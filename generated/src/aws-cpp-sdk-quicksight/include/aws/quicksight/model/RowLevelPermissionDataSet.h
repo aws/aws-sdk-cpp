@@ -47,141 +47,50 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The namespace associated with the dataset that contains permissions for
      * RLS.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
-
-    /**
-     * <p>The namespace associated with the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-
-    /**
-     * <p>The namespace associated with the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-
-    /**
-     * <p>The namespace associated with the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-
-    /**
-     * <p>The namespace associated with the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-
-    /**
-     * <p>The namespace associated with the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline RowLevelPermissionDataSet& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-
-    /**
-     * <p>The namespace associated with the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline RowLevelPermissionDataSet& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-
-    /**
-     * <p>The namespace associated with the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline RowLevelPermissionDataSet& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for
      * RLS.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline RowLevelPermissionDataSet& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline RowLevelPermissionDataSet& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for
-     * RLS.</p>
-     */
     inline RowLevelPermissionDataSet& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of permissions to use when interpreting the permissions for RLS.
      * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
      */
     inline const RowLevelPermissionPolicy& GetPermissionPolicy() const{ return m_permissionPolicy; }
-
-    /**
-     * <p>The type of permissions to use when interpreting the permissions for RLS.
-     * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
-     */
     inline bool PermissionPolicyHasBeenSet() const { return m_permissionPolicyHasBeenSet; }
-
-    /**
-     * <p>The type of permissions to use when interpreting the permissions for RLS.
-     * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
-     */
     inline void SetPermissionPolicy(const RowLevelPermissionPolicy& value) { m_permissionPolicyHasBeenSet = true; m_permissionPolicy = value; }
-
-    /**
-     * <p>The type of permissions to use when interpreting the permissions for RLS.
-     * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
-     */
     inline void SetPermissionPolicy(RowLevelPermissionPolicy&& value) { m_permissionPolicyHasBeenSet = true; m_permissionPolicy = std::move(value); }
-
-    /**
-     * <p>The type of permissions to use when interpreting the permissions for RLS.
-     * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
-     */
     inline RowLevelPermissionDataSet& WithPermissionPolicy(const RowLevelPermissionPolicy& value) { SetPermissionPolicy(value); return *this;}
-
-    /**
-     * <p>The type of permissions to use when interpreting the permissions for RLS.
-     * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
-     */
     inline RowLevelPermissionDataSet& WithPermissionPolicy(RowLevelPermissionPolicy&& value) { SetPermissionPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The user or group rules associated with the dataset that contains permissions
      * for RLS.</p> <p>By default, <code>FormatVersion</code> is
@@ -192,105 +101,26 @@ namespace Model
      * <code>Namespace</code> must not exist.</p>
      */
     inline const RowLevelPermissionFormatVersion& GetFormatVersion() const{ return m_formatVersion; }
-
-    /**
-     * <p>The user or group rules associated with the dataset that contains permissions
-     * for RLS.</p> <p>By default, <code>FormatVersion</code> is
-     * <code>VERSION_1</code>. When <code>FormatVersion</code> is
-     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are
-     * required. When <code>FormatVersion</code> is <code>VERSION_2</code>,
-     * <code>UserARN</code> and <code>GroupARN</code> are required, and
-     * <code>Namespace</code> must not exist.</p>
-     */
     inline bool FormatVersionHasBeenSet() const { return m_formatVersionHasBeenSet; }
-
-    /**
-     * <p>The user or group rules associated with the dataset that contains permissions
-     * for RLS.</p> <p>By default, <code>FormatVersion</code> is
-     * <code>VERSION_1</code>. When <code>FormatVersion</code> is
-     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are
-     * required. When <code>FormatVersion</code> is <code>VERSION_2</code>,
-     * <code>UserARN</code> and <code>GroupARN</code> are required, and
-     * <code>Namespace</code> must not exist.</p>
-     */
     inline void SetFormatVersion(const RowLevelPermissionFormatVersion& value) { m_formatVersionHasBeenSet = true; m_formatVersion = value; }
-
-    /**
-     * <p>The user or group rules associated with the dataset that contains permissions
-     * for RLS.</p> <p>By default, <code>FormatVersion</code> is
-     * <code>VERSION_1</code>. When <code>FormatVersion</code> is
-     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are
-     * required. When <code>FormatVersion</code> is <code>VERSION_2</code>,
-     * <code>UserARN</code> and <code>GroupARN</code> are required, and
-     * <code>Namespace</code> must not exist.</p>
-     */
     inline void SetFormatVersion(RowLevelPermissionFormatVersion&& value) { m_formatVersionHasBeenSet = true; m_formatVersion = std::move(value); }
-
-    /**
-     * <p>The user or group rules associated with the dataset that contains permissions
-     * for RLS.</p> <p>By default, <code>FormatVersion</code> is
-     * <code>VERSION_1</code>. When <code>FormatVersion</code> is
-     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are
-     * required. When <code>FormatVersion</code> is <code>VERSION_2</code>,
-     * <code>UserARN</code> and <code>GroupARN</code> are required, and
-     * <code>Namespace</code> must not exist.</p>
-     */
     inline RowLevelPermissionDataSet& WithFormatVersion(const RowLevelPermissionFormatVersion& value) { SetFormatVersion(value); return *this;}
-
-    /**
-     * <p>The user or group rules associated with the dataset that contains permissions
-     * for RLS.</p> <p>By default, <code>FormatVersion</code> is
-     * <code>VERSION_1</code>. When <code>FormatVersion</code> is
-     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are
-     * required. When <code>FormatVersion</code> is <code>VERSION_2</code>,
-     * <code>UserARN</code> and <code>GroupARN</code> are required, and
-     * <code>Namespace</code> must not exist.</p>
-     */
     inline RowLevelPermissionDataSet& WithFormatVersion(RowLevelPermissionFormatVersion&& value) { SetFormatVersion(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the row-level security permission dataset. If enabled, the
      * status is <code>ENABLED</code>. If disabled, the status is
      * <code>DISABLED</code>.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the row-level security permission dataset. If enabled, the
-     * status is <code>ENABLED</code>. If disabled, the status is
-     * <code>DISABLED</code>.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the row-level security permission dataset. If enabled, the
-     * status is <code>ENABLED</code>. If disabled, the status is
-     * <code>DISABLED</code>.</p>
-     */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the row-level security permission dataset. If enabled, the
-     * status is <code>ENABLED</code>. If disabled, the status is
-     * <code>DISABLED</code>.</p>
-     */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the row-level security permission dataset. If enabled, the
-     * status is <code>ENABLED</code>. If disabled, the status is
-     * <code>DISABLED</code>.</p>
-     */
     inline RowLevelPermissionDataSet& WithStatus(const Status& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the row-level security permission dataset. If enabled, the
-     * status is <code>ENABLED</code>. If disabled, the status is
-     * <code>DISABLED</code>.</p>
-     */
     inline RowLevelPermissionDataSet& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_namespace;

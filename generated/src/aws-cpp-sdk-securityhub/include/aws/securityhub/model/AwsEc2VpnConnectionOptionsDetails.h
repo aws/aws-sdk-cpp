@@ -38,67 +38,29 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether the VPN connection uses static routes only.</p>
      */
     inline bool GetStaticRoutesOnly() const{ return m_staticRoutesOnly; }
-
-    /**
-     * <p>Whether the VPN connection uses static routes only.</p>
-     */
     inline bool StaticRoutesOnlyHasBeenSet() const { return m_staticRoutesOnlyHasBeenSet; }
-
-    /**
-     * <p>Whether the VPN connection uses static routes only.</p>
-     */
     inline void SetStaticRoutesOnly(bool value) { m_staticRoutesOnlyHasBeenSet = true; m_staticRoutesOnly = value; }
-
-    /**
-     * <p>Whether the VPN connection uses static routes only.</p>
-     */
     inline AwsEc2VpnConnectionOptionsDetails& WithStaticRoutesOnly(bool value) { SetStaticRoutesOnly(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The VPN tunnel options.</p>
      */
     inline const Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>& GetTunnelOptions() const{ return m_tunnelOptions; }
-
-    /**
-     * <p>The VPN tunnel options.</p>
-     */
     inline bool TunnelOptionsHasBeenSet() const { return m_tunnelOptionsHasBeenSet; }
-
-    /**
-     * <p>The VPN tunnel options.</p>
-     */
     inline void SetTunnelOptions(const Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions = value; }
-
-    /**
-     * <p>The VPN tunnel options.</p>
-     */
     inline void SetTunnelOptions(Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>&& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions = std::move(value); }
-
-    /**
-     * <p>The VPN tunnel options.</p>
-     */
     inline AwsEc2VpnConnectionOptionsDetails& WithTunnelOptions(const Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>& value) { SetTunnelOptions(value); return *this;}
-
-    /**
-     * <p>The VPN tunnel options.</p>
-     */
     inline AwsEc2VpnConnectionOptionsDetails& WithTunnelOptions(Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>&& value) { SetTunnelOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The VPN tunnel options.</p>
-     */
     inline AwsEc2VpnConnectionOptionsDetails& AddTunnelOptions(const AwsEc2VpnConnectionOptionsTunnelOptionsDetails& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions.push_back(value); return *this; }
-
-    /**
-     * <p>The VPN tunnel options.</p>
-     */
     inline AwsEc2VpnConnectionOptionsDetails& AddTunnelOptions(AwsEc2VpnConnectionOptionsTunnelOptionsDetails&& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     bool m_staticRoutesOnly;

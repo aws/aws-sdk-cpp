@@ -39,46 +39,19 @@ namespace Model
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The differences between the base and latest versions of the lens.</p>
      */
     inline const Aws::Vector<PillarDifference>& GetPillarDifferences() const{ return m_pillarDifferences; }
-
-    /**
-     * <p>The differences between the base and latest versions of the lens.</p>
-     */
     inline bool PillarDifferencesHasBeenSet() const { return m_pillarDifferencesHasBeenSet; }
-
-    /**
-     * <p>The differences between the base and latest versions of the lens.</p>
-     */
     inline void SetPillarDifferences(const Aws::Vector<PillarDifference>& value) { m_pillarDifferencesHasBeenSet = true; m_pillarDifferences = value; }
-
-    /**
-     * <p>The differences between the base and latest versions of the lens.</p>
-     */
     inline void SetPillarDifferences(Aws::Vector<PillarDifference>&& value) { m_pillarDifferencesHasBeenSet = true; m_pillarDifferences = std::move(value); }
-
-    /**
-     * <p>The differences between the base and latest versions of the lens.</p>
-     */
     inline VersionDifferences& WithPillarDifferences(const Aws::Vector<PillarDifference>& value) { SetPillarDifferences(value); return *this;}
-
-    /**
-     * <p>The differences between the base and latest versions of the lens.</p>
-     */
     inline VersionDifferences& WithPillarDifferences(Aws::Vector<PillarDifference>&& value) { SetPillarDifferences(std::move(value)); return *this;}
-
-    /**
-     * <p>The differences between the base and latest versions of the lens.</p>
-     */
     inline VersionDifferences& AddPillarDifferences(const PillarDifference& value) { m_pillarDifferencesHasBeenSet = true; m_pillarDifferences.push_back(value); return *this; }
-
-    /**
-     * <p>The differences between the base and latest versions of the lens.</p>
-     */
     inline VersionDifferences& AddPillarDifferences(PillarDifference&& value) { m_pillarDifferencesHasBeenSet = true; m_pillarDifferences.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<PillarDifference> m_pillarDifferences;

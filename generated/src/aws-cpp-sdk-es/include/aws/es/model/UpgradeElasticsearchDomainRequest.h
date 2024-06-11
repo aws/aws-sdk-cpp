@@ -36,96 +36,42 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    
     inline UpgradeElasticsearchDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    
     inline UpgradeElasticsearchDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    
     inline UpgradeElasticsearchDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
      */
     inline const Aws::String& GetTargetVersion() const{ return m_targetVersion; }
-
-    /**
-     * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-     */
     inline bool TargetVersionHasBeenSet() const { return m_targetVersionHasBeenSet; }
-
-    /**
-     * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-     */
     inline void SetTargetVersion(const Aws::String& value) { m_targetVersionHasBeenSet = true; m_targetVersion = value; }
-
-    /**
-     * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-     */
     inline void SetTargetVersion(Aws::String&& value) { m_targetVersionHasBeenSet = true; m_targetVersion = std::move(value); }
-
-    /**
-     * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-     */
     inline void SetTargetVersion(const char* value) { m_targetVersionHasBeenSet = true; m_targetVersion.assign(value); }
-
-    /**
-     * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-     */
     inline UpgradeElasticsearchDomainRequest& WithTargetVersion(const Aws::String& value) { SetTargetVersion(value); return *this;}
-
-    /**
-     * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-     */
     inline UpgradeElasticsearchDomainRequest& WithTargetVersion(Aws::String&& value) { SetTargetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-     */
     inline UpgradeElasticsearchDomainRequest& WithTargetVersion(const char* value) { SetTargetVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> This flag, when set to True, indicates that an Upgrade Eligibility Check
      * needs to be performed. This will not actually perform the Upgrade. </p>
      */
     inline bool GetPerformCheckOnly() const{ return m_performCheckOnly; }
-
-    /**
-     * <p> This flag, when set to True, indicates that an Upgrade Eligibility Check
-     * needs to be performed. This will not actually perform the Upgrade. </p>
-     */
     inline bool PerformCheckOnlyHasBeenSet() const { return m_performCheckOnlyHasBeenSet; }
-
-    /**
-     * <p> This flag, when set to True, indicates that an Upgrade Eligibility Check
-     * needs to be performed. This will not actually perform the Upgrade. </p>
-     */
     inline void SetPerformCheckOnly(bool value) { m_performCheckOnlyHasBeenSet = true; m_performCheckOnly = value; }
-
-    /**
-     * <p> This flag, when set to True, indicates that an Upgrade Eligibility Check
-     * needs to be performed. This will not actually perform the Upgrade. </p>
-     */
     inline UpgradeElasticsearchDomainRequest& WithPerformCheckOnly(bool value) { SetPerformCheckOnly(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

@@ -34,95 +34,34 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the maintenance window execution that includes the task.</p>
      */
     inline const Aws::String& GetWindowExecutionId() const{ return m_windowExecutionId; }
-
-    /**
-     * <p>The ID of the maintenance window execution that includes the task.</p>
-     */
     inline bool WindowExecutionIdHasBeenSet() const { return m_windowExecutionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the maintenance window execution that includes the task.</p>
-     */
     inline void SetWindowExecutionId(const Aws::String& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = value; }
-
-    /**
-     * <p>The ID of the maintenance window execution that includes the task.</p>
-     */
     inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = std::move(value); }
-
-    /**
-     * <p>The ID of the maintenance window execution that includes the task.</p>
-     */
     inline void SetWindowExecutionId(const char* value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId.assign(value); }
-
-    /**
-     * <p>The ID of the maintenance window execution that includes the task.</p>
-     */
     inline GetMaintenanceWindowExecutionTaskRequest& WithWindowExecutionId(const Aws::String& value) { SetWindowExecutionId(value); return *this;}
-
-    /**
-     * <p>The ID of the maintenance window execution that includes the task.</p>
-     */
     inline GetMaintenanceWindowExecutionTaskRequest& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the maintenance window execution that includes the task.</p>
-     */
     inline GetMaintenanceWindowExecutionTaskRequest& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the specific task execution in the maintenance window task that
      * should be retrieved.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
-
-    /**
-     * <p>The ID of the specific task execution in the maintenance window task that
-     * should be retrieved.</p>
-     */
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the specific task execution in the maintenance window task that
-     * should be retrieved.</p>
-     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-
-    /**
-     * <p>The ID of the specific task execution in the maintenance window task that
-     * should be retrieved.</p>
-     */
     inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-
-    /**
-     * <p>The ID of the specific task execution in the maintenance window task that
-     * should be retrieved.</p>
-     */
     inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-
-    /**
-     * <p>The ID of the specific task execution in the maintenance window task that
-     * should be retrieved.</p>
-     */
     inline GetMaintenanceWindowExecutionTaskRequest& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-
-    /**
-     * <p>The ID of the specific task execution in the maintenance window task that
-     * should be retrieved.</p>
-     */
     inline GetMaintenanceWindowExecutionTaskRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the specific task execution in the maintenance window task that
-     * should be retrieved.</p>
-     */
     inline GetMaintenanceWindowExecutionTaskRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_windowExecutionId;

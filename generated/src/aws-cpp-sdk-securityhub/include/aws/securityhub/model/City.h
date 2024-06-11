@@ -37,46 +37,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the city.</p>
      */
     inline const Aws::String& GetCityName() const{ return m_cityName; }
-
-    /**
-     * <p>The name of the city.</p>
-     */
     inline bool CityNameHasBeenSet() const { return m_cityNameHasBeenSet; }
-
-    /**
-     * <p>The name of the city.</p>
-     */
     inline void SetCityName(const Aws::String& value) { m_cityNameHasBeenSet = true; m_cityName = value; }
-
-    /**
-     * <p>The name of the city.</p>
-     */
     inline void SetCityName(Aws::String&& value) { m_cityNameHasBeenSet = true; m_cityName = std::move(value); }
-
-    /**
-     * <p>The name of the city.</p>
-     */
     inline void SetCityName(const char* value) { m_cityNameHasBeenSet = true; m_cityName.assign(value); }
-
-    /**
-     * <p>The name of the city.</p>
-     */
     inline City& WithCityName(const Aws::String& value) { SetCityName(value); return *this;}
-
-    /**
-     * <p>The name of the city.</p>
-     */
     inline City& WithCityName(Aws::String&& value) { SetCityName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the city.</p>
-     */
     inline City& WithCityName(const char* value) { SetCityName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cityName;

@@ -39,54 +39,20 @@ namespace Model
     AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The CIDR block for the advertised route. Separate multiple routes using
      * commas. An IPv6 CIDR must use /64 or shorter.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
-
-    /**
-     * <p>The CIDR block for the advertised route. Separate multiple routes using
-     * commas. An IPv6 CIDR must use /64 or shorter.</p>
-     */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-
-    /**
-     * <p>The CIDR block for the advertised route. Separate multiple routes using
-     * commas. An IPv6 CIDR must use /64 or shorter.</p>
-     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-
-    /**
-     * <p>The CIDR block for the advertised route. Separate multiple routes using
-     * commas. An IPv6 CIDR must use /64 or shorter.</p>
-     */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-
-    /**
-     * <p>The CIDR block for the advertised route. Separate multiple routes using
-     * commas. An IPv6 CIDR must use /64 or shorter.</p>
-     */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-
-    /**
-     * <p>The CIDR block for the advertised route. Separate multiple routes using
-     * commas. An IPv6 CIDR must use /64 or shorter.</p>
-     */
     inline RouteFilterPrefix& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-
-    /**
-     * <p>The CIDR block for the advertised route. Separate multiple routes using
-     * commas. An IPv6 CIDR must use /64 or shorter.</p>
-     */
     inline RouteFilterPrefix& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIDR block for the advertised route. Separate multiple routes using
-     * commas. An IPv6 CIDR must use /64 or shorter.</p>
-     */
     inline RouteFilterPrefix& WithCidr(const char* value) { SetCidr(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cidr;

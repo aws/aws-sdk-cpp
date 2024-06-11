@@ -33,114 +33,44 @@ namespace Model
     AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline UpdateCampaignRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline UpdateCampaignRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline UpdateCampaignRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the campaign.</p>
      */
     inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
-
-    /**
-     * <p>The unique identifier for the campaign.</p>
-     */
     inline bool CampaignIdHasBeenSet() const { return m_campaignIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the campaign.</p>
-     */
     inline void SetCampaignId(const Aws::String& value) { m_campaignIdHasBeenSet = true; m_campaignId = value; }
-
-    /**
-     * <p>The unique identifier for the campaign.</p>
-     */
     inline void SetCampaignId(Aws::String&& value) { m_campaignIdHasBeenSet = true; m_campaignId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the campaign.</p>
-     */
     inline void SetCampaignId(const char* value) { m_campaignIdHasBeenSet = true; m_campaignId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the campaign.</p>
-     */
     inline UpdateCampaignRequest& WithCampaignId(const Aws::String& value) { SetCampaignId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the campaign.</p>
-     */
     inline UpdateCampaignRequest& WithCampaignId(Aws::String&& value) { SetCampaignId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the campaign.</p>
-     */
     inline UpdateCampaignRequest& WithCampaignId(const char* value) { SetCampaignId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const WriteCampaignRequest& GetWriteCampaignRequest() const{ return m_writeCampaignRequest; }
-
-    
     inline bool WriteCampaignRequestHasBeenSet() const { return m_writeCampaignRequestHasBeenSet; }
-
-    
     inline void SetWriteCampaignRequest(const WriteCampaignRequest& value) { m_writeCampaignRequestHasBeenSet = true; m_writeCampaignRequest = value; }
-
-    
     inline void SetWriteCampaignRequest(WriteCampaignRequest&& value) { m_writeCampaignRequestHasBeenSet = true; m_writeCampaignRequest = std::move(value); }
-
-    
     inline UpdateCampaignRequest& WithWriteCampaignRequest(const WriteCampaignRequest& value) { SetWriteCampaignRequest(value); return *this;}
-
-    
     inline UpdateCampaignRequest& WithWriteCampaignRequest(WriteCampaignRequest&& value) { SetWriteCampaignRequest(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

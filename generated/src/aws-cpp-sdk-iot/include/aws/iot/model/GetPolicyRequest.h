@@ -35,46 +35,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline GetPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline GetPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline GetPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyName;

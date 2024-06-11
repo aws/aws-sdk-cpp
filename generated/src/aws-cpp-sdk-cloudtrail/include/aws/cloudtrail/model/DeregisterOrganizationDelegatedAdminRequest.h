@@ -39,54 +39,20 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A delegated administrator account ID. This is a member account in an
      * organization that is currently designated as a delegated administrator.</p>
      */
     inline const Aws::String& GetDelegatedAdminAccountId() const{ return m_delegatedAdminAccountId; }
-
-    /**
-     * <p>A delegated administrator account ID. This is a member account in an
-     * organization that is currently designated as a delegated administrator.</p>
-     */
     inline bool DelegatedAdminAccountIdHasBeenSet() const { return m_delegatedAdminAccountIdHasBeenSet; }
-
-    /**
-     * <p>A delegated administrator account ID. This is a member account in an
-     * organization that is currently designated as a delegated administrator.</p>
-     */
     inline void SetDelegatedAdminAccountId(const Aws::String& value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId = value; }
-
-    /**
-     * <p>A delegated administrator account ID. This is a member account in an
-     * organization that is currently designated as a delegated administrator.</p>
-     */
     inline void SetDelegatedAdminAccountId(Aws::String&& value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId = std::move(value); }
-
-    /**
-     * <p>A delegated administrator account ID. This is a member account in an
-     * organization that is currently designated as a delegated administrator.</p>
-     */
     inline void SetDelegatedAdminAccountId(const char* value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId.assign(value); }
-
-    /**
-     * <p>A delegated administrator account ID. This is a member account in an
-     * organization that is currently designated as a delegated administrator.</p>
-     */
     inline DeregisterOrganizationDelegatedAdminRequest& WithDelegatedAdminAccountId(const Aws::String& value) { SetDelegatedAdminAccountId(value); return *this;}
-
-    /**
-     * <p>A delegated administrator account ID. This is a member account in an
-     * organization that is currently designated as a delegated administrator.</p>
-     */
     inline DeregisterOrganizationDelegatedAdminRequest& WithDelegatedAdminAccountId(Aws::String&& value) { SetDelegatedAdminAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>A delegated administrator account ID. This is a member account in an
-     * organization that is currently designated as a delegated administrator.</p>
-     */
     inline DeregisterOrganizationDelegatedAdminRequest& WithDelegatedAdminAccountId(const char* value) { SetDelegatedAdminAccountId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_delegatedAdminAccountId;

@@ -34,99 +34,42 @@ namespace Model
     AWS_PERSONALIZE_API ListEventTrackersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of event trackers.</p>
      */
     inline const Aws::Vector<EventTrackerSummary>& GetEventTrackers() const{ return m_eventTrackers; }
-
-    /**
-     * <p>A list of event trackers.</p>
-     */
     inline void SetEventTrackers(const Aws::Vector<EventTrackerSummary>& value) { m_eventTrackers = value; }
-
-    /**
-     * <p>A list of event trackers.</p>
-     */
     inline void SetEventTrackers(Aws::Vector<EventTrackerSummary>&& value) { m_eventTrackers = std::move(value); }
-
-    /**
-     * <p>A list of event trackers.</p>
-     */
     inline ListEventTrackersResult& WithEventTrackers(const Aws::Vector<EventTrackerSummary>& value) { SetEventTrackers(value); return *this;}
-
-    /**
-     * <p>A list of event trackers.</p>
-     */
     inline ListEventTrackersResult& WithEventTrackers(Aws::Vector<EventTrackerSummary>&& value) { SetEventTrackers(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of event trackers.</p>
-     */
     inline ListEventTrackersResult& AddEventTrackers(const EventTrackerSummary& value) { m_eventTrackers.push_back(value); return *this; }
-
-    /**
-     * <p>A list of event trackers.</p>
-     */
     inline ListEventTrackersResult& AddEventTrackers(EventTrackerSummary&& value) { m_eventTrackers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token for getting the next set of event trackers (if they exist).</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token for getting the next set of event trackers (if they exist).</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token for getting the next set of event trackers (if they exist).</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token for getting the next set of event trackers (if they exist).</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token for getting the next set of event trackers (if they exist).</p>
-     */
     inline ListEventTrackersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token for getting the next set of event trackers (if they exist).</p>
-     */
     inline ListEventTrackersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token for getting the next set of event trackers (if they exist).</p>
-     */
     inline ListEventTrackersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListEventTrackersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListEventTrackersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListEventTrackersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EventTrackerSummary> m_eventTrackers;

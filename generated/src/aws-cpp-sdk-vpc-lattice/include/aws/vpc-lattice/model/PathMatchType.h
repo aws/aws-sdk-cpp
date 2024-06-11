@@ -38,87 +38,33 @@ namespace Model
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An exact match of the path.</p>
      */
     inline const Aws::String& GetExact() const{ return m_exact; }
-
-    /**
-     * <p>An exact match of the path.</p>
-     */
     inline bool ExactHasBeenSet() const { return m_exactHasBeenSet; }
-
-    /**
-     * <p>An exact match of the path.</p>
-     */
     inline void SetExact(const Aws::String& value) { m_exactHasBeenSet = true; m_exact = value; }
-
-    /**
-     * <p>An exact match of the path.</p>
-     */
     inline void SetExact(Aws::String&& value) { m_exactHasBeenSet = true; m_exact = std::move(value); }
-
-    /**
-     * <p>An exact match of the path.</p>
-     */
     inline void SetExact(const char* value) { m_exactHasBeenSet = true; m_exact.assign(value); }
-
-    /**
-     * <p>An exact match of the path.</p>
-     */
     inline PathMatchType& WithExact(const Aws::String& value) { SetExact(value); return *this;}
-
-    /**
-     * <p>An exact match of the path.</p>
-     */
     inline PathMatchType& WithExact(Aws::String&& value) { SetExact(std::move(value)); return *this;}
-
-    /**
-     * <p>An exact match of the path.</p>
-     */
     inline PathMatchType& WithExact(const char* value) { SetExact(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A prefix match of the path.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p>A prefix match of the path.</p>
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p>A prefix match of the path.</p>
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p>A prefix match of the path.</p>
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p>A prefix match of the path.</p>
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p>A prefix match of the path.</p>
-     */
     inline PathMatchType& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p>A prefix match of the path.</p>
-     */
     inline PathMatchType& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>A prefix match of the path.</p>
-     */
     inline PathMatchType& WithPrefix(const char* value) { SetPrefix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exact;

@@ -40,65 +40,29 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A leaf node condition which can be used to specify a tag condition.</p>
      */
     inline const Aws::Vector<TagCondition>& GetTagConditions() const{ return m_tagConditions; }
-
-    /**
-     * <p>A leaf node condition which can be used to specify a tag condition.</p>
-     */
     inline bool TagConditionsHasBeenSet() const { return m_tagConditionsHasBeenSet; }
-
-    /**
-     * <p>A leaf node condition which can be used to specify a tag condition.</p>
-     */
     inline void SetTagConditions(const Aws::Vector<TagCondition>& value) { m_tagConditionsHasBeenSet = true; m_tagConditions = value; }
-
-    /**
-     * <p>A leaf node condition which can be used to specify a tag condition.</p>
-     */
     inline void SetTagConditions(Aws::Vector<TagCondition>&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions = std::move(value); }
-
-    /**
-     * <p>A leaf node condition which can be used to specify a tag condition.</p>
-     */
     inline AttributeAndCondition& WithTagConditions(const Aws::Vector<TagCondition>& value) { SetTagConditions(value); return *this;}
-
-    /**
-     * <p>A leaf node condition which can be used to specify a tag condition.</p>
-     */
     inline AttributeAndCondition& WithTagConditions(Aws::Vector<TagCondition>&& value) { SetTagConditions(std::move(value)); return *this;}
-
-    /**
-     * <p>A leaf node condition which can be used to specify a tag condition.</p>
-     */
     inline AttributeAndCondition& AddTagConditions(const TagCondition& value) { m_tagConditionsHasBeenSet = true; m_tagConditions.push_back(value); return *this; }
-
-    /**
-     * <p>A leaf node condition which can be used to specify a tag condition.</p>
-     */
     inline AttributeAndCondition& AddTagConditions(TagCondition&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const HierarchyGroupCondition& GetHierarchyGroupCondition() const{ return m_hierarchyGroupCondition; }
-
-    
     inline bool HierarchyGroupConditionHasBeenSet() const { return m_hierarchyGroupConditionHasBeenSet; }
-
-    
     inline void SetHierarchyGroupCondition(const HierarchyGroupCondition& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = value; }
-
-    
     inline void SetHierarchyGroupCondition(HierarchyGroupCondition&& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = std::move(value); }
-
-    
     inline AttributeAndCondition& WithHierarchyGroupCondition(const HierarchyGroupCondition& value) { SetHierarchyGroupCondition(value); return *this;}
-
-    
     inline AttributeAndCondition& WithHierarchyGroupCondition(HierarchyGroupCondition&& value) { SetHierarchyGroupCondition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TagCondition> m_tagConditions;

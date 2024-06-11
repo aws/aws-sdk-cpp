@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The lexical name for the level of boldness of the text display.</p>
      */
     inline const FontWeightName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The lexical name for the level of boldness of the text display.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The lexical name for the level of boldness of the text display.</p>
-     */
     inline void SetName(const FontWeightName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The lexical name for the level of boldness of the text display.</p>
-     */
     inline void SetName(FontWeightName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The lexical name for the level of boldness of the text display.</p>
-     */
     inline FontWeight& WithName(const FontWeightName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The lexical name for the level of boldness of the text display.</p>
-     */
     inline FontWeight& WithName(FontWeightName&& value) { SetName(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FontWeightName m_name;

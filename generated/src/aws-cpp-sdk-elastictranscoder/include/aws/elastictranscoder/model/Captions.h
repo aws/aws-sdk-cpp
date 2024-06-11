@@ -38,54 +38,20 @@ namespace Model
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The array of file formats for the output captions. If you leave this value
      * blank, Elastic Transcoder returns an error.</p>
      */
     inline const Aws::Vector<CaptionFormat>& GetCaptionFormats() const{ return m_captionFormats; }
-
-    /**
-     * <p>The array of file formats for the output captions. If you leave this value
-     * blank, Elastic Transcoder returns an error.</p>
-     */
     inline bool CaptionFormatsHasBeenSet() const { return m_captionFormatsHasBeenSet; }
-
-    /**
-     * <p>The array of file formats for the output captions. If you leave this value
-     * blank, Elastic Transcoder returns an error.</p>
-     */
     inline void SetCaptionFormats(const Aws::Vector<CaptionFormat>& value) { m_captionFormatsHasBeenSet = true; m_captionFormats = value; }
-
-    /**
-     * <p>The array of file formats for the output captions. If you leave this value
-     * blank, Elastic Transcoder returns an error.</p>
-     */
     inline void SetCaptionFormats(Aws::Vector<CaptionFormat>&& value) { m_captionFormatsHasBeenSet = true; m_captionFormats = std::move(value); }
-
-    /**
-     * <p>The array of file formats for the output captions. If you leave this value
-     * blank, Elastic Transcoder returns an error.</p>
-     */
     inline Captions& WithCaptionFormats(const Aws::Vector<CaptionFormat>& value) { SetCaptionFormats(value); return *this;}
-
-    /**
-     * <p>The array of file formats for the output captions. If you leave this value
-     * blank, Elastic Transcoder returns an error.</p>
-     */
     inline Captions& WithCaptionFormats(Aws::Vector<CaptionFormat>&& value) { SetCaptionFormats(std::move(value)); return *this;}
-
-    /**
-     * <p>The array of file formats for the output captions. If you leave this value
-     * blank, Elastic Transcoder returns an error.</p>
-     */
     inline Captions& AddCaptionFormats(const CaptionFormat& value) { m_captionFormatsHasBeenSet = true; m_captionFormats.push_back(value); return *this; }
-
-    /**
-     * <p>The array of file formats for the output captions. If you leave this value
-     * blank, Elastic Transcoder returns an error.</p>
-     */
     inline Captions& AddCaptionFormats(CaptionFormat&& value) { m_captionFormatsHasBeenSet = true; m_captionFormats.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CaptionFormat> m_captionFormats;

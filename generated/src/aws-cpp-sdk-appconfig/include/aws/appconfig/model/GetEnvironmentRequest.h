@@ -32,87 +32,33 @@ namespace Model
     AWS_APPCONFIG_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the application that includes the environment you want to get.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The ID of the application that includes the environment you want to get.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the application that includes the environment you want to get.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The ID of the application that includes the environment you want to get.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The ID of the application that includes the environment you want to get.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The ID of the application that includes the environment you want to get.</p>
-     */
     inline GetEnvironmentRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The ID of the application that includes the environment you want to get.</p>
-     */
     inline GetEnvironmentRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the application that includes the environment you want to get.</p>
-     */
     inline GetEnvironmentRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the environment that you want to get.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-
-    /**
-     * <p>The ID of the environment that you want to get.</p>
-     */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the environment that you want to get.</p>
-     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-
-    /**
-     * <p>The ID of the environment that you want to get.</p>
-     */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the environment that you want to get.</p>
-     */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-
-    /**
-     * <p>The ID of the environment that you want to get.</p>
-     */
     inline GetEnvironmentRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the environment that you want to get.</p>
-     */
     inline GetEnvironmentRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the environment that you want to get.</p>
-     */
     inline GetEnvironmentRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

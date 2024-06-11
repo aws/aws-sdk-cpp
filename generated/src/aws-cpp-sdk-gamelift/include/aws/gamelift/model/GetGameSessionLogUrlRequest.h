@@ -34,46 +34,19 @@ namespace Model
     AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the game session to get logs for. </p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
-
-    /**
-     * <p>A unique identifier for the game session to get logs for. </p>
-     */
     inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the game session to get logs for. </p>
-     */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
-
-    /**
-     * <p>A unique identifier for the game session to get logs for. </p>
-     */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the game session to get logs for. </p>
-     */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the game session to get logs for. </p>
-     */
     inline GetGameSessionLogUrlRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the game session to get logs for. </p>
-     */
     inline GetGameSessionLogUrlRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the game session to get logs for. </p>
-     */
     inline GetGameSessionLogUrlRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gameSessionId;

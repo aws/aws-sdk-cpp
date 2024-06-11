@@ -33,53 +33,27 @@ namespace Model
     AWS_TRANSFER_API DescribeProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details of the specified profile, returned as an object.</p>
      */
     inline const DescribedProfile& GetProfile() const{ return m_profile; }
-
-    /**
-     * <p>The details of the specified profile, returned as an object.</p>
-     */
     inline void SetProfile(const DescribedProfile& value) { m_profile = value; }
-
-    /**
-     * <p>The details of the specified profile, returned as an object.</p>
-     */
     inline void SetProfile(DescribedProfile&& value) { m_profile = std::move(value); }
-
-    /**
-     * <p>The details of the specified profile, returned as an object.</p>
-     */
     inline DescribeProfileResult& WithProfile(const DescribedProfile& value) { SetProfile(value); return *this;}
-
-    /**
-     * <p>The details of the specified profile, returned as an object.</p>
-     */
     inline DescribeProfileResult& WithProfile(DescribedProfile&& value) { SetProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DescribedProfile m_profile;

@@ -39,106 +39,43 @@ namespace Model
     AWS_GROUNDSTATION_API ListContactsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>List of contacts.</p>
      */
     inline const Aws::Vector<ContactData>& GetContactList() const{ return m_contactList; }
-
-    /**
-     * <p>List of contacts.</p>
-     */
     inline void SetContactList(const Aws::Vector<ContactData>& value) { m_contactList = value; }
-
-    /**
-     * <p>List of contacts.</p>
-     */
     inline void SetContactList(Aws::Vector<ContactData>&& value) { m_contactList = std::move(value); }
-
-    /**
-     * <p>List of contacts.</p>
-     */
     inline ListContactsResult& WithContactList(const Aws::Vector<ContactData>& value) { SetContactList(value); return *this;}
-
-    /**
-     * <p>List of contacts.</p>
-     */
     inline ListContactsResult& WithContactList(Aws::Vector<ContactData>&& value) { SetContactList(std::move(value)); return *this;}
-
-    /**
-     * <p>List of contacts.</p>
-     */
     inline ListContactsResult& AddContactList(const ContactData& value) { m_contactList.push_back(value); return *this; }
-
-    /**
-     * <p>List of contacts.</p>
-     */
     inline ListContactsResult& AddContactList(ContactData&& value) { m_contactList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Next token returned in the response of a previous <code>ListContacts</code>
      * call. Used to get the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Next token returned in the response of a previous <code>ListContacts</code>
-     * call. Used to get the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Next token returned in the response of a previous <code>ListContacts</code>
-     * call. Used to get the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Next token returned in the response of a previous <code>ListContacts</code>
-     * call. Used to get the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Next token returned in the response of a previous <code>ListContacts</code>
-     * call. Used to get the next page of results.</p>
-     */
     inline ListContactsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Next token returned in the response of a previous <code>ListContacts</code>
-     * call. Used to get the next page of results.</p>
-     */
     inline ListContactsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Next token returned in the response of a previous <code>ListContacts</code>
-     * call. Used to get the next page of results.</p>
-     */
     inline ListContactsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListContactsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListContactsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListContactsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ContactData> m_contactList;

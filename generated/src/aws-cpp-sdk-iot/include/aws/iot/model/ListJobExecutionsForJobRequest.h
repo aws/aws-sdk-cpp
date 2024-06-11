@@ -39,139 +39,55 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline ListJobExecutionsForJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline ListJobExecutionsForJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline ListJobExecutionsForJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the job.</p>
      */
     inline const JobExecutionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the job.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the job.</p>
-     */
     inline void SetStatus(const JobExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the job.</p>
-     */
     inline void SetStatus(JobExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the job.</p>
-     */
     inline ListJobExecutionsForJobRequest& WithStatus(const JobExecutionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the job.</p>
-     */
     inline ListJobExecutionsForJobRequest& WithStatus(JobExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to be returned per request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to be returned per request.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to be returned per request.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to be returned per request.</p>
-     */
     inline ListJobExecutionsForJobRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline ListJobExecutionsForJobRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline ListJobExecutionsForJobRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline ListJobExecutionsForJobRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

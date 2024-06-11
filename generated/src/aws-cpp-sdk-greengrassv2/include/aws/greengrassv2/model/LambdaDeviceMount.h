@@ -39,108 +39,43 @@ namespace Model
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The mount path for the device in the file system.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
-
-    /**
-     * <p>The mount path for the device in the file system.</p>
-     */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-
-    /**
-     * <p>The mount path for the device in the file system.</p>
-     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-
-    /**
-     * <p>The mount path for the device in the file system.</p>
-     */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-
-    /**
-     * <p>The mount path for the device in the file system.</p>
-     */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-
-    /**
-     * <p>The mount path for the device in the file system.</p>
-     */
     inline LambdaDeviceMount& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-
-    /**
-     * <p>The mount path for the device in the file system.</p>
-     */
     inline LambdaDeviceMount& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The mount path for the device in the file system.</p>
-     */
     inline LambdaDeviceMount& WithPath(const char* value) { SetPath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The permission to access the device: read/only (<code>ro</code>) or
      * read/write (<code>rw</code>).</p> <p>Default: <code>ro</code> </p>
      */
     inline const LambdaFilesystemPermission& GetPermission() const{ return m_permission; }
-
-    /**
-     * <p>The permission to access the device: read/only (<code>ro</code>) or
-     * read/write (<code>rw</code>).</p> <p>Default: <code>ro</code> </p>
-     */
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-
-    /**
-     * <p>The permission to access the device: read/only (<code>ro</code>) or
-     * read/write (<code>rw</code>).</p> <p>Default: <code>ro</code> </p>
-     */
     inline void SetPermission(const LambdaFilesystemPermission& value) { m_permissionHasBeenSet = true; m_permission = value; }
-
-    /**
-     * <p>The permission to access the device: read/only (<code>ro</code>) or
-     * read/write (<code>rw</code>).</p> <p>Default: <code>ro</code> </p>
-     */
     inline void SetPermission(LambdaFilesystemPermission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-
-    /**
-     * <p>The permission to access the device: read/only (<code>ro</code>) or
-     * read/write (<code>rw</code>).</p> <p>Default: <code>ro</code> </p>
-     */
     inline LambdaDeviceMount& WithPermission(const LambdaFilesystemPermission& value) { SetPermission(value); return *this;}
-
-    /**
-     * <p>The permission to access the device: read/only (<code>ro</code>) or
-     * read/write (<code>rw</code>).</p> <p>Default: <code>ro</code> </p>
-     */
     inline LambdaDeviceMount& WithPermission(LambdaFilesystemPermission&& value) { SetPermission(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether or not to add the component's system user as an owner of the
      * device.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAddGroupOwner() const{ return m_addGroupOwner; }
-
-    /**
-     * <p>Whether or not to add the component's system user as an owner of the
-     * device.</p> <p>Default: <code>false</code> </p>
-     */
     inline bool AddGroupOwnerHasBeenSet() const { return m_addGroupOwnerHasBeenSet; }
-
-    /**
-     * <p>Whether or not to add the component's system user as an owner of the
-     * device.</p> <p>Default: <code>false</code> </p>
-     */
     inline void SetAddGroupOwner(bool value) { m_addGroupOwnerHasBeenSet = true; m_addGroupOwner = value; }
-
-    /**
-     * <p>Whether or not to add the component's system user as an owner of the
-     * device.</p> <p>Default: <code>false</code> </p>
-     */
     inline LambdaDeviceMount& WithAddGroupOwner(bool value) { SetAddGroupOwner(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_path;

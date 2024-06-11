@@ -39,173 +39,61 @@ namespace Model
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The role of the service account, which sets the permission level used when
      * calling Grafana APIs.</p>
      */
     inline const Role& GetGrafanaRole() const{ return m_grafanaRole; }
-
-    /**
-     * <p>The role of the service account, which sets the permission level used when
-     * calling Grafana APIs.</p>
-     */
     inline bool GrafanaRoleHasBeenSet() const { return m_grafanaRoleHasBeenSet; }
-
-    /**
-     * <p>The role of the service account, which sets the permission level used when
-     * calling Grafana APIs.</p>
-     */
     inline void SetGrafanaRole(const Role& value) { m_grafanaRoleHasBeenSet = true; m_grafanaRole = value; }
-
-    /**
-     * <p>The role of the service account, which sets the permission level used when
-     * calling Grafana APIs.</p>
-     */
     inline void SetGrafanaRole(Role&& value) { m_grafanaRoleHasBeenSet = true; m_grafanaRole = std::move(value); }
-
-    /**
-     * <p>The role of the service account, which sets the permission level used when
-     * calling Grafana APIs.</p>
-     */
     inline ServiceAccountSummary& WithGrafanaRole(const Role& value) { SetGrafanaRole(value); return *this;}
-
-    /**
-     * <p>The role of the service account, which sets the permission level used when
-     * calling Grafana APIs.</p>
-     */
     inline ServiceAccountSummary& WithGrafanaRole(Role&& value) { SetGrafanaRole(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique ID of the service account.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The unique ID of the service account.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the service account.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The unique ID of the service account.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The unique ID of the service account.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The unique ID of the service account.</p>
-     */
     inline ServiceAccountSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the service account.</p>
-     */
     inline ServiceAccountSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the service account.</p>
-     */
     inline ServiceAccountSummary& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns true if the service account is disabled. Service accounts can be
      * disabled and enabled in the Amazon Managed Grafana console.</p>
      */
     inline const Aws::String& GetIsDisabled() const{ return m_isDisabled; }
-
-    /**
-     * <p>Returns true if the service account is disabled. Service accounts can be
-     * disabled and enabled in the Amazon Managed Grafana console.</p>
-     */
     inline bool IsDisabledHasBeenSet() const { return m_isDisabledHasBeenSet; }
-
-    /**
-     * <p>Returns true if the service account is disabled. Service accounts can be
-     * disabled and enabled in the Amazon Managed Grafana console.</p>
-     */
     inline void SetIsDisabled(const Aws::String& value) { m_isDisabledHasBeenSet = true; m_isDisabled = value; }
-
-    /**
-     * <p>Returns true if the service account is disabled. Service accounts can be
-     * disabled and enabled in the Amazon Managed Grafana console.</p>
-     */
     inline void SetIsDisabled(Aws::String&& value) { m_isDisabledHasBeenSet = true; m_isDisabled = std::move(value); }
-
-    /**
-     * <p>Returns true if the service account is disabled. Service accounts can be
-     * disabled and enabled in the Amazon Managed Grafana console.</p>
-     */
     inline void SetIsDisabled(const char* value) { m_isDisabledHasBeenSet = true; m_isDisabled.assign(value); }
-
-    /**
-     * <p>Returns true if the service account is disabled. Service accounts can be
-     * disabled and enabled in the Amazon Managed Grafana console.</p>
-     */
     inline ServiceAccountSummary& WithIsDisabled(const Aws::String& value) { SetIsDisabled(value); return *this;}
-
-    /**
-     * <p>Returns true if the service account is disabled. Service accounts can be
-     * disabled and enabled in the Amazon Managed Grafana console.</p>
-     */
     inline ServiceAccountSummary& WithIsDisabled(Aws::String&& value) { SetIsDisabled(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns true if the service account is disabled. Service accounts can be
-     * disabled and enabled in the Amazon Managed Grafana console.</p>
-     */
     inline ServiceAccountSummary& WithIsDisabled(const char* value) { SetIsDisabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the service account.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the service account.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the service account.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the service account.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the service account.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the service account.</p>
-     */
     inline ServiceAccountSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the service account.</p>
-     */
     inline ServiceAccountSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service account.</p>
-     */
     inline ServiceAccountSummary& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Role m_grafanaRole;

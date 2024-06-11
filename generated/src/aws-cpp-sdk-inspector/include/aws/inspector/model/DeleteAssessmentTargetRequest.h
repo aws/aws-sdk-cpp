@@ -34,46 +34,19 @@ namespace Model
     AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN that specifies the assessment target that you want to delete.</p>
      */
     inline const Aws::String& GetAssessmentTargetArn() const{ return m_assessmentTargetArn; }
-
-    /**
-     * <p>The ARN that specifies the assessment target that you want to delete.</p>
-     */
     inline bool AssessmentTargetArnHasBeenSet() const { return m_assessmentTargetArnHasBeenSet; }
-
-    /**
-     * <p>The ARN that specifies the assessment target that you want to delete.</p>
-     */
     inline void SetAssessmentTargetArn(const Aws::String& value) { m_assessmentTargetArnHasBeenSet = true; m_assessmentTargetArn = value; }
-
-    /**
-     * <p>The ARN that specifies the assessment target that you want to delete.</p>
-     */
     inline void SetAssessmentTargetArn(Aws::String&& value) { m_assessmentTargetArnHasBeenSet = true; m_assessmentTargetArn = std::move(value); }
-
-    /**
-     * <p>The ARN that specifies the assessment target that you want to delete.</p>
-     */
     inline void SetAssessmentTargetArn(const char* value) { m_assessmentTargetArnHasBeenSet = true; m_assessmentTargetArn.assign(value); }
-
-    /**
-     * <p>The ARN that specifies the assessment target that you want to delete.</p>
-     */
     inline DeleteAssessmentTargetRequest& WithAssessmentTargetArn(const Aws::String& value) { SetAssessmentTargetArn(value); return *this;}
-
-    /**
-     * <p>The ARN that specifies the assessment target that you want to delete.</p>
-     */
     inline DeleteAssessmentTargetRequest& WithAssessmentTargetArn(Aws::String&& value) { SetAssessmentTargetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN that specifies the assessment target that you want to delete.</p>
-     */
     inline DeleteAssessmentTargetRequest& WithAssessmentTargetArn(const char* value) { SetAssessmentTargetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assessmentTargetArn;

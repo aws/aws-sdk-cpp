@@ -37,45 +37,25 @@ namespace Model
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const AudienceSize& GetAudienceSize() const{ return m_audienceSize; }
-
-    
     inline bool AudienceSizeHasBeenSet() const { return m_audienceSizeHasBeenSet; }
-
-    
     inline void SetAudienceSize(const AudienceSize& value) { m_audienceSizeHasBeenSet = true; m_audienceSize = value; }
-
-    
     inline void SetAudienceSize(AudienceSize&& value) { m_audienceSizeHasBeenSet = true; m_audienceSize = std::move(value); }
-
-    
     inline RelevanceMetric& WithAudienceSize(const AudienceSize& value) { SetAudienceSize(value); return *this;}
-
-    
     inline RelevanceMetric& WithAudienceSize(AudienceSize&& value) { SetAudienceSize(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The relevance score of the generated audience.</p>
      */
     inline double GetScore() const{ return m_score; }
-
-    /**
-     * <p>The relevance score of the generated audience.</p>
-     */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-
-    /**
-     * <p>The relevance score of the generated audience.</p>
-     */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
-
-    /**
-     * <p>The relevance score of the generated audience.</p>
-     */
     inline RelevanceMetric& WithScore(double value) { SetScore(value); return *this;}
-
+    ///@}
   private:
 
     AudienceSize m_audienceSize;

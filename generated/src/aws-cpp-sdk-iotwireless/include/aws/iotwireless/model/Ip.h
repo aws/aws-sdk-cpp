@@ -37,46 +37,19 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>IP address information.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
-
-    /**
-     * <p>IP address information.</p>
-     */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-
-    /**
-     * <p>IP address information.</p>
-     */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-
-    /**
-     * <p>IP address information.</p>
-     */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-
-    /**
-     * <p>IP address information.</p>
-     */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-
-    /**
-     * <p>IP address information.</p>
-     */
     inline Ip& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-
-    /**
-     * <p>IP address information.</p>
-     */
     inline Ip& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>IP address information.</p>
-     */
     inline Ip& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ipAddress;

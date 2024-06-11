@@ -34,46 +34,19 @@ namespace Model
     AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the domain list that you want to delete. </p>
      */
     inline const Aws::String& GetFirewallDomainListId() const{ return m_firewallDomainListId; }
-
-    /**
-     * <p>The ID of the domain list that you want to delete. </p>
-     */
     inline bool FirewallDomainListIdHasBeenSet() const { return m_firewallDomainListIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the domain list that you want to delete. </p>
-     */
     inline void SetFirewallDomainListId(const Aws::String& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = value; }
-
-    /**
-     * <p>The ID of the domain list that you want to delete. </p>
-     */
     inline void SetFirewallDomainListId(Aws::String&& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = std::move(value); }
-
-    /**
-     * <p>The ID of the domain list that you want to delete. </p>
-     */
     inline void SetFirewallDomainListId(const char* value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId.assign(value); }
-
-    /**
-     * <p>The ID of the domain list that you want to delete. </p>
-     */
     inline DeleteFirewallDomainListRequest& WithFirewallDomainListId(const Aws::String& value) { SetFirewallDomainListId(value); return *this;}
-
-    /**
-     * <p>The ID of the domain list that you want to delete. </p>
-     */
     inline DeleteFirewallDomainListRequest& WithFirewallDomainListId(Aws::String&& value) { SetFirewallDomainListId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the domain list that you want to delete. </p>
-     */
     inline DeleteFirewallDomainListRequest& WithFirewallDomainListId(const char* value) { SetFirewallDomainListId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_firewallDomainListId;

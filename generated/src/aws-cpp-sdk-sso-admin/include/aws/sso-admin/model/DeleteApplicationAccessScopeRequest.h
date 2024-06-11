@@ -34,87 +34,33 @@ namespace Model
     AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the ARN of the application with the access scope to delete.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-
-    /**
-     * <p>Specifies the ARN of the application with the access scope to delete.</p>
-     */
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the ARN of the application with the access scope to delete.</p>
-     */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-
-    /**
-     * <p>Specifies the ARN of the application with the access scope to delete.</p>
-     */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-
-    /**
-     * <p>Specifies the ARN of the application with the access scope to delete.</p>
-     */
     inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-
-    /**
-     * <p>Specifies the ARN of the application with the access scope to delete.</p>
-     */
     inline DeleteApplicationAccessScopeRequest& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application with the access scope to delete.</p>
-     */
     inline DeleteApplicationAccessScopeRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application with the access scope to delete.</p>
-     */
     inline DeleteApplicationAccessScopeRequest& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the name of the access scope to remove from the application.</p>
      */
     inline const Aws::String& GetScope() const{ return m_scope; }
-
-    /**
-     * <p>Specifies the name of the access scope to remove from the application.</p>
-     */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-
-    /**
-     * <p>Specifies the name of the access scope to remove from the application.</p>
-     */
     inline void SetScope(const Aws::String& value) { m_scopeHasBeenSet = true; m_scope = value; }
-
-    /**
-     * <p>Specifies the name of the access scope to remove from the application.</p>
-     */
     inline void SetScope(Aws::String&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-
-    /**
-     * <p>Specifies the name of the access scope to remove from the application.</p>
-     */
     inline void SetScope(const char* value) { m_scopeHasBeenSet = true; m_scope.assign(value); }
-
-    /**
-     * <p>Specifies the name of the access scope to remove from the application.</p>
-     */
     inline DeleteApplicationAccessScopeRequest& WithScope(const Aws::String& value) { SetScope(value); return *this;}
-
-    /**
-     * <p>Specifies the name of the access scope to remove from the application.</p>
-     */
     inline DeleteApplicationAccessScopeRequest& WithScope(Aws::String&& value) { SetScope(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the name of the access scope to remove from the application.</p>
-     */
     inline DeleteApplicationAccessScopeRequest& WithScope(const char* value) { SetScope(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationArn;

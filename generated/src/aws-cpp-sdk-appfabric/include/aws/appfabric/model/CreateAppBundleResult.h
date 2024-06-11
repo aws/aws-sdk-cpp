@@ -33,53 +33,27 @@ namespace Model
     AWS_APPFABRIC_API CreateAppBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains information about an app bundle.</p>
      */
     inline const AppBundle& GetAppBundle() const{ return m_appBundle; }
-
-    /**
-     * <p>Contains information about an app bundle.</p>
-     */
     inline void SetAppBundle(const AppBundle& value) { m_appBundle = value; }
-
-    /**
-     * <p>Contains information about an app bundle.</p>
-     */
     inline void SetAppBundle(AppBundle&& value) { m_appBundle = std::move(value); }
-
-    /**
-     * <p>Contains information about an app bundle.</p>
-     */
     inline CreateAppBundleResult& WithAppBundle(const AppBundle& value) { SetAppBundle(value); return *this;}
-
-    /**
-     * <p>Contains information about an app bundle.</p>
-     */
     inline CreateAppBundleResult& WithAppBundle(AppBundle&& value) { SetAppBundle(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAppBundleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAppBundleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAppBundleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AppBundle m_appBundle;

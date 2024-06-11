@@ -34,46 +34,19 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the destination.</p>
      */
     inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
-
-    /**
-     * <p>The name of the destination.</p>
-     */
     inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the destination.</p>
-     */
     inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
-
-    /**
-     * <p>The name of the destination.</p>
-     */
     inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::move(value); }
-
-    /**
-     * <p>The name of the destination.</p>
-     */
     inline void SetDestinationName(const char* value) { m_destinationNameHasBeenSet = true; m_destinationName.assign(value); }
-
-    /**
-     * <p>The name of the destination.</p>
-     */
     inline DeleteDestinationRequest& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
-
-    /**
-     * <p>The name of the destination.</p>
-     */
     inline DeleteDestinationRequest& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the destination.</p>
-     */
     inline DeleteDestinationRequest& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destinationName;

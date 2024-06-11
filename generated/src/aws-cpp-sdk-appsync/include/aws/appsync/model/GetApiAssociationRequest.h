@@ -32,46 +32,19 @@ namespace Model
     AWS_APPSYNC_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The domain name.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline GetApiAssociationRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline GetApiAssociationRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline GetApiAssociationRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

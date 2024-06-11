@@ -33,43 +33,25 @@ namespace Model
     AWS_MEDIACONNECT_API UpdateFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Flow& GetFlow() const{ return m_flow; }
-
-    
     inline void SetFlow(const Flow& value) { m_flow = value; }
-
-    
     inline void SetFlow(Flow&& value) { m_flow = std::move(value); }
-
-    
     inline UpdateFlowResult& WithFlow(const Flow& value) { SetFlow(value); return *this;}
-
-    
     inline UpdateFlowResult& WithFlow(Flow&& value) { SetFlow(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateFlowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateFlowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateFlowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Flow m_flow;

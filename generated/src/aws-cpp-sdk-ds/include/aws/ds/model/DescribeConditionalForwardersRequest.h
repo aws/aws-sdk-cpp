@@ -38,118 +38,37 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The directory ID for which to get the list of associated conditional
      * forwarders.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-
-    /**
-     * <p>The directory ID for which to get the list of associated conditional
-     * forwarders.</p>
-     */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-
-    /**
-     * <p>The directory ID for which to get the list of associated conditional
-     * forwarders.</p>
-     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-
-    /**
-     * <p>The directory ID for which to get the list of associated conditional
-     * forwarders.</p>
-     */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-
-    /**
-     * <p>The directory ID for which to get the list of associated conditional
-     * forwarders.</p>
-     */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-
-    /**
-     * <p>The directory ID for which to get the list of associated conditional
-     * forwarders.</p>
-     */
     inline DescribeConditionalForwardersRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-
-    /**
-     * <p>The directory ID for which to get the list of associated conditional
-     * forwarders.</p>
-     */
     inline DescribeConditionalForwardersRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The directory ID for which to get the list of associated conditional
-     * forwarders.</p>
-     */
     inline DescribeConditionalForwardersRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The fully qualified domain names (FQDN) of the remote domains for which to
      * get the list of associated conditional forwarders. If this member is null, all
      * conditional forwarders are returned.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoteDomainNames() const{ return m_remoteDomainNames; }
-
-    /**
-     * <p>The fully qualified domain names (FQDN) of the remote domains for which to
-     * get the list of associated conditional forwarders. If this member is null, all
-     * conditional forwarders are returned.</p>
-     */
     inline bool RemoteDomainNamesHasBeenSet() const { return m_remoteDomainNamesHasBeenSet; }
-
-    /**
-     * <p>The fully qualified domain names (FQDN) of the remote domains for which to
-     * get the list of associated conditional forwarders. If this member is null, all
-     * conditional forwarders are returned.</p>
-     */
     inline void SetRemoteDomainNames(const Aws::Vector<Aws::String>& value) { m_remoteDomainNamesHasBeenSet = true; m_remoteDomainNames = value; }
-
-    /**
-     * <p>The fully qualified domain names (FQDN) of the remote domains for which to
-     * get the list of associated conditional forwarders. If this member is null, all
-     * conditional forwarders are returned.</p>
-     */
     inline void SetRemoteDomainNames(Aws::Vector<Aws::String>&& value) { m_remoteDomainNamesHasBeenSet = true; m_remoteDomainNames = std::move(value); }
-
-    /**
-     * <p>The fully qualified domain names (FQDN) of the remote domains for which to
-     * get the list of associated conditional forwarders. If this member is null, all
-     * conditional forwarders are returned.</p>
-     */
     inline DescribeConditionalForwardersRequest& WithRemoteDomainNames(const Aws::Vector<Aws::String>& value) { SetRemoteDomainNames(value); return *this;}
-
-    /**
-     * <p>The fully qualified domain names (FQDN) of the remote domains for which to
-     * get the list of associated conditional forwarders. If this member is null, all
-     * conditional forwarders are returned.</p>
-     */
     inline DescribeConditionalForwardersRequest& WithRemoteDomainNames(Aws::Vector<Aws::String>&& value) { SetRemoteDomainNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The fully qualified domain names (FQDN) of the remote domains for which to
-     * get the list of associated conditional forwarders. If this member is null, all
-     * conditional forwarders are returned.</p>
-     */
     inline DescribeConditionalForwardersRequest& AddRemoteDomainNames(const Aws::String& value) { m_remoteDomainNamesHasBeenSet = true; m_remoteDomainNames.push_back(value); return *this; }
-
-    /**
-     * <p>The fully qualified domain names (FQDN) of the remote domains for which to
-     * get the list of associated conditional forwarders. If this member is null, all
-     * conditional forwarders are returned.</p>
-     */
     inline DescribeConditionalForwardersRequest& AddRemoteDomainNames(Aws::String&& value) { m_remoteDomainNamesHasBeenSet = true; m_remoteDomainNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The fully qualified domain names (FQDN) of the remote domains for which to
-     * get the list of associated conditional forwarders. If this member is null, all
-     * conditional forwarders are returned.</p>
-     */
     inline DescribeConditionalForwardersRequest& AddRemoteDomainNames(const char* value) { m_remoteDomainNamesHasBeenSet = true; m_remoteDomainNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_directoryId;

@@ -62,77 +62,31 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status.</p>
      */
     inline const PhoneNumberWorkflowStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status.</p>
-     */
     inline void SetStatus(const PhoneNumberWorkflowStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status.</p>
-     */
     inline void SetStatus(PhoneNumberWorkflowStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status.</p>
-     */
     inline PhoneNumberStatus& WithStatus(const PhoneNumberWorkflowStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status.</p>
-     */
     inline PhoneNumberStatus& WithStatus(PhoneNumberWorkflowStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline PhoneNumberStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The status message.</p>
-     */
     inline PhoneNumberStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The status message.</p>
-     */
     inline PhoneNumberStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     PhoneNumberWorkflowStatus m_status;

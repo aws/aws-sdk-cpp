@@ -38,67 +38,29 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>type</code> associated with the
      * <code>MinimumHealthyHostsPerZone</code> option.</p>
      */
     inline const MinimumHealthyHostsPerZoneType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The <code>type</code> associated with the
-     * <code>MinimumHealthyHostsPerZone</code> option.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The <code>type</code> associated with the
-     * <code>MinimumHealthyHostsPerZone</code> option.</p>
-     */
     inline void SetType(const MinimumHealthyHostsPerZoneType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The <code>type</code> associated with the
-     * <code>MinimumHealthyHostsPerZone</code> option.</p>
-     */
     inline void SetType(MinimumHealthyHostsPerZoneType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The <code>type</code> associated with the
-     * <code>MinimumHealthyHostsPerZone</code> option.</p>
-     */
     inline MinimumHealthyHostsPerZone& WithType(const MinimumHealthyHostsPerZoneType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The <code>type</code> associated with the
-     * <code>MinimumHealthyHostsPerZone</code> option.</p>
-     */
     inline MinimumHealthyHostsPerZone& WithType(MinimumHealthyHostsPerZoneType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>value</code> associated with the
      * <code>MinimumHealthyHostsPerZone</code> option.</p>
      */
     inline int GetValue() const{ return m_value; }
-
-    /**
-     * <p>The <code>value</code> associated with the
-     * <code>MinimumHealthyHostsPerZone</code> option.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The <code>value</code> associated with the
-     * <code>MinimumHealthyHostsPerZone</code> option.</p>
-     */
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The <code>value</code> associated with the
-     * <code>MinimumHealthyHostsPerZone</code> option.</p>
-     */
     inline MinimumHealthyHostsPerZone& WithValue(int value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     MinimumHealthyHostsPerZoneType m_type;

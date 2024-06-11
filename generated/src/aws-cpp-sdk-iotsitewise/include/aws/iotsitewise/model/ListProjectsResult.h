@@ -34,106 +34,43 @@ namespace Model
     AWS_IOTSITEWISE_API ListProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list that summarizes each project in the portal.</p>
      */
     inline const Aws::Vector<ProjectSummary>& GetProjectSummaries() const{ return m_projectSummaries; }
-
-    /**
-     * <p>A list that summarizes each project in the portal.</p>
-     */
     inline void SetProjectSummaries(const Aws::Vector<ProjectSummary>& value) { m_projectSummaries = value; }
-
-    /**
-     * <p>A list that summarizes each project in the portal.</p>
-     */
     inline void SetProjectSummaries(Aws::Vector<ProjectSummary>&& value) { m_projectSummaries = std::move(value); }
-
-    /**
-     * <p>A list that summarizes each project in the portal.</p>
-     */
     inline ListProjectsResult& WithProjectSummaries(const Aws::Vector<ProjectSummary>& value) { SetProjectSummaries(value); return *this;}
-
-    /**
-     * <p>A list that summarizes each project in the portal.</p>
-     */
     inline ListProjectsResult& WithProjectSummaries(Aws::Vector<ProjectSummary>&& value) { SetProjectSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list that summarizes each project in the portal.</p>
-     */
     inline ListProjectsResult& AddProjectSummaries(const ProjectSummary& value) { m_projectSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>A list that summarizes each project in the portal.</p>
-     */
     inline ListProjectsResult& AddProjectSummaries(ProjectSummary&& value) { m_projectSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of results, or null if there are no additional
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListProjectsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListProjectsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListProjectsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListProjectsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListProjectsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListProjectsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ProjectSummary> m_projectSummaries;

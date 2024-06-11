@@ -33,53 +33,27 @@ namespace Model
     AWS_COMPREHEND_API DescribeTopicsDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of properties for the requested job.</p>
      */
     inline const TopicsDetectionJobProperties& GetTopicsDetectionJobProperties() const{ return m_topicsDetectionJobProperties; }
-
-    /**
-     * <p>The list of properties for the requested job.</p>
-     */
     inline void SetTopicsDetectionJobProperties(const TopicsDetectionJobProperties& value) { m_topicsDetectionJobProperties = value; }
-
-    /**
-     * <p>The list of properties for the requested job.</p>
-     */
     inline void SetTopicsDetectionJobProperties(TopicsDetectionJobProperties&& value) { m_topicsDetectionJobProperties = std::move(value); }
-
-    /**
-     * <p>The list of properties for the requested job.</p>
-     */
     inline DescribeTopicsDetectionJobResult& WithTopicsDetectionJobProperties(const TopicsDetectionJobProperties& value) { SetTopicsDetectionJobProperties(value); return *this;}
-
-    /**
-     * <p>The list of properties for the requested job.</p>
-     */
     inline DescribeTopicsDetectionJobResult& WithTopicsDetectionJobProperties(TopicsDetectionJobProperties&& value) { SetTopicsDetectionJobProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeTopicsDetectionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeTopicsDetectionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeTopicsDetectionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TopicsDetectionJobProperties m_topicsDetectionJobProperties;

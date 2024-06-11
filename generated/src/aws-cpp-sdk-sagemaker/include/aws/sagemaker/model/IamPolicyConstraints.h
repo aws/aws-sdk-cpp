@@ -38,6 +38,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>When <code>SourceIp</code> is <code>Enabled</code> the worker's IP address
      * when a task is rendered in the worker portal is added to the IAM policy as a
@@ -46,53 +47,14 @@ namespace Model
      * resource to be rendered in the worker portal.</p>
      */
     inline const EnabledOrDisabled& GetSourceIp() const{ return m_sourceIp; }
-
-    /**
-     * <p>When <code>SourceIp</code> is <code>Enabled</code> the worker's IP address
-     * when a task is rendered in the worker portal is added to the IAM policy as a
-     * <code>Condition</code> used to generate the Amazon S3 presigned URL. This IP
-     * address is checked by Amazon S3 and must match in order for the Amazon S3
-     * resource to be rendered in the worker portal.</p>
-     */
     inline bool SourceIpHasBeenSet() const { return m_sourceIpHasBeenSet; }
-
-    /**
-     * <p>When <code>SourceIp</code> is <code>Enabled</code> the worker's IP address
-     * when a task is rendered in the worker portal is added to the IAM policy as a
-     * <code>Condition</code> used to generate the Amazon S3 presigned URL. This IP
-     * address is checked by Amazon S3 and must match in order for the Amazon S3
-     * resource to be rendered in the worker portal.</p>
-     */
     inline void SetSourceIp(const EnabledOrDisabled& value) { m_sourceIpHasBeenSet = true; m_sourceIp = value; }
-
-    /**
-     * <p>When <code>SourceIp</code> is <code>Enabled</code> the worker's IP address
-     * when a task is rendered in the worker portal is added to the IAM policy as a
-     * <code>Condition</code> used to generate the Amazon S3 presigned URL. This IP
-     * address is checked by Amazon S3 and must match in order for the Amazon S3
-     * resource to be rendered in the worker portal.</p>
-     */
     inline void SetSourceIp(EnabledOrDisabled&& value) { m_sourceIpHasBeenSet = true; m_sourceIp = std::move(value); }
-
-    /**
-     * <p>When <code>SourceIp</code> is <code>Enabled</code> the worker's IP address
-     * when a task is rendered in the worker portal is added to the IAM policy as a
-     * <code>Condition</code> used to generate the Amazon S3 presigned URL. This IP
-     * address is checked by Amazon S3 and must match in order for the Amazon S3
-     * resource to be rendered in the worker portal.</p>
-     */
     inline IamPolicyConstraints& WithSourceIp(const EnabledOrDisabled& value) { SetSourceIp(value); return *this;}
-
-    /**
-     * <p>When <code>SourceIp</code> is <code>Enabled</code> the worker's IP address
-     * when a task is rendered in the worker portal is added to the IAM policy as a
-     * <code>Condition</code> used to generate the Amazon S3 presigned URL. This IP
-     * address is checked by Amazon S3 and must match in order for the Amazon S3
-     * resource to be rendered in the worker portal.</p>
-     */
     inline IamPolicyConstraints& WithSourceIp(EnabledOrDisabled&& value) { SetSourceIp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When <code>VpcSourceIp</code> is <code>Enabled</code> the worker's IP address
      * when a task is rendered in private worker portal inside the VPC is added to the
@@ -105,72 +67,12 @@ namespace Model
      * Amazon VPC mode from a private worker portal</a>.</p>
      */
     inline const EnabledOrDisabled& GetVpcSourceIp() const{ return m_vpcSourceIp; }
-
-    /**
-     * <p>When <code>VpcSourceIp</code> is <code>Enabled</code> the worker's IP address
-     * when a task is rendered in private worker portal inside the VPC is added to the
-     * IAM policy as a <code>Condition</code> used to generate the Amazon S3 presigned
-     * URL. To render the task successfully Amazon S3 checks that the presigned URL is
-     * being accessed over an Amazon S3 VPC Endpoint, and that the worker's IP address
-     * matches the IP address in the IAM policy. To learn more about configuring
-     * private worker portal, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/samurai-vpc-worker-portal.html">Use
-     * Amazon VPC mode from a private worker portal</a>.</p>
-     */
     inline bool VpcSourceIpHasBeenSet() const { return m_vpcSourceIpHasBeenSet; }
-
-    /**
-     * <p>When <code>VpcSourceIp</code> is <code>Enabled</code> the worker's IP address
-     * when a task is rendered in private worker portal inside the VPC is added to the
-     * IAM policy as a <code>Condition</code> used to generate the Amazon S3 presigned
-     * URL. To render the task successfully Amazon S3 checks that the presigned URL is
-     * being accessed over an Amazon S3 VPC Endpoint, and that the worker's IP address
-     * matches the IP address in the IAM policy. To learn more about configuring
-     * private worker portal, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/samurai-vpc-worker-portal.html">Use
-     * Amazon VPC mode from a private worker portal</a>.</p>
-     */
     inline void SetVpcSourceIp(const EnabledOrDisabled& value) { m_vpcSourceIpHasBeenSet = true; m_vpcSourceIp = value; }
-
-    /**
-     * <p>When <code>VpcSourceIp</code> is <code>Enabled</code> the worker's IP address
-     * when a task is rendered in private worker portal inside the VPC is added to the
-     * IAM policy as a <code>Condition</code> used to generate the Amazon S3 presigned
-     * URL. To render the task successfully Amazon S3 checks that the presigned URL is
-     * being accessed over an Amazon S3 VPC Endpoint, and that the worker's IP address
-     * matches the IP address in the IAM policy. To learn more about configuring
-     * private worker portal, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/samurai-vpc-worker-portal.html">Use
-     * Amazon VPC mode from a private worker portal</a>.</p>
-     */
     inline void SetVpcSourceIp(EnabledOrDisabled&& value) { m_vpcSourceIpHasBeenSet = true; m_vpcSourceIp = std::move(value); }
-
-    /**
-     * <p>When <code>VpcSourceIp</code> is <code>Enabled</code> the worker's IP address
-     * when a task is rendered in private worker portal inside the VPC is added to the
-     * IAM policy as a <code>Condition</code> used to generate the Amazon S3 presigned
-     * URL. To render the task successfully Amazon S3 checks that the presigned URL is
-     * being accessed over an Amazon S3 VPC Endpoint, and that the worker's IP address
-     * matches the IP address in the IAM policy. To learn more about configuring
-     * private worker portal, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/samurai-vpc-worker-portal.html">Use
-     * Amazon VPC mode from a private worker portal</a>.</p>
-     */
     inline IamPolicyConstraints& WithVpcSourceIp(const EnabledOrDisabled& value) { SetVpcSourceIp(value); return *this;}
-
-    /**
-     * <p>When <code>VpcSourceIp</code> is <code>Enabled</code> the worker's IP address
-     * when a task is rendered in private worker portal inside the VPC is added to the
-     * IAM policy as a <code>Condition</code> used to generate the Amazon S3 presigned
-     * URL. To render the task successfully Amazon S3 checks that the presigned URL is
-     * being accessed over an Amazon S3 VPC Endpoint, and that the worker's IP address
-     * matches the IP address in the IAM policy. To learn more about configuring
-     * private worker portal, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/samurai-vpc-worker-portal.html">Use
-     * Amazon VPC mode from a private worker portal</a>.</p>
-     */
     inline IamPolicyConstraints& WithVpcSourceIp(EnabledOrDisabled&& value) { SetVpcSourceIp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EnabledOrDisabled m_sourceIp;

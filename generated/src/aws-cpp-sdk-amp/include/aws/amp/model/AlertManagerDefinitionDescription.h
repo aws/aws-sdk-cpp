@@ -39,153 +39,57 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The date and time that the alert manager definition was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The date and time that the alert manager definition was created.</p>
-     */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The date and time that the alert manager definition was created.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The date and time that the alert manager definition was created.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The date and time that the alert manager definition was created.</p>
-     */
     inline AlertManagerDefinitionDescription& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The date and time that the alert manager definition was created.</p>
-     */
     inline AlertManagerDefinitionDescription& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The actual alert manager definition.</p> <p>For details about the alert
      * manager definition, see <a
      * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
-
-    /**
-     * <p>The actual alert manager definition.</p> <p>For details about the alert
-     * manager definition, see <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The actual alert manager definition.</p> <p>For details about the alert
-     * manager definition, see <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
-     */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The actual alert manager definition.</p> <p>For details about the alert
-     * manager definition, see <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
-     */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The actual alert manager definition.</p> <p>For details about the alert
-     * manager definition, see <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
-     */
     inline AlertManagerDefinitionDescription& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The actual alert manager definition.</p> <p>For details about the alert
-     * manager definition, see <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
-     */
     inline AlertManagerDefinitionDescription& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that the alert manager definition was most recently
      * changed.</p>
      */
     inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-
-    /**
-     * <p>The date and time that the alert manager definition was most recently
-     * changed.</p>
-     */
     inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
-
-    /**
-     * <p>The date and time that the alert manager definition was most recently
-     * changed.</p>
-     */
     inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = value; }
-
-    /**
-     * <p>The date and time that the alert manager definition was most recently
-     * changed.</p>
-     */
     inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::move(value); }
-
-    /**
-     * <p>The date and time that the alert manager definition was most recently
-     * changed.</p>
-     */
     inline AlertManagerDefinitionDescription& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-
-    /**
-     * <p>The date and time that the alert manager definition was most recently
-     * changed.</p>
-     */
     inline AlertManagerDefinitionDescription& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A structure that displays the current status of the alert manager
      * definition..</p>
      */
     inline const AlertManagerDefinitionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>A structure that displays the current status of the alert manager
-     * definition..</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>A structure that displays the current status of the alert manager
-     * definition..</p>
-     */
     inline void SetStatus(const AlertManagerDefinitionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>A structure that displays the current status of the alert manager
-     * definition..</p>
-     */
     inline void SetStatus(AlertManagerDefinitionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>A structure that displays the current status of the alert manager
-     * definition..</p>
-     */
     inline AlertManagerDefinitionDescription& WithStatus(const AlertManagerDefinitionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>A structure that displays the current status of the alert manager
-     * definition..</p>
-     */
     inline AlertManagerDefinitionDescription& WithStatus(AlertManagerDefinitionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_createdAt;

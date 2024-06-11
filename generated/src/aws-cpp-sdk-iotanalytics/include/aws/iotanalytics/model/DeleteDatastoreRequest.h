@@ -32,46 +32,19 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the data store to delete.</p>
      */
     inline const Aws::String& GetDatastoreName() const{ return m_datastoreName; }
-
-    /**
-     * <p>The name of the data store to delete.</p>
-     */
     inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
-
-    /**
-     * <p>The name of the data store to delete.</p>
-     */
     inline void SetDatastoreName(const Aws::String& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = value; }
-
-    /**
-     * <p>The name of the data store to delete.</p>
-     */
     inline void SetDatastoreName(Aws::String&& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = std::move(value); }
-
-    /**
-     * <p>The name of the data store to delete.</p>
-     */
     inline void SetDatastoreName(const char* value) { m_datastoreNameHasBeenSet = true; m_datastoreName.assign(value); }
-
-    /**
-     * <p>The name of the data store to delete.</p>
-     */
     inline DeleteDatastoreRequest& WithDatastoreName(const Aws::String& value) { SetDatastoreName(value); return *this;}
-
-    /**
-     * <p>The name of the data store to delete.</p>
-     */
     inline DeleteDatastoreRequest& WithDatastoreName(Aws::String&& value) { SetDatastoreName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the data store to delete.</p>
-     */
     inline DeleteDatastoreRequest& WithDatastoreName(const char* value) { SetDatastoreName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datastoreName;

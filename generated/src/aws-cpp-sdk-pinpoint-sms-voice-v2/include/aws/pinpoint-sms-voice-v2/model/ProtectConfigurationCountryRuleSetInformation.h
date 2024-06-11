@@ -37,36 +37,17 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The types of protection that can be used.</p>
      */
     inline const ProtectStatus& GetProtectStatus() const{ return m_protectStatus; }
-
-    /**
-     * <p>The types of protection that can be used.</p>
-     */
     inline bool ProtectStatusHasBeenSet() const { return m_protectStatusHasBeenSet; }
-
-    /**
-     * <p>The types of protection that can be used.</p>
-     */
     inline void SetProtectStatus(const ProtectStatus& value) { m_protectStatusHasBeenSet = true; m_protectStatus = value; }
-
-    /**
-     * <p>The types of protection that can be used.</p>
-     */
     inline void SetProtectStatus(ProtectStatus&& value) { m_protectStatusHasBeenSet = true; m_protectStatus = std::move(value); }
-
-    /**
-     * <p>The types of protection that can be used.</p>
-     */
     inline ProtectConfigurationCountryRuleSetInformation& WithProtectStatus(const ProtectStatus& value) { SetProtectStatus(value); return *this;}
-
-    /**
-     * <p>The types of protection that can be used.</p>
-     */
     inline ProtectConfigurationCountryRuleSetInformation& WithProtectStatus(ProtectStatus&& value) { SetProtectStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ProtectStatus m_protectStatus;

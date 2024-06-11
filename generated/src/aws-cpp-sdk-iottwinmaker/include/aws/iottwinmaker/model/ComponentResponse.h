@@ -43,498 +43,165 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the component.</p>
      */
     inline const Aws::String& GetComponentName() const{ return m_componentName; }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline ComponentResponse& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline ComponentResponse& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline ComponentResponse& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the component type.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the component type.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the component type.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the component type.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the component type.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the component type.</p>
-     */
     inline ComponentResponse& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the component type.</p>
-     */
     inline ComponentResponse& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the component type.</p>
-     */
     inline ComponentResponse& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the component type.</p>
      */
     inline const Aws::String& GetComponentTypeId() const{ return m_componentTypeId; }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
     inline bool ComponentTypeIdHasBeenSet() const { return m_componentTypeIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
     inline void SetComponentTypeId(const Aws::String& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = value; }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
     inline void SetComponentTypeId(Aws::String&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::move(value); }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
     inline void SetComponentTypeId(const char* value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId.assign(value); }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
     inline ComponentResponse& WithComponentTypeId(const Aws::String& value) { SetComponentTypeId(value); return *this;}
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
     inline ComponentResponse& WithComponentTypeId(Aws::String&& value) { SetComponentTypeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
     inline ComponentResponse& WithComponentTypeId(const char* value) { SetComponentTypeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the component type.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the component type.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the component type.</p>
-     */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the component type.</p>
-     */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the component type.</p>
-     */
     inline ComponentResponse& WithStatus(const Status& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the component type.</p>
-     */
     inline ComponentResponse& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the property definition set in the request.</p>
      */
     inline const Aws::String& GetDefinedIn() const{ return m_definedIn; }
-
-    /**
-     * <p>The name of the property definition set in the request.</p>
-     */
     inline bool DefinedInHasBeenSet() const { return m_definedInHasBeenSet; }
-
-    /**
-     * <p>The name of the property definition set in the request.</p>
-     */
     inline void SetDefinedIn(const Aws::String& value) { m_definedInHasBeenSet = true; m_definedIn = value; }
-
-    /**
-     * <p>The name of the property definition set in the request.</p>
-     */
     inline void SetDefinedIn(Aws::String&& value) { m_definedInHasBeenSet = true; m_definedIn = std::move(value); }
-
-    /**
-     * <p>The name of the property definition set in the request.</p>
-     */
     inline void SetDefinedIn(const char* value) { m_definedInHasBeenSet = true; m_definedIn.assign(value); }
-
-    /**
-     * <p>The name of the property definition set in the request.</p>
-     */
     inline ComponentResponse& WithDefinedIn(const Aws::String& value) { SetDefinedIn(value); return *this;}
-
-    /**
-     * <p>The name of the property definition set in the request.</p>
-     */
     inline ComponentResponse& WithDefinedIn(Aws::String&& value) { SetDefinedIn(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the property definition set in the request.</p>
-     */
     inline ComponentResponse& WithDefinedIn(const char* value) { SetDefinedIn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that maps strings to the properties to set in the component type.
      * Each string in the mapping must be unique to this object.</p>
      */
     inline const Aws::Map<Aws::String, PropertyResponse>& GetProperties() const{ return m_properties; }
-
-    /**
-     * <p>An object that maps strings to the properties to set in the component type.
-     * Each string in the mapping must be unique to this object.</p>
-     */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-
-    /**
-     * <p>An object that maps strings to the properties to set in the component type.
-     * Each string in the mapping must be unique to this object.</p>
-     */
     inline void SetProperties(const Aws::Map<Aws::String, PropertyResponse>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-
-    /**
-     * <p>An object that maps strings to the properties to set in the component type.
-     * Each string in the mapping must be unique to this object.</p>
-     */
     inline void SetProperties(Aws::Map<Aws::String, PropertyResponse>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-
-    /**
-     * <p>An object that maps strings to the properties to set in the component type.
-     * Each string in the mapping must be unique to this object.</p>
-     */
     inline ComponentResponse& WithProperties(const Aws::Map<Aws::String, PropertyResponse>& value) { SetProperties(value); return *this;}
-
-    /**
-     * <p>An object that maps strings to the properties to set in the component type.
-     * Each string in the mapping must be unique to this object.</p>
-     */
     inline ComponentResponse& WithProperties(Aws::Map<Aws::String, PropertyResponse>&& value) { SetProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>An object that maps strings to the properties to set in the component type.
-     * Each string in the mapping must be unique to this object.</p>
-     */
     inline ComponentResponse& AddProperties(const Aws::String& key, const PropertyResponse& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
-
-    /**
-     * <p>An object that maps strings to the properties to set in the component type.
-     * Each string in the mapping must be unique to this object.</p>
-     */
     inline ComponentResponse& AddProperties(Aws::String&& key, const PropertyResponse& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>An object that maps strings to the properties to set in the component type.
-     * Each string in the mapping must be unique to this object.</p>
-     */
     inline ComponentResponse& AddProperties(const Aws::String& key, PropertyResponse&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>An object that maps strings to the properties to set in the component type.
-     * Each string in the mapping must be unique to this object.</p>
-     */
     inline ComponentResponse& AddProperties(Aws::String&& key, PropertyResponse&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>An object that maps strings to the properties to set in the component type.
-     * Each string in the mapping must be unique to this object.</p>
-     */
     inline ComponentResponse& AddProperties(const char* key, PropertyResponse&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>An object that maps strings to the properties to set in the component type.
-     * Each string in the mapping must be unique to this object.</p>
-     */
     inline ComponentResponse& AddProperties(const char* key, const PropertyResponse& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The property groups.</p>
      */
     inline const Aws::Map<Aws::String, ComponentPropertyGroupResponse>& GetPropertyGroups() const{ return m_propertyGroups; }
-
-    /**
-     * <p>The property groups.</p>
-     */
     inline bool PropertyGroupsHasBeenSet() const { return m_propertyGroupsHasBeenSet; }
-
-    /**
-     * <p>The property groups.</p>
-     */
     inline void SetPropertyGroups(const Aws::Map<Aws::String, ComponentPropertyGroupResponse>& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = value; }
-
-    /**
-     * <p>The property groups.</p>
-     */
     inline void SetPropertyGroups(Aws::Map<Aws::String, ComponentPropertyGroupResponse>&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = std::move(value); }
-
-    /**
-     * <p>The property groups.</p>
-     */
     inline ComponentResponse& WithPropertyGroups(const Aws::Map<Aws::String, ComponentPropertyGroupResponse>& value) { SetPropertyGroups(value); return *this;}
-
-    /**
-     * <p>The property groups.</p>
-     */
     inline ComponentResponse& WithPropertyGroups(Aws::Map<Aws::String, ComponentPropertyGroupResponse>&& value) { SetPropertyGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The property groups.</p>
-     */
     inline ComponentResponse& AddPropertyGroups(const Aws::String& key, const ComponentPropertyGroupResponse& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, value); return *this; }
-
-    /**
-     * <p>The property groups.</p>
-     */
     inline ComponentResponse& AddPropertyGroups(Aws::String&& key, const ComponentPropertyGroupResponse& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The property groups.</p>
-     */
     inline ComponentResponse& AddPropertyGroups(const Aws::String& key, ComponentPropertyGroupResponse&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The property groups.</p>
-     */
     inline ComponentResponse& AddPropertyGroups(Aws::String&& key, ComponentPropertyGroupResponse&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The property groups.</p>
-     */
     inline ComponentResponse& AddPropertyGroups(const char* key, ComponentPropertyGroupResponse&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The property groups.</p>
-     */
     inline ComponentResponse& AddPropertyGroups(const char* key, const ComponentPropertyGroupResponse& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
      */
     inline const Aws::String& GetSyncSource() const{ return m_syncSource; }
-
-    /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-     */
     inline bool SyncSourceHasBeenSet() const { return m_syncSourceHasBeenSet; }
-
-    /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-     */
     inline void SetSyncSource(const Aws::String& value) { m_syncSourceHasBeenSet = true; m_syncSource = value; }
-
-    /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-     */
     inline void SetSyncSource(Aws::String&& value) { m_syncSourceHasBeenSet = true; m_syncSource = std::move(value); }
-
-    /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-     */
     inline void SetSyncSource(const char* value) { m_syncSourceHasBeenSet = true; m_syncSource.assign(value); }
-
-    /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-     */
     inline ComponentResponse& WithSyncSource(const Aws::String& value) { SetSyncSource(value); return *this;}
-
-    /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-     */
     inline ComponentResponse& WithSyncSource(Aws::String&& value) { SetSyncSource(std::move(value)); return *this;}
-
-    /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-     */
     inline ComponentResponse& WithSyncSource(const char* value) { SetSyncSource(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This flag notes whether all properties of the component are returned in the
      * API response. The maximum number of properties returned is 800.</p>
      */
     inline bool GetAreAllPropertiesReturned() const{ return m_areAllPropertiesReturned; }
-
-    /**
-     * <p>This flag notes whether all properties of the component are returned in the
-     * API response. The maximum number of properties returned is 800.</p>
-     */
     inline bool AreAllPropertiesReturnedHasBeenSet() const { return m_areAllPropertiesReturnedHasBeenSet; }
-
-    /**
-     * <p>This flag notes whether all properties of the component are returned in the
-     * API response. The maximum number of properties returned is 800.</p>
-     */
     inline void SetAreAllPropertiesReturned(bool value) { m_areAllPropertiesReturnedHasBeenSet = true; m_areAllPropertiesReturned = value; }
-
-    /**
-     * <p>This flag notes whether all properties of the component are returned in the
-     * API response. The maximum number of properties returned is 800.</p>
-     */
     inline ComponentResponse& WithAreAllPropertiesReturned(bool value) { SetAreAllPropertiesReturned(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This lists objects that contain information about the
      * <code>compositeComponents</code>.</p>
      */
     inline const Aws::Map<Aws::String, ComponentSummary>& GetCompositeComponents() const{ return m_compositeComponents; }
-
-    /**
-     * <p>This lists objects that contain information about the
-     * <code>compositeComponents</code>.</p>
-     */
     inline bool CompositeComponentsHasBeenSet() const { return m_compositeComponentsHasBeenSet; }
-
-    /**
-     * <p>This lists objects that contain information about the
-     * <code>compositeComponents</code>.</p>
-     */
     inline void SetCompositeComponents(const Aws::Map<Aws::String, ComponentSummary>& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents = value; }
-
-    /**
-     * <p>This lists objects that contain information about the
-     * <code>compositeComponents</code>.</p>
-     */
     inline void SetCompositeComponents(Aws::Map<Aws::String, ComponentSummary>&& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents = std::move(value); }
-
-    /**
-     * <p>This lists objects that contain information about the
-     * <code>compositeComponents</code>.</p>
-     */
     inline ComponentResponse& WithCompositeComponents(const Aws::Map<Aws::String, ComponentSummary>& value) { SetCompositeComponents(value); return *this;}
-
-    /**
-     * <p>This lists objects that contain information about the
-     * <code>compositeComponents</code>.</p>
-     */
     inline ComponentResponse& WithCompositeComponents(Aws::Map<Aws::String, ComponentSummary>&& value) { SetCompositeComponents(std::move(value)); return *this;}
-
-    /**
-     * <p>This lists objects that contain information about the
-     * <code>compositeComponents</code>.</p>
-     */
     inline ComponentResponse& AddCompositeComponents(const Aws::String& key, const ComponentSummary& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(key, value); return *this; }
-
-    /**
-     * <p>This lists objects that contain information about the
-     * <code>compositeComponents</code>.</p>
-     */
     inline ComponentResponse& AddCompositeComponents(Aws::String&& key, const ComponentSummary& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>This lists objects that contain information about the
-     * <code>compositeComponents</code>.</p>
-     */
     inline ComponentResponse& AddCompositeComponents(const Aws::String& key, ComponentSummary&& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>This lists objects that contain information about the
-     * <code>compositeComponents</code>.</p>
-     */
     inline ComponentResponse& AddCompositeComponents(Aws::String&& key, ComponentSummary&& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>This lists objects that contain information about the
-     * <code>compositeComponents</code>.</p>
-     */
     inline ComponentResponse& AddCompositeComponents(const char* key, ComponentSummary&& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>This lists objects that contain information about the
-     * <code>compositeComponents</code>.</p>
-     */
     inline ComponentResponse& AddCompositeComponents(const char* key, const ComponentSummary& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>This flag notes whether all <code>compositeComponents</code> are returned in
      * the API response.</p>
      */
     inline bool GetAreAllCompositeComponentsReturned() const{ return m_areAllCompositeComponentsReturned; }
-
-    /**
-     * <p>This flag notes whether all <code>compositeComponents</code> are returned in
-     * the API response.</p>
-     */
     inline bool AreAllCompositeComponentsReturnedHasBeenSet() const { return m_areAllCompositeComponentsReturnedHasBeenSet; }
-
-    /**
-     * <p>This flag notes whether all <code>compositeComponents</code> are returned in
-     * the API response.</p>
-     */
     inline void SetAreAllCompositeComponentsReturned(bool value) { m_areAllCompositeComponentsReturnedHasBeenSet = true; m_areAllCompositeComponentsReturned = value; }
-
-    /**
-     * <p>This flag notes whether all <code>compositeComponents</code> are returned in
-     * the API response.</p>
-     */
     inline ComponentResponse& WithAreAllCompositeComponentsReturned(bool value) { SetAreAllCompositeComponentsReturned(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_componentName;

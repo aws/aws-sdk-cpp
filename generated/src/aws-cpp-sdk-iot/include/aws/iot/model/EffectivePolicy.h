@@ -38,128 +38,47 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The policy name.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline EffectivePolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline EffectivePolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline EffectivePolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The policy ARN.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline EffectivePolicy& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline EffectivePolicy& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline EffectivePolicy& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IAM policy document.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
-
-    /**
-     * <p>The IAM policy document.</p>
-     */
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
-
-    /**
-     * <p>The IAM policy document.</p>
-     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
-
-    /**
-     * <p>The IAM policy document.</p>
-     */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
-
-    /**
-     * <p>The IAM policy document.</p>
-     */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
-
-    /**
-     * <p>The IAM policy document.</p>
-     */
     inline EffectivePolicy& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-
-    /**
-     * <p>The IAM policy document.</p>
-     */
     inline EffectivePolicy& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-
-    /**
-     * <p>The IAM policy document.</p>
-     */
     inline EffectivePolicy& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyName;

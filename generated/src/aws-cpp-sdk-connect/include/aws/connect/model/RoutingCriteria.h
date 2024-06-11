@@ -39,6 +39,7 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List of routing steps. When Amazon Connect does not find an available agent
      * meeting the requirements in a step for a given step duration, the routing
@@ -47,71 +48,16 @@ namespace Model
      * agent in the queue.</p>
      */
     inline const Aws::Vector<Step>& GetSteps() const{ return m_steps; }
-
-    /**
-     * <p>List of routing steps. When Amazon Connect does not find an available agent
-     * meeting the requirements in a step for a given step duration, the routing
-     * criteria will move on to the next step sequentially until a join is completed
-     * with an agent. When all steps are exhausted, the contact will be offered to any
-     * agent in the queue.</p>
-     */
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
-
-    /**
-     * <p>List of routing steps. When Amazon Connect does not find an available agent
-     * meeting the requirements in a step for a given step duration, the routing
-     * criteria will move on to the next step sequentially until a join is completed
-     * with an agent. When all steps are exhausted, the contact will be offered to any
-     * agent in the queue.</p>
-     */
     inline void SetSteps(const Aws::Vector<Step>& value) { m_stepsHasBeenSet = true; m_steps = value; }
-
-    /**
-     * <p>List of routing steps. When Amazon Connect does not find an available agent
-     * meeting the requirements in a step for a given step duration, the routing
-     * criteria will move on to the next step sequentially until a join is completed
-     * with an agent. When all steps are exhausted, the contact will be offered to any
-     * agent in the queue.</p>
-     */
     inline void SetSteps(Aws::Vector<Step>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
-
-    /**
-     * <p>List of routing steps. When Amazon Connect does not find an available agent
-     * meeting the requirements in a step for a given step duration, the routing
-     * criteria will move on to the next step sequentially until a join is completed
-     * with an agent. When all steps are exhausted, the contact will be offered to any
-     * agent in the queue.</p>
-     */
     inline RoutingCriteria& WithSteps(const Aws::Vector<Step>& value) { SetSteps(value); return *this;}
-
-    /**
-     * <p>List of routing steps. When Amazon Connect does not find an available agent
-     * meeting the requirements in a step for a given step duration, the routing
-     * criteria will move on to the next step sequentially until a join is completed
-     * with an agent. When all steps are exhausted, the contact will be offered to any
-     * agent in the queue.</p>
-     */
     inline RoutingCriteria& WithSteps(Aws::Vector<Step>&& value) { SetSteps(std::move(value)); return *this;}
-
-    /**
-     * <p>List of routing steps. When Amazon Connect does not find an available agent
-     * meeting the requirements in a step for a given step duration, the routing
-     * criteria will move on to the next step sequentially until a join is completed
-     * with an agent. When all steps are exhausted, the contact will be offered to any
-     * agent in the queue.</p>
-     */
     inline RoutingCriteria& AddSteps(const Step& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
-
-    /**
-     * <p>List of routing steps. When Amazon Connect does not find an available agent
-     * meeting the requirements in a step for a given step duration, the routing
-     * criteria will move on to the next step sequentially until a join is completed
-     * with an agent. When all steps are exhausted, the contact will be offered to any
-     * agent in the queue.</p>
-     */
     inline RoutingCriteria& AddSteps(Step&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp indicating when the routing criteria is set to active. A
      * routing criteria is activated when contact is transferred to a queue.
@@ -119,68 +65,22 @@ namespace Model
      * even though Routing criteria is never activated for contacts in agent queue.</p>
      */
     inline const Aws::Utils::DateTime& GetActivationTimestamp() const{ return m_activationTimestamp; }
-
-    /**
-     * <p>The timestamp indicating when the routing criteria is set to active. A
-     * routing criteria is activated when contact is transferred to a queue.
-     * ActivationTimestamp will be set on routing criteria for contacts in agent queue
-     * even though Routing criteria is never activated for contacts in agent queue.</p>
-     */
     inline bool ActivationTimestampHasBeenSet() const { return m_activationTimestampHasBeenSet; }
-
-    /**
-     * <p>The timestamp indicating when the routing criteria is set to active. A
-     * routing criteria is activated when contact is transferred to a queue.
-     * ActivationTimestamp will be set on routing criteria for contacts in agent queue
-     * even though Routing criteria is never activated for contacts in agent queue.</p>
-     */
     inline void SetActivationTimestamp(const Aws::Utils::DateTime& value) { m_activationTimestampHasBeenSet = true; m_activationTimestamp = value; }
-
-    /**
-     * <p>The timestamp indicating when the routing criteria is set to active. A
-     * routing criteria is activated when contact is transferred to a queue.
-     * ActivationTimestamp will be set on routing criteria for contacts in agent queue
-     * even though Routing criteria is never activated for contacts in agent queue.</p>
-     */
     inline void SetActivationTimestamp(Aws::Utils::DateTime&& value) { m_activationTimestampHasBeenSet = true; m_activationTimestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp indicating when the routing criteria is set to active. A
-     * routing criteria is activated when contact is transferred to a queue.
-     * ActivationTimestamp will be set on routing criteria for contacts in agent queue
-     * even though Routing criteria is never activated for contacts in agent queue.</p>
-     */
     inline RoutingCriteria& WithActivationTimestamp(const Aws::Utils::DateTime& value) { SetActivationTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp indicating when the routing criteria is set to active. A
-     * routing criteria is activated when contact is transferred to a queue.
-     * ActivationTimestamp will be set on routing criteria for contacts in agent queue
-     * even though Routing criteria is never activated for contacts in agent queue.</p>
-     */
     inline RoutingCriteria& WithActivationTimestamp(Aws::Utils::DateTime&& value) { SetActivationTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the index of the routing criteria.</p>
      */
     inline int GetIndex() const{ return m_index; }
-
-    /**
-     * <p>Information about the index of the routing criteria.</p>
-     */
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-
-    /**
-     * <p>Information about the index of the routing criteria.</p>
-     */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
-
-    /**
-     * <p>Information about the index of the routing criteria.</p>
-     */
     inline RoutingCriteria& WithIndex(int value) { SetIndex(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Step> m_steps;

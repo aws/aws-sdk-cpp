@@ -32,113 +32,44 @@ namespace Model
     AWS_ACM_API GetCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
-
-    /**
-     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
-     */
     inline void SetCertificate(const Aws::String& value) { m_certificate = value; }
-
-    /**
-     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
-     */
     inline void SetCertificate(Aws::String&& value) { m_certificate = std::move(value); }
-
-    /**
-     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
-     */
     inline void SetCertificate(const char* value) { m_certificate.assign(value); }
-
-    /**
-     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
-     */
     inline GetCertificateResult& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
-
-    /**
-     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
-     */
     inline GetCertificateResult& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
-
-    /**
-     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
-     */
     inline GetCertificateResult& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Certificates forming the requested certificate's chain of trust. The chain
      * consists of the certificate of the issuing CA and the intermediate certificates
      * of any other subordinate CAs. </p>
      */
     inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
-
-    /**
-     * <p>Certificates forming the requested certificate's chain of trust. The chain
-     * consists of the certificate of the issuing CA and the intermediate certificates
-     * of any other subordinate CAs. </p>
-     */
     inline void SetCertificateChain(const Aws::String& value) { m_certificateChain = value; }
-
-    /**
-     * <p>Certificates forming the requested certificate's chain of trust. The chain
-     * consists of the certificate of the issuing CA and the intermediate certificates
-     * of any other subordinate CAs. </p>
-     */
     inline void SetCertificateChain(Aws::String&& value) { m_certificateChain = std::move(value); }
-
-    /**
-     * <p>Certificates forming the requested certificate's chain of trust. The chain
-     * consists of the certificate of the issuing CA and the intermediate certificates
-     * of any other subordinate CAs. </p>
-     */
     inline void SetCertificateChain(const char* value) { m_certificateChain.assign(value); }
-
-    /**
-     * <p>Certificates forming the requested certificate's chain of trust. The chain
-     * consists of the certificate of the issuing CA and the intermediate certificates
-     * of any other subordinate CAs. </p>
-     */
     inline GetCertificateResult& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
-
-    /**
-     * <p>Certificates forming the requested certificate's chain of trust. The chain
-     * consists of the certificate of the issuing CA and the intermediate certificates
-     * of any other subordinate CAs. </p>
-     */
     inline GetCertificateResult& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
-
-    /**
-     * <p>Certificates forming the requested certificate's chain of trust. The chain
-     * consists of the certificate of the issuing CA and the intermediate certificates
-     * of any other subordinate CAs. </p>
-     */
     inline GetCertificateResult& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificate;

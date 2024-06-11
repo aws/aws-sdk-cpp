@@ -38,51 +38,20 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * A list of schedule actions to delete.
      */
     inline const Aws::Vector<Aws::String>& GetActionNames() const{ return m_actionNames; }
-
-    /**
-     * A list of schedule actions to delete.
-     */
     inline bool ActionNamesHasBeenSet() const { return m_actionNamesHasBeenSet; }
-
-    /**
-     * A list of schedule actions to delete.
-     */
     inline void SetActionNames(const Aws::Vector<Aws::String>& value) { m_actionNamesHasBeenSet = true; m_actionNames = value; }
-
-    /**
-     * A list of schedule actions to delete.
-     */
     inline void SetActionNames(Aws::Vector<Aws::String>&& value) { m_actionNamesHasBeenSet = true; m_actionNames = std::move(value); }
-
-    /**
-     * A list of schedule actions to delete.
-     */
     inline BatchScheduleActionDeleteRequest& WithActionNames(const Aws::Vector<Aws::String>& value) { SetActionNames(value); return *this;}
-
-    /**
-     * A list of schedule actions to delete.
-     */
     inline BatchScheduleActionDeleteRequest& WithActionNames(Aws::Vector<Aws::String>&& value) { SetActionNames(std::move(value)); return *this;}
-
-    /**
-     * A list of schedule actions to delete.
-     */
     inline BatchScheduleActionDeleteRequest& AddActionNames(const Aws::String& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
-
-    /**
-     * A list of schedule actions to delete.
-     */
     inline BatchScheduleActionDeleteRequest& AddActionNames(Aws::String&& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * A list of schedule actions to delete.
-     */
     inline BatchScheduleActionDeleteRequest& AddActionNames(const char* value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_actionNames;

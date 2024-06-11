@@ -37,36 +37,17 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * SCTE-35 Descriptor Settings.
      */
     inline const Scte35DescriptorSettings& GetScte35DescriptorSettings() const{ return m_scte35DescriptorSettings; }
-
-    /**
-     * SCTE-35 Descriptor Settings.
-     */
     inline bool Scte35DescriptorSettingsHasBeenSet() const { return m_scte35DescriptorSettingsHasBeenSet; }
-
-    /**
-     * SCTE-35 Descriptor Settings.
-     */
     inline void SetScte35DescriptorSettings(const Scte35DescriptorSettings& value) { m_scte35DescriptorSettingsHasBeenSet = true; m_scte35DescriptorSettings = value; }
-
-    /**
-     * SCTE-35 Descriptor Settings.
-     */
     inline void SetScte35DescriptorSettings(Scte35DescriptorSettings&& value) { m_scte35DescriptorSettingsHasBeenSet = true; m_scte35DescriptorSettings = std::move(value); }
-
-    /**
-     * SCTE-35 Descriptor Settings.
-     */
     inline Scte35Descriptor& WithScte35DescriptorSettings(const Scte35DescriptorSettings& value) { SetScte35DescriptorSettings(value); return *this;}
-
-    /**
-     * SCTE-35 Descriptor Settings.
-     */
     inline Scte35Descriptor& WithScte35DescriptorSettings(Scte35DescriptorSettings&& value) { SetScte35DescriptorSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Scte35DescriptorSettings m_scte35DescriptorSettings;

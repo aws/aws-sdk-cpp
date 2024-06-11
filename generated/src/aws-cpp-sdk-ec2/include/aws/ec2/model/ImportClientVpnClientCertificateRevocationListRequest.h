@@ -36,55 +36,22 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the Client VPN endpoint to which the client certificate revocation
      * list applies.</p>
      */
     inline const Aws::String& GetClientVpnEndpointId() const{ return m_clientVpnEndpointId; }
-
-    /**
-     * <p>The ID of the Client VPN endpoint to which the client certificate revocation
-     * list applies.</p>
-     */
     inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Client VPN endpoint to which the client certificate revocation
-     * list applies.</p>
-     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
-
-    /**
-     * <p>The ID of the Client VPN endpoint to which the client certificate revocation
-     * list applies.</p>
-     */
     inline void SetClientVpnEndpointId(Aws::String&& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = std::move(value); }
-
-    /**
-     * <p>The ID of the Client VPN endpoint to which the client certificate revocation
-     * list applies.</p>
-     */
     inline void SetClientVpnEndpointId(const char* value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId.assign(value); }
-
-    /**
-     * <p>The ID of the Client VPN endpoint to which the client certificate revocation
-     * list applies.</p>
-     */
     inline ImportClientVpnClientCertificateRevocationListRequest& WithClientVpnEndpointId(const Aws::String& value) { SetClientVpnEndpointId(value); return *this;}
-
-    /**
-     * <p>The ID of the Client VPN endpoint to which the client certificate revocation
-     * list applies.</p>
-     */
     inline ImportClientVpnClientCertificateRevocationListRequest& WithClientVpnEndpointId(Aws::String&& value) { SetClientVpnEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Client VPN endpoint to which the client certificate revocation
-     * list applies.</p>
-     */
     inline ImportClientVpnClientCertificateRevocationListRequest& WithClientVpnEndpointId(const char* value) { SetClientVpnEndpointId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The client certificate revocation list file. For more information, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
@@ -92,64 +59,16 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetCertificateRevocationList() const{ return m_certificateRevocationList; }
-
-    /**
-     * <p>The client certificate revocation list file. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
-     * Guide</i>.</p>
-     */
     inline bool CertificateRevocationListHasBeenSet() const { return m_certificateRevocationListHasBeenSet; }
-
-    /**
-     * <p>The client certificate revocation list file. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
-     * Guide</i>.</p>
-     */
     inline void SetCertificateRevocationList(const Aws::String& value) { m_certificateRevocationListHasBeenSet = true; m_certificateRevocationList = value; }
-
-    /**
-     * <p>The client certificate revocation list file. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
-     * Guide</i>.</p>
-     */
     inline void SetCertificateRevocationList(Aws::String&& value) { m_certificateRevocationListHasBeenSet = true; m_certificateRevocationList = std::move(value); }
-
-    /**
-     * <p>The client certificate revocation list file. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
-     * Guide</i>.</p>
-     */
     inline void SetCertificateRevocationList(const char* value) { m_certificateRevocationListHasBeenSet = true; m_certificateRevocationList.assign(value); }
-
-    /**
-     * <p>The client certificate revocation list file. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
-     * Guide</i>.</p>
-     */
     inline ImportClientVpnClientCertificateRevocationListRequest& WithCertificateRevocationList(const Aws::String& value) { SetCertificateRevocationList(value); return *this;}
-
-    /**
-     * <p>The client certificate revocation list file. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
-     * Guide</i>.</p>
-     */
     inline ImportClientVpnClientCertificateRevocationListRequest& WithCertificateRevocationList(Aws::String&& value) { SetCertificateRevocationList(std::move(value)); return *this;}
-
-    /**
-     * <p>The client certificate revocation list file. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
-     * Guide</i>.</p>
-     */
     inline ImportClientVpnClientCertificateRevocationListRequest& WithCertificateRevocationList(const char* value) { SetCertificateRevocationList(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -157,31 +76,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline ImportClientVpnClientCertificateRevocationListRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientVpnEndpointId;

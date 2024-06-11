@@ -34,87 +34,33 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Voice Connector ID.</p>
      */
     inline const Aws::String& GetVoiceConnectorId() const{ return m_voiceConnectorId; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline bool VoiceConnectorIdHasBeenSet() const { return m_voiceConnectorIdHasBeenSet; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const Aws::String& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = value; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(Aws::String&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::move(value); }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const char* value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId.assign(value); }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline PutVoiceConnectorTerminationCredentialsRequest& WithVoiceConnectorId(const Aws::String& value) { SetVoiceConnectorId(value); return *this;}
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline PutVoiceConnectorTerminationCredentialsRequest& WithVoiceConnectorId(Aws::String&& value) { SetVoiceConnectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline PutVoiceConnectorTerminationCredentialsRequest& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The termination credentials being updated.</p>
      */
     inline const Aws::Vector<Credential>& GetCredentials() const{ return m_credentials; }
-
-    /**
-     * <p>The termination credentials being updated.</p>
-     */
     inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
-
-    /**
-     * <p>The termination credentials being updated.</p>
-     */
     inline void SetCredentials(const Aws::Vector<Credential>& value) { m_credentialsHasBeenSet = true; m_credentials = value; }
-
-    /**
-     * <p>The termination credentials being updated.</p>
-     */
     inline void SetCredentials(Aws::Vector<Credential>&& value) { m_credentialsHasBeenSet = true; m_credentials = std::move(value); }
-
-    /**
-     * <p>The termination credentials being updated.</p>
-     */
     inline PutVoiceConnectorTerminationCredentialsRequest& WithCredentials(const Aws::Vector<Credential>& value) { SetCredentials(value); return *this;}
-
-    /**
-     * <p>The termination credentials being updated.</p>
-     */
     inline PutVoiceConnectorTerminationCredentialsRequest& WithCredentials(Aws::Vector<Credential>&& value) { SetCredentials(std::move(value)); return *this;}
-
-    /**
-     * <p>The termination credentials being updated.</p>
-     */
     inline PutVoiceConnectorTerminationCredentialsRequest& AddCredentials(const Credential& value) { m_credentialsHasBeenSet = true; m_credentials.push_back(value); return *this; }
-
-    /**
-     * <p>The termination credentials being updated.</p>
-     */
     inline PutVoiceConnectorTerminationCredentialsRequest& AddCredentials(Credential&& value) { m_credentialsHasBeenSet = true; m_credentials.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_voiceConnectorId;

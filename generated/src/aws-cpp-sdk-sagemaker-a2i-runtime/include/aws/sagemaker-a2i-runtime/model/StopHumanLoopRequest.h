@@ -32,46 +32,19 @@ namespace Model
     AWS_AUGMENTEDAIRUNTIME_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the human loop that you want to stop.</p>
      */
     inline const Aws::String& GetHumanLoopName() const{ return m_humanLoopName; }
-
-    /**
-     * <p>The name of the human loop that you want to stop.</p>
-     */
     inline bool HumanLoopNameHasBeenSet() const { return m_humanLoopNameHasBeenSet; }
-
-    /**
-     * <p>The name of the human loop that you want to stop.</p>
-     */
     inline void SetHumanLoopName(const Aws::String& value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName = value; }
-
-    /**
-     * <p>The name of the human loop that you want to stop.</p>
-     */
     inline void SetHumanLoopName(Aws::String&& value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName = std::move(value); }
-
-    /**
-     * <p>The name of the human loop that you want to stop.</p>
-     */
     inline void SetHumanLoopName(const char* value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName.assign(value); }
-
-    /**
-     * <p>The name of the human loop that you want to stop.</p>
-     */
     inline StopHumanLoopRequest& WithHumanLoopName(const Aws::String& value) { SetHumanLoopName(value); return *this;}
-
-    /**
-     * <p>The name of the human loop that you want to stop.</p>
-     */
     inline StopHumanLoopRequest& WithHumanLoopName(Aws::String&& value) { SetHumanLoopName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the human loop that you want to stop.</p>
-     */
     inline StopHumanLoopRequest& WithHumanLoopName(const char* value) { SetHumanLoopName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_humanLoopName;

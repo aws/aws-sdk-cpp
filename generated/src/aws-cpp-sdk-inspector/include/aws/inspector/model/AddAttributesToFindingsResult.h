@@ -34,94 +34,34 @@ namespace Model
     AWS_INSPECTOR_API AddAttributesToFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Attribute details that cannot be described. An error code is provided for
      * each failed item.</p>
      */
     inline const Aws::Map<Aws::String, FailedItemDetails>& GetFailedItems() const{ return m_failedItems; }
-
-    /**
-     * <p>Attribute details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline void SetFailedItems(const Aws::Map<Aws::String, FailedItemDetails>& value) { m_failedItems = value; }
-
-    /**
-     * <p>Attribute details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline void SetFailedItems(Aws::Map<Aws::String, FailedItemDetails>&& value) { m_failedItems = std::move(value); }
-
-    /**
-     * <p>Attribute details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline AddAttributesToFindingsResult& WithFailedItems(const Aws::Map<Aws::String, FailedItemDetails>& value) { SetFailedItems(value); return *this;}
-
-    /**
-     * <p>Attribute details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline AddAttributesToFindingsResult& WithFailedItems(Aws::Map<Aws::String, FailedItemDetails>&& value) { SetFailedItems(std::move(value)); return *this;}
-
-    /**
-     * <p>Attribute details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline AddAttributesToFindingsResult& AddFailedItems(const Aws::String& key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
-
-    /**
-     * <p>Attribute details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline AddAttributesToFindingsResult& AddFailedItems(Aws::String&& key, const FailedItemDetails& value) { m_failedItems.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Attribute details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline AddAttributesToFindingsResult& AddFailedItems(const Aws::String& key, FailedItemDetails&& value) { m_failedItems.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Attribute details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline AddAttributesToFindingsResult& AddFailedItems(Aws::String&& key, FailedItemDetails&& value) { m_failedItems.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Attribute details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline AddAttributesToFindingsResult& AddFailedItems(const char* key, FailedItemDetails&& value) { m_failedItems.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Attribute details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline AddAttributesToFindingsResult& AddFailedItems(const char* key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AddAttributesToFindingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AddAttributesToFindingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AddAttributesToFindingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, FailedItemDetails> m_failedItems;

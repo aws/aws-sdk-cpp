@@ -38,67 +38,29 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the number of seconds, minutes or hours to suppress this anomaly.
      * There is no maximum.</p>
      */
     inline int GetValue() const{ return m_value; }
-
-    /**
-     * <p>Specifies the number of seconds, minutes or hours to suppress this anomaly.
-     * There is no maximum.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Specifies the number of seconds, minutes or hours to suppress this anomaly.
-     * There is no maximum.</p>
-     */
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Specifies the number of seconds, minutes or hours to suppress this anomaly.
-     * There is no maximum.</p>
-     */
     inline SuppressionPeriod& WithValue(int value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the value of <code>value</code> is in seconds, minutes, or
      * hours.</p>
      */
     inline const SuppressionUnit& GetSuppressionUnit() const{ return m_suppressionUnit; }
-
-    /**
-     * <p>Specifies whether the value of <code>value</code> is in seconds, minutes, or
-     * hours.</p>
-     */
     inline bool SuppressionUnitHasBeenSet() const { return m_suppressionUnitHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the value of <code>value</code> is in seconds, minutes, or
-     * hours.</p>
-     */
     inline void SetSuppressionUnit(const SuppressionUnit& value) { m_suppressionUnitHasBeenSet = true; m_suppressionUnit = value; }
-
-    /**
-     * <p>Specifies whether the value of <code>value</code> is in seconds, minutes, or
-     * hours.</p>
-     */
     inline void SetSuppressionUnit(SuppressionUnit&& value) { m_suppressionUnitHasBeenSet = true; m_suppressionUnit = std::move(value); }
-
-    /**
-     * <p>Specifies whether the value of <code>value</code> is in seconds, minutes, or
-     * hours.</p>
-     */
     inline SuppressionPeriod& WithSuppressionUnit(const SuppressionUnit& value) { SetSuppressionUnit(value); return *this;}
-
-    /**
-     * <p>Specifies whether the value of <code>value</code> is in seconds, minutes, or
-     * hours.</p>
-     */
     inline SuppressionPeriod& WithSuppressionUnit(SuppressionUnit&& value) { SetSuppressionUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_value;

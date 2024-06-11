@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetCampaignActivitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const ActivitiesResponse& GetActivitiesResponse() const{ return m_activitiesResponse; }
-
-    
     inline void SetActivitiesResponse(const ActivitiesResponse& value) { m_activitiesResponse = value; }
-
-    
     inline void SetActivitiesResponse(ActivitiesResponse&& value) { m_activitiesResponse = std::move(value); }
-
-    
     inline GetCampaignActivitiesResult& WithActivitiesResponse(const ActivitiesResponse& value) { SetActivitiesResponse(value); return *this;}
-
-    
     inline GetCampaignActivitiesResult& WithActivitiesResponse(ActivitiesResponse&& value) { SetActivitiesResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCampaignActivitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCampaignActivitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCampaignActivitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ActivitiesResponse m_activitiesResponse;

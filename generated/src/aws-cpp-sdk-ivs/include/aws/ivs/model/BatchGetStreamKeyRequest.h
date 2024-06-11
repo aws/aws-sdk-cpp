@@ -33,51 +33,20 @@ namespace Model
     AWS_IVS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Array of ARNs, one per stream key.</p>
      */
     inline const Aws::Vector<Aws::String>& GetArns() const{ return m_arns; }
-
-    /**
-     * <p>Array of ARNs, one per stream key.</p>
-     */
     inline bool ArnsHasBeenSet() const { return m_arnsHasBeenSet; }
-
-    /**
-     * <p>Array of ARNs, one per stream key.</p>
-     */
     inline void SetArns(const Aws::Vector<Aws::String>& value) { m_arnsHasBeenSet = true; m_arns = value; }
-
-    /**
-     * <p>Array of ARNs, one per stream key.</p>
-     */
     inline void SetArns(Aws::Vector<Aws::String>&& value) { m_arnsHasBeenSet = true; m_arns = std::move(value); }
-
-    /**
-     * <p>Array of ARNs, one per stream key.</p>
-     */
     inline BatchGetStreamKeyRequest& WithArns(const Aws::Vector<Aws::String>& value) { SetArns(value); return *this;}
-
-    /**
-     * <p>Array of ARNs, one per stream key.</p>
-     */
     inline BatchGetStreamKeyRequest& WithArns(Aws::Vector<Aws::String>&& value) { SetArns(std::move(value)); return *this;}
-
-    /**
-     * <p>Array of ARNs, one per stream key.</p>
-     */
     inline BatchGetStreamKeyRequest& AddArns(const Aws::String& value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
-
-    /**
-     * <p>Array of ARNs, one per stream key.</p>
-     */
     inline BatchGetStreamKeyRequest& AddArns(Aws::String&& value) { m_arnsHasBeenSet = true; m_arns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Array of ARNs, one per stream key.</p>
-     */
     inline BatchGetStreamKeyRequest& AddArns(const char* value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_arns;

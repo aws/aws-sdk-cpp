@@ -38,36 +38,17 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The file format of the data in S3.</p>
      */
     inline const FileFormat& GetFileFormat() const{ return m_fileFormat; }
-
-    /**
-     * <p>The file format of the data in S3.</p>
-     */
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
-
-    /**
-     * <p>The file format of the data in S3.</p>
-     */
     inline void SetFileFormat(const FileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
-
-    /**
-     * <p>The file format of the data in S3.</p>
-     */
     inline void SetFileFormat(FileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
-
-    /**
-     * <p>The file format of the data in S3.</p>
-     */
     inline JobConfiguration& WithFileFormat(const FileFormat& value) { SetFileFormat(value); return *this;}
-
-    /**
-     * <p>The file format of the data in S3.</p>
-     */
     inline JobConfiguration& WithFileFormat(FileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FileFormat m_fileFormat;

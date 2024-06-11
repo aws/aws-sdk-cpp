@@ -39,71 +39,30 @@ namespace Model
     AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicated whether the app monitor stores copies of the data that RUM collects
      * in CloudWatch Logs.</p>
      */
     inline bool GetCwLogEnabled() const{ return m_cwLogEnabled; }
-
-    /**
-     * <p>Indicated whether the app monitor stores copies of the data that RUM collects
-     * in CloudWatch Logs.</p>
-     */
     inline bool CwLogEnabledHasBeenSet() const { return m_cwLogEnabledHasBeenSet; }
-
-    /**
-     * <p>Indicated whether the app monitor stores copies of the data that RUM collects
-     * in CloudWatch Logs.</p>
-     */
     inline void SetCwLogEnabled(bool value) { m_cwLogEnabledHasBeenSet = true; m_cwLogEnabled = value; }
-
-    /**
-     * <p>Indicated whether the app monitor stores copies of the data that RUM collects
-     * in CloudWatch Logs.</p>
-     */
     inline CwLog& WithCwLogEnabled(bool value) { SetCwLogEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the log group where the copies are stored.</p>
      */
     inline const Aws::String& GetCwLogGroup() const{ return m_cwLogGroup; }
-
-    /**
-     * <p>The name of the log group where the copies are stored.</p>
-     */
     inline bool CwLogGroupHasBeenSet() const { return m_cwLogGroupHasBeenSet; }
-
-    /**
-     * <p>The name of the log group where the copies are stored.</p>
-     */
     inline void SetCwLogGroup(const Aws::String& value) { m_cwLogGroupHasBeenSet = true; m_cwLogGroup = value; }
-
-    /**
-     * <p>The name of the log group where the copies are stored.</p>
-     */
     inline void SetCwLogGroup(Aws::String&& value) { m_cwLogGroupHasBeenSet = true; m_cwLogGroup = std::move(value); }
-
-    /**
-     * <p>The name of the log group where the copies are stored.</p>
-     */
     inline void SetCwLogGroup(const char* value) { m_cwLogGroupHasBeenSet = true; m_cwLogGroup.assign(value); }
-
-    /**
-     * <p>The name of the log group where the copies are stored.</p>
-     */
     inline CwLog& WithCwLogGroup(const Aws::String& value) { SetCwLogGroup(value); return *this;}
-
-    /**
-     * <p>The name of the log group where the copies are stored.</p>
-     */
     inline CwLog& WithCwLogGroup(Aws::String&& value) { SetCwLogGroup(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the log group where the copies are stored.</p>
-     */
     inline CwLog& WithCwLogGroup(const char* value) { SetCwLogGroup(value); return *this;}
-
+    ///@}
   private:
 
     bool m_cwLogEnabled;

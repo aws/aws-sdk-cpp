@@ -39,91 +39,33 @@ namespace Model
     AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An Amazon Ion binary value contained in a <code>ValueHolder</code>
      * structure.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetIonBinary() const{ return m_ionBinary; }
-
-    /**
-     * <p>An Amazon Ion binary value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline bool IonBinaryHasBeenSet() const { return m_ionBinaryHasBeenSet; }
-
-    /**
-     * <p>An Amazon Ion binary value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline void SetIonBinary(const Aws::Utils::ByteBuffer& value) { m_ionBinaryHasBeenSet = true; m_ionBinary = value; }
-
-    /**
-     * <p>An Amazon Ion binary value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline void SetIonBinary(Aws::Utils::ByteBuffer&& value) { m_ionBinaryHasBeenSet = true; m_ionBinary = std::move(value); }
-
-    /**
-     * <p>An Amazon Ion binary value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline ValueHolder& WithIonBinary(const Aws::Utils::ByteBuffer& value) { SetIonBinary(value); return *this;}
-
-    /**
-     * <p>An Amazon Ion binary value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline ValueHolder& WithIonBinary(Aws::Utils::ByteBuffer&& value) { SetIonBinary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
      * structure.</p>
      */
     inline const Aws::String& GetIonText() const{ return m_ionText; }
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline bool IonTextHasBeenSet() const { return m_ionTextHasBeenSet; }
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline void SetIonText(const Aws::String& value) { m_ionTextHasBeenSet = true; m_ionText = value; }
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline void SetIonText(Aws::String&& value) { m_ionTextHasBeenSet = true; m_ionText = std::move(value); }
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline void SetIonText(const char* value) { m_ionTextHasBeenSet = true; m_ionText.assign(value); }
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline ValueHolder& WithIonText(const Aws::String& value) { SetIonText(value); return *this;}
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline ValueHolder& WithIonText(Aws::String&& value) { SetIonText(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline ValueHolder& WithIonText(const char* value) { SetIonText(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_ionBinary;

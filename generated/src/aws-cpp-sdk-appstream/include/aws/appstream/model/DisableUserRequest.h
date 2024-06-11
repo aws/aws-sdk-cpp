@@ -35,85 +35,32 @@ namespace Model
     AWS_APPSTREAM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The email address of the user.</p>  <p>Users' email addresses are
      * case-sensitive.</p> 
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
-
-    /**
-     * <p>The email address of the user.</p>  <p>Users' email addresses are
-     * case-sensitive.</p> 
-     */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-
-    /**
-     * <p>The email address of the user.</p>  <p>Users' email addresses are
-     * case-sensitive.</p> 
-     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-
-    /**
-     * <p>The email address of the user.</p>  <p>Users' email addresses are
-     * case-sensitive.</p> 
-     */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-
-    /**
-     * <p>The email address of the user.</p>  <p>Users' email addresses are
-     * case-sensitive.</p> 
-     */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-
-    /**
-     * <p>The email address of the user.</p>  <p>Users' email addresses are
-     * case-sensitive.</p> 
-     */
     inline DisableUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-
-    /**
-     * <p>The email address of the user.</p>  <p>Users' email addresses are
-     * case-sensitive.</p> 
-     */
     inline DisableUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-
-    /**
-     * <p>The email address of the user.</p>  <p>Users' email addresses are
-     * case-sensitive.</p> 
-     */
     inline DisableUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The authentication type for the user. You must specify USERPOOL.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
-
-    /**
-     * <p>The authentication type for the user. You must specify USERPOOL.</p>
-     */
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-
-    /**
-     * <p>The authentication type for the user. You must specify USERPOOL.</p>
-     */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-
-    /**
-     * <p>The authentication type for the user. You must specify USERPOOL.</p>
-     */
     inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-
-    /**
-     * <p>The authentication type for the user. You must specify USERPOOL.</p>
-     */
     inline DisableUserRequest& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
-
-    /**
-     * <p>The authentication type for the user. You must specify USERPOOL.</p>
-     */
     inline DisableUserRequest& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userName;

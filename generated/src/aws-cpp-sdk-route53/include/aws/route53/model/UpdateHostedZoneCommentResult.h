@@ -39,58 +39,28 @@ namespace Model
     AWS_ROUTE53_API UpdateHostedZoneCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A complex type that contains the response to the
      * <code>UpdateHostedZoneComment</code> request.</p>
      */
     inline const HostedZone& GetHostedZone() const{ return m_hostedZone; }
-
-    /**
-     * <p>A complex type that contains the response to the
-     * <code>UpdateHostedZoneComment</code> request.</p>
-     */
     inline void SetHostedZone(const HostedZone& value) { m_hostedZone = value; }
-
-    /**
-     * <p>A complex type that contains the response to the
-     * <code>UpdateHostedZoneComment</code> request.</p>
-     */
     inline void SetHostedZone(HostedZone&& value) { m_hostedZone = std::move(value); }
-
-    /**
-     * <p>A complex type that contains the response to the
-     * <code>UpdateHostedZoneComment</code> request.</p>
-     */
     inline UpdateHostedZoneCommentResult& WithHostedZone(const HostedZone& value) { SetHostedZone(value); return *this;}
-
-    /**
-     * <p>A complex type that contains the response to the
-     * <code>UpdateHostedZoneComment</code> request.</p>
-     */
     inline UpdateHostedZoneCommentResult& WithHostedZone(HostedZone&& value) { SetHostedZone(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateHostedZoneCommentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateHostedZoneCommentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateHostedZoneCommentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     HostedZone m_hostedZone;

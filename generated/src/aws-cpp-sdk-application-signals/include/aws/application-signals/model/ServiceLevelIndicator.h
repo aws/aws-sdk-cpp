@@ -39,100 +39,41 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A structure that contains information about the metric that the SLO monitors.
      * </p>
      */
     inline const ServiceLevelIndicatorMetric& GetSliMetric() const{ return m_sliMetric; }
-
-    /**
-     * <p>A structure that contains information about the metric that the SLO monitors.
-     * </p>
-     */
     inline bool SliMetricHasBeenSet() const { return m_sliMetricHasBeenSet; }
-
-    /**
-     * <p>A structure that contains information about the metric that the SLO monitors.
-     * </p>
-     */
     inline void SetSliMetric(const ServiceLevelIndicatorMetric& value) { m_sliMetricHasBeenSet = true; m_sliMetric = value; }
-
-    /**
-     * <p>A structure that contains information about the metric that the SLO monitors.
-     * </p>
-     */
     inline void SetSliMetric(ServiceLevelIndicatorMetric&& value) { m_sliMetricHasBeenSet = true; m_sliMetric = std::move(value); }
-
-    /**
-     * <p>A structure that contains information about the metric that the SLO monitors.
-     * </p>
-     */
     inline ServiceLevelIndicator& WithSliMetric(const ServiceLevelIndicatorMetric& value) { SetSliMetric(value); return *this;}
-
-    /**
-     * <p>A structure that contains information about the metric that the SLO monitors.
-     * </p>
-     */
     inline ServiceLevelIndicator& WithSliMetric(ServiceLevelIndicatorMetric&& value) { SetSliMetric(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value that the SLI metric is compared to.</p>
      */
     inline double GetMetricThreshold() const{ return m_metricThreshold; }
-
-    /**
-     * <p>The value that the SLI metric is compared to.</p>
-     */
     inline bool MetricThresholdHasBeenSet() const { return m_metricThresholdHasBeenSet; }
-
-    /**
-     * <p>The value that the SLI metric is compared to.</p>
-     */
     inline void SetMetricThreshold(double value) { m_metricThresholdHasBeenSet = true; m_metricThreshold = value; }
-
-    /**
-     * <p>The value that the SLI metric is compared to.</p>
-     */
     inline ServiceLevelIndicator& WithMetricThreshold(double value) { SetMetricThreshold(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The arithmetic operation used when comparing the specified metric to the
      * threshold.</p>
      */
     inline const ServiceLevelIndicatorComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
-
-    /**
-     * <p>The arithmetic operation used when comparing the specified metric to the
-     * threshold.</p>
-     */
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-
-    /**
-     * <p>The arithmetic operation used when comparing the specified metric to the
-     * threshold.</p>
-     */
     inline void SetComparisonOperator(const ServiceLevelIndicatorComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-
-    /**
-     * <p>The arithmetic operation used when comparing the specified metric to the
-     * threshold.</p>
-     */
     inline void SetComparisonOperator(ServiceLevelIndicatorComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-
-    /**
-     * <p>The arithmetic operation used when comparing the specified metric to the
-     * threshold.</p>
-     */
     inline ServiceLevelIndicator& WithComparisonOperator(const ServiceLevelIndicatorComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-
-    /**
-     * <p>The arithmetic operation used when comparing the specified metric to the
-     * threshold.</p>
-     */
     inline ServiceLevelIndicator& WithComparisonOperator(ServiceLevelIndicatorComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ServiceLevelIndicatorMetric m_sliMetric;

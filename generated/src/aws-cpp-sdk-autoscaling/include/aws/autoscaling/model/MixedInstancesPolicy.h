@@ -46,73 +46,30 @@ namespace Model
     AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>One or more launch templates and the instance types (overrides) that are used
      * to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
      */
     inline const LaunchTemplate& GetLaunchTemplate() const{ return m_launchTemplate; }
-
-    /**
-     * <p>One or more launch templates and the instance types (overrides) that are used
-     * to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
-     */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
-
-    /**
-     * <p>One or more launch templates and the instance types (overrides) that are used
-     * to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
-     */
     inline void SetLaunchTemplate(const LaunchTemplate& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
-
-    /**
-     * <p>One or more launch templates and the instance types (overrides) that are used
-     * to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
-     */
     inline void SetLaunchTemplate(LaunchTemplate&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
-
-    /**
-     * <p>One or more launch templates and the instance types (overrides) that are used
-     * to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
-     */
     inline MixedInstancesPolicy& WithLaunchTemplate(const LaunchTemplate& value) { SetLaunchTemplate(value); return *this;}
-
-    /**
-     * <p>One or more launch templates and the instance types (overrides) that are used
-     * to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
-     */
     inline MixedInstancesPolicy& WithLaunchTemplate(LaunchTemplate&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The instances distribution.</p>
      */
     inline const InstancesDistribution& GetInstancesDistribution() const{ return m_instancesDistribution; }
-
-    /**
-     * <p>The instances distribution.</p>
-     */
     inline bool InstancesDistributionHasBeenSet() const { return m_instancesDistributionHasBeenSet; }
-
-    /**
-     * <p>The instances distribution.</p>
-     */
     inline void SetInstancesDistribution(const InstancesDistribution& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = value; }
-
-    /**
-     * <p>The instances distribution.</p>
-     */
     inline void SetInstancesDistribution(InstancesDistribution&& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = std::move(value); }
-
-    /**
-     * <p>The instances distribution.</p>
-     */
     inline MixedInstancesPolicy& WithInstancesDistribution(const InstancesDistribution& value) { SetInstancesDistribution(value); return *this;}
-
-    /**
-     * <p>The instances distribution.</p>
-     */
     inline MixedInstancesPolicy& WithInstancesDistribution(InstancesDistribution&& value) { SetInstancesDistribution(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LaunchTemplate m_launchTemplate;

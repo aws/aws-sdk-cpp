@@ -33,129 +33,53 @@ namespace Model
     AWS_EC2_API CancelImportTaskResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the task being canceled.</p>
      */
     inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
-
-    /**
-     * <p>The ID of the task being canceled.</p>
-     */
     inline void SetImportTaskId(const Aws::String& value) { m_importTaskId = value; }
-
-    /**
-     * <p>The ID of the task being canceled.</p>
-     */
     inline void SetImportTaskId(Aws::String&& value) { m_importTaskId = std::move(value); }
-
-    /**
-     * <p>The ID of the task being canceled.</p>
-     */
     inline void SetImportTaskId(const char* value) { m_importTaskId.assign(value); }
-
-    /**
-     * <p>The ID of the task being canceled.</p>
-     */
     inline CancelImportTaskResponse& WithImportTaskId(const Aws::String& value) { SetImportTaskId(value); return *this;}
-
-    /**
-     * <p>The ID of the task being canceled.</p>
-     */
     inline CancelImportTaskResponse& WithImportTaskId(Aws::String&& value) { SetImportTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the task being canceled.</p>
-     */
     inline CancelImportTaskResponse& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current state of the task being canceled.</p>
      */
     inline const Aws::String& GetPreviousState() const{ return m_previousState; }
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline void SetPreviousState(const Aws::String& value) { m_previousState = value; }
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline void SetPreviousState(Aws::String&& value) { m_previousState = std::move(value); }
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline void SetPreviousState(const char* value) { m_previousState.assign(value); }
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline CancelImportTaskResponse& WithPreviousState(const Aws::String& value) { SetPreviousState(value); return *this;}
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline CancelImportTaskResponse& WithPreviousState(Aws::String&& value) { SetPreviousState(std::move(value)); return *this;}
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline CancelImportTaskResponse& WithPreviousState(const char* value) { SetPreviousState(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current state of the task being canceled.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline void SetState(const Aws::String& value) { m_state = value; }
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline void SetState(Aws::String&& value) { m_state = std::move(value); }
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline void SetState(const char* value) { m_state.assign(value); }
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline CancelImportTaskResponse& WithState(const Aws::String& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline CancelImportTaskResponse& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline CancelImportTaskResponse& WithState(const char* value) { SetState(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CancelImportTaskResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CancelImportTaskResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_importTaskId;

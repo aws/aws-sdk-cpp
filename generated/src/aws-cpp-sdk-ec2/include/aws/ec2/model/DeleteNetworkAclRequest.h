@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -43,72 +44,24 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DeleteNetworkAclRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the network ACL.</p>
      */
     inline const Aws::String& GetNetworkAclId() const{ return m_networkAclId; }
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline void SetNetworkAclId(const Aws::String& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = value; }
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline void SetNetworkAclId(Aws::String&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::move(value); }
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline void SetNetworkAclId(const char* value) { m_networkAclIdHasBeenSet = true; m_networkAclId.assign(value); }
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline DeleteNetworkAclRequest& WithNetworkAclId(const Aws::String& value) { SetNetworkAclId(value); return *this;}
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline DeleteNetworkAclRequest& WithNetworkAclId(Aws::String&& value) { SetNetworkAclId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline DeleteNetworkAclRequest& WithNetworkAclId(const char* value) { SetNetworkAclId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

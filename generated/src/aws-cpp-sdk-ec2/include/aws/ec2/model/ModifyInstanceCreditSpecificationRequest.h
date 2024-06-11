@@ -38,6 +38,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -45,32 +46,12 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline ModifyInstanceCreditSpecificationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
      * modification request. For more information, see <a
@@ -78,104 +59,28 @@ namespace Model
      * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
-     * modification request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
-     * modification request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
-     * modification request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
-     * modification request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
-     * modification request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline ModifyInstanceCreditSpecificationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
-     * modification request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline ModifyInstanceCreditSpecificationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
-     * modification request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline ModifyInstanceCreditSpecificationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the credit option for CPU usage.</p>
      */
     inline const Aws::Vector<InstanceCreditSpecificationRequest>& GetInstanceCreditSpecifications() const{ return m_instanceCreditSpecifications; }
-
-    /**
-     * <p>Information about the credit option for CPU usage.</p>
-     */
     inline bool InstanceCreditSpecificationsHasBeenSet() const { return m_instanceCreditSpecificationsHasBeenSet; }
-
-    /**
-     * <p>Information about the credit option for CPU usage.</p>
-     */
     inline void SetInstanceCreditSpecifications(const Aws::Vector<InstanceCreditSpecificationRequest>& value) { m_instanceCreditSpecificationsHasBeenSet = true; m_instanceCreditSpecifications = value; }
-
-    /**
-     * <p>Information about the credit option for CPU usage.</p>
-     */
     inline void SetInstanceCreditSpecifications(Aws::Vector<InstanceCreditSpecificationRequest>&& value) { m_instanceCreditSpecificationsHasBeenSet = true; m_instanceCreditSpecifications = std::move(value); }
-
-    /**
-     * <p>Information about the credit option for CPU usage.</p>
-     */
     inline ModifyInstanceCreditSpecificationRequest& WithInstanceCreditSpecifications(const Aws::Vector<InstanceCreditSpecificationRequest>& value) { SetInstanceCreditSpecifications(value); return *this;}
-
-    /**
-     * <p>Information about the credit option for CPU usage.</p>
-     */
     inline ModifyInstanceCreditSpecificationRequest& WithInstanceCreditSpecifications(Aws::Vector<InstanceCreditSpecificationRequest>&& value) { SetInstanceCreditSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the credit option for CPU usage.</p>
-     */
     inline ModifyInstanceCreditSpecificationRequest& AddInstanceCreditSpecifications(const InstanceCreditSpecificationRequest& value) { m_instanceCreditSpecificationsHasBeenSet = true; m_instanceCreditSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the credit option for CPU usage.</p>
-     */
     inline ModifyInstanceCreditSpecificationRequest& AddInstanceCreditSpecifications(InstanceCreditSpecificationRequest&& value) { m_instanceCreditSpecificationsHasBeenSet = true; m_instanceCreditSpecifications.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     bool m_dryRun;

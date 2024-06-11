@@ -48,108 +48,43 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of validation that was performed.</p>
      */
     inline const AnalysisTemplateValidationType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of validation that was performed.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of validation that was performed.</p>
-     */
     inline void SetType(const AnalysisTemplateValidationType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of validation that was performed.</p>
-     */
     inline void SetType(AnalysisTemplateValidationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of validation that was performed.</p>
-     */
     inline AnalysisTemplateValidationStatusDetail& WithType(const AnalysisTemplateValidationType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of validation that was performed.</p>
-     */
     inline AnalysisTemplateValidationStatusDetail& WithType(AnalysisTemplateValidationType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the validation.</p>
      */
     inline const AnalysisTemplateValidationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the validation.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the validation.</p>
-     */
     inline void SetStatus(const AnalysisTemplateValidationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the validation.</p>
-     */
     inline void SetStatus(AnalysisTemplateValidationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the validation.</p>
-     */
     inline AnalysisTemplateValidationStatusDetail& WithStatus(const AnalysisTemplateValidationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the validation.</p>
-     */
     inline AnalysisTemplateValidationStatusDetail& WithStatus(AnalysisTemplateValidationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reasons for the validation results.</p>
      */
     inline const Aws::Vector<AnalysisTemplateValidationStatusReason>& GetReasons() const{ return m_reasons; }
-
-    /**
-     * <p>The reasons for the validation results.</p>
-     */
     inline bool ReasonsHasBeenSet() const { return m_reasonsHasBeenSet; }
-
-    /**
-     * <p>The reasons for the validation results.</p>
-     */
     inline void SetReasons(const Aws::Vector<AnalysisTemplateValidationStatusReason>& value) { m_reasonsHasBeenSet = true; m_reasons = value; }
-
-    /**
-     * <p>The reasons for the validation results.</p>
-     */
     inline void SetReasons(Aws::Vector<AnalysisTemplateValidationStatusReason>&& value) { m_reasonsHasBeenSet = true; m_reasons = std::move(value); }
-
-    /**
-     * <p>The reasons for the validation results.</p>
-     */
     inline AnalysisTemplateValidationStatusDetail& WithReasons(const Aws::Vector<AnalysisTemplateValidationStatusReason>& value) { SetReasons(value); return *this;}
-
-    /**
-     * <p>The reasons for the validation results.</p>
-     */
     inline AnalysisTemplateValidationStatusDetail& WithReasons(Aws::Vector<AnalysisTemplateValidationStatusReason>&& value) { SetReasons(std::move(value)); return *this;}
-
-    /**
-     * <p>The reasons for the validation results.</p>
-     */
     inline AnalysisTemplateValidationStatusDetail& AddReasons(const AnalysisTemplateValidationStatusReason& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
-
-    /**
-     * <p>The reasons for the validation results.</p>
-     */
     inline AnalysisTemplateValidationStatusDetail& AddReasons(AnalysisTemplateValidationStatusReason&& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     AnalysisTemplateValidationType m_type;

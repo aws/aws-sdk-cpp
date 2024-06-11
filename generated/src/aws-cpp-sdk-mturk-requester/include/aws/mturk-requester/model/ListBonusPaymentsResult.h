@@ -34,111 +34,51 @@ namespace Model
     AWS_MTURK_API ListBonusPaymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The number of bonus payments on this page in the filtered results list,
      * equivalent to the number of bonus payments being returned by this call. </p>
      */
     inline int GetNumResults() const{ return m_numResults; }
-
-    /**
-     * <p>The number of bonus payments on this page in the filtered results list,
-     * equivalent to the number of bonus payments being returned by this call. </p>
-     */
     inline void SetNumResults(int value) { m_numResults = value; }
-
-    /**
-     * <p>The number of bonus payments on this page in the filtered results list,
-     * equivalent to the number of bonus payments being returned by this call. </p>
-     */
     inline ListBonusPaymentsResult& WithNumResults(int value) { SetNumResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    
     inline ListBonusPaymentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline ListBonusPaymentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline ListBonusPaymentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A successful request to the ListBonusPayments operation returns a list of
      * BonusPayment objects. </p>
      */
     inline const Aws::Vector<BonusPayment>& GetBonusPayments() const{ return m_bonusPayments; }
-
-    /**
-     * <p>A successful request to the ListBonusPayments operation returns a list of
-     * BonusPayment objects. </p>
-     */
     inline void SetBonusPayments(const Aws::Vector<BonusPayment>& value) { m_bonusPayments = value; }
-
-    /**
-     * <p>A successful request to the ListBonusPayments operation returns a list of
-     * BonusPayment objects. </p>
-     */
     inline void SetBonusPayments(Aws::Vector<BonusPayment>&& value) { m_bonusPayments = std::move(value); }
-
-    /**
-     * <p>A successful request to the ListBonusPayments operation returns a list of
-     * BonusPayment objects. </p>
-     */
     inline ListBonusPaymentsResult& WithBonusPayments(const Aws::Vector<BonusPayment>& value) { SetBonusPayments(value); return *this;}
-
-    /**
-     * <p>A successful request to the ListBonusPayments operation returns a list of
-     * BonusPayment objects. </p>
-     */
     inline ListBonusPaymentsResult& WithBonusPayments(Aws::Vector<BonusPayment>&& value) { SetBonusPayments(std::move(value)); return *this;}
-
-    /**
-     * <p>A successful request to the ListBonusPayments operation returns a list of
-     * BonusPayment objects. </p>
-     */
     inline ListBonusPaymentsResult& AddBonusPayments(const BonusPayment& value) { m_bonusPayments.push_back(value); return *this; }
-
-    /**
-     * <p>A successful request to the ListBonusPayments operation returns a list of
-     * BonusPayment objects. </p>
-     */
     inline ListBonusPaymentsResult& AddBonusPayments(BonusPayment&& value) { m_bonusPayments.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListBonusPaymentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListBonusPaymentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListBonusPaymentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_numResults;

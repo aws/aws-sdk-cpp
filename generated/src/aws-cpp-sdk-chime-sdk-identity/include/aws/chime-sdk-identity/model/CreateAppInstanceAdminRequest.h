@@ -32,87 +32,33 @@ namespace Model
     AWS_CHIMESDKIDENTITY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
      */
     inline const Aws::String& GetAppInstanceAdminArn() const{ return m_appInstanceAdminArn; }
-
-    /**
-     * <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-     */
     inline bool AppInstanceAdminArnHasBeenSet() const { return m_appInstanceAdminArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-     */
     inline void SetAppInstanceAdminArn(const Aws::String& value) { m_appInstanceAdminArnHasBeenSet = true; m_appInstanceAdminArn = value; }
-
-    /**
-     * <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-     */
     inline void SetAppInstanceAdminArn(Aws::String&& value) { m_appInstanceAdminArnHasBeenSet = true; m_appInstanceAdminArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-     */
     inline void SetAppInstanceAdminArn(const char* value) { m_appInstanceAdminArnHasBeenSet = true; m_appInstanceAdminArn.assign(value); }
-
-    /**
-     * <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-     */
     inline CreateAppInstanceAdminRequest& WithAppInstanceAdminArn(const Aws::String& value) { SetAppInstanceAdminArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-     */
     inline CreateAppInstanceAdminRequest& WithAppInstanceAdminArn(Aws::String&& value) { SetAppInstanceAdminArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-     */
     inline CreateAppInstanceAdminRequest& WithAppInstanceAdminArn(const char* value) { SetAppInstanceAdminArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline const Aws::String& GetAppInstanceArn() const{ return m_appInstanceArn; }
-
-    /**
-     * <p>The ARN of the <code>AppInstance</code>.</p>
-     */
     inline bool AppInstanceArnHasBeenSet() const { return m_appInstanceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the <code>AppInstance</code>.</p>
-     */
     inline void SetAppInstanceArn(const Aws::String& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = value; }
-
-    /**
-     * <p>The ARN of the <code>AppInstance</code>.</p>
-     */
     inline void SetAppInstanceArn(Aws::String&& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the <code>AppInstance</code>.</p>
-     */
     inline void SetAppInstanceArn(const char* value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the <code>AppInstance</code>.</p>
-     */
     inline CreateAppInstanceAdminRequest& WithAppInstanceArn(const Aws::String& value) { SetAppInstanceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the <code>AppInstance</code>.</p>
-     */
     inline CreateAppInstanceAdminRequest& WithAppInstanceArn(Aws::String&& value) { SetAppInstanceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the <code>AppInstance</code>.</p>
-     */
     inline CreateAppInstanceAdminRequest& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appInstanceAdminArn;

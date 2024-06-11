@@ -40,120 +40,57 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether EBS-based storage is enabled.</p>
      */
     inline bool GetEBSEnabled() const{ return m_eBSEnabled; }
-
-    /**
-     * <p>Specifies whether EBS-based storage is enabled.</p>
-     */
     inline bool EBSEnabledHasBeenSet() const { return m_eBSEnabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether EBS-based storage is enabled.</p>
-     */
     inline void SetEBSEnabled(bool value) { m_eBSEnabledHasBeenSet = true; m_eBSEnabled = value; }
-
-    /**
-     * <p>Specifies whether EBS-based storage is enabled.</p>
-     */
     inline EBSOptions& WithEBSEnabled(bool value) { SetEBSEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Specifies the volume type for EBS-based storage.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
-
-    /**
-     * <p> Specifies the volume type for EBS-based storage.</p>
-     */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
-
-    /**
-     * <p> Specifies the volume type for EBS-based storage.</p>
-     */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
-
-    /**
-     * <p> Specifies the volume type for EBS-based storage.</p>
-     */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
-
-    /**
-     * <p> Specifies the volume type for EBS-based storage.</p>
-     */
     inline EBSOptions& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
-
-    /**
-     * <p> Specifies the volume type for EBS-based storage.</p>
-     */
     inline EBSOptions& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Integer to specify the size of an EBS volume.</p>
      */
     inline int GetVolumeSize() const{ return m_volumeSize; }
-
-    /**
-     * <p> Integer to specify the size of an EBS volume.</p>
-     */
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
-
-    /**
-     * <p> Integer to specify the size of an EBS volume.</p>
-     */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
-
-    /**
-     * <p> Integer to specify the size of an EBS volume.</p>
-     */
     inline EBSOptions& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
      */
     inline int GetIops() const{ return m_iops; }
-
-    /**
-     * <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
-     */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
-
-    /**
-     * <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
-     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
-
-    /**
-     * <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
-     */
     inline EBSOptions& WithIops(int value) { SetIops(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
      */
     inline int GetThroughput() const{ return m_throughput; }
-
-    /**
-     * <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
-     */
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
-
-    /**
-     * <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
-     */
     inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
-
-    /**
-     * <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
-     */
     inline EBSOptions& WithThroughput(int value) { SetThroughput(value); return *this;}
-
+    ///@}
   private:
 
     bool m_eBSEnabled;

@@ -38,87 +38,33 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The S3 bucket name. </p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
-
-    /**
-     * <p> The S3 bucket name. </p>
-     */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-
-    /**
-     * <p> The S3 bucket name. </p>
-     */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-
-    /**
-     * <p> The S3 bucket name. </p>
-     */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-
-    /**
-     * <p> The S3 bucket name. </p>
-     */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-
-    /**
-     * <p> The S3 bucket name. </p>
-     */
     inline S3Object& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-
-    /**
-     * <p> The S3 bucket name. </p>
-     */
     inline S3Object& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-
-    /**
-     * <p> The S3 bucket name. </p>
-     */
     inline S3Object& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The Amazon S3 key name. </p>
      */
     inline const Aws::String& GetS3key() const{ return m_s3key; }
-
-    /**
-     * <p> The Amazon S3 key name. </p>
-     */
     inline bool S3keyHasBeenSet() const { return m_s3keyHasBeenSet; }
-
-    /**
-     * <p> The Amazon S3 key name. </p>
-     */
     inline void SetS3key(const Aws::String& value) { m_s3keyHasBeenSet = true; m_s3key = value; }
-
-    /**
-     * <p> The Amazon S3 key name. </p>
-     */
     inline void SetS3key(Aws::String&& value) { m_s3keyHasBeenSet = true; m_s3key = std::move(value); }
-
-    /**
-     * <p> The Amazon S3 key name. </p>
-     */
     inline void SetS3key(const char* value) { m_s3keyHasBeenSet = true; m_s3key.assign(value); }
-
-    /**
-     * <p> The Amazon S3 key name. </p>
-     */
     inline S3Object& WithS3key(const Aws::String& value) { SetS3key(value); return *this;}
-
-    /**
-     * <p> The Amazon S3 key name. </p>
-     */
     inline S3Object& WithS3key(Aws::String&& value) { SetS3key(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon S3 key name. </p>
-     */
     inline S3Object& WithS3key(const char* value) { SetS3key(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_s3Bucket;

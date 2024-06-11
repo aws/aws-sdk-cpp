@@ -34,62 +34,21 @@ namespace Model
     AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A descriptive label that is associated with game session queue. Queue names
      * must be unique within each Region. You can use either the queue ID or ARN value.
      * </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A descriptive label that is associated with game session queue. Queue names
-     * must be unique within each Region. You can use either the queue ID or ARN value.
-     * </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A descriptive label that is associated with game session queue. Queue names
-     * must be unique within each Region. You can use either the queue ID or ARN value.
-     * </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A descriptive label that is associated with game session queue. Queue names
-     * must be unique within each Region. You can use either the queue ID or ARN value.
-     * </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A descriptive label that is associated with game session queue. Queue names
-     * must be unique within each Region. You can use either the queue ID or ARN value.
-     * </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A descriptive label that is associated with game session queue. Queue names
-     * must be unique within each Region. You can use either the queue ID or ARN value.
-     * </p>
-     */
     inline DeleteGameSessionQueueRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A descriptive label that is associated with game session queue. Queue names
-     * must be unique within each Region. You can use either the queue ID or ARN value.
-     * </p>
-     */
     inline DeleteGameSessionQueueRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A descriptive label that is associated with game session queue. Queue names
-     * must be unique within each Region. You can use either the queue ID or ARN value.
-     * </p>
-     */
     inline DeleteGameSessionQueueRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

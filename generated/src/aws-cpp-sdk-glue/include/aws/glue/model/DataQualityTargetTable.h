@@ -37,128 +37,47 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Glue table.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p>The name of the Glue table.</p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Glue table.</p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p>The name of the Glue table.</p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p>The name of the Glue table.</p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p>The name of the Glue table.</p>
-     */
     inline DataQualityTargetTable& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p>The name of the Glue table.</p>
-     */
     inline DataQualityTargetTable& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Glue table.</p>
-     */
     inline DataQualityTargetTable& WithTableName(const char* value) { SetTableName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the database where the Glue table exists.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
-
-    /**
-     * <p>The name of the database where the Glue table exists.</p>
-     */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-
-    /**
-     * <p>The name of the database where the Glue table exists.</p>
-     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-
-    /**
-     * <p>The name of the database where the Glue table exists.</p>
-     */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-
-    /**
-     * <p>The name of the database where the Glue table exists.</p>
-     */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-
-    /**
-     * <p>The name of the database where the Glue table exists.</p>
-     */
     inline DataQualityTargetTable& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-
-    /**
-     * <p>The name of the database where the Glue table exists.</p>
-     */
     inline DataQualityTargetTable& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the database where the Glue table exists.</p>
-     */
     inline DataQualityTargetTable& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The catalog id where the Glue table exists.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
-
-    /**
-     * <p>The catalog id where the Glue table exists.</p>
-     */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-
-    /**
-     * <p>The catalog id where the Glue table exists.</p>
-     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-
-    /**
-     * <p>The catalog id where the Glue table exists.</p>
-     */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-
-    /**
-     * <p>The catalog id where the Glue table exists.</p>
-     */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-
-    /**
-     * <p>The catalog id where the Glue table exists.</p>
-     */
     inline DataQualityTargetTable& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-
-    /**
-     * <p>The catalog id where the Glue table exists.</p>
-     */
     inline DataQualityTargetTable& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-
-    /**
-     * <p>The catalog id where the Glue table exists.</p>
-     */
     inline DataQualityTargetTable& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tableName;

@@ -36,30 +36,16 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The percentile value. This value can be any numeric constant 0–100. A
      * percentile value of 50 computes the median value of the measure.</p>
      */
     inline double GetPercentileValue() const{ return m_percentileValue; }
-
-    /**
-     * <p>The percentile value. This value can be any numeric constant 0–100. A
-     * percentile value of 50 computes the median value of the measure.</p>
-     */
     inline bool PercentileValueHasBeenSet() const { return m_percentileValueHasBeenSet; }
-
-    /**
-     * <p>The percentile value. This value can be any numeric constant 0–100. A
-     * percentile value of 50 computes the median value of the measure.</p>
-     */
     inline void SetPercentileValue(double value) { m_percentileValueHasBeenSet = true; m_percentileValue = value; }
-
-    /**
-     * <p>The percentile value. This value can be any numeric constant 0–100. A
-     * percentile value of 50 computes the median value of the measure.</p>
-     */
     inline PercentileAggregation& WithPercentileValue(double value) { SetPercentileValue(value); return *this;}
-
+    ///@}
   private:
 
     double m_percentileValue;

@@ -46,200 +46,72 @@ namespace Model
     AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A description of the operation event. For example, "Stop the EC2 instance
      * i-abcdefgh987654321".</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the operation event. For example, "Stop the EC2 instance
-     * i-abcdefgh987654321".</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the operation event. For example, "Stop the EC2 instance
-     * i-abcdefgh987654321".</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the operation event. For example, "Stop the EC2 instance
-     * i-abcdefgh987654321".</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the operation event. For example, "Stop the EC2 instance
-     * i-abcdefgh987654321".</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the operation event. For example, "Stop the EC2 instance
-     * i-abcdefgh987654321".</p>
-     */
     inline OperationEvent& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the operation event. For example, "Stop the EC2 instance
-     * i-abcdefgh987654321".</p>
-     */
     inline OperationEvent& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the operation event. For example, "Stop the EC2 instance
-     * i-abcdefgh987654321".</p>
-     */
     inline OperationEvent& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource involved in the operations event.</p> <p>Contains
      * <code>ResourceArn</code> ARN and <code>ResourceType</code>.</p>
      */
     inline const Resource& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>The resource involved in the operations event.</p> <p>Contains
-     * <code>ResourceArn</code> ARN and <code>ResourceType</code>.</p>
-     */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-
-    /**
-     * <p>The resource involved in the operations event.</p> <p>Contains
-     * <code>ResourceArn</code> ARN and <code>ResourceType</code>.</p>
-     */
     inline void SetResource(const Resource& value) { m_resourceHasBeenSet = true; m_resource = value; }
-
-    /**
-     * <p>The resource involved in the operations event.</p> <p>Contains
-     * <code>ResourceArn</code> ARN and <code>ResourceType</code>.</p>
-     */
     inline void SetResource(Resource&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-
-    /**
-     * <p>The resource involved in the operations event.</p> <p>Contains
-     * <code>ResourceArn</code> ARN and <code>ResourceType</code>.</p>
-     */
     inline OperationEvent& WithResource(const Resource& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>The resource involved in the operations event.</p> <p>Contains
-     * <code>ResourceArn</code> ARN and <code>ResourceType</code>.</p>
-     */
     inline OperationEvent& WithResource(Resource&& value) { SetResource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the operation event. The possible statuses are:
      * <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>FAILED</code>.</p>
      */
     inline const OperationEventStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the operation event. The possible statuses are:
-     * <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>FAILED</code>.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the operation event. The possible statuses are:
-     * <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>FAILED</code>.</p>
-     */
     inline void SetStatus(const OperationEventStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the operation event. The possible statuses are:
-     * <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>FAILED</code>.</p>
-     */
     inline void SetStatus(OperationEventStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the operation event. The possible statuses are:
-     * <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>FAILED</code>.</p>
-     */
     inline OperationEvent& WithStatus(const OperationEventStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the operation event. The possible statuses are:
-     * <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>FAILED</code>.</p>
-     */
     inline OperationEvent& WithStatus(OperationEventStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status message relating to a specific operation event.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>The status message relating to a specific operation event.</p>
-     */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p>The status message relating to a specific operation event.</p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p>The status message relating to a specific operation event.</p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p>The status message relating to a specific operation event.</p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p>The status message relating to a specific operation event.</p>
-     */
     inline OperationEvent& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>The status message relating to a specific operation event.</p>
-     */
     inline OperationEvent& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The status message relating to a specific operation event.</p>
-     */
     inline OperationEvent& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp of the specified operation event.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The timestamp of the specified operation event.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The timestamp of the specified operation event.</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The timestamp of the specified operation event.</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp of the specified operation event.</p>
-     */
     inline OperationEvent& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp of the specified operation event.</p>
-     */
     inline OperationEvent& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_description;

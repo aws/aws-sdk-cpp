@@ -39,96 +39,36 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
      * source.</p>
      */
     inline const Aws::String& GetBucketArn() const{ return m_bucketArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
-     * source.</p>
-     */
     inline bool BucketArnHasBeenSet() const { return m_bucketArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
-     * source.</p>
-     */
     inline void SetBucketArn(const Aws::String& value) { m_bucketArnHasBeenSet = true; m_bucketArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
-     * source.</p>
-     */
     inline void SetBucketArn(Aws::String&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
-     * source.</p>
-     */
     inline void SetBucketArn(const char* value) { m_bucketArnHasBeenSet = true; m_bucketArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
-     * source.</p>
-     */
     inline S3DataSourceConfiguration& WithBucketArn(const Aws::String& value) { SetBucketArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
-     * source.</p>
-     */
     inline S3DataSourceConfiguration& WithBucketArn(Aws::String&& value) { SetBucketArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
-     * source.</p>
-     */
     inline S3DataSourceConfiguration& WithBucketArn(const char* value) { SetBucketArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The bucket account owner ID for the S3 bucket.</p>
      */
     inline const Aws::String& GetBucketOwnerAccountId() const{ return m_bucketOwnerAccountId; }
-
-    /**
-     * <p>The bucket account owner ID for the S3 bucket.</p>
-     */
     inline bool BucketOwnerAccountIdHasBeenSet() const { return m_bucketOwnerAccountIdHasBeenSet; }
-
-    /**
-     * <p>The bucket account owner ID for the S3 bucket.</p>
-     */
     inline void SetBucketOwnerAccountId(const Aws::String& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = value; }
-
-    /**
-     * <p>The bucket account owner ID for the S3 bucket.</p>
-     */
     inline void SetBucketOwnerAccountId(Aws::String&& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = std::move(value); }
-
-    /**
-     * <p>The bucket account owner ID for the S3 bucket.</p>
-     */
     inline void SetBucketOwnerAccountId(const char* value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId.assign(value); }
-
-    /**
-     * <p>The bucket account owner ID for the S3 bucket.</p>
-     */
     inline S3DataSourceConfiguration& WithBucketOwnerAccountId(const Aws::String& value) { SetBucketOwnerAccountId(value); return *this;}
-
-    /**
-     * <p>The bucket account owner ID for the S3 bucket.</p>
-     */
     inline S3DataSourceConfiguration& WithBucketOwnerAccountId(Aws::String&& value) { SetBucketOwnerAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The bucket account owner ID for the S3 bucket.</p>
-     */
     inline S3DataSourceConfiguration& WithBucketOwnerAccountId(const char* value) { SetBucketOwnerAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of S3 prefixes that define the object containing the data sources. For
      * more information, see <a
@@ -136,71 +76,15 @@ namespace Model
      * objects using prefixes</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInclusionPrefixes() const{ return m_inclusionPrefixes; }
-
-    /**
-     * <p>A list of S3 prefixes that define the object containing the data sources. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a>.</p>
-     */
     inline bool InclusionPrefixesHasBeenSet() const { return m_inclusionPrefixesHasBeenSet; }
-
-    /**
-     * <p>A list of S3 prefixes that define the object containing the data sources. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a>.</p>
-     */
     inline void SetInclusionPrefixes(const Aws::Vector<Aws::String>& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes = value; }
-
-    /**
-     * <p>A list of S3 prefixes that define the object containing the data sources. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a>.</p>
-     */
     inline void SetInclusionPrefixes(Aws::Vector<Aws::String>&& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes = std::move(value); }
-
-    /**
-     * <p>A list of S3 prefixes that define the object containing the data sources. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a>.</p>
-     */
     inline S3DataSourceConfiguration& WithInclusionPrefixes(const Aws::Vector<Aws::String>& value) { SetInclusionPrefixes(value); return *this;}
-
-    /**
-     * <p>A list of S3 prefixes that define the object containing the data sources. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a>.</p>
-     */
     inline S3DataSourceConfiguration& WithInclusionPrefixes(Aws::Vector<Aws::String>&& value) { SetInclusionPrefixes(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of S3 prefixes that define the object containing the data sources. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a>.</p>
-     */
     inline S3DataSourceConfiguration& AddInclusionPrefixes(const Aws::String& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes.push_back(value); return *this; }
-
-    /**
-     * <p>A list of S3 prefixes that define the object containing the data sources. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a>.</p>
-     */
     inline S3DataSourceConfiguration& AddInclusionPrefixes(Aws::String&& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of S3 prefixes that define the object containing the data sources. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a>.</p>
-     */
     inline S3DataSourceConfiguration& AddInclusionPrefixes(const char* value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_bucketArn;

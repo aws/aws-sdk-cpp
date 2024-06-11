@@ -40,116 +40,44 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of compliance item. For example, the compliance type can be
      * Association, Patch, or Custom:string.</p>
      */
     inline const Aws::String& GetComplianceType() const{ return m_complianceType; }
-
-    /**
-     * <p>The type of compliance item. For example, the compliance type can be
-     * Association, Patch, or Custom:string.</p>
-     */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of compliance item. For example, the compliance type can be
-     * Association, Patch, or Custom:string.</p>
-     */
     inline void SetComplianceType(const Aws::String& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
-
-    /**
-     * <p>The type of compliance item. For example, the compliance type can be
-     * Association, Patch, or Custom:string.</p>
-     */
     inline void SetComplianceType(Aws::String&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
-
-    /**
-     * <p>The type of compliance item. For example, the compliance type can be
-     * Association, Patch, or Custom:string.</p>
-     */
     inline void SetComplianceType(const char* value) { m_complianceTypeHasBeenSet = true; m_complianceType.assign(value); }
-
-    /**
-     * <p>The type of compliance item. For example, the compliance type can be
-     * Association, Patch, or Custom:string.</p>
-     */
     inline ComplianceSummaryItem& WithComplianceType(const Aws::String& value) { SetComplianceType(value); return *this;}
-
-    /**
-     * <p>The type of compliance item. For example, the compliance type can be
-     * Association, Patch, or Custom:string.</p>
-     */
     inline ComplianceSummaryItem& WithComplianceType(Aws::String&& value) { SetComplianceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of compliance item. For example, the compliance type can be
-     * Association, Patch, or Custom:string.</p>
-     */
     inline ComplianceSummaryItem& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of COMPLIANT items for the specified compliance type.</p>
      */
     inline const CompliantSummary& GetCompliantSummary() const{ return m_compliantSummary; }
-
-    /**
-     * <p>A list of COMPLIANT items for the specified compliance type.</p>
-     */
     inline bool CompliantSummaryHasBeenSet() const { return m_compliantSummaryHasBeenSet; }
-
-    /**
-     * <p>A list of COMPLIANT items for the specified compliance type.</p>
-     */
     inline void SetCompliantSummary(const CompliantSummary& value) { m_compliantSummaryHasBeenSet = true; m_compliantSummary = value; }
-
-    /**
-     * <p>A list of COMPLIANT items for the specified compliance type.</p>
-     */
     inline void SetCompliantSummary(CompliantSummary&& value) { m_compliantSummaryHasBeenSet = true; m_compliantSummary = std::move(value); }
-
-    /**
-     * <p>A list of COMPLIANT items for the specified compliance type.</p>
-     */
     inline ComplianceSummaryItem& WithCompliantSummary(const CompliantSummary& value) { SetCompliantSummary(value); return *this;}
-
-    /**
-     * <p>A list of COMPLIANT items for the specified compliance type.</p>
-     */
     inline ComplianceSummaryItem& WithCompliantSummary(CompliantSummary&& value) { SetCompliantSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
      */
     inline const NonCompliantSummary& GetNonCompliantSummary() const{ return m_nonCompliantSummary; }
-
-    /**
-     * <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
-     */
     inline bool NonCompliantSummaryHasBeenSet() const { return m_nonCompliantSummaryHasBeenSet; }
-
-    /**
-     * <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
-     */
     inline void SetNonCompliantSummary(const NonCompliantSummary& value) { m_nonCompliantSummaryHasBeenSet = true; m_nonCompliantSummary = value; }
-
-    /**
-     * <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
-     */
     inline void SetNonCompliantSummary(NonCompliantSummary&& value) { m_nonCompliantSummaryHasBeenSet = true; m_nonCompliantSummary = std::move(value); }
-
-    /**
-     * <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
-     */
     inline ComplianceSummaryItem& WithNonCompliantSummary(const NonCompliantSummary& value) { SetNonCompliantSummary(value); return *this;}
-
-    /**
-     * <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
-     */
     inline ComplianceSummaryItem& WithNonCompliantSummary(NonCompliantSummary&& value) { SetNonCompliantSummary(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_complianceType;

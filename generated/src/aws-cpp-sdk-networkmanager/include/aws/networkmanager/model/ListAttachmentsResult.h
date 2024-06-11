@@ -34,99 +34,42 @@ namespace Model
     AWS_NETWORKMANAGER_API ListAttachmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Describes the list of attachments.</p>
      */
     inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
-
-    /**
-     * <p>Describes the list of attachments.</p>
-     */
     inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachments = value; }
-
-    /**
-     * <p>Describes the list of attachments.</p>
-     */
     inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachments = std::move(value); }
-
-    /**
-     * <p>Describes the list of attachments.</p>
-     */
     inline ListAttachmentsResult& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
-
-    /**
-     * <p>Describes the list of attachments.</p>
-     */
     inline ListAttachmentsResult& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the list of attachments.</p>
-     */
     inline ListAttachmentsResult& AddAttachments(const Attachment& value) { m_attachments.push_back(value); return *this; }
-
-    /**
-     * <p>Describes the list of attachments.</p>
-     */
     inline ListAttachmentsResult& AddAttachments(Attachment&& value) { m_attachments.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline ListAttachmentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline ListAttachmentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline ListAttachmentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAttachmentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAttachmentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAttachmentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Attachment> m_attachments;

@@ -38,112 +38,44 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the resource policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The name of the resource policy.</p>
-     */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the resource policy.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-
-    /**
-     * <p>The name of the resource policy.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-
-    /**
-     * <p>The name of the resource policy.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-
-    /**
-     * <p>The name of the resource policy.</p>
-     */
     inline ResourcePolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The name of the resource policy.</p>
-     */
     inline ResourcePolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the resource policy.</p>
-     */
     inline ResourcePolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of the policy.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
-
-    /**
-     * <p>The details of the policy.</p>
-     */
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
-
-    /**
-     * <p>The details of the policy.</p>
-     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
-
-    /**
-     * <p>The details of the policy.</p>
-     */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
-
-    /**
-     * <p>The details of the policy.</p>
-     */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
-
-    /**
-     * <p>The details of the policy.</p>
-     */
     inline ResourcePolicy& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-
-    /**
-     * <p>The details of the policy.</p>
-     */
     inline ResourcePolicy& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-
-    /**
-     * <p>The details of the policy.</p>
-     */
     inline ResourcePolicy& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Timestamp showing when this policy was last updated, expressed as the number
      * of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
-
-    /**
-     * <p>Timestamp showing when this policy was last updated, expressed as the number
-     * of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-     */
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-
-    /**
-     * <p>Timestamp showing when this policy was last updated, expressed as the number
-     * of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-     */
     inline void SetLastUpdatedTime(long long value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-
-    /**
-     * <p>Timestamp showing when this policy was last updated, expressed as the number
-     * of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-     */
     inline ResourcePolicy& WithLastUpdatedTime(long long value) { SetLastUpdatedTime(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyName;

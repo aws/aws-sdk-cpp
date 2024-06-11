@@ -38,67 +38,29 @@ namespace Model
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sort order for search criteria.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>The sort order for search criteria.</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>The sort order for search criteria.</p>
-     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>The sort order for search criteria.</p>
-     */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>The sort order for search criteria.</p>
-     */
     inline Sort& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>The sort order for search criteria.</p>
-     */
     inline Sort& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sort field for search criteria.</p>
      */
     inline const SortField& GetSortField() const{ return m_sortField; }
-
-    /**
-     * <p>The sort field for search criteria.</p>
-     */
     inline bool SortFieldHasBeenSet() const { return m_sortFieldHasBeenSet; }
-
-    /**
-     * <p>The sort field for search criteria.</p>
-     */
     inline void SetSortField(const SortField& value) { m_sortFieldHasBeenSet = true; m_sortField = value; }
-
-    /**
-     * <p>The sort field for search criteria.</p>
-     */
     inline void SetSortField(SortField&& value) { m_sortFieldHasBeenSet = true; m_sortField = std::move(value); }
-
-    /**
-     * <p>The sort field for search criteria.</p>
-     */
     inline Sort& WithSortField(const SortField& value) { SetSortField(value); return *this;}
-
-    /**
-     * <p>The sort field for search criteria.</p>
-     */
     inline Sort& WithSortField(SortField&& value) { SetSortField(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SortOrder m_sortOrder;

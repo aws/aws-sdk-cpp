@@ -38,67 +38,29 @@ namespace Model
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The revision of the worker configuration.</p>
      */
     inline long long GetRevision() const{ return m_revision; }
-
-    /**
-     * <p>The revision of the worker configuration.</p>
-     */
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-
-    /**
-     * <p>The revision of the worker configuration.</p>
-     */
     inline void SetRevision(long long value) { m_revisionHasBeenSet = true; m_revision = value; }
-
-    /**
-     * <p>The revision of the worker configuration.</p>
-     */
     inline WorkerConfiguration& WithRevision(long long value) { SetRevision(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
      */
     inline const Aws::String& GetWorkerConfigurationArn() const{ return m_workerConfigurationArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-     */
     inline bool WorkerConfigurationArnHasBeenSet() const { return m_workerConfigurationArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-     */
     inline void SetWorkerConfigurationArn(const Aws::String& value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-     */
     inline void SetWorkerConfigurationArn(Aws::String&& value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-     */
     inline void SetWorkerConfigurationArn(const char* value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-     */
     inline WorkerConfiguration& WithWorkerConfigurationArn(const Aws::String& value) { SetWorkerConfigurationArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-     */
     inline WorkerConfiguration& WithWorkerConfigurationArn(Aws::String&& value) { SetWorkerConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-     */
     inline WorkerConfiguration& WithWorkerConfigurationArn(const char* value) { SetWorkerConfigurationArn(value); return *this;}
-
+    ///@}
   private:
 
     long long m_revision;

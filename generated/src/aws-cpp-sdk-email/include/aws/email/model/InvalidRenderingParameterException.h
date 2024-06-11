@@ -41,30 +41,17 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
-
-    
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-
-    
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-
-    
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-
-    
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-
-    
     inline InvalidRenderingParameterException& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-
-    
     inline InvalidRenderingParameterException& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-
-    
     inline InvalidRenderingParameterException& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateName;

@@ -33,53 +33,27 @@ namespace Model
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateRoutingControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The routing control that is created.</p>
      */
     inline const RoutingControl& GetRoutingControl() const{ return m_routingControl; }
-
-    /**
-     * <p>The routing control that is created.</p>
-     */
     inline void SetRoutingControl(const RoutingControl& value) { m_routingControl = value; }
-
-    /**
-     * <p>The routing control that is created.</p>
-     */
     inline void SetRoutingControl(RoutingControl&& value) { m_routingControl = std::move(value); }
-
-    /**
-     * <p>The routing control that is created.</p>
-     */
     inline CreateRoutingControlResult& WithRoutingControl(const RoutingControl& value) { SetRoutingControl(value); return *this;}
-
-    /**
-     * <p>The routing control that is created.</p>
-     */
     inline CreateRoutingControlResult& WithRoutingControl(RoutingControl&& value) { SetRoutingControl(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateRoutingControlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateRoutingControlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateRoutingControlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RoutingControl m_routingControl;

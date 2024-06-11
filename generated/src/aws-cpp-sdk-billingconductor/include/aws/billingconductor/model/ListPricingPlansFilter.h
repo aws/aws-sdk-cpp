@@ -39,60 +39,21 @@ namespace Model
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve
      * information.</p>
      */
     inline const Aws::Vector<Aws::String>& GetArns() const{ return m_arns; }
-
-    /**
-     * <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve
-     * information.</p>
-     */
     inline bool ArnsHasBeenSet() const { return m_arnsHasBeenSet; }
-
-    /**
-     * <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve
-     * information.</p>
-     */
     inline void SetArns(const Aws::Vector<Aws::String>& value) { m_arnsHasBeenSet = true; m_arns = value; }
-
-    /**
-     * <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve
-     * information.</p>
-     */
     inline void SetArns(Aws::Vector<Aws::String>&& value) { m_arnsHasBeenSet = true; m_arns = std::move(value); }
-
-    /**
-     * <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve
-     * information.</p>
-     */
     inline ListPricingPlansFilter& WithArns(const Aws::Vector<Aws::String>& value) { SetArns(value); return *this;}
-
-    /**
-     * <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve
-     * information.</p>
-     */
     inline ListPricingPlansFilter& WithArns(Aws::Vector<Aws::String>&& value) { SetArns(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve
-     * information.</p>
-     */
     inline ListPricingPlansFilter& AddArns(const Aws::String& value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
-
-    /**
-     * <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve
-     * information.</p>
-     */
     inline ListPricingPlansFilter& AddArns(Aws::String&& value) { m_arnsHasBeenSet = true; m_arns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve
-     * information.</p>
-     */
     inline ListPricingPlansFilter& AddArns(const char* value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_arns;

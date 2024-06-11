@@ -38,45 +38,25 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether to enable sample utterance generation or not.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Specifies whether to enable sample utterance generation or not.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to enable sample utterance generation or not.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Specifies whether to enable sample utterance generation or not.</p>
-     */
     inline SampleUtteranceGenerationSpecification& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const BedrockModelSpecification& GetBedrockModelSpecification() const{ return m_bedrockModelSpecification; }
-
-    
     inline bool BedrockModelSpecificationHasBeenSet() const { return m_bedrockModelSpecificationHasBeenSet; }
-
-    
     inline void SetBedrockModelSpecification(const BedrockModelSpecification& value) { m_bedrockModelSpecificationHasBeenSet = true; m_bedrockModelSpecification = value; }
-
-    
     inline void SetBedrockModelSpecification(BedrockModelSpecification&& value) { m_bedrockModelSpecificationHasBeenSet = true; m_bedrockModelSpecification = std::move(value); }
-
-    
     inline SampleUtteranceGenerationSpecification& WithBedrockModelSpecification(const BedrockModelSpecification& value) { SetBedrockModelSpecification(value); return *this;}
-
-    
     inline SampleUtteranceGenerationSpecification& WithBedrockModelSpecification(BedrockModelSpecification&& value) { SetBedrockModelSpecification(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

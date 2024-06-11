@@ -40,45 +40,25 @@ namespace Model
     AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The availability options configured for the domain.</p>
      */
     inline bool GetOptions() const{ return m_options; }
-
-    /**
-     * <p>The availability options configured for the domain.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p>The availability options configured for the domain.</p>
-     */
     inline void SetOptions(bool value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>The availability options configured for the domain.</p>
-     */
     inline AvailabilityOptionsStatus& WithOptions(bool value) { SetOptions(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const OptionStatus& GetStatus() const{ return m_status; }
-
-    
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    
     inline AvailabilityOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-
-    
     inline AvailabilityOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_options;

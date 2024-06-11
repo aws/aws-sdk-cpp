@@ -38,54 +38,34 @@ namespace Model
 
 
 
+    ///@{
     /**
      * <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
      */
     inline Aws::IOStream& GetBody() const { return m_body.GetUnderlyingStream(); }
-
-    /**
-     * <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
-     */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
 
+    ///@}
 
+    ///@{
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
-
-    
     inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
-
-    
     inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
-
-    
     inline GetObjectTorrentResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
-
-    
     inline GetObjectTorrentResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetObjectTorrentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetObjectTorrentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetObjectTorrentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Stream::ResponseStream m_body;

@@ -47,129 +47,49 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the entry.</p>
      */
     inline const Aws::String& GetEntryId() const{ return m_entryId; }
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline bool EntryIdHasBeenSet() const { return m_entryIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline void SetEntryId(const Aws::String& value) { m_entryIdHasBeenSet = true; m_entryId = value; }
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline void SetEntryId(Aws::String&& value) { m_entryIdHasBeenSet = true; m_entryId = std::move(value); }
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline void SetEntryId(const char* value) { m_entryIdHasBeenSet = true; m_entryId.assign(value); }
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline BatchGetAssetPropertyValueEntry& WithEntryId(const Aws::String& value) { SetEntryId(value); return *this;}
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline BatchGetAssetPropertyValueEntry& WithEntryId(Aws::String&& value) { SetEntryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline BatchGetAssetPropertyValueEntry& WithEntryId(const char* value) { SetEntryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the asset in which the asset property was created.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
-
-    /**
-     * <p>The ID of the asset in which the asset property was created.</p>
-     */
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the asset in which the asset property was created.</p>
-     */
     inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-
-    /**
-     * <p>The ID of the asset in which the asset property was created.</p>
-     */
     inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-
-    /**
-     * <p>The ID of the asset in which the asset property was created.</p>
-     */
     inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-
-    /**
-     * <p>The ID of the asset in which the asset property was created.</p>
-     */
     inline BatchGetAssetPropertyValueEntry& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-
-    /**
-     * <p>The ID of the asset in which the asset property was created.</p>
-     */
     inline BatchGetAssetPropertyValueEntry& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the asset in which the asset property was created.</p>
-     */
     inline BatchGetAssetPropertyValueEntry& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the asset property, in UUID format.</p>
      */
     inline const Aws::String& GetPropertyId() const{ return m_propertyId; }
-
-    /**
-     * <p>The ID of the asset property, in UUID format.</p>
-     */
     inline bool PropertyIdHasBeenSet() const { return m_propertyIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the asset property, in UUID format.</p>
-     */
     inline void SetPropertyId(const Aws::String& value) { m_propertyIdHasBeenSet = true; m_propertyId = value; }
-
-    /**
-     * <p>The ID of the asset property, in UUID format.</p>
-     */
     inline void SetPropertyId(Aws::String&& value) { m_propertyIdHasBeenSet = true; m_propertyId = std::move(value); }
-
-    /**
-     * <p>The ID of the asset property, in UUID format.</p>
-     */
     inline void SetPropertyId(const char* value) { m_propertyIdHasBeenSet = true; m_propertyId.assign(value); }
-
-    /**
-     * <p>The ID of the asset property, in UUID format.</p>
-     */
     inline BatchGetAssetPropertyValueEntry& WithPropertyId(const Aws::String& value) { SetPropertyId(value); return *this;}
-
-    /**
-     * <p>The ID of the asset property, in UUID format.</p>
-     */
     inline BatchGetAssetPropertyValueEntry& WithPropertyId(Aws::String&& value) { SetPropertyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the asset property, in UUID format.</p>
-     */
     inline BatchGetAssetPropertyValueEntry& WithPropertyId(const char* value) { SetPropertyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The alias that identifies the property, such as an OPC-UA server data stream
      * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
@@ -179,77 +99,14 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetPropertyAlias() const{ return m_propertyAlias; }
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline bool PropertyAliasHasBeenSet() const { return m_propertyAliasHasBeenSet; }
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline void SetPropertyAlias(const Aws::String& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = value; }
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline void SetPropertyAlias(Aws::String&& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = std::move(value); }
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline void SetPropertyAlias(const char* value) { m_propertyAliasHasBeenSet = true; m_propertyAlias.assign(value); }
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline BatchGetAssetPropertyValueEntry& WithPropertyAlias(const Aws::String& value) { SetPropertyAlias(value); return *this;}
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline BatchGetAssetPropertyValueEntry& WithPropertyAlias(Aws::String&& value) { SetPropertyAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline BatchGetAssetPropertyValueEntry& WithPropertyAlias(const char* value) { SetPropertyAlias(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_entryId;

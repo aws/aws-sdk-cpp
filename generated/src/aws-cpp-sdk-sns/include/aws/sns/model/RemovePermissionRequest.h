@@ -39,87 +39,33 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
-
-    /**
-     * <p>The ARN of the topic whose access control policy you wish to modify.</p>
-     */
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the topic whose access control policy you wish to modify.</p>
-     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-
-    /**
-     * <p>The ARN of the topic whose access control policy you wish to modify.</p>
-     */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the topic whose access control policy you wish to modify.</p>
-     */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-
-    /**
-     * <p>The ARN of the topic whose access control policy you wish to modify.</p>
-     */
     inline RemovePermissionRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the topic whose access control policy you wish to modify.</p>
-     */
     inline RemovePermissionRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the topic whose access control policy you wish to modify.</p>
-     */
     inline RemovePermissionRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique label of the statement you want to remove.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
-
-    /**
-     * <p>The unique label of the statement you want to remove.</p>
-     */
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-
-    /**
-     * <p>The unique label of the statement you want to remove.</p>
-     */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-
-    /**
-     * <p>The unique label of the statement you want to remove.</p>
-     */
     inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-
-    /**
-     * <p>The unique label of the statement you want to remove.</p>
-     */
     inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-
-    /**
-     * <p>The unique label of the statement you want to remove.</p>
-     */
     inline RemovePermissionRequest& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-
-    /**
-     * <p>The unique label of the statement you want to remove.</p>
-     */
     inline RemovePermissionRequest& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique label of the statement you want to remove.</p>
-     */
     inline RemovePermissionRequest& WithLabel(const char* value) { SetLabel(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topicArn;

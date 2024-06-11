@@ -42,190 +42,70 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Parameters to derive session key for an Amex payment card for ARQC
      * verification.</p>
      */
     inline const SessionKeyAmex& GetAmex() const{ return m_amex; }
-
-    /**
-     * <p>Parameters to derive session key for an Amex payment card for ARQC
-     * verification.</p>
-     */
     inline bool AmexHasBeenSet() const { return m_amexHasBeenSet; }
-
-    /**
-     * <p>Parameters to derive session key for an Amex payment card for ARQC
-     * verification.</p>
-     */
     inline void SetAmex(const SessionKeyAmex& value) { m_amexHasBeenSet = true; m_amex = value; }
-
-    /**
-     * <p>Parameters to derive session key for an Amex payment card for ARQC
-     * verification.</p>
-     */
     inline void SetAmex(SessionKeyAmex&& value) { m_amexHasBeenSet = true; m_amex = std::move(value); }
-
-    /**
-     * <p>Parameters to derive session key for an Amex payment card for ARQC
-     * verification.</p>
-     */
     inline SessionKeyDerivation& WithAmex(const SessionKeyAmex& value) { SetAmex(value); return *this;}
-
-    /**
-     * <p>Parameters to derive session key for an Amex payment card for ARQC
-     * verification.</p>
-     */
     inline SessionKeyDerivation& WithAmex(SessionKeyAmex&& value) { SetAmex(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Parameters to derive session key for an Emv2000 payment card for ARQC
      * verification.</p>
      */
     inline const SessionKeyEmv2000& GetEmv2000() const{ return m_emv2000; }
-
-    /**
-     * <p>Parameters to derive session key for an Emv2000 payment card for ARQC
-     * verification.</p>
-     */
     inline bool Emv2000HasBeenSet() const { return m_emv2000HasBeenSet; }
-
-    /**
-     * <p>Parameters to derive session key for an Emv2000 payment card for ARQC
-     * verification.</p>
-     */
     inline void SetEmv2000(const SessionKeyEmv2000& value) { m_emv2000HasBeenSet = true; m_emv2000 = value; }
-
-    /**
-     * <p>Parameters to derive session key for an Emv2000 payment card for ARQC
-     * verification.</p>
-     */
     inline void SetEmv2000(SessionKeyEmv2000&& value) { m_emv2000HasBeenSet = true; m_emv2000 = std::move(value); }
-
-    /**
-     * <p>Parameters to derive session key for an Emv2000 payment card for ARQC
-     * verification.</p>
-     */
     inline SessionKeyDerivation& WithEmv2000(const SessionKeyEmv2000& value) { SetEmv2000(value); return *this;}
-
-    /**
-     * <p>Parameters to derive session key for an Emv2000 payment card for ARQC
-     * verification.</p>
-     */
     inline SessionKeyDerivation& WithEmv2000(SessionKeyEmv2000&& value) { SetEmv2000(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Parameters to derive session key for an Emv common payment card for ARQC
      * verification.</p>
      */
     inline const SessionKeyEmvCommon& GetEmvCommon() const{ return m_emvCommon; }
-
-    /**
-     * <p>Parameters to derive session key for an Emv common payment card for ARQC
-     * verification.</p>
-     */
     inline bool EmvCommonHasBeenSet() const { return m_emvCommonHasBeenSet; }
-
-    /**
-     * <p>Parameters to derive session key for an Emv common payment card for ARQC
-     * verification.</p>
-     */
     inline void SetEmvCommon(const SessionKeyEmvCommon& value) { m_emvCommonHasBeenSet = true; m_emvCommon = value; }
-
-    /**
-     * <p>Parameters to derive session key for an Emv common payment card for ARQC
-     * verification.</p>
-     */
     inline void SetEmvCommon(SessionKeyEmvCommon&& value) { m_emvCommonHasBeenSet = true; m_emvCommon = std::move(value); }
-
-    /**
-     * <p>Parameters to derive session key for an Emv common payment card for ARQC
-     * verification.</p>
-     */
     inline SessionKeyDerivation& WithEmvCommon(const SessionKeyEmvCommon& value) { SetEmvCommon(value); return *this;}
-
-    /**
-     * <p>Parameters to derive session key for an Emv common payment card for ARQC
-     * verification.</p>
-     */
     inline SessionKeyDerivation& WithEmvCommon(SessionKeyEmvCommon&& value) { SetEmvCommon(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Parameters to derive session key for a Mastercard payment card for ARQC
      * verification.</p>
      */
     inline const SessionKeyMastercard& GetMastercard() const{ return m_mastercard; }
-
-    /**
-     * <p>Parameters to derive session key for a Mastercard payment card for ARQC
-     * verification.</p>
-     */
     inline bool MastercardHasBeenSet() const { return m_mastercardHasBeenSet; }
-
-    /**
-     * <p>Parameters to derive session key for a Mastercard payment card for ARQC
-     * verification.</p>
-     */
     inline void SetMastercard(const SessionKeyMastercard& value) { m_mastercardHasBeenSet = true; m_mastercard = value; }
-
-    /**
-     * <p>Parameters to derive session key for a Mastercard payment card for ARQC
-     * verification.</p>
-     */
     inline void SetMastercard(SessionKeyMastercard&& value) { m_mastercardHasBeenSet = true; m_mastercard = std::move(value); }
-
-    /**
-     * <p>Parameters to derive session key for a Mastercard payment card for ARQC
-     * verification.</p>
-     */
     inline SessionKeyDerivation& WithMastercard(const SessionKeyMastercard& value) { SetMastercard(value); return *this;}
-
-    /**
-     * <p>Parameters to derive session key for a Mastercard payment card for ARQC
-     * verification.</p>
-     */
     inline SessionKeyDerivation& WithMastercard(SessionKeyMastercard&& value) { SetMastercard(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Parameters to derive session key for a Visa payment cardfor ARQC
      * verification.</p>
      */
     inline const SessionKeyVisa& GetVisa() const{ return m_visa; }
-
-    /**
-     * <p>Parameters to derive session key for a Visa payment cardfor ARQC
-     * verification.</p>
-     */
     inline bool VisaHasBeenSet() const { return m_visaHasBeenSet; }
-
-    /**
-     * <p>Parameters to derive session key for a Visa payment cardfor ARQC
-     * verification.</p>
-     */
     inline void SetVisa(const SessionKeyVisa& value) { m_visaHasBeenSet = true; m_visa = value; }
-
-    /**
-     * <p>Parameters to derive session key for a Visa payment cardfor ARQC
-     * verification.</p>
-     */
     inline void SetVisa(SessionKeyVisa&& value) { m_visaHasBeenSet = true; m_visa = std::move(value); }
-
-    /**
-     * <p>Parameters to derive session key for a Visa payment cardfor ARQC
-     * verification.</p>
-     */
     inline SessionKeyDerivation& WithVisa(const SessionKeyVisa& value) { SetVisa(value); return *this;}
-
-    /**
-     * <p>Parameters to derive session key for a Visa payment cardfor ARQC
-     * verification.</p>
-     */
     inline SessionKeyDerivation& WithVisa(SessionKeyVisa&& value) { SetVisa(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SessionKeyAmex m_amex;

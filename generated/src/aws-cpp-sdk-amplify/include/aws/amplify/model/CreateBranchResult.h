@@ -39,58 +39,28 @@ namespace Model
     AWS_AMPLIFY_API CreateBranchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Describes the branch for an Amplify app, which maps to a third-party
      * repository branch. </p>
      */
     inline const Branch& GetBranch() const{ return m_branch; }
-
-    /**
-     * <p> Describes the branch for an Amplify app, which maps to a third-party
-     * repository branch. </p>
-     */
     inline void SetBranch(const Branch& value) { m_branch = value; }
-
-    /**
-     * <p> Describes the branch for an Amplify app, which maps to a third-party
-     * repository branch. </p>
-     */
     inline void SetBranch(Branch&& value) { m_branch = std::move(value); }
-
-    /**
-     * <p> Describes the branch for an Amplify app, which maps to a third-party
-     * repository branch. </p>
-     */
     inline CreateBranchResult& WithBranch(const Branch& value) { SetBranch(value); return *this;}
-
-    /**
-     * <p> Describes the branch for an Amplify app, which maps to a third-party
-     * repository branch. </p>
-     */
     inline CreateBranchResult& WithBranch(Branch&& value) { SetBranch(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateBranchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateBranchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateBranchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Branch m_branch;

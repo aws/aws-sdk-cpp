@@ -41,99 +41,42 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API ListVpcEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about each endpoint.</p>
      */
     inline const Aws::Vector<VpcEndpointSummary>& GetVpcEndpointSummaryList() const{ return m_vpcEndpointSummaryList; }
-
-    /**
-     * <p>Information about each endpoint.</p>
-     */
     inline void SetVpcEndpointSummaryList(const Aws::Vector<VpcEndpointSummary>& value) { m_vpcEndpointSummaryList = value; }
-
-    /**
-     * <p>Information about each endpoint.</p>
-     */
     inline void SetVpcEndpointSummaryList(Aws::Vector<VpcEndpointSummary>&& value) { m_vpcEndpointSummaryList = std::move(value); }
-
-    /**
-     * <p>Information about each endpoint.</p>
-     */
     inline ListVpcEndpointsResult& WithVpcEndpointSummaryList(const Aws::Vector<VpcEndpointSummary>& value) { SetVpcEndpointSummaryList(value); return *this;}
-
-    /**
-     * <p>Information about each endpoint.</p>
-     */
     inline ListVpcEndpointsResult& WithVpcEndpointSummaryList(Aws::Vector<VpcEndpointSummary>&& value) { SetVpcEndpointSummaryList(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about each endpoint.</p>
-     */
     inline ListVpcEndpointsResult& AddVpcEndpointSummaryList(const VpcEndpointSummary& value) { m_vpcEndpointSummaryList.push_back(value); return *this; }
-
-    /**
-     * <p>Information about each endpoint.</p>
-     */
     inline ListVpcEndpointsResult& AddVpcEndpointSummaryList(VpcEndpointSummary&& value) { m_vpcEndpointSummaryList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline ListVpcEndpointsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline ListVpcEndpointsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline ListVpcEndpointsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListVpcEndpointsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListVpcEndpointsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListVpcEndpointsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<VpcEndpointSummary> m_vpcEndpointSummaryList;

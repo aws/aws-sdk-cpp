@@ -37,55 +37,27 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Maximum Content Light Level. Static HDR metadata that corresponds to the
      * brightest pixel in the entire stream. Measured in nits.
      */
     inline int GetMaxCll() const{ return m_maxCll; }
-
-    /**
-     * Maximum Content Light Level. Static HDR metadata that corresponds to the
-     * brightest pixel in the entire stream. Measured in nits.
-     */
     inline bool MaxCllHasBeenSet() const { return m_maxCllHasBeenSet; }
-
-    /**
-     * Maximum Content Light Level. Static HDR metadata that corresponds to the
-     * brightest pixel in the entire stream. Measured in nits.
-     */
     inline void SetMaxCll(int value) { m_maxCllHasBeenSet = true; m_maxCll = value; }
-
-    /**
-     * Maximum Content Light Level. Static HDR metadata that corresponds to the
-     * brightest pixel in the entire stream. Measured in nits.
-     */
     inline DolbyVisionLevel6Metadata& WithMaxCll(int value) { SetMaxCll(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the
      * highest frame-average brightness in the entire stream. Measured in nits.
      */
     inline int GetMaxFall() const{ return m_maxFall; }
-
-    /**
-     * Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the
-     * highest frame-average brightness in the entire stream. Measured in nits.
-     */
     inline bool MaxFallHasBeenSet() const { return m_maxFallHasBeenSet; }
-
-    /**
-     * Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the
-     * highest frame-average brightness in the entire stream. Measured in nits.
-     */
     inline void SetMaxFall(int value) { m_maxFallHasBeenSet = true; m_maxFall = value; }
-
-    /**
-     * Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the
-     * highest frame-average brightness in the entire stream. Measured in nits.
-     */
     inline DolbyVisionLevel6Metadata& WithMaxFall(int value) { SetMaxFall(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxCll;

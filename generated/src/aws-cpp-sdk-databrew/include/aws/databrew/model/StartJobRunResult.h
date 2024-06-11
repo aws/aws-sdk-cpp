@@ -32,63 +32,29 @@ namespace Model
     AWS_GLUEDATABREW_API StartJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A system-generated identifier for this particular job run.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
-
-    /**
-     * <p>A system-generated identifier for this particular job run.</p>
-     */
     inline void SetRunId(const Aws::String& value) { m_runId = value; }
-
-    /**
-     * <p>A system-generated identifier for this particular job run.</p>
-     */
     inline void SetRunId(Aws::String&& value) { m_runId = std::move(value); }
-
-    /**
-     * <p>A system-generated identifier for this particular job run.</p>
-     */
     inline void SetRunId(const char* value) { m_runId.assign(value); }
-
-    /**
-     * <p>A system-generated identifier for this particular job run.</p>
-     */
     inline StartJobRunResult& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-
-    /**
-     * <p>A system-generated identifier for this particular job run.</p>
-     */
     inline StartJobRunResult& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>A system-generated identifier for this particular job run.</p>
-     */
     inline StartJobRunResult& WithRunId(const char* value) { SetRunId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartJobRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartJobRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartJobRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_runId;

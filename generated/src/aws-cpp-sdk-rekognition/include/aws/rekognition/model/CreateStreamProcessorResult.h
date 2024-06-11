@@ -32,63 +32,29 @@ namespace Model
     AWS_REKOGNITION_API CreateStreamProcessorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Amazon Resource Number for the newly created stream processor.</p>
      */
     inline const Aws::String& GetStreamProcessorArn() const{ return m_streamProcessorArn; }
-
-    /**
-     * <p>Amazon Resource Number for the newly created stream processor.</p>
-     */
     inline void SetStreamProcessorArn(const Aws::String& value) { m_streamProcessorArn = value; }
-
-    /**
-     * <p>Amazon Resource Number for the newly created stream processor.</p>
-     */
     inline void SetStreamProcessorArn(Aws::String&& value) { m_streamProcessorArn = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Number for the newly created stream processor.</p>
-     */
     inline void SetStreamProcessorArn(const char* value) { m_streamProcessorArn.assign(value); }
-
-    /**
-     * <p>Amazon Resource Number for the newly created stream processor.</p>
-     */
     inline CreateStreamProcessorResult& WithStreamProcessorArn(const Aws::String& value) { SetStreamProcessorArn(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Number for the newly created stream processor.</p>
-     */
     inline CreateStreamProcessorResult& WithStreamProcessorArn(Aws::String&& value) { SetStreamProcessorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Number for the newly created stream processor.</p>
-     */
     inline CreateStreamProcessorResult& WithStreamProcessorArn(const char* value) { SetStreamProcessorArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateStreamProcessorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateStreamProcessorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateStreamProcessorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamProcessorArn;

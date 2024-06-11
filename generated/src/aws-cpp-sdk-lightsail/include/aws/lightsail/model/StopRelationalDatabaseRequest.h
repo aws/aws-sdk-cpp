@@ -34,95 +34,34 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of your database to stop.</p>
      */
     inline const Aws::String& GetRelationalDatabaseName() const{ return m_relationalDatabaseName; }
-
-    /**
-     * <p>The name of your database to stop.</p>
-     */
     inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
-
-    /**
-     * <p>The name of your database to stop.</p>
-     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
-
-    /**
-     * <p>The name of your database to stop.</p>
-     */
     inline void SetRelationalDatabaseName(Aws::String&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::move(value); }
-
-    /**
-     * <p>The name of your database to stop.</p>
-     */
     inline void SetRelationalDatabaseName(const char* value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName.assign(value); }
-
-    /**
-     * <p>The name of your database to stop.</p>
-     */
     inline StopRelationalDatabaseRequest& WithRelationalDatabaseName(const Aws::String& value) { SetRelationalDatabaseName(value); return *this;}
-
-    /**
-     * <p>The name of your database to stop.</p>
-     */
     inline StopRelationalDatabaseRequest& WithRelationalDatabaseName(Aws::String&& value) { SetRelationalDatabaseName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of your database to stop.</p>
-     */
     inline StopRelationalDatabaseRequest& WithRelationalDatabaseName(const char* value) { SetRelationalDatabaseName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of your new database snapshot to be created before stopping your
      * database.</p>
      */
     inline const Aws::String& GetRelationalDatabaseSnapshotName() const{ return m_relationalDatabaseSnapshotName; }
-
-    /**
-     * <p>The name of your new database snapshot to be created before stopping your
-     * database.</p>
-     */
     inline bool RelationalDatabaseSnapshotNameHasBeenSet() const { return m_relationalDatabaseSnapshotNameHasBeenSet; }
-
-    /**
-     * <p>The name of your new database snapshot to be created before stopping your
-     * database.</p>
-     */
     inline void SetRelationalDatabaseSnapshotName(const Aws::String& value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName = value; }
-
-    /**
-     * <p>The name of your new database snapshot to be created before stopping your
-     * database.</p>
-     */
     inline void SetRelationalDatabaseSnapshotName(Aws::String&& value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName = std::move(value); }
-
-    /**
-     * <p>The name of your new database snapshot to be created before stopping your
-     * database.</p>
-     */
     inline void SetRelationalDatabaseSnapshotName(const char* value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName.assign(value); }
-
-    /**
-     * <p>The name of your new database snapshot to be created before stopping your
-     * database.</p>
-     */
     inline StopRelationalDatabaseRequest& WithRelationalDatabaseSnapshotName(const Aws::String& value) { SetRelationalDatabaseSnapshotName(value); return *this;}
-
-    /**
-     * <p>The name of your new database snapshot to be created before stopping your
-     * database.</p>
-     */
     inline StopRelationalDatabaseRequest& WithRelationalDatabaseSnapshotName(Aws::String&& value) { SetRelationalDatabaseSnapshotName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of your new database snapshot to be created before stopping your
-     * database.</p>
-     */
     inline StopRelationalDatabaseRequest& WithRelationalDatabaseSnapshotName(const char* value) { SetRelationalDatabaseSnapshotName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_relationalDatabaseName;

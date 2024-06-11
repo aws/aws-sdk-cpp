@@ -39,77 +39,31 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the conformance pack name.</p>
      */
     inline const Aws::String& GetConformancePackName() const{ return m_conformancePackName; }
-
-    /**
-     * <p>The name of the conformance pack name.</p>
-     */
     inline bool ConformancePackNameHasBeenSet() const { return m_conformancePackNameHasBeenSet; }
-
-    /**
-     * <p>The name of the conformance pack name.</p>
-     */
     inline void SetConformancePackName(const Aws::String& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = value; }
-
-    /**
-     * <p>The name of the conformance pack name.</p>
-     */
     inline void SetConformancePackName(Aws::String&& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = std::move(value); }
-
-    /**
-     * <p>The name of the conformance pack name.</p>
-     */
     inline void SetConformancePackName(const char* value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName.assign(value); }
-
-    /**
-     * <p>The name of the conformance pack name.</p>
-     */
     inline ConformancePackComplianceSummary& WithConformancePackName(const Aws::String& value) { SetConformancePackName(value); return *this;}
-
-    /**
-     * <p>The name of the conformance pack name.</p>
-     */
     inline ConformancePackComplianceSummary& WithConformancePackName(Aws::String&& value) { SetConformancePackName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the conformance pack name.</p>
-     */
     inline ConformancePackComplianceSummary& WithConformancePackName(const char* value) { SetConformancePackName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the conformance pack.</p>
      */
     inline const ConformancePackComplianceType& GetConformancePackComplianceStatus() const{ return m_conformancePackComplianceStatus; }
-
-    /**
-     * <p>The status of the conformance pack.</p>
-     */
     inline bool ConformancePackComplianceStatusHasBeenSet() const { return m_conformancePackComplianceStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the conformance pack.</p>
-     */
     inline void SetConformancePackComplianceStatus(const ConformancePackComplianceType& value) { m_conformancePackComplianceStatusHasBeenSet = true; m_conformancePackComplianceStatus = value; }
-
-    /**
-     * <p>The status of the conformance pack.</p>
-     */
     inline void SetConformancePackComplianceStatus(ConformancePackComplianceType&& value) { m_conformancePackComplianceStatusHasBeenSet = true; m_conformancePackComplianceStatus = std::move(value); }
-
-    /**
-     * <p>The status of the conformance pack.</p>
-     */
     inline ConformancePackComplianceSummary& WithConformancePackComplianceStatus(const ConformancePackComplianceType& value) { SetConformancePackComplianceStatus(value); return *this;}
-
-    /**
-     * <p>The status of the conformance pack.</p>
-     */
     inline ConformancePackComplianceSummary& WithConformancePackComplianceStatus(ConformancePackComplianceType&& value) { SetConformancePackComplianceStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_conformancePackName;

@@ -33,102 +33,42 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The thing group to update.</p>
      */
     inline const Aws::String& GetThingGroupName() const{ return m_thingGroupName; }
-
-    /**
-     * <p>The thing group to update.</p>
-     */
     inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The thing group to update.</p>
-     */
     inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
-
-    /**
-     * <p>The thing group to update.</p>
-     */
     inline void SetThingGroupName(Aws::String&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::move(value); }
-
-    /**
-     * <p>The thing group to update.</p>
-     */
     inline void SetThingGroupName(const char* value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName.assign(value); }
-
-    /**
-     * <p>The thing group to update.</p>
-     */
     inline UpdateThingGroupRequest& WithThingGroupName(const Aws::String& value) { SetThingGroupName(value); return *this;}
-
-    /**
-     * <p>The thing group to update.</p>
-     */
     inline UpdateThingGroupRequest& WithThingGroupName(Aws::String&& value) { SetThingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The thing group to update.</p>
-     */
     inline UpdateThingGroupRequest& WithThingGroupName(const char* value) { SetThingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The thing group properties.</p>
      */
     inline const ThingGroupProperties& GetThingGroupProperties() const{ return m_thingGroupProperties; }
-
-    /**
-     * <p>The thing group properties.</p>
-     */
     inline bool ThingGroupPropertiesHasBeenSet() const { return m_thingGroupPropertiesHasBeenSet; }
-
-    /**
-     * <p>The thing group properties.</p>
-     */
     inline void SetThingGroupProperties(const ThingGroupProperties& value) { m_thingGroupPropertiesHasBeenSet = true; m_thingGroupProperties = value; }
-
-    /**
-     * <p>The thing group properties.</p>
-     */
     inline void SetThingGroupProperties(ThingGroupProperties&& value) { m_thingGroupPropertiesHasBeenSet = true; m_thingGroupProperties = std::move(value); }
-
-    /**
-     * <p>The thing group properties.</p>
-     */
     inline UpdateThingGroupRequest& WithThingGroupProperties(const ThingGroupProperties& value) { SetThingGroupProperties(value); return *this;}
-
-    /**
-     * <p>The thing group properties.</p>
-     */
     inline UpdateThingGroupRequest& WithThingGroupProperties(ThingGroupProperties&& value) { SetThingGroupProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The expected version of the thing group. If this does not match the version
      * of the thing group being updated, the update will fail.</p>
      */
     inline long long GetExpectedVersion() const{ return m_expectedVersion; }
-
-    /**
-     * <p>The expected version of the thing group. If this does not match the version
-     * of the thing group being updated, the update will fail.</p>
-     */
     inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
-
-    /**
-     * <p>The expected version of the thing group. If this does not match the version
-     * of the thing group being updated, the update will fail.</p>
-     */
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
-
-    /**
-     * <p>The expected version of the thing group. If this does not match the version
-     * of the thing group being updated, the update will fail.</p>
-     */
     inline UpdateThingGroupRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_thingGroupName;

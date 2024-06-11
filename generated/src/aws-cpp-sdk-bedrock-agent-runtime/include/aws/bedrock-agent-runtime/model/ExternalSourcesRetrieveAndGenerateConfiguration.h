@@ -41,140 +41,48 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The prompt used with the external source wrapper object with the
      * retrieveAndGenerate function.</p>
      */
     inline const ExternalSourcesGenerationConfiguration& GetGenerationConfiguration() const{ return m_generationConfiguration; }
-
-    /**
-     * <p>The prompt used with the external source wrapper object with the
-     * retrieveAndGenerate function.</p>
-     */
     inline bool GenerationConfigurationHasBeenSet() const { return m_generationConfigurationHasBeenSet; }
-
-    /**
-     * <p>The prompt used with the external source wrapper object with the
-     * retrieveAndGenerate function.</p>
-     */
     inline void SetGenerationConfiguration(const ExternalSourcesGenerationConfiguration& value) { m_generationConfigurationHasBeenSet = true; m_generationConfiguration = value; }
-
-    /**
-     * <p>The prompt used with the external source wrapper object with the
-     * retrieveAndGenerate function.</p>
-     */
     inline void SetGenerationConfiguration(ExternalSourcesGenerationConfiguration&& value) { m_generationConfigurationHasBeenSet = true; m_generationConfiguration = std::move(value); }
-
-    /**
-     * <p>The prompt used with the external source wrapper object with the
-     * retrieveAndGenerate function.</p>
-     */
     inline ExternalSourcesRetrieveAndGenerateConfiguration& WithGenerationConfiguration(const ExternalSourcesGenerationConfiguration& value) { SetGenerationConfiguration(value); return *this;}
-
-    /**
-     * <p>The prompt used with the external source wrapper object with the
-     * retrieveAndGenerate function.</p>
-     */
     inline ExternalSourcesRetrieveAndGenerateConfiguration& WithGenerationConfiguration(ExternalSourcesGenerationConfiguration&& value) { SetGenerationConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The modelArn used with the external source wrapper object in the
      * retrieveAndGenerate function.</p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
-
-    /**
-     * <p>The modelArn used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-
-    /**
-     * <p>The modelArn used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-
-    /**
-     * <p>The modelArn used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-
-    /**
-     * <p>The modelArn used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-
-    /**
-     * <p>The modelArn used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline ExternalSourcesRetrieveAndGenerateConfiguration& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-
-    /**
-     * <p>The modelArn used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline ExternalSourcesRetrieveAndGenerateConfiguration& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The modelArn used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline ExternalSourcesRetrieveAndGenerateConfiguration& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The document used with the external source wrapper object in the
      * retrieveAndGenerate function.</p>
      */
     inline const Aws::Vector<ExternalSource>& GetSources() const{ return m_sources; }
-
-    /**
-     * <p>The document used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-
-    /**
-     * <p>The document used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline void SetSources(const Aws::Vector<ExternalSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-
-    /**
-     * <p>The document used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline void SetSources(Aws::Vector<ExternalSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-
-    /**
-     * <p>The document used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline ExternalSourcesRetrieveAndGenerateConfiguration& WithSources(const Aws::Vector<ExternalSource>& value) { SetSources(value); return *this;}
-
-    /**
-     * <p>The document used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline ExternalSourcesRetrieveAndGenerateConfiguration& WithSources(Aws::Vector<ExternalSource>&& value) { SetSources(std::move(value)); return *this;}
-
-    /**
-     * <p>The document used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline ExternalSourcesRetrieveAndGenerateConfiguration& AddSources(const ExternalSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-
-    /**
-     * <p>The document used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
-     */
     inline ExternalSourcesRetrieveAndGenerateConfiguration& AddSources(ExternalSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     ExternalSourcesGenerationConfiguration m_generationConfiguration;

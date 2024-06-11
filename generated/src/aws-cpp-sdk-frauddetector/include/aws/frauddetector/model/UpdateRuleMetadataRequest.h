@@ -35,77 +35,31 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The rule to update.</p>
      */
     inline const Rule& GetRule() const{ return m_rule; }
-
-    /**
-     * <p>The rule to update.</p>
-     */
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
-
-    /**
-     * <p>The rule to update.</p>
-     */
     inline void SetRule(const Rule& value) { m_ruleHasBeenSet = true; m_rule = value; }
-
-    /**
-     * <p>The rule to update.</p>
-     */
     inline void SetRule(Rule&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
-
-    /**
-     * <p>The rule to update.</p>
-     */
     inline UpdateRuleMetadataRequest& WithRule(const Rule& value) { SetRule(value); return *this;}
-
-    /**
-     * <p>The rule to update.</p>
-     */
     inline UpdateRuleMetadataRequest& WithRule(Rule&& value) { SetRule(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rule description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The rule description.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The rule description.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The rule description.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The rule description.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The rule description.</p>
-     */
     inline UpdateRuleMetadataRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The rule description.</p>
-     */
     inline UpdateRuleMetadataRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The rule description.</p>
-     */
     inline UpdateRuleMetadataRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     Rule m_rule;

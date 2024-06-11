@@ -34,54 +34,20 @@ namespace Model
     AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the organization for which the email monitoring configuration is
      * described.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
-
-    /**
-     * <p>The ID of the organization for which the email monitoring configuration is
-     * described.</p>
-     */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the organization for which the email monitoring configuration is
-     * described.</p>
-     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-
-    /**
-     * <p>The ID of the organization for which the email monitoring configuration is
-     * described.</p>
-     */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-
-    /**
-     * <p>The ID of the organization for which the email monitoring configuration is
-     * described.</p>
-     */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-
-    /**
-     * <p>The ID of the organization for which the email monitoring configuration is
-     * described.</p>
-     */
     inline DescribeEmailMonitoringConfigurationRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-
-    /**
-     * <p>The ID of the organization for which the email monitoring configuration is
-     * described.</p>
-     */
     inline DescribeEmailMonitoringConfigurationRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the organization for which the email monitoring configuration is
-     * described.</p>
-     */
     inline DescribeEmailMonitoringConfigurationRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_organizationId;

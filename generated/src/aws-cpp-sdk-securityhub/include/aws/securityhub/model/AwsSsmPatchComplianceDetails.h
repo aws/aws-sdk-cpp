@@ -39,36 +39,17 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the status of a patch.</p>
      */
     inline const AwsSsmPatch& GetPatch() const{ return m_patch; }
-
-    /**
-     * <p>Information about the status of a patch.</p>
-     */
     inline bool PatchHasBeenSet() const { return m_patchHasBeenSet; }
-
-    /**
-     * <p>Information about the status of a patch.</p>
-     */
     inline void SetPatch(const AwsSsmPatch& value) { m_patchHasBeenSet = true; m_patch = value; }
-
-    /**
-     * <p>Information about the status of a patch.</p>
-     */
     inline void SetPatch(AwsSsmPatch&& value) { m_patchHasBeenSet = true; m_patch = std::move(value); }
-
-    /**
-     * <p>Information about the status of a patch.</p>
-     */
     inline AwsSsmPatchComplianceDetails& WithPatch(const AwsSsmPatch& value) { SetPatch(value); return *this;}
-
-    /**
-     * <p>Information about the status of a patch.</p>
-     */
     inline AwsSsmPatchComplianceDetails& WithPatch(AwsSsmPatch&& value) { SetPatch(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsSsmPatch m_patch;

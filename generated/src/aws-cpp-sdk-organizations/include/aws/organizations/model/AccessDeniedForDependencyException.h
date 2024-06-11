@@ -42,49 +42,27 @@ namespace Model
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline AccessDeniedForDependencyException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline AccessDeniedForDependencyException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline AccessDeniedForDependencyException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const AccessDeniedForDependencyExceptionReason& GetReason() const{ return m_reason; }
-
-    
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    
     inline void SetReason(const AccessDeniedForDependencyExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    
     inline void SetReason(AccessDeniedForDependencyExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    
     inline AccessDeniedForDependencyException& WithReason(const AccessDeniedForDependencyExceptionReason& value) { SetReason(value); return *this;}
-
-    
     inline AccessDeniedForDependencyException& WithReason(AccessDeniedForDependencyExceptionReason&& value) { SetReason(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

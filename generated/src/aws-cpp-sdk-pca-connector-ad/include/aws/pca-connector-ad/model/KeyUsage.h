@@ -38,63 +38,28 @@ namespace Model
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Sets the key usage extension to critical.</p>
      */
     inline bool GetCritical() const{ return m_critical; }
-
-    /**
-     * <p>Sets the key usage extension to critical.</p>
-     */
     inline bool CriticalHasBeenSet() const { return m_criticalHasBeenSet; }
-
-    /**
-     * <p>Sets the key usage extension to critical.</p>
-     */
     inline void SetCritical(bool value) { m_criticalHasBeenSet = true; m_critical = value; }
-
-    /**
-     * <p>Sets the key usage extension to critical.</p>
-     */
     inline KeyUsage& WithCritical(bool value) { SetCritical(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key usage flags represent the purpose (e.g., encipherment, signature) of
      * the key contained in the certificate.</p>
      */
     inline const KeyUsageFlags& GetUsageFlags() const{ return m_usageFlags; }
-
-    /**
-     * <p>The key usage flags represent the purpose (e.g., encipherment, signature) of
-     * the key contained in the certificate.</p>
-     */
     inline bool UsageFlagsHasBeenSet() const { return m_usageFlagsHasBeenSet; }
-
-    /**
-     * <p>The key usage flags represent the purpose (e.g., encipherment, signature) of
-     * the key contained in the certificate.</p>
-     */
     inline void SetUsageFlags(const KeyUsageFlags& value) { m_usageFlagsHasBeenSet = true; m_usageFlags = value; }
-
-    /**
-     * <p>The key usage flags represent the purpose (e.g., encipherment, signature) of
-     * the key contained in the certificate.</p>
-     */
     inline void SetUsageFlags(KeyUsageFlags&& value) { m_usageFlagsHasBeenSet = true; m_usageFlags = std::move(value); }
-
-    /**
-     * <p>The key usage flags represent the purpose (e.g., encipherment, signature) of
-     * the key contained in the certificate.</p>
-     */
     inline KeyUsage& WithUsageFlags(const KeyUsageFlags& value) { SetUsageFlags(value); return *this;}
-
-    /**
-     * <p>The key usage flags represent the purpose (e.g., encipherment, signature) of
-     * the key contained in the certificate.</p>
-     */
     inline KeyUsage& WithUsageFlags(KeyUsageFlags&& value) { SetUsageFlags(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_critical;

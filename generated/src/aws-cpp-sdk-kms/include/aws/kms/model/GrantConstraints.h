@@ -61,6 +61,7 @@ namespace Model
     AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of key-value pairs that must be included in the encryption context of
      * the <a
@@ -70,128 +71,21 @@ namespace Model
      * this constraint, although it can include additional key-value pairs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContextSubset() const{ return m_encryptionContextSubset; }
-
-    /**
-     * <p>A list of key-value pairs that must be included in the encryption context of
-     * the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the cryptographic operation only when
-     * the encryption context in the request includes the key-value pairs specified in
-     * this constraint, although it can include additional key-value pairs.</p>
-     */
     inline bool EncryptionContextSubsetHasBeenSet() const { return m_encryptionContextSubsetHasBeenSet; }
-
-    /**
-     * <p>A list of key-value pairs that must be included in the encryption context of
-     * the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the cryptographic operation only when
-     * the encryption context in the request includes the key-value pairs specified in
-     * this constraint, although it can include additional key-value pairs.</p>
-     */
     inline void SetEncryptionContextSubset(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset = value; }
-
-    /**
-     * <p>A list of key-value pairs that must be included in the encryption context of
-     * the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the cryptographic operation only when
-     * the encryption context in the request includes the key-value pairs specified in
-     * this constraint, although it can include additional key-value pairs.</p>
-     */
     inline void SetEncryptionContextSubset(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset = std::move(value); }
-
-    /**
-     * <p>A list of key-value pairs that must be included in the encryption context of
-     * the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the cryptographic operation only when
-     * the encryption context in the request includes the key-value pairs specified in
-     * this constraint, although it can include additional key-value pairs.</p>
-     */
     inline GrantConstraints& WithEncryptionContextSubset(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContextSubset(value); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that must be included in the encryption context of
-     * the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the cryptographic operation only when
-     * the encryption context in the request includes the key-value pairs specified in
-     * this constraint, although it can include additional key-value pairs.</p>
-     */
     inline GrantConstraints& WithEncryptionContextSubset(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContextSubset(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that must be included in the encryption context of
-     * the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the cryptographic operation only when
-     * the encryption context in the request includes the key-value pairs specified in
-     * this constraint, although it can include additional key-value pairs.</p>
-     */
     inline GrantConstraints& AddEncryptionContextSubset(const Aws::String& key, const Aws::String& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that must be included in the encryption context of
-     * the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the cryptographic operation only when
-     * the encryption context in the request includes the key-value pairs specified in
-     * this constraint, although it can include additional key-value pairs.</p>
-     */
     inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, const Aws::String& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that must be included in the encryption context of
-     * the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the cryptographic operation only when
-     * the encryption context in the request includes the key-value pairs specified in
-     * this constraint, although it can include additional key-value pairs.</p>
-     */
     inline GrantConstraints& AddEncryptionContextSubset(const Aws::String& key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that must be included in the encryption context of
-     * the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the cryptographic operation only when
-     * the encryption context in the request includes the key-value pairs specified in
-     * this constraint, although it can include additional key-value pairs.</p>
-     */
     inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that must be included in the encryption context of
-     * the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the cryptographic operation only when
-     * the encryption context in the request includes the key-value pairs specified in
-     * this constraint, although it can include additional key-value pairs.</p>
-     */
     inline GrantConstraints& AddEncryptionContextSubset(const char* key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that must be included in the encryption context of
-     * the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the cryptographic operation only when
-     * the encryption context in the request includes the key-value pairs specified in
-     * this constraint, although it can include additional key-value pairs.</p>
-     */
     inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, const char* value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that must be included in the encryption context of
-     * the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the cryptographic operation only when
-     * the encryption context in the request includes the key-value pairs specified in
-     * this constraint, although it can include additional key-value pairs.</p>
-     */
     inline GrantConstraints& AddEncryptionContextSubset(const char* key, const char* value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of key-value pairs that must match the encryption context in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
@@ -200,115 +94,19 @@ namespace Model
      * constraint.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContextEquals() const{ return m_encryptionContextEquals; }
-
-    /**
-     * <p>A list of key-value pairs that must match the encryption context in the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the operation only when the encryption
-     * context in the request is the same as the encryption context specified in this
-     * constraint.</p>
-     */
     inline bool EncryptionContextEqualsHasBeenSet() const { return m_encryptionContextEqualsHasBeenSet; }
-
-    /**
-     * <p>A list of key-value pairs that must match the encryption context in the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the operation only when the encryption
-     * context in the request is the same as the encryption context specified in this
-     * constraint.</p>
-     */
     inline void SetEncryptionContextEquals(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals = value; }
-
-    /**
-     * <p>A list of key-value pairs that must match the encryption context in the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the operation only when the encryption
-     * context in the request is the same as the encryption context specified in this
-     * constraint.</p>
-     */
     inline void SetEncryptionContextEquals(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals = std::move(value); }
-
-    /**
-     * <p>A list of key-value pairs that must match the encryption context in the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the operation only when the encryption
-     * context in the request is the same as the encryption context specified in this
-     * constraint.</p>
-     */
     inline GrantConstraints& WithEncryptionContextEquals(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContextEquals(value); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that must match the encryption context in the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the operation only when the encryption
-     * context in the request is the same as the encryption context specified in this
-     * constraint.</p>
-     */
     inline GrantConstraints& WithEncryptionContextEquals(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContextEquals(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that must match the encryption context in the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the operation only when the encryption
-     * context in the request is the same as the encryption context specified in this
-     * constraint.</p>
-     */
     inline GrantConstraints& AddEncryptionContextEquals(const Aws::String& key, const Aws::String& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that must match the encryption context in the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the operation only when the encryption
-     * context in the request is the same as the encryption context specified in this
-     * constraint.</p>
-     */
     inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, const Aws::String& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that must match the encryption context in the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the operation only when the encryption
-     * context in the request is the same as the encryption context specified in this
-     * constraint.</p>
-     */
     inline GrantConstraints& AddEncryptionContextEquals(const Aws::String& key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that must match the encryption context in the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the operation only when the encryption
-     * context in the request is the same as the encryption context specified in this
-     * constraint.</p>
-     */
     inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that must match the encryption context in the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the operation only when the encryption
-     * context in the request is the same as the encryption context specified in this
-     * constraint.</p>
-     */
     inline GrantConstraints& AddEncryptionContextEquals(const char* key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that must match the encryption context in the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the operation only when the encryption
-     * context in the request is the same as the encryption context specified in this
-     * constraint.</p>
-     */
     inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, const char* value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that must match the encryption context in the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> request. The grant allows the operation only when the encryption
-     * context in the request is the same as the encryption context specified in this
-     * constraint.</p>
-     */
     inline GrantConstraints& AddEncryptionContextEquals(const char* key, const char* value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_encryptionContextSubset;

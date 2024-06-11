@@ -35,85 +35,32 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Data Catalog to set the security configuration for. If none is
      * provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
-
-    /**
-     * <p>The ID of the Data Catalog to set the security configuration for. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Data Catalog to set the security configuration for. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-
-    /**
-     * <p>The ID of the Data Catalog to set the security configuration for. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-
-    /**
-     * <p>The ID of the Data Catalog to set the security configuration for. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-
-    /**
-     * <p>The ID of the Data Catalog to set the security configuration for. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline PutDataCatalogEncryptionSettingsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-
-    /**
-     * <p>The ID of the Data Catalog to set the security configuration for. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline PutDataCatalogEncryptionSettingsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Data Catalog to set the security configuration for. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline PutDataCatalogEncryptionSettingsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The security configuration to set.</p>
      */
     inline const DataCatalogEncryptionSettings& GetDataCatalogEncryptionSettings() const{ return m_dataCatalogEncryptionSettings; }
-
-    /**
-     * <p>The security configuration to set.</p>
-     */
     inline bool DataCatalogEncryptionSettingsHasBeenSet() const { return m_dataCatalogEncryptionSettingsHasBeenSet; }
-
-    /**
-     * <p>The security configuration to set.</p>
-     */
     inline void SetDataCatalogEncryptionSettings(const DataCatalogEncryptionSettings& value) { m_dataCatalogEncryptionSettingsHasBeenSet = true; m_dataCatalogEncryptionSettings = value; }
-
-    /**
-     * <p>The security configuration to set.</p>
-     */
     inline void SetDataCatalogEncryptionSettings(DataCatalogEncryptionSettings&& value) { m_dataCatalogEncryptionSettingsHasBeenSet = true; m_dataCatalogEncryptionSettings = std::move(value); }
-
-    /**
-     * <p>The security configuration to set.</p>
-     */
     inline PutDataCatalogEncryptionSettingsRequest& WithDataCatalogEncryptionSettings(const DataCatalogEncryptionSettings& value) { SetDataCatalogEncryptionSettings(value); return *this;}
-
-    /**
-     * <p>The security configuration to set.</p>
-     */
     inline PutDataCatalogEncryptionSettingsRequest& WithDataCatalogEncryptionSettings(DataCatalogEncryptionSettings&& value) { SetDataCatalogEncryptionSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_catalogId;

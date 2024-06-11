@@ -32,46 +32,19 @@ namespace Model
     AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
      */
     inline const Aws::String& GetTargetGroupIdentifier() const{ return m_targetGroupIdentifier; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline bool TargetGroupIdentifierHasBeenSet() const { return m_targetGroupIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupIdentifier(const Aws::String& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = value; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupIdentifier(Aws::String&& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupIdentifier(const char* value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier.assign(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline GetTargetGroupRequest& WithTargetGroupIdentifier(const Aws::String& value) { SetTargetGroupIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline GetTargetGroupRequest& WithTargetGroupIdentifier(Aws::String&& value) { SetTargetGroupIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline GetTargetGroupRequest& WithTargetGroupIdentifier(const char* value) { SetTargetGroupIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_targetGroupIdentifier;

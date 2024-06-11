@@ -38,108 +38,43 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether to disable encryption of the S3 build log output.</p>
      */
     inline bool GetEncryptionDisabled() const{ return m_encryptionDisabled; }
-
-    /**
-     * <p>Whether to disable encryption of the S3 build log output.</p>
-     */
     inline bool EncryptionDisabledHasBeenSet() const { return m_encryptionDisabledHasBeenSet; }
-
-    /**
-     * <p>Whether to disable encryption of the S3 build log output.</p>
-     */
     inline void SetEncryptionDisabled(bool value) { m_encryptionDisabledHasBeenSet = true; m_encryptionDisabled = value; }
-
-    /**
-     * <p>Whether to disable encryption of the S3 build log output.</p>
-     */
     inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithEncryptionDisabled(bool value) { SetEncryptionDisabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
-     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-
-    /**
-     * <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-
-    /**
-     * <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-
-    /**
-     * <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
-     */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-
-    /**
-     * <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
-     */
     inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
-     */
     inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
-     */
     inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithLocation(const char* value) { SetLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of the S3 build logs.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the S3 build logs.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of the S3 build logs.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of the S3 build logs.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the S3 build logs.</p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The current status of the S3 build logs.</p>
-     */
     inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the S3 build logs.</p>
-     */
     inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The current status of the S3 build logs.</p>
-     */
     inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     bool m_encryptionDisabled;

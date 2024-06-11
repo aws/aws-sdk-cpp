@@ -38,77 +38,31 @@ namespace Model
     AWS_BCMDATAEXPORTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID for this specific execution.</p>
      */
     inline const Aws::String& GetExecutionId() const{ return m_executionId; }
-
-    /**
-     * <p>The ID for this specific execution.</p>
-     */
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-
-    /**
-     * <p>The ID for this specific execution.</p>
-     */
     inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-
-    /**
-     * <p>The ID for this specific execution.</p>
-     */
     inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-
-    /**
-     * <p>The ID for this specific execution.</p>
-     */
     inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-
-    /**
-     * <p>The ID for this specific execution.</p>
-     */
     inline ExecutionReference& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-
-    /**
-     * <p>The ID for this specific execution.</p>
-     */
     inline ExecutionReference& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for this specific execution.</p>
-     */
     inline ExecutionReference& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of this specific execution.</p>
      */
     inline const ExecutionStatus& GetExecutionStatus() const{ return m_executionStatus; }
-
-    /**
-     * <p>The status of this specific execution.</p>
-     */
     inline bool ExecutionStatusHasBeenSet() const { return m_executionStatusHasBeenSet; }
-
-    /**
-     * <p>The status of this specific execution.</p>
-     */
     inline void SetExecutionStatus(const ExecutionStatus& value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
-
-    /**
-     * <p>The status of this specific execution.</p>
-     */
     inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatusHasBeenSet = true; m_executionStatus = std::move(value); }
-
-    /**
-     * <p>The status of this specific execution.</p>
-     */
     inline ExecutionReference& WithExecutionStatus(const ExecutionStatus& value) { SetExecutionStatus(value); return *this;}
-
-    /**
-     * <p>The status of this specific execution.</p>
-     */
     inline ExecutionReference& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_executionId;

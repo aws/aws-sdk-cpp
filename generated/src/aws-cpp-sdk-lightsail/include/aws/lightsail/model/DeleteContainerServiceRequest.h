@@ -34,46 +34,19 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the container service to delete.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>The name of the container service to delete.</p>
-     */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the container service to delete.</p>
-     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>The name of the container service to delete.</p>
-     */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>The name of the container service to delete.</p>
-     */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>The name of the container service to delete.</p>
-     */
     inline DeleteContainerServiceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The name of the container service to delete.</p>
-     */
     inline DeleteContainerServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the container service to delete.</p>
-     */
     inline DeleteContainerServiceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceName;

@@ -32,63 +32,29 @@ namespace Model
     AWS_TRANSFER_API UpdateConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns the identifier of the connector object that you are updating.</p>
      */
     inline const Aws::String& GetConnectorId() const{ return m_connectorId; }
-
-    /**
-     * <p>Returns the identifier of the connector object that you are updating.</p>
-     */
     inline void SetConnectorId(const Aws::String& value) { m_connectorId = value; }
-
-    /**
-     * <p>Returns the identifier of the connector object that you are updating.</p>
-     */
     inline void SetConnectorId(Aws::String&& value) { m_connectorId = std::move(value); }
-
-    /**
-     * <p>Returns the identifier of the connector object that you are updating.</p>
-     */
     inline void SetConnectorId(const char* value) { m_connectorId.assign(value); }
-
-    /**
-     * <p>Returns the identifier of the connector object that you are updating.</p>
-     */
     inline UpdateConnectorResult& WithConnectorId(const Aws::String& value) { SetConnectorId(value); return *this;}
-
-    /**
-     * <p>Returns the identifier of the connector object that you are updating.</p>
-     */
     inline UpdateConnectorResult& WithConnectorId(Aws::String&& value) { SetConnectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns the identifier of the connector object that you are updating.</p>
-     */
     inline UpdateConnectorResult& WithConnectorId(const char* value) { SetConnectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateConnectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateConnectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateConnectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectorId;

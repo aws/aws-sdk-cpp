@@ -39,73 +39,30 @@ namespace Model
     AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The details resulting from 'Known Fraudster Risk' analysis of the
      * speaker.</p>
      */
     inline const KnownFraudsterRisk& GetKnownFraudsterRisk() const{ return m_knownFraudsterRisk; }
-
-    /**
-     * <p>The details resulting from 'Known Fraudster Risk' analysis of the
-     * speaker.</p>
-     */
     inline bool KnownFraudsterRiskHasBeenSet() const { return m_knownFraudsterRiskHasBeenSet; }
-
-    /**
-     * <p>The details resulting from 'Known Fraudster Risk' analysis of the
-     * speaker.</p>
-     */
     inline void SetKnownFraudsterRisk(const KnownFraudsterRisk& value) { m_knownFraudsterRiskHasBeenSet = true; m_knownFraudsterRisk = value; }
-
-    /**
-     * <p>The details resulting from 'Known Fraudster Risk' analysis of the
-     * speaker.</p>
-     */
     inline void SetKnownFraudsterRisk(KnownFraudsterRisk&& value) { m_knownFraudsterRiskHasBeenSet = true; m_knownFraudsterRisk = std::move(value); }
-
-    /**
-     * <p>The details resulting from 'Known Fraudster Risk' analysis of the
-     * speaker.</p>
-     */
     inline FraudRiskDetails& WithKnownFraudsterRisk(const KnownFraudsterRisk& value) { SetKnownFraudsterRisk(value); return *this;}
-
-    /**
-     * <p>The details resulting from 'Known Fraudster Risk' analysis of the
-     * speaker.</p>
-     */
     inline FraudRiskDetails& WithKnownFraudsterRisk(KnownFraudsterRisk&& value) { SetKnownFraudsterRisk(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
      */
     inline const VoiceSpoofingRisk& GetVoiceSpoofingRisk() const{ return m_voiceSpoofingRisk; }
-
-    /**
-     * <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
-     */
     inline bool VoiceSpoofingRiskHasBeenSet() const { return m_voiceSpoofingRiskHasBeenSet; }
-
-    /**
-     * <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
-     */
     inline void SetVoiceSpoofingRisk(const VoiceSpoofingRisk& value) { m_voiceSpoofingRiskHasBeenSet = true; m_voiceSpoofingRisk = value; }
-
-    /**
-     * <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
-     */
     inline void SetVoiceSpoofingRisk(VoiceSpoofingRisk&& value) { m_voiceSpoofingRiskHasBeenSet = true; m_voiceSpoofingRisk = std::move(value); }
-
-    /**
-     * <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
-     */
     inline FraudRiskDetails& WithVoiceSpoofingRisk(const VoiceSpoofingRisk& value) { SetVoiceSpoofingRisk(value); return *this;}
-
-    /**
-     * <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
-     */
     inline FraudRiskDetails& WithVoiceSpoofingRisk(VoiceSpoofingRisk&& value) { SetVoiceSpoofingRisk(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KnownFraudsterRisk m_knownFraudsterRisk;

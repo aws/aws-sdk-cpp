@@ -38,46 +38,19 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Unique identifier of a field.</p>
      */
     inline const Aws::String& GetFieldId() const{ return m_fieldId; }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline RequiredField& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline RequiredField& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline RequiredField& WithFieldId(const char* value) { SetFieldId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldId;

@@ -34,124 +34,45 @@ namespace Model
     AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the index for your Amazon Kendra experience.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline ListExperiencesRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline ListExperiencesRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline ListExperiencesRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the previous response was incomplete (because there is more data to
      * retrieve), Amazon Kendra returns a pagination token in the response. You can use
      * this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
-     */
     inline ListExperiencesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
-     */
     inline ListExperiencesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
-     */
     inline ListExperiencesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of returned Amazon Kendra experiences.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of returned Amazon Kendra experiences.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of returned Amazon Kendra experiences.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of returned Amazon Kendra experiences.</p>
-     */
     inline ListExperiencesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_indexId;

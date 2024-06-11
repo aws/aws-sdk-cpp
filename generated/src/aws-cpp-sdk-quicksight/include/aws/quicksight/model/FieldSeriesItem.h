@@ -40,114 +40,44 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field ID of the field for which you are setting the axis binding.</p>
      */
     inline const Aws::String& GetFieldId() const{ return m_fieldId; }
-
-    /**
-     * <p>The field ID of the field for which you are setting the axis binding.</p>
-     */
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-
-    /**
-     * <p>The field ID of the field for which you are setting the axis binding.</p>
-     */
     inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-
-    /**
-     * <p>The field ID of the field for which you are setting the axis binding.</p>
-     */
     inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-
-    /**
-     * <p>The field ID of the field for which you are setting the axis binding.</p>
-     */
     inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-
-    /**
-     * <p>The field ID of the field for which you are setting the axis binding.</p>
-     */
     inline FieldSeriesItem& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-
-    /**
-     * <p>The field ID of the field for which you are setting the axis binding.</p>
-     */
     inline FieldSeriesItem& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-
-    /**
-     * <p>The field ID of the field for which you are setting the axis binding.</p>
-     */
     inline FieldSeriesItem& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The axis that you are binding the field to.</p>
      */
     inline const AxisBinding& GetAxisBinding() const{ return m_axisBinding; }
-
-    /**
-     * <p>The axis that you are binding the field to.</p>
-     */
     inline bool AxisBindingHasBeenSet() const { return m_axisBindingHasBeenSet; }
-
-    /**
-     * <p>The axis that you are binding the field to.</p>
-     */
     inline void SetAxisBinding(const AxisBinding& value) { m_axisBindingHasBeenSet = true; m_axisBinding = value; }
-
-    /**
-     * <p>The axis that you are binding the field to.</p>
-     */
     inline void SetAxisBinding(AxisBinding&& value) { m_axisBindingHasBeenSet = true; m_axisBinding = std::move(value); }
-
-    /**
-     * <p>The axis that you are binding the field to.</p>
-     */
     inline FieldSeriesItem& WithAxisBinding(const AxisBinding& value) { SetAxisBinding(value); return *this;}
-
-    /**
-     * <p>The axis that you are binding the field to.</p>
-     */
     inline FieldSeriesItem& WithAxisBinding(AxisBinding&& value) { SetAxisBinding(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The options that determine the presentation of line series associated to the
      * field.</p>
      */
     inline const LineChartSeriesSettings& GetSettings() const{ return m_settings; }
-
-    /**
-     * <p>The options that determine the presentation of line series associated to the
-     * field.</p>
-     */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-
-    /**
-     * <p>The options that determine the presentation of line series associated to the
-     * field.</p>
-     */
     inline void SetSettings(const LineChartSeriesSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-
-    /**
-     * <p>The options that determine the presentation of line series associated to the
-     * field.</p>
-     */
     inline void SetSettings(LineChartSeriesSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-
-    /**
-     * <p>The options that determine the presentation of line series associated to the
-     * field.</p>
-     */
     inline FieldSeriesItem& WithSettings(const LineChartSeriesSettings& value) { SetSettings(value); return *this;}
-
-    /**
-     * <p>The options that determine the presentation of line series associated to the
-     * field.</p>
-     */
     inline FieldSeriesItem& WithSettings(LineChartSeriesSettings&& value) { SetSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldId;

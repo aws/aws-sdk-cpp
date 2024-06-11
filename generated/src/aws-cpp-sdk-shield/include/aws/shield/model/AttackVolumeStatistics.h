@@ -36,26 +36,15 @@ namespace Model
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum attack volume observed for the given unit.</p>
      */
     inline double GetMax() const{ return m_max; }
-
-    /**
-     * <p>The maximum attack volume observed for the given unit.</p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p>The maximum attack volume observed for the given unit.</p>
-     */
     inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p>The maximum attack volume observed for the given unit.</p>
-     */
     inline AttackVolumeStatistics& WithMax(double value) { SetMax(value); return *this;}
-
+    ///@}
   private:
 
     double m_max;

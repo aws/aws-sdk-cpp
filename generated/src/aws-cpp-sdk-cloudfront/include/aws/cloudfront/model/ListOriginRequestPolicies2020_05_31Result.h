@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDFRONT_API ListOriginRequestPolicies2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A list of origin request policies.</p>
      */
     inline const OriginRequestPolicyList& GetOriginRequestPolicyList() const{ return m_originRequestPolicyList; }
-
-    /**
-     * <p>A list of origin request policies.</p>
-     */
     inline void SetOriginRequestPolicyList(const OriginRequestPolicyList& value) { m_originRequestPolicyList = value; }
-
-    /**
-     * <p>A list of origin request policies.</p>
-     */
     inline void SetOriginRequestPolicyList(OriginRequestPolicyList&& value) { m_originRequestPolicyList = std::move(value); }
-
-    /**
-     * <p>A list of origin request policies.</p>
-     */
     inline ListOriginRequestPolicies2020_05_31Result& WithOriginRequestPolicyList(const OriginRequestPolicyList& value) { SetOriginRequestPolicyList(value); return *this;}
-
-    /**
-     * <p>A list of origin request policies.</p>
-     */
     inline ListOriginRequestPolicies2020_05_31Result& WithOriginRequestPolicyList(OriginRequestPolicyList&& value) { SetOriginRequestPolicyList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListOriginRequestPolicies2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListOriginRequestPolicies2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListOriginRequestPolicies2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     OriginRequestPolicyList m_originRequestPolicyList;

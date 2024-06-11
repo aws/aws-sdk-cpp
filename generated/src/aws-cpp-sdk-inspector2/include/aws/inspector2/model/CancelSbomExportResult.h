@@ -32,63 +32,29 @@ namespace Model
     AWS_INSPECTOR2_API CancelSbomExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The report ID of the canceled SBOM export.</p>
      */
     inline const Aws::String& GetReportId() const{ return m_reportId; }
-
-    /**
-     * <p>The report ID of the canceled SBOM export.</p>
-     */
     inline void SetReportId(const Aws::String& value) { m_reportId = value; }
-
-    /**
-     * <p>The report ID of the canceled SBOM export.</p>
-     */
     inline void SetReportId(Aws::String&& value) { m_reportId = std::move(value); }
-
-    /**
-     * <p>The report ID of the canceled SBOM export.</p>
-     */
     inline void SetReportId(const char* value) { m_reportId.assign(value); }
-
-    /**
-     * <p>The report ID of the canceled SBOM export.</p>
-     */
     inline CancelSbomExportResult& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-
-    /**
-     * <p>The report ID of the canceled SBOM export.</p>
-     */
     inline CancelSbomExportResult& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-
-    /**
-     * <p>The report ID of the canceled SBOM export.</p>
-     */
     inline CancelSbomExportResult& WithReportId(const char* value) { SetReportId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CancelSbomExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CancelSbomExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CancelSbomExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reportId;

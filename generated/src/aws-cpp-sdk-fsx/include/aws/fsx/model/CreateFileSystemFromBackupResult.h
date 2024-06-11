@@ -39,53 +39,27 @@ namespace Model
     AWS_FSX_API CreateFileSystemFromBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A description of the file system.</p>
      */
     inline const FileSystem& GetFileSystem() const{ return m_fileSystem; }
-
-    /**
-     * <p>A description of the file system.</p>
-     */
     inline void SetFileSystem(const FileSystem& value) { m_fileSystem = value; }
-
-    /**
-     * <p>A description of the file system.</p>
-     */
     inline void SetFileSystem(FileSystem&& value) { m_fileSystem = std::move(value); }
-
-    /**
-     * <p>A description of the file system.</p>
-     */
     inline CreateFileSystemFromBackupResult& WithFileSystem(const FileSystem& value) { SetFileSystem(value); return *this;}
-
-    /**
-     * <p>A description of the file system.</p>
-     */
     inline CreateFileSystemFromBackupResult& WithFileSystem(FileSystem&& value) { SetFileSystem(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateFileSystemFromBackupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateFileSystemFromBackupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateFileSystemFromBackupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FileSystem m_fileSystem;

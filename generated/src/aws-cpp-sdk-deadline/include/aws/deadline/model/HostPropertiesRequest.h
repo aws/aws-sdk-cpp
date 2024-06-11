@@ -38,77 +38,31 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The host name.</p>
      */
     inline const Aws::String& GetHostName() const{ return m_hostName; }
-
-    /**
-     * <p>The host name.</p>
-     */
     inline bool HostNameHasBeenSet() const { return m_hostNameHasBeenSet; }
-
-    /**
-     * <p>The host name.</p>
-     */
     inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
-
-    /**
-     * <p>The host name.</p>
-     */
     inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = std::move(value); }
-
-    /**
-     * <p>The host name.</p>
-     */
     inline void SetHostName(const char* value) { m_hostNameHasBeenSet = true; m_hostName.assign(value); }
-
-    /**
-     * <p>The host name.</p>
-     */
     inline HostPropertiesRequest& WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
-
-    /**
-     * <p>The host name.</p>
-     */
     inline HostPropertiesRequest& WithHostName(Aws::String&& value) { SetHostName(std::move(value)); return *this;}
-
-    /**
-     * <p>The host name.</p>
-     */
     inline HostPropertiesRequest& WithHostName(const char* value) { SetHostName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IP address of the host.</p>
      */
     inline const IpAddresses& GetIpAddresses() const{ return m_ipAddresses; }
-
-    /**
-     * <p>The IP address of the host.</p>
-     */
     inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
-
-    /**
-     * <p>The IP address of the host.</p>
-     */
     inline void SetIpAddresses(const IpAddresses& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
-
-    /**
-     * <p>The IP address of the host.</p>
-     */
     inline void SetIpAddresses(IpAddresses&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
-
-    /**
-     * <p>The IP address of the host.</p>
-     */
     inline HostPropertiesRequest& WithIpAddresses(const IpAddresses& value) { SetIpAddresses(value); return *this;}
-
-    /**
-     * <p>The IP address of the host.</p>
-     */
     inline HostPropertiesRequest& WithIpAddresses(IpAddresses&& value) { SetIpAddresses(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hostName;

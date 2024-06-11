@@ -39,48 +39,27 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The number of CPU cores for the instance.</p>
      */
     inline int GetCoreCount() const{ return m_coreCount; }
-
-    /**
-     * <p>The number of CPU cores for the instance.</p>
-     */
     inline bool CoreCountHasBeenSet() const { return m_coreCountHasBeenSet; }
-
-    /**
-     * <p>The number of CPU cores for the instance.</p>
-     */
     inline void SetCoreCount(int value) { m_coreCountHasBeenSet = true; m_coreCount = value; }
-
-    /**
-     * <p>The number of CPU cores for the instance.</p>
-     */
     inline LaunchTemplateCpuOptions& WithCoreCount(int value) { SetCoreCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of threads per CPU core.</p>
      */
     inline int GetThreadsPerCore() const{ return m_threadsPerCore; }
-
-    /**
-     * <p>The number of threads per CPU core.</p>
-     */
     inline bool ThreadsPerCoreHasBeenSet() const { return m_threadsPerCoreHasBeenSet; }
-
-    /**
-     * <p>The number of threads per CPU core.</p>
-     */
     inline void SetThreadsPerCore(int value) { m_threadsPerCoreHasBeenSet = true; m_threadsPerCore = value; }
-
-    /**
-     * <p>The number of threads per CPU core.</p>
-     */
     inline LaunchTemplateCpuOptions& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more
      * information, see <a
@@ -88,47 +67,12 @@ namespace Model
      * SEV-SNP</a>.</p>
      */
     inline const AmdSevSnpSpecification& GetAmdSevSnp() const{ return m_amdSevSnp; }
-
-    /**
-     * <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
-     * SEV-SNP</a>.</p>
-     */
     inline bool AmdSevSnpHasBeenSet() const { return m_amdSevSnpHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
-     * SEV-SNP</a>.</p>
-     */
     inline void SetAmdSevSnp(const AmdSevSnpSpecification& value) { m_amdSevSnpHasBeenSet = true; m_amdSevSnp = value; }
-
-    /**
-     * <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
-     * SEV-SNP</a>.</p>
-     */
     inline void SetAmdSevSnp(AmdSevSnpSpecification&& value) { m_amdSevSnpHasBeenSet = true; m_amdSevSnp = std::move(value); }
-
-    /**
-     * <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
-     * SEV-SNP</a>.</p>
-     */
     inline LaunchTemplateCpuOptions& WithAmdSevSnp(const AmdSevSnpSpecification& value) { SetAmdSevSnp(value); return *this;}
-
-    /**
-     * <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
-     * SEV-SNP</a>.</p>
-     */
     inline LaunchTemplateCpuOptions& WithAmdSevSnp(AmdSevSnpSpecification&& value) { SetAmdSevSnp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_coreCount;

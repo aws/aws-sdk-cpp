@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DeleteClientVpnRouteResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The current state of the route.</p>
      */
     inline const ClientVpnRouteStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current state of the route.</p>
-     */
     inline void SetStatus(const ClientVpnRouteStatus& value) { m_status = value; }
-
-    /**
-     * <p>The current state of the route.</p>
-     */
     inline void SetStatus(ClientVpnRouteStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The current state of the route.</p>
-     */
     inline DeleteClientVpnRouteResponse& WithStatus(const ClientVpnRouteStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current state of the route.</p>
-     */
     inline DeleteClientVpnRouteResponse& WithStatus(ClientVpnRouteStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteClientVpnRouteResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteClientVpnRouteResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ClientVpnRouteStatus m_status;

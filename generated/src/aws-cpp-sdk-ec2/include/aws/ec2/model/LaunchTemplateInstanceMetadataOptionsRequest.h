@@ -45,6 +45,7 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates whether IMDSv2 is required.</p> <ul> <li> <p> <code>optional</code>
      * - IMDSv2 is optional. You can choose whether to send a session token in your
@@ -60,117 +61,26 @@ namespace Model
      * <code>required</code>.</p>
      */
     inline const LaunchTemplateHttpTokensState& GetHttpTokens() const{ return m_httpTokens; }
-
-    /**
-     * <p>Indicates whether IMDSv2 is required.</p> <ul> <li> <p> <code>optional</code>
-     * - IMDSv2 is optional. You can choose whether to send a session token in your
-     * instance metadata retrieval requests. If you retrieve IAM role credentials
-     * without a session token, you receive the IMDSv1 role credentials. If you
-     * retrieve IAM role credentials using a valid session token, you receive the
-     * IMDSv2 role credentials.</p> </li> <li> <p> <code>required</code> - IMDSv2 is
-     * required. You must send a session token in your instance metadata retrieval
-     * requests. With this option, retrieving the IAM role credentials always returns
-     * IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li> </ul>
-     * <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine
-     * Image (AMI) for your instance is <code>v2.0</code>, the default is
-     * <code>required</code>.</p>
-     */
     inline bool HttpTokensHasBeenSet() const { return m_httpTokensHasBeenSet; }
-
-    /**
-     * <p>Indicates whether IMDSv2 is required.</p> <ul> <li> <p> <code>optional</code>
-     * - IMDSv2 is optional. You can choose whether to send a session token in your
-     * instance metadata retrieval requests. If you retrieve IAM role credentials
-     * without a session token, you receive the IMDSv1 role credentials. If you
-     * retrieve IAM role credentials using a valid session token, you receive the
-     * IMDSv2 role credentials.</p> </li> <li> <p> <code>required</code> - IMDSv2 is
-     * required. You must send a session token in your instance metadata retrieval
-     * requests. With this option, retrieving the IAM role credentials always returns
-     * IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li> </ul>
-     * <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine
-     * Image (AMI) for your instance is <code>v2.0</code>, the default is
-     * <code>required</code>.</p>
-     */
     inline void SetHttpTokens(const LaunchTemplateHttpTokensState& value) { m_httpTokensHasBeenSet = true; m_httpTokens = value; }
-
-    /**
-     * <p>Indicates whether IMDSv2 is required.</p> <ul> <li> <p> <code>optional</code>
-     * - IMDSv2 is optional. You can choose whether to send a session token in your
-     * instance metadata retrieval requests. If you retrieve IAM role credentials
-     * without a session token, you receive the IMDSv1 role credentials. If you
-     * retrieve IAM role credentials using a valid session token, you receive the
-     * IMDSv2 role credentials.</p> </li> <li> <p> <code>required</code> - IMDSv2 is
-     * required. You must send a session token in your instance metadata retrieval
-     * requests. With this option, retrieving the IAM role credentials always returns
-     * IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li> </ul>
-     * <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine
-     * Image (AMI) for your instance is <code>v2.0</code>, the default is
-     * <code>required</code>.</p>
-     */
     inline void SetHttpTokens(LaunchTemplateHttpTokensState&& value) { m_httpTokensHasBeenSet = true; m_httpTokens = std::move(value); }
-
-    /**
-     * <p>Indicates whether IMDSv2 is required.</p> <ul> <li> <p> <code>optional</code>
-     * - IMDSv2 is optional. You can choose whether to send a session token in your
-     * instance metadata retrieval requests. If you retrieve IAM role credentials
-     * without a session token, you receive the IMDSv1 role credentials. If you
-     * retrieve IAM role credentials using a valid session token, you receive the
-     * IMDSv2 role credentials.</p> </li> <li> <p> <code>required</code> - IMDSv2 is
-     * required. You must send a session token in your instance metadata retrieval
-     * requests. With this option, retrieving the IAM role credentials always returns
-     * IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li> </ul>
-     * <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine
-     * Image (AMI) for your instance is <code>v2.0</code>, the default is
-     * <code>required</code>.</p>
-     */
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpTokens(const LaunchTemplateHttpTokensState& value) { SetHttpTokens(value); return *this;}
-
-    /**
-     * <p>Indicates whether IMDSv2 is required.</p> <ul> <li> <p> <code>optional</code>
-     * - IMDSv2 is optional. You can choose whether to send a session token in your
-     * instance metadata retrieval requests. If you retrieve IAM role credentials
-     * without a session token, you receive the IMDSv1 role credentials. If you
-     * retrieve IAM role credentials using a valid session token, you receive the
-     * IMDSv2 role credentials.</p> </li> <li> <p> <code>required</code> - IMDSv2 is
-     * required. You must send a session token in your instance metadata retrieval
-     * requests. With this option, retrieving the IAM role credentials always returns
-     * IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li> </ul>
-     * <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine
-     * Image (AMI) for your instance is <code>v2.0</code>, the default is
-     * <code>required</code>.</p>
-     */
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpTokens(LaunchTemplateHttpTokensState&& value) { SetHttpTokens(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
      * larger the number, the further instance metadata requests can travel.</p>
      * <p>Default: <code>1</code> </p> <p>Possible values: Integers from 1 to 64</p>
      */
     inline int GetHttpPutResponseHopLimit() const{ return m_httpPutResponseHopLimit; }
-
-    /**
-     * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
-     * larger the number, the further instance metadata requests can travel.</p>
-     * <p>Default: <code>1</code> </p> <p>Possible values: Integers from 1 to 64</p>
-     */
     inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }
-
-    /**
-     * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
-     * larger the number, the further instance metadata requests can travel.</p>
-     * <p>Default: <code>1</code> </p> <p>Possible values: Integers from 1 to 64</p>
-     */
     inline void SetHttpPutResponseHopLimit(int value) { m_httpPutResponseHopLimitHasBeenSet = true; m_httpPutResponseHopLimit = value; }
-
-    /**
-     * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
-     * larger the number, the further instance metadata requests can travel.</p>
-     * <p>Default: <code>1</code> </p> <p>Possible values: Integers from 1 to 64</p>
-     */
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpPutResponseHopLimit(int value) { SetHttpPutResponseHopLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
      * parameter is not specified, the default state is <code>enabled</code>.</p>
@@ -178,85 +88,27 @@ namespace Model
      * to access your instance metadata. </p> 
      */
     inline const LaunchTemplateInstanceMetadataEndpointState& GetHttpEndpoint() const{ return m_httpEndpoint; }
-
-    /**
-     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
-     * parameter is not specified, the default state is <code>enabled</code>.</p>
-     *  <p>If you specify a value of <code>disabled</code>, you will not be able
-     * to access your instance metadata. </p> 
-     */
     inline bool HttpEndpointHasBeenSet() const { return m_httpEndpointHasBeenSet; }
-
-    /**
-     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
-     * parameter is not specified, the default state is <code>enabled</code>.</p>
-     *  <p>If you specify a value of <code>disabled</code>, you will not be able
-     * to access your instance metadata. </p> 
-     */
     inline void SetHttpEndpoint(const LaunchTemplateInstanceMetadataEndpointState& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
-
-    /**
-     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
-     * parameter is not specified, the default state is <code>enabled</code>.</p>
-     *  <p>If you specify a value of <code>disabled</code>, you will not be able
-     * to access your instance metadata. </p> 
-     */
     inline void SetHttpEndpoint(LaunchTemplateInstanceMetadataEndpointState&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::move(value); }
-
-    /**
-     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
-     * parameter is not specified, the default state is <code>enabled</code>.</p>
-     *  <p>If you specify a value of <code>disabled</code>, you will not be able
-     * to access your instance metadata. </p> 
-     */
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpEndpoint(const LaunchTemplateInstanceMetadataEndpointState& value) { SetHttpEndpoint(value); return *this;}
-
-    /**
-     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
-     * parameter is not specified, the default state is <code>enabled</code>.</p>
-     *  <p>If you specify a value of <code>disabled</code>, you will not be able
-     * to access your instance metadata. </p> 
-     */
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpEndpoint(LaunchTemplateInstanceMetadataEndpointState&& value) { SetHttpEndpoint(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
      * <p>Default: <code>disabled</code> </p>
      */
     inline const LaunchTemplateInstanceMetadataProtocolIpv6& GetHttpProtocolIpv6() const{ return m_httpProtocolIpv6; }
-
-    /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
-     * <p>Default: <code>disabled</code> </p>
-     */
     inline bool HttpProtocolIpv6HasBeenSet() const { return m_httpProtocolIpv6HasBeenSet; }
-
-    /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
-     * <p>Default: <code>disabled</code> </p>
-     */
     inline void SetHttpProtocolIpv6(const LaunchTemplateInstanceMetadataProtocolIpv6& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
-
-    /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
-     * <p>Default: <code>disabled</code> </p>
-     */
     inline void SetHttpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6&& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = std::move(value); }
-
-    /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
-     * <p>Default: <code>disabled</code> </p>
-     */
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(const LaunchTemplateInstanceMetadataProtocolIpv6& value) { SetHttpProtocolIpv6(value); return *this;}
-
-    /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
-     * <p>Default: <code>disabled</code> </p>
-     */
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6&& value) { SetHttpProtocolIpv6(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Set to <code>enabled</code> to allow access to instance tags from the
      * instance metadata. Set to <code>disabled</code> to turn off access to instance
@@ -266,57 +118,12 @@ namespace Model
      * <code>disabled</code> </p>
      */
     inline const LaunchTemplateInstanceMetadataTagsState& GetInstanceMetadataTags() const{ return m_instanceMetadataTags; }
-
-    /**
-     * <p>Set to <code>enabled</code> to allow access to instance tags from the
-     * instance metadata. Set to <code>disabled</code> to turn off access to instance
-     * tags from the instance metadata. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-     * with instance tags using the instance metadata</a>.</p> <p>Default:
-     * <code>disabled</code> </p>
-     */
     inline bool InstanceMetadataTagsHasBeenSet() const { return m_instanceMetadataTagsHasBeenSet; }
-
-    /**
-     * <p>Set to <code>enabled</code> to allow access to instance tags from the
-     * instance metadata. Set to <code>disabled</code> to turn off access to instance
-     * tags from the instance metadata. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-     * with instance tags using the instance metadata</a>.</p> <p>Default:
-     * <code>disabled</code> </p>
-     */
     inline void SetInstanceMetadataTags(const LaunchTemplateInstanceMetadataTagsState& value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = value; }
-
-    /**
-     * <p>Set to <code>enabled</code> to allow access to instance tags from the
-     * instance metadata. Set to <code>disabled</code> to turn off access to instance
-     * tags from the instance metadata. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-     * with instance tags using the instance metadata</a>.</p> <p>Default:
-     * <code>disabled</code> </p>
-     */
     inline void SetInstanceMetadataTags(LaunchTemplateInstanceMetadataTagsState&& value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = std::move(value); }
-
-    /**
-     * <p>Set to <code>enabled</code> to allow access to instance tags from the
-     * instance metadata. Set to <code>disabled</code> to turn off access to instance
-     * tags from the instance metadata. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-     * with instance tags using the instance metadata</a>.</p> <p>Default:
-     * <code>disabled</code> </p>
-     */
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithInstanceMetadataTags(const LaunchTemplateInstanceMetadataTagsState& value) { SetInstanceMetadataTags(value); return *this;}
-
-    /**
-     * <p>Set to <code>enabled</code> to allow access to instance tags from the
-     * instance metadata. Set to <code>disabled</code> to turn off access to instance
-     * tags from the instance metadata. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-     * with instance tags using the instance metadata</a>.</p> <p>Default:
-     * <code>disabled</code> </p>
-     */
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithInstanceMetadataTags(LaunchTemplateInstanceMetadataTagsState&& value) { SetInstanceMetadataTags(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LaunchTemplateHttpTokensState m_httpTokens;

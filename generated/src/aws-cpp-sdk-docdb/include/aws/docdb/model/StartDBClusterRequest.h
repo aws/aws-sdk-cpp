@@ -36,54 +36,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The identifier of the cluster to restart. Example:
      * <code>docdb-2019-05-28-15-24-52</code> </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
-
-    /**
-     * <p>The identifier of the cluster to restart. Example:
-     * <code>docdb-2019-05-28-15-24-52</code> </p>
-     */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the cluster to restart. Example:
-     * <code>docdb-2019-05-28-15-24-52</code> </p>
-     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
-
-    /**
-     * <p>The identifier of the cluster to restart. Example:
-     * <code>docdb-2019-05-28-15-24-52</code> </p>
-     */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the cluster to restart. Example:
-     * <code>docdb-2019-05-28-15-24-52</code> </p>
-     */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the cluster to restart. Example:
-     * <code>docdb-2019-05-28-15-24-52</code> </p>
-     */
     inline StartDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the cluster to restart. Example:
-     * <code>docdb-2019-05-28-15-24-52</code> </p>
-     */
     inline StartDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the cluster to restart. Example:
-     * <code>docdb-2019-05-28-15-24-52</code> </p>
-     */
     inline StartDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dBClusterIdentifier;

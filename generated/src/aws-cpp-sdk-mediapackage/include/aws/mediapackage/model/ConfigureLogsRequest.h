@@ -37,84 +37,39 @@ namespace Model
     AWS_MEDIAPACKAGE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const EgressAccessLogs& GetEgressAccessLogs() const{ return m_egressAccessLogs; }
-
-    
     inline bool EgressAccessLogsHasBeenSet() const { return m_egressAccessLogsHasBeenSet; }
-
-    
     inline void SetEgressAccessLogs(const EgressAccessLogs& value) { m_egressAccessLogsHasBeenSet = true; m_egressAccessLogs = value; }
-
-    
     inline void SetEgressAccessLogs(EgressAccessLogs&& value) { m_egressAccessLogsHasBeenSet = true; m_egressAccessLogs = std::move(value); }
-
-    
     inline ConfigureLogsRequest& WithEgressAccessLogs(const EgressAccessLogs& value) { SetEgressAccessLogs(value); return *this;}
-
-    
     inline ConfigureLogsRequest& WithEgressAccessLogs(EgressAccessLogs&& value) { SetEgressAccessLogs(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ID of the channel to log subscription.
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * The ID of the channel to log subscription.
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * The ID of the channel to log subscription.
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * The ID of the channel to log subscription.
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * The ID of the channel to log subscription.
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * The ID of the channel to log subscription.
-     */
     inline ConfigureLogsRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * The ID of the channel to log subscription.
-     */
     inline ConfigureLogsRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the channel to log subscription.
-     */
     inline ConfigureLogsRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const IngressAccessLogs& GetIngressAccessLogs() const{ return m_ingressAccessLogs; }
-
-    
     inline bool IngressAccessLogsHasBeenSet() const { return m_ingressAccessLogsHasBeenSet; }
-
-    
     inline void SetIngressAccessLogs(const IngressAccessLogs& value) { m_ingressAccessLogsHasBeenSet = true; m_ingressAccessLogs = value; }
-
-    
     inline void SetIngressAccessLogs(IngressAccessLogs&& value) { m_ingressAccessLogsHasBeenSet = true; m_ingressAccessLogs = std::move(value); }
-
-    
     inline ConfigureLogsRequest& WithIngressAccessLogs(const IngressAccessLogs& value) { SetIngressAccessLogs(value); return *this;}
-
-    
     inline ConfigureLogsRequest& WithIngressAccessLogs(IngressAccessLogs&& value) { SetIngressAccessLogs(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EgressAccessLogs m_egressAccessLogs;

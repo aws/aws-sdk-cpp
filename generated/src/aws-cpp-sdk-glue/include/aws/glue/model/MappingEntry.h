@@ -37,251 +37,89 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the source table.</p>
      */
     inline const Aws::String& GetSourceTable() const{ return m_sourceTable; }
-
-    /**
-     * <p>The name of the source table.</p>
-     */
     inline bool SourceTableHasBeenSet() const { return m_sourceTableHasBeenSet; }
-
-    /**
-     * <p>The name of the source table.</p>
-     */
     inline void SetSourceTable(const Aws::String& value) { m_sourceTableHasBeenSet = true; m_sourceTable = value; }
-
-    /**
-     * <p>The name of the source table.</p>
-     */
     inline void SetSourceTable(Aws::String&& value) { m_sourceTableHasBeenSet = true; m_sourceTable = std::move(value); }
-
-    /**
-     * <p>The name of the source table.</p>
-     */
     inline void SetSourceTable(const char* value) { m_sourceTableHasBeenSet = true; m_sourceTable.assign(value); }
-
-    /**
-     * <p>The name of the source table.</p>
-     */
     inline MappingEntry& WithSourceTable(const Aws::String& value) { SetSourceTable(value); return *this;}
-
-    /**
-     * <p>The name of the source table.</p>
-     */
     inline MappingEntry& WithSourceTable(Aws::String&& value) { SetSourceTable(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the source table.</p>
-     */
     inline MappingEntry& WithSourceTable(const char* value) { SetSourceTable(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The source path.</p>
      */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
-
-    /**
-     * <p>The source path.</p>
-     */
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
-
-    /**
-     * <p>The source path.</p>
-     */
     inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
-
-    /**
-     * <p>The source path.</p>
-     */
     inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
-
-    /**
-     * <p>The source path.</p>
-     */
     inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
-
-    /**
-     * <p>The source path.</p>
-     */
     inline MappingEntry& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
-
-    /**
-     * <p>The source path.</p>
-     */
     inline MappingEntry& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
-
-    /**
-     * <p>The source path.</p>
-     */
     inline MappingEntry& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The source type.</p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
-
-    /**
-     * <p>The source type.</p>
-     */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-
-    /**
-     * <p>The source type.</p>
-     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-
-    /**
-     * <p>The source type.</p>
-     */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-
-    /**
-     * <p>The source type.</p>
-     */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-
-    /**
-     * <p>The source type.</p>
-     */
     inline MappingEntry& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-
-    /**
-     * <p>The source type.</p>
-     */
     inline MappingEntry& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The source type.</p>
-     */
     inline MappingEntry& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The target table.</p>
      */
     inline const Aws::String& GetTargetTable() const{ return m_targetTable; }
-
-    /**
-     * <p>The target table.</p>
-     */
     inline bool TargetTableHasBeenSet() const { return m_targetTableHasBeenSet; }
-
-    /**
-     * <p>The target table.</p>
-     */
     inline void SetTargetTable(const Aws::String& value) { m_targetTableHasBeenSet = true; m_targetTable = value; }
-
-    /**
-     * <p>The target table.</p>
-     */
     inline void SetTargetTable(Aws::String&& value) { m_targetTableHasBeenSet = true; m_targetTable = std::move(value); }
-
-    /**
-     * <p>The target table.</p>
-     */
     inline void SetTargetTable(const char* value) { m_targetTableHasBeenSet = true; m_targetTable.assign(value); }
-
-    /**
-     * <p>The target table.</p>
-     */
     inline MappingEntry& WithTargetTable(const Aws::String& value) { SetTargetTable(value); return *this;}
-
-    /**
-     * <p>The target table.</p>
-     */
     inline MappingEntry& WithTargetTable(Aws::String&& value) { SetTargetTable(std::move(value)); return *this;}
-
-    /**
-     * <p>The target table.</p>
-     */
     inline MappingEntry& WithTargetTable(const char* value) { SetTargetTable(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The target path.</p>
      */
     inline const Aws::String& GetTargetPath() const{ return m_targetPath; }
-
-    /**
-     * <p>The target path.</p>
-     */
     inline bool TargetPathHasBeenSet() const { return m_targetPathHasBeenSet; }
-
-    /**
-     * <p>The target path.</p>
-     */
     inline void SetTargetPath(const Aws::String& value) { m_targetPathHasBeenSet = true; m_targetPath = value; }
-
-    /**
-     * <p>The target path.</p>
-     */
     inline void SetTargetPath(Aws::String&& value) { m_targetPathHasBeenSet = true; m_targetPath = std::move(value); }
-
-    /**
-     * <p>The target path.</p>
-     */
     inline void SetTargetPath(const char* value) { m_targetPathHasBeenSet = true; m_targetPath.assign(value); }
-
-    /**
-     * <p>The target path.</p>
-     */
     inline MappingEntry& WithTargetPath(const Aws::String& value) { SetTargetPath(value); return *this;}
-
-    /**
-     * <p>The target path.</p>
-     */
     inline MappingEntry& WithTargetPath(Aws::String&& value) { SetTargetPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The target path.</p>
-     */
     inline MappingEntry& WithTargetPath(const char* value) { SetTargetPath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The target type.</p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
-
-    /**
-     * <p>The target type.</p>
-     */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-
-    /**
-     * <p>The target type.</p>
-     */
     inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-
-    /**
-     * <p>The target type.</p>
-     */
     inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-
-    /**
-     * <p>The target type.</p>
-     */
     inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
-
-    /**
-     * <p>The target type.</p>
-     */
     inline MappingEntry& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
-
-    /**
-     * <p>The target type.</p>
-     */
     inline MappingEntry& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The target type.</p>
-     */
     inline MappingEntry& WithTargetType(const char* value) { SetTargetType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceTable;

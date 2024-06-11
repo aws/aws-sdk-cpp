@@ -39,85 +39,32 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The severity label assigned to the finding by the finding provider.</p>
      */
     inline const SeverityLabel& GetLabel() const{ return m_label; }
-
-    /**
-     * <p>The severity label assigned to the finding by the finding provider.</p>
-     */
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-
-    /**
-     * <p>The severity label assigned to the finding by the finding provider.</p>
-     */
     inline void SetLabel(const SeverityLabel& value) { m_labelHasBeenSet = true; m_label = value; }
-
-    /**
-     * <p>The severity label assigned to the finding by the finding provider.</p>
-     */
     inline void SetLabel(SeverityLabel&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-
-    /**
-     * <p>The severity label assigned to the finding by the finding provider.</p>
-     */
     inline FindingProviderSeverity& WithLabel(const SeverityLabel& value) { SetLabel(value); return *this;}
-
-    /**
-     * <p>The severity label assigned to the finding by the finding provider.</p>
-     */
     inline FindingProviderSeverity& WithLabel(SeverityLabel&& value) { SetLabel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The finding provider's original value for the severity.</p> <p>Length
      * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline const Aws::String& GetOriginal() const{ return m_original; }
-
-    /**
-     * <p>The finding provider's original value for the severity.</p> <p>Length
-     * Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline bool OriginalHasBeenSet() const { return m_originalHasBeenSet; }
-
-    /**
-     * <p>The finding provider's original value for the severity.</p> <p>Length
-     * Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline void SetOriginal(const Aws::String& value) { m_originalHasBeenSet = true; m_original = value; }
-
-    /**
-     * <p>The finding provider's original value for the severity.</p> <p>Length
-     * Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline void SetOriginal(Aws::String&& value) { m_originalHasBeenSet = true; m_original = std::move(value); }
-
-    /**
-     * <p>The finding provider's original value for the severity.</p> <p>Length
-     * Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline void SetOriginal(const char* value) { m_originalHasBeenSet = true; m_original.assign(value); }
-
-    /**
-     * <p>The finding provider's original value for the severity.</p> <p>Length
-     * Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline FindingProviderSeverity& WithOriginal(const Aws::String& value) { SetOriginal(value); return *this;}
-
-    /**
-     * <p>The finding provider's original value for the severity.</p> <p>Length
-     * Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline FindingProviderSeverity& WithOriginal(Aws::String&& value) { SetOriginal(std::move(value)); return *this;}
-
-    /**
-     * <p>The finding provider's original value for the severity.</p> <p>Length
-     * Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline FindingProviderSeverity& WithOriginal(const char* value) { SetOriginal(value); return *this;}
-
+    ///@}
   private:
 
     SeverityLabel m_label;

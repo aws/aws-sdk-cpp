@@ -35,26 +35,15 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The size of the array for Map state iterations.</p>
      */
     inline int GetLength() const{ return m_length; }
-
-    /**
-     * <p>The size of the array for Map state iterations.</p>
-     */
     inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
-
-    /**
-     * <p>The size of the array for Map state iterations.</p>
-     */
     inline void SetLength(int value) { m_lengthHasBeenSet = true; m_length = value; }
-
-    /**
-     * <p>The size of the array for Map state iterations.</p>
-     */
     inline MapStateStartedEventDetails& WithLength(int value) { SetLength(value); return *this;}
-
+    ///@}
   private:
 
     int m_length;

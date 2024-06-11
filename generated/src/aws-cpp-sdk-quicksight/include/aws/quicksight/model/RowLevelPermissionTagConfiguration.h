@@ -41,92 +41,35 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status of row-level security tags. If enabled, the status is
      * <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of row-level security tags. If enabled, the status is
-     * <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of row-level security tags. If enabled, the status is
-     * <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
-     */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of row-level security tags. If enabled, the status is
-     * <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
-     */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of row-level security tags. If enabled, the status is
-     * <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
-     */
     inline RowLevelPermissionTagConfiguration& WithStatus(const Status& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of row-level security tags. If enabled, the status is
-     * <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
-     */
     inline RowLevelPermissionTagConfiguration& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A set of rules associated with row-level security, such as the tag names and
      * columns that they are assigned to.</p>
      */
     inline const Aws::Vector<RowLevelPermissionTagRule>& GetTagRules() const{ return m_tagRules; }
-
-    /**
-     * <p>A set of rules associated with row-level security, such as the tag names and
-     * columns that they are assigned to.</p>
-     */
     inline bool TagRulesHasBeenSet() const { return m_tagRulesHasBeenSet; }
-
-    /**
-     * <p>A set of rules associated with row-level security, such as the tag names and
-     * columns that they are assigned to.</p>
-     */
     inline void SetTagRules(const Aws::Vector<RowLevelPermissionTagRule>& value) { m_tagRulesHasBeenSet = true; m_tagRules = value; }
-
-    /**
-     * <p>A set of rules associated with row-level security, such as the tag names and
-     * columns that they are assigned to.</p>
-     */
     inline void SetTagRules(Aws::Vector<RowLevelPermissionTagRule>&& value) { m_tagRulesHasBeenSet = true; m_tagRules = std::move(value); }
-
-    /**
-     * <p>A set of rules associated with row-level security, such as the tag names and
-     * columns that they are assigned to.</p>
-     */
     inline RowLevelPermissionTagConfiguration& WithTagRules(const Aws::Vector<RowLevelPermissionTagRule>& value) { SetTagRules(value); return *this;}
-
-    /**
-     * <p>A set of rules associated with row-level security, such as the tag names and
-     * columns that they are assigned to.</p>
-     */
     inline RowLevelPermissionTagConfiguration& WithTagRules(Aws::Vector<RowLevelPermissionTagRule>&& value) { SetTagRules(std::move(value)); return *this;}
-
-    /**
-     * <p>A set of rules associated with row-level security, such as the tag names and
-     * columns that they are assigned to.</p>
-     */
     inline RowLevelPermissionTagConfiguration& AddTagRules(const RowLevelPermissionTagRule& value) { m_tagRulesHasBeenSet = true; m_tagRules.push_back(value); return *this; }
-
-    /**
-     * <p>A set of rules associated with row-level security, such as the tag names and
-     * columns that they are assigned to.</p>
-     */
     inline RowLevelPermissionTagConfiguration& AddTagRules(RowLevelPermissionTagRule&& value) { m_tagRulesHasBeenSet = true; m_tagRules.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of tag configuration rules to apply to a dataset. All tag
      * configurations have the OR condition. Tags within each tile will be joined
@@ -134,63 +77,14 @@ namespace Model
      * it to apply Row-level security (RLS) to the dataset.</p>
      */
     inline const Aws::Vector<Aws::Vector<Aws::String>>& GetTagRuleConfigurations() const{ return m_tagRuleConfigurations; }
-
-    /**
-     * <p>A list of tag configuration rules to apply to a dataset. All tag
-     * configurations have the OR condition. Tags within each tile will be joined
-     * (AND). At least one rule in this structure must have all tag values assigned to
-     * it to apply Row-level security (RLS) to the dataset.</p>
-     */
     inline bool TagRuleConfigurationsHasBeenSet() const { return m_tagRuleConfigurationsHasBeenSet; }
-
-    /**
-     * <p>A list of tag configuration rules to apply to a dataset. All tag
-     * configurations have the OR condition. Tags within each tile will be joined
-     * (AND). At least one rule in this structure must have all tag values assigned to
-     * it to apply Row-level security (RLS) to the dataset.</p>
-     */
     inline void SetTagRuleConfigurations(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_tagRuleConfigurationsHasBeenSet = true; m_tagRuleConfigurations = value; }
-
-    /**
-     * <p>A list of tag configuration rules to apply to a dataset. All tag
-     * configurations have the OR condition. Tags within each tile will be joined
-     * (AND). At least one rule in this structure must have all tag values assigned to
-     * it to apply Row-level security (RLS) to the dataset.</p>
-     */
     inline void SetTagRuleConfigurations(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_tagRuleConfigurationsHasBeenSet = true; m_tagRuleConfigurations = std::move(value); }
-
-    /**
-     * <p>A list of tag configuration rules to apply to a dataset. All tag
-     * configurations have the OR condition. Tags within each tile will be joined
-     * (AND). At least one rule in this structure must have all tag values assigned to
-     * it to apply Row-level security (RLS) to the dataset.</p>
-     */
     inline RowLevelPermissionTagConfiguration& WithTagRuleConfigurations(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetTagRuleConfigurations(value); return *this;}
-
-    /**
-     * <p>A list of tag configuration rules to apply to a dataset. All tag
-     * configurations have the OR condition. Tags within each tile will be joined
-     * (AND). At least one rule in this structure must have all tag values assigned to
-     * it to apply Row-level security (RLS) to the dataset.</p>
-     */
     inline RowLevelPermissionTagConfiguration& WithTagRuleConfigurations(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetTagRuleConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tag configuration rules to apply to a dataset. All tag
-     * configurations have the OR condition. Tags within each tile will be joined
-     * (AND). At least one rule in this structure must have all tag values assigned to
-     * it to apply Row-level security (RLS) to the dataset.</p>
-     */
     inline RowLevelPermissionTagConfiguration& AddTagRuleConfigurations(const Aws::Vector<Aws::String>& value) { m_tagRuleConfigurationsHasBeenSet = true; m_tagRuleConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tag configuration rules to apply to a dataset. All tag
-     * configurations have the OR condition. Tags within each tile will be joined
-     * (AND). At least one rule in this structure must have all tag values assigned to
-     * it to apply Row-level security (RLS) to the dataset.</p>
-     */
     inline RowLevelPermissionTagConfiguration& AddTagRuleConfigurations(Aws::Vector<Aws::String>&& value) { m_tagRuleConfigurationsHasBeenSet = true; m_tagRuleConfigurations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Status m_status;

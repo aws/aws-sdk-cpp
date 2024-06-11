@@ -37,83 +37,32 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The identifier of the cluster to be modified.</p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
-
-    /**
-     * <p>The identifier of the cluster to be modified.</p>
-     */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the cluster to be modified.</p>
-     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-
-    /**
-     * <p>The identifier of the cluster to be modified.</p>
-     */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the cluster to be modified.</p>
-     */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the cluster to be modified.</p>
-     */
     inline ModifyAquaConfigurationRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the cluster to be modified.</p>
-     */
     inline ModifyAquaConfigurationRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the cluster to be modified.</p>
-     */
     inline ModifyAquaConfigurationRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This parameter is retired. Amazon Redshift automatically determines whether
      * to use AQUA (Advanced Query Accelerator).</p>
      */
     inline const AquaConfigurationStatus& GetAquaConfigurationStatus() const{ return m_aquaConfigurationStatus; }
-
-    /**
-     * <p>This parameter is retired. Amazon Redshift automatically determines whether
-     * to use AQUA (Advanced Query Accelerator).</p>
-     */
     inline bool AquaConfigurationStatusHasBeenSet() const { return m_aquaConfigurationStatusHasBeenSet; }
-
-    /**
-     * <p>This parameter is retired. Amazon Redshift automatically determines whether
-     * to use AQUA (Advanced Query Accelerator).</p>
-     */
     inline void SetAquaConfigurationStatus(const AquaConfigurationStatus& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = value; }
-
-    /**
-     * <p>This parameter is retired. Amazon Redshift automatically determines whether
-     * to use AQUA (Advanced Query Accelerator).</p>
-     */
     inline void SetAquaConfigurationStatus(AquaConfigurationStatus&& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = std::move(value); }
-
-    /**
-     * <p>This parameter is retired. Amazon Redshift automatically determines whether
-     * to use AQUA (Advanced Query Accelerator).</p>
-     */
     inline ModifyAquaConfigurationRequest& WithAquaConfigurationStatus(const AquaConfigurationStatus& value) { SetAquaConfigurationStatus(value); return *this;}
-
-    /**
-     * <p>This parameter is retired. Amazon Redshift automatically determines whether
-     * to use AQUA (Advanced Query Accelerator).</p>
-     */
     inline ModifyAquaConfigurationRequest& WithAquaConfigurationStatus(AquaConfigurationStatus&& value) { SetAquaConfigurationStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterIdentifier;

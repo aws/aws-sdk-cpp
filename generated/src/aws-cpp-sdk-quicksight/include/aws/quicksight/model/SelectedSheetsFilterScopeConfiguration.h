@@ -42,54 +42,20 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sheet ID and visual IDs of the sheet and visuals that the filter is
      * applied to.</p>
      */
     inline const Aws::Vector<SheetVisualScopingConfiguration>& GetSheetVisualScopingConfigurations() const{ return m_sheetVisualScopingConfigurations; }
-
-    /**
-     * <p>The sheet ID and visual IDs of the sheet and visuals that the filter is
-     * applied to.</p>
-     */
     inline bool SheetVisualScopingConfigurationsHasBeenSet() const { return m_sheetVisualScopingConfigurationsHasBeenSet; }
-
-    /**
-     * <p>The sheet ID and visual IDs of the sheet and visuals that the filter is
-     * applied to.</p>
-     */
     inline void SetSheetVisualScopingConfigurations(const Aws::Vector<SheetVisualScopingConfiguration>& value) { m_sheetVisualScopingConfigurationsHasBeenSet = true; m_sheetVisualScopingConfigurations = value; }
-
-    /**
-     * <p>The sheet ID and visual IDs of the sheet and visuals that the filter is
-     * applied to.</p>
-     */
     inline void SetSheetVisualScopingConfigurations(Aws::Vector<SheetVisualScopingConfiguration>&& value) { m_sheetVisualScopingConfigurationsHasBeenSet = true; m_sheetVisualScopingConfigurations = std::move(value); }
-
-    /**
-     * <p>The sheet ID and visual IDs of the sheet and visuals that the filter is
-     * applied to.</p>
-     */
     inline SelectedSheetsFilterScopeConfiguration& WithSheetVisualScopingConfigurations(const Aws::Vector<SheetVisualScopingConfiguration>& value) { SetSheetVisualScopingConfigurations(value); return *this;}
-
-    /**
-     * <p>The sheet ID and visual IDs of the sheet and visuals that the filter is
-     * applied to.</p>
-     */
     inline SelectedSheetsFilterScopeConfiguration& WithSheetVisualScopingConfigurations(Aws::Vector<SheetVisualScopingConfiguration>&& value) { SetSheetVisualScopingConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>The sheet ID and visual IDs of the sheet and visuals that the filter is
-     * applied to.</p>
-     */
     inline SelectedSheetsFilterScopeConfiguration& AddSheetVisualScopingConfigurations(const SheetVisualScopingConfiguration& value) { m_sheetVisualScopingConfigurationsHasBeenSet = true; m_sheetVisualScopingConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>The sheet ID and visual IDs of the sheet and visuals that the filter is
-     * applied to.</p>
-     */
     inline SelectedSheetsFilterScopeConfiguration& AddSheetVisualScopingConfigurations(SheetVisualScopingConfiguration&& value) { m_sheetVisualScopingConfigurationsHasBeenSet = true; m_sheetVisualScopingConfigurations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<SheetVisualScopingConfiguration> m_sheetVisualScopingConfigurations;

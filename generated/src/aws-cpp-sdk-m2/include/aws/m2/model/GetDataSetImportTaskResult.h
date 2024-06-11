@@ -34,115 +34,51 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API GetDataSetImportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the task.</p>
      */
     inline const DataSetTaskLifecycle& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the task.</p>
-     */
     inline void SetStatus(const DataSetTaskLifecycle& value) { m_status = value; }
-
-    /**
-     * <p>The status of the task.</p>
-     */
     inline void SetStatus(DataSetTaskLifecycle&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of the task.</p>
-     */
     inline GetDataSetImportTaskResult& WithStatus(const DataSetTaskLifecycle& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the task.</p>
-     */
     inline GetDataSetImportTaskResult& WithStatus(DataSetTaskLifecycle&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A summary of the status of the task.</p>
      */
     inline const DataSetImportSummary& GetSummary() const{ return m_summary; }
-
-    /**
-     * <p>A summary of the status of the task.</p>
-     */
     inline void SetSummary(const DataSetImportSummary& value) { m_summary = value; }
-
-    /**
-     * <p>A summary of the status of the task.</p>
-     */
     inline void SetSummary(DataSetImportSummary&& value) { m_summary = std::move(value); }
-
-    /**
-     * <p>A summary of the status of the task.</p>
-     */
     inline GetDataSetImportTaskResult& WithSummary(const DataSetImportSummary& value) { SetSummary(value); return *this;}
-
-    /**
-     * <p>A summary of the status of the task.</p>
-     */
     inline GetDataSetImportTaskResult& WithSummary(DataSetImportSummary&& value) { SetSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The task identifier.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
-
-    /**
-     * <p>The task identifier.</p>
-     */
     inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
-
-    /**
-     * <p>The task identifier.</p>
-     */
     inline void SetTaskId(Aws::String&& value) { m_taskId = std::move(value); }
-
-    /**
-     * <p>The task identifier.</p>
-     */
     inline void SetTaskId(const char* value) { m_taskId.assign(value); }
-
-    /**
-     * <p>The task identifier.</p>
-     */
     inline GetDataSetImportTaskResult& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-
-    /**
-     * <p>The task identifier.</p>
-     */
     inline GetDataSetImportTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The task identifier.</p>
-     */
     inline GetDataSetImportTaskResult& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDataSetImportTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDataSetImportTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDataSetImportTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DataSetTaskLifecycle m_status;

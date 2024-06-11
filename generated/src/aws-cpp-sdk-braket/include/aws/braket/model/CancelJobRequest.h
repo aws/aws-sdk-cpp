@@ -32,46 +32,19 @@ namespace Model
     AWS_BRAKET_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the Amazon Braket job to cancel.</p>
      */
     inline const Aws::String& GetJobArn() const{ return m_jobArn; }
-
-    /**
-     * <p>The ARN of the Amazon Braket job to cancel.</p>
-     */
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the Amazon Braket job to cancel.</p>
-     */
     inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
-
-    /**
-     * <p>The ARN of the Amazon Braket job to cancel.</p>
-     */
     inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the Amazon Braket job to cancel.</p>
-     */
     inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
-
-    /**
-     * <p>The ARN of the Amazon Braket job to cancel.</p>
-     */
     inline CancelJobRequest& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the Amazon Braket job to cancel.</p>
-     */
     inline CancelJobRequest& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Amazon Braket job to cancel.</p>
-     */
     inline CancelJobRequest& WithJobArn(const char* value) { SetJobArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobArn;

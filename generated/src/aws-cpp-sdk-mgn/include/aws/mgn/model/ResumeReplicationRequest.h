@@ -32,87 +32,33 @@ namespace Model
     AWS_MGN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Resume Replication Request account ID.</p>
      */
     inline const Aws::String& GetAccountID() const{ return m_accountID; }
-
-    /**
-     * <p>Resume Replication Request account ID.</p>
-     */
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-
-    /**
-     * <p>Resume Replication Request account ID.</p>
-     */
     inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-
-    /**
-     * <p>Resume Replication Request account ID.</p>
-     */
     inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-
-    /**
-     * <p>Resume Replication Request account ID.</p>
-     */
     inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-
-    /**
-     * <p>Resume Replication Request account ID.</p>
-     */
     inline ResumeReplicationRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-
-    /**
-     * <p>Resume Replication Request account ID.</p>
-     */
     inline ResumeReplicationRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-
-    /**
-     * <p>Resume Replication Request account ID.</p>
-     */
     inline ResumeReplicationRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Resume Replication Request source server ID.</p>
      */
     inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
-
-    /**
-     * <p>Resume Replication Request source server ID.</p>
-     */
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-
-    /**
-     * <p>Resume Replication Request source server ID.</p>
-     */
     inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
-
-    /**
-     * <p>Resume Replication Request source server ID.</p>
-     */
     inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
-
-    /**
-     * <p>Resume Replication Request source server ID.</p>
-     */
     inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
-
-    /**
-     * <p>Resume Replication Request source server ID.</p>
-     */
     inline ResumeReplicationRequest& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
-
-    /**
-     * <p>Resume Replication Request source server ID.</p>
-     */
     inline ResumeReplicationRequest& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
-
-    /**
-     * <p>Resume Replication Request source server ID.</p>
-     */
     inline ResumeReplicationRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountID;

@@ -37,36 +37,17 @@ namespace Model
     AWS_BCMDATAEXPORTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that describes the destination of the data exports file.</p>
      */
     inline const S3Destination& GetS3Destination() const{ return m_s3Destination; }
-
-    /**
-     * <p>An object that describes the destination of the data exports file.</p>
-     */
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-
-    /**
-     * <p>An object that describes the destination of the data exports file.</p>
-     */
     inline void SetS3Destination(const S3Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-
-    /**
-     * <p>An object that describes the destination of the data exports file.</p>
-     */
     inline void SetS3Destination(S3Destination&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-
-    /**
-     * <p>An object that describes the destination of the data exports file.</p>
-     */
     inline DestinationConfigurations& WithS3Destination(const S3Destination& value) { SetS3Destination(value); return *this;}
-
-    /**
-     * <p>An object that describes the destination of the data exports file.</p>
-     */
     inline DestinationConfigurations& WithS3Destination(S3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Destination m_s3Destination;

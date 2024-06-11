@@ -38,63 +38,28 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The channel ID.</p>
      */
     inline int GetChannelId() const{ return m_channelId; }
-
-    /**
-     * <p>The channel ID.</p>
-     */
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-
-    /**
-     * <p>The channel ID.</p>
-     */
     inline void SetChannelId(int value) { m_channelIdHasBeenSet = true; m_channelId = value; }
-
-    /**
-     * <p>The channel ID.</p>
-     */
     inline ChannelDefinition& WithChannelId(int value) { SetChannelId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or
      * <code>CUSTOMER</code>.</p>
      */
     inline const ParticipantRole& GetParticipantRole() const{ return m_participantRole; }
-
-    /**
-     * <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or
-     * <code>CUSTOMER</code>.</p>
-     */
     inline bool ParticipantRoleHasBeenSet() const { return m_participantRoleHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or
-     * <code>CUSTOMER</code>.</p>
-     */
     inline void SetParticipantRole(const ParticipantRole& value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
-
-    /**
-     * <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or
-     * <code>CUSTOMER</code>.</p>
-     */
     inline void SetParticipantRole(ParticipantRole&& value) { m_participantRoleHasBeenSet = true; m_participantRole = std::move(value); }
-
-    /**
-     * <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or
-     * <code>CUSTOMER</code>.</p>
-     */
     inline ChannelDefinition& WithParticipantRole(const ParticipantRole& value) { SetParticipantRole(value); return *this;}
-
-    /**
-     * <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or
-     * <code>CUSTOMER</code>.</p>
-     */
     inline ChannelDefinition& WithParticipantRole(ParticipantRole&& value) { SetParticipantRole(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_channelId;

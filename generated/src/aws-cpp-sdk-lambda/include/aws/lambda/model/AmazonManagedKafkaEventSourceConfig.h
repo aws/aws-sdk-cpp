@@ -38,6 +38,7 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier for the Kafka consumer group to join. The consumer group ID
      * must be unique among all your Kafka event sources. After creating a Kafka event
@@ -47,77 +48,14 @@ namespace Model
      * consumer group ID</a>.</p>
      */
     inline const Aws::String& GetConsumerGroupId() const{ return m_consumerGroupId; }
-
-    /**
-     * <p>The identifier for the Kafka consumer group to join. The consumer group ID
-     * must be unique among all your Kafka event sources. After creating a Kafka event
-     * source mapping with the consumer group ID specified, you cannot update this
-     * value. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
-     * consumer group ID</a>.</p>
-     */
     inline bool ConsumerGroupIdHasBeenSet() const { return m_consumerGroupIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the Kafka consumer group to join. The consumer group ID
-     * must be unique among all your Kafka event sources. After creating a Kafka event
-     * source mapping with the consumer group ID specified, you cannot update this
-     * value. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
-     * consumer group ID</a>.</p>
-     */
     inline void SetConsumerGroupId(const Aws::String& value) { m_consumerGroupIdHasBeenSet = true; m_consumerGroupId = value; }
-
-    /**
-     * <p>The identifier for the Kafka consumer group to join. The consumer group ID
-     * must be unique among all your Kafka event sources. After creating a Kafka event
-     * source mapping with the consumer group ID specified, you cannot update this
-     * value. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
-     * consumer group ID</a>.</p>
-     */
     inline void SetConsumerGroupId(Aws::String&& value) { m_consumerGroupIdHasBeenSet = true; m_consumerGroupId = std::move(value); }
-
-    /**
-     * <p>The identifier for the Kafka consumer group to join. The consumer group ID
-     * must be unique among all your Kafka event sources. After creating a Kafka event
-     * source mapping with the consumer group ID specified, you cannot update this
-     * value. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
-     * consumer group ID</a>.</p>
-     */
     inline void SetConsumerGroupId(const char* value) { m_consumerGroupIdHasBeenSet = true; m_consumerGroupId.assign(value); }
-
-    /**
-     * <p>The identifier for the Kafka consumer group to join. The consumer group ID
-     * must be unique among all your Kafka event sources. After creating a Kafka event
-     * source mapping with the consumer group ID specified, you cannot update this
-     * value. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
-     * consumer group ID</a>.</p>
-     */
     inline AmazonManagedKafkaEventSourceConfig& WithConsumerGroupId(const Aws::String& value) { SetConsumerGroupId(value); return *this;}
-
-    /**
-     * <p>The identifier for the Kafka consumer group to join. The consumer group ID
-     * must be unique among all your Kafka event sources. After creating a Kafka event
-     * source mapping with the consumer group ID specified, you cannot update this
-     * value. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
-     * consumer group ID</a>.</p>
-     */
     inline AmazonManagedKafkaEventSourceConfig& WithConsumerGroupId(Aws::String&& value) { SetConsumerGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the Kafka consumer group to join. The consumer group ID
-     * must be unique among all your Kafka event sources. After creating a Kafka event
-     * source mapping with the consumer group ID specified, you cannot update this
-     * value. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
-     * consumer group ID</a>.</p>
-     */
     inline AmazonManagedKafkaEventSourceConfig& WithConsumerGroupId(const char* value) { SetConsumerGroupId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_consumerGroupId;

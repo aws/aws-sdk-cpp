@@ -34,89 +34,40 @@ namespace Model
     AWS_ACCESSANALYZER_API GetGeneratedPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <code>GeneratedPolicyDetails</code> object that contains details about the
      * generated policy.</p>
      */
     inline const JobDetails& GetJobDetails() const{ return m_jobDetails; }
-
-    /**
-     * <p>A <code>GeneratedPolicyDetails</code> object that contains details about the
-     * generated policy.</p>
-     */
     inline void SetJobDetails(const JobDetails& value) { m_jobDetails = value; }
-
-    /**
-     * <p>A <code>GeneratedPolicyDetails</code> object that contains details about the
-     * generated policy.</p>
-     */
     inline void SetJobDetails(JobDetails&& value) { m_jobDetails = std::move(value); }
-
-    /**
-     * <p>A <code>GeneratedPolicyDetails</code> object that contains details about the
-     * generated policy.</p>
-     */
     inline GetGeneratedPolicyResult& WithJobDetails(const JobDetails& value) { SetJobDetails(value); return *this;}
-
-    /**
-     * <p>A <code>GeneratedPolicyDetails</code> object that contains details about the
-     * generated policy.</p>
-     */
     inline GetGeneratedPolicyResult& WithJobDetails(JobDetails&& value) { SetJobDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A <code>GeneratedPolicyResult</code> object that contains the generated
      * policies and associated details.</p>
      */
     inline const GeneratedPolicyResults& GetGeneratedPolicyResults() const{ return m_generatedPolicyResults; }
-
-    /**
-     * <p>A <code>GeneratedPolicyResult</code> object that contains the generated
-     * policies and associated details.</p>
-     */
     inline void SetGeneratedPolicyResults(const GeneratedPolicyResults& value) { m_generatedPolicyResults = value; }
-
-    /**
-     * <p>A <code>GeneratedPolicyResult</code> object that contains the generated
-     * policies and associated details.</p>
-     */
     inline void SetGeneratedPolicyResults(GeneratedPolicyResults&& value) { m_generatedPolicyResults = std::move(value); }
-
-    /**
-     * <p>A <code>GeneratedPolicyResult</code> object that contains the generated
-     * policies and associated details.</p>
-     */
     inline GetGeneratedPolicyResult& WithGeneratedPolicyResults(const GeneratedPolicyResults& value) { SetGeneratedPolicyResults(value); return *this;}
-
-    /**
-     * <p>A <code>GeneratedPolicyResult</code> object that contains the generated
-     * policies and associated details.</p>
-     */
     inline GetGeneratedPolicyResult& WithGeneratedPolicyResults(GeneratedPolicyResults&& value) { SetGeneratedPolicyResults(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetGeneratedPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetGeneratedPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetGeneratedPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JobDetails m_jobDetails;

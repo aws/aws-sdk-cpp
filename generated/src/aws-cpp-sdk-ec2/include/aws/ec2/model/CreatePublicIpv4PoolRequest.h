@@ -37,6 +37,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A check for whether you have the required permissions for the action without
      * actually making the request and provides an error response. If you have the
@@ -44,32 +45,12 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CreatePublicIpv4PoolRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key/value combination of a tag assigned to the resource. Use the tag key
      * in the filter name and the tag value as the filter value. For example, to find
@@ -78,70 +59,14 @@ namespace Model
      * <code>TeamA</code> for the filter value.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline CreatePublicIpv4PoolRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline CreatePublicIpv4PoolRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline CreatePublicIpv4PoolRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline CreatePublicIpv4PoolRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     bool m_dryRun;

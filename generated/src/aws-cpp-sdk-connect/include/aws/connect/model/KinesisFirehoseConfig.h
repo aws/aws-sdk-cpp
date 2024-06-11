@@ -38,46 +38,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
      */
     inline const Aws::String& GetFirehoseArn() const{ return m_firehoseArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-     */
     inline bool FirehoseArnHasBeenSet() const { return m_firehoseArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-     */
     inline void SetFirehoseArn(const Aws::String& value) { m_firehoseArnHasBeenSet = true; m_firehoseArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-     */
     inline void SetFirehoseArn(Aws::String&& value) { m_firehoseArnHasBeenSet = true; m_firehoseArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-     */
     inline void SetFirehoseArn(const char* value) { m_firehoseArnHasBeenSet = true; m_firehoseArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-     */
     inline KinesisFirehoseConfig& WithFirehoseArn(const Aws::String& value) { SetFirehoseArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-     */
     inline KinesisFirehoseConfig& WithFirehoseArn(Aws::String&& value) { SetFirehoseArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-     */
     inline KinesisFirehoseConfig& WithFirehoseArn(const char* value) { SetFirehoseArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_firehoseArn;

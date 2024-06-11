@@ -34,196 +34,71 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The input Amazon Resource Name (ARN) of the Earth Observation job being
      * exported.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The input Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The input Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The input Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The input Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The input Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline ExportEarthObservationJobRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The input Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline ExportEarthObservationJobRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The input Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline ExportEarthObservationJobRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique token that guarantees that the call to this API is idempotent.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
-     */
     inline ExportEarthObservationJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
-     */
     inline ExportEarthObservationJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
-     */
     inline ExportEarthObservationJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
      * job.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline ExportEarthObservationJobRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline ExportEarthObservationJobRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline ExportEarthObservationJobRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The source images provided to the Earth Observation job being exported.</p>
      */
     inline bool GetExportSourceImages() const{ return m_exportSourceImages; }
-
-    /**
-     * <p>The source images provided to the Earth Observation job being exported.</p>
-     */
     inline bool ExportSourceImagesHasBeenSet() const { return m_exportSourceImagesHasBeenSet; }
-
-    /**
-     * <p>The source images provided to the Earth Observation job being exported.</p>
-     */
     inline void SetExportSourceImages(bool value) { m_exportSourceImagesHasBeenSet = true; m_exportSourceImages = value; }
-
-    /**
-     * <p>The source images provided to the Earth Observation job being exported.</p>
-     */
     inline ExportEarthObservationJobRequest& WithExportSourceImages(bool value) { SetExportSourceImages(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object containing information about the output file.</p>
      */
     inline const OutputConfigInput& GetOutputConfig() const{ return m_outputConfig; }
-
-    /**
-     * <p>An object containing information about the output file.</p>
-     */
     inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
-
-    /**
-     * <p>An object containing information about the output file.</p>
-     */
     inline void SetOutputConfig(const OutputConfigInput& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
-
-    /**
-     * <p>An object containing information about the output file.</p>
-     */
     inline void SetOutputConfig(OutputConfigInput&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::move(value); }
-
-    /**
-     * <p>An object containing information about the output file.</p>
-     */
     inline ExportEarthObservationJobRequest& WithOutputConfig(const OutputConfigInput& value) { SetOutputConfig(value); return *this;}
-
-    /**
-     * <p>An object containing information about the output file.</p>
-     */
     inline ExportEarthObservationJobRequest& WithOutputConfig(OutputConfigInput&& value) { SetOutputConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

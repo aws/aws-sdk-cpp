@@ -39,26 +39,15 @@ namespace Model
     AWS_OSIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether persistent buffering should be enabled.</p>
      */
     inline bool GetPersistentBufferEnabled() const{ return m_persistentBufferEnabled; }
-
-    /**
-     * <p>Whether persistent buffering should be enabled.</p>
-     */
     inline bool PersistentBufferEnabledHasBeenSet() const { return m_persistentBufferEnabledHasBeenSet; }
-
-    /**
-     * <p>Whether persistent buffering should be enabled.</p>
-     */
     inline void SetPersistentBufferEnabled(bool value) { m_persistentBufferEnabledHasBeenSet = true; m_persistentBufferEnabled = value; }
-
-    /**
-     * <p>Whether persistent buffering should be enabled.</p>
-     */
     inline BufferOptions& WithPersistentBufferEnabled(bool value) { SetPersistentBufferEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_persistentBufferEnabled;

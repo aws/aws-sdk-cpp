@@ -41,67 +41,29 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The Classic Load Balancers.</p>
      */
     inline const ClassicLoadBalancersConfig& GetClassicLoadBalancersConfig() const{ return m_classicLoadBalancersConfig; }
-
-    /**
-     * <p>The Classic Load Balancers.</p>
-     */
     inline bool ClassicLoadBalancersConfigHasBeenSet() const { return m_classicLoadBalancersConfigHasBeenSet; }
-
-    /**
-     * <p>The Classic Load Balancers.</p>
-     */
     inline void SetClassicLoadBalancersConfig(const ClassicLoadBalancersConfig& value) { m_classicLoadBalancersConfigHasBeenSet = true; m_classicLoadBalancersConfig = value; }
-
-    /**
-     * <p>The Classic Load Balancers.</p>
-     */
     inline void SetClassicLoadBalancersConfig(ClassicLoadBalancersConfig&& value) { m_classicLoadBalancersConfigHasBeenSet = true; m_classicLoadBalancersConfig = std::move(value); }
-
-    /**
-     * <p>The Classic Load Balancers.</p>
-     */
     inline LoadBalancersConfig& WithClassicLoadBalancersConfig(const ClassicLoadBalancersConfig& value) { SetClassicLoadBalancersConfig(value); return *this;}
-
-    /**
-     * <p>The Classic Load Balancers.</p>
-     */
     inline LoadBalancersConfig& WithClassicLoadBalancersConfig(ClassicLoadBalancersConfig&& value) { SetClassicLoadBalancersConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The target groups.</p>
      */
     inline const TargetGroupsConfig& GetTargetGroupsConfig() const{ return m_targetGroupsConfig; }
-
-    /**
-     * <p>The target groups.</p>
-     */
     inline bool TargetGroupsConfigHasBeenSet() const { return m_targetGroupsConfigHasBeenSet; }
-
-    /**
-     * <p>The target groups.</p>
-     */
     inline void SetTargetGroupsConfig(const TargetGroupsConfig& value) { m_targetGroupsConfigHasBeenSet = true; m_targetGroupsConfig = value; }
-
-    /**
-     * <p>The target groups.</p>
-     */
     inline void SetTargetGroupsConfig(TargetGroupsConfig&& value) { m_targetGroupsConfigHasBeenSet = true; m_targetGroupsConfig = std::move(value); }
-
-    /**
-     * <p>The target groups.</p>
-     */
     inline LoadBalancersConfig& WithTargetGroupsConfig(const TargetGroupsConfig& value) { SetTargetGroupsConfig(value); return *this;}
-
-    /**
-     * <p>The target groups.</p>
-     */
     inline LoadBalancersConfig& WithTargetGroupsConfig(TargetGroupsConfig&& value) { SetTargetGroupsConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ClassicLoadBalancersConfig m_classicLoadBalancersConfig;

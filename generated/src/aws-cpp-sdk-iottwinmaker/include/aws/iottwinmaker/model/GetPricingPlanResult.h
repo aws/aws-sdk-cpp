@@ -33,79 +33,38 @@ namespace Model
     AWS_IOTTWINMAKER_API GetPricingPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The chosen pricing plan for the current billing cycle.</p>
      */
     inline const PricingPlan& GetCurrentPricingPlan() const{ return m_currentPricingPlan; }
-
-    /**
-     * <p>The chosen pricing plan for the current billing cycle.</p>
-     */
     inline void SetCurrentPricingPlan(const PricingPlan& value) { m_currentPricingPlan = value; }
-
-    /**
-     * <p>The chosen pricing plan for the current billing cycle.</p>
-     */
     inline void SetCurrentPricingPlan(PricingPlan&& value) { m_currentPricingPlan = std::move(value); }
-
-    /**
-     * <p>The chosen pricing plan for the current billing cycle.</p>
-     */
     inline GetPricingPlanResult& WithCurrentPricingPlan(const PricingPlan& value) { SetCurrentPricingPlan(value); return *this;}
-
-    /**
-     * <p>The chosen pricing plan for the current billing cycle.</p>
-     */
     inline GetPricingPlanResult& WithCurrentPricingPlan(PricingPlan&& value) { SetCurrentPricingPlan(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pending pricing plan.</p>
      */
     inline const PricingPlan& GetPendingPricingPlan() const{ return m_pendingPricingPlan; }
-
-    /**
-     * <p>The pending pricing plan.</p>
-     */
     inline void SetPendingPricingPlan(const PricingPlan& value) { m_pendingPricingPlan = value; }
-
-    /**
-     * <p>The pending pricing plan.</p>
-     */
     inline void SetPendingPricingPlan(PricingPlan&& value) { m_pendingPricingPlan = std::move(value); }
-
-    /**
-     * <p>The pending pricing plan.</p>
-     */
     inline GetPricingPlanResult& WithPendingPricingPlan(const PricingPlan& value) { SetPendingPricingPlan(value); return *this;}
-
-    /**
-     * <p>The pending pricing plan.</p>
-     */
     inline GetPricingPlanResult& WithPendingPricingPlan(PricingPlan&& value) { SetPendingPricingPlan(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPricingPlanResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPricingPlanResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPricingPlanResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PricingPlan m_currentPricingPlan;

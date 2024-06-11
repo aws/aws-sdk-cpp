@@ -39,46 +39,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the cluster subnet group name to be deleted.</p>
      */
     inline const Aws::String& GetClusterSubnetGroupName() const{ return m_clusterSubnetGroupName; }
-
-    /**
-     * <p>The name of the cluster subnet group name to be deleted.</p>
-     */
     inline bool ClusterSubnetGroupNameHasBeenSet() const { return m_clusterSubnetGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the cluster subnet group name to be deleted.</p>
-     */
     inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
-
-    /**
-     * <p>The name of the cluster subnet group name to be deleted.</p>
-     */
     inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the cluster subnet group name to be deleted.</p>
-     */
     inline void SetClusterSubnetGroupName(const char* value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName.assign(value); }
-
-    /**
-     * <p>The name of the cluster subnet group name to be deleted.</p>
-     */
     inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(const Aws::String& value) { SetClusterSubnetGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the cluster subnet group name to be deleted.</p>
-     */
     inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the cluster subnet group name to be deleted.</p>
-     */
     inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterSubnetGroupName;

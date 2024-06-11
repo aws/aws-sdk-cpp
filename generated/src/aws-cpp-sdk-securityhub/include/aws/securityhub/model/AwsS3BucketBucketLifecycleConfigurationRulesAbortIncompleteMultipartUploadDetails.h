@@ -36,30 +36,16 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of days after which Amazon S3 cancels an incomplete multipart
      * upload.</p>
      */
     inline int GetDaysAfterInitiation() const{ return m_daysAfterInitiation; }
-
-    /**
-     * <p>The number of days after which Amazon S3 cancels an incomplete multipart
-     * upload.</p>
-     */
     inline bool DaysAfterInitiationHasBeenSet() const { return m_daysAfterInitiationHasBeenSet; }
-
-    /**
-     * <p>The number of days after which Amazon S3 cancels an incomplete multipart
-     * upload.</p>
-     */
     inline void SetDaysAfterInitiation(int value) { m_daysAfterInitiationHasBeenSet = true; m_daysAfterInitiation = value; }
-
-    /**
-     * <p>The number of days after which Amazon S3 cancels an incomplete multipart
-     * upload.</p>
-     */
     inline AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails& WithDaysAfterInitiation(int value) { SetDaysAfterInitiation(value); return *this;}
-
+    ///@}
   private:
 
     int m_daysAfterInitiation;

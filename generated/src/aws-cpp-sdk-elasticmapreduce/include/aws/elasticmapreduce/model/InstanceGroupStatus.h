@@ -39,98 +39,41 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current state of the instance group.</p>
      */
     inline const InstanceGroupState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The current state of the instance group.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The current state of the instance group.</p>
-     */
     inline void SetState(const InstanceGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The current state of the instance group.</p>
-     */
     inline void SetState(InstanceGroupState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The current state of the instance group.</p>
-     */
     inline InstanceGroupStatus& WithState(const InstanceGroupState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The current state of the instance group.</p>
-     */
     inline InstanceGroupStatus& WithState(InstanceGroupState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status change reason details for the instance group.</p>
      */
     inline const InstanceGroupStateChangeReason& GetStateChangeReason() const{ return m_stateChangeReason; }
-
-    /**
-     * <p>The status change reason details for the instance group.</p>
-     */
     inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
-
-    /**
-     * <p>The status change reason details for the instance group.</p>
-     */
     inline void SetStateChangeReason(const InstanceGroupStateChangeReason& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
-
-    /**
-     * <p>The status change reason details for the instance group.</p>
-     */
     inline void SetStateChangeReason(InstanceGroupStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::move(value); }
-
-    /**
-     * <p>The status change reason details for the instance group.</p>
-     */
     inline InstanceGroupStatus& WithStateChangeReason(const InstanceGroupStateChangeReason& value) { SetStateChangeReason(value); return *this;}
-
-    /**
-     * <p>The status change reason details for the instance group.</p>
-     */
     inline InstanceGroupStatus& WithStateChangeReason(InstanceGroupStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timeline of the instance group status over time.</p>
      */
     inline const InstanceGroupTimeline& GetTimeline() const{ return m_timeline; }
-
-    /**
-     * <p>The timeline of the instance group status over time.</p>
-     */
     inline bool TimelineHasBeenSet() const { return m_timelineHasBeenSet; }
-
-    /**
-     * <p>The timeline of the instance group status over time.</p>
-     */
     inline void SetTimeline(const InstanceGroupTimeline& value) { m_timelineHasBeenSet = true; m_timeline = value; }
-
-    /**
-     * <p>The timeline of the instance group status over time.</p>
-     */
     inline void SetTimeline(InstanceGroupTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = std::move(value); }
-
-    /**
-     * <p>The timeline of the instance group status over time.</p>
-     */
     inline InstanceGroupStatus& WithTimeline(const InstanceGroupTimeline& value) { SetTimeline(value); return *this;}
-
-    /**
-     * <p>The timeline of the instance group status over time.</p>
-     */
     inline InstanceGroupStatus& WithTimeline(InstanceGroupTimeline&& value) { SetTimeline(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InstanceGroupState m_state;

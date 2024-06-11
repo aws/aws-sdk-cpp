@@ -39,58 +39,28 @@ namespace Model
     AWS_ELASTICTRANSCODER_API UpdatePipelineStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A section of the response body that provides information about the
      * pipeline.</p>
      */
     inline const Pipeline& GetPipeline() const{ return m_pipeline; }
-
-    /**
-     * <p>A section of the response body that provides information about the
-     * pipeline.</p>
-     */
     inline void SetPipeline(const Pipeline& value) { m_pipeline = value; }
-
-    /**
-     * <p>A section of the response body that provides information about the
-     * pipeline.</p>
-     */
     inline void SetPipeline(Pipeline&& value) { m_pipeline = std::move(value); }
-
-    /**
-     * <p>A section of the response body that provides information about the
-     * pipeline.</p>
-     */
     inline UpdatePipelineStatusResult& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
-
-    /**
-     * <p>A section of the response body that provides information about the
-     * pipeline.</p>
-     */
     inline UpdatePipelineStatusResult& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdatePipelineStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdatePipelineStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdatePipelineStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Pipeline m_pipeline;

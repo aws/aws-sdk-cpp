@@ -37,87 +37,33 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The exception error message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The exception error message.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The exception error message.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The exception error message.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The exception error message.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The exception error message.</p>
-     */
     inline OperationNotSupportedException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The exception error message.</p>
-     */
     inline OperationNotSupportedException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The exception error message.</p>
-     */
     inline OperationNotSupportedException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The exception error reason.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>The exception error reason.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>The exception error reason.</p>
-     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>The exception error reason.</p>
-     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>The exception error reason.</p>
-     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>The exception error reason.</p>
-     */
     inline OperationNotSupportedException& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>The exception error reason.</p>
-     */
     inline OperationNotSupportedException& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The exception error reason.</p>
-     */
     inline OperationNotSupportedException& WithReason(const char* value) { SetReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

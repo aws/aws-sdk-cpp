@@ -40,139 +40,55 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the generation request.</p>
      */
     inline const Aws::String& GetGenerationId() const{ return m_generationId; }
-
-    /**
-     * <p>The unique identifier of the generation request.</p>
-     */
     inline bool GenerationIdHasBeenSet() const { return m_generationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the generation request.</p>
-     */
     inline void SetGenerationId(const Aws::String& value) { m_generationIdHasBeenSet = true; m_generationId = value; }
-
-    /**
-     * <p>The unique identifier of the generation request.</p>
-     */
     inline void SetGenerationId(Aws::String&& value) { m_generationIdHasBeenSet = true; m_generationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the generation request.</p>
-     */
     inline void SetGenerationId(const char* value) { m_generationIdHasBeenSet = true; m_generationId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the generation request.</p>
-     */
     inline GenerationSummary& WithGenerationId(const Aws::String& value) { SetGenerationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the generation request.</p>
-     */
     inline GenerationSummary& WithGenerationId(Aws::String&& value) { SetGenerationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the generation request.</p>
-     */
     inline GenerationSummary& WithGenerationId(const char* value) { SetGenerationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the generation request.</p>
      */
     inline const GenerationStatus& GetGenerationStatus() const{ return m_generationStatus; }
-
-    /**
-     * <p>The status of the generation request.</p>
-     */
     inline bool GenerationStatusHasBeenSet() const { return m_generationStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the generation request.</p>
-     */
     inline void SetGenerationStatus(const GenerationStatus& value) { m_generationStatusHasBeenSet = true; m_generationStatus = value; }
-
-    /**
-     * <p>The status of the generation request.</p>
-     */
     inline void SetGenerationStatus(GenerationStatus&& value) { m_generationStatusHasBeenSet = true; m_generationStatus = std::move(value); }
-
-    /**
-     * <p>The status of the generation request.</p>
-     */
     inline GenerationSummary& WithGenerationStatus(const GenerationStatus& value) { SetGenerationStatus(value); return *this;}
-
-    /**
-     * <p>The status of the generation request.</p>
-     */
     inline GenerationSummary& WithGenerationStatus(GenerationStatus&& value) { SetGenerationStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time at which the generation request was made.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-
-    /**
-     * <p>The date and time at which the generation request was made.</p>
-     */
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time at which the generation request was made.</p>
-     */
     inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-
-    /**
-     * <p>The date and time at which the generation request was made.</p>
-     */
     inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time at which the generation request was made.</p>
-     */
     inline GenerationSummary& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time at which the generation request was made.</p>
-     */
     inline GenerationSummary& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time at which the generation request was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
-
-    /**
-     * <p>The date and time at which the generation request was last updated.</p>
-     */
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time at which the generation request was last updated.</p>
-     */
     inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
-
-    /**
-     * <p>The date and time at which the generation request was last updated.</p>
-     */
     inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time at which the generation request was last updated.</p>
-     */
     inline GenerationSummary& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time at which the generation request was last updated.</p>
-     */
     inline GenerationSummary& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_generationId;

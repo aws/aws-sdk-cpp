@@ -37,52 +37,22 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The IDs of the instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline UnmonitorInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline UnmonitorInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline UnmonitorInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline UnmonitorInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline UnmonitorInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -90,31 +60,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline UnmonitorInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_instanceIds;

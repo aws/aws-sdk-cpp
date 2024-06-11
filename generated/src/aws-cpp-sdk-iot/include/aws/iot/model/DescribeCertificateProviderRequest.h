@@ -32,46 +32,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the certificate provider.</p>
      */
     inline const Aws::String& GetCertificateProviderName() const{ return m_certificateProviderName; }
-
-    /**
-     * <p>The name of the certificate provider.</p>
-     */
     inline bool CertificateProviderNameHasBeenSet() const { return m_certificateProviderNameHasBeenSet; }
-
-    /**
-     * <p>The name of the certificate provider.</p>
-     */
     inline void SetCertificateProviderName(const Aws::String& value) { m_certificateProviderNameHasBeenSet = true; m_certificateProviderName = value; }
-
-    /**
-     * <p>The name of the certificate provider.</p>
-     */
     inline void SetCertificateProviderName(Aws::String&& value) { m_certificateProviderNameHasBeenSet = true; m_certificateProviderName = std::move(value); }
-
-    /**
-     * <p>The name of the certificate provider.</p>
-     */
     inline void SetCertificateProviderName(const char* value) { m_certificateProviderNameHasBeenSet = true; m_certificateProviderName.assign(value); }
-
-    /**
-     * <p>The name of the certificate provider.</p>
-     */
     inline DescribeCertificateProviderRequest& WithCertificateProviderName(const Aws::String& value) { SetCertificateProviderName(value); return *this;}
-
-    /**
-     * <p>The name of the certificate provider.</p>
-     */
     inline DescribeCertificateProviderRequest& WithCertificateProviderName(Aws::String&& value) { SetCertificateProviderName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the certificate provider.</p>
-     */
     inline DescribeCertificateProviderRequest& WithCertificateProviderName(const char* value) { SetCertificateProviderName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificateProviderName;

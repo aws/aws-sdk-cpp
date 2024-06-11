@@ -41,93 +41,33 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Indicates which of the available formats the specified manifest uses.</p>
      */
     inline const JobManifestFormat& GetFormat() const{ return m_format; }
-
-    /**
-     * <p>Indicates which of the available formats the specified manifest uses.</p>
-     */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-
-    /**
-     * <p>Indicates which of the available formats the specified manifest uses.</p>
-     */
     inline void SetFormat(const JobManifestFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-
-    /**
-     * <p>Indicates which of the available formats the specified manifest uses.</p>
-     */
     inline void SetFormat(JobManifestFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-
-    /**
-     * <p>Indicates which of the available formats the specified manifest uses.</p>
-     */
     inline JobManifestSpec& WithFormat(const JobManifestFormat& value) { SetFormat(value); return *this;}
-
-    /**
-     * <p>Indicates which of the available formats the specified manifest uses.</p>
-     */
     inline JobManifestSpec& WithFormat(JobManifestFormat&& value) { SetFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the specified manifest object is in the
      * <code>S3BatchOperations_CSV_20180820</code> format, this element describes which
      * columns contain the required data.</p>
      */
     inline const Aws::Vector<JobManifestFieldName>& GetFields() const{ return m_fields; }
-
-    /**
-     * <p>If the specified manifest object is in the
-     * <code>S3BatchOperations_CSV_20180820</code> format, this element describes which
-     * columns contain the required data.</p>
-     */
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-
-    /**
-     * <p>If the specified manifest object is in the
-     * <code>S3BatchOperations_CSV_20180820</code> format, this element describes which
-     * columns contain the required data.</p>
-     */
     inline void SetFields(const Aws::Vector<JobManifestFieldName>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-
-    /**
-     * <p>If the specified manifest object is in the
-     * <code>S3BatchOperations_CSV_20180820</code> format, this element describes which
-     * columns contain the required data.</p>
-     */
     inline void SetFields(Aws::Vector<JobManifestFieldName>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-
-    /**
-     * <p>If the specified manifest object is in the
-     * <code>S3BatchOperations_CSV_20180820</code> format, this element describes which
-     * columns contain the required data.</p>
-     */
     inline JobManifestSpec& WithFields(const Aws::Vector<JobManifestFieldName>& value) { SetFields(value); return *this;}
-
-    /**
-     * <p>If the specified manifest object is in the
-     * <code>S3BatchOperations_CSV_20180820</code> format, this element describes which
-     * columns contain the required data.</p>
-     */
     inline JobManifestSpec& WithFields(Aws::Vector<JobManifestFieldName>&& value) { SetFields(std::move(value)); return *this;}
-
-    /**
-     * <p>If the specified manifest object is in the
-     * <code>S3BatchOperations_CSV_20180820</code> format, this element describes which
-     * columns contain the required data.</p>
-     */
     inline JobManifestSpec& AddFields(const JobManifestFieldName& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-
-    /**
-     * <p>If the specified manifest object is in the
-     * <code>S3BatchOperations_CSV_20180820</code> format, this element describes which
-     * columns contain the required data.</p>
-     */
     inline JobManifestSpec& AddFields(JobManifestFieldName&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     JobManifestFormat m_format;

@@ -34,106 +34,43 @@ namespace Model
     AWS_WORKSPACES_API DescribeConnectionAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the specified connection aliases.</p>
      */
     inline const Aws::Vector<ConnectionAlias>& GetConnectionAliases() const{ return m_connectionAliases; }
-
-    /**
-     * <p>Information about the specified connection aliases.</p>
-     */
     inline void SetConnectionAliases(const Aws::Vector<ConnectionAlias>& value) { m_connectionAliases = value; }
-
-    /**
-     * <p>Information about the specified connection aliases.</p>
-     */
     inline void SetConnectionAliases(Aws::Vector<ConnectionAlias>&& value) { m_connectionAliases = std::move(value); }
-
-    /**
-     * <p>Information about the specified connection aliases.</p>
-     */
     inline DescribeConnectionAliasesResult& WithConnectionAliases(const Aws::Vector<ConnectionAlias>& value) { SetConnectionAliases(value); return *this;}
-
-    /**
-     * <p>Information about the specified connection aliases.</p>
-     */
     inline DescribeConnectionAliasesResult& WithConnectionAliases(Aws::Vector<ConnectionAlias>&& value) { SetConnectionAliases(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the specified connection aliases.</p>
-     */
     inline DescribeConnectionAliasesResult& AddConnectionAliases(const ConnectionAlias& value) { m_connectionAliases.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the specified connection aliases.</p>
-     */
     inline DescribeConnectionAliasesResult& AddConnectionAliases(ConnectionAlias&& value) { m_connectionAliases.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to retrieve the next page of results. This value is null
      * when there are no more results to return. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return. </p>
-     */
     inline DescribeConnectionAliasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return. </p>
-     */
     inline DescribeConnectionAliasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return. </p>
-     */
     inline DescribeConnectionAliasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeConnectionAliasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeConnectionAliasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeConnectionAliasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ConnectionAlias> m_connectionAliases;

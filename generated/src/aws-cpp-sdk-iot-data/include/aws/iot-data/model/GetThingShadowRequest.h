@@ -41,87 +41,33 @@ namespace Model
     AWS_IOTDATAPLANE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the thing.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline GetThingShadowRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline GetThingShadowRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline GetThingShadowRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the shadow.</p>
      */
     inline const Aws::String& GetShadowName() const{ return m_shadowName; }
-
-    /**
-     * <p>The name of the shadow.</p>
-     */
     inline bool ShadowNameHasBeenSet() const { return m_shadowNameHasBeenSet; }
-
-    /**
-     * <p>The name of the shadow.</p>
-     */
     inline void SetShadowName(const Aws::String& value) { m_shadowNameHasBeenSet = true; m_shadowName = value; }
-
-    /**
-     * <p>The name of the shadow.</p>
-     */
     inline void SetShadowName(Aws::String&& value) { m_shadowNameHasBeenSet = true; m_shadowName = std::move(value); }
-
-    /**
-     * <p>The name of the shadow.</p>
-     */
     inline void SetShadowName(const char* value) { m_shadowNameHasBeenSet = true; m_shadowName.assign(value); }
-
-    /**
-     * <p>The name of the shadow.</p>
-     */
     inline GetThingShadowRequest& WithShadowName(const Aws::String& value) { SetShadowName(value); return *this;}
-
-    /**
-     * <p>The name of the shadow.</p>
-     */
     inline GetThingShadowRequest& WithShadowName(Aws::String&& value) { SetShadowName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the shadow.</p>
-     */
     inline GetThingShadowRequest& WithShadowName(const char* value) { SetShadowName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_thingName;

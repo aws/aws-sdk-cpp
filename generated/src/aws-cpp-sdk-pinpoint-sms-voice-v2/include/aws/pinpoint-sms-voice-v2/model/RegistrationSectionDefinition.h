@@ -39,77 +39,31 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The path to the section of the registration.</p>
      */
     inline const Aws::String& GetSectionPath() const{ return m_sectionPath; }
-
-    /**
-     * <p>The path to the section of the registration.</p>
-     */
     inline bool SectionPathHasBeenSet() const { return m_sectionPathHasBeenSet; }
-
-    /**
-     * <p>The path to the section of the registration.</p>
-     */
     inline void SetSectionPath(const Aws::String& value) { m_sectionPathHasBeenSet = true; m_sectionPath = value; }
-
-    /**
-     * <p>The path to the section of the registration.</p>
-     */
     inline void SetSectionPath(Aws::String&& value) { m_sectionPathHasBeenSet = true; m_sectionPath = std::move(value); }
-
-    /**
-     * <p>The path to the section of the registration.</p>
-     */
     inline void SetSectionPath(const char* value) { m_sectionPathHasBeenSet = true; m_sectionPath.assign(value); }
-
-    /**
-     * <p>The path to the section of the registration.</p>
-     */
     inline RegistrationSectionDefinition& WithSectionPath(const Aws::String& value) { SetSectionPath(value); return *this;}
-
-    /**
-     * <p>The path to the section of the registration.</p>
-     */
     inline RegistrationSectionDefinition& WithSectionPath(Aws::String&& value) { SetSectionPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The path to the section of the registration.</p>
-     */
     inline RegistrationSectionDefinition& WithSectionPath(const char* value) { SetSectionPath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The path to the section of the registration.</p>
      */
     inline const RegistrationSectionDisplayHints& GetDisplayHints() const{ return m_displayHints; }
-
-    /**
-     * <p>The path to the section of the registration.</p>
-     */
     inline bool DisplayHintsHasBeenSet() const { return m_displayHintsHasBeenSet; }
-
-    /**
-     * <p>The path to the section of the registration.</p>
-     */
     inline void SetDisplayHints(const RegistrationSectionDisplayHints& value) { m_displayHintsHasBeenSet = true; m_displayHints = value; }
-
-    /**
-     * <p>The path to the section of the registration.</p>
-     */
     inline void SetDisplayHints(RegistrationSectionDisplayHints&& value) { m_displayHintsHasBeenSet = true; m_displayHints = std::move(value); }
-
-    /**
-     * <p>The path to the section of the registration.</p>
-     */
     inline RegistrationSectionDefinition& WithDisplayHints(const RegistrationSectionDisplayHints& value) { SetDisplayHints(value); return *this;}
-
-    /**
-     * <p>The path to the section of the registration.</p>
-     */
     inline RegistrationSectionDefinition& WithDisplayHints(RegistrationSectionDisplayHints&& value) { SetDisplayHints(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sectionPath;

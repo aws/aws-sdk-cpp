@@ -39,6 +39,7 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the email field. </p> <p>How you specify this depends on the
      * request inspection payload type.</p> <ul> <li> <p>For JSON payloads, specify the
@@ -53,112 +54,14 @@ namespace Model
      * <code>email1</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>The name of the email field. </p> <p>How you specify this depends on the
-     * request inspection payload type.</p> <ul> <li> <p>For JSON payloads, specify the
-     * field name in JSON pointer syntax. For information about the JSON Pointer
-     * syntax, see the Internet Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "email": "THE_EMAIL" } }</code>, the email field specification is
-     * <code>/form/email</code>.</p> </li> <li> <p>For form encoded payload types, use
-     * the HTML form names.</p> <p>For example, for an HTML form with the input element
-     * named <code>email1</code>, the email field specification is
-     * <code>email1</code>.</p> </li> </ul>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p>The name of the email field. </p> <p>How you specify this depends on the
-     * request inspection payload type.</p> <ul> <li> <p>For JSON payloads, specify the
-     * field name in JSON pointer syntax. For information about the JSON Pointer
-     * syntax, see the Internet Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "email": "THE_EMAIL" } }</code>, the email field specification is
-     * <code>/form/email</code>.</p> </li> <li> <p>For form encoded payload types, use
-     * the HTML form names.</p> <p>For example, for an HTML form with the input element
-     * named <code>email1</code>, the email field specification is
-     * <code>email1</code>.</p> </li> </ul>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p>The name of the email field. </p> <p>How you specify this depends on the
-     * request inspection payload type.</p> <ul> <li> <p>For JSON payloads, specify the
-     * field name in JSON pointer syntax. For information about the JSON Pointer
-     * syntax, see the Internet Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "email": "THE_EMAIL" } }</code>, the email field specification is
-     * <code>/form/email</code>.</p> </li> <li> <p>For form encoded payload types, use
-     * the HTML form names.</p> <p>For example, for an HTML form with the input element
-     * named <code>email1</code>, the email field specification is
-     * <code>email1</code>.</p> </li> </ul>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p>The name of the email field. </p> <p>How you specify this depends on the
-     * request inspection payload type.</p> <ul> <li> <p>For JSON payloads, specify the
-     * field name in JSON pointer syntax. For information about the JSON Pointer
-     * syntax, see the Internet Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "email": "THE_EMAIL" } }</code>, the email field specification is
-     * <code>/form/email</code>.</p> </li> <li> <p>For form encoded payload types, use
-     * the HTML form names.</p> <p>For example, for an HTML form with the input element
-     * named <code>email1</code>, the email field specification is
-     * <code>email1</code>.</p> </li> </ul>
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * <p>The name of the email field. </p> <p>How you specify this depends on the
-     * request inspection payload type.</p> <ul> <li> <p>For JSON payloads, specify the
-     * field name in JSON pointer syntax. For information about the JSON Pointer
-     * syntax, see the Internet Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "email": "THE_EMAIL" } }</code>, the email field specification is
-     * <code>/form/email</code>.</p> </li> <li> <p>For form encoded payload types, use
-     * the HTML form names.</p> <p>For example, for an HTML form with the input element
-     * named <code>email1</code>, the email field specification is
-     * <code>email1</code>.</p> </li> </ul>
-     */
     inline EmailField& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>The name of the email field. </p> <p>How you specify this depends on the
-     * request inspection payload type.</p> <ul> <li> <p>For JSON payloads, specify the
-     * field name in JSON pointer syntax. For information about the JSON Pointer
-     * syntax, see the Internet Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "email": "THE_EMAIL" } }</code>, the email field specification is
-     * <code>/form/email</code>.</p> </li> <li> <p>For form encoded payload types, use
-     * the HTML form names.</p> <p>For example, for an HTML form with the input element
-     * named <code>email1</code>, the email field specification is
-     * <code>email1</code>.</p> </li> </ul>
-     */
     inline EmailField& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the email field. </p> <p>How you specify this depends on the
-     * request inspection payload type.</p> <ul> <li> <p>For JSON payloads, specify the
-     * field name in JSON pointer syntax. For information about the JSON Pointer
-     * syntax, see the Internet Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "email": "THE_EMAIL" } }</code>, the email field specification is
-     * <code>/form/email</code>.</p> </li> <li> <p>For form encoded payload types, use
-     * the HTML form names.</p> <p>For example, for an HTML form with the input element
-     * named <code>email1</code>, the email field specification is
-     * <code>email1</code>.</p> </li> </ul>
-     */
     inline EmailField& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identifier;

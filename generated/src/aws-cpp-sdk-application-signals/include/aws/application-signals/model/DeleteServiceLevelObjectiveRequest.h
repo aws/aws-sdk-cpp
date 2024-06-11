@@ -32,46 +32,19 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN or name of the service level objective to delete.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ARN or name of the service level objective to delete.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ARN or name of the service level objective to delete.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ARN or name of the service level objective to delete.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ARN or name of the service level objective to delete.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ARN or name of the service level objective to delete.</p>
-     */
     inline DeleteServiceLevelObjectiveRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ARN or name of the service level objective to delete.</p>
-     */
     inline DeleteServiceLevelObjectiveRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN or name of the service level objective to delete.</p>
-     */
     inline DeleteServiceLevelObjectiveRequest& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

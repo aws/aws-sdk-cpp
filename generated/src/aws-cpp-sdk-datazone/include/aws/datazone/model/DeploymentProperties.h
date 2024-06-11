@@ -36,47 +36,25 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The end timeout of the environment blueprint deployment.</p>
      */
     inline int GetEndTimeoutMinutes() const{ return m_endTimeoutMinutes; }
-
-    /**
-     * <p>The end timeout of the environment blueprint deployment.</p>
-     */
     inline bool EndTimeoutMinutesHasBeenSet() const { return m_endTimeoutMinutesHasBeenSet; }
-
-    /**
-     * <p>The end timeout of the environment blueprint deployment.</p>
-     */
     inline void SetEndTimeoutMinutes(int value) { m_endTimeoutMinutesHasBeenSet = true; m_endTimeoutMinutes = value; }
-
-    /**
-     * <p>The end timeout of the environment blueprint deployment.</p>
-     */
     inline DeploymentProperties& WithEndTimeoutMinutes(int value) { SetEndTimeoutMinutes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The start timeout of the environment blueprint deployment.</p>
      */
     inline int GetStartTimeoutMinutes() const{ return m_startTimeoutMinutes; }
-
-    /**
-     * <p>The start timeout of the environment blueprint deployment.</p>
-     */
     inline bool StartTimeoutMinutesHasBeenSet() const { return m_startTimeoutMinutesHasBeenSet; }
-
-    /**
-     * <p>The start timeout of the environment blueprint deployment.</p>
-     */
     inline void SetStartTimeoutMinutes(int value) { m_startTimeoutMinutesHasBeenSet = true; m_startTimeoutMinutes = value; }
-
-    /**
-     * <p>The start timeout of the environment blueprint deployment.</p>
-     */
     inline DeploymentProperties& WithStartTimeoutMinutes(int value) { SetStartTimeoutMinutes(value); return *this;}
-
+    ///@}
   private:
 
     int m_endTimeoutMinutes;

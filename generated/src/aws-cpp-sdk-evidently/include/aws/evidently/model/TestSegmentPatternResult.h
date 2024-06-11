@@ -32,43 +32,25 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API TestSegmentPatternResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns <code>true</code> if the pattern matches the payload.</p>
      */
     inline bool GetMatch() const{ return m_match; }
-
-    /**
-     * <p>Returns <code>true</code> if the pattern matches the payload.</p>
-     */
     inline void SetMatch(bool value) { m_match = value; }
-
-    /**
-     * <p>Returns <code>true</code> if the pattern matches the payload.</p>
-     */
     inline TestSegmentPatternResult& WithMatch(bool value) { SetMatch(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline TestSegmentPatternResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline TestSegmentPatternResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline TestSegmentPatternResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_match;

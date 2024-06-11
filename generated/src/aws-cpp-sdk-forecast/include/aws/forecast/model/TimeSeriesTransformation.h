@@ -44,97 +44,34 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of actions that define a time series and how it is transformed.
      * These transformations create a new time series that is used for the what-if
      * analysis.</p>
      */
     inline const Action& GetAction() const{ return m_action; }
-
-    /**
-     * <p>An array of actions that define a time series and how it is transformed.
-     * These transformations create a new time series that is used for the what-if
-     * analysis.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>An array of actions that define a time series and how it is transformed.
-     * These transformations create a new time series that is used for the what-if
-     * analysis.</p>
-     */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>An array of actions that define a time series and how it is transformed.
-     * These transformations create a new time series that is used for the what-if
-     * analysis.</p>
-     */
     inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>An array of actions that define a time series and how it is transformed.
-     * These transformations create a new time series that is used for the what-if
-     * analysis.</p>
-     */
     inline TimeSeriesTransformation& WithAction(const Action& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>An array of actions that define a time series and how it is transformed.
-     * These transformations create a new time series that is used for the what-if
-     * analysis.</p>
-     */
     inline TimeSeriesTransformation& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of conditions that define which members of the related time series
      * are transformed.</p>
      */
     inline const Aws::Vector<TimeSeriesCondition>& GetTimeSeriesConditions() const{ return m_timeSeriesConditions; }
-
-    /**
-     * <p>An array of conditions that define which members of the related time series
-     * are transformed.</p>
-     */
     inline bool TimeSeriesConditionsHasBeenSet() const { return m_timeSeriesConditionsHasBeenSet; }
-
-    /**
-     * <p>An array of conditions that define which members of the related time series
-     * are transformed.</p>
-     */
     inline void SetTimeSeriesConditions(const Aws::Vector<TimeSeriesCondition>& value) { m_timeSeriesConditionsHasBeenSet = true; m_timeSeriesConditions = value; }
-
-    /**
-     * <p>An array of conditions that define which members of the related time series
-     * are transformed.</p>
-     */
     inline void SetTimeSeriesConditions(Aws::Vector<TimeSeriesCondition>&& value) { m_timeSeriesConditionsHasBeenSet = true; m_timeSeriesConditions = std::move(value); }
-
-    /**
-     * <p>An array of conditions that define which members of the related time series
-     * are transformed.</p>
-     */
     inline TimeSeriesTransformation& WithTimeSeriesConditions(const Aws::Vector<TimeSeriesCondition>& value) { SetTimeSeriesConditions(value); return *this;}
-
-    /**
-     * <p>An array of conditions that define which members of the related time series
-     * are transformed.</p>
-     */
     inline TimeSeriesTransformation& WithTimeSeriesConditions(Aws::Vector<TimeSeriesCondition>&& value) { SetTimeSeriesConditions(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of conditions that define which members of the related time series
-     * are transformed.</p>
-     */
     inline TimeSeriesTransformation& AddTimeSeriesConditions(const TimeSeriesCondition& value) { m_timeSeriesConditionsHasBeenSet = true; m_timeSeriesConditions.push_back(value); return *this; }
-
-    /**
-     * <p>An array of conditions that define which members of the related time series
-     * are transformed.</p>
-     */
     inline TimeSeriesTransformation& AddTimeSeriesConditions(TimeSeriesCondition&& value) { m_timeSeriesConditionsHasBeenSet = true; m_timeSeriesConditions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Action m_action;

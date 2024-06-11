@@ -32,46 +32,19 @@ namespace Model
     AWS_IOT1CLICKPROJECTS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the project to be described.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
-
-    /**
-     * <p>The name of the project to be described.</p>
-     */
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-
-    /**
-     * <p>The name of the project to be described.</p>
-     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-
-    /**
-     * <p>The name of the project to be described.</p>
-     */
     inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-
-    /**
-     * <p>The name of the project to be described.</p>
-     */
     inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-
-    /**
-     * <p>The name of the project to be described.</p>
-     */
     inline DescribeProjectRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-
-    /**
-     * <p>The name of the project to be described.</p>
-     */
     inline DescribeProjectRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the project to be described.</p>
-     */
     inline DescribeProjectRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectName;

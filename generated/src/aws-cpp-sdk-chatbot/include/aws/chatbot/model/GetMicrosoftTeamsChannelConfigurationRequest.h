@@ -32,46 +32,19 @@ namespace Model
     AWS_CHATBOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
-     */
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
-     */
     inline void SetChatConfigurationArn(const Aws::String& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = value; }
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
-     */
     inline void SetChatConfigurationArn(Aws::String&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::move(value); }
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
-     */
     inline void SetChatConfigurationArn(const char* value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn.assign(value); }
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
-     */
     inline GetMicrosoftTeamsChannelConfigurationRequest& WithChatConfigurationArn(const Aws::String& value) { SetChatConfigurationArn(value); return *this;}
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
-     */
     inline GetMicrosoftTeamsChannelConfigurationRequest& WithChatConfigurationArn(Aws::String&& value) { SetChatConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
-     */
     inline GetMicrosoftTeamsChannelConfigurationRequest& WithChatConfigurationArn(const char* value) { SetChatConfigurationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_chatConfigurationArn;

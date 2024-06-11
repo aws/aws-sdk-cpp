@@ -35,51 +35,26 @@ namespace Model
     AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The API target request burst rate limit. This allows more requests through
      * for a period of time than the target rate limit.</p>
      */
     inline int GetBurstLimit() const{ return m_burstLimit; }
-
-    /**
-     * <p>The API target request burst rate limit. This allows more requests through
-     * for a period of time than the target rate limit.</p>
-     */
     inline bool BurstLimitHasBeenSet() const { return m_burstLimitHasBeenSet; }
-
-    /**
-     * <p>The API target request burst rate limit. This allows more requests through
-     * for a period of time than the target rate limit.</p>
-     */
     inline void SetBurstLimit(int value) { m_burstLimitHasBeenSet = true; m_burstLimit = value; }
-
-    /**
-     * <p>The API target request burst rate limit. This allows more requests through
-     * for a period of time than the target rate limit.</p>
-     */
     inline ThrottleSettings& WithBurstLimit(int value) { SetBurstLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The API target request rate limit.</p>
      */
     inline double GetRateLimit() const{ return m_rateLimit; }
-
-    /**
-     * <p>The API target request rate limit.</p>
-     */
     inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
-
-    /**
-     * <p>The API target request rate limit.</p>
-     */
     inline void SetRateLimit(double value) { m_rateLimitHasBeenSet = true; m_rateLimit = value; }
-
-    /**
-     * <p>The API target request rate limit.</p>
-     */
     inline ThrottleSettings& WithRateLimit(double value) { SetRateLimit(value); return *this;}
-
+    ///@}
   private:
 
     int m_burstLimit;

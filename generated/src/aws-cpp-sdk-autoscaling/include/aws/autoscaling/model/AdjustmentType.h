@@ -39,62 +39,21 @@ namespace Model
     AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The policy adjustment type. The valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      * <code>PercentChangeInCapacity</code>.</p>
      */
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
-
-    /**
-     * <p>The policy adjustment type. The valid values are
-     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>.</p>
-     */
     inline bool AdjustmentTypeHasBeenSet() const { return m_adjustmentTypeHasBeenSet; }
-
-    /**
-     * <p>The policy adjustment type. The valid values are
-     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>.</p>
-     */
     inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
-
-    /**
-     * <p>The policy adjustment type. The valid values are
-     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>.</p>
-     */
     inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
-
-    /**
-     * <p>The policy adjustment type. The valid values are
-     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>.</p>
-     */
     inline void SetAdjustmentType(const char* value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType.assign(value); }
-
-    /**
-     * <p>The policy adjustment type. The valid values are
-     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>.</p>
-     */
     inline AdjustmentType& WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
-
-    /**
-     * <p>The policy adjustment type. The valid values are
-     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>.</p>
-     */
     inline AdjustmentType& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy adjustment type. The valid values are
-     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>.</p>
-     */
     inline AdjustmentType& WithAdjustmentType(const char* value) { SetAdjustmentType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_adjustmentType;

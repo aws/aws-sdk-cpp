@@ -36,30 +36,16 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A Boolean value that indicates whether to import all analyses and dashboards
      * under strict or lenient mode.</p>
      */
     inline bool GetStrictModeForAllResources() const{ return m_strictModeForAllResources; }
-
-    /**
-     * <p>A Boolean value that indicates whether to import all analyses and dashboards
-     * under strict or lenient mode.</p>
-     */
     inline bool StrictModeForAllResourcesHasBeenSet() const { return m_strictModeForAllResourcesHasBeenSet; }
-
-    /**
-     * <p>A Boolean value that indicates whether to import all analyses and dashboards
-     * under strict or lenient mode.</p>
-     */
     inline void SetStrictModeForAllResources(bool value) { m_strictModeForAllResourcesHasBeenSet = true; m_strictModeForAllResources = value; }
-
-    /**
-     * <p>A Boolean value that indicates whether to import all analyses and dashboards
-     * under strict or lenient mode.</p>
-     */
     inline AssetBundleImportJobOverrideValidationStrategy& WithStrictModeForAllResources(bool value) { SetStrictModeForAllResources(value); return *this;}
-
+    ///@}
   private:
 
     bool m_strictModeForAllResources;

@@ -34,132 +34,47 @@ namespace Model
     AWS_ECRPUBLIC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID that's associated with the public registry
      * that contains the repository to delete. If you do not specify a registry, the
      * default public registry is assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-
-    /**
-     * <p>The Amazon Web Services account ID that's associated with the public registry
-     * that contains the repository to delete. If you do not specify a registry, the
-     * default public registry is assumed.</p>
-     */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID that's associated with the public registry
-     * that contains the repository to delete. If you do not specify a registry, the
-     * default public registry is assumed.</p>
-     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID that's associated with the public registry
-     * that contains the repository to delete. If you do not specify a registry, the
-     * default public registry is assumed.</p>
-     */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID that's associated with the public registry
-     * that contains the repository to delete. If you do not specify a registry, the
-     * default public registry is assumed.</p>
-     */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID that's associated with the public registry
-     * that contains the repository to delete. If you do not specify a registry, the
-     * default public registry is assumed.</p>
-     */
     inline DeleteRepositoryRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID that's associated with the public registry
-     * that contains the repository to delete. If you do not specify a registry, the
-     * default public registry is assumed.</p>
-     */
     inline DeleteRepositoryRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID that's associated with the public registry
-     * that contains the repository to delete. If you do not specify a registry, the
-     * default public registry is assumed.</p>
-     */
     inline DeleteRepositoryRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the repository to delete.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the repository to delete.</p>
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the repository to delete.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the repository to delete.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the repository to delete.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the repository to delete.</p>
-     */
     inline DeleteRepositoryRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the repository to delete.</p>
-     */
     inline DeleteRepositoryRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the repository to delete.</p>
-     */
     inline DeleteRepositoryRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The force option can be used to delete a repository that contains images. If
      * the force option is not used, the repository must be empty prior to
      * deletion.</p>
      */
     inline bool GetForce() const{ return m_force; }
-
-    /**
-     * <p> The force option can be used to delete a repository that contains images. If
-     * the force option is not used, the repository must be empty prior to
-     * deletion.</p>
-     */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
-
-    /**
-     * <p> The force option can be used to delete a repository that contains images. If
-     * the force option is not used, the repository must be empty prior to
-     * deletion.</p>
-     */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
-
-    /**
-     * <p> The force option can be used to delete a repository that contains images. If
-     * the force option is not used, the repository must be empty prior to
-     * deletion.</p>
-     */
     inline DeleteRepositoryRequest& WithForce(bool value) { SetForce(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_registryId;

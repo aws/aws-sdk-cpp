@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API UpdateActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the action.</p>
      */
     inline const Aws::String& GetActionArn() const{ return m_actionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the action.</p>
-     */
     inline void SetActionArn(const Aws::String& value) { m_actionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the action.</p>
-     */
     inline void SetActionArn(Aws::String&& value) { m_actionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the action.</p>
-     */
     inline void SetActionArn(const char* value) { m_actionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the action.</p>
-     */
     inline UpdateActionResult& WithActionArn(const Aws::String& value) { SetActionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the action.</p>
-     */
     inline UpdateActionResult& WithActionArn(Aws::String&& value) { SetActionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the action.</p>
-     */
     inline UpdateActionResult& WithActionArn(const char* value) { SetActionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_actionArn;

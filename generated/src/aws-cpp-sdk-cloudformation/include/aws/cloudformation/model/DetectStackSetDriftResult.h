@@ -33,71 +33,29 @@ namespace Model
     AWS_CLOUDFORMATION_API DetectStackSetDriftResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the drift detection stack set operation.</p> <p>You can use this
      * operation ID with <a>DescribeStackSetOperation</a> to monitor the progress of
      * the drift detection operation.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
-
-    /**
-     * <p>The ID of the drift detection stack set operation.</p> <p>You can use this
-     * operation ID with <a>DescribeStackSetOperation</a> to monitor the progress of
-     * the drift detection operation.</p>
-     */
     inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
-
-    /**
-     * <p>The ID of the drift detection stack set operation.</p> <p>You can use this
-     * operation ID with <a>DescribeStackSetOperation</a> to monitor the progress of
-     * the drift detection operation.</p>
-     */
     inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
-
-    /**
-     * <p>The ID of the drift detection stack set operation.</p> <p>You can use this
-     * operation ID with <a>DescribeStackSetOperation</a> to monitor the progress of
-     * the drift detection operation.</p>
-     */
     inline void SetOperationId(const char* value) { m_operationId.assign(value); }
-
-    /**
-     * <p>The ID of the drift detection stack set operation.</p> <p>You can use this
-     * operation ID with <a>DescribeStackSetOperation</a> to monitor the progress of
-     * the drift detection operation.</p>
-     */
     inline DetectStackSetDriftResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-
-    /**
-     * <p>The ID of the drift detection stack set operation.</p> <p>You can use this
-     * operation ID with <a>DescribeStackSetOperation</a> to monitor the progress of
-     * the drift detection operation.</p>
-     */
     inline DetectStackSetDriftResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the drift detection stack set operation.</p> <p>You can use this
-     * operation ID with <a>DescribeStackSetOperation</a> to monitor the progress of
-     * the drift detection operation.</p>
-     */
     inline DetectStackSetDriftResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DetectStackSetDriftResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DetectStackSetDriftResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_operationId;

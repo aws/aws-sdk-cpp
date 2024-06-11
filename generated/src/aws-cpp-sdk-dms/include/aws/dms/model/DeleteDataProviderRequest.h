@@ -34,46 +34,19 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the data provider to delete.</p>
      */
     inline const Aws::String& GetDataProviderIdentifier() const{ return m_dataProviderIdentifier; }
-
-    /**
-     * <p>The identifier of the data provider to delete.</p>
-     */
     inline bool DataProviderIdentifierHasBeenSet() const { return m_dataProviderIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the data provider to delete.</p>
-     */
     inline void SetDataProviderIdentifier(const Aws::String& value) { m_dataProviderIdentifierHasBeenSet = true; m_dataProviderIdentifier = value; }
-
-    /**
-     * <p>The identifier of the data provider to delete.</p>
-     */
     inline void SetDataProviderIdentifier(Aws::String&& value) { m_dataProviderIdentifierHasBeenSet = true; m_dataProviderIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the data provider to delete.</p>
-     */
     inline void SetDataProviderIdentifier(const char* value) { m_dataProviderIdentifierHasBeenSet = true; m_dataProviderIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the data provider to delete.</p>
-     */
     inline DeleteDataProviderRequest& WithDataProviderIdentifier(const Aws::String& value) { SetDataProviderIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the data provider to delete.</p>
-     */
     inline DeleteDataProviderRequest& WithDataProviderIdentifier(Aws::String&& value) { SetDataProviderIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the data provider to delete.</p>
-     */
     inline DeleteDataProviderRequest& WithDataProviderIdentifier(const char* value) { SetDataProviderIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataProviderIdentifier;

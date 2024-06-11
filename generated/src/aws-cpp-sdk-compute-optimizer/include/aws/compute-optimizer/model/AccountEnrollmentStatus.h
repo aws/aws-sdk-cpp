@@ -40,171 +40,60 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline AccountEnrollmentStatus& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline AccountEnrollmentStatus& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline AccountEnrollmentStatus& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The account enrollment status.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The account enrollment status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The account enrollment status.</p>
-     */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The account enrollment status.</p>
-     */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The account enrollment status.</p>
-     */
     inline AccountEnrollmentStatus& WithStatus(const Status& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The account enrollment status.</p>
-     */
     inline AccountEnrollmentStatus& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason for the account enrollment status.</p> <p>For example, an account
      * might show a status of <code>Pending</code> because member accounts of an
      * organization require more time to be enrolled in the service.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
-
-    /**
-     * <p>The reason for the account enrollment status.</p> <p>For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-
-    /**
-     * <p>The reason for the account enrollment status.</p> <p>For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-
-    /**
-     * <p>The reason for the account enrollment status.</p> <p>For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-
-    /**
-     * <p>The reason for the account enrollment status.</p> <p>For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-
-    /**
-     * <p>The reason for the account enrollment status.</p> <p>For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline AccountEnrollmentStatus& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-
-    /**
-     * <p>The reason for the account enrollment status.</p> <p>For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline AccountEnrollmentStatus& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for the account enrollment status.</p> <p>For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline AccountEnrollmentStatus& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Unix epoch timestamp, in seconds, of when the account enrollment status
      * was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
-
-    /**
-     * <p>The Unix epoch timestamp, in seconds, of when the account enrollment status
-     * was last updated.</p>
-     */
     inline bool LastUpdatedTimestampHasBeenSet() const { return m_lastUpdatedTimestampHasBeenSet; }
-
-    /**
-     * <p>The Unix epoch timestamp, in seconds, of when the account enrollment status
-     * was last updated.</p>
-     */
     inline void SetLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
-
-    /**
-     * <p>The Unix epoch timestamp, in seconds, of when the account enrollment status
-     * was last updated.</p>
-     */
     inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::move(value); }
-
-    /**
-     * <p>The Unix epoch timestamp, in seconds, of when the account enrollment status
-     * was last updated.</p>
-     */
     inline AccountEnrollmentStatus& WithLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimestamp(value); return *this;}
-
-    /**
-     * <p>The Unix epoch timestamp, in seconds, of when the account enrollment status
-     * was last updated.</p>
-     */
     inline AccountEnrollmentStatus& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

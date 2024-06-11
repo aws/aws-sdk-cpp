@@ -37,54 +37,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The path on the host container instance that is presented to the
      * container.</p>
      */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
-
-    /**
-     * <p>The path on the host container instance that is presented to the
-     * container.</p>
-     */
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
-
-    /**
-     * <p>The path on the host container instance that is presented to the
-     * container.</p>
-     */
     inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
-
-    /**
-     * <p>The path on the host container instance that is presented to the
-     * container.</p>
-     */
     inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
-
-    /**
-     * <p>The path on the host container instance that is presented to the
-     * container.</p>
-     */
     inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
-
-    /**
-     * <p>The path on the host container instance that is presented to the
-     * container.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesHostDetails& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
-
-    /**
-     * <p>The path on the host container instance that is presented to the
-     * container.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesHostDetails& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
-
-    /**
-     * <p>The path on the host container instance that is presented to the
-     * container.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesHostDetails& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourcePath;

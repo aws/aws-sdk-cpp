@@ -36,47 +36,25 @@ namespace Model
     AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of cores that the CPU can use.</p>
      */
     inline int GetCoreCount() const{ return m_coreCount; }
-
-    /**
-     * <p>The number of cores that the CPU can use.</p>
-     */
     inline bool CoreCountHasBeenSet() const { return m_coreCountHasBeenSet; }
-
-    /**
-     * <p>The number of cores that the CPU can use.</p>
-     */
     inline void SetCoreCount(int value) { m_coreCountHasBeenSet = true; m_coreCount = value; }
-
-    /**
-     * <p>The number of cores that the CPU can use.</p>
-     */
     inline CpuOptions& WithCoreCount(int value) { SetCoreCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of threads per core in the CPU.</p>
      */
     inline int GetThreadsPerCore() const{ return m_threadsPerCore; }
-
-    /**
-     * <p>The number of threads per core in the CPU.</p>
-     */
     inline bool ThreadsPerCoreHasBeenSet() const { return m_threadsPerCoreHasBeenSet; }
-
-    /**
-     * <p>The number of threads per core in the CPU.</p>
-     */
     inline void SetThreadsPerCore(int value) { m_threadsPerCoreHasBeenSet = true; m_threadsPerCore = value; }
-
-    /**
-     * <p>The number of threads per core in the CPU.</p>
-     */
     inline CpuOptions& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
-
+    ///@}
   private:
 
     int m_coreCount;

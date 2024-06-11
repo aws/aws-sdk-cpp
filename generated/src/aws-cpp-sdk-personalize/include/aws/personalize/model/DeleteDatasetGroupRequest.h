@@ -34,46 +34,19 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the dataset group to delete.</p>
      */
     inline const Aws::String& GetDatasetGroupArn() const{ return m_datasetGroupArn; }
-
-    /**
-     * <p>The ARN of the dataset group to delete.</p>
-     */
     inline bool DatasetGroupArnHasBeenSet() const { return m_datasetGroupArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the dataset group to delete.</p>
-     */
     inline void SetDatasetGroupArn(const Aws::String& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = value; }
-
-    /**
-     * <p>The ARN of the dataset group to delete.</p>
-     */
     inline void SetDatasetGroupArn(Aws::String&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the dataset group to delete.</p>
-     */
     inline void SetDatasetGroupArn(const char* value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn.assign(value); }
-
-    /**
-     * <p>The ARN of the dataset group to delete.</p>
-     */
     inline DeleteDatasetGroupRequest& WithDatasetGroupArn(const Aws::String& value) { SetDatasetGroupArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the dataset group to delete.</p>
-     */
     inline DeleteDatasetGroupRequest& WithDatasetGroupArn(Aws::String&& value) { SetDatasetGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the dataset group to delete.</p>
-     */
     inline DeleteDatasetGroupRequest& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetGroupArn;

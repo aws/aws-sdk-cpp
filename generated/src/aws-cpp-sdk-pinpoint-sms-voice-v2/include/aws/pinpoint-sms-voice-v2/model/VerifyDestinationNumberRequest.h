@@ -34,95 +34,34 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the verififed destination phone number.</p>
      */
     inline const Aws::String& GetVerifiedDestinationNumberId() const{ return m_verifiedDestinationNumberId; }
-
-    /**
-     * <p>The unique identifier for the verififed destination phone number.</p>
-     */
     inline bool VerifiedDestinationNumberIdHasBeenSet() const { return m_verifiedDestinationNumberIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the verififed destination phone number.</p>
-     */
     inline void SetVerifiedDestinationNumberId(const Aws::String& value) { m_verifiedDestinationNumberIdHasBeenSet = true; m_verifiedDestinationNumberId = value; }
-
-    /**
-     * <p>The unique identifier for the verififed destination phone number.</p>
-     */
     inline void SetVerifiedDestinationNumberId(Aws::String&& value) { m_verifiedDestinationNumberIdHasBeenSet = true; m_verifiedDestinationNumberId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the verififed destination phone number.</p>
-     */
     inline void SetVerifiedDestinationNumberId(const char* value) { m_verifiedDestinationNumberIdHasBeenSet = true; m_verifiedDestinationNumberId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the verififed destination phone number.</p>
-     */
     inline VerifyDestinationNumberRequest& WithVerifiedDestinationNumberId(const Aws::String& value) { SetVerifiedDestinationNumberId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the verififed destination phone number.</p>
-     */
     inline VerifyDestinationNumberRequest& WithVerifiedDestinationNumberId(Aws::String&& value) { SetVerifiedDestinationNumberId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the verififed destination phone number.</p>
-     */
     inline VerifyDestinationNumberRequest& WithVerifiedDestinationNumberId(const char* value) { SetVerifiedDestinationNumberId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The verification code that was received by the verified destination phone
      * number.</p>
      */
     inline const Aws::String& GetVerificationCode() const{ return m_verificationCode; }
-
-    /**
-     * <p>The verification code that was received by the verified destination phone
-     * number.</p>
-     */
     inline bool VerificationCodeHasBeenSet() const { return m_verificationCodeHasBeenSet; }
-
-    /**
-     * <p>The verification code that was received by the verified destination phone
-     * number.</p>
-     */
     inline void SetVerificationCode(const Aws::String& value) { m_verificationCodeHasBeenSet = true; m_verificationCode = value; }
-
-    /**
-     * <p>The verification code that was received by the verified destination phone
-     * number.</p>
-     */
     inline void SetVerificationCode(Aws::String&& value) { m_verificationCodeHasBeenSet = true; m_verificationCode = std::move(value); }
-
-    /**
-     * <p>The verification code that was received by the verified destination phone
-     * number.</p>
-     */
     inline void SetVerificationCode(const char* value) { m_verificationCodeHasBeenSet = true; m_verificationCode.assign(value); }
-
-    /**
-     * <p>The verification code that was received by the verified destination phone
-     * number.</p>
-     */
     inline VerifyDestinationNumberRequest& WithVerificationCode(const Aws::String& value) { SetVerificationCode(value); return *this;}
-
-    /**
-     * <p>The verification code that was received by the verified destination phone
-     * number.</p>
-     */
     inline VerifyDestinationNumberRequest& WithVerificationCode(Aws::String&& value) { SetVerificationCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The verification code that was received by the verified destination phone
-     * number.</p>
-     */
     inline VerifyDestinationNumberRequest& WithVerificationCode(const char* value) { SetVerificationCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_verifiedDestinationNumberId;

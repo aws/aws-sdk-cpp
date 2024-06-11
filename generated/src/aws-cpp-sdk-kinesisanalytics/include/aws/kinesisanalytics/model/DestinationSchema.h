@@ -40,36 +40,17 @@ namespace Model
     AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the format of the records on the output stream.</p>
      */
     inline const RecordFormatType& GetRecordFormatType() const{ return m_recordFormatType; }
-
-    /**
-     * <p>Specifies the format of the records on the output stream.</p>
-     */
     inline bool RecordFormatTypeHasBeenSet() const { return m_recordFormatTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies the format of the records on the output stream.</p>
-     */
     inline void SetRecordFormatType(const RecordFormatType& value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = value; }
-
-    /**
-     * <p>Specifies the format of the records on the output stream.</p>
-     */
     inline void SetRecordFormatType(RecordFormatType&& value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = std::move(value); }
-
-    /**
-     * <p>Specifies the format of the records on the output stream.</p>
-     */
     inline DestinationSchema& WithRecordFormatType(const RecordFormatType& value) { SetRecordFormatType(value); return *this;}
-
-    /**
-     * <p>Specifies the format of the records on the output stream.</p>
-     */
     inline DestinationSchema& WithRecordFormatType(RecordFormatType&& value) { SetRecordFormatType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RecordFormatType m_recordFormatType;

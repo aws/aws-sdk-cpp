@@ -47,37 +47,19 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Server-side encryption algorithm to use for the default encryption.</p>
      */
     inline const ServerSideEncryption& GetSSEAlgorithm() const{ return m_sSEAlgorithm; }
-
-    /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
-     */
     inline bool SSEAlgorithmHasBeenSet() const { return m_sSEAlgorithmHasBeenSet; }
-
-    /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
-     */
     inline void SetSSEAlgorithm(const ServerSideEncryption& value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = value; }
-
-    /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
-     */
     inline void SetSSEAlgorithm(ServerSideEncryption&& value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = std::move(value); }
-
-    /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
-     */
     inline ServerSideEncryptionByDefault& WithSSEAlgorithm(const ServerSideEncryption& value) { SetSSEAlgorithm(value); return *this;}
-
-    /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
-     */
     inline ServerSideEncryptionByDefault& WithSSEAlgorithm(ServerSideEncryption&& value) { SetSSEAlgorithm(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
      * KMS key ID to use for the default encryption. This parameter is allowed if and
@@ -99,161 +81,14 @@ namespace Model
      * Service Developer Guide</i>.</p> 
      */
     inline const Aws::String& GetKMSMasterKeyID() const{ return m_kMSMasterKeyID; }
-
-    /**
-     * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
-     * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
-     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
-     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
-     * <p>If you use a key ID, you can run into a LogDestination undeliverable error
-     * when creating a VPC flow log. </p> <p>If you are using encryption with
-     * cross-account or Amazon Web Services service operations you must use a fully
-     * qualified KMS key ARN. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using
-     * encryption for cross-account operations</a>.</p>  <p>Amazon S3 only
-     * supports symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> 
-     */
     inline bool KMSMasterKeyIDHasBeenSet() const { return m_kMSMasterKeyIDHasBeenSet; }
-
-    /**
-     * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
-     * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
-     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
-     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
-     * <p>If you use a key ID, you can run into a LogDestination undeliverable error
-     * when creating a VPC flow log. </p> <p>If you are using encryption with
-     * cross-account or Amazon Web Services service operations you must use a fully
-     * qualified KMS key ARN. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using
-     * encryption for cross-account operations</a>.</p>  <p>Amazon S3 only
-     * supports symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> 
-     */
     inline void SetKMSMasterKeyID(const Aws::String& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = value; }
-
-    /**
-     * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
-     * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
-     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
-     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
-     * <p>If you use a key ID, you can run into a LogDestination undeliverable error
-     * when creating a VPC flow log. </p> <p>If you are using encryption with
-     * cross-account or Amazon Web Services service operations you must use a fully
-     * qualified KMS key ARN. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using
-     * encryption for cross-account operations</a>.</p>  <p>Amazon S3 only
-     * supports symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> 
-     */
     inline void SetKMSMasterKeyID(Aws::String&& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = std::move(value); }
-
-    /**
-     * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
-     * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
-     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
-     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
-     * <p>If you use a key ID, you can run into a LogDestination undeliverable error
-     * when creating a VPC flow log. </p> <p>If you are using encryption with
-     * cross-account or Amazon Web Services service operations you must use a fully
-     * qualified KMS key ARN. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using
-     * encryption for cross-account operations</a>.</p>  <p>Amazon S3 only
-     * supports symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> 
-     */
     inline void SetKMSMasterKeyID(const char* value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID.assign(value); }
-
-    /**
-     * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
-     * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
-     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
-     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
-     * <p>If you use a key ID, you can run into a LogDestination undeliverable error
-     * when creating a VPC flow log. </p> <p>If you are using encryption with
-     * cross-account or Amazon Web Services service operations you must use a fully
-     * qualified KMS key ARN. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using
-     * encryption for cross-account operations</a>.</p>  <p>Amazon S3 only
-     * supports symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> 
-     */
     inline ServerSideEncryptionByDefault& WithKMSMasterKeyID(const Aws::String& value) { SetKMSMasterKeyID(value); return *this;}
-
-    /**
-     * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
-     * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
-     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
-     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
-     * <p>If you use a key ID, you can run into a LogDestination undeliverable error
-     * when creating a VPC flow log. </p> <p>If you are using encryption with
-     * cross-account or Amazon Web Services service operations you must use a fully
-     * qualified KMS key ARN. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using
-     * encryption for cross-account operations</a>.</p>  <p>Amazon S3 only
-     * supports symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> 
-     */
     inline ServerSideEncryptionByDefault& WithKMSMasterKeyID(Aws::String&& value) { SetKMSMasterKeyID(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
-     * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
-     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
-     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
-     * <p>If you use a key ID, you can run into a LogDestination undeliverable error
-     * when creating a VPC flow log. </p> <p>If you are using encryption with
-     * cross-account or Amazon Web Services service operations you must use a fully
-     * qualified KMS key ARN. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using
-     * encryption for cross-account operations</a>.</p>  <p>Amazon S3 only
-     * supports symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> 
-     */
     inline ServerSideEncryptionByDefault& WithKMSMasterKeyID(const char* value) { SetKMSMasterKeyID(value); return *this;}
-
+    ///@}
   private:
 
     ServerSideEncryption m_sSEAlgorithm;

@@ -36,88 +36,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the Capacity Reservation.</p>
      */
     inline const Aws::String& GetCapacityReservationId() const{ return m_capacityReservationId; }
-
-    /**
-     * <p>The ID of the Capacity Reservation.</p>
-     */
     inline bool CapacityReservationIdHasBeenSet() const { return m_capacityReservationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Capacity Reservation.</p>
-     */
     inline void SetCapacityReservationId(const Aws::String& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = value; }
-
-    /**
-     * <p>The ID of the Capacity Reservation.</p>
-     */
     inline void SetCapacityReservationId(Aws::String&& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = std::move(value); }
-
-    /**
-     * <p>The ID of the Capacity Reservation.</p>
-     */
     inline void SetCapacityReservationId(const char* value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId.assign(value); }
-
-    /**
-     * <p>The ID of the Capacity Reservation.</p>
-     */
     inline GetCapacityReservationUsageRequest& WithCapacityReservationId(const Aws::String& value) { SetCapacityReservationId(value); return *this;}
-
-    /**
-     * <p>The ID of the Capacity Reservation.</p>
-     */
     inline GetCapacityReservationUsageRequest& WithCapacityReservationId(Aws::String&& value) { SetCapacityReservationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Capacity Reservation.</p>
-     */
     inline GetCapacityReservationUsageRequest& WithCapacityReservationId(const char* value) { SetCapacityReservationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline GetCapacityReservationUsageRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline GetCapacityReservationUsageRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline GetCapacityReservationUsageRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to return for this request. To get the next page
      * of items, make another request with the token returned in the output. For more
@@ -125,32 +72,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     */
     inline GetCapacityReservationUsageRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -158,31 +85,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline GetCapacityReservationUsageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_capacityReservationId;

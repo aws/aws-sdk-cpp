@@ -34,46 +34,19 @@ namespace Model
     AWS_SNOWBALL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The automatically generated ID for a cluster.</p>
      */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
-
-    /**
-     * <p>The automatically generated ID for a cluster.</p>
-     */
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-
-    /**
-     * <p>The automatically generated ID for a cluster.</p>
-     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-
-    /**
-     * <p>The automatically generated ID for a cluster.</p>
-     */
     inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-
-    /**
-     * <p>The automatically generated ID for a cluster.</p>
-     */
     inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-
-    /**
-     * <p>The automatically generated ID for a cluster.</p>
-     */
     inline DescribeClusterRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-
-    /**
-     * <p>The automatically generated ID for a cluster.</p>
-     */
     inline DescribeClusterRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-
-    /**
-     * <p>The automatically generated ID for a cluster.</p>
-     */
     inline DescribeClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterId;

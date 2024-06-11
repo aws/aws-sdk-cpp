@@ -35,51 +35,20 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The resource identifier, in the form of directory IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
-
-    /**
-     * <p>The resource identifier, in the form of directory IDs.</p>
-     */
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-
-    /**
-     * <p>The resource identifier, in the form of directory IDs.</p>
-     */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-
-    /**
-     * <p>The resource identifier, in the form of directory IDs.</p>
-     */
     inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-
-    /**
-     * <p>The resource identifier, in the form of directory IDs.</p>
-     */
     inline DescribeClientPropertiesRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-
-    /**
-     * <p>The resource identifier, in the form of directory IDs.</p>
-     */
     inline DescribeClientPropertiesRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource identifier, in the form of directory IDs.</p>
-     */
     inline DescribeClientPropertiesRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-
-    /**
-     * <p>The resource identifier, in the form of directory IDs.</p>
-     */
     inline DescribeClientPropertiesRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The resource identifier, in the form of directory IDs.</p>
-     */
     inline DescribeClientPropertiesRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_resourceIds;

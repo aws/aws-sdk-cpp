@@ -39,103 +39,35 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The YAML-formatted or JSON-formatted revision string. It includes information
      * about which Lambda function to update and optional Lambda functions that
      * validate deployment lifecycle events.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about which Lambda function to update and optional Lambda functions that
-     * validate deployment lifecycle events.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about which Lambda function to update and optional Lambda functions that
-     * validate deployment lifecycle events.</p>
-     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about which Lambda function to update and optional Lambda functions that
-     * validate deployment lifecycle events.</p>
-     */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about which Lambda function to update and optional Lambda functions that
-     * validate deployment lifecycle events.</p>
-     */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-
-    /**
-     * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about which Lambda function to update and optional Lambda functions that
-     * validate deployment lifecycle events.</p>
-     */
     inline RawString& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about which Lambda function to update and optional Lambda functions that
-     * validate deployment lifecycle events.</p>
-     */
     inline RawString& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-
-    /**
-     * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about which Lambda function to update and optional Lambda functions that
-     * validate deployment lifecycle events.</p>
-     */
     inline RawString& WithContent(const char* value) { SetContent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The SHA256 hash value of the revision content.</p>
      */
     inline const Aws::String& GetSha256() const{ return m_sha256; }
-
-    /**
-     * <p>The SHA256 hash value of the revision content.</p>
-     */
     inline bool Sha256HasBeenSet() const { return m_sha256HasBeenSet; }
-
-    /**
-     * <p>The SHA256 hash value of the revision content.</p>
-     */
     inline void SetSha256(const Aws::String& value) { m_sha256HasBeenSet = true; m_sha256 = value; }
-
-    /**
-     * <p>The SHA256 hash value of the revision content.</p>
-     */
     inline void SetSha256(Aws::String&& value) { m_sha256HasBeenSet = true; m_sha256 = std::move(value); }
-
-    /**
-     * <p>The SHA256 hash value of the revision content.</p>
-     */
     inline void SetSha256(const char* value) { m_sha256HasBeenSet = true; m_sha256.assign(value); }
-
-    /**
-     * <p>The SHA256 hash value of the revision content.</p>
-     */
     inline RawString& WithSha256(const Aws::String& value) { SetSha256(value); return *this;}
-
-    /**
-     * <p>The SHA256 hash value of the revision content.</p>
-     */
     inline RawString& WithSha256(Aws::String&& value) { SetSha256(std::move(value)); return *this;}
-
-    /**
-     * <p>The SHA256 hash value of the revision content.</p>
-     */
     inline RawString& WithSha256(const char* value) { SetSha256(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_content;

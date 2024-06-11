@@ -38,77 +38,31 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the search job.</p>
      */
     inline const Aws::String& GetSearchId() const{ return m_searchId; }
-
-    /**
-     * <p>The unique identifier of the search job.</p>
-     */
     inline bool SearchIdHasBeenSet() const { return m_searchIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the search job.</p>
-     */
     inline void SetSearchId(const Aws::String& value) { m_searchIdHasBeenSet = true; m_searchId = value; }
-
-    /**
-     * <p>The unique identifier of the search job.</p>
-     */
     inline void SetSearchId(Aws::String&& value) { m_searchIdHasBeenSet = true; m_searchId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the search job.</p>
-     */
     inline void SetSearchId(const char* value) { m_searchIdHasBeenSet = true; m_searchId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the search job.</p>
-     */
     inline SearchSummary& WithSearchId(const Aws::String& value) { SetSearchId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the search job.</p>
-     */
     inline SearchSummary& WithSearchId(Aws::String&& value) { SetSearchId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the search job.</p>
-     */
     inline SearchSummary& WithSearchId(const char* value) { SetSearchId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of the search job.</p>
      */
     inline const SearchStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the search job.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of the search job.</p>
-     */
     inline void SetStatus(const SearchStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of the search job.</p>
-     */
     inline void SetStatus(SearchStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the search job.</p>
-     */
     inline SearchSummary& WithStatus(const SearchStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the search job.</p>
-     */
     inline SearchSummary& WithStatus(SearchStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_searchId;

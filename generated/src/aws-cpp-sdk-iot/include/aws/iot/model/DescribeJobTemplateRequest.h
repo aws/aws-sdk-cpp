@@ -32,46 +32,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the job template.</p>
      */
     inline const Aws::String& GetJobTemplateId() const{ return m_jobTemplateId; }
-
-    /**
-     * <p>The unique identifier of the job template.</p>
-     */
     inline bool JobTemplateIdHasBeenSet() const { return m_jobTemplateIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the job template.</p>
-     */
     inline void SetJobTemplateId(const Aws::String& value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId = value; }
-
-    /**
-     * <p>The unique identifier of the job template.</p>
-     */
     inline void SetJobTemplateId(Aws::String&& value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the job template.</p>
-     */
     inline void SetJobTemplateId(const char* value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the job template.</p>
-     */
     inline DescribeJobTemplateRequest& WithJobTemplateId(const Aws::String& value) { SetJobTemplateId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the job template.</p>
-     */
     inline DescribeJobTemplateRequest& WithJobTemplateId(Aws::String&& value) { SetJobTemplateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the job template.</p>
-     */
     inline DescribeJobTemplateRequest& WithJobTemplateId(const char* value) { SetJobTemplateId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobTemplateId;

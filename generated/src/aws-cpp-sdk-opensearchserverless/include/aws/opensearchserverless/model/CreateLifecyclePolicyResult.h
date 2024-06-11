@@ -33,53 +33,27 @@ namespace Model
     AWS_OPENSEARCHSERVERLESS_API CreateLifecyclePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about the created lifecycle policy.</p>
      */
     inline const LifecyclePolicyDetail& GetLifecyclePolicyDetail() const{ return m_lifecyclePolicyDetail; }
-
-    /**
-     * <p>Details about the created lifecycle policy.</p>
-     */
     inline void SetLifecyclePolicyDetail(const LifecyclePolicyDetail& value) { m_lifecyclePolicyDetail = value; }
-
-    /**
-     * <p>Details about the created lifecycle policy.</p>
-     */
     inline void SetLifecyclePolicyDetail(LifecyclePolicyDetail&& value) { m_lifecyclePolicyDetail = std::move(value); }
-
-    /**
-     * <p>Details about the created lifecycle policy.</p>
-     */
     inline CreateLifecyclePolicyResult& WithLifecyclePolicyDetail(const LifecyclePolicyDetail& value) { SetLifecyclePolicyDetail(value); return *this;}
-
-    /**
-     * <p>Details about the created lifecycle policy.</p>
-     */
     inline CreateLifecyclePolicyResult& WithLifecyclePolicyDetail(LifecyclePolicyDetail&& value) { SetLifecyclePolicyDetail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateLifecyclePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateLifecyclePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateLifecyclePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LifecyclePolicyDetail m_lifecyclePolicyDetail;

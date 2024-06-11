@@ -32,63 +32,29 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API CreateNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier of the node.</p>
      */
     inline const Aws::String& GetNodeId() const{ return m_nodeId; }
-
-    /**
-     * <p>The unique identifier of the node.</p>
-     */
     inline void SetNodeId(const Aws::String& value) { m_nodeId = value; }
-
-    /**
-     * <p>The unique identifier of the node.</p>
-     */
     inline void SetNodeId(Aws::String&& value) { m_nodeId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the node.</p>
-     */
     inline void SetNodeId(const char* value) { m_nodeId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the node.</p>
-     */
     inline CreateNodeResult& WithNodeId(const Aws::String& value) { SetNodeId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the node.</p>
-     */
     inline CreateNodeResult& WithNodeId(Aws::String&& value) { SetNodeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the node.</p>
-     */
     inline CreateNodeResult& WithNodeId(const char* value) { SetNodeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateNodeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateNodeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateNodeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nodeId;

@@ -32,63 +32,29 @@ namespace Model
     AWS_SECURITYHUB_API DeleteActionTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the custom action target that was deleted.</p>
      */
     inline const Aws::String& GetActionTargetArn() const{ return m_actionTargetArn; }
-
-    /**
-     * <p>The ARN of the custom action target that was deleted.</p>
-     */
     inline void SetActionTargetArn(const Aws::String& value) { m_actionTargetArn = value; }
-
-    /**
-     * <p>The ARN of the custom action target that was deleted.</p>
-     */
     inline void SetActionTargetArn(Aws::String&& value) { m_actionTargetArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the custom action target that was deleted.</p>
-     */
     inline void SetActionTargetArn(const char* value) { m_actionTargetArn.assign(value); }
-
-    /**
-     * <p>The ARN of the custom action target that was deleted.</p>
-     */
     inline DeleteActionTargetResult& WithActionTargetArn(const Aws::String& value) { SetActionTargetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the custom action target that was deleted.</p>
-     */
     inline DeleteActionTargetResult& WithActionTargetArn(Aws::String&& value) { SetActionTargetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the custom action target that was deleted.</p>
-     */
     inline DeleteActionTargetResult& WithActionTargetArn(const char* value) { SetActionTargetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteActionTargetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteActionTargetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteActionTargetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_actionTargetArn;

@@ -40,67 +40,29 @@ namespace Model
     AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The version of the option.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The version of the option.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The version of the option.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The version of the option.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The version of the option.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>The version of the option.</p>
-     */
     inline OptionVersion& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The version of the option.</p>
-     */
     inline OptionVersion& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the option.</p>
-     */
     inline OptionVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the version is the default version of the option.</p>
      */
     inline bool GetIsDefault() const{ return m_isDefault; }
-
-    /**
-     * <p>Indicates whether the version is the default version of the option.</p>
-     */
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the version is the default version of the option.</p>
-     */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
-
-    /**
-     * <p>Indicates whether the version is the default version of the option.</p>
-     */
     inline OptionVersion& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_version;

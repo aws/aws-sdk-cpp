@@ -38,77 +38,31 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Amazon Redshift source.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the Amazon Redshift source.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon Redshift source.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the Amazon Redshift source.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon Redshift source.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the Amazon Redshift source.</p>
-     */
     inline AmazonRedshiftSource& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Redshift source.</p>
-     */
     inline AmazonRedshiftSource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon Redshift source.</p>
-     */
     inline AmazonRedshiftSource& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the data of the Amazon Reshift source node.</p>
      */
     inline const AmazonRedshiftNodeData& GetData() const{ return m_data; }
-
-    /**
-     * <p>Specifies the data of the Amazon Reshift source node.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>Specifies the data of the Amazon Reshift source node.</p>
-     */
     inline void SetData(const AmazonRedshiftNodeData& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>Specifies the data of the Amazon Reshift source node.</p>
-     */
     inline void SetData(AmazonRedshiftNodeData&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>Specifies the data of the Amazon Reshift source node.</p>
-     */
     inline AmazonRedshiftSource& WithData(const AmazonRedshiftNodeData& value) { SetData(value); return *this;}
-
-    /**
-     * <p>Specifies the data of the Amazon Reshift source node.</p>
-     */
     inline AmazonRedshiftSource& WithData(AmazonRedshiftNodeData&& value) { SetData(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

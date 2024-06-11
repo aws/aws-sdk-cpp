@@ -34,46 +34,19 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the protect configuration.</p>
      */
     inline const Aws::String& GetProtectConfigurationId() const{ return m_protectConfigurationId; }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline bool ProtectConfigurationIdHasBeenSet() const { return m_protectConfigurationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline void SetProtectConfigurationId(const Aws::String& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = value; }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline void SetProtectConfigurationId(Aws::String&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline void SetProtectConfigurationId(const char* value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline DeleteProtectConfigurationRequest& WithProtectConfigurationId(const Aws::String& value) { SetProtectConfigurationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline DeleteProtectConfigurationRequest& WithProtectConfigurationId(Aws::String&& value) { SetProtectConfigurationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline DeleteProtectConfigurationRequest& WithProtectConfigurationId(const char* value) { SetProtectConfigurationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_protectConfigurationId;

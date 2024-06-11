@@ -33,58 +33,28 @@ namespace Model
     AWS_DEADLINE_API CopyJobTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The format of the job template, either <code>JSON</code> or
      * <code>YAML</code>.</p>
      */
     inline const JobTemplateType& GetTemplateType() const{ return m_templateType; }
-
-    /**
-     * <p>The format of the job template, either <code>JSON</code> or
-     * <code>YAML</code>.</p>
-     */
     inline void SetTemplateType(const JobTemplateType& value) { m_templateType = value; }
-
-    /**
-     * <p>The format of the job template, either <code>JSON</code> or
-     * <code>YAML</code>.</p>
-     */
     inline void SetTemplateType(JobTemplateType&& value) { m_templateType = std::move(value); }
-
-    /**
-     * <p>The format of the job template, either <code>JSON</code> or
-     * <code>YAML</code>.</p>
-     */
     inline CopyJobTemplateResult& WithTemplateType(const JobTemplateType& value) { SetTemplateType(value); return *this;}
-
-    /**
-     * <p>The format of the job template, either <code>JSON</code> or
-     * <code>YAML</code>.</p>
-     */
     inline CopyJobTemplateResult& WithTemplateType(JobTemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CopyJobTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CopyJobTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CopyJobTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JobTemplateType m_templateType;

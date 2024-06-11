@@ -37,6 +37,7 @@ namespace Model
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Ad markers indicate when ads should be inserted during playback. If you
      * include ad markers in the content stream in your upstream encoders, then you
@@ -50,77 +51,12 @@ namespace Model
      * Ad Marker EXT-X-DATERANGE</a>.</p> </li> </ul>
      */
     inline const AdMarkerHls& GetAdMarkerHls() const{ return m_adMarkerHls; }
-
-    /**
-     * <p>Ad markers indicate when ads should be inserted during playback. If you
-     * include ad markers in the content stream in your upstream encoders, then you
-     * need to inform MediaPackage what to do with the ad markers in the output. Choose
-     * what you want MediaPackage to do with the ad markers.</p> <p>Value description:
-     * </p> <ul> <li> <p>DATERANGE - Insert EXT-X-DATERANGE tags to signal ad and
-     * program transition events in TS and CMAF manifests. If you use DATERANGE, you
-     * must set a programDateTimeIntervalSeconds value of 1 or higher. To learn more
-     * about DATERANGE, see <a
-     * href="http://docs.aws.amazon.com/mediapackage/latest/ug/scte-35-ad-marker-ext-x-daterange.html">SCTE-35
-     * Ad Marker EXT-X-DATERANGE</a>.</p> </li> </ul>
-     */
     inline bool AdMarkerHlsHasBeenSet() const { return m_adMarkerHlsHasBeenSet; }
-
-    /**
-     * <p>Ad markers indicate when ads should be inserted during playback. If you
-     * include ad markers in the content stream in your upstream encoders, then you
-     * need to inform MediaPackage what to do with the ad markers in the output. Choose
-     * what you want MediaPackage to do with the ad markers.</p> <p>Value description:
-     * </p> <ul> <li> <p>DATERANGE - Insert EXT-X-DATERANGE tags to signal ad and
-     * program transition events in TS and CMAF manifests. If you use DATERANGE, you
-     * must set a programDateTimeIntervalSeconds value of 1 or higher. To learn more
-     * about DATERANGE, see <a
-     * href="http://docs.aws.amazon.com/mediapackage/latest/ug/scte-35-ad-marker-ext-x-daterange.html">SCTE-35
-     * Ad Marker EXT-X-DATERANGE</a>.</p> </li> </ul>
-     */
     inline void SetAdMarkerHls(const AdMarkerHls& value) { m_adMarkerHlsHasBeenSet = true; m_adMarkerHls = value; }
-
-    /**
-     * <p>Ad markers indicate when ads should be inserted during playback. If you
-     * include ad markers in the content stream in your upstream encoders, then you
-     * need to inform MediaPackage what to do with the ad markers in the output. Choose
-     * what you want MediaPackage to do with the ad markers.</p> <p>Value description:
-     * </p> <ul> <li> <p>DATERANGE - Insert EXT-X-DATERANGE tags to signal ad and
-     * program transition events in TS and CMAF manifests. If you use DATERANGE, you
-     * must set a programDateTimeIntervalSeconds value of 1 or higher. To learn more
-     * about DATERANGE, see <a
-     * href="http://docs.aws.amazon.com/mediapackage/latest/ug/scte-35-ad-marker-ext-x-daterange.html">SCTE-35
-     * Ad Marker EXT-X-DATERANGE</a>.</p> </li> </ul>
-     */
     inline void SetAdMarkerHls(AdMarkerHls&& value) { m_adMarkerHlsHasBeenSet = true; m_adMarkerHls = std::move(value); }
-
-    /**
-     * <p>Ad markers indicate when ads should be inserted during playback. If you
-     * include ad markers in the content stream in your upstream encoders, then you
-     * need to inform MediaPackage what to do with the ad markers in the output. Choose
-     * what you want MediaPackage to do with the ad markers.</p> <p>Value description:
-     * </p> <ul> <li> <p>DATERANGE - Insert EXT-X-DATERANGE tags to signal ad and
-     * program transition events in TS and CMAF manifests. If you use DATERANGE, you
-     * must set a programDateTimeIntervalSeconds value of 1 or higher. To learn more
-     * about DATERANGE, see <a
-     * href="http://docs.aws.amazon.com/mediapackage/latest/ug/scte-35-ad-marker-ext-x-daterange.html">SCTE-35
-     * Ad Marker EXT-X-DATERANGE</a>.</p> </li> </ul>
-     */
     inline ScteHls& WithAdMarkerHls(const AdMarkerHls& value) { SetAdMarkerHls(value); return *this;}
-
-    /**
-     * <p>Ad markers indicate when ads should be inserted during playback. If you
-     * include ad markers in the content stream in your upstream encoders, then you
-     * need to inform MediaPackage what to do with the ad markers in the output. Choose
-     * what you want MediaPackage to do with the ad markers.</p> <p>Value description:
-     * </p> <ul> <li> <p>DATERANGE - Insert EXT-X-DATERANGE tags to signal ad and
-     * program transition events in TS and CMAF manifests. If you use DATERANGE, you
-     * must set a programDateTimeIntervalSeconds value of 1 or higher. To learn more
-     * about DATERANGE, see <a
-     * href="http://docs.aws.amazon.com/mediapackage/latest/ug/scte-35-ad-marker-ext-x-daterange.html">SCTE-35
-     * Ad Marker EXT-X-DATERANGE</a>.</p> </li> </ul>
-     */
     inline ScteHls& WithAdMarkerHls(AdMarkerHls&& value) { SetAdMarkerHls(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AdMarkerHls m_adMarkerHls;

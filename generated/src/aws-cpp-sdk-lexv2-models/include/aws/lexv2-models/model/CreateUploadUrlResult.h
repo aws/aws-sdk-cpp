@@ -32,120 +32,45 @@ namespace Model
     AWS_LEXMODELSV2_API CreateUploadUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An identifier for a unique import job. Use it when you call the <a
      * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
      * operation.</p>
      */
     inline const Aws::String& GetImportId() const{ return m_importId; }
-
-    /**
-     * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
-     * operation.</p>
-     */
     inline void SetImportId(const Aws::String& value) { m_importId = value; }
-
-    /**
-     * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
-     * operation.</p>
-     */
     inline void SetImportId(Aws::String&& value) { m_importId = std::move(value); }
-
-    /**
-     * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
-     * operation.</p>
-     */
     inline void SetImportId(const char* value) { m_importId.assign(value); }
-
-    /**
-     * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
-     * operation.</p>
-     */
     inline CreateUploadUrlResult& WithImportId(const Aws::String& value) { SetImportId(value); return *this;}
-
-    /**
-     * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
-     * operation.</p>
-     */
     inline CreateUploadUrlResult& WithImportId(Aws::String&& value) { SetImportId(std::move(value)); return *this;}
-
-    /**
-     * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
-     * operation.</p>
-     */
     inline CreateUploadUrlResult& WithImportId(const char* value) { SetImportId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A pre-signed S3 write URL. Upload the zip archive file that contains the
      * definition of your bot or bot locale.</p>
      */
     inline const Aws::String& GetUploadUrl() const{ return m_uploadUrl; }
-
-    /**
-     * <p>A pre-signed S3 write URL. Upload the zip archive file that contains the
-     * definition of your bot or bot locale.</p>
-     */
     inline void SetUploadUrl(const Aws::String& value) { m_uploadUrl = value; }
-
-    /**
-     * <p>A pre-signed S3 write URL. Upload the zip archive file that contains the
-     * definition of your bot or bot locale.</p>
-     */
     inline void SetUploadUrl(Aws::String&& value) { m_uploadUrl = std::move(value); }
-
-    /**
-     * <p>A pre-signed S3 write URL. Upload the zip archive file that contains the
-     * definition of your bot or bot locale.</p>
-     */
     inline void SetUploadUrl(const char* value) { m_uploadUrl.assign(value); }
-
-    /**
-     * <p>A pre-signed S3 write URL. Upload the zip archive file that contains the
-     * definition of your bot or bot locale.</p>
-     */
     inline CreateUploadUrlResult& WithUploadUrl(const Aws::String& value) { SetUploadUrl(value); return *this;}
-
-    /**
-     * <p>A pre-signed S3 write URL. Upload the zip archive file that contains the
-     * definition of your bot or bot locale.</p>
-     */
     inline CreateUploadUrlResult& WithUploadUrl(Aws::String&& value) { SetUploadUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>A pre-signed S3 write URL. Upload the zip archive file that contains the
-     * definition of your bot or bot locale.</p>
-     */
     inline CreateUploadUrlResult& WithUploadUrl(const char* value) { SetUploadUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateUploadUrlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateUploadUrlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateUploadUrlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_importId;

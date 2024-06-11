@@ -36,112 +36,36 @@ namespace Model
     AWS_COMPREHEND_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A list containing the UTF-8 encoded text of the input documents. The list can
      * contain a maximum of 25 documents. The maximum size of each document is 5
      * KB.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTextList() const{ return m_textList; }
-
-    /**
-     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
-     * contain a maximum of 25 documents. The maximum size of each document is 5
-     * KB.</p>
-     */
     inline bool TextListHasBeenSet() const { return m_textListHasBeenSet; }
-
-    /**
-     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
-     * contain a maximum of 25 documents. The maximum size of each document is 5
-     * KB.</p>
-     */
     inline void SetTextList(const Aws::Vector<Aws::String>& value) { m_textListHasBeenSet = true; m_textList = value; }
-
-    /**
-     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
-     * contain a maximum of 25 documents. The maximum size of each document is 5
-     * KB.</p>
-     */
     inline void SetTextList(Aws::Vector<Aws::String>&& value) { m_textListHasBeenSet = true; m_textList = std::move(value); }
-
-    /**
-     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
-     * contain a maximum of 25 documents. The maximum size of each document is 5
-     * KB.</p>
-     */
     inline BatchDetectEntitiesRequest& WithTextList(const Aws::Vector<Aws::String>& value) { SetTextList(value); return *this;}
-
-    /**
-     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
-     * contain a maximum of 25 documents. The maximum size of each document is 5
-     * KB.</p>
-     */
     inline BatchDetectEntitiesRequest& WithTextList(Aws::Vector<Aws::String>&& value) { SetTextList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
-     * contain a maximum of 25 documents. The maximum size of each document is 5
-     * KB.</p>
-     */
     inline BatchDetectEntitiesRequest& AddTextList(const Aws::String& value) { m_textListHasBeenSet = true; m_textList.push_back(value); return *this; }
-
-    /**
-     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
-     * contain a maximum of 25 documents. The maximum size of each document is 5
-     * KB.</p>
-     */
     inline BatchDetectEntitiesRequest& AddTextList(Aws::String&& value) { m_textListHasBeenSet = true; m_textList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
-     * contain a maximum of 25 documents. The maximum size of each document is 5
-     * KB.</p>
-     */
     inline BatchDetectEntitiesRequest& AddTextList(const char* value) { m_textListHasBeenSet = true; m_textList.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The language of the input documents. You can specify any of the primary
      * languages supported by Amazon Comprehend. All documents must be in the same
      * language.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
-
-    /**
-     * <p>The language of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend. All documents must be in the same
-     * language.</p>
-     */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-
-    /**
-     * <p>The language of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend. All documents must be in the same
-     * language.</p>
-     */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-
-    /**
-     * <p>The language of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend. All documents must be in the same
-     * language.</p>
-     */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-
-    /**
-     * <p>The language of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend. All documents must be in the same
-     * language.</p>
-     */
     inline BatchDetectEntitiesRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-
-    /**
-     * <p>The language of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend. All documents must be in the same
-     * language.</p>
-     */
     inline BatchDetectEntitiesRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_textList;

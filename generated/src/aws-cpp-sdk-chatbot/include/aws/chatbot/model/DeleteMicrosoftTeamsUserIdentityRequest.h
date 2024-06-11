@@ -32,95 +32,34 @@ namespace Model
     AWS_CHATBOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ARN of the MicrosoftTeamsChannelConfiguration associated with the user
      * identity to delete.
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration associated with the user
-     * identity to delete.
-     */
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration associated with the user
-     * identity to delete.
-     */
     inline void SetChatConfigurationArn(const Aws::String& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = value; }
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration associated with the user
-     * identity to delete.
-     */
     inline void SetChatConfigurationArn(Aws::String&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::move(value); }
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration associated with the user
-     * identity to delete.
-     */
     inline void SetChatConfigurationArn(const char* value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn.assign(value); }
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration associated with the user
-     * identity to delete.
-     */
     inline DeleteMicrosoftTeamsUserIdentityRequest& WithChatConfigurationArn(const Aws::String& value) { SetChatConfigurationArn(value); return *this;}
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration associated with the user
-     * identity to delete.
-     */
     inline DeleteMicrosoftTeamsUserIdentityRequest& WithChatConfigurationArn(Aws::String&& value) { SetChatConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration associated with the user
-     * identity to delete.
-     */
     inline DeleteMicrosoftTeamsUserIdentityRequest& WithChatConfigurationArn(const char* value) { SetChatConfigurationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Id from Microsoft Teams for user.
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
-
-    /**
-     * Id from Microsoft Teams for user.
-     */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-
-    /**
-     * Id from Microsoft Teams for user.
-     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-
-    /**
-     * Id from Microsoft Teams for user.
-     */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-
-    /**
-     * Id from Microsoft Teams for user.
-     */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-
-    /**
-     * Id from Microsoft Teams for user.
-     */
     inline DeleteMicrosoftTeamsUserIdentityRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-
-    /**
-     * Id from Microsoft Teams for user.
-     */
     inline DeleteMicrosoftTeamsUserIdentityRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-
-    /**
-     * Id from Microsoft Teams for user.
-     */
     inline DeleteMicrosoftTeamsUserIdentityRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_chatConfigurationArn;

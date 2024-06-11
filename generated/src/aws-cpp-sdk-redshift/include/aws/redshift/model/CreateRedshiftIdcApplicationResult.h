@@ -33,37 +33,23 @@ namespace Model
     AWS_REDSHIFT_API CreateRedshiftIdcApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const RedshiftIdcApplication& GetRedshiftIdcApplication() const{ return m_redshiftIdcApplication; }
-
-    
     inline void SetRedshiftIdcApplication(const RedshiftIdcApplication& value) { m_redshiftIdcApplication = value; }
-
-    
     inline void SetRedshiftIdcApplication(RedshiftIdcApplication&& value) { m_redshiftIdcApplication = std::move(value); }
-
-    
     inline CreateRedshiftIdcApplicationResult& WithRedshiftIdcApplication(const RedshiftIdcApplication& value) { SetRedshiftIdcApplication(value); return *this;}
-
-    
     inline CreateRedshiftIdcApplicationResult& WithRedshiftIdcApplication(RedshiftIdcApplication&& value) { SetRedshiftIdcApplication(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateRedshiftIdcApplicationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateRedshiftIdcApplicationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RedshiftIdcApplication m_redshiftIdcApplication;

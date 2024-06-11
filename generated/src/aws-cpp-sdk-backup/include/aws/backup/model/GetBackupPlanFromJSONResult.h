@@ -33,58 +33,28 @@ namespace Model
     AWS_BACKUP_API GetBackupPlanFromJSONResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code>
      * and one or more sets of <code>Rules</code>.</p>
      */
     inline const BackupPlan& GetBackupPlan() const{ return m_backupPlan; }
-
-    /**
-     * <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code>
-     * and one or more sets of <code>Rules</code>.</p>
-     */
     inline void SetBackupPlan(const BackupPlan& value) { m_backupPlan = value; }
-
-    /**
-     * <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code>
-     * and one or more sets of <code>Rules</code>.</p>
-     */
     inline void SetBackupPlan(BackupPlan&& value) { m_backupPlan = std::move(value); }
-
-    /**
-     * <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code>
-     * and one or more sets of <code>Rules</code>.</p>
-     */
     inline GetBackupPlanFromJSONResult& WithBackupPlan(const BackupPlan& value) { SetBackupPlan(value); return *this;}
-
-    /**
-     * <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code>
-     * and one or more sets of <code>Rules</code>.</p>
-     */
     inline GetBackupPlanFromJSONResult& WithBackupPlan(BackupPlan&& value) { SetBackupPlan(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBackupPlanFromJSONResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBackupPlanFromJSONResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBackupPlanFromJSONResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BackupPlan m_backupPlan;

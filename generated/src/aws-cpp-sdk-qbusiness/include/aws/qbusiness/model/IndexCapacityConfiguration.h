@@ -36,26 +36,15 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of storage units configured for an Amazon Q Business index.</p>
      */
     inline int GetUnits() const{ return m_units; }
-
-    /**
-     * <p>The number of storage units configured for an Amazon Q Business index.</p>
-     */
     inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
-
-    /**
-     * <p>The number of storage units configured for an Amazon Q Business index.</p>
-     */
     inline void SetUnits(int value) { m_unitsHasBeenSet = true; m_units = value; }
-
-    /**
-     * <p>The number of storage units configured for an Amazon Q Business index.</p>
-     */
     inline IndexCapacityConfiguration& WithUnits(int value) { SetUnits(value); return *this;}
-
+    ///@}
   private:
 
     int m_units;

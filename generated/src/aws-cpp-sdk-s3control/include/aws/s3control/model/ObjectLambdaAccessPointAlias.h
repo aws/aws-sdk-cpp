@@ -41,47 +41,21 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The alias value of the Object Lambda Access Point.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The alias value of the Object Lambda Access Point.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The alias value of the Object Lambda Access Point.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The alias value of the Object Lambda Access Point.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The alias value of the Object Lambda Access Point.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The alias value of the Object Lambda Access Point.</p>
-     */
     inline ObjectLambdaAccessPointAlias& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The alias value of the Object Lambda Access Point.</p>
-     */
     inline ObjectLambdaAccessPointAlias& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The alias value of the Object Lambda Access Point.</p>
-     */
     inline ObjectLambdaAccessPointAlias& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the Object Lambda Access Point alias. If the status is
      * <code>PROVISIONING</code>, the Object Lambda Access Point is provisioning the
@@ -90,52 +64,12 @@ namespace Model
      * provisioned and ready for use.</p>
      */
     inline const ObjectLambdaAccessPointAliasStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the Object Lambda Access Point alias. If the status is
-     * <code>PROVISIONING</code>, the Object Lambda Access Point is provisioning the
-     * alias and the alias is not ready for use yet. If the status is
-     * <code>READY</code>, the Object Lambda Access Point alias is successfully
-     * provisioned and ready for use.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the Object Lambda Access Point alias. If the status is
-     * <code>PROVISIONING</code>, the Object Lambda Access Point is provisioning the
-     * alias and the alias is not ready for use yet. If the status is
-     * <code>READY</code>, the Object Lambda Access Point alias is successfully
-     * provisioned and ready for use.</p>
-     */
     inline void SetStatus(const ObjectLambdaAccessPointAliasStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the Object Lambda Access Point alias. If the status is
-     * <code>PROVISIONING</code>, the Object Lambda Access Point is provisioning the
-     * alias and the alias is not ready for use yet. If the status is
-     * <code>READY</code>, the Object Lambda Access Point alias is successfully
-     * provisioned and ready for use.</p>
-     */
     inline void SetStatus(ObjectLambdaAccessPointAliasStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the Object Lambda Access Point alias. If the status is
-     * <code>PROVISIONING</code>, the Object Lambda Access Point is provisioning the
-     * alias and the alias is not ready for use yet. If the status is
-     * <code>READY</code>, the Object Lambda Access Point alias is successfully
-     * provisioned and ready for use.</p>
-     */
     inline ObjectLambdaAccessPointAlias& WithStatus(const ObjectLambdaAccessPointAliasStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the Object Lambda Access Point alias. If the status is
-     * <code>PROVISIONING</code>, the Object Lambda Access Point is provisioning the
-     * alias and the alias is not ready for use yet. If the status is
-     * <code>READY</code>, the Object Lambda Access Point alias is successfully
-     * provisioned and ready for use.</p>
-     */
     inline ObjectLambdaAccessPointAlias& WithStatus(ObjectLambdaAccessPointAliasStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_value;

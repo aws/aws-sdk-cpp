@@ -39,53 +39,27 @@ namespace Model
     AWS_DIRECTORYSERVICE_API CreateComputerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <a>Computer</a> object that represents the computer account.</p>
      */
     inline const Computer& GetComputer() const{ return m_computer; }
-
-    /**
-     * <p>A <a>Computer</a> object that represents the computer account.</p>
-     */
     inline void SetComputer(const Computer& value) { m_computer = value; }
-
-    /**
-     * <p>A <a>Computer</a> object that represents the computer account.</p>
-     */
     inline void SetComputer(Computer&& value) { m_computer = std::move(value); }
-
-    /**
-     * <p>A <a>Computer</a> object that represents the computer account.</p>
-     */
     inline CreateComputerResult& WithComputer(const Computer& value) { SetComputer(value); return *this;}
-
-    /**
-     * <p>A <a>Computer</a> object that represents the computer account.</p>
-     */
     inline CreateComputerResult& WithComputer(Computer&& value) { SetComputer(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateComputerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateComputerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateComputerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Computer m_computer;

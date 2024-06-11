@@ -38,65 +38,29 @@ namespace Model
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Parameter name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Parameter name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Parameter name.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Parameter name.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Parameter name.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Parameter name.</p>
-     */
     inline ParameterMapping& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Parameter name.</p>
-     */
     inline ParameterMapping& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Parameter name.</p>
-     */
     inline ParameterMapping& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Type& GetType() const{ return m_type; }
-
-    
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    
     inline ParameterMapping& WithType(const Type& value) { SetType(value); return *this;}
-
-    
     inline ParameterMapping& WithType(Type&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

@@ -44,6 +44,7 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
      * is an open-source threat detection framework that includes a standard rule-based
@@ -55,123 +56,28 @@ namespace Model
      * <code>STRICT_ORDER</code>.</p> 
      */
     inline const Aws::String& GetRulesString() const{ return m_rulesString; }
-
-    /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
-     * is an open-source threat detection framework that includes a standard rule-based
-     * language for network traffic inspection.</p> <p>These rules contain the
-     * inspection criteria and the action to take for traffic that matches the
-     * criteria, so this type of rule group doesn't have a separate action setting.</p>
-     *  <p>You can't use the <code>priority</code> keyword if the
-     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
-     * <code>STRICT_ORDER</code>.</p> 
-     */
     inline bool RulesStringHasBeenSet() const { return m_rulesStringHasBeenSet; }
-
-    /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
-     * is an open-source threat detection framework that includes a standard rule-based
-     * language for network traffic inspection.</p> <p>These rules contain the
-     * inspection criteria and the action to take for traffic that matches the
-     * criteria, so this type of rule group doesn't have a separate action setting.</p>
-     *  <p>You can't use the <code>priority</code> keyword if the
-     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
-     * <code>STRICT_ORDER</code>.</p> 
-     */
     inline void SetRulesString(const Aws::String& value) { m_rulesStringHasBeenSet = true; m_rulesString = value; }
-
-    /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
-     * is an open-source threat detection framework that includes a standard rule-based
-     * language for network traffic inspection.</p> <p>These rules contain the
-     * inspection criteria and the action to take for traffic that matches the
-     * criteria, so this type of rule group doesn't have a separate action setting.</p>
-     *  <p>You can't use the <code>priority</code> keyword if the
-     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
-     * <code>STRICT_ORDER</code>.</p> 
-     */
     inline void SetRulesString(Aws::String&& value) { m_rulesStringHasBeenSet = true; m_rulesString = std::move(value); }
-
-    /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
-     * is an open-source threat detection framework that includes a standard rule-based
-     * language for network traffic inspection.</p> <p>These rules contain the
-     * inspection criteria and the action to take for traffic that matches the
-     * criteria, so this type of rule group doesn't have a separate action setting.</p>
-     *  <p>You can't use the <code>priority</code> keyword if the
-     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
-     * <code>STRICT_ORDER</code>.</p> 
-     */
     inline void SetRulesString(const char* value) { m_rulesStringHasBeenSet = true; m_rulesString.assign(value); }
-
-    /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
-     * is an open-source threat detection framework that includes a standard rule-based
-     * language for network traffic inspection.</p> <p>These rules contain the
-     * inspection criteria and the action to take for traffic that matches the
-     * criteria, so this type of rule group doesn't have a separate action setting.</p>
-     *  <p>You can't use the <code>priority</code> keyword if the
-     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
-     * <code>STRICT_ORDER</code>.</p> 
-     */
     inline RulesSource& WithRulesString(const Aws::String& value) { SetRulesString(value); return *this;}
-
-    /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
-     * is an open-source threat detection framework that includes a standard rule-based
-     * language for network traffic inspection.</p> <p>These rules contain the
-     * inspection criteria and the action to take for traffic that matches the
-     * criteria, so this type of rule group doesn't have a separate action setting.</p>
-     *  <p>You can't use the <code>priority</code> keyword if the
-     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
-     * <code>STRICT_ORDER</code>.</p> 
-     */
     inline RulesSource& WithRulesString(Aws::String&& value) { SetRulesString(std::move(value)); return *this;}
-
-    /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
-     * is an open-source threat detection framework that includes a standard rule-based
-     * language for network traffic inspection.</p> <p>These rules contain the
-     * inspection criteria and the action to take for traffic that matches the
-     * criteria, so this type of rule group doesn't have a separate action setting.</p>
-     *  <p>You can't use the <code>priority</code> keyword if the
-     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
-     * <code>STRICT_ORDER</code>.</p> 
-     */
     inline RulesSource& WithRulesString(const char* value) { SetRulesString(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Stateful inspection criteria for a domain list rule group. </p>
      */
     inline const RulesSourceList& GetRulesSourceList() const{ return m_rulesSourceList; }
-
-    /**
-     * <p>Stateful inspection criteria for a domain list rule group. </p>
-     */
     inline bool RulesSourceListHasBeenSet() const { return m_rulesSourceListHasBeenSet; }
-
-    /**
-     * <p>Stateful inspection criteria for a domain list rule group. </p>
-     */
     inline void SetRulesSourceList(const RulesSourceList& value) { m_rulesSourceListHasBeenSet = true; m_rulesSourceList = value; }
-
-    /**
-     * <p>Stateful inspection criteria for a domain list rule group. </p>
-     */
     inline void SetRulesSourceList(RulesSourceList&& value) { m_rulesSourceListHasBeenSet = true; m_rulesSourceList = std::move(value); }
-
-    /**
-     * <p>Stateful inspection criteria for a domain list rule group. </p>
-     */
     inline RulesSource& WithRulesSourceList(const RulesSourceList& value) { SetRulesSourceList(value); return *this;}
-
-    /**
-     * <p>Stateful inspection criteria for a domain list rule group. </p>
-     */
     inline RulesSource& WithRulesSourceList(RulesSourceList&& value) { SetRulesSourceList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of individual stateful rules inspection criteria to be used together
      * in a stateful rule group. Use this option to specify simple Suricata rules with
@@ -181,108 +87,26 @@ namespace Model
      * Format</a>. </p>
      */
     inline const Aws::Vector<StatefulRule>& GetStatefulRules() const{ return m_statefulRules; }
-
-    /**
-     * <p>An array of individual stateful rules inspection criteria to be used together
-     * in a stateful rule group. Use this option to specify simple Suricata rules with
-     * protocol, source and destination, ports, direction, and rule options. For
-     * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
-     */
     inline bool StatefulRulesHasBeenSet() const { return m_statefulRulesHasBeenSet; }
-
-    /**
-     * <p>An array of individual stateful rules inspection criteria to be used together
-     * in a stateful rule group. Use this option to specify simple Suricata rules with
-     * protocol, source and destination, ports, direction, and rule options. For
-     * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
-     */
     inline void SetStatefulRules(const Aws::Vector<StatefulRule>& value) { m_statefulRulesHasBeenSet = true; m_statefulRules = value; }
-
-    /**
-     * <p>An array of individual stateful rules inspection criteria to be used together
-     * in a stateful rule group. Use this option to specify simple Suricata rules with
-     * protocol, source and destination, ports, direction, and rule options. For
-     * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
-     */
     inline void SetStatefulRules(Aws::Vector<StatefulRule>&& value) { m_statefulRulesHasBeenSet = true; m_statefulRules = std::move(value); }
-
-    /**
-     * <p>An array of individual stateful rules inspection criteria to be used together
-     * in a stateful rule group. Use this option to specify simple Suricata rules with
-     * protocol, source and destination, ports, direction, and rule options. For
-     * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
-     */
     inline RulesSource& WithStatefulRules(const Aws::Vector<StatefulRule>& value) { SetStatefulRules(value); return *this;}
-
-    /**
-     * <p>An array of individual stateful rules inspection criteria to be used together
-     * in a stateful rule group. Use this option to specify simple Suricata rules with
-     * protocol, source and destination, ports, direction, and rule options. For
-     * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
-     */
     inline RulesSource& WithStatefulRules(Aws::Vector<StatefulRule>&& value) { SetStatefulRules(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of individual stateful rules inspection criteria to be used together
-     * in a stateful rule group. Use this option to specify simple Suricata rules with
-     * protocol, source and destination, ports, direction, and rule options. For
-     * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
-     */
     inline RulesSource& AddStatefulRules(const StatefulRule& value) { m_statefulRulesHasBeenSet = true; m_statefulRules.push_back(value); return *this; }
-
-    /**
-     * <p>An array of individual stateful rules inspection criteria to be used together
-     * in a stateful rule group. Use this option to specify simple Suricata rules with
-     * protocol, source and destination, ports, direction, and rule options. For
-     * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
-     */
     inline RulesSource& AddStatefulRules(StatefulRule&& value) { m_statefulRulesHasBeenSet = true; m_statefulRules.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Stateless inspection criteria to be used in a stateless rule group. </p>
      */
     inline const StatelessRulesAndCustomActions& GetStatelessRulesAndCustomActions() const{ return m_statelessRulesAndCustomActions; }
-
-    /**
-     * <p>Stateless inspection criteria to be used in a stateless rule group. </p>
-     */
     inline bool StatelessRulesAndCustomActionsHasBeenSet() const { return m_statelessRulesAndCustomActionsHasBeenSet; }
-
-    /**
-     * <p>Stateless inspection criteria to be used in a stateless rule group. </p>
-     */
     inline void SetStatelessRulesAndCustomActions(const StatelessRulesAndCustomActions& value) { m_statelessRulesAndCustomActionsHasBeenSet = true; m_statelessRulesAndCustomActions = value; }
-
-    /**
-     * <p>Stateless inspection criteria to be used in a stateless rule group. </p>
-     */
     inline void SetStatelessRulesAndCustomActions(StatelessRulesAndCustomActions&& value) { m_statelessRulesAndCustomActionsHasBeenSet = true; m_statelessRulesAndCustomActions = std::move(value); }
-
-    /**
-     * <p>Stateless inspection criteria to be used in a stateless rule group. </p>
-     */
     inline RulesSource& WithStatelessRulesAndCustomActions(const StatelessRulesAndCustomActions& value) { SetStatelessRulesAndCustomActions(value); return *this;}
-
-    /**
-     * <p>Stateless inspection criteria to be used in a stateless rule group. </p>
-     */
     inline RulesSource& WithStatelessRulesAndCustomActions(StatelessRulesAndCustomActions&& value) { SetStatelessRulesAndCustomActions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_rulesString;

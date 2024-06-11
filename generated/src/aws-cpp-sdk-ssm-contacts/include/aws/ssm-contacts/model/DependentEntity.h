@@ -40,100 +40,35 @@ namespace Model
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of relationship between one resource and the other resource that it
      * is related to or depends on.</p>
      */
     inline const Aws::String& GetRelationType() const{ return m_relationType; }
-
-    /**
-     * <p>The type of relationship between one resource and the other resource that it
-     * is related to or depends on.</p>
-     */
     inline bool RelationTypeHasBeenSet() const { return m_relationTypeHasBeenSet; }
-
-    /**
-     * <p>The type of relationship between one resource and the other resource that it
-     * is related to or depends on.</p>
-     */
     inline void SetRelationType(const Aws::String& value) { m_relationTypeHasBeenSet = true; m_relationType = value; }
-
-    /**
-     * <p>The type of relationship between one resource and the other resource that it
-     * is related to or depends on.</p>
-     */
     inline void SetRelationType(Aws::String&& value) { m_relationTypeHasBeenSet = true; m_relationType = std::move(value); }
-
-    /**
-     * <p>The type of relationship between one resource and the other resource that it
-     * is related to or depends on.</p>
-     */
     inline void SetRelationType(const char* value) { m_relationTypeHasBeenSet = true; m_relationType.assign(value); }
-
-    /**
-     * <p>The type of relationship between one resource and the other resource that it
-     * is related to or depends on.</p>
-     */
     inline DependentEntity& WithRelationType(const Aws::String& value) { SetRelationType(value); return *this;}
-
-    /**
-     * <p>The type of relationship between one resource and the other resource that it
-     * is related to or depends on.</p>
-     */
     inline DependentEntity& WithRelationType(Aws::String&& value) { SetRelationType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of relationship between one resource and the other resource that it
-     * is related to or depends on.</p>
-     */
     inline DependentEntity& WithRelationType(const char* value) { SetRelationType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDependentResourceIds() const{ return m_dependentResourceIds; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-     */
     inline bool DependentResourceIdsHasBeenSet() const { return m_dependentResourceIdsHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-     */
     inline void SetDependentResourceIds(const Aws::Vector<Aws::String>& value) { m_dependentResourceIdsHasBeenSet = true; m_dependentResourceIds = value; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-     */
     inline void SetDependentResourceIds(Aws::Vector<Aws::String>&& value) { m_dependentResourceIdsHasBeenSet = true; m_dependentResourceIds = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-     */
     inline DependentEntity& WithDependentResourceIds(const Aws::Vector<Aws::String>& value) { SetDependentResourceIds(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-     */
     inline DependentEntity& WithDependentResourceIds(Aws::Vector<Aws::String>&& value) { SetDependentResourceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-     */
     inline DependentEntity& AddDependentResourceIds(const Aws::String& value) { m_dependentResourceIdsHasBeenSet = true; m_dependentResourceIds.push_back(value); return *this; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-     */
     inline DependentEntity& AddDependentResourceIds(Aws::String&& value) { m_dependentResourceIdsHasBeenSet = true; m_dependentResourceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-     */
     inline DependentEntity& AddDependentResourceIds(const char* value) { m_dependentResourceIdsHasBeenSet = true; m_dependentResourceIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_relationType;

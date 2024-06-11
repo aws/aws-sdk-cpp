@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Source template.</p>
      */
     inline const DashboardSourceTemplate& GetSourceTemplate() const{ return m_sourceTemplate; }
-
-    /**
-     * <p>Source template.</p>
-     */
     inline bool SourceTemplateHasBeenSet() const { return m_sourceTemplateHasBeenSet; }
-
-    /**
-     * <p>Source template.</p>
-     */
     inline void SetSourceTemplate(const DashboardSourceTemplate& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = value; }
-
-    /**
-     * <p>Source template.</p>
-     */
     inline void SetSourceTemplate(DashboardSourceTemplate&& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = std::move(value); }
-
-    /**
-     * <p>Source template.</p>
-     */
     inline DashboardSourceEntity& WithSourceTemplate(const DashboardSourceTemplate& value) { SetSourceTemplate(value); return *this;}
-
-    /**
-     * <p>Source template.</p>
-     */
     inline DashboardSourceEntity& WithSourceTemplate(DashboardSourceTemplate&& value) { SetSourceTemplate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DashboardSourceTemplate m_sourceTemplate;

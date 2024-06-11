@@ -42,160 +42,51 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of objects containing the criteria you requested for binning results
      * and the values of the bins.</p>
      */
     inline const Aws::Vector<AnalyticsBinKey>& GetBinKeys() const{ return m_binKeys; }
-
-    /**
-     * <p>A list of objects containing the criteria you requested for binning results
-     * and the values of the bins.</p>
-     */
     inline bool BinKeysHasBeenSet() const { return m_binKeysHasBeenSet; }
-
-    /**
-     * <p>A list of objects containing the criteria you requested for binning results
-     * and the values of the bins.</p>
-     */
     inline void SetBinKeys(const Aws::Vector<AnalyticsBinKey>& value) { m_binKeysHasBeenSet = true; m_binKeys = value; }
-
-    /**
-     * <p>A list of objects containing the criteria you requested for binning results
-     * and the values of the bins.</p>
-     */
     inline void SetBinKeys(Aws::Vector<AnalyticsBinKey>&& value) { m_binKeysHasBeenSet = true; m_binKeys = std::move(value); }
-
-    /**
-     * <p>A list of objects containing the criteria you requested for binning results
-     * and the values of the bins.</p>
-     */
     inline AnalyticsSessionResult& WithBinKeys(const Aws::Vector<AnalyticsBinKey>& value) { SetBinKeys(value); return *this;}
-
-    /**
-     * <p>A list of objects containing the criteria you requested for binning results
-     * and the values of the bins.</p>
-     */
     inline AnalyticsSessionResult& WithBinKeys(Aws::Vector<AnalyticsBinKey>&& value) { SetBinKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of objects containing the criteria you requested for binning results
-     * and the values of the bins.</p>
-     */
     inline AnalyticsSessionResult& AddBinKeys(const AnalyticsBinKey& value) { m_binKeysHasBeenSet = true; m_binKeys.push_back(value); return *this; }
-
-    /**
-     * <p>A list of objects containing the criteria you requested for binning results
-     * and the values of the bins.</p>
-     */
     inline AnalyticsSessionResult& AddBinKeys(AnalyticsBinKey&& value) { m_binKeysHasBeenSet = true; m_binKeys.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of objects containing the criteria you requested for grouping results
      * and the values of the bins.</p>
      */
     inline const Aws::Vector<AnalyticsSessionGroupByKey>& GetGroupByKeys() const{ return m_groupByKeys; }
-
-    /**
-     * <p>A list of objects containing the criteria you requested for grouping results
-     * and the values of the bins.</p>
-     */
     inline bool GroupByKeysHasBeenSet() const { return m_groupByKeysHasBeenSet; }
-
-    /**
-     * <p>A list of objects containing the criteria you requested for grouping results
-     * and the values of the bins.</p>
-     */
     inline void SetGroupByKeys(const Aws::Vector<AnalyticsSessionGroupByKey>& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys = value; }
-
-    /**
-     * <p>A list of objects containing the criteria you requested for grouping results
-     * and the values of the bins.</p>
-     */
     inline void SetGroupByKeys(Aws::Vector<AnalyticsSessionGroupByKey>&& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys = std::move(value); }
-
-    /**
-     * <p>A list of objects containing the criteria you requested for grouping results
-     * and the values of the bins.</p>
-     */
     inline AnalyticsSessionResult& WithGroupByKeys(const Aws::Vector<AnalyticsSessionGroupByKey>& value) { SetGroupByKeys(value); return *this;}
-
-    /**
-     * <p>A list of objects containing the criteria you requested for grouping results
-     * and the values of the bins.</p>
-     */
     inline AnalyticsSessionResult& WithGroupByKeys(Aws::Vector<AnalyticsSessionGroupByKey>&& value) { SetGroupByKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of objects containing the criteria you requested for grouping results
-     * and the values of the bins.</p>
-     */
     inline AnalyticsSessionResult& AddGroupByKeys(const AnalyticsSessionGroupByKey& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys.push_back(value); return *this; }
-
-    /**
-     * <p>A list of objects containing the criteria you requested for grouping results
-     * and the values of the bins.</p>
-     */
     inline AnalyticsSessionResult& AddGroupByKeys(AnalyticsSessionGroupByKey&& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of objects, each of which contains a metric you want to list, the
      * statistic for the metric you want to return, and the method by which to organize
      * the results.</p>
      */
     inline const Aws::Vector<AnalyticsSessionMetricResult>& GetMetricsResults() const{ return m_metricsResults; }
-
-    /**
-     * <p>A list of objects, each of which contains a metric you want to list, the
-     * statistic for the metric you want to return, and the method by which to organize
-     * the results.</p>
-     */
     inline bool MetricsResultsHasBeenSet() const { return m_metricsResultsHasBeenSet; }
-
-    /**
-     * <p>A list of objects, each of which contains a metric you want to list, the
-     * statistic for the metric you want to return, and the method by which to organize
-     * the results.</p>
-     */
     inline void SetMetricsResults(const Aws::Vector<AnalyticsSessionMetricResult>& value) { m_metricsResultsHasBeenSet = true; m_metricsResults = value; }
-
-    /**
-     * <p>A list of objects, each of which contains a metric you want to list, the
-     * statistic for the metric you want to return, and the method by which to organize
-     * the results.</p>
-     */
     inline void SetMetricsResults(Aws::Vector<AnalyticsSessionMetricResult>&& value) { m_metricsResultsHasBeenSet = true; m_metricsResults = std::move(value); }
-
-    /**
-     * <p>A list of objects, each of which contains a metric you want to list, the
-     * statistic for the metric you want to return, and the method by which to organize
-     * the results.</p>
-     */
     inline AnalyticsSessionResult& WithMetricsResults(const Aws::Vector<AnalyticsSessionMetricResult>& value) { SetMetricsResults(value); return *this;}
-
-    /**
-     * <p>A list of objects, each of which contains a metric you want to list, the
-     * statistic for the metric you want to return, and the method by which to organize
-     * the results.</p>
-     */
     inline AnalyticsSessionResult& WithMetricsResults(Aws::Vector<AnalyticsSessionMetricResult>&& value) { SetMetricsResults(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of objects, each of which contains a metric you want to list, the
-     * statistic for the metric you want to return, and the method by which to organize
-     * the results.</p>
-     */
     inline AnalyticsSessionResult& AddMetricsResults(const AnalyticsSessionMetricResult& value) { m_metricsResultsHasBeenSet = true; m_metricsResults.push_back(value); return *this; }
-
-    /**
-     * <p>A list of objects, each of which contains a metric you want to list, the
-     * statistic for the metric you want to return, and the method by which to organize
-     * the results.</p>
-     */
     inline AnalyticsSessionResult& AddMetricsResults(AnalyticsSessionMetricResult&& value) { m_metricsResultsHasBeenSet = true; m_metricsResults.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AnalyticsBinKey> m_binKeys;

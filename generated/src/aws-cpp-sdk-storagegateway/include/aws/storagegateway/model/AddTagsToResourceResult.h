@@ -37,63 +37,29 @@ namespace Model
     AWS_STORAGEGATEWAY_API AddTagsToResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
-     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
-     */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
-     */
     inline void SetResourceARN(const char* value) { m_resourceARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
-     */
     inline AddTagsToResourceResult& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
-     */
     inline AddTagsToResourceResult& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
-     */
     inline AddTagsToResourceResult& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AddTagsToResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AddTagsToResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AddTagsToResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceARN;

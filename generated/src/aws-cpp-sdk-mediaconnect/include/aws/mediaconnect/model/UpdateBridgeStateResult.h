@@ -33,89 +33,40 @@ namespace Model
     AWS_MEDIACONNECT_API UpdateBridgeStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The Amazon Resource Number (ARN) of the bridge.
      */
     inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the bridge.
-     */
     inline void SetBridgeArn(const Aws::String& value) { m_bridgeArn = value; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the bridge.
-     */
     inline void SetBridgeArn(Aws::String&& value) { m_bridgeArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Number (ARN) of the bridge.
-     */
     inline void SetBridgeArn(const char* value) { m_bridgeArn.assign(value); }
-
-    /**
-     * The Amazon Resource Number (ARN) of the bridge.
-     */
     inline UpdateBridgeStateResult& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Number (ARN) of the bridge.
-     */
     inline UpdateBridgeStateResult& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Number (ARN) of the bridge.
-     */
     inline UpdateBridgeStateResult& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The state of the bridge. ACTIVE or STANDBY.
      */
     inline const DesiredState& GetDesiredState() const{ return m_desiredState; }
-
-    /**
-     * The state of the bridge. ACTIVE or STANDBY.
-     */
     inline void SetDesiredState(const DesiredState& value) { m_desiredState = value; }
-
-    /**
-     * The state of the bridge. ACTIVE or STANDBY.
-     */
     inline void SetDesiredState(DesiredState&& value) { m_desiredState = std::move(value); }
-
-    /**
-     * The state of the bridge. ACTIVE or STANDBY.
-     */
     inline UpdateBridgeStateResult& WithDesiredState(const DesiredState& value) { SetDesiredState(value); return *this;}
-
-    /**
-     * The state of the bridge. ACTIVE or STANDBY.
-     */
     inline UpdateBridgeStateResult& WithDesiredState(DesiredState&& value) { SetDesiredState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateBridgeStateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateBridgeStateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateBridgeStateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bridgeArn;

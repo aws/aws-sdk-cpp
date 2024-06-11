@@ -39,63 +39,29 @@ namespace Model
     AWS_DATAPIPELINE_API DescribePipelinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of descriptions for the specified pipelines.</p>
      */
     inline const Aws::Vector<PipelineDescription>& GetPipelineDescriptionList() const{ return m_pipelineDescriptionList; }
-
-    /**
-     * <p>An array of descriptions for the specified pipelines.</p>
-     */
     inline void SetPipelineDescriptionList(const Aws::Vector<PipelineDescription>& value) { m_pipelineDescriptionList = value; }
-
-    /**
-     * <p>An array of descriptions for the specified pipelines.</p>
-     */
     inline void SetPipelineDescriptionList(Aws::Vector<PipelineDescription>&& value) { m_pipelineDescriptionList = std::move(value); }
-
-    /**
-     * <p>An array of descriptions for the specified pipelines.</p>
-     */
     inline DescribePipelinesResult& WithPipelineDescriptionList(const Aws::Vector<PipelineDescription>& value) { SetPipelineDescriptionList(value); return *this;}
-
-    /**
-     * <p>An array of descriptions for the specified pipelines.</p>
-     */
     inline DescribePipelinesResult& WithPipelineDescriptionList(Aws::Vector<PipelineDescription>&& value) { SetPipelineDescriptionList(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of descriptions for the specified pipelines.</p>
-     */
     inline DescribePipelinesResult& AddPipelineDescriptionList(const PipelineDescription& value) { m_pipelineDescriptionList.push_back(value); return *this; }
-
-    /**
-     * <p>An array of descriptions for the specified pipelines.</p>
-     */
     inline DescribePipelinesResult& AddPipelineDescriptionList(PipelineDescription&& value) { m_pipelineDescriptionList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribePipelinesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribePipelinesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribePipelinesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PipelineDescription> m_pipelineDescriptionList;

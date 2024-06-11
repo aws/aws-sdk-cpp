@@ -37,6 +37,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ARN of the IAM customer managed policy from which you want to remove
      * tags.</p> <p>This parameter allows (through its <a
@@ -45,125 +46,30 @@ namespace Model
      * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
-
-    /**
-     * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
-
-    /**
-     * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
-
-    /**
-     * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline UntagPolicyRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline UntagPolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline UntagPolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of key names as a simple array of strings. The tags with matching keys
      * are removed from the specified policy.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified policy.</p>
-     */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified policy.</p>
-     */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified policy.</p>
-     */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified policy.</p>
-     */
     inline UntagPolicyRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified policy.</p>
-     */
     inline UntagPolicyRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified policy.</p>
-     */
     inline UntagPolicyRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified policy.</p>
-     */
     inline UntagPolicyRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified policy.</p>
-     */
     inline UntagPolicyRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_policyArn;

@@ -33,37 +33,23 @@ namespace Model
     AWS_REDSHIFT_API CreateClusterSecurityGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const ClusterSecurityGroup& GetClusterSecurityGroup() const{ return m_clusterSecurityGroup; }
-
-    
     inline void SetClusterSecurityGroup(const ClusterSecurityGroup& value) { m_clusterSecurityGroup = value; }
-
-    
     inline void SetClusterSecurityGroup(ClusterSecurityGroup&& value) { m_clusterSecurityGroup = std::move(value); }
-
-    
     inline CreateClusterSecurityGroupResult& WithClusterSecurityGroup(const ClusterSecurityGroup& value) { SetClusterSecurityGroup(value); return *this;}
-
-    
     inline CreateClusterSecurityGroupResult& WithClusterSecurityGroup(ClusterSecurityGroup&& value) { SetClusterSecurityGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateClusterSecurityGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateClusterSecurityGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ClusterSecurityGroup m_clusterSecurityGroup;

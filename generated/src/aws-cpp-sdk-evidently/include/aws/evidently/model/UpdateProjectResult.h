@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API UpdateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure containing information about the updated project.</p>
      */
     inline const Project& GetProject() const{ return m_project; }
-
-    /**
-     * <p>A structure containing information about the updated project.</p>
-     */
     inline void SetProject(const Project& value) { m_project = value; }
-
-    /**
-     * <p>A structure containing information about the updated project.</p>
-     */
     inline void SetProject(Project&& value) { m_project = std::move(value); }
-
-    /**
-     * <p>A structure containing information about the updated project.</p>
-     */
     inline UpdateProjectResult& WithProject(const Project& value) { SetProject(value); return *this;}
-
-    /**
-     * <p>A structure containing information about the updated project.</p>
-     */
     inline UpdateProjectResult& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Project m_project;

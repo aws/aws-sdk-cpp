@@ -35,46 +35,19 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
      */
     inline const Aws::Vector<WorkspaceRequest>& GetWorkspaces() const{ return m_workspaces; }
-
-    /**
-     * <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-     */
     inline bool WorkspacesHasBeenSet() const { return m_workspacesHasBeenSet; }
-
-    /**
-     * <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-     */
     inline void SetWorkspaces(const Aws::Vector<WorkspaceRequest>& value) { m_workspacesHasBeenSet = true; m_workspaces = value; }
-
-    /**
-     * <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-     */
     inline void SetWorkspaces(Aws::Vector<WorkspaceRequest>&& value) { m_workspacesHasBeenSet = true; m_workspaces = std::move(value); }
-
-    /**
-     * <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-     */
     inline CreateWorkspacesRequest& WithWorkspaces(const Aws::Vector<WorkspaceRequest>& value) { SetWorkspaces(value); return *this;}
-
-    /**
-     * <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-     */
     inline CreateWorkspacesRequest& WithWorkspaces(Aws::Vector<WorkspaceRequest>&& value) { SetWorkspaces(std::move(value)); return *this;}
-
-    /**
-     * <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-     */
     inline CreateWorkspacesRequest& AddWorkspaces(const WorkspaceRequest& value) { m_workspacesHasBeenSet = true; m_workspaces.push_back(value); return *this; }
-
-    /**
-     * <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-     */
     inline CreateWorkspacesRequest& AddWorkspaces(WorkspaceRequest&& value) { m_workspacesHasBeenSet = true; m_workspaces.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<WorkspaceRequest> m_workspaces;

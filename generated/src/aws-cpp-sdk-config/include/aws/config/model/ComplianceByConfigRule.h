@@ -40,77 +40,31 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Config rule.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
-
-    /**
-     * <p>The name of the Config rule.</p>
-     */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Config rule.</p>
-     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
-
-    /**
-     * <p>The name of the Config rule.</p>
-     */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
-
-    /**
-     * <p>The name of the Config rule.</p>
-     */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
-
-    /**
-     * <p>The name of the Config rule.</p>
-     */
     inline ComplianceByConfigRule& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
-
-    /**
-     * <p>The name of the Config rule.</p>
-     */
     inline ComplianceByConfigRule& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Config rule.</p>
-     */
     inline ComplianceByConfigRule& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the Config rule is compliant.</p>
      */
     inline const Compliance& GetCompliance() const{ return m_compliance; }
-
-    /**
-     * <p>Indicates whether the Config rule is compliant.</p>
-     */
     inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the Config rule is compliant.</p>
-     */
     inline void SetCompliance(const Compliance& value) { m_complianceHasBeenSet = true; m_compliance = value; }
-
-    /**
-     * <p>Indicates whether the Config rule is compliant.</p>
-     */
     inline void SetCompliance(Compliance&& value) { m_complianceHasBeenSet = true; m_compliance = std::move(value); }
-
-    /**
-     * <p>Indicates whether the Config rule is compliant.</p>
-     */
     inline ComplianceByConfigRule& WithCompliance(const Compliance& value) { SetCompliance(value); return *this;}
-
-    /**
-     * <p>Indicates whether the Config rule is compliant.</p>
-     */
     inline ComplianceByConfigRule& WithCompliance(Compliance&& value) { SetCompliance(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configRuleName;

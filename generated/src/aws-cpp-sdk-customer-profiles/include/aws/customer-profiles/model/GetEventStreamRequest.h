@@ -32,87 +32,33 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique name of the domain.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline GetEventStreamRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline GetEventStreamRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline GetEventStreamRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the event stream provided during create operations.</p>
      */
     inline const Aws::String& GetEventStreamName() const{ return m_eventStreamName; }
-
-    /**
-     * <p>The name of the event stream provided during create operations.</p>
-     */
     inline bool EventStreamNameHasBeenSet() const { return m_eventStreamNameHasBeenSet; }
-
-    /**
-     * <p>The name of the event stream provided during create operations.</p>
-     */
     inline void SetEventStreamName(const Aws::String& value) { m_eventStreamNameHasBeenSet = true; m_eventStreamName = value; }
-
-    /**
-     * <p>The name of the event stream provided during create operations.</p>
-     */
     inline void SetEventStreamName(Aws::String&& value) { m_eventStreamNameHasBeenSet = true; m_eventStreamName = std::move(value); }
-
-    /**
-     * <p>The name of the event stream provided during create operations.</p>
-     */
     inline void SetEventStreamName(const char* value) { m_eventStreamNameHasBeenSet = true; m_eventStreamName.assign(value); }
-
-    /**
-     * <p>The name of the event stream provided during create operations.</p>
-     */
     inline GetEventStreamRequest& WithEventStreamName(const Aws::String& value) { SetEventStreamName(value); return *this;}
-
-    /**
-     * <p>The name of the event stream provided during create operations.</p>
-     */
     inline GetEventStreamRequest& WithEventStreamName(Aws::String&& value) { SetEventStreamName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the event stream provided during create operations.</p>
-     */
     inline GetEventStreamRequest& WithEventStreamName(const char* value) { SetEventStreamName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

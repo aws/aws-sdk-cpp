@@ -40,87 +40,33 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the Amazon Web Services account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline AwsAccount& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline AwsAccount& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline AwsAccount& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the entity that performed the action.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
-
-    /**
-     * <p>The unique identifier for the entity that performed the action.</p>
-     */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the entity that performed the action.</p>
-     */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-
-    /**
-     * <p>The unique identifier for the entity that performed the action.</p>
-     */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the entity that performed the action.</p>
-     */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the entity that performed the action.</p>
-     */
     inline AwsAccount& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the entity that performed the action.</p>
-     */
     inline AwsAccount& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the entity that performed the action.</p>
-     */
     inline AwsAccount& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

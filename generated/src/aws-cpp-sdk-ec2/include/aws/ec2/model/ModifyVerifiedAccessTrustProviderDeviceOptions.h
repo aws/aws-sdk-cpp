@@ -40,54 +40,20 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p> The URL Amazon Web Services Verified Access will use to verify the
      * authenticity of the device tokens. </p>
      */
     inline const Aws::String& GetPublicSigningKeyUrl() const{ return m_publicSigningKeyUrl; }
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline bool PublicSigningKeyUrlHasBeenSet() const { return m_publicSigningKeyUrlHasBeenSet; }
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline void SetPublicSigningKeyUrl(const Aws::String& value) { m_publicSigningKeyUrlHasBeenSet = true; m_publicSigningKeyUrl = value; }
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline void SetPublicSigningKeyUrl(Aws::String&& value) { m_publicSigningKeyUrlHasBeenSet = true; m_publicSigningKeyUrl = std::move(value); }
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline void SetPublicSigningKeyUrl(const char* value) { m_publicSigningKeyUrlHasBeenSet = true; m_publicSigningKeyUrl.assign(value); }
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline ModifyVerifiedAccessTrustProviderDeviceOptions& WithPublicSigningKeyUrl(const Aws::String& value) { SetPublicSigningKeyUrl(value); return *this;}
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline ModifyVerifiedAccessTrustProviderDeviceOptions& WithPublicSigningKeyUrl(Aws::String&& value) { SetPublicSigningKeyUrl(std::move(value)); return *this;}
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline ModifyVerifiedAccessTrustProviderDeviceOptions& WithPublicSigningKeyUrl(const char* value) { SetPublicSigningKeyUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_publicSigningKeyUrl;

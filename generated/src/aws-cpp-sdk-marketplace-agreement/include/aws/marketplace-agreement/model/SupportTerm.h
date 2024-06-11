@@ -38,95 +38,34 @@ namespace Model
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Free-text field about the refund policy description that will be shown to
      * customers as is on the website and console.</p>
      */
     inline const Aws::String& GetRefundPolicy() const{ return m_refundPolicy; }
-
-    /**
-     * <p>Free-text field about the refund policy description that will be shown to
-     * customers as is on the website and console.</p>
-     */
     inline bool RefundPolicyHasBeenSet() const { return m_refundPolicyHasBeenSet; }
-
-    /**
-     * <p>Free-text field about the refund policy description that will be shown to
-     * customers as is on the website and console.</p>
-     */
     inline void SetRefundPolicy(const Aws::String& value) { m_refundPolicyHasBeenSet = true; m_refundPolicy = value; }
-
-    /**
-     * <p>Free-text field about the refund policy description that will be shown to
-     * customers as is on the website and console.</p>
-     */
     inline void SetRefundPolicy(Aws::String&& value) { m_refundPolicyHasBeenSet = true; m_refundPolicy = std::move(value); }
-
-    /**
-     * <p>Free-text field about the refund policy description that will be shown to
-     * customers as is on the website and console.</p>
-     */
     inline void SetRefundPolicy(const char* value) { m_refundPolicyHasBeenSet = true; m_refundPolicy.assign(value); }
-
-    /**
-     * <p>Free-text field about the refund policy description that will be shown to
-     * customers as is on the website and console.</p>
-     */
     inline SupportTerm& WithRefundPolicy(const Aws::String& value) { SetRefundPolicy(value); return *this;}
-
-    /**
-     * <p>Free-text field about the refund policy description that will be shown to
-     * customers as is on the website and console.</p>
-     */
     inline SupportTerm& WithRefundPolicy(Aws::String&& value) { SetRefundPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>Free-text field about the refund policy description that will be shown to
-     * customers as is on the website and console.</p>
-     */
     inline SupportTerm& WithRefundPolicy(const char* value) { SetRefundPolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Category of the term being updated.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>Category of the term being updated.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Category of the term being updated.</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Category of the term being updated.</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Category of the term being updated.</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>Category of the term being updated.</p>
-     */
     inline SupportTerm& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Category of the term being updated.</p>
-     */
     inline SupportTerm& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>Category of the term being updated.</p>
-     */
     inline SupportTerm& WithType(const char* value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_refundPolicy;

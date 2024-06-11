@@ -36,68 +36,35 @@ namespace Model
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
      */
     inline int GetLine() const{ return m_line; }
-
-    /**
-     * <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
-     */
     inline bool LineHasBeenSet() const { return m_lineHasBeenSet; }
-
-    /**
-     * <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
-     */
     inline void SetLine(int value) { m_lineHasBeenSet = true; m_line = value; }
-
-    /**
-     * <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
-     */
     inline CodeErrorLocation& WithLine(int value) { SetLine(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
      */
     inline int GetColumn() const{ return m_column; }
-
-    /**
-     * <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
-     */
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-
-    /**
-     * <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
-     */
     inline void SetColumn(int value) { m_columnHasBeenSet = true; m_column = value; }
-
-    /**
-     * <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
-     */
     inline CodeErrorLocation& WithColumn(int value) { SetColumn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
      */
     inline int GetSpan() const{ return m_span; }
-
-    /**
-     * <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
-     */
     inline bool SpanHasBeenSet() const { return m_spanHasBeenSet; }
-
-    /**
-     * <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
-     */
     inline void SetSpan(int value) { m_spanHasBeenSet = true; m_span = value; }
-
-    /**
-     * <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
-     */
     inline CodeErrorLocation& WithSpan(int value) { SetSpan(value); return *this;}
-
+    ///@}
   private:
 
     int m_line;

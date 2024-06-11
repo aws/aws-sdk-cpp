@@ -38,42 +38,18 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The failover configuration for an endpoint. This includes what triggers
      * failover and what happens when it's triggered.</p>
      */
     inline const AwsEventsEndpointRoutingConfigFailoverConfigDetails& GetFailoverConfig() const{ return m_failoverConfig; }
-
-    /**
-     * <p> The failover configuration for an endpoint. This includes what triggers
-     * failover and what happens when it's triggered.</p>
-     */
     inline bool FailoverConfigHasBeenSet() const { return m_failoverConfigHasBeenSet; }
-
-    /**
-     * <p> The failover configuration for an endpoint. This includes what triggers
-     * failover and what happens when it's triggered.</p>
-     */
     inline void SetFailoverConfig(const AwsEventsEndpointRoutingConfigFailoverConfigDetails& value) { m_failoverConfigHasBeenSet = true; m_failoverConfig = value; }
-
-    /**
-     * <p> The failover configuration for an endpoint. This includes what triggers
-     * failover and what happens when it's triggered.</p>
-     */
     inline void SetFailoverConfig(AwsEventsEndpointRoutingConfigFailoverConfigDetails&& value) { m_failoverConfigHasBeenSet = true; m_failoverConfig = std::move(value); }
-
-    /**
-     * <p> The failover configuration for an endpoint. This includes what triggers
-     * failover and what happens when it's triggered.</p>
-     */
     inline AwsEventsEndpointRoutingConfigDetails& WithFailoverConfig(const AwsEventsEndpointRoutingConfigFailoverConfigDetails& value) { SetFailoverConfig(value); return *this;}
-
-    /**
-     * <p> The failover configuration for an endpoint. This includes what triggers
-     * failover and what happens when it's triggered.</p>
-     */
     inline AwsEventsEndpointRoutingConfigDetails& WithFailoverConfig(AwsEventsEndpointRoutingConfigFailoverConfigDetails&& value) { SetFailoverConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsEventsEndpointRoutingConfigFailoverConfigDetails m_failoverConfig;

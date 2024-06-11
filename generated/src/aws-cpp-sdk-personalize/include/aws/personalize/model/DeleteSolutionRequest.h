@@ -34,46 +34,19 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the solution to delete.</p>
      */
     inline const Aws::String& GetSolutionArn() const{ return m_solutionArn; }
-
-    /**
-     * <p>The ARN of the solution to delete.</p>
-     */
     inline bool SolutionArnHasBeenSet() const { return m_solutionArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the solution to delete.</p>
-     */
     inline void SetSolutionArn(const Aws::String& value) { m_solutionArnHasBeenSet = true; m_solutionArn = value; }
-
-    /**
-     * <p>The ARN of the solution to delete.</p>
-     */
     inline void SetSolutionArn(Aws::String&& value) { m_solutionArnHasBeenSet = true; m_solutionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the solution to delete.</p>
-     */
     inline void SetSolutionArn(const char* value) { m_solutionArnHasBeenSet = true; m_solutionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the solution to delete.</p>
-     */
     inline DeleteSolutionRequest& WithSolutionArn(const Aws::String& value) { SetSolutionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the solution to delete.</p>
-     */
     inline DeleteSolutionRequest& WithSolutionArn(Aws::String&& value) { SetSolutionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the solution to delete.</p>
-     */
     inline DeleteSolutionRequest& WithSolutionArn(const char* value) { SetSolutionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_solutionArn;

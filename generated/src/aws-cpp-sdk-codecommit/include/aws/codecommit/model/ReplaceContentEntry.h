@@ -41,145 +41,56 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The path of the conflicting file.</p>
      */
     inline const Aws::String& GetFilePath() const{ return m_filePath; }
-
-    /**
-     * <p>The path of the conflicting file.</p>
-     */
     inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
-
-    /**
-     * <p>The path of the conflicting file.</p>
-     */
     inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
-
-    /**
-     * <p>The path of the conflicting file.</p>
-     */
     inline void SetFilePath(Aws::String&& value) { m_filePathHasBeenSet = true; m_filePath = std::move(value); }
-
-    /**
-     * <p>The path of the conflicting file.</p>
-     */
     inline void SetFilePath(const char* value) { m_filePathHasBeenSet = true; m_filePath.assign(value); }
-
-    /**
-     * <p>The path of the conflicting file.</p>
-     */
     inline ReplaceContentEntry& WithFilePath(const Aws::String& value) { SetFilePath(value); return *this;}
-
-    /**
-     * <p>The path of the conflicting file.</p>
-     */
     inline ReplaceContentEntry& WithFilePath(Aws::String&& value) { SetFilePath(std::move(value)); return *this;}
-
-    /**
-     * <p>The path of the conflicting file.</p>
-     */
     inline ReplaceContentEntry& WithFilePath(const char* value) { SetFilePath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The replacement type to use when determining how to resolve the conflict.</p>
      */
     inline const ReplacementTypeEnum& GetReplacementType() const{ return m_replacementType; }
-
-    /**
-     * <p>The replacement type to use when determining how to resolve the conflict.</p>
-     */
     inline bool ReplacementTypeHasBeenSet() const { return m_replacementTypeHasBeenSet; }
-
-    /**
-     * <p>The replacement type to use when determining how to resolve the conflict.</p>
-     */
     inline void SetReplacementType(const ReplacementTypeEnum& value) { m_replacementTypeHasBeenSet = true; m_replacementType = value; }
-
-    /**
-     * <p>The replacement type to use when determining how to resolve the conflict.</p>
-     */
     inline void SetReplacementType(ReplacementTypeEnum&& value) { m_replacementTypeHasBeenSet = true; m_replacementType = std::move(value); }
-
-    /**
-     * <p>The replacement type to use when determining how to resolve the conflict.</p>
-     */
     inline ReplaceContentEntry& WithReplacementType(const ReplacementTypeEnum& value) { SetReplacementType(value); return *this;}
-
-    /**
-     * <p>The replacement type to use when determining how to resolve the conflict.</p>
-     */
     inline ReplaceContentEntry& WithReplacementType(ReplacementTypeEnum&& value) { SetReplacementType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The base-64 encoded content to use when the replacement type is
      * USE_NEW_CONTENT.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The base-64 encoded content to use when the replacement type is
-     * USE_NEW_CONTENT.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The base-64 encoded content to use when the replacement type is
-     * USE_NEW_CONTENT.</p>
-     */
     inline void SetContent(const Aws::Utils::ByteBuffer& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The base-64 encoded content to use when the replacement type is
-     * USE_NEW_CONTENT.</p>
-     */
     inline void SetContent(Aws::Utils::ByteBuffer&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The base-64 encoded content to use when the replacement type is
-     * USE_NEW_CONTENT.</p>
-     */
     inline ReplaceContentEntry& WithContent(const Aws::Utils::ByteBuffer& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The base-64 encoded content to use when the replacement type is
-     * USE_NEW_CONTENT.</p>
-     */
     inline ReplaceContentEntry& WithContent(Aws::Utils::ByteBuffer&& value) { SetContent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The file mode to apply during conflict resoltion.</p>
      */
     inline const FileModeTypeEnum& GetFileMode() const{ return m_fileMode; }
-
-    /**
-     * <p>The file mode to apply during conflict resoltion.</p>
-     */
     inline bool FileModeHasBeenSet() const { return m_fileModeHasBeenSet; }
-
-    /**
-     * <p>The file mode to apply during conflict resoltion.</p>
-     */
     inline void SetFileMode(const FileModeTypeEnum& value) { m_fileModeHasBeenSet = true; m_fileMode = value; }
-
-    /**
-     * <p>The file mode to apply during conflict resoltion.</p>
-     */
     inline void SetFileMode(FileModeTypeEnum&& value) { m_fileModeHasBeenSet = true; m_fileMode = std::move(value); }
-
-    /**
-     * <p>The file mode to apply during conflict resoltion.</p>
-     */
     inline ReplaceContentEntry& WithFileMode(const FileModeTypeEnum& value) { SetFileMode(value); return *this;}
-
-    /**
-     * <p>The file mode to apply during conflict resoltion.</p>
-     */
     inline ReplaceContentEntry& WithFileMode(FileModeTypeEnum&& value) { SetFileMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_filePath;

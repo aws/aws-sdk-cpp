@@ -38,24 +38,15 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const LoRaWANMulticastMetadata& GetLoRaWAN() const{ return m_loRaWAN; }
-
-    
     inline bool LoRaWANHasBeenSet() const { return m_loRaWANHasBeenSet; }
-
-    
     inline void SetLoRaWAN(const LoRaWANMulticastMetadata& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = value; }
-
-    
     inline void SetLoRaWAN(LoRaWANMulticastMetadata&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::move(value); }
-
-    
     inline MulticastWirelessMetadata& WithLoRaWAN(const LoRaWANMulticastMetadata& value) { SetLoRaWAN(value); return *this;}
-
-    
     inline MulticastWirelessMetadata& WithLoRaWAN(LoRaWANMulticastMetadata&& value) { SetLoRaWAN(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LoRaWANMulticastMetadata m_loRaWAN;

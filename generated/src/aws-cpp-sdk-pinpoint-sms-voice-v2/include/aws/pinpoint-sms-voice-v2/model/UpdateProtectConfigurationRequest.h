@@ -34,71 +34,30 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the protect configuration.</p>
      */
     inline const Aws::String& GetProtectConfigurationId() const{ return m_protectConfigurationId; }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline bool ProtectConfigurationIdHasBeenSet() const { return m_protectConfigurationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline void SetProtectConfigurationId(const Aws::String& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = value; }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline void SetProtectConfigurationId(Aws::String&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline void SetProtectConfigurationId(const char* value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline UpdateProtectConfigurationRequest& WithProtectConfigurationId(const Aws::String& value) { SetProtectConfigurationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline UpdateProtectConfigurationRequest& WithProtectConfigurationId(Aws::String&& value) { SetProtectConfigurationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline UpdateProtectConfigurationRequest& WithProtectConfigurationId(const char* value) { SetProtectConfigurationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When set to true deletion protection is enabled. By default this is set to
      * false. </p>
      */
     inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
-
-    /**
-     * <p>When set to true deletion protection is enabled. By default this is set to
-     * false. </p>
-     */
     inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
-
-    /**
-     * <p>When set to true deletion protection is enabled. By default this is set to
-     * false. </p>
-     */
     inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
-
-    /**
-     * <p>When set to true deletion protection is enabled. By default this is set to
-     * false. </p>
-     */
     inline UpdateProtectConfigurationRequest& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_protectConfigurationId;

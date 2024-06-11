@@ -33,53 +33,27 @@ namespace Model
     AWS_LOOKOUTFORVISION_API DescribeDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The description of the requested dataset. </p>
      */
     inline const DatasetDescription& GetDatasetDescription() const{ return m_datasetDescription; }
-
-    /**
-     * <p>The description of the requested dataset. </p>
-     */
     inline void SetDatasetDescription(const DatasetDescription& value) { m_datasetDescription = value; }
-
-    /**
-     * <p>The description of the requested dataset. </p>
-     */
     inline void SetDatasetDescription(DatasetDescription&& value) { m_datasetDescription = std::move(value); }
-
-    /**
-     * <p>The description of the requested dataset. </p>
-     */
     inline DescribeDatasetResult& WithDatasetDescription(const DatasetDescription& value) { SetDatasetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the requested dataset. </p>
-     */
     inline DescribeDatasetResult& WithDatasetDescription(DatasetDescription&& value) { SetDatasetDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDatasetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDatasetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDatasetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DatasetDescription m_datasetDescription;

@@ -37,87 +37,33 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Path to the source of the error.
      */
     inline const Aws::String& GetElementPath() const{ return m_elementPath; }
-
-    /**
-     * Path to the source of the error.
-     */
     inline bool ElementPathHasBeenSet() const { return m_elementPathHasBeenSet; }
-
-    /**
-     * Path to the source of the error.
-     */
     inline void SetElementPath(const Aws::String& value) { m_elementPathHasBeenSet = true; m_elementPath = value; }
-
-    /**
-     * Path to the source of the error.
-     */
     inline void SetElementPath(Aws::String&& value) { m_elementPathHasBeenSet = true; m_elementPath = std::move(value); }
-
-    /**
-     * Path to the source of the error.
-     */
     inline void SetElementPath(const char* value) { m_elementPathHasBeenSet = true; m_elementPath.assign(value); }
-
-    /**
-     * Path to the source of the error.
-     */
     inline ValidationError& WithElementPath(const Aws::String& value) { SetElementPath(value); return *this;}
-
-    /**
-     * Path to the source of the error.
-     */
     inline ValidationError& WithElementPath(Aws::String&& value) { SetElementPath(std::move(value)); return *this;}
-
-    /**
-     * Path to the source of the error.
-     */
     inline ValidationError& WithElementPath(const char* value) { SetElementPath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The error message.
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * The error message.
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * The error message.
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * The error message.
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * The error message.
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * The error message.
-     */
     inline ValidationError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * The error message.
-     */
     inline ValidationError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * The error message.
-     */
     inline ValidationError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_elementPath;

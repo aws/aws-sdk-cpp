@@ -50,48 +50,19 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the point-in-time since an exported file was last accessed, in order
      * for that file to be eligible for release. Only files that were last accessed
      * before this point-in-time are eligible to be released from the file system.</p>
      */
     inline const DurationSinceLastAccess& GetDurationSinceLastAccess() const{ return m_durationSinceLastAccess; }
-
-    /**
-     * <p>Defines the point-in-time since an exported file was last accessed, in order
-     * for that file to be eligible for release. Only files that were last accessed
-     * before this point-in-time are eligible to be released from the file system.</p>
-     */
     inline bool DurationSinceLastAccessHasBeenSet() const { return m_durationSinceLastAccessHasBeenSet; }
-
-    /**
-     * <p>Defines the point-in-time since an exported file was last accessed, in order
-     * for that file to be eligible for release. Only files that were last accessed
-     * before this point-in-time are eligible to be released from the file system.</p>
-     */
     inline void SetDurationSinceLastAccess(const DurationSinceLastAccess& value) { m_durationSinceLastAccessHasBeenSet = true; m_durationSinceLastAccess = value; }
-
-    /**
-     * <p>Defines the point-in-time since an exported file was last accessed, in order
-     * for that file to be eligible for release. Only files that were last accessed
-     * before this point-in-time are eligible to be released from the file system.</p>
-     */
     inline void SetDurationSinceLastAccess(DurationSinceLastAccess&& value) { m_durationSinceLastAccessHasBeenSet = true; m_durationSinceLastAccess = std::move(value); }
-
-    /**
-     * <p>Defines the point-in-time since an exported file was last accessed, in order
-     * for that file to be eligible for release. Only files that were last accessed
-     * before this point-in-time are eligible to be released from the file system.</p>
-     */
     inline ReleaseConfiguration& WithDurationSinceLastAccess(const DurationSinceLastAccess& value) { SetDurationSinceLastAccess(value); return *this;}
-
-    /**
-     * <p>Defines the point-in-time since an exported file was last accessed, in order
-     * for that file to be eligible for release. Only files that were last accessed
-     * before this point-in-time are eligible to be released from the file system.</p>
-     */
     inline ReleaseConfiguration& WithDurationSinceLastAccess(DurationSinceLastAccess&& value) { SetDurationSinceLastAccess(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DurationSinceLastAccess m_durationSinceLastAccess;

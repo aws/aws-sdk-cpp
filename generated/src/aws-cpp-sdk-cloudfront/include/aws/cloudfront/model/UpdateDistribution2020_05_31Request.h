@@ -38,126 +38,46 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The distribution's configuration information.</p>
      */
     inline const DistributionConfig& GetDistributionConfig() const{ return m_distributionConfig; }
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline bool DistributionConfigHasBeenSet() const { return m_distributionConfigHasBeenSet; }
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = std::move(value); }
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline UpdateDistribution2020_05_31Request& WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline UpdateDistribution2020_05_31Request& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The distribution's id.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline UpdateDistribution2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline UpdateDistribution2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline UpdateDistribution2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the <code>ETag</code> header that you received when retrieving
      * the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline UpdateDistribution2020_05_31Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline UpdateDistribution2020_05_31Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline UpdateDistribution2020_05_31Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
-
+    ///@}
   private:
 
     DistributionConfig m_distributionConfig;

@@ -38,46 +38,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A structure containing the list of column schemas.</p>
      */
     inline const Aws::Vector<ColumnSchema>& GetColumnSchemaList() const{ return m_columnSchemaList; }
-
-    /**
-     * <p>A structure containing the list of column schemas.</p>
-     */
     inline bool ColumnSchemaListHasBeenSet() const { return m_columnSchemaListHasBeenSet; }
-
-    /**
-     * <p>A structure containing the list of column schemas.</p>
-     */
     inline void SetColumnSchemaList(const Aws::Vector<ColumnSchema>& value) { m_columnSchemaListHasBeenSet = true; m_columnSchemaList = value; }
-
-    /**
-     * <p>A structure containing the list of column schemas.</p>
-     */
     inline void SetColumnSchemaList(Aws::Vector<ColumnSchema>&& value) { m_columnSchemaListHasBeenSet = true; m_columnSchemaList = std::move(value); }
-
-    /**
-     * <p>A structure containing the list of column schemas.</p>
-     */
     inline DataSetSchema& WithColumnSchemaList(const Aws::Vector<ColumnSchema>& value) { SetColumnSchemaList(value); return *this;}
-
-    /**
-     * <p>A structure containing the list of column schemas.</p>
-     */
     inline DataSetSchema& WithColumnSchemaList(Aws::Vector<ColumnSchema>&& value) { SetColumnSchemaList(std::move(value)); return *this;}
-
-    /**
-     * <p>A structure containing the list of column schemas.</p>
-     */
     inline DataSetSchema& AddColumnSchemaList(const ColumnSchema& value) { m_columnSchemaListHasBeenSet = true; m_columnSchemaList.push_back(value); return *this; }
-
-    /**
-     * <p>A structure containing the list of column schemas.</p>
-     */
     inline DataSetSchema& AddColumnSchemaList(ColumnSchema&& value) { m_columnSchemaListHasBeenSet = true; m_columnSchemaList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ColumnSchema> m_columnSchemaList;

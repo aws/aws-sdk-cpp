@@ -38,42 +38,18 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that specifies the new values for the epsilon and noise
      * parameters.</p>
      */
     inline const DifferentialPrivacyTemplateUpdateParameters& GetDifferentialPrivacy() const{ return m_differentialPrivacy; }
-
-    /**
-     * <p>An object that specifies the new values for the epsilon and noise
-     * parameters.</p>
-     */
     inline bool DifferentialPrivacyHasBeenSet() const { return m_differentialPrivacyHasBeenSet; }
-
-    /**
-     * <p>An object that specifies the new values for the epsilon and noise
-     * parameters.</p>
-     */
     inline void SetDifferentialPrivacy(const DifferentialPrivacyTemplateUpdateParameters& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = value; }
-
-    /**
-     * <p>An object that specifies the new values for the epsilon and noise
-     * parameters.</p>
-     */
     inline void SetDifferentialPrivacy(DifferentialPrivacyTemplateUpdateParameters&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::move(value); }
-
-    /**
-     * <p>An object that specifies the new values for the epsilon and noise
-     * parameters.</p>
-     */
     inline PrivacyBudgetTemplateUpdateParameters& WithDifferentialPrivacy(const DifferentialPrivacyTemplateUpdateParameters& value) { SetDifferentialPrivacy(value); return *this;}
-
-    /**
-     * <p>An object that specifies the new values for the epsilon and noise
-     * parameters.</p>
-     */
     inline PrivacyBudgetTemplateUpdateParameters& WithDifferentialPrivacy(DifferentialPrivacyTemplateUpdateParameters&& value) { SetDifferentialPrivacy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DifferentialPrivacyTemplateUpdateParameters m_differentialPrivacy;

@@ -41,104 +41,42 @@ namespace Model
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The date that the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline GetSolNetworkPackageMetadata& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline GetSolNetworkPackageMetadata& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date that the resource was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline GetSolNetworkPackageMetadata& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline GetSolNetworkPackageMetadata& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Metadata related to the onboarded network service descriptor in the network
      * package.</p>
      */
     inline const NetworkArtifactMeta& GetNsd() const{ return m_nsd; }
-
-    /**
-     * <p>Metadata related to the onboarded network service descriptor in the network
-     * package.</p>
-     */
     inline bool NsdHasBeenSet() const { return m_nsdHasBeenSet; }
-
-    /**
-     * <p>Metadata related to the onboarded network service descriptor in the network
-     * package.</p>
-     */
     inline void SetNsd(const NetworkArtifactMeta& value) { m_nsdHasBeenSet = true; m_nsd = value; }
-
-    /**
-     * <p>Metadata related to the onboarded network service descriptor in the network
-     * package.</p>
-     */
     inline void SetNsd(NetworkArtifactMeta&& value) { m_nsdHasBeenSet = true; m_nsd = std::move(value); }
-
-    /**
-     * <p>Metadata related to the onboarded network service descriptor in the network
-     * package.</p>
-     */
     inline GetSolNetworkPackageMetadata& WithNsd(const NetworkArtifactMeta& value) { SetNsd(value); return *this;}
-
-    /**
-     * <p>Metadata related to the onboarded network service descriptor in the network
-     * package.</p>
-     */
     inline GetSolNetworkPackageMetadata& WithNsd(NetworkArtifactMeta&& value) { SetNsd(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_createdAt;

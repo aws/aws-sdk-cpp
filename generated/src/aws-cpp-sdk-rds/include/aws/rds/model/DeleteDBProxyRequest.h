@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the DB proxy to delete.</p>
      */
     inline const Aws::String& GetDBProxyName() const{ return m_dBProxyName; }
-
-    /**
-     * <p>The name of the DB proxy to delete.</p>
-     */
     inline bool DBProxyNameHasBeenSet() const { return m_dBProxyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the DB proxy to delete.</p>
-     */
     inline void SetDBProxyName(const Aws::String& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = value; }
-
-    /**
-     * <p>The name of the DB proxy to delete.</p>
-     */
     inline void SetDBProxyName(Aws::String&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::move(value); }
-
-    /**
-     * <p>The name of the DB proxy to delete.</p>
-     */
     inline void SetDBProxyName(const char* value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName.assign(value); }
-
-    /**
-     * <p>The name of the DB proxy to delete.</p>
-     */
     inline DeleteDBProxyRequest& WithDBProxyName(const Aws::String& value) { SetDBProxyName(value); return *this;}
-
-    /**
-     * <p>The name of the DB proxy to delete.</p>
-     */
     inline DeleteDBProxyRequest& WithDBProxyName(Aws::String&& value) { SetDBProxyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the DB proxy to delete.</p>
-     */
     inline DeleteDBProxyRequest& WithDBProxyName(const char* value) { SetDBProxyName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dBProxyName;

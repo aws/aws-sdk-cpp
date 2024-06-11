@@ -38,42 +38,18 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the S3 location where Identity Resolution Jobs write result
      * files.</p>
      */
     inline const S3ExportingLocation& GetS3Exporting() const{ return m_s3Exporting; }
-
-    /**
-     * <p>Information about the S3 location where Identity Resolution Jobs write result
-     * files.</p>
-     */
     inline bool S3ExportingHasBeenSet() const { return m_s3ExportingHasBeenSet; }
-
-    /**
-     * <p>Information about the S3 location where Identity Resolution Jobs write result
-     * files.</p>
-     */
     inline void SetS3Exporting(const S3ExportingLocation& value) { m_s3ExportingHasBeenSet = true; m_s3Exporting = value; }
-
-    /**
-     * <p>Information about the S3 location where Identity Resolution Jobs write result
-     * files.</p>
-     */
     inline void SetS3Exporting(S3ExportingLocation&& value) { m_s3ExportingHasBeenSet = true; m_s3Exporting = std::move(value); }
-
-    /**
-     * <p>Information about the S3 location where Identity Resolution Jobs write result
-     * files.</p>
-     */
     inline ExportingLocation& WithS3Exporting(const S3ExportingLocation& value) { SetS3Exporting(value); return *this;}
-
-    /**
-     * <p>Information about the S3 location where Identity Resolution Jobs write result
-     * files.</p>
-     */
     inline ExportingLocation& WithS3Exporting(S3ExportingLocation&& value) { SetS3Exporting(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3ExportingLocation m_s3Exporting;

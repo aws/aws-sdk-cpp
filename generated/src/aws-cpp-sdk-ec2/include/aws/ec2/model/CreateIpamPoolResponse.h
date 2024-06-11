@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API CreateIpamPoolResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the IPAM pool created.</p>
      */
     inline const IpamPool& GetIpamPool() const{ return m_ipamPool; }
-
-    /**
-     * <p>Information about the IPAM pool created.</p>
-     */
     inline void SetIpamPool(const IpamPool& value) { m_ipamPool = value; }
-
-    /**
-     * <p>Information about the IPAM pool created.</p>
-     */
     inline void SetIpamPool(IpamPool&& value) { m_ipamPool = std::move(value); }
-
-    /**
-     * <p>Information about the IPAM pool created.</p>
-     */
     inline CreateIpamPoolResponse& WithIpamPool(const IpamPool& value) { SetIpamPool(value); return *this;}
-
-    /**
-     * <p>Information about the IPAM pool created.</p>
-     */
     inline CreateIpamPoolResponse& WithIpamPool(IpamPool&& value) { SetIpamPool(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateIpamPoolResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateIpamPoolResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IpamPool m_ipamPool;

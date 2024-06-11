@@ -34,106 +34,43 @@ namespace Model
     AWS_IOTSITEWISE_API GetAssetPropertyAggregatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The requested aggregated values.</p>
      */
     inline const Aws::Vector<AggregatedValue>& GetAggregatedValues() const{ return m_aggregatedValues; }
-
-    /**
-     * <p>The requested aggregated values.</p>
-     */
     inline void SetAggregatedValues(const Aws::Vector<AggregatedValue>& value) { m_aggregatedValues = value; }
-
-    /**
-     * <p>The requested aggregated values.</p>
-     */
     inline void SetAggregatedValues(Aws::Vector<AggregatedValue>&& value) { m_aggregatedValues = std::move(value); }
-
-    /**
-     * <p>The requested aggregated values.</p>
-     */
     inline GetAssetPropertyAggregatesResult& WithAggregatedValues(const Aws::Vector<AggregatedValue>& value) { SetAggregatedValues(value); return *this;}
-
-    /**
-     * <p>The requested aggregated values.</p>
-     */
     inline GetAssetPropertyAggregatesResult& WithAggregatedValues(Aws::Vector<AggregatedValue>&& value) { SetAggregatedValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The requested aggregated values.</p>
-     */
     inline GetAssetPropertyAggregatesResult& AddAggregatedValues(const AggregatedValue& value) { m_aggregatedValues.push_back(value); return *this; }
-
-    /**
-     * <p>The requested aggregated values.</p>
-     */
     inline GetAssetPropertyAggregatesResult& AddAggregatedValues(AggregatedValue&& value) { m_aggregatedValues.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of results, or null if there are no additional
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline GetAssetPropertyAggregatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline GetAssetPropertyAggregatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline GetAssetPropertyAggregatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAssetPropertyAggregatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAssetPropertyAggregatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAssetPropertyAggregatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AggregatedValue> m_aggregatedValues;

@@ -33,53 +33,27 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API GetAccessorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The properties of the accessor.</p>
      */
     inline const Accessor& GetAccessor() const{ return m_accessor; }
-
-    /**
-     * <p>The properties of the accessor.</p>
-     */
     inline void SetAccessor(const Accessor& value) { m_accessor = value; }
-
-    /**
-     * <p>The properties of the accessor.</p>
-     */
     inline void SetAccessor(Accessor&& value) { m_accessor = std::move(value); }
-
-    /**
-     * <p>The properties of the accessor.</p>
-     */
     inline GetAccessorResult& WithAccessor(const Accessor& value) { SetAccessor(value); return *this;}
-
-    /**
-     * <p>The properties of the accessor.</p>
-     */
     inline GetAccessorResult& WithAccessor(Accessor&& value) { SetAccessor(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAccessorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAccessorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAccessorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Accessor m_accessor;

@@ -40,203 +40,75 @@ namespace Model
     AWS_IOT_API UpdateSecurityProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the security profile that was updated.</p>
      */
     inline const Aws::String& GetSecurityProfileName() const{ return m_securityProfileName; }
-
-    /**
-     * <p>The name of the security profile that was updated.</p>
-     */
     inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileName = value; }
-
-    /**
-     * <p>The name of the security profile that was updated.</p>
-     */
     inline void SetSecurityProfileName(Aws::String&& value) { m_securityProfileName = std::move(value); }
-
-    /**
-     * <p>The name of the security profile that was updated.</p>
-     */
     inline void SetSecurityProfileName(const char* value) { m_securityProfileName.assign(value); }
-
-    /**
-     * <p>The name of the security profile that was updated.</p>
-     */
     inline UpdateSecurityProfileResult& WithSecurityProfileName(const Aws::String& value) { SetSecurityProfileName(value); return *this;}
-
-    /**
-     * <p>The name of the security profile that was updated.</p>
-     */
     inline UpdateSecurityProfileResult& WithSecurityProfileName(Aws::String&& value) { SetSecurityProfileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the security profile that was updated.</p>
-     */
     inline UpdateSecurityProfileResult& WithSecurityProfileName(const char* value) { SetSecurityProfileName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the security profile that was updated.</p>
      */
     inline const Aws::String& GetSecurityProfileArn() const{ return m_securityProfileArn; }
-
-    /**
-     * <p>The ARN of the security profile that was updated.</p>
-     */
     inline void SetSecurityProfileArn(const Aws::String& value) { m_securityProfileArn = value; }
-
-    /**
-     * <p>The ARN of the security profile that was updated.</p>
-     */
     inline void SetSecurityProfileArn(Aws::String&& value) { m_securityProfileArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the security profile that was updated.</p>
-     */
     inline void SetSecurityProfileArn(const char* value) { m_securityProfileArn.assign(value); }
-
-    /**
-     * <p>The ARN of the security profile that was updated.</p>
-     */
     inline UpdateSecurityProfileResult& WithSecurityProfileArn(const Aws::String& value) { SetSecurityProfileArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the security profile that was updated.</p>
-     */
     inline UpdateSecurityProfileResult& WithSecurityProfileArn(Aws::String&& value) { SetSecurityProfileArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the security profile that was updated.</p>
-     */
     inline UpdateSecurityProfileResult& WithSecurityProfileArn(const char* value) { SetSecurityProfileArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the security profile.</p>
      */
     inline const Aws::String& GetSecurityProfileDescription() const{ return m_securityProfileDescription; }
-
-    /**
-     * <p>The description of the security profile.</p>
-     */
     inline void SetSecurityProfileDescription(const Aws::String& value) { m_securityProfileDescription = value; }
-
-    /**
-     * <p>The description of the security profile.</p>
-     */
     inline void SetSecurityProfileDescription(Aws::String&& value) { m_securityProfileDescription = std::move(value); }
-
-    /**
-     * <p>The description of the security profile.</p>
-     */
     inline void SetSecurityProfileDescription(const char* value) { m_securityProfileDescription.assign(value); }
-
-    /**
-     * <p>The description of the security profile.</p>
-     */
     inline UpdateSecurityProfileResult& WithSecurityProfileDescription(const Aws::String& value) { SetSecurityProfileDescription(value); return *this;}
-
-    /**
-     * <p>The description of the security profile.</p>
-     */
     inline UpdateSecurityProfileResult& WithSecurityProfileDescription(Aws::String&& value) { SetSecurityProfileDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the security profile.</p>
-     */
     inline UpdateSecurityProfileResult& WithSecurityProfileDescription(const char* value) { SetSecurityProfileDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the behaviors that, when violated by a device (thing), cause an
      * alert.</p>
      */
     inline const Aws::Vector<Behavior>& GetBehaviors() const{ return m_behaviors; }
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline void SetBehaviors(const Aws::Vector<Behavior>& value) { m_behaviors = value; }
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline void SetBehaviors(Aws::Vector<Behavior>&& value) { m_behaviors = std::move(value); }
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline UpdateSecurityProfileResult& WithBehaviors(const Aws::Vector<Behavior>& value) { SetBehaviors(value); return *this;}
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline UpdateSecurityProfileResult& WithBehaviors(Aws::Vector<Behavior>&& value) { SetBehaviors(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline UpdateSecurityProfileResult& AddBehaviors(const Behavior& value) { m_behaviors.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline UpdateSecurityProfileResult& AddBehaviors(Behavior&& value) { m_behaviors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
      */
     inline const Aws::Map<AlertTargetType, AlertTarget>& GetAlertTargets() const{ return m_alertTargets; }
-
-    /**
-     * <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-     */
     inline void SetAlertTargets(const Aws::Map<AlertTargetType, AlertTarget>& value) { m_alertTargets = value; }
-
-    /**
-     * <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-     */
     inline void SetAlertTargets(Aws::Map<AlertTargetType, AlertTarget>&& value) { m_alertTargets = std::move(value); }
-
-    /**
-     * <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-     */
     inline UpdateSecurityProfileResult& WithAlertTargets(const Aws::Map<AlertTargetType, AlertTarget>& value) { SetAlertTargets(value); return *this;}
-
-    /**
-     * <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-     */
     inline UpdateSecurityProfileResult& WithAlertTargets(Aws::Map<AlertTargetType, AlertTarget>&& value) { SetAlertTargets(std::move(value)); return *this;}
-
-    /**
-     * <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-     */
     inline UpdateSecurityProfileResult& AddAlertTargets(const AlertTargetType& key, const AlertTarget& value) { m_alertTargets.emplace(key, value); return *this; }
-
-    /**
-     * <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-     */
     inline UpdateSecurityProfileResult& AddAlertTargets(AlertTargetType&& key, const AlertTarget& value) { m_alertTargets.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-     */
     inline UpdateSecurityProfileResult& AddAlertTargets(const AlertTargetType& key, AlertTarget&& value) { m_alertTargets.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-     */
     inline UpdateSecurityProfileResult& AddAlertTargets(AlertTargetType&& key, AlertTarget&& value) { m_alertTargets.emplace(std::move(key), std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
      * retained for any metric used in the profile's behaviors, but it is also retained
@@ -244,171 +116,66 @@ namespace Model
      * with dimensions.</p>
      */
     inline const Aws::Vector<MetricToRetain>& GetAdditionalMetricsToRetainV2() const{ return m_additionalMetricsToRetainV2; }
-
-    /**
-     * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here. Can be used with custom metrics; cannot be used
-     * with dimensions.</p>
-     */
     inline void SetAdditionalMetricsToRetainV2(const Aws::Vector<MetricToRetain>& value) { m_additionalMetricsToRetainV2 = value; }
-
-    /**
-     * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here. Can be used with custom metrics; cannot be used
-     * with dimensions.</p>
-     */
     inline void SetAdditionalMetricsToRetainV2(Aws::Vector<MetricToRetain>&& value) { m_additionalMetricsToRetainV2 = std::move(value); }
-
-    /**
-     * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here. Can be used with custom metrics; cannot be used
-     * with dimensions.</p>
-     */
     inline UpdateSecurityProfileResult& WithAdditionalMetricsToRetainV2(const Aws::Vector<MetricToRetain>& value) { SetAdditionalMetricsToRetainV2(value); return *this;}
-
-    /**
-     * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here. Can be used with custom metrics; cannot be used
-     * with dimensions.</p>
-     */
     inline UpdateSecurityProfileResult& WithAdditionalMetricsToRetainV2(Aws::Vector<MetricToRetain>&& value) { SetAdditionalMetricsToRetainV2(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here. Can be used with custom metrics; cannot be used
-     * with dimensions.</p>
-     */
     inline UpdateSecurityProfileResult& AddAdditionalMetricsToRetainV2(const MetricToRetain& value) { m_additionalMetricsToRetainV2.push_back(value); return *this; }
-
-    /**
-     * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here. Can be used with custom metrics; cannot be used
-     * with dimensions.</p>
-     */
     inline UpdateSecurityProfileResult& AddAdditionalMetricsToRetainV2(MetricToRetain&& value) { m_additionalMetricsToRetainV2.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The updated version of the security profile.</p>
      */
     inline long long GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The updated version of the security profile.</p>
-     */
     inline void SetVersion(long long value) { m_version = value; }
-
-    /**
-     * <p>The updated version of the security profile.</p>
-     */
     inline UpdateSecurityProfileResult& WithVersion(long long value) { SetVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time the security profile was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-
-    /**
-     * <p>The time the security profile was created.</p>
-     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
-
-    /**
-     * <p>The time the security profile was created.</p>
-     */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
-
-    /**
-     * <p>The time the security profile was created.</p>
-     */
     inline UpdateSecurityProfileResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-
-    /**
-     * <p>The time the security profile was created.</p>
-     */
     inline UpdateSecurityProfileResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time the security profile was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
-
-    /**
-     * <p>The time the security profile was last modified.</p>
-     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDate = value; }
-
-    /**
-     * <p>The time the security profile was last modified.</p>
-     */
     inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDate = std::move(value); }
-
-    /**
-     * <p>The time the security profile was last modified.</p>
-     */
     inline UpdateSecurityProfileResult& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-
-    /**
-     * <p>The time the security profile was last modified.</p>
-     */
     inline UpdateSecurityProfileResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
      */
     inline const MetricsExportConfig& GetMetricsExportConfig() const{ return m_metricsExportConfig; }
-
-    /**
-     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
-     */
     inline void SetMetricsExportConfig(const MetricsExportConfig& value) { m_metricsExportConfig = value; }
-
-    /**
-     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
-     */
     inline void SetMetricsExportConfig(MetricsExportConfig&& value) { m_metricsExportConfig = std::move(value); }
-
-    /**
-     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
-     */
     inline UpdateSecurityProfileResult& WithMetricsExportConfig(const MetricsExportConfig& value) { SetMetricsExportConfig(value); return *this;}
-
-    /**
-     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
-     */
     inline UpdateSecurityProfileResult& WithMetricsExportConfig(MetricsExportConfig&& value) { SetMetricsExportConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateSecurityProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateSecurityProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateSecurityProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_securityProfileName;

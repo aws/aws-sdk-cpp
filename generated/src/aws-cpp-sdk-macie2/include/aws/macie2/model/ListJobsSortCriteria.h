@@ -39,79 +39,31 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The property to sort the results by.</p>
      */
     inline const ListJobsSortAttributeName& GetAttributeName() const{ return m_attributeName; }
-
-    /**
-     * <p>The property to sort the results by.</p>
-     */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-
-    /**
-     * <p>The property to sort the results by.</p>
-     */
     inline void SetAttributeName(const ListJobsSortAttributeName& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-
-    /**
-     * <p>The property to sort the results by.</p>
-     */
     inline void SetAttributeName(ListJobsSortAttributeName&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-
-    /**
-     * <p>The property to sort the results by.</p>
-     */
     inline ListJobsSortCriteria& WithAttributeName(const ListJobsSortAttributeName& value) { SetAttributeName(value); return *this;}
-
-    /**
-     * <p>The property to sort the results by.</p>
-     */
     inline ListJobsSortCriteria& WithAttributeName(ListJobsSortAttributeName&& value) { SetAttributeName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sort order to apply to the results, based on the value for the property
      * specified by the attributeName property. Valid values are: ASC, sort the results
      * in ascending order; and, DESC, sort the results in descending order.</p>
      */
     inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
-
-    /**
-     * <p>The sort order to apply to the results, based on the value for the property
-     * specified by the attributeName property. Valid values are: ASC, sort the results
-     * in ascending order; and, DESC, sort the results in descending order.</p>
-     */
     inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
-
-    /**
-     * <p>The sort order to apply to the results, based on the value for the property
-     * specified by the attributeName property. Valid values are: ASC, sort the results
-     * in ascending order; and, DESC, sort the results in descending order.</p>
-     */
     inline void SetOrderBy(const OrderBy& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
-
-    /**
-     * <p>The sort order to apply to the results, based on the value for the property
-     * specified by the attributeName property. Valid values are: ASC, sort the results
-     * in ascending order; and, DESC, sort the results in descending order.</p>
-     */
     inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
-
-    /**
-     * <p>The sort order to apply to the results, based on the value for the property
-     * specified by the attributeName property. Valid values are: ASC, sort the results
-     * in ascending order; and, DESC, sort the results in descending order.</p>
-     */
     inline ListJobsSortCriteria& WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
-
-    /**
-     * <p>The sort order to apply to the results, based on the value for the property
-     * specified by the attributeName property. Valid values are: ASC, sort the results
-     * in ascending order; and, DESC, sort the results in descending order.</p>
-     */
     inline ListJobsSortCriteria& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ListJobsSortAttributeName m_attributeName;

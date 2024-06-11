@@ -52,144 +52,49 @@ namespace Model
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The <code>workflowId</code> of the external workflow execution to
      * cancel.</p>
      */
     inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
-
-    /**
-     * <p> The <code>workflowId</code> of the external workflow execution to
-     * cancel.</p>
-     */
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-
-    /**
-     * <p> The <code>workflowId</code> of the external workflow execution to
-     * cancel.</p>
-     */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-
-    /**
-     * <p> The <code>workflowId</code> of the external workflow execution to
-     * cancel.</p>
-     */
     inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-
-    /**
-     * <p> The <code>workflowId</code> of the external workflow execution to
-     * cancel.</p>
-     */
     inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-
-    /**
-     * <p> The <code>workflowId</code> of the external workflow execution to
-     * cancel.</p>
-     */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-
-    /**
-     * <p> The <code>workflowId</code> of the external workflow execution to
-     * cancel.</p>
-     */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-
-    /**
-     * <p> The <code>workflowId</code> of the external workflow execution to
-     * cancel.</p>
-     */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>runId</code> of the external workflow execution to cancel.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
-
-    /**
-     * <p>The <code>runId</code> of the external workflow execution to cancel.</p>
-     */
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-
-    /**
-     * <p>The <code>runId</code> of the external workflow execution to cancel.</p>
-     */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-
-    /**
-     * <p>The <code>runId</code> of the external workflow execution to cancel.</p>
-     */
     inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-
-    /**
-     * <p>The <code>runId</code> of the external workflow execution to cancel.</p>
-     */
     inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-
-    /**
-     * <p>The <code>runId</code> of the external workflow execution to cancel.</p>
-     */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-
-    /**
-     * <p>The <code>runId</code> of the external workflow execution to cancel.</p>
-     */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>runId</code> of the external workflow execution to cancel.</p>
-     */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithRunId(const char* value) { SetRunId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data attached to the event that can be used by the decider in subsequent
      * workflow tasks.</p>
      */
     inline const Aws::String& GetControl() const{ return m_control; }
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline void SetControl(const Aws::String& value) { m_controlHasBeenSet = true; m_control = value; }
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline void SetControl(const char* value) { m_controlHasBeenSet = true; m_control.assign(value); }
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithControl(const Aws::String& value) { SetControl(value); return *this;}
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithControl(Aws::String&& value) { SetControl(std::move(value)); return *this;}
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithControl(const char* value) { SetControl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workflowId;

@@ -33,53 +33,27 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API GetServiceLevelObjectiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure containing the information about the SLO.</p>
      */
     inline const ServiceLevelObjective& GetSlo() const{ return m_slo; }
-
-    /**
-     * <p>A structure containing the information about the SLO.</p>
-     */
     inline void SetSlo(const ServiceLevelObjective& value) { m_slo = value; }
-
-    /**
-     * <p>A structure containing the information about the SLO.</p>
-     */
     inline void SetSlo(ServiceLevelObjective&& value) { m_slo = std::move(value); }
-
-    /**
-     * <p>A structure containing the information about the SLO.</p>
-     */
     inline GetServiceLevelObjectiveResult& WithSlo(const ServiceLevelObjective& value) { SetSlo(value); return *this;}
-
-    /**
-     * <p>A structure containing the information about the SLO.</p>
-     */
     inline GetServiceLevelObjectiveResult& WithSlo(ServiceLevelObjective&& value) { SetSlo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetServiceLevelObjectiveResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetServiceLevelObjectiveResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetServiceLevelObjectiveResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceLevelObjective m_slo;

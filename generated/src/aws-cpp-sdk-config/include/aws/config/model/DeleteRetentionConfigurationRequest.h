@@ -34,46 +34,19 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the retention configuration to delete.</p>
      */
     inline const Aws::String& GetRetentionConfigurationName() const{ return m_retentionConfigurationName; }
-
-    /**
-     * <p>The name of the retention configuration to delete.</p>
-     */
     inline bool RetentionConfigurationNameHasBeenSet() const { return m_retentionConfigurationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the retention configuration to delete.</p>
-     */
     inline void SetRetentionConfigurationName(const Aws::String& value) { m_retentionConfigurationNameHasBeenSet = true; m_retentionConfigurationName = value; }
-
-    /**
-     * <p>The name of the retention configuration to delete.</p>
-     */
     inline void SetRetentionConfigurationName(Aws::String&& value) { m_retentionConfigurationNameHasBeenSet = true; m_retentionConfigurationName = std::move(value); }
-
-    /**
-     * <p>The name of the retention configuration to delete.</p>
-     */
     inline void SetRetentionConfigurationName(const char* value) { m_retentionConfigurationNameHasBeenSet = true; m_retentionConfigurationName.assign(value); }
-
-    /**
-     * <p>The name of the retention configuration to delete.</p>
-     */
     inline DeleteRetentionConfigurationRequest& WithRetentionConfigurationName(const Aws::String& value) { SetRetentionConfigurationName(value); return *this;}
-
-    /**
-     * <p>The name of the retention configuration to delete.</p>
-     */
     inline DeleteRetentionConfigurationRequest& WithRetentionConfigurationName(Aws::String&& value) { SetRetentionConfigurationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the retention configuration to delete.</p>
-     */
     inline DeleteRetentionConfigurationRequest& WithRetentionConfigurationName(const char* value) { SetRetentionConfigurationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_retentionConfigurationName;

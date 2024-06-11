@@ -39,67 +39,29 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the quality of Agent media connection.</p>
      */
     inline const AgentQualityMetrics& GetAgent() const{ return m_agent; }
-
-    /**
-     * <p>Information about the quality of Agent media connection.</p>
-     */
     inline bool AgentHasBeenSet() const { return m_agentHasBeenSet; }
-
-    /**
-     * <p>Information about the quality of Agent media connection.</p>
-     */
     inline void SetAgent(const AgentQualityMetrics& value) { m_agentHasBeenSet = true; m_agent = value; }
-
-    /**
-     * <p>Information about the quality of Agent media connection.</p>
-     */
     inline void SetAgent(AgentQualityMetrics&& value) { m_agentHasBeenSet = true; m_agent = std::move(value); }
-
-    /**
-     * <p>Information about the quality of Agent media connection.</p>
-     */
     inline QualityMetrics& WithAgent(const AgentQualityMetrics& value) { SetAgent(value); return *this;}
-
-    /**
-     * <p>Information about the quality of Agent media connection.</p>
-     */
     inline QualityMetrics& WithAgent(AgentQualityMetrics&& value) { SetAgent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the quality of Customer media connection.</p>
      */
     inline const CustomerQualityMetrics& GetCustomer() const{ return m_customer; }
-
-    /**
-     * <p>Information about the quality of Customer media connection.</p>
-     */
     inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
-
-    /**
-     * <p>Information about the quality of Customer media connection.</p>
-     */
     inline void SetCustomer(const CustomerQualityMetrics& value) { m_customerHasBeenSet = true; m_customer = value; }
-
-    /**
-     * <p>Information about the quality of Customer media connection.</p>
-     */
     inline void SetCustomer(CustomerQualityMetrics&& value) { m_customerHasBeenSet = true; m_customer = std::move(value); }
-
-    /**
-     * <p>Information about the quality of Customer media connection.</p>
-     */
     inline QualityMetrics& WithCustomer(const CustomerQualityMetrics& value) { SetCustomer(value); return *this;}
-
-    /**
-     * <p>Information about the quality of Customer media connection.</p>
-     */
     inline QualityMetrics& WithCustomer(CustomerQualityMetrics&& value) { SetCustomer(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AgentQualityMetrics m_agent;

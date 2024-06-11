@@ -32,63 +32,29 @@ namespace Model
     AWS_DEADLINE_API CreateBudgetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The budget ID.</p>
      */
     inline const Aws::String& GetBudgetId() const{ return m_budgetId; }
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline void SetBudgetId(const Aws::String& value) { m_budgetId = value; }
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline void SetBudgetId(Aws::String&& value) { m_budgetId = std::move(value); }
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline void SetBudgetId(const char* value) { m_budgetId.assign(value); }
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline CreateBudgetResult& WithBudgetId(const Aws::String& value) { SetBudgetId(value); return *this;}
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline CreateBudgetResult& WithBudgetId(Aws::String&& value) { SetBudgetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline CreateBudgetResult& WithBudgetId(const char* value) { SetBudgetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateBudgetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateBudgetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateBudgetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_budgetId;

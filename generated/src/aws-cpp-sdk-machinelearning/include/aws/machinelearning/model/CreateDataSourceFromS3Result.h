@@ -41,77 +41,31 @@ namespace Model
     AWS_MACHINELEARNING_API CreateDataSourceFromS3Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
      * value should be identical to the value of the <code>DataSourceID</code> in the
      * request. </p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
-     * value should be identical to the value of the <code>DataSourceID</code> in the
-     * request. </p>
-     */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceId = value; }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
-     * value should be identical to the value of the <code>DataSourceID</code> in the
-     * request. </p>
-     */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceId = std::move(value); }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
-     * value should be identical to the value of the <code>DataSourceID</code> in the
-     * request. </p>
-     */
     inline void SetDataSourceId(const char* value) { m_dataSourceId.assign(value); }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
-     * value should be identical to the value of the <code>DataSourceID</code> in the
-     * request. </p>
-     */
     inline CreateDataSourceFromS3Result& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
-     * value should be identical to the value of the <code>DataSourceID</code> in the
-     * request. </p>
-     */
     inline CreateDataSourceFromS3Result& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
-     * value should be identical to the value of the <code>DataSourceID</code> in the
-     * request. </p>
-     */
     inline CreateDataSourceFromS3Result& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDataSourceFromS3Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDataSourceFromS3Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDataSourceFromS3Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataSourceId;

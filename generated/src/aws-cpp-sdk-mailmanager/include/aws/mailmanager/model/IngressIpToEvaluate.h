@@ -38,42 +38,18 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An enum type representing the allowed attribute types for an IP
      * condition.</p>
      */
     inline const IngressIpv4Attribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>An enum type representing the allowed attribute types for an IP
-     * condition.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>An enum type representing the allowed attribute types for an IP
-     * condition.</p>
-     */
     inline void SetAttribute(const IngressIpv4Attribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>An enum type representing the allowed attribute types for an IP
-     * condition.</p>
-     */
     inline void SetAttribute(IngressIpv4Attribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>An enum type representing the allowed attribute types for an IP
-     * condition.</p>
-     */
     inline IngressIpToEvaluate& WithAttribute(const IngressIpv4Attribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>An enum type representing the allowed attribute types for an IP
-     * condition.</p>
-     */
     inline IngressIpToEvaluate& WithAttribute(IngressIpv4Attribute&& value) { SetAttribute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IngressIpv4Attribute m_attribute;

@@ -34,79 +34,31 @@ namespace Model
     AWS_CODECONNECTIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> A non-zero, non-negative integer used to limit the number of returned
      * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p> A non-zero, non-negative integer used to limit the number of returned
-     * results.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p> A non-zero, non-negative integer used to limit the number of returned
-     * results.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p> A non-zero, non-negative integer used to limit the number of returned
-     * results.</p>
-     */
     inline ListRepositoryLinksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> An enumeration token that, when provided in a request, returns the next
      * batch of the results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> An enumeration token that, when provided in a request, returns the next
-     * batch of the results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p> An enumeration token that, when provided in a request, returns the next
-     * batch of the results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p> An enumeration token that, when provided in a request, returns the next
-     * batch of the results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p> An enumeration token that, when provided in a request, returns the next
-     * batch of the results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p> An enumeration token that, when provided in a request, returns the next
-     * batch of the results.</p>
-     */
     inline ListRepositoryLinksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> An enumeration token that, when provided in a request, returns the next
-     * batch of the results.</p>
-     */
     inline ListRepositoryLinksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> An enumeration token that, when provided in a request, returns the next
-     * batch of the results.</p>
-     */
     inline ListRepositoryLinksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

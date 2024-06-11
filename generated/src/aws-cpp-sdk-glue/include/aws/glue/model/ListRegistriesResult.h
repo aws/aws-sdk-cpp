@@ -34,113 +34,44 @@ namespace Model
     AWS_GLUE_API ListRegistriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal
      * details of each registry.</p>
      */
     inline const Aws::Vector<RegistryListItem>& GetRegistries() const{ return m_registries; }
-
-    /**
-     * <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal
-     * details of each registry.</p>
-     */
     inline void SetRegistries(const Aws::Vector<RegistryListItem>& value) { m_registries = value; }
-
-    /**
-     * <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal
-     * details of each registry.</p>
-     */
     inline void SetRegistries(Aws::Vector<RegistryListItem>&& value) { m_registries = std::move(value); }
-
-    /**
-     * <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal
-     * details of each registry.</p>
-     */
     inline ListRegistriesResult& WithRegistries(const Aws::Vector<RegistryListItem>& value) { SetRegistries(value); return *this;}
-
-    /**
-     * <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal
-     * details of each registry.</p>
-     */
     inline ListRegistriesResult& WithRegistries(Aws::Vector<RegistryListItem>&& value) { SetRegistries(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal
-     * details of each registry.</p>
-     */
     inline ListRegistriesResult& AddRegistries(const RegistryListItem& value) { m_registries.push_back(value); return *this; }
-
-    /**
-     * <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal
-     * details of each registry.</p>
-     */
     inline ListRegistriesResult& AddRegistries(RegistryListItem&& value) { m_registries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A continuation token for paginating the returned list of tokens, returned if
      * the current segment of the list is not the last.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A continuation token for paginating the returned list of tokens, returned if
-     * the current segment of the list is not the last.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A continuation token for paginating the returned list of tokens, returned if
-     * the current segment of the list is not the last.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A continuation token for paginating the returned list of tokens, returned if
-     * the current segment of the list is not the last.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A continuation token for paginating the returned list of tokens, returned if
-     * the current segment of the list is not the last.</p>
-     */
     inline ListRegistriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A continuation token for paginating the returned list of tokens, returned if
-     * the current segment of the list is not the last.</p>
-     */
     inline ListRegistriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A continuation token for paginating the returned list of tokens, returned if
-     * the current segment of the list is not the last.</p>
-     */
     inline ListRegistriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRegistriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRegistriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRegistriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<RegistryListItem> m_registries;

@@ -38,87 +38,33 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The column to be joined.</p>
      */
     inline const Aws::String& GetFrom() const{ return m_from; }
-
-    /**
-     * <p>The column to be joined.</p>
-     */
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-
-    /**
-     * <p>The column to be joined.</p>
-     */
     inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
-
-    /**
-     * <p>The column to be joined.</p>
-     */
     inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-
-    /**
-     * <p>The column to be joined.</p>
-     */
     inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
-
-    /**
-     * <p>The column to be joined.</p>
-     */
     inline JoinColumn& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
-
-    /**
-     * <p>The column to be joined.</p>
-     */
     inline JoinColumn& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
-
-    /**
-     * <p>The column to be joined.</p>
-     */
     inline JoinColumn& WithFrom(const char* value) { SetFrom(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key of the column to be joined.</p>
      */
     inline const Aws::Vector<Aws::Vector<Aws::String>>& GetKeys() const{ return m_keys; }
-
-    /**
-     * <p>The key of the column to be joined.</p>
-     */
     inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
-
-    /**
-     * <p>The key of the column to be joined.</p>
-     */
     inline void SetKeys(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_keysHasBeenSet = true; m_keys = value; }
-
-    /**
-     * <p>The key of the column to be joined.</p>
-     */
     inline void SetKeys(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_keysHasBeenSet = true; m_keys = std::move(value); }
-
-    /**
-     * <p>The key of the column to be joined.</p>
-     */
     inline JoinColumn& WithKeys(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetKeys(value); return *this;}
-
-    /**
-     * <p>The key of the column to be joined.</p>
-     */
     inline JoinColumn& WithKeys(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>The key of the column to be joined.</p>
-     */
     inline JoinColumn& AddKeys(const Aws::Vector<Aws::String>& value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
-
-    /**
-     * <p>The key of the column to be joined.</p>
-     */
     inline JoinColumn& AddKeys(Aws::Vector<Aws::String>&& value) { m_keysHasBeenSet = true; m_keys.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_from;

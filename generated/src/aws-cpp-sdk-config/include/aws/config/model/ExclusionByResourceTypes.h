@@ -62,54 +62,20 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A comma-separated list of resource types to exclude from recording by the
      * configuration recorder.</p>
      */
     inline const Aws::Vector<ResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline void SetResourceTypes(const Aws::Vector<ResourceType>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline void SetResourceTypes(Aws::Vector<ResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline ExclusionByResourceTypes& WithResourceTypes(const Aws::Vector<ResourceType>& value) { SetResourceTypes(value); return *this;}
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline ExclusionByResourceTypes& WithResourceTypes(Aws::Vector<ResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline ExclusionByResourceTypes& AddResourceTypes(const ResourceType& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline ExclusionByResourceTypes& AddResourceTypes(ResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ResourceType> m_resourceTypes;

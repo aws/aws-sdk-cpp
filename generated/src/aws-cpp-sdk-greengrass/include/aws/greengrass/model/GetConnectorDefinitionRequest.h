@@ -32,46 +32,19 @@ namespace Model
     AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ID of the connector definition.
      */
     inline const Aws::String& GetConnectorDefinitionId() const{ return m_connectorDefinitionId; }
-
-    /**
-     * The ID of the connector definition.
-     */
     inline bool ConnectorDefinitionIdHasBeenSet() const { return m_connectorDefinitionIdHasBeenSet; }
-
-    /**
-     * The ID of the connector definition.
-     */
     inline void SetConnectorDefinitionId(const Aws::String& value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId = value; }
-
-    /**
-     * The ID of the connector definition.
-     */
     inline void SetConnectorDefinitionId(Aws::String&& value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId = std::move(value); }
-
-    /**
-     * The ID of the connector definition.
-     */
     inline void SetConnectorDefinitionId(const char* value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId.assign(value); }
-
-    /**
-     * The ID of the connector definition.
-     */
     inline GetConnectorDefinitionRequest& WithConnectorDefinitionId(const Aws::String& value) { SetConnectorDefinitionId(value); return *this;}
-
-    /**
-     * The ID of the connector definition.
-     */
     inline GetConnectorDefinitionRequest& WithConnectorDefinitionId(Aws::String&& value) { SetConnectorDefinitionId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the connector definition.
-     */
     inline GetConnectorDefinitionRequest& WithConnectorDefinitionId(const char* value) { SetConnectorDefinitionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectorDefinitionId;

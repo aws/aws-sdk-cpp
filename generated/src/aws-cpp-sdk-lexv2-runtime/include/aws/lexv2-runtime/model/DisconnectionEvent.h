@@ -39,79 +39,31 @@ namespace Model
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier that your application assigns to the event. You can use
      * this to identify events in logs.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
-
-    /**
-     * <p>A unique identifier that your application assigns to the event. You can use
-     * this to identify events in logs.</p>
-     */
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier that your application assigns to the event. You can use
-     * this to identify events in logs.</p>
-     */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-
-    /**
-     * <p>A unique identifier that your application assigns to the event. You can use
-     * this to identify events in logs.</p>
-     */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-
-    /**
-     * <p>A unique identifier that your application assigns to the event. You can use
-     * this to identify events in logs.</p>
-     */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-
-    /**
-     * <p>A unique identifier that your application assigns to the event. You can use
-     * this to identify events in logs.</p>
-     */
     inline DisconnectionEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-
-    /**
-     * <p>A unique identifier that your application assigns to the event. You can use
-     * this to identify events in logs.</p>
-     */
     inline DisconnectionEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier that your application assigns to the event. You can use
-     * this to identify events in logs.</p>
-     */
     inline DisconnectionEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
      * Amazon Lex V2.</p>
      */
     inline long long GetClientTimestampMillis() const{ return m_clientTimestampMillis; }
-
-    /**
-     * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex V2.</p>
-     */
     inline bool ClientTimestampMillisHasBeenSet() const { return m_clientTimestampMillisHasBeenSet; }
-
-    /**
-     * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex V2.</p>
-     */
     inline void SetClientTimestampMillis(long long value) { m_clientTimestampMillisHasBeenSet = true; m_clientTimestampMillis = value; }
-
-    /**
-     * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex V2.</p>
-     */
     inline DisconnectionEvent& WithClientTimestampMillis(long long value) { SetClientTimestampMillis(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_eventId;

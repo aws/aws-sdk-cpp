@@ -39,98 +39,41 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the metric.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline MetricData& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline MetricData& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline MetricData& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the metric.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the metric.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the metric.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the metric.</p>
-     */
     inline MetricData& WithValue(double value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that the algorithm emitted the metric.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The date and time that the algorithm emitted the metric.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The date and time that the algorithm emitted the metric.</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The date and time that the algorithm emitted the metric.</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>The date and time that the algorithm emitted the metric.</p>
-     */
     inline MetricData& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The date and time that the algorithm emitted the metric.</p>
-     */
     inline MetricData& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_metricName;

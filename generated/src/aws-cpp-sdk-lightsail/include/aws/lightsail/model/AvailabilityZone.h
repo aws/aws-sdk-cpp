@@ -38,95 +38,34 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline const Aws::String& GetZoneName() const{ return m_zoneName; }
-
-    /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
-     * (case-sensitive).</p>
-     */
     inline bool ZoneNameHasBeenSet() const { return m_zoneNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
-     * (case-sensitive).</p>
-     */
     inline void SetZoneName(const Aws::String& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
-
-    /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
-     * (case-sensitive).</p>
-     */
     inline void SetZoneName(Aws::String&& value) { m_zoneNameHasBeenSet = true; m_zoneName = std::move(value); }
-
-    /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
-     * (case-sensitive).</p>
-     */
     inline void SetZoneName(const char* value) { m_zoneNameHasBeenSet = true; m_zoneName.assign(value); }
-
-    /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
-     * (case-sensitive).</p>
-     */
     inline AvailabilityZone& WithZoneName(const Aws::String& value) { SetZoneName(value); return *this;}
-
-    /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
-     * (case-sensitive).</p>
-     */
     inline AvailabilityZone& WithZoneName(Aws::String&& value) { SetZoneName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
-     * (case-sensitive).</p>
-     */
     inline AvailabilityZone& WithZoneName(const char* value) { SetZoneName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the Availability Zone.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the Availability Zone.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of the Availability Zone.</p>
-     */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of the Availability Zone.</p>
-     */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of the Availability Zone.</p>
-     */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-
-    /**
-     * <p>The state of the Availability Zone.</p>
-     */
     inline AvailabilityZone& WithState(const Aws::String& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the Availability Zone.</p>
-     */
     inline AvailabilityZone& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-
-    /**
-     * <p>The state of the Availability Zone.</p>
-     */
     inline AvailabilityZone& WithState(const char* value) { SetState(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_zoneName;

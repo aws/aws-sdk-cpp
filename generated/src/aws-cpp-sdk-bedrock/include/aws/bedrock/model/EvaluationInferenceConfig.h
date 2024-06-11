@@ -41,46 +41,19 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Used to specify the models.</p>
      */
     inline const Aws::Vector<EvaluationModelConfig>& GetModels() const{ return m_models; }
-
-    /**
-     * <p>Used to specify the models.</p>
-     */
     inline bool ModelsHasBeenSet() const { return m_modelsHasBeenSet; }
-
-    /**
-     * <p>Used to specify the models.</p>
-     */
     inline void SetModels(const Aws::Vector<EvaluationModelConfig>& value) { m_modelsHasBeenSet = true; m_models = value; }
-
-    /**
-     * <p>Used to specify the models.</p>
-     */
     inline void SetModels(Aws::Vector<EvaluationModelConfig>&& value) { m_modelsHasBeenSet = true; m_models = std::move(value); }
-
-    /**
-     * <p>Used to specify the models.</p>
-     */
     inline EvaluationInferenceConfig& WithModels(const Aws::Vector<EvaluationModelConfig>& value) { SetModels(value); return *this;}
-
-    /**
-     * <p>Used to specify the models.</p>
-     */
     inline EvaluationInferenceConfig& WithModels(Aws::Vector<EvaluationModelConfig>&& value) { SetModels(std::move(value)); return *this;}
-
-    /**
-     * <p>Used to specify the models.</p>
-     */
     inline EvaluationInferenceConfig& AddModels(const EvaluationModelConfig& value) { m_modelsHasBeenSet = true; m_models.push_back(value); return *this; }
-
-    /**
-     * <p>Used to specify the models.</p>
-     */
     inline EvaluationInferenceConfig& AddModels(EvaluationModelConfig&& value) { m_modelsHasBeenSet = true; m_models.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<EvaluationModelConfig> m_models;

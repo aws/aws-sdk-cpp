@@ -36,46 +36,19 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the ClientCertificate resource to be deleted.</p>
      */
     inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
-
-    /**
-     * <p>The identifier of the ClientCertificate resource to be deleted.</p>
-     */
     inline bool ClientCertificateIdHasBeenSet() const { return m_clientCertificateIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the ClientCertificate resource to be deleted.</p>
-     */
     inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
-
-    /**
-     * <p>The identifier of the ClientCertificate resource to be deleted.</p>
-     */
     inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = std::move(value); }
-
-    /**
-     * <p>The identifier of the ClientCertificate resource to be deleted.</p>
-     */
     inline void SetClientCertificateId(const char* value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId.assign(value); }
-
-    /**
-     * <p>The identifier of the ClientCertificate resource to be deleted.</p>
-     */
     inline DeleteClientCertificateRequest& WithClientCertificateId(const Aws::String& value) { SetClientCertificateId(value); return *this;}
-
-    /**
-     * <p>The identifier of the ClientCertificate resource to be deleted.</p>
-     */
     inline DeleteClientCertificateRequest& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the ClientCertificate resource to be deleted.</p>
-     */
     inline DeleteClientCertificateRequest& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientCertificateId;

@@ -37,152 +37,50 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the Add On to subscribe to. You can only have one subscription
      * for each Add On name.</p>
      */
     inline const Aws::String& GetAddonName() const{ return m_addonName; }
-
-    /**
-     * <p>The name of the Add On to subscribe to. You can only have one subscription
-     * for each Add On name.</p>
-     */
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Add On to subscribe to. You can only have one subscription
-     * for each Add On name.</p>
-     */
     inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
-
-    /**
-     * <p>The name of the Add On to subscribe to. You can only have one subscription
-     * for each Add On name.</p>
-     */
     inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
-
-    /**
-     * <p>The name of the Add On to subscribe to. You can only have one subscription
-     * for each Add On name.</p>
-     */
     inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
-
-    /**
-     * <p>The name of the Add On to subscribe to. You can only have one subscription
-     * for each Add On name.</p>
-     */
     inline CreateAddonSubscriptionRequest& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
-
-    /**
-     * <p>The name of the Add On to subscribe to. You can only have one subscription
-     * for each Add On name.</p>
-     */
     inline CreateAddonSubscriptionRequest& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Add On to subscribe to. You can only have one subscription
-     * for each Add On name.</p>
-     */
     inline CreateAddonSubscriptionRequest& WithAddonName(const char* value) { SetAddonName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
      * same request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline CreateAddonSubscriptionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline CreateAddonSubscriptionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline CreateAddonSubscriptionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags used to organize, track, or control access for the resource. For
      * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateAddonSubscriptionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateAddonSubscriptionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateAddonSubscriptionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateAddonSubscriptionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_addonName;

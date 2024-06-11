@@ -35,92 +35,34 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Refresh token, encoded as a JWT token.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
-
-    /**
-     * <p>Refresh token, encoded as a JWT token.</p>
-     */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-
-    /**
-     * <p>Refresh token, encoded as a JWT token.</p>
-     */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-
-    /**
-     * <p>Refresh token, encoded as a JWT token.</p>
-     */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-
-    /**
-     * <p>Refresh token, encoded as a JWT token.</p>
-     */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-
-    /**
-     * <p>Refresh token, encoded as a JWT token.</p>
-     */
     inline GetAccessTokenRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-
-    /**
-     * <p>Refresh token, encoded as a JWT token.</p>
-     */
     inline GetAccessTokenRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Refresh token, encoded as a JWT token.</p>
-     */
     inline GetAccessTokenRequest& WithToken(const char* value) { SetToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Token properties to validate against those present in the JWT token.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTokenProperties() const{ return m_tokenProperties; }
-
-    /**
-     * <p>Token properties to validate against those present in the JWT token.</p>
-     */
     inline bool TokenPropertiesHasBeenSet() const { return m_tokenPropertiesHasBeenSet; }
-
-    /**
-     * <p>Token properties to validate against those present in the JWT token.</p>
-     */
     inline void SetTokenProperties(const Aws::Vector<Aws::String>& value) { m_tokenPropertiesHasBeenSet = true; m_tokenProperties = value; }
-
-    /**
-     * <p>Token properties to validate against those present in the JWT token.</p>
-     */
     inline void SetTokenProperties(Aws::Vector<Aws::String>&& value) { m_tokenPropertiesHasBeenSet = true; m_tokenProperties = std::move(value); }
-
-    /**
-     * <p>Token properties to validate against those present in the JWT token.</p>
-     */
     inline GetAccessTokenRequest& WithTokenProperties(const Aws::Vector<Aws::String>& value) { SetTokenProperties(value); return *this;}
-
-    /**
-     * <p>Token properties to validate against those present in the JWT token.</p>
-     */
     inline GetAccessTokenRequest& WithTokenProperties(Aws::Vector<Aws::String>&& value) { SetTokenProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>Token properties to validate against those present in the JWT token.</p>
-     */
     inline GetAccessTokenRequest& AddTokenProperties(const Aws::String& value) { m_tokenPropertiesHasBeenSet = true; m_tokenProperties.push_back(value); return *this; }
-
-    /**
-     * <p>Token properties to validate against those present in the JWT token.</p>
-     */
     inline GetAccessTokenRequest& AddTokenProperties(Aws::String&& value) { m_tokenPropertiesHasBeenSet = true; m_tokenProperties.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Token properties to validate against those present in the JWT token.</p>
-     */
     inline GetAccessTokenRequest& AddTokenProperties(const char* value) { m_tokenPropertiesHasBeenSet = true; m_tokenProperties.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_token;

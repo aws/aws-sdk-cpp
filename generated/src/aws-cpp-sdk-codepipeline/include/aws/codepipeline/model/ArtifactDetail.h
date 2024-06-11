@@ -39,77 +39,31 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The artifact object name for the action execution.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The artifact object name for the action execution.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The artifact object name for the action execution.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The artifact object name for the action execution.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The artifact object name for the action execution.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The artifact object name for the action execution.</p>
-     */
     inline ArtifactDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The artifact object name for the action execution.</p>
-     */
     inline ArtifactDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The artifact object name for the action execution.</p>
-     */
     inline ArtifactDetail& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon S3 artifact location for the action execution.</p>
      */
     inline const S3Location& GetS3location() const{ return m_s3location; }
-
-    /**
-     * <p>The Amazon S3 artifact location for the action execution.</p>
-     */
     inline bool S3locationHasBeenSet() const { return m_s3locationHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 artifact location for the action execution.</p>
-     */
     inline void SetS3location(const S3Location& value) { m_s3locationHasBeenSet = true; m_s3location = value; }
-
-    /**
-     * <p>The Amazon S3 artifact location for the action execution.</p>
-     */
     inline void SetS3location(S3Location&& value) { m_s3locationHasBeenSet = true; m_s3location = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 artifact location for the action execution.</p>
-     */
     inline ArtifactDetail& WithS3location(const S3Location& value) { SetS3location(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 artifact location for the action execution.</p>
-     */
     inline ArtifactDetail& WithS3location(S3Location&& value) { SetS3location(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

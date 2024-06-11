@@ -33,53 +33,27 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API DeleteMigrationProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The migration project that was deleted.</p>
      */
     inline const MigrationProject& GetMigrationProject() const{ return m_migrationProject; }
-
-    /**
-     * <p>The migration project that was deleted.</p>
-     */
     inline void SetMigrationProject(const MigrationProject& value) { m_migrationProject = value; }
-
-    /**
-     * <p>The migration project that was deleted.</p>
-     */
     inline void SetMigrationProject(MigrationProject&& value) { m_migrationProject = std::move(value); }
-
-    /**
-     * <p>The migration project that was deleted.</p>
-     */
     inline DeleteMigrationProjectResult& WithMigrationProject(const MigrationProject& value) { SetMigrationProject(value); return *this;}
-
-    /**
-     * <p>The migration project that was deleted.</p>
-     */
     inline DeleteMigrationProjectResult& WithMigrationProject(MigrationProject&& value) { SetMigrationProject(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteMigrationProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteMigrationProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteMigrationProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MigrationProject m_migrationProject;

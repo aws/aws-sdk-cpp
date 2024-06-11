@@ -34,30 +34,17 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
-
-    
     inline bool FileShareARNHasBeenSet() const { return m_fileShareARNHasBeenSet; }
-
-    
     inline void SetFileShareARN(const Aws::String& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
-
-    
     inline void SetFileShareARN(Aws::String&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = std::move(value); }
-
-    
     inline void SetFileShareARN(const char* value) { m_fileShareARNHasBeenSet = true; m_fileShareARN.assign(value); }
-
-    
     inline NotifyWhenUploadedRequest& WithFileShareARN(const Aws::String& value) { SetFileShareARN(value); return *this;}
-
-    
     inline NotifyWhenUploadedRequest& WithFileShareARN(Aws::String&& value) { SetFileShareARN(std::move(value)); return *this;}
-
-    
     inline NotifyWhenUploadedRequest& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileShareARN;

@@ -38,43 +38,25 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const OEMEphemeris& GetOem() const{ return m_oem; }
-
-    
     inline bool OemHasBeenSet() const { return m_oemHasBeenSet; }
-
-    
     inline void SetOem(const OEMEphemeris& value) { m_oemHasBeenSet = true; m_oem = value; }
-
-    
     inline void SetOem(OEMEphemeris&& value) { m_oemHasBeenSet = true; m_oem = std::move(value); }
-
-    
     inline EphemerisData& WithOem(const OEMEphemeris& value) { SetOem(value); return *this;}
-
-    
     inline EphemerisData& WithOem(OEMEphemeris&& value) { SetOem(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const TLEEphemeris& GetTle() const{ return m_tle; }
-
-    
     inline bool TleHasBeenSet() const { return m_tleHasBeenSet; }
-
-    
     inline void SetTle(const TLEEphemeris& value) { m_tleHasBeenSet = true; m_tle = value; }
-
-    
     inline void SetTle(TLEEphemeris&& value) { m_tleHasBeenSet = true; m_tle = std::move(value); }
-
-    
     inline EphemerisData& WithTle(const TLEEphemeris& value) { SetTle(value); return *this;}
-
-    
     inline EphemerisData& WithTle(TLEEphemeris&& value) { SetTle(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OEMEphemeris m_oem;

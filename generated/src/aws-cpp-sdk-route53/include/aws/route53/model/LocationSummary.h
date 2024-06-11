@@ -38,46 +38,19 @@ namespace Model
     AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A string that specifies a location name.</p>
      */
     inline const Aws::String& GetLocationName() const{ return m_locationName; }
-
-    /**
-     * <p>A string that specifies a location name.</p>
-     */
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
-
-    /**
-     * <p>A string that specifies a location name.</p>
-     */
     inline void SetLocationName(const Aws::String& value) { m_locationNameHasBeenSet = true; m_locationName = value; }
-
-    /**
-     * <p>A string that specifies a location name.</p>
-     */
     inline void SetLocationName(Aws::String&& value) { m_locationNameHasBeenSet = true; m_locationName = std::move(value); }
-
-    /**
-     * <p>A string that specifies a location name.</p>
-     */
     inline void SetLocationName(const char* value) { m_locationNameHasBeenSet = true; m_locationName.assign(value); }
-
-    /**
-     * <p>A string that specifies a location name.</p>
-     */
     inline LocationSummary& WithLocationName(const Aws::String& value) { SetLocationName(value); return *this;}
-
-    /**
-     * <p>A string that specifies a location name.</p>
-     */
     inline LocationSummary& WithLocationName(Aws::String&& value) { SetLocationName(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that specifies a location name.</p>
-     */
     inline LocationSummary& WithLocationName(const char* value) { SetLocationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_locationName;

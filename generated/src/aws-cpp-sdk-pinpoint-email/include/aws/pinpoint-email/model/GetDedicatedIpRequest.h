@@ -36,62 +36,21 @@ namespace Model
     AWS_PINPOINTEMAIL_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The IP address that you want to obtain more information about. The value you
      * specify has to be a dedicated IP address that's assocaited with your Amazon
      * Pinpoint account.</p>
      */
     inline const Aws::String& GetIp() const{ return m_ip; }
-
-    /**
-     * <p>The IP address that you want to obtain more information about. The value you
-     * specify has to be a dedicated IP address that's assocaited with your Amazon
-     * Pinpoint account.</p>
-     */
     inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
-
-    /**
-     * <p>The IP address that you want to obtain more information about. The value you
-     * specify has to be a dedicated IP address that's assocaited with your Amazon
-     * Pinpoint account.</p>
-     */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
-
-    /**
-     * <p>The IP address that you want to obtain more information about. The value you
-     * specify has to be a dedicated IP address that's assocaited with your Amazon
-     * Pinpoint account.</p>
-     */
     inline void SetIp(Aws::String&& value) { m_ipHasBeenSet = true; m_ip = std::move(value); }
-
-    /**
-     * <p>The IP address that you want to obtain more information about. The value you
-     * specify has to be a dedicated IP address that's assocaited with your Amazon
-     * Pinpoint account.</p>
-     */
     inline void SetIp(const char* value) { m_ipHasBeenSet = true; m_ip.assign(value); }
-
-    /**
-     * <p>The IP address that you want to obtain more information about. The value you
-     * specify has to be a dedicated IP address that's assocaited with your Amazon
-     * Pinpoint account.</p>
-     */
     inline GetDedicatedIpRequest& WithIp(const Aws::String& value) { SetIp(value); return *this;}
-
-    /**
-     * <p>The IP address that you want to obtain more information about. The value you
-     * specify has to be a dedicated IP address that's assocaited with your Amazon
-     * Pinpoint account.</p>
-     */
     inline GetDedicatedIpRequest& WithIp(Aws::String&& value) { SetIp(std::move(value)); return *this;}
-
-    /**
-     * <p>The IP address that you want to obtain more information about. The value you
-     * specify has to be a dedicated IP address that's assocaited with your Amazon
-     * Pinpoint account.</p>
-     */
     inline GetDedicatedIpRequest& WithIp(const char* value) { SetIp(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ip;

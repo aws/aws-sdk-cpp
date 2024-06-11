@@ -34,6 +34,7 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the configuration set or the configuration set Amazon Resource
      * Name (ARN) to delete the default sender ID from. The ConfigurationSetName and
@@ -41,63 +42,14 @@ namespace Model
      * action.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-
-    /**
-     * <p>The name of the configuration set or the configuration set Amazon Resource
-     * Name (ARN) to delete the default sender ID from. The ConfigurationSetName and
-     * ConfigurationSetArn can be found using the <a>DescribeConfigurationSets</a>
-     * action.</p>
-     */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the configuration set or the configuration set Amazon Resource
-     * Name (ARN) to delete the default sender ID from. The ConfigurationSetName and
-     * ConfigurationSetArn can be found using the <a>DescribeConfigurationSets</a>
-     * action.</p>
-     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-
-    /**
-     * <p>The name of the configuration set or the configuration set Amazon Resource
-     * Name (ARN) to delete the default sender ID from. The ConfigurationSetName and
-     * ConfigurationSetArn can be found using the <a>DescribeConfigurationSets</a>
-     * action.</p>
-     */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-
-    /**
-     * <p>The name of the configuration set or the configuration set Amazon Resource
-     * Name (ARN) to delete the default sender ID from. The ConfigurationSetName and
-     * ConfigurationSetArn can be found using the <a>DescribeConfigurationSets</a>
-     * action.</p>
-     */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-
-    /**
-     * <p>The name of the configuration set or the configuration set Amazon Resource
-     * Name (ARN) to delete the default sender ID from. The ConfigurationSetName and
-     * ConfigurationSetArn can be found using the <a>DescribeConfigurationSets</a>
-     * action.</p>
-     */
     inline DeleteDefaultSenderIdRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-
-    /**
-     * <p>The name of the configuration set or the configuration set Amazon Resource
-     * Name (ARN) to delete the default sender ID from. The ConfigurationSetName and
-     * ConfigurationSetArn can be found using the <a>DescribeConfigurationSets</a>
-     * action.</p>
-     */
     inline DeleteDefaultSenderIdRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the configuration set or the configuration set Amazon Resource
-     * Name (ARN) to delete the default sender ID from. The ConfigurationSetName and
-     * ConfigurationSetArn can be found using the <a>DescribeConfigurationSets</a>
-     * action.</p>
-     */
     inline DeleteDefaultSenderIdRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationSetName;

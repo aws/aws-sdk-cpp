@@ -33,37 +33,23 @@ namespace Model
     AWS_NEPTUNE_API CopyDBParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const DBParameterGroup& GetDBParameterGroup() const{ return m_dBParameterGroup; }
-
-    
     inline void SetDBParameterGroup(const DBParameterGroup& value) { m_dBParameterGroup = value; }
-
-    
     inline void SetDBParameterGroup(DBParameterGroup&& value) { m_dBParameterGroup = std::move(value); }
-
-    
     inline CopyDBParameterGroupResult& WithDBParameterGroup(const DBParameterGroup& value) { SetDBParameterGroup(value); return *this;}
-
-    
     inline CopyDBParameterGroupResult& WithDBParameterGroup(DBParameterGroup&& value) { SetDBParameterGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CopyDBParameterGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CopyDBParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DBParameterGroup m_dBParameterGroup;

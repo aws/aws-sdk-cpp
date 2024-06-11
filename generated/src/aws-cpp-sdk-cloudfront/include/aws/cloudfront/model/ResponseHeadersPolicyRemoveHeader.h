@@ -39,46 +39,19 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The HTTP header name.</p>
      */
     inline const Aws::String& GetHeader() const{ return m_header; }
-
-    /**
-     * <p>The HTTP header name.</p>
-     */
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-
-    /**
-     * <p>The HTTP header name.</p>
-     */
     inline void SetHeader(const Aws::String& value) { m_headerHasBeenSet = true; m_header = value; }
-
-    /**
-     * <p>The HTTP header name.</p>
-     */
     inline void SetHeader(Aws::String&& value) { m_headerHasBeenSet = true; m_header = std::move(value); }
-
-    /**
-     * <p>The HTTP header name.</p>
-     */
     inline void SetHeader(const char* value) { m_headerHasBeenSet = true; m_header.assign(value); }
-
-    /**
-     * <p>The HTTP header name.</p>
-     */
     inline ResponseHeadersPolicyRemoveHeader& WithHeader(const Aws::String& value) { SetHeader(value); return *this;}
-
-    /**
-     * <p>The HTTP header name.</p>
-     */
     inline ResponseHeadersPolicyRemoveHeader& WithHeader(Aws::String&& value) { SetHeader(std::move(value)); return *this;}
-
-    /**
-     * <p>The HTTP header name.</p>
-     */
     inline ResponseHeadersPolicyRemoveHeader& WithHeader(const char* value) { SetHeader(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_header;

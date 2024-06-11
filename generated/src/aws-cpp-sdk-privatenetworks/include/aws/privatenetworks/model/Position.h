@@ -38,130 +38,59 @@ namespace Model
     AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The elevation of the equipment at this position.</p>
      */
     inline double GetElevation() const{ return m_elevation; }
-
-    /**
-     * <p>The elevation of the equipment at this position.</p>
-     */
     inline bool ElevationHasBeenSet() const { return m_elevationHasBeenSet; }
-
-    /**
-     * <p>The elevation of the equipment at this position.</p>
-     */
     inline void SetElevation(double value) { m_elevationHasBeenSet = true; m_elevation = value; }
-
-    /**
-     * <p>The elevation of the equipment at this position.</p>
-     */
     inline Position& WithElevation(double value) { SetElevation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reference point from which elevation is reported.</p>
      */
     inline const ElevationReference& GetElevationReference() const{ return m_elevationReference; }
-
-    /**
-     * <p>The reference point from which elevation is reported.</p>
-     */
     inline bool ElevationReferenceHasBeenSet() const { return m_elevationReferenceHasBeenSet; }
-
-    /**
-     * <p>The reference point from which elevation is reported.</p>
-     */
     inline void SetElevationReference(const ElevationReference& value) { m_elevationReferenceHasBeenSet = true; m_elevationReference = value; }
-
-    /**
-     * <p>The reference point from which elevation is reported.</p>
-     */
     inline void SetElevationReference(ElevationReference&& value) { m_elevationReferenceHasBeenSet = true; m_elevationReference = std::move(value); }
-
-    /**
-     * <p>The reference point from which elevation is reported.</p>
-     */
     inline Position& WithElevationReference(const ElevationReference& value) { SetElevationReference(value); return *this;}
-
-    /**
-     * <p>The reference point from which elevation is reported.</p>
-     */
     inline Position& WithElevationReference(ElevationReference&& value) { SetElevationReference(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The units used to measure the elevation of the position.</p>
      */
     inline const ElevationUnit& GetElevationUnit() const{ return m_elevationUnit; }
-
-    /**
-     * <p>The units used to measure the elevation of the position.</p>
-     */
     inline bool ElevationUnitHasBeenSet() const { return m_elevationUnitHasBeenSet; }
-
-    /**
-     * <p>The units used to measure the elevation of the position.</p>
-     */
     inline void SetElevationUnit(const ElevationUnit& value) { m_elevationUnitHasBeenSet = true; m_elevationUnit = value; }
-
-    /**
-     * <p>The units used to measure the elevation of the position.</p>
-     */
     inline void SetElevationUnit(ElevationUnit&& value) { m_elevationUnitHasBeenSet = true; m_elevationUnit = std::move(value); }
-
-    /**
-     * <p>The units used to measure the elevation of the position.</p>
-     */
     inline Position& WithElevationUnit(const ElevationUnit& value) { SetElevationUnit(value); return *this;}
-
-    /**
-     * <p>The units used to measure the elevation of the position.</p>
-     */
     inline Position& WithElevationUnit(ElevationUnit&& value) { SetElevationUnit(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The latitude of the position.</p>
      */
     inline double GetLatitude() const{ return m_latitude; }
-
-    /**
-     * <p>The latitude of the position.</p>
-     */
     inline bool LatitudeHasBeenSet() const { return m_latitudeHasBeenSet; }
-
-    /**
-     * <p>The latitude of the position.</p>
-     */
     inline void SetLatitude(double value) { m_latitudeHasBeenSet = true; m_latitude = value; }
-
-    /**
-     * <p>The latitude of the position.</p>
-     */
     inline Position& WithLatitude(double value) { SetLatitude(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The longitude of the position.</p>
      */
     inline double GetLongitude() const{ return m_longitude; }
-
-    /**
-     * <p>The longitude of the position.</p>
-     */
     inline bool LongitudeHasBeenSet() const { return m_longitudeHasBeenSet; }
-
-    /**
-     * <p>The longitude of the position.</p>
-     */
     inline void SetLongitude(double value) { m_longitudeHasBeenSet = true; m_longitude = value; }
-
-    /**
-     * <p>The longitude of the position.</p>
-     */
     inline Position& WithLongitude(double value) { SetLongitude(value); return *this;}
-
+    ///@}
   private:
 
     double m_elevation;

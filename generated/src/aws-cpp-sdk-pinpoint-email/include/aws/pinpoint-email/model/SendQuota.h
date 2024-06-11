@@ -37,84 +37,39 @@ namespace Model
     AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of emails that you can send in the current AWS Region over
      * a 24-hour period. This value is also called your <i>sending quota</i>.</p>
      */
     inline double GetMax24HourSend() const{ return m_max24HourSend; }
-
-    /**
-     * <p>The maximum number of emails that you can send in the current AWS Region over
-     * a 24-hour period. This value is also called your <i>sending quota</i>.</p>
-     */
     inline bool Max24HourSendHasBeenSet() const { return m_max24HourSendHasBeenSet; }
-
-    /**
-     * <p>The maximum number of emails that you can send in the current AWS Region over
-     * a 24-hour period. This value is also called your <i>sending quota</i>.</p>
-     */
     inline void SetMax24HourSend(double value) { m_max24HourSendHasBeenSet = true; m_max24HourSend = value; }
-
-    /**
-     * <p>The maximum number of emails that you can send in the current AWS Region over
-     * a 24-hour period. This value is also called your <i>sending quota</i>.</p>
-     */
     inline SendQuota& WithMax24HourSend(double value) { SetMax24HourSend(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of emails that you can send per second in the current AWS
      * Region. This value is also called your <i>maximum sending rate</i> or your
      * <i>maximum TPS (transactions per second) rate</i>.</p>
      */
     inline double GetMaxSendRate() const{ return m_maxSendRate; }
-
-    /**
-     * <p>The maximum number of emails that you can send per second in the current AWS
-     * Region. This value is also called your <i>maximum sending rate</i> or your
-     * <i>maximum TPS (transactions per second) rate</i>.</p>
-     */
     inline bool MaxSendRateHasBeenSet() const { return m_maxSendRateHasBeenSet; }
-
-    /**
-     * <p>The maximum number of emails that you can send per second in the current AWS
-     * Region. This value is also called your <i>maximum sending rate</i> or your
-     * <i>maximum TPS (transactions per second) rate</i>.</p>
-     */
     inline void SetMaxSendRate(double value) { m_maxSendRateHasBeenSet = true; m_maxSendRate = value; }
-
-    /**
-     * <p>The maximum number of emails that you can send per second in the current AWS
-     * Region. This value is also called your <i>maximum sending rate</i> or your
-     * <i>maximum TPS (transactions per second) rate</i>.</p>
-     */
     inline SendQuota& WithMaxSendRate(double value) { SetMaxSendRate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of emails sent from your Amazon Pinpoint account in the current
      * AWS Region over the past 24 hours.</p>
      */
     inline double GetSentLast24Hours() const{ return m_sentLast24Hours; }
-
-    /**
-     * <p>The number of emails sent from your Amazon Pinpoint account in the current
-     * AWS Region over the past 24 hours.</p>
-     */
     inline bool SentLast24HoursHasBeenSet() const { return m_sentLast24HoursHasBeenSet; }
-
-    /**
-     * <p>The number of emails sent from your Amazon Pinpoint account in the current
-     * AWS Region over the past 24 hours.</p>
-     */
     inline void SetSentLast24Hours(double value) { m_sentLast24HoursHasBeenSet = true; m_sentLast24Hours = value; }
-
-    /**
-     * <p>The number of emails sent from your Amazon Pinpoint account in the current
-     * AWS Region over the past 24 hours.</p>
-     */
     inline SendQuota& WithSentLast24Hours(double value) { SetSentLast24Hours(value); return *this;}
-
+    ///@}
   private:
 
     double m_max24HourSend;

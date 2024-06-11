@@ -37,6 +37,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A single metric anomaly detector to be deleted.</p> <p>When using
      * <code>SingleMetricAnomalyDetector</code>, you cannot include the following
@@ -49,73 +50,14 @@ namespace Model
      * <code>SingleMetricAnomalyDetector</code> property.</p>
      */
     inline const SingleMetricAnomalyDetector& GetSingleMetricAnomalyDetector() const{ return m_singleMetricAnomalyDetector; }
-
-    /**
-     * <p>A single metric anomaly detector to be deleted.</p> <p>When using
-     * <code>SingleMetricAnomalyDetector</code>, you cannot include the following
-     * parameters in the same operation:</p> <ul> <li> <p> <code>Dimensions</code>,</p>
-     * </li> <li> <p> <code>MetricName</code> </p> </li> <li> <p>
-     * <code>Namespace</code> </p> </li> <li> <p> <code>Stat</code> </p> </li> <li>
-     * <p>the <code>MetricMathAnomalyDetector</code> parameters of
-     * <code>DeleteAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
-     * single metric anomaly detector attributes as part of the
-     * <code>SingleMetricAnomalyDetector</code> property.</p>
-     */
     inline bool SingleMetricAnomalyDetectorHasBeenSet() const { return m_singleMetricAnomalyDetectorHasBeenSet; }
-
-    /**
-     * <p>A single metric anomaly detector to be deleted.</p> <p>When using
-     * <code>SingleMetricAnomalyDetector</code>, you cannot include the following
-     * parameters in the same operation:</p> <ul> <li> <p> <code>Dimensions</code>,</p>
-     * </li> <li> <p> <code>MetricName</code> </p> </li> <li> <p>
-     * <code>Namespace</code> </p> </li> <li> <p> <code>Stat</code> </p> </li> <li>
-     * <p>the <code>MetricMathAnomalyDetector</code> parameters of
-     * <code>DeleteAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
-     * single metric anomaly detector attributes as part of the
-     * <code>SingleMetricAnomalyDetector</code> property.</p>
-     */
     inline void SetSingleMetricAnomalyDetector(const SingleMetricAnomalyDetector& value) { m_singleMetricAnomalyDetectorHasBeenSet = true; m_singleMetricAnomalyDetector = value; }
-
-    /**
-     * <p>A single metric anomaly detector to be deleted.</p> <p>When using
-     * <code>SingleMetricAnomalyDetector</code>, you cannot include the following
-     * parameters in the same operation:</p> <ul> <li> <p> <code>Dimensions</code>,</p>
-     * </li> <li> <p> <code>MetricName</code> </p> </li> <li> <p>
-     * <code>Namespace</code> </p> </li> <li> <p> <code>Stat</code> </p> </li> <li>
-     * <p>the <code>MetricMathAnomalyDetector</code> parameters of
-     * <code>DeleteAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
-     * single metric anomaly detector attributes as part of the
-     * <code>SingleMetricAnomalyDetector</code> property.</p>
-     */
     inline void SetSingleMetricAnomalyDetector(SingleMetricAnomalyDetector&& value) { m_singleMetricAnomalyDetectorHasBeenSet = true; m_singleMetricAnomalyDetector = std::move(value); }
-
-    /**
-     * <p>A single metric anomaly detector to be deleted.</p> <p>When using
-     * <code>SingleMetricAnomalyDetector</code>, you cannot include the following
-     * parameters in the same operation:</p> <ul> <li> <p> <code>Dimensions</code>,</p>
-     * </li> <li> <p> <code>MetricName</code> </p> </li> <li> <p>
-     * <code>Namespace</code> </p> </li> <li> <p> <code>Stat</code> </p> </li> <li>
-     * <p>the <code>MetricMathAnomalyDetector</code> parameters of
-     * <code>DeleteAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
-     * single metric anomaly detector attributes as part of the
-     * <code>SingleMetricAnomalyDetector</code> property.</p>
-     */
     inline DeleteAnomalyDetectorRequest& WithSingleMetricAnomalyDetector(const SingleMetricAnomalyDetector& value) { SetSingleMetricAnomalyDetector(value); return *this;}
-
-    /**
-     * <p>A single metric anomaly detector to be deleted.</p> <p>When using
-     * <code>SingleMetricAnomalyDetector</code>, you cannot include the following
-     * parameters in the same operation:</p> <ul> <li> <p> <code>Dimensions</code>,</p>
-     * </li> <li> <p> <code>MetricName</code> </p> </li> <li> <p>
-     * <code>Namespace</code> </p> </li> <li> <p> <code>Stat</code> </p> </li> <li>
-     * <p>the <code>MetricMathAnomalyDetector</code> parameters of
-     * <code>DeleteAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
-     * single metric anomaly detector attributes as part of the
-     * <code>SingleMetricAnomalyDetector</code> property.</p>
-     */
     inline DeleteAnomalyDetectorRequest& WithSingleMetricAnomalyDetector(SingleMetricAnomalyDetector&& value) { SetSingleMetricAnomalyDetector(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The metric math anomaly detector to be deleted.</p> <p>When using
      * <code>MetricMathAnomalyDetector</code>, you cannot include following parameters
@@ -128,72 +70,12 @@ namespace Model
      * <code>MetricMathAnomalyDetector</code> property.</p>
      */
     inline const MetricMathAnomalyDetector& GetMetricMathAnomalyDetector() const{ return m_metricMathAnomalyDetector; }
-
-    /**
-     * <p>The metric math anomaly detector to be deleted.</p> <p>When using
-     * <code>MetricMathAnomalyDetector</code>, you cannot include following parameters
-     * in the same operation:</p> <ul> <li> <p> <code>Dimensions</code>,</p> </li> <li>
-     * <p> <code>MetricName</code> </p> </li> <li> <p> <code>Namespace</code> </p>
-     * </li> <li> <p> <code>Stat</code> </p> </li> <li> <p>the
-     * <code>SingleMetricAnomalyDetector</code> parameters of
-     * <code>DeleteAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
-     * metric math anomaly detector attributes as part of the
-     * <code>MetricMathAnomalyDetector</code> property.</p>
-     */
     inline bool MetricMathAnomalyDetectorHasBeenSet() const { return m_metricMathAnomalyDetectorHasBeenSet; }
-
-    /**
-     * <p>The metric math anomaly detector to be deleted.</p> <p>When using
-     * <code>MetricMathAnomalyDetector</code>, you cannot include following parameters
-     * in the same operation:</p> <ul> <li> <p> <code>Dimensions</code>,</p> </li> <li>
-     * <p> <code>MetricName</code> </p> </li> <li> <p> <code>Namespace</code> </p>
-     * </li> <li> <p> <code>Stat</code> </p> </li> <li> <p>the
-     * <code>SingleMetricAnomalyDetector</code> parameters of
-     * <code>DeleteAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
-     * metric math anomaly detector attributes as part of the
-     * <code>MetricMathAnomalyDetector</code> property.</p>
-     */
     inline void SetMetricMathAnomalyDetector(const MetricMathAnomalyDetector& value) { m_metricMathAnomalyDetectorHasBeenSet = true; m_metricMathAnomalyDetector = value; }
-
-    /**
-     * <p>The metric math anomaly detector to be deleted.</p> <p>When using
-     * <code>MetricMathAnomalyDetector</code>, you cannot include following parameters
-     * in the same operation:</p> <ul> <li> <p> <code>Dimensions</code>,</p> </li> <li>
-     * <p> <code>MetricName</code> </p> </li> <li> <p> <code>Namespace</code> </p>
-     * </li> <li> <p> <code>Stat</code> </p> </li> <li> <p>the
-     * <code>SingleMetricAnomalyDetector</code> parameters of
-     * <code>DeleteAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
-     * metric math anomaly detector attributes as part of the
-     * <code>MetricMathAnomalyDetector</code> property.</p>
-     */
     inline void SetMetricMathAnomalyDetector(MetricMathAnomalyDetector&& value) { m_metricMathAnomalyDetectorHasBeenSet = true; m_metricMathAnomalyDetector = std::move(value); }
-
-    /**
-     * <p>The metric math anomaly detector to be deleted.</p> <p>When using
-     * <code>MetricMathAnomalyDetector</code>, you cannot include following parameters
-     * in the same operation:</p> <ul> <li> <p> <code>Dimensions</code>,</p> </li> <li>
-     * <p> <code>MetricName</code> </p> </li> <li> <p> <code>Namespace</code> </p>
-     * </li> <li> <p> <code>Stat</code> </p> </li> <li> <p>the
-     * <code>SingleMetricAnomalyDetector</code> parameters of
-     * <code>DeleteAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
-     * metric math anomaly detector attributes as part of the
-     * <code>MetricMathAnomalyDetector</code> property.</p>
-     */
     inline DeleteAnomalyDetectorRequest& WithMetricMathAnomalyDetector(const MetricMathAnomalyDetector& value) { SetMetricMathAnomalyDetector(value); return *this;}
-
-    /**
-     * <p>The metric math anomaly detector to be deleted.</p> <p>When using
-     * <code>MetricMathAnomalyDetector</code>, you cannot include following parameters
-     * in the same operation:</p> <ul> <li> <p> <code>Dimensions</code>,</p> </li> <li>
-     * <p> <code>MetricName</code> </p> </li> <li> <p> <code>Namespace</code> </p>
-     * </li> <li> <p> <code>Stat</code> </p> </li> <li> <p>the
-     * <code>SingleMetricAnomalyDetector</code> parameters of
-     * <code>DeleteAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
-     * metric math anomaly detector attributes as part of the
-     * <code>MetricMathAnomalyDetector</code> property.</p>
-     */
     inline DeleteAnomalyDetectorRequest& WithMetricMathAnomalyDetector(MetricMathAnomalyDetector&& value) { SetMetricMathAnomalyDetector(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;

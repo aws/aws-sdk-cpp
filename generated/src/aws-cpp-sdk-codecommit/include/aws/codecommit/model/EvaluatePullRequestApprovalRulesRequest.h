@@ -34,95 +34,34 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The system-generated ID of the pull request you want to evaluate.</p>
      */
     inline const Aws::String& GetPullRequestId() const{ return m_pullRequestId; }
-
-    /**
-     * <p>The system-generated ID of the pull request you want to evaluate.</p>
-     */
     inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
-
-    /**
-     * <p>The system-generated ID of the pull request you want to evaluate.</p>
-     */
     inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
-
-    /**
-     * <p>The system-generated ID of the pull request you want to evaluate.</p>
-     */
     inline void SetPullRequestId(Aws::String&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::move(value); }
-
-    /**
-     * <p>The system-generated ID of the pull request you want to evaluate.</p>
-     */
     inline void SetPullRequestId(const char* value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId.assign(value); }
-
-    /**
-     * <p>The system-generated ID of the pull request you want to evaluate.</p>
-     */
     inline EvaluatePullRequestApprovalRulesRequest& WithPullRequestId(const Aws::String& value) { SetPullRequestId(value); return *this;}
-
-    /**
-     * <p>The system-generated ID of the pull request you want to evaluate.</p>
-     */
     inline EvaluatePullRequestApprovalRulesRequest& WithPullRequestId(Aws::String&& value) { SetPullRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The system-generated ID of the pull request you want to evaluate.</p>
-     */
     inline EvaluatePullRequestApprovalRulesRequest& WithPullRequestId(const char* value) { SetPullRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The system-generated ID for the pull request revision. To retrieve the most
      * recent revision ID for a pull request, use <a>GetPullRequest</a>.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
-
-    /**
-     * <p>The system-generated ID for the pull request revision. To retrieve the most
-     * recent revision ID for a pull request, use <a>GetPullRequest</a>.</p>
-     */
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
-
-    /**
-     * <p>The system-generated ID for the pull request revision. To retrieve the most
-     * recent revision ID for a pull request, use <a>GetPullRequest</a>.</p>
-     */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
-
-    /**
-     * <p>The system-generated ID for the pull request revision. To retrieve the most
-     * recent revision ID for a pull request, use <a>GetPullRequest</a>.</p>
-     */
     inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
-
-    /**
-     * <p>The system-generated ID for the pull request revision. To retrieve the most
-     * recent revision ID for a pull request, use <a>GetPullRequest</a>.</p>
-     */
     inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
-
-    /**
-     * <p>The system-generated ID for the pull request revision. To retrieve the most
-     * recent revision ID for a pull request, use <a>GetPullRequest</a>.</p>
-     */
     inline EvaluatePullRequestApprovalRulesRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-
-    /**
-     * <p>The system-generated ID for the pull request revision. To retrieve the most
-     * recent revision ID for a pull request, use <a>GetPullRequest</a>.</p>
-     */
     inline EvaluatePullRequestApprovalRulesRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The system-generated ID for the pull request revision. To retrieve the most
-     * recent revision ID for a pull request, use <a>GetPullRequest</a>.</p>
-     */
     inline EvaluatePullRequestApprovalRulesRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pullRequestId;

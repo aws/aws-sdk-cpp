@@ -33,53 +33,27 @@ namespace Model
     AWS_ROUTE53RESOLVER_API UpdateOutpostResolverResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The response to an <code>UpdateOutpostResolver</code> request.</p>
      */
     inline const OutpostResolver& GetOutpostResolver() const{ return m_outpostResolver; }
-
-    /**
-     * <p>The response to an <code>UpdateOutpostResolver</code> request.</p>
-     */
     inline void SetOutpostResolver(const OutpostResolver& value) { m_outpostResolver = value; }
-
-    /**
-     * <p>The response to an <code>UpdateOutpostResolver</code> request.</p>
-     */
     inline void SetOutpostResolver(OutpostResolver&& value) { m_outpostResolver = std::move(value); }
-
-    /**
-     * <p>The response to an <code>UpdateOutpostResolver</code> request.</p>
-     */
     inline UpdateOutpostResolverResult& WithOutpostResolver(const OutpostResolver& value) { SetOutpostResolver(value); return *this;}
-
-    /**
-     * <p>The response to an <code>UpdateOutpostResolver</code> request.</p>
-     */
     inline UpdateOutpostResolverResult& WithOutpostResolver(OutpostResolver&& value) { SetOutpostResolver(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateOutpostResolverResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateOutpostResolverResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateOutpostResolverResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     OutpostResolver m_outpostResolver;

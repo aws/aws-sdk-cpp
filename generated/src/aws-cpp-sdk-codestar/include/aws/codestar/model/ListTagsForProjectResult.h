@@ -33,124 +33,47 @@ namespace Model
     AWS_CODESTAR_API ListTagsForProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The tags for the project.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags for the project.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-
-    /**
-     * <p>The tags for the project.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p>The tags for the project.</p>
-     */
     inline ListTagsForProjectResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags for the project.</p>
-     */
     inline ListTagsForProjectResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags for the project.</p>
-     */
     inline ListTagsForProjectResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The tags for the project.</p>
-     */
     inline ListTagsForProjectResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags for the project.</p>
-     */
     inline ListTagsForProjectResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags for the project.</p>
-     */
     inline ListTagsForProjectResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The tags for the project.</p>
-     */
     inline ListTagsForProjectResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags for the project.</p>
-     */
     inline ListTagsForProjectResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags for the project.</p>
-     */
     inline ListTagsForProjectResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline ListTagsForProjectResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline ListTagsForProjectResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline ListTagsForProjectResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTagsForProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTagsForProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTagsForProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;

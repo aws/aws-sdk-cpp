@@ -33,53 +33,27 @@ namespace Model
     AWS_GAMELIFT_API CreateVpcPeeringAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details on the requested VPC peering authorization, including expiration.</p>
      */
     inline const VpcPeeringAuthorization& GetVpcPeeringAuthorization() const{ return m_vpcPeeringAuthorization; }
-
-    /**
-     * <p>Details on the requested VPC peering authorization, including expiration.</p>
-     */
     inline void SetVpcPeeringAuthorization(const VpcPeeringAuthorization& value) { m_vpcPeeringAuthorization = value; }
-
-    /**
-     * <p>Details on the requested VPC peering authorization, including expiration.</p>
-     */
     inline void SetVpcPeeringAuthorization(VpcPeeringAuthorization&& value) { m_vpcPeeringAuthorization = std::move(value); }
-
-    /**
-     * <p>Details on the requested VPC peering authorization, including expiration.</p>
-     */
     inline CreateVpcPeeringAuthorizationResult& WithVpcPeeringAuthorization(const VpcPeeringAuthorization& value) { SetVpcPeeringAuthorization(value); return *this;}
-
-    /**
-     * <p>Details on the requested VPC peering authorization, including expiration.</p>
-     */
     inline CreateVpcPeeringAuthorizationResult& WithVpcPeeringAuthorization(VpcPeeringAuthorization&& value) { SetVpcPeeringAuthorization(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateVpcPeeringAuthorizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateVpcPeeringAuthorizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateVpcPeeringAuthorizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VpcPeeringAuthorization m_vpcPeeringAuthorization;

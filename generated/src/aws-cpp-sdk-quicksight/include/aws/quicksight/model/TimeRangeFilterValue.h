@@ -41,108 +41,43 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The static input value.</p>
      */
     inline const Aws::Utils::DateTime& GetStaticValue() const{ return m_staticValue; }
-
-    /**
-     * <p>The static input value.</p>
-     */
     inline bool StaticValueHasBeenSet() const { return m_staticValueHasBeenSet; }
-
-    /**
-     * <p>The static input value.</p>
-     */
     inline void SetStaticValue(const Aws::Utils::DateTime& value) { m_staticValueHasBeenSet = true; m_staticValue = value; }
-
-    /**
-     * <p>The static input value.</p>
-     */
     inline void SetStaticValue(Aws::Utils::DateTime&& value) { m_staticValueHasBeenSet = true; m_staticValue = std::move(value); }
-
-    /**
-     * <p>The static input value.</p>
-     */
     inline TimeRangeFilterValue& WithStaticValue(const Aws::Utils::DateTime& value) { SetStaticValue(value); return *this;}
-
-    /**
-     * <p>The static input value.</p>
-     */
     inline TimeRangeFilterValue& WithStaticValue(Aws::Utils::DateTime&& value) { SetStaticValue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rolling date input value.</p>
      */
     inline const RollingDateConfiguration& GetRollingDate() const{ return m_rollingDate; }
-
-    /**
-     * <p>The rolling date input value.</p>
-     */
     inline bool RollingDateHasBeenSet() const { return m_rollingDateHasBeenSet; }
-
-    /**
-     * <p>The rolling date input value.</p>
-     */
     inline void SetRollingDate(const RollingDateConfiguration& value) { m_rollingDateHasBeenSet = true; m_rollingDate = value; }
-
-    /**
-     * <p>The rolling date input value.</p>
-     */
     inline void SetRollingDate(RollingDateConfiguration&& value) { m_rollingDateHasBeenSet = true; m_rollingDate = std::move(value); }
-
-    /**
-     * <p>The rolling date input value.</p>
-     */
     inline TimeRangeFilterValue& WithRollingDate(const RollingDateConfiguration& value) { SetRollingDate(value); return *this;}
-
-    /**
-     * <p>The rolling date input value.</p>
-     */
     inline TimeRangeFilterValue& WithRollingDate(RollingDateConfiguration&& value) { SetRollingDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameter type input value.</p>
      */
     inline const Aws::String& GetParameter() const{ return m_parameter; }
-
-    /**
-     * <p>The parameter type input value.</p>
-     */
     inline bool ParameterHasBeenSet() const { return m_parameterHasBeenSet; }
-
-    /**
-     * <p>The parameter type input value.</p>
-     */
     inline void SetParameter(const Aws::String& value) { m_parameterHasBeenSet = true; m_parameter = value; }
-
-    /**
-     * <p>The parameter type input value.</p>
-     */
     inline void SetParameter(Aws::String&& value) { m_parameterHasBeenSet = true; m_parameter = std::move(value); }
-
-    /**
-     * <p>The parameter type input value.</p>
-     */
     inline void SetParameter(const char* value) { m_parameterHasBeenSet = true; m_parameter.assign(value); }
-
-    /**
-     * <p>The parameter type input value.</p>
-     */
     inline TimeRangeFilterValue& WithParameter(const Aws::String& value) { SetParameter(value); return *this;}
-
-    /**
-     * <p>The parameter type input value.</p>
-     */
     inline TimeRangeFilterValue& WithParameter(Aws::String&& value) { SetParameter(std::move(value)); return *this;}
-
-    /**
-     * <p>The parameter type input value.</p>
-     */
     inline TimeRangeFilterValue& WithParameter(const char* value) { SetParameter(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_staticValue;

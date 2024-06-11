@@ -44,105 +44,35 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The ID used to identify the metrics configuration. The ID has a 64 character
      * limit and can only contain letters, numbers, periods, dashes, and
      * underscores.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline MetricsConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline MetricsConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline MetricsConfiguration& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies a metrics configuration filter. The metrics configuration will only
      * include objects that meet the filter's criteria. A filter must be a prefix, an
      * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
      */
     inline const MetricsFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>Specifies a metrics configuration filter. The metrics configuration will only
-     * include objects that meet the filter's criteria. A filter must be a prefix, an
-     * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
-     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>Specifies a metrics configuration filter. The metrics configuration will only
-     * include objects that meet the filter's criteria. A filter must be a prefix, an
-     * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
-     */
     inline void SetFilter(const MetricsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>Specifies a metrics configuration filter. The metrics configuration will only
-     * include objects that meet the filter's criteria. A filter must be a prefix, an
-     * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
-     */
     inline void SetFilter(MetricsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>Specifies a metrics configuration filter. The metrics configuration will only
-     * include objects that meet the filter's criteria. A filter must be a prefix, an
-     * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
-     */
     inline MetricsConfiguration& WithFilter(const MetricsFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>Specifies a metrics configuration filter. The metrics configuration will only
-     * include objects that meet the filter's criteria. A filter must be a prefix, an
-     * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
-     */
     inline MetricsConfiguration& WithFilter(MetricsFilter&& value) { SetFilter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

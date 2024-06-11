@@ -34,87 +34,33 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the OpsItem that you want to get.</p>
      */
     inline const Aws::String& GetOpsItemId() const{ return m_opsItemId; }
-
-    /**
-     * <p>The ID of the OpsItem that you want to get.</p>
-     */
     inline bool OpsItemIdHasBeenSet() const { return m_opsItemIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the OpsItem that you want to get.</p>
-     */
     inline void SetOpsItemId(const Aws::String& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = value; }
-
-    /**
-     * <p>The ID of the OpsItem that you want to get.</p>
-     */
     inline void SetOpsItemId(Aws::String&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::move(value); }
-
-    /**
-     * <p>The ID of the OpsItem that you want to get.</p>
-     */
     inline void SetOpsItemId(const char* value) { m_opsItemIdHasBeenSet = true; m_opsItemId.assign(value); }
-
-    /**
-     * <p>The ID of the OpsItem that you want to get.</p>
-     */
     inline GetOpsItemRequest& WithOpsItemId(const Aws::String& value) { SetOpsItemId(value); return *this;}
-
-    /**
-     * <p>The ID of the OpsItem that you want to get.</p>
-     */
     inline GetOpsItemRequest& WithOpsItemId(Aws::String&& value) { SetOpsItemId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the OpsItem that you want to get.</p>
-     */
     inline GetOpsItemRequest& WithOpsItemId(const char* value) { SetOpsItemId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The OpsItem Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetOpsItemArn() const{ return m_opsItemArn; }
-
-    /**
-     * <p>The OpsItem Amazon Resource Name (ARN).</p>
-     */
     inline bool OpsItemArnHasBeenSet() const { return m_opsItemArnHasBeenSet; }
-
-    /**
-     * <p>The OpsItem Amazon Resource Name (ARN).</p>
-     */
     inline void SetOpsItemArn(const Aws::String& value) { m_opsItemArnHasBeenSet = true; m_opsItemArn = value; }
-
-    /**
-     * <p>The OpsItem Amazon Resource Name (ARN).</p>
-     */
     inline void SetOpsItemArn(Aws::String&& value) { m_opsItemArnHasBeenSet = true; m_opsItemArn = std::move(value); }
-
-    /**
-     * <p>The OpsItem Amazon Resource Name (ARN).</p>
-     */
     inline void SetOpsItemArn(const char* value) { m_opsItemArnHasBeenSet = true; m_opsItemArn.assign(value); }
-
-    /**
-     * <p>The OpsItem Amazon Resource Name (ARN).</p>
-     */
     inline GetOpsItemRequest& WithOpsItemArn(const Aws::String& value) { SetOpsItemArn(value); return *this;}
-
-    /**
-     * <p>The OpsItem Amazon Resource Name (ARN).</p>
-     */
     inline GetOpsItemRequest& WithOpsItemArn(Aws::String&& value) { SetOpsItemArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The OpsItem Amazon Resource Name (ARN).</p>
-     */
     inline GetOpsItemRequest& WithOpsItemArn(const char* value) { SetOpsItemArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_opsItemId;

@@ -32,46 +32,19 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the segment to return information for.</p>
      */
     inline const Aws::String& GetSegment() const{ return m_segment; }
-
-    /**
-     * <p>The ARN of the segment to return information for.</p>
-     */
     inline bool SegmentHasBeenSet() const { return m_segmentHasBeenSet; }
-
-    /**
-     * <p>The ARN of the segment to return information for.</p>
-     */
     inline void SetSegment(const Aws::String& value) { m_segmentHasBeenSet = true; m_segment = value; }
-
-    /**
-     * <p>The ARN of the segment to return information for.</p>
-     */
     inline void SetSegment(Aws::String&& value) { m_segmentHasBeenSet = true; m_segment = std::move(value); }
-
-    /**
-     * <p>The ARN of the segment to return information for.</p>
-     */
     inline void SetSegment(const char* value) { m_segmentHasBeenSet = true; m_segment.assign(value); }
-
-    /**
-     * <p>The ARN of the segment to return information for.</p>
-     */
     inline GetSegmentRequest& WithSegment(const Aws::String& value) { SetSegment(value); return *this;}
-
-    /**
-     * <p>The ARN of the segment to return information for.</p>
-     */
     inline GetSegmentRequest& WithSegment(Aws::String&& value) { SetSegment(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the segment to return information for.</p>
-     */
     inline GetSegmentRequest& WithSegment(const char* value) { SetSegment(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_segment;

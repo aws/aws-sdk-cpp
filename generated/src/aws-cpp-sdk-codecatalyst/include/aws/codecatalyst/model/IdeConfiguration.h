@@ -38,111 +38,36 @@ namespace Model
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A link to the IDE runtime image. </p>  <p>This parameter is not
      * required for <code>VSCode</code>.</p> 
      */
     inline const Aws::String& GetRuntime() const{ return m_runtime; }
-
-    /**
-     * <p>A link to the IDE runtime image. </p>  <p>This parameter is not
-     * required for <code>VSCode</code>.</p> 
-     */
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
-
-    /**
-     * <p>A link to the IDE runtime image. </p>  <p>This parameter is not
-     * required for <code>VSCode</code>.</p> 
-     */
     inline void SetRuntime(const Aws::String& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
-
-    /**
-     * <p>A link to the IDE runtime image. </p>  <p>This parameter is not
-     * required for <code>VSCode</code>.</p> 
-     */
     inline void SetRuntime(Aws::String&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
-
-    /**
-     * <p>A link to the IDE runtime image. </p>  <p>This parameter is not
-     * required for <code>VSCode</code>.</p> 
-     */
     inline void SetRuntime(const char* value) { m_runtimeHasBeenSet = true; m_runtime.assign(value); }
-
-    /**
-     * <p>A link to the IDE runtime image. </p>  <p>This parameter is not
-     * required for <code>VSCode</code>.</p> 
-     */
     inline IdeConfiguration& WithRuntime(const Aws::String& value) { SetRuntime(value); return *this;}
-
-    /**
-     * <p>A link to the IDE runtime image. </p>  <p>This parameter is not
-     * required for <code>VSCode</code>.</p> 
-     */
     inline IdeConfiguration& WithRuntime(Aws::String&& value) { SetRuntime(std::move(value)); return *this;}
-
-    /**
-     * <p>A link to the IDE runtime image. </p>  <p>This parameter is not
-     * required for <code>VSCode</code>.</p> 
-     */
     inline IdeConfiguration& WithRuntime(const char* value) { SetRuntime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the IDE. Valid values include <code>Cloud9</code>,
      * <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and
      * <code>VSCode</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the IDE. Valid values include <code>Cloud9</code>,
-     * <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and
-     * <code>VSCode</code>.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the IDE. Valid values include <code>Cloud9</code>,
-     * <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and
-     * <code>VSCode</code>.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the IDE. Valid values include <code>Cloud9</code>,
-     * <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and
-     * <code>VSCode</code>.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the IDE. Valid values include <code>Cloud9</code>,
-     * <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and
-     * <code>VSCode</code>.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the IDE. Valid values include <code>Cloud9</code>,
-     * <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and
-     * <code>VSCode</code>.</p>
-     */
     inline IdeConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the IDE. Valid values include <code>Cloud9</code>,
-     * <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and
-     * <code>VSCode</code>.</p>
-     */
     inline IdeConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the IDE. Valid values include <code>Cloud9</code>,
-     * <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and
-     * <code>VSCode</code>.</p>
-     */
     inline IdeConfiguration& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_runtime;

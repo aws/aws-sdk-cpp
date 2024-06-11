@@ -37,6 +37,7 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The tax document access token, which contains information that the Tax
      * Settings API uses to locate the tax document.</p>  <p>If you update your
@@ -46,118 +47,28 @@ namespace Model
      * hours.</p> 
      */
     inline const Aws::String& GetTaxDocumentAccessToken() const{ return m_taxDocumentAccessToken; }
-
-    /**
-     * <p>The tax document access token, which contains information that the Tax
-     * Settings API uses to locate the tax document.</p>  <p>If you update your
-     * tax registration, the existing <code>taxDocumentAccessToken</code> won't be
-     * valid. To get the latest token, call the <code>GetTaxRegistration</code> or
-     * <code>ListTaxRegistrations</code> API operation. This token is valid for 24
-     * hours.</p> 
-     */
     inline bool TaxDocumentAccessTokenHasBeenSet() const { return m_taxDocumentAccessTokenHasBeenSet; }
-
-    /**
-     * <p>The tax document access token, which contains information that the Tax
-     * Settings API uses to locate the tax document.</p>  <p>If you update your
-     * tax registration, the existing <code>taxDocumentAccessToken</code> won't be
-     * valid. To get the latest token, call the <code>GetTaxRegistration</code> or
-     * <code>ListTaxRegistrations</code> API operation. This token is valid for 24
-     * hours.</p> 
-     */
     inline void SetTaxDocumentAccessToken(const Aws::String& value) { m_taxDocumentAccessTokenHasBeenSet = true; m_taxDocumentAccessToken = value; }
-
-    /**
-     * <p>The tax document access token, which contains information that the Tax
-     * Settings API uses to locate the tax document.</p>  <p>If you update your
-     * tax registration, the existing <code>taxDocumentAccessToken</code> won't be
-     * valid. To get the latest token, call the <code>GetTaxRegistration</code> or
-     * <code>ListTaxRegistrations</code> API operation. This token is valid for 24
-     * hours.</p> 
-     */
     inline void SetTaxDocumentAccessToken(Aws::String&& value) { m_taxDocumentAccessTokenHasBeenSet = true; m_taxDocumentAccessToken = std::move(value); }
-
-    /**
-     * <p>The tax document access token, which contains information that the Tax
-     * Settings API uses to locate the tax document.</p>  <p>If you update your
-     * tax registration, the existing <code>taxDocumentAccessToken</code> won't be
-     * valid. To get the latest token, call the <code>GetTaxRegistration</code> or
-     * <code>ListTaxRegistrations</code> API operation. This token is valid for 24
-     * hours.</p> 
-     */
     inline void SetTaxDocumentAccessToken(const char* value) { m_taxDocumentAccessTokenHasBeenSet = true; m_taxDocumentAccessToken.assign(value); }
-
-    /**
-     * <p>The tax document access token, which contains information that the Tax
-     * Settings API uses to locate the tax document.</p>  <p>If you update your
-     * tax registration, the existing <code>taxDocumentAccessToken</code> won't be
-     * valid. To get the latest token, call the <code>GetTaxRegistration</code> or
-     * <code>ListTaxRegistrations</code> API operation. This token is valid for 24
-     * hours.</p> 
-     */
     inline TaxDocumentMetadata& WithTaxDocumentAccessToken(const Aws::String& value) { SetTaxDocumentAccessToken(value); return *this;}
-
-    /**
-     * <p>The tax document access token, which contains information that the Tax
-     * Settings API uses to locate the tax document.</p>  <p>If you update your
-     * tax registration, the existing <code>taxDocumentAccessToken</code> won't be
-     * valid. To get the latest token, call the <code>GetTaxRegistration</code> or
-     * <code>ListTaxRegistrations</code> API operation. This token is valid for 24
-     * hours.</p> 
-     */
     inline TaxDocumentMetadata& WithTaxDocumentAccessToken(Aws::String&& value) { SetTaxDocumentAccessToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The tax document access token, which contains information that the Tax
-     * Settings API uses to locate the tax document.</p>  <p>If you update your
-     * tax registration, the existing <code>taxDocumentAccessToken</code> won't be
-     * valid. To get the latest token, call the <code>GetTaxRegistration</code> or
-     * <code>ListTaxRegistrations</code> API operation. This token is valid for 24
-     * hours.</p> 
-     */
     inline TaxDocumentMetadata& WithTaxDocumentAccessToken(const char* value) { SetTaxDocumentAccessToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of your tax document.</p>
      */
     inline const Aws::String& GetTaxDocumentName() const{ return m_taxDocumentName; }
-
-    /**
-     * <p>The name of your tax document.</p>
-     */
     inline bool TaxDocumentNameHasBeenSet() const { return m_taxDocumentNameHasBeenSet; }
-
-    /**
-     * <p>The name of your tax document.</p>
-     */
     inline void SetTaxDocumentName(const Aws::String& value) { m_taxDocumentNameHasBeenSet = true; m_taxDocumentName = value; }
-
-    /**
-     * <p>The name of your tax document.</p>
-     */
     inline void SetTaxDocumentName(Aws::String&& value) { m_taxDocumentNameHasBeenSet = true; m_taxDocumentName = std::move(value); }
-
-    /**
-     * <p>The name of your tax document.</p>
-     */
     inline void SetTaxDocumentName(const char* value) { m_taxDocumentNameHasBeenSet = true; m_taxDocumentName.assign(value); }
-
-    /**
-     * <p>The name of your tax document.</p>
-     */
     inline TaxDocumentMetadata& WithTaxDocumentName(const Aws::String& value) { SetTaxDocumentName(value); return *this;}
-
-    /**
-     * <p>The name of your tax document.</p>
-     */
     inline TaxDocumentMetadata& WithTaxDocumentName(Aws::String&& value) { SetTaxDocumentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of your tax document.</p>
-     */
     inline TaxDocumentMetadata& WithTaxDocumentName(const char* value) { SetTaxDocumentName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taxDocumentAccessToken;

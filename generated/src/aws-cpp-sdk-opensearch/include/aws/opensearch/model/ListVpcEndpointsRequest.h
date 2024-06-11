@@ -38,6 +38,7 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>If your initial <code>ListVpcEndpoints</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
@@ -45,63 +46,14 @@ namespace Model
      * the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If your initial <code>ListVpcEndpoints</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListVpcEndpoints</code> operations, which returns results in
-     * the next page.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If your initial <code>ListVpcEndpoints</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListVpcEndpoints</code> operations, which returns results in
-     * the next page.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If your initial <code>ListVpcEndpoints</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListVpcEndpoints</code> operations, which returns results in
-     * the next page.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If your initial <code>ListVpcEndpoints</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListVpcEndpoints</code> operations, which returns results in
-     * the next page.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If your initial <code>ListVpcEndpoints</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListVpcEndpoints</code> operations, which returns results in
-     * the next page.</p>
-     */
     inline ListVpcEndpointsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If your initial <code>ListVpcEndpoints</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListVpcEndpoints</code> operations, which returns results in
-     * the next page.</p>
-     */
     inline ListVpcEndpointsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If your initial <code>ListVpcEndpoints</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListVpcEndpoints</code> operations, which returns results in
-     * the next page.</p>
-     */
     inline ListVpcEndpointsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

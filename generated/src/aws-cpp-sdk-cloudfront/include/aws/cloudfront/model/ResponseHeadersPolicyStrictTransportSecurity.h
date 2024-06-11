@@ -40,121 +40,53 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A Boolean that determines whether CloudFront overrides the
      * <code>Strict-Transport-Security</code> HTTP response header received from the
      * origin with the one specified in this response headers policy.</p>
      */
     inline bool GetOverride() const{ return m_override; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront overrides the
-     * <code>Strict-Transport-Security</code> HTTP response header received from the
-     * origin with the one specified in this response headers policy.</p>
-     */
     inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront overrides the
-     * <code>Strict-Transport-Security</code> HTTP response header received from the
-     * origin with the one specified in this response headers policy.</p>
-     */
     inline void SetOverride(bool value) { m_overrideHasBeenSet = true; m_override = value; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront overrides the
-     * <code>Strict-Transport-Security</code> HTTP response header received from the
-     * origin with the one specified in this response headers policy.</p>
-     */
     inline ResponseHeadersPolicyStrictTransportSecurity& WithOverride(bool value) { SetOverride(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean that determines whether CloudFront includes the
      * <code>includeSubDomains</code> directive in the
      * <code>Strict-Transport-Security</code> HTTP response header.</p>
      */
     inline bool GetIncludeSubdomains() const{ return m_includeSubdomains; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront includes the
-     * <code>includeSubDomains</code> directive in the
-     * <code>Strict-Transport-Security</code> HTTP response header.</p>
-     */
     inline bool IncludeSubdomainsHasBeenSet() const { return m_includeSubdomainsHasBeenSet; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront includes the
-     * <code>includeSubDomains</code> directive in the
-     * <code>Strict-Transport-Security</code> HTTP response header.</p>
-     */
     inline void SetIncludeSubdomains(bool value) { m_includeSubdomainsHasBeenSet = true; m_includeSubdomains = value; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront includes the
-     * <code>includeSubDomains</code> directive in the
-     * <code>Strict-Transport-Security</code> HTTP response header.</p>
-     */
     inline ResponseHeadersPolicyStrictTransportSecurity& WithIncludeSubdomains(bool value) { SetIncludeSubdomains(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean that determines whether CloudFront includes the
      * <code>preload</code> directive in the <code>Strict-Transport-Security</code>
      * HTTP response header.</p>
      */
     inline bool GetPreload() const{ return m_preload; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront includes the
-     * <code>preload</code> directive in the <code>Strict-Transport-Security</code>
-     * HTTP response header.</p>
-     */
     inline bool PreloadHasBeenSet() const { return m_preloadHasBeenSet; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront includes the
-     * <code>preload</code> directive in the <code>Strict-Transport-Security</code>
-     * HTTP response header.</p>
-     */
     inline void SetPreload(bool value) { m_preloadHasBeenSet = true; m_preload = value; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront includes the
-     * <code>preload</code> directive in the <code>Strict-Transport-Security</code>
-     * HTTP response header.</p>
-     */
     inline ResponseHeadersPolicyStrictTransportSecurity& WithPreload(bool value) { SetPreload(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A number that CloudFront uses as the value for the <code>max-age</code>
      * directive in the <code>Strict-Transport-Security</code> HTTP response
      * header.</p>
      */
     inline int GetAccessControlMaxAgeSec() const{ return m_accessControlMaxAgeSec; }
-
-    /**
-     * <p>A number that CloudFront uses as the value for the <code>max-age</code>
-     * directive in the <code>Strict-Transport-Security</code> HTTP response
-     * header.</p>
-     */
     inline bool AccessControlMaxAgeSecHasBeenSet() const { return m_accessControlMaxAgeSecHasBeenSet; }
-
-    /**
-     * <p>A number that CloudFront uses as the value for the <code>max-age</code>
-     * directive in the <code>Strict-Transport-Security</code> HTTP response
-     * header.</p>
-     */
     inline void SetAccessControlMaxAgeSec(int value) { m_accessControlMaxAgeSecHasBeenSet = true; m_accessControlMaxAgeSec = value; }
-
-    /**
-     * <p>A number that CloudFront uses as the value for the <code>max-age</code>
-     * directive in the <code>Strict-Transport-Security</code> HTTP response
-     * header.</p>
-     */
     inline ResponseHeadersPolicyStrictTransportSecurity& WithAccessControlMaxAgeSec(int value) { SetAccessControlMaxAgeSec(value); return *this;}
-
+    ///@}
   private:
 
     bool m_override;

@@ -40,103 +40,35 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IAM roles that SageMaker uses to run the training jobs.</p>
      */
     inline const Aws::String& GetValidationRole() const{ return m_validationRole; }
-
-    /**
-     * <p>The IAM roles that SageMaker uses to run the training jobs.</p>
-     */
     inline bool ValidationRoleHasBeenSet() const { return m_validationRoleHasBeenSet; }
-
-    /**
-     * <p>The IAM roles that SageMaker uses to run the training jobs.</p>
-     */
     inline void SetValidationRole(const Aws::String& value) { m_validationRoleHasBeenSet = true; m_validationRole = value; }
-
-    /**
-     * <p>The IAM roles that SageMaker uses to run the training jobs.</p>
-     */
     inline void SetValidationRole(Aws::String&& value) { m_validationRoleHasBeenSet = true; m_validationRole = std::move(value); }
-
-    /**
-     * <p>The IAM roles that SageMaker uses to run the training jobs.</p>
-     */
     inline void SetValidationRole(const char* value) { m_validationRoleHasBeenSet = true; m_validationRole.assign(value); }
-
-    /**
-     * <p>The IAM roles that SageMaker uses to run the training jobs.</p>
-     */
     inline AlgorithmValidationSpecification& WithValidationRole(const Aws::String& value) { SetValidationRole(value); return *this;}
-
-    /**
-     * <p>The IAM roles that SageMaker uses to run the training jobs.</p>
-     */
     inline AlgorithmValidationSpecification& WithValidationRole(Aws::String&& value) { SetValidationRole(std::move(value)); return *this;}
-
-    /**
-     * <p>The IAM roles that SageMaker uses to run the training jobs.</p>
-     */
     inline AlgorithmValidationSpecification& WithValidationRole(const char* value) { SetValidationRole(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which
      * specifies a training job and batch transform job that SageMaker runs to validate
      * your algorithm.</p>
      */
     inline const Aws::Vector<AlgorithmValidationProfile>& GetValidationProfiles() const{ return m_validationProfiles; }
-
-    /**
-     * <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which
-     * specifies a training job and batch transform job that SageMaker runs to validate
-     * your algorithm.</p>
-     */
     inline bool ValidationProfilesHasBeenSet() const { return m_validationProfilesHasBeenSet; }
-
-    /**
-     * <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which
-     * specifies a training job and batch transform job that SageMaker runs to validate
-     * your algorithm.</p>
-     */
     inline void SetValidationProfiles(const Aws::Vector<AlgorithmValidationProfile>& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles = value; }
-
-    /**
-     * <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which
-     * specifies a training job and batch transform job that SageMaker runs to validate
-     * your algorithm.</p>
-     */
     inline void SetValidationProfiles(Aws::Vector<AlgorithmValidationProfile>&& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles = std::move(value); }
-
-    /**
-     * <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which
-     * specifies a training job and batch transform job that SageMaker runs to validate
-     * your algorithm.</p>
-     */
     inline AlgorithmValidationSpecification& WithValidationProfiles(const Aws::Vector<AlgorithmValidationProfile>& value) { SetValidationProfiles(value); return *this;}
-
-    /**
-     * <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which
-     * specifies a training job and batch transform job that SageMaker runs to validate
-     * your algorithm.</p>
-     */
     inline AlgorithmValidationSpecification& WithValidationProfiles(Aws::Vector<AlgorithmValidationProfile>&& value) { SetValidationProfiles(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which
-     * specifies a training job and batch transform job that SageMaker runs to validate
-     * your algorithm.</p>
-     */
     inline AlgorithmValidationSpecification& AddValidationProfiles(const AlgorithmValidationProfile& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles.push_back(value); return *this; }
-
-    /**
-     * <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which
-     * specifies a training job and batch transform job that SageMaker runs to validate
-     * your algorithm.</p>
-     */
     inline AlgorithmValidationSpecification& AddValidationProfiles(AlgorithmValidationProfile&& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_validationRole;

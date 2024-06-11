@@ -51,260 +51,91 @@ namespace Model
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The customer-provided service name.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>The customer-provided service name.</p>
-     */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-
-    /**
-     * <p>The customer-provided service name.</p>
-     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>The customer-provided service name.</p>
-     */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>The customer-provided service name.</p>
-     */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>The customer-provided service name.</p>
-     */
     inline ServiceSummary& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The customer-provided service name.</p>
-     */
     inline ServiceSummary& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The customer-provided service name.</p>
-     */
     inline ServiceSummary& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An ID that App Runner generated for this service. It's unique within the
      * Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
-
-    /**
-     * <p>An ID that App Runner generated for this service. It's unique within the
-     * Amazon Web Services Region.</p>
-     */
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-
-    /**
-     * <p>An ID that App Runner generated for this service. It's unique within the
-     * Amazon Web Services Region.</p>
-     */
     inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-
-    /**
-     * <p>An ID that App Runner generated for this service. It's unique within the
-     * Amazon Web Services Region.</p>
-     */
     inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-
-    /**
-     * <p>An ID that App Runner generated for this service. It's unique within the
-     * Amazon Web Services Region.</p>
-     */
     inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
-
-    /**
-     * <p>An ID that App Runner generated for this service. It's unique within the
-     * Amazon Web Services Region.</p>
-     */
     inline ServiceSummary& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-
-    /**
-     * <p>An ID that App Runner generated for this service. It's unique within the
-     * Amazon Web Services Region.</p>
-     */
     inline ServiceSummary& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
-
-    /**
-     * <p>An ID that App Runner generated for this service. It's unique within the
-     * Amazon Web Services Region.</p>
-     */
     inline ServiceSummary& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of this service.</p>
      */
     inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this service.</p>
-     */
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this service.</p>
-     */
     inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this service.</p>
-     */
     inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this service.</p>
-     */
     inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this service.</p>
-     */
     inline ServiceSummary& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this service.</p>
-     */
     inline ServiceSummary& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this service.</p>
-     */
     inline ServiceSummary& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A subdomain URL that App Runner generated for this service. You can use this
      * URL to access your service web application.</p>
      */
     inline const Aws::String& GetServiceUrl() const{ return m_serviceUrl; }
-
-    /**
-     * <p>A subdomain URL that App Runner generated for this service. You can use this
-     * URL to access your service web application.</p>
-     */
     inline bool ServiceUrlHasBeenSet() const { return m_serviceUrlHasBeenSet; }
-
-    /**
-     * <p>A subdomain URL that App Runner generated for this service. You can use this
-     * URL to access your service web application.</p>
-     */
     inline void SetServiceUrl(const Aws::String& value) { m_serviceUrlHasBeenSet = true; m_serviceUrl = value; }
-
-    /**
-     * <p>A subdomain URL that App Runner generated for this service. You can use this
-     * URL to access your service web application.</p>
-     */
     inline void SetServiceUrl(Aws::String&& value) { m_serviceUrlHasBeenSet = true; m_serviceUrl = std::move(value); }
-
-    /**
-     * <p>A subdomain URL that App Runner generated for this service. You can use this
-     * URL to access your service web application.</p>
-     */
     inline void SetServiceUrl(const char* value) { m_serviceUrlHasBeenSet = true; m_serviceUrl.assign(value); }
-
-    /**
-     * <p>A subdomain URL that App Runner generated for this service. You can use this
-     * URL to access your service web application.</p>
-     */
     inline ServiceSummary& WithServiceUrl(const Aws::String& value) { SetServiceUrl(value); return *this;}
-
-    /**
-     * <p>A subdomain URL that App Runner generated for this service. You can use this
-     * URL to access your service web application.</p>
-     */
     inline ServiceSummary& WithServiceUrl(Aws::String&& value) { SetServiceUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>A subdomain URL that App Runner generated for this service. You can use this
-     * URL to access your service web application.</p>
-     */
     inline ServiceSummary& WithServiceUrl(const char* value) { SetServiceUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time when the App Runner service was created. It's in the Unix time stamp
      * format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The time when the App Runner service was created. It's in the Unix time stamp
-     * format.</p>
-     */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The time when the App Runner service was created. It's in the Unix time stamp
-     * format.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The time when the App Runner service was created. It's in the Unix time stamp
-     * format.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The time when the App Runner service was created. It's in the Unix time stamp
-     * format.</p>
-     */
     inline ServiceSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The time when the App Runner service was created. It's in the Unix time stamp
-     * format.</p>
-     */
     inline ServiceSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time when the App Runner service was last updated. It's in theUnix time
      * stamp format.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-
-    /**
-     * <p>The time when the App Runner service was last updated. It's in theUnix time
-     * stamp format.</p>
-     */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-
-    /**
-     * <p>The time when the App Runner service was last updated. It's in theUnix time
-     * stamp format.</p>
-     */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-
-    /**
-     * <p>The time when the App Runner service was last updated. It's in theUnix time
-     * stamp format.</p>
-     */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-
-    /**
-     * <p>The time when the App Runner service was last updated. It's in theUnix time
-     * stamp format.</p>
-     */
     inline ServiceSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-
-    /**
-     * <p>The time when the App Runner service was last updated. It's in theUnix time
-     * stamp format.</p>
-     */
     inline ServiceSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current state of the App Runner service. These particular values mean the
      * following.</p> <ul> <li> <p> <code>CREATE_FAILED</code> – The service failed to
@@ -316,67 +147,12 @@ namespace Model
      * deletion call to ensure that all related resources are removed.</p> </li> </ul>
      */
     inline const ServiceStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current state of the App Runner service. These particular values mean the
-     * following.</p> <ul> <li> <p> <code>CREATE_FAILED</code> – The service failed to
-     * create. The failed service isn't usable, and still counts towards your service
-     * quota. To troubleshoot this failure, read the failure events and logs, change
-     * any parameters that need to be fixed, and rebuild your service using
-     * <code>UpdateService</code>.</p> </li> <li> <p> <code>DELETE_FAILED</code> – The
-     * service failed to delete and can't be successfully recovered. Retry the service
-     * deletion call to ensure that all related resources are removed.</p> </li> </ul>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current state of the App Runner service. These particular values mean the
-     * following.</p> <ul> <li> <p> <code>CREATE_FAILED</code> – The service failed to
-     * create. The failed service isn't usable, and still counts towards your service
-     * quota. To troubleshoot this failure, read the failure events and logs, change
-     * any parameters that need to be fixed, and rebuild your service using
-     * <code>UpdateService</code>.</p> </li> <li> <p> <code>DELETE_FAILED</code> – The
-     * service failed to delete and can't be successfully recovered. Retry the service
-     * deletion call to ensure that all related resources are removed.</p> </li> </ul>
-     */
     inline void SetStatus(const ServiceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current state of the App Runner service. These particular values mean the
-     * following.</p> <ul> <li> <p> <code>CREATE_FAILED</code> – The service failed to
-     * create. The failed service isn't usable, and still counts towards your service
-     * quota. To troubleshoot this failure, read the failure events and logs, change
-     * any parameters that need to be fixed, and rebuild your service using
-     * <code>UpdateService</code>.</p> </li> <li> <p> <code>DELETE_FAILED</code> – The
-     * service failed to delete and can't be successfully recovered. Retry the service
-     * deletion call to ensure that all related resources are removed.</p> </li> </ul>
-     */
     inline void SetStatus(ServiceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current state of the App Runner service. These particular values mean the
-     * following.</p> <ul> <li> <p> <code>CREATE_FAILED</code> – The service failed to
-     * create. The failed service isn't usable, and still counts towards your service
-     * quota. To troubleshoot this failure, read the failure events and logs, change
-     * any parameters that need to be fixed, and rebuild your service using
-     * <code>UpdateService</code>.</p> </li> <li> <p> <code>DELETE_FAILED</code> – The
-     * service failed to delete and can't be successfully recovered. Retry the service
-     * deletion call to ensure that all related resources are removed.</p> </li> </ul>
-     */
     inline ServiceSummary& WithStatus(const ServiceStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current state of the App Runner service. These particular values mean the
-     * following.</p> <ul> <li> <p> <code>CREATE_FAILED</code> – The service failed to
-     * create. The failed service isn't usable, and still counts towards your service
-     * quota. To troubleshoot this failure, read the failure events and logs, change
-     * any parameters that need to be fixed, and rebuild your service using
-     * <code>UpdateService</code>.</p> </li> <li> <p> <code>DELETE_FAILED</code> – The
-     * service failed to delete and can't be successfully recovered. Retry the service
-     * deletion call to ensure that all related resources are removed.</p> </li> </ul>
-     */
     inline ServiceSummary& WithStatus(ServiceStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceName;

@@ -35,186 +35,70 @@ namespace Model
     AWS_APPLICATIONCOSTPROFILER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Required. ID of the report to update.</p>
      */
     inline const Aws::String& GetReportId() const{ return m_reportId; }
-
-    /**
-     * <p>Required. ID of the report to update.</p>
-     */
     inline bool ReportIdHasBeenSet() const { return m_reportIdHasBeenSet; }
-
-    /**
-     * <p>Required. ID of the report to update.</p>
-     */
     inline void SetReportId(const Aws::String& value) { m_reportIdHasBeenSet = true; m_reportId = value; }
-
-    /**
-     * <p>Required. ID of the report to update.</p>
-     */
     inline void SetReportId(Aws::String&& value) { m_reportIdHasBeenSet = true; m_reportId = std::move(value); }
-
-    /**
-     * <p>Required. ID of the report to update.</p>
-     */
     inline void SetReportId(const char* value) { m_reportIdHasBeenSet = true; m_reportId.assign(value); }
-
-    /**
-     * <p>Required. ID of the report to update.</p>
-     */
     inline UpdateReportDefinitionRequest& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-
-    /**
-     * <p>Required. ID of the report to update.</p>
-     */
     inline UpdateReportDefinitionRequest& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-
-    /**
-     * <p>Required. ID of the report to update.</p>
-     */
     inline UpdateReportDefinitionRequest& WithReportId(const char* value) { SetReportId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Required. Description of the report.</p>
      */
     inline const Aws::String& GetReportDescription() const{ return m_reportDescription; }
-
-    /**
-     * <p>Required. Description of the report.</p>
-     */
     inline bool ReportDescriptionHasBeenSet() const { return m_reportDescriptionHasBeenSet; }
-
-    /**
-     * <p>Required. Description of the report.</p>
-     */
     inline void SetReportDescription(const Aws::String& value) { m_reportDescriptionHasBeenSet = true; m_reportDescription = value; }
-
-    /**
-     * <p>Required. Description of the report.</p>
-     */
     inline void SetReportDescription(Aws::String&& value) { m_reportDescriptionHasBeenSet = true; m_reportDescription = std::move(value); }
-
-    /**
-     * <p>Required. Description of the report.</p>
-     */
     inline void SetReportDescription(const char* value) { m_reportDescriptionHasBeenSet = true; m_reportDescription.assign(value); }
-
-    /**
-     * <p>Required. Description of the report.</p>
-     */
     inline UpdateReportDefinitionRequest& WithReportDescription(const Aws::String& value) { SetReportDescription(value); return *this;}
-
-    /**
-     * <p>Required. Description of the report.</p>
-     */
     inline UpdateReportDefinitionRequest& WithReportDescription(Aws::String&& value) { SetReportDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>Required. Description of the report.</p>
-     */
     inline UpdateReportDefinitionRequest& WithReportDescription(const char* value) { SetReportDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Required. The cadence to generate the report.</p>
      */
     inline const ReportFrequency& GetReportFrequency() const{ return m_reportFrequency; }
-
-    /**
-     * <p>Required. The cadence to generate the report.</p>
-     */
     inline bool ReportFrequencyHasBeenSet() const { return m_reportFrequencyHasBeenSet; }
-
-    /**
-     * <p>Required. The cadence to generate the report.</p>
-     */
     inline void SetReportFrequency(const ReportFrequency& value) { m_reportFrequencyHasBeenSet = true; m_reportFrequency = value; }
-
-    /**
-     * <p>Required. The cadence to generate the report.</p>
-     */
     inline void SetReportFrequency(ReportFrequency&& value) { m_reportFrequencyHasBeenSet = true; m_reportFrequency = std::move(value); }
-
-    /**
-     * <p>Required. The cadence to generate the report.</p>
-     */
     inline UpdateReportDefinitionRequest& WithReportFrequency(const ReportFrequency& value) { SetReportFrequency(value); return *this;}
-
-    /**
-     * <p>Required. The cadence to generate the report.</p>
-     */
     inline UpdateReportDefinitionRequest& WithReportFrequency(ReportFrequency&& value) { SetReportFrequency(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Required. The format to use for the generated report.</p>
      */
     inline const Format& GetFormat() const{ return m_format; }
-
-    /**
-     * <p>Required. The format to use for the generated report.</p>
-     */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-
-    /**
-     * <p>Required. The format to use for the generated report.</p>
-     */
     inline void SetFormat(const Format& value) { m_formatHasBeenSet = true; m_format = value; }
-
-    /**
-     * <p>Required. The format to use for the generated report.</p>
-     */
     inline void SetFormat(Format&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-
-    /**
-     * <p>Required. The format to use for the generated report.</p>
-     */
     inline UpdateReportDefinitionRequest& WithFormat(const Format& value) { SetFormat(value); return *this;}
-
-    /**
-     * <p>Required. The format to use for the generated report.</p>
-     */
     inline UpdateReportDefinitionRequest& WithFormat(Format&& value) { SetFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Required. Amazon Simple Storage Service (Amazon S3) location where
      * Application Cost Profiler uploads the report.</p>
      */
     inline const S3Location& GetDestinationS3Location() const{ return m_destinationS3Location; }
-
-    /**
-     * <p>Required. Amazon Simple Storage Service (Amazon S3) location where
-     * Application Cost Profiler uploads the report.</p>
-     */
     inline bool DestinationS3LocationHasBeenSet() const { return m_destinationS3LocationHasBeenSet; }
-
-    /**
-     * <p>Required. Amazon Simple Storage Service (Amazon S3) location where
-     * Application Cost Profiler uploads the report.</p>
-     */
     inline void SetDestinationS3Location(const S3Location& value) { m_destinationS3LocationHasBeenSet = true; m_destinationS3Location = value; }
-
-    /**
-     * <p>Required. Amazon Simple Storage Service (Amazon S3) location where
-     * Application Cost Profiler uploads the report.</p>
-     */
     inline void SetDestinationS3Location(S3Location&& value) { m_destinationS3LocationHasBeenSet = true; m_destinationS3Location = std::move(value); }
-
-    /**
-     * <p>Required. Amazon Simple Storage Service (Amazon S3) location where
-     * Application Cost Profiler uploads the report.</p>
-     */
     inline UpdateReportDefinitionRequest& WithDestinationS3Location(const S3Location& value) { SetDestinationS3Location(value); return *this;}
-
-    /**
-     * <p>Required. Amazon Simple Storage Service (Amazon S3) location where
-     * Application Cost Profiler uploads the report.</p>
-     */
     inline UpdateReportDefinitionRequest& WithDestinationS3Location(S3Location&& value) { SetDestinationS3Location(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reportId;

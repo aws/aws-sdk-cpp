@@ -38,62 +38,21 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The security policy for a domain configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security
      * policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
      */
     inline const Aws::String& GetSecurityPolicy() const{ return m_securityPolicy; }
-
-    /**
-     * <p>The security policy for a domain configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security
-     * policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
-     */
     inline bool SecurityPolicyHasBeenSet() const { return m_securityPolicyHasBeenSet; }
-
-    /**
-     * <p>The security policy for a domain configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security
-     * policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
-     */
     inline void SetSecurityPolicy(const Aws::String& value) { m_securityPolicyHasBeenSet = true; m_securityPolicy = value; }
-
-    /**
-     * <p>The security policy for a domain configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security
-     * policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
-     */
     inline void SetSecurityPolicy(Aws::String&& value) { m_securityPolicyHasBeenSet = true; m_securityPolicy = std::move(value); }
-
-    /**
-     * <p>The security policy for a domain configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security
-     * policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
-     */
     inline void SetSecurityPolicy(const char* value) { m_securityPolicyHasBeenSet = true; m_securityPolicy.assign(value); }
-
-    /**
-     * <p>The security policy for a domain configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security
-     * policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
-     */
     inline TlsConfig& WithSecurityPolicy(const Aws::String& value) { SetSecurityPolicy(value); return *this;}
-
-    /**
-     * <p>The security policy for a domain configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security
-     * policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
-     */
     inline TlsConfig& WithSecurityPolicy(Aws::String&& value) { SetSecurityPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The security policy for a domain configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security
-     * policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
-     */
     inline TlsConfig& WithSecurityPolicy(const char* value) { SetSecurityPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_securityPolicy;

@@ -33,100 +33,35 @@ namespace Model
     AWS_BILLINGCONDUCTOR_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the billing group that associates the
      * array of account IDs. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline AssociateAccountsRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline AssociateAccountsRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline AssociateAccountsRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The associating array of account IDs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
-
-    /**
-     * <p> The associating array of account IDs. </p>
-     */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-
-    /**
-     * <p> The associating array of account IDs. </p>
-     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-
-    /**
-     * <p> The associating array of account IDs. </p>
-     */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-
-    /**
-     * <p> The associating array of account IDs. </p>
-     */
     inline AssociateAccountsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-
-    /**
-     * <p> The associating array of account IDs. </p>
-     */
     inline AssociateAccountsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-
-    /**
-     * <p> The associating array of account IDs. </p>
-     */
     inline AssociateAccountsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-    /**
-     * <p> The associating array of account IDs. </p>
-     */
     inline AssociateAccountsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> The associating array of account IDs. </p>
-     */
     inline AssociateAccountsRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_arn;

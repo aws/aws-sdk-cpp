@@ -39,73 +39,30 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status by which you are filtering: <code>OPT_IN</code> or
      * <code>OPT_OUT</code>.</p>
      */
     inline const SubscriptionStatus& GetFilteredStatus() const{ return m_filteredStatus; }
-
-    /**
-     * <p>The status by which you are filtering: <code>OPT_IN</code> or
-     * <code>OPT_OUT</code>.</p>
-     */
     inline bool FilteredStatusHasBeenSet() const { return m_filteredStatusHasBeenSet; }
-
-    /**
-     * <p>The status by which you are filtering: <code>OPT_IN</code> or
-     * <code>OPT_OUT</code>.</p>
-     */
     inline void SetFilteredStatus(const SubscriptionStatus& value) { m_filteredStatusHasBeenSet = true; m_filteredStatus = value; }
-
-    /**
-     * <p>The status by which you are filtering: <code>OPT_IN</code> or
-     * <code>OPT_OUT</code>.</p>
-     */
     inline void SetFilteredStatus(SubscriptionStatus&& value) { m_filteredStatusHasBeenSet = true; m_filteredStatus = std::move(value); }
-
-    /**
-     * <p>The status by which you are filtering: <code>OPT_IN</code> or
-     * <code>OPT_OUT</code>.</p>
-     */
     inline ListContactsFilter& WithFilteredStatus(const SubscriptionStatus& value) { SetFilteredStatus(value); return *this;}
-
-    /**
-     * <p>The status by which you are filtering: <code>OPT_IN</code> or
-     * <code>OPT_OUT</code>.</p>
-     */
     inline ListContactsFilter& WithFilteredStatus(SubscriptionStatus&& value) { SetFilteredStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Used for filtering by a specific topic preference.</p>
      */
     inline const TopicFilter& GetTopicFilter() const{ return m_topicFilter; }
-
-    /**
-     * <p>Used for filtering by a specific topic preference.</p>
-     */
     inline bool TopicFilterHasBeenSet() const { return m_topicFilterHasBeenSet; }
-
-    /**
-     * <p>Used for filtering by a specific topic preference.</p>
-     */
     inline void SetTopicFilter(const TopicFilter& value) { m_topicFilterHasBeenSet = true; m_topicFilter = value; }
-
-    /**
-     * <p>Used for filtering by a specific topic preference.</p>
-     */
     inline void SetTopicFilter(TopicFilter&& value) { m_topicFilterHasBeenSet = true; m_topicFilter = std::move(value); }
-
-    /**
-     * <p>Used for filtering by a specific topic preference.</p>
-     */
     inline ListContactsFilter& WithTopicFilter(const TopicFilter& value) { SetTopicFilter(value); return *this;}
-
-    /**
-     * <p>Used for filtering by a specific topic preference.</p>
-     */
     inline ListContactsFilter& WithTopicFilter(TopicFilter&& value) { SetTopicFilter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SubscriptionStatus m_filteredStatus;

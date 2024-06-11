@@ -33,53 +33,27 @@ namespace Model
     AWS_LOCATIONSERVICE_API GetPlaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about the result, such as its address and position.</p>
      */
     inline const Place& GetPlace() const{ return m_place; }
-
-    /**
-     * <p>Details about the result, such as its address and position.</p>
-     */
     inline void SetPlace(const Place& value) { m_place = value; }
-
-    /**
-     * <p>Details about the result, such as its address and position.</p>
-     */
     inline void SetPlace(Place&& value) { m_place = std::move(value); }
-
-    /**
-     * <p>Details about the result, such as its address and position.</p>
-     */
     inline GetPlaceResult& WithPlace(const Place& value) { SetPlace(value); return *this;}
-
-    /**
-     * <p>Details about the result, such as its address and position.</p>
-     */
     inline GetPlaceResult& WithPlace(Place&& value) { SetPlace(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPlaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPlaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPlaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Place m_place;

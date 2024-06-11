@@ -33,62 +33,35 @@ namespace Model
     AWS_SQS_API CancelMessageMoveTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The approximate number of messages already moved to the destination
      * queue.</p>
      */
     inline long long GetApproximateNumberOfMessagesMoved() const{ return m_approximateNumberOfMessagesMoved; }
-
-    /**
-     * <p>The approximate number of messages already moved to the destination
-     * queue.</p>
-     */
     inline void SetApproximateNumberOfMessagesMoved(long long value) { m_approximateNumberOfMessagesMoved = value; }
-
-    /**
-     * <p>The approximate number of messages already moved to the destination
-     * queue.</p>
-     */
     inline CancelMessageMoveTaskResult& WithApproximateNumberOfMessagesMoved(long long value) { SetApproximateNumberOfMessagesMoved(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CancelMessageMoveTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CancelMessageMoveTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CancelMessageMoveTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CancelMessageMoveTaskResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CancelMessageMoveTaskResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_approximateNumberOfMessagesMoved;

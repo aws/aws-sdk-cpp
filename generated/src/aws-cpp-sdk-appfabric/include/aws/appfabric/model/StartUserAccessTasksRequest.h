@@ -32,95 +32,34 @@ namespace Model
     AWS_APPFABRIC_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
      * app bundle to use for the request.</p>
      */
     inline const Aws::String& GetAppBundleIdentifier() const{ return m_appBundleIdentifier; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
-     * app bundle to use for the request.</p>
-     */
     inline bool AppBundleIdentifierHasBeenSet() const { return m_appBundleIdentifierHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
-     * app bundle to use for the request.</p>
-     */
     inline void SetAppBundleIdentifier(const Aws::String& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
-     * app bundle to use for the request.</p>
-     */
     inline void SetAppBundleIdentifier(Aws::String&& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
-     * app bundle to use for the request.</p>
-     */
     inline void SetAppBundleIdentifier(const char* value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
-     * app bundle to use for the request.</p>
-     */
     inline StartUserAccessTasksRequest& WithAppBundleIdentifier(const Aws::String& value) { SetAppBundleIdentifier(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
-     * app bundle to use for the request.</p>
-     */
     inline StartUserAccessTasksRequest& WithAppBundleIdentifier(Aws::String&& value) { SetAppBundleIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
-     * app bundle to use for the request.</p>
-     */
     inline StartUserAccessTasksRequest& WithAppBundleIdentifier(const char* value) { SetAppBundleIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The email address of the target user.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
-
-    /**
-     * <p>The email address of the target user.</p>
-     */
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-
-    /**
-     * <p>The email address of the target user.</p>
-     */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-
-    /**
-     * <p>The email address of the target user.</p>
-     */
     inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-
-    /**
-     * <p>The email address of the target user.</p>
-     */
     inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-
-    /**
-     * <p>The email address of the target user.</p>
-     */
     inline StartUserAccessTasksRequest& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-
-    /**
-     * <p>The email address of the target user.</p>
-     */
     inline StartUserAccessTasksRequest& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-
-    /**
-     * <p>The email address of the target user.</p>
-     */
     inline StartUserAccessTasksRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appBundleIdentifier;

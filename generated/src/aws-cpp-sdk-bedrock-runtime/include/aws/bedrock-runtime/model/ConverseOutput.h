@@ -39,36 +39,17 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The message that the model generates.</p>
      */
     inline const Message& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The message that the model generates.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The message that the model generates.</p>
-     */
     inline void SetMessage(const Message& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The message that the model generates.</p>
-     */
     inline void SetMessage(Message&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The message that the model generates.</p>
-     */
     inline ConverseOutput& WithMessage(const Message& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The message that the model generates.</p>
-     */
     inline ConverseOutput& WithMessage(Message&& value) { SetMessage(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Message m_message;

@@ -33,53 +33,27 @@ namespace Model
     AWS_CODECOMMIT_API MergePullRequestByFastForwardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the specified pull request, including the merge.</p>
      */
     inline const PullRequest& GetPullRequest() const{ return m_pullRequest; }
-
-    /**
-     * <p>Information about the specified pull request, including the merge.</p>
-     */
     inline void SetPullRequest(const PullRequest& value) { m_pullRequest = value; }
-
-    /**
-     * <p>Information about the specified pull request, including the merge.</p>
-     */
     inline void SetPullRequest(PullRequest&& value) { m_pullRequest = std::move(value); }
-
-    /**
-     * <p>Information about the specified pull request, including the merge.</p>
-     */
     inline MergePullRequestByFastForwardResult& WithPullRequest(const PullRequest& value) { SetPullRequest(value); return *this;}
-
-    /**
-     * <p>Information about the specified pull request, including the merge.</p>
-     */
     inline MergePullRequestByFastForwardResult& WithPullRequest(PullRequest&& value) { SetPullRequest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline MergePullRequestByFastForwardResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline MergePullRequestByFastForwardResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline MergePullRequestByFastForwardResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PullRequest m_pullRequest;

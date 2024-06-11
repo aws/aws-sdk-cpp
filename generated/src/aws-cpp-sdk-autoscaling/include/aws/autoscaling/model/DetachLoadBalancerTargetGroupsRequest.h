@@ -37,101 +37,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DetachLoadBalancerTargetGroupsRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DetachLoadBalancerTargetGroupsRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DetachLoadBalancerTargetGroupsRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
      * 10 target groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetGroupARNs() const{ return m_targetGroupARNs; }
-
-    /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
-     * 10 target groups.</p>
-     */
     inline bool TargetGroupARNsHasBeenSet() const { return m_targetGroupARNsHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
-     * 10 target groups.</p>
-     */
     inline void SetTargetGroupARNs(const Aws::Vector<Aws::String>& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = value; }
-
-    /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
-     * 10 target groups.</p>
-     */
     inline void SetTargetGroupARNs(Aws::Vector<Aws::String>&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
-     * 10 target groups.</p>
-     */
     inline DetachLoadBalancerTargetGroupsRequest& WithTargetGroupARNs(const Aws::Vector<Aws::String>& value) { SetTargetGroupARNs(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
-     * 10 target groups.</p>
-     */
     inline DetachLoadBalancerTargetGroupsRequest& WithTargetGroupARNs(Aws::Vector<Aws::String>&& value) { SetTargetGroupARNs(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
-     * 10 target groups.</p>
-     */
     inline DetachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(const Aws::String& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
-
-    /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
-     * 10 target groups.</p>
-     */
     inline DetachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(Aws::String&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
-     * 10 target groups.</p>
-     */
     inline DetachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(const char* value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;

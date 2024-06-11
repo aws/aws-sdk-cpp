@@ -30,6 +30,7 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>Specifies whether you want to turn on or turn off
@@ -37,31 +38,10 @@ namespace Model
          
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * 
-            <p>Specifies whether you want to turn on or turn off
-     * unauthenticated traffic to your cluster.</p>
-         
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * 
-            <p>Specifies whether you want to turn on or turn off
-     * unauthenticated traffic to your cluster.</p>
-         
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * 
-            <p>Specifies whether you want to turn on or turn off
-     * unauthenticated traffic to your cluster.</p>
-         
-     */
     inline Unauthenticated& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

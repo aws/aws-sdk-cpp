@@ -37,46 +37,19 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The job ID.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline JobAttachmentDetailsIdentifiers& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline JobAttachmentDetailsIdentifiers& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline JobAttachmentDetailsIdentifiers& WithJobId(const char* value) { SetJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

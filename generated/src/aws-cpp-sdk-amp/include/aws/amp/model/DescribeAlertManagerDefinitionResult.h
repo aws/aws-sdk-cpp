@@ -39,53 +39,27 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API DescribeAlertManagerDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The alert manager definition.</p>
      */
     inline const AlertManagerDefinitionDescription& GetAlertManagerDefinition() const{ return m_alertManagerDefinition; }
-
-    /**
-     * <p>The alert manager definition.</p>
-     */
     inline void SetAlertManagerDefinition(const AlertManagerDefinitionDescription& value) { m_alertManagerDefinition = value; }
-
-    /**
-     * <p>The alert manager definition.</p>
-     */
     inline void SetAlertManagerDefinition(AlertManagerDefinitionDescription&& value) { m_alertManagerDefinition = std::move(value); }
-
-    /**
-     * <p>The alert manager definition.</p>
-     */
     inline DescribeAlertManagerDefinitionResult& WithAlertManagerDefinition(const AlertManagerDefinitionDescription& value) { SetAlertManagerDefinition(value); return *this;}
-
-    /**
-     * <p>The alert manager definition.</p>
-     */
     inline DescribeAlertManagerDefinitionResult& WithAlertManagerDefinition(AlertManagerDefinitionDescription&& value) { SetAlertManagerDefinition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAlertManagerDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAlertManagerDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAlertManagerDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AlertManagerDefinitionDescription m_alertManagerDefinition;

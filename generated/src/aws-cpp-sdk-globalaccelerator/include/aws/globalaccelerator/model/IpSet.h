@@ -40,91 +40,33 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The array of IP addresses in the IP address set. An IP address set can have a
      * maximum of two IP addresses.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpAddresses() const{ return m_ipAddresses; }
-
-    /**
-     * <p>The array of IP addresses in the IP address set. An IP address set can have a
-     * maximum of two IP addresses.</p>
-     */
     inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
-
-    /**
-     * <p>The array of IP addresses in the IP address set. An IP address set can have a
-     * maximum of two IP addresses.</p>
-     */
     inline void SetIpAddresses(const Aws::Vector<Aws::String>& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
-
-    /**
-     * <p>The array of IP addresses in the IP address set. An IP address set can have a
-     * maximum of two IP addresses.</p>
-     */
     inline void SetIpAddresses(Aws::Vector<Aws::String>&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
-
-    /**
-     * <p>The array of IP addresses in the IP address set. An IP address set can have a
-     * maximum of two IP addresses.</p>
-     */
     inline IpSet& WithIpAddresses(const Aws::Vector<Aws::String>& value) { SetIpAddresses(value); return *this;}
-
-    /**
-     * <p>The array of IP addresses in the IP address set. An IP address set can have a
-     * maximum of two IP addresses.</p>
-     */
     inline IpSet& WithIpAddresses(Aws::Vector<Aws::String>&& value) { SetIpAddresses(std::move(value)); return *this;}
-
-    /**
-     * <p>The array of IP addresses in the IP address set. An IP address set can have a
-     * maximum of two IP addresses.</p>
-     */
     inline IpSet& AddIpAddresses(const Aws::String& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
-
-    /**
-     * <p>The array of IP addresses in the IP address set. An IP address set can have a
-     * maximum of two IP addresses.</p>
-     */
     inline IpSet& AddIpAddresses(Aws::String&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The array of IP addresses in the IP address set. An IP address set can have a
-     * maximum of two IP addresses.</p>
-     */
     inline IpSet& AddIpAddresses(const char* value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The types of IP addresses included in this IP set. </p>
      */
     inline const IpAddressFamily& GetIpAddressFamily() const{ return m_ipAddressFamily; }
-
-    /**
-     * <p>The types of IP addresses included in this IP set. </p>
-     */
     inline bool IpAddressFamilyHasBeenSet() const { return m_ipAddressFamilyHasBeenSet; }
-
-    /**
-     * <p>The types of IP addresses included in this IP set. </p>
-     */
     inline void SetIpAddressFamily(const IpAddressFamily& value) { m_ipAddressFamilyHasBeenSet = true; m_ipAddressFamily = value; }
-
-    /**
-     * <p>The types of IP addresses included in this IP set. </p>
-     */
     inline void SetIpAddressFamily(IpAddressFamily&& value) { m_ipAddressFamilyHasBeenSet = true; m_ipAddressFamily = std::move(value); }
-
-    /**
-     * <p>The types of IP addresses included in this IP set. </p>
-     */
     inline IpSet& WithIpAddressFamily(const IpAddressFamily& value) { SetIpAddressFamily(value); return *this;}
-
-    /**
-     * <p>The types of IP addresses included in this IP set. </p>
-     */
     inline IpSet& WithIpAddressFamily(IpAddressFamily&& value) { SetIpAddressFamily(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_ipAddresses;

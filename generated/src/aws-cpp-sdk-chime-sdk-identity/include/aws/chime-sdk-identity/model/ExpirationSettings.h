@@ -38,67 +38,29 @@ namespace Model
     AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The period in days after which an <code>AppInstanceUser</code> will be
      * automatically deleted.</p>
      */
     inline int GetExpirationDays() const{ return m_expirationDays; }
-
-    /**
-     * <p>The period in days after which an <code>AppInstanceUser</code> will be
-     * automatically deleted.</p>
-     */
     inline bool ExpirationDaysHasBeenSet() const { return m_expirationDaysHasBeenSet; }
-
-    /**
-     * <p>The period in days after which an <code>AppInstanceUser</code> will be
-     * automatically deleted.</p>
-     */
     inline void SetExpirationDays(int value) { m_expirationDaysHasBeenSet = true; m_expirationDays = value; }
-
-    /**
-     * <p>The period in days after which an <code>AppInstanceUser</code> will be
-     * automatically deleted.</p>
-     */
     inline ExpirationSettings& WithExpirationDays(int value) { SetExpirationDays(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the conditions under which an <code>AppInstanceUser</code> will
      * expire.</p>
      */
     inline const ExpirationCriterion& GetExpirationCriterion() const{ return m_expirationCriterion; }
-
-    /**
-     * <p>Specifies the conditions under which an <code>AppInstanceUser</code> will
-     * expire.</p>
-     */
     inline bool ExpirationCriterionHasBeenSet() const { return m_expirationCriterionHasBeenSet; }
-
-    /**
-     * <p>Specifies the conditions under which an <code>AppInstanceUser</code> will
-     * expire.</p>
-     */
     inline void SetExpirationCriterion(const ExpirationCriterion& value) { m_expirationCriterionHasBeenSet = true; m_expirationCriterion = value; }
-
-    /**
-     * <p>Specifies the conditions under which an <code>AppInstanceUser</code> will
-     * expire.</p>
-     */
     inline void SetExpirationCriterion(ExpirationCriterion&& value) { m_expirationCriterionHasBeenSet = true; m_expirationCriterion = std::move(value); }
-
-    /**
-     * <p>Specifies the conditions under which an <code>AppInstanceUser</code> will
-     * expire.</p>
-     */
     inline ExpirationSettings& WithExpirationCriterion(const ExpirationCriterion& value) { SetExpirationCriterion(value); return *this;}
-
-    /**
-     * <p>Specifies the conditions under which an <code>AppInstanceUser</code> will
-     * expire.</p>
-     */
     inline ExpirationSettings& WithExpirationCriterion(ExpirationCriterion&& value) { SetExpirationCriterion(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_expirationDays;

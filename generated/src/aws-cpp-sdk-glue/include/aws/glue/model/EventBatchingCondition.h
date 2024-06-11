@@ -37,55 +37,27 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Number of events that must be received from Amazon EventBridge before
      * EventBridge event trigger fires.</p>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
-
-    /**
-     * <p>Number of events that must be received from Amazon EventBridge before
-     * EventBridge event trigger fires.</p>
-     */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
-
-    /**
-     * <p>Number of events that must be received from Amazon EventBridge before
-     * EventBridge event trigger fires.</p>
-     */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
-
-    /**
-     * <p>Number of events that must be received from Amazon EventBridge before
-     * EventBridge event trigger fires.</p>
-     */
     inline EventBatchingCondition& WithBatchSize(int value) { SetBatchSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Window of time in seconds after which EventBridge event trigger fires. Window
      * starts when first event is received.</p>
      */
     inline int GetBatchWindow() const{ return m_batchWindow; }
-
-    /**
-     * <p>Window of time in seconds after which EventBridge event trigger fires. Window
-     * starts when first event is received.</p>
-     */
     inline bool BatchWindowHasBeenSet() const { return m_batchWindowHasBeenSet; }
-
-    /**
-     * <p>Window of time in seconds after which EventBridge event trigger fires. Window
-     * starts when first event is received.</p>
-     */
     inline void SetBatchWindow(int value) { m_batchWindowHasBeenSet = true; m_batchWindow = value; }
-
-    /**
-     * <p>Window of time in seconds after which EventBridge event trigger fires. Window
-     * starts when first event is received.</p>
-     */
     inline EventBatchingCondition& WithBatchWindow(int value) { SetBatchWindow(value); return *this;}
-
+    ///@}
   private:
 
     int m_batchSize;

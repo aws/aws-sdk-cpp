@@ -32,46 +32,19 @@ namespace Model
     AWS_MEDIAPACKAGEVOD_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ID of a MediaPackage VOD PackagingGroup resource.
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * The ID of a MediaPackage VOD PackagingGroup resource.
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * The ID of a MediaPackage VOD PackagingGroup resource.
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * The ID of a MediaPackage VOD PackagingGroup resource.
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * The ID of a MediaPackage VOD PackagingGroup resource.
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * The ID of a MediaPackage VOD PackagingGroup resource.
-     */
     inline DescribePackagingGroupRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * The ID of a MediaPackage VOD PackagingGroup resource.
-     */
     inline DescribePackagingGroupRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * The ID of a MediaPackage VOD PackagingGroup resource.
-     */
     inline DescribePackagingGroupRequest& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

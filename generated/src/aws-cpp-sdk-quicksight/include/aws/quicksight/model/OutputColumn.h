@@ -39,149 +39,57 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The display name of the column..</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The display name of the column..</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The display name of the column..</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The display name of the column..</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The display name of the column..</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The display name of the column..</p>
-     */
     inline OutputColumn& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The display name of the column..</p>
-     */
     inline OutputColumn& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The display name of the column..</p>
-     */
     inline OutputColumn& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description for a column.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description for a column.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description for a column.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description for a column.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description for a column.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description for a column.</p>
-     */
     inline OutputColumn& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for a column.</p>
-     */
     inline OutputColumn& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for a column.</p>
-     */
     inline OutputColumn& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data type of the column.</p>
      */
     inline const ColumnDataType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The data type of the column.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The data type of the column.</p>
-     */
     inline void SetType(const ColumnDataType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The data type of the column.</p>
-     */
     inline void SetType(ColumnDataType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The data type of the column.</p>
-     */
     inline OutputColumn& WithType(const ColumnDataType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The data type of the column.</p>
-     */
     inline OutputColumn& WithType(ColumnDataType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sub data type of the column.</p>
      */
     inline const ColumnDataSubType& GetSubType() const{ return m_subType; }
-
-    /**
-     * <p>The sub data type of the column.</p>
-     */
     inline bool SubTypeHasBeenSet() const { return m_subTypeHasBeenSet; }
-
-    /**
-     * <p>The sub data type of the column.</p>
-     */
     inline void SetSubType(const ColumnDataSubType& value) { m_subTypeHasBeenSet = true; m_subType = value; }
-
-    /**
-     * <p>The sub data type of the column.</p>
-     */
     inline void SetSubType(ColumnDataSubType&& value) { m_subTypeHasBeenSet = true; m_subType = std::move(value); }
-
-    /**
-     * <p>The sub data type of the column.</p>
-     */
     inline OutputColumn& WithSubType(const ColumnDataSubType& value) { SetSubType(value); return *this;}
-
-    /**
-     * <p>The sub data type of the column.</p>
-     */
     inline OutputColumn& WithSubType(ColumnDataSubType&& value) { SetSubType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

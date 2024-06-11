@@ -44,79 +44,31 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The date when the applied Object Lock retention will expire on all objects
      * set by the Batch Operations job.</p>
      */
     inline const Aws::Utils::DateTime& GetRetainUntilDate() const{ return m_retainUntilDate; }
-
-    /**
-     * <p>The date when the applied Object Lock retention will expire on all objects
-     * set by the Batch Operations job.</p>
-     */
     inline bool RetainUntilDateHasBeenSet() const { return m_retainUntilDateHasBeenSet; }
-
-    /**
-     * <p>The date when the applied Object Lock retention will expire on all objects
-     * set by the Batch Operations job.</p>
-     */
     inline void SetRetainUntilDate(const Aws::Utils::DateTime& value) { m_retainUntilDateHasBeenSet = true; m_retainUntilDate = value; }
-
-    /**
-     * <p>The date when the applied Object Lock retention will expire on all objects
-     * set by the Batch Operations job.</p>
-     */
     inline void SetRetainUntilDate(Aws::Utils::DateTime&& value) { m_retainUntilDateHasBeenSet = true; m_retainUntilDate = std::move(value); }
-
-    /**
-     * <p>The date when the applied Object Lock retention will expire on all objects
-     * set by the Batch Operations job.</p>
-     */
     inline S3Retention& WithRetainUntilDate(const Aws::Utils::DateTime& value) { SetRetainUntilDate(value); return *this;}
-
-    /**
-     * <p>The date when the applied Object Lock retention will expire on all objects
-     * set by the Batch Operations job.</p>
-     */
     inline S3Retention& WithRetainUntilDate(Aws::Utils::DateTime&& value) { SetRetainUntilDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Object Lock retention mode to be applied to all objects in the Batch
      * Operations job.</p>
      */
     inline const S3ObjectLockRetentionMode& GetMode() const{ return m_mode; }
-
-    /**
-     * <p>The Object Lock retention mode to be applied to all objects in the Batch
-     * Operations job.</p>
-     */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-
-    /**
-     * <p>The Object Lock retention mode to be applied to all objects in the Batch
-     * Operations job.</p>
-     */
     inline void SetMode(const S3ObjectLockRetentionMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-
-    /**
-     * <p>The Object Lock retention mode to be applied to all objects in the Batch
-     * Operations job.</p>
-     */
     inline void SetMode(S3ObjectLockRetentionMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-
-    /**
-     * <p>The Object Lock retention mode to be applied to all objects in the Batch
-     * Operations job.</p>
-     */
     inline S3Retention& WithMode(const S3ObjectLockRetentionMode& value) { SetMode(value); return *this;}
-
-    /**
-     * <p>The Object Lock retention mode to be applied to all objects in the Batch
-     * Operations job.</p>
-     */
     inline S3Retention& WithMode(S3ObjectLockRetentionMode&& value) { SetMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_retainUntilDate;

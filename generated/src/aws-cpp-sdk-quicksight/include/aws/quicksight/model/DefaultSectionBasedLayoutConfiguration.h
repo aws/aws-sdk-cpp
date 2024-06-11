@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines the screen canvas size options for a section-based layout.</p>
      */
     inline const SectionBasedLayoutCanvasSizeOptions& GetCanvasSizeOptions() const{ return m_canvasSizeOptions; }
-
-    /**
-     * <p>Determines the screen canvas size options for a section-based layout.</p>
-     */
     inline bool CanvasSizeOptionsHasBeenSet() const { return m_canvasSizeOptionsHasBeenSet; }
-
-    /**
-     * <p>Determines the screen canvas size options for a section-based layout.</p>
-     */
     inline void SetCanvasSizeOptions(const SectionBasedLayoutCanvasSizeOptions& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = value; }
-
-    /**
-     * <p>Determines the screen canvas size options for a section-based layout.</p>
-     */
     inline void SetCanvasSizeOptions(SectionBasedLayoutCanvasSizeOptions&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::move(value); }
-
-    /**
-     * <p>Determines the screen canvas size options for a section-based layout.</p>
-     */
     inline DefaultSectionBasedLayoutConfiguration& WithCanvasSizeOptions(const SectionBasedLayoutCanvasSizeOptions& value) { SetCanvasSizeOptions(value); return *this;}
-
-    /**
-     * <p>Determines the screen canvas size options for a section-based layout.</p>
-     */
     inline DefaultSectionBasedLayoutConfiguration& WithCanvasSizeOptions(SectionBasedLayoutCanvasSizeOptions&& value) { SetCanvasSizeOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SectionBasedLayoutCanvasSizeOptions m_canvasSizeOptions;

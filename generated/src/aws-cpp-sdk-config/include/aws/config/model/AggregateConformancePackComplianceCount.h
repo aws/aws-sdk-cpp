@@ -36,47 +36,25 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Number of compliant conformance packs.</p>
      */
     inline int GetCompliantConformancePackCount() const{ return m_compliantConformancePackCount; }
-
-    /**
-     * <p>Number of compliant conformance packs.</p>
-     */
     inline bool CompliantConformancePackCountHasBeenSet() const { return m_compliantConformancePackCountHasBeenSet; }
-
-    /**
-     * <p>Number of compliant conformance packs.</p>
-     */
     inline void SetCompliantConformancePackCount(int value) { m_compliantConformancePackCountHasBeenSet = true; m_compliantConformancePackCount = value; }
-
-    /**
-     * <p>Number of compliant conformance packs.</p>
-     */
     inline AggregateConformancePackComplianceCount& WithCompliantConformancePackCount(int value) { SetCompliantConformancePackCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Number of noncompliant conformance packs.</p>
      */
     inline int GetNonCompliantConformancePackCount() const{ return m_nonCompliantConformancePackCount; }
-
-    /**
-     * <p>Number of noncompliant conformance packs.</p>
-     */
     inline bool NonCompliantConformancePackCountHasBeenSet() const { return m_nonCompliantConformancePackCountHasBeenSet; }
-
-    /**
-     * <p>Number of noncompliant conformance packs.</p>
-     */
     inline void SetNonCompliantConformancePackCount(int value) { m_nonCompliantConformancePackCountHasBeenSet = true; m_nonCompliantConformancePackCount = value; }
-
-    /**
-     * <p>Number of noncompliant conformance packs.</p>
-     */
     inline AggregateConformancePackComplianceCount& WithNonCompliantConformancePackCount(int value) { SetNonCompliantConformancePackCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_compliantConformancePackCount;

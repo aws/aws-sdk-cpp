@@ -33,53 +33,27 @@ namespace Model
     AWS_PROTON_API CancelServicePipelineDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The service pipeline detail data that's returned by Proton.</p>
      */
     inline const ServicePipeline& GetPipeline() const{ return m_pipeline; }
-
-    /**
-     * <p>The service pipeline detail data that's returned by Proton.</p>
-     */
     inline void SetPipeline(const ServicePipeline& value) { m_pipeline = value; }
-
-    /**
-     * <p>The service pipeline detail data that's returned by Proton.</p>
-     */
     inline void SetPipeline(ServicePipeline&& value) { m_pipeline = std::move(value); }
-
-    /**
-     * <p>The service pipeline detail data that's returned by Proton.</p>
-     */
     inline CancelServicePipelineDeploymentResult& WithPipeline(const ServicePipeline& value) { SetPipeline(value); return *this;}
-
-    /**
-     * <p>The service pipeline detail data that's returned by Proton.</p>
-     */
     inline CancelServicePipelineDeploymentResult& WithPipeline(ServicePipeline&& value) { SetPipeline(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CancelServicePipelineDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CancelServicePipelineDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CancelServicePipelineDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServicePipeline m_pipeline;

@@ -39,93 +39,33 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration for protected query results.</p>
      */
     inline const MembershipProtectedQueryOutputConfiguration& GetOutputConfiguration() const{ return m_outputConfiguration; }
-
-    /**
-     * <p>Configuration for protected query results.</p>
-     */
     inline bool OutputConfigurationHasBeenSet() const { return m_outputConfigurationHasBeenSet; }
-
-    /**
-     * <p>Configuration for protected query results.</p>
-     */
     inline void SetOutputConfiguration(const MembershipProtectedQueryOutputConfiguration& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = value; }
-
-    /**
-     * <p>Configuration for protected query results.</p>
-     */
     inline void SetOutputConfiguration(MembershipProtectedQueryOutputConfiguration&& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = std::move(value); }
-
-    /**
-     * <p>Configuration for protected query results.</p>
-     */
     inline MembershipProtectedQueryResultConfiguration& WithOutputConfiguration(const MembershipProtectedQueryOutputConfiguration& value) { SetOutputConfiguration(value); return *this;}
-
-    /**
-     * <p>Configuration for protected query results.</p>
-     */
     inline MembershipProtectedQueryResultConfiguration& WithOutputConfiguration(MembershipProtectedQueryOutputConfiguration&& value) { SetOutputConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique ARN for an IAM role that is used by Clean Rooms to write protected
      * query results to the result location, given by the member who can receive
      * results.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The unique ARN for an IAM role that is used by Clean Rooms to write protected
-     * query results to the result location, given by the member who can receive
-     * results.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The unique ARN for an IAM role that is used by Clean Rooms to write protected
-     * query results to the result location, given by the member who can receive
-     * results.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The unique ARN for an IAM role that is used by Clean Rooms to write protected
-     * query results to the result location, given by the member who can receive
-     * results.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The unique ARN for an IAM role that is used by Clean Rooms to write protected
-     * query results to the result location, given by the member who can receive
-     * results.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The unique ARN for an IAM role that is used by Clean Rooms to write protected
-     * query results to the result location, given by the member who can receive
-     * results.</p>
-     */
     inline MembershipProtectedQueryResultConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The unique ARN for an IAM role that is used by Clean Rooms to write protected
-     * query results to the result location, given by the member who can receive
-     * results.</p>
-     */
     inline MembershipProtectedQueryResultConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ARN for an IAM role that is used by Clean Rooms to write protected
-     * query results to the result location, given by the member who can receive
-     * results.</p>
-     */
     inline MembershipProtectedQueryResultConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     MembershipProtectedQueryOutputConfiguration m_outputConfiguration;

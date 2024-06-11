@@ -36,47 +36,25 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Indicates the count of occurences of the given statistic. </p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p> Indicates the count of occurences of the given statistic. </p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p> Indicates the count of occurences of the given statistic. </p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p> Indicates the count of occurences of the given statistic. </p>
-     */
     inline CountPercent& WithCount(int value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Indicates the percentage of occurances of the given statistic. </p>
      */
     inline double GetPercentage() const{ return m_percentage; }
-
-    /**
-     * <p> Indicates the percentage of occurances of the given statistic. </p>
-     */
     inline bool PercentageHasBeenSet() const { return m_percentageHasBeenSet; }
-
-    /**
-     * <p> Indicates the percentage of occurances of the given statistic. </p>
-     */
     inline void SetPercentage(double value) { m_percentageHasBeenSet = true; m_percentage = value; }
-
-    /**
-     * <p> Indicates the percentage of occurances of the given statistic. </p>
-     */
     inline CountPercent& WithPercentage(double value) { SetPercentage(value); return *this;}
-
+    ///@}
   private:
 
     int m_count;

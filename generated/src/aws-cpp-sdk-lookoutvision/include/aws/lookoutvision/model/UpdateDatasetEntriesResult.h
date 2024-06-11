@@ -33,53 +33,27 @@ namespace Model
     AWS_LOOKOUTFORVISION_API UpdateDatasetEntriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the dataset update.</p>
      */
     inline const DatasetStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the dataset update.</p>
-     */
     inline void SetStatus(const DatasetStatus& value) { m_status = value; }
-
-    /**
-     * <p>The status of the dataset update.</p>
-     */
     inline void SetStatus(DatasetStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of the dataset update.</p>
-     */
     inline UpdateDatasetEntriesResult& WithStatus(const DatasetStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the dataset update.</p>
-     */
     inline UpdateDatasetEntriesResult& WithStatus(DatasetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateDatasetEntriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateDatasetEntriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateDatasetEntriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DatasetStatus m_status;

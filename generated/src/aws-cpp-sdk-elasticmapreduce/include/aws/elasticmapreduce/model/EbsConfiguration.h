@@ -39,75 +39,30 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of Amazon EBS volume specifications attached to a cluster
      * instance.</p>
      */
     inline const Aws::Vector<EbsBlockDeviceConfig>& GetEbsBlockDeviceConfigs() const{ return m_ebsBlockDeviceConfigs; }
-
-    /**
-     * <p>An array of Amazon EBS volume specifications attached to a cluster
-     * instance.</p>
-     */
     inline bool EbsBlockDeviceConfigsHasBeenSet() const { return m_ebsBlockDeviceConfigsHasBeenSet; }
-
-    /**
-     * <p>An array of Amazon EBS volume specifications attached to a cluster
-     * instance.</p>
-     */
     inline void SetEbsBlockDeviceConfigs(const Aws::Vector<EbsBlockDeviceConfig>& value) { m_ebsBlockDeviceConfigsHasBeenSet = true; m_ebsBlockDeviceConfigs = value; }
-
-    /**
-     * <p>An array of Amazon EBS volume specifications attached to a cluster
-     * instance.</p>
-     */
     inline void SetEbsBlockDeviceConfigs(Aws::Vector<EbsBlockDeviceConfig>&& value) { m_ebsBlockDeviceConfigsHasBeenSet = true; m_ebsBlockDeviceConfigs = std::move(value); }
-
-    /**
-     * <p>An array of Amazon EBS volume specifications attached to a cluster
-     * instance.</p>
-     */
     inline EbsConfiguration& WithEbsBlockDeviceConfigs(const Aws::Vector<EbsBlockDeviceConfig>& value) { SetEbsBlockDeviceConfigs(value); return *this;}
-
-    /**
-     * <p>An array of Amazon EBS volume specifications attached to a cluster
-     * instance.</p>
-     */
     inline EbsConfiguration& WithEbsBlockDeviceConfigs(Aws::Vector<EbsBlockDeviceConfig>&& value) { SetEbsBlockDeviceConfigs(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of Amazon EBS volume specifications attached to a cluster
-     * instance.</p>
-     */
     inline EbsConfiguration& AddEbsBlockDeviceConfigs(const EbsBlockDeviceConfig& value) { m_ebsBlockDeviceConfigsHasBeenSet = true; m_ebsBlockDeviceConfigs.push_back(value); return *this; }
-
-    /**
-     * <p>An array of Amazon EBS volume specifications attached to a cluster
-     * instance.</p>
-     */
     inline EbsConfiguration& AddEbsBlockDeviceConfigs(EbsBlockDeviceConfig&& value) { m_ebsBlockDeviceConfigsHasBeenSet = true; m_ebsBlockDeviceConfigs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
-
-    /**
-     * <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
-     */
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
-
-    /**
-     * <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
-     */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
-
-    /**
-     * <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
-     */
     inline EbsConfiguration& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EbsBlockDeviceConfig> m_ebsBlockDeviceConfigs;

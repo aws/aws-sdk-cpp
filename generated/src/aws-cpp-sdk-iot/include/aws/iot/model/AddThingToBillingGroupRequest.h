@@ -32,177 +32,62 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
      * might take several seconds for the detachment to propagate.</p> 
      */
     inline const Aws::String& GetBillingGroupName() const{ return m_billingGroupName; }
-
-    /**
-     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
-     * might take several seconds for the detachment to propagate.</p> 
-     */
     inline bool BillingGroupNameHasBeenSet() const { return m_billingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
-     * might take several seconds for the detachment to propagate.</p> 
-     */
     inline void SetBillingGroupName(const Aws::String& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = value; }
-
-    /**
-     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
-     * might take several seconds for the detachment to propagate.</p> 
-     */
     inline void SetBillingGroupName(Aws::String&& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
-     * might take several seconds for the detachment to propagate.</p> 
-     */
     inline void SetBillingGroupName(const char* value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
-     * might take several seconds for the detachment to propagate.</p> 
-     */
     inline AddThingToBillingGroupRequest& WithBillingGroupName(const Aws::String& value) { SetBillingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
-     * might take several seconds for the detachment to propagate.</p> 
-     */
     inline AddThingToBillingGroupRequest& WithBillingGroupName(Aws::String&& value) { SetBillingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
-     * might take several seconds for the detachment to propagate.</p> 
-     */
     inline AddThingToBillingGroupRequest& WithBillingGroupName(const char* value) { SetBillingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the billing group.</p>
      */
     inline const Aws::String& GetBillingGroupArn() const{ return m_billingGroupArn; }
-
-    /**
-     * <p>The ARN of the billing group.</p>
-     */
     inline bool BillingGroupArnHasBeenSet() const { return m_billingGroupArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the billing group.</p>
-     */
     inline void SetBillingGroupArn(const Aws::String& value) { m_billingGroupArnHasBeenSet = true; m_billingGroupArn = value; }
-
-    /**
-     * <p>The ARN of the billing group.</p>
-     */
     inline void SetBillingGroupArn(Aws::String&& value) { m_billingGroupArnHasBeenSet = true; m_billingGroupArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the billing group.</p>
-     */
     inline void SetBillingGroupArn(const char* value) { m_billingGroupArnHasBeenSet = true; m_billingGroupArn.assign(value); }
-
-    /**
-     * <p>The ARN of the billing group.</p>
-     */
     inline AddThingToBillingGroupRequest& WithBillingGroupArn(const Aws::String& value) { SetBillingGroupArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the billing group.</p>
-     */
     inline AddThingToBillingGroupRequest& WithBillingGroupArn(Aws::String&& value) { SetBillingGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the billing group.</p>
-     */
     inline AddThingToBillingGroupRequest& WithBillingGroupArn(const char* value) { SetBillingGroupArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the thing to be added to the billing group.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
-
-    /**
-     * <p>The name of the thing to be added to the billing group.</p>
-     */
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-
-    /**
-     * <p>The name of the thing to be added to the billing group.</p>
-     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-
-    /**
-     * <p>The name of the thing to be added to the billing group.</p>
-     */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-
-    /**
-     * <p>The name of the thing to be added to the billing group.</p>
-     */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-
-    /**
-     * <p>The name of the thing to be added to the billing group.</p>
-     */
     inline AddThingToBillingGroupRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-
-    /**
-     * <p>The name of the thing to be added to the billing group.</p>
-     */
     inline AddThingToBillingGroupRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the thing to be added to the billing group.</p>
-     */
     inline AddThingToBillingGroupRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the thing to be added to the billing group.</p>
      */
     inline const Aws::String& GetThingArn() const{ return m_thingArn; }
-
-    /**
-     * <p>The ARN of the thing to be added to the billing group.</p>
-     */
     inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the thing to be added to the billing group.</p>
-     */
     inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
-
-    /**
-     * <p>The ARN of the thing to be added to the billing group.</p>
-     */
     inline void SetThingArn(Aws::String&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the thing to be added to the billing group.</p>
-     */
     inline void SetThingArn(const char* value) { m_thingArnHasBeenSet = true; m_thingArn.assign(value); }
-
-    /**
-     * <p>The ARN of the thing to be added to the billing group.</p>
-     */
     inline AddThingToBillingGroupRequest& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the thing to be added to the billing group.</p>
-     */
     inline AddThingToBillingGroupRequest& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the thing to be added to the billing group.</p>
-     */
     inline AddThingToBillingGroupRequest& WithThingArn(const char* value) { SetThingArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_billingGroupName;

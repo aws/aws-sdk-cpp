@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
      * <p>This parameter allows (through its <a
@@ -44,71 +45,16 @@ namespace Model
      * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
-
-    /**
-     * <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
-
-    /**
-     * <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
-
-    /**
-     * <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
-
-    /**
-     * <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
-
-    /**
-     * <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline AttachRolePolicyRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-
-    /**
-     * <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline AttachRolePolicyRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline AttachRolePolicyRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
      * <p>For more information about ARNs, see <a
@@ -117,70 +63,14 @@ namespace Model
      * Reference</i>.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline AttachRolePolicyRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline AttachRolePolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline AttachRolePolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleName;

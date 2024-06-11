@@ -38,42 +38,18 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The conditional formatting for the shape background color of a filled map
      * visual.</p>
      */
     inline const ConditionalFormattingColor& GetBackgroundColor() const{ return m_backgroundColor; }
-
-    /**
-     * <p>The conditional formatting for the shape background color of a filled map
-     * visual.</p>
-     */
     inline bool BackgroundColorHasBeenSet() const { return m_backgroundColorHasBeenSet; }
-
-    /**
-     * <p>The conditional formatting for the shape background color of a filled map
-     * visual.</p>
-     */
     inline void SetBackgroundColor(const ConditionalFormattingColor& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = value; }
-
-    /**
-     * <p>The conditional formatting for the shape background color of a filled map
-     * visual.</p>
-     */
     inline void SetBackgroundColor(ConditionalFormattingColor&& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = std::move(value); }
-
-    /**
-     * <p>The conditional formatting for the shape background color of a filled map
-     * visual.</p>
-     */
     inline ShapeConditionalFormat& WithBackgroundColor(const ConditionalFormattingColor& value) { SetBackgroundColor(value); return *this;}
-
-    /**
-     * <p>The conditional formatting for the shape background color of a filled map
-     * visual.</p>
-     */
     inline ShapeConditionalFormat& WithBackgroundColor(ConditionalFormattingColor&& value) { SetBackgroundColor(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConditionalFormattingColor m_backgroundColor;

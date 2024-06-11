@@ -37,46 +37,19 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Name of the associated budget.</p>
      */
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
-
-    /**
-     * <p>Name of the associated budget.</p>
-     */
     inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
-
-    /**
-     * <p>Name of the associated budget.</p>
-     */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
-
-    /**
-     * <p>Name of the associated budget.</p>
-     */
     inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
-
-    /**
-     * <p>Name of the associated budget.</p>
-     */
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
-
-    /**
-     * <p>Name of the associated budget.</p>
-     */
     inline BudgetDetail& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
-
-    /**
-     * <p>Name of the associated budget.</p>
-     */
     inline BudgetDetail& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the associated budget.</p>
-     */
     inline BudgetDetail& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_budgetName;

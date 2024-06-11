@@ -37,46 +37,19 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The DevEUI value.</p>
      */
     inline const Aws::String& GetDevEui() const{ return m_devEui; }
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline bool DevEuiHasBeenSet() const { return m_devEuiHasBeenSet; }
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline void SetDevEui(const Aws::String& value) { m_devEuiHasBeenSet = true; m_devEui = value; }
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline void SetDevEui(Aws::String&& value) { m_devEuiHasBeenSet = true; m_devEui = std::move(value); }
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline void SetDevEui(const char* value) { m_devEuiHasBeenSet = true; m_devEui.assign(value); }
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline LoRaWANListDevice& WithDevEui(const Aws::String& value) { SetDevEui(value); return *this;}
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline LoRaWANListDevice& WithDevEui(Aws::String&& value) { SetDevEui(std::move(value)); return *this;}
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline LoRaWANListDevice& WithDevEui(const char* value) { SetDevEui(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_devEui;

@@ -41,108 +41,43 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The ID of the client connection.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
-
-    /**
-     * <p>The ID of the client connection.</p>
-     */
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the client connection.</p>
-     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-
-    /**
-     * <p>The ID of the client connection.</p>
-     */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-
-    /**
-     * <p>The ID of the client connection.</p>
-     */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-
-    /**
-     * <p>The ID of the client connection.</p>
-     */
     inline TerminateConnectionStatus& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-
-    /**
-     * <p>The ID of the client connection.</p>
-     */
     inline TerminateConnectionStatus& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the client connection.</p>
-     */
     inline TerminateConnectionStatus& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the client connection.</p>
      */
     inline const ClientVpnConnectionStatus& GetPreviousStatus() const{ return m_previousStatus; }
-
-    /**
-     * <p>The state of the client connection.</p>
-     */
     inline bool PreviousStatusHasBeenSet() const { return m_previousStatusHasBeenSet; }
-
-    /**
-     * <p>The state of the client connection.</p>
-     */
     inline void SetPreviousStatus(const ClientVpnConnectionStatus& value) { m_previousStatusHasBeenSet = true; m_previousStatus = value; }
-
-    /**
-     * <p>The state of the client connection.</p>
-     */
     inline void SetPreviousStatus(ClientVpnConnectionStatus&& value) { m_previousStatusHasBeenSet = true; m_previousStatus = std::move(value); }
-
-    /**
-     * <p>The state of the client connection.</p>
-     */
     inline TerminateConnectionStatus& WithPreviousStatus(const ClientVpnConnectionStatus& value) { SetPreviousStatus(value); return *this;}
-
-    /**
-     * <p>The state of the client connection.</p>
-     */
     inline TerminateConnectionStatus& WithPreviousStatus(ClientVpnConnectionStatus&& value) { SetPreviousStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A message about the status of the client connection, if applicable.</p>
      */
     inline const ClientVpnConnectionStatus& GetCurrentStatus() const{ return m_currentStatus; }
-
-    /**
-     * <p>A message about the status of the client connection, if applicable.</p>
-     */
     inline bool CurrentStatusHasBeenSet() const { return m_currentStatusHasBeenSet; }
-
-    /**
-     * <p>A message about the status of the client connection, if applicable.</p>
-     */
     inline void SetCurrentStatus(const ClientVpnConnectionStatus& value) { m_currentStatusHasBeenSet = true; m_currentStatus = value; }
-
-    /**
-     * <p>A message about the status of the client connection, if applicable.</p>
-     */
     inline void SetCurrentStatus(ClientVpnConnectionStatus&& value) { m_currentStatusHasBeenSet = true; m_currentStatus = std::move(value); }
-
-    /**
-     * <p>A message about the status of the client connection, if applicable.</p>
-     */
     inline TerminateConnectionStatus& WithCurrentStatus(const ClientVpnConnectionStatus& value) { SetCurrentStatus(value); return *this;}
-
-    /**
-     * <p>A message about the status of the client connection, if applicable.</p>
-     */
     inline TerminateConnectionStatus& WithCurrentStatus(ClientVpnConnectionStatus&& value) { SetCurrentStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectionId;

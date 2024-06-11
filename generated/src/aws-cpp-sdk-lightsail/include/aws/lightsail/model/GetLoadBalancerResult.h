@@ -33,53 +33,27 @@ namespace Model
     AWS_LIGHTSAIL_API GetLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object containing information about your load balancer.</p>
      */
     inline const LoadBalancer& GetLoadBalancer() const{ return m_loadBalancer; }
-
-    /**
-     * <p>An object containing information about your load balancer.</p>
-     */
     inline void SetLoadBalancer(const LoadBalancer& value) { m_loadBalancer = value; }
-
-    /**
-     * <p>An object containing information about your load balancer.</p>
-     */
     inline void SetLoadBalancer(LoadBalancer&& value) { m_loadBalancer = std::move(value); }
-
-    /**
-     * <p>An object containing information about your load balancer.</p>
-     */
     inline GetLoadBalancerResult& WithLoadBalancer(const LoadBalancer& value) { SetLoadBalancer(value); return *this;}
-
-    /**
-     * <p>An object containing information about your load balancer.</p>
-     */
     inline GetLoadBalancerResult& WithLoadBalancer(LoadBalancer&& value) { SetLoadBalancer(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetLoadBalancerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetLoadBalancerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetLoadBalancerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LoadBalancer m_loadBalancer;

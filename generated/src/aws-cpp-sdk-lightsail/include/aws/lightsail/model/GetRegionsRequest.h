@@ -32,63 +32,29 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A Boolean value indicating whether to also include Availability Zones in your
      * get regions request. Availability Zones are indicated with a letter:
      * <code>us-east-2a</code>.</p>
      */
     inline bool GetIncludeAvailabilityZones() const{ return m_includeAvailabilityZones; }
-
-    /**
-     * <p>A Boolean value indicating whether to also include Availability Zones in your
-     * get regions request. Availability Zones are indicated with a letter:
-     * <code>us-east-2a</code>.</p>
-     */
     inline bool IncludeAvailabilityZonesHasBeenSet() const { return m_includeAvailabilityZonesHasBeenSet; }
-
-    /**
-     * <p>A Boolean value indicating whether to also include Availability Zones in your
-     * get regions request. Availability Zones are indicated with a letter:
-     * <code>us-east-2a</code>.</p>
-     */
     inline void SetIncludeAvailabilityZones(bool value) { m_includeAvailabilityZonesHasBeenSet = true; m_includeAvailabilityZones = value; }
-
-    /**
-     * <p>A Boolean value indicating whether to also include Availability Zones in your
-     * get regions request. Availability Zones are indicated with a letter:
-     * <code>us-east-2a</code>.</p>
-     */
     inline GetRegionsRequest& WithIncludeAvailabilityZones(bool value) { SetIncludeAvailabilityZones(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean value indicating whether to also include Availability Zones for
      * databases in your get regions request. Availability Zones are indicated with a
      * letter (<code>us-east-2a</code>).</p>
      */
     inline bool GetIncludeRelationalDatabaseAvailabilityZones() const{ return m_includeRelationalDatabaseAvailabilityZones; }
-
-    /**
-     * <p>A Boolean value indicating whether to also include Availability Zones for
-     * databases in your get regions request. Availability Zones are indicated with a
-     * letter (<code>us-east-2a</code>).</p>
-     */
     inline bool IncludeRelationalDatabaseAvailabilityZonesHasBeenSet() const { return m_includeRelationalDatabaseAvailabilityZonesHasBeenSet; }
-
-    /**
-     * <p>A Boolean value indicating whether to also include Availability Zones for
-     * databases in your get regions request. Availability Zones are indicated with a
-     * letter (<code>us-east-2a</code>).</p>
-     */
     inline void SetIncludeRelationalDatabaseAvailabilityZones(bool value) { m_includeRelationalDatabaseAvailabilityZonesHasBeenSet = true; m_includeRelationalDatabaseAvailabilityZones = value; }
-
-    /**
-     * <p>A Boolean value indicating whether to also include Availability Zones for
-     * databases in your get regions request. Availability Zones are indicated with a
-     * letter (<code>us-east-2a</code>).</p>
-     */
     inline GetRegionsRequest& WithIncludeRelationalDatabaseAvailabilityZones(bool value) { SetIncludeRelationalDatabaseAvailabilityZones(value); return *this;}
-
+    ///@}
   private:
 
     bool m_includeAvailabilityZones;

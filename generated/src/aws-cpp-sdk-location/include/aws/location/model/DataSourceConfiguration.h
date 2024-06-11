@@ -47,6 +47,7 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies how the results of an operation will be stored by the caller. </p>
      * <p>Valid values include:</p> <ul> <li> <p> <code>SingleUse</code> specifies that
@@ -55,52 +56,12 @@ namespace Model
      * <p>Default value: <code>SingleUse</code> </p>
      */
     inline const IntendedUse& GetIntendedUse() const{ return m_intendedUse; }
-
-    /**
-     * <p>Specifies how the results of an operation will be stored by the caller. </p>
-     * <p>Valid values include:</p> <ul> <li> <p> <code>SingleUse</code> specifies that
-     * the results won't be stored. </p> </li> <li> <p> <code>Storage</code> specifies
-     * that the result can be cached or stored in a database.</p> </li> </ul>
-     * <p>Default value: <code>SingleUse</code> </p>
-     */
     inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }
-
-    /**
-     * <p>Specifies how the results of an operation will be stored by the caller. </p>
-     * <p>Valid values include:</p> <ul> <li> <p> <code>SingleUse</code> specifies that
-     * the results won't be stored. </p> </li> <li> <p> <code>Storage</code> specifies
-     * that the result can be cached or stored in a database.</p> </li> </ul>
-     * <p>Default value: <code>SingleUse</code> </p>
-     */
     inline void SetIntendedUse(const IntendedUse& value) { m_intendedUseHasBeenSet = true; m_intendedUse = value; }
-
-    /**
-     * <p>Specifies how the results of an operation will be stored by the caller. </p>
-     * <p>Valid values include:</p> <ul> <li> <p> <code>SingleUse</code> specifies that
-     * the results won't be stored. </p> </li> <li> <p> <code>Storage</code> specifies
-     * that the result can be cached or stored in a database.</p> </li> </ul>
-     * <p>Default value: <code>SingleUse</code> </p>
-     */
     inline void SetIntendedUse(IntendedUse&& value) { m_intendedUseHasBeenSet = true; m_intendedUse = std::move(value); }
-
-    /**
-     * <p>Specifies how the results of an operation will be stored by the caller. </p>
-     * <p>Valid values include:</p> <ul> <li> <p> <code>SingleUse</code> specifies that
-     * the results won't be stored. </p> </li> <li> <p> <code>Storage</code> specifies
-     * that the result can be cached or stored in a database.</p> </li> </ul>
-     * <p>Default value: <code>SingleUse</code> </p>
-     */
     inline DataSourceConfiguration& WithIntendedUse(const IntendedUse& value) { SetIntendedUse(value); return *this;}
-
-    /**
-     * <p>Specifies how the results of an operation will be stored by the caller. </p>
-     * <p>Valid values include:</p> <ul> <li> <p> <code>SingleUse</code> specifies that
-     * the results won't be stored. </p> </li> <li> <p> <code>Storage</code> specifies
-     * that the result can be cached or stored in a database.</p> </li> </ul>
-     * <p>Default value: <code>SingleUse</code> </p>
-     */
     inline DataSourceConfiguration& WithIntendedUse(IntendedUse&& value) { SetIntendedUse(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IntendedUse m_intendedUse;

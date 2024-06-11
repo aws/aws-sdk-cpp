@@ -38,83 +38,32 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier assigned to the slot type.</p>
      */
     inline const Aws::String& GetSlotTypeId() const{ return m_slotTypeId; }
-
-    /**
-     * <p>The unique identifier assigned to the slot type.</p>
-     */
     inline bool SlotTypeIdHasBeenSet() const { return m_slotTypeIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier assigned to the slot type.</p>
-     */
     inline void SetSlotTypeId(const Aws::String& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = value; }
-
-    /**
-     * <p>The unique identifier assigned to the slot type.</p>
-     */
     inline void SetSlotTypeId(Aws::String&& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = std::move(value); }
-
-    /**
-     * <p>The unique identifier assigned to the slot type.</p>
-     */
     inline void SetSlotTypeId(const char* value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId.assign(value); }
-
-    /**
-     * <p>The unique identifier assigned to the slot type.</p>
-     */
     inline Specifications& WithSlotTypeId(const Aws::String& value) { SetSlotTypeId(value); return *this;}
-
-    /**
-     * <p>The unique identifier assigned to the slot type.</p>
-     */
     inline Specifications& WithSlotTypeId(Aws::String&& value) { SetSlotTypeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier assigned to the slot type.</p>
-     */
     inline Specifications& WithSlotTypeId(const char* value) { SetSlotTypeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the elicitation setting details for constituent sub slots of a
      * composite slot.</p>
      */
     inline const SubSlotValueElicitationSetting& GetValueElicitationSetting() const{ return m_valueElicitationSetting; }
-
-    /**
-     * <p>Specifies the elicitation setting details for constituent sub slots of a
-     * composite slot.</p>
-     */
     inline bool ValueElicitationSettingHasBeenSet() const { return m_valueElicitationSettingHasBeenSet; }
-
-    /**
-     * <p>Specifies the elicitation setting details for constituent sub slots of a
-     * composite slot.</p>
-     */
     inline void SetValueElicitationSetting(const SubSlotValueElicitationSetting& value) { m_valueElicitationSettingHasBeenSet = true; m_valueElicitationSetting = value; }
-
-    /**
-     * <p>Specifies the elicitation setting details for constituent sub slots of a
-     * composite slot.</p>
-     */
     inline void SetValueElicitationSetting(SubSlotValueElicitationSetting&& value) { m_valueElicitationSettingHasBeenSet = true; m_valueElicitationSetting = std::move(value); }
-
-    /**
-     * <p>Specifies the elicitation setting details for constituent sub slots of a
-     * composite slot.</p>
-     */
     inline Specifications& WithValueElicitationSetting(const SubSlotValueElicitationSetting& value) { SetValueElicitationSetting(value); return *this;}
-
-    /**
-     * <p>Specifies the elicitation setting details for constituent sub slots of a
-     * composite slot.</p>
-     */
     inline Specifications& WithValueElicitationSetting(SubSlotValueElicitationSetting&& value) { SetValueElicitationSetting(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_slotTypeId;

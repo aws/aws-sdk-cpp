@@ -38,57 +38,27 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
      */
     inline const ArcAxisDisplayRange& GetRange() const{ return m_range; }
-
-    /**
-     * <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
-     */
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-
-    /**
-     * <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetRange(const ArcAxisDisplayRange& value) { m_rangeHasBeenSet = true; m_range = value; }
-
-    /**
-     * <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetRange(ArcAxisDisplayRange&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
-
-    /**
-     * <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
-     */
     inline ArcAxisConfiguration& WithRange(const ArcAxisDisplayRange& value) { SetRange(value); return *this;}
-
-    /**
-     * <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
-     */
     inline ArcAxisConfiguration& WithRange(ArcAxisDisplayRange&& value) { SetRange(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reserved range of the arc axis.</p>
      */
     inline int GetReserveRange() const{ return m_reserveRange; }
-
-    /**
-     * <p>The reserved range of the arc axis.</p>
-     */
     inline bool ReserveRangeHasBeenSet() const { return m_reserveRangeHasBeenSet; }
-
-    /**
-     * <p>The reserved range of the arc axis.</p>
-     */
     inline void SetReserveRange(int value) { m_reserveRangeHasBeenSet = true; m_reserveRange = value; }
-
-    /**
-     * <p>The reserved range of the arc axis.</p>
-     */
     inline ArcAxisConfiguration& WithReserveRange(int value) { SetReserveRange(value); return *this;}
-
+    ///@}
   private:
 
     ArcAxisDisplayRange m_range;

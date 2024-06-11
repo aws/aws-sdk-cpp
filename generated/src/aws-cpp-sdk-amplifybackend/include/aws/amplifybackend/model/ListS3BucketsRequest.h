@@ -35,46 +35,19 @@ namespace Model
     AWS_AMPLIFYBACKEND_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline ListS3BucketsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline ListS3BucketsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline ListS3BucketsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

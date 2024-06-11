@@ -39,54 +39,20 @@ namespace Model
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The remote write URL in the Amazon Managed Service for Prometheus workspace
      * to send metrics to.</p>
      */
     inline const Aws::String& GetRemoteWriteUrl() const{ return m_remoteWriteUrl; }
-
-    /**
-     * <p>The remote write URL in the Amazon Managed Service for Prometheus workspace
-     * to send metrics to.</p>
-     */
     inline bool RemoteWriteUrlHasBeenSet() const { return m_remoteWriteUrlHasBeenSet; }
-
-    /**
-     * <p>The remote write URL in the Amazon Managed Service for Prometheus workspace
-     * to send metrics to.</p>
-     */
     inline void SetRemoteWriteUrl(const Aws::String& value) { m_remoteWriteUrlHasBeenSet = true; m_remoteWriteUrl = value; }
-
-    /**
-     * <p>The remote write URL in the Amazon Managed Service for Prometheus workspace
-     * to send metrics to.</p>
-     */
     inline void SetRemoteWriteUrl(Aws::String&& value) { m_remoteWriteUrlHasBeenSet = true; m_remoteWriteUrl = std::move(value); }
-
-    /**
-     * <p>The remote write URL in the Amazon Managed Service for Prometheus workspace
-     * to send metrics to.</p>
-     */
     inline void SetRemoteWriteUrl(const char* value) { m_remoteWriteUrlHasBeenSet = true; m_remoteWriteUrl.assign(value); }
-
-    /**
-     * <p>The remote write URL in the Amazon Managed Service for Prometheus workspace
-     * to send metrics to.</p>
-     */
     inline PrometheusMonitoringConfiguration& WithRemoteWriteUrl(const Aws::String& value) { SetRemoteWriteUrl(value); return *this;}
-
-    /**
-     * <p>The remote write URL in the Amazon Managed Service for Prometheus workspace
-     * to send metrics to.</p>
-     */
     inline PrometheusMonitoringConfiguration& WithRemoteWriteUrl(Aws::String&& value) { SetRemoteWriteUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The remote write URL in the Amazon Managed Service for Prometheus workspace
-     * to send metrics to.</p>
-     */
     inline PrometheusMonitoringConfiguration& WithRemoteWriteUrl(const char* value) { SetRemoteWriteUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_remoteWriteUrl;

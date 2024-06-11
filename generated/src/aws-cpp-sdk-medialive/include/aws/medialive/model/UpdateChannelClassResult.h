@@ -39,43 +39,25 @@ namespace Model
     AWS_MEDIALIVE_API UpdateChannelClassResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Channel& GetChannel() const{ return m_channel; }
-
-    
     inline void SetChannel(const Channel& value) { m_channel = value; }
-
-    
     inline void SetChannel(Channel&& value) { m_channel = std::move(value); }
-
-    
     inline UpdateChannelClassResult& WithChannel(const Channel& value) { SetChannel(value); return *this;}
-
-    
     inline UpdateChannelClassResult& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateChannelClassResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateChannelClassResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateChannelClassResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Channel m_channel;

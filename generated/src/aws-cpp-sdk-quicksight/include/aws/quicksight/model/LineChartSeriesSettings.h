@@ -39,67 +39,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
      */
     inline const LineChartLineStyleSettings& GetLineStyleSettings() const{ return m_lineStyleSettings; }
-
-    /**
-     * <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
-     */
     inline bool LineStyleSettingsHasBeenSet() const { return m_lineStyleSettingsHasBeenSet; }
-
-    /**
-     * <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
-     */
     inline void SetLineStyleSettings(const LineChartLineStyleSettings& value) { m_lineStyleSettingsHasBeenSet = true; m_lineStyleSettings = value; }
-
-    /**
-     * <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
-     */
     inline void SetLineStyleSettings(LineChartLineStyleSettings&& value) { m_lineStyleSettingsHasBeenSet = true; m_lineStyleSettings = std::move(value); }
-
-    /**
-     * <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
-     */
     inline LineChartSeriesSettings& WithLineStyleSettings(const LineChartLineStyleSettings& value) { SetLineStyleSettings(value); return *this;}
-
-    /**
-     * <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
-     */
     inline LineChartSeriesSettings& WithLineStyleSettings(LineChartLineStyleSettings&& value) { SetLineStyleSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
      */
     inline const LineChartMarkerStyleSettings& GetMarkerStyleSettings() const{ return m_markerStyleSettings; }
-
-    /**
-     * <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
-     */
     inline bool MarkerStyleSettingsHasBeenSet() const { return m_markerStyleSettingsHasBeenSet; }
-
-    /**
-     * <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
-     */
     inline void SetMarkerStyleSettings(const LineChartMarkerStyleSettings& value) { m_markerStyleSettingsHasBeenSet = true; m_markerStyleSettings = value; }
-
-    /**
-     * <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
-     */
     inline void SetMarkerStyleSettings(LineChartMarkerStyleSettings&& value) { m_markerStyleSettingsHasBeenSet = true; m_markerStyleSettings = std::move(value); }
-
-    /**
-     * <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
-     */
     inline LineChartSeriesSettings& WithMarkerStyleSettings(const LineChartMarkerStyleSettings& value) { SetMarkerStyleSettings(value); return *this;}
-
-    /**
-     * <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
-     */
     inline LineChartSeriesSettings& WithMarkerStyleSettings(LineChartMarkerStyleSettings&& value) { SetMarkerStyleSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LineChartLineStyleSettings m_lineStyleSettings;

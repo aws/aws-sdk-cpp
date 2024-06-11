@@ -32,54 +32,20 @@ namespace Model
     AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The insight's unique identifier. Use the GetInsightSummaries action to
      * retrieve an InsightId.</p>
      */
     inline const Aws::String& GetInsightId() const{ return m_insightId; }
-
-    /**
-     * <p>The insight's unique identifier. Use the GetInsightSummaries action to
-     * retrieve an InsightId.</p>
-     */
     inline bool InsightIdHasBeenSet() const { return m_insightIdHasBeenSet; }
-
-    /**
-     * <p>The insight's unique identifier. Use the GetInsightSummaries action to
-     * retrieve an InsightId.</p>
-     */
     inline void SetInsightId(const Aws::String& value) { m_insightIdHasBeenSet = true; m_insightId = value; }
-
-    /**
-     * <p>The insight's unique identifier. Use the GetInsightSummaries action to
-     * retrieve an InsightId.</p>
-     */
     inline void SetInsightId(Aws::String&& value) { m_insightIdHasBeenSet = true; m_insightId = std::move(value); }
-
-    /**
-     * <p>The insight's unique identifier. Use the GetInsightSummaries action to
-     * retrieve an InsightId.</p>
-     */
     inline void SetInsightId(const char* value) { m_insightIdHasBeenSet = true; m_insightId.assign(value); }
-
-    /**
-     * <p>The insight's unique identifier. Use the GetInsightSummaries action to
-     * retrieve an InsightId.</p>
-     */
     inline GetInsightRequest& WithInsightId(const Aws::String& value) { SetInsightId(value); return *this;}
-
-    /**
-     * <p>The insight's unique identifier. Use the GetInsightSummaries action to
-     * retrieve an InsightId.</p>
-     */
     inline GetInsightRequest& WithInsightId(Aws::String&& value) { SetInsightId(std::move(value)); return *this;}
-
-    /**
-     * <p>The insight's unique identifier. Use the GetInsightSummaries action to
-     * retrieve an InsightId.</p>
-     */
     inline GetInsightRequest& WithInsightId(const char* value) { SetInsightId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_insightId;

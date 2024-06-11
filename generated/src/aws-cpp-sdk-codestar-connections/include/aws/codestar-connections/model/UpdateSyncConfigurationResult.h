@@ -33,53 +33,27 @@ namespace Model
     AWS_CODESTARCONNECTIONS_API UpdateSyncConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The information returned for the sync configuration to be updated.</p>
      */
     inline const SyncConfiguration& GetSyncConfiguration() const{ return m_syncConfiguration; }
-
-    /**
-     * <p>The information returned for the sync configuration to be updated.</p>
-     */
     inline void SetSyncConfiguration(const SyncConfiguration& value) { m_syncConfiguration = value; }
-
-    /**
-     * <p>The information returned for the sync configuration to be updated.</p>
-     */
     inline void SetSyncConfiguration(SyncConfiguration&& value) { m_syncConfiguration = std::move(value); }
-
-    /**
-     * <p>The information returned for the sync configuration to be updated.</p>
-     */
     inline UpdateSyncConfigurationResult& WithSyncConfiguration(const SyncConfiguration& value) { SetSyncConfiguration(value); return *this;}
-
-    /**
-     * <p>The information returned for the sync configuration to be updated.</p>
-     */
     inline UpdateSyncConfigurationResult& WithSyncConfiguration(SyncConfiguration&& value) { SetSyncConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateSyncConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateSyncConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateSyncConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SyncConfiguration m_syncConfiguration;

@@ -37,57 +37,27 @@ namespace Model
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount of storage used, in bytes.</p>
      */
     inline long long GetStorageUtilizedInBytes() const{ return m_storageUtilizedInBytes; }
-
-    /**
-     * <p>The amount of storage used, in bytes.</p>
-     */
     inline bool StorageUtilizedInBytesHasBeenSet() const { return m_storageUtilizedInBytesHasBeenSet; }
-
-    /**
-     * <p>The amount of storage used, in bytes.</p>
-     */
     inline void SetStorageUtilizedInBytes(long long value) { m_storageUtilizedInBytesHasBeenSet = true; m_storageUtilizedInBytes = value; }
-
-    /**
-     * <p>The amount of storage used, in bytes.</p>
-     */
     inline UserStorageMetadata& WithStorageUtilizedInBytes(long long value) { SetStorageUtilizedInBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The storage for a user.</p>
      */
     inline const StorageRuleType& GetStorageRule() const{ return m_storageRule; }
-
-    /**
-     * <p>The storage for a user.</p>
-     */
     inline bool StorageRuleHasBeenSet() const { return m_storageRuleHasBeenSet; }
-
-    /**
-     * <p>The storage for a user.</p>
-     */
     inline void SetStorageRule(const StorageRuleType& value) { m_storageRuleHasBeenSet = true; m_storageRule = value; }
-
-    /**
-     * <p>The storage for a user.</p>
-     */
     inline void SetStorageRule(StorageRuleType&& value) { m_storageRuleHasBeenSet = true; m_storageRule = std::move(value); }
-
-    /**
-     * <p>The storage for a user.</p>
-     */
     inline UserStorageMetadata& WithStorageRule(const StorageRuleType& value) { SetStorageRule(value); return *this;}
-
-    /**
-     * <p>The storage for a user.</p>
-     */
     inline UserStorageMetadata& WithStorageRule(StorageRuleType&& value) { SetStorageRule(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_storageUtilizedInBytes;

@@ -34,92 +34,40 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The output format for the software bill of materials (SBOM) report.</p>
      */
     inline const SbomReportFormat& GetReportFormat() const{ return m_reportFormat; }
-
-    /**
-     * <p>The output format for the software bill of materials (SBOM) report.</p>
-     */
     inline bool ReportFormatHasBeenSet() const { return m_reportFormatHasBeenSet; }
-
-    /**
-     * <p>The output format for the software bill of materials (SBOM) report.</p>
-     */
     inline void SetReportFormat(const SbomReportFormat& value) { m_reportFormatHasBeenSet = true; m_reportFormat = value; }
-
-    /**
-     * <p>The output format for the software bill of materials (SBOM) report.</p>
-     */
     inline void SetReportFormat(SbomReportFormat&& value) { m_reportFormatHasBeenSet = true; m_reportFormat = std::move(value); }
-
-    /**
-     * <p>The output format for the software bill of materials (SBOM) report.</p>
-     */
     inline CreateSbomExportRequest& WithReportFormat(const SbomReportFormat& value) { SetReportFormat(value); return *this;}
-
-    /**
-     * <p>The output format for the software bill of materials (SBOM) report.</p>
-     */
     inline CreateSbomExportRequest& WithReportFormat(SbomReportFormat&& value) { SetReportFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource filter criteria for the software bill of materials (SBOM)
      * report.</p>
      */
     inline const ResourceFilterCriteria& GetResourceFilterCriteria() const{ return m_resourceFilterCriteria; }
-
-    /**
-     * <p>The resource filter criteria for the software bill of materials (SBOM)
-     * report.</p>
-     */
     inline bool ResourceFilterCriteriaHasBeenSet() const { return m_resourceFilterCriteriaHasBeenSet; }
-
-    /**
-     * <p>The resource filter criteria for the software bill of materials (SBOM)
-     * report.</p>
-     */
     inline void SetResourceFilterCriteria(const ResourceFilterCriteria& value) { m_resourceFilterCriteriaHasBeenSet = true; m_resourceFilterCriteria = value; }
-
-    /**
-     * <p>The resource filter criteria for the software bill of materials (SBOM)
-     * report.</p>
-     */
     inline void SetResourceFilterCriteria(ResourceFilterCriteria&& value) { m_resourceFilterCriteriaHasBeenSet = true; m_resourceFilterCriteria = std::move(value); }
-
-    /**
-     * <p>The resource filter criteria for the software bill of materials (SBOM)
-     * report.</p>
-     */
     inline CreateSbomExportRequest& WithResourceFilterCriteria(const ResourceFilterCriteria& value) { SetResourceFilterCriteria(value); return *this;}
-
-    /**
-     * <p>The resource filter criteria for the software bill of materials (SBOM)
-     * report.</p>
-     */
     inline CreateSbomExportRequest& WithResourceFilterCriteria(ResourceFilterCriteria&& value) { SetResourceFilterCriteria(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Destination& GetS3Destination() const{ return m_s3Destination; }
-
-    
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-
-    
     inline void SetS3Destination(const Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-
-    
     inline void SetS3Destination(Destination&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-
-    
     inline CreateSbomExportRequest& WithS3Destination(const Destination& value) { SetS3Destination(value); return *this;}
-
-    
     inline CreateSbomExportRequest& WithS3Destination(Destination&& value) { SetS3Destination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SbomReportFormat m_reportFormat;

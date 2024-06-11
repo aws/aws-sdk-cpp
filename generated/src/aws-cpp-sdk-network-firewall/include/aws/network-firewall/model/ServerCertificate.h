@@ -50,54 +50,20 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
      * certificate that's used for inbound SSL/TLS inspection.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate that's used for inbound SSL/TLS inspection.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate that's used for inbound SSL/TLS inspection.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate that's used for inbound SSL/TLS inspection.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate that's used for inbound SSL/TLS inspection.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate that's used for inbound SSL/TLS inspection.</p>
-     */
     inline ServerCertificate& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate that's used for inbound SSL/TLS inspection.</p>
-     */
     inline ServerCertificate& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate that's used for inbound SSL/TLS inspection.</p>
-     */
     inline ServerCertificate& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

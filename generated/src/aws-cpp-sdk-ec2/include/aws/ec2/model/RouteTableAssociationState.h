@@ -41,77 +41,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The state of the association.</p>
      */
     inline const RouteTableAssociationStateCode& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the association.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of the association.</p>
-     */
     inline void SetState(const RouteTableAssociationStateCode& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of the association.</p>
-     */
     inline void SetState(RouteTableAssociationStateCode&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of the association.</p>
-     */
     inline RouteTableAssociationState& WithState(const RouteTableAssociationStateCode& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the association.</p>
-     */
     inline RouteTableAssociationState& WithState(RouteTableAssociationStateCode&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status message, if applicable.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>The status message, if applicable.</p>
-     */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p>The status message, if applicable.</p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p>The status message, if applicable.</p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p>The status message, if applicable.</p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p>The status message, if applicable.</p>
-     */
     inline RouteTableAssociationState& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>The status message, if applicable.</p>
-     */
     inline RouteTableAssociationState& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The status message, if applicable.</p>
-     */
     inline RouteTableAssociationState& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
-
+    ///@}
   private:
 
     RouteTableAssociationStateCode m_state;

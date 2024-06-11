@@ -39,149 +39,57 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique ID of the field that is targeted by the tooltip.</p>
      */
     inline const Aws::String& GetFieldId() const{ return m_fieldId; }
-
-    /**
-     * <p>The unique ID of the field that is targeted by the tooltip.</p>
-     */
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the field that is targeted by the tooltip.</p>
-     */
     inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-
-    /**
-     * <p>The unique ID of the field that is targeted by the tooltip.</p>
-     */
     inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the field that is targeted by the tooltip.</p>
-     */
     inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-
-    /**
-     * <p>The unique ID of the field that is targeted by the tooltip.</p>
-     */
     inline FieldTooltipItem& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the field that is targeted by the tooltip.</p>
-     */
     inline FieldTooltipItem& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the field that is targeted by the tooltip.</p>
-     */
     inline FieldTooltipItem& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The label of the tooltip item.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
-
-    /**
-     * <p>The label of the tooltip item.</p>
-     */
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-
-    /**
-     * <p>The label of the tooltip item.</p>
-     */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-
-    /**
-     * <p>The label of the tooltip item.</p>
-     */
     inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-
-    /**
-     * <p>The label of the tooltip item.</p>
-     */
     inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-
-    /**
-     * <p>The label of the tooltip item.</p>
-     */
     inline FieldTooltipItem& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-
-    /**
-     * <p>The label of the tooltip item.</p>
-     */
     inline FieldTooltipItem& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-
-    /**
-     * <p>The label of the tooltip item.</p>
-     */
     inline FieldTooltipItem& WithLabel(const char* value) { SetLabel(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The visibility of the tooltip item.</p>
      */
     inline const Visibility& GetVisibility() const{ return m_visibility; }
-
-    /**
-     * <p>The visibility of the tooltip item.</p>
-     */
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-
-    /**
-     * <p>The visibility of the tooltip item.</p>
-     */
     inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-
-    /**
-     * <p>The visibility of the tooltip item.</p>
-     */
     inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-
-    /**
-     * <p>The visibility of the tooltip item.</p>
-     */
     inline FieldTooltipItem& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-
-    /**
-     * <p>The visibility of the tooltip item.</p>
-     */
     inline FieldTooltipItem& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Determines the target of the field tooltip item in a combo chart visual.</p>
      */
     inline const TooltipTarget& GetTooltipTarget() const{ return m_tooltipTarget; }
-
-    /**
-     * <p>Determines the target of the field tooltip item in a combo chart visual.</p>
-     */
     inline bool TooltipTargetHasBeenSet() const { return m_tooltipTargetHasBeenSet; }
-
-    /**
-     * <p>Determines the target of the field tooltip item in a combo chart visual.</p>
-     */
     inline void SetTooltipTarget(const TooltipTarget& value) { m_tooltipTargetHasBeenSet = true; m_tooltipTarget = value; }
-
-    /**
-     * <p>Determines the target of the field tooltip item in a combo chart visual.</p>
-     */
     inline void SetTooltipTarget(TooltipTarget&& value) { m_tooltipTargetHasBeenSet = true; m_tooltipTarget = std::move(value); }
-
-    /**
-     * <p>Determines the target of the field tooltip item in a combo chart visual.</p>
-     */
     inline FieldTooltipItem& WithTooltipTarget(const TooltipTarget& value) { SetTooltipTarget(value); return *this;}
-
-    /**
-     * <p>Determines the target of the field tooltip item in a combo chart visual.</p>
-     */
     inline FieldTooltipItem& WithTooltipTarget(TooltipTarget&& value) { SetTooltipTarget(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldId;

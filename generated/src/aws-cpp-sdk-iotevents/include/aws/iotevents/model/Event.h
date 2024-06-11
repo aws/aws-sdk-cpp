@@ -40,47 +40,21 @@ namespace Model
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the event.</p>
      */
     inline const Aws::String& GetEventName() const{ return m_eventName; }
-
-    /**
-     * <p>The name of the event.</p>
-     */
     inline bool EventNameHasBeenSet() const { return m_eventNameHasBeenSet; }
-
-    /**
-     * <p>The name of the event.</p>
-     */
     inline void SetEventName(const Aws::String& value) { m_eventNameHasBeenSet = true; m_eventName = value; }
-
-    /**
-     * <p>The name of the event.</p>
-     */
     inline void SetEventName(Aws::String&& value) { m_eventNameHasBeenSet = true; m_eventName = std::move(value); }
-
-    /**
-     * <p>The name of the event.</p>
-     */
     inline void SetEventName(const char* value) { m_eventNameHasBeenSet = true; m_eventName.assign(value); }
-
-    /**
-     * <p>The name of the event.</p>
-     */
     inline Event& WithEventName(const Aws::String& value) { SetEventName(value); return *this;}
-
-    /**
-     * <p>The name of the event.</p>
-     */
     inline Event& WithEventName(Aws::String&& value) { SetEventName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the event.</p>
-     */
     inline Event& WithEventName(const char* value) { SetEventName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Optional. The Boolean expression that, when TRUE, causes the
      * <code>actions</code> to be performed. If not present, the actions are performed
@@ -88,104 +62,28 @@ namespace Model
      * performed (=FALSE).</p>
      */
     inline const Aws::String& GetCondition() const{ return m_condition; }
-
-    /**
-     * <p>Optional. The Boolean expression that, when TRUE, causes the
-     * <code>actions</code> to be performed. If not present, the actions are performed
-     * (=TRUE). If the expression result is not a Boolean value, the actions are not
-     * performed (=FALSE).</p>
-     */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-
-    /**
-     * <p>Optional. The Boolean expression that, when TRUE, causes the
-     * <code>actions</code> to be performed. If not present, the actions are performed
-     * (=TRUE). If the expression result is not a Boolean value, the actions are not
-     * performed (=FALSE).</p>
-     */
     inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
-
-    /**
-     * <p>Optional. The Boolean expression that, when TRUE, causes the
-     * <code>actions</code> to be performed. If not present, the actions are performed
-     * (=TRUE). If the expression result is not a Boolean value, the actions are not
-     * performed (=FALSE).</p>
-     */
     inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-
-    /**
-     * <p>Optional. The Boolean expression that, when TRUE, causes the
-     * <code>actions</code> to be performed. If not present, the actions are performed
-     * (=TRUE). If the expression result is not a Boolean value, the actions are not
-     * performed (=FALSE).</p>
-     */
     inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
-
-    /**
-     * <p>Optional. The Boolean expression that, when TRUE, causes the
-     * <code>actions</code> to be performed. If not present, the actions are performed
-     * (=TRUE). If the expression result is not a Boolean value, the actions are not
-     * performed (=FALSE).</p>
-     */
     inline Event& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
-
-    /**
-     * <p>Optional. The Boolean expression that, when TRUE, causes the
-     * <code>actions</code> to be performed. If not present, the actions are performed
-     * (=TRUE). If the expression result is not a Boolean value, the actions are not
-     * performed (=FALSE).</p>
-     */
     inline Event& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
-
-    /**
-     * <p>Optional. The Boolean expression that, when TRUE, causes the
-     * <code>actions</code> to be performed. If not present, the actions are performed
-     * (=TRUE). If the expression result is not a Boolean value, the actions are not
-     * performed (=FALSE).</p>
-     */
     inline Event& WithCondition(const char* value) { SetCondition(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The actions to be performed.</p>
      */
     inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
-
-    /**
-     * <p>The actions to be performed.</p>
-     */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-
-    /**
-     * <p>The actions to be performed.</p>
-     */
     inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-
-    /**
-     * <p>The actions to be performed.</p>
-     */
     inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-
-    /**
-     * <p>The actions to be performed.</p>
-     */
     inline Event& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
-
-    /**
-     * <p>The actions to be performed.</p>
-     */
     inline Event& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
-
-    /**
-     * <p>The actions to be performed.</p>
-     */
     inline Event& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-
-    /**
-     * <p>The actions to be performed.</p>
-     */
     inline Event& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_eventName;

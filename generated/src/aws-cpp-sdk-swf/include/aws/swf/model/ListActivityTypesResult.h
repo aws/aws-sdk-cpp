@@ -40,42 +40,20 @@ namespace Model
     AWS_SWF_API ListActivityTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>List of activity type information.</p>
      */
     inline const Aws::Vector<ActivityTypeInfo>& GetTypeInfos() const{ return m_typeInfos; }
-
-    /**
-     * <p>List of activity type information.</p>
-     */
     inline void SetTypeInfos(const Aws::Vector<ActivityTypeInfo>& value) { m_typeInfos = value; }
-
-    /**
-     * <p>List of activity type information.</p>
-     */
     inline void SetTypeInfos(Aws::Vector<ActivityTypeInfo>&& value) { m_typeInfos = std::move(value); }
-
-    /**
-     * <p>List of activity type information.</p>
-     */
     inline ListActivityTypesResult& WithTypeInfos(const Aws::Vector<ActivityTypeInfo>& value) { SetTypeInfos(value); return *this;}
-
-    /**
-     * <p>List of activity type information.</p>
-     */
     inline ListActivityTypesResult& WithTypeInfos(Aws::Vector<ActivityTypeInfo>&& value) { SetTypeInfos(std::move(value)); return *this;}
-
-    /**
-     * <p>List of activity type information.</p>
-     */
     inline ListActivityTypesResult& AddTypeInfos(const ActivityTypeInfo& value) { m_typeInfos.push_back(value); return *this; }
-
-    /**
-     * <p>List of activity type information.</p>
-     */
     inline ListActivityTypesResult& AddTypeInfos(ActivityTypeInfo&& value) { m_typeInfos.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
      * more results available. To retrieve the next page of results, make the call
@@ -84,83 +62,24 @@ namespace Model
      * determines how many results can be returned in a single call.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-
-    /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p>
-     */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-
-    /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p>
-     */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-
-    /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p>
-     */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-
-    /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p>
-     */
     inline ListActivityTypesResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-
-    /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p>
-     */
     inline ListActivityTypesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p>
-     */
     inline ListActivityTypesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListActivityTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListActivityTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListActivityTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ActivityTypeInfo> m_typeInfos;

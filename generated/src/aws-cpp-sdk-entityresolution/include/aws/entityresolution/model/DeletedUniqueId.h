@@ -37,46 +37,19 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The unique ID of the deleted item.</p>
      */
     inline const Aws::String& GetUniqueId() const{ return m_uniqueId; }
-
-    /**
-     * <p> The unique ID of the deleted item.</p>
-     */
     inline bool UniqueIdHasBeenSet() const { return m_uniqueIdHasBeenSet; }
-
-    /**
-     * <p> The unique ID of the deleted item.</p>
-     */
     inline void SetUniqueId(const Aws::String& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = value; }
-
-    /**
-     * <p> The unique ID of the deleted item.</p>
-     */
     inline void SetUniqueId(Aws::String&& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = std::move(value); }
-
-    /**
-     * <p> The unique ID of the deleted item.</p>
-     */
     inline void SetUniqueId(const char* value) { m_uniqueIdHasBeenSet = true; m_uniqueId.assign(value); }
-
-    /**
-     * <p> The unique ID of the deleted item.</p>
-     */
     inline DeletedUniqueId& WithUniqueId(const Aws::String& value) { SetUniqueId(value); return *this;}
-
-    /**
-     * <p> The unique ID of the deleted item.</p>
-     */
     inline DeletedUniqueId& WithUniqueId(Aws::String&& value) { SetUniqueId(std::move(value)); return *this;}
-
-    /**
-     * <p> The unique ID of the deleted item.</p>
-     */
     inline DeletedUniqueId& WithUniqueId(const char* value) { SetUniqueId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_uniqueId;

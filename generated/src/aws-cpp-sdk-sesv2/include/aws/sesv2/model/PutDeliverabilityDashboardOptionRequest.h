@@ -45,79 +45,31 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Specifies whether to enable the Deliverability dashboard. To enable the
      * dashboard, set this value to <code>true</code>.</p>
      */
     inline bool GetDashboardEnabled() const{ return m_dashboardEnabled; }
-
-    /**
-     * <p>Specifies whether to enable the Deliverability dashboard. To enable the
-     * dashboard, set this value to <code>true</code>.</p>
-     */
     inline bool DashboardEnabledHasBeenSet() const { return m_dashboardEnabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to enable the Deliverability dashboard. To enable the
-     * dashboard, set this value to <code>true</code>.</p>
-     */
     inline void SetDashboardEnabled(bool value) { m_dashboardEnabledHasBeenSet = true; m_dashboardEnabled = value; }
-
-    /**
-     * <p>Specifies whether to enable the Deliverability dashboard. To enable the
-     * dashboard, set this value to <code>true</code>.</p>
-     */
     inline PutDeliverabilityDashboardOptionRequest& WithDashboardEnabled(bool value) { SetDashboardEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of objects, one for each verified domain that you use to send email
      * and enabled the Deliverability dashboard for.</p>
      */
     inline const Aws::Vector<DomainDeliverabilityTrackingOption>& GetSubscribedDomains() const{ return m_subscribedDomains; }
-
-    /**
-     * <p>An array of objects, one for each verified domain that you use to send email
-     * and enabled the Deliverability dashboard for.</p>
-     */
     inline bool SubscribedDomainsHasBeenSet() const { return m_subscribedDomainsHasBeenSet; }
-
-    /**
-     * <p>An array of objects, one for each verified domain that you use to send email
-     * and enabled the Deliverability dashboard for.</p>
-     */
     inline void SetSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains = value; }
-
-    /**
-     * <p>An array of objects, one for each verified domain that you use to send email
-     * and enabled the Deliverability dashboard for.</p>
-     */
     inline void SetSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains = std::move(value); }
-
-    /**
-     * <p>An array of objects, one for each verified domain that you use to send email
-     * and enabled the Deliverability dashboard for.</p>
-     */
     inline PutDeliverabilityDashboardOptionRequest& WithSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { SetSubscribedDomains(value); return *this;}
-
-    /**
-     * <p>An array of objects, one for each verified domain that you use to send email
-     * and enabled the Deliverability dashboard for.</p>
-     */
     inline PutDeliverabilityDashboardOptionRequest& WithSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { SetSubscribedDomains(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of objects, one for each verified domain that you use to send email
-     * and enabled the Deliverability dashboard for.</p>
-     */
     inline PutDeliverabilityDashboardOptionRequest& AddSubscribedDomains(const DomainDeliverabilityTrackingOption& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains.push_back(value); return *this; }
-
-    /**
-     * <p>An array of objects, one for each verified domain that you use to send email
-     * and enabled the Deliverability dashboard for.</p>
-     */
     inline PutDeliverabilityDashboardOptionRequest& AddSubscribedDomains(DomainDeliverabilityTrackingOption&& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     bool m_dashboardEnabled;

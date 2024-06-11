@@ -37,77 +37,31 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the configuration set.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline PutConfigurationSetVdmOptionsRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline PutConfigurationSetVdmOptionsRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline PutConfigurationSetVdmOptionsRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The VDM options to apply to the configuration set.</p>
      */
     inline const VdmOptions& GetVdmOptions() const{ return m_vdmOptions; }
-
-    /**
-     * <p>The VDM options to apply to the configuration set.</p>
-     */
     inline bool VdmOptionsHasBeenSet() const { return m_vdmOptionsHasBeenSet; }
-
-    /**
-     * <p>The VDM options to apply to the configuration set.</p>
-     */
     inline void SetVdmOptions(const VdmOptions& value) { m_vdmOptionsHasBeenSet = true; m_vdmOptions = value; }
-
-    /**
-     * <p>The VDM options to apply to the configuration set.</p>
-     */
     inline void SetVdmOptions(VdmOptions&& value) { m_vdmOptionsHasBeenSet = true; m_vdmOptions = std::move(value); }
-
-    /**
-     * <p>The VDM options to apply to the configuration set.</p>
-     */
     inline PutConfigurationSetVdmOptionsRequest& WithVdmOptions(const VdmOptions& value) { SetVdmOptions(value); return *this;}
-
-    /**
-     * <p>The VDM options to apply to the configuration set.</p>
-     */
     inline PutConfigurationSetVdmOptionsRequest& WithVdmOptions(VdmOptions&& value) { SetVdmOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationSetName;

@@ -34,24 +34,15 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     
     inline const Rule& GetRule() const{ return m_rule; }
-
-    
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
-
-    
     inline void SetRule(const Rule& value) { m_ruleHasBeenSet = true; m_rule = value; }
-
-    
     inline void SetRule(Rule&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
-
-    
     inline DeleteRuleRequest& WithRule(const Rule& value) { SetRule(value); return *this;}
-
-    
     inline DeleteRuleRequest& WithRule(Rule&& value) { SetRule(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Rule m_rule;

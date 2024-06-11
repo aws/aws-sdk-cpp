@@ -40,87 +40,33 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The column that this operation acts on.</p>
      */
     inline const Aws::String& GetColumnName() const{ return m_columnName; }
-
-    /**
-     * <p>The column that this operation acts on.</p>
-     */
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
-
-    /**
-     * <p>The column that this operation acts on.</p>
-     */
     inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
-
-    /**
-     * <p>The column that this operation acts on.</p>
-     */
     inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
-
-    /**
-     * <p>The column that this operation acts on.</p>
-     */
     inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
-
-    /**
-     * <p>The column that this operation acts on.</p>
-     */
     inline UntagColumnOperation& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
-
-    /**
-     * <p>The column that this operation acts on.</p>
-     */
     inline UntagColumnOperation& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
-
-    /**
-     * <p>The column that this operation acts on.</p>
-     */
     inline UntagColumnOperation& WithColumnName(const char* value) { SetColumnName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The column tags to remove from this column.</p>
      */
     inline const Aws::Vector<ColumnTagName>& GetTagNames() const{ return m_tagNames; }
-
-    /**
-     * <p>The column tags to remove from this column.</p>
-     */
     inline bool TagNamesHasBeenSet() const { return m_tagNamesHasBeenSet; }
-
-    /**
-     * <p>The column tags to remove from this column.</p>
-     */
     inline void SetTagNames(const Aws::Vector<ColumnTagName>& value) { m_tagNamesHasBeenSet = true; m_tagNames = value; }
-
-    /**
-     * <p>The column tags to remove from this column.</p>
-     */
     inline void SetTagNames(Aws::Vector<ColumnTagName>&& value) { m_tagNamesHasBeenSet = true; m_tagNames = std::move(value); }
-
-    /**
-     * <p>The column tags to remove from this column.</p>
-     */
     inline UntagColumnOperation& WithTagNames(const Aws::Vector<ColumnTagName>& value) { SetTagNames(value); return *this;}
-
-    /**
-     * <p>The column tags to remove from this column.</p>
-     */
     inline UntagColumnOperation& WithTagNames(Aws::Vector<ColumnTagName>&& value) { SetTagNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The column tags to remove from this column.</p>
-     */
     inline UntagColumnOperation& AddTagNames(const ColumnTagName& value) { m_tagNamesHasBeenSet = true; m_tagNames.push_back(value); return *this; }
-
-    /**
-     * <p>The column tags to remove from this column.</p>
-     */
     inline UntagColumnOperation& AddTagNames(ColumnTagName&& value) { m_tagNamesHasBeenSet = true; m_tagNames.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_columnName;

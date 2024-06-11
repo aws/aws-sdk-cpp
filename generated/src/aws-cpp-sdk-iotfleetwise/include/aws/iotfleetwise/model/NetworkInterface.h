@@ -44,47 +44,21 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetInterfaceId() const{ return m_interfaceId; }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline bool InterfaceIdHasBeenSet() const { return m_interfaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline void SetInterfaceId(const Aws::String& value) { m_interfaceIdHasBeenSet = true; m_interfaceId = value; }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline void SetInterfaceId(Aws::String&& value) { m_interfaceIdHasBeenSet = true; m_interfaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline void SetInterfaceId(const char* value) { m_interfaceIdHasBeenSet = true; m_interfaceId.assign(value); }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline NetworkInterface& WithInterfaceId(const Aws::String& value) { SetInterfaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline NetworkInterface& WithInterfaceId(Aws::String&& value) { SetInterfaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline NetworkInterface& WithInterfaceId(const char* value) { SetInterfaceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code>
      * specifies a protocol that defines how data is communicated between electronic
@@ -92,158 +66,51 @@ namespace Model
      * how self-diagnostic data is communicated between ECUs.</p>
      */
     inline const NetworkInterfaceType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code>
-     * specifies a protocol that defines how data is communicated between electronic
-     * control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines
-     * how self-diagnostic data is communicated between ECUs.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code>
-     * specifies a protocol that defines how data is communicated between electronic
-     * control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines
-     * how self-diagnostic data is communicated between ECUs.</p>
-     */
     inline void SetType(const NetworkInterfaceType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code>
-     * specifies a protocol that defines how data is communicated between electronic
-     * control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines
-     * how self-diagnostic data is communicated between ECUs.</p>
-     */
     inline void SetType(NetworkInterfaceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code>
-     * specifies a protocol that defines how data is communicated between electronic
-     * control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines
-     * how self-diagnostic data is communicated between ECUs.</p>
-     */
     inline NetworkInterface& WithType(const NetworkInterfaceType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code>
-     * specifies a protocol that defines how data is communicated between electronic
-     * control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines
-     * how self-diagnostic data is communicated between ECUs.</p>
-     */
     inline NetworkInterface& WithType(NetworkInterfaceType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about a network interface specified by the Controller Area
      * Network (CAN) protocol.</p>
      */
     inline const CanInterface& GetCanInterface() const{ return m_canInterface; }
-
-    /**
-     * <p>Information about a network interface specified by the Controller Area
-     * Network (CAN) protocol.</p>
-     */
     inline bool CanInterfaceHasBeenSet() const { return m_canInterfaceHasBeenSet; }
-
-    /**
-     * <p>Information about a network interface specified by the Controller Area
-     * Network (CAN) protocol.</p>
-     */
     inline void SetCanInterface(const CanInterface& value) { m_canInterfaceHasBeenSet = true; m_canInterface = value; }
-
-    /**
-     * <p>Information about a network interface specified by the Controller Area
-     * Network (CAN) protocol.</p>
-     */
     inline void SetCanInterface(CanInterface&& value) { m_canInterfaceHasBeenSet = true; m_canInterface = std::move(value); }
-
-    /**
-     * <p>Information about a network interface specified by the Controller Area
-     * Network (CAN) protocol.</p>
-     */
     inline NetworkInterface& WithCanInterface(const CanInterface& value) { SetCanInterface(value); return *this;}
-
-    /**
-     * <p>Information about a network interface specified by the Controller Area
-     * Network (CAN) protocol.</p>
-     */
     inline NetworkInterface& WithCanInterface(CanInterface&& value) { SetCanInterface(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about a network interface specified by the On-board diagnostic
      * (OBD) II protocol.</p>
      */
     inline const ObdInterface& GetObdInterface() const{ return m_obdInterface; }
-
-    /**
-     * <p>Information about a network interface specified by the On-board diagnostic
-     * (OBD) II protocol.</p>
-     */
     inline bool ObdInterfaceHasBeenSet() const { return m_obdInterfaceHasBeenSet; }
-
-    /**
-     * <p>Information about a network interface specified by the On-board diagnostic
-     * (OBD) II protocol.</p>
-     */
     inline void SetObdInterface(const ObdInterface& value) { m_obdInterfaceHasBeenSet = true; m_obdInterface = value; }
-
-    /**
-     * <p>Information about a network interface specified by the On-board diagnostic
-     * (OBD) II protocol.</p>
-     */
     inline void SetObdInterface(ObdInterface&& value) { m_obdInterfaceHasBeenSet = true; m_obdInterface = std::move(value); }
-
-    /**
-     * <p>Information about a network interface specified by the On-board diagnostic
-     * (OBD) II protocol.</p>
-     */
     inline NetworkInterface& WithObdInterface(const ObdInterface& value) { SetObdInterface(value); return *this;}
-
-    /**
-     * <p>Information about a network interface specified by the On-board diagnostic
-     * (OBD) II protocol.</p>
-     */
     inline NetworkInterface& WithObdInterface(ObdInterface&& value) { SetObdInterface(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The vehicle middleware defined as a type of network interface. Examples of
      * vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
      */
     inline const VehicleMiddleware& GetVehicleMiddleware() const{ return m_vehicleMiddleware; }
-
-    /**
-     * <p>The vehicle middleware defined as a type of network interface. Examples of
-     * vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
-     */
     inline bool VehicleMiddlewareHasBeenSet() const { return m_vehicleMiddlewareHasBeenSet; }
-
-    /**
-     * <p>The vehicle middleware defined as a type of network interface. Examples of
-     * vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
-     */
     inline void SetVehicleMiddleware(const VehicleMiddleware& value) { m_vehicleMiddlewareHasBeenSet = true; m_vehicleMiddleware = value; }
-
-    /**
-     * <p>The vehicle middleware defined as a type of network interface. Examples of
-     * vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
-     */
     inline void SetVehicleMiddleware(VehicleMiddleware&& value) { m_vehicleMiddlewareHasBeenSet = true; m_vehicleMiddleware = std::move(value); }
-
-    /**
-     * <p>The vehicle middleware defined as a type of network interface. Examples of
-     * vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
-     */
     inline NetworkInterface& WithVehicleMiddleware(const VehicleMiddleware& value) { SetVehicleMiddleware(value); return *this;}
-
-    /**
-     * <p>The vehicle middleware defined as a type of network interface. Examples of
-     * vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
-     */
     inline NetworkInterface& WithVehicleMiddleware(VehicleMiddleware&& value) { SetVehicleMiddleware(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_interfaceId;

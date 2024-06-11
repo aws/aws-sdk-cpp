@@ -45,6 +45,7 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the document attribute used to sort the response. You can use any
      * field that has the <code>Sortable</code> flag set to true.</p> <p>You can also
@@ -53,113 +54,28 @@ namespace Model
      * <p>_version</p> </li> <li> <p>_view_count</p> </li> </ul>
      */
     inline const Aws::String& GetDocumentAttributeKey() const{ return m_documentAttributeKey; }
-
-    /**
-     * <p>The name of the document attribute used to sort the response. You can use any
-     * field that has the <code>Sortable</code> flag set to true.</p> <p>You can also
-     * sort by any of the following built-in attributes:</p> <ul> <li> <p>_category</p>
-     * </li> <li> <p>_created_at</p> </li> <li> <p>_last_updated_at</p> </li> <li>
-     * <p>_version</p> </li> <li> <p>_view_count</p> </li> </ul>
-     */
     inline bool DocumentAttributeKeyHasBeenSet() const { return m_documentAttributeKeyHasBeenSet; }
-
-    /**
-     * <p>The name of the document attribute used to sort the response. You can use any
-     * field that has the <code>Sortable</code> flag set to true.</p> <p>You can also
-     * sort by any of the following built-in attributes:</p> <ul> <li> <p>_category</p>
-     * </li> <li> <p>_created_at</p> </li> <li> <p>_last_updated_at</p> </li> <li>
-     * <p>_version</p> </li> <li> <p>_view_count</p> </li> </ul>
-     */
     inline void SetDocumentAttributeKey(const Aws::String& value) { m_documentAttributeKeyHasBeenSet = true; m_documentAttributeKey = value; }
-
-    /**
-     * <p>The name of the document attribute used to sort the response. You can use any
-     * field that has the <code>Sortable</code> flag set to true.</p> <p>You can also
-     * sort by any of the following built-in attributes:</p> <ul> <li> <p>_category</p>
-     * </li> <li> <p>_created_at</p> </li> <li> <p>_last_updated_at</p> </li> <li>
-     * <p>_version</p> </li> <li> <p>_view_count</p> </li> </ul>
-     */
     inline void SetDocumentAttributeKey(Aws::String&& value) { m_documentAttributeKeyHasBeenSet = true; m_documentAttributeKey = std::move(value); }
-
-    /**
-     * <p>The name of the document attribute used to sort the response. You can use any
-     * field that has the <code>Sortable</code> flag set to true.</p> <p>You can also
-     * sort by any of the following built-in attributes:</p> <ul> <li> <p>_category</p>
-     * </li> <li> <p>_created_at</p> </li> <li> <p>_last_updated_at</p> </li> <li>
-     * <p>_version</p> </li> <li> <p>_view_count</p> </li> </ul>
-     */
     inline void SetDocumentAttributeKey(const char* value) { m_documentAttributeKeyHasBeenSet = true; m_documentAttributeKey.assign(value); }
-
-    /**
-     * <p>The name of the document attribute used to sort the response. You can use any
-     * field that has the <code>Sortable</code> flag set to true.</p> <p>You can also
-     * sort by any of the following built-in attributes:</p> <ul> <li> <p>_category</p>
-     * </li> <li> <p>_created_at</p> </li> <li> <p>_last_updated_at</p> </li> <li>
-     * <p>_version</p> </li> <li> <p>_view_count</p> </li> </ul>
-     */
     inline SortingConfiguration& WithDocumentAttributeKey(const Aws::String& value) { SetDocumentAttributeKey(value); return *this;}
-
-    /**
-     * <p>The name of the document attribute used to sort the response. You can use any
-     * field that has the <code>Sortable</code> flag set to true.</p> <p>You can also
-     * sort by any of the following built-in attributes:</p> <ul> <li> <p>_category</p>
-     * </li> <li> <p>_created_at</p> </li> <li> <p>_last_updated_at</p> </li> <li>
-     * <p>_version</p> </li> <li> <p>_view_count</p> </li> </ul>
-     */
     inline SortingConfiguration& WithDocumentAttributeKey(Aws::String&& value) { SetDocumentAttributeKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the document attribute used to sort the response. You can use any
-     * field that has the <code>Sortable</code> flag set to true.</p> <p>You can also
-     * sort by any of the following built-in attributes:</p> <ul> <li> <p>_category</p>
-     * </li> <li> <p>_created_at</p> </li> <li> <p>_last_updated_at</p> </li> <li>
-     * <p>_version</p> </li> <li> <p>_view_count</p> </li> </ul>
-     */
     inline SortingConfiguration& WithDocumentAttributeKey(const char* value) { SetDocumentAttributeKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The order that the results should be returned in. In case of ties, the
      * relevance assigned to the result by Amazon Kendra is used as the
      * tie-breaker.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>The order that the results should be returned in. In case of ties, the
-     * relevance assigned to the result by Amazon Kendra is used as the
-     * tie-breaker.</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>The order that the results should be returned in. In case of ties, the
-     * relevance assigned to the result by Amazon Kendra is used as the
-     * tie-breaker.</p>
-     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>The order that the results should be returned in. In case of ties, the
-     * relevance assigned to the result by Amazon Kendra is used as the
-     * tie-breaker.</p>
-     */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>The order that the results should be returned in. In case of ties, the
-     * relevance assigned to the result by Amazon Kendra is used as the
-     * tie-breaker.</p>
-     */
     inline SortingConfiguration& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>The order that the results should be returned in. In case of ties, the
-     * relevance assigned to the result by Amazon Kendra is used as the
-     * tie-breaker.</p>
-     */
     inline SortingConfiguration& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_documentAttributeKey;

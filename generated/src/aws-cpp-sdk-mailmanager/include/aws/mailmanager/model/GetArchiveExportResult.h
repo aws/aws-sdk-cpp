@@ -42,209 +42,93 @@ namespace Model
     AWS_MAILMANAGER_API GetArchiveExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier of the archive the email export was performed from.</p>
      */
     inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
-
-    /**
-     * <p>The identifier of the archive the email export was performed from.</p>
-     */
     inline void SetArchiveId(const Aws::String& value) { m_archiveId = value; }
-
-    /**
-     * <p>The identifier of the archive the email export was performed from.</p>
-     */
     inline void SetArchiveId(Aws::String&& value) { m_archiveId = std::move(value); }
-
-    /**
-     * <p>The identifier of the archive the email export was performed from.</p>
-     */
     inline void SetArchiveId(const char* value) { m_archiveId.assign(value); }
-
-    /**
-     * <p>The identifier of the archive the email export was performed from.</p>
-     */
     inline GetArchiveExportResult& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-
-    /**
-     * <p>The identifier of the archive the email export was performed from.</p>
-     */
     inline GetArchiveExportResult& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the archive the email export was performed from.</p>
-     */
     inline GetArchiveExportResult& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Where the exported emails are being delivered.</p>
      */
     inline const ExportDestinationConfiguration& GetExportDestinationConfiguration() const{ return m_exportDestinationConfiguration; }
-
-    /**
-     * <p>Where the exported emails are being delivered.</p>
-     */
     inline void SetExportDestinationConfiguration(const ExportDestinationConfiguration& value) { m_exportDestinationConfiguration = value; }
-
-    /**
-     * <p>Where the exported emails are being delivered.</p>
-     */
     inline void SetExportDestinationConfiguration(ExportDestinationConfiguration&& value) { m_exportDestinationConfiguration = std::move(value); }
-
-    /**
-     * <p>Where the exported emails are being delivered.</p>
-     */
     inline GetArchiveExportResult& WithExportDestinationConfiguration(const ExportDestinationConfiguration& value) { SetExportDestinationConfiguration(value); return *this;}
-
-    /**
-     * <p>Where the exported emails are being delivered.</p>
-     */
     inline GetArchiveExportResult& WithExportDestinationConfiguration(ExportDestinationConfiguration&& value) { SetExportDestinationConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The criteria used to filter emails included in the export.</p>
      */
     inline const ArchiveFilters& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>The criteria used to filter emails included in the export.</p>
-     */
     inline void SetFilters(const ArchiveFilters& value) { m_filters = value; }
-
-    /**
-     * <p>The criteria used to filter emails included in the export.</p>
-     */
     inline void SetFilters(ArchiveFilters&& value) { m_filters = std::move(value); }
-
-    /**
-     * <p>The criteria used to filter emails included in the export.</p>
-     */
     inline GetArchiveExportResult& WithFilters(const ArchiveFilters& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>The criteria used to filter emails included in the export.</p>
-     */
     inline GetArchiveExportResult& WithFilters(ArchiveFilters&& value) { SetFilters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The start of the timestamp range the exported emails cover.</p>
      */
     inline const Aws::Utils::DateTime& GetFromTimestamp() const{ return m_fromTimestamp; }
-
-    /**
-     * <p>The start of the timestamp range the exported emails cover.</p>
-     */
     inline void SetFromTimestamp(const Aws::Utils::DateTime& value) { m_fromTimestamp = value; }
-
-    /**
-     * <p>The start of the timestamp range the exported emails cover.</p>
-     */
     inline void SetFromTimestamp(Aws::Utils::DateTime&& value) { m_fromTimestamp = std::move(value); }
-
-    /**
-     * <p>The start of the timestamp range the exported emails cover.</p>
-     */
     inline GetArchiveExportResult& WithFromTimestamp(const Aws::Utils::DateTime& value) { SetFromTimestamp(value); return *this;}
-
-    /**
-     * <p>The start of the timestamp range the exported emails cover.</p>
-     */
     inline GetArchiveExportResult& WithFromTimestamp(Aws::Utils::DateTime&& value) { SetFromTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of email items included in the export.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of email items included in the export.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of email items included in the export.</p>
-     */
     inline GetArchiveExportResult& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of the export job.</p>
      */
     inline const ExportStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the export job.</p>
-     */
     inline void SetStatus(const ExportStatus& value) { m_status = value; }
-
-    /**
-     * <p>The current status of the export job.</p>
-     */
     inline void SetStatus(ExportStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the export job.</p>
-     */
     inline GetArchiveExportResult& WithStatus(const ExportStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the export job.</p>
-     */
     inline GetArchiveExportResult& WithStatus(ExportStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The end of the date range the exported emails cover.</p>
      */
     inline const Aws::Utils::DateTime& GetToTimestamp() const{ return m_toTimestamp; }
-
-    /**
-     * <p>The end of the date range the exported emails cover.</p>
-     */
     inline void SetToTimestamp(const Aws::Utils::DateTime& value) { m_toTimestamp = value; }
-
-    /**
-     * <p>The end of the date range the exported emails cover.</p>
-     */
     inline void SetToTimestamp(Aws::Utils::DateTime&& value) { m_toTimestamp = std::move(value); }
-
-    /**
-     * <p>The end of the date range the exported emails cover.</p>
-     */
     inline GetArchiveExportResult& WithToTimestamp(const Aws::Utils::DateTime& value) { SetToTimestamp(value); return *this;}
-
-    /**
-     * <p>The end of the date range the exported emails cover.</p>
-     */
     inline GetArchiveExportResult& WithToTimestamp(Aws::Utils::DateTime&& value) { SetToTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetArchiveExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetArchiveExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetArchiveExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_archiveId;

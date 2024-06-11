@@ -37,36 +37,17 @@ namespace Model
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The image configuration for a worker type.</p>
      */
     inline const ImageConfigurationInput& GetImageConfiguration() const{ return m_imageConfiguration; }
-
-    /**
-     * <p>The image configuration for a worker type.</p>
-     */
     inline bool ImageConfigurationHasBeenSet() const { return m_imageConfigurationHasBeenSet; }
-
-    /**
-     * <p>The image configuration for a worker type.</p>
-     */
     inline void SetImageConfiguration(const ImageConfigurationInput& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = value; }
-
-    /**
-     * <p>The image configuration for a worker type.</p>
-     */
     inline void SetImageConfiguration(ImageConfigurationInput&& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = std::move(value); }
-
-    /**
-     * <p>The image configuration for a worker type.</p>
-     */
     inline WorkerTypeSpecificationInput& WithImageConfiguration(const ImageConfigurationInput& value) { SetImageConfiguration(value); return *this;}
-
-    /**
-     * <p>The image configuration for a worker type.</p>
-     */
     inline WorkerTypeSpecificationInput& WithImageConfiguration(ImageConfigurationInput&& value) { SetImageConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ImageConfigurationInput m_imageConfiguration;

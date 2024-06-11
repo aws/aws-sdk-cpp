@@ -38,46 +38,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The content of the Liquid template for the worker user interface.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The content of the Liquid template for the worker user interface.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The content of the Liquid template for the worker user interface.</p>
-     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The content of the Liquid template for the worker user interface.</p>
-     */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The content of the Liquid template for the worker user interface.</p>
-     */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-
-    /**
-     * <p>The content of the Liquid template for the worker user interface.</p>
-     */
     inline UiTemplate& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The content of the Liquid template for the worker user interface.</p>
-     */
     inline UiTemplate& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-
-    /**
-     * <p>The content of the Liquid template for the worker user interface.</p>
-     */
     inline UiTemplate& WithContent(const char* value) { SetContent(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_content;

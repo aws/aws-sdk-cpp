@@ -38,46 +38,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The intent that the bot mapped the utterance to.</p>
      */
     inline const Aws::String& GetLastUsedIntent() const{ return m_lastUsedIntent; }
-
-    /**
-     * <p>The intent that the bot mapped the utterance to.</p>
-     */
     inline bool LastUsedIntentHasBeenSet() const { return m_lastUsedIntentHasBeenSet; }
-
-    /**
-     * <p>The intent that the bot mapped the utterance to.</p>
-     */
     inline void SetLastUsedIntent(const Aws::String& value) { m_lastUsedIntentHasBeenSet = true; m_lastUsedIntent = value; }
-
-    /**
-     * <p>The intent that the bot mapped the utterance to.</p>
-     */
     inline void SetLastUsedIntent(Aws::String&& value) { m_lastUsedIntentHasBeenSet = true; m_lastUsedIntent = std::move(value); }
-
-    /**
-     * <p>The intent that the bot mapped the utterance to.</p>
-     */
     inline void SetLastUsedIntent(const char* value) { m_lastUsedIntentHasBeenSet = true; m_lastUsedIntent.assign(value); }
-
-    /**
-     * <p>The intent that the bot mapped the utterance to.</p>
-     */
     inline AnalyticsUtteranceAttributeResult& WithLastUsedIntent(const Aws::String& value) { SetLastUsedIntent(value); return *this;}
-
-    /**
-     * <p>The intent that the bot mapped the utterance to.</p>
-     */
     inline AnalyticsUtteranceAttributeResult& WithLastUsedIntent(Aws::String&& value) { SetLastUsedIntent(std::move(value)); return *this;}
-
-    /**
-     * <p>The intent that the bot mapped the utterance to.</p>
-     */
     inline AnalyticsUtteranceAttributeResult& WithLastUsedIntent(const char* value) { SetLastUsedIntent(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_lastUsedIntent;

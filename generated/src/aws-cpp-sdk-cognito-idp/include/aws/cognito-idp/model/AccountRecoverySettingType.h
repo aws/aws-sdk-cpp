@@ -39,46 +39,19 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of <code>RecoveryOptionTypes</code>.</p>
      */
     inline const Aws::Vector<RecoveryOptionType>& GetRecoveryMechanisms() const{ return m_recoveryMechanisms; }
-
-    /**
-     * <p>The list of <code>RecoveryOptionTypes</code>.</p>
-     */
     inline bool RecoveryMechanismsHasBeenSet() const { return m_recoveryMechanismsHasBeenSet; }
-
-    /**
-     * <p>The list of <code>RecoveryOptionTypes</code>.</p>
-     */
     inline void SetRecoveryMechanisms(const Aws::Vector<RecoveryOptionType>& value) { m_recoveryMechanismsHasBeenSet = true; m_recoveryMechanisms = value; }
-
-    /**
-     * <p>The list of <code>RecoveryOptionTypes</code>.</p>
-     */
     inline void SetRecoveryMechanisms(Aws::Vector<RecoveryOptionType>&& value) { m_recoveryMechanismsHasBeenSet = true; m_recoveryMechanisms = std::move(value); }
-
-    /**
-     * <p>The list of <code>RecoveryOptionTypes</code>.</p>
-     */
     inline AccountRecoverySettingType& WithRecoveryMechanisms(const Aws::Vector<RecoveryOptionType>& value) { SetRecoveryMechanisms(value); return *this;}
-
-    /**
-     * <p>The list of <code>RecoveryOptionTypes</code>.</p>
-     */
     inline AccountRecoverySettingType& WithRecoveryMechanisms(Aws::Vector<RecoveryOptionType>&& value) { SetRecoveryMechanisms(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of <code>RecoveryOptionTypes</code>.</p>
-     */
     inline AccountRecoverySettingType& AddRecoveryMechanisms(const RecoveryOptionType& value) { m_recoveryMechanismsHasBeenSet = true; m_recoveryMechanisms.push_back(value); return *this; }
-
-    /**
-     * <p>The list of <code>RecoveryOptionTypes</code>.</p>
-     */
     inline AccountRecoverySettingType& AddRecoveryMechanisms(RecoveryOptionType&& value) { m_recoveryMechanismsHasBeenSet = true; m_recoveryMechanisms.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<RecoveryOptionType> m_recoveryMechanisms;

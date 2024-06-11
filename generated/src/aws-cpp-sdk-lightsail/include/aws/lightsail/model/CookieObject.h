@@ -43,6 +43,7 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies which cookies to forward to the distribution's origin for a cache
      * behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to
@@ -50,93 +51,27 @@ namespace Model
      * parameter.</p>
      */
     inline const ForwardValues& GetOption() const{ return m_option; }
-
-    /**
-     * <p>Specifies which cookies to forward to the distribution's origin for a cache
-     * behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to
-     * forward only the cookies specified in the <code>cookiesAllowList</code>
-     * parameter.</p>
-     */
     inline bool OptionHasBeenSet() const { return m_optionHasBeenSet; }
-
-    /**
-     * <p>Specifies which cookies to forward to the distribution's origin for a cache
-     * behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to
-     * forward only the cookies specified in the <code>cookiesAllowList</code>
-     * parameter.</p>
-     */
     inline void SetOption(const ForwardValues& value) { m_optionHasBeenSet = true; m_option = value; }
-
-    /**
-     * <p>Specifies which cookies to forward to the distribution's origin for a cache
-     * behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to
-     * forward only the cookies specified in the <code>cookiesAllowList</code>
-     * parameter.</p>
-     */
     inline void SetOption(ForwardValues&& value) { m_optionHasBeenSet = true; m_option = std::move(value); }
-
-    /**
-     * <p>Specifies which cookies to forward to the distribution's origin for a cache
-     * behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to
-     * forward only the cookies specified in the <code>cookiesAllowList</code>
-     * parameter.</p>
-     */
     inline CookieObject& WithOption(const ForwardValues& value) { SetOption(value); return *this;}
-
-    /**
-     * <p>Specifies which cookies to forward to the distribution's origin for a cache
-     * behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to
-     * forward only the cookies specified in the <code>cookiesAllowList</code>
-     * parameter.</p>
-     */
     inline CookieObject& WithOption(ForwardValues&& value) { SetOption(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The specific cookies to forward to your distribution's origin.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCookiesAllowList() const{ return m_cookiesAllowList; }
-
-    /**
-     * <p>The specific cookies to forward to your distribution's origin.</p>
-     */
     inline bool CookiesAllowListHasBeenSet() const { return m_cookiesAllowListHasBeenSet; }
-
-    /**
-     * <p>The specific cookies to forward to your distribution's origin.</p>
-     */
     inline void SetCookiesAllowList(const Aws::Vector<Aws::String>& value) { m_cookiesAllowListHasBeenSet = true; m_cookiesAllowList = value; }
-
-    /**
-     * <p>The specific cookies to forward to your distribution's origin.</p>
-     */
     inline void SetCookiesAllowList(Aws::Vector<Aws::String>&& value) { m_cookiesAllowListHasBeenSet = true; m_cookiesAllowList = std::move(value); }
-
-    /**
-     * <p>The specific cookies to forward to your distribution's origin.</p>
-     */
     inline CookieObject& WithCookiesAllowList(const Aws::Vector<Aws::String>& value) { SetCookiesAllowList(value); return *this;}
-
-    /**
-     * <p>The specific cookies to forward to your distribution's origin.</p>
-     */
     inline CookieObject& WithCookiesAllowList(Aws::Vector<Aws::String>&& value) { SetCookiesAllowList(std::move(value)); return *this;}
-
-    /**
-     * <p>The specific cookies to forward to your distribution's origin.</p>
-     */
     inline CookieObject& AddCookiesAllowList(const Aws::String& value) { m_cookiesAllowListHasBeenSet = true; m_cookiesAllowList.push_back(value); return *this; }
-
-    /**
-     * <p>The specific cookies to forward to your distribution's origin.</p>
-     */
     inline CookieObject& AddCookiesAllowList(Aws::String&& value) { m_cookiesAllowListHasBeenSet = true; m_cookiesAllowList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The specific cookies to forward to your distribution's origin.</p>
-     */
     inline CookieObject& AddCookiesAllowList(const char* value) { m_cookiesAllowListHasBeenSet = true; m_cookiesAllowList.push_back(value); return *this; }
-
+    ///@}
   private:
 
     ForwardValues m_option;

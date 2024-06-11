@@ -51,74 +51,39 @@ namespace Model
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline WAFEntityMigrationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline WAFEntityMigrationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline WAFEntityMigrationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const MigrationErrorType& GetMigrationErrorType() const{ return m_migrationErrorType; }
-
-    
     inline bool MigrationErrorTypeHasBeenSet() const { return m_migrationErrorTypeHasBeenSet; }
-
-    
     inline void SetMigrationErrorType(const MigrationErrorType& value) { m_migrationErrorTypeHasBeenSet = true; m_migrationErrorType = value; }
-
-    
     inline void SetMigrationErrorType(MigrationErrorType&& value) { m_migrationErrorTypeHasBeenSet = true; m_migrationErrorType = std::move(value); }
-
-    
     inline WAFEntityMigrationException& WithMigrationErrorType(const MigrationErrorType& value) { SetMigrationErrorType(value); return *this;}
-
-    
     inline WAFEntityMigrationException& WithMigrationErrorType(MigrationErrorType&& value) { SetMigrationErrorType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetMigrationErrorReason() const{ return m_migrationErrorReason; }
-
-    
     inline bool MigrationErrorReasonHasBeenSet() const { return m_migrationErrorReasonHasBeenSet; }
-
-    
     inline void SetMigrationErrorReason(const Aws::String& value) { m_migrationErrorReasonHasBeenSet = true; m_migrationErrorReason = value; }
-
-    
     inline void SetMigrationErrorReason(Aws::String&& value) { m_migrationErrorReasonHasBeenSet = true; m_migrationErrorReason = std::move(value); }
-
-    
     inline void SetMigrationErrorReason(const char* value) { m_migrationErrorReasonHasBeenSet = true; m_migrationErrorReason.assign(value); }
-
-    
     inline WAFEntityMigrationException& WithMigrationErrorReason(const Aws::String& value) { SetMigrationErrorReason(value); return *this;}
-
-    
     inline WAFEntityMigrationException& WithMigrationErrorReason(Aws::String&& value) { SetMigrationErrorReason(std::move(value)); return *this;}
-
-    
     inline WAFEntityMigrationException& WithMigrationErrorReason(const char* value) { SetMigrationErrorReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

@@ -32,46 +32,19 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the ID namespace.</p>
      */
     inline const Aws::String& GetIdNamespaceName() const{ return m_idNamespaceName; }
-
-    /**
-     * <p>The name of the ID namespace.</p>
-     */
     inline bool IdNamespaceNameHasBeenSet() const { return m_idNamespaceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the ID namespace.</p>
-     */
     inline void SetIdNamespaceName(const Aws::String& value) { m_idNamespaceNameHasBeenSet = true; m_idNamespaceName = value; }
-
-    /**
-     * <p>The name of the ID namespace.</p>
-     */
     inline void SetIdNamespaceName(Aws::String&& value) { m_idNamespaceNameHasBeenSet = true; m_idNamespaceName = std::move(value); }
-
-    /**
-     * <p>The name of the ID namespace.</p>
-     */
     inline void SetIdNamespaceName(const char* value) { m_idNamespaceNameHasBeenSet = true; m_idNamespaceName.assign(value); }
-
-    /**
-     * <p>The name of the ID namespace.</p>
-     */
     inline GetIdNamespaceRequest& WithIdNamespaceName(const Aws::String& value) { SetIdNamespaceName(value); return *this;}
-
-    /**
-     * <p>The name of the ID namespace.</p>
-     */
     inline GetIdNamespaceRequest& WithIdNamespaceName(Aws::String&& value) { SetIdNamespaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the ID namespace.</p>
-     */
     inline GetIdNamespaceRequest& WithIdNamespaceName(const char* value) { SetIdNamespaceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_idNamespaceName;

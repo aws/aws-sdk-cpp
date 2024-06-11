@@ -33,111 +33,44 @@ namespace Model
     AWS_APPREGISTRY_API ListAssociatedAttributeGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of attribute group IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributeGroups() const{ return m_attributeGroups; }
-
-    /**
-     * <p>A list of attribute group IDs.</p>
-     */
     inline void SetAttributeGroups(const Aws::Vector<Aws::String>& value) { m_attributeGroups = value; }
-
-    /**
-     * <p>A list of attribute group IDs.</p>
-     */
     inline void SetAttributeGroups(Aws::Vector<Aws::String>&& value) { m_attributeGroups = std::move(value); }
-
-    /**
-     * <p>A list of attribute group IDs.</p>
-     */
     inline ListAssociatedAttributeGroupsResult& WithAttributeGroups(const Aws::Vector<Aws::String>& value) { SetAttributeGroups(value); return *this;}
-
-    /**
-     * <p>A list of attribute group IDs.</p>
-     */
     inline ListAssociatedAttributeGroupsResult& WithAttributeGroups(Aws::Vector<Aws::String>&& value) { SetAttributeGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of attribute group IDs.</p>
-     */
     inline ListAssociatedAttributeGroupsResult& AddAttributeGroups(const Aws::String& value) { m_attributeGroups.push_back(value); return *this; }
-
-    /**
-     * <p>A list of attribute group IDs.</p>
-     */
     inline ListAssociatedAttributeGroupsResult& AddAttributeGroups(Aws::String&& value) { m_attributeGroups.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of attribute group IDs.</p>
-     */
     inline ListAssociatedAttributeGroupsResult& AddAttributeGroups(const char* value) { m_attributeGroups.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to get the next page of results after a previous API call.
      * </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * </p>
-     */
     inline ListAssociatedAttributeGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * </p>
-     */
     inline ListAssociatedAttributeGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * </p>
-     */
     inline ListAssociatedAttributeGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAssociatedAttributeGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAssociatedAttributeGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAssociatedAttributeGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_attributeGroups;

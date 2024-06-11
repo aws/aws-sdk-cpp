@@ -41,43 +41,25 @@ namespace Model
     AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     
     inline const IndexField& GetOptions() const{ return m_options; }
-
-    
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    
     inline void SetOptions(const IndexField& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    
     inline void SetOptions(IndexField&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    
     inline IndexFieldStatus& WithOptions(const IndexField& value) { SetOptions(value); return *this;}
-
-    
     inline IndexFieldStatus& WithOptions(IndexField&& value) { SetOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const OptionStatus& GetStatus() const{ return m_status; }
-
-    
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    
     inline IndexFieldStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-
-    
     inline IndexFieldStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IndexField m_options;

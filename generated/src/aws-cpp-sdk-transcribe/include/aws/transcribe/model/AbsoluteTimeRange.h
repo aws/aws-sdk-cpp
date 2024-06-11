@@ -49,121 +49,53 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time, in milliseconds, when Amazon Transcribe starts searching for the
      * specified criteria in your audio. If you include <code>StartTime</code> in your
      * request, you must also include <code>EndTime</code>.</p>
      */
     inline long long GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The time, in milliseconds, when Amazon Transcribe starts searching for the
-     * specified criteria in your audio. If you include <code>StartTime</code> in your
-     * request, you must also include <code>EndTime</code>.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The time, in milliseconds, when Amazon Transcribe starts searching for the
-     * specified criteria in your audio. If you include <code>StartTime</code> in your
-     * request, you must also include <code>EndTime</code>.</p>
-     */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The time, in milliseconds, when Amazon Transcribe starts searching for the
-     * specified criteria in your audio. If you include <code>StartTime</code> in your
-     * request, you must also include <code>EndTime</code>.</p>
-     */
     inline AbsoluteTimeRange& WithStartTime(long long value) { SetStartTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time, in milliseconds, when Amazon Transcribe stops searching for the
      * specified criteria in your audio. If you include <code>EndTime</code> in your
      * request, you must also include <code>StartTime</code>.</p>
      */
     inline long long GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>The time, in milliseconds, when Amazon Transcribe stops searching for the
-     * specified criteria in your audio. If you include <code>EndTime</code> in your
-     * request, you must also include <code>StartTime</code>.</p>
-     */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-
-    /**
-     * <p>The time, in milliseconds, when Amazon Transcribe stops searching for the
-     * specified criteria in your audio. If you include <code>EndTime</code> in your
-     * request, you must also include <code>StartTime</code>.</p>
-     */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-
-    /**
-     * <p>The time, in milliseconds, when Amazon Transcribe stops searching for the
-     * specified criteria in your audio. If you include <code>EndTime</code> in your
-     * request, you must also include <code>StartTime</code>.</p>
-     */
     inline AbsoluteTimeRange& WithEndTime(long long value) { SetEndTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time, in milliseconds, from the start of your media file until the
      * specified value. Amazon Transcribe searches for your specified criteria in this
      * time segment.</p>
      */
     inline long long GetFirst() const{ return m_first; }
-
-    /**
-     * <p>The time, in milliseconds, from the start of your media file until the
-     * specified value. Amazon Transcribe searches for your specified criteria in this
-     * time segment.</p>
-     */
     inline bool FirstHasBeenSet() const { return m_firstHasBeenSet; }
-
-    /**
-     * <p>The time, in milliseconds, from the start of your media file until the
-     * specified value. Amazon Transcribe searches for your specified criteria in this
-     * time segment.</p>
-     */
     inline void SetFirst(long long value) { m_firstHasBeenSet = true; m_first = value; }
-
-    /**
-     * <p>The time, in milliseconds, from the start of your media file until the
-     * specified value. Amazon Transcribe searches for your specified criteria in this
-     * time segment.</p>
-     */
     inline AbsoluteTimeRange& WithFirst(long long value) { SetFirst(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time, in milliseconds, from the specified value until the end of your
      * media file. Amazon Transcribe searches for your specified criteria in this time
      * segment.</p>
      */
     inline long long GetLast() const{ return m_last; }
-
-    /**
-     * <p>The time, in milliseconds, from the specified value until the end of your
-     * media file. Amazon Transcribe searches for your specified criteria in this time
-     * segment.</p>
-     */
     inline bool LastHasBeenSet() const { return m_lastHasBeenSet; }
-
-    /**
-     * <p>The time, in milliseconds, from the specified value until the end of your
-     * media file. Amazon Transcribe searches for your specified criteria in this time
-     * segment.</p>
-     */
     inline void SetLast(long long value) { m_lastHasBeenSet = true; m_last = value; }
-
-    /**
-     * <p>The time, in milliseconds, from the specified value until the end of your
-     * media file. Amazon Transcribe searches for your specified criteria in this time
-     * segment.</p>
-     */
     inline AbsoluteTimeRange& WithLast(long long value) { SetLast(value); return *this;}
-
+    ///@}
   private:
 
     long long m_startTime;

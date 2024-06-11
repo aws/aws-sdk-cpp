@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetJourneyDateRangeKpiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const JourneyDateRangeKpiResponse& GetJourneyDateRangeKpiResponse() const{ return m_journeyDateRangeKpiResponse; }
-
-    
     inline void SetJourneyDateRangeKpiResponse(const JourneyDateRangeKpiResponse& value) { m_journeyDateRangeKpiResponse = value; }
-
-    
     inline void SetJourneyDateRangeKpiResponse(JourneyDateRangeKpiResponse&& value) { m_journeyDateRangeKpiResponse = std::move(value); }
-
-    
     inline GetJourneyDateRangeKpiResult& WithJourneyDateRangeKpiResponse(const JourneyDateRangeKpiResponse& value) { SetJourneyDateRangeKpiResponse(value); return *this;}
-
-    
     inline GetJourneyDateRangeKpiResult& WithJourneyDateRangeKpiResponse(JourneyDateRangeKpiResponse&& value) { SetJourneyDateRangeKpiResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetJourneyDateRangeKpiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetJourneyDateRangeKpiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetJourneyDateRangeKpiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JourneyDateRangeKpiResponse m_journeyDateRangeKpiResponse;

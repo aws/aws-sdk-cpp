@@ -38,6 +38,7 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The ID of the Multiplex that the encoder is providing output to. You do not need
      * to specify the individual inputs to the Multiplex; MediaLive will handle the
@@ -46,119 +47,29 @@ The
      * Multiplex must be in the same region as the Channel.
      */
     inline const Aws::String& GetMultiplexId() const{ return m_multiplexId; }
-
-    /**
-     * The ID of the Multiplex that the encoder is providing output to. You do not need
-     * to specify the individual inputs to the Multiplex; MediaLive will handle the
-     * connection of the two MediaLive pipelines to the two Multiplex instances.
-The
-     * Multiplex must be in the same region as the Channel.
-     */
     inline bool MultiplexIdHasBeenSet() const { return m_multiplexIdHasBeenSet; }
-
-    /**
-     * The ID of the Multiplex that the encoder is providing output to. You do not need
-     * to specify the individual inputs to the Multiplex; MediaLive will handle the
-     * connection of the two MediaLive pipelines to the two Multiplex instances.
-The
-     * Multiplex must be in the same region as the Channel.
-     */
     inline void SetMultiplexId(const Aws::String& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = value; }
-
-    /**
-     * The ID of the Multiplex that the encoder is providing output to. You do not need
-     * to specify the individual inputs to the Multiplex; MediaLive will handle the
-     * connection of the two MediaLive pipelines to the two Multiplex instances.
-The
-     * Multiplex must be in the same region as the Channel.
-     */
     inline void SetMultiplexId(Aws::String&& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = std::move(value); }
-
-    /**
-     * The ID of the Multiplex that the encoder is providing output to. You do not need
-     * to specify the individual inputs to the Multiplex; MediaLive will handle the
-     * connection of the two MediaLive pipelines to the two Multiplex instances.
-The
-     * Multiplex must be in the same region as the Channel.
-     */
     inline void SetMultiplexId(const char* value) { m_multiplexIdHasBeenSet = true; m_multiplexId.assign(value); }
-
-    /**
-     * The ID of the Multiplex that the encoder is providing output to. You do not need
-     * to specify the individual inputs to the Multiplex; MediaLive will handle the
-     * connection of the two MediaLive pipelines to the two Multiplex instances.
-The
-     * Multiplex must be in the same region as the Channel.
-     */
     inline MultiplexProgramChannelDestinationSettings& WithMultiplexId(const Aws::String& value) { SetMultiplexId(value); return *this;}
-
-    /**
-     * The ID of the Multiplex that the encoder is providing output to. You do not need
-     * to specify the individual inputs to the Multiplex; MediaLive will handle the
-     * connection of the two MediaLive pipelines to the two Multiplex instances.
-The
-     * Multiplex must be in the same region as the Channel.
-     */
     inline MultiplexProgramChannelDestinationSettings& WithMultiplexId(Aws::String&& value) { SetMultiplexId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the Multiplex that the encoder is providing output to. You do not need
-     * to specify the individual inputs to the Multiplex; MediaLive will handle the
-     * connection of the two MediaLive pipelines to the two Multiplex instances.
-The
-     * Multiplex must be in the same region as the Channel.
-     */
     inline MultiplexProgramChannelDestinationSettings& WithMultiplexId(const char* value) { SetMultiplexId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The program name of the Multiplex program that the encoder is providing output
      * to.
      */
     inline const Aws::String& GetProgramName() const{ return m_programName; }
-
-    /**
-     * The program name of the Multiplex program that the encoder is providing output
-     * to.
-     */
     inline bool ProgramNameHasBeenSet() const { return m_programNameHasBeenSet; }
-
-    /**
-     * The program name of the Multiplex program that the encoder is providing output
-     * to.
-     */
     inline void SetProgramName(const Aws::String& value) { m_programNameHasBeenSet = true; m_programName = value; }
-
-    /**
-     * The program name of the Multiplex program that the encoder is providing output
-     * to.
-     */
     inline void SetProgramName(Aws::String&& value) { m_programNameHasBeenSet = true; m_programName = std::move(value); }
-
-    /**
-     * The program name of the Multiplex program that the encoder is providing output
-     * to.
-     */
     inline void SetProgramName(const char* value) { m_programNameHasBeenSet = true; m_programName.assign(value); }
-
-    /**
-     * The program name of the Multiplex program that the encoder is providing output
-     * to.
-     */
     inline MultiplexProgramChannelDestinationSettings& WithProgramName(const Aws::String& value) { SetProgramName(value); return *this;}
-
-    /**
-     * The program name of the Multiplex program that the encoder is providing output
-     * to.
-     */
     inline MultiplexProgramChannelDestinationSettings& WithProgramName(Aws::String&& value) { SetProgramName(std::move(value)); return *this;}
-
-    /**
-     * The program name of the Multiplex program that the encoder is providing output
-     * to.
-     */
     inline MultiplexProgramChannelDestinationSettings& WithProgramName(const char* value) { SetProgramName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_multiplexId;

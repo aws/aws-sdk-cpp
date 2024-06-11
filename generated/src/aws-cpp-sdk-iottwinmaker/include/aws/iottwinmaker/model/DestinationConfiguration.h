@@ -40,104 +40,42 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The destination type.</p>
      */
     inline const DestinationType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The destination type.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The destination type.</p>
-     */
     inline void SetType(const DestinationType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The destination type.</p>
-     */
     inline void SetType(DestinationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The destination type.</p>
-     */
     inline DestinationConfiguration& WithType(const DestinationType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The destination type.</p>
-     */
     inline DestinationConfiguration& WithType(DestinationType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The metadata transfer job S3 configuration. [need to add S3 entity]</p>
      */
     inline const S3DestinationConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
-
-    /**
-     * <p>The metadata transfer job S3 configuration. [need to add S3 entity]</p>
-     */
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-
-    /**
-     * <p>The metadata transfer job S3 configuration. [need to add S3 entity]</p>
-     */
     inline void SetS3Configuration(const S3DestinationConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-
-    /**
-     * <p>The metadata transfer job S3 configuration. [need to add S3 entity]</p>
-     */
     inline void SetS3Configuration(S3DestinationConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-
-    /**
-     * <p>The metadata transfer job S3 configuration. [need to add S3 entity]</p>
-     */
     inline DestinationConfiguration& WithS3Configuration(const S3DestinationConfiguration& value) { SetS3Configuration(value); return *this;}
-
-    /**
-     * <p>The metadata transfer job S3 configuration. [need to add S3 entity]</p>
-     */
     inline DestinationConfiguration& WithS3Configuration(S3DestinationConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The metadata transfer job Amazon Web Services IoT TwinMaker
      * configuration.</p>
      */
     inline const IotTwinMakerDestinationConfiguration& GetIotTwinMakerConfiguration() const{ return m_iotTwinMakerConfiguration; }
-
-    /**
-     * <p>The metadata transfer job Amazon Web Services IoT TwinMaker
-     * configuration.</p>
-     */
     inline bool IotTwinMakerConfigurationHasBeenSet() const { return m_iotTwinMakerConfigurationHasBeenSet; }
-
-    /**
-     * <p>The metadata transfer job Amazon Web Services IoT TwinMaker
-     * configuration.</p>
-     */
     inline void SetIotTwinMakerConfiguration(const IotTwinMakerDestinationConfiguration& value) { m_iotTwinMakerConfigurationHasBeenSet = true; m_iotTwinMakerConfiguration = value; }
-
-    /**
-     * <p>The metadata transfer job Amazon Web Services IoT TwinMaker
-     * configuration.</p>
-     */
     inline void SetIotTwinMakerConfiguration(IotTwinMakerDestinationConfiguration&& value) { m_iotTwinMakerConfigurationHasBeenSet = true; m_iotTwinMakerConfiguration = std::move(value); }
-
-    /**
-     * <p>The metadata transfer job Amazon Web Services IoT TwinMaker
-     * configuration.</p>
-     */
     inline DestinationConfiguration& WithIotTwinMakerConfiguration(const IotTwinMakerDestinationConfiguration& value) { SetIotTwinMakerConfiguration(value); return *this;}
-
-    /**
-     * <p>The metadata transfer job Amazon Web Services IoT TwinMaker
-     * configuration.</p>
-     */
     inline DestinationConfiguration& WithIotTwinMakerConfiguration(IotTwinMakerDestinationConfiguration&& value) { SetIotTwinMakerConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DestinationType m_type;

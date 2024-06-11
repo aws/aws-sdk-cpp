@@ -38,31 +38,18 @@ namespace Model
     AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of backups that each streaming session created from this
      * launch profile can have.</p>
      */
     inline int GetMaxBackupsToRetain() const{ return m_maxBackupsToRetain; }
-
-    /**
-     * <p>The maximum number of backups that each streaming session created from this
-     * launch profile can have.</p>
-     */
     inline bool MaxBackupsToRetainHasBeenSet() const { return m_maxBackupsToRetainHasBeenSet; }
-
-    /**
-     * <p>The maximum number of backups that each streaming session created from this
-     * launch profile can have.</p>
-     */
     inline void SetMaxBackupsToRetain(int value) { m_maxBackupsToRetainHasBeenSet = true; m_maxBackupsToRetain = value; }
-
-    /**
-     * <p>The maximum number of backups that each streaming session created from this
-     * launch profile can have.</p>
-     */
     inline StreamConfigurationSessionBackup& WithMaxBackupsToRetain(int value) { SetMaxBackupsToRetain(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies how artists sessions are backed up.</p> <p>Configures backups for
      * streaming sessions launched with this launch profile. The default value is
@@ -70,47 +57,12 @@ namespace Model
      * backups, set this value to <code>AUTOMATIC</code>.</p>
      */
     inline const SessionBackupMode& GetMode() const{ return m_mode; }
-
-    /**
-     * <p>Specifies how artists sessions are backed up.</p> <p>Configures backups for
-     * streaming sessions launched with this launch profile. The default value is
-     * <code>DEACTIVATED</code>, which means that backups are deactivated. To allow
-     * backups, set this value to <code>AUTOMATIC</code>.</p>
-     */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-
-    /**
-     * <p>Specifies how artists sessions are backed up.</p> <p>Configures backups for
-     * streaming sessions launched with this launch profile. The default value is
-     * <code>DEACTIVATED</code>, which means that backups are deactivated. To allow
-     * backups, set this value to <code>AUTOMATIC</code>.</p>
-     */
     inline void SetMode(const SessionBackupMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-
-    /**
-     * <p>Specifies how artists sessions are backed up.</p> <p>Configures backups for
-     * streaming sessions launched with this launch profile. The default value is
-     * <code>DEACTIVATED</code>, which means that backups are deactivated. To allow
-     * backups, set this value to <code>AUTOMATIC</code>.</p>
-     */
     inline void SetMode(SessionBackupMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-
-    /**
-     * <p>Specifies how artists sessions are backed up.</p> <p>Configures backups for
-     * streaming sessions launched with this launch profile. The default value is
-     * <code>DEACTIVATED</code>, which means that backups are deactivated. To allow
-     * backups, set this value to <code>AUTOMATIC</code>.</p>
-     */
     inline StreamConfigurationSessionBackup& WithMode(const SessionBackupMode& value) { SetMode(value); return *this;}
-
-    /**
-     * <p>Specifies how artists sessions are backed up.</p> <p>Configures backups for
-     * streaming sessions launched with this launch profile. The default value is
-     * <code>DEACTIVATED</code>, which means that backups are deactivated. To allow
-     * backups, set this value to <code>AUTOMATIC</code>.</p>
-     */
     inline StreamConfigurationSessionBackup& WithMode(SessionBackupMode&& value) { SetMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_maxBackupsToRetain;

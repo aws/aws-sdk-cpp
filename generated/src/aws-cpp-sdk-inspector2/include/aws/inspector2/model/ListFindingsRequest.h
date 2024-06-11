@@ -34,37 +34,19 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Details on the filters to apply to your finding results.</p>
      */
     inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
-
-    /**
-     * <p>Details on the filters to apply to your finding results.</p>
-     */
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
-
-    /**
-     * <p>Details on the filters to apply to your finding results.</p>
-     */
     inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
-
-    /**
-     * <p>Details on the filters to apply to your finding results.</p>
-     */
     inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
-
-    /**
-     * <p>Details on the filters to apply to your finding results.</p>
-     */
     inline ListFindingsRequest& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
-
-    /**
-     * <p>Details on the filters to apply to your finding results.</p>
-     */
     inline ListFindingsRequest& WithFilterCriteria(FilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results the response can return. If your request would
      * return more than the maximum the response will return a <code>nextToken</code>
@@ -72,32 +54,12 @@ namespace Model
      * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results the response can return. If your request would
-     * return more than the maximum the response will return a <code>nextToken</code>
-     * value, use this value when you call the action again to get the remaining
-     * results.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results the response can return. If your request would
-     * return more than the maximum the response will return a <code>nextToken</code>
-     * value, use this value when you call the action again to get the remaining
-     * results.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results the response can return. If your request would
-     * return more than the maximum the response will return a <code>nextToken</code>
-     * value, use this value when you call the action again to get the remaining
-     * results.</p>
-     */
     inline ListFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token to use for paginating results that are returned in the response. Set
      * the value of this parameter to null for the first request to a list action. If
@@ -107,108 +69,26 @@ namespace Model
      * listing results after the first page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline ListFindingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline ListFindingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline ListFindingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details on the sort criteria to apply to your finding results.</p>
      */
     inline const SortCriteria& GetSortCriteria() const{ return m_sortCriteria; }
-
-    /**
-     * <p>Details on the sort criteria to apply to your finding results.</p>
-     */
     inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
-
-    /**
-     * <p>Details on the sort criteria to apply to your finding results.</p>
-     */
     inline void SetSortCriteria(const SortCriteria& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = value; }
-
-    /**
-     * <p>Details on the sort criteria to apply to your finding results.</p>
-     */
     inline void SetSortCriteria(SortCriteria&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::move(value); }
-
-    /**
-     * <p>Details on the sort criteria to apply to your finding results.</p>
-     */
     inline ListFindingsRequest& WithSortCriteria(const SortCriteria& value) { SetSortCriteria(value); return *this;}
-
-    /**
-     * <p>Details on the sort criteria to apply to your finding results.</p>
-     */
     inline ListFindingsRequest& WithSortCriteria(SortCriteria&& value) { SetSortCriteria(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FilterCriteria m_filterCriteria;

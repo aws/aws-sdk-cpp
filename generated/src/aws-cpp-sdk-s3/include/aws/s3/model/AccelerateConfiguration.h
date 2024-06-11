@@ -41,36 +41,17 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies the transfer acceleration status of the bucket.</p>
      */
     inline const BucketAccelerateStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Specifies the transfer acceleration status of the bucket.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Specifies the transfer acceleration status of the bucket.</p>
-     */
     inline void SetStatus(const BucketAccelerateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Specifies the transfer acceleration status of the bucket.</p>
-     */
     inline void SetStatus(BucketAccelerateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Specifies the transfer acceleration status of the bucket.</p>
-     */
     inline AccelerateConfiguration& WithStatus(const BucketAccelerateStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Specifies the transfer acceleration status of the bucket.</p>
-     */
     inline AccelerateConfiguration& WithStatus(BucketAccelerateStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BucketAccelerateStatus m_status;

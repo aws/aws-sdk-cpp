@@ -38,36 +38,17 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The registration type in Spain.</p>
      */
     inline const RegistrationType& GetRegistrationType() const{ return m_registrationType; }
-
-    /**
-     * <p>The registration type in Spain.</p>
-     */
     inline bool RegistrationTypeHasBeenSet() const { return m_registrationTypeHasBeenSet; }
-
-    /**
-     * <p>The registration type in Spain.</p>
-     */
     inline void SetRegistrationType(const RegistrationType& value) { m_registrationTypeHasBeenSet = true; m_registrationType = value; }
-
-    /**
-     * <p>The registration type in Spain.</p>
-     */
     inline void SetRegistrationType(RegistrationType&& value) { m_registrationTypeHasBeenSet = true; m_registrationType = std::move(value); }
-
-    /**
-     * <p>The registration type in Spain.</p>
-     */
     inline SpainAdditionalInfo& WithRegistrationType(const RegistrationType& value) { SetRegistrationType(value); return *this;}
-
-    /**
-     * <p>The registration type in Spain.</p>
-     */
     inline SpainAdditionalInfo& WithRegistrationType(RegistrationType&& value) { SetRegistrationType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RegistrationType m_registrationType;

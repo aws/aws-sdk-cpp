@@ -38,73 +38,30 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The URL target (new tab, new window, same tab) for the table link
      * configuration.</p>
      */
     inline const URLTargetConfiguration& GetTarget() const{ return m_target; }
-
-    /**
-     * <p>The URL target (new tab, new window, same tab) for the table link
-     * configuration.</p>
-     */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    /**
-     * <p>The URL target (new tab, new window, same tab) for the table link
-     * configuration.</p>
-     */
     inline void SetTarget(const URLTargetConfiguration& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    /**
-     * <p>The URL target (new tab, new window, same tab) for the table link
-     * configuration.</p>
-     */
     inline void SetTarget(URLTargetConfiguration&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    /**
-     * <p>The URL target (new tab, new window, same tab) for the table link
-     * configuration.</p>
-     */
     inline TableFieldLinkConfiguration& WithTarget(const URLTargetConfiguration& value) { SetTarget(value); return *this;}
-
-    /**
-     * <p>The URL target (new tab, new window, same tab) for the table link
-     * configuration.</p>
-     */
     inline TableFieldLinkConfiguration& WithTarget(URLTargetConfiguration&& value) { SetTarget(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The URL content (text, icon) for the table link configuration.</p>
      */
     inline const TableFieldLinkContentConfiguration& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The URL content (text, icon) for the table link configuration.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The URL content (text, icon) for the table link configuration.</p>
-     */
     inline void SetContent(const TableFieldLinkContentConfiguration& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The URL content (text, icon) for the table link configuration.</p>
-     */
     inline void SetContent(TableFieldLinkContentConfiguration&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The URL content (text, icon) for the table link configuration.</p>
-     */
     inline TableFieldLinkConfiguration& WithContent(const TableFieldLinkContentConfiguration& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The URL content (text, icon) for the table link configuration.</p>
-     */
     inline TableFieldLinkConfiguration& WithContent(TableFieldLinkContentConfiguration&& value) { SetContent(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     URLTargetConfiguration m_target;

@@ -38,24 +38,15 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const GeneralLabelsSettings& GetGeneralLabels() const{ return m_generalLabels; }
-
-    
     inline bool GeneralLabelsHasBeenSet() const { return m_generalLabelsHasBeenSet; }
-
-    
     inline void SetGeneralLabels(const GeneralLabelsSettings& value) { m_generalLabelsHasBeenSet = true; m_generalLabels = value; }
-
-    
     inline void SetGeneralLabels(GeneralLabelsSettings&& value) { m_generalLabelsHasBeenSet = true; m_generalLabels = std::move(value); }
-
-    
     inline LabelDetectionSettings& WithGeneralLabels(const GeneralLabelsSettings& value) { SetGeneralLabels(value); return *this;}
-
-    
     inline LabelDetectionSettings& WithGeneralLabels(GeneralLabelsSettings&& value) { SetGeneralLabels(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GeneralLabelsSettings m_generalLabels;

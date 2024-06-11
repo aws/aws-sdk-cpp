@@ -40,97 +40,34 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of dataset IDs that you want to apply overrides to. You can use
      * <code>*</code> to override all datasets in this asset bundle.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDataSetIds() const{ return m_dataSetIds; }
-
-    /**
-     * <p>A list of dataset IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all datasets in this asset bundle.</p>
-     */
     inline bool DataSetIdsHasBeenSet() const { return m_dataSetIdsHasBeenSet; }
-
-    /**
-     * <p>A list of dataset IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all datasets in this asset bundle.</p>
-     */
     inline void SetDataSetIds(const Aws::Vector<Aws::String>& value) { m_dataSetIdsHasBeenSet = true; m_dataSetIds = value; }
-
-    /**
-     * <p>A list of dataset IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all datasets in this asset bundle.</p>
-     */
     inline void SetDataSetIds(Aws::Vector<Aws::String>&& value) { m_dataSetIdsHasBeenSet = true; m_dataSetIds = std::move(value); }
-
-    /**
-     * <p>A list of dataset IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all datasets in this asset bundle.</p>
-     */
     inline AssetBundleImportJobDataSetOverridePermissions& WithDataSetIds(const Aws::Vector<Aws::String>& value) { SetDataSetIds(value); return *this;}
-
-    /**
-     * <p>A list of dataset IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all datasets in this asset bundle.</p>
-     */
     inline AssetBundleImportJobDataSetOverridePermissions& WithDataSetIds(Aws::Vector<Aws::String>&& value) { SetDataSetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of dataset IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all datasets in this asset bundle.</p>
-     */
     inline AssetBundleImportJobDataSetOverridePermissions& AddDataSetIds(const Aws::String& value) { m_dataSetIdsHasBeenSet = true; m_dataSetIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of dataset IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all datasets in this asset bundle.</p>
-     */
     inline AssetBundleImportJobDataSetOverridePermissions& AddDataSetIds(Aws::String&& value) { m_dataSetIdsHasBeenSet = true; m_dataSetIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of dataset IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all datasets in this asset bundle.</p>
-     */
     inline AssetBundleImportJobDataSetOverridePermissions& AddDataSetIds(const char* value) { m_dataSetIdsHasBeenSet = true; m_dataSetIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of permissions for the datasets that you want to apply overrides
      * to.</p>
      */
     inline const AssetBundleResourcePermissions& GetPermissions() const{ return m_permissions; }
-
-    /**
-     * <p>A list of permissions for the datasets that you want to apply overrides
-     * to.</p>
-     */
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-
-    /**
-     * <p>A list of permissions for the datasets that you want to apply overrides
-     * to.</p>
-     */
     inline void SetPermissions(const AssetBundleResourcePermissions& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-
-    /**
-     * <p>A list of permissions for the datasets that you want to apply overrides
-     * to.</p>
-     */
     inline void SetPermissions(AssetBundleResourcePermissions&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-
-    /**
-     * <p>A list of permissions for the datasets that you want to apply overrides
-     * to.</p>
-     */
     inline AssetBundleImportJobDataSetOverridePermissions& WithPermissions(const AssetBundleResourcePermissions& value) { SetPermissions(value); return *this;}
-
-    /**
-     * <p>A list of permissions for the datasets that you want to apply overrides
-     * to.</p>
-     */
     inline AssetBundleImportJobDataSetOverridePermissions& WithPermissions(AssetBundleResourcePermissions&& value) { SetPermissions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_dataSetIds;

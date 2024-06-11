@@ -39,98 +39,41 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The binary analyzer names.</p>
      */
     inline const BinaryAnalyzerName& GetBinaryAnalyzerName() const{ return m_binaryAnalyzerName; }
-
-    /**
-     * <p>The binary analyzer names.</p>
-     */
     inline bool BinaryAnalyzerNameHasBeenSet() const { return m_binaryAnalyzerNameHasBeenSet; }
-
-    /**
-     * <p>The binary analyzer names.</p>
-     */
     inline void SetBinaryAnalyzerName(const BinaryAnalyzerName& value) { m_binaryAnalyzerNameHasBeenSet = true; m_binaryAnalyzerName = value; }
-
-    /**
-     * <p>The binary analyzer names.</p>
-     */
     inline void SetBinaryAnalyzerName(BinaryAnalyzerName&& value) { m_binaryAnalyzerNameHasBeenSet = true; m_binaryAnalyzerName = std::move(value); }
-
-    /**
-     * <p>The binary analyzer names.</p>
-     */
     inline AnalyzerNameUnion& WithBinaryAnalyzerName(const BinaryAnalyzerName& value) { SetBinaryAnalyzerName(value); return *this;}
-
-    /**
-     * <p>The binary analyzer names.</p>
-     */
     inline AnalyzerNameUnion& WithBinaryAnalyzerName(BinaryAnalyzerName&& value) { SetBinaryAnalyzerName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The assessment analyzer names.</p>
      */
     inline const RunTimeAnalyzerName& GetRunTimeAnalyzerName() const{ return m_runTimeAnalyzerName; }
-
-    /**
-     * <p>The assessment analyzer names.</p>
-     */
     inline bool RunTimeAnalyzerNameHasBeenSet() const { return m_runTimeAnalyzerNameHasBeenSet; }
-
-    /**
-     * <p>The assessment analyzer names.</p>
-     */
     inline void SetRunTimeAnalyzerName(const RunTimeAnalyzerName& value) { m_runTimeAnalyzerNameHasBeenSet = true; m_runTimeAnalyzerName = value; }
-
-    /**
-     * <p>The assessment analyzer names.</p>
-     */
     inline void SetRunTimeAnalyzerName(RunTimeAnalyzerName&& value) { m_runTimeAnalyzerNameHasBeenSet = true; m_runTimeAnalyzerName = std::move(value); }
-
-    /**
-     * <p>The assessment analyzer names.</p>
-     */
     inline AnalyzerNameUnion& WithRunTimeAnalyzerName(const RunTimeAnalyzerName& value) { SetRunTimeAnalyzerName(value); return *this;}
-
-    /**
-     * <p>The assessment analyzer names.</p>
-     */
     inline AnalyzerNameUnion& WithRunTimeAnalyzerName(RunTimeAnalyzerName&& value) { SetRunTimeAnalyzerName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The source code analyzer names.</p>
      */
     inline const SourceCodeAnalyzerName& GetSourceCodeAnalyzerName() const{ return m_sourceCodeAnalyzerName; }
-
-    /**
-     * <p>The source code analyzer names.</p>
-     */
     inline bool SourceCodeAnalyzerNameHasBeenSet() const { return m_sourceCodeAnalyzerNameHasBeenSet; }
-
-    /**
-     * <p>The source code analyzer names.</p>
-     */
     inline void SetSourceCodeAnalyzerName(const SourceCodeAnalyzerName& value) { m_sourceCodeAnalyzerNameHasBeenSet = true; m_sourceCodeAnalyzerName = value; }
-
-    /**
-     * <p>The source code analyzer names.</p>
-     */
     inline void SetSourceCodeAnalyzerName(SourceCodeAnalyzerName&& value) { m_sourceCodeAnalyzerNameHasBeenSet = true; m_sourceCodeAnalyzerName = std::move(value); }
-
-    /**
-     * <p>The source code analyzer names.</p>
-     */
     inline AnalyzerNameUnion& WithSourceCodeAnalyzerName(const SourceCodeAnalyzerName& value) { SetSourceCodeAnalyzerName(value); return *this;}
-
-    /**
-     * <p>The source code analyzer names.</p>
-     */
     inline AnalyzerNameUnion& WithSourceCodeAnalyzerName(SourceCodeAnalyzerName&& value) { SetSourceCodeAnalyzerName(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BinaryAnalyzerName m_binaryAnalyzerName;

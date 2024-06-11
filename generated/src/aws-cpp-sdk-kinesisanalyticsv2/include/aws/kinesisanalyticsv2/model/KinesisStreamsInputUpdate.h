@@ -39,46 +39,19 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
      */
     inline const Aws::String& GetResourceARNUpdate() const{ return m_resourceARNUpdate; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-     */
     inline bool ResourceARNUpdateHasBeenSet() const { return m_resourceARNUpdateHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-     */
     inline void SetResourceARNUpdate(const Aws::String& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-     */
     inline void SetResourceARNUpdate(Aws::String&& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-     */
     inline void SetResourceARNUpdate(const char* value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-     */
     inline KinesisStreamsInputUpdate& WithResourceARNUpdate(const Aws::String& value) { SetResourceARNUpdate(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-     */
     inline KinesisStreamsInputUpdate& WithResourceARNUpdate(Aws::String&& value) { SetResourceARNUpdate(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-     */
     inline KinesisStreamsInputUpdate& WithResourceARNUpdate(const char* value) { SetResourceARNUpdate(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceARNUpdate;

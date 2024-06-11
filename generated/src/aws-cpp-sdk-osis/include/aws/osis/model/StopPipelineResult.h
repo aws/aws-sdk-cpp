@@ -33,43 +33,25 @@ namespace Model
     AWS_OSIS_API StopPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Pipeline& GetPipeline() const{ return m_pipeline; }
-
-    
     inline void SetPipeline(const Pipeline& value) { m_pipeline = value; }
-
-    
     inline void SetPipeline(Pipeline&& value) { m_pipeline = std::move(value); }
-
-    
     inline StopPipelineResult& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
-
-    
     inline StopPipelineResult& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StopPipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StopPipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StopPipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Pipeline m_pipeline;

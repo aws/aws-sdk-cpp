@@ -34,6 +34,7 @@ namespace Model
     AWS_TRANSFER_API ListUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
@@ -41,163 +42,52 @@ namespace Model
      * additional users.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>When you can get additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command to the <code>NextToken</code> parameter to continue listing
-     * additional users.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>When you can get additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command to the <code>NextToken</code> parameter to continue listing
-     * additional users.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>When you can get additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command to the <code>NextToken</code> parameter to continue listing
-     * additional users.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>When you can get additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command to the <code>NextToken</code> parameter to continue listing
-     * additional users.</p>
-     */
     inline ListUsersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>When you can get additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command to the <code>NextToken</code> parameter to continue listing
-     * additional users.</p>
-     */
     inline ListUsersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>When you can get additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command to the <code>NextToken</code> parameter to continue listing
-     * additional users.</p>
-     */
     inline ListUsersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A system-assigned unique identifier for a server that the users are assigned
      * to.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that the users are assigned
-     * to.</p>
-     */
     inline void SetServerId(const Aws::String& value) { m_serverId = value; }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that the users are assigned
-     * to.</p>
-     */
     inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that the users are assigned
-     * to.</p>
-     */
     inline void SetServerId(const char* value) { m_serverId.assign(value); }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that the users are assigned
-     * to.</p>
-     */
     inline ListUsersResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-
-    /**
-     * <p>A system-assigned unique identifier for a server that the users are assigned
-     * to.</p>
-     */
     inline ListUsersResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-
-    /**
-     * <p>A system-assigned unique identifier for a server that the users are assigned
-     * to.</p>
-     */
     inline ListUsersResult& WithServerId(const char* value) { SetServerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns the Transfer Family users and their properties for the
      * <code>ServerId</code> value that you specify.</p>
      */
     inline const Aws::Vector<ListedUser>& GetUsers() const{ return m_users; }
-
-    /**
-     * <p>Returns the Transfer Family users and their properties for the
-     * <code>ServerId</code> value that you specify.</p>
-     */
     inline void SetUsers(const Aws::Vector<ListedUser>& value) { m_users = value; }
-
-    /**
-     * <p>Returns the Transfer Family users and their properties for the
-     * <code>ServerId</code> value that you specify.</p>
-     */
     inline void SetUsers(Aws::Vector<ListedUser>&& value) { m_users = std::move(value); }
-
-    /**
-     * <p>Returns the Transfer Family users and their properties for the
-     * <code>ServerId</code> value that you specify.</p>
-     */
     inline ListUsersResult& WithUsers(const Aws::Vector<ListedUser>& value) { SetUsers(value); return *this;}
-
-    /**
-     * <p>Returns the Transfer Family users and their properties for the
-     * <code>ServerId</code> value that you specify.</p>
-     */
     inline ListUsersResult& WithUsers(Aws::Vector<ListedUser>&& value) { SetUsers(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns the Transfer Family users and their properties for the
-     * <code>ServerId</code> value that you specify.</p>
-     */
     inline ListUsersResult& AddUsers(const ListedUser& value) { m_users.push_back(value); return *this; }
-
-    /**
-     * <p>Returns the Transfer Family users and their properties for the
-     * <code>ServerId</code> value that you specify.</p>
-     */
     inline ListUsersResult& AddUsers(ListedUser&& value) { m_users.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListUsersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListUsersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListUsersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

@@ -39,6 +39,7 @@ namespace Model
     AWS_WAF_API GetSqlInjectionMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the <a>SqlInjectionMatchSet</a> that you specified in the
      * <code>GetSqlInjectionMatchSet</code> request. For more information, see the
@@ -51,81 +52,22 @@ namespace Model
      * <code>Type</code> </p> </li> </ul>
      */
     inline const SqlInjectionMatchSet& GetSqlInjectionMatchSet() const{ return m_sqlInjectionMatchSet; }
-
-    /**
-     * <p>Information about the <a>SqlInjectionMatchSet</a> that you specified in the
-     * <code>GetSqlInjectionMatchSet</code> request. For more information, see the
-     * following topics:</p> <ul> <li> <p> <a>SqlInjectionMatchSet</a>: Contains
-     * <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of
-     * <code>SqlInjectionMatchTuple</code> objects</p> </li> <li> <p>
-     * <a>SqlInjectionMatchTuple</a>: Each <code>SqlInjectionMatchTuple</code> object
-     * contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p>
-     * </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code> </p> </li> </ul>
-     */
     inline void SetSqlInjectionMatchSet(const SqlInjectionMatchSet& value) { m_sqlInjectionMatchSet = value; }
-
-    /**
-     * <p>Information about the <a>SqlInjectionMatchSet</a> that you specified in the
-     * <code>GetSqlInjectionMatchSet</code> request. For more information, see the
-     * following topics:</p> <ul> <li> <p> <a>SqlInjectionMatchSet</a>: Contains
-     * <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of
-     * <code>SqlInjectionMatchTuple</code> objects</p> </li> <li> <p>
-     * <a>SqlInjectionMatchTuple</a>: Each <code>SqlInjectionMatchTuple</code> object
-     * contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p>
-     * </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code> </p> </li> </ul>
-     */
     inline void SetSqlInjectionMatchSet(SqlInjectionMatchSet&& value) { m_sqlInjectionMatchSet = std::move(value); }
-
-    /**
-     * <p>Information about the <a>SqlInjectionMatchSet</a> that you specified in the
-     * <code>GetSqlInjectionMatchSet</code> request. For more information, see the
-     * following topics:</p> <ul> <li> <p> <a>SqlInjectionMatchSet</a>: Contains
-     * <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of
-     * <code>SqlInjectionMatchTuple</code> objects</p> </li> <li> <p>
-     * <a>SqlInjectionMatchTuple</a>: Each <code>SqlInjectionMatchTuple</code> object
-     * contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p>
-     * </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code> </p> </li> </ul>
-     */
     inline GetSqlInjectionMatchSetResult& WithSqlInjectionMatchSet(const SqlInjectionMatchSet& value) { SetSqlInjectionMatchSet(value); return *this;}
-
-    /**
-     * <p>Information about the <a>SqlInjectionMatchSet</a> that you specified in the
-     * <code>GetSqlInjectionMatchSet</code> request. For more information, see the
-     * following topics:</p> <ul> <li> <p> <a>SqlInjectionMatchSet</a>: Contains
-     * <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of
-     * <code>SqlInjectionMatchTuple</code> objects</p> </li> <li> <p>
-     * <a>SqlInjectionMatchTuple</a>: Each <code>SqlInjectionMatchTuple</code> object
-     * contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p>
-     * </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code> </p> </li> </ul>
-     */
     inline GetSqlInjectionMatchSetResult& WithSqlInjectionMatchSet(SqlInjectionMatchSet&& value) { SetSqlInjectionMatchSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSqlInjectionMatchSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSqlInjectionMatchSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSqlInjectionMatchSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SqlInjectionMatchSet m_sqlInjectionMatchSet;

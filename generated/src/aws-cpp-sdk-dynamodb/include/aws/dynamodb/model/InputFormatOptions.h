@@ -38,42 +38,18 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The options for imported source files in CSV format. The values are
      * Delimiter and HeaderList. </p>
      */
     inline const CsvOptions& GetCsv() const{ return m_csv; }
-
-    /**
-     * <p> The options for imported source files in CSV format. The values are
-     * Delimiter and HeaderList. </p>
-     */
     inline bool CsvHasBeenSet() const { return m_csvHasBeenSet; }
-
-    /**
-     * <p> The options for imported source files in CSV format. The values are
-     * Delimiter and HeaderList. </p>
-     */
     inline void SetCsv(const CsvOptions& value) { m_csvHasBeenSet = true; m_csv = value; }
-
-    /**
-     * <p> The options for imported source files in CSV format. The values are
-     * Delimiter and HeaderList. </p>
-     */
     inline void SetCsv(CsvOptions&& value) { m_csvHasBeenSet = true; m_csv = std::move(value); }
-
-    /**
-     * <p> The options for imported source files in CSV format. The values are
-     * Delimiter and HeaderList. </p>
-     */
     inline InputFormatOptions& WithCsv(const CsvOptions& value) { SetCsv(value); return *this;}
-
-    /**
-     * <p> The options for imported source files in CSV format. The values are
-     * Delimiter and HeaderList. </p>
-     */
     inline InputFormatOptions& WithCsv(CsvOptions&& value) { SetCsv(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CsvOptions m_csv;

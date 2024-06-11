@@ -34,63 +34,29 @@ namespace Model
     AWS_INSPECTOR_API GetTelemetryMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Telemetry details.</p>
      */
     inline const Aws::Vector<TelemetryMetadata>& GetTelemetryMetadata() const{ return m_telemetryMetadata; }
-
-    /**
-     * <p>Telemetry details.</p>
-     */
     inline void SetTelemetryMetadata(const Aws::Vector<TelemetryMetadata>& value) { m_telemetryMetadata = value; }
-
-    /**
-     * <p>Telemetry details.</p>
-     */
     inline void SetTelemetryMetadata(Aws::Vector<TelemetryMetadata>&& value) { m_telemetryMetadata = std::move(value); }
-
-    /**
-     * <p>Telemetry details.</p>
-     */
     inline GetTelemetryMetadataResult& WithTelemetryMetadata(const Aws::Vector<TelemetryMetadata>& value) { SetTelemetryMetadata(value); return *this;}
-
-    /**
-     * <p>Telemetry details.</p>
-     */
     inline GetTelemetryMetadataResult& WithTelemetryMetadata(Aws::Vector<TelemetryMetadata>&& value) { SetTelemetryMetadata(std::move(value)); return *this;}
-
-    /**
-     * <p>Telemetry details.</p>
-     */
     inline GetTelemetryMetadataResult& AddTelemetryMetadata(const TelemetryMetadata& value) { m_telemetryMetadata.push_back(value); return *this; }
-
-    /**
-     * <p>Telemetry details.</p>
-     */
     inline GetTelemetryMetadataResult& AddTelemetryMetadata(TelemetryMetadata&& value) { m_telemetryMetadata.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTelemetryMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTelemetryMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTelemetryMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TelemetryMetadata> m_telemetryMetadata;

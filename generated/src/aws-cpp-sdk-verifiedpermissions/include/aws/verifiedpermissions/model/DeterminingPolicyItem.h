@@ -47,54 +47,20 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Id of a policy that determined to an authorization decision.</p>
      * <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
-
-    /**
-     * <p>The Id of a policy that determined to an authorization decision.</p>
-     * <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
-     */
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
-
-    /**
-     * <p>The Id of a policy that determined to an authorization decision.</p>
-     * <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
-     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
-
-    /**
-     * <p>The Id of a policy that determined to an authorization decision.</p>
-     * <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
-     */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
-
-    /**
-     * <p>The Id of a policy that determined to an authorization decision.</p>
-     * <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
-     */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
-
-    /**
-     * <p>The Id of a policy that determined to an authorization decision.</p>
-     * <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
-     */
     inline DeterminingPolicyItem& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-
-    /**
-     * <p>The Id of a policy that determined to an authorization decision.</p>
-     * <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
-     */
     inline DeterminingPolicyItem& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Id of a policy that determined to an authorization decision.</p>
-     * <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
-     */
     inline DeterminingPolicyItem& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyId;

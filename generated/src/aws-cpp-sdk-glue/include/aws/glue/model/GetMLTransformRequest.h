@@ -34,54 +34,20 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the transform, generated at the time that the
      * transform was created.</p>
      */
     inline const Aws::String& GetTransformId() const{ return m_transformId; }
-
-    /**
-     * <p>The unique identifier of the transform, generated at the time that the
-     * transform was created.</p>
-     */
     inline bool TransformIdHasBeenSet() const { return m_transformIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the transform, generated at the time that the
-     * transform was created.</p>
-     */
     inline void SetTransformId(const Aws::String& value) { m_transformIdHasBeenSet = true; m_transformId = value; }
-
-    /**
-     * <p>The unique identifier of the transform, generated at the time that the
-     * transform was created.</p>
-     */
     inline void SetTransformId(Aws::String&& value) { m_transformIdHasBeenSet = true; m_transformId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the transform, generated at the time that the
-     * transform was created.</p>
-     */
     inline void SetTransformId(const char* value) { m_transformIdHasBeenSet = true; m_transformId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the transform, generated at the time that the
-     * transform was created.</p>
-     */
     inline GetMLTransformRequest& WithTransformId(const Aws::String& value) { SetTransformId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the transform, generated at the time that the
-     * transform was created.</p>
-     */
     inline GetMLTransformRequest& WithTransformId(Aws::String&& value) { SetTransformId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the transform, generated at the time that the
-     * transform was created.</p>
-     */
     inline GetMLTransformRequest& WithTransformId(const char* value) { SetTransformId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transformId;

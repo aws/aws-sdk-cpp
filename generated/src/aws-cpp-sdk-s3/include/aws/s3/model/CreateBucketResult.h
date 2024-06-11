@@ -32,63 +32,29 @@ namespace Model
     AWS_S3_API CreateBucketResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A forward slash followed by the name of the bucket.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>A forward slash followed by the name of the bucket.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
-
-    /**
-     * <p>A forward slash followed by the name of the bucket.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-
-    /**
-     * <p>A forward slash followed by the name of the bucket.</p>
-     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
-
-    /**
-     * <p>A forward slash followed by the name of the bucket.</p>
-     */
     inline CreateBucketResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>A forward slash followed by the name of the bucket.</p>
-     */
     inline CreateBucketResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>A forward slash followed by the name of the bucket.</p>
-     */
     inline CreateBucketResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateBucketResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateBucketResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateBucketResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_location;

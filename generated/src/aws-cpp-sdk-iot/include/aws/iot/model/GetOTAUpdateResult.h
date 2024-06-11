@@ -33,53 +33,27 @@ namespace Model
     AWS_IOT_API GetOTAUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The OTA update info.</p>
      */
     inline const OTAUpdateInfo& GetOtaUpdateInfo() const{ return m_otaUpdateInfo; }
-
-    /**
-     * <p>The OTA update info.</p>
-     */
     inline void SetOtaUpdateInfo(const OTAUpdateInfo& value) { m_otaUpdateInfo = value; }
-
-    /**
-     * <p>The OTA update info.</p>
-     */
     inline void SetOtaUpdateInfo(OTAUpdateInfo&& value) { m_otaUpdateInfo = std::move(value); }
-
-    /**
-     * <p>The OTA update info.</p>
-     */
     inline GetOTAUpdateResult& WithOtaUpdateInfo(const OTAUpdateInfo& value) { SetOtaUpdateInfo(value); return *this;}
-
-    /**
-     * <p>The OTA update info.</p>
-     */
     inline GetOTAUpdateResult& WithOtaUpdateInfo(OTAUpdateInfo&& value) { SetOtaUpdateInfo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetOTAUpdateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetOTAUpdateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetOTAUpdateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     OTAUpdateInfo m_otaUpdateInfo;

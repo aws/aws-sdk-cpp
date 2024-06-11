@@ -52,131 +52,46 @@ namespace Model
     AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>A list of specific dimensions from a dimension group. If this list isn't
      * included, then all of the dimensions in the group were requested, or are present
      * in the response.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDimensions() const{ return m_dimensions; }
-
-    /**
-     * <p>A list of specific dimensions from a dimension group. If this list isn't
-     * included, then all of the dimensions in the group were requested, or are present
-     * in the response.</p>
-     */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-
-    /**
-     * <p>A list of specific dimensions from a dimension group. If this list isn't
-     * included, then all of the dimensions in the group were requested, or are present
-     * in the response.</p>
-     */
     inline void SetDimensions(const Aws::Vector<Aws::String>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-
-    /**
-     * <p>A list of specific dimensions from a dimension group. If this list isn't
-     * included, then all of the dimensions in the group were requested, or are present
-     * in the response.</p>
-     */
     inline void SetDimensions(Aws::Vector<Aws::String>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-
-    /**
-     * <p>A list of specific dimensions from a dimension group. If this list isn't
-     * included, then all of the dimensions in the group were requested, or are present
-     * in the response.</p>
-     */
     inline PerformanceInsightsMetricDimensionGroup& WithDimensions(const Aws::Vector<Aws::String>& value) { SetDimensions(value); return *this;}
-
-    /**
-     * <p>A list of specific dimensions from a dimension group. If this list isn't
-     * included, then all of the dimensions in the group were requested, or are present
-     * in the response.</p>
-     */
     inline PerformanceInsightsMetricDimensionGroup& WithDimensions(Aws::Vector<Aws::String>&& value) { SetDimensions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of specific dimensions from a dimension group. If this list isn't
-     * included, then all of the dimensions in the group were requested, or are present
-     * in the response.</p>
-     */
     inline PerformanceInsightsMetricDimensionGroup& AddDimensions(const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of specific dimensions from a dimension group. If this list isn't
-     * included, then all of the dimensions in the group were requested, or are present
-     * in the response.</p>
-     */
     inline PerformanceInsightsMetricDimensionGroup& AddDimensions(Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of specific dimensions from a dimension group. If this list isn't
-     * included, then all of the dimensions in the group were requested, or are present
-     * in the response.</p>
-     */
     inline PerformanceInsightsMetricDimensionGroup& AddDimensions(const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The available dimension groups for Performance Insights metric type.</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
-
-    /**
-     * <p>The available dimension groups for Performance Insights metric type.</p>
-     */
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-
-    /**
-     * <p>The available dimension groups for Performance Insights metric type.</p>
-     */
     inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-
-    /**
-     * <p>The available dimension groups for Performance Insights metric type.</p>
-     */
     inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-
-    /**
-     * <p>The available dimension groups for Performance Insights metric type.</p>
-     */
     inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-
-    /**
-     * <p>The available dimension groups for Performance Insights metric type.</p>
-     */
     inline PerformanceInsightsMetricDimensionGroup& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p>The available dimension groups for Performance Insights metric type.</p>
-     */
     inline PerformanceInsightsMetricDimensionGroup& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-
-    /**
-     * <p>The available dimension groups for Performance Insights metric type.</p>
-     */
     inline PerformanceInsightsMetricDimensionGroup& WithGroup(const char* value) { SetGroup(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to fetch for this dimension group.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The maximum number of items to fetch for this dimension group.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to fetch for this dimension group.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>The maximum number of items to fetch for this dimension group.</p>
-     */
     inline PerformanceInsightsMetricDimensionGroup& WithLimit(int value) { SetLimit(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_dimensions;

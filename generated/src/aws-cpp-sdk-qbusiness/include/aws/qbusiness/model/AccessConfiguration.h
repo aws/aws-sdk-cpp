@@ -40,83 +40,32 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of <code>AccessControlList</code> objects.</p>
      */
     inline const Aws::Vector<AccessControl>& GetAccessControls() const{ return m_accessControls; }
-
-    /**
-     * <p>A list of <code>AccessControlList</code> objects.</p>
-     */
     inline bool AccessControlsHasBeenSet() const { return m_accessControlsHasBeenSet; }
-
-    /**
-     * <p>A list of <code>AccessControlList</code> objects.</p>
-     */
     inline void SetAccessControls(const Aws::Vector<AccessControl>& value) { m_accessControlsHasBeenSet = true; m_accessControls = value; }
-
-    /**
-     * <p>A list of <code>AccessControlList</code> objects.</p>
-     */
     inline void SetAccessControls(Aws::Vector<AccessControl>&& value) { m_accessControlsHasBeenSet = true; m_accessControls = std::move(value); }
-
-    /**
-     * <p>A list of <code>AccessControlList</code> objects.</p>
-     */
     inline AccessConfiguration& WithAccessControls(const Aws::Vector<AccessControl>& value) { SetAccessControls(value); return *this;}
-
-    /**
-     * <p>A list of <code>AccessControlList</code> objects.</p>
-     */
     inline AccessConfiguration& WithAccessControls(Aws::Vector<AccessControl>&& value) { SetAccessControls(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>AccessControlList</code> objects.</p>
-     */
     inline AccessConfiguration& AddAccessControls(const AccessControl& value) { m_accessControlsHasBeenSet = true; m_accessControls.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>AccessControlList</code> objects.</p>
-     */
     inline AccessConfiguration& AddAccessControls(AccessControl&& value) { m_accessControlsHasBeenSet = true; m_accessControls.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the member relation within the <code>AccessControlList</code>
      * object.</p>
      */
     inline const MemberRelation& GetMemberRelation() const{ return m_memberRelation; }
-
-    /**
-     * <p>Describes the member relation within the <code>AccessControlList</code>
-     * object.</p>
-     */
     inline bool MemberRelationHasBeenSet() const { return m_memberRelationHasBeenSet; }
-
-    /**
-     * <p>Describes the member relation within the <code>AccessControlList</code>
-     * object.</p>
-     */
     inline void SetMemberRelation(const MemberRelation& value) { m_memberRelationHasBeenSet = true; m_memberRelation = value; }
-
-    /**
-     * <p>Describes the member relation within the <code>AccessControlList</code>
-     * object.</p>
-     */
     inline void SetMemberRelation(MemberRelation&& value) { m_memberRelationHasBeenSet = true; m_memberRelation = std::move(value); }
-
-    /**
-     * <p>Describes the member relation within the <code>AccessControlList</code>
-     * object.</p>
-     */
     inline AccessConfiguration& WithMemberRelation(const MemberRelation& value) { SetMemberRelation(value); return *this;}
-
-    /**
-     * <p>Describes the member relation within the <code>AccessControlList</code>
-     * object.</p>
-     */
     inline AccessConfiguration& WithMemberRelation(MemberRelation&& value) { SetMemberRelation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AccessControl> m_accessControls;

@@ -33,46 +33,19 @@ namespace Model
     AWS_TRUSTEDADVISOR_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A list of recommendation resource ARNs and exclusion status to update</p>
      */
     inline const Aws::Vector<RecommendationResourceExclusion>& GetRecommendationResourceExclusions() const{ return m_recommendationResourceExclusions; }
-
-    /**
-     * <p>A list of recommendation resource ARNs and exclusion status to update</p>
-     */
     inline bool RecommendationResourceExclusionsHasBeenSet() const { return m_recommendationResourceExclusionsHasBeenSet; }
-
-    /**
-     * <p>A list of recommendation resource ARNs and exclusion status to update</p>
-     */
     inline void SetRecommendationResourceExclusions(const Aws::Vector<RecommendationResourceExclusion>& value) { m_recommendationResourceExclusionsHasBeenSet = true; m_recommendationResourceExclusions = value; }
-
-    /**
-     * <p>A list of recommendation resource ARNs and exclusion status to update</p>
-     */
     inline void SetRecommendationResourceExclusions(Aws::Vector<RecommendationResourceExclusion>&& value) { m_recommendationResourceExclusionsHasBeenSet = true; m_recommendationResourceExclusions = std::move(value); }
-
-    /**
-     * <p>A list of recommendation resource ARNs and exclusion status to update</p>
-     */
     inline BatchUpdateRecommendationResourceExclusionRequest& WithRecommendationResourceExclusions(const Aws::Vector<RecommendationResourceExclusion>& value) { SetRecommendationResourceExclusions(value); return *this;}
-
-    /**
-     * <p>A list of recommendation resource ARNs and exclusion status to update</p>
-     */
     inline BatchUpdateRecommendationResourceExclusionRequest& WithRecommendationResourceExclusions(Aws::Vector<RecommendationResourceExclusion>&& value) { SetRecommendationResourceExclusions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of recommendation resource ARNs and exclusion status to update</p>
-     */
     inline BatchUpdateRecommendationResourceExclusionRequest& AddRecommendationResourceExclusions(const RecommendationResourceExclusion& value) { m_recommendationResourceExclusionsHasBeenSet = true; m_recommendationResourceExclusions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of recommendation resource ARNs and exclusion status to update</p>
-     */
     inline BatchUpdateRecommendationResourceExclusionRequest& AddRecommendationResourceExclusions(RecommendationResourceExclusion&& value) { m_recommendationResourceExclusionsHasBeenSet = true; m_recommendationResourceExclusions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<RecommendationResourceExclusion> m_recommendationResourceExclusions;

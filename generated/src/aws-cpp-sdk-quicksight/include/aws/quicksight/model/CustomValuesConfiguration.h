@@ -39,45 +39,25 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Includes the null value in custom action parameter values.</p>
      */
     inline bool GetIncludeNullValue() const{ return m_includeNullValue; }
-
-    /**
-     * <p>Includes the null value in custom action parameter values.</p>
-     */
     inline bool IncludeNullValueHasBeenSet() const { return m_includeNullValueHasBeenSet; }
-
-    /**
-     * <p>Includes the null value in custom action parameter values.</p>
-     */
     inline void SetIncludeNullValue(bool value) { m_includeNullValueHasBeenSet = true; m_includeNullValue = value; }
-
-    /**
-     * <p>Includes the null value in custom action parameter values.</p>
-     */
     inline CustomValuesConfiguration& WithIncludeNullValue(bool value) { SetIncludeNullValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const CustomParameterValues& GetCustomValues() const{ return m_customValues; }
-
-    
     inline bool CustomValuesHasBeenSet() const { return m_customValuesHasBeenSet; }
-
-    
     inline void SetCustomValues(const CustomParameterValues& value) { m_customValuesHasBeenSet = true; m_customValues = value; }
-
-    
     inline void SetCustomValues(CustomParameterValues&& value) { m_customValuesHasBeenSet = true; m_customValues = std::move(value); }
-
-    
     inline CustomValuesConfiguration& WithCustomValues(const CustomParameterValues& value) { SetCustomValues(value); return *this;}
-
-    
     inline CustomValuesConfiguration& WithCustomValues(CustomParameterValues&& value) { SetCustomValues(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_includeNullValue;

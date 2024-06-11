@@ -34,87 +34,33 @@ namespace Model
     AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier for the organization.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
-
-    /**
-     * <p>The identifier for the organization.</p>
-     */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the organization.</p>
-     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-
-    /**
-     * <p>The identifier for the organization.</p>
-     */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-
-    /**
-     * <p>The identifier for the organization.</p>
-     */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-
-    /**
-     * <p>The identifier for the organization.</p>
-     */
     inline DeleteAccessControlRuleRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-
-    /**
-     * <p>The identifier for the organization.</p>
-     */
     inline DeleteAccessControlRuleRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the organization.</p>
-     */
     inline DeleteAccessControlRuleRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the access control rule.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the access control rule.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the access control rule.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the access control rule.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the access control rule.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the access control rule.</p>
-     */
     inline DeleteAccessControlRuleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the access control rule.</p>
-     */
     inline DeleteAccessControlRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the access control rule.</p>
-     */
     inline DeleteAccessControlRuleRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_organizationId;

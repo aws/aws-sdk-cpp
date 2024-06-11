@@ -37,46 +37,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The rule priorities.</p>
      */
     inline const Aws::Vector<RulePriorityPair>& GetRulePriorities() const{ return m_rulePriorities; }
-
-    /**
-     * <p>The rule priorities.</p>
-     */
     inline bool RulePrioritiesHasBeenSet() const { return m_rulePrioritiesHasBeenSet; }
-
-    /**
-     * <p>The rule priorities.</p>
-     */
     inline void SetRulePriorities(const Aws::Vector<RulePriorityPair>& value) { m_rulePrioritiesHasBeenSet = true; m_rulePriorities = value; }
-
-    /**
-     * <p>The rule priorities.</p>
-     */
     inline void SetRulePriorities(Aws::Vector<RulePriorityPair>&& value) { m_rulePrioritiesHasBeenSet = true; m_rulePriorities = std::move(value); }
-
-    /**
-     * <p>The rule priorities.</p>
-     */
     inline SetRulePrioritiesRequest& WithRulePriorities(const Aws::Vector<RulePriorityPair>& value) { SetRulePriorities(value); return *this;}
-
-    /**
-     * <p>The rule priorities.</p>
-     */
     inline SetRulePrioritiesRequest& WithRulePriorities(Aws::Vector<RulePriorityPair>&& value) { SetRulePriorities(std::move(value)); return *this;}
-
-    /**
-     * <p>The rule priorities.</p>
-     */
     inline SetRulePrioritiesRequest& AddRulePriorities(const RulePriorityPair& value) { m_rulePrioritiesHasBeenSet = true; m_rulePriorities.push_back(value); return *this; }
-
-    /**
-     * <p>The rule priorities.</p>
-     */
     inline SetRulePrioritiesRequest& AddRulePriorities(RulePriorityPair&& value) { m_rulePrioritiesHasBeenSet = true; m_rulePriorities.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<RulePriorityPair> m_rulePriorities;

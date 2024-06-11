@@ -37,63 +37,29 @@ namespace Model
     AWS_STORAGEGATEWAY_API DetachVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
      */
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
-     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
-     */
     inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
-     */
     inline void SetVolumeARN(const char* value) { m_volumeARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
-     */
     inline DetachVolumeResult& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
-     */
     inline DetachVolumeResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
-     */
     inline DetachVolumeResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DetachVolumeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DetachVolumeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DetachVolumeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_volumeARN;

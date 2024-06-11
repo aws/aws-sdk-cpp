@@ -36,71 +36,30 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the Global datastore</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupId() const{ return m_globalReplicationGroupId; }
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline bool GlobalReplicationGroupIdHasBeenSet() const { return m_globalReplicationGroupIdHasBeenSet; }
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline void SetGlobalReplicationGroupId(const Aws::String& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = value; }
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline void SetGlobalReplicationGroupId(Aws::String&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::move(value); }
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline void SetGlobalReplicationGroupId(const char* value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId.assign(value); }
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline DeleteGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(const Aws::String& value) { SetGlobalReplicationGroupId(value); return *this;}
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline DeleteGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(Aws::String&& value) { SetGlobalReplicationGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline DeleteGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(const char* value) { SetGlobalReplicationGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The primary replication group is retained as a standalone replication group.
      * </p>
      */
     inline bool GetRetainPrimaryReplicationGroup() const{ return m_retainPrimaryReplicationGroup; }
-
-    /**
-     * <p>The primary replication group is retained as a standalone replication group.
-     * </p>
-     */
     inline bool RetainPrimaryReplicationGroupHasBeenSet() const { return m_retainPrimaryReplicationGroupHasBeenSet; }
-
-    /**
-     * <p>The primary replication group is retained as a standalone replication group.
-     * </p>
-     */
     inline void SetRetainPrimaryReplicationGroup(bool value) { m_retainPrimaryReplicationGroupHasBeenSet = true; m_retainPrimaryReplicationGroup = value; }
-
-    /**
-     * <p>The primary replication group is retained as a standalone replication group.
-     * </p>
-     */
     inline DeleteGlobalReplicationGroupRequest& WithRetainPrimaryReplicationGroup(bool value) { SetRetainPrimaryReplicationGroup(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_globalReplicationGroupId;

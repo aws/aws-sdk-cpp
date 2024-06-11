@@ -38,153 +38,58 @@ namespace Model
     AWS_CHIME_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Amazon Chime account name prefix with which to filter results.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Amazon Chime account name prefix with which to filter results.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Amazon Chime account name prefix with which to filter results.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Amazon Chime account name prefix with which to filter results.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Amazon Chime account name prefix with which to filter results.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Amazon Chime account name prefix with which to filter results.</p>
-     */
     inline ListAccountsRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Amazon Chime account name prefix with which to filter results.</p>
-     */
     inline ListAccountsRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Chime account name prefix with which to filter results.</p>
-     */
     inline ListAccountsRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>User email address with which to filter results.</p>
      */
     inline const Aws::String& GetUserEmail() const{ return m_userEmail; }
-
-    /**
-     * <p>User email address with which to filter results.</p>
-     */
     inline bool UserEmailHasBeenSet() const { return m_userEmailHasBeenSet; }
-
-    /**
-     * <p>User email address with which to filter results.</p>
-     */
     inline void SetUserEmail(const Aws::String& value) { m_userEmailHasBeenSet = true; m_userEmail = value; }
-
-    /**
-     * <p>User email address with which to filter results.</p>
-     */
     inline void SetUserEmail(Aws::String&& value) { m_userEmailHasBeenSet = true; m_userEmail = std::move(value); }
-
-    /**
-     * <p>User email address with which to filter results.</p>
-     */
     inline void SetUserEmail(const char* value) { m_userEmailHasBeenSet = true; m_userEmail.assign(value); }
-
-    /**
-     * <p>User email address with which to filter results.</p>
-     */
     inline ListAccountsRequest& WithUserEmail(const Aws::String& value) { SetUserEmail(value); return *this;}
-
-    /**
-     * <p>User email address with which to filter results.</p>
-     */
     inline ListAccountsRequest& WithUserEmail(Aws::String&& value) { SetUserEmail(std::move(value)); return *this;}
-
-    /**
-     * <p>User email address with which to filter results.</p>
-     */
     inline ListAccountsRequest& WithUserEmail(const char* value) { SetUserEmail(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline ListAccountsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline ListAccountsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline ListAccountsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return in a single call. Defaults to
      * 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in a single call. Defaults to
-     * 100.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return in a single call. Defaults to
-     * 100.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in a single call. Defaults to
-     * 100.</p>
-     */
     inline ListAccountsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

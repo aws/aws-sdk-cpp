@@ -34,62 +34,21 @@ namespace Model
     AWS_MEMORYDB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to
      * identify the current node type being used by this cluster, and from that to
      * create a list of node types you can scale up to.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
-
-    /**
-     * <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to
-     * identify the current node type being used by this cluster, and from that to
-     * create a list of node types you can scale up to.</p>
-     */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-
-    /**
-     * <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to
-     * identify the current node type being used by this cluster, and from that to
-     * create a list of node types you can scale up to.</p>
-     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-
-    /**
-     * <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to
-     * identify the current node type being used by this cluster, and from that to
-     * create a list of node types you can scale up to.</p>
-     */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-
-    /**
-     * <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to
-     * identify the current node type being used by this cluster, and from that to
-     * create a list of node types you can scale up to.</p>
-     */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-
-    /**
-     * <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to
-     * identify the current node type being used by this cluster, and from that to
-     * create a list of node types you can scale up to.</p>
-     */
     inline ListAllowedNodeTypeUpdatesRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-
-    /**
-     * <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to
-     * identify the current node type being used by this cluster, and from that to
-     * create a list of node types you can scale up to.</p>
-     */
     inline ListAllowedNodeTypeUpdatesRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to
-     * identify the current node type being used by this cluster, and from that to
-     * create a list of node types you can scale up to.</p>
-     */
     inline ListAllowedNodeTypeUpdatesRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterName;

@@ -50,30 +50,16 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>the time period where Firehose will retry sending data to the chosen HTTP
      * endpoint.</p>
      */
     inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
-
-    /**
-     * <p>the time period where Firehose will retry sending data to the chosen HTTP
-     * endpoint.</p>
-     */
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
-
-    /**
-     * <p>the time period where Firehose will retry sending data to the chosen HTTP
-     * endpoint.</p>
-     */
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
-
-    /**
-     * <p>the time period where Firehose will retry sending data to the chosen HTTP
-     * endpoint.</p>
-     */
     inline SnowflakeRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_durationInSeconds;

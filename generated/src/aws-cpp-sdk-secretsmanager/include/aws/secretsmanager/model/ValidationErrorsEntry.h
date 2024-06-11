@@ -38,95 +38,34 @@ namespace Model
     AWS_SECRETSMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Checks the name of the policy.</p>
      */
     inline const Aws::String& GetCheckName() const{ return m_checkName; }
-
-    /**
-     * <p>Checks the name of the policy.</p>
-     */
     inline bool CheckNameHasBeenSet() const { return m_checkNameHasBeenSet; }
-
-    /**
-     * <p>Checks the name of the policy.</p>
-     */
     inline void SetCheckName(const Aws::String& value) { m_checkNameHasBeenSet = true; m_checkName = value; }
-
-    /**
-     * <p>Checks the name of the policy.</p>
-     */
     inline void SetCheckName(Aws::String&& value) { m_checkNameHasBeenSet = true; m_checkName = std::move(value); }
-
-    /**
-     * <p>Checks the name of the policy.</p>
-     */
     inline void SetCheckName(const char* value) { m_checkNameHasBeenSet = true; m_checkName.assign(value); }
-
-    /**
-     * <p>Checks the name of the policy.</p>
-     */
     inline ValidationErrorsEntry& WithCheckName(const Aws::String& value) { SetCheckName(value); return *this;}
-
-    /**
-     * <p>Checks the name of the policy.</p>
-     */
     inline ValidationErrorsEntry& WithCheckName(Aws::String&& value) { SetCheckName(std::move(value)); return *this;}
-
-    /**
-     * <p>Checks the name of the policy.</p>
-     */
     inline ValidationErrorsEntry& WithCheckName(const char* value) { SetCheckName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Displays error messages if validation encounters problems during validation
      * of the resource policy.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>Displays error messages if validation encounters problems during validation
-     * of the resource policy.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>Displays error messages if validation encounters problems during validation
-     * of the resource policy.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>Displays error messages if validation encounters problems during validation
-     * of the resource policy.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>Displays error messages if validation encounters problems during validation
-     * of the resource policy.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>Displays error messages if validation encounters problems during validation
-     * of the resource policy.</p>
-     */
     inline ValidationErrorsEntry& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>Displays error messages if validation encounters problems during validation
-     * of the resource policy.</p>
-     */
     inline ValidationErrorsEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Displays error messages if validation encounters problems during validation
-     * of the resource policy.</p>
-     */
     inline ValidationErrorsEntry& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_checkName;

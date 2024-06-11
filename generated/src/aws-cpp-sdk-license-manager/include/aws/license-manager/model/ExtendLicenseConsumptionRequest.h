@@ -34,75 +34,31 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>License consumption token.</p>
      */
     inline const Aws::String& GetLicenseConsumptionToken() const{ return m_licenseConsumptionToken; }
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline bool LicenseConsumptionTokenHasBeenSet() const { return m_licenseConsumptionTokenHasBeenSet; }
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline void SetLicenseConsumptionToken(const Aws::String& value) { m_licenseConsumptionTokenHasBeenSet = true; m_licenseConsumptionToken = value; }
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline void SetLicenseConsumptionToken(Aws::String&& value) { m_licenseConsumptionTokenHasBeenSet = true; m_licenseConsumptionToken = std::move(value); }
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline void SetLicenseConsumptionToken(const char* value) { m_licenseConsumptionTokenHasBeenSet = true; m_licenseConsumptionToken.assign(value); }
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline ExtendLicenseConsumptionRequest& WithLicenseConsumptionToken(const Aws::String& value) { SetLicenseConsumptionToken(value); return *this;}
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline ExtendLicenseConsumptionRequest& WithLicenseConsumptionToken(Aws::String&& value) { SetLicenseConsumptionToken(std::move(value)); return *this;}
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline ExtendLicenseConsumptionRequest& WithLicenseConsumptionToken(const char* value) { SetLicenseConsumptionToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request. Provides an error response if you do not have the
      * required permissions.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request. Provides an error response if you do not have the
-     * required permissions.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request. Provides an error response if you do not have the
-     * required permissions.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request. Provides an error response if you do not have the
-     * required permissions.</p>
-     */
     inline ExtendLicenseConsumptionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_licenseConsumptionToken;

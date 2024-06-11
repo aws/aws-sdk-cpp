@@ -39,6 +39,7 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The runtime system for your Config Custom Policy rule. Guard is a
      * policy-as-code language that allows you to write policies that are enforced by
@@ -47,144 +48,40 @@ namespace Model
      * Repository</a>.</p>
      */
     inline const Aws::String& GetPolicyRuntime() const{ return m_policyRuntime; }
-
-    /**
-     * <p>The runtime system for your Config Custom Policy rule. Guard is a
-     * policy-as-code language that allows you to write policies that are enforced by
-     * Config Custom Policy rules. For more information about Guard, see the <a
-     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
-     * Repository</a>.</p>
-     */
     inline bool PolicyRuntimeHasBeenSet() const { return m_policyRuntimeHasBeenSet; }
-
-    /**
-     * <p>The runtime system for your Config Custom Policy rule. Guard is a
-     * policy-as-code language that allows you to write policies that are enforced by
-     * Config Custom Policy rules. For more information about Guard, see the <a
-     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
-     * Repository</a>.</p>
-     */
     inline void SetPolicyRuntime(const Aws::String& value) { m_policyRuntimeHasBeenSet = true; m_policyRuntime = value; }
-
-    /**
-     * <p>The runtime system for your Config Custom Policy rule. Guard is a
-     * policy-as-code language that allows you to write policies that are enforced by
-     * Config Custom Policy rules. For more information about Guard, see the <a
-     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
-     * Repository</a>.</p>
-     */
     inline void SetPolicyRuntime(Aws::String&& value) { m_policyRuntimeHasBeenSet = true; m_policyRuntime = std::move(value); }
-
-    /**
-     * <p>The runtime system for your Config Custom Policy rule. Guard is a
-     * policy-as-code language that allows you to write policies that are enforced by
-     * Config Custom Policy rules. For more information about Guard, see the <a
-     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
-     * Repository</a>.</p>
-     */
     inline void SetPolicyRuntime(const char* value) { m_policyRuntimeHasBeenSet = true; m_policyRuntime.assign(value); }
-
-    /**
-     * <p>The runtime system for your Config Custom Policy rule. Guard is a
-     * policy-as-code language that allows you to write policies that are enforced by
-     * Config Custom Policy rules. For more information about Guard, see the <a
-     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
-     * Repository</a>.</p>
-     */
     inline CustomPolicyDetails& WithPolicyRuntime(const Aws::String& value) { SetPolicyRuntime(value); return *this;}
-
-    /**
-     * <p>The runtime system for your Config Custom Policy rule. Guard is a
-     * policy-as-code language that allows you to write policies that are enforced by
-     * Config Custom Policy rules. For more information about Guard, see the <a
-     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
-     * Repository</a>.</p>
-     */
     inline CustomPolicyDetails& WithPolicyRuntime(Aws::String&& value) { SetPolicyRuntime(std::move(value)); return *this;}
-
-    /**
-     * <p>The runtime system for your Config Custom Policy rule. Guard is a
-     * policy-as-code language that allows you to write policies that are enforced by
-     * Config Custom Policy rules. For more information about Guard, see the <a
-     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
-     * Repository</a>.</p>
-     */
     inline CustomPolicyDetails& WithPolicyRuntime(const char* value) { SetPolicyRuntime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The policy definition containing the logic for your Config Custom Policy
      * rule.</p>
      */
     inline const Aws::String& GetPolicyText() const{ return m_policyText; }
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline bool PolicyTextHasBeenSet() const { return m_policyTextHasBeenSet; }
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline void SetPolicyText(const Aws::String& value) { m_policyTextHasBeenSet = true; m_policyText = value; }
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline void SetPolicyText(Aws::String&& value) { m_policyTextHasBeenSet = true; m_policyText = std::move(value); }
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline void SetPolicyText(const char* value) { m_policyTextHasBeenSet = true; m_policyText.assign(value); }
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline CustomPolicyDetails& WithPolicyText(const Aws::String& value) { SetPolicyText(value); return *this;}
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline CustomPolicyDetails& WithPolicyText(Aws::String&& value) { SetPolicyText(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline CustomPolicyDetails& WithPolicyText(const char* value) { SetPolicyText(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The boolean expression for enabling debug logging for your Config Custom
      * Policy rule. The default value is <code>false</code>.</p>
      */
     inline bool GetEnableDebugLogDelivery() const{ return m_enableDebugLogDelivery; }
-
-    /**
-     * <p>The boolean expression for enabling debug logging for your Config Custom
-     * Policy rule. The default value is <code>false</code>.</p>
-     */
     inline bool EnableDebugLogDeliveryHasBeenSet() const { return m_enableDebugLogDeliveryHasBeenSet; }
-
-    /**
-     * <p>The boolean expression for enabling debug logging for your Config Custom
-     * Policy rule. The default value is <code>false</code>.</p>
-     */
     inline void SetEnableDebugLogDelivery(bool value) { m_enableDebugLogDeliveryHasBeenSet = true; m_enableDebugLogDelivery = value; }
-
-    /**
-     * <p>The boolean expression for enabling debug logging for your Config Custom
-     * Policy rule. The default value is <code>false</code>.</p>
-     */
     inline CustomPolicyDetails& WithEnableDebugLogDelivery(bool value) { SetEnableDebugLogDelivery(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyRuntime;

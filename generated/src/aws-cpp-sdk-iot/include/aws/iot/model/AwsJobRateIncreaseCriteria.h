@@ -36,55 +36,27 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>When this number of things have been notified, it will initiate an increase
      * in the rollout rate.</p>
      */
     inline int GetNumberOfNotifiedThings() const{ return m_numberOfNotifiedThings; }
-
-    /**
-     * <p>When this number of things have been notified, it will initiate an increase
-     * in the rollout rate.</p>
-     */
     inline bool NumberOfNotifiedThingsHasBeenSet() const { return m_numberOfNotifiedThingsHasBeenSet; }
-
-    /**
-     * <p>When this number of things have been notified, it will initiate an increase
-     * in the rollout rate.</p>
-     */
     inline void SetNumberOfNotifiedThings(int value) { m_numberOfNotifiedThingsHasBeenSet = true; m_numberOfNotifiedThings = value; }
-
-    /**
-     * <p>When this number of things have been notified, it will initiate an increase
-     * in the rollout rate.</p>
-     */
     inline AwsJobRateIncreaseCriteria& WithNumberOfNotifiedThings(int value) { SetNumberOfNotifiedThings(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When this number of things have succeeded in their job execution, it will
      * initiate an increase in the rollout rate.</p>
      */
     inline int GetNumberOfSucceededThings() const{ return m_numberOfSucceededThings; }
-
-    /**
-     * <p>When this number of things have succeeded in their job execution, it will
-     * initiate an increase in the rollout rate.</p>
-     */
     inline bool NumberOfSucceededThingsHasBeenSet() const { return m_numberOfSucceededThingsHasBeenSet; }
-
-    /**
-     * <p>When this number of things have succeeded in their job execution, it will
-     * initiate an increase in the rollout rate.</p>
-     */
     inline void SetNumberOfSucceededThings(int value) { m_numberOfSucceededThingsHasBeenSet = true; m_numberOfSucceededThings = value; }
-
-    /**
-     * <p>When this number of things have succeeded in their job execution, it will
-     * initiate an increase in the rollout rate.</p>
-     */
     inline AwsJobRateIncreaseCriteria& WithNumberOfSucceededThings(int value) { SetNumberOfSucceededThings(value); return *this;}
-
+    ///@}
   private:
 
     int m_numberOfNotifiedThings;

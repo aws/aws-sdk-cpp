@@ -39,48 +39,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Defines a custom response for the web request. For information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
      * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
      */
     inline const AwsWafv2CustomResponseDetails& GetCustomResponse() const{ return m_customResponse; }
-
-    /**
-     * <p> Defines a custom response for the web request. For information, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-     */
     inline bool CustomResponseHasBeenSet() const { return m_customResponseHasBeenSet; }
-
-    /**
-     * <p> Defines a custom response for the web request. For information, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-     */
     inline void SetCustomResponse(const AwsWafv2CustomResponseDetails& value) { m_customResponseHasBeenSet = true; m_customResponse = value; }
-
-    /**
-     * <p> Defines a custom response for the web request. For information, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-     */
     inline void SetCustomResponse(AwsWafv2CustomResponseDetails&& value) { m_customResponseHasBeenSet = true; m_customResponse = std::move(value); }
-
-    /**
-     * <p> Defines a custom response for the web request. For information, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-     */
     inline AwsWafv2ActionBlockDetails& WithCustomResponse(const AwsWafv2CustomResponseDetails& value) { SetCustomResponse(value); return *this;}
-
-    /**
-     * <p> Defines a custom response for the web request. For information, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-     */
     inline AwsWafv2ActionBlockDetails& WithCustomResponse(AwsWafv2CustomResponseDetails&& value) { SetCustomResponse(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsWafv2CustomResponseDetails m_customResponse;

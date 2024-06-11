@@ -33,53 +33,27 @@ namespace Model
     AWS_OPENSEARCHSERVERLESS_API GetSecurityConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details of the requested security configuration.</p>
      */
     inline const SecurityConfigDetail& GetSecurityConfigDetail() const{ return m_securityConfigDetail; }
-
-    /**
-     * <p>Details of the requested security configuration.</p>
-     */
     inline void SetSecurityConfigDetail(const SecurityConfigDetail& value) { m_securityConfigDetail = value; }
-
-    /**
-     * <p>Details of the requested security configuration.</p>
-     */
     inline void SetSecurityConfigDetail(SecurityConfigDetail&& value) { m_securityConfigDetail = std::move(value); }
-
-    /**
-     * <p>Details of the requested security configuration.</p>
-     */
     inline GetSecurityConfigResult& WithSecurityConfigDetail(const SecurityConfigDetail& value) { SetSecurityConfigDetail(value); return *this;}
-
-    /**
-     * <p>Details of the requested security configuration.</p>
-     */
     inline GetSecurityConfigResult& WithSecurityConfigDetail(SecurityConfigDetail&& value) { SetSecurityConfigDetail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSecurityConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSecurityConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSecurityConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SecurityConfigDetail m_securityConfigDetail;

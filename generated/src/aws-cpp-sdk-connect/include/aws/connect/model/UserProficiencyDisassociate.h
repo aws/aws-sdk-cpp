@@ -38,87 +38,33 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of user's proficiency.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
-
-    /**
-     * <p>The name of user's proficiency.</p>
-     */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-
-    /**
-     * <p>The name of user's proficiency.</p>
-     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-
-    /**
-     * <p>The name of user's proficiency.</p>
-     */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-
-    /**
-     * <p>The name of user's proficiency.</p>
-     */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-
-    /**
-     * <p>The name of user's proficiency.</p>
-     */
     inline UserProficiencyDisassociate& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-
-    /**
-     * <p>The name of user's proficiency.</p>
-     */
     inline UserProficiencyDisassociate& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of user's proficiency.</p>
-     */
     inline UserProficiencyDisassociate& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of user's proficiency.</p>
      */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
-
-    /**
-     * <p>The value of user's proficiency.</p>
-     */
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
-
-    /**
-     * <p>The value of user's proficiency.</p>
-     */
     inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
-
-    /**
-     * <p>The value of user's proficiency.</p>
-     */
     inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
-
-    /**
-     * <p>The value of user's proficiency.</p>
-     */
     inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
-
-    /**
-     * <p>The value of user's proficiency.</p>
-     */
     inline UserProficiencyDisassociate& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
-
-    /**
-     * <p>The value of user's proficiency.</p>
-     */
     inline UserProficiencyDisassociate& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of user's proficiency.</p>
-     */
     inline UserProficiencyDisassociate& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attributeName;

@@ -34,63 +34,29 @@ namespace Model
     AWS_AUTOSCALINGPLANS_API GetScalingPlanResourceForecastDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The data points to return.</p>
      */
     inline const Aws::Vector<Datapoint>& GetDatapoints() const{ return m_datapoints; }
-
-    /**
-     * <p>The data points to return.</p>
-     */
     inline void SetDatapoints(const Aws::Vector<Datapoint>& value) { m_datapoints = value; }
-
-    /**
-     * <p>The data points to return.</p>
-     */
     inline void SetDatapoints(Aws::Vector<Datapoint>&& value) { m_datapoints = std::move(value); }
-
-    /**
-     * <p>The data points to return.</p>
-     */
     inline GetScalingPlanResourceForecastDataResult& WithDatapoints(const Aws::Vector<Datapoint>& value) { SetDatapoints(value); return *this;}
-
-    /**
-     * <p>The data points to return.</p>
-     */
     inline GetScalingPlanResourceForecastDataResult& WithDatapoints(Aws::Vector<Datapoint>&& value) { SetDatapoints(std::move(value)); return *this;}
-
-    /**
-     * <p>The data points to return.</p>
-     */
     inline GetScalingPlanResourceForecastDataResult& AddDatapoints(const Datapoint& value) { m_datapoints.push_back(value); return *this; }
-
-    /**
-     * <p>The data points to return.</p>
-     */
     inline GetScalingPlanResourceForecastDataResult& AddDatapoints(Datapoint&& value) { m_datapoints.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetScalingPlanResourceForecastDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetScalingPlanResourceForecastDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetScalingPlanResourceForecastDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Datapoint> m_datapoints;

@@ -32,46 +32,19 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ARN of the gateway that you want to delete.
      */
     inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
-
-    /**
-     * The ARN of the gateway that you want to delete.
-     */
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
-
-    /**
-     * The ARN of the gateway that you want to delete.
-     */
     inline void SetGatewayArn(const Aws::String& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = value; }
-
-    /**
-     * The ARN of the gateway that you want to delete.
-     */
     inline void SetGatewayArn(Aws::String&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::move(value); }
-
-    /**
-     * The ARN of the gateway that you want to delete.
-     */
     inline void SetGatewayArn(const char* value) { m_gatewayArnHasBeenSet = true; m_gatewayArn.assign(value); }
-
-    /**
-     * The ARN of the gateway that you want to delete.
-     */
     inline DeleteGatewayRequest& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-
-    /**
-     * The ARN of the gateway that you want to delete.
-     */
     inline DeleteGatewayRequest& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the gateway that you want to delete.
-     */
     inline DeleteGatewayRequest& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayArn;

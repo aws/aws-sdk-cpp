@@ -33,53 +33,27 @@ namespace Model
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DisassociateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Metadata that describes the associate user operation.</p>
      */
     inline const InstanceUserSummary& GetInstanceUserSummary() const{ return m_instanceUserSummary; }
-
-    /**
-     * <p>Metadata that describes the associate user operation.</p>
-     */
     inline void SetInstanceUserSummary(const InstanceUserSummary& value) { m_instanceUserSummary = value; }
-
-    /**
-     * <p>Metadata that describes the associate user operation.</p>
-     */
     inline void SetInstanceUserSummary(InstanceUserSummary&& value) { m_instanceUserSummary = std::move(value); }
-
-    /**
-     * <p>Metadata that describes the associate user operation.</p>
-     */
     inline DisassociateUserResult& WithInstanceUserSummary(const InstanceUserSummary& value) { SetInstanceUserSummary(value); return *this;}
-
-    /**
-     * <p>Metadata that describes the associate user operation.</p>
-     */
     inline DisassociateUserResult& WithInstanceUserSummary(InstanceUserSummary&& value) { SetInstanceUserSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DisassociateUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DisassociateUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DisassociateUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     InstanceUserSummary m_instanceUserSummary;

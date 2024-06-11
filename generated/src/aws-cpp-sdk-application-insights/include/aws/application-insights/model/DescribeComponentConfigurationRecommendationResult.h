@@ -32,70 +32,30 @@ namespace Model
     AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationRecommendationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The recommended configuration settings of the component. The value is the
      * escaped JSON of the configuration.</p>
      */
     inline const Aws::String& GetComponentConfiguration() const{ return m_componentConfiguration; }
-
-    /**
-     * <p>The recommended configuration settings of the component. The value is the
-     * escaped JSON of the configuration.</p>
-     */
     inline void SetComponentConfiguration(const Aws::String& value) { m_componentConfiguration = value; }
-
-    /**
-     * <p>The recommended configuration settings of the component. The value is the
-     * escaped JSON of the configuration.</p>
-     */
     inline void SetComponentConfiguration(Aws::String&& value) { m_componentConfiguration = std::move(value); }
-
-    /**
-     * <p>The recommended configuration settings of the component. The value is the
-     * escaped JSON of the configuration.</p>
-     */
     inline void SetComponentConfiguration(const char* value) { m_componentConfiguration.assign(value); }
-
-    /**
-     * <p>The recommended configuration settings of the component. The value is the
-     * escaped JSON of the configuration.</p>
-     */
     inline DescribeComponentConfigurationRecommendationResult& WithComponentConfiguration(const Aws::String& value) { SetComponentConfiguration(value); return *this;}
-
-    /**
-     * <p>The recommended configuration settings of the component. The value is the
-     * escaped JSON of the configuration.</p>
-     */
     inline DescribeComponentConfigurationRecommendationResult& WithComponentConfiguration(Aws::String&& value) { SetComponentConfiguration(std::move(value)); return *this;}
-
-    /**
-     * <p>The recommended configuration settings of the component. The value is the
-     * escaped JSON of the configuration.</p>
-     */
     inline DescribeComponentConfigurationRecommendationResult& WithComponentConfiguration(const char* value) { SetComponentConfiguration(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeComponentConfigurationRecommendationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeComponentConfigurationRecommendationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeComponentConfigurationRecommendationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_componentConfiguration;

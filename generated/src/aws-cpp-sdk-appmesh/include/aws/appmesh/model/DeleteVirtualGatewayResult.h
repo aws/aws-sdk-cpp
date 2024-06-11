@@ -33,53 +33,27 @@ namespace Model
     AWS_APPMESH_API DeleteVirtualGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The virtual gateway that was deleted.</p>
      */
     inline const VirtualGatewayData& GetVirtualGateway() const{ return m_virtualGateway; }
-
-    /**
-     * <p>The virtual gateway that was deleted.</p>
-     */
     inline void SetVirtualGateway(const VirtualGatewayData& value) { m_virtualGateway = value; }
-
-    /**
-     * <p>The virtual gateway that was deleted.</p>
-     */
     inline void SetVirtualGateway(VirtualGatewayData&& value) { m_virtualGateway = std::move(value); }
-
-    /**
-     * <p>The virtual gateway that was deleted.</p>
-     */
     inline DeleteVirtualGatewayResult& WithVirtualGateway(const VirtualGatewayData& value) { SetVirtualGateway(value); return *this;}
-
-    /**
-     * <p>The virtual gateway that was deleted.</p>
-     */
     inline DeleteVirtualGatewayResult& WithVirtualGateway(VirtualGatewayData&& value) { SetVirtualGateway(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteVirtualGatewayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteVirtualGatewayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteVirtualGatewayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VirtualGatewayData m_virtualGateway;

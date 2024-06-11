@@ -39,54 +39,20 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A suggested property name based on what you entered in the search textbox in
      * the SageMaker console.</p>
      */
     inline const Aws::String& GetPropertyName() const{ return m_propertyName; }
-
-    /**
-     * <p>A suggested property name based on what you entered in the search textbox in
-     * the SageMaker console.</p>
-     */
     inline bool PropertyNameHasBeenSet() const { return m_propertyNameHasBeenSet; }
-
-    /**
-     * <p>A suggested property name based on what you entered in the search textbox in
-     * the SageMaker console.</p>
-     */
     inline void SetPropertyName(const Aws::String& value) { m_propertyNameHasBeenSet = true; m_propertyName = value; }
-
-    /**
-     * <p>A suggested property name based on what you entered in the search textbox in
-     * the SageMaker console.</p>
-     */
     inline void SetPropertyName(Aws::String&& value) { m_propertyNameHasBeenSet = true; m_propertyName = std::move(value); }
-
-    /**
-     * <p>A suggested property name based on what you entered in the search textbox in
-     * the SageMaker console.</p>
-     */
     inline void SetPropertyName(const char* value) { m_propertyNameHasBeenSet = true; m_propertyName.assign(value); }
-
-    /**
-     * <p>A suggested property name based on what you entered in the search textbox in
-     * the SageMaker console.</p>
-     */
     inline PropertyNameSuggestion& WithPropertyName(const Aws::String& value) { SetPropertyName(value); return *this;}
-
-    /**
-     * <p>A suggested property name based on what you entered in the search textbox in
-     * the SageMaker console.</p>
-     */
     inline PropertyNameSuggestion& WithPropertyName(Aws::String&& value) { SetPropertyName(std::move(value)); return *this;}
-
-    /**
-     * <p>A suggested property name based on what you entered in the search textbox in
-     * the SageMaker console.</p>
-     */
     inline PropertyNameSuggestion& WithPropertyName(const char* value) { SetPropertyName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_propertyName;

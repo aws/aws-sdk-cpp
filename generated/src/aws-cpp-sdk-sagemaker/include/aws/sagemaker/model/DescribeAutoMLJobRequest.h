@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Requests information about an AutoML job using its unique name.</p>
      */
     inline const Aws::String& GetAutoMLJobName() const{ return m_autoMLJobName; }
-
-    /**
-     * <p>Requests information about an AutoML job using its unique name.</p>
-     */
     inline bool AutoMLJobNameHasBeenSet() const { return m_autoMLJobNameHasBeenSet; }
-
-    /**
-     * <p>Requests information about an AutoML job using its unique name.</p>
-     */
     inline void SetAutoMLJobName(const Aws::String& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = value; }
-
-    /**
-     * <p>Requests information about an AutoML job using its unique name.</p>
-     */
     inline void SetAutoMLJobName(Aws::String&& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = std::move(value); }
-
-    /**
-     * <p>Requests information about an AutoML job using its unique name.</p>
-     */
     inline void SetAutoMLJobName(const char* value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName.assign(value); }
-
-    /**
-     * <p>Requests information about an AutoML job using its unique name.</p>
-     */
     inline DescribeAutoMLJobRequest& WithAutoMLJobName(const Aws::String& value) { SetAutoMLJobName(value); return *this;}
-
-    /**
-     * <p>Requests information about an AutoML job using its unique name.</p>
-     */
     inline DescribeAutoMLJobRequest& WithAutoMLJobName(Aws::String&& value) { SetAutoMLJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>Requests information about an AutoML job using its unique name.</p>
-     */
     inline DescribeAutoMLJobRequest& WithAutoMLJobName(const char* value) { SetAutoMLJobName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_autoMLJobName;

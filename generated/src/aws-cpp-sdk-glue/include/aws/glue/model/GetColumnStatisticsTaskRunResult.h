@@ -33,58 +33,28 @@ namespace Model
     AWS_GLUE_API GetColumnStatisticsTaskRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <code>ColumnStatisticsTaskRun</code> object representing the details of the
      * column stats run.</p>
      */
     inline const ColumnStatisticsTaskRun& GetColumnStatisticsTaskRun() const{ return m_columnStatisticsTaskRun; }
-
-    /**
-     * <p>A <code>ColumnStatisticsTaskRun</code> object representing the details of the
-     * column stats run.</p>
-     */
     inline void SetColumnStatisticsTaskRun(const ColumnStatisticsTaskRun& value) { m_columnStatisticsTaskRun = value; }
-
-    /**
-     * <p>A <code>ColumnStatisticsTaskRun</code> object representing the details of the
-     * column stats run.</p>
-     */
     inline void SetColumnStatisticsTaskRun(ColumnStatisticsTaskRun&& value) { m_columnStatisticsTaskRun = std::move(value); }
-
-    /**
-     * <p>A <code>ColumnStatisticsTaskRun</code> object representing the details of the
-     * column stats run.</p>
-     */
     inline GetColumnStatisticsTaskRunResult& WithColumnStatisticsTaskRun(const ColumnStatisticsTaskRun& value) { SetColumnStatisticsTaskRun(value); return *this;}
-
-    /**
-     * <p>A <code>ColumnStatisticsTaskRun</code> object representing the details of the
-     * column stats run.</p>
-     */
     inline GetColumnStatisticsTaskRunResult& WithColumnStatisticsTaskRun(ColumnStatisticsTaskRun&& value) { SetColumnStatisticsTaskRun(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetColumnStatisticsTaskRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetColumnStatisticsTaskRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetColumnStatisticsTaskRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ColumnStatisticsTaskRun m_columnStatisticsTaskRun;

@@ -43,71 +43,30 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A string that represents the name of a domain.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline DescribeDomainEndpointOptionsRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline DescribeDomainEndpointOptionsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline DescribeDomainEndpointOptionsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether to retrieve the latest configuration (which might be in a Processing
      * state) or the current, active configuration. Defaults to <code>false</code>.</p>
      */
     inline bool GetDeployed() const{ return m_deployed; }
-
-    /**
-     * <p>Whether to retrieve the latest configuration (which might be in a Processing
-     * state) or the current, active configuration. Defaults to <code>false</code>.</p>
-     */
     inline bool DeployedHasBeenSet() const { return m_deployedHasBeenSet; }
-
-    /**
-     * <p>Whether to retrieve the latest configuration (which might be in a Processing
-     * state) or the current, active configuration. Defaults to <code>false</code>.</p>
-     */
     inline void SetDeployed(bool value) { m_deployedHasBeenSet = true; m_deployed = value; }
-
-    /**
-     * <p>Whether to retrieve the latest configuration (which might be in a Processing
-     * state) or the current, active configuration. Defaults to <code>false</code>.</p>
-     */
     inline DescribeDomainEndpointOptionsRequest& WithDeployed(bool value) { SetDeployed(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

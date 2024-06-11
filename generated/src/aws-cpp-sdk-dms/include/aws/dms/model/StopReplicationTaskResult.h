@@ -38,53 +38,27 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API StopReplicationTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The replication task stopped.</p>
      */
     inline const ReplicationTask& GetReplicationTask() const{ return m_replicationTask; }
-
-    /**
-     * <p>The replication task stopped.</p>
-     */
     inline void SetReplicationTask(const ReplicationTask& value) { m_replicationTask = value; }
-
-    /**
-     * <p>The replication task stopped.</p>
-     */
     inline void SetReplicationTask(ReplicationTask&& value) { m_replicationTask = std::move(value); }
-
-    /**
-     * <p>The replication task stopped.</p>
-     */
     inline StopReplicationTaskResult& WithReplicationTask(const ReplicationTask& value) { SetReplicationTask(value); return *this;}
-
-    /**
-     * <p>The replication task stopped.</p>
-     */
     inline StopReplicationTaskResult& WithReplicationTask(ReplicationTask&& value) { SetReplicationTask(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StopReplicationTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StopReplicationTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StopReplicationTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ReplicationTask m_replicationTask;

@@ -40,88 +40,33 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Classification mode indicates whether the documents are
      * <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
      */
     inline const DocumentClassifierMode& GetMode() const{ return m_mode; }
-
-    /**
-     * <p>Classification mode indicates whether the documents are
-     * <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
-     */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-
-    /**
-     * <p>Classification mode indicates whether the documents are
-     * <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
-     */
     inline void SetMode(const DocumentClassifierMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-
-    /**
-     * <p>Classification mode indicates whether the documents are
-     * <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
-     */
     inline void SetMode(DocumentClassifierMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-
-    /**
-     * <p>Classification mode indicates whether the documents are
-     * <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
-     */
     inline DocumentClassificationConfig& WithMode(const DocumentClassifierMode& value) { SetMode(value); return *this;}
-
-    /**
-     * <p>Classification mode indicates whether the documents are
-     * <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
-     */
     inline DocumentClassificationConfig& WithMode(DocumentClassifierMode&& value) { SetMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>One or more labels to associate with the custom classifier.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
-
-    /**
-     * <p>One or more labels to associate with the custom classifier.</p>
-     */
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-
-    /**
-     * <p>One or more labels to associate with the custom classifier.</p>
-     */
     inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-
-    /**
-     * <p>One or more labels to associate with the custom classifier.</p>
-     */
     inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-
-    /**
-     * <p>One or more labels to associate with the custom classifier.</p>
-     */
     inline DocumentClassificationConfig& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
-
-    /**
-     * <p>One or more labels to associate with the custom classifier.</p>
-     */
     inline DocumentClassificationConfig& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more labels to associate with the custom classifier.</p>
-     */
     inline DocumentClassificationConfig& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-
-    /**
-     * <p>One or more labels to associate with the custom classifier.</p>
-     */
     inline DocumentClassificationConfig& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more labels to associate with the custom classifier.</p>
-     */
     inline DocumentClassificationConfig& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-
+    ///@}
   private:
 
     DocumentClassifierMode m_mode;

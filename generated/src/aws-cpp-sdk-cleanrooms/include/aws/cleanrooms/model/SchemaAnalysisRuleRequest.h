@@ -41,77 +41,31 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the analysis rule schema that you are requesting.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the analysis rule schema that you are requesting.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the analysis rule schema that you are requesting.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the analysis rule schema that you are requesting.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the analysis rule schema that you are requesting.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the analysis rule schema that you are requesting.</p>
-     */
     inline SchemaAnalysisRuleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the analysis rule schema that you are requesting.</p>
-     */
     inline SchemaAnalysisRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the analysis rule schema that you are requesting.</p>
-     */
     inline SchemaAnalysisRuleRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of analysis rule schema that you are requesting.</p>
      */
     inline const AnalysisRuleType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of analysis rule schema that you are requesting.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of analysis rule schema that you are requesting.</p>
-     */
     inline void SetType(const AnalysisRuleType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of analysis rule schema that you are requesting.</p>
-     */
     inline void SetType(AnalysisRuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of analysis rule schema that you are requesting.</p>
-     */
     inline SchemaAnalysisRuleRequest& WithType(const AnalysisRuleType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of analysis rule schema that you are requesting.</p>
-     */
     inline SchemaAnalysisRuleRequest& WithType(AnalysisRuleType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

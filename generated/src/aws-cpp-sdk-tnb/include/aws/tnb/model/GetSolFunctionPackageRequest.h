@@ -32,46 +32,19 @@ namespace Model
     AWS_TNB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>ID of the function package.</p>
      */
     inline const Aws::String& GetVnfPkgId() const{ return m_vnfPkgId; }
-
-    /**
-     * <p>ID of the function package.</p>
-     */
     inline bool VnfPkgIdHasBeenSet() const { return m_vnfPkgIdHasBeenSet; }
-
-    /**
-     * <p>ID of the function package.</p>
-     */
     inline void SetVnfPkgId(const Aws::String& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = value; }
-
-    /**
-     * <p>ID of the function package.</p>
-     */
     inline void SetVnfPkgId(Aws::String&& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = std::move(value); }
-
-    /**
-     * <p>ID of the function package.</p>
-     */
     inline void SetVnfPkgId(const char* value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId.assign(value); }
-
-    /**
-     * <p>ID of the function package.</p>
-     */
     inline GetSolFunctionPackageRequest& WithVnfPkgId(const Aws::String& value) { SetVnfPkgId(value); return *this;}
-
-    /**
-     * <p>ID of the function package.</p>
-     */
     inline GetSolFunctionPackageRequest& WithVnfPkgId(Aws::String&& value) { SetVnfPkgId(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of the function package.</p>
-     */
     inline GetSolFunctionPackageRequest& WithVnfPkgId(const char* value) { SetVnfPkgId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_vnfPkgId;

@@ -39,58 +39,28 @@ namespace Model
     AWS_ROUTE53_API GetChangeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A complex type that contains information about the specified change
      * batch.</p>
      */
     inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
-
-    /**
-     * <p>A complex type that contains information about the specified change
-     * batch.</p>
-     */
     inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
-
-    /**
-     * <p>A complex type that contains information about the specified change
-     * batch.</p>
-     */
     inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = std::move(value); }
-
-    /**
-     * <p>A complex type that contains information about the specified change
-     * batch.</p>
-     */
     inline GetChangeResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
-
-    /**
-     * <p>A complex type that contains information about the specified change
-     * batch.</p>
-     */
     inline GetChangeResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetChangeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetChangeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetChangeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ChangeInfo m_changeInfo;

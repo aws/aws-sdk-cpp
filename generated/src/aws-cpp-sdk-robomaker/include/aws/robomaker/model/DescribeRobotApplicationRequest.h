@@ -32,87 +32,33 @@ namespace Model
     AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the robot application.</p>
      */
     inline const Aws::String& GetApplication() const{ return m_application; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
-     */
     inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
-     */
     inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
-     */
     inline void SetApplication(Aws::String&& value) { m_applicationHasBeenSet = true; m_application = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
-     */
     inline void SetApplication(const char* value) { m_applicationHasBeenSet = true; m_application.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
-     */
     inline DescribeRobotApplicationRequest& WithApplication(const Aws::String& value) { SetApplication(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
-     */
     inline DescribeRobotApplicationRequest& WithApplication(Aws::String&& value) { SetApplication(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
-     */
     inline DescribeRobotApplicationRequest& WithApplication(const char* value) { SetApplication(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the robot application to describe.</p>
      */
     inline const Aws::String& GetApplicationVersion() const{ return m_applicationVersion; }
-
-    /**
-     * <p>The version of the robot application to describe.</p>
-     */
     inline bool ApplicationVersionHasBeenSet() const { return m_applicationVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the robot application to describe.</p>
-     */
     inline void SetApplicationVersion(const Aws::String& value) { m_applicationVersionHasBeenSet = true; m_applicationVersion = value; }
-
-    /**
-     * <p>The version of the robot application to describe.</p>
-     */
     inline void SetApplicationVersion(Aws::String&& value) { m_applicationVersionHasBeenSet = true; m_applicationVersion = std::move(value); }
-
-    /**
-     * <p>The version of the robot application to describe.</p>
-     */
     inline void SetApplicationVersion(const char* value) { m_applicationVersionHasBeenSet = true; m_applicationVersion.assign(value); }
-
-    /**
-     * <p>The version of the robot application to describe.</p>
-     */
     inline DescribeRobotApplicationRequest& WithApplicationVersion(const Aws::String& value) { SetApplicationVersion(value); return *this;}
-
-    /**
-     * <p>The version of the robot application to describe.</p>
-     */
     inline DescribeRobotApplicationRequest& WithApplicationVersion(Aws::String&& value) { SetApplicationVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the robot application to describe.</p>
-     */
     inline DescribeRobotApplicationRequest& WithApplicationVersion(const char* value) { SetApplicationVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_application;

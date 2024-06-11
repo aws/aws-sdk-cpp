@@ -41,176 +41,54 @@ namespace Model
     AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 location where the toolchain template file provided with the
      * project request is stored. AWS CodeStar retrieves the file during project
      * creation.</p>
      */
     inline const ToolchainSource& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The Amazon S3 location where the toolchain template file provided with the
-     * project request is stored. AWS CodeStar retrieves the file during project
-     * creation.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 location where the toolchain template file provided with the
-     * project request is stored. AWS CodeStar retrieves the file during project
-     * creation.</p>
-     */
     inline void SetSource(const ToolchainSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The Amazon S3 location where the toolchain template file provided with the
-     * project request is stored. AWS CodeStar retrieves the file during project
-     * creation.</p>
-     */
     inline void SetSource(ToolchainSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 location where the toolchain template file provided with the
-     * project request is stored. AWS CodeStar retrieves the file during project
-     * creation.</p>
-     */
     inline Toolchain& WithSource(const ToolchainSource& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 location where the toolchain template file provided with the
-     * project request is stored. AWS CodeStar retrieves the file during project
-     * creation.</p>
-     */
     inline Toolchain& WithSource(ToolchainSource&& value) { SetSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The service role ARN for AWS CodeStar to use for the toolchain template
      * during stack provisioning.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The service role ARN for AWS CodeStar to use for the toolchain template
-     * during stack provisioning.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The service role ARN for AWS CodeStar to use for the toolchain template
-     * during stack provisioning.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The service role ARN for AWS CodeStar to use for the toolchain template
-     * during stack provisioning.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The service role ARN for AWS CodeStar to use for the toolchain template
-     * during stack provisioning.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The service role ARN for AWS CodeStar to use for the toolchain template
-     * during stack provisioning.</p>
-     */
     inline Toolchain& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The service role ARN for AWS CodeStar to use for the toolchain template
-     * during stack provisioning.</p>
-     */
     inline Toolchain& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The service role ARN for AWS CodeStar to use for the toolchain template
-     * during stack provisioning.</p>
-     */
     inline Toolchain& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of parameter overrides to be passed into the toolchain template
      * during stack provisioning, if any.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStackParameters() const{ return m_stackParameters; }
-
-    /**
-     * <p>The list of parameter overrides to be passed into the toolchain template
-     * during stack provisioning, if any.</p>
-     */
     inline bool StackParametersHasBeenSet() const { return m_stackParametersHasBeenSet; }
-
-    /**
-     * <p>The list of parameter overrides to be passed into the toolchain template
-     * during stack provisioning, if any.</p>
-     */
     inline void SetStackParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_stackParametersHasBeenSet = true; m_stackParameters = value; }
-
-    /**
-     * <p>The list of parameter overrides to be passed into the toolchain template
-     * during stack provisioning, if any.</p>
-     */
     inline void SetStackParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_stackParametersHasBeenSet = true; m_stackParameters = std::move(value); }
-
-    /**
-     * <p>The list of parameter overrides to be passed into the toolchain template
-     * during stack provisioning, if any.</p>
-     */
     inline Toolchain& WithStackParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetStackParameters(value); return *this;}
-
-    /**
-     * <p>The list of parameter overrides to be passed into the toolchain template
-     * during stack provisioning, if any.</p>
-     */
     inline Toolchain& WithStackParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetStackParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of parameter overrides to be passed into the toolchain template
-     * during stack provisioning, if any.</p>
-     */
     inline Toolchain& AddStackParameters(const Aws::String& key, const Aws::String& value) { m_stackParametersHasBeenSet = true; m_stackParameters.emplace(key, value); return *this; }
-
-    /**
-     * <p>The list of parameter overrides to be passed into the toolchain template
-     * during stack provisioning, if any.</p>
-     */
     inline Toolchain& AddStackParameters(Aws::String&& key, const Aws::String& value) { m_stackParametersHasBeenSet = true; m_stackParameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The list of parameter overrides to be passed into the toolchain template
-     * during stack provisioning, if any.</p>
-     */
     inline Toolchain& AddStackParameters(const Aws::String& key, Aws::String&& value) { m_stackParametersHasBeenSet = true; m_stackParameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The list of parameter overrides to be passed into the toolchain template
-     * during stack provisioning, if any.</p>
-     */
     inline Toolchain& AddStackParameters(Aws::String&& key, Aws::String&& value) { m_stackParametersHasBeenSet = true; m_stackParameters.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The list of parameter overrides to be passed into the toolchain template
-     * during stack provisioning, if any.</p>
-     */
     inline Toolchain& AddStackParameters(const char* key, Aws::String&& value) { m_stackParametersHasBeenSet = true; m_stackParameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The list of parameter overrides to be passed into the toolchain template
-     * during stack provisioning, if any.</p>
-     */
     inline Toolchain& AddStackParameters(Aws::String&& key, const char* value) { m_stackParametersHasBeenSet = true; m_stackParameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The list of parameter overrides to be passed into the toolchain template
-     * during stack provisioning, if any.</p>
-     */
     inline Toolchain& AddStackParameters(const char* key, const char* value) { m_stackParametersHasBeenSet = true; m_stackParameters.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     ToolchainSource m_source;

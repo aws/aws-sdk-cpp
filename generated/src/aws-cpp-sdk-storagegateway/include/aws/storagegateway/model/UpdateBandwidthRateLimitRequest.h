@@ -41,72 +41,37 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-
-    
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-
-    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-
-    
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-
-    
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-
-    
     inline UpdateBandwidthRateLimitRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-
-    
     inline UpdateBandwidthRateLimitRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-
-    
     inline UpdateBandwidthRateLimitRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The average upload bandwidth rate limit in bits per second.</p>
      */
     inline long long GetAverageUploadRateLimitInBitsPerSec() const{ return m_averageUploadRateLimitInBitsPerSec; }
-
-    /**
-     * <p>The average upload bandwidth rate limit in bits per second.</p>
-     */
     inline bool AverageUploadRateLimitInBitsPerSecHasBeenSet() const { return m_averageUploadRateLimitInBitsPerSecHasBeenSet; }
-
-    /**
-     * <p>The average upload bandwidth rate limit in bits per second.</p>
-     */
     inline void SetAverageUploadRateLimitInBitsPerSec(long long value) { m_averageUploadRateLimitInBitsPerSecHasBeenSet = true; m_averageUploadRateLimitInBitsPerSec = value; }
-
-    /**
-     * <p>The average upload bandwidth rate limit in bits per second.</p>
-     */
     inline UpdateBandwidthRateLimitRequest& WithAverageUploadRateLimitInBitsPerSec(long long value) { SetAverageUploadRateLimitInBitsPerSec(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The average download bandwidth rate limit in bits per second.</p>
      */
     inline long long GetAverageDownloadRateLimitInBitsPerSec() const{ return m_averageDownloadRateLimitInBitsPerSec; }
-
-    /**
-     * <p>The average download bandwidth rate limit in bits per second.</p>
-     */
     inline bool AverageDownloadRateLimitInBitsPerSecHasBeenSet() const { return m_averageDownloadRateLimitInBitsPerSecHasBeenSet; }
-
-    /**
-     * <p>The average download bandwidth rate limit in bits per second.</p>
-     */
     inline void SetAverageDownloadRateLimitInBitsPerSec(long long value) { m_averageDownloadRateLimitInBitsPerSecHasBeenSet = true; m_averageDownloadRateLimitInBitsPerSec = value; }
-
-    /**
-     * <p>The average download bandwidth rate limit in bits per second.</p>
-     */
     inline UpdateBandwidthRateLimitRequest& WithAverageDownloadRateLimitInBitsPerSec(long long value) { SetAverageDownloadRateLimitInBitsPerSec(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayARN;

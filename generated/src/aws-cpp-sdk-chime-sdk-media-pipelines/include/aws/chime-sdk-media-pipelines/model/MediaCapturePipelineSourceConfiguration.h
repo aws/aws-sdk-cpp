@@ -39,91 +39,33 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The media pipeline ARN in the configuration object of a media capture
      * pipeline.</p>
      */
     inline const Aws::String& GetMediaPipelineArn() const{ return m_mediaPipelineArn; }
-
-    /**
-     * <p>The media pipeline ARN in the configuration object of a media capture
-     * pipeline.</p>
-     */
     inline bool MediaPipelineArnHasBeenSet() const { return m_mediaPipelineArnHasBeenSet; }
-
-    /**
-     * <p>The media pipeline ARN in the configuration object of a media capture
-     * pipeline.</p>
-     */
     inline void SetMediaPipelineArn(const Aws::String& value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn = value; }
-
-    /**
-     * <p>The media pipeline ARN in the configuration object of a media capture
-     * pipeline.</p>
-     */
     inline void SetMediaPipelineArn(Aws::String&& value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn = std::move(value); }
-
-    /**
-     * <p>The media pipeline ARN in the configuration object of a media capture
-     * pipeline.</p>
-     */
     inline void SetMediaPipelineArn(const char* value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn.assign(value); }
-
-    /**
-     * <p>The media pipeline ARN in the configuration object of a media capture
-     * pipeline.</p>
-     */
     inline MediaCapturePipelineSourceConfiguration& WithMediaPipelineArn(const Aws::String& value) { SetMediaPipelineArn(value); return *this;}
-
-    /**
-     * <p>The media pipeline ARN in the configuration object of a media capture
-     * pipeline.</p>
-     */
     inline MediaCapturePipelineSourceConfiguration& WithMediaPipelineArn(Aws::String&& value) { SetMediaPipelineArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The media pipeline ARN in the configuration object of a media capture
-     * pipeline.</p>
-     */
     inline MediaCapturePipelineSourceConfiguration& WithMediaPipelineArn(const char* value) { SetMediaPipelineArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The meeting configuration settings in a media capture pipeline configuration
      * object. </p>
      */
     inline const ChimeSdkMeetingConcatenationConfiguration& GetChimeSdkMeetingConfiguration() const{ return m_chimeSdkMeetingConfiguration; }
-
-    /**
-     * <p>The meeting configuration settings in a media capture pipeline configuration
-     * object. </p>
-     */
     inline bool ChimeSdkMeetingConfigurationHasBeenSet() const { return m_chimeSdkMeetingConfigurationHasBeenSet; }
-
-    /**
-     * <p>The meeting configuration settings in a media capture pipeline configuration
-     * object. </p>
-     */
     inline void SetChimeSdkMeetingConfiguration(const ChimeSdkMeetingConcatenationConfiguration& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = value; }
-
-    /**
-     * <p>The meeting configuration settings in a media capture pipeline configuration
-     * object. </p>
-     */
     inline void SetChimeSdkMeetingConfiguration(ChimeSdkMeetingConcatenationConfiguration&& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = std::move(value); }
-
-    /**
-     * <p>The meeting configuration settings in a media capture pipeline configuration
-     * object. </p>
-     */
     inline MediaCapturePipelineSourceConfiguration& WithChimeSdkMeetingConfiguration(const ChimeSdkMeetingConcatenationConfiguration& value) { SetChimeSdkMeetingConfiguration(value); return *this;}
-
-    /**
-     * <p>The meeting configuration settings in a media capture pipeline configuration
-     * object. </p>
-     */
     inline MediaCapturePipelineSourceConfiguration& WithChimeSdkMeetingConfiguration(ChimeSdkMeetingConcatenationConfiguration&& value) { SetChimeSdkMeetingConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_mediaPipelineArn;

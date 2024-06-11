@@ -51,160 +51,65 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A string array that specifies the command that the container runs to
      * determine if it's healthy.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
-
-    /**
-     * <p>A string array that specifies the command that the container runs to
-     * determine if it's healthy.</p>
-     */
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-
-    /**
-     * <p>A string array that specifies the command that the container runs to
-     * determine if it's healthy.</p>
-     */
     inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
-
-    /**
-     * <p>A string array that specifies the command that the container runs to
-     * determine if it's healthy.</p>
-     */
     inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-
-    /**
-     * <p>A string array that specifies the command that the container runs to
-     * determine if it's healthy.</p>
-     */
     inline ContainerHealthCheck& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
-
-    /**
-     * <p>A string array that specifies the command that the container runs to
-     * determine if it's healthy.</p>
-     */
     inline ContainerHealthCheck& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
-
-    /**
-     * <p>A string array that specifies the command that the container runs to
-     * determine if it's healthy.</p>
-     */
     inline ContainerHealthCheck& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
-
-    /**
-     * <p>A string array that specifies the command that the container runs to
-     * determine if it's healthy.</p>
-     */
     inline ContainerHealthCheck& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A string array that specifies the command that the container runs to
-     * determine if it's healthy.</p>
-     */
     inline ContainerHealthCheck& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time period (in seconds) between each health check.</p>
      */
     inline int GetInterval() const{ return m_interval; }
-
-    /**
-     * <p>The time period (in seconds) between each health check.</p>
-     */
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
-
-    /**
-     * <p>The time period (in seconds) between each health check.</p>
-     */
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
-
-    /**
-     * <p>The time period (in seconds) between each health check.</p>
-     */
     inline ContainerHealthCheck& WithInterval(int value) { SetInterval(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time period (in seconds) to wait for a health check to succeed before a
      * failed health check is counted. </p>
      */
     inline int GetTimeout() const{ return m_timeout; }
-
-    /**
-     * <p>The time period (in seconds) to wait for a health check to succeed before a
-     * failed health check is counted. </p>
-     */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
-
-    /**
-     * <p>The time period (in seconds) to wait for a health check to succeed before a
-     * failed health check is counted. </p>
-     */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
-
-    /**
-     * <p>The time period (in seconds) to wait for a health check to succeed before a
-     * failed health check is counted. </p>
-     */
     inline ContainerHealthCheck& WithTimeout(int value) { SetTimeout(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of times to retry a failed health check before the container is
      * considered unhealthy. The first run of the command does not count as a
      * retry.</p>
      */
     inline int GetRetries() const{ return m_retries; }
-
-    /**
-     * <p>The number of times to retry a failed health check before the container is
-     * considered unhealthy. The first run of the command does not count as a
-     * retry.</p>
-     */
     inline bool RetriesHasBeenSet() const { return m_retriesHasBeenSet; }
-
-    /**
-     * <p>The number of times to retry a failed health check before the container is
-     * considered unhealthy. The first run of the command does not count as a
-     * retry.</p>
-     */
     inline void SetRetries(int value) { m_retriesHasBeenSet = true; m_retries = value; }
-
-    /**
-     * <p>The number of times to retry a failed health check before the container is
-     * considered unhealthy. The first run of the command does not count as a
-     * retry.</p>
-     */
     inline ContainerHealthCheck& WithRetries(int value) { SetRetries(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The optional grace period (in seconds) to give a container time to bootstrap
      * before the first failed health check counts toward the number of retries.</p>
      */
     inline int GetStartPeriod() const{ return m_startPeriod; }
-
-    /**
-     * <p>The optional grace period (in seconds) to give a container time to bootstrap
-     * before the first failed health check counts toward the number of retries.</p>
-     */
     inline bool StartPeriodHasBeenSet() const { return m_startPeriodHasBeenSet; }
-
-    /**
-     * <p>The optional grace period (in seconds) to give a container time to bootstrap
-     * before the first failed health check counts toward the number of retries.</p>
-     */
     inline void SetStartPeriod(int value) { m_startPeriodHasBeenSet = true; m_startPeriod = value; }
-
-    /**
-     * <p>The optional grace period (in seconds) to give a container time to bootstrap
-     * before the first failed health check counts toward the number of retries.</p>
-     */
     inline ContainerHealthCheck& WithStartPeriod(int value) { SetStartPeriod(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_command;

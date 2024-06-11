@@ -40,6 +40,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The country code for the holiday calendar.</p> <p>For the list of public
      * holiday calendars supported by AutoML job V2, see <a
@@ -47,63 +48,14 @@ namespace Model
      * Codes</a>. Use the country code corresponding to the country of your choice.</p>
      */
     inline const Aws::String& GetCountryCode() const{ return m_countryCode; }
-
-    /**
-     * <p>The country code for the holiday calendar.</p> <p>For the list of public
-     * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
-     * Codes</a>. Use the country code corresponding to the country of your choice.</p>
-     */
     inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-
-    /**
-     * <p>The country code for the holiday calendar.</p> <p>For the list of public
-     * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
-     * Codes</a>. Use the country code corresponding to the country of your choice.</p>
-     */
     inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
-
-    /**
-     * <p>The country code for the holiday calendar.</p> <p>For the list of public
-     * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
-     * Codes</a>. Use the country code corresponding to the country of your choice.</p>
-     */
     inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
-
-    /**
-     * <p>The country code for the holiday calendar.</p> <p>For the list of public
-     * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
-     * Codes</a>. Use the country code corresponding to the country of your choice.</p>
-     */
     inline void SetCountryCode(const char* value) { m_countryCodeHasBeenSet = true; m_countryCode.assign(value); }
-
-    /**
-     * <p>The country code for the holiday calendar.</p> <p>For the list of public
-     * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
-     * Codes</a>. Use the country code corresponding to the country of your choice.</p>
-     */
     inline HolidayConfigAttributes& WithCountryCode(const Aws::String& value) { SetCountryCode(value); return *this;}
-
-    /**
-     * <p>The country code for the holiday calendar.</p> <p>For the list of public
-     * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
-     * Codes</a>. Use the country code corresponding to the country of your choice.</p>
-     */
     inline HolidayConfigAttributes& WithCountryCode(Aws::String&& value) { SetCountryCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The country code for the holiday calendar.</p> <p>For the list of public
-     * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
-     * Codes</a>. Use the country code corresponding to the country of your choice.</p>
-     */
     inline HolidayConfigAttributes& WithCountryCode(const char* value) { SetCountryCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_countryCode;

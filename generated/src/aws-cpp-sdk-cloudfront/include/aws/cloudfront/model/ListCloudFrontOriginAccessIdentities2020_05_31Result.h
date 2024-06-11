@@ -39,53 +39,27 @@ namespace Model
     AWS_CLOUDFRONT_API ListCloudFrontOriginAccessIdentities2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
      */
     inline const CloudFrontOriginAccessIdentityList& GetCloudFrontOriginAccessIdentityList() const{ return m_cloudFrontOriginAccessIdentityList; }
-
-    /**
-     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
-     */
     inline void SetCloudFrontOriginAccessIdentityList(const CloudFrontOriginAccessIdentityList& value) { m_cloudFrontOriginAccessIdentityList = value; }
-
-    /**
-     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
-     */
     inline void SetCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { m_cloudFrontOriginAccessIdentityList = std::move(value); }
-
-    /**
-     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
-     */
     inline ListCloudFrontOriginAccessIdentities2020_05_31Result& WithCloudFrontOriginAccessIdentityList(const CloudFrontOriginAccessIdentityList& value) { SetCloudFrontOriginAccessIdentityList(value); return *this;}
-
-    /**
-     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
-     */
     inline ListCloudFrontOriginAccessIdentities2020_05_31Result& WithCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { SetCloudFrontOriginAccessIdentityList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListCloudFrontOriginAccessIdentities2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListCloudFrontOriginAccessIdentities2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListCloudFrontOriginAccessIdentities2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CloudFrontOriginAccessIdentityList m_cloudFrontOriginAccessIdentityList;

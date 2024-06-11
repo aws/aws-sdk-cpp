@@ -32,46 +32,19 @@ namespace Model
     AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the web portal.</p>
      */
     inline const Aws::String& GetPortalArn() const{ return m_portalArn; }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline bool PortalArnHasBeenSet() const { return m_portalArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline void SetPortalArn(const Aws::String& value) { m_portalArnHasBeenSet = true; m_portalArn = value; }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline void SetPortalArn(Aws::String&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline void SetPortalArn(const char* value) { m_portalArnHasBeenSet = true; m_portalArn.assign(value); }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline DisassociateBrowserSettingsRequest& WithPortalArn(const Aws::String& value) { SetPortalArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline DisassociateBrowserSettingsRequest& WithPortalArn(Aws::String&& value) { SetPortalArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline DisassociateBrowserSettingsRequest& WithPortalArn(const char* value) { SetPortalArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_portalArn;

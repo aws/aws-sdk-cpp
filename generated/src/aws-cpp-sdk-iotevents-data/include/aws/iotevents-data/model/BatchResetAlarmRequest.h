@@ -33,54 +33,20 @@ namespace Model
     AWS_IOTEVENTSDATA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The list of reset action requests. You can specify up to 10 requests per
      * operation.</p>
      */
     inline const Aws::Vector<ResetAlarmActionRequest>& GetResetActionRequests() const{ return m_resetActionRequests; }
-
-    /**
-     * <p>The list of reset action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline bool ResetActionRequestsHasBeenSet() const { return m_resetActionRequestsHasBeenSet; }
-
-    /**
-     * <p>The list of reset action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline void SetResetActionRequests(const Aws::Vector<ResetAlarmActionRequest>& value) { m_resetActionRequestsHasBeenSet = true; m_resetActionRequests = value; }
-
-    /**
-     * <p>The list of reset action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline void SetResetActionRequests(Aws::Vector<ResetAlarmActionRequest>&& value) { m_resetActionRequestsHasBeenSet = true; m_resetActionRequests = std::move(value); }
-
-    /**
-     * <p>The list of reset action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline BatchResetAlarmRequest& WithResetActionRequests(const Aws::Vector<ResetAlarmActionRequest>& value) { SetResetActionRequests(value); return *this;}
-
-    /**
-     * <p>The list of reset action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline BatchResetAlarmRequest& WithResetActionRequests(Aws::Vector<ResetAlarmActionRequest>&& value) { SetResetActionRequests(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of reset action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline BatchResetAlarmRequest& AddResetActionRequests(const ResetAlarmActionRequest& value) { m_resetActionRequestsHasBeenSet = true; m_resetActionRequests.push_back(value); return *this; }
-
-    /**
-     * <p>The list of reset action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline BatchResetAlarmRequest& AddResetActionRequests(ResetAlarmActionRequest&& value) { m_resetActionRequestsHasBeenSet = true; m_resetActionRequests.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ResetAlarmActionRequest> m_resetActionRequests;

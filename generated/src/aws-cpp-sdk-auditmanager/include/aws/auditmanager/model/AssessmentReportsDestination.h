@@ -39,77 +39,31 @@ namespace Model
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The destination type, such as Amazon S3. </p>
      */
     inline const AssessmentReportDestinationType& GetDestinationType() const{ return m_destinationType; }
-
-    /**
-     * <p> The destination type, such as Amazon S3. </p>
-     */
     inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
-
-    /**
-     * <p> The destination type, such as Amazon S3. </p>
-     */
     inline void SetDestinationType(const AssessmentReportDestinationType& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
-
-    /**
-     * <p> The destination type, such as Amazon S3. </p>
-     */
     inline void SetDestinationType(AssessmentReportDestinationType&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::move(value); }
-
-    /**
-     * <p> The destination type, such as Amazon S3. </p>
-     */
     inline AssessmentReportsDestination& WithDestinationType(const AssessmentReportDestinationType& value) { SetDestinationType(value); return *this;}
-
-    /**
-     * <p> The destination type, such as Amazon S3. </p>
-     */
     inline AssessmentReportsDestination& WithDestinationType(AssessmentReportDestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The destination bucket where Audit Manager stores assessment reports. </p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
-
-    /**
-     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
-     */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-
-    /**
-     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
-     */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-
-    /**
-     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
-     */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-
-    /**
-     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
-     */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-
-    /**
-     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
-     */
     inline AssessmentReportsDestination& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-
-    /**
-     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
-     */
     inline AssessmentReportsDestination& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-
-    /**
-     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
-     */
     inline AssessmentReportsDestination& WithDestination(const char* value) { SetDestination(value); return *this;}
-
+    ///@}
   private:
 
     AssessmentReportDestinationType m_destinationType;

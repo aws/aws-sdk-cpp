@@ -33,58 +33,28 @@ namespace Model
     AWS_CODEARTIFACT_API DescribeRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> A <code>RepositoryDescription</code> object that contains the requested
      * repository information. </p>
      */
     inline const RepositoryDescription& GetRepository() const{ return m_repository; }
-
-    /**
-     * <p> A <code>RepositoryDescription</code> object that contains the requested
-     * repository information. </p>
-     */
     inline void SetRepository(const RepositoryDescription& value) { m_repository = value; }
-
-    /**
-     * <p> A <code>RepositoryDescription</code> object that contains the requested
-     * repository information. </p>
-     */
     inline void SetRepository(RepositoryDescription&& value) { m_repository = std::move(value); }
-
-    /**
-     * <p> A <code>RepositoryDescription</code> object that contains the requested
-     * repository information. </p>
-     */
     inline DescribeRepositoryResult& WithRepository(const RepositoryDescription& value) { SetRepository(value); return *this;}
-
-    /**
-     * <p> A <code>RepositoryDescription</code> object that contains the requested
-     * repository information. </p>
-     */
     inline DescribeRepositoryResult& WithRepository(RepositoryDescription&& value) { SetRepository(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeRepositoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeRepositoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeRepositoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RepositoryDescription m_repository;

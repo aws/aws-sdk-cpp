@@ -34,87 +34,33 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> The unique ID of a deployment. </p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-
-    /**
-     * <p> The unique ID of a deployment. </p>
-     */
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-
-    /**
-     * <p> The unique ID of a deployment. </p>
-     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-
-    /**
-     * <p> The unique ID of a deployment. </p>
-     */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-
-    /**
-     * <p> The unique ID of a deployment. </p>
-     */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-
-    /**
-     * <p> The unique ID of a deployment. </p>
-     */
     inline GetDeploymentTargetRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-
-    /**
-     * <p> The unique ID of a deployment. </p>
-     */
     inline GetDeploymentTargetRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-
-    /**
-     * <p> The unique ID of a deployment. </p>
-     */
     inline GetDeploymentTargetRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The unique ID of a deployment target. </p>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
-
-    /**
-     * <p> The unique ID of a deployment target. </p>
-     */
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-
-    /**
-     * <p> The unique ID of a deployment target. </p>
-     */
     inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-
-    /**
-     * <p> The unique ID of a deployment target. </p>
-     */
     inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-
-    /**
-     * <p> The unique ID of a deployment target. </p>
-     */
     inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-
-    /**
-     * <p> The unique ID of a deployment target. </p>
-     */
     inline GetDeploymentTargetRequest& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-
-    /**
-     * <p> The unique ID of a deployment target. </p>
-     */
     inline GetDeploymentTargetRequest& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-
-    /**
-     * <p> The unique ID of a deployment target. </p>
-     */
     inline GetDeploymentTargetRequest& WithTargetId(const char* value) { SetTargetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deploymentId;

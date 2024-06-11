@@ -37,99 +37,34 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The destination phone number to verify. On verification, Amazon SNS adds this
      * phone number to the list of verified phone numbers that you can send SMS
      * messages to.</p>
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
-
-    /**
-     * <p>The destination phone number to verify. On verification, Amazon SNS adds this
-     * phone number to the list of verified phone numbers that you can send SMS
-     * messages to.</p>
-     */
     inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
-
-    /**
-     * <p>The destination phone number to verify. On verification, Amazon SNS adds this
-     * phone number to the list of verified phone numbers that you can send SMS
-     * messages to.</p>
-     */
     inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
-
-    /**
-     * <p>The destination phone number to verify. On verification, Amazon SNS adds this
-     * phone number to the list of verified phone numbers that you can send SMS
-     * messages to.</p>
-     */
     inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
-
-    /**
-     * <p>The destination phone number to verify. On verification, Amazon SNS adds this
-     * phone number to the list of verified phone numbers that you can send SMS
-     * messages to.</p>
-     */
     inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
-
-    /**
-     * <p>The destination phone number to verify. On verification, Amazon SNS adds this
-     * phone number to the list of verified phone numbers that you can send SMS
-     * messages to.</p>
-     */
     inline CreateSMSSandboxPhoneNumberRequest& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
-
-    /**
-     * <p>The destination phone number to verify. On verification, Amazon SNS adds this
-     * phone number to the list of verified phone numbers that you can send SMS
-     * messages to.</p>
-     */
     inline CreateSMSSandboxPhoneNumberRequest& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
-
-    /**
-     * <p>The destination phone number to verify. On verification, Amazon SNS adds this
-     * phone number to the list of verified phone numbers that you can send SMS
-     * messages to.</p>
-     */
     inline CreateSMSSandboxPhoneNumberRequest& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The language to use for sending the OTP. The default value is
      * <code>en-US</code>.</p>
      */
     inline const LanguageCodeString& GetLanguageCode() const{ return m_languageCode; }
-
-    /**
-     * <p>The language to use for sending the OTP. The default value is
-     * <code>en-US</code>.</p>
-     */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-
-    /**
-     * <p>The language to use for sending the OTP. The default value is
-     * <code>en-US</code>.</p>
-     */
     inline void SetLanguageCode(const LanguageCodeString& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-
-    /**
-     * <p>The language to use for sending the OTP. The default value is
-     * <code>en-US</code>.</p>
-     */
     inline void SetLanguageCode(LanguageCodeString&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-
-    /**
-     * <p>The language to use for sending the OTP. The default value is
-     * <code>en-US</code>.</p>
-     */
     inline CreateSMSSandboxPhoneNumberRequest& WithLanguageCode(const LanguageCodeString& value) { SetLanguageCode(value); return *this;}
-
-    /**
-     * <p>The language to use for sending the OTP. The default value is
-     * <code>en-US</code>.</p>
-     */
     inline CreateSMSSandboxPhoneNumberRequest& WithLanguageCode(LanguageCodeString&& value) { SetLanguageCode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_phoneNumber;

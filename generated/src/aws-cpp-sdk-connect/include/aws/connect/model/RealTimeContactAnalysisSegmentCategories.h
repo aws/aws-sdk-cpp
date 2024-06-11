@@ -39,78 +39,24 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Map between the name of the matched rule and
      * RealTimeContactAnalysisCategoryDetails.</p>
      */
     inline const Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>& GetMatchedDetails() const{ return m_matchedDetails; }
-
-    /**
-     * <p>Map between the name of the matched rule and
-     * RealTimeContactAnalysisCategoryDetails.</p>
-     */
     inline bool MatchedDetailsHasBeenSet() const { return m_matchedDetailsHasBeenSet; }
-
-    /**
-     * <p>Map between the name of the matched rule and
-     * RealTimeContactAnalysisCategoryDetails.</p>
-     */
     inline void SetMatchedDetails(const Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails = value; }
-
-    /**
-     * <p>Map between the name of the matched rule and
-     * RealTimeContactAnalysisCategoryDetails.</p>
-     */
     inline void SetMatchedDetails(Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails = std::move(value); }
-
-    /**
-     * <p>Map between the name of the matched rule and
-     * RealTimeContactAnalysisCategoryDetails.</p>
-     */
     inline RealTimeContactAnalysisSegmentCategories& WithMatchedDetails(const Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>& value) { SetMatchedDetails(value); return *this;}
-
-    /**
-     * <p>Map between the name of the matched rule and
-     * RealTimeContactAnalysisCategoryDetails.</p>
-     */
     inline RealTimeContactAnalysisSegmentCategories& WithMatchedDetails(Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>&& value) { SetMatchedDetails(std::move(value)); return *this;}
-
-    /**
-     * <p>Map between the name of the matched rule and
-     * RealTimeContactAnalysisCategoryDetails.</p>
-     */
     inline RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(const Aws::String& key, const RealTimeContactAnalysisCategoryDetails& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(key, value); return *this; }
-
-    /**
-     * <p>Map between the name of the matched rule and
-     * RealTimeContactAnalysisCategoryDetails.</p>
-     */
     inline RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(Aws::String&& key, const RealTimeContactAnalysisCategoryDetails& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Map between the name of the matched rule and
-     * RealTimeContactAnalysisCategoryDetails.</p>
-     */
     inline RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(const Aws::String& key, RealTimeContactAnalysisCategoryDetails&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Map between the name of the matched rule and
-     * RealTimeContactAnalysisCategoryDetails.</p>
-     */
     inline RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(Aws::String&& key, RealTimeContactAnalysisCategoryDetails&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Map between the name of the matched rule and
-     * RealTimeContactAnalysisCategoryDetails.</p>
-     */
     inline RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(const char* key, RealTimeContactAnalysisCategoryDetails&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Map between the name of the matched rule and
-     * RealTimeContactAnalysisCategoryDetails.</p>
-     */
     inline RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(const char* key, const RealTimeContactAnalysisCategoryDetails& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails> m_matchedDetails;

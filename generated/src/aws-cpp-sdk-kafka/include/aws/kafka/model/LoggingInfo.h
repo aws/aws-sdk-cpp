@@ -32,24 +32,15 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const BrokerLogs& GetBrokerLogs() const{ return m_brokerLogs; }
-
-    
     inline bool BrokerLogsHasBeenSet() const { return m_brokerLogsHasBeenSet; }
-
-    
     inline void SetBrokerLogs(const BrokerLogs& value) { m_brokerLogsHasBeenSet = true; m_brokerLogs = value; }
-
-    
     inline void SetBrokerLogs(BrokerLogs&& value) { m_brokerLogsHasBeenSet = true; m_brokerLogs = std::move(value); }
-
-    
     inline LoggingInfo& WithBrokerLogs(const BrokerLogs& value) { SetBrokerLogs(value); return *this;}
-
-    
     inline LoggingInfo& WithBrokerLogs(BrokerLogs&& value) { SetBrokerLogs(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BrokerLogs m_brokerLogs;

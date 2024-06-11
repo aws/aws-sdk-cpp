@@ -39,42 +39,18 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Container structure for defining under what conditions SageMaker creates a
      * human loop.</p>
      */
     inline const HumanLoopActivationConditionsConfig& GetHumanLoopActivationConditionsConfig() const{ return m_humanLoopActivationConditionsConfig; }
-
-    /**
-     * <p>Container structure for defining under what conditions SageMaker creates a
-     * human loop.</p>
-     */
     inline bool HumanLoopActivationConditionsConfigHasBeenSet() const { return m_humanLoopActivationConditionsConfigHasBeenSet; }
-
-    /**
-     * <p>Container structure for defining under what conditions SageMaker creates a
-     * human loop.</p>
-     */
     inline void SetHumanLoopActivationConditionsConfig(const HumanLoopActivationConditionsConfig& value) { m_humanLoopActivationConditionsConfigHasBeenSet = true; m_humanLoopActivationConditionsConfig = value; }
-
-    /**
-     * <p>Container structure for defining under what conditions SageMaker creates a
-     * human loop.</p>
-     */
     inline void SetHumanLoopActivationConditionsConfig(HumanLoopActivationConditionsConfig&& value) { m_humanLoopActivationConditionsConfigHasBeenSet = true; m_humanLoopActivationConditionsConfig = std::move(value); }
-
-    /**
-     * <p>Container structure for defining under what conditions SageMaker creates a
-     * human loop.</p>
-     */
     inline HumanLoopActivationConfig& WithHumanLoopActivationConditionsConfig(const HumanLoopActivationConditionsConfig& value) { SetHumanLoopActivationConditionsConfig(value); return *this;}
-
-    /**
-     * <p>Container structure for defining under what conditions SageMaker creates a
-     * human loop.</p>
-     */
     inline HumanLoopActivationConfig& WithHumanLoopActivationConditionsConfig(HumanLoopActivationConditionsConfig&& value) { SetHumanLoopActivationConditionsConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HumanLoopActivationConditionsConfig m_humanLoopActivationConditionsConfig;

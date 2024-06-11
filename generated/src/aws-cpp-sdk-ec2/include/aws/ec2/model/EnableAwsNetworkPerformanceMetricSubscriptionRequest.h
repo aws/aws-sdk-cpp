@@ -38,6 +38,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The source Region (like <code>us-east-1</code>) or Availability Zone ID (like
      * <code>use1-az1</code>) that the metric subscription is enabled for. If you use
@@ -45,64 +46,16 @@ namespace Model
      * the same Region.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The source Region (like <code>us-east-1</code>) or Availability Zone ID (like
-     * <code>use1-az1</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The source Region (like <code>us-east-1</code>) or Availability Zone ID (like
-     * <code>use1-az1</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The source Region (like <code>us-east-1</code>) or Availability Zone ID (like
-     * <code>use1-az1</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The source Region (like <code>us-east-1</code>) or Availability Zone ID (like
-     * <code>use1-az1</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-
-    /**
-     * <p>The source Region (like <code>us-east-1</code>) or Availability Zone ID (like
-     * <code>use1-az1</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline EnableAwsNetworkPerformanceMetricSubscriptionRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The source Region (like <code>us-east-1</code>) or Availability Zone ID (like
-     * <code>use1-az1</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline EnableAwsNetworkPerformanceMetricSubscriptionRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-
-    /**
-     * <p>The source Region (like <code>us-east-1</code>) or Availability Zone ID (like
-     * <code>use1-az1</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline EnableAwsNetworkPerformanceMetricSubscriptionRequest& WithSource(const char* value) { SetSource(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The target Region (like <code>us-east-2</code>) or Availability Zone ID (like
      * <code>use2-az2</code>) that the metric subscription is enabled for. If you use
@@ -110,126 +63,40 @@ namespace Model
      * the same Region.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
-
-    /**
-     * <p>The target Region (like <code>us-east-2</code>) or Availability Zone ID (like
-     * <code>use2-az2</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-
-    /**
-     * <p>The target Region (like <code>us-east-2</code>) or Availability Zone ID (like
-     * <code>use2-az2</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-
-    /**
-     * <p>The target Region (like <code>us-east-2</code>) or Availability Zone ID (like
-     * <code>use2-az2</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-
-    /**
-     * <p>The target Region (like <code>us-east-2</code>) or Availability Zone ID (like
-     * <code>use2-az2</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-
-    /**
-     * <p>The target Region (like <code>us-east-2</code>) or Availability Zone ID (like
-     * <code>use2-az2</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline EnableAwsNetworkPerformanceMetricSubscriptionRequest& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-
-    /**
-     * <p>The target Region (like <code>us-east-2</code>) or Availability Zone ID (like
-     * <code>use2-az2</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline EnableAwsNetworkPerformanceMetricSubscriptionRequest& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-
-    /**
-     * <p>The target Region (like <code>us-east-2</code>) or Availability Zone ID (like
-     * <code>use2-az2</code>) that the metric subscription is enabled for. If you use
-     * Availability Zone IDs, the Source and Destination Availability Zones must be in
-     * the same Region.</p>
-     */
     inline EnableAwsNetworkPerformanceMetricSubscriptionRequest& WithDestination(const char* value) { SetDestination(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The metric used for the enabled subscription.</p>
      */
     inline const MetricType& GetMetric() const{ return m_metric; }
-
-    /**
-     * <p>The metric used for the enabled subscription.</p>
-     */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-
-    /**
-     * <p>The metric used for the enabled subscription.</p>
-     */
     inline void SetMetric(const MetricType& value) { m_metricHasBeenSet = true; m_metric = value; }
-
-    /**
-     * <p>The metric used for the enabled subscription.</p>
-     */
     inline void SetMetric(MetricType&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-
-    /**
-     * <p>The metric used for the enabled subscription.</p>
-     */
     inline EnableAwsNetworkPerformanceMetricSubscriptionRequest& WithMetric(const MetricType& value) { SetMetric(value); return *this;}
-
-    /**
-     * <p>The metric used for the enabled subscription.</p>
-     */
     inline EnableAwsNetworkPerformanceMetricSubscriptionRequest& WithMetric(MetricType&& value) { SetMetric(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The statistic used for the enabled subscription.</p>
      */
     inline const StatisticType& GetStatistic() const{ return m_statistic; }
-
-    /**
-     * <p>The statistic used for the enabled subscription.</p>
-     */
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-
-    /**
-     * <p>The statistic used for the enabled subscription.</p>
-     */
     inline void SetStatistic(const StatisticType& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-
-    /**
-     * <p>The statistic used for the enabled subscription.</p>
-     */
     inline void SetStatistic(StatisticType&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-
-    /**
-     * <p>The statistic used for the enabled subscription.</p>
-     */
     inline EnableAwsNetworkPerformanceMetricSubscriptionRequest& WithStatistic(const StatisticType& value) { SetStatistic(value); return *this;}
-
-    /**
-     * <p>The statistic used for the enabled subscription.</p>
-     */
     inline EnableAwsNetworkPerformanceMetricSubscriptionRequest& WithStatistic(StatisticType&& value) { SetStatistic(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -237,31 +104,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline EnableAwsNetworkPerformanceMetricSubscriptionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_source;

@@ -34,62 +34,21 @@ namespace Model
     AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
      * definition to deregister. You must specify a <code>revision</code>.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to deregister. You must specify a <code>revision</code>.</p>
-     */
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to deregister. You must specify a <code>revision</code>.</p>
-     */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to deregister. You must specify a <code>revision</code>.</p>
-     */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to deregister. You must specify a <code>revision</code>.</p>
-     */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to deregister. You must specify a <code>revision</code>.</p>
-     */
     inline DeregisterTaskDefinitionRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to deregister. You must specify a <code>revision</code>.</p>
-     */
     inline DeregisterTaskDefinitionRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to deregister. You must specify a <code>revision</code>.</p>
-     */
     inline DeregisterTaskDefinitionRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskDefinition;

@@ -39,73 +39,30 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The bounds options (north, south, west, east) of the geospatial window
      * options.</p>
      */
     inline const GeospatialCoordinateBounds& GetBounds() const{ return m_bounds; }
-
-    /**
-     * <p>The bounds options (north, south, west, east) of the geospatial window
-     * options.</p>
-     */
     inline bool BoundsHasBeenSet() const { return m_boundsHasBeenSet; }
-
-    /**
-     * <p>The bounds options (north, south, west, east) of the geospatial window
-     * options.</p>
-     */
     inline void SetBounds(const GeospatialCoordinateBounds& value) { m_boundsHasBeenSet = true; m_bounds = value; }
-
-    /**
-     * <p>The bounds options (north, south, west, east) of the geospatial window
-     * options.</p>
-     */
     inline void SetBounds(GeospatialCoordinateBounds&& value) { m_boundsHasBeenSet = true; m_bounds = std::move(value); }
-
-    /**
-     * <p>The bounds options (north, south, west, east) of the geospatial window
-     * options.</p>
-     */
     inline GeospatialWindowOptions& WithBounds(const GeospatialCoordinateBounds& value) { SetBounds(value); return *this;}
-
-    /**
-     * <p>The bounds options (north, south, west, east) of the geospatial window
-     * options.</p>
-     */
     inline GeospatialWindowOptions& WithBounds(GeospatialCoordinateBounds&& value) { SetBounds(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The map zoom modes (manual, auto) of the geospatial window options.</p>
      */
     inline const MapZoomMode& GetMapZoomMode() const{ return m_mapZoomMode; }
-
-    /**
-     * <p>The map zoom modes (manual, auto) of the geospatial window options.</p>
-     */
     inline bool MapZoomModeHasBeenSet() const { return m_mapZoomModeHasBeenSet; }
-
-    /**
-     * <p>The map zoom modes (manual, auto) of the geospatial window options.</p>
-     */
     inline void SetMapZoomMode(const MapZoomMode& value) { m_mapZoomModeHasBeenSet = true; m_mapZoomMode = value; }
-
-    /**
-     * <p>The map zoom modes (manual, auto) of the geospatial window options.</p>
-     */
     inline void SetMapZoomMode(MapZoomMode&& value) { m_mapZoomModeHasBeenSet = true; m_mapZoomMode = std::move(value); }
-
-    /**
-     * <p>The map zoom modes (manual, auto) of the geospatial window options.</p>
-     */
     inline GeospatialWindowOptions& WithMapZoomMode(const MapZoomMode& value) { SetMapZoomMode(value); return *this;}
-
-    /**
-     * <p>The map zoom modes (manual, auto) of the geospatial window options.</p>
-     */
     inline GeospatialWindowOptions& WithMapZoomMode(MapZoomMode&& value) { SetMapZoomMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GeospatialCoordinateBounds m_bounds;

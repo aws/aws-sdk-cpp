@@ -39,118 +39,45 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The error code.</p>
      */
     inline const FindingDetailsErrorCode& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetErrorCode(const FindingDetailsErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetErrorCode(FindingDetailsErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline FindingDetailsError& WithErrorCode(const FindingDetailsErrorCode& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code.</p>
-     */
     inline FindingDetailsError& WithErrorCode(FindingDetailsErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error message.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline FindingDetailsError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>The error message.</p>
-     */
     inline FindingDetailsError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message.</p>
-     */
     inline FindingDetailsError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The finding ARN that returned an error.</p>
      */
     inline const Aws::String& GetFindingArn() const{ return m_findingArn; }
-
-    /**
-     * <p>The finding ARN that returned an error.</p>
-     */
     inline bool FindingArnHasBeenSet() const { return m_findingArnHasBeenSet; }
-
-    /**
-     * <p>The finding ARN that returned an error.</p>
-     */
     inline void SetFindingArn(const Aws::String& value) { m_findingArnHasBeenSet = true; m_findingArn = value; }
-
-    /**
-     * <p>The finding ARN that returned an error.</p>
-     */
     inline void SetFindingArn(Aws::String&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::move(value); }
-
-    /**
-     * <p>The finding ARN that returned an error.</p>
-     */
     inline void SetFindingArn(const char* value) { m_findingArnHasBeenSet = true; m_findingArn.assign(value); }
-
-    /**
-     * <p>The finding ARN that returned an error.</p>
-     */
     inline FindingDetailsError& WithFindingArn(const Aws::String& value) { SetFindingArn(value); return *this;}
-
-    /**
-     * <p>The finding ARN that returned an error.</p>
-     */
     inline FindingDetailsError& WithFindingArn(Aws::String&& value) { SetFindingArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The finding ARN that returned an error.</p>
-     */
     inline FindingDetailsError& WithFindingArn(const char* value) { SetFindingArn(value); return *this;}
-
+    ///@}
   private:
 
     FindingDetailsErrorCode m_errorCode;

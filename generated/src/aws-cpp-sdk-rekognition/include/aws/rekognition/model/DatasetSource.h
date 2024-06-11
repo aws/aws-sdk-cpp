@@ -46,73 +46,30 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const GroundTruthManifest& GetGroundTruthManifest() const{ return m_groundTruthManifest; }
-
-    
     inline bool GroundTruthManifestHasBeenSet() const { return m_groundTruthManifestHasBeenSet; }
-
-    
     inline void SetGroundTruthManifest(const GroundTruthManifest& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = value; }
-
-    
     inline void SetGroundTruthManifest(GroundTruthManifest&& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = std::move(value); }
-
-    
     inline DatasetSource& WithGroundTruthManifest(const GroundTruthManifest& value) { SetGroundTruthManifest(value); return *this;}
-
-    
     inline DatasetSource& WithGroundTruthManifest(GroundTruthManifest&& value) { SetGroundTruthManifest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to
      * copy. </p>
      */
     inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
-
-    /**
-     * <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to
-     * copy. </p>
-     */
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-
-    /**
-     * <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to
-     * copy. </p>
-     */
     inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-
-    /**
-     * <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to
-     * copy. </p>
-     */
     inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-
-    /**
-     * <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to
-     * copy. </p>
-     */
     inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-
-    /**
-     * <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to
-     * copy. </p>
-     */
     inline DatasetSource& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-
-    /**
-     * <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to
-     * copy. </p>
-     */
     inline DatasetSource& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to
-     * copy. </p>
-     */
     inline DatasetSource& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
-
+    ///@}
   private:
 
     GroundTruthManifest m_groundTruthManifest;

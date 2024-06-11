@@ -33,77 +33,31 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Voice Connector ID.</p>
      */
     inline const Aws::String& GetVoiceConnectorId() const{ return m_voiceConnectorId; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline bool VoiceConnectorIdHasBeenSet() const { return m_voiceConnectorIdHasBeenSet; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const Aws::String& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = value; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(Aws::String&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::move(value); }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const char* value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId.assign(value); }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline PutVoiceConnectorTerminationRequest& WithVoiceConnectorId(const Aws::String& value) { SetVoiceConnectorId(value); return *this;}
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline PutVoiceConnectorTerminationRequest& WithVoiceConnectorId(Aws::String&& value) { SetVoiceConnectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline PutVoiceConnectorTerminationRequest& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The termination settings to be updated.</p>
      */
     inline const Termination& GetTermination() const{ return m_termination; }
-
-    /**
-     * <p>The termination settings to be updated.</p>
-     */
     inline bool TerminationHasBeenSet() const { return m_terminationHasBeenSet; }
-
-    /**
-     * <p>The termination settings to be updated.</p>
-     */
     inline void SetTermination(const Termination& value) { m_terminationHasBeenSet = true; m_termination = value; }
-
-    /**
-     * <p>The termination settings to be updated.</p>
-     */
     inline void SetTermination(Termination&& value) { m_terminationHasBeenSet = true; m_termination = std::move(value); }
-
-    /**
-     * <p>The termination settings to be updated.</p>
-     */
     inline PutVoiceConnectorTerminationRequest& WithTermination(const Termination& value) { SetTermination(value); return *this;}
-
-    /**
-     * <p>The termination settings to be updated.</p>
-     */
     inline PutVoiceConnectorTerminationRequest& WithTermination(Termination&& value) { SetTermination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_voiceConnectorId;

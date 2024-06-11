@@ -39,47 +39,25 @@ namespace Model
     AWS_CLOUDSEARCH_API DeleteSuggesterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The status of the suggester being deleted.</p>
      */
     inline const SuggesterStatus& GetSuggester() const{ return m_suggester; }
-
-    /**
-     * <p>The status of the suggester being deleted.</p>
-     */
     inline void SetSuggester(const SuggesterStatus& value) { m_suggester = value; }
-
-    /**
-     * <p>The status of the suggester being deleted.</p>
-     */
     inline void SetSuggester(SuggesterStatus&& value) { m_suggester = std::move(value); }
-
-    /**
-     * <p>The status of the suggester being deleted.</p>
-     */
     inline DeleteSuggesterResult& WithSuggester(const SuggesterStatus& value) { SetSuggester(value); return *this;}
-
-    /**
-     * <p>The status of the suggester being deleted.</p>
-     */
     inline DeleteSuggesterResult& WithSuggester(SuggesterStatus&& value) { SetSuggester(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteSuggesterResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteSuggesterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SuggesterStatus m_suggester;

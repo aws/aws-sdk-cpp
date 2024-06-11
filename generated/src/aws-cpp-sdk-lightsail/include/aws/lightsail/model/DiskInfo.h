@@ -37,133 +37,54 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The disk name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The disk name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The disk name.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The disk name.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The disk name.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The disk name.</p>
-     */
     inline DiskInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The disk name.</p>
-     */
     inline DiskInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The disk name.</p>
-     */
     inline DiskInfo& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The disk path.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
-
-    /**
-     * <p>The disk path.</p>
-     */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-
-    /**
-     * <p>The disk path.</p>
-     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-
-    /**
-     * <p>The disk path.</p>
-     */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-
-    /**
-     * <p>The disk path.</p>
-     */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-
-    /**
-     * <p>The disk path.</p>
-     */
     inline DiskInfo& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-
-    /**
-     * <p>The disk path.</p>
-     */
     inline DiskInfo& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The disk path.</p>
-     */
     inline DiskInfo& WithPath(const char* value) { SetPath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The size of the disk in GB (<code>32</code>).</p>
      */
     inline int GetSizeInGb() const{ return m_sizeInGb; }
-
-    /**
-     * <p>The size of the disk in GB (<code>32</code>).</p>
-     */
     inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
-
-    /**
-     * <p>The size of the disk in GB (<code>32</code>).</p>
-     */
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
-
-    /**
-     * <p>The size of the disk in GB (<code>32</code>).</p>
-     */
     inline DiskInfo& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean value indicating whether this disk is a system disk (has an
      * operating system loaded on it).</p>
      */
     inline bool GetIsSystemDisk() const{ return m_isSystemDisk; }
-
-    /**
-     * <p>A Boolean value indicating whether this disk is a system disk (has an
-     * operating system loaded on it).</p>
-     */
     inline bool IsSystemDiskHasBeenSet() const { return m_isSystemDiskHasBeenSet; }
-
-    /**
-     * <p>A Boolean value indicating whether this disk is a system disk (has an
-     * operating system loaded on it).</p>
-     */
     inline void SetIsSystemDisk(bool value) { m_isSystemDiskHasBeenSet = true; m_isSystemDisk = value; }
-
-    /**
-     * <p>A Boolean value indicating whether this disk is a system disk (has an
-     * operating system loaded on it).</p>
-     */
     inline DiskInfo& WithIsSystemDisk(bool value) { SetIsSystemDisk(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

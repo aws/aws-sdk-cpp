@@ -37,46 +37,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines the font family settings.</p>
      */
     inline const Aws::String& GetFontFamily() const{ return m_fontFamily; }
-
-    /**
-     * <p>Determines the font family settings.</p>
-     */
     inline bool FontFamilyHasBeenSet() const { return m_fontFamilyHasBeenSet; }
-
-    /**
-     * <p>Determines the font family settings.</p>
-     */
     inline void SetFontFamily(const Aws::String& value) { m_fontFamilyHasBeenSet = true; m_fontFamily = value; }
-
-    /**
-     * <p>Determines the font family settings.</p>
-     */
     inline void SetFontFamily(Aws::String&& value) { m_fontFamilyHasBeenSet = true; m_fontFamily = std::move(value); }
-
-    /**
-     * <p>Determines the font family settings.</p>
-     */
     inline void SetFontFamily(const char* value) { m_fontFamilyHasBeenSet = true; m_fontFamily.assign(value); }
-
-    /**
-     * <p>Determines the font family settings.</p>
-     */
     inline Font& WithFontFamily(const Aws::String& value) { SetFontFamily(value); return *this;}
-
-    /**
-     * <p>Determines the font family settings.</p>
-     */
     inline Font& WithFontFamily(Aws::String&& value) { SetFontFamily(std::move(value)); return *this;}
-
-    /**
-     * <p>Determines the font family settings.</p>
-     */
     inline Font& WithFontFamily(const char* value) { SetFontFamily(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fontFamily;

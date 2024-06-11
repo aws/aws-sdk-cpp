@@ -38,42 +38,18 @@ namespace Model
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A <code>PackageOriginRestrictions</code> object that contains information
      * about the upstream and publish package origin configuration for the package.</p>
      */
     inline const PackageOriginRestrictions& GetRestrictions() const{ return m_restrictions; }
-
-    /**
-     * <p>A <code>PackageOriginRestrictions</code> object that contains information
-     * about the upstream and publish package origin configuration for the package.</p>
-     */
     inline bool RestrictionsHasBeenSet() const { return m_restrictionsHasBeenSet; }
-
-    /**
-     * <p>A <code>PackageOriginRestrictions</code> object that contains information
-     * about the upstream and publish package origin configuration for the package.</p>
-     */
     inline void SetRestrictions(const PackageOriginRestrictions& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
-
-    /**
-     * <p>A <code>PackageOriginRestrictions</code> object that contains information
-     * about the upstream and publish package origin configuration for the package.</p>
-     */
     inline void SetRestrictions(PackageOriginRestrictions&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::move(value); }
-
-    /**
-     * <p>A <code>PackageOriginRestrictions</code> object that contains information
-     * about the upstream and publish package origin configuration for the package.</p>
-     */
     inline PackageOriginConfiguration& WithRestrictions(const PackageOriginRestrictions& value) { SetRestrictions(value); return *this;}
-
-    /**
-     * <p>A <code>PackageOriginRestrictions</code> object that contains information
-     * about the upstream and publish package origin configuration for the package.</p>
-     */
     inline PackageOriginConfiguration& WithRestrictions(PackageOriginRestrictions&& value) { SetRestrictions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PackageOriginRestrictions m_restrictions;

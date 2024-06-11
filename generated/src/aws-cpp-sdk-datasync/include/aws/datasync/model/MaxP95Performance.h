@@ -36,236 +36,115 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Peak IOPS related to read operations.</p>
      */
     inline double GetIopsRead() const{ return m_iopsRead; }
-
-    /**
-     * <p>Peak IOPS related to read operations.</p>
-     */
     inline bool IopsReadHasBeenSet() const { return m_iopsReadHasBeenSet; }
-
-    /**
-     * <p>Peak IOPS related to read operations.</p>
-     */
     inline void SetIopsRead(double value) { m_iopsReadHasBeenSet = true; m_iopsRead = value; }
-
-    /**
-     * <p>Peak IOPS related to read operations.</p>
-     */
     inline MaxP95Performance& WithIopsRead(double value) { SetIopsRead(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Peak IOPS related to write operations.</p>
      */
     inline double GetIopsWrite() const{ return m_iopsWrite; }
-
-    /**
-     * <p>Peak IOPS related to write operations.</p>
-     */
     inline bool IopsWriteHasBeenSet() const { return m_iopsWriteHasBeenSet; }
-
-    /**
-     * <p>Peak IOPS related to write operations.</p>
-     */
     inline void SetIopsWrite(double value) { m_iopsWriteHasBeenSet = true; m_iopsWrite = value; }
-
-    /**
-     * <p>Peak IOPS related to write operations.</p>
-     */
     inline MaxP95Performance& WithIopsWrite(double value) { SetIopsWrite(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Peak IOPS unrelated to read and write operations.</p>
      */
     inline double GetIopsOther() const{ return m_iopsOther; }
-
-    /**
-     * <p>Peak IOPS unrelated to read and write operations.</p>
-     */
     inline bool IopsOtherHasBeenSet() const { return m_iopsOtherHasBeenSet; }
-
-    /**
-     * <p>Peak IOPS unrelated to read and write operations.</p>
-     */
     inline void SetIopsOther(double value) { m_iopsOtherHasBeenSet = true; m_iopsOther = value; }
-
-    /**
-     * <p>Peak IOPS unrelated to read and write operations.</p>
-     */
     inline MaxP95Performance& WithIopsOther(double value) { SetIopsOther(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Peak total IOPS on your on-premises storage system resource.</p>
      */
     inline double GetIopsTotal() const{ return m_iopsTotal; }
-
-    /**
-     * <p>Peak total IOPS on your on-premises storage system resource.</p>
-     */
     inline bool IopsTotalHasBeenSet() const { return m_iopsTotalHasBeenSet; }
-
-    /**
-     * <p>Peak total IOPS on your on-premises storage system resource.</p>
-     */
     inline void SetIopsTotal(double value) { m_iopsTotalHasBeenSet = true; m_iopsTotal = value; }
-
-    /**
-     * <p>Peak total IOPS on your on-premises storage system resource.</p>
-     */
     inline MaxP95Performance& WithIopsTotal(double value) { SetIopsTotal(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Peak throughput related to read operations.</p>
      */
     inline double GetThroughputRead() const{ return m_throughputRead; }
-
-    /**
-     * <p>Peak throughput related to read operations.</p>
-     */
     inline bool ThroughputReadHasBeenSet() const { return m_throughputReadHasBeenSet; }
-
-    /**
-     * <p>Peak throughput related to read operations.</p>
-     */
     inline void SetThroughputRead(double value) { m_throughputReadHasBeenSet = true; m_throughputRead = value; }
-
-    /**
-     * <p>Peak throughput related to read operations.</p>
-     */
     inline MaxP95Performance& WithThroughputRead(double value) { SetThroughputRead(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Peak throughput related to write operations.</p>
      */
     inline double GetThroughputWrite() const{ return m_throughputWrite; }
-
-    /**
-     * <p>Peak throughput related to write operations.</p>
-     */
     inline bool ThroughputWriteHasBeenSet() const { return m_throughputWriteHasBeenSet; }
-
-    /**
-     * <p>Peak throughput related to write operations.</p>
-     */
     inline void SetThroughputWrite(double value) { m_throughputWriteHasBeenSet = true; m_throughputWrite = value; }
-
-    /**
-     * <p>Peak throughput related to write operations.</p>
-     */
     inline MaxP95Performance& WithThroughputWrite(double value) { SetThroughputWrite(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Peak throughput unrelated to read and write operations.</p>
      */
     inline double GetThroughputOther() const{ return m_throughputOther; }
-
-    /**
-     * <p>Peak throughput unrelated to read and write operations.</p>
-     */
     inline bool ThroughputOtherHasBeenSet() const { return m_throughputOtherHasBeenSet; }
-
-    /**
-     * <p>Peak throughput unrelated to read and write operations.</p>
-     */
     inline void SetThroughputOther(double value) { m_throughputOtherHasBeenSet = true; m_throughputOther = value; }
-
-    /**
-     * <p>Peak throughput unrelated to read and write operations.</p>
-     */
     inline MaxP95Performance& WithThroughputOther(double value) { SetThroughputOther(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Peak total throughput on your on-premises storage system resource.</p>
      */
     inline double GetThroughputTotal() const{ return m_throughputTotal; }
-
-    /**
-     * <p>Peak total throughput on your on-premises storage system resource.</p>
-     */
     inline bool ThroughputTotalHasBeenSet() const { return m_throughputTotalHasBeenSet; }
-
-    /**
-     * <p>Peak total throughput on your on-premises storage system resource.</p>
-     */
     inline void SetThroughputTotal(double value) { m_throughputTotalHasBeenSet = true; m_throughputTotal = value; }
-
-    /**
-     * <p>Peak total throughput on your on-premises storage system resource.</p>
-     */
     inline MaxP95Performance& WithThroughputTotal(double value) { SetThroughputTotal(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Peak latency for read operations.</p>
      */
     inline double GetLatencyRead() const{ return m_latencyRead; }
-
-    /**
-     * <p>Peak latency for read operations.</p>
-     */
     inline bool LatencyReadHasBeenSet() const { return m_latencyReadHasBeenSet; }
-
-    /**
-     * <p>Peak latency for read operations.</p>
-     */
     inline void SetLatencyRead(double value) { m_latencyReadHasBeenSet = true; m_latencyRead = value; }
-
-    /**
-     * <p>Peak latency for read operations.</p>
-     */
     inline MaxP95Performance& WithLatencyRead(double value) { SetLatencyRead(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Peak latency for write operations.</p>
      */
     inline double GetLatencyWrite() const{ return m_latencyWrite; }
-
-    /**
-     * <p>Peak latency for write operations.</p>
-     */
     inline bool LatencyWriteHasBeenSet() const { return m_latencyWriteHasBeenSet; }
-
-    /**
-     * <p>Peak latency for write operations.</p>
-     */
     inline void SetLatencyWrite(double value) { m_latencyWriteHasBeenSet = true; m_latencyWrite = value; }
-
-    /**
-     * <p>Peak latency for write operations.</p>
-     */
     inline MaxP95Performance& WithLatencyWrite(double value) { SetLatencyWrite(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Peak latency for operations unrelated to read and write operations.</p>
      */
     inline double GetLatencyOther() const{ return m_latencyOther; }
-
-    /**
-     * <p>Peak latency for operations unrelated to read and write operations.</p>
-     */
     inline bool LatencyOtherHasBeenSet() const { return m_latencyOtherHasBeenSet; }
-
-    /**
-     * <p>Peak latency for operations unrelated to read and write operations.</p>
-     */
     inline void SetLatencyOther(double value) { m_latencyOtherHasBeenSet = true; m_latencyOther = value; }
-
-    /**
-     * <p>Peak latency for operations unrelated to read and write operations.</p>
-     */
     inline MaxP95Performance& WithLatencyOther(double value) { SetLatencyOther(value); return *this;}
-
+    ///@}
   private:
 
     double m_iopsRead;

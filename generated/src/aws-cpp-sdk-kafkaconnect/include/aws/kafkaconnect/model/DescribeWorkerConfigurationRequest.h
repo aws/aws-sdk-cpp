@@ -32,54 +32,20 @@ namespace Model
     AWS_KAFKACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the worker configuration that you want to
      * get information about.</p>
      */
     inline const Aws::String& GetWorkerConfigurationArn() const{ return m_workerConfigurationArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration that you want to
-     * get information about.</p>
-     */
     inline bool WorkerConfigurationArnHasBeenSet() const { return m_workerConfigurationArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration that you want to
-     * get information about.</p>
-     */
     inline void SetWorkerConfigurationArn(const Aws::String& value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration that you want to
-     * get information about.</p>
-     */
     inline void SetWorkerConfigurationArn(Aws::String&& value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration that you want to
-     * get information about.</p>
-     */
     inline void SetWorkerConfigurationArn(const char* value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration that you want to
-     * get information about.</p>
-     */
     inline DescribeWorkerConfigurationRequest& WithWorkerConfigurationArn(const Aws::String& value) { SetWorkerConfigurationArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration that you want to
-     * get information about.</p>
-     */
     inline DescribeWorkerConfigurationRequest& WithWorkerConfigurationArn(Aws::String&& value) { SetWorkerConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the worker configuration that you want to
-     * get information about.</p>
-     */
     inline DescribeWorkerConfigurationRequest& WithWorkerConfigurationArn(const char* value) { SetWorkerConfigurationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workerConfigurationArn;

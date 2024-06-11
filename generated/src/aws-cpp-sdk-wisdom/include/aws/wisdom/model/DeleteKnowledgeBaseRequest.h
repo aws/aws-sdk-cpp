@@ -32,54 +32,20 @@ namespace Model
     AWS_CONNECTWISDOMSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The knowledge base to delete content from. Can be either the ID or the ARN.
      * URLs cannot contain the ARN.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
-
-    /**
-     * <p>The knowledge base to delete content from. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-
-    /**
-     * <p>The knowledge base to delete content from. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-
-    /**
-     * <p>The knowledge base to delete content from. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-
-    /**
-     * <p>The knowledge base to delete content from. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-
-    /**
-     * <p>The knowledge base to delete content from. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline DeleteKnowledgeBaseRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-
-    /**
-     * <p>The knowledge base to delete content from. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline DeleteKnowledgeBaseRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The knowledge base to delete content from. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline DeleteKnowledgeBaseRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_knowledgeBaseId;

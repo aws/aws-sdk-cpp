@@ -34,105 +34,49 @@ namespace Model
     AWS_PROTON_API GetTemplateSyncStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The template sync desired state that's returned by Proton.</p>
      */
     inline const Revision& GetDesiredState() const{ return m_desiredState; }
-
-    /**
-     * <p>The template sync desired state that's returned by Proton.</p>
-     */
     inline void SetDesiredState(const Revision& value) { m_desiredState = value; }
-
-    /**
-     * <p>The template sync desired state that's returned by Proton.</p>
-     */
     inline void SetDesiredState(Revision&& value) { m_desiredState = std::move(value); }
-
-    /**
-     * <p>The template sync desired state that's returned by Proton.</p>
-     */
     inline GetTemplateSyncStatusResult& WithDesiredState(const Revision& value) { SetDesiredState(value); return *this;}
-
-    /**
-     * <p>The template sync desired state that's returned by Proton.</p>
-     */
     inline GetTemplateSyncStatusResult& WithDesiredState(Revision&& value) { SetDesiredState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of the last successful sync that's returned by Proton.</p>
      */
     inline const ResourceSyncAttempt& GetLatestSuccessfulSync() const{ return m_latestSuccessfulSync; }
-
-    /**
-     * <p>The details of the last successful sync that's returned by Proton.</p>
-     */
     inline void SetLatestSuccessfulSync(const ResourceSyncAttempt& value) { m_latestSuccessfulSync = value; }
-
-    /**
-     * <p>The details of the last successful sync that's returned by Proton.</p>
-     */
     inline void SetLatestSuccessfulSync(ResourceSyncAttempt&& value) { m_latestSuccessfulSync = std::move(value); }
-
-    /**
-     * <p>The details of the last successful sync that's returned by Proton.</p>
-     */
     inline GetTemplateSyncStatusResult& WithLatestSuccessfulSync(const ResourceSyncAttempt& value) { SetLatestSuccessfulSync(value); return *this;}
-
-    /**
-     * <p>The details of the last successful sync that's returned by Proton.</p>
-     */
     inline GetTemplateSyncStatusResult& WithLatestSuccessfulSync(ResourceSyncAttempt&& value) { SetLatestSuccessfulSync(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of the last sync that's returned by Proton.</p>
      */
     inline const ResourceSyncAttempt& GetLatestSync() const{ return m_latestSync; }
-
-    /**
-     * <p>The details of the last sync that's returned by Proton.</p>
-     */
     inline void SetLatestSync(const ResourceSyncAttempt& value) { m_latestSync = value; }
-
-    /**
-     * <p>The details of the last sync that's returned by Proton.</p>
-     */
     inline void SetLatestSync(ResourceSyncAttempt&& value) { m_latestSync = std::move(value); }
-
-    /**
-     * <p>The details of the last sync that's returned by Proton.</p>
-     */
     inline GetTemplateSyncStatusResult& WithLatestSync(const ResourceSyncAttempt& value) { SetLatestSync(value); return *this;}
-
-    /**
-     * <p>The details of the last sync that's returned by Proton.</p>
-     */
     inline GetTemplateSyncStatusResult& WithLatestSync(ResourceSyncAttempt&& value) { SetLatestSync(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTemplateSyncStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTemplateSyncStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTemplateSyncStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Revision m_desiredState;

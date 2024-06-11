@@ -38,136 +38,48 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the property whose change was cancelled.</p>
      */
     inline const Aws::String& GetPropertyName() const{ return m_propertyName; }
-
-    /**
-     * <p>The name of the property whose change was cancelled.</p>
-     */
     inline bool PropertyNameHasBeenSet() const { return m_propertyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the property whose change was cancelled.</p>
-     */
     inline void SetPropertyName(const Aws::String& value) { m_propertyNameHasBeenSet = true; m_propertyName = value; }
-
-    /**
-     * <p>The name of the property whose change was cancelled.</p>
-     */
     inline void SetPropertyName(Aws::String&& value) { m_propertyNameHasBeenSet = true; m_propertyName = std::move(value); }
-
-    /**
-     * <p>The name of the property whose change was cancelled.</p>
-     */
     inline void SetPropertyName(const char* value) { m_propertyNameHasBeenSet = true; m_propertyName.assign(value); }
-
-    /**
-     * <p>The name of the property whose change was cancelled.</p>
-     */
     inline CancelledChangeProperty& WithPropertyName(const Aws::String& value) { SetPropertyName(value); return *this;}
-
-    /**
-     * <p>The name of the property whose change was cancelled.</p>
-     */
     inline CancelledChangeProperty& WithPropertyName(Aws::String&& value) { SetPropertyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the property whose change was cancelled.</p>
-     */
     inline CancelledChangeProperty& WithPropertyName(const char* value) { SetPropertyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pending value of the property that was cancelled. This would have been
      * the eventual value of the property if the chance had not been cancelled.</p>
      */
     inline const Aws::String& GetCancelledValue() const{ return m_cancelledValue; }
-
-    /**
-     * <p>The pending value of the property that was cancelled. This would have been
-     * the eventual value of the property if the chance had not been cancelled.</p>
-     */
     inline bool CancelledValueHasBeenSet() const { return m_cancelledValueHasBeenSet; }
-
-    /**
-     * <p>The pending value of the property that was cancelled. This would have been
-     * the eventual value of the property if the chance had not been cancelled.</p>
-     */
     inline void SetCancelledValue(const Aws::String& value) { m_cancelledValueHasBeenSet = true; m_cancelledValue = value; }
-
-    /**
-     * <p>The pending value of the property that was cancelled. This would have been
-     * the eventual value of the property if the chance had not been cancelled.</p>
-     */
     inline void SetCancelledValue(Aws::String&& value) { m_cancelledValueHasBeenSet = true; m_cancelledValue = std::move(value); }
-
-    /**
-     * <p>The pending value of the property that was cancelled. This would have been
-     * the eventual value of the property if the chance had not been cancelled.</p>
-     */
     inline void SetCancelledValue(const char* value) { m_cancelledValueHasBeenSet = true; m_cancelledValue.assign(value); }
-
-    /**
-     * <p>The pending value of the property that was cancelled. This would have been
-     * the eventual value of the property if the chance had not been cancelled.</p>
-     */
     inline CancelledChangeProperty& WithCancelledValue(const Aws::String& value) { SetCancelledValue(value); return *this;}
-
-    /**
-     * <p>The pending value of the property that was cancelled. This would have been
-     * the eventual value of the property if the chance had not been cancelled.</p>
-     */
     inline CancelledChangeProperty& WithCancelledValue(Aws::String&& value) { SetCancelledValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The pending value of the property that was cancelled. This would have been
-     * the eventual value of the property if the chance had not been cancelled.</p>
-     */
     inline CancelledChangeProperty& WithCancelledValue(const char* value) { SetCancelledValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current value of the property, after the change was cancelled.</p>
      */
     inline const Aws::String& GetActiveValue() const{ return m_activeValue; }
-
-    /**
-     * <p>The current value of the property, after the change was cancelled.</p>
-     */
     inline bool ActiveValueHasBeenSet() const { return m_activeValueHasBeenSet; }
-
-    /**
-     * <p>The current value of the property, after the change was cancelled.</p>
-     */
     inline void SetActiveValue(const Aws::String& value) { m_activeValueHasBeenSet = true; m_activeValue = value; }
-
-    /**
-     * <p>The current value of the property, after the change was cancelled.</p>
-     */
     inline void SetActiveValue(Aws::String&& value) { m_activeValueHasBeenSet = true; m_activeValue = std::move(value); }
-
-    /**
-     * <p>The current value of the property, after the change was cancelled.</p>
-     */
     inline void SetActiveValue(const char* value) { m_activeValueHasBeenSet = true; m_activeValue.assign(value); }
-
-    /**
-     * <p>The current value of the property, after the change was cancelled.</p>
-     */
     inline CancelledChangeProperty& WithActiveValue(const Aws::String& value) { SetActiveValue(value); return *this;}
-
-    /**
-     * <p>The current value of the property, after the change was cancelled.</p>
-     */
     inline CancelledChangeProperty& WithActiveValue(Aws::String&& value) { SetActiveValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The current value of the property, after the change was cancelled.</p>
-     */
     inline CancelledChangeProperty& WithActiveValue(const char* value) { SetActiveValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_propertyName;

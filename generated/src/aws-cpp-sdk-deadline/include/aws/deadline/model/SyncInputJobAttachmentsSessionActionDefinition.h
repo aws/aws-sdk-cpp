@@ -37,46 +37,19 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The step ID for the step in the job attachment.</p>
      */
     inline const Aws::String& GetStepId() const{ return m_stepId; }
-
-    /**
-     * <p>The step ID for the step in the job attachment.</p>
-     */
     inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
-
-    /**
-     * <p>The step ID for the step in the job attachment.</p>
-     */
     inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
-
-    /**
-     * <p>The step ID for the step in the job attachment.</p>
-     */
     inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
-
-    /**
-     * <p>The step ID for the step in the job attachment.</p>
-     */
     inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
-
-    /**
-     * <p>The step ID for the step in the job attachment.</p>
-     */
     inline SyncInputJobAttachmentsSessionActionDefinition& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
-
-    /**
-     * <p>The step ID for the step in the job attachment.</p>
-     */
     inline SyncInputJobAttachmentsSessionActionDefinition& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
-
-    /**
-     * <p>The step ID for the step in the job attachment.</p>
-     */
     inline SyncInputJobAttachmentsSessionActionDefinition& WithStepId(const char* value) { SetStepId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stepId;

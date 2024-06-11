@@ -42,46 +42,19 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The details of the last established policy.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The details of the last established policy.</p>
-     */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-
-    /**
-     * <p>The details of the last established policy.</p>
-     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-
-    /**
-     * <p>The details of the last established policy.</p>
-     */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-
-    /**
-     * <p>The details of the last established policy.</p>
-     */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-
-    /**
-     * <p>The details of the last established policy.</p>
-     */
     inline EstablishedMultiRegionAccessPointPolicy& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The details of the last established policy.</p>
-     */
     inline EstablishedMultiRegionAccessPointPolicy& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The details of the last established policy.</p>
-     */
     inline EstablishedMultiRegionAccessPointPolicy& WithPolicy(const char* value) { SetPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policy;

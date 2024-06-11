@@ -40,103 +40,35 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The class, or document type, assigned to a detected Page object. The class,
      * or document type, assigned to a detected Page object.</p>
      */
     inline const Aws::Vector<Prediction>& GetPageType() const{ return m_pageType; }
-
-    /**
-     * <p>The class, or document type, assigned to a detected Page object. The class,
-     * or document type, assigned to a detected Page object.</p>
-     */
     inline bool PageTypeHasBeenSet() const { return m_pageTypeHasBeenSet; }
-
-    /**
-     * <p>The class, or document type, assigned to a detected Page object. The class,
-     * or document type, assigned to a detected Page object.</p>
-     */
     inline void SetPageType(const Aws::Vector<Prediction>& value) { m_pageTypeHasBeenSet = true; m_pageType = value; }
-
-    /**
-     * <p>The class, or document type, assigned to a detected Page object. The class,
-     * or document type, assigned to a detected Page object.</p>
-     */
     inline void SetPageType(Aws::Vector<Prediction>&& value) { m_pageTypeHasBeenSet = true; m_pageType = std::move(value); }
-
-    /**
-     * <p>The class, or document type, assigned to a detected Page object. The class,
-     * or document type, assigned to a detected Page object.</p>
-     */
     inline PageClassification& WithPageType(const Aws::Vector<Prediction>& value) { SetPageType(value); return *this;}
-
-    /**
-     * <p>The class, or document type, assigned to a detected Page object. The class,
-     * or document type, assigned to a detected Page object.</p>
-     */
     inline PageClassification& WithPageType(Aws::Vector<Prediction>&& value) { SetPageType(std::move(value)); return *this;}
-
-    /**
-     * <p>The class, or document type, assigned to a detected Page object. The class,
-     * or document type, assigned to a detected Page object.</p>
-     */
     inline PageClassification& AddPageType(const Prediction& value) { m_pageTypeHasBeenSet = true; m_pageType.push_back(value); return *this; }
-
-    /**
-     * <p>The class, or document type, assigned to a detected Page object. The class,
-     * or document type, assigned to a detected Page object.</p>
-     */
     inline PageClassification& AddPageType(Prediction&& value) { m_pageTypeHasBeenSet = true; m_pageType.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The page number the value was detected on, relative to Amazon Textract's
      * starting position.</p>
      */
     inline const Aws::Vector<Prediction>& GetPageNumber() const{ return m_pageNumber; }
-
-    /**
-     * <p> The page number the value was detected on, relative to Amazon Textract's
-     * starting position.</p>
-     */
     inline bool PageNumberHasBeenSet() const { return m_pageNumberHasBeenSet; }
-
-    /**
-     * <p> The page number the value was detected on, relative to Amazon Textract's
-     * starting position.</p>
-     */
     inline void SetPageNumber(const Aws::Vector<Prediction>& value) { m_pageNumberHasBeenSet = true; m_pageNumber = value; }
-
-    /**
-     * <p> The page number the value was detected on, relative to Amazon Textract's
-     * starting position.</p>
-     */
     inline void SetPageNumber(Aws::Vector<Prediction>&& value) { m_pageNumberHasBeenSet = true; m_pageNumber = std::move(value); }
-
-    /**
-     * <p> The page number the value was detected on, relative to Amazon Textract's
-     * starting position.</p>
-     */
     inline PageClassification& WithPageNumber(const Aws::Vector<Prediction>& value) { SetPageNumber(value); return *this;}
-
-    /**
-     * <p> The page number the value was detected on, relative to Amazon Textract's
-     * starting position.</p>
-     */
     inline PageClassification& WithPageNumber(Aws::Vector<Prediction>&& value) { SetPageNumber(std::move(value)); return *this;}
-
-    /**
-     * <p> The page number the value was detected on, relative to Amazon Textract's
-     * starting position.</p>
-     */
     inline PageClassification& AddPageNumber(const Prediction& value) { m_pageNumberHasBeenSet = true; m_pageNumber.push_back(value); return *this; }
-
-    /**
-     * <p> The page number the value was detected on, relative to Amazon Textract's
-     * starting position.</p>
-     */
     inline PageClassification& AddPageNumber(Prediction&& value) { m_pageNumberHasBeenSet = true; m_pageNumber.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Prediction> m_pageType;

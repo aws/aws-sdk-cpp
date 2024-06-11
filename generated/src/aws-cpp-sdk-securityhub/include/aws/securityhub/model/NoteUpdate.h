@@ -37,87 +37,33 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The updated note text.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>The updated note text.</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>The updated note text.</p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>The updated note text.</p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>The updated note text.</p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>The updated note text.</p>
-     */
     inline NoteUpdate& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>The updated note text.</p>
-     */
     inline NoteUpdate& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>The updated note text.</p>
-     */
     inline NoteUpdate& WithText(const char* value) { SetText(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The principal that updated the note.</p>
      */
     inline const Aws::String& GetUpdatedBy() const{ return m_updatedBy; }
-
-    /**
-     * <p>The principal that updated the note.</p>
-     */
     inline bool UpdatedByHasBeenSet() const { return m_updatedByHasBeenSet; }
-
-    /**
-     * <p>The principal that updated the note.</p>
-     */
     inline void SetUpdatedBy(const Aws::String& value) { m_updatedByHasBeenSet = true; m_updatedBy = value; }
-
-    /**
-     * <p>The principal that updated the note.</p>
-     */
     inline void SetUpdatedBy(Aws::String&& value) { m_updatedByHasBeenSet = true; m_updatedBy = std::move(value); }
-
-    /**
-     * <p>The principal that updated the note.</p>
-     */
     inline void SetUpdatedBy(const char* value) { m_updatedByHasBeenSet = true; m_updatedBy.assign(value); }
-
-    /**
-     * <p>The principal that updated the note.</p>
-     */
     inline NoteUpdate& WithUpdatedBy(const Aws::String& value) { SetUpdatedBy(value); return *this;}
-
-    /**
-     * <p>The principal that updated the note.</p>
-     */
     inline NoteUpdate& WithUpdatedBy(Aws::String&& value) { SetUpdatedBy(std::move(value)); return *this;}
-
-    /**
-     * <p>The principal that updated the note.</p>
-     */
     inline NoteUpdate& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_text;

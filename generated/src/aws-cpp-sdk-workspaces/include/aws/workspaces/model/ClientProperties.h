@@ -38,49 +38,21 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces
      * client. When enabled, users can choose to reconnect to their WorkSpaces without
      * re-entering their credentials. </p>
      */
     inline const ReconnectEnum& GetReconnectEnabled() const{ return m_reconnectEnabled; }
-
-    /**
-     * <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces
-     * client. When enabled, users can choose to reconnect to their WorkSpaces without
-     * re-entering their credentials. </p>
-     */
     inline bool ReconnectEnabledHasBeenSet() const { return m_reconnectEnabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces
-     * client. When enabled, users can choose to reconnect to their WorkSpaces without
-     * re-entering their credentials. </p>
-     */
     inline void SetReconnectEnabled(const ReconnectEnum& value) { m_reconnectEnabledHasBeenSet = true; m_reconnectEnabled = value; }
-
-    /**
-     * <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces
-     * client. When enabled, users can choose to reconnect to their WorkSpaces without
-     * re-entering their credentials. </p>
-     */
     inline void SetReconnectEnabled(ReconnectEnum&& value) { m_reconnectEnabledHasBeenSet = true; m_reconnectEnabled = std::move(value); }
-
-    /**
-     * <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces
-     * client. When enabled, users can choose to reconnect to their WorkSpaces without
-     * re-entering their credentials. </p>
-     */
     inline ClientProperties& WithReconnectEnabled(const ReconnectEnum& value) { SetReconnectEnabled(value); return *this;}
-
-    /**
-     * <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces
-     * client. When enabled, users can choose to reconnect to their WorkSpaces without
-     * re-entering their credentials. </p>
-     */
     inline ClientProperties& WithReconnectEnabled(ReconnectEnum&& value) { SetReconnectEnabled(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces
      * client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces
@@ -88,47 +60,12 @@ namespace Model
      * will be applied to all users in the specified directory.</p>
      */
     inline const LogUploadEnum& GetLogUploadEnabled() const{ return m_logUploadEnabled; }
-
-    /**
-     * <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces
-     * client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces
-     * client. When enabled, the log files will be sent to WorkSpaces automatically and
-     * will be applied to all users in the specified directory.</p>
-     */
     inline bool LogUploadEnabledHasBeenSet() const { return m_logUploadEnabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces
-     * client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces
-     * client. When enabled, the log files will be sent to WorkSpaces automatically and
-     * will be applied to all users in the specified directory.</p>
-     */
     inline void SetLogUploadEnabled(const LogUploadEnum& value) { m_logUploadEnabledHasBeenSet = true; m_logUploadEnabled = value; }
-
-    /**
-     * <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces
-     * client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces
-     * client. When enabled, the log files will be sent to WorkSpaces automatically and
-     * will be applied to all users in the specified directory.</p>
-     */
     inline void SetLogUploadEnabled(LogUploadEnum&& value) { m_logUploadEnabledHasBeenSet = true; m_logUploadEnabled = std::move(value); }
-
-    /**
-     * <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces
-     * client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces
-     * client. When enabled, the log files will be sent to WorkSpaces automatically and
-     * will be applied to all users in the specified directory.</p>
-     */
     inline ClientProperties& WithLogUploadEnabled(const LogUploadEnum& value) { SetLogUploadEnabled(value); return *this;}
-
-    /**
-     * <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces
-     * client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces
-     * client. When enabled, the log files will be sent to WorkSpaces automatically and
-     * will be applied to all users in the specified directory.</p>
-     */
     inline ClientProperties& WithLogUploadEnabled(LogUploadEnum&& value) { SetLogUploadEnabled(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReconnectEnum m_reconnectEnabled;

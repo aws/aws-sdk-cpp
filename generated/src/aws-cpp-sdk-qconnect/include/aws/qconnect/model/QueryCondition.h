@@ -37,36 +37,17 @@ namespace Model
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The condition for the query.</p>
      */
     inline const QueryConditionItem& GetSingle() const{ return m_single; }
-
-    /**
-     * <p>The condition for the query.</p>
-     */
     inline bool SingleHasBeenSet() const { return m_singleHasBeenSet; }
-
-    /**
-     * <p>The condition for the query.</p>
-     */
     inline void SetSingle(const QueryConditionItem& value) { m_singleHasBeenSet = true; m_single = value; }
-
-    /**
-     * <p>The condition for the query.</p>
-     */
     inline void SetSingle(QueryConditionItem&& value) { m_singleHasBeenSet = true; m_single = std::move(value); }
-
-    /**
-     * <p>The condition for the query.</p>
-     */
     inline QueryCondition& WithSingle(const QueryConditionItem& value) { SetSingle(value); return *this;}
-
-    /**
-     * <p>The condition for the query.</p>
-     */
     inline QueryCondition& WithSingle(QueryConditionItem&& value) { SetSingle(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     QueryConditionItem m_single;

@@ -39,6 +39,7 @@ namespace Model
     AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Service Quotas returns the following error values:</p> <ul> <li> <p>
      * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the
@@ -51,113 +52,26 @@ namespace Model
      * Quotas.</p> </li> </ul>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>Service Quotas returns the following error values:</p> <ul> <li> <p>
-     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the
-     * required permissions to complete the action. To resolve the error, you must have
-     * permission to access the Amazon Web Service or quota.</p> </li> <li> <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling
-     * Service Quotas. </p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The
-     * Amazon Web Service is not available.</p> </li> <li> <p>
-     * <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
-     * Quotas.</p> </li> </ul>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>Service Quotas returns the following error values:</p> <ul> <li> <p>
-     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the
-     * required permissions to complete the action. To resolve the error, you must have
-     * permission to access the Amazon Web Service or quota.</p> </li> <li> <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling
-     * Service Quotas. </p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The
-     * Amazon Web Service is not available.</p> </li> <li> <p>
-     * <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
-     * Quotas.</p> </li> </ul>
-     */
     inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>Service Quotas returns the following error values:</p> <ul> <li> <p>
-     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the
-     * required permissions to complete the action. To resolve the error, you must have
-     * permission to access the Amazon Web Service or quota.</p> </li> <li> <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling
-     * Service Quotas. </p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The
-     * Amazon Web Service is not available.</p> </li> <li> <p>
-     * <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
-     * Quotas.</p> </li> </ul>
-     */
     inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>Service Quotas returns the following error values:</p> <ul> <li> <p>
-     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the
-     * required permissions to complete the action. To resolve the error, you must have
-     * permission to access the Amazon Web Service or quota.</p> </li> <li> <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling
-     * Service Quotas. </p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The
-     * Amazon Web Service is not available.</p> </li> <li> <p>
-     * <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
-     * Quotas.</p> </li> </ul>
-     */
     inline ErrorReason& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>Service Quotas returns the following error values:</p> <ul> <li> <p>
-     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the
-     * required permissions to complete the action. To resolve the error, you must have
-     * permission to access the Amazon Web Service or quota.</p> </li> <li> <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling
-     * Service Quotas. </p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The
-     * Amazon Web Service is not available.</p> </li> <li> <p>
-     * <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
-     * Quotas.</p> </li> </ul>
-     */
     inline ErrorReason& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error message.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline ErrorReason& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>The error message.</p>
-     */
     inline ErrorReason& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message.</p>
-     */
     inline ErrorReason& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
-
+    ///@}
   private:
 
     ErrorCode m_errorCode;

@@ -93,211 +93,81 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Return results that match either <code>Dimension</code> object.</p>
      */
     inline const Aws::Vector<Expression>& GetOr() const{ return m_or; }
-
-    /**
-     * <p>Return results that match either <code>Dimension</code> object.</p>
-     */
     inline bool OrHasBeenSet() const { return m_orHasBeenSet; }
-
-    /**
-     * <p>Return results that match either <code>Dimension</code> object.</p>
-     */
     inline void SetOr(const Aws::Vector<Expression>& value) { m_orHasBeenSet = true; m_or = value; }
-
-    /**
-     * <p>Return results that match either <code>Dimension</code> object.</p>
-     */
     inline void SetOr(Aws::Vector<Expression>&& value) { m_orHasBeenSet = true; m_or = std::move(value); }
-
-    /**
-     * <p>Return results that match either <code>Dimension</code> object.</p>
-     */
     inline Expression& WithOr(const Aws::Vector<Expression>& value) { SetOr(value); return *this;}
-
-    /**
-     * <p>Return results that match either <code>Dimension</code> object.</p>
-     */
     inline Expression& WithOr(Aws::Vector<Expression>&& value) { SetOr(std::move(value)); return *this;}
-
-    /**
-     * <p>Return results that match either <code>Dimension</code> object.</p>
-     */
     inline Expression& AddOr(const Expression& value) { m_orHasBeenSet = true; m_or.push_back(value); return *this; }
-
-    /**
-     * <p>Return results that match either <code>Dimension</code> object.</p>
-     */
     inline Expression& AddOr(Expression&& value) { m_orHasBeenSet = true; m_or.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Return results that match both <code>Dimension</code> objects.</p>
      */
     inline const Aws::Vector<Expression>& GetAnd() const{ return m_and; }
-
-    /**
-     * <p>Return results that match both <code>Dimension</code> objects.</p>
-     */
     inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
-
-    /**
-     * <p>Return results that match both <code>Dimension</code> objects.</p>
-     */
     inline void SetAnd(const Aws::Vector<Expression>& value) { m_andHasBeenSet = true; m_and = value; }
-
-    /**
-     * <p>Return results that match both <code>Dimension</code> objects.</p>
-     */
     inline void SetAnd(Aws::Vector<Expression>&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
-
-    /**
-     * <p>Return results that match both <code>Dimension</code> objects.</p>
-     */
     inline Expression& WithAnd(const Aws::Vector<Expression>& value) { SetAnd(value); return *this;}
-
-    /**
-     * <p>Return results that match both <code>Dimension</code> objects.</p>
-     */
     inline Expression& WithAnd(Aws::Vector<Expression>&& value) { SetAnd(std::move(value)); return *this;}
-
-    /**
-     * <p>Return results that match both <code>Dimension</code> objects.</p>
-     */
     inline Expression& AddAnd(const Expression& value) { m_andHasBeenSet = true; m_and.push_back(value); return *this; }
-
-    /**
-     * <p>Return results that match both <code>Dimension</code> objects.</p>
-     */
     inline Expression& AddAnd(Expression&& value) { m_andHasBeenSet = true; m_and.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
     AWS_COSTEXPLORER_API const Expression& GetNot() const;
-
-    /**
-     * <p>Return results that don't match a <code>Dimension</code> object.</p>
-     */
     AWS_COSTEXPLORER_API bool NotHasBeenSet() const;
-
-    /**
-     * <p>Return results that don't match a <code>Dimension</code> object.</p>
-     */
     AWS_COSTEXPLORER_API void SetNot(const Expression& value);
-
-    /**
-     * <p>Return results that don't match a <code>Dimension</code> object.</p>
-     */
     AWS_COSTEXPLORER_API void SetNot(Expression&& value);
-
-    /**
-     * <p>Return results that don't match a <code>Dimension</code> object.</p>
-     */
     AWS_COSTEXPLORER_API Expression& WithNot(const Expression& value);
-
-    /**
-     * <p>Return results that don't match a <code>Dimension</code> object.</p>
-     */
     AWS_COSTEXPLORER_API Expression& WithNot(Expression&& value);
+    ///@}
 
-
+    ///@{
     /**
      * <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
      */
     inline const DimensionValues& GetDimensions() const{ return m_dimensions; }
-
-    /**
-     * <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
-     */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-
-    /**
-     * <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
-     */
     inline void SetDimensions(const DimensionValues& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-
-    /**
-     * <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
-     */
     inline void SetDimensions(DimensionValues&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-
-    /**
-     * <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
-     */
     inline Expression& WithDimensions(const DimensionValues& value) { SetDimensions(value); return *this;}
-
-    /**
-     * <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
-     */
     inline Expression& WithDimensions(DimensionValues&& value) { SetDimensions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
      */
     inline const TagValues& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
-     */
     inline void SetTags(const TagValues& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
-     */
     inline void SetTags(TagValues&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
-     */
     inline Expression& WithTags(const TagValues& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
-     */
     inline Expression& WithTags(TagValues&& value) { SetTags(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The filter that's based on <code>CostCategory</code> values.</p>
      */
     inline const CostCategoryValues& GetCostCategories() const{ return m_costCategories; }
-
-    /**
-     * <p>The filter that's based on <code>CostCategory</code> values.</p>
-     */
     inline bool CostCategoriesHasBeenSet() const { return m_costCategoriesHasBeenSet; }
-
-    /**
-     * <p>The filter that's based on <code>CostCategory</code> values.</p>
-     */
     inline void SetCostCategories(const CostCategoryValues& value) { m_costCategoriesHasBeenSet = true; m_costCategories = value; }
-
-    /**
-     * <p>The filter that's based on <code>CostCategory</code> values.</p>
-     */
     inline void SetCostCategories(CostCategoryValues&& value) { m_costCategoriesHasBeenSet = true; m_costCategories = std::move(value); }
-
-    /**
-     * <p>The filter that's based on <code>CostCategory</code> values.</p>
-     */
     inline Expression& WithCostCategories(const CostCategoryValues& value) { SetCostCategories(value); return *this;}
-
-    /**
-     * <p>The filter that's based on <code>CostCategory</code> values.</p>
-     */
     inline Expression& WithCostCategories(CostCategoryValues&& value) { SetCostCategories(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Expression> m_or;

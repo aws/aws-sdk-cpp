@@ -40,6 +40,7 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
      * information on the files that are requested during a
@@ -49,77 +50,14 @@ namespace Model
      * fail.</p>
      */
     inline const Aws::Vector<SnapshotJobResultFileGroup>& GetFileGroups() const{ return m_fileGroups; }
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information on the files that are requested during a
-     * <code>StartDashboardSnapshotJob</code> API call. If the job succeeds, these
-     * objects contain the location where the snapshot artifacts are stored. If the job
-     * fails, the objects contain information about the error that caused the job to
-     * fail.</p>
-     */
     inline bool FileGroupsHasBeenSet() const { return m_fileGroupsHasBeenSet; }
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information on the files that are requested during a
-     * <code>StartDashboardSnapshotJob</code> API call. If the job succeeds, these
-     * objects contain the location where the snapshot artifacts are stored. If the job
-     * fails, the objects contain information about the error that caused the job to
-     * fail.</p>
-     */
     inline void SetFileGroups(const Aws::Vector<SnapshotJobResultFileGroup>& value) { m_fileGroupsHasBeenSet = true; m_fileGroups = value; }
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information on the files that are requested during a
-     * <code>StartDashboardSnapshotJob</code> API call. If the job succeeds, these
-     * objects contain the location where the snapshot artifacts are stored. If the job
-     * fails, the objects contain information about the error that caused the job to
-     * fail.</p>
-     */
     inline void SetFileGroups(Aws::Vector<SnapshotJobResultFileGroup>&& value) { m_fileGroupsHasBeenSet = true; m_fileGroups = std::move(value); }
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information on the files that are requested during a
-     * <code>StartDashboardSnapshotJob</code> API call. If the job succeeds, these
-     * objects contain the location where the snapshot artifacts are stored. If the job
-     * fails, the objects contain information about the error that caused the job to
-     * fail.</p>
-     */
     inline AnonymousUserSnapshotJobResult& WithFileGroups(const Aws::Vector<SnapshotJobResultFileGroup>& value) { SetFileGroups(value); return *this;}
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information on the files that are requested during a
-     * <code>StartDashboardSnapshotJob</code> API call. If the job succeeds, these
-     * objects contain the location where the snapshot artifacts are stored. If the job
-     * fails, the objects contain information about the error that caused the job to
-     * fail.</p>
-     */
     inline AnonymousUserSnapshotJobResult& WithFileGroups(Aws::Vector<SnapshotJobResultFileGroup>&& value) { SetFileGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information on the files that are requested during a
-     * <code>StartDashboardSnapshotJob</code> API call. If the job succeeds, these
-     * objects contain the location where the snapshot artifacts are stored. If the job
-     * fails, the objects contain information about the error that caused the job to
-     * fail.</p>
-     */
     inline AnonymousUserSnapshotJobResult& AddFileGroups(const SnapshotJobResultFileGroup& value) { m_fileGroupsHasBeenSet = true; m_fileGroups.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information on the files that are requested during a
-     * <code>StartDashboardSnapshotJob</code> API call. If the job succeeds, these
-     * objects contain the location where the snapshot artifacts are stored. If the job
-     * fails, the objects contain information about the error that caused the job to
-     * fail.</p>
-     */
     inline AnonymousUserSnapshotJobResult& AddFileGroups(SnapshotJobResultFileGroup&& value) { m_fileGroupsHasBeenSet = true; m_fileGroups.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<SnapshotJobResultFileGroup> m_fileGroups;

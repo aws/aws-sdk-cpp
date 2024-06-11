@@ -32,99 +32,42 @@ namespace Model
     AWS_GLUE_API CreateScriptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Python script generated from the DAG.</p>
      */
     inline const Aws::String& GetPythonScript() const{ return m_pythonScript; }
-
-    /**
-     * <p>The Python script generated from the DAG.</p>
-     */
     inline void SetPythonScript(const Aws::String& value) { m_pythonScript = value; }
-
-    /**
-     * <p>The Python script generated from the DAG.</p>
-     */
     inline void SetPythonScript(Aws::String&& value) { m_pythonScript = std::move(value); }
-
-    /**
-     * <p>The Python script generated from the DAG.</p>
-     */
     inline void SetPythonScript(const char* value) { m_pythonScript.assign(value); }
-
-    /**
-     * <p>The Python script generated from the DAG.</p>
-     */
     inline CreateScriptResult& WithPythonScript(const Aws::String& value) { SetPythonScript(value); return *this;}
-
-    /**
-     * <p>The Python script generated from the DAG.</p>
-     */
     inline CreateScriptResult& WithPythonScript(Aws::String&& value) { SetPythonScript(std::move(value)); return *this;}
-
-    /**
-     * <p>The Python script generated from the DAG.</p>
-     */
     inline CreateScriptResult& WithPythonScript(const char* value) { SetPythonScript(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Scala code generated from the DAG.</p>
      */
     inline const Aws::String& GetScalaCode() const{ return m_scalaCode; }
-
-    /**
-     * <p>The Scala code generated from the DAG.</p>
-     */
     inline void SetScalaCode(const Aws::String& value) { m_scalaCode = value; }
-
-    /**
-     * <p>The Scala code generated from the DAG.</p>
-     */
     inline void SetScalaCode(Aws::String&& value) { m_scalaCode = std::move(value); }
-
-    /**
-     * <p>The Scala code generated from the DAG.</p>
-     */
     inline void SetScalaCode(const char* value) { m_scalaCode.assign(value); }
-
-    /**
-     * <p>The Scala code generated from the DAG.</p>
-     */
     inline CreateScriptResult& WithScalaCode(const Aws::String& value) { SetScalaCode(value); return *this;}
-
-    /**
-     * <p>The Scala code generated from the DAG.</p>
-     */
     inline CreateScriptResult& WithScalaCode(Aws::String&& value) { SetScalaCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The Scala code generated from the DAG.</p>
-     */
     inline CreateScriptResult& WithScalaCode(const char* value) { SetScalaCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateScriptResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateScriptResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateScriptResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pythonScript;

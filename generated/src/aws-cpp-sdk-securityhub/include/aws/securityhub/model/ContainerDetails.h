@@ -39,170 +39,63 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The runtime of the container. </p>
      */
     inline const Aws::String& GetContainerRuntime() const{ return m_containerRuntime; }
-
-    /**
-     * <p>The runtime of the container. </p>
-     */
     inline bool ContainerRuntimeHasBeenSet() const { return m_containerRuntimeHasBeenSet; }
-
-    /**
-     * <p>The runtime of the container. </p>
-     */
     inline void SetContainerRuntime(const Aws::String& value) { m_containerRuntimeHasBeenSet = true; m_containerRuntime = value; }
-
-    /**
-     * <p>The runtime of the container. </p>
-     */
     inline void SetContainerRuntime(Aws::String&& value) { m_containerRuntimeHasBeenSet = true; m_containerRuntime = std::move(value); }
-
-    /**
-     * <p>The runtime of the container. </p>
-     */
     inline void SetContainerRuntime(const char* value) { m_containerRuntimeHasBeenSet = true; m_containerRuntime.assign(value); }
-
-    /**
-     * <p>The runtime of the container. </p>
-     */
     inline ContainerDetails& WithContainerRuntime(const Aws::String& value) { SetContainerRuntime(value); return *this;}
-
-    /**
-     * <p>The runtime of the container. </p>
-     */
     inline ContainerDetails& WithContainerRuntime(Aws::String&& value) { SetContainerRuntime(std::move(value)); return *this;}
-
-    /**
-     * <p>The runtime of the container. </p>
-     */
     inline ContainerDetails& WithContainerRuntime(const char* value) { SetContainerRuntime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the container related to a finding.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the container related to a finding.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the container related to a finding.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the container related to a finding.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the container related to a finding.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the container related to a finding.</p>
-     */
     inline ContainerDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the container related to a finding.</p>
-     */
     inline ContainerDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the container related to a finding.</p>
-     */
     inline ContainerDetails& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the container image related to a finding.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
-
-    /**
-     * <p>The identifier of the container image related to a finding.</p>
-     */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the container image related to a finding.</p>
-     */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-
-    /**
-     * <p>The identifier of the container image related to a finding.</p>
-     */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-
-    /**
-     * <p>The identifier of the container image related to a finding.</p>
-     */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-
-    /**
-     * <p>The identifier of the container image related to a finding.</p>
-     */
     inline ContainerDetails& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-
-    /**
-     * <p>The identifier of the container image related to a finding.</p>
-     */
     inline ContainerDetails& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the container image related to a finding.</p>
-     */
     inline ContainerDetails& WithImageId(const char* value) { SetImageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the container image related to a finding.</p>
      */
     inline const Aws::String& GetImageName() const{ return m_imageName; }
-
-    /**
-     * <p>The name of the container image related to a finding.</p>
-     */
     inline bool ImageNameHasBeenSet() const { return m_imageNameHasBeenSet; }
-
-    /**
-     * <p>The name of the container image related to a finding.</p>
-     */
     inline void SetImageName(const Aws::String& value) { m_imageNameHasBeenSet = true; m_imageName = value; }
-
-    /**
-     * <p>The name of the container image related to a finding.</p>
-     */
     inline void SetImageName(Aws::String&& value) { m_imageNameHasBeenSet = true; m_imageName = std::move(value); }
-
-    /**
-     * <p>The name of the container image related to a finding.</p>
-     */
     inline void SetImageName(const char* value) { m_imageNameHasBeenSet = true; m_imageName.assign(value); }
-
-    /**
-     * <p>The name of the container image related to a finding.</p>
-     */
     inline ContainerDetails& WithImageName(const Aws::String& value) { SetImageName(value); return *this;}
-
-    /**
-     * <p>The name of the container image related to a finding.</p>
-     */
     inline ContainerDetails& WithImageName(Aws::String&& value) { SetImageName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the container image related to a finding.</p>
-     */
     inline ContainerDetails& WithImageName(const char* value) { SetImageName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates when the container started.</p> <p>This field accepts only the
      * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
@@ -221,206 +114,39 @@ namespace Model
      * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetLaunchedAt() const{ return m_launchedAt; }
-
-    /**
-     * <p>Indicates when the container started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline bool LaunchedAtHasBeenSet() const { return m_launchedAtHasBeenSet; }
-
-    /**
-     * <p>Indicates when the container started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetLaunchedAt(const Aws::String& value) { m_launchedAtHasBeenSet = true; m_launchedAt = value; }
-
-    /**
-     * <p>Indicates when the container started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetLaunchedAt(Aws::String&& value) { m_launchedAtHasBeenSet = true; m_launchedAt = std::move(value); }
-
-    /**
-     * <p>Indicates when the container started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetLaunchedAt(const char* value) { m_launchedAtHasBeenSet = true; m_launchedAt.assign(value); }
-
-    /**
-     * <p>Indicates when the container started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline ContainerDetails& WithLaunchedAt(const Aws::String& value) { SetLaunchedAt(value); return *this;}
-
-    /**
-     * <p>Indicates when the container started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline ContainerDetails& WithLaunchedAt(Aws::String&& value) { SetLaunchedAt(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates when the container started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline ContainerDetails& WithLaunchedAt(const char* value) { SetLaunchedAt(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides information about the mounting of a volume in a container. </p>
      */
     inline const Aws::Vector<VolumeMount>& GetVolumeMounts() const{ return m_volumeMounts; }
-
-    /**
-     * <p>Provides information about the mounting of a volume in a container. </p>
-     */
     inline bool VolumeMountsHasBeenSet() const { return m_volumeMountsHasBeenSet; }
-
-    /**
-     * <p>Provides information about the mounting of a volume in a container. </p>
-     */
     inline void SetVolumeMounts(const Aws::Vector<VolumeMount>& value) { m_volumeMountsHasBeenSet = true; m_volumeMounts = value; }
-
-    /**
-     * <p>Provides information about the mounting of a volume in a container. </p>
-     */
     inline void SetVolumeMounts(Aws::Vector<VolumeMount>&& value) { m_volumeMountsHasBeenSet = true; m_volumeMounts = std::move(value); }
-
-    /**
-     * <p>Provides information about the mounting of a volume in a container. </p>
-     */
     inline ContainerDetails& WithVolumeMounts(const Aws::Vector<VolumeMount>& value) { SetVolumeMounts(value); return *this;}
-
-    /**
-     * <p>Provides information about the mounting of a volume in a container. </p>
-     */
     inline ContainerDetails& WithVolumeMounts(Aws::Vector<VolumeMount>&& value) { SetVolumeMounts(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides information about the mounting of a volume in a container. </p>
-     */
     inline ContainerDetails& AddVolumeMounts(const VolumeMount& value) { m_volumeMountsHasBeenSet = true; m_volumeMounts.push_back(value); return *this; }
-
-    /**
-     * <p>Provides information about the mounting of a volume in a container. </p>
-     */
     inline ContainerDetails& AddVolumeMounts(VolumeMount&& value) { m_volumeMountsHasBeenSet = true; m_volumeMounts.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>When this parameter is <code>true</code>, the container is given elevated
      * privileges on the host container instance (similar to the root user). </p>
      */
     inline bool GetPrivileged() const{ return m_privileged; }
-
-    /**
-     * <p>When this parameter is <code>true</code>, the container is given elevated
-     * privileges on the host container instance (similar to the root user). </p>
-     */
     inline bool PrivilegedHasBeenSet() const { return m_privilegedHasBeenSet; }
-
-    /**
-     * <p>When this parameter is <code>true</code>, the container is given elevated
-     * privileges on the host container instance (similar to the root user). </p>
-     */
     inline void SetPrivileged(bool value) { m_privilegedHasBeenSet = true; m_privileged = value; }
-
-    /**
-     * <p>When this parameter is <code>true</code>, the container is given elevated
-     * privileges on the host container instance (similar to the root user). </p>
-     */
     inline ContainerDetails& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_containerRuntime;

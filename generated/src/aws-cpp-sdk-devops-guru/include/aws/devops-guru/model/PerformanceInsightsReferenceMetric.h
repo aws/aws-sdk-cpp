@@ -38,36 +38,17 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A query to be processed on the metric.</p>
      */
     inline const PerformanceInsightsMetricQuery& GetMetricQuery() const{ return m_metricQuery; }
-
-    /**
-     * <p>A query to be processed on the metric.</p>
-     */
     inline bool MetricQueryHasBeenSet() const { return m_metricQueryHasBeenSet; }
-
-    /**
-     * <p>A query to be processed on the metric.</p>
-     */
     inline void SetMetricQuery(const PerformanceInsightsMetricQuery& value) { m_metricQueryHasBeenSet = true; m_metricQuery = value; }
-
-    /**
-     * <p>A query to be processed on the metric.</p>
-     */
     inline void SetMetricQuery(PerformanceInsightsMetricQuery&& value) { m_metricQueryHasBeenSet = true; m_metricQuery = std::move(value); }
-
-    /**
-     * <p>A query to be processed on the metric.</p>
-     */
     inline PerformanceInsightsReferenceMetric& WithMetricQuery(const PerformanceInsightsMetricQuery& value) { SetMetricQuery(value); return *this;}
-
-    /**
-     * <p>A query to be processed on the metric.</p>
-     */
     inline PerformanceInsightsReferenceMetric& WithMetricQuery(PerformanceInsightsMetricQuery&& value) { SetMetricQuery(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PerformanceInsightsMetricQuery m_metricQuery;

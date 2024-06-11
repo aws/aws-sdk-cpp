@@ -42,87 +42,33 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier for a player </p>
      */
     inline const Aws::String& GetPlayerId() const{ return m_playerId; }
-
-    /**
-     * <p>A unique identifier for a player </p>
-     */
     inline bool PlayerIdHasBeenSet() const { return m_playerIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for a player </p>
-     */
     inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
-
-    /**
-     * <p>A unique identifier for a player </p>
-     */
     inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for a player </p>
-     */
     inline void SetPlayerId(const char* value) { m_playerIdHasBeenSet = true; m_playerId.assign(value); }
-
-    /**
-     * <p>A unique identifier for a player </p>
-     */
     inline MatchedPlayerSession& WithPlayerId(const Aws::String& value) { SetPlayerId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for a player </p>
-     */
     inline MatchedPlayerSession& WithPlayerId(Aws::String&& value) { SetPlayerId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for a player </p>
-     */
     inline MatchedPlayerSession& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique identifier for a player session</p>
      */
     inline const Aws::String& GetPlayerSessionId() const{ return m_playerSessionId; }
-
-    /**
-     * <p>A unique identifier for a player session</p>
-     */
     inline bool PlayerSessionIdHasBeenSet() const { return m_playerSessionIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for a player session</p>
-     */
     inline void SetPlayerSessionId(const Aws::String& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = value; }
-
-    /**
-     * <p>A unique identifier for a player session</p>
-     */
     inline void SetPlayerSessionId(Aws::String&& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for a player session</p>
-     */
     inline void SetPlayerSessionId(const char* value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId.assign(value); }
-
-    /**
-     * <p>A unique identifier for a player session</p>
-     */
     inline MatchedPlayerSession& WithPlayerSessionId(const Aws::String& value) { SetPlayerSessionId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for a player session</p>
-     */
     inline MatchedPlayerSession& WithPlayerSessionId(Aws::String&& value) { SetPlayerSessionId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for a player session</p>
-     */
     inline MatchedPlayerSession& WithPlayerSessionId(const char* value) { SetPlayerSessionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_playerId;

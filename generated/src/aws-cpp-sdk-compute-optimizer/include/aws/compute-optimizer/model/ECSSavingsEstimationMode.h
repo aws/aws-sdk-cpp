@@ -38,42 +38,18 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Describes the source for calculating the savings opportunity for Amazon ECS
      * services. </p>
      */
     inline const ECSSavingsEstimationModeSource& GetSource() const{ return m_source; }
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon ECS
-     * services. </p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon ECS
-     * services. </p>
-     */
     inline void SetSource(const ECSSavingsEstimationModeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon ECS
-     * services. </p>
-     */
     inline void SetSource(ECSSavingsEstimationModeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon ECS
-     * services. </p>
-     */
     inline ECSSavingsEstimationMode& WithSource(const ECSSavingsEstimationModeSource& value) { SetSource(value); return *this;}
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon ECS
-     * services. </p>
-     */
     inline ECSSavingsEstimationMode& WithSource(ECSSavingsEstimationModeSource&& value) { SetSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ECSSavingsEstimationModeSource m_source;

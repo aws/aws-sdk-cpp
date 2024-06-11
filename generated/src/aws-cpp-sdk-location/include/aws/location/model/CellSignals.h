@@ -39,54 +39,20 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the Long-Term Evolution (LTE) network the device is
      * connected to.</p>
      */
     inline const Aws::Vector<LteCellDetails>& GetLteCellDetails() const{ return m_lteCellDetails; }
-
-    /**
-     * <p>Information about the Long-Term Evolution (LTE) network the device is
-     * connected to.</p>
-     */
     inline bool LteCellDetailsHasBeenSet() const { return m_lteCellDetailsHasBeenSet; }
-
-    /**
-     * <p>Information about the Long-Term Evolution (LTE) network the device is
-     * connected to.</p>
-     */
     inline void SetLteCellDetails(const Aws::Vector<LteCellDetails>& value) { m_lteCellDetailsHasBeenSet = true; m_lteCellDetails = value; }
-
-    /**
-     * <p>Information about the Long-Term Evolution (LTE) network the device is
-     * connected to.</p>
-     */
     inline void SetLteCellDetails(Aws::Vector<LteCellDetails>&& value) { m_lteCellDetailsHasBeenSet = true; m_lteCellDetails = std::move(value); }
-
-    /**
-     * <p>Information about the Long-Term Evolution (LTE) network the device is
-     * connected to.</p>
-     */
     inline CellSignals& WithLteCellDetails(const Aws::Vector<LteCellDetails>& value) { SetLteCellDetails(value); return *this;}
-
-    /**
-     * <p>Information about the Long-Term Evolution (LTE) network the device is
-     * connected to.</p>
-     */
     inline CellSignals& WithLteCellDetails(Aws::Vector<LteCellDetails>&& value) { SetLteCellDetails(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the Long-Term Evolution (LTE) network the device is
-     * connected to.</p>
-     */
     inline CellSignals& AddLteCellDetails(const LteCellDetails& value) { m_lteCellDetailsHasBeenSet = true; m_lteCellDetails.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the Long-Term Evolution (LTE) network the device is
-     * connected to.</p>
-     */
     inline CellSignals& AddLteCellDetails(LteCellDetails&& value) { m_lteCellDetailsHasBeenSet = true; m_lteCellDetails.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<LteCellDetails> m_lteCellDetails;

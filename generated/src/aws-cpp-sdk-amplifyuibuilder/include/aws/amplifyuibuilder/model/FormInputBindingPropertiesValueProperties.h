@@ -40,46 +40,19 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An Amplify DataStore model.</p>
      */
     inline const Aws::String& GetModel() const{ return m_model; }
-
-    /**
-     * <p>An Amplify DataStore model.</p>
-     */
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
-
-    /**
-     * <p>An Amplify DataStore model.</p>
-     */
     inline void SetModel(const Aws::String& value) { m_modelHasBeenSet = true; m_model = value; }
-
-    /**
-     * <p>An Amplify DataStore model.</p>
-     */
     inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
-
-    /**
-     * <p>An Amplify DataStore model.</p>
-     */
     inline void SetModel(const char* value) { m_modelHasBeenSet = true; m_model.assign(value); }
-
-    /**
-     * <p>An Amplify DataStore model.</p>
-     */
     inline FormInputBindingPropertiesValueProperties& WithModel(const Aws::String& value) { SetModel(value); return *this;}
-
-    /**
-     * <p>An Amplify DataStore model.</p>
-     */
     inline FormInputBindingPropertiesValueProperties& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amplify DataStore model.</p>
-     */
     inline FormInputBindingPropertiesValueProperties& WithModel(const char* value) { SetModel(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_model;

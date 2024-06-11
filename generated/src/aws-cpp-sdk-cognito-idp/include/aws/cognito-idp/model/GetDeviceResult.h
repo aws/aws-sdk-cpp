@@ -38,53 +38,27 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API GetDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The device.</p>
      */
     inline const DeviceType& GetDevice() const{ return m_device; }
-
-    /**
-     * <p>The device.</p>
-     */
     inline void SetDevice(const DeviceType& value) { m_device = value; }
-
-    /**
-     * <p>The device.</p>
-     */
     inline void SetDevice(DeviceType&& value) { m_device = std::move(value); }
-
-    /**
-     * <p>The device.</p>
-     */
     inline GetDeviceResult& WithDevice(const DeviceType& value) { SetDevice(value); return *this;}
-
-    /**
-     * <p>The device.</p>
-     */
     inline GetDeviceResult& WithDevice(DeviceType&& value) { SetDevice(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DeviceType m_device;

@@ -39,124 +39,46 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the <code>FilterCrossSheetControl</code>.</p>
      */
     inline const Aws::String& GetFilterControlId() const{ return m_filterControlId; }
-
-    /**
-     * <p>The ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline bool FilterControlIdHasBeenSet() const { return m_filterControlIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline void SetFilterControlId(const Aws::String& value) { m_filterControlIdHasBeenSet = true; m_filterControlId = value; }
-
-    /**
-     * <p>The ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline void SetFilterControlId(Aws::String&& value) { m_filterControlIdHasBeenSet = true; m_filterControlId = std::move(value); }
-
-    /**
-     * <p>The ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline void SetFilterControlId(const char* value) { m_filterControlIdHasBeenSet = true; m_filterControlId.assign(value); }
-
-    /**
-     * <p>The ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline FilterCrossSheetControl& WithFilterControlId(const Aws::String& value) { SetFilterControlId(value); return *this;}
-
-    /**
-     * <p>The ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline FilterCrossSheetControl& WithFilterControlId(Aws::String&& value) { SetFilterControlId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline FilterCrossSheetControl& WithFilterControlId(const char* value) { SetFilterControlId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The source filter ID of the <code>FilterCrossSheetControl</code>.</p>
      */
     inline const Aws::String& GetSourceFilterId() const{ return m_sourceFilterId; }
-
-    /**
-     * <p>The source filter ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline bool SourceFilterIdHasBeenSet() const { return m_sourceFilterIdHasBeenSet; }
-
-    /**
-     * <p>The source filter ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline void SetSourceFilterId(const Aws::String& value) { m_sourceFilterIdHasBeenSet = true; m_sourceFilterId = value; }
-
-    /**
-     * <p>The source filter ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline void SetSourceFilterId(Aws::String&& value) { m_sourceFilterIdHasBeenSet = true; m_sourceFilterId = std::move(value); }
-
-    /**
-     * <p>The source filter ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline void SetSourceFilterId(const char* value) { m_sourceFilterIdHasBeenSet = true; m_sourceFilterId.assign(value); }
-
-    /**
-     * <p>The source filter ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline FilterCrossSheetControl& WithSourceFilterId(const Aws::String& value) { SetSourceFilterId(value); return *this;}
-
-    /**
-     * <p>The source filter ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline FilterCrossSheetControl& WithSourceFilterId(Aws::String&& value) { SetSourceFilterId(std::move(value)); return *this;}
-
-    /**
-     * <p>The source filter ID of the <code>FilterCrossSheetControl</code>.</p>
-     */
     inline FilterCrossSheetControl& WithSourceFilterId(const char* value) { SetSourceFilterId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The values that are displayed in a control can be configured to only show
      * values that are valid based on what's selected in other controls.</p>
      */
     inline const CascadingControlConfiguration& GetCascadingControlConfiguration() const{ return m_cascadingControlConfiguration; }
-
-    /**
-     * <p>The values that are displayed in a control can be configured to only show
-     * values that are valid based on what's selected in other controls.</p>
-     */
     inline bool CascadingControlConfigurationHasBeenSet() const { return m_cascadingControlConfigurationHasBeenSet; }
-
-    /**
-     * <p>The values that are displayed in a control can be configured to only show
-     * values that are valid based on what's selected in other controls.</p>
-     */
     inline void SetCascadingControlConfiguration(const CascadingControlConfiguration& value) { m_cascadingControlConfigurationHasBeenSet = true; m_cascadingControlConfiguration = value; }
-
-    /**
-     * <p>The values that are displayed in a control can be configured to only show
-     * values that are valid based on what's selected in other controls.</p>
-     */
     inline void SetCascadingControlConfiguration(CascadingControlConfiguration&& value) { m_cascadingControlConfigurationHasBeenSet = true; m_cascadingControlConfiguration = std::move(value); }
-
-    /**
-     * <p>The values that are displayed in a control can be configured to only show
-     * values that are valid based on what's selected in other controls.</p>
-     */
     inline FilterCrossSheetControl& WithCascadingControlConfiguration(const CascadingControlConfiguration& value) { SetCascadingControlConfiguration(value); return *this;}
-
-    /**
-     * <p>The values that are displayed in a control can be configured to only show
-     * values that are valid based on what's selected in other controls.</p>
-     */
     inline FilterCrossSheetControl& WithCascadingControlConfiguration(CascadingControlConfiguration&& value) { SetCascadingControlConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_filterControlId;

@@ -41,42 +41,18 @@ namespace Model
     AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies the partition date source for the partitioned prefix.
      * PartitionDateSource can be EventTime or DeliveryTime.</p>
      */
     inline const PartitionDateSource& GetPartitionDateSource() const{ return m_partitionDateSource; }
-
-    /**
-     * <p>Specifies the partition date source for the partitioned prefix.
-     * PartitionDateSource can be EventTime or DeliveryTime.</p>
-     */
     inline bool PartitionDateSourceHasBeenSet() const { return m_partitionDateSourceHasBeenSet; }
-
-    /**
-     * <p>Specifies the partition date source for the partitioned prefix.
-     * PartitionDateSource can be EventTime or DeliveryTime.</p>
-     */
     inline void SetPartitionDateSource(const PartitionDateSource& value) { m_partitionDateSourceHasBeenSet = true; m_partitionDateSource = value; }
-
-    /**
-     * <p>Specifies the partition date source for the partitioned prefix.
-     * PartitionDateSource can be EventTime or DeliveryTime.</p>
-     */
     inline void SetPartitionDateSource(PartitionDateSource&& value) { m_partitionDateSourceHasBeenSet = true; m_partitionDateSource = std::move(value); }
-
-    /**
-     * <p>Specifies the partition date source for the partitioned prefix.
-     * PartitionDateSource can be EventTime or DeliveryTime.</p>
-     */
     inline PartitionedPrefix& WithPartitionDateSource(const PartitionDateSource& value) { SetPartitionDateSource(value); return *this;}
-
-    /**
-     * <p>Specifies the partition date source for the partitioned prefix.
-     * PartitionDateSource can be EventTime or DeliveryTime.</p>
-     */
     inline PartitionedPrefix& WithPartitionDateSource(PartitionDateSource&& value) { SetPartitionDateSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PartitionDateSource m_partitionDateSource;

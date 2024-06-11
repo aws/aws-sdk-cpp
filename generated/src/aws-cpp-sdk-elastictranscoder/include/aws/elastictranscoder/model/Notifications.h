@@ -40,201 +40,65 @@ namespace Model
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process the job.</p>
      */
     inline const Aws::String& GetProgressing() const{ return m_progressing; }
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify when Elastic Transcoder has started to process the job.</p>
-     */
     inline bool ProgressingHasBeenSet() const { return m_progressingHasBeenSet; }
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify when Elastic Transcoder has started to process the job.</p>
-     */
     inline void SetProgressing(const Aws::String& value) { m_progressingHasBeenSet = true; m_progressing = value; }
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify when Elastic Transcoder has started to process the job.</p>
-     */
     inline void SetProgressing(Aws::String&& value) { m_progressingHasBeenSet = true; m_progressing = std::move(value); }
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify when Elastic Transcoder has started to process the job.</p>
-     */
     inline void SetProgressing(const char* value) { m_progressingHasBeenSet = true; m_progressing.assign(value); }
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify when Elastic Transcoder has started to process the job.</p>
-     */
     inline Notifications& WithProgressing(const Aws::String& value) { SetProgressing(value); return *this;}
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify when Elastic Transcoder has started to process the job.</p>
-     */
     inline Notifications& WithProgressing(Aws::String&& value) { SetProgressing(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify when Elastic Transcoder has started to process the job.</p>
-     */
     inline Notifications& WithProgressing(const char* value) { SetProgressing(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing the job.</p>
      */
     inline const Aws::String& GetCompleted() const{ return m_completed; }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
-     * finished processing the job.</p>
-     */
     inline bool CompletedHasBeenSet() const { return m_completedHasBeenSet; }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
-     * finished processing the job.</p>
-     */
     inline void SetCompleted(const Aws::String& value) { m_completedHasBeenSet = true; m_completed = value; }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
-     * finished processing the job.</p>
-     */
     inline void SetCompleted(Aws::String&& value) { m_completedHasBeenSet = true; m_completed = std::move(value); }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
-     * finished processing the job.</p>
-     */
     inline void SetCompleted(const char* value) { m_completedHasBeenSet = true; m_completed.assign(value); }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
-     * finished processing the job.</p>
-     */
     inline Notifications& WithCompleted(const Aws::String& value) { SetCompleted(value); return *this;}
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
-     * finished processing the job.</p>
-     */
     inline Notifications& WithCompleted(Aws::String&& value) { SetCompleted(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
-     * finished processing the job.</p>
-     */
     inline Notifications& WithCompleted(const char* value) { SetCompleted(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
      * encounters a warning condition.</p>
      */
     inline const Aws::String& GetWarning() const{ return m_warning; }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters a warning condition.</p>
-     */
     inline bool WarningHasBeenSet() const { return m_warningHasBeenSet; }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters a warning condition.</p>
-     */
     inline void SetWarning(const Aws::String& value) { m_warningHasBeenSet = true; m_warning = value; }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters a warning condition.</p>
-     */
     inline void SetWarning(Aws::String&& value) { m_warningHasBeenSet = true; m_warning = std::move(value); }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters a warning condition.</p>
-     */
     inline void SetWarning(const char* value) { m_warningHasBeenSet = true; m_warning.assign(value); }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters a warning condition.</p>
-     */
     inline Notifications& WithWarning(const Aws::String& value) { SetWarning(value); return *this;}
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters a warning condition.</p>
-     */
     inline Notifications& WithWarning(Aws::String&& value) { SetWarning(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters a warning condition.</p>
-     */
     inline Notifications& WithWarning(const char* value) { SetWarning(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
      * encounters an error condition.</p>
      */
     inline const Aws::String& GetError() const{ return m_error; }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters an error condition.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters an error condition.</p>
-     */
     inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters an error condition.</p>
-     */
     inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters an error condition.</p>
-     */
     inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters an error condition.</p>
-     */
     inline Notifications& WithError(const Aws::String& value) { SetError(value); return *this;}
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters an error condition.</p>
-     */
     inline Notifications& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
-     * encounters an error condition.</p>
-     */
     inline Notifications& WithError(const char* value) { SetError(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_progressing;

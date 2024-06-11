@@ -56,85 +56,32 @@ namespace Model
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The file type to use. The only supported value is <code>s3</code>.</p>
      */
     inline const EcsEnvironmentFileType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The file type to use. The only supported value is <code>s3</code>.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The file type to use. The only supported value is <code>s3</code>.</p>
-     */
     inline void SetType(const EcsEnvironmentFileType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The file type to use. The only supported value is <code>s3</code>.</p>
-     */
     inline void SetType(EcsEnvironmentFileType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The file type to use. The only supported value is <code>s3</code>.</p>
-     */
     inline EcsEnvironmentFile& WithType(const EcsEnvironmentFileType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The file type to use. The only supported value is <code>s3</code>.</p>
-     */
     inline EcsEnvironmentFile& WithType(EcsEnvironmentFileType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the
      * environment variable file.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the
-     * environment variable file.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the
-     * environment variable file.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the
-     * environment variable file.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the
-     * environment variable file.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the
-     * environment variable file.</p>
-     */
     inline EcsEnvironmentFile& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the
-     * environment variable file.</p>
-     */
     inline EcsEnvironmentFile& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the
-     * environment variable file.</p>
-     */
     inline EcsEnvironmentFile& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     EcsEnvironmentFileType m_type;

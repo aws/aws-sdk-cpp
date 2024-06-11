@@ -37,57 +37,27 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unit of time.</p>
      */
     inline const DurationUnit& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>A unit of time.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>A unit of time.</p>
-     */
     inline void SetUnit(const DurationUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>A unit of time.</p>
-     */
     inline void SetUnit(DurationUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>A unit of time.</p>
-     */
     inline Duration& WithUnit(const DurationUnit& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>A unit of time.</p>
-     */
     inline Duration& WithUnit(DurationUnit&& value) { SetUnit(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A number of time units.</p>
      */
     inline long long GetValue() const{ return m_value; }
-
-    /**
-     * <p>A number of time units.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>A number of time units.</p>
-     */
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>A number of time units.</p>
-     */
     inline Duration& WithValue(long long value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     DurationUnit m_unit;

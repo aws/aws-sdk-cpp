@@ -39,73 +39,30 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Summary information about a product view.</p>
      */
     inline const ProductViewSummary& GetProductViewSummary() const{ return m_productViewSummary; }
-
-    /**
-     * <p>Summary information about a product view.</p>
-     */
     inline bool ProductViewSummaryHasBeenSet() const { return m_productViewSummaryHasBeenSet; }
-
-    /**
-     * <p>Summary information about a product view.</p>
-     */
     inline void SetProductViewSummary(const ProductViewSummary& value) { m_productViewSummaryHasBeenSet = true; m_productViewSummary = value; }
-
-    /**
-     * <p>Summary information about a product view.</p>
-     */
     inline void SetProductViewSummary(ProductViewSummary&& value) { m_productViewSummaryHasBeenSet = true; m_productViewSummary = std::move(value); }
-
-    /**
-     * <p>Summary information about a product view.</p>
-     */
     inline ProvisioningArtifactView& WithProductViewSummary(const ProductViewSummary& value) { SetProductViewSummary(value); return *this;}
-
-    /**
-     * <p>Summary information about a product view.</p>
-     */
     inline ProvisioningArtifactView& WithProductViewSummary(ProductViewSummary&& value) { SetProductViewSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about a provisioning artifact. A provisioning artifact is also
      * known as a product version.</p>
      */
     inline const ProvisioningArtifact& GetProvisioningArtifact() const{ return m_provisioningArtifact; }
-
-    /**
-     * <p>Information about a provisioning artifact. A provisioning artifact is also
-     * known as a product version.</p>
-     */
     inline bool ProvisioningArtifactHasBeenSet() const { return m_provisioningArtifactHasBeenSet; }
-
-    /**
-     * <p>Information about a provisioning artifact. A provisioning artifact is also
-     * known as a product version.</p>
-     */
     inline void SetProvisioningArtifact(const ProvisioningArtifact& value) { m_provisioningArtifactHasBeenSet = true; m_provisioningArtifact = value; }
-
-    /**
-     * <p>Information about a provisioning artifact. A provisioning artifact is also
-     * known as a product version.</p>
-     */
     inline void SetProvisioningArtifact(ProvisioningArtifact&& value) { m_provisioningArtifactHasBeenSet = true; m_provisioningArtifact = std::move(value); }
-
-    /**
-     * <p>Information about a provisioning artifact. A provisioning artifact is also
-     * known as a product version.</p>
-     */
     inline ProvisioningArtifactView& WithProvisioningArtifact(const ProvisioningArtifact& value) { SetProvisioningArtifact(value); return *this;}
-
-    /**
-     * <p>Information about a provisioning artifact. A provisioning artifact is also
-     * known as a product version.</p>
-     */
     inline ProvisioningArtifactView& WithProvisioningArtifact(ProvisioningArtifact&& value) { SetProvisioningArtifact(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ProductViewSummary m_productViewSummary;

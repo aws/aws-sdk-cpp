@@ -34,54 +34,20 @@ namespace Model
     AWS_CLOUDHSMV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier (ID) of the cluster that you are deleting. To find the cluster
      * ID, use <a>DescribeClusters</a>.</p>
      */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
-
-    /**
-     * <p>The identifier (ID) of the cluster that you are deleting. To find the cluster
-     * ID, use <a>DescribeClusters</a>.</p>
-     */
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-
-    /**
-     * <p>The identifier (ID) of the cluster that you are deleting. To find the cluster
-     * ID, use <a>DescribeClusters</a>.</p>
-     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-
-    /**
-     * <p>The identifier (ID) of the cluster that you are deleting. To find the cluster
-     * ID, use <a>DescribeClusters</a>.</p>
-     */
     inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-
-    /**
-     * <p>The identifier (ID) of the cluster that you are deleting. To find the cluster
-     * ID, use <a>DescribeClusters</a>.</p>
-     */
     inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-
-    /**
-     * <p>The identifier (ID) of the cluster that you are deleting. To find the cluster
-     * ID, use <a>DescribeClusters</a>.</p>
-     */
     inline DeleteClusterRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-
-    /**
-     * <p>The identifier (ID) of the cluster that you are deleting. To find the cluster
-     * ID, use <a>DescribeClusters</a>.</p>
-     */
     inline DeleteClusterRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier (ID) of the cluster that you are deleting. To find the cluster
-     * ID, use <a>DescribeClusters</a>.</p>
-     */
     inline DeleteClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterId;

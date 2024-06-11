@@ -38,143 +38,57 @@ namespace Model
     AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The version identifier of the API documentation snapshot.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The version identifier of the API documentation snapshot.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The version identifier of the API documentation snapshot.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The version identifier of the API documentation snapshot.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The version identifier of the API documentation snapshot.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>The version identifier of the API documentation snapshot.</p>
-     */
     inline DocumentationVersion& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The version identifier of the API documentation snapshot.</p>
-     */
     inline DocumentationVersion& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version identifier of the API documentation snapshot.</p>
-     */
     inline DocumentationVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date when the API documentation snapshot is created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-
-    /**
-     * <p>The date when the API documentation snapshot is created.</p>
-     */
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-
-    /**
-     * <p>The date when the API documentation snapshot is created.</p>
-     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-
-    /**
-     * <p>The date when the API documentation snapshot is created.</p>
-     */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-
-    /**
-     * <p>The date when the API documentation snapshot is created.</p>
-     */
     inline DocumentationVersion& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-
-    /**
-     * <p>The date when the API documentation snapshot is created.</p>
-     */
     inline DocumentationVersion& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the API documentation snapshot.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the API documentation snapshot.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the API documentation snapshot.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the API documentation snapshot.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the API documentation snapshot.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the API documentation snapshot.</p>
-     */
     inline DocumentationVersion& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the API documentation snapshot.</p>
-     */
     inline DocumentationVersion& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the API documentation snapshot.</p>
-     */
     inline DocumentationVersion& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-
-    
     inline DocumentationVersion& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DocumentationVersion& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DocumentationVersion& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_version;

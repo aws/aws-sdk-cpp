@@ -41,6 +41,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the engine to describe options for.</p> <p>Valid Values:</p> <ul>
      * <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p> </li>
@@ -53,189 +54,45 @@ namespace Model
      * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
-
-    /**
-     * <p>The name of the engine to describe options for.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p> </li>
-     * <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
-     * <li> <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
-     */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
-
-    /**
-     * <p>The name of the engine to describe options for.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p> </li>
-     * <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
-     * <li> <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
-     */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
-
-    /**
-     * <p>The name of the engine to describe options for.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p> </li>
-     * <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
-     * <li> <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
-     */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
-
-    /**
-     * <p>The name of the engine to describe options for.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p> </li>
-     * <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
-     * <li> <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
-     */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
-
-    /**
-     * <p>The name of the engine to describe options for.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p> </li>
-     * <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
-     * <li> <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
-     */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
-
-    /**
-     * <p>The name of the engine to describe options for.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p> </li>
-     * <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
-     * <li> <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
-     */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the engine to describe options for.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p> </li>
-     * <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
-     * <li> <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
-     */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If specified, filters the results to include only options for the specified
      * major engine version.</p>
      */
     inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
-
-    /**
-     * <p>If specified, filters the results to include only options for the specified
-     * major engine version.</p>
-     */
     inline bool MajorEngineVersionHasBeenSet() const { return m_majorEngineVersionHasBeenSet; }
-
-    /**
-     * <p>If specified, filters the results to include only options for the specified
-     * major engine version.</p>
-     */
     inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
-
-    /**
-     * <p>If specified, filters the results to include only options for the specified
-     * major engine version.</p>
-     */
     inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = std::move(value); }
-
-    /**
-     * <p>If specified, filters the results to include only options for the specified
-     * major engine version.</p>
-     */
     inline void SetMajorEngineVersion(const char* value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion.assign(value); }
-
-    /**
-     * <p>If specified, filters the results to include only options for the specified
-     * major engine version.</p>
-     */
     inline DescribeOptionGroupOptionsRequest& WithMajorEngineVersion(const Aws::String& value) { SetMajorEngineVersion(value); return *this;}
-
-    /**
-     * <p>If specified, filters the results to include only options for the specified
-     * major engine version.</p>
-     */
     inline DescribeOptionGroupOptionsRequest& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>If specified, filters the results to include only options for the specified
-     * major engine version.</p>
-     */
     inline DescribeOptionGroupOptionsRequest& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This parameter isn't currently supported.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline DescribeOptionGroupOptionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline DescribeOptionGroupOptionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline DescribeOptionGroupOptionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline DescribeOptionGroupOptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -244,91 +101,26 @@ namespace Model
      * 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
-
-    /**
-     * <p>The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * called a marker is included in the response so that you can retrieve the
-     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 100.</p>
-     */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * called a marker is included in the response so that you can retrieve the
-     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 100.</p>
-     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
-
-    /**
-     * <p>The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * called a marker is included in the response so that you can retrieve the
-     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 100.</p>
-     */
     inline DescribeOptionGroupOptionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>.</p>
-     */
     inline DescribeOptionGroupOptionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>.</p>
-     */
     inline DescribeOptionGroupOptionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>.</p>
-     */
     inline DescribeOptionGroupOptionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_engineName;

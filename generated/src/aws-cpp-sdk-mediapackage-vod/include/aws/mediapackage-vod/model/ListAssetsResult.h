@@ -34,99 +34,42 @@ namespace Model
     AWS_MEDIAPACKAGEVOD_API ListAssetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * A list of MediaPackage VOD Asset resources.
      */
     inline const Aws::Vector<AssetShallow>& GetAssets() const{ return m_assets; }
-
-    /**
-     * A list of MediaPackage VOD Asset resources.
-     */
     inline void SetAssets(const Aws::Vector<AssetShallow>& value) { m_assets = value; }
-
-    /**
-     * A list of MediaPackage VOD Asset resources.
-     */
     inline void SetAssets(Aws::Vector<AssetShallow>&& value) { m_assets = std::move(value); }
-
-    /**
-     * A list of MediaPackage VOD Asset resources.
-     */
     inline ListAssetsResult& WithAssets(const Aws::Vector<AssetShallow>& value) { SetAssets(value); return *this;}
-
-    /**
-     * A list of MediaPackage VOD Asset resources.
-     */
     inline ListAssetsResult& WithAssets(Aws::Vector<AssetShallow>&& value) { SetAssets(std::move(value)); return *this;}
-
-    /**
-     * A list of MediaPackage VOD Asset resources.
-     */
     inline ListAssetsResult& AddAssets(const AssetShallow& value) { m_assets.push_back(value); return *this; }
-
-    /**
-     * A list of MediaPackage VOD Asset resources.
-     */
     inline ListAssetsResult& AddAssets(AssetShallow&& value) { m_assets.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * A token that can be used to resume pagination from the end of the collection.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline ListAssetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline ListAssetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline ListAssetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAssetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAssetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAssetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AssetShallow> m_assets;

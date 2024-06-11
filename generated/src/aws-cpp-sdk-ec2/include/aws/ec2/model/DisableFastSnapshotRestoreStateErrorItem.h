@@ -41,77 +41,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The Availability Zone.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
     inline DisableFastSnapshotRestoreStateErrorItem& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
     inline DisableFastSnapshotRestoreStateErrorItem& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
     inline DisableFastSnapshotRestoreStateErrorItem& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error.</p>
      */
     inline const DisableFastSnapshotRestoreStateError& GetError() const{ return m_error; }
-
-    /**
-     * <p>The error.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>The error.</p>
-     */
     inline void SetError(const DisableFastSnapshotRestoreStateError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>The error.</p>
-     */
     inline void SetError(DisableFastSnapshotRestoreStateError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>The error.</p>
-     */
     inline DisableFastSnapshotRestoreStateErrorItem& WithError(const DisableFastSnapshotRestoreStateError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>The error.</p>
-     */
     inline DisableFastSnapshotRestoreStateErrorItem& WithError(DisableFastSnapshotRestoreStateError&& value) { SetError(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_availabilityZone;

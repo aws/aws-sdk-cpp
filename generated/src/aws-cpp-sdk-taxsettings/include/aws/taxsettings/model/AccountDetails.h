@@ -41,151 +41,57 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List of unique account identifiers. </p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline AccountDetails& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline AccountDetails& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline AccountDetails& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The meta data information associated with the account. </p>
      */
     inline const AccountMetaData& GetAccountMetaData() const{ return m_accountMetaData; }
-
-    /**
-     * <p> The meta data information associated with the account. </p>
-     */
     inline bool AccountMetaDataHasBeenSet() const { return m_accountMetaDataHasBeenSet; }
-
-    /**
-     * <p> The meta data information associated with the account. </p>
-     */
     inline void SetAccountMetaData(const AccountMetaData& value) { m_accountMetaDataHasBeenSet = true; m_accountMetaData = value; }
-
-    /**
-     * <p> The meta data information associated with the account. </p>
-     */
     inline void SetAccountMetaData(AccountMetaData&& value) { m_accountMetaDataHasBeenSet = true; m_accountMetaData = std::move(value); }
-
-    /**
-     * <p> The meta data information associated with the account. </p>
-     */
     inline AccountDetails& WithAccountMetaData(const AccountMetaData& value) { SetAccountMetaData(value); return *this;}
-
-    /**
-     * <p> The meta data information associated with the account. </p>
-     */
     inline AccountDetails& WithAccountMetaData(AccountMetaData&& value) { SetAccountMetaData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Tax inheritance information associated with the account. </p>
      */
     inline const TaxInheritanceDetails& GetTaxInheritanceDetails() const{ return m_taxInheritanceDetails; }
-
-    /**
-     * <p> Tax inheritance information associated with the account. </p>
-     */
     inline bool TaxInheritanceDetailsHasBeenSet() const { return m_taxInheritanceDetailsHasBeenSet; }
-
-    /**
-     * <p> Tax inheritance information associated with the account. </p>
-     */
     inline void SetTaxInheritanceDetails(const TaxInheritanceDetails& value) { m_taxInheritanceDetailsHasBeenSet = true; m_taxInheritanceDetails = value; }
-
-    /**
-     * <p> Tax inheritance information associated with the account. </p>
-     */
     inline void SetTaxInheritanceDetails(TaxInheritanceDetails&& value) { m_taxInheritanceDetailsHasBeenSet = true; m_taxInheritanceDetails = std::move(value); }
-
-    /**
-     * <p> Tax inheritance information associated with the account. </p>
-     */
     inline AccountDetails& WithTaxInheritanceDetails(const TaxInheritanceDetails& value) { SetTaxInheritanceDetails(value); return *this;}
-
-    /**
-     * <p> Tax inheritance information associated with the account. </p>
-     */
     inline AccountDetails& WithTaxInheritanceDetails(TaxInheritanceDetails&& value) { SetTaxInheritanceDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Your TRN information. Instead of having full legal address, here TRN
      * information will have jurisdiction details (for example, country code and
      * state/region/province if applicable). </p>
      */
     inline const TaxRegistrationWithJurisdiction& GetTaxRegistration() const{ return m_taxRegistration; }
-
-    /**
-     * <p>Your TRN information. Instead of having full legal address, here TRN
-     * information will have jurisdiction details (for example, country code and
-     * state/region/province if applicable). </p>
-     */
     inline bool TaxRegistrationHasBeenSet() const { return m_taxRegistrationHasBeenSet; }
-
-    /**
-     * <p>Your TRN information. Instead of having full legal address, here TRN
-     * information will have jurisdiction details (for example, country code and
-     * state/region/province if applicable). </p>
-     */
     inline void SetTaxRegistration(const TaxRegistrationWithJurisdiction& value) { m_taxRegistrationHasBeenSet = true; m_taxRegistration = value; }
-
-    /**
-     * <p>Your TRN information. Instead of having full legal address, here TRN
-     * information will have jurisdiction details (for example, country code and
-     * state/region/province if applicable). </p>
-     */
     inline void SetTaxRegistration(TaxRegistrationWithJurisdiction&& value) { m_taxRegistrationHasBeenSet = true; m_taxRegistration = std::move(value); }
-
-    /**
-     * <p>Your TRN information. Instead of having full legal address, here TRN
-     * information will have jurisdiction details (for example, country code and
-     * state/region/province if applicable). </p>
-     */
     inline AccountDetails& WithTaxRegistration(const TaxRegistrationWithJurisdiction& value) { SetTaxRegistration(value); return *this;}
-
-    /**
-     * <p>Your TRN information. Instead of having full legal address, here TRN
-     * information will have jurisdiction details (for example, country code and
-     * state/region/province if applicable). </p>
-     */
     inline AccountDetails& WithTaxRegistration(TaxRegistrationWithJurisdiction&& value) { SetTaxRegistration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

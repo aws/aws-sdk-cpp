@@ -33,58 +33,28 @@ namespace Model
     AWS_GAMELIFT_API CreateContainerGroupDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The properties of the newly created container group definition resource. You
      * use this resource to create a container fleet.</p>
      */
     inline const ContainerGroupDefinition& GetContainerGroupDefinition() const{ return m_containerGroupDefinition; }
-
-    /**
-     * <p>The properties of the newly created container group definition resource. You
-     * use this resource to create a container fleet.</p>
-     */
     inline void SetContainerGroupDefinition(const ContainerGroupDefinition& value) { m_containerGroupDefinition = value; }
-
-    /**
-     * <p>The properties of the newly created container group definition resource. You
-     * use this resource to create a container fleet.</p>
-     */
     inline void SetContainerGroupDefinition(ContainerGroupDefinition&& value) { m_containerGroupDefinition = std::move(value); }
-
-    /**
-     * <p>The properties of the newly created container group definition resource. You
-     * use this resource to create a container fleet.</p>
-     */
     inline CreateContainerGroupDefinitionResult& WithContainerGroupDefinition(const ContainerGroupDefinition& value) { SetContainerGroupDefinition(value); return *this;}
-
-    /**
-     * <p>The properties of the newly created container group definition resource. You
-     * use this resource to create a container fleet.</p>
-     */
     inline CreateContainerGroupDefinitionResult& WithContainerGroupDefinition(ContainerGroupDefinition&& value) { SetContainerGroupDefinition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateContainerGroupDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateContainerGroupDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateContainerGroupDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ContainerGroupDefinition m_containerGroupDefinition;

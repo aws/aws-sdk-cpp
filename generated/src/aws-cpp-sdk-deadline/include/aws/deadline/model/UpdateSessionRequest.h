@@ -36,249 +36,88 @@ namespace Model
     AWS_DEADLINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique token which the server uses to recognize retries of the same
      * request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline UpdateSessionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline UpdateSessionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline UpdateSessionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The farm ID to update in the session.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
-
-    /**
-     * <p>The farm ID to update in the session.</p>
-     */
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-
-    /**
-     * <p>The farm ID to update in the session.</p>
-     */
     inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-
-    /**
-     * <p>The farm ID to update in the session.</p>
-     */
     inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-
-    /**
-     * <p>The farm ID to update in the session.</p>
-     */
     inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-
-    /**
-     * <p>The farm ID to update in the session.</p>
-     */
     inline UpdateSessionRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-
-    /**
-     * <p>The farm ID to update in the session.</p>
-     */
     inline UpdateSessionRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-
-    /**
-     * <p>The farm ID to update in the session.</p>
-     */
     inline UpdateSessionRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The job ID to update in the session.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The job ID to update in the session.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The job ID to update in the session.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The job ID to update in the session.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The job ID to update in the session.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The job ID to update in the session.</p>
-     */
     inline UpdateSessionRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The job ID to update in the session.</p>
-     */
     inline UpdateSessionRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The job ID to update in the session.</p>
-     */
     inline UpdateSessionRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The queue ID to update in the session.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
-
-    /**
-     * <p>The queue ID to update in the session.</p>
-     */
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-
-    /**
-     * <p>The queue ID to update in the session.</p>
-     */
     inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-
-    /**
-     * <p>The queue ID to update in the session.</p>
-     */
     inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-
-    /**
-     * <p>The queue ID to update in the session.</p>
-     */
     inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-
-    /**
-     * <p>The queue ID to update in the session.</p>
-     */
     inline UpdateSessionRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-
-    /**
-     * <p>The queue ID to update in the session.</p>
-     */
     inline UpdateSessionRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-
-    /**
-     * <p>The queue ID to update in the session.</p>
-     */
     inline UpdateSessionRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The session ID to update.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-
-    /**
-     * <p>The session ID to update.</p>
-     */
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-
-    /**
-     * <p>The session ID to update.</p>
-     */
     inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-
-    /**
-     * <p>The session ID to update.</p>
-     */
     inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-
-    /**
-     * <p>The session ID to update.</p>
-     */
     inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-
-    /**
-     * <p>The session ID to update.</p>
-     */
     inline UpdateSessionRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-
-    /**
-     * <p>The session ID to update.</p>
-     */
     inline UpdateSessionRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The session ID to update.</p>
-     */
     inline UpdateSessionRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The life cycle status to update in the session.</p>
      */
     inline const SessionLifecycleTargetStatus& GetTargetLifecycleStatus() const{ return m_targetLifecycleStatus; }
-
-    /**
-     * <p>The life cycle status to update in the session.</p>
-     */
     inline bool TargetLifecycleStatusHasBeenSet() const { return m_targetLifecycleStatusHasBeenSet; }
-
-    /**
-     * <p>The life cycle status to update in the session.</p>
-     */
     inline void SetTargetLifecycleStatus(const SessionLifecycleTargetStatus& value) { m_targetLifecycleStatusHasBeenSet = true; m_targetLifecycleStatus = value; }
-
-    /**
-     * <p>The life cycle status to update in the session.</p>
-     */
     inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus&& value) { m_targetLifecycleStatusHasBeenSet = true; m_targetLifecycleStatus = std::move(value); }
-
-    /**
-     * <p>The life cycle status to update in the session.</p>
-     */
     inline UpdateSessionRequest& WithTargetLifecycleStatus(const SessionLifecycleTargetStatus& value) { SetTargetLifecycleStatus(value); return *this;}
-
-    /**
-     * <p>The life cycle status to update in the session.</p>
-     */
     inline UpdateSessionRequest& WithTargetLifecycleStatus(SessionLifecycleTargetStatus&& value) { SetTargetLifecycleStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

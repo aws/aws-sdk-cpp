@@ -38,54 +38,20 @@ namespace Model
     AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The prefix that an object must have to be included in the inventory
      * results.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p>The prefix that an object must have to be included in the inventory
-     * results.</p>
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p>The prefix that an object must have to be included in the inventory
-     * results.</p>
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p>The prefix that an object must have to be included in the inventory
-     * results.</p>
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p>The prefix that an object must have to be included in the inventory
-     * results.</p>
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p>The prefix that an object must have to be included in the inventory
-     * results.</p>
-     */
     inline InventoryFilter& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p>The prefix that an object must have to be included in the inventory
-     * results.</p>
-     */
     inline InventoryFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The prefix that an object must have to be included in the inventory
-     * results.</p>
-     */
     inline InventoryFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_prefix;

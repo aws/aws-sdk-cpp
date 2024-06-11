@@ -33,37 +33,23 @@ namespace Model
     AWS_REDSHIFT_API CreateHsmConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const HsmConfiguration& GetHsmConfiguration() const{ return m_hsmConfiguration; }
-
-    
     inline void SetHsmConfiguration(const HsmConfiguration& value) { m_hsmConfiguration = value; }
-
-    
     inline void SetHsmConfiguration(HsmConfiguration&& value) { m_hsmConfiguration = std::move(value); }
-
-    
     inline CreateHsmConfigurationResult& WithHsmConfiguration(const HsmConfiguration& value) { SetHsmConfiguration(value); return *this;}
-
-    
     inline CreateHsmConfigurationResult& WithHsmConfiguration(HsmConfiguration&& value) { SetHsmConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateHsmConfigurationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateHsmConfigurationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HsmConfiguration m_hsmConfiguration;

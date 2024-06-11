@@ -39,62 +39,28 @@ namespace Model
     AWS_EC2_API RunScheduledInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The IDs of the newly launched instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIdSet() const{ return m_instanceIdSet; }
-
-    /**
-     * <p>The IDs of the newly launched instances.</p>
-     */
     inline void SetInstanceIdSet(const Aws::Vector<Aws::String>& value) { m_instanceIdSet = value; }
-
-    /**
-     * <p>The IDs of the newly launched instances.</p>
-     */
     inline void SetInstanceIdSet(Aws::Vector<Aws::String>&& value) { m_instanceIdSet = std::move(value); }
-
-    /**
-     * <p>The IDs of the newly launched instances.</p>
-     */
     inline RunScheduledInstancesResponse& WithInstanceIdSet(const Aws::Vector<Aws::String>& value) { SetInstanceIdSet(value); return *this;}
-
-    /**
-     * <p>The IDs of the newly launched instances.</p>
-     */
     inline RunScheduledInstancesResponse& WithInstanceIdSet(Aws::Vector<Aws::String>&& value) { SetInstanceIdSet(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the newly launched instances.</p>
-     */
     inline RunScheduledInstancesResponse& AddInstanceIdSet(const Aws::String& value) { m_instanceIdSet.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the newly launched instances.</p>
-     */
     inline RunScheduledInstancesResponse& AddInstanceIdSet(Aws::String&& value) { m_instanceIdSet.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the newly launched instances.</p>
-     */
     inline RunScheduledInstancesResponse& AddInstanceIdSet(const char* value) { m_instanceIdSet.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline RunScheduledInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline RunScheduledInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_instanceIdSet;

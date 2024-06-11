@@ -40,70 +40,30 @@ namespace Model
     AWS_SESV2_API GetConfigurationSetEventDestinationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array that includes all of the events destinations that have been
      * configured for the configuration set.</p>
      */
     inline const Aws::Vector<EventDestination>& GetEventDestinations() const{ return m_eventDestinations; }
-
-    /**
-     * <p>An array that includes all of the events destinations that have been
-     * configured for the configuration set.</p>
-     */
     inline void SetEventDestinations(const Aws::Vector<EventDestination>& value) { m_eventDestinations = value; }
-
-    /**
-     * <p>An array that includes all of the events destinations that have been
-     * configured for the configuration set.</p>
-     */
     inline void SetEventDestinations(Aws::Vector<EventDestination>&& value) { m_eventDestinations = std::move(value); }
-
-    /**
-     * <p>An array that includes all of the events destinations that have been
-     * configured for the configuration set.</p>
-     */
     inline GetConfigurationSetEventDestinationsResult& WithEventDestinations(const Aws::Vector<EventDestination>& value) { SetEventDestinations(value); return *this;}
-
-    /**
-     * <p>An array that includes all of the events destinations that have been
-     * configured for the configuration set.</p>
-     */
     inline GetConfigurationSetEventDestinationsResult& WithEventDestinations(Aws::Vector<EventDestination>&& value) { SetEventDestinations(std::move(value)); return *this;}
-
-    /**
-     * <p>An array that includes all of the events destinations that have been
-     * configured for the configuration set.</p>
-     */
     inline GetConfigurationSetEventDestinationsResult& AddEventDestinations(const EventDestination& value) { m_eventDestinations.push_back(value); return *this; }
-
-    /**
-     * <p>An array that includes all of the events destinations that have been
-     * configured for the configuration set.</p>
-     */
     inline GetConfigurationSetEventDestinationsResult& AddEventDestinations(EventDestination&& value) { m_eventDestinations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetConfigurationSetEventDestinationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetConfigurationSetEventDestinationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetConfigurationSetEventDestinationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EventDestination> m_eventDestinations;

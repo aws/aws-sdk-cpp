@@ -34,46 +34,19 @@ namespace Model
     AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique string that identifies the Resolver on the Outpost.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>A unique string that identifies the Resolver on the Outpost.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>A unique string that identifies the Resolver on the Outpost.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>A unique string that identifies the Resolver on the Outpost.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>A unique string that identifies the Resolver on the Outpost.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>A unique string that identifies the Resolver on the Outpost.</p>
-     */
     inline DeleteOutpostResolverRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>A unique string that identifies the Resolver on the Outpost.</p>
-     */
     inline DeleteOutpostResolverRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique string that identifies the Resolver on the Outpost.</p>
-     */
     inline DeleteOutpostResolverRequest& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

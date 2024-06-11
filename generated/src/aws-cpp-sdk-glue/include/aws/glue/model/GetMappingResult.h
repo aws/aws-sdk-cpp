@@ -34,63 +34,29 @@ namespace Model
     AWS_GLUE_API GetMappingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of mappings to the specified targets.</p>
      */
     inline const Aws::Vector<MappingEntry>& GetMapping() const{ return m_mapping; }
-
-    /**
-     * <p>A list of mappings to the specified targets.</p>
-     */
     inline void SetMapping(const Aws::Vector<MappingEntry>& value) { m_mapping = value; }
-
-    /**
-     * <p>A list of mappings to the specified targets.</p>
-     */
     inline void SetMapping(Aws::Vector<MappingEntry>&& value) { m_mapping = std::move(value); }
-
-    /**
-     * <p>A list of mappings to the specified targets.</p>
-     */
     inline GetMappingResult& WithMapping(const Aws::Vector<MappingEntry>& value) { SetMapping(value); return *this;}
-
-    /**
-     * <p>A list of mappings to the specified targets.</p>
-     */
     inline GetMappingResult& WithMapping(Aws::Vector<MappingEntry>&& value) { SetMapping(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of mappings to the specified targets.</p>
-     */
     inline GetMappingResult& AddMapping(const MappingEntry& value) { m_mapping.push_back(value); return *this; }
-
-    /**
-     * <p>A list of mappings to the specified targets.</p>
-     */
     inline GetMappingResult& AddMapping(MappingEntry&& value) { m_mapping.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetMappingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetMappingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetMappingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MappingEntry> m_mapping;

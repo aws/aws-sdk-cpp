@@ -40,89 +40,40 @@ namespace Model
     AWS_CLOUDSEARCHDOMAIN_API SuggestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of a <code>SuggestRequest</code>. Contains the resource ID
      * (<code>rid</code>) and how long it took to process the request
      * (<code>timems</code>).</p>
      */
     inline const SuggestStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of a <code>SuggestRequest</code>. Contains the resource ID
-     * (<code>rid</code>) and how long it took to process the request
-     * (<code>timems</code>).</p>
-     */
     inline void SetStatus(const SuggestStatus& value) { m_status = value; }
-
-    /**
-     * <p>The status of a <code>SuggestRequest</code>. Contains the resource ID
-     * (<code>rid</code>) and how long it took to process the request
-     * (<code>timems</code>).</p>
-     */
     inline void SetStatus(SuggestStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of a <code>SuggestRequest</code>. Contains the resource ID
-     * (<code>rid</code>) and how long it took to process the request
-     * (<code>timems</code>).</p>
-     */
     inline SuggestResult& WithStatus(const SuggestStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of a <code>SuggestRequest</code>. Contains the resource ID
-     * (<code>rid</code>) and how long it took to process the request
-     * (<code>timems</code>).</p>
-     */
     inline SuggestResult& WithStatus(SuggestStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Container for the matching search suggestion information.</p>
      */
     inline const SuggestModel& GetSuggest() const{ return m_suggest; }
-
-    /**
-     * <p>Container for the matching search suggestion information.</p>
-     */
     inline void SetSuggest(const SuggestModel& value) { m_suggest = value; }
-
-    /**
-     * <p>Container for the matching search suggestion information.</p>
-     */
     inline void SetSuggest(SuggestModel&& value) { m_suggest = std::move(value); }
-
-    /**
-     * <p>Container for the matching search suggestion information.</p>
-     */
     inline SuggestResult& WithSuggest(const SuggestModel& value) { SetSuggest(value); return *this;}
-
-    /**
-     * <p>Container for the matching search suggestion information.</p>
-     */
     inline SuggestResult& WithSuggest(SuggestModel&& value) { SetSuggest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SuggestResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SuggestResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SuggestResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SuggestStatus m_status;

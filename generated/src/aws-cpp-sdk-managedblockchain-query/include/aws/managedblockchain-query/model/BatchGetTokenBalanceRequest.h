@@ -33,54 +33,20 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance
      * is being requested.</p>
      */
     inline const Aws::Vector<BatchGetTokenBalanceInputItem>& GetGetTokenBalanceInputs() const{ return m_getTokenBalanceInputs; }
-
-    /**
-     * <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance
-     * is being requested.</p>
-     */
     inline bool GetTokenBalanceInputsHasBeenSet() const { return m_getTokenBalanceInputsHasBeenSet; }
-
-    /**
-     * <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance
-     * is being requested.</p>
-     */
     inline void SetGetTokenBalanceInputs(const Aws::Vector<BatchGetTokenBalanceInputItem>& value) { m_getTokenBalanceInputsHasBeenSet = true; m_getTokenBalanceInputs = value; }
-
-    /**
-     * <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance
-     * is being requested.</p>
-     */
     inline void SetGetTokenBalanceInputs(Aws::Vector<BatchGetTokenBalanceInputItem>&& value) { m_getTokenBalanceInputsHasBeenSet = true; m_getTokenBalanceInputs = std::move(value); }
-
-    /**
-     * <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance
-     * is being requested.</p>
-     */
     inline BatchGetTokenBalanceRequest& WithGetTokenBalanceInputs(const Aws::Vector<BatchGetTokenBalanceInputItem>& value) { SetGetTokenBalanceInputs(value); return *this;}
-
-    /**
-     * <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance
-     * is being requested.</p>
-     */
     inline BatchGetTokenBalanceRequest& WithGetTokenBalanceInputs(Aws::Vector<BatchGetTokenBalanceInputItem>&& value) { SetGetTokenBalanceInputs(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance
-     * is being requested.</p>
-     */
     inline BatchGetTokenBalanceRequest& AddGetTokenBalanceInputs(const BatchGetTokenBalanceInputItem& value) { m_getTokenBalanceInputsHasBeenSet = true; m_getTokenBalanceInputs.push_back(value); return *this; }
-
-    /**
-     * <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance
-     * is being requested.</p>
-     */
     inline BatchGetTokenBalanceRequest& AddGetTokenBalanceInputs(BatchGetTokenBalanceInputItem&& value) { m_getTokenBalanceInputsHasBeenSet = true; m_getTokenBalanceInputs.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<BatchGetTokenBalanceInputItem> m_getTokenBalanceInputs;

@@ -38,54 +38,20 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the secret containing the private
      * repository credentials.</p>
      */
     inline const Aws::String& GetCredentialsParameter() const{ return m_credentialsParameter; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the secret containing the private
-     * repository credentials.</p>
-     */
     inline bool CredentialsParameterHasBeenSet() const { return m_credentialsParameterHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the secret containing the private
-     * repository credentials.</p>
-     */
     inline void SetCredentialsParameter(const Aws::String& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the secret containing the private
-     * repository credentials.</p>
-     */
     inline void SetCredentialsParameter(Aws::String&& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the secret containing the private
-     * repository credentials.</p>
-     */
     inline void SetCredentialsParameter(const char* value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the secret containing the private
-     * repository credentials.</p>
-     */
     inline RepositoryCredentials& WithCredentialsParameter(const Aws::String& value) { SetCredentialsParameter(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the secret containing the private
-     * repository credentials.</p>
-     */
     inline RepositoryCredentials& WithCredentialsParameter(Aws::String&& value) { SetCredentialsParameter(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the secret containing the private
-     * repository credentials.</p>
-     */
     inline RepositoryCredentials& WithCredentialsParameter(const char* value) { SetCredentialsParameter(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_credentialsParameter;

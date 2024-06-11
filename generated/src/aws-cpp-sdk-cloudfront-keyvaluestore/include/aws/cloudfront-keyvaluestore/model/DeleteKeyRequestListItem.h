@@ -37,46 +37,19 @@ namespace Model
     AWS_CLOUDFRONTKEYVALUESTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The key of the key value pair to be deleted.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The key of the key value pair to be deleted.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The key of the key value pair to be deleted.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The key of the key value pair to be deleted.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The key of the key value pair to be deleted.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The key of the key value pair to be deleted.</p>
-     */
     inline DeleteKeyRequestListItem& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The key of the key value pair to be deleted.</p>
-     */
     inline DeleteKeyRequestListItem& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The key of the key value pair to be deleted.</p>
-     */
     inline DeleteKeyRequestListItem& WithKey(const char* value) { SetKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

@@ -39,46 +39,19 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The properties for the Amazon ECS task definition of a job.</p>
      */
     inline const Aws::Vector<EcsTaskDetails>& GetTaskProperties() const{ return m_taskProperties; }
-
-    /**
-     * <p>The properties for the Amazon ECS task definition of a job.</p>
-     */
     inline bool TaskPropertiesHasBeenSet() const { return m_taskPropertiesHasBeenSet; }
-
-    /**
-     * <p>The properties for the Amazon ECS task definition of a job.</p>
-     */
     inline void SetTaskProperties(const Aws::Vector<EcsTaskDetails>& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties = value; }
-
-    /**
-     * <p>The properties for the Amazon ECS task definition of a job.</p>
-     */
     inline void SetTaskProperties(Aws::Vector<EcsTaskDetails>&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties = std::move(value); }
-
-    /**
-     * <p>The properties for the Amazon ECS task definition of a job.</p>
-     */
     inline EcsPropertiesDetail& WithTaskProperties(const Aws::Vector<EcsTaskDetails>& value) { SetTaskProperties(value); return *this;}
-
-    /**
-     * <p>The properties for the Amazon ECS task definition of a job.</p>
-     */
     inline EcsPropertiesDetail& WithTaskProperties(Aws::Vector<EcsTaskDetails>&& value) { SetTaskProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>The properties for the Amazon ECS task definition of a job.</p>
-     */
     inline EcsPropertiesDetail& AddTaskProperties(const EcsTaskDetails& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties.push_back(value); return *this; }
-
-    /**
-     * <p>The properties for the Amazon ECS task definition of a job.</p>
-     */
     inline EcsPropertiesDetail& AddTaskProperties(EcsTaskDetails&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<EcsTaskDetails> m_taskProperties;

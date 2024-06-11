@@ -32,46 +32,19 @@ namespace Model
     AWS_ARCZONALSHIFT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The internally-generated identifier of a zonal shift.</p>
      */
     inline const Aws::String& GetZonalShiftId() const{ return m_zonalShiftId; }
-
-    /**
-     * <p>The internally-generated identifier of a zonal shift.</p>
-     */
     inline bool ZonalShiftIdHasBeenSet() const { return m_zonalShiftIdHasBeenSet; }
-
-    /**
-     * <p>The internally-generated identifier of a zonal shift.</p>
-     */
     inline void SetZonalShiftId(const Aws::String& value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId = value; }
-
-    /**
-     * <p>The internally-generated identifier of a zonal shift.</p>
-     */
     inline void SetZonalShiftId(Aws::String&& value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId = std::move(value); }
-
-    /**
-     * <p>The internally-generated identifier of a zonal shift.</p>
-     */
     inline void SetZonalShiftId(const char* value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId.assign(value); }
-
-    /**
-     * <p>The internally-generated identifier of a zonal shift.</p>
-     */
     inline CancelZonalShiftRequest& WithZonalShiftId(const Aws::String& value) { SetZonalShiftId(value); return *this;}
-
-    /**
-     * <p>The internally-generated identifier of a zonal shift.</p>
-     */
     inline CancelZonalShiftRequest& WithZonalShiftId(Aws::String&& value) { SetZonalShiftId(std::move(value)); return *this;}
-
-    /**
-     * <p>The internally-generated identifier of a zonal shift.</p>
-     */
     inline CancelZonalShiftRequest& WithZonalShiftId(const char* value) { SetZonalShiftId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_zonalShiftId;

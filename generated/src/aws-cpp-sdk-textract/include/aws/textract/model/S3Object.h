@@ -41,160 +41,51 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the S3 bucket. Note that the # character is not valid in the file
      * name.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
-
-    /**
-     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
-     * name.</p>
-     */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-
-    /**
-     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
-     * name.</p>
-     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-
-    /**
-     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
-     * name.</p>
-     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-
-    /**
-     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
-     * name.</p>
-     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-
-    /**
-     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
-     * name.</p>
-     */
     inline S3Object& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-
-    /**
-     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
-     * name.</p>
-     */
     inline S3Object& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
-     * name.</p>
-     */
     inline S3Object& WithBucket(const char* value) { SetBucket(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The file name of the input document. Synchronous operations can use image
      * files that are in JPEG or PNG format. Asynchronous operations also support PDF
      * and TIFF format files.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The file name of the input document. Synchronous operations can use image
-     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
-     * and TIFF format files.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The file name of the input document. Synchronous operations can use image
-     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
-     * and TIFF format files.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The file name of the input document. Synchronous operations can use image
-     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
-     * and TIFF format files.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The file name of the input document. Synchronous operations can use image
-     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
-     * and TIFF format files.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The file name of the input document. Synchronous operations can use image
-     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
-     * and TIFF format files.</p>
-     */
     inline S3Object& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The file name of the input document. Synchronous operations can use image
-     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
-     * and TIFF format files.</p>
-     */
     inline S3Object& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The file name of the input document. Synchronous operations can use image
-     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
-     * and TIFF format files.</p>
-     */
     inline S3Object& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the bucket has versioning enabled, you can specify the object version.
      * </p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>If the bucket has versioning enabled, you can specify the object version.
-     * </p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>If the bucket has versioning enabled, you can specify the object version.
-     * </p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>If the bucket has versioning enabled, you can specify the object version.
-     * </p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>If the bucket has versioning enabled, you can specify the object version.
-     * </p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>If the bucket has versioning enabled, you can specify the object version.
-     * </p>
-     */
     inline S3Object& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>If the bucket has versioning enabled, you can specify the object version.
-     * </p>
-     */
     inline S3Object& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>If the bucket has versioning enabled, you can specify the object version.
-     * </p>
-     */
     inline S3Object& WithVersion(const char* value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucket;

@@ -39,167 +39,60 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the endpoint.</p>
      */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
-
-    /**
-     * <p>The unique identifier of the endpoint.</p>
-     */
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the endpoint.</p>
-     */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
-
-    /**
-     * <p>The unique identifier of the endpoint.</p>
-     */
     inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the endpoint.</p>
-     */
     inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the endpoint.</p>
-     */
     inline VpcEndpointSummary& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the endpoint.</p>
-     */
     inline VpcEndpointSummary& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the endpoint.</p>
-     */
     inline VpcEndpointSummary& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The creator of the endpoint.</p>
      */
     inline const Aws::String& GetVpcEndpointOwner() const{ return m_vpcEndpointOwner; }
-
-    /**
-     * <p>The creator of the endpoint.</p>
-     */
     inline bool VpcEndpointOwnerHasBeenSet() const { return m_vpcEndpointOwnerHasBeenSet; }
-
-    /**
-     * <p>The creator of the endpoint.</p>
-     */
     inline void SetVpcEndpointOwner(const Aws::String& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = value; }
-
-    /**
-     * <p>The creator of the endpoint.</p>
-     */
     inline void SetVpcEndpointOwner(Aws::String&& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = std::move(value); }
-
-    /**
-     * <p>The creator of the endpoint.</p>
-     */
     inline void SetVpcEndpointOwner(const char* value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner.assign(value); }
-
-    /**
-     * <p>The creator of the endpoint.</p>
-     */
     inline VpcEndpointSummary& WithVpcEndpointOwner(const Aws::String& value) { SetVpcEndpointOwner(value); return *this;}
-
-    /**
-     * <p>The creator of the endpoint.</p>
-     */
     inline VpcEndpointSummary& WithVpcEndpointOwner(Aws::String&& value) { SetVpcEndpointOwner(std::move(value)); return *this;}
-
-    /**
-     * <p>The creator of the endpoint.</p>
-     */
     inline VpcEndpointSummary& WithVpcEndpointOwner(const char* value) { SetVpcEndpointOwner(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the domain associated with the
      * endpoint.</p>
      */
     inline const Aws::String& GetDomainArn() const{ return m_domainArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain associated with the
-     * endpoint.</p>
-     */
     inline bool DomainArnHasBeenSet() const { return m_domainArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain associated with the
-     * endpoint.</p>
-     */
     inline void SetDomainArn(const Aws::String& value) { m_domainArnHasBeenSet = true; m_domainArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain associated with the
-     * endpoint.</p>
-     */
     inline void SetDomainArn(Aws::String&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain associated with the
-     * endpoint.</p>
-     */
     inline void SetDomainArn(const char* value) { m_domainArnHasBeenSet = true; m_domainArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain associated with the
-     * endpoint.</p>
-     */
     inline VpcEndpointSummary& WithDomainArn(const Aws::String& value) { SetDomainArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain associated with the
-     * endpoint.</p>
-     */
     inline VpcEndpointSummary& WithDomainArn(Aws::String&& value) { SetDomainArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain associated with the
-     * endpoint.</p>
-     */
     inline VpcEndpointSummary& WithDomainArn(const char* value) { SetDomainArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of the endpoint.</p>
      */
     inline const VpcEndpointStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the endpoint.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of the endpoint.</p>
-     */
     inline void SetStatus(const VpcEndpointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of the endpoint.</p>
-     */
     inline void SetStatus(VpcEndpointStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the endpoint.</p>
-     */
     inline VpcEndpointSummary& WithStatus(const VpcEndpointStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the endpoint.</p>
-     */
     inline VpcEndpointSummary& WithStatus(VpcEndpointStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_vpcEndpointId;

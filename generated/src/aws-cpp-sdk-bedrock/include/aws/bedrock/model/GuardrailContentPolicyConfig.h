@@ -43,54 +43,20 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains the type of the content filter and how strongly it should apply to
      * prompts and model responses.</p>
      */
     inline const Aws::Vector<GuardrailContentFilterConfig>& GetFiltersConfig() const{ return m_filtersConfig; }
-
-    /**
-     * <p>Contains the type of the content filter and how strongly it should apply to
-     * prompts and model responses.</p>
-     */
     inline bool FiltersConfigHasBeenSet() const { return m_filtersConfigHasBeenSet; }
-
-    /**
-     * <p>Contains the type of the content filter and how strongly it should apply to
-     * prompts and model responses.</p>
-     */
     inline void SetFiltersConfig(const Aws::Vector<GuardrailContentFilterConfig>& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig = value; }
-
-    /**
-     * <p>Contains the type of the content filter and how strongly it should apply to
-     * prompts and model responses.</p>
-     */
     inline void SetFiltersConfig(Aws::Vector<GuardrailContentFilterConfig>&& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig = std::move(value); }
-
-    /**
-     * <p>Contains the type of the content filter and how strongly it should apply to
-     * prompts and model responses.</p>
-     */
     inline GuardrailContentPolicyConfig& WithFiltersConfig(const Aws::Vector<GuardrailContentFilterConfig>& value) { SetFiltersConfig(value); return *this;}
-
-    /**
-     * <p>Contains the type of the content filter and how strongly it should apply to
-     * prompts and model responses.</p>
-     */
     inline GuardrailContentPolicyConfig& WithFiltersConfig(Aws::Vector<GuardrailContentFilterConfig>&& value) { SetFiltersConfig(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains the type of the content filter and how strongly it should apply to
-     * prompts and model responses.</p>
-     */
     inline GuardrailContentPolicyConfig& AddFiltersConfig(const GuardrailContentFilterConfig& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig.push_back(value); return *this; }
-
-    /**
-     * <p>Contains the type of the content filter and how strongly it should apply to
-     * prompts and model responses.</p>
-     */
     inline GuardrailContentPolicyConfig& AddFiltersConfig(GuardrailContentFilterConfig&& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<GuardrailContentFilterConfig> m_filtersConfig;

@@ -41,37 +41,19 @@ namespace Model
     AWS_SESV2_API CreateEmailIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type
      * is not supported.</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
-
-    /**
-     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type
-     * is not supported.</p>
-     */
     inline void SetIdentityType(const IdentityType& value) { m_identityType = value; }
-
-    /**
-     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type
-     * is not supported.</p>
-     */
     inline void SetIdentityType(IdentityType&& value) { m_identityType = std::move(value); }
-
-    /**
-     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type
-     * is not supported.</p>
-     */
     inline CreateEmailIdentityResult& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
-
-    /**
-     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type
-     * is not supported.</p>
-     */
     inline CreateEmailIdentityResult& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether or not the identity is verified. You can only send email
      * from verified email addresses or domains. For more information about verifying
@@ -80,78 +62,32 @@ namespace Model
      * Pinpoint User Guide</a>.</p>
      */
     inline bool GetVerifiedForSendingStatus() const{ return m_verifiedForSendingStatus; }
-
-    /**
-     * <p>Specifies whether or not the identity is verified. You can only send email
-     * from verified email addresses or domains. For more information about verifying
-     * identities, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
-     * Pinpoint User Guide</a>.</p>
-     */
     inline void SetVerifiedForSendingStatus(bool value) { m_verifiedForSendingStatus = value; }
-
-    /**
-     * <p>Specifies whether or not the identity is verified. You can only send email
-     * from verified email addresses or domains. For more information about verifying
-     * identities, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
-     * Pinpoint User Guide</a>.</p>
-     */
     inline CreateEmailIdentityResult& WithVerifiedForSendingStatus(bool value) { SetVerifiedForSendingStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that contains information about the DKIM attributes for the
      * identity.</p>
      */
     inline const DkimAttributes& GetDkimAttributes() const{ return m_dkimAttributes; }
-
-    /**
-     * <p>An object that contains information about the DKIM attributes for the
-     * identity.</p>
-     */
     inline void SetDkimAttributes(const DkimAttributes& value) { m_dkimAttributes = value; }
-
-    /**
-     * <p>An object that contains information about the DKIM attributes for the
-     * identity.</p>
-     */
     inline void SetDkimAttributes(DkimAttributes&& value) { m_dkimAttributes = std::move(value); }
-
-    /**
-     * <p>An object that contains information about the DKIM attributes for the
-     * identity.</p>
-     */
     inline CreateEmailIdentityResult& WithDkimAttributes(const DkimAttributes& value) { SetDkimAttributes(value); return *this;}
-
-    /**
-     * <p>An object that contains information about the DKIM attributes for the
-     * identity.</p>
-     */
     inline CreateEmailIdentityResult& WithDkimAttributes(DkimAttributes&& value) { SetDkimAttributes(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateEmailIdentityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateEmailIdentityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateEmailIdentityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     IdentityType m_identityType;

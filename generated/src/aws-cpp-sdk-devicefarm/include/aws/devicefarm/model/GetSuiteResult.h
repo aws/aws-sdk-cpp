@@ -38,53 +38,27 @@ namespace Model
     AWS_DEVICEFARM_API GetSuiteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A collection of one or more tests.</p>
      */
     inline const Suite& GetSuite() const{ return m_suite; }
-
-    /**
-     * <p>A collection of one or more tests.</p>
-     */
     inline void SetSuite(const Suite& value) { m_suite = value; }
-
-    /**
-     * <p>A collection of one or more tests.</p>
-     */
     inline void SetSuite(Suite&& value) { m_suite = std::move(value); }
-
-    /**
-     * <p>A collection of one or more tests.</p>
-     */
     inline GetSuiteResult& WithSuite(const Suite& value) { SetSuite(value); return *this;}
-
-    /**
-     * <p>A collection of one or more tests.</p>
-     */
     inline GetSuiteResult& WithSuite(Suite&& value) { SetSuite(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSuiteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSuiteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSuiteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Suite m_suite;

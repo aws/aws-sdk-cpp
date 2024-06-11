@@ -34,46 +34,19 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the dataset to be described. </p>
      */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
-
-    /**
-     * <p>The name of the dataset to be described. </p>
-     */
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the dataset to be described. </p>
-     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-
-    /**
-     * <p>The name of the dataset to be described. </p>
-     */
     inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-
-    /**
-     * <p>The name of the dataset to be described. </p>
-     */
     inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-
-    /**
-     * <p>The name of the dataset to be described. </p>
-     */
     inline DescribeDatasetRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-
-    /**
-     * <p>The name of the dataset to be described. </p>
-     */
     inline DescribeDatasetRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the dataset to be described. </p>
-     */
     inline DescribeDatasetRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetName;

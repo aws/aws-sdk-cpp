@@ -34,99 +34,42 @@ namespace Model
     AWS_MEDIACONNECT_API AddFlowVpcInterfacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The ARN of the flow that these VPC interfaces were added to.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The ARN of the flow that these VPC interfaces were added to.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-
-    /**
-     * The ARN of the flow that these VPC interfaces were added to.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-
-    /**
-     * The ARN of the flow that these VPC interfaces were added to.
-     */
     inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-
-    /**
-     * The ARN of the flow that these VPC interfaces were added to.
-     */
     inline AddFlowVpcInterfacesResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The ARN of the flow that these VPC interfaces were added to.
-     */
     inline AddFlowVpcInterfacesResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the flow that these VPC interfaces were added to.
-     */
     inline AddFlowVpcInterfacesResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The details of the newly added VPC interfaces.
      */
     inline const Aws::Vector<VpcInterface>& GetVpcInterfaces() const{ return m_vpcInterfaces; }
-
-    /**
-     * The details of the newly added VPC interfaces.
-     */
     inline void SetVpcInterfaces(const Aws::Vector<VpcInterface>& value) { m_vpcInterfaces = value; }
-
-    /**
-     * The details of the newly added VPC interfaces.
-     */
     inline void SetVpcInterfaces(Aws::Vector<VpcInterface>&& value) { m_vpcInterfaces = std::move(value); }
-
-    /**
-     * The details of the newly added VPC interfaces.
-     */
     inline AddFlowVpcInterfacesResult& WithVpcInterfaces(const Aws::Vector<VpcInterface>& value) { SetVpcInterfaces(value); return *this;}
-
-    /**
-     * The details of the newly added VPC interfaces.
-     */
     inline AddFlowVpcInterfacesResult& WithVpcInterfaces(Aws::Vector<VpcInterface>&& value) { SetVpcInterfaces(std::move(value)); return *this;}
-
-    /**
-     * The details of the newly added VPC interfaces.
-     */
     inline AddFlowVpcInterfacesResult& AddVpcInterfaces(const VpcInterface& value) { m_vpcInterfaces.push_back(value); return *this; }
-
-    /**
-     * The details of the newly added VPC interfaces.
-     */
     inline AddFlowVpcInterfacesResult& AddVpcInterfaces(VpcInterface&& value) { m_vpcInterfaces.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AddFlowVpcInterfacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AddFlowVpcInterfacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AddFlowVpcInterfacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

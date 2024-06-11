@@ -34,63 +34,29 @@ namespace Model
     AWS_WORKSPACES_API DescribeClientPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the specified Amazon WorkSpaces clients.</p>
      */
     inline const Aws::Vector<ClientPropertiesResult>& GetClientPropertiesList() const{ return m_clientPropertiesList; }
-
-    /**
-     * <p>Information about the specified Amazon WorkSpaces clients.</p>
-     */
     inline void SetClientPropertiesList(const Aws::Vector<ClientPropertiesResult>& value) { m_clientPropertiesList = value; }
-
-    /**
-     * <p>Information about the specified Amazon WorkSpaces clients.</p>
-     */
     inline void SetClientPropertiesList(Aws::Vector<ClientPropertiesResult>&& value) { m_clientPropertiesList = std::move(value); }
-
-    /**
-     * <p>Information about the specified Amazon WorkSpaces clients.</p>
-     */
     inline DescribeClientPropertiesResult& WithClientPropertiesList(const Aws::Vector<ClientPropertiesResult>& value) { SetClientPropertiesList(value); return *this;}
-
-    /**
-     * <p>Information about the specified Amazon WorkSpaces clients.</p>
-     */
     inline DescribeClientPropertiesResult& WithClientPropertiesList(Aws::Vector<ClientPropertiesResult>&& value) { SetClientPropertiesList(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the specified Amazon WorkSpaces clients.</p>
-     */
     inline DescribeClientPropertiesResult& AddClientPropertiesList(const ClientPropertiesResult& value) { m_clientPropertiesList.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the specified Amazon WorkSpaces clients.</p>
-     */
     inline DescribeClientPropertiesResult& AddClientPropertiesList(ClientPropertiesResult&& value) { m_clientPropertiesList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeClientPropertiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeClientPropertiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeClientPropertiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ClientPropertiesResult> m_clientPropertiesList;

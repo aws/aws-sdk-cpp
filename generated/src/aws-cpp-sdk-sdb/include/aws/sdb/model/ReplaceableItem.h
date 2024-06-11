@@ -41,87 +41,33 @@ namespace Model
     AWS_SIMPLEDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * The name of the replaceable item.
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * The name of the replaceable item.
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * The name of the replaceable item.
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * The name of the replaceable item.
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * The name of the replaceable item.
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * The name of the replaceable item.
-     */
     inline ReplaceableItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * The name of the replaceable item.
-     */
     inline ReplaceableItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * The name of the replaceable item.
-     */
     inline ReplaceableItem& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The list of attributes for a replaceable item.
      */
     inline const Aws::Vector<ReplaceableAttribute>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * The list of attributes for a replaceable item.
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * The list of attributes for a replaceable item.
-     */
     inline void SetAttributes(const Aws::Vector<ReplaceableAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * The list of attributes for a replaceable item.
-     */
     inline void SetAttributes(Aws::Vector<ReplaceableAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * The list of attributes for a replaceable item.
-     */
     inline ReplaceableItem& WithAttributes(const Aws::Vector<ReplaceableAttribute>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * The list of attributes for a replaceable item.
-     */
     inline ReplaceableItem& WithAttributes(Aws::Vector<ReplaceableAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * The list of attributes for a replaceable item.
-     */
     inline ReplaceableItem& AddAttributes(const ReplaceableAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-
-    /**
-     * The list of attributes for a replaceable item.
-     */
     inline ReplaceableItem& AddAttributes(ReplaceableAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

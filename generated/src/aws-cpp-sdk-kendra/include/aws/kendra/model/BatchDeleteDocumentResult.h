@@ -34,77 +34,31 @@ namespace Model
     AWS_KENDRA_API BatchDeleteDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of documents that could not be removed from the index. Each entry
      * contains an error message that indicates why the document couldn't be removed
      * from the index.</p>
      */
     inline const Aws::Vector<BatchDeleteDocumentResponseFailedDocument>& GetFailedDocuments() const{ return m_failedDocuments; }
-
-    /**
-     * <p>A list of documents that could not be removed from the index. Each entry
-     * contains an error message that indicates why the document couldn't be removed
-     * from the index.</p>
-     */
     inline void SetFailedDocuments(const Aws::Vector<BatchDeleteDocumentResponseFailedDocument>& value) { m_failedDocuments = value; }
-
-    /**
-     * <p>A list of documents that could not be removed from the index. Each entry
-     * contains an error message that indicates why the document couldn't be removed
-     * from the index.</p>
-     */
     inline void SetFailedDocuments(Aws::Vector<BatchDeleteDocumentResponseFailedDocument>&& value) { m_failedDocuments = std::move(value); }
-
-    /**
-     * <p>A list of documents that could not be removed from the index. Each entry
-     * contains an error message that indicates why the document couldn't be removed
-     * from the index.</p>
-     */
     inline BatchDeleteDocumentResult& WithFailedDocuments(const Aws::Vector<BatchDeleteDocumentResponseFailedDocument>& value) { SetFailedDocuments(value); return *this;}
-
-    /**
-     * <p>A list of documents that could not be removed from the index. Each entry
-     * contains an error message that indicates why the document couldn't be removed
-     * from the index.</p>
-     */
     inline BatchDeleteDocumentResult& WithFailedDocuments(Aws::Vector<BatchDeleteDocumentResponseFailedDocument>&& value) { SetFailedDocuments(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of documents that could not be removed from the index. Each entry
-     * contains an error message that indicates why the document couldn't be removed
-     * from the index.</p>
-     */
     inline BatchDeleteDocumentResult& AddFailedDocuments(const BatchDeleteDocumentResponseFailedDocument& value) { m_failedDocuments.push_back(value); return *this; }
-
-    /**
-     * <p>A list of documents that could not be removed from the index. Each entry
-     * contains an error message that indicates why the document couldn't be removed
-     * from the index.</p>
-     */
     inline BatchDeleteDocumentResult& AddFailedDocuments(BatchDeleteDocumentResponseFailedDocument&& value) { m_failedDocuments.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchDeleteDocumentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchDeleteDocumentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchDeleteDocumentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BatchDeleteDocumentResponseFailedDocument> m_failedDocuments;

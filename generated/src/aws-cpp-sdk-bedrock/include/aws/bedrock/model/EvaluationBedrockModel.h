@@ -47,95 +47,34 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the Amazon Bedrock model specified.</p>
      */
     inline const Aws::String& GetModelIdentifier() const{ return m_modelIdentifier; }
-
-    /**
-     * <p>The ARN of the Amazon Bedrock model specified.</p>
-     */
     inline bool ModelIdentifierHasBeenSet() const { return m_modelIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ARN of the Amazon Bedrock model specified.</p>
-     */
     inline void SetModelIdentifier(const Aws::String& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = value; }
-
-    /**
-     * <p>The ARN of the Amazon Bedrock model specified.</p>
-     */
     inline void SetModelIdentifier(Aws::String&& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = std::move(value); }
-
-    /**
-     * <p>The ARN of the Amazon Bedrock model specified.</p>
-     */
     inline void SetModelIdentifier(const char* value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier.assign(value); }
-
-    /**
-     * <p>The ARN of the Amazon Bedrock model specified.</p>
-     */
     inline EvaluationBedrockModel& WithModelIdentifier(const Aws::String& value) { SetModelIdentifier(value); return *this;}
-
-    /**
-     * <p>The ARN of the Amazon Bedrock model specified.</p>
-     */
     inline EvaluationBedrockModel& WithModelIdentifier(Aws::String&& value) { SetModelIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Amazon Bedrock model specified.</p>
-     */
     inline EvaluationBedrockModel& WithModelIdentifier(const char* value) { SetModelIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Each Amazon Bedrock support different inference parameters that change how
      * the model behaves during inference.</p>
      */
     inline const Aws::String& GetInferenceParams() const{ return m_inferenceParams; }
-
-    /**
-     * <p>Each Amazon Bedrock support different inference parameters that change how
-     * the model behaves during inference.</p>
-     */
     inline bool InferenceParamsHasBeenSet() const { return m_inferenceParamsHasBeenSet; }
-
-    /**
-     * <p>Each Amazon Bedrock support different inference parameters that change how
-     * the model behaves during inference.</p>
-     */
     inline void SetInferenceParams(const Aws::String& value) { m_inferenceParamsHasBeenSet = true; m_inferenceParams = value; }
-
-    /**
-     * <p>Each Amazon Bedrock support different inference parameters that change how
-     * the model behaves during inference.</p>
-     */
     inline void SetInferenceParams(Aws::String&& value) { m_inferenceParamsHasBeenSet = true; m_inferenceParams = std::move(value); }
-
-    /**
-     * <p>Each Amazon Bedrock support different inference parameters that change how
-     * the model behaves during inference.</p>
-     */
     inline void SetInferenceParams(const char* value) { m_inferenceParamsHasBeenSet = true; m_inferenceParams.assign(value); }
-
-    /**
-     * <p>Each Amazon Bedrock support different inference parameters that change how
-     * the model behaves during inference.</p>
-     */
     inline EvaluationBedrockModel& WithInferenceParams(const Aws::String& value) { SetInferenceParams(value); return *this;}
-
-    /**
-     * <p>Each Amazon Bedrock support different inference parameters that change how
-     * the model behaves during inference.</p>
-     */
     inline EvaluationBedrockModel& WithInferenceParams(Aws::String&& value) { SetInferenceParams(std::move(value)); return *this;}
-
-    /**
-     * <p>Each Amazon Bedrock support different inference parameters that change how
-     * the model behaves during inference.</p>
-     */
     inline EvaluationBedrockModel& WithInferenceParams(const char* value) { SetInferenceParams(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelIdentifier;

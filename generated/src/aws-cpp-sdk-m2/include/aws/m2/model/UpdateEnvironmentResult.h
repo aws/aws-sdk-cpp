@@ -32,63 +32,29 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API UpdateEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier of the runtime environment that was updated.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-
-    /**
-     * <p>The unique identifier of the runtime environment that was updated.</p>
-     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentId = value; }
-
-    /**
-     * <p>The unique identifier of the runtime environment that was updated.</p>
-     */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the runtime environment that was updated.</p>
-     */
     inline void SetEnvironmentId(const char* value) { m_environmentId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the runtime environment that was updated.</p>
-     */
     inline UpdateEnvironmentResult& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the runtime environment that was updated.</p>
-     */
     inline UpdateEnvironmentResult& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the runtime environment that was updated.</p>
-     */
     inline UpdateEnvironmentResult& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateEnvironmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateEnvironmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateEnvironmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_environmentId;

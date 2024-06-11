@@ -40,215 +40,76 @@ namespace Model
     AWS_LAUNCHWIZARD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The allowed values of the deployment specification.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedValues() const{ return m_allowedValues; }
-
-    /**
-     * <p>The allowed values of the deployment specification.</p>
-     */
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
-
-    /**
-     * <p>The allowed values of the deployment specification.</p>
-     */
     inline void SetAllowedValues(const Aws::Vector<Aws::String>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
-
-    /**
-     * <p>The allowed values of the deployment specification.</p>
-     */
     inline void SetAllowedValues(Aws::Vector<Aws::String>&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
-
-    /**
-     * <p>The allowed values of the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& WithAllowedValues(const Aws::Vector<Aws::String>& value) { SetAllowedValues(value); return *this;}
-
-    /**
-     * <p>The allowed values of the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& WithAllowedValues(Aws::Vector<Aws::String>&& value) { SetAllowedValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The allowed values of the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& AddAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
-
-    /**
-     * <p>The allowed values of the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& AddAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The allowed values of the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& AddAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The conditionals used for the deployment specification.</p>
      */
     inline const Aws::Vector<DeploymentConditionalField>& GetConditionals() const{ return m_conditionals; }
-
-    /**
-     * <p>The conditionals used for the deployment specification.</p>
-     */
     inline bool ConditionalsHasBeenSet() const { return m_conditionalsHasBeenSet; }
-
-    /**
-     * <p>The conditionals used for the deployment specification.</p>
-     */
     inline void SetConditionals(const Aws::Vector<DeploymentConditionalField>& value) { m_conditionalsHasBeenSet = true; m_conditionals = value; }
-
-    /**
-     * <p>The conditionals used for the deployment specification.</p>
-     */
     inline void SetConditionals(Aws::Vector<DeploymentConditionalField>&& value) { m_conditionalsHasBeenSet = true; m_conditionals = std::move(value); }
-
-    /**
-     * <p>The conditionals used for the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& WithConditionals(const Aws::Vector<DeploymentConditionalField>& value) { SetConditionals(value); return *this;}
-
-    /**
-     * <p>The conditionals used for the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& WithConditionals(Aws::Vector<DeploymentConditionalField>&& value) { SetConditionals(std::move(value)); return *this;}
-
-    /**
-     * <p>The conditionals used for the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& AddConditionals(const DeploymentConditionalField& value) { m_conditionalsHasBeenSet = true; m_conditionals.push_back(value); return *this; }
-
-    /**
-     * <p>The conditionals used for the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& AddConditionals(DeploymentConditionalField&& value) { m_conditionalsHasBeenSet = true; m_conditionals.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the deployment specification.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the deployment specification.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the deployment specification.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the deployment specification.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the deployment specification.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the deployment specification.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the deployment specification.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the deployment specification.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the deployment specification.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the deployment specification.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the deployment specification.</p>
-     */
     inline DeploymentSpecificationsField& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates if the deployment specification is required.</p>
      */
     inline const Aws::String& GetRequired() const{ return m_required; }
-
-    /**
-     * <p>Indicates if the deployment specification is required.</p>
-     */
     inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
-
-    /**
-     * <p>Indicates if the deployment specification is required.</p>
-     */
     inline void SetRequired(const Aws::String& value) { m_requiredHasBeenSet = true; m_required = value; }
-
-    /**
-     * <p>Indicates if the deployment specification is required.</p>
-     */
     inline void SetRequired(Aws::String&& value) { m_requiredHasBeenSet = true; m_required = std::move(value); }
-
-    /**
-     * <p>Indicates if the deployment specification is required.</p>
-     */
     inline void SetRequired(const char* value) { m_requiredHasBeenSet = true; m_required.assign(value); }
-
-    /**
-     * <p>Indicates if the deployment specification is required.</p>
-     */
     inline DeploymentSpecificationsField& WithRequired(const Aws::String& value) { SetRequired(value); return *this;}
-
-    /**
-     * <p>Indicates if the deployment specification is required.</p>
-     */
     inline DeploymentSpecificationsField& WithRequired(Aws::String&& value) { SetRequired(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates if the deployment specification is required.</p>
-     */
     inline DeploymentSpecificationsField& WithRequired(const char* value) { SetRequired(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_allowedValues;

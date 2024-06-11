@@ -32,95 +32,34 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique ID of the replicated bot to be deleted from the secondary
      * region</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
-
-    /**
-     * <p>The unique ID of the replicated bot to be deleted from the secondary
-     * region</p>
-     */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the replicated bot to be deleted from the secondary
-     * region</p>
-     */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-
-    /**
-     * <p>The unique ID of the replicated bot to be deleted from the secondary
-     * region</p>
-     */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the replicated bot to be deleted from the secondary
-     * region</p>
-     */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-
-    /**
-     * <p>The unique ID of the replicated bot to be deleted from the secondary
-     * region</p>
-     */
     inline DeleteBotReplicaRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the replicated bot to be deleted from the secondary
-     * region</p>
-     */
     inline DeleteBotReplicaRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the replicated bot to be deleted from the secondary
-     * region</p>
-     */
     inline DeleteBotReplicaRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The secondary region of the replicated bot that will be deleted.</p>
      */
     inline const Aws::String& GetReplicaRegion() const{ return m_replicaRegion; }
-
-    /**
-     * <p>The secondary region of the replicated bot that will be deleted.</p>
-     */
     inline bool ReplicaRegionHasBeenSet() const { return m_replicaRegionHasBeenSet; }
-
-    /**
-     * <p>The secondary region of the replicated bot that will be deleted.</p>
-     */
     inline void SetReplicaRegion(const Aws::String& value) { m_replicaRegionHasBeenSet = true; m_replicaRegion = value; }
-
-    /**
-     * <p>The secondary region of the replicated bot that will be deleted.</p>
-     */
     inline void SetReplicaRegion(Aws::String&& value) { m_replicaRegionHasBeenSet = true; m_replicaRegion = std::move(value); }
-
-    /**
-     * <p>The secondary region of the replicated bot that will be deleted.</p>
-     */
     inline void SetReplicaRegion(const char* value) { m_replicaRegionHasBeenSet = true; m_replicaRegion.assign(value); }
-
-    /**
-     * <p>The secondary region of the replicated bot that will be deleted.</p>
-     */
     inline DeleteBotReplicaRequest& WithReplicaRegion(const Aws::String& value) { SetReplicaRegion(value); return *this;}
-
-    /**
-     * <p>The secondary region of the replicated bot that will be deleted.</p>
-     */
     inline DeleteBotReplicaRequest& WithReplicaRegion(Aws::String&& value) { SetReplicaRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The secondary region of the replicated bot that will be deleted.</p>
-     */
     inline DeleteBotReplicaRequest& WithReplicaRegion(const char* value) { SetReplicaRegion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_botId;

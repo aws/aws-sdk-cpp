@@ -32,30 +32,17 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetConfigurationName() const{ return m_configurationName; }
-
-    
     inline bool ConfigurationNameHasBeenSet() const { return m_configurationNameHasBeenSet; }
-
-    
     inline void SetConfigurationName(const Aws::String& value) { m_configurationNameHasBeenSet = true; m_configurationName = value; }
-
-    
     inline void SetConfigurationName(Aws::String&& value) { m_configurationNameHasBeenSet = true; m_configurationName = std::move(value); }
-
-    
     inline void SetConfigurationName(const char* value) { m_configurationNameHasBeenSet = true; m_configurationName.assign(value); }
-
-    
     inline GetNetworkAnalyzerConfigurationRequest& WithConfigurationName(const Aws::String& value) { SetConfigurationName(value); return *this;}
-
-    
     inline GetNetworkAnalyzerConfigurationRequest& WithConfigurationName(Aws::String&& value) { SetConfigurationName(std::move(value)); return *this;}
-
-    
     inline GetNetworkAnalyzerConfigurationRequest& WithConfigurationName(const char* value) { SetConfigurationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationName;

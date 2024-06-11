@@ -32,46 +32,19 @@ namespace Model
     AWS_BEDROCK_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
      */
     inline const Aws::String& GetProvisionedModelId() const{ return m_provisionedModelId; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
-     */
     inline bool ProvisionedModelIdHasBeenSet() const { return m_provisionedModelIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
-     */
     inline void SetProvisionedModelId(const Aws::String& value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
-     */
     inline void SetProvisionedModelId(Aws::String&& value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
-     */
     inline void SetProvisionedModelId(const char* value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
-     */
     inline DeleteProvisionedModelThroughputRequest& WithProvisionedModelId(const Aws::String& value) { SetProvisionedModelId(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
-     */
     inline DeleteProvisionedModelThroughputRequest& WithProvisionedModelId(Aws::String&& value) { SetProvisionedModelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
-     */
     inline DeleteProvisionedModelThroughputRequest& WithProvisionedModelId(const char* value) { SetProvisionedModelId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_provisionedModelId;

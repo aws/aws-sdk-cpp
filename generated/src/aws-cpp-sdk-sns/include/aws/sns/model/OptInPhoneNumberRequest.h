@@ -39,46 +39,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The phone number to opt in. Use E.164 format.</p>
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
-
-    /**
-     * <p>The phone number to opt in. Use E.164 format.</p>
-     */
     inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
-
-    /**
-     * <p>The phone number to opt in. Use E.164 format.</p>
-     */
     inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
-
-    /**
-     * <p>The phone number to opt in. Use E.164 format.</p>
-     */
     inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
-
-    /**
-     * <p>The phone number to opt in. Use E.164 format.</p>
-     */
     inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
-
-    /**
-     * <p>The phone number to opt in. Use E.164 format.</p>
-     */
     inline OptInPhoneNumberRequest& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
-
-    /**
-     * <p>The phone number to opt in. Use E.164 format.</p>
-     */
     inline OptInPhoneNumberRequest& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
-
-    /**
-     * <p>The phone number to opt in. Use E.164 format.</p>
-     */
     inline OptInPhoneNumberRequest& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_phoneNumber;

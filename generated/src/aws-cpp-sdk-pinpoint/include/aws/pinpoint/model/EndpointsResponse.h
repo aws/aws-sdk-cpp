@@ -39,54 +39,20 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of responses, one for each endpoint that's associated with the user
      * ID.</p>
      */
     inline const Aws::Vector<EndpointResponse>& GetItem() const{ return m_item; }
-
-    /**
-     * <p>An array of responses, one for each endpoint that's associated with the user
-     * ID.</p>
-     */
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
-
-    /**
-     * <p>An array of responses, one for each endpoint that's associated with the user
-     * ID.</p>
-     */
     inline void SetItem(const Aws::Vector<EndpointResponse>& value) { m_itemHasBeenSet = true; m_item = value; }
-
-    /**
-     * <p>An array of responses, one for each endpoint that's associated with the user
-     * ID.</p>
-     */
     inline void SetItem(Aws::Vector<EndpointResponse>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
-
-    /**
-     * <p>An array of responses, one for each endpoint that's associated with the user
-     * ID.</p>
-     */
     inline EndpointsResponse& WithItem(const Aws::Vector<EndpointResponse>& value) { SetItem(value); return *this;}
-
-    /**
-     * <p>An array of responses, one for each endpoint that's associated with the user
-     * ID.</p>
-     */
     inline EndpointsResponse& WithItem(Aws::Vector<EndpointResponse>&& value) { SetItem(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of responses, one for each endpoint that's associated with the user
-     * ID.</p>
-     */
     inline EndpointsResponse& AddItem(const EndpointResponse& value) { m_itemHasBeenSet = true; m_item.push_back(value); return *this; }
-
-    /**
-     * <p>An array of responses, one for each endpoint that's associated with the user
-     * ID.</p>
-     */
     inline EndpointsResponse& AddItem(EndpointResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<EndpointResponse> m_item;

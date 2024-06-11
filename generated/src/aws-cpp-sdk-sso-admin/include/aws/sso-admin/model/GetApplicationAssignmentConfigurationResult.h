@@ -32,6 +32,7 @@ namespace Model
     AWS_SSOADMIN_API GetApplicationAssignmentConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>If <code>AssignmentsRequired</code> is <code>true</code> (default value),
      * users don’t have access to the application unless an assignment is created using
@@ -40,47 +41,20 @@ namespace Model
      * API</a>. If <code>false</code>, all users have access to the application. </p>
      */
     inline bool GetAssignmentRequired() const{ return m_assignmentRequired; }
-
-    /**
-     * <p>If <code>AssignmentsRequired</code> is <code>true</code> (default value),
-     * users don’t have access to the application unless an assignment is created using
-     * the <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment
-     * API</a>. If <code>false</code>, all users have access to the application. </p>
-     */
     inline void SetAssignmentRequired(bool value) { m_assignmentRequired = value; }
-
-    /**
-     * <p>If <code>AssignmentsRequired</code> is <code>true</code> (default value),
-     * users don’t have access to the application unless an assignment is created using
-     * the <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment
-     * API</a>. If <code>false</code>, all users have access to the application. </p>
-     */
     inline GetApplicationAssignmentConfigurationResult& WithAssignmentRequired(bool value) { SetAssignmentRequired(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetApplicationAssignmentConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetApplicationAssignmentConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetApplicationAssignmentConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_assignmentRequired;

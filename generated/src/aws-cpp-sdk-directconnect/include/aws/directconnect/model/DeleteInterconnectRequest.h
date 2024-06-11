@@ -34,46 +34,19 @@ namespace Model
     AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the interconnect.</p>
      */
     inline const Aws::String& GetInterconnectId() const{ return m_interconnectId; }
-
-    /**
-     * <p>The ID of the interconnect.</p>
-     */
     inline bool InterconnectIdHasBeenSet() const { return m_interconnectIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the interconnect.</p>
-     */
     inline void SetInterconnectId(const Aws::String& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = value; }
-
-    /**
-     * <p>The ID of the interconnect.</p>
-     */
     inline void SetInterconnectId(Aws::String&& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = std::move(value); }
-
-    /**
-     * <p>The ID of the interconnect.</p>
-     */
     inline void SetInterconnectId(const char* value) { m_interconnectIdHasBeenSet = true; m_interconnectId.assign(value); }
-
-    /**
-     * <p>The ID of the interconnect.</p>
-     */
     inline DeleteInterconnectRequest& WithInterconnectId(const Aws::String& value) { SetInterconnectId(value); return *this;}
-
-    /**
-     * <p>The ID of the interconnect.</p>
-     */
     inline DeleteInterconnectRequest& WithInterconnectId(Aws::String&& value) { SetInterconnectId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the interconnect.</p>
-     */
     inline DeleteInterconnectRequest& WithInterconnectId(const char* value) { SetInterconnectId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_interconnectId;

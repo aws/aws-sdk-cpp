@@ -38,67 +38,29 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The format of the image.</p>
      */
     inline const ImageFormat& GetFormat() const{ return m_format; }
-
-    /**
-     * <p>The format of the image.</p>
-     */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-
-    /**
-     * <p>The format of the image.</p>
-     */
     inline void SetFormat(const ImageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-
-    /**
-     * <p>The format of the image.</p>
-     */
     inline void SetFormat(ImageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-
-    /**
-     * <p>The format of the image.</p>
-     */
     inline ImageBlock& WithFormat(const ImageFormat& value) { SetFormat(value); return *this;}
-
-    /**
-     * <p>The format of the image.</p>
-     */
     inline ImageBlock& WithFormat(ImageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The source for the image.</p>
      */
     inline const ImageSource& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The source for the image.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The source for the image.</p>
-     */
     inline void SetSource(const ImageSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The source for the image.</p>
-     */
     inline void SetSource(ImageSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The source for the image.</p>
-     */
     inline ImageBlock& WithSource(const ImageSource& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The source for the image.</p>
-     */
     inline ImageBlock& WithSource(ImageSource&& value) { SetSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ImageFormat m_format;

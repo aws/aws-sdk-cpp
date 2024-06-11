@@ -39,87 +39,33 @@ namespace Model
     AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the parameter object. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the parameter object. </p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the parameter object. </p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the parameter object. </p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the parameter object. </p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the parameter object. </p>
-     */
     inline ParameterObject& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the parameter object. </p>
-     */
     inline ParameterObject& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the parameter object. </p>
-     */
     inline ParameterObject& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The attributes of the parameter object.</p>
      */
     inline const Aws::Vector<ParameterAttribute>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>The attributes of the parameter object.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>The attributes of the parameter object.</p>
-     */
     inline void SetAttributes(const Aws::Vector<ParameterAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>The attributes of the parameter object.</p>
-     */
     inline void SetAttributes(Aws::Vector<ParameterAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>The attributes of the parameter object.</p>
-     */
     inline ParameterObject& WithAttributes(const Aws::Vector<ParameterAttribute>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>The attributes of the parameter object.</p>
-     */
     inline ParameterObject& WithAttributes(Aws::Vector<ParameterAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>The attributes of the parameter object.</p>
-     */
     inline ParameterObject& AddAttributes(const ParameterAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-
-    /**
-     * <p>The attributes of the parameter object.</p>
-     */
     inline ParameterObject& AddAttributes(ParameterAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_id;

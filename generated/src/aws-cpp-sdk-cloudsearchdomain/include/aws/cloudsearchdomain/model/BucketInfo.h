@@ -39,46 +39,19 @@ namespace Model
     AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of the calculated facet values and counts.</p>
      */
     inline const Aws::Vector<Bucket>& GetBuckets() const{ return m_buckets; }
-
-    /**
-     * <p>A list of the calculated facet values and counts.</p>
-     */
     inline bool BucketsHasBeenSet() const { return m_bucketsHasBeenSet; }
-
-    /**
-     * <p>A list of the calculated facet values and counts.</p>
-     */
     inline void SetBuckets(const Aws::Vector<Bucket>& value) { m_bucketsHasBeenSet = true; m_buckets = value; }
-
-    /**
-     * <p>A list of the calculated facet values and counts.</p>
-     */
     inline void SetBuckets(Aws::Vector<Bucket>&& value) { m_bucketsHasBeenSet = true; m_buckets = std::move(value); }
-
-    /**
-     * <p>A list of the calculated facet values and counts.</p>
-     */
     inline BucketInfo& WithBuckets(const Aws::Vector<Bucket>& value) { SetBuckets(value); return *this;}
-
-    /**
-     * <p>A list of the calculated facet values and counts.</p>
-     */
     inline BucketInfo& WithBuckets(Aws::Vector<Bucket>&& value) { SetBuckets(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the calculated facet values and counts.</p>
-     */
     inline BucketInfo& AddBuckets(const Bucket& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the calculated facet values and counts.</p>
-     */
     inline BucketInfo& AddBuckets(Bucket&& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Bucket> m_buckets;

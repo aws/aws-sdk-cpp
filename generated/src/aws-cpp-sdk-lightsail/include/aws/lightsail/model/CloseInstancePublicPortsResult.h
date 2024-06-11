@@ -33,63 +33,29 @@ namespace Model
     AWS_LIGHTSAIL_API CloseInstancePublicPortsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that describes the result of the action, such as the status of the
      * request, the timestamp of the request, and the resources affected by the
      * request.</p>
      */
     inline const Operation& GetOperation() const{ return m_operation; }
-
-    /**
-     * <p>An object that describes the result of the action, such as the status of the
-     * request, the timestamp of the request, and the resources affected by the
-     * request.</p>
-     */
     inline void SetOperation(const Operation& value) { m_operation = value; }
-
-    /**
-     * <p>An object that describes the result of the action, such as the status of the
-     * request, the timestamp of the request, and the resources affected by the
-     * request.</p>
-     */
     inline void SetOperation(Operation&& value) { m_operation = std::move(value); }
-
-    /**
-     * <p>An object that describes the result of the action, such as the status of the
-     * request, the timestamp of the request, and the resources affected by the
-     * request.</p>
-     */
     inline CloseInstancePublicPortsResult& WithOperation(const Operation& value) { SetOperation(value); return *this;}
-
-    /**
-     * <p>An object that describes the result of the action, such as the status of the
-     * request, the timestamp of the request, and the resources affected by the
-     * request.</p>
-     */
     inline CloseInstancePublicPortsResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CloseInstancePublicPortsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CloseInstancePublicPortsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CloseInstancePublicPortsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Operation m_operation;

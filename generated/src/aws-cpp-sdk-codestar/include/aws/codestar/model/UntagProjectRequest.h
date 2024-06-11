@@ -35,92 +35,34 @@ namespace Model
     AWS_CODESTAR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the project to remove tags from.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the project to remove tags from.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the project to remove tags from.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the project to remove tags from.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the project to remove tags from.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the project to remove tags from.</p>
-     */
     inline UntagProjectRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the project to remove tags from.</p>
-     */
     inline UntagProjectRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the project to remove tags from.</p>
-     */
     inline UntagProjectRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags to remove from the project.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags to remove from the project.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags to remove from the project.</p>
-     */
     inline void SetTags(const Aws::Vector<Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags to remove from the project.</p>
-     */
     inline void SetTags(Aws::Vector<Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags to remove from the project.</p>
-     */
     inline UntagProjectRequest& WithTags(const Aws::Vector<Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags to remove from the project.</p>
-     */
     inline UntagProjectRequest& WithTags(Aws::Vector<Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to remove from the project.</p>
-     */
     inline UntagProjectRequest& AddTags(const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to remove from the project.</p>
-     */
     inline UntagProjectRequest& AddTags(Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The tags to remove from the project.</p>
-     */
     inline UntagProjectRequest& AddTags(const char* value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_id;

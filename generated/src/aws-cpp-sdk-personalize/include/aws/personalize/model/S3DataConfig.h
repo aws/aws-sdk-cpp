@@ -38,95 +38,34 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The file path of the Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
-
-    /**
-     * <p>The file path of the Amazon S3 bucket.</p>
-     */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-
-    /**
-     * <p>The file path of the Amazon S3 bucket.</p>
-     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-
-    /**
-     * <p>The file path of the Amazon S3 bucket.</p>
-     */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-
-    /**
-     * <p>The file path of the Amazon S3 bucket.</p>
-     */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-
-    /**
-     * <p>The file path of the Amazon S3 bucket.</p>
-     */
     inline S3DataConfig& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-
-    /**
-     * <p>The file path of the Amazon S3 bucket.</p>
-     */
     inline S3DataConfig& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The file path of the Amazon S3 bucket.</p>
-     */
     inline S3DataConfig& WithPath(const char* value) { SetPath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that
      * Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that
-     * Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-     */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that
-     * Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-     */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that
-     * Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-     */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that
-     * Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-     */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that
-     * Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-     */
     inline S3DataConfig& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that
-     * Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-     */
     inline S3DataConfig& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that
-     * Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-     */
     inline S3DataConfig& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_path;

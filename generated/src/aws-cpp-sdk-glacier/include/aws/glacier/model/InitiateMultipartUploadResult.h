@@ -37,113 +37,44 @@ namespace Model
     AWS_GLACIER_API InitiateMultipartUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
      * created.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
-     * created.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
-
-    /**
-     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
-     * created.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-
-    /**
-     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
-     * created.</p>
-     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
-
-    /**
-     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
-     * created.</p>
-     */
     inline InitiateMultipartUploadResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
-     * created.</p>
-     */
     inline InitiateMultipartUploadResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
-     * created.</p>
-     */
     inline InitiateMultipartUploadResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the multipart upload. This value is also included as part of the
      * location.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
-
-    /**
-     * <p>The ID of the multipart upload. This value is also included as part of the
-     * location.</p>
-     */
     inline void SetUploadId(const Aws::String& value) { m_uploadId = value; }
-
-    /**
-     * <p>The ID of the multipart upload. This value is also included as part of the
-     * location.</p>
-     */
     inline void SetUploadId(Aws::String&& value) { m_uploadId = std::move(value); }
-
-    /**
-     * <p>The ID of the multipart upload. This value is also included as part of the
-     * location.</p>
-     */
     inline void SetUploadId(const char* value) { m_uploadId.assign(value); }
-
-    /**
-     * <p>The ID of the multipart upload. This value is also included as part of the
-     * location.</p>
-     */
     inline InitiateMultipartUploadResult& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
-
-    /**
-     * <p>The ID of the multipart upload. This value is also included as part of the
-     * location.</p>
-     */
     inline InitiateMultipartUploadResult& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the multipart upload. This value is also included as part of the
-     * location.</p>
-     */
     inline InitiateMultipartUploadResult& WithUploadId(const char* value) { SetUploadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline InitiateMultipartUploadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline InitiateMultipartUploadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline InitiateMultipartUploadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_location;

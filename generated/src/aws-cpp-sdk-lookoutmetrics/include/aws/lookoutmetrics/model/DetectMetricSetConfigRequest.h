@@ -33,77 +33,31 @@ namespace Model
     AWS_LOOKOUTMETRICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>An anomaly detector ARN.</p>
      */
     inline const Aws::String& GetAnomalyDetectorArn() const{ return m_anomalyDetectorArn; }
-
-    /**
-     * <p>An anomaly detector ARN.</p>
-     */
     inline bool AnomalyDetectorArnHasBeenSet() const { return m_anomalyDetectorArnHasBeenSet; }
-
-    /**
-     * <p>An anomaly detector ARN.</p>
-     */
     inline void SetAnomalyDetectorArn(const Aws::String& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = value; }
-
-    /**
-     * <p>An anomaly detector ARN.</p>
-     */
     inline void SetAnomalyDetectorArn(Aws::String&& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = std::move(value); }
-
-    /**
-     * <p>An anomaly detector ARN.</p>
-     */
     inline void SetAnomalyDetectorArn(const char* value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn.assign(value); }
-
-    /**
-     * <p>An anomaly detector ARN.</p>
-     */
     inline DetectMetricSetConfigRequest& WithAnomalyDetectorArn(const Aws::String& value) { SetAnomalyDetectorArn(value); return *this;}
-
-    /**
-     * <p>An anomaly detector ARN.</p>
-     */
     inline DetectMetricSetConfigRequest& WithAnomalyDetectorArn(Aws::String&& value) { SetAnomalyDetectorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>An anomaly detector ARN.</p>
-     */
     inline DetectMetricSetConfigRequest& WithAnomalyDetectorArn(const char* value) { SetAnomalyDetectorArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A data source.</p>
      */
     inline const AutoDetectionMetricSource& GetAutoDetectionMetricSource() const{ return m_autoDetectionMetricSource; }
-
-    /**
-     * <p>A data source.</p>
-     */
     inline bool AutoDetectionMetricSourceHasBeenSet() const { return m_autoDetectionMetricSourceHasBeenSet; }
-
-    /**
-     * <p>A data source.</p>
-     */
     inline void SetAutoDetectionMetricSource(const AutoDetectionMetricSource& value) { m_autoDetectionMetricSourceHasBeenSet = true; m_autoDetectionMetricSource = value; }
-
-    /**
-     * <p>A data source.</p>
-     */
     inline void SetAutoDetectionMetricSource(AutoDetectionMetricSource&& value) { m_autoDetectionMetricSourceHasBeenSet = true; m_autoDetectionMetricSource = std::move(value); }
-
-    /**
-     * <p>A data source.</p>
-     */
     inline DetectMetricSetConfigRequest& WithAutoDetectionMetricSource(const AutoDetectionMetricSource& value) { SetAutoDetectionMetricSource(value); return *this;}
-
-    /**
-     * <p>A data source.</p>
-     */
     inline DetectMetricSetConfigRequest& WithAutoDetectionMetricSource(AutoDetectionMetricSource&& value) { SetAutoDetectionMetricSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_anomalyDetectorArn;

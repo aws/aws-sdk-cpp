@@ -38,36 +38,17 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The URL of S3 bucket where you want to store the results of this request.</p>
      */
     inline const S3OutputUrl& GetS3OutputUrl() const{ return m_s3OutputUrl; }
-
-    /**
-     * <p>The URL of S3 bucket where you want to store the results of this request.</p>
-     */
     inline bool S3OutputUrlHasBeenSet() const { return m_s3OutputUrlHasBeenSet; }
-
-    /**
-     * <p>The URL of S3 bucket where you want to store the results of this request.</p>
-     */
     inline void SetS3OutputUrl(const S3OutputUrl& value) { m_s3OutputUrlHasBeenSet = true; m_s3OutputUrl = value; }
-
-    /**
-     * <p>The URL of S3 bucket where you want to store the results of this request.</p>
-     */
     inline void SetS3OutputUrl(S3OutputUrl&& value) { m_s3OutputUrlHasBeenSet = true; m_s3OutputUrl = std::move(value); }
-
-    /**
-     * <p>The URL of S3 bucket where you want to store the results of this request.</p>
-     */
     inline InstanceAssociationOutputUrl& WithS3OutputUrl(const S3OutputUrl& value) { SetS3OutputUrl(value); return *this;}
-
-    /**
-     * <p>The URL of S3 bucket where you want to store the results of this request.</p>
-     */
     inline InstanceAssociationOutputUrl& WithS3OutputUrl(S3OutputUrl&& value) { SetS3OutputUrl(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3OutputUrl m_s3OutputUrl;

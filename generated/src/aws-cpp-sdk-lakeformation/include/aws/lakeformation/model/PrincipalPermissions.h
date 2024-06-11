@@ -39,77 +39,31 @@ namespace Model
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The principal who is granted permissions.</p>
      */
     inline const DataLakePrincipal& GetPrincipal() const{ return m_principal; }
-
-    /**
-     * <p>The principal who is granted permissions.</p>
-     */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-
-    /**
-     * <p>The principal who is granted permissions.</p>
-     */
     inline void SetPrincipal(const DataLakePrincipal& value) { m_principalHasBeenSet = true; m_principal = value; }
-
-    /**
-     * <p>The principal who is granted permissions.</p>
-     */
     inline void SetPrincipal(DataLakePrincipal&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-
-    /**
-     * <p>The principal who is granted permissions.</p>
-     */
     inline PrincipalPermissions& WithPrincipal(const DataLakePrincipal& value) { SetPrincipal(value); return *this;}
-
-    /**
-     * <p>The principal who is granted permissions.</p>
-     */
     inline PrincipalPermissions& WithPrincipal(DataLakePrincipal&& value) { SetPrincipal(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The permissions that are granted to the principal.</p>
      */
     inline const Aws::Vector<Permission>& GetPermissions() const{ return m_permissions; }
-
-    /**
-     * <p>The permissions that are granted to the principal.</p>
-     */
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-
-    /**
-     * <p>The permissions that are granted to the principal.</p>
-     */
     inline void SetPermissions(const Aws::Vector<Permission>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-
-    /**
-     * <p>The permissions that are granted to the principal.</p>
-     */
     inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-
-    /**
-     * <p>The permissions that are granted to the principal.</p>
-     */
     inline PrincipalPermissions& WithPermissions(const Aws::Vector<Permission>& value) { SetPermissions(value); return *this;}
-
-    /**
-     * <p>The permissions that are granted to the principal.</p>
-     */
     inline PrincipalPermissions& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(std::move(value)); return *this;}
-
-    /**
-     * <p>The permissions that are granted to the principal.</p>
-     */
     inline PrincipalPermissions& AddPermissions(const Permission& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
-
-    /**
-     * <p>The permissions that are granted to the principal.</p>
-     */
     inline PrincipalPermissions& AddPermissions(Permission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     DataLakePrincipal m_principal;

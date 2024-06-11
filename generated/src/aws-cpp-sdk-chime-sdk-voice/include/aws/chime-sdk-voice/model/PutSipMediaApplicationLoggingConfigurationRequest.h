@@ -33,77 +33,31 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The SIP media application ID.</p>
      */
     inline const Aws::String& GetSipMediaApplicationId() const{ return m_sipMediaApplicationId; }
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline bool SipMediaApplicationIdHasBeenSet() const { return m_sipMediaApplicationIdHasBeenSet; }
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline void SetSipMediaApplicationId(const Aws::String& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = value; }
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline void SetSipMediaApplicationId(Aws::String&& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = std::move(value); }
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline void SetSipMediaApplicationId(const char* value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId.assign(value); }
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline PutSipMediaApplicationLoggingConfigurationRequest& WithSipMediaApplicationId(const Aws::String& value) { SetSipMediaApplicationId(value); return *this;}
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline PutSipMediaApplicationLoggingConfigurationRequest& WithSipMediaApplicationId(Aws::String&& value) { SetSipMediaApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline PutSipMediaApplicationLoggingConfigurationRequest& WithSipMediaApplicationId(const char* value) { SetSipMediaApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The logging configuration for the specified SIP media application.</p>
      */
     inline const SipMediaApplicationLoggingConfiguration& GetSipMediaApplicationLoggingConfiguration() const{ return m_sipMediaApplicationLoggingConfiguration; }
-
-    /**
-     * <p>The logging configuration for the specified SIP media application.</p>
-     */
     inline bool SipMediaApplicationLoggingConfigurationHasBeenSet() const { return m_sipMediaApplicationLoggingConfigurationHasBeenSet; }
-
-    /**
-     * <p>The logging configuration for the specified SIP media application.</p>
-     */
     inline void SetSipMediaApplicationLoggingConfiguration(const SipMediaApplicationLoggingConfiguration& value) { m_sipMediaApplicationLoggingConfigurationHasBeenSet = true; m_sipMediaApplicationLoggingConfiguration = value; }
-
-    /**
-     * <p>The logging configuration for the specified SIP media application.</p>
-     */
     inline void SetSipMediaApplicationLoggingConfiguration(SipMediaApplicationLoggingConfiguration&& value) { m_sipMediaApplicationLoggingConfigurationHasBeenSet = true; m_sipMediaApplicationLoggingConfiguration = std::move(value); }
-
-    /**
-     * <p>The logging configuration for the specified SIP media application.</p>
-     */
     inline PutSipMediaApplicationLoggingConfigurationRequest& WithSipMediaApplicationLoggingConfiguration(const SipMediaApplicationLoggingConfiguration& value) { SetSipMediaApplicationLoggingConfiguration(value); return *this;}
-
-    /**
-     * <p>The logging configuration for the specified SIP media application.</p>
-     */
     inline PutSipMediaApplicationLoggingConfigurationRequest& WithSipMediaApplicationLoggingConfiguration(SipMediaApplicationLoggingConfiguration&& value) { SetSipMediaApplicationLoggingConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sipMediaApplicationId;

@@ -36,26 +36,15 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes updates to whether snapshots are enabled for an application.</p>
      */
     inline bool GetSnapshotsEnabledUpdate() const{ return m_snapshotsEnabledUpdate; }
-
-    /**
-     * <p>Describes updates to whether snapshots are enabled for an application.</p>
-     */
     inline bool SnapshotsEnabledUpdateHasBeenSet() const { return m_snapshotsEnabledUpdateHasBeenSet; }
-
-    /**
-     * <p>Describes updates to whether snapshots are enabled for an application.</p>
-     */
     inline void SetSnapshotsEnabledUpdate(bool value) { m_snapshotsEnabledUpdateHasBeenSet = true; m_snapshotsEnabledUpdate = value; }
-
-    /**
-     * <p>Describes updates to whether snapshots are enabled for an application.</p>
-     */
     inline ApplicationSnapshotConfigurationUpdate& WithSnapshotsEnabledUpdate(bool value) { SetSnapshotsEnabledUpdate(value); return *this;}
-
+    ///@}
   private:
 
     bool m_snapshotsEnabledUpdate;

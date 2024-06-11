@@ -38,108 +38,39 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A resource ID for a new Application Manager application.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>A resource ID for a new Application Manager application.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>A resource ID for a new Application Manager application.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>A resource ID for a new Application Manager application.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>A resource ID for a new Application Manager application.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>A resource ID for a new Application Manager application.</p>
-     */
     inline CreateOpsMetadataRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>A resource ID for a new Application Manager application.</p>
-     */
     inline CreateOpsMetadataRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>A resource ID for a new Application Manager application.</p>
-     */
     inline CreateOpsMetadataRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Metadata for a new Application Manager application. </p>
      */
     inline const Aws::Map<Aws::String, MetadataValue>& GetMetadata() const{ return m_metadata; }
-
-    /**
-     * <p>Metadata for a new Application Manager application. </p>
-     */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-
-    /**
-     * <p>Metadata for a new Application Manager application. </p>
-     */
     inline void SetMetadata(const Aws::Map<Aws::String, MetadataValue>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-
-    /**
-     * <p>Metadata for a new Application Manager application. </p>
-     */
     inline void SetMetadata(Aws::Map<Aws::String, MetadataValue>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-
-    /**
-     * <p>Metadata for a new Application Manager application. </p>
-     */
     inline CreateOpsMetadataRequest& WithMetadata(const Aws::Map<Aws::String, MetadataValue>& value) { SetMetadata(value); return *this;}
-
-    /**
-     * <p>Metadata for a new Application Manager application. </p>
-     */
     inline CreateOpsMetadataRequest& WithMetadata(Aws::Map<Aws::String, MetadataValue>&& value) { SetMetadata(std::move(value)); return *this;}
-
-    /**
-     * <p>Metadata for a new Application Manager application. </p>
-     */
     inline CreateOpsMetadataRequest& AddMetadata(const Aws::String& key, const MetadataValue& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
-
-    /**
-     * <p>Metadata for a new Application Manager application. </p>
-     */
     inline CreateOpsMetadataRequest& AddMetadata(Aws::String&& key, const MetadataValue& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Metadata for a new Application Manager application. </p>
-     */
     inline CreateOpsMetadataRequest& AddMetadata(const Aws::String& key, MetadataValue&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Metadata for a new Application Manager application. </p>
-     */
     inline CreateOpsMetadataRequest& AddMetadata(Aws::String&& key, MetadataValue&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Metadata for a new Application Manager application. </p>
-     */
     inline CreateOpsMetadataRequest& AddMetadata(const char* key, MetadataValue&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Metadata for a new Application Manager application. </p>
-     */
     inline CreateOpsMetadataRequest& AddMetadata(const char* key, const MetadataValue& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Optional metadata that you assign to a resource. You can specify a maximum of
      * five tags for an OpsMetadata object. Tags enable you to categorize a resource in
@@ -150,84 +81,14 @@ namespace Model
      * </p> </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Optional metadata that you assign to a resource. You can specify a maximum of
-     * five tags for an OpsMetadata object. Tags enable you to categorize a resource in
-     * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag an OpsMetadata object to identify an environment or target
-     * Amazon Web Services Region. In this case, you could specify the following
-     * key-value pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code>
-     * </p> </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Optional metadata that you assign to a resource. You can specify a maximum of
-     * five tags for an OpsMetadata object. Tags enable you to categorize a resource in
-     * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag an OpsMetadata object to identify an environment or target
-     * Amazon Web Services Region. In this case, you could specify the following
-     * key-value pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code>
-     * </p> </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Optional metadata that you assign to a resource. You can specify a maximum of
-     * five tags for an OpsMetadata object. Tags enable you to categorize a resource in
-     * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag an OpsMetadata object to identify an environment or target
-     * Amazon Web Services Region. In this case, you could specify the following
-     * key-value pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code>
-     * </p> </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Optional metadata that you assign to a resource. You can specify a maximum of
-     * five tags for an OpsMetadata object. Tags enable you to categorize a resource in
-     * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag an OpsMetadata object to identify an environment or target
-     * Amazon Web Services Region. In this case, you could specify the following
-     * key-value pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code>
-     * </p> </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
-     */
     inline CreateOpsMetadataRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Optional metadata that you assign to a resource. You can specify a maximum of
-     * five tags for an OpsMetadata object. Tags enable you to categorize a resource in
-     * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag an OpsMetadata object to identify an environment or target
-     * Amazon Web Services Region. In this case, you could specify the following
-     * key-value pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code>
-     * </p> </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
-     */
     inline CreateOpsMetadataRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Optional metadata that you assign to a resource. You can specify a maximum of
-     * five tags for an OpsMetadata object. Tags enable you to categorize a resource in
-     * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag an OpsMetadata object to identify an environment or target
-     * Amazon Web Services Region. In this case, you could specify the following
-     * key-value pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code>
-     * </p> </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
-     */
     inline CreateOpsMetadataRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>Optional metadata that you assign to a resource. You can specify a maximum of
-     * five tags for an OpsMetadata object. Tags enable you to categorize a resource in
-     * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag an OpsMetadata object to identify an environment or target
-     * Amazon Web Services Region. In this case, you could specify the following
-     * key-value pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code>
-     * </p> </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
-     */
     inline CreateOpsMetadataRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceId;

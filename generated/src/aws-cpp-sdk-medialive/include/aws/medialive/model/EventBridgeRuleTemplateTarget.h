@@ -37,46 +37,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Target ARNs must be either an SNS topic or CloudWatch log group.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * Target ARNs must be either an SNS topic or CloudWatch log group.
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * Target ARNs must be either an SNS topic or CloudWatch log group.
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * Target ARNs must be either an SNS topic or CloudWatch log group.
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * Target ARNs must be either an SNS topic or CloudWatch log group.
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * Target ARNs must be either an SNS topic or CloudWatch log group.
-     */
     inline EventBridgeRuleTemplateTarget& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * Target ARNs must be either an SNS topic or CloudWatch log group.
-     */
     inline EventBridgeRuleTemplateTarget& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * Target ARNs must be either an SNS topic or CloudWatch log group.
-     */
     inline EventBridgeRuleTemplateTarget& WithArn(const char* value) { SetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

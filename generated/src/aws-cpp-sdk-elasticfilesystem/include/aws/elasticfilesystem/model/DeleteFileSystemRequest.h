@@ -35,46 +35,19 @@ namespace Model
     AWS_EFS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the file system you want to delete.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
-
-    /**
-     * <p>The ID of the file system you want to delete.</p>
-     */
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the file system you want to delete.</p>
-     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-
-    /**
-     * <p>The ID of the file system you want to delete.</p>
-     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-
-    /**
-     * <p>The ID of the file system you want to delete.</p>
-     */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-
-    /**
-     * <p>The ID of the file system you want to delete.</p>
-     */
     inline DeleteFileSystemRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-
-    /**
-     * <p>The ID of the file system you want to delete.</p>
-     */
     inline DeleteFileSystemRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the file system you want to delete.</p>
-     */
     inline DeleteFileSystemRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileSystemId;

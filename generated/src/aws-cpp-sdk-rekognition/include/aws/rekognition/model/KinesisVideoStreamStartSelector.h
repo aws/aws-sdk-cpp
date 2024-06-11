@@ -43,79 +43,31 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The timestamp from the producer corresponding to the fragment, in
      * milliseconds, expressed in unix time format. </p>
      */
     inline long long GetProducerTimestamp() const{ return m_producerTimestamp; }
-
-    /**
-     * <p> The timestamp from the producer corresponding to the fragment, in
-     * milliseconds, expressed in unix time format. </p>
-     */
     inline bool ProducerTimestampHasBeenSet() const { return m_producerTimestampHasBeenSet; }
-
-    /**
-     * <p> The timestamp from the producer corresponding to the fragment, in
-     * milliseconds, expressed in unix time format. </p>
-     */
     inline void SetProducerTimestamp(long long value) { m_producerTimestampHasBeenSet = true; m_producerTimestamp = value; }
-
-    /**
-     * <p> The timestamp from the producer corresponding to the fragment, in
-     * milliseconds, expressed in unix time format. </p>
-     */
     inline KinesisVideoStreamStartSelector& WithProducerTimestamp(long long value) { SetProducerTimestamp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The unique identifier of the fragment. This value monotonically increases
      * based on the ingestion order. </p>
      */
     inline const Aws::String& GetFragmentNumber() const{ return m_fragmentNumber; }
-
-    /**
-     * <p> The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order. </p>
-     */
     inline bool FragmentNumberHasBeenSet() const { return m_fragmentNumberHasBeenSet; }
-
-    /**
-     * <p> The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order. </p>
-     */
     inline void SetFragmentNumber(const Aws::String& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = value; }
-
-    /**
-     * <p> The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order. </p>
-     */
     inline void SetFragmentNumber(Aws::String&& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = std::move(value); }
-
-    /**
-     * <p> The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order. </p>
-     */
     inline void SetFragmentNumber(const char* value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber.assign(value); }
-
-    /**
-     * <p> The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order. </p>
-     */
     inline KinesisVideoStreamStartSelector& WithFragmentNumber(const Aws::String& value) { SetFragmentNumber(value); return *this;}
-
-    /**
-     * <p> The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order. </p>
-     */
     inline KinesisVideoStreamStartSelector& WithFragmentNumber(Aws::String&& value) { SetFragmentNumber(std::move(value)); return *this;}
-
-    /**
-     * <p> The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order. </p>
-     */
     inline KinesisVideoStreamStartSelector& WithFragmentNumber(const char* value) { SetFragmentNumber(value); return *this;}
-
+    ///@}
   private:
 
     long long m_producerTimestamp;

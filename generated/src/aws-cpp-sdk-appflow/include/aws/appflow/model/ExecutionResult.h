@@ -37,149 +37,69 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Provides any error message information related to the flow run. </p>
      */
     inline const ErrorInfo& GetErrorInfo() const{ return m_errorInfo; }
-
-    /**
-     * <p> Provides any error message information related to the flow run. </p>
-     */
     inline bool ErrorInfoHasBeenSet() const { return m_errorInfoHasBeenSet; }
-
-    /**
-     * <p> Provides any error message information related to the flow run. </p>
-     */
     inline void SetErrorInfo(const ErrorInfo& value) { m_errorInfoHasBeenSet = true; m_errorInfo = value; }
-
-    /**
-     * <p> Provides any error message information related to the flow run. </p>
-     */
     inline void SetErrorInfo(ErrorInfo&& value) { m_errorInfoHasBeenSet = true; m_errorInfo = std::move(value); }
-
-    /**
-     * <p> Provides any error message information related to the flow run. </p>
-     */
     inline ExecutionResult& WithErrorInfo(const ErrorInfo& value) { SetErrorInfo(value); return *this;}
-
-    /**
-     * <p> Provides any error message information related to the flow run. </p>
-     */
     inline ExecutionResult& WithErrorInfo(ErrorInfo&& value) { SetErrorInfo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The total number of bytes processed by the flow run. </p>
      */
     inline long long GetBytesProcessed() const{ return m_bytesProcessed; }
-
-    /**
-     * <p> The total number of bytes processed by the flow run. </p>
-     */
     inline bool BytesProcessedHasBeenSet() const { return m_bytesProcessedHasBeenSet; }
-
-    /**
-     * <p> The total number of bytes processed by the flow run. </p>
-     */
     inline void SetBytesProcessed(long long value) { m_bytesProcessedHasBeenSet = true; m_bytesProcessed = value; }
-
-    /**
-     * <p> The total number of bytes processed by the flow run. </p>
-     */
     inline ExecutionResult& WithBytesProcessed(long long value) { SetBytesProcessed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The total number of bytes written as a result of the flow run. </p>
      */
     inline long long GetBytesWritten() const{ return m_bytesWritten; }
-
-    /**
-     * <p> The total number of bytes written as a result of the flow run. </p>
-     */
     inline bool BytesWrittenHasBeenSet() const { return m_bytesWrittenHasBeenSet; }
-
-    /**
-     * <p> The total number of bytes written as a result of the flow run. </p>
-     */
     inline void SetBytesWritten(long long value) { m_bytesWrittenHasBeenSet = true; m_bytesWritten = value; }
-
-    /**
-     * <p> The total number of bytes written as a result of the flow run. </p>
-     */
     inline ExecutionResult& WithBytesWritten(long long value) { SetBytesWritten(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The number of records processed in the flow run. </p>
      */
     inline long long GetRecordsProcessed() const{ return m_recordsProcessed; }
-
-    /**
-     * <p> The number of records processed in the flow run. </p>
-     */
     inline bool RecordsProcessedHasBeenSet() const { return m_recordsProcessedHasBeenSet; }
-
-    /**
-     * <p> The number of records processed in the flow run. </p>
-     */
     inline void SetRecordsProcessed(long long value) { m_recordsProcessedHasBeenSet = true; m_recordsProcessed = value; }
-
-    /**
-     * <p> The number of records processed in the flow run. </p>
-     */
     inline ExecutionResult& WithRecordsProcessed(long long value) { SetRecordsProcessed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of processes that Amazon AppFlow ran at the same time when it
      * retrieved your data.</p>
      */
     inline long long GetNumParallelProcesses() const{ return m_numParallelProcesses; }
-
-    /**
-     * <p>The number of processes that Amazon AppFlow ran at the same time when it
-     * retrieved your data.</p>
-     */
     inline bool NumParallelProcessesHasBeenSet() const { return m_numParallelProcessesHasBeenSet; }
-
-    /**
-     * <p>The number of processes that Amazon AppFlow ran at the same time when it
-     * retrieved your data.</p>
-     */
     inline void SetNumParallelProcesses(long long value) { m_numParallelProcessesHasBeenSet = true; m_numParallelProcesses = value; }
-
-    /**
-     * <p>The number of processes that Amazon AppFlow ran at the same time when it
-     * retrieved your data.</p>
-     */
     inline ExecutionResult& WithNumParallelProcesses(long long value) { SetNumParallelProcesses(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of records that Amazon AppFlow receives in each page of
      * the response from your SAP application.</p>
      */
     inline long long GetMaxPageSize() const{ return m_maxPageSize; }
-
-    /**
-     * <p>The maximum number of records that Amazon AppFlow receives in each page of
-     * the response from your SAP application.</p>
-     */
     inline bool MaxPageSizeHasBeenSet() const { return m_maxPageSizeHasBeenSet; }
-
-    /**
-     * <p>The maximum number of records that Amazon AppFlow receives in each page of
-     * the response from your SAP application.</p>
-     */
     inline void SetMaxPageSize(long long value) { m_maxPageSizeHasBeenSet = true; m_maxPageSize = value; }
-
-    /**
-     * <p>The maximum number of records that Amazon AppFlow receives in each page of
-     * the response from your SAP application.</p>
-     */
     inline ExecutionResult& WithMaxPageSize(long long value) { SetMaxPageSize(value); return *this;}
-
+    ///@}
   private:
 
     ErrorInfo m_errorInfo;

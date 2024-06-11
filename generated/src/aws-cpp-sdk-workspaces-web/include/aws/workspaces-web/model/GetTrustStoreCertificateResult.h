@@ -33,89 +33,40 @@ namespace Model
     AWS_WORKSPACESWEB_API GetTrustStoreCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The certificate of the trust store certificate.</p>
      */
     inline const Certificate& GetCertificate() const{ return m_certificate; }
-
-    /**
-     * <p>The certificate of the trust store certificate.</p>
-     */
     inline void SetCertificate(const Certificate& value) { m_certificate = value; }
-
-    /**
-     * <p>The certificate of the trust store certificate.</p>
-     */
     inline void SetCertificate(Certificate&& value) { m_certificate = std::move(value); }
-
-    /**
-     * <p>The certificate of the trust store certificate.</p>
-     */
     inline GetTrustStoreCertificateResult& WithCertificate(const Certificate& value) { SetCertificate(value); return *this;}
-
-    /**
-     * <p>The certificate of the trust store certificate.</p>
-     */
     inline GetTrustStoreCertificateResult& WithCertificate(Certificate&& value) { SetCertificate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the trust store certificate.</p>
      */
     inline const Aws::String& GetTrustStoreArn() const{ return m_trustStoreArn; }
-
-    /**
-     * <p>The ARN of the trust store certificate.</p>
-     */
     inline void SetTrustStoreArn(const Aws::String& value) { m_trustStoreArn = value; }
-
-    /**
-     * <p>The ARN of the trust store certificate.</p>
-     */
     inline void SetTrustStoreArn(Aws::String&& value) { m_trustStoreArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the trust store certificate.</p>
-     */
     inline void SetTrustStoreArn(const char* value) { m_trustStoreArn.assign(value); }
-
-    /**
-     * <p>The ARN of the trust store certificate.</p>
-     */
     inline GetTrustStoreCertificateResult& WithTrustStoreArn(const Aws::String& value) { SetTrustStoreArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the trust store certificate.</p>
-     */
     inline GetTrustStoreCertificateResult& WithTrustStoreArn(Aws::String&& value) { SetTrustStoreArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the trust store certificate.</p>
-     */
     inline GetTrustStoreCertificateResult& WithTrustStoreArn(const char* value) { SetTrustStoreArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTrustStoreCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTrustStoreCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTrustStoreCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Certificate m_certificate;

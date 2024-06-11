@@ -39,97 +39,34 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A policy that states what to do in the case of failure. The action will fail
      * if there are configuration errors. For example, the caller does not have the
      * permissions to call the sendRawEmail API.</p>
      */
     inline const ActionFailurePolicy& GetActionFailurePolicy() const{ return m_actionFailurePolicy; }
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the caller does not have the
-     * permissions to call the sendRawEmail API.</p>
-     */
     inline bool ActionFailurePolicyHasBeenSet() const { return m_actionFailurePolicyHasBeenSet; }
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the caller does not have the
-     * permissions to call the sendRawEmail API.</p>
-     */
     inline void SetActionFailurePolicy(const ActionFailurePolicy& value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = value; }
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the caller does not have the
-     * permissions to call the sendRawEmail API.</p>
-     */
     inline void SetActionFailurePolicy(ActionFailurePolicy&& value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = std::move(value); }
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the caller does not have the
-     * permissions to call the sendRawEmail API.</p>
-     */
     inline SendAction& WithActionFailurePolicy(const ActionFailurePolicy& value) { SetActionFailurePolicy(value); return *this;}
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the caller does not have the
-     * permissions to call the sendRawEmail API.</p>
-     */
     inline SendAction& WithActionFailurePolicy(ActionFailurePolicy&& value) { SetActionFailurePolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the role to use for this action. This role
      * must have access to the ses:SendRawEmail API.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role to use for this action. This role
-     * must have access to the ses:SendRawEmail API.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role to use for this action. This role
-     * must have access to the ses:SendRawEmail API.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role to use for this action. This role
-     * must have access to the ses:SendRawEmail API.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role to use for this action. This role
-     * must have access to the ses:SendRawEmail API.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role to use for this action. This role
-     * must have access to the ses:SendRawEmail API.</p>
-     */
     inline SendAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role to use for this action. This role
-     * must have access to the ses:SendRawEmail API.</p>
-     */
     inline SendAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role to use for this action. This role
-     * must have access to the ses:SendRawEmail API.</p>
-     */
     inline SendAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     ActionFailurePolicy m_actionFailurePolicy;

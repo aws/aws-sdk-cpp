@@ -39,79 +39,38 @@ namespace Model
     AWS_SQS_API CreateQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The URL of the created Amazon SQS queue.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
-
-    /**
-     * <p>The URL of the created Amazon SQS queue.</p>
-     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrl = value; }
-
-    /**
-     * <p>The URL of the created Amazon SQS queue.</p>
-     */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrl = std::move(value); }
-
-    /**
-     * <p>The URL of the created Amazon SQS queue.</p>
-     */
     inline void SetQueueUrl(const char* value) { m_queueUrl.assign(value); }
-
-    /**
-     * <p>The URL of the created Amazon SQS queue.</p>
-     */
     inline CreateQueueResult& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
-
-    /**
-     * <p>The URL of the created Amazon SQS queue.</p>
-     */
     inline CreateQueueResult& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL of the created Amazon SQS queue.</p>
-     */
     inline CreateQueueResult& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateQueueResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateQueueResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateQueueResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateQueueResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateQueueResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_queueUrl;

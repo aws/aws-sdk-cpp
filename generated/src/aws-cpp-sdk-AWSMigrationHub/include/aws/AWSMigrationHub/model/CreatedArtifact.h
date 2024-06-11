@@ -38,95 +38,34 @@ namespace Model
     AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An ARN that uniquely identifies the result of a migration task.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>An ARN that uniquely identifies the result of a migration task.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>An ARN that uniquely identifies the result of a migration task.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>An ARN that uniquely identifies the result of a migration task.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>An ARN that uniquely identifies the result of a migration task.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>An ARN that uniquely identifies the result of a migration task.</p>
-     */
     inline CreatedArtifact& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>An ARN that uniquely identifies the result of a migration task.</p>
-     */
     inline CreatedArtifact& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>An ARN that uniquely identifies the result of a migration task.</p>
-     */
     inline CreatedArtifact& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description that can be free-form text to record additional detail about
      * the artifact for clarity or for later reference.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description that can be free-form text to record additional detail about
-     * the artifact for clarity or for later reference.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description that can be free-form text to record additional detail about
-     * the artifact for clarity or for later reference.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description that can be free-form text to record additional detail about
-     * the artifact for clarity or for later reference.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description that can be free-form text to record additional detail about
-     * the artifact for clarity or for later reference.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description that can be free-form text to record additional detail about
-     * the artifact for clarity or for later reference.</p>
-     */
     inline CreatedArtifact& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description that can be free-form text to record additional detail about
-     * the artifact for clarity or for later reference.</p>
-     */
     inline CreatedArtifact& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description that can be free-form text to record additional detail about
-     * the artifact for clarity or for later reference.</p>
-     */
     inline CreatedArtifact& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

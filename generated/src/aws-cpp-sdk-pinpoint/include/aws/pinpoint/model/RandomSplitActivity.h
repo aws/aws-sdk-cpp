@@ -41,54 +41,20 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The paths for the activity, including the percentage of participants to enter
      * each path and the activity to perform for each path.</p>
      */
     inline const Aws::Vector<RandomSplitEntry>& GetBranches() const{ return m_branches; }
-
-    /**
-     * <p>The paths for the activity, including the percentage of participants to enter
-     * each path and the activity to perform for each path.</p>
-     */
     inline bool BranchesHasBeenSet() const { return m_branchesHasBeenSet; }
-
-    /**
-     * <p>The paths for the activity, including the percentage of participants to enter
-     * each path and the activity to perform for each path.</p>
-     */
     inline void SetBranches(const Aws::Vector<RandomSplitEntry>& value) { m_branchesHasBeenSet = true; m_branches = value; }
-
-    /**
-     * <p>The paths for the activity, including the percentage of participants to enter
-     * each path and the activity to perform for each path.</p>
-     */
     inline void SetBranches(Aws::Vector<RandomSplitEntry>&& value) { m_branchesHasBeenSet = true; m_branches = std::move(value); }
-
-    /**
-     * <p>The paths for the activity, including the percentage of participants to enter
-     * each path and the activity to perform for each path.</p>
-     */
     inline RandomSplitActivity& WithBranches(const Aws::Vector<RandomSplitEntry>& value) { SetBranches(value); return *this;}
-
-    /**
-     * <p>The paths for the activity, including the percentage of participants to enter
-     * each path and the activity to perform for each path.</p>
-     */
     inline RandomSplitActivity& WithBranches(Aws::Vector<RandomSplitEntry>&& value) { SetBranches(std::move(value)); return *this;}
-
-    /**
-     * <p>The paths for the activity, including the percentage of participants to enter
-     * each path and the activity to perform for each path.</p>
-     */
     inline RandomSplitActivity& AddBranches(const RandomSplitEntry& value) { m_branchesHasBeenSet = true; m_branches.push_back(value); return *this; }
-
-    /**
-     * <p>The paths for the activity, including the percentage of participants to enter
-     * each path and the activity to perform for each path.</p>
-     */
     inline RandomSplitActivity& AddBranches(RandomSplitEntry&& value) { m_branchesHasBeenSet = true; m_branches.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<RandomSplitEntry> m_branches;

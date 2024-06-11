@@ -40,95 +40,34 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
      */
     inline const Aws::String& GetSamlProviderArn() const{ return m_samlProviderArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
-     */
     inline bool SamlProviderArnHasBeenSet() const { return m_samlProviderArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
-     */
     inline void SetSamlProviderArn(const Aws::String& value) { m_samlProviderArnHasBeenSet = true; m_samlProviderArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
-     */
     inline void SetSamlProviderArn(Aws::String&& value) { m_samlProviderArnHasBeenSet = true; m_samlProviderArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
-     */
     inline void SetSamlProviderArn(const char* value) { m_samlProviderArnHasBeenSet = true; m_samlProviderArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
-     */
     inline FederatedAuthentication& WithSamlProviderArn(const Aws::String& value) { SetSamlProviderArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
-     */
     inline FederatedAuthentication& WithSamlProviderArn(Aws::String&& value) { SetSamlProviderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
-     */
     inline FederatedAuthentication& WithSamlProviderArn(const char* value) { SetSamlProviderArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
      * self-service portal.</p>
      */
     inline const Aws::String& GetSelfServiceSamlProviderArn() const{ return m_selfServiceSamlProviderArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
-     * self-service portal.</p>
-     */
     inline bool SelfServiceSamlProviderArnHasBeenSet() const { return m_selfServiceSamlProviderArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
-     * self-service portal.</p>
-     */
     inline void SetSelfServiceSamlProviderArn(const Aws::String& value) { m_selfServiceSamlProviderArnHasBeenSet = true; m_selfServiceSamlProviderArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
-     * self-service portal.</p>
-     */
     inline void SetSelfServiceSamlProviderArn(Aws::String&& value) { m_selfServiceSamlProviderArnHasBeenSet = true; m_selfServiceSamlProviderArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
-     * self-service portal.</p>
-     */
     inline void SetSelfServiceSamlProviderArn(const char* value) { m_selfServiceSamlProviderArnHasBeenSet = true; m_selfServiceSamlProviderArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
-     * self-service portal.</p>
-     */
     inline FederatedAuthentication& WithSelfServiceSamlProviderArn(const Aws::String& value) { SetSelfServiceSamlProviderArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
-     * self-service portal.</p>
-     */
     inline FederatedAuthentication& WithSelfServiceSamlProviderArn(Aws::String&& value) { SetSelfServiceSamlProviderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
-     * self-service portal.</p>
-     */
     inline FederatedAuthentication& WithSelfServiceSamlProviderArn(const char* value) { SetSelfServiceSamlProviderArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_samlProviderArn;

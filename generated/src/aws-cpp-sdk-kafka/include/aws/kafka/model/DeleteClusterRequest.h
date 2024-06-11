@@ -38,6 +38,7 @@ namespace Model
     AWS_KAFKA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * 
             <p>The Amazon Resource Name (ARN) that uniquely identifies the
@@ -45,120 +46,30 @@ namespace Model
          
      */
     inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * cluster.</p>
-         
-     */
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * cluster.</p>
-         
-     */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * cluster.</p>
-         
-     */
     inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * cluster.</p>
-         
-     */
     inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * cluster.</p>
-         
-     */
     inline DeleteClusterRequest& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * cluster.</p>
-         
-     */
     inline DeleteClusterRequest& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * cluster.</p>
-         
-     */
     inline DeleteClusterRequest& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * 
             <p>The current version of the MSK cluster.</p>
          
      */
     inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
-
-    /**
-     * 
-            <p>The current version of the MSK cluster.</p>
-         
-     */
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-
-    /**
-     * 
-            <p>The current version of the MSK cluster.</p>
-         
-     */
     inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-
-    /**
-     * 
-            <p>The current version of the MSK cluster.</p>
-         
-     */
     inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-
-    /**
-     * 
-            <p>The current version of the MSK cluster.</p>
-         
-     */
     inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
-
-    /**
-     * 
-            <p>The current version of the MSK cluster.</p>
-         
-     */
     inline DeleteClusterRequest& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-
-    /**
-     * 
-            <p>The current version of the MSK cluster.</p>
-         
-     */
     inline DeleteClusterRequest& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The current version of the MSK cluster.</p>
-         
-     */
     inline DeleteClusterRequest& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterArn;

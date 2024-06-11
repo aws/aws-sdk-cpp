@@ -33,53 +33,27 @@ namespace Model
     AWS_GLOBALACCELERATOR_API DescribeListenerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The description of a listener.</p>
      */
     inline const Listener& GetListener() const{ return m_listener; }
-
-    /**
-     * <p>The description of a listener.</p>
-     */
     inline void SetListener(const Listener& value) { m_listener = value; }
-
-    /**
-     * <p>The description of a listener.</p>
-     */
     inline void SetListener(Listener&& value) { m_listener = std::move(value); }
-
-    /**
-     * <p>The description of a listener.</p>
-     */
     inline DescribeListenerResult& WithListener(const Listener& value) { SetListener(value); return *this;}
-
-    /**
-     * <p>The description of a listener.</p>
-     */
     inline DescribeListenerResult& WithListener(Listener&& value) { SetListener(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeListenerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeListenerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeListenerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Listener m_listener;

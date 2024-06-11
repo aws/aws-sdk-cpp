@@ -46,6 +46,7 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The medium to store the volume. The default value is an empty string, which
      * uses the storage of the node.</p> <dl> <dt>""</dt> <dd> <p> <b>(Default)</b> Use
@@ -55,126 +56,29 @@ namespace Model
      * against the container's memory limit.</p> </dd> </dl>
      */
     inline const Aws::String& GetMedium() const{ return m_medium; }
-
-    /**
-     * <p>The medium to store the volume. The default value is an empty string, which
-     * uses the storage of the node.</p> <dl> <dt>""</dt> <dd> <p> <b>(Default)</b> Use
-     * the disk storage of the node.</p> </dd> <dt>"Memory"</dt> <dd> <p>Use the
-     * <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the
-     * volume are lost when the node reboots, and any storage on the volume counts
-     * against the container's memory limit.</p> </dd> </dl>
-     */
     inline bool MediumHasBeenSet() const { return m_mediumHasBeenSet; }
-
-    /**
-     * <p>The medium to store the volume. The default value is an empty string, which
-     * uses the storage of the node.</p> <dl> <dt>""</dt> <dd> <p> <b>(Default)</b> Use
-     * the disk storage of the node.</p> </dd> <dt>"Memory"</dt> <dd> <p>Use the
-     * <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the
-     * volume are lost when the node reboots, and any storage on the volume counts
-     * against the container's memory limit.</p> </dd> </dl>
-     */
     inline void SetMedium(const Aws::String& value) { m_mediumHasBeenSet = true; m_medium = value; }
-
-    /**
-     * <p>The medium to store the volume. The default value is an empty string, which
-     * uses the storage of the node.</p> <dl> <dt>""</dt> <dd> <p> <b>(Default)</b> Use
-     * the disk storage of the node.</p> </dd> <dt>"Memory"</dt> <dd> <p>Use the
-     * <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the
-     * volume are lost when the node reboots, and any storage on the volume counts
-     * against the container's memory limit.</p> </dd> </dl>
-     */
     inline void SetMedium(Aws::String&& value) { m_mediumHasBeenSet = true; m_medium = std::move(value); }
-
-    /**
-     * <p>The medium to store the volume. The default value is an empty string, which
-     * uses the storage of the node.</p> <dl> <dt>""</dt> <dd> <p> <b>(Default)</b> Use
-     * the disk storage of the node.</p> </dd> <dt>"Memory"</dt> <dd> <p>Use the
-     * <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the
-     * volume are lost when the node reboots, and any storage on the volume counts
-     * against the container's memory limit.</p> </dd> </dl>
-     */
     inline void SetMedium(const char* value) { m_mediumHasBeenSet = true; m_medium.assign(value); }
-
-    /**
-     * <p>The medium to store the volume. The default value is an empty string, which
-     * uses the storage of the node.</p> <dl> <dt>""</dt> <dd> <p> <b>(Default)</b> Use
-     * the disk storage of the node.</p> </dd> <dt>"Memory"</dt> <dd> <p>Use the
-     * <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the
-     * volume are lost when the node reboots, and any storage on the volume counts
-     * against the container's memory limit.</p> </dd> </dl>
-     */
     inline EksEmptyDir& WithMedium(const Aws::String& value) { SetMedium(value); return *this;}
-
-    /**
-     * <p>The medium to store the volume. The default value is an empty string, which
-     * uses the storage of the node.</p> <dl> <dt>""</dt> <dd> <p> <b>(Default)</b> Use
-     * the disk storage of the node.</p> </dd> <dt>"Memory"</dt> <dd> <p>Use the
-     * <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the
-     * volume are lost when the node reboots, and any storage on the volume counts
-     * against the container's memory limit.</p> </dd> </dl>
-     */
     inline EksEmptyDir& WithMedium(Aws::String&& value) { SetMedium(std::move(value)); return *this;}
-
-    /**
-     * <p>The medium to store the volume. The default value is an empty string, which
-     * uses the storage of the node.</p> <dl> <dt>""</dt> <dd> <p> <b>(Default)</b> Use
-     * the disk storage of the node.</p> </dd> <dt>"Memory"</dt> <dd> <p>Use the
-     * <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the
-     * volume are lost when the node reboots, and any storage on the volume counts
-     * against the container's memory limit.</p> </dd> </dl>
-     */
     inline EksEmptyDir& WithMedium(const char* value) { SetMedium(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum size of the volume. By default, there's no maximum size
      * defined.</p>
      */
     inline const Aws::String& GetSizeLimit() const{ return m_sizeLimit; }
-
-    /**
-     * <p>The maximum size of the volume. By default, there's no maximum size
-     * defined.</p>
-     */
     inline bool SizeLimitHasBeenSet() const { return m_sizeLimitHasBeenSet; }
-
-    /**
-     * <p>The maximum size of the volume. By default, there's no maximum size
-     * defined.</p>
-     */
     inline void SetSizeLimit(const Aws::String& value) { m_sizeLimitHasBeenSet = true; m_sizeLimit = value; }
-
-    /**
-     * <p>The maximum size of the volume. By default, there's no maximum size
-     * defined.</p>
-     */
     inline void SetSizeLimit(Aws::String&& value) { m_sizeLimitHasBeenSet = true; m_sizeLimit = std::move(value); }
-
-    /**
-     * <p>The maximum size of the volume. By default, there's no maximum size
-     * defined.</p>
-     */
     inline void SetSizeLimit(const char* value) { m_sizeLimitHasBeenSet = true; m_sizeLimit.assign(value); }
-
-    /**
-     * <p>The maximum size of the volume. By default, there's no maximum size
-     * defined.</p>
-     */
     inline EksEmptyDir& WithSizeLimit(const Aws::String& value) { SetSizeLimit(value); return *this;}
-
-    /**
-     * <p>The maximum size of the volume. By default, there's no maximum size
-     * defined.</p>
-     */
     inline EksEmptyDir& WithSizeLimit(Aws::String&& value) { SetSizeLimit(std::move(value)); return *this;}
-
-    /**
-     * <p>The maximum size of the volume. By default, there's no maximum size
-     * defined.</p>
-     */
     inline EksEmptyDir& WithSizeLimit(const char* value) { SetSizeLimit(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_medium;

@@ -39,36 +39,17 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The label detection settings you want to use for your stream processor. </p>
      */
     inline const ConnectedHomeSettingsForUpdate& GetConnectedHomeForUpdate() const{ return m_connectedHomeForUpdate; }
-
-    /**
-     * <p> The label detection settings you want to use for your stream processor. </p>
-     */
     inline bool ConnectedHomeForUpdateHasBeenSet() const { return m_connectedHomeForUpdateHasBeenSet; }
-
-    /**
-     * <p> The label detection settings you want to use for your stream processor. </p>
-     */
     inline void SetConnectedHomeForUpdate(const ConnectedHomeSettingsForUpdate& value) { m_connectedHomeForUpdateHasBeenSet = true; m_connectedHomeForUpdate = value; }
-
-    /**
-     * <p> The label detection settings you want to use for your stream processor. </p>
-     */
     inline void SetConnectedHomeForUpdate(ConnectedHomeSettingsForUpdate&& value) { m_connectedHomeForUpdateHasBeenSet = true; m_connectedHomeForUpdate = std::move(value); }
-
-    /**
-     * <p> The label detection settings you want to use for your stream processor. </p>
-     */
     inline StreamProcessorSettingsForUpdate& WithConnectedHomeForUpdate(const ConnectedHomeSettingsForUpdate& value) { SetConnectedHomeForUpdate(value); return *this;}
-
-    /**
-     * <p> The label detection settings you want to use for your stream processor. </p>
-     */
     inline StreamProcessorSettingsForUpdate& WithConnectedHomeForUpdate(ConnectedHomeSettingsForUpdate&& value) { SetConnectedHomeForUpdate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConnectedHomeSettingsForUpdate m_connectedHomeForUpdate;

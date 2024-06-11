@@ -32,63 +32,29 @@ namespace Model
     AWS_SSMSAP_API PutResourcePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p/>
-     */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
-
-    /**
-     * <p/>
-     */
     inline PutResourcePermissionResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline PutResourcePermissionResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline PutResourcePermissionResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutResourcePermissionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutResourcePermissionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutResourcePermissionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policy;

@@ -35,47 +35,21 @@ namespace Model
     AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The stack or layer's Amazon Resource Number (ARN).</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The stack or layer's Amazon Resource Number (ARN).</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The stack or layer's Amazon Resource Number (ARN).</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The stack or layer's Amazon Resource Number (ARN).</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The stack or layer's Amazon Resource Number (ARN).</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The stack or layer's Amazon Resource Number (ARN).</p>
-     */
     inline TagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The stack or layer's Amazon Resource Number (ARN).</p>
-     */
     inline TagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The stack or layer's Amazon Resource Number (ARN).</p>
-     */
     inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A map that contains tag keys and tag values that are attached to a stack or
      * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
@@ -88,163 +62,19 @@ namespace Model
      * is allowed for any resource.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A map that contains tag keys and tag values that are attached to a stack or
-     * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
-     * be a maximum of 127 characters, and can contain only Unicode letters, numbers,
-     * or separators, or the following special characters: <code>+ - = . _ : /</code>
-     * </p> </li> <li> <p>The value can be a maximum 255 characters, and contain only
-     * Unicode letters, numbers, or separators, or the following special characters:
-     * <code>+ - = . _ : /</code> </p> </li> <li> <p>Leading and trailing white spaces
-     * are trimmed from both the key and value.</p> </li> <li> <p>A maximum of 40 tags
-     * is allowed for any resource.</p> </li> </ul>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A map that contains tag keys and tag values that are attached to a stack or
-     * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
-     * be a maximum of 127 characters, and can contain only Unicode letters, numbers,
-     * or separators, or the following special characters: <code>+ - = . _ : /</code>
-     * </p> </li> <li> <p>The value can be a maximum 255 characters, and contain only
-     * Unicode letters, numbers, or separators, or the following special characters:
-     * <code>+ - = . _ : /</code> </p> </li> <li> <p>Leading and trailing white spaces
-     * are trimmed from both the key and value.</p> </li> <li> <p>A maximum of 40 tags
-     * is allowed for any resource.</p> </li> </ul>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A map that contains tag keys and tag values that are attached to a stack or
-     * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
-     * be a maximum of 127 characters, and can contain only Unicode letters, numbers,
-     * or separators, or the following special characters: <code>+ - = . _ : /</code>
-     * </p> </li> <li> <p>The value can be a maximum 255 characters, and contain only
-     * Unicode letters, numbers, or separators, or the following special characters:
-     * <code>+ - = . _ : /</code> </p> </li> <li> <p>Leading and trailing white spaces
-     * are trimmed from both the key and value.</p> </li> <li> <p>A maximum of 40 tags
-     * is allowed for any resource.</p> </li> </ul>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A map that contains tag keys and tag values that are attached to a stack or
-     * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
-     * be a maximum of 127 characters, and can contain only Unicode letters, numbers,
-     * or separators, or the following special characters: <code>+ - = . _ : /</code>
-     * </p> </li> <li> <p>The value can be a maximum 255 characters, and contain only
-     * Unicode letters, numbers, or separators, or the following special characters:
-     * <code>+ - = . _ : /</code> </p> </li> <li> <p>Leading and trailing white spaces
-     * are trimmed from both the key and value.</p> </li> <li> <p>A maximum of 40 tags
-     * is allowed for any resource.</p> </li> </ul>
-     */
     inline TagResourceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A map that contains tag keys and tag values that are attached to a stack or
-     * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
-     * be a maximum of 127 characters, and can contain only Unicode letters, numbers,
-     * or separators, or the following special characters: <code>+ - = . _ : /</code>
-     * </p> </li> <li> <p>The value can be a maximum 255 characters, and contain only
-     * Unicode letters, numbers, or separators, or the following special characters:
-     * <code>+ - = . _ : /</code> </p> </li> <li> <p>Leading and trailing white spaces
-     * are trimmed from both the key and value.</p> </li> <li> <p>A maximum of 40 tags
-     * is allowed for any resource.</p> </li> </ul>
-     */
     inline TagResourceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A map that contains tag keys and tag values that are attached to a stack or
-     * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
-     * be a maximum of 127 characters, and can contain only Unicode letters, numbers,
-     * or separators, or the following special characters: <code>+ - = . _ : /</code>
-     * </p> </li> <li> <p>The value can be a maximum 255 characters, and contain only
-     * Unicode letters, numbers, or separators, or the following special characters:
-     * <code>+ - = . _ : /</code> </p> </li> <li> <p>Leading and trailing white spaces
-     * are trimmed from both the key and value.</p> </li> <li> <p>A maximum of 40 tags
-     * is allowed for any resource.</p> </li> </ul>
-     */
     inline TagResourceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>A map that contains tag keys and tag values that are attached to a stack or
-     * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
-     * be a maximum of 127 characters, and can contain only Unicode letters, numbers,
-     * or separators, or the following special characters: <code>+ - = . _ : /</code>
-     * </p> </li> <li> <p>The value can be a maximum 255 characters, and contain only
-     * Unicode letters, numbers, or separators, or the following special characters:
-     * <code>+ - = . _ : /</code> </p> </li> <li> <p>Leading and trailing white spaces
-     * are trimmed from both the key and value.</p> </li> <li> <p>A maximum of 40 tags
-     * is allowed for any resource.</p> </li> </ul>
-     */
     inline TagResourceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A map that contains tag keys and tag values that are attached to a stack or
-     * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
-     * be a maximum of 127 characters, and can contain only Unicode letters, numbers,
-     * or separators, or the following special characters: <code>+ - = . _ : /</code>
-     * </p> </li> <li> <p>The value can be a maximum 255 characters, and contain only
-     * Unicode letters, numbers, or separators, or the following special characters:
-     * <code>+ - = . _ : /</code> </p> </li> <li> <p>Leading and trailing white spaces
-     * are trimmed from both the key and value.</p> </li> <li> <p>A maximum of 40 tags
-     * is allowed for any resource.</p> </li> </ul>
-     */
     inline TagResourceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map that contains tag keys and tag values that are attached to a stack or
-     * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
-     * be a maximum of 127 characters, and can contain only Unicode letters, numbers,
-     * or separators, or the following special characters: <code>+ - = . _ : /</code>
-     * </p> </li> <li> <p>The value can be a maximum 255 characters, and contain only
-     * Unicode letters, numbers, or separators, or the following special characters:
-     * <code>+ - = . _ : /</code> </p> </li> <li> <p>Leading and trailing white spaces
-     * are trimmed from both the key and value.</p> </li> <li> <p>A maximum of 40 tags
-     * is allowed for any resource.</p> </li> </ul>
-     */
     inline TagResourceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A map that contains tag keys and tag values that are attached to a stack or
-     * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
-     * be a maximum of 127 characters, and can contain only Unicode letters, numbers,
-     * or separators, or the following special characters: <code>+ - = . _ : /</code>
-     * </p> </li> <li> <p>The value can be a maximum 255 characters, and contain only
-     * Unicode letters, numbers, or separators, or the following special characters:
-     * <code>+ - = . _ : /</code> </p> </li> <li> <p>Leading and trailing white spaces
-     * are trimmed from both the key and value.</p> </li> <li> <p>A maximum of 40 tags
-     * is allowed for any resource.</p> </li> </ul>
-     */
     inline TagResourceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map that contains tag keys and tag values that are attached to a stack or
-     * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
-     * be a maximum of 127 characters, and can contain only Unicode letters, numbers,
-     * or separators, or the following special characters: <code>+ - = . _ : /</code>
-     * </p> </li> <li> <p>The value can be a maximum 255 characters, and contain only
-     * Unicode letters, numbers, or separators, or the following special characters:
-     * <code>+ - = . _ : /</code> </p> </li> <li> <p>Leading and trailing white spaces
-     * are trimmed from both the key and value.</p> </li> <li> <p>A maximum of 40 tags
-     * is allowed for any resource.</p> </li> </ul>
-     */
     inline TagResourceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A map that contains tag keys and tag values that are attached to a stack or
-     * layer.</p> <ul> <li> <p>The key cannot be empty.</p> </li> <li> <p>The key can
-     * be a maximum of 127 characters, and can contain only Unicode letters, numbers,
-     * or separators, or the following special characters: <code>+ - = . _ : /</code>
-     * </p> </li> <li> <p>The value can be a maximum 255 characters, and contain only
-     * Unicode letters, numbers, or separators, or the following special characters:
-     * <code>+ - = . _ : /</code> </p> </li> <li> <p>Leading and trailing white spaces
-     * are trimmed from both the key and value.</p> </li> <li> <p>A maximum of 40 tags
-     * is allowed for any resource.</p> </li> </ul>
-     */
     inline TagResourceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

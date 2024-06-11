@@ -32,115 +32,51 @@ namespace Model
     AWS_QUICKSIGHT_API CancelIngestionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
-     */
     inline CancelIngestionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
-     */
     inline CancelIngestionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
-     */
     inline CancelIngestionResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An ID for the ingestion.</p>
      */
     inline const Aws::String& GetIngestionId() const{ return m_ingestionId; }
-
-    /**
-     * <p>An ID for the ingestion.</p>
-     */
     inline void SetIngestionId(const Aws::String& value) { m_ingestionId = value; }
-
-    /**
-     * <p>An ID for the ingestion.</p>
-     */
     inline void SetIngestionId(Aws::String&& value) { m_ingestionId = std::move(value); }
-
-    /**
-     * <p>An ID for the ingestion.</p>
-     */
     inline void SetIngestionId(const char* value) { m_ingestionId.assign(value); }
-
-    /**
-     * <p>An ID for the ingestion.</p>
-     */
     inline CancelIngestionResult& WithIngestionId(const Aws::String& value) { SetIngestionId(value); return *this;}
-
-    /**
-     * <p>An ID for the ingestion.</p>
-     */
     inline CancelIngestionResult& WithIngestionId(Aws::String&& value) { SetIngestionId(std::move(value)); return *this;}
-
-    /**
-     * <p>An ID for the ingestion.</p>
-     */
     inline CancelIngestionResult& WithIngestionId(const char* value) { SetIngestionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CancelIngestionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CancelIngestionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CancelIngestionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline void SetStatus(int value) { m_status = value; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline CancelIngestionResult& WithStatus(int value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

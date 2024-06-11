@@ -32,46 +32,19 @@ namespace Model
     AWS_SIGNER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the signing profile to be canceled.</p>
      */
     inline const Aws::String& GetProfileName() const{ return m_profileName; }
-
-    /**
-     * <p>The name of the signing profile to be canceled.</p>
-     */
     inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
-
-    /**
-     * <p>The name of the signing profile to be canceled.</p>
-     */
     inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
-
-    /**
-     * <p>The name of the signing profile to be canceled.</p>
-     */
     inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
-
-    /**
-     * <p>The name of the signing profile to be canceled.</p>
-     */
     inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
-
-    /**
-     * <p>The name of the signing profile to be canceled.</p>
-     */
     inline CancelSigningProfileRequest& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
-
-    /**
-     * <p>The name of the signing profile to be canceled.</p>
-     */
     inline CancelSigningProfileRequest& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the signing profile to be canceled.</p>
-     */
     inline CancelSigningProfileRequest& WithProfileName(const char* value) { SetProfileName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_profileName;

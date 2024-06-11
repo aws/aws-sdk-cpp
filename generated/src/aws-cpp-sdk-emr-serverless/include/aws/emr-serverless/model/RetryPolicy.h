@@ -35,55 +35,27 @@ namespace Model
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Maximum number of attempts for the job run. This parameter is only applicable
      * for <code>BATCH</code> mode.</p>
      */
     inline int GetMaxAttempts() const{ return m_maxAttempts; }
-
-    /**
-     * <p>Maximum number of attempts for the job run. This parameter is only applicable
-     * for <code>BATCH</code> mode.</p>
-     */
     inline bool MaxAttemptsHasBeenSet() const { return m_maxAttemptsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of attempts for the job run. This parameter is only applicable
-     * for <code>BATCH</code> mode.</p>
-     */
     inline void SetMaxAttempts(int value) { m_maxAttemptsHasBeenSet = true; m_maxAttempts = value; }
-
-    /**
-     * <p>Maximum number of attempts for the job run. This parameter is only applicable
-     * for <code>BATCH</code> mode.</p>
-     */
     inline RetryPolicy& WithMaxAttempts(int value) { SetMaxAttempts(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum number of failed attempts per hour. This [arameter is only applicable
      * for <code>STREAMING</code> mode.</p>
      */
     inline int GetMaxFailedAttemptsPerHour() const{ return m_maxFailedAttemptsPerHour; }
-
-    /**
-     * <p>Maximum number of failed attempts per hour. This [arameter is only applicable
-     * for <code>STREAMING</code> mode.</p>
-     */
     inline bool MaxFailedAttemptsPerHourHasBeenSet() const { return m_maxFailedAttemptsPerHourHasBeenSet; }
-
-    /**
-     * <p>Maximum number of failed attempts per hour. This [arameter is only applicable
-     * for <code>STREAMING</code> mode.</p>
-     */
     inline void SetMaxFailedAttemptsPerHour(int value) { m_maxFailedAttemptsPerHourHasBeenSet = true; m_maxFailedAttemptsPerHour = value; }
-
-    /**
-     * <p>Maximum number of failed attempts per hour. This [arameter is only applicable
-     * for <code>STREAMING</code> mode.</p>
-     */
     inline RetryPolicy& WithMaxFailedAttemptsPerHour(int value) { SetMaxFailedAttemptsPerHour(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxAttempts;

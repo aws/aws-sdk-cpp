@@ -34,62 +34,21 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> The date you want the backfill to start from. The date can only be a first
      * day of the month (a billing start date). Dates can't precede the previous twelve
      * months, or in the future.</p>
      */
     inline const Aws::String& GetBackfillFrom() const{ return m_backfillFrom; }
-
-    /**
-     * <p> The date you want the backfill to start from. The date can only be a first
-     * day of the month (a billing start date). Dates can't precede the previous twelve
-     * months, or in the future.</p>
-     */
     inline bool BackfillFromHasBeenSet() const { return m_backfillFromHasBeenSet; }
-
-    /**
-     * <p> The date you want the backfill to start from. The date can only be a first
-     * day of the month (a billing start date). Dates can't precede the previous twelve
-     * months, or in the future.</p>
-     */
     inline void SetBackfillFrom(const Aws::String& value) { m_backfillFromHasBeenSet = true; m_backfillFrom = value; }
-
-    /**
-     * <p> The date you want the backfill to start from. The date can only be a first
-     * day of the month (a billing start date). Dates can't precede the previous twelve
-     * months, or in the future.</p>
-     */
     inline void SetBackfillFrom(Aws::String&& value) { m_backfillFromHasBeenSet = true; m_backfillFrom = std::move(value); }
-
-    /**
-     * <p> The date you want the backfill to start from. The date can only be a first
-     * day of the month (a billing start date). Dates can't precede the previous twelve
-     * months, or in the future.</p>
-     */
     inline void SetBackfillFrom(const char* value) { m_backfillFromHasBeenSet = true; m_backfillFrom.assign(value); }
-
-    /**
-     * <p> The date you want the backfill to start from. The date can only be a first
-     * day of the month (a billing start date). Dates can't precede the previous twelve
-     * months, or in the future.</p>
-     */
     inline StartCostAllocationTagBackfillRequest& WithBackfillFrom(const Aws::String& value) { SetBackfillFrom(value); return *this;}
-
-    /**
-     * <p> The date you want the backfill to start from. The date can only be a first
-     * day of the month (a billing start date). Dates can't precede the previous twelve
-     * months, or in the future.</p>
-     */
     inline StartCostAllocationTagBackfillRequest& WithBackfillFrom(Aws::String&& value) { SetBackfillFrom(std::move(value)); return *this;}
-
-    /**
-     * <p> The date you want the backfill to start from. The date can only be a first
-     * day of the month (a billing start date). Dates can't precede the previous twelve
-     * months, or in the future.</p>
-     */
     inline StartCostAllocationTagBackfillRequest& WithBackfillFrom(const char* value) { SetBackfillFrom(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_backfillFrom;

@@ -38,54 +38,20 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This is the <code>componentTypeId</code> that the
      * <code>compositeComponentType</code> refers to.</p>
      */
     inline const Aws::String& GetComponentTypeId() const{ return m_componentTypeId; }
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that the
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline bool ComponentTypeIdHasBeenSet() const { return m_componentTypeIdHasBeenSet; }
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that the
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline void SetComponentTypeId(const Aws::String& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = value; }
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that the
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline void SetComponentTypeId(Aws::String&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::move(value); }
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that the
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline void SetComponentTypeId(const char* value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId.assign(value); }
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that the
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline CompositeComponentTypeRequest& WithComponentTypeId(const Aws::String& value) { SetComponentTypeId(value); return *this;}
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that the
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline CompositeComponentTypeRequest& WithComponentTypeId(Aws::String&& value) { SetComponentTypeId(std::move(value)); return *this;}
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that the
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline CompositeComponentTypeRequest& WithComponentTypeId(const char* value) { SetComponentTypeId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_componentTypeId;

@@ -32,46 +32,26 @@ namespace Model
     AWS_SAGEMAKER_API DeleteWorkteamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns <code>true</code> if the work team was successfully deleted;
      * otherwise, returns <code>false</code>.</p>
      */
     inline bool GetSuccess() const{ return m_success; }
-
-    /**
-     * <p>Returns <code>true</code> if the work team was successfully deleted;
-     * otherwise, returns <code>false</code>.</p>
-     */
     inline void SetSuccess(bool value) { m_success = value; }
-
-    /**
-     * <p>Returns <code>true</code> if the work team was successfully deleted;
-     * otherwise, returns <code>false</code>.</p>
-     */
     inline DeleteWorkteamResult& WithSuccess(bool value) { SetSuccess(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteWorkteamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteWorkteamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteWorkteamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_success;

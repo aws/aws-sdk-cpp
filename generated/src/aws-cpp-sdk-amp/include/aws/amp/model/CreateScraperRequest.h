@@ -41,135 +41,49 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>(optional) a name to associate with the scraper. This is for your use, and
      * does not need to be unique.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
-
-    /**
-     * <p>(optional) a name to associate with the scraper. This is for your use, and
-     * does not need to be unique.</p>
-     */
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-
-    /**
-     * <p>(optional) a name to associate with the scraper. This is for your use, and
-     * does not need to be unique.</p>
-     */
     inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-
-    /**
-     * <p>(optional) a name to associate with the scraper. This is for your use, and
-     * does not need to be unique.</p>
-     */
     inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-
-    /**
-     * <p>(optional) a name to associate with the scraper. This is for your use, and
-     * does not need to be unique.</p>
-     */
     inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-
-    /**
-     * <p>(optional) a name to associate with the scraper. This is for your use, and
-     * does not need to be unique.</p>
-     */
     inline CreateScraperRequest& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-
-    /**
-     * <p>(optional) a name to associate with the scraper. This is for your use, and
-     * does not need to be unique.</p>
-     */
     inline CreateScraperRequest& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>(optional) a name to associate with the scraper. This is for your use, and
-     * does not need to be unique.</p>
-     */
     inline CreateScraperRequest& WithAlias(const char* value) { SetAlias(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
      * the idempotency of the request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline CreateScraperRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline CreateScraperRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline CreateScraperRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
      */
     inline const Destination& GetDestination() const{ return m_destination; }
-
-    /**
-     * <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
-     */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-
-    /**
-     * <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
-     */
     inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-
-    /**
-     * <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
-     */
     inline void SetDestination(Destination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-
-    /**
-     * <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
-     */
     inline CreateScraperRequest& WithDestination(const Destination& value) { SetDestination(value); return *this;}
-
-    /**
-     * <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
-     */
     inline CreateScraperRequest& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration file to use in the new scraper. For more information, see
      * <a
@@ -178,149 +92,43 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const ScrapeConfiguration& GetScrapeConfiguration() const{ return m_scrapeConfiguration; }
-
-    /**
-     * <p>The configuration file to use in the new scraper. For more information, see
-     * <a
-     * href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
-     * configuration</a> in the <i>Amazon Managed Service for Prometheus User
-     * Guide</i>.</p>
-     */
     inline bool ScrapeConfigurationHasBeenSet() const { return m_scrapeConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration file to use in the new scraper. For more information, see
-     * <a
-     * href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
-     * configuration</a> in the <i>Amazon Managed Service for Prometheus User
-     * Guide</i>.</p>
-     */
     inline void SetScrapeConfiguration(const ScrapeConfiguration& value) { m_scrapeConfigurationHasBeenSet = true; m_scrapeConfiguration = value; }
-
-    /**
-     * <p>The configuration file to use in the new scraper. For more information, see
-     * <a
-     * href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
-     * configuration</a> in the <i>Amazon Managed Service for Prometheus User
-     * Guide</i>.</p>
-     */
     inline void SetScrapeConfiguration(ScrapeConfiguration&& value) { m_scrapeConfigurationHasBeenSet = true; m_scrapeConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration file to use in the new scraper. For more information, see
-     * <a
-     * href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
-     * configuration</a> in the <i>Amazon Managed Service for Prometheus User
-     * Guide</i>.</p>
-     */
     inline CreateScraperRequest& WithScrapeConfiguration(const ScrapeConfiguration& value) { SetScrapeConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration file to use in the new scraper. For more information, see
-     * <a
-     * href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
-     * configuration</a> in the <i>Amazon Managed Service for Prometheus User
-     * Guide</i>.</p>
-     */
     inline CreateScraperRequest& WithScrapeConfiguration(ScrapeConfiguration&& value) { SetScrapeConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
      */
     inline const Source& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
-     */
     inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
-     */
     inline void SetSource(Source&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
-     */
     inline CreateScraperRequest& WithSource(const Source& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
-     */
     inline CreateScraperRequest& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-     */
     inline CreateScraperRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-     */
     inline CreateScraperRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-     */
     inline CreateScraperRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-     */
     inline CreateScraperRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-     */
     inline CreateScraperRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-     */
     inline CreateScraperRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-     */
     inline CreateScraperRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-     */
     inline CreateScraperRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-     */
     inline CreateScraperRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_alias;

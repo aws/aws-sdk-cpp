@@ -39,67 +39,29 @@ namespace Model
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether CloudWatch Logs is enabled for a layer.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Whether CloudWatch Logs is enabled for a layer.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Whether CloudWatch Logs is enabled for a layer.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Whether CloudWatch Logs is enabled for a layer.</p>
-     */
     inline CloudWatchLogsConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of configuration options for CloudWatch Logs.</p>
      */
     inline const Aws::Vector<CloudWatchLogsLogStream>& GetLogStreams() const{ return m_logStreams; }
-
-    /**
-     * <p>A list of configuration options for CloudWatch Logs.</p>
-     */
     inline bool LogStreamsHasBeenSet() const { return m_logStreamsHasBeenSet; }
-
-    /**
-     * <p>A list of configuration options for CloudWatch Logs.</p>
-     */
     inline void SetLogStreams(const Aws::Vector<CloudWatchLogsLogStream>& value) { m_logStreamsHasBeenSet = true; m_logStreams = value; }
-
-    /**
-     * <p>A list of configuration options for CloudWatch Logs.</p>
-     */
     inline void SetLogStreams(Aws::Vector<CloudWatchLogsLogStream>&& value) { m_logStreamsHasBeenSet = true; m_logStreams = std::move(value); }
-
-    /**
-     * <p>A list of configuration options for CloudWatch Logs.</p>
-     */
     inline CloudWatchLogsConfiguration& WithLogStreams(const Aws::Vector<CloudWatchLogsLogStream>& value) { SetLogStreams(value); return *this;}
-
-    /**
-     * <p>A list of configuration options for CloudWatch Logs.</p>
-     */
     inline CloudWatchLogsConfiguration& WithLogStreams(Aws::Vector<CloudWatchLogsLogStream>&& value) { SetLogStreams(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of configuration options for CloudWatch Logs.</p>
-     */
     inline CloudWatchLogsConfiguration& AddLogStreams(const CloudWatchLogsLogStream& value) { m_logStreamsHasBeenSet = true; m_logStreams.push_back(value); return *this; }
-
-    /**
-     * <p>A list of configuration options for CloudWatch Logs.</p>
-     */
     inline CloudWatchLogsConfiguration& AddLogStreams(CloudWatchLogsLogStream&& value) { m_logStreamsHasBeenSet = true; m_logStreams.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     bool m_enabled;

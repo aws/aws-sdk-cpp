@@ -39,98 +39,41 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The day that the hours of operation applies to.</p>
      */
     inline const HoursOfOperationDays& GetDay() const{ return m_day; }
-
-    /**
-     * <p>The day that the hours of operation applies to.</p>
-     */
     inline bool DayHasBeenSet() const { return m_dayHasBeenSet; }
-
-    /**
-     * <p>The day that the hours of operation applies to.</p>
-     */
     inline void SetDay(const HoursOfOperationDays& value) { m_dayHasBeenSet = true; m_day = value; }
-
-    /**
-     * <p>The day that the hours of operation applies to.</p>
-     */
     inline void SetDay(HoursOfOperationDays&& value) { m_dayHasBeenSet = true; m_day = std::move(value); }
-
-    /**
-     * <p>The day that the hours of operation applies to.</p>
-     */
     inline HoursOfOperationConfig& WithDay(const HoursOfOperationDays& value) { SetDay(value); return *this;}
-
-    /**
-     * <p>The day that the hours of operation applies to.</p>
-     */
     inline HoursOfOperationConfig& WithDay(HoursOfOperationDays&& value) { SetDay(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The start time that your contact center opens.</p>
      */
     inline const HoursOfOperationTimeSlice& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The start time that your contact center opens.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The start time that your contact center opens.</p>
-     */
     inline void SetStartTime(const HoursOfOperationTimeSlice& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The start time that your contact center opens.</p>
-     */
     inline void SetStartTime(HoursOfOperationTimeSlice&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The start time that your contact center opens.</p>
-     */
     inline HoursOfOperationConfig& WithStartTime(const HoursOfOperationTimeSlice& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The start time that your contact center opens.</p>
-     */
     inline HoursOfOperationConfig& WithStartTime(HoursOfOperationTimeSlice&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The end time that your contact center closes.</p>
      */
     inline const HoursOfOperationTimeSlice& GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>The end time that your contact center closes.</p>
-     */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-
-    /**
-     * <p>The end time that your contact center closes.</p>
-     */
     inline void SetEndTime(const HoursOfOperationTimeSlice& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-
-    /**
-     * <p>The end time that your contact center closes.</p>
-     */
     inline void SetEndTime(HoursOfOperationTimeSlice&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-
-    /**
-     * <p>The end time that your contact center closes.</p>
-     */
     inline HoursOfOperationConfig& WithEndTime(const HoursOfOperationTimeSlice& value) { SetEndTime(value); return *this;}
-
-    /**
-     * <p>The end time that your contact center closes.</p>
-     */
     inline HoursOfOperationConfig& WithEndTime(HoursOfOperationTimeSlice&& value) { SetEndTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HoursOfOperationDays m_day;

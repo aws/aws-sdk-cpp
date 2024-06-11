@@ -41,71 +41,31 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    
     inline DeleteExpressionRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    
     inline DeleteExpressionRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    
     inline DeleteExpressionRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the <code><a>Expression</a></code> to delete.</p>
      */
     inline const Aws::String& GetExpressionName() const{ return m_expressionName; }
-
-    /**
-     * <p>The name of the <code><a>Expression</a></code> to delete.</p>
-     */
     inline bool ExpressionNameHasBeenSet() const { return m_expressionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the <code><a>Expression</a></code> to delete.</p>
-     */
     inline void SetExpressionName(const Aws::String& value) { m_expressionNameHasBeenSet = true; m_expressionName = value; }
-
-    /**
-     * <p>The name of the <code><a>Expression</a></code> to delete.</p>
-     */
     inline void SetExpressionName(Aws::String&& value) { m_expressionNameHasBeenSet = true; m_expressionName = std::move(value); }
-
-    /**
-     * <p>The name of the <code><a>Expression</a></code> to delete.</p>
-     */
     inline void SetExpressionName(const char* value) { m_expressionNameHasBeenSet = true; m_expressionName.assign(value); }
-
-    /**
-     * <p>The name of the <code><a>Expression</a></code> to delete.</p>
-     */
     inline DeleteExpressionRequest& WithExpressionName(const Aws::String& value) { SetExpressionName(value); return *this;}
-
-    /**
-     * <p>The name of the <code><a>Expression</a></code> to delete.</p>
-     */
     inline DeleteExpressionRequest& WithExpressionName(Aws::String&& value) { SetExpressionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the <code><a>Expression</a></code> to delete.</p>
-     */
     inline DeleteExpressionRequest& WithExpressionName(const char* value) { SetExpressionName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

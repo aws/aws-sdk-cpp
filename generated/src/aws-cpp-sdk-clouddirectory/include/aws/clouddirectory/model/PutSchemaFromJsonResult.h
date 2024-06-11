@@ -32,63 +32,29 @@ namespace Model
     AWS_CLOUDDIRECTORY_API PutSchemaFromJsonResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the schema to update.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The ARN of the schema to update.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The ARN of the schema to update.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The ARN of the schema to update.</p>
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The ARN of the schema to update.</p>
-     */
     inline PutSchemaFromJsonResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the schema to update.</p>
-     */
     inline PutSchemaFromJsonResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the schema to update.</p>
-     */
     inline PutSchemaFromJsonResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutSchemaFromJsonResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutSchemaFromJsonResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutSchemaFromJsonResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

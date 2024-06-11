@@ -41,89 +41,40 @@ namespace Model
     AWS_CODEPIPELINE_API CreateCustomActionTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns information about the details of an action type.</p>
      */
     inline const ActionType& GetActionType() const{ return m_actionType; }
-
-    /**
-     * <p>Returns information about the details of an action type.</p>
-     */
     inline void SetActionType(const ActionType& value) { m_actionType = value; }
-
-    /**
-     * <p>Returns information about the details of an action type.</p>
-     */
     inline void SetActionType(ActionType&& value) { m_actionType = std::move(value); }
-
-    /**
-     * <p>Returns information about the details of an action type.</p>
-     */
     inline CreateCustomActionTypeResult& WithActionType(const ActionType& value) { SetActionType(value); return *this;}
-
-    /**
-     * <p>Returns information about the details of an action type.</p>
-     */
     inline CreateCustomActionTypeResult& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the tags applied to the custom action.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Specifies the tags applied to the custom action.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-
-    /**
-     * <p>Specifies the tags applied to the custom action.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p>Specifies the tags applied to the custom action.</p>
-     */
     inline CreateCustomActionTypeResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Specifies the tags applied to the custom action.</p>
-     */
     inline CreateCustomActionTypeResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the tags applied to the custom action.</p>
-     */
     inline CreateCustomActionTypeResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies the tags applied to the custom action.</p>
-     */
     inline CreateCustomActionTypeResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateCustomActionTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateCustomActionTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateCustomActionTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ActionType m_actionType;

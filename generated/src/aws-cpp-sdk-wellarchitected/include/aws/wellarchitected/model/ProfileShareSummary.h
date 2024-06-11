@@ -38,115 +38,53 @@ namespace Model
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetShareId() const{ return m_shareId; }
-
-    
     inline bool ShareIdHasBeenSet() const { return m_shareIdHasBeenSet; }
-
-    
     inline void SetShareId(const Aws::String& value) { m_shareIdHasBeenSet = true; m_shareId = value; }
-
-    
     inline void SetShareId(Aws::String&& value) { m_shareIdHasBeenSet = true; m_shareId = std::move(value); }
-
-    
     inline void SetShareId(const char* value) { m_shareIdHasBeenSet = true; m_shareId.assign(value); }
-
-    
     inline ProfileShareSummary& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-
-    
     inline ProfileShareSummary& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-
-    
     inline ProfileShareSummary& WithShareId(const char* value) { SetShareId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetSharedWith() const{ return m_sharedWith; }
-
-    
     inline bool SharedWithHasBeenSet() const { return m_sharedWithHasBeenSet; }
-
-    
     inline void SetSharedWith(const Aws::String& value) { m_sharedWithHasBeenSet = true; m_sharedWith = value; }
-
-    
     inline void SetSharedWith(Aws::String&& value) { m_sharedWithHasBeenSet = true; m_sharedWith = std::move(value); }
-
-    
     inline void SetSharedWith(const char* value) { m_sharedWithHasBeenSet = true; m_sharedWith.assign(value); }
-
-    
     inline ProfileShareSummary& WithSharedWith(const Aws::String& value) { SetSharedWith(value); return *this;}
-
-    
     inline ProfileShareSummary& WithSharedWith(Aws::String&& value) { SetSharedWith(std::move(value)); return *this;}
-
-    
     inline ProfileShareSummary& WithSharedWith(const char* value) { SetSharedWith(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ShareStatus& GetStatus() const{ return m_status; }
-
-    
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    
     inline void SetStatus(const ShareStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    
     inline void SetStatus(ShareStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    
     inline ProfileShareSummary& WithStatus(const ShareStatus& value) { SetStatus(value); return *this;}
-
-    
     inline ProfileShareSummary& WithStatus(ShareStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Profile share invitation status message.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>Profile share invitation status message.</p>
-     */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p>Profile share invitation status message.</p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p>Profile share invitation status message.</p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p>Profile share invitation status message.</p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p>Profile share invitation status message.</p>
-     */
     inline ProfileShareSummary& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>Profile share invitation status message.</p>
-     */
     inline ProfileShareSummary& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Profile share invitation status message.</p>
-     */
     inline ProfileShareSummary& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_shareId;

@@ -33,58 +33,28 @@ namespace Model
     AWS_OPSWORKSCM_API UpdateServerEngineAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains the response to an <code>UpdateServerEngineAttributes</code>
      * request. </p>
      */
     inline const Server& GetServer() const{ return m_server; }
-
-    /**
-     * <p>Contains the response to an <code>UpdateServerEngineAttributes</code>
-     * request. </p>
-     */
     inline void SetServer(const Server& value) { m_server = value; }
-
-    /**
-     * <p>Contains the response to an <code>UpdateServerEngineAttributes</code>
-     * request. </p>
-     */
     inline void SetServer(Server&& value) { m_server = std::move(value); }
-
-    /**
-     * <p>Contains the response to an <code>UpdateServerEngineAttributes</code>
-     * request. </p>
-     */
     inline UpdateServerEngineAttributesResult& WithServer(const Server& value) { SetServer(value); return *this;}
-
-    /**
-     * <p>Contains the response to an <code>UpdateServerEngineAttributes</code>
-     * request. </p>
-     */
     inline UpdateServerEngineAttributesResult& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateServerEngineAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateServerEngineAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateServerEngineAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Server m_server;

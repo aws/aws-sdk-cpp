@@ -36,156 +36,76 @@ namespace Model
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The number of active Migration Evaluator collectors. </p>
      */
     inline int GetActiveMeCollectors() const{ return m_activeMeCollectors; }
-
-    /**
-     * <p> The number of active Migration Evaluator collectors. </p>
-     */
     inline bool ActiveMeCollectorsHasBeenSet() const { return m_activeMeCollectorsHasBeenSet; }
-
-    /**
-     * <p> The number of active Migration Evaluator collectors. </p>
-     */
     inline void SetActiveMeCollectors(int value) { m_activeMeCollectorsHasBeenSet = true; m_activeMeCollectors = value; }
-
-    /**
-     * <p> The number of active Migration Evaluator collectors. </p>
-     */
     inline CustomerMeCollectorInfo& WithActiveMeCollectors(int value) { SetActiveMeCollectors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The number of healthy Migration Evaluator collectors. </p>
      */
     inline int GetHealthyMeCollectors() const{ return m_healthyMeCollectors; }
-
-    /**
-     * <p> The number of healthy Migration Evaluator collectors. </p>
-     */
     inline bool HealthyMeCollectorsHasBeenSet() const { return m_healthyMeCollectorsHasBeenSet; }
-
-    /**
-     * <p> The number of healthy Migration Evaluator collectors. </p>
-     */
     inline void SetHealthyMeCollectors(int value) { m_healthyMeCollectorsHasBeenSet = true; m_healthyMeCollectors = value; }
-
-    /**
-     * <p> The number of healthy Migration Evaluator collectors. </p>
-     */
     inline CustomerMeCollectorInfo& WithHealthyMeCollectors(int value) { SetHealthyMeCollectors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The number of deny-listed Migration Evaluator collectors. </p>
      */
     inline int GetDenyListedMeCollectors() const{ return m_denyListedMeCollectors; }
-
-    /**
-     * <p> The number of deny-listed Migration Evaluator collectors. </p>
-     */
     inline bool DenyListedMeCollectorsHasBeenSet() const { return m_denyListedMeCollectorsHasBeenSet; }
-
-    /**
-     * <p> The number of deny-listed Migration Evaluator collectors. </p>
-     */
     inline void SetDenyListedMeCollectors(int value) { m_denyListedMeCollectorsHasBeenSet = true; m_denyListedMeCollectors = value; }
-
-    /**
-     * <p> The number of deny-listed Migration Evaluator collectors. </p>
-     */
     inline CustomerMeCollectorInfo& WithDenyListedMeCollectors(int value) { SetDenyListedMeCollectors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code>
      * status. </p>
      */
     inline int GetShutdownMeCollectors() const{ return m_shutdownMeCollectors; }
-
-    /**
-     * <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code>
-     * status. </p>
-     */
     inline bool ShutdownMeCollectorsHasBeenSet() const { return m_shutdownMeCollectorsHasBeenSet; }
-
-    /**
-     * <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code>
-     * status. </p>
-     */
     inline void SetShutdownMeCollectors(int value) { m_shutdownMeCollectorsHasBeenSet = true; m_shutdownMeCollectors = value; }
-
-    /**
-     * <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code>
-     * status. </p>
-     */
     inline CustomerMeCollectorInfo& WithShutdownMeCollectors(int value) { SetShutdownMeCollectors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The number of unhealthy Migration Evaluator collectors. </p>
      */
     inline int GetUnhealthyMeCollectors() const{ return m_unhealthyMeCollectors; }
-
-    /**
-     * <p> The number of unhealthy Migration Evaluator collectors. </p>
-     */
     inline bool UnhealthyMeCollectorsHasBeenSet() const { return m_unhealthyMeCollectorsHasBeenSet; }
-
-    /**
-     * <p> The number of unhealthy Migration Evaluator collectors. </p>
-     */
     inline void SetUnhealthyMeCollectors(int value) { m_unhealthyMeCollectorsHasBeenSet = true; m_unhealthyMeCollectors = value; }
-
-    /**
-     * <p> The number of unhealthy Migration Evaluator collectors. </p>
-     */
     inline CustomerMeCollectorInfo& WithUnhealthyMeCollectors(int value) { SetUnhealthyMeCollectors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The total number of Migration Evaluator collectors. </p>
      */
     inline int GetTotalMeCollectors() const{ return m_totalMeCollectors; }
-
-    /**
-     * <p> The total number of Migration Evaluator collectors. </p>
-     */
     inline bool TotalMeCollectorsHasBeenSet() const { return m_totalMeCollectorsHasBeenSet; }
-
-    /**
-     * <p> The total number of Migration Evaluator collectors. </p>
-     */
     inline void SetTotalMeCollectors(int value) { m_totalMeCollectorsHasBeenSet = true; m_totalMeCollectors = value; }
-
-    /**
-     * <p> The total number of Migration Evaluator collectors. </p>
-     */
     inline CustomerMeCollectorInfo& WithTotalMeCollectors(int value) { SetTotalMeCollectors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The number of unknown Migration Evaluator collectors. </p>
      */
     inline int GetUnknownMeCollectors() const{ return m_unknownMeCollectors; }
-
-    /**
-     * <p> The number of unknown Migration Evaluator collectors. </p>
-     */
     inline bool UnknownMeCollectorsHasBeenSet() const { return m_unknownMeCollectorsHasBeenSet; }
-
-    /**
-     * <p> The number of unknown Migration Evaluator collectors. </p>
-     */
     inline void SetUnknownMeCollectors(int value) { m_unknownMeCollectorsHasBeenSet = true; m_unknownMeCollectors = value; }
-
-    /**
-     * <p> The number of unknown Migration Evaluator collectors. </p>
-     */
     inline CustomerMeCollectorInfo& WithUnknownMeCollectors(int value) { SetUnknownMeCollectors(value); return *this;}
-
+    ///@}
   private:
 
     int m_activeMeCollectors;

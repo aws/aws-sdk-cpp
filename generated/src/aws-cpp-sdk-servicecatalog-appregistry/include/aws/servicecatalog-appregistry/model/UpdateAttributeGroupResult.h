@@ -33,53 +33,27 @@ namespace Model
     AWS_APPREGISTRY_API UpdateAttributeGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated information of the attribute group.</p>
      */
     inline const AttributeGroup& GetAttributeGroup() const{ return m_attributeGroup; }
-
-    /**
-     * <p>The updated information of the attribute group.</p>
-     */
     inline void SetAttributeGroup(const AttributeGroup& value) { m_attributeGroup = value; }
-
-    /**
-     * <p>The updated information of the attribute group.</p>
-     */
     inline void SetAttributeGroup(AttributeGroup&& value) { m_attributeGroup = std::move(value); }
-
-    /**
-     * <p>The updated information of the attribute group.</p>
-     */
     inline UpdateAttributeGroupResult& WithAttributeGroup(const AttributeGroup& value) { SetAttributeGroup(value); return *this;}
-
-    /**
-     * <p>The updated information of the attribute group.</p>
-     */
     inline UpdateAttributeGroupResult& WithAttributeGroup(AttributeGroup&& value) { SetAttributeGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateAttributeGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateAttributeGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateAttributeGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AttributeGroup m_attributeGroup;

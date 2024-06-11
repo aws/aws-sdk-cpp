@@ -39,54 +39,20 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The target database engine for database migration preference that you
      * specify. </p>
      */
     inline const Aws::Vector<TargetDatabaseEngine>& GetTargetDatabaseEngine() const{ return m_targetDatabaseEngine; }
-
-    /**
-     * <p> The target database engine for database migration preference that you
-     * specify. </p>
-     */
     inline bool TargetDatabaseEngineHasBeenSet() const { return m_targetDatabaseEngineHasBeenSet; }
-
-    /**
-     * <p> The target database engine for database migration preference that you
-     * specify. </p>
-     */
     inline void SetTargetDatabaseEngine(const Aws::Vector<TargetDatabaseEngine>& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine = value; }
-
-    /**
-     * <p> The target database engine for database migration preference that you
-     * specify. </p>
-     */
     inline void SetTargetDatabaseEngine(Aws::Vector<TargetDatabaseEngine>&& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine = std::move(value); }
-
-    /**
-     * <p> The target database engine for database migration preference that you
-     * specify. </p>
-     */
     inline NoDatabaseMigrationPreference& WithTargetDatabaseEngine(const Aws::Vector<TargetDatabaseEngine>& value) { SetTargetDatabaseEngine(value); return *this;}
-
-    /**
-     * <p> The target database engine for database migration preference that you
-     * specify. </p>
-     */
     inline NoDatabaseMigrationPreference& WithTargetDatabaseEngine(Aws::Vector<TargetDatabaseEngine>&& value) { SetTargetDatabaseEngine(std::move(value)); return *this;}
-
-    /**
-     * <p> The target database engine for database migration preference that you
-     * specify. </p>
-     */
     inline NoDatabaseMigrationPreference& AddTargetDatabaseEngine(const TargetDatabaseEngine& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine.push_back(value); return *this; }
-
-    /**
-     * <p> The target database engine for database migration preference that you
-     * specify. </p>
-     */
     inline NoDatabaseMigrationPreference& AddTargetDatabaseEngine(TargetDatabaseEngine&& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<TargetDatabaseEngine> m_targetDatabaseEngine;

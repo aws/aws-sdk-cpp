@@ -32,46 +32,19 @@ namespace Model
     AWS_REPOSTSPACE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the private re:Post.</p>
      */
     inline const Aws::String& GetSpaceId() const{ return m_spaceId; }
-
-    /**
-     * <p>The ID of the private re:Post.</p>
-     */
     inline bool SpaceIdHasBeenSet() const { return m_spaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the private re:Post.</p>
-     */
     inline void SetSpaceId(const Aws::String& value) { m_spaceIdHasBeenSet = true; m_spaceId = value; }
-
-    /**
-     * <p>The ID of the private re:Post.</p>
-     */
     inline void SetSpaceId(Aws::String&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the private re:Post.</p>
-     */
     inline void SetSpaceId(const char* value) { m_spaceIdHasBeenSet = true; m_spaceId.assign(value); }
-
-    /**
-     * <p>The ID of the private re:Post.</p>
-     */
     inline GetSpaceRequest& WithSpaceId(const Aws::String& value) { SetSpaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the private re:Post.</p>
-     */
     inline GetSpaceRequest& WithSpaceId(Aws::String&& value) { SetSpaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the private re:Post.</p>
-     */
     inline GetSpaceRequest& WithSpaceId(const char* value) { SetSpaceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_spaceId;

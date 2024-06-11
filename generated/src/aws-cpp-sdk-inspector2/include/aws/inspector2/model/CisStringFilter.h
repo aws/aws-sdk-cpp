@@ -38,77 +38,31 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The comparison value of the CIS string filter.</p>
      */
     inline const CisStringComparison& GetComparison() const{ return m_comparison; }
-
-    /**
-     * <p>The comparison value of the CIS string filter.</p>
-     */
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
-
-    /**
-     * <p>The comparison value of the CIS string filter.</p>
-     */
     inline void SetComparison(const CisStringComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
-
-    /**
-     * <p>The comparison value of the CIS string filter.</p>
-     */
     inline void SetComparison(CisStringComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
-
-    /**
-     * <p>The comparison value of the CIS string filter.</p>
-     */
     inline CisStringFilter& WithComparison(const CisStringComparison& value) { SetComparison(value); return *this;}
-
-    /**
-     * <p>The comparison value of the CIS string filter.</p>
-     */
     inline CisStringFilter& WithComparison(CisStringComparison&& value) { SetComparison(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the CIS string filter.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the CIS string filter.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the CIS string filter.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the CIS string filter.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the CIS string filter.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of the CIS string filter.</p>
-     */
     inline CisStringFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the CIS string filter.</p>
-     */
     inline CisStringFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the CIS string filter.</p>
-     */
     inline CisStringFilter& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     CisStringComparison m_comparison;

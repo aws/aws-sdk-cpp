@@ -39,67 +39,29 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The desired timeout for decommissioning an instance. Overrides the default
      * YARN decommissioning timeout.</p>
      */
     inline int GetDecommissionTimeout() const{ return m_decommissionTimeout; }
-
-    /**
-     * <p>The desired timeout for decommissioning an instance. Overrides the default
-     * YARN decommissioning timeout.</p>
-     */
     inline bool DecommissionTimeoutHasBeenSet() const { return m_decommissionTimeoutHasBeenSet; }
-
-    /**
-     * <p>The desired timeout for decommissioning an instance. Overrides the default
-     * YARN decommissioning timeout.</p>
-     */
     inline void SetDecommissionTimeout(int value) { m_decommissionTimeoutHasBeenSet = true; m_decommissionTimeout = value; }
-
-    /**
-     * <p>The desired timeout for decommissioning an instance. Overrides the default
-     * YARN decommissioning timeout.</p>
-     */
     inline ShrinkPolicy& WithDecommissionTimeout(int value) { SetDecommissionTimeout(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Custom policy for requesting termination protection or termination of
      * specific instances when shrinking an instance group.</p>
      */
     inline const InstanceResizePolicy& GetInstanceResizePolicy() const{ return m_instanceResizePolicy; }
-
-    /**
-     * <p>Custom policy for requesting termination protection or termination of
-     * specific instances when shrinking an instance group.</p>
-     */
     inline bool InstanceResizePolicyHasBeenSet() const { return m_instanceResizePolicyHasBeenSet; }
-
-    /**
-     * <p>Custom policy for requesting termination protection or termination of
-     * specific instances when shrinking an instance group.</p>
-     */
     inline void SetInstanceResizePolicy(const InstanceResizePolicy& value) { m_instanceResizePolicyHasBeenSet = true; m_instanceResizePolicy = value; }
-
-    /**
-     * <p>Custom policy for requesting termination protection or termination of
-     * specific instances when shrinking an instance group.</p>
-     */
     inline void SetInstanceResizePolicy(InstanceResizePolicy&& value) { m_instanceResizePolicyHasBeenSet = true; m_instanceResizePolicy = std::move(value); }
-
-    /**
-     * <p>Custom policy for requesting termination protection or termination of
-     * specific instances when shrinking an instance group.</p>
-     */
     inline ShrinkPolicy& WithInstanceResizePolicy(const InstanceResizePolicy& value) { SetInstanceResizePolicy(value); return *this;}
-
-    /**
-     * <p>Custom policy for requesting termination protection or termination of
-     * specific instances when shrinking an instance group.</p>
-     */
     inline ShrinkPolicy& WithInstanceResizePolicy(InstanceResizePolicy&& value) { SetInstanceResizePolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_decommissionTimeout;

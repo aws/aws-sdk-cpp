@@ -39,26 +39,15 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The size of the function's <code>/tmp</code> directory.</p>
      */
     inline int GetSize() const{ return m_size; }
-
-    /**
-     * <p>The size of the function's <code>/tmp</code> directory.</p>
-     */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-
-    /**
-     * <p>The size of the function's <code>/tmp</code> directory.</p>
-     */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
-
-    /**
-     * <p>The size of the function's <code>/tmp</code> directory.</p>
-     */
     inline EphemeralStorage& WithSize(int value) { SetSize(value); return *this;}
-
+    ///@}
   private:
 
     int m_size;

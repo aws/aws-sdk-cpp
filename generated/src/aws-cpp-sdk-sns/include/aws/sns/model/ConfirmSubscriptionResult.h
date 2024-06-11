@@ -38,57 +38,27 @@ namespace Model
     AWS_SNS_API ConfirmSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the created subscription.</p>
      */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
-
-    /**
-     * <p>The ARN of the created subscription.</p>
-     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArn = value; }
-
-    /**
-     * <p>The ARN of the created subscription.</p>
-     */
     inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the created subscription.</p>
-     */
     inline void SetSubscriptionArn(const char* value) { m_subscriptionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the created subscription.</p>
-     */
     inline ConfirmSubscriptionResult& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the created subscription.</p>
-     */
     inline ConfirmSubscriptionResult& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the created subscription.</p>
-     */
     inline ConfirmSubscriptionResult& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ConfirmSubscriptionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ConfirmSubscriptionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_subscriptionArn;

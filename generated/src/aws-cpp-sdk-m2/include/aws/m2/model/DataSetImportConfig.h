@@ -40,87 +40,33 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data sets.</p>
      */
     inline const Aws::Vector<DataSetImportItem>& GetDataSets() const{ return m_dataSets; }
-
-    /**
-     * <p>The data sets.</p>
-     */
     inline bool DataSetsHasBeenSet() const { return m_dataSetsHasBeenSet; }
-
-    /**
-     * <p>The data sets.</p>
-     */
     inline void SetDataSets(const Aws::Vector<DataSetImportItem>& value) { m_dataSetsHasBeenSet = true; m_dataSets = value; }
-
-    /**
-     * <p>The data sets.</p>
-     */
     inline void SetDataSets(Aws::Vector<DataSetImportItem>&& value) { m_dataSetsHasBeenSet = true; m_dataSets = std::move(value); }
-
-    /**
-     * <p>The data sets.</p>
-     */
     inline DataSetImportConfig& WithDataSets(const Aws::Vector<DataSetImportItem>& value) { SetDataSets(value); return *this;}
-
-    /**
-     * <p>The data sets.</p>
-     */
     inline DataSetImportConfig& WithDataSets(Aws::Vector<DataSetImportItem>&& value) { SetDataSets(std::move(value)); return *this;}
-
-    /**
-     * <p>The data sets.</p>
-     */
     inline DataSetImportConfig& AddDataSets(const DataSetImportItem& value) { m_dataSetsHasBeenSet = true; m_dataSets.push_back(value); return *this; }
-
-    /**
-     * <p>The data sets.</p>
-     */
     inline DataSetImportConfig& AddDataSets(DataSetImportItem&& value) { m_dataSetsHasBeenSet = true; m_dataSets.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon S3 location of the data sets.</p>
      */
     inline const Aws::String& GetS3Location() const{ return m_s3Location; }
-
-    /**
-     * <p>The Amazon S3 location of the data sets.</p>
-     */
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 location of the data sets.</p>
-     */
     inline void SetS3Location(const Aws::String& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-
-    /**
-     * <p>The Amazon S3 location of the data sets.</p>
-     */
     inline void SetS3Location(Aws::String&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 location of the data sets.</p>
-     */
     inline void SetS3Location(const char* value) { m_s3LocationHasBeenSet = true; m_s3Location.assign(value); }
-
-    /**
-     * <p>The Amazon S3 location of the data sets.</p>
-     */
     inline DataSetImportConfig& WithS3Location(const Aws::String& value) { SetS3Location(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 location of the data sets.</p>
-     */
     inline DataSetImportConfig& WithS3Location(Aws::String&& value) { SetS3Location(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 location of the data sets.</p>
-     */
     inline DataSetImportConfig& WithS3Location(const char* value) { SetS3Location(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DataSetImportItem> m_dataSets;

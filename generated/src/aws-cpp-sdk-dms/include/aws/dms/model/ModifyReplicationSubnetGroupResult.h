@@ -38,53 +38,27 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The modified replication subnet group.</p>
      */
     inline const ReplicationSubnetGroup& GetReplicationSubnetGroup() const{ return m_replicationSubnetGroup; }
-
-    /**
-     * <p>The modified replication subnet group.</p>
-     */
     inline void SetReplicationSubnetGroup(const ReplicationSubnetGroup& value) { m_replicationSubnetGroup = value; }
-
-    /**
-     * <p>The modified replication subnet group.</p>
-     */
     inline void SetReplicationSubnetGroup(ReplicationSubnetGroup&& value) { m_replicationSubnetGroup = std::move(value); }
-
-    /**
-     * <p>The modified replication subnet group.</p>
-     */
     inline ModifyReplicationSubnetGroupResult& WithReplicationSubnetGroup(const ReplicationSubnetGroup& value) { SetReplicationSubnetGroup(value); return *this;}
-
-    /**
-     * <p>The modified replication subnet group.</p>
-     */
     inline ModifyReplicationSubnetGroupResult& WithReplicationSubnetGroup(ReplicationSubnetGroup&& value) { SetReplicationSubnetGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ModifyReplicationSubnetGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ModifyReplicationSubnetGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ModifyReplicationSubnetGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ReplicationSubnetGroup m_replicationSubnetGroup;

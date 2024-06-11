@@ -34,46 +34,19 @@ namespace Model
     AWS_SERVICEDISCOVERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the service that you want to get settings for.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the service that you want to get settings for.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the service that you want to get settings for.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the service that you want to get settings for.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the service that you want to get settings for.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the service that you want to get settings for.</p>
-     */
     inline GetServiceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the service that you want to get settings for.</p>
-     */
     inline GetServiceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the service that you want to get settings for.</p>
-     */
     inline GetServiceRequest& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

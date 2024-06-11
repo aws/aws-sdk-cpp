@@ -33,53 +33,27 @@ namespace Model
     AWS_CLEANROOMS_API GetSchemaAnalysisRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A specification about how data from the configured table can be used.</p>
      */
     inline const AnalysisRule& GetAnalysisRule() const{ return m_analysisRule; }
-
-    /**
-     * <p>A specification about how data from the configured table can be used.</p>
-     */
     inline void SetAnalysisRule(const AnalysisRule& value) { m_analysisRule = value; }
-
-    /**
-     * <p>A specification about how data from the configured table can be used.</p>
-     */
     inline void SetAnalysisRule(AnalysisRule&& value) { m_analysisRule = std::move(value); }
-
-    /**
-     * <p>A specification about how data from the configured table can be used.</p>
-     */
     inline GetSchemaAnalysisRuleResult& WithAnalysisRule(const AnalysisRule& value) { SetAnalysisRule(value); return *this;}
-
-    /**
-     * <p>A specification about how data from the configured table can be used.</p>
-     */
     inline GetSchemaAnalysisRuleResult& WithAnalysisRule(AnalysisRule&& value) { SetAnalysisRule(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSchemaAnalysisRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSchemaAnalysisRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSchemaAnalysisRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AnalysisRule m_analysisRule;

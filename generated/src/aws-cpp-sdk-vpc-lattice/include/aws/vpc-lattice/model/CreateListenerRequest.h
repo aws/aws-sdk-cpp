@@ -36,6 +36,7 @@ namespace Model
     AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If you retry a request that completed successfully
@@ -43,320 +44,99 @@ namespace Model
      * performing any actions. If the parameters aren't identical, the retry fails.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline CreateListenerRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline CreateListenerRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline CreateListenerRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The action for the default rule. Each listener has a default rule. The
      * default rule is used if no other rules match.</p>
      */
     inline const RuleAction& GetDefaultAction() const{ return m_defaultAction; }
-
-    /**
-     * <p>The action for the default rule. Each listener has a default rule. The
-     * default rule is used if no other rules match.</p>
-     */
     inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
-
-    /**
-     * <p>The action for the default rule. Each listener has a default rule. The
-     * default rule is used if no other rules match.</p>
-     */
     inline void SetDefaultAction(const RuleAction& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
-
-    /**
-     * <p>The action for the default rule. Each listener has a default rule. The
-     * default rule is used if no other rules match.</p>
-     */
     inline void SetDefaultAction(RuleAction&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::move(value); }
-
-    /**
-     * <p>The action for the default rule. Each listener has a default rule. The
-     * default rule is used if no other rules match.</p>
-     */
     inline CreateListenerRequest& WithDefaultAction(const RuleAction& value) { SetDefaultAction(value); return *this;}
-
-    /**
-     * <p>The action for the default rule. Each listener has a default rule. The
-     * default rule is used if no other rules match.</p>
-     */
     inline CreateListenerRequest& WithDefaultAction(RuleAction&& value) { SetDefaultAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the listener. A listener name must be unique within a service.
      * The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as
      * the first or last character, or immediately after another hyphen.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the listener. A listener name must be unique within a service.
-     * The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as
-     * the first or last character, or immediately after another hyphen.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the listener. A listener name must be unique within a service.
-     * The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as
-     * the first or last character, or immediately after another hyphen.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the listener. A listener name must be unique within a service.
-     * The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as
-     * the first or last character, or immediately after another hyphen.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the listener. A listener name must be unique within a service.
-     * The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as
-     * the first or last character, or immediately after another hyphen.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the listener. A listener name must be unique within a service.
-     * The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as
-     * the first or last character, or immediately after another hyphen.</p>
-     */
     inline CreateListenerRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the listener. A listener name must be unique within a service.
-     * The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as
-     * the first or last character, or immediately after another hyphen.</p>
-     */
     inline CreateListenerRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the listener. A listener name must be unique within a service.
-     * The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as
-     * the first or last character, or immediately after another hyphen.</p>
-     */
     inline CreateListenerRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The listener port. You can specify a value from 1 to 65535. For HTTP, the
      * default is 80. For HTTPS, the default is 443.</p>
      */
     inline int GetPort() const{ return m_port; }
-
-    /**
-     * <p>The listener port. You can specify a value from 1 to 65535. For HTTP, the
-     * default is 80. For HTTPS, the default is 443.</p>
-     */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-
-    /**
-     * <p>The listener port. You can specify a value from 1 to 65535. For HTTP, the
-     * default is 80. For HTTPS, the default is 443.</p>
-     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-
-    /**
-     * <p>The listener port. You can specify a value from 1 to 65535. For HTTP, the
-     * default is 80. For HTTPS, the default is 443.</p>
-     */
     inline CreateListenerRequest& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The listener protocol.</p>
      */
     inline const ListenerProtocol& GetProtocol() const{ return m_protocol; }
-
-    /**
-     * <p>The listener protocol.</p>
-     */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-
-    /**
-     * <p>The listener protocol.</p>
-     */
     inline void SetProtocol(const ListenerProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-
-    /**
-     * <p>The listener protocol.</p>
-     */
     inline void SetProtocol(ListenerProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-
-    /**
-     * <p>The listener protocol.</p>
-     */
     inline CreateListenerRequest& WithProtocol(const ListenerProtocol& value) { SetProtocol(value); return *this;}
-
-    /**
-     * <p>The listener protocol.</p>
-     */
     inline CreateListenerRequest& WithProtocol(ListenerProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
      */
     inline const Aws::String& GetServiceIdentifier() const{ return m_serviceIdentifier; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline void SetServiceIdentifier(const Aws::String& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = value; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline void SetServiceIdentifier(Aws::String&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline void SetServiceIdentifier(const char* value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier.assign(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline CreateListenerRequest& WithServiceIdentifier(const Aws::String& value) { SetServiceIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline CreateListenerRequest& WithServiceIdentifier(Aws::String&& value) { SetServiceIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline CreateListenerRequest& WithServiceIdentifier(const char* value) { SetServiceIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags for the listener.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags for the listener.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags for the listener.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags for the listener.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags for the listener.</p>
-     */
     inline CreateListenerRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags for the listener.</p>
-     */
     inline CreateListenerRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags for the listener.</p>
-     */
     inline CreateListenerRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The tags for the listener.</p>
-     */
     inline CreateListenerRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags for the listener.</p>
-     */
     inline CreateListenerRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags for the listener.</p>
-     */
     inline CreateListenerRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The tags for the listener.</p>
-     */
     inline CreateListenerRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags for the listener.</p>
-     */
     inline CreateListenerRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags for the listener.</p>
-     */
     inline CreateListenerRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

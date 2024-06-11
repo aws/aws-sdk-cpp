@@ -40,108 +40,43 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The action details on a specific topic in the Guardrail.</p>
      */
     inline const GuardrailTopicPolicyAction& GetAction() const{ return m_action; }
-
-    /**
-     * <p>The action details on a specific topic in the Guardrail.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>The action details on a specific topic in the Guardrail.</p>
-     */
     inline void SetAction(const GuardrailTopicPolicyAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>The action details on a specific topic in the Guardrail.</p>
-     */
     inline void SetAction(GuardrailTopicPolicyAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>The action details on a specific topic in the Guardrail.</p>
-     */
     inline GuardrailTopic& WithAction(const GuardrailTopicPolicyAction& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>The action details on a specific topic in the Guardrail.</p>
-     */
     inline GuardrailTopic& WithAction(GuardrailTopicPolicyAction&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name details on a specific topic in the Guardrail.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name details on a specific topic in the Guardrail.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name details on a specific topic in the Guardrail.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name details on a specific topic in the Guardrail.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name details on a specific topic in the Guardrail.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name details on a specific topic in the Guardrail.</p>
-     */
     inline GuardrailTopic& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name details on a specific topic in the Guardrail.</p>
-     */
     inline GuardrailTopic& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name details on a specific topic in the Guardrail.</p>
-     */
     inline GuardrailTopic& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type details on a specific topic in the Guardrail.</p>
      */
     inline const GuardrailTopicType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type details on a specific topic in the Guardrail.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type details on a specific topic in the Guardrail.</p>
-     */
     inline void SetType(const GuardrailTopicType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type details on a specific topic in the Guardrail.</p>
-     */
     inline void SetType(GuardrailTopicType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type details on a specific topic in the Guardrail.</p>
-     */
     inline GuardrailTopic& WithType(const GuardrailTopicType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type details on a specific topic in the Guardrail.</p>
-     */
     inline GuardrailTopic& WithType(GuardrailTopicType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GuardrailTopicPolicyAction m_action;

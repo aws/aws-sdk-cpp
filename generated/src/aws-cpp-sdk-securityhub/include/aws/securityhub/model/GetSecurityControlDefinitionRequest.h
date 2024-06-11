@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYHUB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p> The ID of the security control to retrieve the definition for. This field
      * doesn’t accept an Amazon Resource Name (ARN). </p>
      */
     inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }
-
-    /**
-     * <p> The ID of the security control to retrieve the definition for. This field
-     * doesn’t accept an Amazon Resource Name (ARN). </p>
-     */
     inline bool SecurityControlIdHasBeenSet() const { return m_securityControlIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the security control to retrieve the definition for. This field
-     * doesn’t accept an Amazon Resource Name (ARN). </p>
-     */
     inline void SetSecurityControlId(const Aws::String& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = value; }
-
-    /**
-     * <p> The ID of the security control to retrieve the definition for. This field
-     * doesn’t accept an Amazon Resource Name (ARN). </p>
-     */
     inline void SetSecurityControlId(Aws::String&& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = std::move(value); }
-
-    /**
-     * <p> The ID of the security control to retrieve the definition for. This field
-     * doesn’t accept an Amazon Resource Name (ARN). </p>
-     */
     inline void SetSecurityControlId(const char* value) { m_securityControlIdHasBeenSet = true; m_securityControlId.assign(value); }
-
-    /**
-     * <p> The ID of the security control to retrieve the definition for. This field
-     * doesn’t accept an Amazon Resource Name (ARN). </p>
-     */
     inline GetSecurityControlDefinitionRequest& WithSecurityControlId(const Aws::String& value) { SetSecurityControlId(value); return *this;}
-
-    /**
-     * <p> The ID of the security control to retrieve the definition for. This field
-     * doesn’t accept an Amazon Resource Name (ARN). </p>
-     */
     inline GetSecurityControlDefinitionRequest& WithSecurityControlId(Aws::String&& value) { SetSecurityControlId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the security control to retrieve the definition for. This field
-     * doesn’t accept an Amazon Resource Name (ARN). </p>
-     */
     inline GetSecurityControlDefinitionRequest& WithSecurityControlId(const char* value) { SetSecurityControlId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_securityControlId;

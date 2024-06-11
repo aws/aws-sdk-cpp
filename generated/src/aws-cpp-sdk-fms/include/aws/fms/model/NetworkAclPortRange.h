@@ -36,47 +36,25 @@ namespace Model
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The beginning port number of the range. </p>
      */
     inline int GetFrom() const{ return m_from; }
-
-    /**
-     * <p>The beginning port number of the range. </p>
-     */
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-
-    /**
-     * <p>The beginning port number of the range. </p>
-     */
     inline void SetFrom(int value) { m_fromHasBeenSet = true; m_from = value; }
-
-    /**
-     * <p>The beginning port number of the range. </p>
-     */
     inline NetworkAclPortRange& WithFrom(int value) { SetFrom(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ending port number of the range. </p>
      */
     inline int GetTo() const{ return m_to; }
-
-    /**
-     * <p>The ending port number of the range. </p>
-     */
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-
-    /**
-     * <p>The ending port number of the range. </p>
-     */
     inline void SetTo(int value) { m_toHasBeenSet = true; m_to = value; }
-
-    /**
-     * <p>The ending port number of the range. </p>
-     */
     inline NetworkAclPortRange& WithTo(int value) { SetTo(value); return *this;}
-
+    ///@}
   private:
 
     int m_from;

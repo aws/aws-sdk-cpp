@@ -33,53 +33,27 @@ namespace Model
     AWS_GAMELIFT_API CreateLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details of the custom location you created.</p>
      */
     inline const LocationModel& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>The details of the custom location you created.</p>
-     */
     inline void SetLocation(const LocationModel& value) { m_location = value; }
-
-    /**
-     * <p>The details of the custom location you created.</p>
-     */
     inline void SetLocation(LocationModel&& value) { m_location = std::move(value); }
-
-    /**
-     * <p>The details of the custom location you created.</p>
-     */
     inline CreateLocationResult& WithLocation(const LocationModel& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>The details of the custom location you created.</p>
-     */
     inline CreateLocationResult& WithLocation(LocationModel&& value) { SetLocation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateLocationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateLocationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateLocationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LocationModel m_location;

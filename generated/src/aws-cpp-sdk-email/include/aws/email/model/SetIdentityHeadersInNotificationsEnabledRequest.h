@@ -44,92 +44,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The identity for which to enable or disable headers in notifications.
      * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
      */
     inline const Aws::String& GetIdentity() const{ return m_identity; }
-
-    /**
-     * <p>The identity for which to enable or disable headers in notifications.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
-
-    /**
-     * <p>The identity for which to enable or disable headers in notifications.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
-
-    /**
-     * <p>The identity for which to enable or disable headers in notifications.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
-
-    /**
-     * <p>The identity for which to enable or disable headers in notifications.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
-
-    /**
-     * <p>The identity for which to enable or disable headers in notifications.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline SetIdentityHeadersInNotificationsEnabledRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
-
-    /**
-     * <p>The identity for which to enable or disable headers in notifications.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline SetIdentityHeadersInNotificationsEnabledRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
-
-    /**
-     * <p>The identity for which to enable or disable headers in notifications.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline SetIdentityHeadersInNotificationsEnabledRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The notification type for which to enable or disable headers in
      * notifications. </p>
      */
     inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
-
-    /**
-     * <p>The notification type for which to enable or disable headers in
-     * notifications. </p>
-     */
     inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
-
-    /**
-     * <p>The notification type for which to enable or disable headers in
-     * notifications. </p>
-     */
     inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
-
-    /**
-     * <p>The notification type for which to enable or disable headers in
-     * notifications. </p>
-     */
     inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
-
-    /**
-     * <p>The notification type for which to enable or disable headers in
-     * notifications. </p>
-     */
     inline SetIdentityHeadersInNotificationsEnabledRequest& WithNotificationType(const NotificationType& value) { SetNotificationType(value); return *this;}
-
-    /**
-     * <p>The notification type for which to enable or disable headers in
-     * notifications. </p>
-     */
     inline SetIdentityHeadersInNotificationsEnabledRequest& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Sets whether Amazon SES includes the original email headers in Amazon SNS
      * notifications of the specified notification type. A value of <code>true</code>
@@ -140,40 +83,10 @@ namespace Model
      * topic.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Sets whether Amazon SES includes the original email headers in Amazon SNS
-     * notifications of the specified notification type. A value of <code>true</code>
-     * specifies that Amazon SES includes headers in notifications, and a value of
-     * <code>false</code> specifies that Amazon SES does not include headers in
-     * notifications.</p> <p>This value can only be set when
-     * <code>NotificationType</code> is already set to use a particular Amazon SNS
-     * topic.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Sets whether Amazon SES includes the original email headers in Amazon SNS
-     * notifications of the specified notification type. A value of <code>true</code>
-     * specifies that Amazon SES includes headers in notifications, and a value of
-     * <code>false</code> specifies that Amazon SES does not include headers in
-     * notifications.</p> <p>This value can only be set when
-     * <code>NotificationType</code> is already set to use a particular Amazon SNS
-     * topic.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Sets whether Amazon SES includes the original email headers in Amazon SNS
-     * notifications of the specified notification type. A value of <code>true</code>
-     * specifies that Amazon SES includes headers in notifications, and a value of
-     * <code>false</code> specifies that Amazon SES does not include headers in
-     * notifications.</p> <p>This value can only be set when
-     * <code>NotificationType</code> is already set to use a particular Amazon SNS
-     * topic.</p>
-     */
     inline SetIdentityHeadersInNotificationsEnabledRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identity;

@@ -40,55 +40,22 @@ namespace Model
      */
     AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
      * Point.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline DescribeMultiRegionAccessPointOperationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline DescribeMultiRegionAccessPointOperationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline DescribeMultiRegionAccessPointOperationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The request token associated with the request you want to know about. This
      * request token is returned as part of the response when you make an asynchronous
@@ -96,63 +63,14 @@ namespace Model
      * action.</p>
      */
     inline const Aws::String& GetRequestTokenARN() const{ return m_requestTokenARN; }
-
-    /**
-     * <p>The request token associated with the request you want to know about. This
-     * request token is returned as part of the response when you make an asynchronous
-     * request. You provide this token to query about the status of the asynchronous
-     * action.</p>
-     */
     inline bool RequestTokenARNHasBeenSet() const { return m_requestTokenARNHasBeenSet; }
-
-    /**
-     * <p>The request token associated with the request you want to know about. This
-     * request token is returned as part of the response when you make an asynchronous
-     * request. You provide this token to query about the status of the asynchronous
-     * action.</p>
-     */
     inline void SetRequestTokenARN(const Aws::String& value) { m_requestTokenARNHasBeenSet = true; m_requestTokenARN = value; }
-
-    /**
-     * <p>The request token associated with the request you want to know about. This
-     * request token is returned as part of the response when you make an asynchronous
-     * request. You provide this token to query about the status of the asynchronous
-     * action.</p>
-     */
     inline void SetRequestTokenARN(Aws::String&& value) { m_requestTokenARNHasBeenSet = true; m_requestTokenARN = std::move(value); }
-
-    /**
-     * <p>The request token associated with the request you want to know about. This
-     * request token is returned as part of the response when you make an asynchronous
-     * request. You provide this token to query about the status of the asynchronous
-     * action.</p>
-     */
     inline void SetRequestTokenARN(const char* value) { m_requestTokenARNHasBeenSet = true; m_requestTokenARN.assign(value); }
-
-    /**
-     * <p>The request token associated with the request you want to know about. This
-     * request token is returned as part of the response when you make an asynchronous
-     * request. You provide this token to query about the status of the asynchronous
-     * action.</p>
-     */
     inline DescribeMultiRegionAccessPointOperationRequest& WithRequestTokenARN(const Aws::String& value) { SetRequestTokenARN(value); return *this;}
-
-    /**
-     * <p>The request token associated with the request you want to know about. This
-     * request token is returned as part of the response when you make an asynchronous
-     * request. You provide this token to query about the status of the asynchronous
-     * action.</p>
-     */
     inline DescribeMultiRegionAccessPointOperationRequest& WithRequestTokenARN(Aws::String&& value) { SetRequestTokenARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The request token associated with the request you want to know about. This
-     * request token is returned as part of the response when you make an asynchronous
-     * request. You provide this token to query about the status of the asynchronous
-     * action.</p>
-     */
     inline DescribeMultiRegionAccessPointOperationRequest& WithRequestTokenARN(const char* value) { SetRequestTokenARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

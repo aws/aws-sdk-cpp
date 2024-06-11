@@ -34,79 +34,31 @@ namespace Model
     AWS_FMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Firewall Manager applications list that you want the details
      * for.</p>
      */
     inline const Aws::String& GetListId() const{ return m_listId; }
-
-    /**
-     * <p>The ID of the Firewall Manager applications list that you want the details
-     * for.</p>
-     */
     inline bool ListIdHasBeenSet() const { return m_listIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Firewall Manager applications list that you want the details
-     * for.</p>
-     */
     inline void SetListId(const Aws::String& value) { m_listIdHasBeenSet = true; m_listId = value; }
-
-    /**
-     * <p>The ID of the Firewall Manager applications list that you want the details
-     * for.</p>
-     */
     inline void SetListId(Aws::String&& value) { m_listIdHasBeenSet = true; m_listId = std::move(value); }
-
-    /**
-     * <p>The ID of the Firewall Manager applications list that you want the details
-     * for.</p>
-     */
     inline void SetListId(const char* value) { m_listIdHasBeenSet = true; m_listId.assign(value); }
-
-    /**
-     * <p>The ID of the Firewall Manager applications list that you want the details
-     * for.</p>
-     */
     inline GetAppsListRequest& WithListId(const Aws::String& value) { SetListId(value); return *this;}
-
-    /**
-     * <p>The ID of the Firewall Manager applications list that you want the details
-     * for.</p>
-     */
     inline GetAppsListRequest& WithListId(Aws::String&& value) { SetListId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Firewall Manager applications list that you want the details
-     * for.</p>
-     */
     inline GetAppsListRequest& WithListId(const char* value) { SetListId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the list to retrieve is a default list owned by Firewall
      * Manager.</p>
      */
     inline bool GetDefaultList() const{ return m_defaultList; }
-
-    /**
-     * <p>Specifies whether the list to retrieve is a default list owned by Firewall
-     * Manager.</p>
-     */
     inline bool DefaultListHasBeenSet() const { return m_defaultListHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the list to retrieve is a default list owned by Firewall
-     * Manager.</p>
-     */
     inline void SetDefaultList(bool value) { m_defaultListHasBeenSet = true; m_defaultList = value; }
-
-    /**
-     * <p>Specifies whether the list to retrieve is a default list owned by Firewall
-     * Manager.</p>
-     */
     inline GetAppsListRequest& WithDefaultList(bool value) { SetDefaultList(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_listId;

@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetJourneyRunExecutionMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const JourneyRunExecutionMetricsResponse& GetJourneyRunExecutionMetricsResponse() const{ return m_journeyRunExecutionMetricsResponse; }
-
-    
     inline void SetJourneyRunExecutionMetricsResponse(const JourneyRunExecutionMetricsResponse& value) { m_journeyRunExecutionMetricsResponse = value; }
-
-    
     inline void SetJourneyRunExecutionMetricsResponse(JourneyRunExecutionMetricsResponse&& value) { m_journeyRunExecutionMetricsResponse = std::move(value); }
-
-    
     inline GetJourneyRunExecutionMetricsResult& WithJourneyRunExecutionMetricsResponse(const JourneyRunExecutionMetricsResponse& value) { SetJourneyRunExecutionMetricsResponse(value); return *this;}
-
-    
     inline GetJourneyRunExecutionMetricsResult& WithJourneyRunExecutionMetricsResponse(JourneyRunExecutionMetricsResponse&& value) { SetJourneyRunExecutionMetricsResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetJourneyRunExecutionMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetJourneyRunExecutionMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetJourneyRunExecutionMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JourneyRunExecutionMetricsResponse m_journeyRunExecutionMetricsResponse;

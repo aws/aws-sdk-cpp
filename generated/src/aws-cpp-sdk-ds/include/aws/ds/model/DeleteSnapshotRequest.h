@@ -38,46 +38,19 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the directory snapshot to be deleted.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
-
-    /**
-     * <p>The identifier of the directory snapshot to be deleted.</p>
-     */
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the directory snapshot to be deleted.</p>
-     */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-
-    /**
-     * <p>The identifier of the directory snapshot to be deleted.</p>
-     */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-
-    /**
-     * <p>The identifier of the directory snapshot to be deleted.</p>
-     */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-
-    /**
-     * <p>The identifier of the directory snapshot to be deleted.</p>
-     */
     inline DeleteSnapshotRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-
-    /**
-     * <p>The identifier of the directory snapshot to be deleted.</p>
-     */
     inline DeleteSnapshotRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the directory snapshot to be deleted.</p>
-     */
     inline DeleteSnapshotRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_snapshotId;

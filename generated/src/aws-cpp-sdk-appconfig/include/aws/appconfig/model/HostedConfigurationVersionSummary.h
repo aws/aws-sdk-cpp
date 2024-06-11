@@ -37,304 +37,103 @@ namespace Model
     AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The application ID.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline HostedConfigurationVersionSummary& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline HostedConfigurationVersionSummary& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline HostedConfigurationVersionSummary& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration profile ID.</p>
      */
     inline const Aws::String& GetConfigurationProfileId() const{ return m_configurationProfileId; }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline bool ConfigurationProfileIdHasBeenSet() const { return m_configurationProfileIdHasBeenSet; }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline void SetConfigurationProfileId(const Aws::String& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = value; }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline void SetConfigurationProfileId(Aws::String&& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = std::move(value); }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline void SetConfigurationProfileId(const char* value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId.assign(value); }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline HostedConfigurationVersionSummary& WithConfigurationProfileId(const Aws::String& value) { SetConfigurationProfileId(value); return *this;}
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline HostedConfigurationVersionSummary& WithConfigurationProfileId(Aws::String&& value) { SetConfigurationProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline HostedConfigurationVersionSummary& WithConfigurationProfileId(const char* value) { SetConfigurationProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration version.</p>
      */
     inline int GetVersionNumber() const{ return m_versionNumber; }
-
-    /**
-     * <p>The configuration version.</p>
-     */
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
-
-    /**
-     * <p>The configuration version.</p>
-     */
     inline void SetVersionNumber(int value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
-
-    /**
-     * <p>The configuration version.</p>
-     */
     inline HostedConfigurationVersionSummary& WithVersionNumber(int value) { SetVersionNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline HostedConfigurationVersionSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline HostedConfigurationVersionSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline HostedConfigurationVersionSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A standard MIME type describing the format of the configuration content. For
      * more information, see <a
      * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
-
-    /**
-     * <p>A standard MIME type describing the format of the configuration content. For
-     * more information, see <a
-     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-     */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-
-    /**
-     * <p>A standard MIME type describing the format of the configuration content. For
-     * more information, see <a
-     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-     */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-
-    /**
-     * <p>A standard MIME type describing the format of the configuration content. For
-     * more information, see <a
-     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-     */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-
-    /**
-     * <p>A standard MIME type describing the format of the configuration content. For
-     * more information, see <a
-     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-     */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-
-    /**
-     * <p>A standard MIME type describing the format of the configuration content. For
-     * more information, see <a
-     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-     */
     inline HostedConfigurationVersionSummary& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-
-    /**
-     * <p>A standard MIME type describing the format of the configuration content. For
-     * more information, see <a
-     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-     */
     inline HostedConfigurationVersionSummary& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-
-    /**
-     * <p>A standard MIME type describing the format of the configuration content. For
-     * more information, see <a
-     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-     */
     inline HostedConfigurationVersionSummary& WithContentType(const char* value) { SetContentType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A user-defined label for an AppConfig hosted configuration version.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline HostedConfigurationVersionSummary& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline HostedConfigurationVersionSummary& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline HostedConfigurationVersionSummary& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name of the Key Management Service key that was used to
      * encrypt this specific version of the configuration data in the AppConfig hosted
      * configuration store.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key that was used to
-     * encrypt this specific version of the configuration data in the AppConfig hosted
-     * configuration store.</p>
-     */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key that was used to
-     * encrypt this specific version of the configuration data in the AppConfig hosted
-     * configuration store.</p>
-     */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key that was used to
-     * encrypt this specific version of the configuration data in the AppConfig hosted
-     * configuration store.</p>
-     */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key that was used to
-     * encrypt this specific version of the configuration data in the AppConfig hosted
-     * configuration store.</p>
-     */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key that was used to
-     * encrypt this specific version of the configuration data in the AppConfig hosted
-     * configuration store.</p>
-     */
     inline HostedConfigurationVersionSummary& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key that was used to
-     * encrypt this specific version of the configuration data in the AppConfig hosted
-     * configuration store.</p>
-     */
     inline HostedConfigurationVersionSummary& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key that was used to
-     * encrypt this specific version of the configuration data in the AppConfig hosted
-     * configuration store.</p>
-     */
     inline HostedConfigurationVersionSummary& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

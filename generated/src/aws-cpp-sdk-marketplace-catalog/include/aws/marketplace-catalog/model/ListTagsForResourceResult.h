@@ -34,106 +34,43 @@ namespace Model
     AWS_MARKETPLACECATALOG_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Required. The ARN associated with the resource you want to list tags on.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>Required. The ARN associated with the resource you want to list tags on.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
-
-    /**
-     * <p>Required. The ARN associated with the resource you want to list tags on.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
-
-    /**
-     * <p>Required. The ARN associated with the resource you want to list tags on.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
-
-    /**
-     * <p>Required. The ARN associated with the resource you want to list tags on.</p>
-     */
     inline ListTagsForResourceResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>Required. The ARN associated with the resource you want to list tags on.</p>
-     */
     inline ListTagsForResourceResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Required. The ARN associated with the resource you want to list tags on.</p>
-     */
     inline ListTagsForResourceResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Required. A list of objects specifying each key name and value. Number of
      * objects allowed: 1-50.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Required. A list of objects specifying each key name and value. Number of
-     * objects allowed: 1-50.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-
-    /**
-     * <p>Required. A list of objects specifying each key name and value. Number of
-     * objects allowed: 1-50.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p>Required. A list of objects specifying each key name and value. Number of
-     * objects allowed: 1-50.</p>
-     */
     inline ListTagsForResourceResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Required. A list of objects specifying each key name and value. Number of
-     * objects allowed: 1-50.</p>
-     */
     inline ListTagsForResourceResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Required. A list of objects specifying each key name and value. Number of
-     * objects allowed: 1-50.</p>
-     */
     inline ListTagsForResourceResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>Required. A list of objects specifying each key name and value. Number of
-     * objects allowed: 1-50.</p>
-     */
     inline ListTagsForResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTagsForResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTagsForResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTagsForResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

@@ -32,103 +32,35 @@ namespace Model
     AWS_CONNECTWISDOMSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
      * type knowledge base if you're storing Wisdom Content resource to it. Can be
      * either the ID or the ARN. URLs cannot contain the ARN.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
-
-    /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Wisdom Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p>
-     */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Wisdom Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p>
-     */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-
-    /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Wisdom Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p>
-     */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-
-    /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Wisdom Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p>
-     */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-
-    /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Wisdom Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p>
-     */
     inline UpdateKnowledgeBaseTemplateUriRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-
-    /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Wisdom Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p>
-     */
     inline UpdateKnowledgeBaseTemplateUriRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Wisdom Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p>
-     */
     inline UpdateKnowledgeBaseTemplateUriRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The template URI to update.</p>
      */
     inline const Aws::String& GetTemplateUri() const{ return m_templateUri; }
-
-    /**
-     * <p>The template URI to update.</p>
-     */
     inline bool TemplateUriHasBeenSet() const { return m_templateUriHasBeenSet; }
-
-    /**
-     * <p>The template URI to update.</p>
-     */
     inline void SetTemplateUri(const Aws::String& value) { m_templateUriHasBeenSet = true; m_templateUri = value; }
-
-    /**
-     * <p>The template URI to update.</p>
-     */
     inline void SetTemplateUri(Aws::String&& value) { m_templateUriHasBeenSet = true; m_templateUri = std::move(value); }
-
-    /**
-     * <p>The template URI to update.</p>
-     */
     inline void SetTemplateUri(const char* value) { m_templateUriHasBeenSet = true; m_templateUri.assign(value); }
-
-    /**
-     * <p>The template URI to update.</p>
-     */
     inline UpdateKnowledgeBaseTemplateUriRequest& WithTemplateUri(const Aws::String& value) { SetTemplateUri(value); return *this;}
-
-    /**
-     * <p>The template URI to update.</p>
-     */
     inline UpdateKnowledgeBaseTemplateUriRequest& WithTemplateUri(Aws::String&& value) { SetTemplateUri(std::move(value)); return *this;}
-
-    /**
-     * <p>The template URI to update.</p>
-     */
     inline UpdateKnowledgeBaseTemplateUriRequest& WithTemplateUri(const char* value) { SetTemplateUri(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_knowledgeBaseId;

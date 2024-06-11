@@ -38,79 +38,31 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This is the <code>componentTypeId</code> that this
      * <code>compositeComponentType</code> refers to.</p>
      */
     inline const Aws::String& GetComponentTypeId() const{ return m_componentTypeId; }
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that this
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline bool ComponentTypeIdHasBeenSet() const { return m_componentTypeIdHasBeenSet; }
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that this
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline void SetComponentTypeId(const Aws::String& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = value; }
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that this
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline void SetComponentTypeId(Aws::String&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::move(value); }
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that this
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline void SetComponentTypeId(const char* value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId.assign(value); }
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that this
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline CompositeComponentTypeResponse& WithComponentTypeId(const Aws::String& value) { SetComponentTypeId(value); return *this;}
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that this
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline CompositeComponentTypeResponse& WithComponentTypeId(Aws::String&& value) { SetComponentTypeId(std::move(value)); return *this;}
-
-    /**
-     * <p>This is the <code>componentTypeId</code> that this
-     * <code>compositeComponentType</code> refers to.</p>
-     */
     inline CompositeComponentTypeResponse& WithComponentTypeId(const char* value) { SetComponentTypeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This boolean indicates whether this <code>compositeComponentType</code> is
      * inherited from its parent.</p>
      */
     inline bool GetIsInherited() const{ return m_isInherited; }
-
-    /**
-     * <p>This boolean indicates whether this <code>compositeComponentType</code> is
-     * inherited from its parent.</p>
-     */
     inline bool IsInheritedHasBeenSet() const { return m_isInheritedHasBeenSet; }
-
-    /**
-     * <p>This boolean indicates whether this <code>compositeComponentType</code> is
-     * inherited from its parent.</p>
-     */
     inline void SetIsInherited(bool value) { m_isInheritedHasBeenSet = true; m_isInherited = value; }
-
-    /**
-     * <p>This boolean indicates whether this <code>compositeComponentType</code> is
-     * inherited from its parent.</p>
-     */
     inline CompositeComponentTypeResponse& WithIsInherited(bool value) { SetIsInherited(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_componentTypeId;

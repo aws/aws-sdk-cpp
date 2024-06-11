@@ -39,77 +39,31 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
      */
     inline const Aws::String& GetRoleArnForLogging() const{ return m_roleArnForLogging; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
-     */
     inline bool RoleArnForLoggingHasBeenSet() const { return m_roleArnForLoggingHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
-     */
     inline void SetRoleArnForLogging(const Aws::String& value) { m_roleArnForLoggingHasBeenSet = true; m_roleArnForLogging = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
-     */
     inline void SetRoleArnForLogging(Aws::String&& value) { m_roleArnForLoggingHasBeenSet = true; m_roleArnForLogging = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
-     */
     inline void SetRoleArnForLogging(const char* value) { m_roleArnForLoggingHasBeenSet = true; m_roleArnForLogging.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
-     */
     inline EnableIoTLoggingParams& WithRoleArnForLogging(const Aws::String& value) { SetRoleArnForLogging(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
-     */
     inline EnableIoTLoggingParams& WithRoleArnForLogging(Aws::String&& value) { SetRoleArnForLogging(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
-     */
     inline EnableIoTLoggingParams& WithRoleArnForLogging(const char* value) { SetRoleArnForLogging(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the type of information to be logged.</p>
      */
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
-
-    /**
-     * <p>Specifies the type of information to be logged.</p>
-     */
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-
-    /**
-     * <p>Specifies the type of information to be logged.</p>
-     */
     inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-
-    /**
-     * <p>Specifies the type of information to be logged.</p>
-     */
     inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-
-    /**
-     * <p>Specifies the type of information to be logged.</p>
-     */
     inline EnableIoTLoggingParams& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-
-    /**
-     * <p>Specifies the type of information to be logged.</p>
-     */
     inline EnableIoTLoggingParams& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleArnForLogging;

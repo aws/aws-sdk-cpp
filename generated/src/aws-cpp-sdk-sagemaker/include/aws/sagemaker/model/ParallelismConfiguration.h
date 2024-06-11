@@ -37,26 +37,15 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The max number of steps that can be executed in parallel. </p>
      */
     inline int GetMaxParallelExecutionSteps() const{ return m_maxParallelExecutionSteps; }
-
-    /**
-     * <p>The max number of steps that can be executed in parallel. </p>
-     */
     inline bool MaxParallelExecutionStepsHasBeenSet() const { return m_maxParallelExecutionStepsHasBeenSet; }
-
-    /**
-     * <p>The max number of steps that can be executed in parallel. </p>
-     */
     inline void SetMaxParallelExecutionSteps(int value) { m_maxParallelExecutionStepsHasBeenSet = true; m_maxParallelExecutionSteps = value; }
-
-    /**
-     * <p>The max number of steps that can be executed in parallel. </p>
-     */
     inline ParallelismConfiguration& WithMaxParallelExecutionSteps(int value) { SetMaxParallelExecutionSteps(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxParallelExecutionSteps;

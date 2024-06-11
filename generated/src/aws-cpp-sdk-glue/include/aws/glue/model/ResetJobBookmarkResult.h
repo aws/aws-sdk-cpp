@@ -33,53 +33,27 @@ namespace Model
     AWS_GLUE_API ResetJobBookmarkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The reset bookmark entry.</p>
      */
     inline const JobBookmarkEntry& GetJobBookmarkEntry() const{ return m_jobBookmarkEntry; }
-
-    /**
-     * <p>The reset bookmark entry.</p>
-     */
     inline void SetJobBookmarkEntry(const JobBookmarkEntry& value) { m_jobBookmarkEntry = value; }
-
-    /**
-     * <p>The reset bookmark entry.</p>
-     */
     inline void SetJobBookmarkEntry(JobBookmarkEntry&& value) { m_jobBookmarkEntry = std::move(value); }
-
-    /**
-     * <p>The reset bookmark entry.</p>
-     */
     inline ResetJobBookmarkResult& WithJobBookmarkEntry(const JobBookmarkEntry& value) { SetJobBookmarkEntry(value); return *this;}
-
-    /**
-     * <p>The reset bookmark entry.</p>
-     */
     inline ResetJobBookmarkResult& WithJobBookmarkEntry(JobBookmarkEntry&& value) { SetJobBookmarkEntry(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ResetJobBookmarkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ResetJobBookmarkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ResetJobBookmarkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JobBookmarkEntry m_jobBookmarkEntry;

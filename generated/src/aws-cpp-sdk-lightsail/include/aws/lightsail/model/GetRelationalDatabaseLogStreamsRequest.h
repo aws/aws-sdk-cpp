@@ -34,46 +34,19 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of your database for which to get log streams.</p>
      */
     inline const Aws::String& GetRelationalDatabaseName() const{ return m_relationalDatabaseName; }
-
-    /**
-     * <p>The name of your database for which to get log streams.</p>
-     */
     inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
-
-    /**
-     * <p>The name of your database for which to get log streams.</p>
-     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
-
-    /**
-     * <p>The name of your database for which to get log streams.</p>
-     */
     inline void SetRelationalDatabaseName(Aws::String&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::move(value); }
-
-    /**
-     * <p>The name of your database for which to get log streams.</p>
-     */
     inline void SetRelationalDatabaseName(const char* value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName.assign(value); }
-
-    /**
-     * <p>The name of your database for which to get log streams.</p>
-     */
     inline GetRelationalDatabaseLogStreamsRequest& WithRelationalDatabaseName(const Aws::String& value) { SetRelationalDatabaseName(value); return *this;}
-
-    /**
-     * <p>The name of your database for which to get log streams.</p>
-     */
     inline GetRelationalDatabaseLogStreamsRequest& WithRelationalDatabaseName(Aws::String&& value) { SetRelationalDatabaseName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of your database for which to get log streams.</p>
-     */
     inline GetRelationalDatabaseLogStreamsRequest& WithRelationalDatabaseName(const char* value) { SetRelationalDatabaseName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_relationalDatabaseName;

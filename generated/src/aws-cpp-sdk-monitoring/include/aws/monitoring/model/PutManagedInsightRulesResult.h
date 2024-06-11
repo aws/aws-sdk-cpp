@@ -34,57 +34,27 @@ namespace Model
     AWS_CLOUDWATCH_API PutManagedInsightRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p> An array that lists the rules that could not be enabled. </p>
      */
     inline const Aws::Vector<PartialFailure>& GetFailures() const{ return m_failures; }
-
-    /**
-     * <p> An array that lists the rules that could not be enabled. </p>
-     */
     inline void SetFailures(const Aws::Vector<PartialFailure>& value) { m_failures = value; }
-
-    /**
-     * <p> An array that lists the rules that could not be enabled. </p>
-     */
     inline void SetFailures(Aws::Vector<PartialFailure>&& value) { m_failures = std::move(value); }
-
-    /**
-     * <p> An array that lists the rules that could not be enabled. </p>
-     */
     inline PutManagedInsightRulesResult& WithFailures(const Aws::Vector<PartialFailure>& value) { SetFailures(value); return *this;}
-
-    /**
-     * <p> An array that lists the rules that could not be enabled. </p>
-     */
     inline PutManagedInsightRulesResult& WithFailures(Aws::Vector<PartialFailure>&& value) { SetFailures(std::move(value)); return *this;}
-
-    /**
-     * <p> An array that lists the rules that could not be enabled. </p>
-     */
     inline PutManagedInsightRulesResult& AddFailures(const PartialFailure& value) { m_failures.push_back(value); return *this; }
-
-    /**
-     * <p> An array that lists the rules that could not be enabled. </p>
-     */
     inline PutManagedInsightRulesResult& AddFailures(PartialFailure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline PutManagedInsightRulesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline PutManagedInsightRulesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PartialFailure> m_failures;

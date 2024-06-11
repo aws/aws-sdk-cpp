@@ -47,157 +47,53 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The names of one or more Amazon Web Services accounts for which you want to
      * deploy stack set updates.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
-
-    /**
-     * <p>The names of one or more Amazon Web Services accounts for which you want to
-     * deploy stack set updates.</p>
-     */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
-
-    /**
-     * <p>The names of one or more Amazon Web Services accounts for which you want to
-     * deploy stack set updates.</p>
-     */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
-
-    /**
-     * <p>The names of one or more Amazon Web Services accounts for which you want to
-     * deploy stack set updates.</p>
-     */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
-
-    /**
-     * <p>The names of one or more Amazon Web Services accounts for which you want to
-     * deploy stack set updates.</p>
-     */
     inline DeploymentTargets& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
-
-    /**
-     * <p>The names of one or more Amazon Web Services accounts for which you want to
-     * deploy stack set updates.</p>
-     */
     inline DeploymentTargets& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of one or more Amazon Web Services accounts for which you want to
-     * deploy stack set updates.</p>
-     */
     inline DeploymentTargets& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
-
-    /**
-     * <p>The names of one or more Amazon Web Services accounts for which you want to
-     * deploy stack set updates.</p>
-     */
     inline DeploymentTargets& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of one or more Amazon Web Services accounts for which you want to
-     * deploy stack set updates.</p>
-     */
     inline DeploymentTargets& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
      */
     inline const Aws::String& GetAccountsUrl() const{ return m_accountsUrl; }
-
-    /**
-     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
-     */
     inline bool AccountsUrlHasBeenSet() const { return m_accountsUrlHasBeenSet; }
-
-    /**
-     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
-     */
     inline void SetAccountsUrl(const Aws::String& value) { m_accountsUrlHasBeenSet = true; m_accountsUrl = value; }
-
-    /**
-     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
-     */
     inline void SetAccountsUrl(Aws::String&& value) { m_accountsUrlHasBeenSet = true; m_accountsUrl = std::move(value); }
-
-    /**
-     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
-     */
     inline void SetAccountsUrl(const char* value) { m_accountsUrlHasBeenSet = true; m_accountsUrl.assign(value); }
-
-    /**
-     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
-     */
     inline DeploymentTargets& WithAccountsUrl(const Aws::String& value) { SetAccountsUrl(value); return *this;}
-
-    /**
-     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
-     */
     inline DeploymentTargets& WithAccountsUrl(Aws::String&& value) { SetAccountsUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
-     */
     inline DeploymentTargets& WithAccountsUrl(const char* value) { SetAccountsUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The organization root ID or organizational unit (OU) IDs to which StackSets
      * deploys.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const{ return m_organizationalUnitIds; }
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-     * deploys.</p>
-     */
     inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-     * deploys.</p>
-     */
     inline void SetOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = value; }
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-     * deploys.</p>
-     */
     inline void SetOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = std::move(value); }
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-     * deploys.</p>
-     */
     inline DeploymentTargets& WithOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitIds(value); return *this;}
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-     * deploys.</p>
-     */
     inline DeploymentTargets& WithOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-     * deploys.</p>
-     */
     inline DeploymentTargets& AddOrganizationalUnitIds(const Aws::String& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-     * deploys.</p>
-     */
     inline DeploymentTargets& AddOrganizationalUnitIds(Aws::String&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-     * deploys.</p>
-     */
     inline DeploymentTargets& AddOrganizationalUnitIds(const char* value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Limit deployment targets to individual accounts or include additional
      * accounts with provided OUs.</p> <p>The following is a list of possible values
@@ -214,92 +110,12 @@ namespace Model
      * all the accounts in specified organizational units (OU).</p> </li> </ul>
      */
     inline const AccountFilterType& GetAccountFilterType() const{ return m_accountFilterType; }
-
-    /**
-     * <p>Limit deployment targets to individual accounts or include additional
-     * accounts with provided OUs.</p> <p>The following is a list of possible values
-     * for the <code>AccountFilterType</code> operation.</p> <ul> <li> <p>
-     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in
-     * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
-     * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
-     * This enables user to avoid certain accounts within an OU such as suspended
-     * accounts.</p> </li> <li> <p> <code>UNION</code>: StackSets includes additional
-     * accounts deployment targets. </p> <p>This is the default value if
-     * <code>AccountFilterType</code> is not provided. This enables user to update an
-     * entire OU and individual accounts from a different OU in one request, which used
-     * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
-     * all the accounts in specified organizational units (OU).</p> </li> </ul>
-     */
     inline bool AccountFilterTypeHasBeenSet() const { return m_accountFilterTypeHasBeenSet; }
-
-    /**
-     * <p>Limit deployment targets to individual accounts or include additional
-     * accounts with provided OUs.</p> <p>The following is a list of possible values
-     * for the <code>AccountFilterType</code> operation.</p> <ul> <li> <p>
-     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in
-     * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
-     * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
-     * This enables user to avoid certain accounts within an OU such as suspended
-     * accounts.</p> </li> <li> <p> <code>UNION</code>: StackSets includes additional
-     * accounts deployment targets. </p> <p>This is the default value if
-     * <code>AccountFilterType</code> is not provided. This enables user to update an
-     * entire OU and individual accounts from a different OU in one request, which used
-     * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
-     * all the accounts in specified organizational units (OU).</p> </li> </ul>
-     */
     inline void SetAccountFilterType(const AccountFilterType& value) { m_accountFilterTypeHasBeenSet = true; m_accountFilterType = value; }
-
-    /**
-     * <p>Limit deployment targets to individual accounts or include additional
-     * accounts with provided OUs.</p> <p>The following is a list of possible values
-     * for the <code>AccountFilterType</code> operation.</p> <ul> <li> <p>
-     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in
-     * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
-     * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
-     * This enables user to avoid certain accounts within an OU such as suspended
-     * accounts.</p> </li> <li> <p> <code>UNION</code>: StackSets includes additional
-     * accounts deployment targets. </p> <p>This is the default value if
-     * <code>AccountFilterType</code> is not provided. This enables user to update an
-     * entire OU and individual accounts from a different OU in one request, which used
-     * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
-     * all the accounts in specified organizational units (OU).</p> </li> </ul>
-     */
     inline void SetAccountFilterType(AccountFilterType&& value) { m_accountFilterTypeHasBeenSet = true; m_accountFilterType = std::move(value); }
-
-    /**
-     * <p>Limit deployment targets to individual accounts or include additional
-     * accounts with provided OUs.</p> <p>The following is a list of possible values
-     * for the <code>AccountFilterType</code> operation.</p> <ul> <li> <p>
-     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in
-     * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
-     * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
-     * This enables user to avoid certain accounts within an OU such as suspended
-     * accounts.</p> </li> <li> <p> <code>UNION</code>: StackSets includes additional
-     * accounts deployment targets. </p> <p>This is the default value if
-     * <code>AccountFilterType</code> is not provided. This enables user to update an
-     * entire OU and individual accounts from a different OU in one request, which used
-     * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
-     * all the accounts in specified organizational units (OU).</p> </li> </ul>
-     */
     inline DeploymentTargets& WithAccountFilterType(const AccountFilterType& value) { SetAccountFilterType(value); return *this;}
-
-    /**
-     * <p>Limit deployment targets to individual accounts or include additional
-     * accounts with provided OUs.</p> <p>The following is a list of possible values
-     * for the <code>AccountFilterType</code> operation.</p> <ul> <li> <p>
-     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in
-     * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
-     * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
-     * This enables user to avoid certain accounts within an OU such as suspended
-     * accounts.</p> </li> <li> <p> <code>UNION</code>: StackSets includes additional
-     * accounts deployment targets. </p> <p>This is the default value if
-     * <code>AccountFilterType</code> is not provided. This enables user to update an
-     * entire OU and individual accounts from a different OU in one request, which used
-     * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
-     * all the accounts in specified organizational units (OU).</p> </li> </ul>
-     */
     inline DeploymentTargets& WithAccountFilterType(AccountFilterType&& value) { SetAccountFilterType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_accounts;

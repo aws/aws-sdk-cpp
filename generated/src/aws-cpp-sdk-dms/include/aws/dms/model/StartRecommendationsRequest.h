@@ -35,55 +35,22 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the source database to analyze and provide recommendations
      * for.</p>
      */
     inline const Aws::String& GetDatabaseId() const{ return m_databaseId; }
-
-    /**
-     * <p>The identifier of the source database to analyze and provide recommendations
-     * for.</p>
-     */
     inline bool DatabaseIdHasBeenSet() const { return m_databaseIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the source database to analyze and provide recommendations
-     * for.</p>
-     */
     inline void SetDatabaseId(const Aws::String& value) { m_databaseIdHasBeenSet = true; m_databaseId = value; }
-
-    /**
-     * <p>The identifier of the source database to analyze and provide recommendations
-     * for.</p>
-     */
     inline void SetDatabaseId(Aws::String&& value) { m_databaseIdHasBeenSet = true; m_databaseId = std::move(value); }
-
-    /**
-     * <p>The identifier of the source database to analyze and provide recommendations
-     * for.</p>
-     */
     inline void SetDatabaseId(const char* value) { m_databaseIdHasBeenSet = true; m_databaseId.assign(value); }
-
-    /**
-     * <p>The identifier of the source database to analyze and provide recommendations
-     * for.</p>
-     */
     inline StartRecommendationsRequest& WithDatabaseId(const Aws::String& value) { SetDatabaseId(value); return *this;}
-
-    /**
-     * <p>The identifier of the source database to analyze and provide recommendations
-     * for.</p>
-     */
     inline StartRecommendationsRequest& WithDatabaseId(Aws::String&& value) { SetDatabaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the source database to analyze and provide recommendations
-     * for.</p>
-     */
     inline StartRecommendationsRequest& WithDatabaseId(const char* value) { SetDatabaseId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The settings in JSON format that Fleet Advisor uses to determine target
      * engine recommendations. These parameters include target instance sizing and
@@ -93,57 +60,12 @@ namespace Model
      * production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
      */
     inline const RecommendationSettings& GetSettings() const{ return m_settings; }
-
-    /**
-     * <p>The settings in JSON format that Fleet Advisor uses to determine target
-     * engine recommendations. These parameters include target instance sizing and
-     * availability and durability settings. For target instance sizing, Fleet Advisor
-     * supports the following two options: total capacity and resource utilization. For
-     * availability and durability, Fleet Advisor supports the following two options:
-     * production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
-     */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-
-    /**
-     * <p>The settings in JSON format that Fleet Advisor uses to determine target
-     * engine recommendations. These parameters include target instance sizing and
-     * availability and durability settings. For target instance sizing, Fleet Advisor
-     * supports the following two options: total capacity and resource utilization. For
-     * availability and durability, Fleet Advisor supports the following two options:
-     * production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
-     */
     inline void SetSettings(const RecommendationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-
-    /**
-     * <p>The settings in JSON format that Fleet Advisor uses to determine target
-     * engine recommendations. These parameters include target instance sizing and
-     * availability and durability settings. For target instance sizing, Fleet Advisor
-     * supports the following two options: total capacity and resource utilization. For
-     * availability and durability, Fleet Advisor supports the following two options:
-     * production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
-     */
     inline void SetSettings(RecommendationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-
-    /**
-     * <p>The settings in JSON format that Fleet Advisor uses to determine target
-     * engine recommendations. These parameters include target instance sizing and
-     * availability and durability settings. For target instance sizing, Fleet Advisor
-     * supports the following two options: total capacity and resource utilization. For
-     * availability and durability, Fleet Advisor supports the following two options:
-     * production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
-     */
     inline StartRecommendationsRequest& WithSettings(const RecommendationSettings& value) { SetSettings(value); return *this;}
-
-    /**
-     * <p>The settings in JSON format that Fleet Advisor uses to determine target
-     * engine recommendations. These parameters include target instance sizing and
-     * availability and durability settings. For target instance sizing, Fleet Advisor
-     * supports the following two options: total capacity and resource utilization. For
-     * availability and durability, Fleet Advisor supports the following two options:
-     * production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
-     */
     inline StartRecommendationsRequest& WithSettings(RecommendationSettings&& value) { SetSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_databaseId;

@@ -32,95 +32,34 @@ namespace Model
     AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline GetJourneyRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline GetJourneyRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline GetJourneyRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the journey.</p>
      */
     inline const Aws::String& GetJourneyId() const{ return m_journeyId; }
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline bool JourneyIdHasBeenSet() const { return m_journeyIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline void SetJourneyId(const Aws::String& value) { m_journeyIdHasBeenSet = true; m_journeyId = value; }
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline void SetJourneyId(Aws::String&& value) { m_journeyIdHasBeenSet = true; m_journeyId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline void SetJourneyId(const char* value) { m_journeyIdHasBeenSet = true; m_journeyId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline GetJourneyRequest& WithJourneyId(const Aws::String& value) { SetJourneyId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline GetJourneyRequest& WithJourneyId(Aws::String&& value) { SetJourneyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline GetJourneyRequest& WithJourneyId(const char* value) { SetJourneyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

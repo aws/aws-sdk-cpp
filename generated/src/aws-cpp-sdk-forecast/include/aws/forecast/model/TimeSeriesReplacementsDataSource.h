@@ -45,125 +45,53 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const S3Config& GetS3Config() const{ return m_s3Config; }
-
-    
     inline bool S3ConfigHasBeenSet() const { return m_s3ConfigHasBeenSet; }
-
-    
     inline void SetS3Config(const S3Config& value) { m_s3ConfigHasBeenSet = true; m_s3Config = value; }
-
-    
     inline void SetS3Config(S3Config&& value) { m_s3ConfigHasBeenSet = true; m_s3Config = std::move(value); }
-
-    
     inline TimeSeriesReplacementsDataSource& WithS3Config(const S3Config& value) { SetS3Config(value); return *this;}
-
-    
     inline TimeSeriesReplacementsDataSource& WithS3Config(S3Config&& value) { SetS3Config(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Schema& GetSchema() const{ return m_schema; }
-
-    
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-
-    
     inline void SetSchema(const Schema& value) { m_schemaHasBeenSet = true; m_schema = value; }
-
-    
     inline void SetSchema(Schema&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-
-    
     inline TimeSeriesReplacementsDataSource& WithSchema(const Schema& value) { SetSchema(value); return *this;}
-
-    
     inline TimeSeriesReplacementsDataSource& WithSchema(Schema&& value) { SetSchema(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The format of the replacement data, CSV or PARQUET.</p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
-
-    /**
-     * <p>The format of the replacement data, CSV or PARQUET.</p>
-     */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-
-    /**
-     * <p>The format of the replacement data, CSV or PARQUET.</p>
-     */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-
-    /**
-     * <p>The format of the replacement data, CSV or PARQUET.</p>
-     */
     inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-
-    /**
-     * <p>The format of the replacement data, CSV or PARQUET.</p>
-     */
     inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-
-    /**
-     * <p>The format of the replacement data, CSV or PARQUET.</p>
-     */
     inline TimeSeriesReplacementsDataSource& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-
-    /**
-     * <p>The format of the replacement data, CSV or PARQUET.</p>
-     */
     inline TimeSeriesReplacementsDataSource& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-
-    /**
-     * <p>The format of the replacement data, CSV or PARQUET.</p>
-     */
     inline TimeSeriesReplacementsDataSource& WithFormat(const char* value) { SetFormat(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp format of the replacement data.</p>
      */
     inline const Aws::String& GetTimestampFormat() const{ return m_timestampFormat; }
-
-    /**
-     * <p>The timestamp format of the replacement data.</p>
-     */
     inline bool TimestampFormatHasBeenSet() const { return m_timestampFormatHasBeenSet; }
-
-    /**
-     * <p>The timestamp format of the replacement data.</p>
-     */
     inline void SetTimestampFormat(const Aws::String& value) { m_timestampFormatHasBeenSet = true; m_timestampFormat = value; }
-
-    /**
-     * <p>The timestamp format of the replacement data.</p>
-     */
     inline void SetTimestampFormat(Aws::String&& value) { m_timestampFormatHasBeenSet = true; m_timestampFormat = std::move(value); }
-
-    /**
-     * <p>The timestamp format of the replacement data.</p>
-     */
     inline void SetTimestampFormat(const char* value) { m_timestampFormatHasBeenSet = true; m_timestampFormat.assign(value); }
-
-    /**
-     * <p>The timestamp format of the replacement data.</p>
-     */
     inline TimeSeriesReplacementsDataSource& WithTimestampFormat(const Aws::String& value) { SetTimestampFormat(value); return *this;}
-
-    /**
-     * <p>The timestamp format of the replacement data.</p>
-     */
     inline TimeSeriesReplacementsDataSource& WithTimestampFormat(Aws::String&& value) { SetTimestampFormat(std::move(value)); return *this;}
-
-    /**
-     * <p>The timestamp format of the replacement data.</p>
-     */
     inline TimeSeriesReplacementsDataSource& WithTimestampFormat(const char* value) { SetTimestampFormat(value); return *this;}
-
+    ///@}
   private:
 
     S3Config m_s3Config;

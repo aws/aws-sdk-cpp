@@ -39,65 +39,29 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The unique account ID.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The unique account ID.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The unique account ID.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The unique account ID.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The unique account ID.</p>
-     */
     inline UsageTopAccountResult& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The unique account ID.</p>
-     */
     inline UsageTopAccountResult& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique account ID.</p>
-     */
     inline UsageTopAccountResult& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Total& GetTotal() const{ return m_total; }
-
-    
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-
-    
     inline void SetTotal(const Total& value) { m_totalHasBeenSet = true; m_total = value; }
-
-    
     inline void SetTotal(Total&& value) { m_totalHasBeenSet = true; m_total = std::move(value); }
-
-    
     inline UsageTopAccountResult& WithTotal(const Total& value) { SetTotal(value); return *this;}
-
-    
     inline UsageTopAccountResult& WithTotal(Total&& value) { SetTotal(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

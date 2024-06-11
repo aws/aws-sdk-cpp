@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the IAM instance profile association.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-
-    /**
-     * <p>The ID of the IAM instance profile association.</p>
-     */
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the IAM instance profile association.</p>
-     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-
-    /**
-     * <p>The ID of the IAM instance profile association.</p>
-     */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-
-    /**
-     * <p>The ID of the IAM instance profile association.</p>
-     */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-
-    /**
-     * <p>The ID of the IAM instance profile association.</p>
-     */
     inline DisassociateIamInstanceProfileRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-
-    /**
-     * <p>The ID of the IAM instance profile association.</p>
-     */
     inline DisassociateIamInstanceProfileRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the IAM instance profile association.</p>
-     */
     inline DisassociateIamInstanceProfileRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_associationId;

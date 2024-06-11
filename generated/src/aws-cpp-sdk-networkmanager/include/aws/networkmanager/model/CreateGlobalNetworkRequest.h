@@ -34,95 +34,34 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A description of the global network.</p> <p>Constraints: Maximum length of
      * 256 characters.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the global network.</p> <p>Constraints: Maximum length of
-     * 256 characters.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the global network.</p> <p>Constraints: Maximum length of
-     * 256 characters.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the global network.</p> <p>Constraints: Maximum length of
-     * 256 characters.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the global network.</p> <p>Constraints: Maximum length of
-     * 256 characters.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the global network.</p> <p>Constraints: Maximum length of
-     * 256 characters.</p>
-     */
     inline CreateGlobalNetworkRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the global network.</p> <p>Constraints: Maximum length of
-     * 256 characters.</p>
-     */
     inline CreateGlobalNetworkRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the global network.</p> <p>Constraints: Maximum length of
-     * 256 characters.</p>
-     */
     inline CreateGlobalNetworkRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags to apply to the resource during creation.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags to apply to the resource during creation.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags to apply to the resource during creation.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags to apply to the resource during creation.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags to apply to the resource during creation.</p>
-     */
     inline CreateGlobalNetworkRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags to apply to the resource during creation.</p>
-     */
     inline CreateGlobalNetworkRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to apply to the resource during creation.</p>
-     */
     inline CreateGlobalNetworkRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to apply to the resource during creation.</p>
-     */
     inline CreateGlobalNetworkRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_description;

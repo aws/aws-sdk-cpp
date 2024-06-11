@@ -39,67 +39,29 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The attribute to use to sort the list of intents.</p>
      */
     inline const IntentSortAttribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The attribute to use to sort the list of intents.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>The attribute to use to sort the list of intents.</p>
-     */
     inline void SetAttribute(const IntentSortAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>The attribute to use to sort the list of intents.</p>
-     */
     inline void SetAttribute(IntentSortAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The attribute to use to sort the list of intents.</p>
-     */
     inline IntentSortBy& WithAttribute(const IntentSortAttribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The attribute to use to sort the list of intents.</p>
-     */
     inline IntentSortBy& WithAttribute(IntentSortAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The order to sort the list. You can choose ascending or descending.</p>
      */
     inline const SortOrder& GetOrder() const{ return m_order; }
-
-    /**
-     * <p>The order to sort the list. You can choose ascending or descending.</p>
-     */
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-
-    /**
-     * <p>The order to sort the list. You can choose ascending or descending.</p>
-     */
     inline void SetOrder(const SortOrder& value) { m_orderHasBeenSet = true; m_order = value; }
-
-    /**
-     * <p>The order to sort the list. You can choose ascending or descending.</p>
-     */
     inline void SetOrder(SortOrder&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-
-    /**
-     * <p>The order to sort the list. You can choose ascending or descending.</p>
-     */
     inline IntentSortBy& WithOrder(const SortOrder& value) { SetOrder(value); return *this;}
-
-    /**
-     * <p>The order to sort the list. You can choose ascending or descending.</p>
-     */
     inline IntentSortBy& WithOrder(SortOrder&& value) { SetOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IntentSortAttribute m_attribute;

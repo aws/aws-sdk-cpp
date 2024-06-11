@@ -42,51 +42,20 @@ namespace Model
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A resource share ARN for a catalog resource shared through RAM.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceShare() const{ return m_resourceShare; }
-
-    /**
-     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
-     */
     inline bool ResourceShareHasBeenSet() const { return m_resourceShareHasBeenSet; }
-
-    /**
-     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
-     */
     inline void SetResourceShare(const Aws::Vector<Aws::String>& value) { m_resourceShareHasBeenSet = true; m_resourceShare = value; }
-
-    /**
-     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
-     */
     inline void SetResourceShare(Aws::Vector<Aws::String>&& value) { m_resourceShareHasBeenSet = true; m_resourceShare = std::move(value); }
-
-    /**
-     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
-     */
     inline DetailsMap& WithResourceShare(const Aws::Vector<Aws::String>& value) { SetResourceShare(value); return *this;}
-
-    /**
-     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
-     */
     inline DetailsMap& WithResourceShare(Aws::Vector<Aws::String>&& value) { SetResourceShare(std::move(value)); return *this;}
-
-    /**
-     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
-     */
     inline DetailsMap& AddResourceShare(const Aws::String& value) { m_resourceShareHasBeenSet = true; m_resourceShare.push_back(value); return *this; }
-
-    /**
-     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
-     */
     inline DetailsMap& AddResourceShare(Aws::String&& value) { m_resourceShareHasBeenSet = true; m_resourceShare.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
-     */
     inline DetailsMap& AddResourceShare(const char* value) { m_resourceShareHasBeenSet = true; m_resourceShare.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_resourceShare;

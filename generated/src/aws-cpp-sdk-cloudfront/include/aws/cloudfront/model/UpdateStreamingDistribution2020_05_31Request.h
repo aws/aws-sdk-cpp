@@ -38,134 +38,47 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The streaming distribution's configuration information.</p>
      */
     inline const StreamingDistributionConfig& GetStreamingDistributionConfig() const{ return m_streamingDistributionConfig; }
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline bool StreamingDistributionConfigHasBeenSet() const { return m_streamingDistributionConfigHasBeenSet; }
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = std::move(value); }
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline UpdateStreamingDistribution2020_05_31Request& WithStreamingDistributionConfig(const StreamingDistributionConfig& value) { SetStreamingDistributionConfig(value); return *this;}
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline UpdateStreamingDistribution2020_05_31Request& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The streaming distribution's id.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The streaming distribution's id.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The streaming distribution's id.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The streaming distribution's id.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The streaming distribution's id.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The streaming distribution's id.</p>
-     */
     inline UpdateStreamingDistribution2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The streaming distribution's id.</p>
-     */
     inline UpdateStreamingDistribution2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The streaming distribution's id.</p>
-     */
     inline UpdateStreamingDistribution2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the <code>ETag</code> header that you received when retrieving
      * the streaming distribution's configuration. For example:
      * <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the streaming distribution's configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the streaming distribution's configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the streaming distribution's configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the streaming distribution's configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the streaming distribution's configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline UpdateStreamingDistribution2020_05_31Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the streaming distribution's configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline UpdateStreamingDistribution2020_05_31Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the streaming distribution's configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline UpdateStreamingDistribution2020_05_31Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
-
+    ///@}
   private:
 
     StreamingDistributionConfig m_streamingDistributionConfig;

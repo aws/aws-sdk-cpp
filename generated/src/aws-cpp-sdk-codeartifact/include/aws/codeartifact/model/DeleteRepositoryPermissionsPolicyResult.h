@@ -33,53 +33,27 @@ namespace Model
     AWS_CODEARTIFACT_API DeleteRepositoryPermissionsPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Information about the deleted policy after processing the request. </p>
      */
     inline const ResourcePolicy& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p> Information about the deleted policy after processing the request. </p>
-     */
     inline void SetPolicy(const ResourcePolicy& value) { m_policy = value; }
-
-    /**
-     * <p> Information about the deleted policy after processing the request. </p>
-     */
     inline void SetPolicy(ResourcePolicy&& value) { m_policy = std::move(value); }
-
-    /**
-     * <p> Information about the deleted policy after processing the request. </p>
-     */
     inline DeleteRepositoryPermissionsPolicyResult& WithPolicy(const ResourcePolicy& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p> Information about the deleted policy after processing the request. </p>
-     */
     inline DeleteRepositoryPermissionsPolicyResult& WithPolicy(ResourcePolicy&& value) { SetPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteRepositoryPermissionsPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteRepositoryPermissionsPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteRepositoryPermissionsPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ResourcePolicy m_policy;

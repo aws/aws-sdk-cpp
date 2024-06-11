@@ -34,99 +34,42 @@ namespace Model
     AWS_MEDIAPACKAGE_API ListChannelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * A list of Channel records.
      */
     inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
-
-    /**
-     * A list of Channel records.
-     */
     inline void SetChannels(const Aws::Vector<Channel>& value) { m_channels = value; }
-
-    /**
-     * A list of Channel records.
-     */
     inline void SetChannels(Aws::Vector<Channel>&& value) { m_channels = std::move(value); }
-
-    /**
-     * A list of Channel records.
-     */
     inline ListChannelsResult& WithChannels(const Aws::Vector<Channel>& value) { SetChannels(value); return *this;}
-
-    /**
-     * A list of Channel records.
-     */
     inline ListChannelsResult& WithChannels(Aws::Vector<Channel>&& value) { SetChannels(std::move(value)); return *this;}
-
-    /**
-     * A list of Channel records.
-     */
     inline ListChannelsResult& AddChannels(const Channel& value) { m_channels.push_back(value); return *this; }
-
-    /**
-     * A list of Channel records.
-     */
     inline ListChannelsResult& AddChannels(Channel&& value) { m_channels.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * A token that can be used to resume pagination from the end of the collection.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline ListChannelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline ListChannelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline ListChannelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListChannelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListChannelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListChannelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Channel> m_channels;

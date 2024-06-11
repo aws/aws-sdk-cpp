@@ -33,63 +33,29 @@ namespace Model
     AWS_MEDIACONVERT_API GetPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * A policy configures behavior that you allow or disallow for your account. For
      * information about MediaConvert policies, see the user guide at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline const Policy& GetPolicy() const{ return m_policy; }
-
-    /**
-     * A policy configures behavior that you allow or disallow for your account. For
-     * information about MediaConvert policies, see the user guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-     */
     inline void SetPolicy(const Policy& value) { m_policy = value; }
-
-    /**
-     * A policy configures behavior that you allow or disallow for your account. For
-     * information about MediaConvert policies, see the user guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-     */
     inline void SetPolicy(Policy&& value) { m_policy = std::move(value); }
-
-    /**
-     * A policy configures behavior that you allow or disallow for your account. For
-     * information about MediaConvert policies, see the user guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-     */
     inline GetPolicyResult& WithPolicy(const Policy& value) { SetPolicy(value); return *this;}
-
-    /**
-     * A policy configures behavior that you allow or disallow for your account. For
-     * information about MediaConvert policies, see the user guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-     */
     inline GetPolicyResult& WithPolicy(Policy&& value) { SetPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Policy m_policy;

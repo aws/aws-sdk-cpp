@@ -38,54 +38,20 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An organization member account ID that you want to designate as a delegated
      * administrator.</p>
      */
     inline const Aws::String& GetMemberAccountId() const{ return m_memberAccountId; }
-
-    /**
-     * <p>An organization member account ID that you want to designate as a delegated
-     * administrator.</p>
-     */
     inline bool MemberAccountIdHasBeenSet() const { return m_memberAccountIdHasBeenSet; }
-
-    /**
-     * <p>An organization member account ID that you want to designate as a delegated
-     * administrator.</p>
-     */
     inline void SetMemberAccountId(const Aws::String& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = value; }
-
-    /**
-     * <p>An organization member account ID that you want to designate as a delegated
-     * administrator.</p>
-     */
     inline void SetMemberAccountId(Aws::String&& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = std::move(value); }
-
-    /**
-     * <p>An organization member account ID that you want to designate as a delegated
-     * administrator.</p>
-     */
     inline void SetMemberAccountId(const char* value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId.assign(value); }
-
-    /**
-     * <p>An organization member account ID that you want to designate as a delegated
-     * administrator.</p>
-     */
     inline RegisterOrganizationDelegatedAdminRequest& WithMemberAccountId(const Aws::String& value) { SetMemberAccountId(value); return *this;}
-
-    /**
-     * <p>An organization member account ID that you want to designate as a delegated
-     * administrator.</p>
-     */
     inline RegisterOrganizationDelegatedAdminRequest& WithMemberAccountId(Aws::String&& value) { SetMemberAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>An organization member account ID that you want to designate as a delegated
-     * administrator.</p>
-     */
     inline RegisterOrganizationDelegatedAdminRequest& WithMemberAccountId(const char* value) { SetMemberAccountId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_memberAccountId;

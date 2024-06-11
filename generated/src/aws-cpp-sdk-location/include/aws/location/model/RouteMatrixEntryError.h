@@ -52,77 +52,31 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of error which occurred for the route calculation.</p>
      */
     inline const RouteMatrixErrorCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The type of error which occurred for the route calculation.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The type of error which occurred for the route calculation.</p>
-     */
     inline void SetCode(const RouteMatrixErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The type of error which occurred for the route calculation.</p>
-     */
     inline void SetCode(RouteMatrixErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The type of error which occurred for the route calculation.</p>
-     */
     inline RouteMatrixEntryError& WithCode(const RouteMatrixErrorCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The type of error which occurred for the route calculation.</p>
-     */
     inline RouteMatrixEntryError& WithCode(RouteMatrixErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A message about the error that occurred for the route calculation.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A message about the error that occurred for the route calculation.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A message about the error that occurred for the route calculation.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A message about the error that occurred for the route calculation.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A message about the error that occurred for the route calculation.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A message about the error that occurred for the route calculation.</p>
-     */
     inline RouteMatrixEntryError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A message about the error that occurred for the route calculation.</p>
-     */
     inline RouteMatrixEntryError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message about the error that occurred for the route calculation.</p>
-     */
     inline RouteMatrixEntryError& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     RouteMatrixErrorCode m_code;

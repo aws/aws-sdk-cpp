@@ -39,67 +39,29 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current state of the configuration.</p>
      */
     inline const ConfigurationState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The current state of the configuration.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The current state of the configuration.</p>
-     */
     inline void SetState(const ConfigurationState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The current state of the configuration.</p>
-     */
     inline void SetState(ConfigurationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The current state of the configuration.</p>
-     */
     inline ConfigurationStatus& WithState(const ConfigurationState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The current state of the configuration.</p>
-     */
     inline ConfigurationStatus& WithState(ConfigurationState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains associated error information, if any.</p>
      */
     inline const ConfigurationErrorDetails& GetError() const{ return m_error; }
-
-    /**
-     * <p>Contains associated error information, if any.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>Contains associated error information, if any.</p>
-     */
     inline void SetError(const ConfigurationErrorDetails& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>Contains associated error information, if any.</p>
-     */
     inline void SetError(ConfigurationErrorDetails&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>Contains associated error information, if any.</p>
-     */
     inline ConfigurationStatus& WithError(const ConfigurationErrorDetails& value) { SetError(value); return *this;}
-
-    /**
-     * <p>Contains associated error information, if any.</p>
-     */
     inline ConfigurationStatus& WithError(ConfigurationErrorDetails&& value) { SetError(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConfigurationState m_state;

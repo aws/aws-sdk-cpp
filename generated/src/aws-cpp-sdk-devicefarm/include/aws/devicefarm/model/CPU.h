@@ -38,112 +38,44 @@ namespace Model
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The CPU's frequency.</p>
      */
     inline const Aws::String& GetFrequency() const{ return m_frequency; }
-
-    /**
-     * <p>The CPU's frequency.</p>
-     */
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
-
-    /**
-     * <p>The CPU's frequency.</p>
-     */
     inline void SetFrequency(const Aws::String& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
-
-    /**
-     * <p>The CPU's frequency.</p>
-     */
     inline void SetFrequency(Aws::String&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
-
-    /**
-     * <p>The CPU's frequency.</p>
-     */
     inline void SetFrequency(const char* value) { m_frequencyHasBeenSet = true; m_frequency.assign(value); }
-
-    /**
-     * <p>The CPU's frequency.</p>
-     */
     inline CPU& WithFrequency(const Aws::String& value) { SetFrequency(value); return *this;}
-
-    /**
-     * <p>The CPU's frequency.</p>
-     */
     inline CPU& WithFrequency(Aws::String&& value) { SetFrequency(std::move(value)); return *this;}
-
-    /**
-     * <p>The CPU's frequency.</p>
-     */
     inline CPU& WithFrequency(const char* value) { SetFrequency(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The CPU's architecture (for example, x86 or ARM).</p>
      */
     inline const Aws::String& GetArchitecture() const{ return m_architecture; }
-
-    /**
-     * <p>The CPU's architecture (for example, x86 or ARM).</p>
-     */
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-
-    /**
-     * <p>The CPU's architecture (for example, x86 or ARM).</p>
-     */
     inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-
-    /**
-     * <p>The CPU's architecture (for example, x86 or ARM).</p>
-     */
     inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-
-    /**
-     * <p>The CPU's architecture (for example, x86 or ARM).</p>
-     */
     inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
-
-    /**
-     * <p>The CPU's architecture (for example, x86 or ARM).</p>
-     */
     inline CPU& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
-
-    /**
-     * <p>The CPU's architecture (for example, x86 or ARM).</p>
-     */
     inline CPU& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
-
-    /**
-     * <p>The CPU's architecture (for example, x86 or ARM).</p>
-     */
     inline CPU& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a
      * 1.2 GHz CPU is expressed as 1200000000.</p>
      */
     inline double GetClock() const{ return m_clock; }
-
-    /**
-     * <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a
-     * 1.2 GHz CPU is expressed as 1200000000.</p>
-     */
     inline bool ClockHasBeenSet() const { return m_clockHasBeenSet; }
-
-    /**
-     * <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a
-     * 1.2 GHz CPU is expressed as 1200000000.</p>
-     */
     inline void SetClock(double value) { m_clockHasBeenSet = true; m_clock = value; }
-
-    /**
-     * <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a
-     * 1.2 GHz CPU is expressed as 1200000000.</p>
-     */
     inline CPU& WithClock(double value) { SetClock(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_frequency;

@@ -38,60 +38,21 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
      * described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFileShareARNList() const{ return m_fileShareARNList; }
-
-    /**
-     * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
-     * described.</p>
-     */
     inline bool FileShareARNListHasBeenSet() const { return m_fileShareARNListHasBeenSet; }
-
-    /**
-     * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
-     * described.</p>
-     */
     inline void SetFileShareARNList(const Aws::Vector<Aws::String>& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList = value; }
-
-    /**
-     * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
-     * described.</p>
-     */
     inline void SetFileShareARNList(Aws::Vector<Aws::String>&& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList = std::move(value); }
-
-    /**
-     * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
-     * described.</p>
-     */
     inline DescribeSMBFileSharesRequest& WithFileShareARNList(const Aws::Vector<Aws::String>& value) { SetFileShareARNList(value); return *this;}
-
-    /**
-     * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
-     * described.</p>
-     */
     inline DescribeSMBFileSharesRequest& WithFileShareARNList(Aws::Vector<Aws::String>&& value) { SetFileShareARNList(std::move(value)); return *this;}
-
-    /**
-     * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
-     * described.</p>
-     */
     inline DescribeSMBFileSharesRequest& AddFileShareARNList(const Aws::String& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList.push_back(value); return *this; }
-
-    /**
-     * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
-     * described.</p>
-     */
     inline DescribeSMBFileSharesRequest& AddFileShareARNList(Aws::String&& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
-     * described.</p>
-     */
     inline DescribeSMBFileSharesRequest& AddFileShareARNList(const char* value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_fileShareARNList;

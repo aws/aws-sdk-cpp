@@ -40,6 +40,7 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata
      * <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you
@@ -48,106 +49,18 @@ namespace Model
      * Network Firewall by default uses the CIDR of your inspection VPC.</p>
      */
     inline const Aws::Map<Aws::String, IPSet>& GetRuleVariables() const{ return m_ruleVariables; }
-
-    /**
-     * <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata
-     * <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you
-     * might want to override the <code>HOME_NET</code> variable with the CIDRs of your
-     * home networks. If you don't override <code>HOME_NET</code> with your own CIDRs,
-     * Network Firewall by default uses the CIDR of your inspection VPC.</p>
-     */
     inline bool RuleVariablesHasBeenSet() const { return m_ruleVariablesHasBeenSet; }
-
-    /**
-     * <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata
-     * <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you
-     * might want to override the <code>HOME_NET</code> variable with the CIDRs of your
-     * home networks. If you don't override <code>HOME_NET</code> with your own CIDRs,
-     * Network Firewall by default uses the CIDR of your inspection VPC.</p>
-     */
     inline void SetRuleVariables(const Aws::Map<Aws::String, IPSet>& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables = value; }
-
-    /**
-     * <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata
-     * <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you
-     * might want to override the <code>HOME_NET</code> variable with the CIDRs of your
-     * home networks. If you don't override <code>HOME_NET</code> with your own CIDRs,
-     * Network Firewall by default uses the CIDR of your inspection VPC.</p>
-     */
     inline void SetRuleVariables(Aws::Map<Aws::String, IPSet>&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables = std::move(value); }
-
-    /**
-     * <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata
-     * <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you
-     * might want to override the <code>HOME_NET</code> variable with the CIDRs of your
-     * home networks. If you don't override <code>HOME_NET</code> with your own CIDRs,
-     * Network Firewall by default uses the CIDR of your inspection VPC.</p>
-     */
     inline PolicyVariables& WithRuleVariables(const Aws::Map<Aws::String, IPSet>& value) { SetRuleVariables(value); return *this;}
-
-    /**
-     * <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata
-     * <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you
-     * might want to override the <code>HOME_NET</code> variable with the CIDRs of your
-     * home networks. If you don't override <code>HOME_NET</code> with your own CIDRs,
-     * Network Firewall by default uses the CIDR of your inspection VPC.</p>
-     */
     inline PolicyVariables& WithRuleVariables(Aws::Map<Aws::String, IPSet>&& value) { SetRuleVariables(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata
-     * <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you
-     * might want to override the <code>HOME_NET</code> variable with the CIDRs of your
-     * home networks. If you don't override <code>HOME_NET</code> with your own CIDRs,
-     * Network Firewall by default uses the CIDR of your inspection VPC.</p>
-     */
     inline PolicyVariables& AddRuleVariables(const Aws::String& key, const IPSet& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(key, value); return *this; }
-
-    /**
-     * <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata
-     * <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you
-     * might want to override the <code>HOME_NET</code> variable with the CIDRs of your
-     * home networks. If you don't override <code>HOME_NET</code> with your own CIDRs,
-     * Network Firewall by default uses the CIDR of your inspection VPC.</p>
-     */
     inline PolicyVariables& AddRuleVariables(Aws::String&& key, const IPSet& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata
-     * <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you
-     * might want to override the <code>HOME_NET</code> variable with the CIDRs of your
-     * home networks. If you don't override <code>HOME_NET</code> with your own CIDRs,
-     * Network Firewall by default uses the CIDR of your inspection VPC.</p>
-     */
     inline PolicyVariables& AddRuleVariables(const Aws::String& key, IPSet&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata
-     * <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you
-     * might want to override the <code>HOME_NET</code> variable with the CIDRs of your
-     * home networks. If you don't override <code>HOME_NET</code> with your own CIDRs,
-     * Network Firewall by default uses the CIDR of your inspection VPC.</p>
-     */
     inline PolicyVariables& AddRuleVariables(Aws::String&& key, IPSet&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata
-     * <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you
-     * might want to override the <code>HOME_NET</code> variable with the CIDRs of your
-     * home networks. If you don't override <code>HOME_NET</code> with your own CIDRs,
-     * Network Firewall by default uses the CIDR of your inspection VPC.</p>
-     */
     inline PolicyVariables& AddRuleVariables(const char* key, IPSet&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata
-     * <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you
-     * might want to override the <code>HOME_NET</code> variable with the CIDRs of your
-     * home networks. If you don't override <code>HOME_NET</code> with your own CIDRs,
-     * Network Firewall by default uses the CIDR of your inspection VPC.</p>
-     */
     inline PolicyVariables& AddRuleVariables(const char* key, const IPSet& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, IPSet> m_ruleVariables;

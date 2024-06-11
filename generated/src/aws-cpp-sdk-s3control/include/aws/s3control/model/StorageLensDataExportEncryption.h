@@ -39,67 +39,29 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const SSES3& GetSSES3() const{ return m_sSES3; }
-
-    /**
-     * <p/>
-     */
     inline bool SSES3HasBeenSet() const { return m_sSES3HasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetSSES3(const SSES3& value) { m_sSES3HasBeenSet = true; m_sSES3 = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetSSES3(SSES3&& value) { m_sSES3HasBeenSet = true; m_sSES3 = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline StorageLensDataExportEncryption& WithSSES3(const SSES3& value) { SetSSES3(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline StorageLensDataExportEncryption& WithSSES3(SSES3&& value) { SetSSES3(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p/>
      */
     inline const SSEKMS& GetSSEKMS() const{ return m_sSEKMS; }
-
-    /**
-     * <p/>
-     */
     inline bool SSEKMSHasBeenSet() const { return m_sSEKMSHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetSSEKMS(const SSEKMS& value) { m_sSEKMSHasBeenSet = true; m_sSEKMS = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetSSEKMS(SSEKMS&& value) { m_sSEKMSHasBeenSet = true; m_sSEKMS = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline StorageLensDataExportEncryption& WithSSEKMS(const SSEKMS& value) { SetSSEKMS(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline StorageLensDataExportEncryption& WithSSEKMS(SSEKMS&& value) { SetSSEKMS(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SSES3 m_sSES3;

@@ -32,85 +32,40 @@ namespace Model
     AWS_WELLARCHITECTED_API CreateTemplateShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The review template ARN.</p>
      */
     inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(const Aws::String& value) { m_templateArn = value; }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(Aws::String&& value) { m_templateArn = std::move(value); }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(const char* value) { m_templateArn.assign(value); }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline CreateTemplateShareResult& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline CreateTemplateShareResult& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline CreateTemplateShareResult& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetShareId() const{ return m_shareId; }
-
-    
     inline void SetShareId(const Aws::String& value) { m_shareId = value; }
-
-    
     inline void SetShareId(Aws::String&& value) { m_shareId = std::move(value); }
-
-    
     inline void SetShareId(const char* value) { m_shareId.assign(value); }
-
-    
     inline CreateTemplateShareResult& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-
-    
     inline CreateTemplateShareResult& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-
-    
     inline CreateTemplateShareResult& WithShareId(const char* value) { SetShareId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateTemplateShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateTemplateShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateTemplateShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateArn;

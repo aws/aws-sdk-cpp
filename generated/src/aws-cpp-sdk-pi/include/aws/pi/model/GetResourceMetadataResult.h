@@ -34,6 +34,7 @@ namespace Model
     AWS_PI_API GetResourceMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An immutable identifier for a data source that is unique for an Amazon Web
      * Services Region. Performance Insights gathers metrics from this data source. To
@@ -41,144 +42,42 @@ namespace Model
      * value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>An immutable identifier for a data source that is unique for an Amazon Web
-     * Services Region. Performance Insights gathers metrics from this data source. To
-     * use a DB instance as a data source, specify its <code>DbiResourceId</code>
-     * value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifier = value; }
-
-    /**
-     * <p>An immutable identifier for a data source that is unique for an Amazon Web
-     * Services Region. Performance Insights gathers metrics from this data source. To
-     * use a DB instance as a data source, specify its <code>DbiResourceId</code>
-     * value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifier = std::move(value); }
-
-    /**
-     * <p>An immutable identifier for a data source that is unique for an Amazon Web
-     * Services Region. Performance Insights gathers metrics from this data source. To
-     * use a DB instance as a data source, specify its <code>DbiResourceId</code>
-     * value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-     */
     inline void SetIdentifier(const char* value) { m_identifier.assign(value); }
-
-    /**
-     * <p>An immutable identifier for a data source that is unique for an Amazon Web
-     * Services Region. Performance Insights gathers metrics from this data source. To
-     * use a DB instance as a data source, specify its <code>DbiResourceId</code>
-     * value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-     */
     inline GetResourceMetadataResult& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>An immutable identifier for a data source that is unique for an Amazon Web
-     * Services Region. Performance Insights gathers metrics from this data source. To
-     * use a DB instance as a data source, specify its <code>DbiResourceId</code>
-     * value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-     */
     inline GetResourceMetadataResult& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>An immutable identifier for a data source that is unique for an Amazon Web
-     * Services Region. Performance Insights gathers metrics from this data source. To
-     * use a DB instance as a data source, specify its <code>DbiResourceId</code>
-     * value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-     */
     inline GetResourceMetadataResult& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The metadata for different features. For example, the metadata might indicate
      * that a feature is turned on or off on a specific DB instance.</p>
      */
     inline const Aws::Map<Aws::String, FeatureMetadata>& GetFeatures() const{ return m_features; }
-
-    /**
-     * <p>The metadata for different features. For example, the metadata might indicate
-     * that a feature is turned on or off on a specific DB instance.</p>
-     */
     inline void SetFeatures(const Aws::Map<Aws::String, FeatureMetadata>& value) { m_features = value; }
-
-    /**
-     * <p>The metadata for different features. For example, the metadata might indicate
-     * that a feature is turned on or off on a specific DB instance.</p>
-     */
     inline void SetFeatures(Aws::Map<Aws::String, FeatureMetadata>&& value) { m_features = std::move(value); }
-
-    /**
-     * <p>The metadata for different features. For example, the metadata might indicate
-     * that a feature is turned on or off on a specific DB instance.</p>
-     */
     inline GetResourceMetadataResult& WithFeatures(const Aws::Map<Aws::String, FeatureMetadata>& value) { SetFeatures(value); return *this;}
-
-    /**
-     * <p>The metadata for different features. For example, the metadata might indicate
-     * that a feature is turned on or off on a specific DB instance.</p>
-     */
     inline GetResourceMetadataResult& WithFeatures(Aws::Map<Aws::String, FeatureMetadata>&& value) { SetFeatures(std::move(value)); return *this;}
-
-    /**
-     * <p>The metadata for different features. For example, the metadata might indicate
-     * that a feature is turned on or off on a specific DB instance.</p>
-     */
     inline GetResourceMetadataResult& AddFeatures(const Aws::String& key, const FeatureMetadata& value) { m_features.emplace(key, value); return *this; }
-
-    /**
-     * <p>The metadata for different features. For example, the metadata might indicate
-     * that a feature is turned on or off on a specific DB instance.</p>
-     */
     inline GetResourceMetadataResult& AddFeatures(Aws::String&& key, const FeatureMetadata& value) { m_features.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The metadata for different features. For example, the metadata might indicate
-     * that a feature is turned on or off on a specific DB instance.</p>
-     */
     inline GetResourceMetadataResult& AddFeatures(const Aws::String& key, FeatureMetadata&& value) { m_features.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The metadata for different features. For example, the metadata might indicate
-     * that a feature is turned on or off on a specific DB instance.</p>
-     */
     inline GetResourceMetadataResult& AddFeatures(Aws::String&& key, FeatureMetadata&& value) { m_features.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The metadata for different features. For example, the metadata might indicate
-     * that a feature is turned on or off on a specific DB instance.</p>
-     */
     inline GetResourceMetadataResult& AddFeatures(const char* key, FeatureMetadata&& value) { m_features.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The metadata for different features. For example, the metadata might indicate
-     * that a feature is turned on or off on a specific DB instance.</p>
-     */
     inline GetResourceMetadataResult& AddFeatures(const char* key, const FeatureMetadata& value) { m_features.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetResourceMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetResourceMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetResourceMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identifier;

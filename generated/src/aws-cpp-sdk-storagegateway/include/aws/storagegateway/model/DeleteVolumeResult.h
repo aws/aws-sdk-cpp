@@ -38,70 +38,30 @@ namespace Model
     AWS_STORAGEGATEWAY_API DeleteVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is
      * the same ARN you provided in the request.</p>
      */
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is
-     * the same ARN you provided in the request.</p>
-     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is
-     * the same ARN you provided in the request.</p>
-     */
     inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is
-     * the same ARN you provided in the request.</p>
-     */
     inline void SetVolumeARN(const char* value) { m_volumeARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is
-     * the same ARN you provided in the request.</p>
-     */
     inline DeleteVolumeResult& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is
-     * the same ARN you provided in the request.</p>
-     */
     inline DeleteVolumeResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is
-     * the same ARN you provided in the request.</p>
-     */
     inline DeleteVolumeResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteVolumeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteVolumeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteVolumeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_volumeARN;

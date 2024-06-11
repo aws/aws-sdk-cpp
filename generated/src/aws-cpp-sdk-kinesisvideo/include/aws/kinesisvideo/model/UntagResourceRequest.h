@@ -33,100 +33,35 @@ namespace Model
     AWS_KINESISVIDEO_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the signaling channel from which you want
      * to remove tags.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the signaling channel from which you want
-     * to remove tags.</p>
-     */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the signaling channel from which you want
-     * to remove tags.</p>
-     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the signaling channel from which you want
-     * to remove tags.</p>
-     */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the signaling channel from which you want
-     * to remove tags.</p>
-     */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the signaling channel from which you want
-     * to remove tags.</p>
-     */
     inline UntagResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the signaling channel from which you want
-     * to remove tags.</p>
-     */
     inline UntagResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the signaling channel from which you want
-     * to remove tags.</p>
-     */
     inline UntagResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of the keys of the tags that you want to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeyList() const{ return m_tagKeyList; }
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline bool TagKeyListHasBeenSet() const { return m_tagKeyListHasBeenSet; }
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline void SetTagKeyList(const Aws::Vector<Aws::String>& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList = value; }
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline void SetTagKeyList(Aws::Vector<Aws::String>&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList = std::move(value); }
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline UntagResourceRequest& WithTagKeyList(const Aws::Vector<Aws::String>& value) { SetTagKeyList(value); return *this;}
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline UntagResourceRequest& WithTagKeyList(Aws::Vector<Aws::String>&& value) { SetTagKeyList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline UntagResourceRequest& AddTagKeyList(const Aws::String& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline UntagResourceRequest& AddTagKeyList(Aws::String&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline UntagResourceRequest& AddTagKeyList(const char* value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceARN;

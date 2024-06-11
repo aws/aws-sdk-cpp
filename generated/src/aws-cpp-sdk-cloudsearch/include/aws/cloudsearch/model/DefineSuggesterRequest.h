@@ -42,49 +42,27 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    
     inline DefineSuggesterRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    
     inline DefineSuggesterRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    
     inline DefineSuggesterRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Suggester& GetSuggester() const{ return m_suggester; }
-
-    
     inline bool SuggesterHasBeenSet() const { return m_suggesterHasBeenSet; }
-
-    
     inline void SetSuggester(const Suggester& value) { m_suggesterHasBeenSet = true; m_suggester = value; }
-
-    
     inline void SetSuggester(Suggester&& value) { m_suggesterHasBeenSet = true; m_suggester = std::move(value); }
-
-    
     inline DefineSuggesterRequest& WithSuggester(const Suggester& value) { SetSuggester(value); return *this;}
-
-    
     inline DefineSuggesterRequest& WithSuggester(Suggester&& value) { SetSuggester(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

@@ -37,47 +37,21 @@ namespace Model
     AWS_KINESISANALYTICS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Amazon Kinesis Analytics application name.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>Amazon Kinesis Analytics application name.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>Amazon Kinesis Analytics application name.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>Amazon Kinesis Analytics application name.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>Amazon Kinesis Analytics application name.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>Amazon Kinesis Analytics application name.</p>
-     */
     inline DeleteApplicationOutputRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>Amazon Kinesis Analytics application name.</p>
-     */
     inline DeleteApplicationOutputRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Kinesis Analytics application name.</p>
-     */
     inline DeleteApplicationOutputRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Amazon Kinesis Analytics application version. You can use the <a
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
@@ -86,35 +60,12 @@ namespace Model
      * returned. </p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
-
-    /**
-     * <p>Amazon Kinesis Analytics application version. You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the current application version. If the version specified is
-     * not the current version, the <code>ConcurrentModificationException</code> is
-     * returned. </p>
-     */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
-
-    /**
-     * <p>Amazon Kinesis Analytics application version. You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the current application version. If the version specified is
-     * not the current version, the <code>ConcurrentModificationException</code> is
-     * returned. </p>
-     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
-
-    /**
-     * <p>Amazon Kinesis Analytics application version. You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the current application version. If the version specified is
-     * not the current version, the <code>ConcurrentModificationException</code> is
-     * returned. </p>
-     */
     inline DeleteApplicationOutputRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the configuration to delete. Each output configuration that is
      * added to the application, either when the application is created or later using
@@ -127,98 +78,14 @@ namespace Model
      * operation to get the specific <code>OutputId</code>. </p>
      */
     inline const Aws::String& GetOutputId() const{ return m_outputId; }
-
-    /**
-     * <p>The ID of the configuration to delete. Each output configuration that is
-     * added to the application, either when the application is created or later using
-     * the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a>
-     * operation, has a unique ID. You need to provide the ID to uniquely identify the
-     * output configuration that you want to delete from the application configuration.
-     * You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the specific <code>OutputId</code>. </p>
-     */
     inline bool OutputIdHasBeenSet() const { return m_outputIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the configuration to delete. Each output configuration that is
-     * added to the application, either when the application is created or later using
-     * the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a>
-     * operation, has a unique ID. You need to provide the ID to uniquely identify the
-     * output configuration that you want to delete from the application configuration.
-     * You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the specific <code>OutputId</code>. </p>
-     */
     inline void SetOutputId(const Aws::String& value) { m_outputIdHasBeenSet = true; m_outputId = value; }
-
-    /**
-     * <p>The ID of the configuration to delete. Each output configuration that is
-     * added to the application, either when the application is created or later using
-     * the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a>
-     * operation, has a unique ID. You need to provide the ID to uniquely identify the
-     * output configuration that you want to delete from the application configuration.
-     * You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the specific <code>OutputId</code>. </p>
-     */
     inline void SetOutputId(Aws::String&& value) { m_outputIdHasBeenSet = true; m_outputId = std::move(value); }
-
-    /**
-     * <p>The ID of the configuration to delete. Each output configuration that is
-     * added to the application, either when the application is created or later using
-     * the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a>
-     * operation, has a unique ID. You need to provide the ID to uniquely identify the
-     * output configuration that you want to delete from the application configuration.
-     * You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the specific <code>OutputId</code>. </p>
-     */
     inline void SetOutputId(const char* value) { m_outputIdHasBeenSet = true; m_outputId.assign(value); }
-
-    /**
-     * <p>The ID of the configuration to delete. Each output configuration that is
-     * added to the application, either when the application is created or later using
-     * the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a>
-     * operation, has a unique ID. You need to provide the ID to uniquely identify the
-     * output configuration that you want to delete from the application configuration.
-     * You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the specific <code>OutputId</code>. </p>
-     */
     inline DeleteApplicationOutputRequest& WithOutputId(const Aws::String& value) { SetOutputId(value); return *this;}
-
-    /**
-     * <p>The ID of the configuration to delete. Each output configuration that is
-     * added to the application, either when the application is created or later using
-     * the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a>
-     * operation, has a unique ID. You need to provide the ID to uniquely identify the
-     * output configuration that you want to delete from the application configuration.
-     * You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the specific <code>OutputId</code>. </p>
-     */
     inline DeleteApplicationOutputRequest& WithOutputId(Aws::String&& value) { SetOutputId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the configuration to delete. Each output configuration that is
-     * added to the application, either when the application is created or later using
-     * the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a>
-     * operation, has a unique ID. You need to provide the ID to uniquely identify the
-     * output configuration that you want to delete from the application configuration.
-     * You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the specific <code>OutputId</code>. </p>
-     */
     inline DeleteApplicationOutputRequest& WithOutputId(const char* value) { SetOutputId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

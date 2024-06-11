@@ -38,6 +38,7 @@ namespace Model
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
      * role to be used by the Glue crawler. The recommended IAM policies are:</p> <ul>
@@ -45,63 +46,14 @@ namespace Model
      * custom policy granting access to your Amazon S3 Data Lake</p> </li> </ul>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role to be used by the Glue crawler. The recommended IAM policies are:</p> <ul>
-     * <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> <li> <p>A
-     * custom policy granting access to your Amazon S3 Data Lake</p> </li> </ul>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role to be used by the Glue crawler. The recommended IAM policies are:</p> <ul>
-     * <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> <li> <p>A
-     * custom policy granting access to your Amazon S3 Data Lake</p> </li> </ul>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role to be used by the Glue crawler. The recommended IAM policies are:</p> <ul>
-     * <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> <li> <p>A
-     * custom policy granting access to your Amazon S3 Data Lake</p> </li> </ul>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role to be used by the Glue crawler. The recommended IAM policies are:</p> <ul>
-     * <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> <li> <p>A
-     * custom policy granting access to your Amazon S3 Data Lake</p> </li> </ul>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role to be used by the Glue crawler. The recommended IAM policies are:</p> <ul>
-     * <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> <li> <p>A
-     * custom policy granting access to your Amazon S3 Data Lake</p> </li> </ul>
-     */
     inline CustomLogSourceCrawlerConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role to be used by the Glue crawler. The recommended IAM policies are:</p> <ul>
-     * <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> <li> <p>A
-     * custom policy granting access to your Amazon S3 Data Lake</p> </li> </ul>
-     */
     inline CustomLogSourceCrawlerConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role to be used by the Glue crawler. The recommended IAM policies are:</p> <ul>
-     * <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> <li> <p>A
-     * custom policy granting access to your Amazon S3 Data Lake</p> </li> </ul>
-     */
     inline CustomLogSourceCrawlerConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleArn;

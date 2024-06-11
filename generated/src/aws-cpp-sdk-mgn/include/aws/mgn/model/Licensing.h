@@ -35,26 +35,15 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configure BYOL OS licensing.</p>
      */
     inline bool GetOsByol() const{ return m_osByol; }
-
-    /**
-     * <p>Configure BYOL OS licensing.</p>
-     */
     inline bool OsByolHasBeenSet() const { return m_osByolHasBeenSet; }
-
-    /**
-     * <p>Configure BYOL OS licensing.</p>
-     */
     inline void SetOsByol(bool value) { m_osByolHasBeenSet = true; m_osByol = value; }
-
-    /**
-     * <p>Configure BYOL OS licensing.</p>
-     */
     inline Licensing& WithOsByol(bool value) { SetOsByol(value); return *this;}
-
+    ///@}
   private:
 
     bool m_osByol;

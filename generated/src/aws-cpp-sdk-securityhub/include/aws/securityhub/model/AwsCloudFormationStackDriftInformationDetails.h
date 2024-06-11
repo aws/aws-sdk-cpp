@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Status of the stack's actual configuration compared to its expected template
      * configuration. </p>
      */
     inline const Aws::String& GetStackDriftStatus() const{ return m_stackDriftStatus; }
-
-    /**
-     * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p>
-     */
     inline bool StackDriftStatusHasBeenSet() const { return m_stackDriftStatusHasBeenSet; }
-
-    /**
-     * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p>
-     */
     inline void SetStackDriftStatus(const Aws::String& value) { m_stackDriftStatusHasBeenSet = true; m_stackDriftStatus = value; }
-
-    /**
-     * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p>
-     */
     inline void SetStackDriftStatus(Aws::String&& value) { m_stackDriftStatusHasBeenSet = true; m_stackDriftStatus = std::move(value); }
-
-    /**
-     * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p>
-     */
     inline void SetStackDriftStatus(const char* value) { m_stackDriftStatusHasBeenSet = true; m_stackDriftStatus.assign(value); }
-
-    /**
-     * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p>
-     */
     inline AwsCloudFormationStackDriftInformationDetails& WithStackDriftStatus(const Aws::String& value) { SetStackDriftStatus(value); return *this;}
-
-    /**
-     * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p>
-     */
     inline AwsCloudFormationStackDriftInformationDetails& WithStackDriftStatus(Aws::String&& value) { SetStackDriftStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p>
-     */
     inline AwsCloudFormationStackDriftInformationDetails& WithStackDriftStatus(const char* value) { SetStackDriftStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stackDriftStatus;

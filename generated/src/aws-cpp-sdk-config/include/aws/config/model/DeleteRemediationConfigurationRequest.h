@@ -34,95 +34,34 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the Config rule for which you want to delete remediation
      * configuration.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
-
-    /**
-     * <p>The name of the Config rule for which you want to delete remediation
-     * configuration.</p>
-     */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Config rule for which you want to delete remediation
-     * configuration.</p>
-     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
-
-    /**
-     * <p>The name of the Config rule for which you want to delete remediation
-     * configuration.</p>
-     */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
-
-    /**
-     * <p>The name of the Config rule for which you want to delete remediation
-     * configuration.</p>
-     */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
-
-    /**
-     * <p>The name of the Config rule for which you want to delete remediation
-     * configuration.</p>
-     */
     inline DeleteRemediationConfigurationRequest& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
-
-    /**
-     * <p>The name of the Config rule for which you want to delete remediation
-     * configuration.</p>
-     */
     inline DeleteRemediationConfigurationRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Config rule for which you want to delete remediation
-     * configuration.</p>
-     */
     inline DeleteRemediationConfigurationRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of a resource.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>The type of a resource.</p>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of a resource.</p>
-     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>The type of a resource.</p>
-     */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>The type of a resource.</p>
-     */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-
-    /**
-     * <p>The type of a resource.</p>
-     */
     inline DeleteRemediationConfigurationRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>The type of a resource.</p>
-     */
     inline DeleteRemediationConfigurationRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of a resource.</p>
-     */
     inline DeleteRemediationConfigurationRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configRuleName;

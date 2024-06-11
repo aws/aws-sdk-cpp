@@ -38,6 +38,7 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
      * symmetric and created in the same Amazon Web Services Region as the cluster. If
@@ -49,91 +50,14 @@ namespace Model
      * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
-     * symmetric and created in the same Amazon Web Services Region as the cluster. If
-     * the KMS key was created in a different account, the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
-     * principal</a> must have access to the KMS key. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * users in other accounts to use a KMS key</a> in the <i>Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline bool KeyArnHasBeenSet() const { return m_keyArnHasBeenSet; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
-     * symmetric and created in the same Amazon Web Services Region as the cluster. If
-     * the KMS key was created in a different account, the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
-     * principal</a> must have access to the KMS key. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * users in other accounts to use a KMS key</a> in the <i>Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline void SetKeyArn(const Aws::String& value) { m_keyArnHasBeenSet = true; m_keyArn = value; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
-     * symmetric and created in the same Amazon Web Services Region as the cluster. If
-     * the KMS key was created in a different account, the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
-     * principal</a> must have access to the KMS key. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * users in other accounts to use a KMS key</a> in the <i>Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
-     * symmetric and created in the same Amazon Web Services Region as the cluster. If
-     * the KMS key was created in a different account, the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
-     * principal</a> must have access to the KMS key. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * users in other accounts to use a KMS key</a> in the <i>Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline void SetKeyArn(const char* value) { m_keyArnHasBeenSet = true; m_keyArn.assign(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
-     * symmetric and created in the same Amazon Web Services Region as the cluster. If
-     * the KMS key was created in a different account, the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
-     * principal</a> must have access to the KMS key. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * users in other accounts to use a KMS key</a> in the <i>Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline Provider& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
-     * symmetric and created in the same Amazon Web Services Region as the cluster. If
-     * the KMS key was created in a different account, the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
-     * principal</a> must have access to the KMS key. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * users in other accounts to use a KMS key</a> in the <i>Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline Provider& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
-     * symmetric and created in the same Amazon Web Services Region as the cluster. If
-     * the KMS key was created in a different account, the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
-     * principal</a> must have access to the KMS key. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * users in other accounts to use a KMS key</a> in the <i>Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline Provider& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_keyArn;

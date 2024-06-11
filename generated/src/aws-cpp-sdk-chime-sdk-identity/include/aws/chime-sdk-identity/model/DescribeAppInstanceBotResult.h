@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKIDENTITY_API DescribeAppInstanceBotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The detials of the <code>AppInstanceBot</code>.</p>
      */
     inline const AppInstanceBot& GetAppInstanceBot() const{ return m_appInstanceBot; }
-
-    /**
-     * <p>The detials of the <code>AppInstanceBot</code>.</p>
-     */
     inline void SetAppInstanceBot(const AppInstanceBot& value) { m_appInstanceBot = value; }
-
-    /**
-     * <p>The detials of the <code>AppInstanceBot</code>.</p>
-     */
     inline void SetAppInstanceBot(AppInstanceBot&& value) { m_appInstanceBot = std::move(value); }
-
-    /**
-     * <p>The detials of the <code>AppInstanceBot</code>.</p>
-     */
     inline DescribeAppInstanceBotResult& WithAppInstanceBot(const AppInstanceBot& value) { SetAppInstanceBot(value); return *this;}
-
-    /**
-     * <p>The detials of the <code>AppInstanceBot</code>.</p>
-     */
     inline DescribeAppInstanceBotResult& WithAppInstanceBot(AppInstanceBot&& value) { SetAppInstanceBot(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAppInstanceBotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAppInstanceBotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAppInstanceBotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AppInstanceBot m_appInstanceBot;

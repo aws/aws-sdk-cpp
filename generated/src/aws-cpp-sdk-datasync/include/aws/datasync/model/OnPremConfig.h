@@ -39,60 +39,21 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer
      * location.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer
-     * location.</p>
-     */
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer
-     * location.</p>
-     */
     inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArnsHasBeenSet = true; m_agentArns = value; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer
-     * location.</p>
-     */
     inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer
-     * location.</p>
-     */
     inline OnPremConfig& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer
-     * location.</p>
-     */
     inline OnPremConfig& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer
-     * location.</p>
-     */
     inline OnPremConfig& AddAgentArns(const Aws::String& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer
-     * location.</p>
-     */
     inline OnPremConfig& AddAgentArns(Aws::String&& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer
-     * location.</p>
-     */
     inline OnPremConfig& AddAgentArns(const char* value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_agentArns;

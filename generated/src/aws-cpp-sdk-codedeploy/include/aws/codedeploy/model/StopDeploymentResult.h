@@ -39,99 +39,42 @@ namespace Model
     AWS_CODEDEPLOY_API StopDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
      * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
      * successful.</p> </li> </ul>
      */
     inline const StopStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
-     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
-     * successful.</p> </li> </ul>
-     */
     inline void SetStatus(const StopStatus& value) { m_status = value; }
-
-    /**
-     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
-     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
-     * successful.</p> </li> </ul>
-     */
     inline void SetStatus(StopStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
-     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
-     * successful.</p> </li> </ul>
-     */
     inline StopDeploymentResult& WithStatus(const StopStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
-     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
-     * successful.</p> </li> </ul>
-     */
     inline StopDeploymentResult& WithStatus(StopStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An accompanying status message.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>An accompanying status message.</p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-
-    /**
-     * <p>An accompanying status message.</p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-
-    /**
-     * <p>An accompanying status message.</p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-
-    /**
-     * <p>An accompanying status message.</p>
-     */
     inline StopDeploymentResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>An accompanying status message.</p>
-     */
     inline StopDeploymentResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>An accompanying status message.</p>
-     */
     inline StopDeploymentResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StopDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StopDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StopDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     StopStatus m_status;

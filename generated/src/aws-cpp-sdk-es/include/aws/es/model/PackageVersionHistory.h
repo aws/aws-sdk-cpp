@@ -38,118 +38,45 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Version of the package.</p>
      */
     inline const Aws::String& GetPackageVersion() const{ return m_packageVersion; }
-
-    /**
-     * <p>Version of the package.</p>
-     */
     inline bool PackageVersionHasBeenSet() const { return m_packageVersionHasBeenSet; }
-
-    /**
-     * <p>Version of the package.</p>
-     */
     inline void SetPackageVersion(const Aws::String& value) { m_packageVersionHasBeenSet = true; m_packageVersion = value; }
-
-    /**
-     * <p>Version of the package.</p>
-     */
     inline void SetPackageVersion(Aws::String&& value) { m_packageVersionHasBeenSet = true; m_packageVersion = std::move(value); }
-
-    /**
-     * <p>Version of the package.</p>
-     */
     inline void SetPackageVersion(const char* value) { m_packageVersionHasBeenSet = true; m_packageVersion.assign(value); }
-
-    /**
-     * <p>Version of the package.</p>
-     */
     inline PackageVersionHistory& WithPackageVersion(const Aws::String& value) { SetPackageVersion(value); return *this;}
-
-    /**
-     * <p>Version of the package.</p>
-     */
     inline PackageVersionHistory& WithPackageVersion(Aws::String&& value) { SetPackageVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>Version of the package.</p>
-     */
     inline PackageVersionHistory& WithPackageVersion(const char* value) { SetPackageVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A message associated with the version.</p>
      */
     inline const Aws::String& GetCommitMessage() const{ return m_commitMessage; }
-
-    /**
-     * <p>A message associated with the version.</p>
-     */
     inline bool CommitMessageHasBeenSet() const { return m_commitMessageHasBeenSet; }
-
-    /**
-     * <p>A message associated with the version.</p>
-     */
     inline void SetCommitMessage(const Aws::String& value) { m_commitMessageHasBeenSet = true; m_commitMessage = value; }
-
-    /**
-     * <p>A message associated with the version.</p>
-     */
     inline void SetCommitMessage(Aws::String&& value) { m_commitMessageHasBeenSet = true; m_commitMessage = std::move(value); }
-
-    /**
-     * <p>A message associated with the version.</p>
-     */
     inline void SetCommitMessage(const char* value) { m_commitMessageHasBeenSet = true; m_commitMessage.assign(value); }
-
-    /**
-     * <p>A message associated with the version.</p>
-     */
     inline PackageVersionHistory& WithCommitMessage(const Aws::String& value) { SetCommitMessage(value); return *this;}
-
-    /**
-     * <p>A message associated with the version.</p>
-     */
     inline PackageVersionHistory& WithCommitMessage(Aws::String&& value) { SetCommitMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message associated with the version.</p>
-     */
     inline PackageVersionHistory& WithCommitMessage(const char* value) { SetCommitMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Timestamp which tells creation time of the package version.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>Timestamp which tells creation time of the package version.</p>
-     */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>Timestamp which tells creation time of the package version.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>Timestamp which tells creation time of the package version.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>Timestamp which tells creation time of the package version.</p>
-     */
     inline PackageVersionHistory& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>Timestamp which tells creation time of the package version.</p>
-     */
     inline PackageVersionHistory& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_packageVersion;

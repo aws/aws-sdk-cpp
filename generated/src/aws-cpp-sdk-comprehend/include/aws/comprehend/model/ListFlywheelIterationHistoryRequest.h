@@ -35,139 +35,55 @@ namespace Model
     AWS_COMPREHEND_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the flywheel.</p>
      */
     inline const Aws::String& GetFlywheelArn() const{ return m_flywheelArn; }
-
-    /**
-     * <p>The ARN of the flywheel.</p>
-     */
     inline bool FlywheelArnHasBeenSet() const { return m_flywheelArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the flywheel.</p>
-     */
     inline void SetFlywheelArn(const Aws::String& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = value; }
-
-    /**
-     * <p>The ARN of the flywheel.</p>
-     */
     inline void SetFlywheelArn(Aws::String&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the flywheel.</p>
-     */
     inline void SetFlywheelArn(const char* value) { m_flywheelArnHasBeenSet = true; m_flywheelArn.assign(value); }
-
-    /**
-     * <p>The ARN of the flywheel.</p>
-     */
     inline ListFlywheelIterationHistoryRequest& WithFlywheelArn(const Aws::String& value) { SetFlywheelArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the flywheel.</p>
-     */
     inline ListFlywheelIterationHistoryRequest& WithFlywheelArn(Aws::String&& value) { SetFlywheelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the flywheel.</p>
-     */
     inline ListFlywheelIterationHistoryRequest& WithFlywheelArn(const char* value) { SetFlywheelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filter the flywheel iteration history based on creation time.</p>
      */
     inline const FlywheelIterationFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>Filter the flywheel iteration history based on creation time.</p>
-     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>Filter the flywheel iteration history based on creation time.</p>
-     */
     inline void SetFilter(const FlywheelIterationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>Filter the flywheel iteration history based on creation time.</p>
-     */
     inline void SetFilter(FlywheelIterationFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>Filter the flywheel iteration history based on creation time.</p>
-     */
     inline ListFlywheelIterationHistoryRequest& WithFilter(const FlywheelIterationFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>Filter the flywheel iteration history based on creation time.</p>
-     */
     inline ListFlywheelIterationHistoryRequest& WithFilter(FlywheelIterationFilter&& value) { SetFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Next token</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Next token</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Next token</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Next token</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Next token</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Next token</p>
-     */
     inline ListFlywheelIterationHistoryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Next token</p>
-     */
     inline ListFlywheelIterationHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Next token</p>
-     */
     inline ListFlywheelIterationHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum number of iteration history results to return</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of iteration history results to return</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of iteration history results to return</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of iteration history results to return</p>
-     */
     inline ListFlywheelIterationHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flywheelArn;

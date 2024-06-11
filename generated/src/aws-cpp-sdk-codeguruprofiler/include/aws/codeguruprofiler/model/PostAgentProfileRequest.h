@@ -42,111 +42,36 @@ namespace Model
     AWS_CODEGURUPROFILER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
      * prevent the accidental submission of duplicate profiling data if there are
      * failures and retries. </p>
      */
     inline const Aws::String& GetProfileToken() const{ return m_profileToken; }
-
-    /**
-     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
-     * prevent the accidental submission of duplicate profiling data if there are
-     * failures and retries. </p>
-     */
     inline bool ProfileTokenHasBeenSet() const { return m_profileTokenHasBeenSet; }
-
-    /**
-     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
-     * prevent the accidental submission of duplicate profiling data if there are
-     * failures and retries. </p>
-     */
     inline void SetProfileToken(const Aws::String& value) { m_profileTokenHasBeenSet = true; m_profileToken = value; }
-
-    /**
-     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
-     * prevent the accidental submission of duplicate profiling data if there are
-     * failures and retries. </p>
-     */
     inline void SetProfileToken(Aws::String&& value) { m_profileTokenHasBeenSet = true; m_profileToken = std::move(value); }
-
-    /**
-     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
-     * prevent the accidental submission of duplicate profiling data if there are
-     * failures and retries. </p>
-     */
     inline void SetProfileToken(const char* value) { m_profileTokenHasBeenSet = true; m_profileToken.assign(value); }
-
-    /**
-     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
-     * prevent the accidental submission of duplicate profiling data if there are
-     * failures and retries. </p>
-     */
     inline PostAgentProfileRequest& WithProfileToken(const Aws::String& value) { SetProfileToken(value); return *this;}
-
-    /**
-     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
-     * prevent the accidental submission of duplicate profiling data if there are
-     * failures and retries. </p>
-     */
     inline PostAgentProfileRequest& WithProfileToken(Aws::String&& value) { SetProfileToken(std::move(value)); return *this;}
-
-    /**
-     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
-     * prevent the accidental submission of duplicate profiling data if there are
-     * failures and retries. </p>
-     */
     inline PostAgentProfileRequest& WithProfileToken(const char* value) { SetProfileToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The name of the profiling group with the aggregated profile that receives
      * the submitted profiling data. </p>
      */
     inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
-
-    /**
-     * <p> The name of the profiling group with the aggregated profile that receives
-     * the submitted profiling data. </p>
-     */
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
-
-    /**
-     * <p> The name of the profiling group with the aggregated profile that receives
-     * the submitted profiling data. </p>
-     */
     inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
-
-    /**
-     * <p> The name of the profiling group with the aggregated profile that receives
-     * the submitted profiling data. </p>
-     */
     inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
-
-    /**
-     * <p> The name of the profiling group with the aggregated profile that receives
-     * the submitted profiling data. </p>
-     */
     inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
-
-    /**
-     * <p> The name of the profiling group with the aggregated profile that receives
-     * the submitted profiling data. </p>
-     */
     inline PostAgentProfileRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
-
-    /**
-     * <p> The name of the profiling group with the aggregated profile that receives
-     * the submitted profiling data. </p>
-     */
     inline PostAgentProfileRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the profiling group with the aggregated profile that receives
-     * the submitted profiling data. </p>
-     */
     inline PostAgentProfileRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
-
+    ///@}
   private:
 
 

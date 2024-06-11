@@ -42,71 +42,30 @@ namespace Model
     AWS_APIGATEWAY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the ApiKey resource.</p>
      */
     inline const Aws::String& GetApiKey() const{ return m_apiKey; }
-
-    /**
-     * <p>The identifier of the ApiKey resource.</p>
-     */
     inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
-
-    /**
-     * <p>The identifier of the ApiKey resource.</p>
-     */
     inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
-
-    /**
-     * <p>The identifier of the ApiKey resource.</p>
-     */
     inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
-
-    /**
-     * <p>The identifier of the ApiKey resource.</p>
-     */
     inline void SetApiKey(const char* value) { m_apiKeyHasBeenSet = true; m_apiKey.assign(value); }
-
-    /**
-     * <p>The identifier of the ApiKey resource.</p>
-     */
     inline GetApiKeyRequest& WithApiKey(const Aws::String& value) { SetApiKey(value); return *this;}
-
-    /**
-     * <p>The identifier of the ApiKey resource.</p>
-     */
     inline GetApiKeyRequest& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the ApiKey resource.</p>
-     */
     inline GetApiKeyRequest& WithApiKey(const char* value) { SetApiKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A boolean flag to specify whether (<code>true</code>) or not
      * (<code>false</code>) the result contains the key value.</p>
      */
     inline bool GetIncludeValue() const{ return m_includeValue; }
-
-    /**
-     * <p>A boolean flag to specify whether (<code>true</code>) or not
-     * (<code>false</code>) the result contains the key value.</p>
-     */
     inline bool IncludeValueHasBeenSet() const { return m_includeValueHasBeenSet; }
-
-    /**
-     * <p>A boolean flag to specify whether (<code>true</code>) or not
-     * (<code>false</code>) the result contains the key value.</p>
-     */
     inline void SetIncludeValue(bool value) { m_includeValueHasBeenSet = true; m_includeValue = value; }
-
-    /**
-     * <p>A boolean flag to specify whether (<code>true</code>) or not
-     * (<code>false</code>) the result contains the key value.</p>
-     */
     inline GetApiKeyRequest& WithIncludeValue(bool value) { SetIncludeValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_apiKey;

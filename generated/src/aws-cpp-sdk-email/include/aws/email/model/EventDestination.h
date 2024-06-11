@@ -53,6 +53,7 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the event destination. The name must meet the following
      * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
@@ -60,64 +61,16 @@ namespace Model
      * or fewer.</p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the event destination. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
-     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
-     * or fewer.</p> </li> </ul>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the event destination. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
-     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
-     * or fewer.</p> </li> </ul>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the event destination. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
-     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
-     * or fewer.</p> </li> </ul>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the event destination. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
-     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
-     * or fewer.</p> </li> </ul>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the event destination. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
-     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
-     * or fewer.</p> </li> </ul>
-     */
     inline EventDestination& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the event destination. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
-     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
-     * or fewer.</p> </li> </ul>
-     */
     inline EventDestination& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the event destination. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
-     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
-     * or fewer.</p> </li> </ul>
-     */
     inline EventDestination& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Sets whether Amazon SES publishes events to this destination when you send an
      * email with the associated configuration set. Set to <code>true</code> to enable
@@ -125,32 +78,12 @@ namespace Model
      * to this destination. The default value is <code>false</code>.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Sets whether Amazon SES publishes events to this destination when you send an
-     * email with the associated configuration set. Set to <code>true</code> to enable
-     * publishing to this destination; set to <code>false</code> to prevent publishing
-     * to this destination. The default value is <code>false</code>.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Sets whether Amazon SES publishes events to this destination when you send an
-     * email with the associated configuration set. Set to <code>true</code> to enable
-     * publishing to this destination; set to <code>false</code> to prevent publishing
-     * to this destination. The default value is <code>false</code>.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Sets whether Amazon SES publishes events to this destination when you send an
-     * email with the associated configuration set. Set to <code>true</code> to enable
-     * publishing to this destination; set to <code>false</code> to prevent publishing
-     * to this destination. The default value is <code>false</code>.</p>
-     */
     inline EventDestination& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
      * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
@@ -167,237 +100,53 @@ namespace Model
      * because of a template rendering issue.</p> </li> </ul>
      */
     inline const Aws::Vector<EventType>& GetMatchingEventTypes() const{ return m_matchingEventTypes; }
-
-    /**
-     * <p>The type of email sending events to publish to the event destination.</p>
-     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
-     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
-     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
-     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
-     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
-     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
-     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
-     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
-     * received the email and opened it in their email client.</p> </li> <li> <p>
-     * <code>click</code> - The recipient clicked one or more links in the email.</p>
-     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
-     * because of a template rendering issue.</p> </li> </ul>
-     */
     inline bool MatchingEventTypesHasBeenSet() const { return m_matchingEventTypesHasBeenSet; }
-
-    /**
-     * <p>The type of email sending events to publish to the event destination.</p>
-     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
-     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
-     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
-     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
-     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
-     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
-     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
-     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
-     * received the email and opened it in their email client.</p> </li> <li> <p>
-     * <code>click</code> - The recipient clicked one or more links in the email.</p>
-     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
-     * because of a template rendering issue.</p> </li> </ul>
-     */
     inline void SetMatchingEventTypes(const Aws::Vector<EventType>& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = value; }
-
-    /**
-     * <p>The type of email sending events to publish to the event destination.</p>
-     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
-     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
-     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
-     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
-     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
-     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
-     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
-     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
-     * received the email and opened it in their email client.</p> </li> <li> <p>
-     * <code>click</code> - The recipient clicked one or more links in the email.</p>
-     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
-     * because of a template rendering issue.</p> </li> </ul>
-     */
     inline void SetMatchingEventTypes(Aws::Vector<EventType>&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = std::move(value); }
-
-    /**
-     * <p>The type of email sending events to publish to the event destination.</p>
-     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
-     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
-     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
-     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
-     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
-     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
-     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
-     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
-     * received the email and opened it in their email client.</p> </li> <li> <p>
-     * <code>click</code> - The recipient clicked one or more links in the email.</p>
-     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
-     * because of a template rendering issue.</p> </li> </ul>
-     */
     inline EventDestination& WithMatchingEventTypes(const Aws::Vector<EventType>& value) { SetMatchingEventTypes(value); return *this;}
-
-    /**
-     * <p>The type of email sending events to publish to the event destination.</p>
-     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
-     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
-     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
-     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
-     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
-     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
-     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
-     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
-     * received the email and opened it in their email client.</p> </li> <li> <p>
-     * <code>click</code> - The recipient clicked one or more links in the email.</p>
-     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
-     * because of a template rendering issue.</p> </li> </ul>
-     */
     inline EventDestination& WithMatchingEventTypes(Aws::Vector<EventType>&& value) { SetMatchingEventTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of email sending events to publish to the event destination.</p>
-     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
-     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
-     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
-     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
-     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
-     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
-     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
-     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
-     * received the email and opened it in their email client.</p> </li> <li> <p>
-     * <code>click</code> - The recipient clicked one or more links in the email.</p>
-     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
-     * because of a template rendering issue.</p> </li> </ul>
-     */
     inline EventDestination& AddMatchingEventTypes(const EventType& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(value); return *this; }
-
-    /**
-     * <p>The type of email sending events to publish to the event destination.</p>
-     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
-     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
-     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
-     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
-     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
-     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
-     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
-     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
-     * received the email and opened it in their email client.</p> </li> <li> <p>
-     * <code>click</code> - The recipient clicked one or more links in the email.</p>
-     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
-     * because of a template rendering issue.</p> </li> </ul>
-     */
     inline EventDestination& AddMatchingEventTypes(EventType&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that contains the delivery stream ARN and the IAM role ARN
      * associated with an Amazon Kinesis Firehose event destination.</p>
      */
     inline const KinesisFirehoseDestination& GetKinesisFirehoseDestination() const{ return m_kinesisFirehoseDestination; }
-
-    /**
-     * <p>An object that contains the delivery stream ARN and the IAM role ARN
-     * associated with an Amazon Kinesis Firehose event destination.</p>
-     */
     inline bool KinesisFirehoseDestinationHasBeenSet() const { return m_kinesisFirehoseDestinationHasBeenSet; }
-
-    /**
-     * <p>An object that contains the delivery stream ARN and the IAM role ARN
-     * associated with an Amazon Kinesis Firehose event destination.</p>
-     */
     inline void SetKinesisFirehoseDestination(const KinesisFirehoseDestination& value) { m_kinesisFirehoseDestinationHasBeenSet = true; m_kinesisFirehoseDestination = value; }
-
-    /**
-     * <p>An object that contains the delivery stream ARN and the IAM role ARN
-     * associated with an Amazon Kinesis Firehose event destination.</p>
-     */
     inline void SetKinesisFirehoseDestination(KinesisFirehoseDestination&& value) { m_kinesisFirehoseDestinationHasBeenSet = true; m_kinesisFirehoseDestination = std::move(value); }
-
-    /**
-     * <p>An object that contains the delivery stream ARN and the IAM role ARN
-     * associated with an Amazon Kinesis Firehose event destination.</p>
-     */
     inline EventDestination& WithKinesisFirehoseDestination(const KinesisFirehoseDestination& value) { SetKinesisFirehoseDestination(value); return *this;}
-
-    /**
-     * <p>An object that contains the delivery stream ARN and the IAM role ARN
-     * associated with an Amazon Kinesis Firehose event destination.</p>
-     */
     inline EventDestination& WithKinesisFirehoseDestination(KinesisFirehoseDestination&& value) { SetKinesisFirehoseDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that contains the names, default values, and sources of the
      * dimensions associated with an Amazon CloudWatch event destination.</p>
      */
     inline const CloudWatchDestination& GetCloudWatchDestination() const{ return m_cloudWatchDestination; }
-
-    /**
-     * <p>An object that contains the names, default values, and sources of the
-     * dimensions associated with an Amazon CloudWatch event destination.</p>
-     */
     inline bool CloudWatchDestinationHasBeenSet() const { return m_cloudWatchDestinationHasBeenSet; }
-
-    /**
-     * <p>An object that contains the names, default values, and sources of the
-     * dimensions associated with an Amazon CloudWatch event destination.</p>
-     */
     inline void SetCloudWatchDestination(const CloudWatchDestination& value) { m_cloudWatchDestinationHasBeenSet = true; m_cloudWatchDestination = value; }
-
-    /**
-     * <p>An object that contains the names, default values, and sources of the
-     * dimensions associated with an Amazon CloudWatch event destination.</p>
-     */
     inline void SetCloudWatchDestination(CloudWatchDestination&& value) { m_cloudWatchDestinationHasBeenSet = true; m_cloudWatchDestination = std::move(value); }
-
-    /**
-     * <p>An object that contains the names, default values, and sources of the
-     * dimensions associated with an Amazon CloudWatch event destination.</p>
-     */
     inline EventDestination& WithCloudWatchDestination(const CloudWatchDestination& value) { SetCloudWatchDestination(value); return *this;}
-
-    /**
-     * <p>An object that contains the names, default values, and sources of the
-     * dimensions associated with an Amazon CloudWatch event destination.</p>
-     */
     inline EventDestination& WithCloudWatchDestination(CloudWatchDestination&& value) { SetCloudWatchDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that contains the topic ARN associated with an Amazon Simple
      * Notification Service (Amazon SNS) event destination.</p>
      */
     inline const SNSDestination& GetSNSDestination() const{ return m_sNSDestination; }
-
-    /**
-     * <p>An object that contains the topic ARN associated with an Amazon Simple
-     * Notification Service (Amazon SNS) event destination.</p>
-     */
     inline bool SNSDestinationHasBeenSet() const { return m_sNSDestinationHasBeenSet; }
-
-    /**
-     * <p>An object that contains the topic ARN associated with an Amazon Simple
-     * Notification Service (Amazon SNS) event destination.</p>
-     */
     inline void SetSNSDestination(const SNSDestination& value) { m_sNSDestinationHasBeenSet = true; m_sNSDestination = value; }
-
-    /**
-     * <p>An object that contains the topic ARN associated with an Amazon Simple
-     * Notification Service (Amazon SNS) event destination.</p>
-     */
     inline void SetSNSDestination(SNSDestination&& value) { m_sNSDestinationHasBeenSet = true; m_sNSDestination = std::move(value); }
-
-    /**
-     * <p>An object that contains the topic ARN associated with an Amazon Simple
-     * Notification Service (Amazon SNS) event destination.</p>
-     */
     inline EventDestination& WithSNSDestination(const SNSDestination& value) { SetSNSDestination(value); return *this;}
-
-    /**
-     * <p>An object that contains the topic ARN associated with an Amazon Simple
-     * Notification Service (Amazon SNS) event destination.</p>
-     */
     inline EventDestination& WithSNSDestination(SNSDestination&& value) { SetSNSDestination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

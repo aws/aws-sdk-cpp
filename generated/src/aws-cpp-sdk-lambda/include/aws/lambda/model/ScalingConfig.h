@@ -36,30 +36,16 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Limits the number of concurrent instances that the Amazon SQS event source
      * can invoke.</p>
      */
     inline int GetMaximumConcurrency() const{ return m_maximumConcurrency; }
-
-    /**
-     * <p>Limits the number of concurrent instances that the Amazon SQS event source
-     * can invoke.</p>
-     */
     inline bool MaximumConcurrencyHasBeenSet() const { return m_maximumConcurrencyHasBeenSet; }
-
-    /**
-     * <p>Limits the number of concurrent instances that the Amazon SQS event source
-     * can invoke.</p>
-     */
     inline void SetMaximumConcurrency(int value) { m_maximumConcurrencyHasBeenSet = true; m_maximumConcurrency = value; }
-
-    /**
-     * <p>Limits the number of concurrent instances that the Amazon SQS event source
-     * can invoke.</p>
-     */
     inline ScalingConfig& WithMaximumConcurrency(int value) { SetMaximumConcurrency(value); return *this;}
-
+    ///@}
   private:
 
     int m_maximumConcurrency;

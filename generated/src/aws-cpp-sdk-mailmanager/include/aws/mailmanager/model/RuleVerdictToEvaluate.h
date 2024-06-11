@@ -39,73 +39,30 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Add On ARN and its returned value to evaluate in a verdict condition
      * expression.</p>
      */
     inline const Analysis& GetAnalysis() const{ return m_analysis; }
-
-    /**
-     * <p>The Add On ARN and its returned value to evaluate in a verdict condition
-     * expression.</p>
-     */
     inline bool AnalysisHasBeenSet() const { return m_analysisHasBeenSet; }
-
-    /**
-     * <p>The Add On ARN and its returned value to evaluate in a verdict condition
-     * expression.</p>
-     */
     inline void SetAnalysis(const Analysis& value) { m_analysisHasBeenSet = true; m_analysis = value; }
-
-    /**
-     * <p>The Add On ARN and its returned value to evaluate in a verdict condition
-     * expression.</p>
-     */
     inline void SetAnalysis(Analysis&& value) { m_analysisHasBeenSet = true; m_analysis = std::move(value); }
-
-    /**
-     * <p>The Add On ARN and its returned value to evaluate in a verdict condition
-     * expression.</p>
-     */
     inline RuleVerdictToEvaluate& WithAnalysis(const Analysis& value) { SetAnalysis(value); return *this;}
-
-    /**
-     * <p>The Add On ARN and its returned value to evaluate in a verdict condition
-     * expression.</p>
-     */
     inline RuleVerdictToEvaluate& WithAnalysis(Analysis&& value) { SetAnalysis(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The email verdict attribute to evaluate in a string verdict expression.</p>
      */
     inline const RuleVerdictAttribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The email verdict attribute to evaluate in a string verdict expression.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>The email verdict attribute to evaluate in a string verdict expression.</p>
-     */
     inline void SetAttribute(const RuleVerdictAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>The email verdict attribute to evaluate in a string verdict expression.</p>
-     */
     inline void SetAttribute(RuleVerdictAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The email verdict attribute to evaluate in a string verdict expression.</p>
-     */
     inline RuleVerdictToEvaluate& WithAttribute(const RuleVerdictAttribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The email verdict attribute to evaluate in a string verdict expression.</p>
-     */
     inline RuleVerdictToEvaluate& WithAttribute(RuleVerdictAttribute&& value) { SetAttribute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Analysis m_analysis;

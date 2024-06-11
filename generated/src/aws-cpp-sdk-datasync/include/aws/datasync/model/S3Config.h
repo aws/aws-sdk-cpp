@@ -41,54 +41,20 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the ARN of the IAM role that DataSync uses to access your S3
      * bucket.</p>
      */
     inline const Aws::String& GetBucketAccessRoleArn() const{ return m_bucketAccessRoleArn; }
-
-    /**
-     * <p>Specifies the ARN of the IAM role that DataSync uses to access your S3
-     * bucket.</p>
-     */
     inline bool BucketAccessRoleArnHasBeenSet() const { return m_bucketAccessRoleArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the ARN of the IAM role that DataSync uses to access your S3
-     * bucket.</p>
-     */
     inline void SetBucketAccessRoleArn(const Aws::String& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = value; }
-
-    /**
-     * <p>Specifies the ARN of the IAM role that DataSync uses to access your S3
-     * bucket.</p>
-     */
     inline void SetBucketAccessRoleArn(Aws::String&& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = std::move(value); }
-
-    /**
-     * <p>Specifies the ARN of the IAM role that DataSync uses to access your S3
-     * bucket.</p>
-     */
     inline void SetBucketAccessRoleArn(const char* value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn.assign(value); }
-
-    /**
-     * <p>Specifies the ARN of the IAM role that DataSync uses to access your S3
-     * bucket.</p>
-     */
     inline S3Config& WithBucketAccessRoleArn(const Aws::String& value) { SetBucketAccessRoleArn(value); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the IAM role that DataSync uses to access your S3
-     * bucket.</p>
-     */
     inline S3Config& WithBucketAccessRoleArn(Aws::String&& value) { SetBucketAccessRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the IAM role that DataSync uses to access your S3
-     * bucket.</p>
-     */
     inline S3Config& WithBucketAccessRoleArn(const char* value) { SetBucketAccessRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucketAccessRoleArn;

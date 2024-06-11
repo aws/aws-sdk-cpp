@@ -40,113 +40,44 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API ListRuleGroupsNamespacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A token indicating that there are more results to retrieve. You can use this
      * token as part of your next <code>ListRuleGroupsNamespaces</code> request to
      * retrieve those results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token indicating that there are more results to retrieve. You can use this
-     * token as part of your next <code>ListRuleGroupsNamespaces</code> request to
-     * retrieve those results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token indicating that there are more results to retrieve. You can use this
-     * token as part of your next <code>ListRuleGroupsNamespaces</code> request to
-     * retrieve those results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token indicating that there are more results to retrieve. You can use this
-     * token as part of your next <code>ListRuleGroupsNamespaces</code> request to
-     * retrieve those results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token indicating that there are more results to retrieve. You can use this
-     * token as part of your next <code>ListRuleGroupsNamespaces</code> request to
-     * retrieve those results.</p>
-     */
     inline ListRuleGroupsNamespacesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token indicating that there are more results to retrieve. You can use this
-     * token as part of your next <code>ListRuleGroupsNamespaces</code> request to
-     * retrieve those results.</p>
-     */
     inline ListRuleGroupsNamespacesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token indicating that there are more results to retrieve. You can use this
-     * token as part of your next <code>ListRuleGroupsNamespaces</code> request to
-     * retrieve those results.</p>
-     */
     inline ListRuleGroupsNamespacesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The returned list of rule groups namespaces.</p>
      */
     inline const Aws::Vector<RuleGroupsNamespaceSummary>& GetRuleGroupsNamespaces() const{ return m_ruleGroupsNamespaces; }
-
-    /**
-     * <p>The returned list of rule groups namespaces.</p>
-     */
     inline void SetRuleGroupsNamespaces(const Aws::Vector<RuleGroupsNamespaceSummary>& value) { m_ruleGroupsNamespaces = value; }
-
-    /**
-     * <p>The returned list of rule groups namespaces.</p>
-     */
     inline void SetRuleGroupsNamespaces(Aws::Vector<RuleGroupsNamespaceSummary>&& value) { m_ruleGroupsNamespaces = std::move(value); }
-
-    /**
-     * <p>The returned list of rule groups namespaces.</p>
-     */
     inline ListRuleGroupsNamespacesResult& WithRuleGroupsNamespaces(const Aws::Vector<RuleGroupsNamespaceSummary>& value) { SetRuleGroupsNamespaces(value); return *this;}
-
-    /**
-     * <p>The returned list of rule groups namespaces.</p>
-     */
     inline ListRuleGroupsNamespacesResult& WithRuleGroupsNamespaces(Aws::Vector<RuleGroupsNamespaceSummary>&& value) { SetRuleGroupsNamespaces(std::move(value)); return *this;}
-
-    /**
-     * <p>The returned list of rule groups namespaces.</p>
-     */
     inline ListRuleGroupsNamespacesResult& AddRuleGroupsNamespaces(const RuleGroupsNamespaceSummary& value) { m_ruleGroupsNamespaces.push_back(value); return *this; }
-
-    /**
-     * <p>The returned list of rule groups namespaces.</p>
-     */
     inline ListRuleGroupsNamespacesResult& AddRuleGroupsNamespaces(RuleGroupsNamespaceSummary&& value) { m_ruleGroupsNamespaces.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRuleGroupsNamespacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRuleGroupsNamespacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRuleGroupsNamespacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

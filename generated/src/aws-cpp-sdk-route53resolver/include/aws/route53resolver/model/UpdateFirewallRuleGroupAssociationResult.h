@@ -33,53 +33,27 @@ namespace Model
     AWS_ROUTE53RESOLVER_API UpdateFirewallRuleGroupAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The association that you just updated. </p>
      */
     inline const FirewallRuleGroupAssociation& GetFirewallRuleGroupAssociation() const{ return m_firewallRuleGroupAssociation; }
-
-    /**
-     * <p>The association that you just updated. </p>
-     */
     inline void SetFirewallRuleGroupAssociation(const FirewallRuleGroupAssociation& value) { m_firewallRuleGroupAssociation = value; }
-
-    /**
-     * <p>The association that you just updated. </p>
-     */
     inline void SetFirewallRuleGroupAssociation(FirewallRuleGroupAssociation&& value) { m_firewallRuleGroupAssociation = std::move(value); }
-
-    /**
-     * <p>The association that you just updated. </p>
-     */
     inline UpdateFirewallRuleGroupAssociationResult& WithFirewallRuleGroupAssociation(const FirewallRuleGroupAssociation& value) { SetFirewallRuleGroupAssociation(value); return *this;}
-
-    /**
-     * <p>The association that you just updated. </p>
-     */
     inline UpdateFirewallRuleGroupAssociationResult& WithFirewallRuleGroupAssociation(FirewallRuleGroupAssociation&& value) { SetFirewallRuleGroupAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateFirewallRuleGroupAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateFirewallRuleGroupAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateFirewallRuleGroupAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FirewallRuleGroupAssociation m_firewallRuleGroupAssociation;

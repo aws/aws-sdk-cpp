@@ -34,99 +34,42 @@ namespace Model
     AWS_PANORAMA_API ListDevicesJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of jobs.</p>
      */
     inline const Aws::Vector<DeviceJob>& GetDeviceJobs() const{ return m_deviceJobs; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
     inline void SetDeviceJobs(const Aws::Vector<DeviceJob>& value) { m_deviceJobs = value; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
     inline void SetDeviceJobs(Aws::Vector<DeviceJob>&& value) { m_deviceJobs = std::move(value); }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
     inline ListDevicesJobsResult& WithDeviceJobs(const Aws::Vector<DeviceJob>& value) { SetDeviceJobs(value); return *this;}
-
-    /**
-     * <p>A list of jobs.</p>
-     */
     inline ListDevicesJobsResult& WithDeviceJobs(Aws::Vector<DeviceJob>&& value) { SetDeviceJobs(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of jobs.</p>
-     */
     inline ListDevicesJobsResult& AddDeviceJobs(const DeviceJob& value) { m_deviceJobs.push_back(value); return *this; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
     inline ListDevicesJobsResult& AddDeviceJobs(DeviceJob&& value) { m_deviceJobs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A pagination token that's included if more results are available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline ListDevicesJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline ListDevicesJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline ListDevicesJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListDevicesJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListDevicesJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListDevicesJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DeviceJob> m_deviceJobs;

@@ -38,46 +38,19 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The contents of the delivery destination policy.</p>
      */
     inline const Aws::String& GetDeliveryDestinationPolicy() const{ return m_deliveryDestinationPolicy; }
-
-    /**
-     * <p>The contents of the delivery destination policy.</p>
-     */
     inline bool DeliveryDestinationPolicyHasBeenSet() const { return m_deliveryDestinationPolicyHasBeenSet; }
-
-    /**
-     * <p>The contents of the delivery destination policy.</p>
-     */
     inline void SetDeliveryDestinationPolicy(const Aws::String& value) { m_deliveryDestinationPolicyHasBeenSet = true; m_deliveryDestinationPolicy = value; }
-
-    /**
-     * <p>The contents of the delivery destination policy.</p>
-     */
     inline void SetDeliveryDestinationPolicy(Aws::String&& value) { m_deliveryDestinationPolicyHasBeenSet = true; m_deliveryDestinationPolicy = std::move(value); }
-
-    /**
-     * <p>The contents of the delivery destination policy.</p>
-     */
     inline void SetDeliveryDestinationPolicy(const char* value) { m_deliveryDestinationPolicyHasBeenSet = true; m_deliveryDestinationPolicy.assign(value); }
-
-    /**
-     * <p>The contents of the delivery destination policy.</p>
-     */
     inline Policy& WithDeliveryDestinationPolicy(const Aws::String& value) { SetDeliveryDestinationPolicy(value); return *this;}
-
-    /**
-     * <p>The contents of the delivery destination policy.</p>
-     */
     inline Policy& WithDeliveryDestinationPolicy(Aws::String&& value) { SetDeliveryDestinationPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The contents of the delivery destination policy.</p>
-     */
     inline Policy& WithDeliveryDestinationPolicy(const char* value) { SetDeliveryDestinationPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deliveryDestinationPolicy;

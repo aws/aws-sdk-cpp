@@ -39,47 +39,25 @@ namespace Model
     AWS_IAM_API GetServerCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A structure containing details about the server certificate.</p>
      */
     inline const ServerCertificate& GetServerCertificate() const{ return m_serverCertificate; }
-
-    /**
-     * <p>A structure containing details about the server certificate.</p>
-     */
     inline void SetServerCertificate(const ServerCertificate& value) { m_serverCertificate = value; }
-
-    /**
-     * <p>A structure containing details about the server certificate.</p>
-     */
     inline void SetServerCertificate(ServerCertificate&& value) { m_serverCertificate = std::move(value); }
-
-    /**
-     * <p>A structure containing details about the server certificate.</p>
-     */
     inline GetServerCertificateResult& WithServerCertificate(const ServerCertificate& value) { SetServerCertificate(value); return *this;}
-
-    /**
-     * <p>A structure containing details about the server certificate.</p>
-     */
     inline GetServerCertificateResult& WithServerCertificate(ServerCertificate&& value) { SetServerCertificate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline GetServerCertificateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline GetServerCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ServerCertificate m_serverCertificate;

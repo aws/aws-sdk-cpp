@@ -38,46 +38,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specified a list of parameters for each category.</p>
      */
     inline const Aws::Vector<CategoricalParameter>& GetCategoricalParameterRanges() const{ return m_categoricalParameterRanges; }
-
-    /**
-     * <p>Specified a list of parameters for each category.</p>
-     */
     inline bool CategoricalParameterRangesHasBeenSet() const { return m_categoricalParameterRangesHasBeenSet; }
-
-    /**
-     * <p>Specified a list of parameters for each category.</p>
-     */
     inline void SetCategoricalParameterRanges(const Aws::Vector<CategoricalParameter>& value) { m_categoricalParameterRangesHasBeenSet = true; m_categoricalParameterRanges = value; }
-
-    /**
-     * <p>Specified a list of parameters for each category.</p>
-     */
     inline void SetCategoricalParameterRanges(Aws::Vector<CategoricalParameter>&& value) { m_categoricalParameterRangesHasBeenSet = true; m_categoricalParameterRanges = std::move(value); }
-
-    /**
-     * <p>Specified a list of parameters for each category.</p>
-     */
     inline EnvironmentParameterRanges& WithCategoricalParameterRanges(const Aws::Vector<CategoricalParameter>& value) { SetCategoricalParameterRanges(value); return *this;}
-
-    /**
-     * <p>Specified a list of parameters for each category.</p>
-     */
     inline EnvironmentParameterRanges& WithCategoricalParameterRanges(Aws::Vector<CategoricalParameter>&& value) { SetCategoricalParameterRanges(std::move(value)); return *this;}
-
-    /**
-     * <p>Specified a list of parameters for each category.</p>
-     */
     inline EnvironmentParameterRanges& AddCategoricalParameterRanges(const CategoricalParameter& value) { m_categoricalParameterRangesHasBeenSet = true; m_categoricalParameterRanges.push_back(value); return *this; }
-
-    /**
-     * <p>Specified a list of parameters for each category.</p>
-     */
     inline EnvironmentParameterRanges& AddCategoricalParameterRanges(CategoricalParameter&& value) { m_categoricalParameterRangesHasBeenSet = true; m_categoricalParameterRanges.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CategoricalParameter> m_categoricalParameterRanges;

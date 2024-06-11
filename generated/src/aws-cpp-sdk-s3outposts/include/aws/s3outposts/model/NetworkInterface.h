@@ -37,46 +37,19 @@ namespace Model
     AWS_S3OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID for the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
-
-    /**
-     * <p>The ID for the network interface.</p>
-     */
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID for the network interface.</p>
-     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
-
-    /**
-     * <p>The ID for the network interface.</p>
-     */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-
-    /**
-     * <p>The ID for the network interface.</p>
-     */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-
-    /**
-     * <p>The ID for the network interface.</p>
-     */
     inline NetworkInterface& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-
-    /**
-     * <p>The ID for the network interface.</p>
-     */
     inline NetworkInterface& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for the network interface.</p>
-     */
     inline NetworkInterface& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_networkInterfaceId;

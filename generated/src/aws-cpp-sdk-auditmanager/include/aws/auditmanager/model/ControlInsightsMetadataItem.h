@@ -42,155 +42,58 @@ namespace Model
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the control. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the control. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the control. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the control. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the control. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the control. </p>
-     */
     inline ControlInsightsMetadataItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the control. </p>
-     */
     inline ControlInsightsMetadataItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the control. </p>
-     */
     inline ControlInsightsMetadataItem& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the control. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The unique identifier for the control. </p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the control. </p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The unique identifier for the control. </p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the control. </p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The unique identifier for the control. </p>
-     */
     inline ControlInsightsMetadataItem& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the control. </p>
-     */
     inline ControlInsightsMetadataItem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the control. </p>
-     */
     inline ControlInsightsMetadataItem& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A breakdown of the compliance check status for the evidence that’s associated
      * with the control. </p>
      */
     inline const EvidenceInsights& GetEvidenceInsights() const{ return m_evidenceInsights; }
-
-    /**
-     * <p>A breakdown of the compliance check status for the evidence that’s associated
-     * with the control. </p>
-     */
     inline bool EvidenceInsightsHasBeenSet() const { return m_evidenceInsightsHasBeenSet; }
-
-    /**
-     * <p>A breakdown of the compliance check status for the evidence that’s associated
-     * with the control. </p>
-     */
     inline void SetEvidenceInsights(const EvidenceInsights& value) { m_evidenceInsightsHasBeenSet = true; m_evidenceInsights = value; }
-
-    /**
-     * <p>A breakdown of the compliance check status for the evidence that’s associated
-     * with the control. </p>
-     */
     inline void SetEvidenceInsights(EvidenceInsights&& value) { m_evidenceInsightsHasBeenSet = true; m_evidenceInsights = std::move(value); }
-
-    /**
-     * <p>A breakdown of the compliance check status for the evidence that’s associated
-     * with the control. </p>
-     */
     inline ControlInsightsMetadataItem& WithEvidenceInsights(const EvidenceInsights& value) { SetEvidenceInsights(value); return *this;}
-
-    /**
-     * <p>A breakdown of the compliance check status for the evidence that’s associated
-     * with the control. </p>
-     */
     inline ControlInsightsMetadataItem& WithEvidenceInsights(EvidenceInsights&& value) { SetEvidenceInsights(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time when the control insights were last updated. </p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
-
-    /**
-     * <p>The time when the control insights were last updated. </p>
-     */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
-
-    /**
-     * <p>The time when the control insights were last updated. </p>
-     */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
-
-    /**
-     * <p>The time when the control insights were last updated. </p>
-     */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
-
-    /**
-     * <p>The time when the control insights were last updated. </p>
-     */
     inline ControlInsightsMetadataItem& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
-
-    /**
-     * <p>The time when the control insights were last updated. </p>
-     */
     inline ControlInsightsMetadataItem& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

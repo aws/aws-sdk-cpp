@@ -39,46 +39,19 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The overrides for the container definition of a job.</p>
      */
     inline const Aws::Vector<TaskContainerOverrides>& GetContainers() const{ return m_containers; }
-
-    /**
-     * <p>The overrides for the container definition of a job.</p>
-     */
     inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
-
-    /**
-     * <p>The overrides for the container definition of a job.</p>
-     */
     inline void SetContainers(const Aws::Vector<TaskContainerOverrides>& value) { m_containersHasBeenSet = true; m_containers = value; }
-
-    /**
-     * <p>The overrides for the container definition of a job.</p>
-     */
     inline void SetContainers(Aws::Vector<TaskContainerOverrides>&& value) { m_containersHasBeenSet = true; m_containers = std::move(value); }
-
-    /**
-     * <p>The overrides for the container definition of a job.</p>
-     */
     inline TaskPropertiesOverride& WithContainers(const Aws::Vector<TaskContainerOverrides>& value) { SetContainers(value); return *this;}
-
-    /**
-     * <p>The overrides for the container definition of a job.</p>
-     */
     inline TaskPropertiesOverride& WithContainers(Aws::Vector<TaskContainerOverrides>&& value) { SetContainers(std::move(value)); return *this;}
-
-    /**
-     * <p>The overrides for the container definition of a job.</p>
-     */
     inline TaskPropertiesOverride& AddContainers(const TaskContainerOverrides& value) { m_containersHasBeenSet = true; m_containers.push_back(value); return *this; }
-
-    /**
-     * <p>The overrides for the container definition of a job.</p>
-     */
     inline TaskPropertiesOverride& AddContainers(TaskContainerOverrides&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<TaskContainerOverrides> m_containers;

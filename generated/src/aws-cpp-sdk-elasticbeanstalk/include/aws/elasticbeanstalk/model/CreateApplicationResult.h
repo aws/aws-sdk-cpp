@@ -39,47 +39,25 @@ namespace Model
     AWS_ELASTICBEANSTALK_API CreateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p> The <a>ApplicationDescription</a> of the application. </p>
      */
     inline const ApplicationDescription& GetApplication() const{ return m_application; }
-
-    /**
-     * <p> The <a>ApplicationDescription</a> of the application. </p>
-     */
     inline void SetApplication(const ApplicationDescription& value) { m_application = value; }
-
-    /**
-     * <p> The <a>ApplicationDescription</a> of the application. </p>
-     */
     inline void SetApplication(ApplicationDescription&& value) { m_application = std::move(value); }
-
-    /**
-     * <p> The <a>ApplicationDescription</a> of the application. </p>
-     */
     inline CreateApplicationResult& WithApplication(const ApplicationDescription& value) { SetApplication(value); return *this;}
-
-    /**
-     * <p> The <a>ApplicationDescription</a> of the application. </p>
-     */
     inline CreateApplicationResult& WithApplication(ApplicationDescription&& value) { SetApplication(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateApplicationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateApplicationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ApplicationDescription m_application;

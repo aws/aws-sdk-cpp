@@ -43,46 +43,19 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::Vector<S3Tag>& GetTagSet() const{ return m_tagSet; }
-
-    /**
-     * <p/>
-     */
     inline bool TagSetHasBeenSet() const { return m_tagSetHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetTagSet(const Aws::Vector<S3Tag>& value) { m_tagSetHasBeenSet = true; m_tagSet = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetTagSet(Aws::Vector<S3Tag>&& value) { m_tagSetHasBeenSet = true; m_tagSet = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline S3SetObjectTaggingOperation& WithTagSet(const Aws::Vector<S3Tag>& value) { SetTagSet(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline S3SetObjectTaggingOperation& WithTagSet(Aws::Vector<S3Tag>&& value) { SetTagSet(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline S3SetObjectTaggingOperation& AddTagSet(const S3Tag& value) { m_tagSetHasBeenSet = true; m_tagSet.push_back(value); return *this; }
-
-    /**
-     * <p/>
-     */
     inline S3SetObjectTaggingOperation& AddTagSet(S3Tag&& value) { m_tagSetHasBeenSet = true; m_tagSet.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<S3Tag> m_tagSet;

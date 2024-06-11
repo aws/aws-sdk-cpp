@@ -34,54 +34,20 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The directory identifier of the WorkSpace for which you want to view client
      * branding information.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The directory identifier of the WorkSpace for which you want to view client
-     * branding information.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>The directory identifier of the WorkSpace for which you want to view client
-     * branding information.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>The directory identifier of the WorkSpace for which you want to view client
-     * branding information.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>The directory identifier of the WorkSpace for which you want to view client
-     * branding information.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>The directory identifier of the WorkSpace for which you want to view client
-     * branding information.</p>
-     */
     inline DescribeClientBrandingRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The directory identifier of the WorkSpace for which you want to view client
-     * branding information.</p>
-     */
     inline DescribeClientBrandingRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The directory identifier of the WorkSpace for which you want to view client
-     * branding information.</p>
-     */
     inline DescribeClientBrandingRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceId;

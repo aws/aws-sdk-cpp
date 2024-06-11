@@ -42,100 +42,35 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The organization root ID or organizational unit (OU) IDs where the stack set
      * is targeted.</p>
      */
     inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs where the stack set
-     * is targeted.</p>
-     */
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs where the stack set
-     * is targeted.</p>
-     */
     inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs where the stack set
-     * is targeted.</p>
-     */
     inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs where the stack set
-     * is targeted.</p>
-     */
     inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs where the stack set
-     * is targeted.</p>
-     */
     inline StackSetAutoDeploymentTargetSummary& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs where the stack set
-     * is targeted.</p>
-     */
     inline StackSetAutoDeploymentTargetSummary& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
-
-    /**
-     * <p>The organization root ID or organizational unit (OU) IDs where the stack set
-     * is targeted.</p>
-     */
     inline StackSetAutoDeploymentTargetSummary& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of Regions targeted for this organization or OU.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
-
-    /**
-     * <p>The list of Regions targeted for this organization or OU.</p>
-     */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-
-    /**
-     * <p>The list of Regions targeted for this organization or OU.</p>
-     */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-
-    /**
-     * <p>The list of Regions targeted for this organization or OU.</p>
-     */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-
-    /**
-     * <p>The list of Regions targeted for this organization or OU.</p>
-     */
     inline StackSetAutoDeploymentTargetSummary& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
-
-    /**
-     * <p>The list of Regions targeted for this organization or OU.</p>
-     */
     inline StackSetAutoDeploymentTargetSummary& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of Regions targeted for this organization or OU.</p>
-     */
     inline StackSetAutoDeploymentTargetSummary& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-
-    /**
-     * <p>The list of Regions targeted for this organization or OU.</p>
-     */
     inline StackSetAutoDeploymentTargetSummary& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of Regions targeted for this organization or OU.</p>
-     */
     inline StackSetAutoDeploymentTargetSummary& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_organizationalUnitId;

@@ -32,46 +32,26 @@ namespace Model
     AWS_RAM_API EnableSharingWithAwsOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A return value of <code>true</code> indicates that the request succeeded. A
      * value of <code>false</code> indicates that the request failed.</p>
      */
     inline bool GetReturnValue() const{ return m_returnValue; }
-
-    /**
-     * <p>A return value of <code>true</code> indicates that the request succeeded. A
-     * value of <code>false</code> indicates that the request failed.</p>
-     */
     inline void SetReturnValue(bool value) { m_returnValue = value; }
-
-    /**
-     * <p>A return value of <code>true</code> indicates that the request succeeded. A
-     * value of <code>false</code> indicates that the request failed.</p>
-     */
     inline EnableSharingWithAwsOrganizationResult& WithReturnValue(bool value) { SetReturnValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline EnableSharingWithAwsOrganizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline EnableSharingWithAwsOrganizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline EnableSharingWithAwsOrganizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_returnValue;

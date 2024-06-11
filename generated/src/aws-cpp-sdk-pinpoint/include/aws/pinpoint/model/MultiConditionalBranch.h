@@ -39,85 +39,32 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The condition to evaluate for the activity path.</p>
      */
     inline const SimpleCondition& GetCondition() const{ return m_condition; }
-
-    /**
-     * <p>The condition to evaluate for the activity path.</p>
-     */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-
-    /**
-     * <p>The condition to evaluate for the activity path.</p>
-     */
     inline void SetCondition(const SimpleCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-
-    /**
-     * <p>The condition to evaluate for the activity path.</p>
-     */
     inline void SetCondition(SimpleCondition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-
-    /**
-     * <p>The condition to evaluate for the activity path.</p>
-     */
     inline MultiConditionalBranch& WithCondition(const SimpleCondition& value) { SetCondition(value); return *this;}
-
-    /**
-     * <p>The condition to evaluate for the activity path.</p>
-     */
     inline MultiConditionalBranch& WithCondition(SimpleCondition&& value) { SetCondition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the next activity to perform, after completing the
      * activity for the path.</p>
      */
     inline const Aws::String& GetNextActivity() const{ return m_nextActivity; }
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after completing the
-     * activity for the path.</p>
-     */
     inline bool NextActivityHasBeenSet() const { return m_nextActivityHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after completing the
-     * activity for the path.</p>
-     */
     inline void SetNextActivity(const Aws::String& value) { m_nextActivityHasBeenSet = true; m_nextActivity = value; }
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after completing the
-     * activity for the path.</p>
-     */
     inline void SetNextActivity(Aws::String&& value) { m_nextActivityHasBeenSet = true; m_nextActivity = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after completing the
-     * activity for the path.</p>
-     */
     inline void SetNextActivity(const char* value) { m_nextActivityHasBeenSet = true; m_nextActivity.assign(value); }
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after completing the
-     * activity for the path.</p>
-     */
     inline MultiConditionalBranch& WithNextActivity(const Aws::String& value) { SetNextActivity(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after completing the
-     * activity for the path.</p>
-     */
     inline MultiConditionalBranch& WithNextActivity(Aws::String&& value) { SetNextActivity(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after completing the
-     * activity for the path.</p>
-     */
     inline MultiConditionalBranch& WithNextActivity(const char* value) { SetNextActivity(value); return *this;}
-
+    ///@}
   private:
 
     SimpleCondition m_condition;

@@ -39,73 +39,30 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details of an Amazon MSK Cluster.</p>
      */
     inline const AmazonMskCluster& GetAmazonMskCluster() const{ return m_amazonMskCluster; }
-
-    /**
-     * <p>Details of an Amazon MSK Cluster.</p>
-     */
     inline bool AmazonMskClusterHasBeenSet() const { return m_amazonMskClusterHasBeenSet; }
-
-    /**
-     * <p>Details of an Amazon MSK Cluster.</p>
-     */
     inline void SetAmazonMskCluster(const AmazonMskCluster& value) { m_amazonMskClusterHasBeenSet = true; m_amazonMskCluster = value; }
-
-    /**
-     * <p>Details of an Amazon MSK Cluster.</p>
-     */
     inline void SetAmazonMskCluster(AmazonMskCluster&& value) { m_amazonMskClusterHasBeenSet = true; m_amazonMskCluster = std::move(value); }
-
-    /**
-     * <p>Details of an Amazon MSK Cluster.</p>
-     */
     inline KafkaCluster& WithAmazonMskCluster(const AmazonMskCluster& value) { SetAmazonMskCluster(value); return *this;}
-
-    /**
-     * <p>Details of an Amazon MSK Cluster.</p>
-     */
     inline KafkaCluster& WithAmazonMskCluster(AmazonMskCluster&& value) { SetAmazonMskCluster(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka
      * cluster.</p>
      */
     inline const KafkaClusterClientVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
-
-    /**
-     * <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka
-     * cluster.</p>
-     */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-
-    /**
-     * <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka
-     * cluster.</p>
-     */
     inline void SetVpcConfig(const KafkaClusterClientVpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-
-    /**
-     * <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka
-     * cluster.</p>
-     */
     inline void SetVpcConfig(KafkaClusterClientVpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-
-    /**
-     * <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka
-     * cluster.</p>
-     */
     inline KafkaCluster& WithVpcConfig(const KafkaClusterClientVpcConfig& value) { SetVpcConfig(value); return *this;}
-
-    /**
-     * <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka
-     * cluster.</p>
-     */
     inline KafkaCluster& WithVpcConfig(KafkaClusterClientVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AmazonMskCluster m_amazonMskCluster;

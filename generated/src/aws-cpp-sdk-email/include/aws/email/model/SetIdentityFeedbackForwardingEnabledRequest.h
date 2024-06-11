@@ -43,55 +43,22 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The identity for which to set bounce and complaint notification forwarding.
      * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
      */
     inline const Aws::String& GetIdentity() const{ return m_identity; }
-
-    /**
-     * <p>The identity for which to set bounce and complaint notification forwarding.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
-
-    /**
-     * <p>The identity for which to set bounce and complaint notification forwarding.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
-
-    /**
-     * <p>The identity for which to set bounce and complaint notification forwarding.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
-
-    /**
-     * <p>The identity for which to set bounce and complaint notification forwarding.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
-
-    /**
-     * <p>The identity for which to set bounce and complaint notification forwarding.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline SetIdentityFeedbackForwardingEnabledRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
-
-    /**
-     * <p>The identity for which to set bounce and complaint notification forwarding.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline SetIdentityFeedbackForwardingEnabledRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
-
-    /**
-     * <p>The identity for which to set bounce and complaint notification forwarding.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
     inline SetIdentityFeedbackForwardingEnabledRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Sets whether Amazon SES forwards bounce and complaint notifications as email.
      * <code>true</code> specifies that Amazon SES forwards bounce and complaint
@@ -102,40 +69,10 @@ namespace Model
      * and <code>Complaint</code> notification types.</p>
      */
     inline bool GetForwardingEnabled() const{ return m_forwardingEnabled; }
-
-    /**
-     * <p>Sets whether Amazon SES forwards bounce and complaint notifications as email.
-     * <code>true</code> specifies that Amazon SES forwards bounce and complaint
-     * notifications as email, in addition to any Amazon SNS topic publishing otherwise
-     * specified. <code>false</code> specifies that Amazon SES publishes bounce and
-     * complaint notifications only through Amazon SNS. This value can only be set to
-     * <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code>
-     * and <code>Complaint</code> notification types.</p>
-     */
     inline bool ForwardingEnabledHasBeenSet() const { return m_forwardingEnabledHasBeenSet; }
-
-    /**
-     * <p>Sets whether Amazon SES forwards bounce and complaint notifications as email.
-     * <code>true</code> specifies that Amazon SES forwards bounce and complaint
-     * notifications as email, in addition to any Amazon SNS topic publishing otherwise
-     * specified. <code>false</code> specifies that Amazon SES publishes bounce and
-     * complaint notifications only through Amazon SNS. This value can only be set to
-     * <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code>
-     * and <code>Complaint</code> notification types.</p>
-     */
     inline void SetForwardingEnabled(bool value) { m_forwardingEnabledHasBeenSet = true; m_forwardingEnabled = value; }
-
-    /**
-     * <p>Sets whether Amazon SES forwards bounce and complaint notifications as email.
-     * <code>true</code> specifies that Amazon SES forwards bounce and complaint
-     * notifications as email, in addition to any Amazon SNS topic publishing otherwise
-     * specified. <code>false</code> specifies that Amazon SES publishes bounce and
-     * complaint notifications only through Amazon SNS. This value can only be set to
-     * <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code>
-     * and <code>Complaint</code> notification types.</p>
-     */
     inline SetIdentityFeedbackForwardingEnabledRequest& WithForwardingEnabled(bool value) { SetForwardingEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identity;

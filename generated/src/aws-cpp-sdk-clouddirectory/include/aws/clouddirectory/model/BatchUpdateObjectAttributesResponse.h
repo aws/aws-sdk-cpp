@@ -38,46 +38,19 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>ID that is associated with the object.</p>
      */
     inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
-
-    /**
-     * <p>ID that is associated with the object.</p>
-     */
     inline bool ObjectIdentifierHasBeenSet() const { return m_objectIdentifierHasBeenSet; }
-
-    /**
-     * <p>ID that is associated with the object.</p>
-     */
     inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
-
-    /**
-     * <p>ID that is associated with the object.</p>
-     */
     inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = std::move(value); }
-
-    /**
-     * <p>ID that is associated with the object.</p>
-     */
     inline void SetObjectIdentifier(const char* value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier.assign(value); }
-
-    /**
-     * <p>ID that is associated with the object.</p>
-     */
     inline BatchUpdateObjectAttributesResponse& WithObjectIdentifier(const Aws::String& value) { SetObjectIdentifier(value); return *this;}
-
-    /**
-     * <p>ID that is associated with the object.</p>
-     */
     inline BatchUpdateObjectAttributesResponse& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>ID that is associated with the object.</p>
-     */
     inline BatchUpdateObjectAttributesResponse& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_objectIdentifier;

@@ -35,77 +35,31 @@ namespace Model
     AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-     */
     inline GetRepositoryRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-     */
     inline GetRepositoryRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-     */
     inline GetRepositoryRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The repository provider.</p>
      */
     inline const RepositoryProvider& GetProvider() const{ return m_provider; }
-
-    /**
-     * <p>The repository provider.</p>
-     */
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-
-    /**
-     * <p>The repository provider.</p>
-     */
     inline void SetProvider(const RepositoryProvider& value) { m_providerHasBeenSet = true; m_provider = value; }
-
-    /**
-     * <p>The repository provider.</p>
-     */
     inline void SetProvider(RepositoryProvider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-
-    /**
-     * <p>The repository provider.</p>
-     */
     inline GetRepositoryRequest& WithProvider(const RepositoryProvider& value) { SetProvider(value); return *this;}
-
-    /**
-     * <p>The repository provider.</p>
-     */
     inline GetRepositoryRequest& WithProvider(RepositoryProvider&& value) { SetProvider(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

@@ -42,6 +42,7 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>  <p>Replacement must be made for object keys
@@ -51,115 +52,29 @@ namespace Model
      * XML related object key constraints</a>.</p> 
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>  <p>Replacement must be made for object keys
-     * containing special characters (such as carriage returns) when using XML
-     * requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>  <p>Replacement must be made for object keys
-     * containing special characters (such as carriage returns) when using XML
-     * requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>  <p>Replacement must be made for object keys
-     * containing special characters (such as carriage returns) when using XML
-     * requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>  <p>Replacement must be made for object keys
-     * containing special characters (such as carriage returns) when using XML
-     * requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>  <p>Replacement must be made for object keys
-     * containing special characters (such as carriage returns) when using XML
-     * requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
-     */
     inline ReplicationRuleFilter& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>  <p>Replacement must be made for object keys
-     * containing special characters (such as carriage returns) when using XML
-     * requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
-     */
     inline ReplicationRuleFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>  <p>Replacement must be made for object keys
-     * containing special characters (such as carriage returns) when using XML
-     * requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
-     */
     inline ReplicationRuleFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
      * to objects that have the tag in their tag set.</p>
      */
     inline const Tag& GetTag() const{ return m_tag; }
-
-    /**
-     * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
-     * to objects that have the tag in their tag set.</p>
-     */
     inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
-
-    /**
-     * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
-     * to objects that have the tag in their tag set.</p>
-     */
     inline void SetTag(const Tag& value) { m_tagHasBeenSet = true; m_tag = value; }
-
-    /**
-     * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
-     * to objects that have the tag in their tag set.</p>
-     */
     inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
-
-    /**
-     * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
-     * to objects that have the tag in their tag set.</p>
-     */
     inline ReplicationRuleFilter& WithTag(const Tag& value) { SetTag(value); return *this;}
-
-    /**
-     * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
-     * to objects that have the tag in their tag set.</p>
-     */
     inline ReplicationRuleFilter& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A container for specifying rule filters. The filters determine the subset of
      * objects to which the rule applies. This element is required only if you specify
@@ -170,62 +85,12 @@ namespace Model
      * tag.</p> </li> </ul>
      */
     inline const ReplicationRuleAndOperator& GetAnd() const{ return m_and; }
-
-    /**
-     * <p>A container for specifying rule filters. The filters determine the subset of
-     * objects to which the rule applies. This element is required only if you specify
-     * more than one filter. For example: </p> <ul> <li> <p>If you specify both a
-     * <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an
-     * <code>And</code> tag.</p> </li> <li> <p>If you specify a filter based on
-     * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code>
-     * tag.</p> </li> </ul>
-     */
     inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
-
-    /**
-     * <p>A container for specifying rule filters. The filters determine the subset of
-     * objects to which the rule applies. This element is required only if you specify
-     * more than one filter. For example: </p> <ul> <li> <p>If you specify both a
-     * <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an
-     * <code>And</code> tag.</p> </li> <li> <p>If you specify a filter based on
-     * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code>
-     * tag.</p> </li> </ul>
-     */
     inline void SetAnd(const ReplicationRuleAndOperator& value) { m_andHasBeenSet = true; m_and = value; }
-
-    /**
-     * <p>A container for specifying rule filters. The filters determine the subset of
-     * objects to which the rule applies. This element is required only if you specify
-     * more than one filter. For example: </p> <ul> <li> <p>If you specify both a
-     * <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an
-     * <code>And</code> tag.</p> </li> <li> <p>If you specify a filter based on
-     * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code>
-     * tag.</p> </li> </ul>
-     */
     inline void SetAnd(ReplicationRuleAndOperator&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
-
-    /**
-     * <p>A container for specifying rule filters. The filters determine the subset of
-     * objects to which the rule applies. This element is required only if you specify
-     * more than one filter. For example: </p> <ul> <li> <p>If you specify both a
-     * <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an
-     * <code>And</code> tag.</p> </li> <li> <p>If you specify a filter based on
-     * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code>
-     * tag.</p> </li> </ul>
-     */
     inline ReplicationRuleFilter& WithAnd(const ReplicationRuleAndOperator& value) { SetAnd(value); return *this;}
-
-    /**
-     * <p>A container for specifying rule filters. The filters determine the subset of
-     * objects to which the rule applies. This element is required only if you specify
-     * more than one filter. For example: </p> <ul> <li> <p>If you specify both a
-     * <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an
-     * <code>And</code> tag.</p> </li> <li> <p>If you specify a filter based on
-     * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code>
-     * tag.</p> </li> </ul>
-     */
     inline ReplicationRuleFilter& WithAnd(ReplicationRuleAndOperator&& value) { SetAnd(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_prefix;

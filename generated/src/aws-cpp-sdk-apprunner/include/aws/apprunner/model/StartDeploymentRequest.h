@@ -34,54 +34,20 @@ namespace Model
     AWS_APPRUNNER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the App Runner service that you want to
      * manually deploy to.</p>
      */
     inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner service that you want to
-     * manually deploy to.</p>
-     */
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner service that you want to
-     * manually deploy to.</p>
-     */
     inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner service that you want to
-     * manually deploy to.</p>
-     */
     inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner service that you want to
-     * manually deploy to.</p>
-     */
     inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner service that you want to
-     * manually deploy to.</p>
-     */
     inline StartDeploymentRequest& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner service that you want to
-     * manually deploy to.</p>
-     */
     inline StartDeploymentRequest& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner service that you want to
-     * manually deploy to.</p>
-     */
     inline StartDeploymentRequest& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceArn;

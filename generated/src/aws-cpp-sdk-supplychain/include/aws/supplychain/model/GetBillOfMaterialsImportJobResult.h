@@ -39,53 +39,27 @@ namespace Model
     AWS_SUPPLYCHAIN_API GetBillOfMaterialsImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The BillOfMaterialsImportJob.</p>
      */
     inline const BillOfMaterialsImportJob& GetJob() const{ return m_job; }
-
-    /**
-     * <p>The BillOfMaterialsImportJob.</p>
-     */
     inline void SetJob(const BillOfMaterialsImportJob& value) { m_job = value; }
-
-    /**
-     * <p>The BillOfMaterialsImportJob.</p>
-     */
     inline void SetJob(BillOfMaterialsImportJob&& value) { m_job = std::move(value); }
-
-    /**
-     * <p>The BillOfMaterialsImportJob.</p>
-     */
     inline GetBillOfMaterialsImportJobResult& WithJob(const BillOfMaterialsImportJob& value) { SetJob(value); return *this;}
-
-    /**
-     * <p>The BillOfMaterialsImportJob.</p>
-     */
     inline GetBillOfMaterialsImportJobResult& WithJob(BillOfMaterialsImportJob&& value) { SetJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBillOfMaterialsImportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBillOfMaterialsImportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBillOfMaterialsImportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BillOfMaterialsImportJob m_job;

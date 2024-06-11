@@ -37,36 +37,17 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Kinesis video stream input stream for the source streaming video.</p>
      */
     inline const KinesisVideoStream& GetKinesisVideoStream() const{ return m_kinesisVideoStream; }
-
-    /**
-     * <p>The Kinesis video stream input stream for the source streaming video.</p>
-     */
     inline bool KinesisVideoStreamHasBeenSet() const { return m_kinesisVideoStreamHasBeenSet; }
-
-    /**
-     * <p>The Kinesis video stream input stream for the source streaming video.</p>
-     */
     inline void SetKinesisVideoStream(const KinesisVideoStream& value) { m_kinesisVideoStreamHasBeenSet = true; m_kinesisVideoStream = value; }
-
-    /**
-     * <p>The Kinesis video stream input stream for the source streaming video.</p>
-     */
     inline void SetKinesisVideoStream(KinesisVideoStream&& value) { m_kinesisVideoStreamHasBeenSet = true; m_kinesisVideoStream = std::move(value); }
-
-    /**
-     * <p>The Kinesis video stream input stream for the source streaming video.</p>
-     */
     inline StreamProcessorInput& WithKinesisVideoStream(const KinesisVideoStream& value) { SetKinesisVideoStream(value); return *this;}
-
-    /**
-     * <p>The Kinesis video stream input stream for the source streaming video.</p>
-     */
     inline StreamProcessorInput& WithKinesisVideoStream(KinesisVideoStream&& value) { SetKinesisVideoStream(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KinesisVideoStream m_kinesisVideoStream;

@@ -38,71 +38,30 @@ namespace Model
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A utilization metric that is used by the recommendations. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p> A utilization metric that is used by the recommendations. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p> A utilization metric that is used by the recommendations. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p> A utilization metric that is used by the recommendations. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p> A utilization metric that is used by the recommendations. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p> A utilization metric that is used by the recommendations. </p>
-     */
     inline UsageMetricBasis& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p> A utilization metric that is used by the recommendations. </p>
-     */
     inline UsageMetricBasis& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p> A utilization metric that is used by the recommendations. </p>
-     */
     inline UsageMetricBasis& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Specifies the percentage of the specified utilization metric that is used by
      * the recommendations. </p>
      */
     inline double GetPercentageAdjust() const{ return m_percentageAdjust; }
-
-    /**
-     * <p> Specifies the percentage of the specified utilization metric that is used by
-     * the recommendations. </p>
-     */
     inline bool PercentageAdjustHasBeenSet() const { return m_percentageAdjustHasBeenSet; }
-
-    /**
-     * <p> Specifies the percentage of the specified utilization metric that is used by
-     * the recommendations. </p>
-     */
     inline void SetPercentageAdjust(double value) { m_percentageAdjustHasBeenSet = true; m_percentageAdjust = value; }
-
-    /**
-     * <p> Specifies the percentage of the specified utilization metric that is used by
-     * the recommendations. </p>
-     */
     inline UsageMetricBasis& WithPercentageAdjust(double value) { SetPercentageAdjust(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

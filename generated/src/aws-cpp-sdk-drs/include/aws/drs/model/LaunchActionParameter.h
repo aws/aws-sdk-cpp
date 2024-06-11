@@ -38,77 +38,31 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Type.</p>
      */
     inline const LaunchActionParameterType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Type.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Type.</p>
-     */
     inline void SetType(const LaunchActionParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Type.</p>
-     */
     inline void SetType(LaunchActionParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Type.</p>
-     */
     inline LaunchActionParameter& WithType(const LaunchActionParameterType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Type.</p>
-     */
     inline LaunchActionParameter& WithType(LaunchActionParameterType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>Value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Value.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Value.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>Value.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>Value.</p>
-     */
     inline LaunchActionParameter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>Value.</p>
-     */
     inline LaunchActionParameter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Value.</p>
-     */
     inline LaunchActionParameter& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     LaunchActionParameterType m_type;

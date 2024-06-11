@@ -39,42 +39,18 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>ReplacementTemplate</code> associated with
      * <code>ReplacementEmailContent</code>.</p>
      */
     inline const ReplacementTemplate& GetReplacementTemplate() const{ return m_replacementTemplate; }
-
-    /**
-     * <p>The <code>ReplacementTemplate</code> associated with
-     * <code>ReplacementEmailContent</code>.</p>
-     */
     inline bool ReplacementTemplateHasBeenSet() const { return m_replacementTemplateHasBeenSet; }
-
-    /**
-     * <p>The <code>ReplacementTemplate</code> associated with
-     * <code>ReplacementEmailContent</code>.</p>
-     */
     inline void SetReplacementTemplate(const ReplacementTemplate& value) { m_replacementTemplateHasBeenSet = true; m_replacementTemplate = value; }
-
-    /**
-     * <p>The <code>ReplacementTemplate</code> associated with
-     * <code>ReplacementEmailContent</code>.</p>
-     */
     inline void SetReplacementTemplate(ReplacementTemplate&& value) { m_replacementTemplateHasBeenSet = true; m_replacementTemplate = std::move(value); }
-
-    /**
-     * <p>The <code>ReplacementTemplate</code> associated with
-     * <code>ReplacementEmailContent</code>.</p>
-     */
     inline ReplacementEmailContent& WithReplacementTemplate(const ReplacementTemplate& value) { SetReplacementTemplate(value); return *this;}
-
-    /**
-     * <p>The <code>ReplacementTemplate</code> associated with
-     * <code>ReplacementEmailContent</code>.</p>
-     */
     inline ReplacementEmailContent& WithReplacementTemplate(ReplacementTemplate&& value) { SetReplacementTemplate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReplacementTemplate m_replacementTemplate;

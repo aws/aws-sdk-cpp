@@ -39,42 +39,18 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that lists the number and type of aggregation functions you can
      * perform.</p>
      */
     inline const DifferentialPrivacyPrivacyImpact& GetDifferentialPrivacy() const{ return m_differentialPrivacy; }
-
-    /**
-     * <p>An object that lists the number and type of aggregation functions you can
-     * perform.</p>
-     */
     inline bool DifferentialPrivacyHasBeenSet() const { return m_differentialPrivacyHasBeenSet; }
-
-    /**
-     * <p>An object that lists the number and type of aggregation functions you can
-     * perform.</p>
-     */
     inline void SetDifferentialPrivacy(const DifferentialPrivacyPrivacyImpact& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = value; }
-
-    /**
-     * <p>An object that lists the number and type of aggregation functions you can
-     * perform.</p>
-     */
     inline void SetDifferentialPrivacy(DifferentialPrivacyPrivacyImpact&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::move(value); }
-
-    /**
-     * <p>An object that lists the number and type of aggregation functions you can
-     * perform.</p>
-     */
     inline PrivacyImpact& WithDifferentialPrivacy(const DifferentialPrivacyPrivacyImpact& value) { SetDifferentialPrivacy(value); return *this;}
-
-    /**
-     * <p>An object that lists the number and type of aggregation functions you can
-     * perform.</p>
-     */
     inline PrivacyImpact& WithDifferentialPrivacy(DifferentialPrivacyPrivacyImpact&& value) { SetDifferentialPrivacy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DifferentialPrivacyPrivacyImpact m_differentialPrivacy;

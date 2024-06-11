@@ -38,46 +38,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The ID of the virtual private gateway. </p>
      */
     inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
-
-    /**
-     * <p> The ID of the virtual private gateway. </p>
-     */
     inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the virtual private gateway. </p>
-     */
     inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-
-    /**
-     * <p> The ID of the virtual private gateway. </p>
-     */
     inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-
-    /**
-     * <p> The ID of the virtual private gateway. </p>
-     */
     inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
-
-    /**
-     * <p> The ID of the virtual private gateway. </p>
-     */
     inline PropagatingVgwSetDetails& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-
-    /**
-     * <p> The ID of the virtual private gateway. </p>
-     */
     inline PropagatingVgwSetDetails& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the virtual private gateway. </p>
-     */
     inline PropagatingVgwSetDetails& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayId;

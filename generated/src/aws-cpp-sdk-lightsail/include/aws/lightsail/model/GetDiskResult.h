@@ -33,53 +33,27 @@ namespace Model
     AWS_LIGHTSAIL_API GetDiskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object containing information about the disk.</p>
      */
     inline const Disk& GetDisk() const{ return m_disk; }
-
-    /**
-     * <p>An object containing information about the disk.</p>
-     */
     inline void SetDisk(const Disk& value) { m_disk = value; }
-
-    /**
-     * <p>An object containing information about the disk.</p>
-     */
     inline void SetDisk(Disk&& value) { m_disk = std::move(value); }
-
-    /**
-     * <p>An object containing information about the disk.</p>
-     */
     inline GetDiskResult& WithDisk(const Disk& value) { SetDisk(value); return *this;}
-
-    /**
-     * <p>An object containing information about the disk.</p>
-     */
     inline GetDiskResult& WithDisk(Disk&& value) { SetDisk(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDiskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDiskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDiskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Disk m_disk;

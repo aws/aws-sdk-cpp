@@ -36,26 +36,15 @@ namespace Model
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
      */
     inline bool GetIsWifiEnabled() const{ return m_isWifiEnabled; }
-
-    /**
-     * <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
-     */
     inline bool IsWifiEnabledHasBeenSet() const { return m_isWifiEnabledHasBeenSet; }
-
-    /**
-     * <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
-     */
     inline void SetIsWifiEnabled(bool value) { m_isWifiEnabledHasBeenSet = true; m_isWifiEnabled = value; }
-
-    /**
-     * <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
-     */
     inline WirelessConnection& WithIsWifiEnabled(bool value) { SetIsWifiEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_isWifiEnabled;

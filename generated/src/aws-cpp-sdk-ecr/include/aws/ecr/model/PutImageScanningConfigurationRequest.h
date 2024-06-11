@@ -35,154 +35,50 @@ namespace Model
     AWS_ECR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID associated with the registry that contains
      * the repository in which to update the image scanning configuration setting. If
      * you do not specify a registry, the default registry is assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository in which to update the image scanning configuration setting. If
-     * you do not specify a registry, the default registry is assumed.</p>
-     */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository in which to update the image scanning configuration setting. If
-     * you do not specify a registry, the default registry is assumed.</p>
-     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository in which to update the image scanning configuration setting. If
-     * you do not specify a registry, the default registry is assumed.</p>
-     */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository in which to update the image scanning configuration setting. If
-     * you do not specify a registry, the default registry is assumed.</p>
-     */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository in which to update the image scanning configuration setting. If
-     * you do not specify a registry, the default registry is assumed.</p>
-     */
     inline PutImageScanningConfigurationRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository in which to update the image scanning configuration setting. If
-     * you do not specify a registry, the default registry is assumed.</p>
-     */
     inline PutImageScanningConfigurationRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository in which to update the image scanning configuration setting. If
-     * you do not specify a registry, the default registry is assumed.</p>
-     */
     inline PutImageScanningConfigurationRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the repository in which to update the image scanning
      * configuration setting.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the repository in which to update the image scanning
-     * configuration setting.</p>
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the repository in which to update the image scanning
-     * configuration setting.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the repository in which to update the image scanning
-     * configuration setting.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the repository in which to update the image scanning
-     * configuration setting.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the repository in which to update the image scanning
-     * configuration setting.</p>
-     */
     inline PutImageScanningConfigurationRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the repository in which to update the image scanning
-     * configuration setting.</p>
-     */
     inline PutImageScanningConfigurationRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the repository in which to update the image scanning
-     * configuration setting.</p>
-     */
     inline PutImageScanningConfigurationRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The image scanning configuration for the repository. This setting determines
      * whether images are scanned for known vulnerabilities after being pushed to the
      * repository.</p>
      */
     inline const ImageScanningConfiguration& GetImageScanningConfiguration() const{ return m_imageScanningConfiguration; }
-
-    /**
-     * <p>The image scanning configuration for the repository. This setting determines
-     * whether images are scanned for known vulnerabilities after being pushed to the
-     * repository.</p>
-     */
     inline bool ImageScanningConfigurationHasBeenSet() const { return m_imageScanningConfigurationHasBeenSet; }
-
-    /**
-     * <p>The image scanning configuration for the repository. This setting determines
-     * whether images are scanned for known vulnerabilities after being pushed to the
-     * repository.</p>
-     */
     inline void SetImageScanningConfiguration(const ImageScanningConfiguration& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = value; }
-
-    /**
-     * <p>The image scanning configuration for the repository. This setting determines
-     * whether images are scanned for known vulnerabilities after being pushed to the
-     * repository.</p>
-     */
     inline void SetImageScanningConfiguration(ImageScanningConfiguration&& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = std::move(value); }
-
-    /**
-     * <p>The image scanning configuration for the repository. This setting determines
-     * whether images are scanned for known vulnerabilities after being pushed to the
-     * repository.</p>
-     */
     inline PutImageScanningConfigurationRequest& WithImageScanningConfiguration(const ImageScanningConfiguration& value) { SetImageScanningConfiguration(value); return *this;}
-
-    /**
-     * <p>The image scanning configuration for the repository. This setting determines
-     * whether images are scanned for known vulnerabilities after being pushed to the
-     * repository.</p>
-     */
     inline PutImageScanningConfigurationRequest& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_registryId;

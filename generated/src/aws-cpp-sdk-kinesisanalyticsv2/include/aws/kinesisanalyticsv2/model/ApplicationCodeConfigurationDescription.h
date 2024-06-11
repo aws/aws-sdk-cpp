@@ -39,67 +39,29 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether the code content is in text or zip format.</p>
      */
     inline const CodeContentType& GetCodeContentType() const{ return m_codeContentType; }
-
-    /**
-     * <p>Specifies whether the code content is in text or zip format.</p>
-     */
     inline bool CodeContentTypeHasBeenSet() const { return m_codeContentTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the code content is in text or zip format.</p>
-     */
     inline void SetCodeContentType(const CodeContentType& value) { m_codeContentTypeHasBeenSet = true; m_codeContentType = value; }
-
-    /**
-     * <p>Specifies whether the code content is in text or zip format.</p>
-     */
     inline void SetCodeContentType(CodeContentType&& value) { m_codeContentTypeHasBeenSet = true; m_codeContentType = std::move(value); }
-
-    /**
-     * <p>Specifies whether the code content is in text or zip format.</p>
-     */
     inline ApplicationCodeConfigurationDescription& WithCodeContentType(const CodeContentType& value) { SetCodeContentType(value); return *this;}
-
-    /**
-     * <p>Specifies whether the code content is in text or zip format.</p>
-     */
     inline ApplicationCodeConfigurationDescription& WithCodeContentType(CodeContentType&& value) { SetCodeContentType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes details about the location and format of the application code.</p>
      */
     inline const CodeContentDescription& GetCodeContentDescription() const{ return m_codeContentDescription; }
-
-    /**
-     * <p>Describes details about the location and format of the application code.</p>
-     */
     inline bool CodeContentDescriptionHasBeenSet() const { return m_codeContentDescriptionHasBeenSet; }
-
-    /**
-     * <p>Describes details about the location and format of the application code.</p>
-     */
     inline void SetCodeContentDescription(const CodeContentDescription& value) { m_codeContentDescriptionHasBeenSet = true; m_codeContentDescription = value; }
-
-    /**
-     * <p>Describes details about the location and format of the application code.</p>
-     */
     inline void SetCodeContentDescription(CodeContentDescription&& value) { m_codeContentDescriptionHasBeenSet = true; m_codeContentDescription = std::move(value); }
-
-    /**
-     * <p>Describes details about the location and format of the application code.</p>
-     */
     inline ApplicationCodeConfigurationDescription& WithCodeContentDescription(const CodeContentDescription& value) { SetCodeContentDescription(value); return *this;}
-
-    /**
-     * <p>Describes details about the location and format of the application code.</p>
-     */
     inline ApplicationCodeConfigurationDescription& WithCodeContentDescription(CodeContentDescription&& value) { SetCodeContentDescription(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CodeContentType m_codeContentType;

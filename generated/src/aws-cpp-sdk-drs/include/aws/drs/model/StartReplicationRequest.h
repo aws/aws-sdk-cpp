@@ -32,46 +32,19 @@ namespace Model
     AWS_DRS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Source Server to start replication for.</p>
      */
     inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
-
-    /**
-     * <p>The ID of the Source Server to start replication for.</p>
-     */
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-
-    /**
-     * <p>The ID of the Source Server to start replication for.</p>
-     */
     inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
-
-    /**
-     * <p>The ID of the Source Server to start replication for.</p>
-     */
     inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
-
-    /**
-     * <p>The ID of the Source Server to start replication for.</p>
-     */
     inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
-
-    /**
-     * <p>The ID of the Source Server to start replication for.</p>
-     */
     inline StartReplicationRequest& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
-
-    /**
-     * <p>The ID of the Source Server to start replication for.</p>
-     */
     inline StartReplicationRequest& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Source Server to start replication for.</p>
-     */
     inline StartReplicationRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceServerID;

@@ -35,51 +35,26 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum record length. In case of fixed, both minimum and maximum are the
      * same.</p>
      */
     inline int GetMax() const{ return m_max; }
-
-    /**
-     * <p>The maximum record length. In case of fixed, both minimum and maximum are the
-     * same.</p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p>The maximum record length. In case of fixed, both minimum and maximum are the
-     * same.</p>
-     */
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p>The maximum record length. In case of fixed, both minimum and maximum are the
-     * same.</p>
-     */
     inline RecordLength& WithMax(int value) { SetMax(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The minimum record length of a record.</p>
      */
     inline int GetMin() const{ return m_min; }
-
-    /**
-     * <p>The minimum record length of a record.</p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p>The minimum record length of a record.</p>
-     */
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p>The minimum record length of a record.</p>
-     */
     inline RecordLength& WithMin(int value) { SetMin(value); return *this;}
-
+    ///@}
   private:
 
     int m_max;

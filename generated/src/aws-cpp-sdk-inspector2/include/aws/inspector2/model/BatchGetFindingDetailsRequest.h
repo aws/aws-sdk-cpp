@@ -33,51 +33,20 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A list of finding ARNs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFindingArns() const{ return m_findingArns; }
-
-    /**
-     * <p>A list of finding ARNs.</p>
-     */
     inline bool FindingArnsHasBeenSet() const { return m_findingArnsHasBeenSet; }
-
-    /**
-     * <p>A list of finding ARNs.</p>
-     */
     inline void SetFindingArns(const Aws::Vector<Aws::String>& value) { m_findingArnsHasBeenSet = true; m_findingArns = value; }
-
-    /**
-     * <p>A list of finding ARNs.</p>
-     */
     inline void SetFindingArns(Aws::Vector<Aws::String>&& value) { m_findingArnsHasBeenSet = true; m_findingArns = std::move(value); }
-
-    /**
-     * <p>A list of finding ARNs.</p>
-     */
     inline BatchGetFindingDetailsRequest& WithFindingArns(const Aws::Vector<Aws::String>& value) { SetFindingArns(value); return *this;}
-
-    /**
-     * <p>A list of finding ARNs.</p>
-     */
     inline BatchGetFindingDetailsRequest& WithFindingArns(Aws::Vector<Aws::String>&& value) { SetFindingArns(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of finding ARNs.</p>
-     */
     inline BatchGetFindingDetailsRequest& AddFindingArns(const Aws::String& value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
-
-    /**
-     * <p>A list of finding ARNs.</p>
-     */
     inline BatchGetFindingDetailsRequest& AddFindingArns(Aws::String&& value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of finding ARNs.</p>
-     */
     inline BatchGetFindingDetailsRequest& AddFindingArns(const char* value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_findingArns;

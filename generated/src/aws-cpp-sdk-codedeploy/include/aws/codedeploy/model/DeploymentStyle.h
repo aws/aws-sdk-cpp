@@ -40,73 +40,30 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether to run an in-place deployment or a blue/green
      * deployment.</p>
      */
     inline const DeploymentType& GetDeploymentType() const{ return m_deploymentType; }
-
-    /**
-     * <p>Indicates whether to run an in-place deployment or a blue/green
-     * deployment.</p>
-     */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to run an in-place deployment or a blue/green
-     * deployment.</p>
-     */
     inline void SetDeploymentType(const DeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
-
-    /**
-     * <p>Indicates whether to run an in-place deployment or a blue/green
-     * deployment.</p>
-     */
     inline void SetDeploymentType(DeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
-
-    /**
-     * <p>Indicates whether to run an in-place deployment or a blue/green
-     * deployment.</p>
-     */
     inline DeploymentStyle& WithDeploymentType(const DeploymentType& value) { SetDeploymentType(value); return *this;}
-
-    /**
-     * <p>Indicates whether to run an in-place deployment or a blue/green
-     * deployment.</p>
-     */
     inline DeploymentStyle& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
      */
     inline const DeploymentOption& GetDeploymentOption() const{ return m_deploymentOption; }
-
-    /**
-     * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
-     */
     inline bool DeploymentOptionHasBeenSet() const { return m_deploymentOptionHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
-     */
     inline void SetDeploymentOption(const DeploymentOption& value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption = value; }
-
-    /**
-     * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
-     */
     inline void SetDeploymentOption(DeploymentOption&& value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption = std::move(value); }
-
-    /**
-     * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
-     */
     inline DeploymentStyle& WithDeploymentOption(const DeploymentOption& value) { SetDeploymentOption(value); return *this;}
-
-    /**
-     * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
-     */
     inline DeploymentStyle& WithDeploymentOption(DeploymentOption&& value) { SetDeploymentOption(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DeploymentType m_deploymentType;

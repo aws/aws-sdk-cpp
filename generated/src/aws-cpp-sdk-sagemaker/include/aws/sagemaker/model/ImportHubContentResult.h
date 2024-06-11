@@ -32,99 +32,42 @@ namespace Model
     AWS_SAGEMAKER_API ImportHubContentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the hub that the content was imported into.</p>
      */
     inline const Aws::String& GetHubArn() const{ return m_hubArn; }
-
-    /**
-     * <p>The ARN of the hub that the content was imported into.</p>
-     */
     inline void SetHubArn(const Aws::String& value) { m_hubArn = value; }
-
-    /**
-     * <p>The ARN of the hub that the content was imported into.</p>
-     */
     inline void SetHubArn(Aws::String&& value) { m_hubArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the hub that the content was imported into.</p>
-     */
     inline void SetHubArn(const char* value) { m_hubArn.assign(value); }
-
-    /**
-     * <p>The ARN of the hub that the content was imported into.</p>
-     */
     inline ImportHubContentResult& WithHubArn(const Aws::String& value) { SetHubArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the hub that the content was imported into.</p>
-     */
     inline ImportHubContentResult& WithHubArn(Aws::String&& value) { SetHubArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the hub that the content was imported into.</p>
-     */
     inline ImportHubContentResult& WithHubArn(const char* value) { SetHubArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the hub content that was imported.</p>
      */
     inline const Aws::String& GetHubContentArn() const{ return m_hubContentArn; }
-
-    /**
-     * <p>The ARN of the hub content that was imported.</p>
-     */
     inline void SetHubContentArn(const Aws::String& value) { m_hubContentArn = value; }
-
-    /**
-     * <p>The ARN of the hub content that was imported.</p>
-     */
     inline void SetHubContentArn(Aws::String&& value) { m_hubContentArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the hub content that was imported.</p>
-     */
     inline void SetHubContentArn(const char* value) { m_hubContentArn.assign(value); }
-
-    /**
-     * <p>The ARN of the hub content that was imported.</p>
-     */
     inline ImportHubContentResult& WithHubContentArn(const Aws::String& value) { SetHubContentArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the hub content that was imported.</p>
-     */
     inline ImportHubContentResult& WithHubContentArn(Aws::String&& value) { SetHubContentArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the hub content that was imported.</p>
-     */
     inline ImportHubContentResult& WithHubContentArn(const char* value) { SetHubContentArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ImportHubContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ImportHubContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ImportHubContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hubArn;

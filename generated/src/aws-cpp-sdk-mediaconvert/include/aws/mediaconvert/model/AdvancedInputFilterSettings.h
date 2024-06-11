@@ -39,6 +39,7 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Add texture and detail to areas of your input video content that were lost after
      * applying the Advanced input filter. To adaptively add texture and reduce
@@ -48,58 +49,14 @@ namespace Model
      * cartoons.
      */
     inline const AdvancedInputFilterAddTexture& GetAddTexture() const{ return m_addTexture; }
-
-    /**
-     * Add texture and detail to areas of your input video content that were lost after
-     * applying the Advanced input filter. To adaptively add texture and reduce
-     * softness: Choose Enabled. To not add any texture: Keep the default value,
-     * Disabled. We recommend that you choose Disabled for input video content that
-     * doesn't have texture, including screen recordings, computer graphics, or
-     * cartoons.
-     */
     inline bool AddTextureHasBeenSet() const { return m_addTextureHasBeenSet; }
-
-    /**
-     * Add texture and detail to areas of your input video content that were lost after
-     * applying the Advanced input filter. To adaptively add texture and reduce
-     * softness: Choose Enabled. To not add any texture: Keep the default value,
-     * Disabled. We recommend that you choose Disabled for input video content that
-     * doesn't have texture, including screen recordings, computer graphics, or
-     * cartoons.
-     */
     inline void SetAddTexture(const AdvancedInputFilterAddTexture& value) { m_addTextureHasBeenSet = true; m_addTexture = value; }
-
-    /**
-     * Add texture and detail to areas of your input video content that were lost after
-     * applying the Advanced input filter. To adaptively add texture and reduce
-     * softness: Choose Enabled. To not add any texture: Keep the default value,
-     * Disabled. We recommend that you choose Disabled for input video content that
-     * doesn't have texture, including screen recordings, computer graphics, or
-     * cartoons.
-     */
     inline void SetAddTexture(AdvancedInputFilterAddTexture&& value) { m_addTextureHasBeenSet = true; m_addTexture = std::move(value); }
-
-    /**
-     * Add texture and detail to areas of your input video content that were lost after
-     * applying the Advanced input filter. To adaptively add texture and reduce
-     * softness: Choose Enabled. To not add any texture: Keep the default value,
-     * Disabled. We recommend that you choose Disabled for input video content that
-     * doesn't have texture, including screen recordings, computer graphics, or
-     * cartoons.
-     */
     inline AdvancedInputFilterSettings& WithAddTexture(const AdvancedInputFilterAddTexture& value) { SetAddTexture(value); return *this;}
-
-    /**
-     * Add texture and detail to areas of your input video content that were lost after
-     * applying the Advanced input filter. To adaptively add texture and reduce
-     * softness: Choose Enabled. To not add any texture: Keep the default value,
-     * Disabled. We recommend that you choose Disabled for input video content that
-     * doesn't have texture, including screen recordings, computer graphics, or
-     * cartoons.
-     */
     inline AdvancedInputFilterSettings& WithAddTexture(AdvancedInputFilterAddTexture&& value) { SetAddTexture(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Optionally specify the amount of sharpening to apply when you use the Advanced
      * input filter. Sharpening adds contrast to the edges of your video content and
@@ -107,47 +64,12 @@ namespace Model
      * apply a minimal amount of sharpening choose Low, or for the maximum choose High.
      */
     inline const AdvancedInputFilterSharpen& GetSharpening() const{ return m_sharpening; }
-
-    /**
-     * Optionally specify the amount of sharpening to apply when you use the Advanced
-     * input filter. Sharpening adds contrast to the edges of your video content and
-     * can reduce softness. To apply no sharpening: Keep the default value, Off. To
-     * apply a minimal amount of sharpening choose Low, or for the maximum choose High.
-     */
     inline bool SharpeningHasBeenSet() const { return m_sharpeningHasBeenSet; }
-
-    /**
-     * Optionally specify the amount of sharpening to apply when you use the Advanced
-     * input filter. Sharpening adds contrast to the edges of your video content and
-     * can reduce softness. To apply no sharpening: Keep the default value, Off. To
-     * apply a minimal amount of sharpening choose Low, or for the maximum choose High.
-     */
     inline void SetSharpening(const AdvancedInputFilterSharpen& value) { m_sharpeningHasBeenSet = true; m_sharpening = value; }
-
-    /**
-     * Optionally specify the amount of sharpening to apply when you use the Advanced
-     * input filter. Sharpening adds contrast to the edges of your video content and
-     * can reduce softness. To apply no sharpening: Keep the default value, Off. To
-     * apply a minimal amount of sharpening choose Low, or for the maximum choose High.
-     */
     inline void SetSharpening(AdvancedInputFilterSharpen&& value) { m_sharpeningHasBeenSet = true; m_sharpening = std::move(value); }
-
-    /**
-     * Optionally specify the amount of sharpening to apply when you use the Advanced
-     * input filter. Sharpening adds contrast to the edges of your video content and
-     * can reduce softness. To apply no sharpening: Keep the default value, Off. To
-     * apply a minimal amount of sharpening choose Low, or for the maximum choose High.
-     */
     inline AdvancedInputFilterSettings& WithSharpening(const AdvancedInputFilterSharpen& value) { SetSharpening(value); return *this;}
-
-    /**
-     * Optionally specify the amount of sharpening to apply when you use the Advanced
-     * input filter. Sharpening adds contrast to the edges of your video content and
-     * can reduce softness. To apply no sharpening: Keep the default value, Off. To
-     * apply a minimal amount of sharpening choose Low, or for the maximum choose High.
-     */
     inline AdvancedInputFilterSettings& WithSharpening(AdvancedInputFilterSharpen&& value) { SetSharpening(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AdvancedInputFilterAddTexture m_addTexture;

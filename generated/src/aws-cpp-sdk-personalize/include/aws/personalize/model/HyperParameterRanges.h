@@ -41,128 +41,47 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The integer-valued hyperparameters and their ranges.</p>
      */
     inline const Aws::Vector<IntegerHyperParameterRange>& GetIntegerHyperParameterRanges() const{ return m_integerHyperParameterRanges; }
-
-    /**
-     * <p>The integer-valued hyperparameters and their ranges.</p>
-     */
     inline bool IntegerHyperParameterRangesHasBeenSet() const { return m_integerHyperParameterRangesHasBeenSet; }
-
-    /**
-     * <p>The integer-valued hyperparameters and their ranges.</p>
-     */
     inline void SetIntegerHyperParameterRanges(const Aws::Vector<IntegerHyperParameterRange>& value) { m_integerHyperParameterRangesHasBeenSet = true; m_integerHyperParameterRanges = value; }
-
-    /**
-     * <p>The integer-valued hyperparameters and their ranges.</p>
-     */
     inline void SetIntegerHyperParameterRanges(Aws::Vector<IntegerHyperParameterRange>&& value) { m_integerHyperParameterRangesHasBeenSet = true; m_integerHyperParameterRanges = std::move(value); }
-
-    /**
-     * <p>The integer-valued hyperparameters and their ranges.</p>
-     */
     inline HyperParameterRanges& WithIntegerHyperParameterRanges(const Aws::Vector<IntegerHyperParameterRange>& value) { SetIntegerHyperParameterRanges(value); return *this;}
-
-    /**
-     * <p>The integer-valued hyperparameters and their ranges.</p>
-     */
     inline HyperParameterRanges& WithIntegerHyperParameterRanges(Aws::Vector<IntegerHyperParameterRange>&& value) { SetIntegerHyperParameterRanges(std::move(value)); return *this;}
-
-    /**
-     * <p>The integer-valued hyperparameters and their ranges.</p>
-     */
     inline HyperParameterRanges& AddIntegerHyperParameterRanges(const IntegerHyperParameterRange& value) { m_integerHyperParameterRangesHasBeenSet = true; m_integerHyperParameterRanges.push_back(value); return *this; }
-
-    /**
-     * <p>The integer-valued hyperparameters and their ranges.</p>
-     */
     inline HyperParameterRanges& AddIntegerHyperParameterRanges(IntegerHyperParameterRange&& value) { m_integerHyperParameterRangesHasBeenSet = true; m_integerHyperParameterRanges.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The continuous hyperparameters and their ranges.</p>
      */
     inline const Aws::Vector<ContinuousHyperParameterRange>& GetContinuousHyperParameterRanges() const{ return m_continuousHyperParameterRanges; }
-
-    /**
-     * <p>The continuous hyperparameters and their ranges.</p>
-     */
     inline bool ContinuousHyperParameterRangesHasBeenSet() const { return m_continuousHyperParameterRangesHasBeenSet; }
-
-    /**
-     * <p>The continuous hyperparameters and their ranges.</p>
-     */
     inline void SetContinuousHyperParameterRanges(const Aws::Vector<ContinuousHyperParameterRange>& value) { m_continuousHyperParameterRangesHasBeenSet = true; m_continuousHyperParameterRanges = value; }
-
-    /**
-     * <p>The continuous hyperparameters and their ranges.</p>
-     */
     inline void SetContinuousHyperParameterRanges(Aws::Vector<ContinuousHyperParameterRange>&& value) { m_continuousHyperParameterRangesHasBeenSet = true; m_continuousHyperParameterRanges = std::move(value); }
-
-    /**
-     * <p>The continuous hyperparameters and their ranges.</p>
-     */
     inline HyperParameterRanges& WithContinuousHyperParameterRanges(const Aws::Vector<ContinuousHyperParameterRange>& value) { SetContinuousHyperParameterRanges(value); return *this;}
-
-    /**
-     * <p>The continuous hyperparameters and their ranges.</p>
-     */
     inline HyperParameterRanges& WithContinuousHyperParameterRanges(Aws::Vector<ContinuousHyperParameterRange>&& value) { SetContinuousHyperParameterRanges(std::move(value)); return *this;}
-
-    /**
-     * <p>The continuous hyperparameters and their ranges.</p>
-     */
     inline HyperParameterRanges& AddContinuousHyperParameterRanges(const ContinuousHyperParameterRange& value) { m_continuousHyperParameterRangesHasBeenSet = true; m_continuousHyperParameterRanges.push_back(value); return *this; }
-
-    /**
-     * <p>The continuous hyperparameters and their ranges.</p>
-     */
     inline HyperParameterRanges& AddContinuousHyperParameterRanges(ContinuousHyperParameterRange&& value) { m_continuousHyperParameterRangesHasBeenSet = true; m_continuousHyperParameterRanges.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The categorical hyperparameters and their ranges.</p>
      */
     inline const Aws::Vector<CategoricalHyperParameterRange>& GetCategoricalHyperParameterRanges() const{ return m_categoricalHyperParameterRanges; }
-
-    /**
-     * <p>The categorical hyperparameters and their ranges.</p>
-     */
     inline bool CategoricalHyperParameterRangesHasBeenSet() const { return m_categoricalHyperParameterRangesHasBeenSet; }
-
-    /**
-     * <p>The categorical hyperparameters and their ranges.</p>
-     */
     inline void SetCategoricalHyperParameterRanges(const Aws::Vector<CategoricalHyperParameterRange>& value) { m_categoricalHyperParameterRangesHasBeenSet = true; m_categoricalHyperParameterRanges = value; }
-
-    /**
-     * <p>The categorical hyperparameters and their ranges.</p>
-     */
     inline void SetCategoricalHyperParameterRanges(Aws::Vector<CategoricalHyperParameterRange>&& value) { m_categoricalHyperParameterRangesHasBeenSet = true; m_categoricalHyperParameterRanges = std::move(value); }
-
-    /**
-     * <p>The categorical hyperparameters and their ranges.</p>
-     */
     inline HyperParameterRanges& WithCategoricalHyperParameterRanges(const Aws::Vector<CategoricalHyperParameterRange>& value) { SetCategoricalHyperParameterRanges(value); return *this;}
-
-    /**
-     * <p>The categorical hyperparameters and their ranges.</p>
-     */
     inline HyperParameterRanges& WithCategoricalHyperParameterRanges(Aws::Vector<CategoricalHyperParameterRange>&& value) { SetCategoricalHyperParameterRanges(std::move(value)); return *this;}
-
-    /**
-     * <p>The categorical hyperparameters and their ranges.</p>
-     */
     inline HyperParameterRanges& AddCategoricalHyperParameterRanges(const CategoricalHyperParameterRange& value) { m_categoricalHyperParameterRangesHasBeenSet = true; m_categoricalHyperParameterRanges.push_back(value); return *this; }
-
-    /**
-     * <p>The categorical hyperparameters and their ranges.</p>
-     */
     inline HyperParameterRanges& AddCategoricalHyperParameterRanges(CategoricalHyperParameterRange&& value) { m_categoricalHyperParameterRangesHasBeenSet = true; m_categoricalHyperParameterRanges.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<IntegerHyperParameterRange> m_integerHyperParameterRanges;

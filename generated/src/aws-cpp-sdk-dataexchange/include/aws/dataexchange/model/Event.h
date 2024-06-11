@@ -37,36 +37,17 @@ namespace Model
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>What occurs to start the revision publish action.</p>
      */
     inline const RevisionPublished& GetRevisionPublished() const{ return m_revisionPublished; }
-
-    /**
-     * <p>What occurs to start the revision publish action.</p>
-     */
     inline bool RevisionPublishedHasBeenSet() const { return m_revisionPublishedHasBeenSet; }
-
-    /**
-     * <p>What occurs to start the revision publish action.</p>
-     */
     inline void SetRevisionPublished(const RevisionPublished& value) { m_revisionPublishedHasBeenSet = true; m_revisionPublished = value; }
-
-    /**
-     * <p>What occurs to start the revision publish action.</p>
-     */
     inline void SetRevisionPublished(RevisionPublished&& value) { m_revisionPublishedHasBeenSet = true; m_revisionPublished = std::move(value); }
-
-    /**
-     * <p>What occurs to start the revision publish action.</p>
-     */
     inline Event& WithRevisionPublished(const RevisionPublished& value) { SetRevisionPublished(value); return *this;}
-
-    /**
-     * <p>What occurs to start the revision publish action.</p>
-     */
     inline Event& WithRevisionPublished(RevisionPublished&& value) { SetRevisionPublished(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RevisionPublished m_revisionPublished;

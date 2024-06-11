@@ -38,42 +38,18 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about whether file upload during chat functionality is activated
      * for your application.</p>
      */
     inline const AttachmentsControlMode& GetAttachmentsControlMode() const{ return m_attachmentsControlMode; }
-
-    /**
-     * <p>Information about whether file upload during chat functionality is activated
-     * for your application.</p>
-     */
     inline bool AttachmentsControlModeHasBeenSet() const { return m_attachmentsControlModeHasBeenSet; }
-
-    /**
-     * <p>Information about whether file upload during chat functionality is activated
-     * for your application.</p>
-     */
     inline void SetAttachmentsControlMode(const AttachmentsControlMode& value) { m_attachmentsControlModeHasBeenSet = true; m_attachmentsControlMode = value; }
-
-    /**
-     * <p>Information about whether file upload during chat functionality is activated
-     * for your application.</p>
-     */
     inline void SetAttachmentsControlMode(AttachmentsControlMode&& value) { m_attachmentsControlModeHasBeenSet = true; m_attachmentsControlMode = std::move(value); }
-
-    /**
-     * <p>Information about whether file upload during chat functionality is activated
-     * for your application.</p>
-     */
     inline AppliedAttachmentsConfiguration& WithAttachmentsControlMode(const AttachmentsControlMode& value) { SetAttachmentsControlMode(value); return *this;}
-
-    /**
-     * <p>Information about whether file upload during chat functionality is activated
-     * for your application.</p>
-     */
     inline AppliedAttachmentsConfiguration& WithAttachmentsControlMode(AttachmentsControlMode&& value) { SetAttachmentsControlMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AttachmentsControlMode m_attachmentsControlMode;

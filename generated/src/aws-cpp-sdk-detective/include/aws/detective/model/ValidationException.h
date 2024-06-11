@@ -38,102 +38,43 @@ namespace Model
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ValidationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ValidationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ValidationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error code associated with the validation failure.</p>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code associated with the validation failure.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code associated with the validation failure.</p>
-     */
     inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code associated with the validation failure.</p>
-     */
     inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code associated with the validation failure.</p>
-     */
     inline ValidationException& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code associated with the validation failure.</p>
-     */
     inline ValidationException& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> An explanation of why validation failed.</p>
      */
     inline const Aws::String& GetErrorCodeReason() const{ return m_errorCodeReason; }
-
-    /**
-     * <p> An explanation of why validation failed.</p>
-     */
     inline bool ErrorCodeReasonHasBeenSet() const { return m_errorCodeReasonHasBeenSet; }
-
-    /**
-     * <p> An explanation of why validation failed.</p>
-     */
     inline void SetErrorCodeReason(const Aws::String& value) { m_errorCodeReasonHasBeenSet = true; m_errorCodeReason = value; }
-
-    /**
-     * <p> An explanation of why validation failed.</p>
-     */
     inline void SetErrorCodeReason(Aws::String&& value) { m_errorCodeReasonHasBeenSet = true; m_errorCodeReason = std::move(value); }
-
-    /**
-     * <p> An explanation of why validation failed.</p>
-     */
     inline void SetErrorCodeReason(const char* value) { m_errorCodeReasonHasBeenSet = true; m_errorCodeReason.assign(value); }
-
-    /**
-     * <p> An explanation of why validation failed.</p>
-     */
     inline ValidationException& WithErrorCodeReason(const Aws::String& value) { SetErrorCodeReason(value); return *this;}
-
-    /**
-     * <p> An explanation of why validation failed.</p>
-     */
     inline ValidationException& WithErrorCodeReason(Aws::String&& value) { SetErrorCodeReason(std::move(value)); return *this;}
-
-    /**
-     * <p> An explanation of why validation failed.</p>
-     */
     inline ValidationException& WithErrorCodeReason(const char* value) { SetErrorCodeReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

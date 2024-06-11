@@ -32,43 +32,25 @@ namespace Model
     AWS_EMR_API ModifyClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The number of steps that can be executed concurrently.</p>
      */
     inline int GetStepConcurrencyLevel() const{ return m_stepConcurrencyLevel; }
-
-    /**
-     * <p>The number of steps that can be executed concurrently.</p>
-     */
     inline void SetStepConcurrencyLevel(int value) { m_stepConcurrencyLevel = value; }
-
-    /**
-     * <p>The number of steps that can be executed concurrently.</p>
-     */
     inline ModifyClusterResult& WithStepConcurrencyLevel(int value) { SetStepConcurrencyLevel(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ModifyClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ModifyClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ModifyClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_stepConcurrencyLevel;

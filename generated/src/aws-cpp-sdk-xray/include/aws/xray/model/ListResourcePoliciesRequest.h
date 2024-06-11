@@ -32,46 +32,19 @@ namespace Model
     AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Not currently supported.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Not currently supported.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Not currently supported.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Not currently supported.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Not currently supported.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Not currently supported.</p>
-     */
     inline ListResourcePoliciesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Not currently supported.</p>
-     */
     inline ListResourcePoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Not currently supported.</p>
-     */
     inline ListResourcePoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

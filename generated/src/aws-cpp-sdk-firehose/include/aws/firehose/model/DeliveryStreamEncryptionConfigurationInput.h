@@ -39,6 +39,7 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
      * must specify the Amazon Resource Name (ARN) of the CMK. If you set
@@ -46,64 +47,16 @@ namespace Model
      * uses a service-account CMK.</p>
      */
     inline const Aws::String& GetKeyARN() const{ return m_keyARN; }
-
-    /**
-     * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
-     * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose
-     * uses a service-account CMK.</p>
-     */
     inline bool KeyARNHasBeenSet() const { return m_keyARNHasBeenSet; }
-
-    /**
-     * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
-     * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose
-     * uses a service-account CMK.</p>
-     */
     inline void SetKeyARN(const Aws::String& value) { m_keyARNHasBeenSet = true; m_keyARN = value; }
-
-    /**
-     * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
-     * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose
-     * uses a service-account CMK.</p>
-     */
     inline void SetKeyARN(Aws::String&& value) { m_keyARNHasBeenSet = true; m_keyARN = std::move(value); }
-
-    /**
-     * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
-     * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose
-     * uses a service-account CMK.</p>
-     */
     inline void SetKeyARN(const char* value) { m_keyARNHasBeenSet = true; m_keyARN.assign(value); }
-
-    /**
-     * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
-     * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose
-     * uses a service-account CMK.</p>
-     */
     inline DeliveryStreamEncryptionConfigurationInput& WithKeyARN(const Aws::String& value) { SetKeyARN(value); return *this;}
-
-    /**
-     * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
-     * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose
-     * uses a service-account CMK.</p>
-     */
     inline DeliveryStreamEncryptionConfigurationInput& WithKeyARN(Aws::String&& value) { SetKeyARN(std::move(value)); return *this;}
-
-    /**
-     * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
-     * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose
-     * uses a service-account CMK.</p>
-     */
     inline DeliveryStreamEncryptionConfigurationInput& WithKeyARN(const char* value) { SetKeyARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates the type of customer master key (CMK) to use for encryption. The
      * default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
@@ -129,137 +82,12 @@ namespace Model
      * Service developer guide.</p> 
      */
     inline const KeyType& GetKeyType() const{ return m_keyType; }
-
-    /**
-     * <p>Indicates the type of customer master key (CMK) to use for encryption. The
-     * default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
-     * information about CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
-     * Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
-     * <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
-     * CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>
-     * to create a grant that allows the Firehose service to use the customer managed
-     * CMK to perform encryption and decryption. Firehose manages that grant. </p>
-     * <p>When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a
-     * delivery stream that is encrypted with a customer managed CMK, Firehose
-     * schedules the grant it had on the old CMK for retirement.</p> <p>You can use a
-     * CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation
-     * exceeds this limit, Firehose throws a <code>LimitExceededException</code>. </p>
-     *  <p>To encrypt your delivery stream, use symmetric CMKs. Firehose
-     * doesn't support asymmetric CMKs. For information about symmetric and asymmetric
-     * CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
-     * Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management
-     * Service developer guide.</p> 
-     */
     inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
-
-    /**
-     * <p>Indicates the type of customer master key (CMK) to use for encryption. The
-     * default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
-     * information about CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
-     * Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
-     * <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
-     * CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>
-     * to create a grant that allows the Firehose service to use the customer managed
-     * CMK to perform encryption and decryption. Firehose manages that grant. </p>
-     * <p>When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a
-     * delivery stream that is encrypted with a customer managed CMK, Firehose
-     * schedules the grant it had on the old CMK for retirement.</p> <p>You can use a
-     * CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation
-     * exceeds this limit, Firehose throws a <code>LimitExceededException</code>. </p>
-     *  <p>To encrypt your delivery stream, use symmetric CMKs. Firehose
-     * doesn't support asymmetric CMKs. For information about symmetric and asymmetric
-     * CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
-     * Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management
-     * Service developer guide.</p> 
-     */
     inline void SetKeyType(const KeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
-
-    /**
-     * <p>Indicates the type of customer master key (CMK) to use for encryption. The
-     * default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
-     * information about CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
-     * Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
-     * <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
-     * CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>
-     * to create a grant that allows the Firehose service to use the customer managed
-     * CMK to perform encryption and decryption. Firehose manages that grant. </p>
-     * <p>When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a
-     * delivery stream that is encrypted with a customer managed CMK, Firehose
-     * schedules the grant it had on the old CMK for retirement.</p> <p>You can use a
-     * CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation
-     * exceeds this limit, Firehose throws a <code>LimitExceededException</code>. </p>
-     *  <p>To encrypt your delivery stream, use symmetric CMKs. Firehose
-     * doesn't support asymmetric CMKs. For information about symmetric and asymmetric
-     * CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
-     * Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management
-     * Service developer guide.</p> 
-     */
     inline void SetKeyType(KeyType&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
-
-    /**
-     * <p>Indicates the type of customer master key (CMK) to use for encryption. The
-     * default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
-     * information about CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
-     * Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
-     * <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
-     * CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>
-     * to create a grant that allows the Firehose service to use the customer managed
-     * CMK to perform encryption and decryption. Firehose manages that grant. </p>
-     * <p>When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a
-     * delivery stream that is encrypted with a customer managed CMK, Firehose
-     * schedules the grant it had on the old CMK for retirement.</p> <p>You can use a
-     * CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation
-     * exceeds this limit, Firehose throws a <code>LimitExceededException</code>. </p>
-     *  <p>To encrypt your delivery stream, use symmetric CMKs. Firehose
-     * doesn't support asymmetric CMKs. For information about symmetric and asymmetric
-     * CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
-     * Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management
-     * Service developer guide.</p> 
-     */
     inline DeliveryStreamEncryptionConfigurationInput& WithKeyType(const KeyType& value) { SetKeyType(value); return *this;}
-
-    /**
-     * <p>Indicates the type of customer master key (CMK) to use for encryption. The
-     * default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
-     * information about CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
-     * Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
-     * <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
-     * CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>
-     * to create a grant that allows the Firehose service to use the customer managed
-     * CMK to perform encryption and decryption. Firehose manages that grant. </p>
-     * <p>When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a
-     * delivery stream that is encrypted with a customer managed CMK, Firehose
-     * schedules the grant it had on the old CMK for retirement.</p> <p>You can use a
-     * CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation
-     * exceeds this limit, Firehose throws a <code>LimitExceededException</code>. </p>
-     *  <p>To encrypt your delivery stream, use symmetric CMKs. Firehose
-     * doesn't support asymmetric CMKs. For information about symmetric and asymmetric
-     * CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
-     * Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management
-     * Service developer guide.</p> 
-     */
     inline DeliveryStreamEncryptionConfigurationInput& WithKeyType(KeyType&& value) { SetKeyType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_keyARN;

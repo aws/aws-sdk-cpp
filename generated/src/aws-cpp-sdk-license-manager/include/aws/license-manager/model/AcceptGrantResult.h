@@ -33,125 +33,53 @@ namespace Model
     AWS_LICENSEMANAGER_API AcceptGrantResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Grant ARN.</p>
      */
     inline const Aws::String& GetGrantArn() const{ return m_grantArn; }
-
-    /**
-     * <p>Grant ARN.</p>
-     */
     inline void SetGrantArn(const Aws::String& value) { m_grantArn = value; }
-
-    /**
-     * <p>Grant ARN.</p>
-     */
     inline void SetGrantArn(Aws::String&& value) { m_grantArn = std::move(value); }
-
-    /**
-     * <p>Grant ARN.</p>
-     */
     inline void SetGrantArn(const char* value) { m_grantArn.assign(value); }
-
-    /**
-     * <p>Grant ARN.</p>
-     */
     inline AcceptGrantResult& WithGrantArn(const Aws::String& value) { SetGrantArn(value); return *this;}
-
-    /**
-     * <p>Grant ARN.</p>
-     */
     inline AcceptGrantResult& WithGrantArn(Aws::String&& value) { SetGrantArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Grant ARN.</p>
-     */
     inline AcceptGrantResult& WithGrantArn(const char* value) { SetGrantArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Grant status.</p>
      */
     inline const GrantStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Grant status.</p>
-     */
     inline void SetStatus(const GrantStatus& value) { m_status = value; }
-
-    /**
-     * <p>Grant status.</p>
-     */
     inline void SetStatus(GrantStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>Grant status.</p>
-     */
     inline AcceptGrantResult& WithStatus(const GrantStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Grant status.</p>
-     */
     inline AcceptGrantResult& WithStatus(GrantStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Grant version.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_version = value; }
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline void SetVersion(const char* value) { m_version.assign(value); }
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline AcceptGrantResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline AcceptGrantResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline AcceptGrantResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AcceptGrantResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AcceptGrantResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AcceptGrantResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_grantArn;

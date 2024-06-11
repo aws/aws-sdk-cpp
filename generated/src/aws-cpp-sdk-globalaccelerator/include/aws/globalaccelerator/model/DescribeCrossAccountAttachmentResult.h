@@ -33,53 +33,27 @@ namespace Model
     AWS_GLOBALACCELERATOR_API DescribeCrossAccountAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the cross-account attachment.</p>
      */
     inline const Attachment& GetCrossAccountAttachment() const{ return m_crossAccountAttachment; }
-
-    /**
-     * <p>Information about the cross-account attachment.</p>
-     */
     inline void SetCrossAccountAttachment(const Attachment& value) { m_crossAccountAttachment = value; }
-
-    /**
-     * <p>Information about the cross-account attachment.</p>
-     */
     inline void SetCrossAccountAttachment(Attachment&& value) { m_crossAccountAttachment = std::move(value); }
-
-    /**
-     * <p>Information about the cross-account attachment.</p>
-     */
     inline DescribeCrossAccountAttachmentResult& WithCrossAccountAttachment(const Attachment& value) { SetCrossAccountAttachment(value); return *this;}
-
-    /**
-     * <p>Information about the cross-account attachment.</p>
-     */
     inline DescribeCrossAccountAttachmentResult& WithCrossAccountAttachment(Attachment&& value) { SetCrossAccountAttachment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCrossAccountAttachmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCrossAccountAttachmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCrossAccountAttachmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Attachment m_crossAccountAttachment;

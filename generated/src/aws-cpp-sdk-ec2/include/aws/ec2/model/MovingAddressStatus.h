@@ -41,77 +41,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The status of the Elastic IP address that's being moved or restored.</p>
      */
     inline const MoveStatus& GetMoveStatus() const{ return m_moveStatus; }
-
-    /**
-     * <p>The status of the Elastic IP address that's being moved or restored.</p>
-     */
     inline bool MoveStatusHasBeenSet() const { return m_moveStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the Elastic IP address that's being moved or restored.</p>
-     */
     inline void SetMoveStatus(const MoveStatus& value) { m_moveStatusHasBeenSet = true; m_moveStatus = value; }
-
-    /**
-     * <p>The status of the Elastic IP address that's being moved or restored.</p>
-     */
     inline void SetMoveStatus(MoveStatus&& value) { m_moveStatusHasBeenSet = true; m_moveStatus = std::move(value); }
-
-    /**
-     * <p>The status of the Elastic IP address that's being moved or restored.</p>
-     */
     inline MovingAddressStatus& WithMoveStatus(const MoveStatus& value) { SetMoveStatus(value); return *this;}
-
-    /**
-     * <p>The status of the Elastic IP address that's being moved or restored.</p>
-     */
     inline MovingAddressStatus& WithMoveStatus(MoveStatus&& value) { SetMoveStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Elastic IP address.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline MovingAddressStatus& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline MovingAddressStatus& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline MovingAddressStatus& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
-
+    ///@}
   private:
 
     MoveStatus m_moveStatus;

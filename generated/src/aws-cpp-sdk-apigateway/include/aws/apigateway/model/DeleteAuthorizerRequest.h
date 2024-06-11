@@ -36,87 +36,33 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline DeleteAuthorizerRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline DeleteAuthorizerRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline DeleteAuthorizerRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the Authorizer resource.</p>
      */
     inline const Aws::String& GetAuthorizerId() const{ return m_authorizerId; }
-
-    /**
-     * <p>The identifier of the Authorizer resource.</p>
-     */
     inline bool AuthorizerIdHasBeenSet() const { return m_authorizerIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Authorizer resource.</p>
-     */
     inline void SetAuthorizerId(const Aws::String& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = value; }
-
-    /**
-     * <p>The identifier of the Authorizer resource.</p>
-     */
     inline void SetAuthorizerId(Aws::String&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Authorizer resource.</p>
-     */
     inline void SetAuthorizerId(const char* value) { m_authorizerIdHasBeenSet = true; m_authorizerId.assign(value); }
-
-    /**
-     * <p>The identifier of the Authorizer resource.</p>
-     */
     inline DeleteAuthorizerRequest& WithAuthorizerId(const Aws::String& value) { SetAuthorizerId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Authorizer resource.</p>
-     */
     inline DeleteAuthorizerRequest& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Authorizer resource.</p>
-     */
     inline DeleteAuthorizerRequest& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_restApiId;

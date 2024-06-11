@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API CreateCapacityReservationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the Capacity Reservation.</p>
      */
     inline const CapacityReservation& GetCapacityReservation() const{ return m_capacityReservation; }
-
-    /**
-     * <p>Information about the Capacity Reservation.</p>
-     */
     inline void SetCapacityReservation(const CapacityReservation& value) { m_capacityReservation = value; }
-
-    /**
-     * <p>Information about the Capacity Reservation.</p>
-     */
     inline void SetCapacityReservation(CapacityReservation&& value) { m_capacityReservation = std::move(value); }
-
-    /**
-     * <p>Information about the Capacity Reservation.</p>
-     */
     inline CreateCapacityReservationResponse& WithCapacityReservation(const CapacityReservation& value) { SetCapacityReservation(value); return *this;}
-
-    /**
-     * <p>Information about the Capacity Reservation.</p>
-     */
     inline CreateCapacityReservationResponse& WithCapacityReservation(CapacityReservation&& value) { SetCapacityReservation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateCapacityReservationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateCapacityReservationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CapacityReservation m_capacityReservation;

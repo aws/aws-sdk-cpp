@@ -41,142 +41,48 @@ namespace Model
     AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the format of the records on the streaming source.</p>
      */
     inline const RecordFormat& GetRecordFormatUpdate() const{ return m_recordFormatUpdate; }
-
-    /**
-     * <p>Specifies the format of the records on the streaming source.</p>
-     */
     inline bool RecordFormatUpdateHasBeenSet() const { return m_recordFormatUpdateHasBeenSet; }
-
-    /**
-     * <p>Specifies the format of the records on the streaming source.</p>
-     */
     inline void SetRecordFormatUpdate(const RecordFormat& value) { m_recordFormatUpdateHasBeenSet = true; m_recordFormatUpdate = value; }
-
-    /**
-     * <p>Specifies the format of the records on the streaming source.</p>
-     */
     inline void SetRecordFormatUpdate(RecordFormat&& value) { m_recordFormatUpdateHasBeenSet = true; m_recordFormatUpdate = std::move(value); }
-
-    /**
-     * <p>Specifies the format of the records on the streaming source.</p>
-     */
     inline InputSchemaUpdate& WithRecordFormatUpdate(const RecordFormat& value) { SetRecordFormatUpdate(value); return *this;}
-
-    /**
-     * <p>Specifies the format of the records on the streaming source.</p>
-     */
     inline InputSchemaUpdate& WithRecordFormatUpdate(RecordFormat&& value) { SetRecordFormatUpdate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the encoding of the records in the streaming source. For example,
      * UTF-8.</p>
      */
     inline const Aws::String& GetRecordEncodingUpdate() const{ return m_recordEncodingUpdate; }
-
-    /**
-     * <p>Specifies the encoding of the records in the streaming source. For example,
-     * UTF-8.</p>
-     */
     inline bool RecordEncodingUpdateHasBeenSet() const { return m_recordEncodingUpdateHasBeenSet; }
-
-    /**
-     * <p>Specifies the encoding of the records in the streaming source. For example,
-     * UTF-8.</p>
-     */
     inline void SetRecordEncodingUpdate(const Aws::String& value) { m_recordEncodingUpdateHasBeenSet = true; m_recordEncodingUpdate = value; }
-
-    /**
-     * <p>Specifies the encoding of the records in the streaming source. For example,
-     * UTF-8.</p>
-     */
     inline void SetRecordEncodingUpdate(Aws::String&& value) { m_recordEncodingUpdateHasBeenSet = true; m_recordEncodingUpdate = std::move(value); }
-
-    /**
-     * <p>Specifies the encoding of the records in the streaming source. For example,
-     * UTF-8.</p>
-     */
     inline void SetRecordEncodingUpdate(const char* value) { m_recordEncodingUpdateHasBeenSet = true; m_recordEncodingUpdate.assign(value); }
-
-    /**
-     * <p>Specifies the encoding of the records in the streaming source. For example,
-     * UTF-8.</p>
-     */
     inline InputSchemaUpdate& WithRecordEncodingUpdate(const Aws::String& value) { SetRecordEncodingUpdate(value); return *this;}
-
-    /**
-     * <p>Specifies the encoding of the records in the streaming source. For example,
-     * UTF-8.</p>
-     */
     inline InputSchemaUpdate& WithRecordEncodingUpdate(Aws::String&& value) { SetRecordEncodingUpdate(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the encoding of the records in the streaming source. For example,
-     * UTF-8.</p>
-     */
     inline InputSchemaUpdate& WithRecordEncodingUpdate(const char* value) { SetRecordEncodingUpdate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of <code>RecordColumn</code> objects. Each object describes the
      * mapping of the streaming source element to the corresponding column in the
      * in-application stream. </p>
      */
     inline const Aws::Vector<RecordColumn>& GetRecordColumnUpdates() const{ return m_recordColumnUpdates; }
-
-    /**
-     * <p>A list of <code>RecordColumn</code> objects. Each object describes the
-     * mapping of the streaming source element to the corresponding column in the
-     * in-application stream. </p>
-     */
     inline bool RecordColumnUpdatesHasBeenSet() const { return m_recordColumnUpdatesHasBeenSet; }
-
-    /**
-     * <p>A list of <code>RecordColumn</code> objects. Each object describes the
-     * mapping of the streaming source element to the corresponding column in the
-     * in-application stream. </p>
-     */
     inline void SetRecordColumnUpdates(const Aws::Vector<RecordColumn>& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates = value; }
-
-    /**
-     * <p>A list of <code>RecordColumn</code> objects. Each object describes the
-     * mapping of the streaming source element to the corresponding column in the
-     * in-application stream. </p>
-     */
     inline void SetRecordColumnUpdates(Aws::Vector<RecordColumn>&& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates = std::move(value); }
-
-    /**
-     * <p>A list of <code>RecordColumn</code> objects. Each object describes the
-     * mapping of the streaming source element to the corresponding column in the
-     * in-application stream. </p>
-     */
     inline InputSchemaUpdate& WithRecordColumnUpdates(const Aws::Vector<RecordColumn>& value) { SetRecordColumnUpdates(value); return *this;}
-
-    /**
-     * <p>A list of <code>RecordColumn</code> objects. Each object describes the
-     * mapping of the streaming source element to the corresponding column in the
-     * in-application stream. </p>
-     */
     inline InputSchemaUpdate& WithRecordColumnUpdates(Aws::Vector<RecordColumn>&& value) { SetRecordColumnUpdates(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>RecordColumn</code> objects. Each object describes the
-     * mapping of the streaming source element to the corresponding column in the
-     * in-application stream. </p>
-     */
     inline InputSchemaUpdate& AddRecordColumnUpdates(const RecordColumn& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>RecordColumn</code> objects. Each object describes the
-     * mapping of the streaming source element to the corresponding column in the
-     * in-application stream. </p>
-     */
     inline InputSchemaUpdate& AddRecordColumnUpdates(RecordColumn&& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     RecordFormat m_recordFormatUpdate;

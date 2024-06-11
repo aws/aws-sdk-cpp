@@ -34,46 +34,19 @@ namespace Model
     AWS_SSMCONTACTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the engagement to a contact channel.</p>
      */
     inline const Aws::String& GetPageId() const{ return m_pageId; }
-
-    /**
-     * <p>The ID of the engagement to a contact channel.</p>
-     */
     inline bool PageIdHasBeenSet() const { return m_pageIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the engagement to a contact channel.</p>
-     */
     inline void SetPageId(const Aws::String& value) { m_pageIdHasBeenSet = true; m_pageId = value; }
-
-    /**
-     * <p>The ID of the engagement to a contact channel.</p>
-     */
     inline void SetPageId(Aws::String&& value) { m_pageIdHasBeenSet = true; m_pageId = std::move(value); }
-
-    /**
-     * <p>The ID of the engagement to a contact channel.</p>
-     */
     inline void SetPageId(const char* value) { m_pageIdHasBeenSet = true; m_pageId.assign(value); }
-
-    /**
-     * <p>The ID of the engagement to a contact channel.</p>
-     */
     inline DescribePageRequest& WithPageId(const Aws::String& value) { SetPageId(value); return *this;}
-
-    /**
-     * <p>The ID of the engagement to a contact channel.</p>
-     */
     inline DescribePageRequest& WithPageId(Aws::String&& value) { SetPageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the engagement to a contact channel.</p>
-     */
     inline DescribePageRequest& WithPageId(const char* value) { SetPageId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pageId;

@@ -38,51 +38,20 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The desired authorization scope for the Slack account. </p>
      */
     inline const Aws::Vector<Aws::String>& GetOAuthScopes() const{ return m_oAuthScopes; }
-
-    /**
-     * <p> The desired authorization scope for the Slack account. </p>
-     */
     inline bool OAuthScopesHasBeenSet() const { return m_oAuthScopesHasBeenSet; }
-
-    /**
-     * <p> The desired authorization scope for the Slack account. </p>
-     */
     inline void SetOAuthScopes(const Aws::Vector<Aws::String>& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = value; }
-
-    /**
-     * <p> The desired authorization scope for the Slack account. </p>
-     */
     inline void SetOAuthScopes(Aws::Vector<Aws::String>&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = std::move(value); }
-
-    /**
-     * <p> The desired authorization scope for the Slack account. </p>
-     */
     inline SlackMetadata& WithOAuthScopes(const Aws::Vector<Aws::String>& value) { SetOAuthScopes(value); return *this;}
-
-    /**
-     * <p> The desired authorization scope for the Slack account. </p>
-     */
     inline SlackMetadata& WithOAuthScopes(Aws::Vector<Aws::String>&& value) { SetOAuthScopes(std::move(value)); return *this;}
-
-    /**
-     * <p> The desired authorization scope for the Slack account. </p>
-     */
     inline SlackMetadata& AddOAuthScopes(const Aws::String& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(value); return *this; }
-
-    /**
-     * <p> The desired authorization scope for the Slack account. </p>
-     */
     inline SlackMetadata& AddOAuthScopes(Aws::String&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> The desired authorization scope for the Slack account. </p>
-     */
     inline SlackMetadata& AddOAuthScopes(const char* value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_oAuthScopes;

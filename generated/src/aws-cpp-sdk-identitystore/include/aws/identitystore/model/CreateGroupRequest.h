@@ -34,47 +34,21 @@ namespace Model
     AWS_IDENTITYSTORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The globally unique identifier for the identity store.</p>
      */
     inline const Aws::String& GetIdentityStoreId() const{ return m_identityStoreId; }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline void SetIdentityStoreId(const Aws::String& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = value; }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline void SetIdentityStoreId(Aws::String&& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = std::move(value); }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline void SetIdentityStoreId(const char* value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId.assign(value); }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline CreateGroupRequest& WithIdentityStoreId(const Aws::String& value) { SetIdentityStoreId(value); return *this;}
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline CreateGroupRequest& WithIdentityStoreId(Aws::String&& value) { SetIdentityStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline CreateGroupRequest& WithIdentityStoreId(const char* value) { SetIdentityStoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A string containing the name of the group. This value is commonly displayed
      * when the group is referenced. <code>Administrator</code> and
@@ -82,104 +56,28 @@ namespace Model
      * groups.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-
-    /**
-     * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced. <code>Administrator</code> and
-     * <code>AWSAdministrators</code> are reserved names and can't be used for users or
-     * groups.</p>
-     */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-
-    /**
-     * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced. <code>Administrator</code> and
-     * <code>AWSAdministrators</code> are reserved names and can't be used for users or
-     * groups.</p>
-     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-
-    /**
-     * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced. <code>Administrator</code> and
-     * <code>AWSAdministrators</code> are reserved names and can't be used for users or
-     * groups.</p>
-     */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-
-    /**
-     * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced. <code>Administrator</code> and
-     * <code>AWSAdministrators</code> are reserved names and can't be used for users or
-     * groups.</p>
-     */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-
-    /**
-     * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced. <code>Administrator</code> and
-     * <code>AWSAdministrators</code> are reserved names and can't be used for users or
-     * groups.</p>
-     */
     inline CreateGroupRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-
-    /**
-     * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced. <code>Administrator</code> and
-     * <code>AWSAdministrators</code> are reserved names and can't be used for users or
-     * groups.</p>
-     */
     inline CreateGroupRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced. <code>Administrator</code> and
-     * <code>AWSAdministrators</code> are reserved names and can't be used for users or
-     * groups.</p>
-     */
     inline CreateGroupRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A string containing the description of the group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A string containing the description of the group.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A string containing the description of the group.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A string containing the description of the group.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A string containing the description of the group.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A string containing the description of the group.</p>
-     */
     inline CreateGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A string containing the description of the group.</p>
-     */
     inline CreateGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A string containing the description of the group.</p>
-     */
     inline CreateGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identityStoreId;

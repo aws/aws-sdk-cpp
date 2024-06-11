@@ -38,48 +38,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The default is <code>Retain</code>, which specifies to keep the data stored
      * on the Amazon EFS volume.</p> <p>Specify <code>Delete</code> to delete the data
      * stored on the Amazon EFS volume.</p>
      */
     inline const RetentionType& GetHomeEfsFileSystem() const{ return m_homeEfsFileSystem; }
-
-    /**
-     * <p>The default is <code>Retain</code>, which specifies to keep the data stored
-     * on the Amazon EFS volume.</p> <p>Specify <code>Delete</code> to delete the data
-     * stored on the Amazon EFS volume.</p>
-     */
     inline bool HomeEfsFileSystemHasBeenSet() const { return m_homeEfsFileSystemHasBeenSet; }
-
-    /**
-     * <p>The default is <code>Retain</code>, which specifies to keep the data stored
-     * on the Amazon EFS volume.</p> <p>Specify <code>Delete</code> to delete the data
-     * stored on the Amazon EFS volume.</p>
-     */
     inline void SetHomeEfsFileSystem(const RetentionType& value) { m_homeEfsFileSystemHasBeenSet = true; m_homeEfsFileSystem = value; }
-
-    /**
-     * <p>The default is <code>Retain</code>, which specifies to keep the data stored
-     * on the Amazon EFS volume.</p> <p>Specify <code>Delete</code> to delete the data
-     * stored on the Amazon EFS volume.</p>
-     */
     inline void SetHomeEfsFileSystem(RetentionType&& value) { m_homeEfsFileSystemHasBeenSet = true; m_homeEfsFileSystem = std::move(value); }
-
-    /**
-     * <p>The default is <code>Retain</code>, which specifies to keep the data stored
-     * on the Amazon EFS volume.</p> <p>Specify <code>Delete</code> to delete the data
-     * stored on the Amazon EFS volume.</p>
-     */
     inline RetentionPolicy& WithHomeEfsFileSystem(const RetentionType& value) { SetHomeEfsFileSystem(value); return *this;}
-
-    /**
-     * <p>The default is <code>Retain</code>, which specifies to keep the data stored
-     * on the Amazon EFS volume.</p> <p>Specify <code>Delete</code> to delete the data
-     * stored on the Amazon EFS volume.</p>
-     */
     inline RetentionPolicy& WithHomeEfsFileSystem(RetentionType&& value) { SetHomeEfsFileSystem(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RetentionType m_homeEfsFileSystem;

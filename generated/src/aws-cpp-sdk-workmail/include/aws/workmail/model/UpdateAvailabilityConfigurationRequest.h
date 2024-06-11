@@ -36,96 +36,36 @@ namespace Model
     AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The WorkMail organization for which the
      * <code>AvailabilityConfiguration</code> will be updated.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
-
-    /**
-     * <p>The WorkMail organization for which the
-     * <code>AvailabilityConfiguration</code> will be updated.</p>
-     */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-
-    /**
-     * <p>The WorkMail organization for which the
-     * <code>AvailabilityConfiguration</code> will be updated.</p>
-     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-
-    /**
-     * <p>The WorkMail organization for which the
-     * <code>AvailabilityConfiguration</code> will be updated.</p>
-     */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-
-    /**
-     * <p>The WorkMail organization for which the
-     * <code>AvailabilityConfiguration</code> will be updated.</p>
-     */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-
-    /**
-     * <p>The WorkMail organization for which the
-     * <code>AvailabilityConfiguration</code> will be updated.</p>
-     */
     inline UpdateAvailabilityConfigurationRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-
-    /**
-     * <p>The WorkMail organization for which the
-     * <code>AvailabilityConfiguration</code> will be updated.</p>
-     */
     inline UpdateAvailabilityConfigurationRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The WorkMail organization for which the
-     * <code>AvailabilityConfiguration</code> will be updated.</p>
-     */
     inline UpdateAvailabilityConfigurationRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The domain to which the provider applies the availability configuration.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The domain to which the provider applies the availability configuration.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The domain to which the provider applies the availability configuration.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The domain to which the provider applies the availability configuration.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The domain to which the provider applies the availability configuration.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The domain to which the provider applies the availability configuration.</p>
-     */
     inline UpdateAvailabilityConfigurationRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The domain to which the provider applies the availability configuration.</p>
-     */
     inline UpdateAvailabilityConfigurationRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain to which the provider applies the availability configuration.</p>
-     */
     inline UpdateAvailabilityConfigurationRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The EWS availability provider definition. The request must contain exactly
      * one provider definition, either <code>EwsProvider</code> or
@@ -133,48 +73,14 @@ namespace Model
      * by the one provided.</p>
      */
     inline const EwsAvailabilityProvider& GetEwsProvider() const{ return m_ewsProvider; }
-
-    /**
-     * <p>The EWS availability provider definition. The request must contain exactly
-     * one provider definition, either <code>EwsProvider</code> or
-     * <code>LambdaProvider</code>. The previously stored provider will be overridden
-     * by the one provided.</p>
-     */
     inline bool EwsProviderHasBeenSet() const { return m_ewsProviderHasBeenSet; }
-
-    /**
-     * <p>The EWS availability provider definition. The request must contain exactly
-     * one provider definition, either <code>EwsProvider</code> or
-     * <code>LambdaProvider</code>. The previously stored provider will be overridden
-     * by the one provided.</p>
-     */
     inline void SetEwsProvider(const EwsAvailabilityProvider& value) { m_ewsProviderHasBeenSet = true; m_ewsProvider = value; }
-
-    /**
-     * <p>The EWS availability provider definition. The request must contain exactly
-     * one provider definition, either <code>EwsProvider</code> or
-     * <code>LambdaProvider</code>. The previously stored provider will be overridden
-     * by the one provided.</p>
-     */
     inline void SetEwsProvider(EwsAvailabilityProvider&& value) { m_ewsProviderHasBeenSet = true; m_ewsProvider = std::move(value); }
-
-    /**
-     * <p>The EWS availability provider definition. The request must contain exactly
-     * one provider definition, either <code>EwsProvider</code> or
-     * <code>LambdaProvider</code>. The previously stored provider will be overridden
-     * by the one provided.</p>
-     */
     inline UpdateAvailabilityConfigurationRequest& WithEwsProvider(const EwsAvailabilityProvider& value) { SetEwsProvider(value); return *this;}
-
-    /**
-     * <p>The EWS availability provider definition. The request must contain exactly
-     * one provider definition, either <code>EwsProvider</code> or
-     * <code>LambdaProvider</code>. The previously stored provider will be overridden
-     * by the one provided.</p>
-     */
     inline UpdateAvailabilityConfigurationRequest& WithEwsProvider(EwsAvailabilityProvider&& value) { SetEwsProvider(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Lambda availability provider definition. The request must contain exactly
      * one provider definition, either <code>EwsProvider</code> or
@@ -182,47 +88,12 @@ namespace Model
      * by the one provided.</p>
      */
     inline const LambdaAvailabilityProvider& GetLambdaProvider() const{ return m_lambdaProvider; }
-
-    /**
-     * <p>The Lambda availability provider definition. The request must contain exactly
-     * one provider definition, either <code>EwsProvider</code> or
-     * <code>LambdaProvider</code>. The previously stored provider will be overridden
-     * by the one provided.</p>
-     */
     inline bool LambdaProviderHasBeenSet() const { return m_lambdaProviderHasBeenSet; }
-
-    /**
-     * <p>The Lambda availability provider definition. The request must contain exactly
-     * one provider definition, either <code>EwsProvider</code> or
-     * <code>LambdaProvider</code>. The previously stored provider will be overridden
-     * by the one provided.</p>
-     */
     inline void SetLambdaProvider(const LambdaAvailabilityProvider& value) { m_lambdaProviderHasBeenSet = true; m_lambdaProvider = value; }
-
-    /**
-     * <p>The Lambda availability provider definition. The request must contain exactly
-     * one provider definition, either <code>EwsProvider</code> or
-     * <code>LambdaProvider</code>. The previously stored provider will be overridden
-     * by the one provided.</p>
-     */
     inline void SetLambdaProvider(LambdaAvailabilityProvider&& value) { m_lambdaProviderHasBeenSet = true; m_lambdaProvider = std::move(value); }
-
-    /**
-     * <p>The Lambda availability provider definition. The request must contain exactly
-     * one provider definition, either <code>EwsProvider</code> or
-     * <code>LambdaProvider</code>. The previously stored provider will be overridden
-     * by the one provided.</p>
-     */
     inline UpdateAvailabilityConfigurationRequest& WithLambdaProvider(const LambdaAvailabilityProvider& value) { SetLambdaProvider(value); return *this;}
-
-    /**
-     * <p>The Lambda availability provider definition. The request must contain exactly
-     * one provider definition, either <code>EwsProvider</code> or
-     * <code>LambdaProvider</code>. The previously stored provider will be overridden
-     * by the one provided.</p>
-     */
     inline UpdateAvailabilityConfigurationRequest& WithLambdaProvider(LambdaAvailabilityProvider&& value) { SetLambdaProvider(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_organizationId;

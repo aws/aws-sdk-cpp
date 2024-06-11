@@ -38,36 +38,17 @@ namespace Model
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configures the wireless connection for the Snowcone device.</p>
      */
     inline const WirelessConnection& GetWirelessConnection() const{ return m_wirelessConnection; }
-
-    /**
-     * <p>Configures the wireless connection for the Snowcone device.</p>
-     */
     inline bool WirelessConnectionHasBeenSet() const { return m_wirelessConnectionHasBeenSet; }
-
-    /**
-     * <p>Configures the wireless connection for the Snowcone device.</p>
-     */
     inline void SetWirelessConnection(const WirelessConnection& value) { m_wirelessConnectionHasBeenSet = true; m_wirelessConnection = value; }
-
-    /**
-     * <p>Configures the wireless connection for the Snowcone device.</p>
-     */
     inline void SetWirelessConnection(WirelessConnection&& value) { m_wirelessConnectionHasBeenSet = true; m_wirelessConnection = std::move(value); }
-
-    /**
-     * <p>Configures the wireless connection for the Snowcone device.</p>
-     */
     inline SnowconeDeviceConfiguration& WithWirelessConnection(const WirelessConnection& value) { SetWirelessConnection(value); return *this;}
-
-    /**
-     * <p>Configures the wireless connection for the Snowcone device.</p>
-     */
     inline SnowconeDeviceConfiguration& WithWirelessConnection(WirelessConnection&& value) { SetWirelessConnection(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     WirelessConnection m_wirelessConnection;

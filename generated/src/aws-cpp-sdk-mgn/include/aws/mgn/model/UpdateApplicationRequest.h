@@ -32,169 +32,61 @@ namespace Model
     AWS_MGN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Account ID.</p>
      */
     inline const Aws::String& GetAccountID() const{ return m_accountID; }
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline UpdateApplicationRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline UpdateApplicationRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline UpdateApplicationRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Application ID.</p>
      */
     inline const Aws::String& GetApplicationID() const{ return m_applicationID; }
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline bool ApplicationIDHasBeenSet() const { return m_applicationIDHasBeenSet; }
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline void SetApplicationID(const Aws::String& value) { m_applicationIDHasBeenSet = true; m_applicationID = value; }
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline void SetApplicationID(Aws::String&& value) { m_applicationIDHasBeenSet = true; m_applicationID = std::move(value); }
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline void SetApplicationID(const char* value) { m_applicationIDHasBeenSet = true; m_applicationID.assign(value); }
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline UpdateApplicationRequest& WithApplicationID(const Aws::String& value) { SetApplicationID(value); return *this;}
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline UpdateApplicationRequest& WithApplicationID(Aws::String&& value) { SetApplicationID(std::move(value)); return *this;}
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline UpdateApplicationRequest& WithApplicationID(const char* value) { SetApplicationID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Application description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>Application description.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>Application description.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>Application description.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>Application description.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>Application description.</p>
-     */
     inline UpdateApplicationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>Application description.</p>
-     */
     inline UpdateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>Application description.</p>
-     */
     inline UpdateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Application name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Application name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Application name.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Application name.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Application name.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Application name.</p>
-     */
     inline UpdateApplicationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Application name.</p>
-     */
     inline UpdateApplicationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Application name.</p>
-     */
     inline UpdateApplicationRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountID;

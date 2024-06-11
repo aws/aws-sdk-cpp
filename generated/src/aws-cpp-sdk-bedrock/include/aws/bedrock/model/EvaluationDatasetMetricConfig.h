@@ -41,68 +41,31 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The task type you want the model to carry out. </p>
      */
     inline const EvaluationTaskType& GetTaskType() const{ return m_taskType; }
-
-    /**
-     * <p>The task type you want the model to carry out. </p>
-     */
     inline bool TaskTypeHasBeenSet() const { return m_taskTypeHasBeenSet; }
-
-    /**
-     * <p>The task type you want the model to carry out. </p>
-     */
     inline void SetTaskType(const EvaluationTaskType& value) { m_taskTypeHasBeenSet = true; m_taskType = value; }
-
-    /**
-     * <p>The task type you want the model to carry out. </p>
-     */
     inline void SetTaskType(EvaluationTaskType&& value) { m_taskTypeHasBeenSet = true; m_taskType = std::move(value); }
-
-    /**
-     * <p>The task type you want the model to carry out. </p>
-     */
     inline EvaluationDatasetMetricConfig& WithTaskType(const EvaluationTaskType& value) { SetTaskType(value); return *this;}
-
-    /**
-     * <p>The task type you want the model to carry out. </p>
-     */
     inline EvaluationDatasetMetricConfig& WithTaskType(EvaluationTaskType&& value) { SetTaskType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the prompt dataset.</p>
      */
     inline const EvaluationDataset& GetDataset() const{ return m_dataset; }
-
-    /**
-     * <p>Specifies the prompt dataset.</p>
-     */
     inline bool DatasetHasBeenSet() const { return m_datasetHasBeenSet; }
-
-    /**
-     * <p>Specifies the prompt dataset.</p>
-     */
     inline void SetDataset(const EvaluationDataset& value) { m_datasetHasBeenSet = true; m_dataset = value; }
-
-    /**
-     * <p>Specifies the prompt dataset.</p>
-     */
     inline void SetDataset(EvaluationDataset&& value) { m_datasetHasBeenSet = true; m_dataset = std::move(value); }
-
-    /**
-     * <p>Specifies the prompt dataset.</p>
-     */
     inline EvaluationDatasetMetricConfig& WithDataset(const EvaluationDataset& value) { SetDataset(value); return *this;}
-
-    /**
-     * <p>Specifies the prompt dataset.</p>
-     */
     inline EvaluationDatasetMetricConfig& WithDataset(EvaluationDataset&& value) { SetDataset(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The names of the metrics used. For automated model evaluation jobs valid
      * values are <code>"Builtin.Accuracy"</code>, <code>"Builtin.Robustness"</code>,
@@ -111,79 +74,15 @@ namespace Model
      * <code>HumanEvaluationCustomMetric</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricNames() const{ return m_metricNames; }
-
-    /**
-     * <p>The names of the metrics used. For automated model evaluation jobs valid
-     * values are <code>"Builtin.Accuracy"</code>, <code>"Builtin.Robustness"</code>,
-     * and <code>"Builtin.Toxicity"</code>. In human-based model evaluation jobs the
-     * array of strings must match the <code>name</code> parameter specified in
-     * <code>HumanEvaluationCustomMetric</code>. </p>
-     */
     inline bool MetricNamesHasBeenSet() const { return m_metricNamesHasBeenSet; }
-
-    /**
-     * <p>The names of the metrics used. For automated model evaluation jobs valid
-     * values are <code>"Builtin.Accuracy"</code>, <code>"Builtin.Robustness"</code>,
-     * and <code>"Builtin.Toxicity"</code>. In human-based model evaluation jobs the
-     * array of strings must match the <code>name</code> parameter specified in
-     * <code>HumanEvaluationCustomMetric</code>. </p>
-     */
     inline void SetMetricNames(const Aws::Vector<Aws::String>& value) { m_metricNamesHasBeenSet = true; m_metricNames = value; }
-
-    /**
-     * <p>The names of the metrics used. For automated model evaluation jobs valid
-     * values are <code>"Builtin.Accuracy"</code>, <code>"Builtin.Robustness"</code>,
-     * and <code>"Builtin.Toxicity"</code>. In human-based model evaluation jobs the
-     * array of strings must match the <code>name</code> parameter specified in
-     * <code>HumanEvaluationCustomMetric</code>. </p>
-     */
     inline void SetMetricNames(Aws::Vector<Aws::String>&& value) { m_metricNamesHasBeenSet = true; m_metricNames = std::move(value); }
-
-    /**
-     * <p>The names of the metrics used. For automated model evaluation jobs valid
-     * values are <code>"Builtin.Accuracy"</code>, <code>"Builtin.Robustness"</code>,
-     * and <code>"Builtin.Toxicity"</code>. In human-based model evaluation jobs the
-     * array of strings must match the <code>name</code> parameter specified in
-     * <code>HumanEvaluationCustomMetric</code>. </p>
-     */
     inline EvaluationDatasetMetricConfig& WithMetricNames(const Aws::Vector<Aws::String>& value) { SetMetricNames(value); return *this;}
-
-    /**
-     * <p>The names of the metrics used. For automated model evaluation jobs valid
-     * values are <code>"Builtin.Accuracy"</code>, <code>"Builtin.Robustness"</code>,
-     * and <code>"Builtin.Toxicity"</code>. In human-based model evaluation jobs the
-     * array of strings must match the <code>name</code> parameter specified in
-     * <code>HumanEvaluationCustomMetric</code>. </p>
-     */
     inline EvaluationDatasetMetricConfig& WithMetricNames(Aws::Vector<Aws::String>&& value) { SetMetricNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the metrics used. For automated model evaluation jobs valid
-     * values are <code>"Builtin.Accuracy"</code>, <code>"Builtin.Robustness"</code>,
-     * and <code>"Builtin.Toxicity"</code>. In human-based model evaluation jobs the
-     * array of strings must match the <code>name</code> parameter specified in
-     * <code>HumanEvaluationCustomMetric</code>. </p>
-     */
     inline EvaluationDatasetMetricConfig& AddMetricNames(const Aws::String& value) { m_metricNamesHasBeenSet = true; m_metricNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the metrics used. For automated model evaluation jobs valid
-     * values are <code>"Builtin.Accuracy"</code>, <code>"Builtin.Robustness"</code>,
-     * and <code>"Builtin.Toxicity"</code>. In human-based model evaluation jobs the
-     * array of strings must match the <code>name</code> parameter specified in
-     * <code>HumanEvaluationCustomMetric</code>. </p>
-     */
     inline EvaluationDatasetMetricConfig& AddMetricNames(Aws::String&& value) { m_metricNamesHasBeenSet = true; m_metricNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of the metrics used. For automated model evaluation jobs valid
-     * values are <code>"Builtin.Accuracy"</code>, <code>"Builtin.Robustness"</code>,
-     * and <code>"Builtin.Toxicity"</code>. In human-based model evaluation jobs the
-     * array of strings must match the <code>name</code> parameter specified in
-     * <code>HumanEvaluationCustomMetric</code>. </p>
-     */
     inline EvaluationDatasetMetricConfig& AddMetricNames(const char* value) { m_metricNamesHasBeenSet = true; m_metricNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     EvaluationTaskType m_taskType;

@@ -32,87 +32,33 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique name of the domain.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline GetIdentityResolutionJobRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline GetIdentityResolutionJobRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline GetIdentityResolutionJobRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the Identity Resolution Job.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The unique identifier of the Identity Resolution Job.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the Identity Resolution Job.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The unique identifier of the Identity Resolution Job.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the Identity Resolution Job.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the Identity Resolution Job.</p>
-     */
     inline GetIdentityResolutionJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the Identity Resolution Job.</p>
-     */
     inline GetIdentityResolutionJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the Identity Resolution Job.</p>
-     */
     inline GetIdentityResolutionJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

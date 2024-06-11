@@ -41,61 +41,28 @@ namespace Model
     AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The expression that is evaluated for sorting while processing a search
      * request.</p>
      */
     inline const Expression& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>The expression that is evaluated for sorting while processing a search
-     * request.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p>The expression that is evaluated for sorting while processing a search
-     * request.</p>
-     */
     inline void SetOptions(const Expression& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>The expression that is evaluated for sorting while processing a search
-     * request.</p>
-     */
     inline void SetOptions(Expression&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>The expression that is evaluated for sorting while processing a search
-     * request.</p>
-     */
     inline ExpressionStatus& WithOptions(const Expression& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>The expression that is evaluated for sorting while processing a search
-     * request.</p>
-     */
     inline ExpressionStatus& WithOptions(Expression&& value) { SetOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const OptionStatus& GetStatus() const{ return m_status; }
-
-    
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    
     inline ExpressionStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-
-    
     inline ExpressionStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Expression m_options;

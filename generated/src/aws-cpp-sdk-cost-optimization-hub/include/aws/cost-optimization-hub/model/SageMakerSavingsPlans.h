@@ -39,67 +39,29 @@ namespace Model
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The SageMaker Savings Plans configuration used for recommendations.</p>
      */
     inline const SageMakerSavingsPlansConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p>The SageMaker Savings Plans configuration used for recommendations.</p>
-     */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-
-    /**
-     * <p>The SageMaker Savings Plans configuration used for recommendations.</p>
-     */
     inline void SetConfiguration(const SageMakerSavingsPlansConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-
-    /**
-     * <p>The SageMaker Savings Plans configuration used for recommendations.</p>
-     */
     inline void SetConfiguration(SageMakerSavingsPlansConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-
-    /**
-     * <p>The SageMaker Savings Plans configuration used for recommendations.</p>
-     */
     inline SageMakerSavingsPlans& WithConfiguration(const SageMakerSavingsPlansConfiguration& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p>The SageMaker Savings Plans configuration used for recommendations.</p>
-     */
     inline SageMakerSavingsPlans& WithConfiguration(SageMakerSavingsPlansConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Cost impact of the Savings Plans purchase recommendation.</p>
      */
     inline const SavingsPlansCostCalculation& GetCostCalculation() const{ return m_costCalculation; }
-
-    /**
-     * <p>Cost impact of the Savings Plans purchase recommendation.</p>
-     */
     inline bool CostCalculationHasBeenSet() const { return m_costCalculationHasBeenSet; }
-
-    /**
-     * <p>Cost impact of the Savings Plans purchase recommendation.</p>
-     */
     inline void SetCostCalculation(const SavingsPlansCostCalculation& value) { m_costCalculationHasBeenSet = true; m_costCalculation = value; }
-
-    /**
-     * <p>Cost impact of the Savings Plans purchase recommendation.</p>
-     */
     inline void SetCostCalculation(SavingsPlansCostCalculation&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::move(value); }
-
-    /**
-     * <p>Cost impact of the Savings Plans purchase recommendation.</p>
-     */
     inline SageMakerSavingsPlans& WithCostCalculation(const SavingsPlansCostCalculation& value) { SetCostCalculation(value); return *this;}
-
-    /**
-     * <p>Cost impact of the Savings Plans purchase recommendation.</p>
-     */
     inline SageMakerSavingsPlans& WithCostCalculation(SavingsPlansCostCalculation&& value) { SetCostCalculation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SageMakerSavingsPlansConfiguration m_configuration;

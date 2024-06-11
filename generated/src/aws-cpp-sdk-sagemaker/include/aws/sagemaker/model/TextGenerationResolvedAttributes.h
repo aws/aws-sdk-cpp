@@ -38,46 +38,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the base model to fine-tune.</p>
      */
     inline const Aws::String& GetBaseModelName() const{ return m_baseModelName; }
-
-    /**
-     * <p>The name of the base model to fine-tune.</p>
-     */
     inline bool BaseModelNameHasBeenSet() const { return m_baseModelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the base model to fine-tune.</p>
-     */
     inline void SetBaseModelName(const Aws::String& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = value; }
-
-    /**
-     * <p>The name of the base model to fine-tune.</p>
-     */
     inline void SetBaseModelName(Aws::String&& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = std::move(value); }
-
-    /**
-     * <p>The name of the base model to fine-tune.</p>
-     */
     inline void SetBaseModelName(const char* value) { m_baseModelNameHasBeenSet = true; m_baseModelName.assign(value); }
-
-    /**
-     * <p>The name of the base model to fine-tune.</p>
-     */
     inline TextGenerationResolvedAttributes& WithBaseModelName(const Aws::String& value) { SetBaseModelName(value); return *this;}
-
-    /**
-     * <p>The name of the base model to fine-tune.</p>
-     */
     inline TextGenerationResolvedAttributes& WithBaseModelName(Aws::String&& value) { SetBaseModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the base model to fine-tune.</p>
-     */
     inline TextGenerationResolvedAttributes& WithBaseModelName(const char* value) { SetBaseModelName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_baseModelName;

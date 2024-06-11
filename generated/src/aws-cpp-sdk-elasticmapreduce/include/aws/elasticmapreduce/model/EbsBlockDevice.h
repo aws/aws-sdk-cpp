@@ -39,89 +39,33 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
      * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
      * EC2 instance in the cluster.</p>
      */
     inline const VolumeSpecification& GetVolumeSpecification() const{ return m_volumeSpecification; }
-
-    /**
-     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
-     * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
-     * EC2 instance in the cluster.</p>
-     */
     inline bool VolumeSpecificationHasBeenSet() const { return m_volumeSpecificationHasBeenSet; }
-
-    /**
-     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
-     * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
-     * EC2 instance in the cluster.</p>
-     */
     inline void SetVolumeSpecification(const VolumeSpecification& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = value; }
-
-    /**
-     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
-     * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
-     * EC2 instance in the cluster.</p>
-     */
     inline void SetVolumeSpecification(VolumeSpecification&& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = std::move(value); }
-
-    /**
-     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
-     * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
-     * EC2 instance in the cluster.</p>
-     */
     inline EbsBlockDevice& WithVolumeSpecification(const VolumeSpecification& value) { SetVolumeSpecification(value); return *this;}
-
-    /**
-     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
-     * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
-     * EC2 instance in the cluster.</p>
-     */
     inline EbsBlockDevice& WithVolumeSpecification(VolumeSpecification&& value) { SetVolumeSpecification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
      */
     inline const Aws::String& GetDevice() const{ return m_device; }
-
-    /**
-     * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
-     */
     inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
-
-    /**
-     * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
-     */
     inline void SetDevice(const Aws::String& value) { m_deviceHasBeenSet = true; m_device = value; }
-
-    /**
-     * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
-     */
     inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
-
-    /**
-     * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
-     */
     inline void SetDevice(const char* value) { m_deviceHasBeenSet = true; m_device.assign(value); }
-
-    /**
-     * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
-     */
     inline EbsBlockDevice& WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
-
-    /**
-     * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
-     */
     inline EbsBlockDevice& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
-
-    /**
-     * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
-     */
     inline EbsBlockDevice& WithDevice(const char* value) { SetDevice(value); return *this;}
-
+    ///@}
   private:
 
     VolumeSpecification m_volumeSpecification;

@@ -33,53 +33,27 @@ namespace Model
     AWS_TAXSETTINGS_API GetTaxRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>TRN information of the account mentioned in the request. </p>
      */
     inline const TaxRegistration& GetTaxRegistration() const{ return m_taxRegistration; }
-
-    /**
-     * <p>TRN information of the account mentioned in the request. </p>
-     */
     inline void SetTaxRegistration(const TaxRegistration& value) { m_taxRegistration = value; }
-
-    /**
-     * <p>TRN information of the account mentioned in the request. </p>
-     */
     inline void SetTaxRegistration(TaxRegistration&& value) { m_taxRegistration = std::move(value); }
-
-    /**
-     * <p>TRN information of the account mentioned in the request. </p>
-     */
     inline GetTaxRegistrationResult& WithTaxRegistration(const TaxRegistration& value) { SetTaxRegistration(value); return *this;}
-
-    /**
-     * <p>TRN information of the account mentioned in the request. </p>
-     */
     inline GetTaxRegistrationResult& WithTaxRegistration(TaxRegistration&& value) { SetTaxRegistration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTaxRegistrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTaxRegistrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTaxRegistrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TaxRegistration m_taxRegistration;

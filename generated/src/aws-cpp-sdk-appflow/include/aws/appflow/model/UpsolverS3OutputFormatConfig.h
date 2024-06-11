@@ -40,80 +40,38 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3
      * bucket. </p>
      */
     inline const FileType& GetFileType() const{ return m_fileType; }
-
-    /**
-     * <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3
-     * bucket. </p>
-     */
     inline bool FileTypeHasBeenSet() const { return m_fileTypeHasBeenSet; }
-
-    /**
-     * <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3
-     * bucket. </p>
-     */
     inline void SetFileType(const FileType& value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
-
-    /**
-     * <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3
-     * bucket. </p>
-     */
     inline void SetFileType(FileType&& value) { m_fileTypeHasBeenSet = true; m_fileType = std::move(value); }
-
-    /**
-     * <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3
-     * bucket. </p>
-     */
     inline UpsolverS3OutputFormatConfig& WithFileType(const FileType& value) { SetFileType(value); return *this;}
-
-    /**
-     * <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3
-     * bucket. </p>
-     */
     inline UpsolverS3OutputFormatConfig& WithFileType(FileType&& value) { SetFileType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const PrefixConfig& GetPrefixConfig() const{ return m_prefixConfig; }
-
-    
     inline bool PrefixConfigHasBeenSet() const { return m_prefixConfigHasBeenSet; }
-
-    
     inline void SetPrefixConfig(const PrefixConfig& value) { m_prefixConfigHasBeenSet = true; m_prefixConfig = value; }
-
-    
     inline void SetPrefixConfig(PrefixConfig&& value) { m_prefixConfigHasBeenSet = true; m_prefixConfig = std::move(value); }
-
-    
     inline UpsolverS3OutputFormatConfig& WithPrefixConfig(const PrefixConfig& value) { SetPrefixConfig(value); return *this;}
-
-    
     inline UpsolverS3OutputFormatConfig& WithPrefixConfig(PrefixConfig&& value) { SetPrefixConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const AggregationConfig& GetAggregationConfig() const{ return m_aggregationConfig; }
-
-    
     inline bool AggregationConfigHasBeenSet() const { return m_aggregationConfigHasBeenSet; }
-
-    
     inline void SetAggregationConfig(const AggregationConfig& value) { m_aggregationConfigHasBeenSet = true; m_aggregationConfig = value; }
-
-    
     inline void SetAggregationConfig(AggregationConfig&& value) { m_aggregationConfigHasBeenSet = true; m_aggregationConfig = std::move(value); }
-
-    
     inline UpsolverS3OutputFormatConfig& WithAggregationConfig(const AggregationConfig& value) { SetAggregationConfig(value); return *this;}
-
-    
     inline UpsolverS3OutputFormatConfig& WithAggregationConfig(AggregationConfig&& value) { SetAggregationConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FileType m_fileType;

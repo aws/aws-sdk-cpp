@@ -32,87 +32,33 @@ namespace Model
     AWS_DEADLINE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the farm from which to remove the queue.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
-
-    /**
-     * <p>The ID of the farm from which to remove the queue.</p>
-     */
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the farm from which to remove the queue.</p>
-     */
     inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-
-    /**
-     * <p>The ID of the farm from which to remove the queue.</p>
-     */
     inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-
-    /**
-     * <p>The ID of the farm from which to remove the queue.</p>
-     */
     inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-
-    /**
-     * <p>The ID of the farm from which to remove the queue.</p>
-     */
     inline DeleteQueueRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-
-    /**
-     * <p>The ID of the farm from which to remove the queue.</p>
-     */
     inline DeleteQueueRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the farm from which to remove the queue.</p>
-     */
     inline DeleteQueueRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The queue ID of the queue to delete.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
-
-    /**
-     * <p>The queue ID of the queue to delete.</p>
-     */
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-
-    /**
-     * <p>The queue ID of the queue to delete.</p>
-     */
     inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-
-    /**
-     * <p>The queue ID of the queue to delete.</p>
-     */
     inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-
-    /**
-     * <p>The queue ID of the queue to delete.</p>
-     */
     inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-
-    /**
-     * <p>The queue ID of the queue to delete.</p>
-     */
     inline DeleteQueueRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-
-    /**
-     * <p>The queue ID of the queue to delete.</p>
-     */
     inline DeleteQueueRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-
-    /**
-     * <p>The queue ID of the queue to delete.</p>
-     */
     inline DeleteQueueRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_farmId;

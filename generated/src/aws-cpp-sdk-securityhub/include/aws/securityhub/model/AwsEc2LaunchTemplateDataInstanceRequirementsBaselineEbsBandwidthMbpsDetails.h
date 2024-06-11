@@ -39,55 +39,27 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The maximum baseline bandwidth, in Mbps. If this parameter is omitted,
      * there's no maximum limit. </p>
      */
     inline int GetMax() const{ return m_max; }
-
-    /**
-     * <p> The maximum baseline bandwidth, in Mbps. If this parameter is omitted,
-     * there's no maximum limit. </p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p> The maximum baseline bandwidth, in Mbps. If this parameter is omitted,
-     * there's no maximum limit. </p>
-     */
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p> The maximum baseline bandwidth, in Mbps. If this parameter is omitted,
-     * there's no maximum limit. </p>
-     */
     inline AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails& WithMax(int value) { SetMax(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The minimum baseline bandwidth, in Mbps. If this parameter is omitted,
      * there's no minimum limit. </p>
      */
     inline int GetMin() const{ return m_min; }
-
-    /**
-     * <p> The minimum baseline bandwidth, in Mbps. If this parameter is omitted,
-     * there's no minimum limit. </p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p> The minimum baseline bandwidth, in Mbps. If this parameter is omitted,
-     * there's no minimum limit. </p>
-     */
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p> The minimum baseline bandwidth, in Mbps. If this parameter is omitted,
-     * there's no minimum limit. </p>
-     */
     inline AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails& WithMin(int value) { SetMin(value); return *this;}
-
+    ///@}
   private:
 
     int m_max;

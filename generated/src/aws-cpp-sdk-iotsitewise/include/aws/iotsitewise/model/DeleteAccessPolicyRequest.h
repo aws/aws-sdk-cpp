@@ -39,103 +39,35 @@ namespace Model
     AWS_IOTSITEWISE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ID of the access policy to be deleted.</p>
      */
     inline const Aws::String& GetAccessPolicyId() const{ return m_accessPolicyId; }
-
-    /**
-     * <p>The ID of the access policy to be deleted.</p>
-     */
     inline bool AccessPolicyIdHasBeenSet() const { return m_accessPolicyIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the access policy to be deleted.</p>
-     */
     inline void SetAccessPolicyId(const Aws::String& value) { m_accessPolicyIdHasBeenSet = true; m_accessPolicyId = value; }
-
-    /**
-     * <p>The ID of the access policy to be deleted.</p>
-     */
     inline void SetAccessPolicyId(Aws::String&& value) { m_accessPolicyIdHasBeenSet = true; m_accessPolicyId = std::move(value); }
-
-    /**
-     * <p>The ID of the access policy to be deleted.</p>
-     */
     inline void SetAccessPolicyId(const char* value) { m_accessPolicyIdHasBeenSet = true; m_accessPolicyId.assign(value); }
-
-    /**
-     * <p>The ID of the access policy to be deleted.</p>
-     */
     inline DeleteAccessPolicyRequest& WithAccessPolicyId(const Aws::String& value) { SetAccessPolicyId(value); return *this;}
-
-    /**
-     * <p>The ID of the access policy to be deleted.</p>
-     */
     inline DeleteAccessPolicyRequest& WithAccessPolicyId(Aws::String&& value) { SetAccessPolicyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the access policy to be deleted.</p>
-     */
     inline DeleteAccessPolicyRequest& WithAccessPolicyId(const char* value) { SetAccessPolicyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique case-sensitive identifier that you can provide to ensure the
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline DeleteAccessPolicyRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline DeleteAccessPolicyRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline DeleteAccessPolicyRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accessPolicyId;

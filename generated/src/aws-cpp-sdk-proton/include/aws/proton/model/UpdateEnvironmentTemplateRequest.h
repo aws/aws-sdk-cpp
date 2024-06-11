@@ -34,136 +34,48 @@ namespace Model
     AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A description of the environment template update.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the environment template update.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the environment template update.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the environment template update.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the environment template update.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the environment template update.</p>
-     */
     inline UpdateEnvironmentTemplateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the environment template update.</p>
-     */
     inline UpdateEnvironmentTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the environment template update.</p>
-     */
     inline UpdateEnvironmentTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the environment template to update as displayed in the developer
      * interface.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-
-    /**
-     * <p>The name of the environment template to update as displayed in the developer
-     * interface.</p>
-     */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-
-    /**
-     * <p>The name of the environment template to update as displayed in the developer
-     * interface.</p>
-     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-
-    /**
-     * <p>The name of the environment template to update as displayed in the developer
-     * interface.</p>
-     */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-
-    /**
-     * <p>The name of the environment template to update as displayed in the developer
-     * interface.</p>
-     */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-
-    /**
-     * <p>The name of the environment template to update as displayed in the developer
-     * interface.</p>
-     */
     inline UpdateEnvironmentTemplateRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-
-    /**
-     * <p>The name of the environment template to update as displayed in the developer
-     * interface.</p>
-     */
     inline UpdateEnvironmentTemplateRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the environment template to update as displayed in the developer
-     * interface.</p>
-     */
     inline UpdateEnvironmentTemplateRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the environment template to update.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the environment template to update.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the environment template to update.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the environment template to update.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the environment template to update.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the environment template to update.</p>
-     */
     inline UpdateEnvironmentTemplateRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the environment template to update.</p>
-     */
     inline UpdateEnvironmentTemplateRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the environment template to update.</p>
-     */
     inline UpdateEnvironmentTemplateRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_description;

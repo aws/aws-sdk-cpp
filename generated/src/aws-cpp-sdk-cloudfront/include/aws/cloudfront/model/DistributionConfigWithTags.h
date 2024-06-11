@@ -39,67 +39,29 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A distribution configuration.</p>
      */
     inline const DistributionConfig& GetDistributionConfig() const{ return m_distributionConfig; }
-
-    /**
-     * <p>A distribution configuration.</p>
-     */
     inline bool DistributionConfigHasBeenSet() const { return m_distributionConfigHasBeenSet; }
-
-    /**
-     * <p>A distribution configuration.</p>
-     */
     inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
-
-    /**
-     * <p>A distribution configuration.</p>
-     */
     inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = std::move(value); }
-
-    /**
-     * <p>A distribution configuration.</p>
-     */
     inline DistributionConfigWithTags& WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
-
-    /**
-     * <p>A distribution configuration.</p>
-     */
     inline DistributionConfigWithTags& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
      */
     inline const Tags& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline void SetTags(const Tags& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline void SetTags(Tags&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline DistributionConfigWithTags& WithTags(const Tags& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline DistributionConfigWithTags& WithTags(Tags&& value) { SetTags(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DistributionConfig m_distributionConfig;

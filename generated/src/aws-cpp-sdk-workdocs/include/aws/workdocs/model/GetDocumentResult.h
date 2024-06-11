@@ -34,114 +34,45 @@ namespace Model
     AWS_WORKDOCS_API GetDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The metadata details of the document.</p>
      */
     inline const DocumentMetadata& GetMetadata() const{ return m_metadata; }
-
-    /**
-     * <p>The metadata details of the document.</p>
-     */
     inline void SetMetadata(const DocumentMetadata& value) { m_metadata = value; }
-
-    /**
-     * <p>The metadata details of the document.</p>
-     */
     inline void SetMetadata(DocumentMetadata&& value) { m_metadata = std::move(value); }
-
-    /**
-     * <p>The metadata details of the document.</p>
-     */
     inline GetDocumentResult& WithMetadata(const DocumentMetadata& value) { SetMetadata(value); return *this;}
-
-    /**
-     * <p>The metadata details of the document.</p>
-     */
     inline GetDocumentResult& WithMetadata(DocumentMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The custom metadata on the document.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomMetadata() const{ return m_customMetadata; }
-
-    /**
-     * <p>The custom metadata on the document.</p>
-     */
     inline void SetCustomMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_customMetadata = value; }
-
-    /**
-     * <p>The custom metadata on the document.</p>
-     */
     inline void SetCustomMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_customMetadata = std::move(value); }
-
-    /**
-     * <p>The custom metadata on the document.</p>
-     */
     inline GetDocumentResult& WithCustomMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomMetadata(value); return *this;}
-
-    /**
-     * <p>The custom metadata on the document.</p>
-     */
     inline GetDocumentResult& WithCustomMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomMetadata(std::move(value)); return *this;}
-
-    /**
-     * <p>The custom metadata on the document.</p>
-     */
     inline GetDocumentResult& AddCustomMetadata(const Aws::String& key, const Aws::String& value) { m_customMetadata.emplace(key, value); return *this; }
-
-    /**
-     * <p>The custom metadata on the document.</p>
-     */
     inline GetDocumentResult& AddCustomMetadata(Aws::String&& key, const Aws::String& value) { m_customMetadata.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The custom metadata on the document.</p>
-     */
     inline GetDocumentResult& AddCustomMetadata(const Aws::String& key, Aws::String&& value) { m_customMetadata.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The custom metadata on the document.</p>
-     */
     inline GetDocumentResult& AddCustomMetadata(Aws::String&& key, Aws::String&& value) { m_customMetadata.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The custom metadata on the document.</p>
-     */
     inline GetDocumentResult& AddCustomMetadata(const char* key, Aws::String&& value) { m_customMetadata.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The custom metadata on the document.</p>
-     */
     inline GetDocumentResult& AddCustomMetadata(Aws::String&& key, const char* value) { m_customMetadata.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The custom metadata on the document.</p>
-     */
     inline GetDocumentResult& AddCustomMetadata(const char* key, const char* value) { m_customMetadata.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDocumentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDocumentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDocumentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DocumentMetadata m_metadata;

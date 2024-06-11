@@ -38,527 +38,216 @@ namespace Model
     AWS_APPCONFIG_API StartDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the application that was deployed.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The ID of the application that was deployed.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
-
-    /**
-     * <p>The ID of the application that was deployed.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
-
-    /**
-     * <p>The ID of the application that was deployed.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
-
-    /**
-     * <p>The ID of the application that was deployed.</p>
-     */
     inline StartDeploymentResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The ID of the application that was deployed.</p>
-     */
     inline StartDeploymentResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the application that was deployed.</p>
-     */
     inline StartDeploymentResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the environment that was deployed.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-
-    /**
-     * <p>The ID of the environment that was deployed.</p>
-     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentId = value; }
-
-    /**
-     * <p>The ID of the environment that was deployed.</p>
-     */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the environment that was deployed.</p>
-     */
     inline void SetEnvironmentId(const char* value) { m_environmentId.assign(value); }
-
-    /**
-     * <p>The ID of the environment that was deployed.</p>
-     */
     inline StartDeploymentResult& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the environment that was deployed.</p>
-     */
     inline StartDeploymentResult& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the environment that was deployed.</p>
-     */
     inline StartDeploymentResult& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the deployment strategy that was deployed.</p>
      */
     inline const Aws::String& GetDeploymentStrategyId() const{ return m_deploymentStrategyId; }
-
-    /**
-     * <p>The ID of the deployment strategy that was deployed.</p>
-     */
     inline void SetDeploymentStrategyId(const Aws::String& value) { m_deploymentStrategyId = value; }
-
-    /**
-     * <p>The ID of the deployment strategy that was deployed.</p>
-     */
     inline void SetDeploymentStrategyId(Aws::String&& value) { m_deploymentStrategyId = std::move(value); }
-
-    /**
-     * <p>The ID of the deployment strategy that was deployed.</p>
-     */
     inline void SetDeploymentStrategyId(const char* value) { m_deploymentStrategyId.assign(value); }
-
-    /**
-     * <p>The ID of the deployment strategy that was deployed.</p>
-     */
     inline StartDeploymentResult& WithDeploymentStrategyId(const Aws::String& value) { SetDeploymentStrategyId(value); return *this;}
-
-    /**
-     * <p>The ID of the deployment strategy that was deployed.</p>
-     */
     inline StartDeploymentResult& WithDeploymentStrategyId(Aws::String&& value) { SetDeploymentStrategyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the deployment strategy that was deployed.</p>
-     */
     inline StartDeploymentResult& WithDeploymentStrategyId(const char* value) { SetDeploymentStrategyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the configuration profile that was deployed.</p>
      */
     inline const Aws::String& GetConfigurationProfileId() const{ return m_configurationProfileId; }
-
-    /**
-     * <p>The ID of the configuration profile that was deployed.</p>
-     */
     inline void SetConfigurationProfileId(const Aws::String& value) { m_configurationProfileId = value; }
-
-    /**
-     * <p>The ID of the configuration profile that was deployed.</p>
-     */
     inline void SetConfigurationProfileId(Aws::String&& value) { m_configurationProfileId = std::move(value); }
-
-    /**
-     * <p>The ID of the configuration profile that was deployed.</p>
-     */
     inline void SetConfigurationProfileId(const char* value) { m_configurationProfileId.assign(value); }
-
-    /**
-     * <p>The ID of the configuration profile that was deployed.</p>
-     */
     inline StartDeploymentResult& WithConfigurationProfileId(const Aws::String& value) { SetConfigurationProfileId(value); return *this;}
-
-    /**
-     * <p>The ID of the configuration profile that was deployed.</p>
-     */
     inline StartDeploymentResult& WithConfigurationProfileId(Aws::String&& value) { SetConfigurationProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the configuration profile that was deployed.</p>
-     */
     inline StartDeploymentResult& WithConfigurationProfileId(const char* value) { SetConfigurationProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sequence number of the deployment.</p>
      */
     inline int GetDeploymentNumber() const{ return m_deploymentNumber; }
-
-    /**
-     * <p>The sequence number of the deployment.</p>
-     */
     inline void SetDeploymentNumber(int value) { m_deploymentNumber = value; }
-
-    /**
-     * <p>The sequence number of the deployment.</p>
-     */
     inline StartDeploymentResult& WithDeploymentNumber(int value) { SetDeploymentNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the configuration.</p>
      */
     inline const Aws::String& GetConfigurationName() const{ return m_configurationName; }
-
-    /**
-     * <p>The name of the configuration.</p>
-     */
     inline void SetConfigurationName(const Aws::String& value) { m_configurationName = value; }
-
-    /**
-     * <p>The name of the configuration.</p>
-     */
     inline void SetConfigurationName(Aws::String&& value) { m_configurationName = std::move(value); }
-
-    /**
-     * <p>The name of the configuration.</p>
-     */
     inline void SetConfigurationName(const char* value) { m_configurationName.assign(value); }
-
-    /**
-     * <p>The name of the configuration.</p>
-     */
     inline StartDeploymentResult& WithConfigurationName(const Aws::String& value) { SetConfigurationName(value); return *this;}
-
-    /**
-     * <p>The name of the configuration.</p>
-     */
     inline StartDeploymentResult& WithConfigurationName(Aws::String&& value) { SetConfigurationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the configuration.</p>
-     */
     inline StartDeploymentResult& WithConfigurationName(const char* value) { SetConfigurationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the source location of the configuration.</p>
      */
     inline const Aws::String& GetConfigurationLocationUri() const{ return m_configurationLocationUri; }
-
-    /**
-     * <p>Information about the source location of the configuration.</p>
-     */
     inline void SetConfigurationLocationUri(const Aws::String& value) { m_configurationLocationUri = value; }
-
-    /**
-     * <p>Information about the source location of the configuration.</p>
-     */
     inline void SetConfigurationLocationUri(Aws::String&& value) { m_configurationLocationUri = std::move(value); }
-
-    /**
-     * <p>Information about the source location of the configuration.</p>
-     */
     inline void SetConfigurationLocationUri(const char* value) { m_configurationLocationUri.assign(value); }
-
-    /**
-     * <p>Information about the source location of the configuration.</p>
-     */
     inline StartDeploymentResult& WithConfigurationLocationUri(const Aws::String& value) { SetConfigurationLocationUri(value); return *this;}
-
-    /**
-     * <p>Information about the source location of the configuration.</p>
-     */
     inline StartDeploymentResult& WithConfigurationLocationUri(Aws::String&& value) { SetConfigurationLocationUri(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the source location of the configuration.</p>
-     */
     inline StartDeploymentResult& WithConfigurationLocationUri(const char* value) { SetConfigurationLocationUri(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration version that was deployed.</p>
      */
     inline const Aws::String& GetConfigurationVersion() const{ return m_configurationVersion; }
-
-    /**
-     * <p>The configuration version that was deployed.</p>
-     */
     inline void SetConfigurationVersion(const Aws::String& value) { m_configurationVersion = value; }
-
-    /**
-     * <p>The configuration version that was deployed.</p>
-     */
     inline void SetConfigurationVersion(Aws::String&& value) { m_configurationVersion = std::move(value); }
-
-    /**
-     * <p>The configuration version that was deployed.</p>
-     */
     inline void SetConfigurationVersion(const char* value) { m_configurationVersion.assign(value); }
-
-    /**
-     * <p>The configuration version that was deployed.</p>
-     */
     inline StartDeploymentResult& WithConfigurationVersion(const Aws::String& value) { SetConfigurationVersion(value); return *this;}
-
-    /**
-     * <p>The configuration version that was deployed.</p>
-     */
     inline StartDeploymentResult& WithConfigurationVersion(Aws::String&& value) { SetConfigurationVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration version that was deployed.</p>
-     */
     inline StartDeploymentResult& WithConfigurationVersion(const char* value) { SetConfigurationVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the deployment.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the deployment.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * <p>The description of the deployment.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>The description of the deployment.</p>
-     */
     inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * <p>The description of the deployment.</p>
-     */
     inline StartDeploymentResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the deployment.</p>
-     */
     inline StartDeploymentResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the deployment.</p>
-     */
     inline StartDeploymentResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Total amount of time the deployment lasted.</p>
      */
     inline int GetDeploymentDurationInMinutes() const{ return m_deploymentDurationInMinutes; }
-
-    /**
-     * <p>Total amount of time the deployment lasted.</p>
-     */
     inline void SetDeploymentDurationInMinutes(int value) { m_deploymentDurationInMinutes = value; }
-
-    /**
-     * <p>Total amount of time the deployment lasted.</p>
-     */
     inline StartDeploymentResult& WithDeploymentDurationInMinutes(int value) { SetDeploymentDurationInMinutes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The algorithm used to define how percentage grew over time.</p>
      */
     inline const GrowthType& GetGrowthType() const{ return m_growthType; }
-
-    /**
-     * <p>The algorithm used to define how percentage grew over time.</p>
-     */
     inline void SetGrowthType(const GrowthType& value) { m_growthType = value; }
-
-    /**
-     * <p>The algorithm used to define how percentage grew over time.</p>
-     */
     inline void SetGrowthType(GrowthType&& value) { m_growthType = std::move(value); }
-
-    /**
-     * <p>The algorithm used to define how percentage grew over time.</p>
-     */
     inline StartDeploymentResult& WithGrowthType(const GrowthType& value) { SetGrowthType(value); return *this;}
-
-    /**
-     * <p>The algorithm used to define how percentage grew over time.</p>
-     */
     inline StartDeploymentResult& WithGrowthType(GrowthType&& value) { SetGrowthType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of targets to receive a deployed configuration during each
      * interval.</p>
      */
     inline double GetGrowthFactor() const{ return m_growthFactor; }
-
-    /**
-     * <p>The percentage of targets to receive a deployed configuration during each
-     * interval.</p>
-     */
     inline void SetGrowthFactor(double value) { m_growthFactor = value; }
-
-    /**
-     * <p>The percentage of targets to receive a deployed configuration during each
-     * interval.</p>
-     */
     inline StartDeploymentResult& WithGrowthFactor(double value) { SetGrowthFactor(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of time that AppConfig monitored for alarms before considering the
      * deployment to be complete and no longer eligible for automatic rollback.</p>
      */
     inline int GetFinalBakeTimeInMinutes() const{ return m_finalBakeTimeInMinutes; }
-
-    /**
-     * <p>The amount of time that AppConfig monitored for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic rollback.</p>
-     */
     inline void SetFinalBakeTimeInMinutes(int value) { m_finalBakeTimeInMinutes = value; }
-
-    /**
-     * <p>The amount of time that AppConfig monitored for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic rollback.</p>
-     */
     inline StartDeploymentResult& WithFinalBakeTimeInMinutes(int value) { SetFinalBakeTimeInMinutes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the deployment.</p>
      */
     inline const DeploymentState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the deployment.</p>
-     */
     inline void SetState(const DeploymentState& value) { m_state = value; }
-
-    /**
-     * <p>The state of the deployment.</p>
-     */
     inline void SetState(DeploymentState&& value) { m_state = std::move(value); }
-
-    /**
-     * <p>The state of the deployment.</p>
-     */
     inline StartDeploymentResult& WithState(const DeploymentState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the deployment.</p>
-     */
     inline StartDeploymentResult& WithState(DeploymentState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list containing all events related to a deployment. The most recent events
      * are displayed first.</p>
      */
     inline const Aws::Vector<DeploymentEvent>& GetEventLog() const{ return m_eventLog; }
-
-    /**
-     * <p>A list containing all events related to a deployment. The most recent events
-     * are displayed first.</p>
-     */
     inline void SetEventLog(const Aws::Vector<DeploymentEvent>& value) { m_eventLog = value; }
-
-    /**
-     * <p>A list containing all events related to a deployment. The most recent events
-     * are displayed first.</p>
-     */
     inline void SetEventLog(Aws::Vector<DeploymentEvent>&& value) { m_eventLog = std::move(value); }
-
-    /**
-     * <p>A list containing all events related to a deployment. The most recent events
-     * are displayed first.</p>
-     */
     inline StartDeploymentResult& WithEventLog(const Aws::Vector<DeploymentEvent>& value) { SetEventLog(value); return *this;}
-
-    /**
-     * <p>A list containing all events related to a deployment. The most recent events
-     * are displayed first.</p>
-     */
     inline StartDeploymentResult& WithEventLog(Aws::Vector<DeploymentEvent>&& value) { SetEventLog(std::move(value)); return *this;}
-
-    /**
-     * <p>A list containing all events related to a deployment. The most recent events
-     * are displayed first.</p>
-     */
     inline StartDeploymentResult& AddEventLog(const DeploymentEvent& value) { m_eventLog.push_back(value); return *this; }
-
-    /**
-     * <p>A list containing all events related to a deployment. The most recent events
-     * are displayed first.</p>
-     */
     inline StartDeploymentResult& AddEventLog(DeploymentEvent&& value) { m_eventLog.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of targets for which the deployment is available.</p>
      */
     inline double GetPercentageComplete() const{ return m_percentageComplete; }
-
-    /**
-     * <p>The percentage of targets for which the deployment is available.</p>
-     */
     inline void SetPercentageComplete(double value) { m_percentageComplete = value; }
-
-    /**
-     * <p>The percentage of targets for which the deployment is available.</p>
-     */
     inline StartDeploymentResult& WithPercentageComplete(double value) { SetPercentageComplete(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time the deployment started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
-
-    /**
-     * <p>The time the deployment started.</p>
-     */
     inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAt = value; }
-
-    /**
-     * <p>The time the deployment started.</p>
-     */
     inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = std::move(value); }
-
-    /**
-     * <p>The time the deployment started.</p>
-     */
     inline StartDeploymentResult& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-
-    /**
-     * <p>The time the deployment started.</p>
-     */
     inline StartDeploymentResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time the deployment completed. </p>
      */
     inline const Aws::Utils::DateTime& GetCompletedAt() const{ return m_completedAt; }
-
-    /**
-     * <p>The time the deployment completed. </p>
-     */
     inline void SetCompletedAt(const Aws::Utils::DateTime& value) { m_completedAt = value; }
-
-    /**
-     * <p>The time the deployment completed. </p>
-     */
     inline void SetCompletedAt(Aws::Utils::DateTime&& value) { m_completedAt = std::move(value); }
-
-    /**
-     * <p>The time the deployment completed. </p>
-     */
     inline StartDeploymentResult& WithCompletedAt(const Aws::Utils::DateTime& value) { SetCompletedAt(value); return *this;}
-
-    /**
-     * <p>The time the deployment completed. </p>
-     */
     inline StartDeploymentResult& WithCompletedAt(Aws::Utils::DateTime&& value) { SetCompletedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of extensions that were processed as part of the deployment. The
      * extensions that were previously associated to the configuration profile,
@@ -566,56 +255,15 @@ namespace Model
      * called.</p>
      */
     inline const Aws::Vector<AppliedExtension>& GetAppliedExtensions() const{ return m_appliedExtensions; }
-
-    /**
-     * <p>A list of extensions that were processed as part of the deployment. The
-     * extensions that were previously associated to the configuration profile,
-     * environment, or the application when <code>StartDeployment</code> was
-     * called.</p>
-     */
     inline void SetAppliedExtensions(const Aws::Vector<AppliedExtension>& value) { m_appliedExtensions = value; }
-
-    /**
-     * <p>A list of extensions that were processed as part of the deployment. The
-     * extensions that were previously associated to the configuration profile,
-     * environment, or the application when <code>StartDeployment</code> was
-     * called.</p>
-     */
     inline void SetAppliedExtensions(Aws::Vector<AppliedExtension>&& value) { m_appliedExtensions = std::move(value); }
-
-    /**
-     * <p>A list of extensions that were processed as part of the deployment. The
-     * extensions that were previously associated to the configuration profile,
-     * environment, or the application when <code>StartDeployment</code> was
-     * called.</p>
-     */
     inline StartDeploymentResult& WithAppliedExtensions(const Aws::Vector<AppliedExtension>& value) { SetAppliedExtensions(value); return *this;}
-
-    /**
-     * <p>A list of extensions that were processed as part of the deployment. The
-     * extensions that were previously associated to the configuration profile,
-     * environment, or the application when <code>StartDeployment</code> was
-     * called.</p>
-     */
     inline StartDeploymentResult& WithAppliedExtensions(Aws::Vector<AppliedExtension>&& value) { SetAppliedExtensions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of extensions that were processed as part of the deployment. The
-     * extensions that were previously associated to the configuration profile,
-     * environment, or the application when <code>StartDeployment</code> was
-     * called.</p>
-     */
     inline StartDeploymentResult& AddAppliedExtensions(const AppliedExtension& value) { m_appliedExtensions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of extensions that were processed as part of the deployment. The
-     * extensions that were previously associated to the configuration profile,
-     * environment, or the application when <code>StartDeployment</code> was
-     * called.</p>
-     */
     inline StartDeploymentResult& AddAppliedExtensions(AppliedExtension&& value) { m_appliedExtensions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
      * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
@@ -624,162 +272,51 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
-     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
-     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
-     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
-     * </p>
-     */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
-     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
-     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
-     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
-     * </p>
-     */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
-     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
-     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
-     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
-     * </p>
-     */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
-     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
-     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
-     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
-     * </p>
-     */
     inline StartDeploymentResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
-     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
-     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
-     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
-     * </p>
-     */
     inline StartDeploymentResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
-     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
-     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
-     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
-     * </p>
-     */
     inline StartDeploymentResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
      * provided when the resource was created or updated.</p>
      */
     inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
-
-    /**
-     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
-     * provided when the resource was created or updated.</p>
-     */
     inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifier = value; }
-
-    /**
-     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
-     * provided when the resource was created or updated.</p>
-     */
     inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifier = std::move(value); }
-
-    /**
-     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
-     * provided when the resource was created or updated.</p>
-     */
     inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifier.assign(value); }
-
-    /**
-     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
-     * provided when the resource was created or updated.</p>
-     */
     inline StartDeploymentResult& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
-
-    /**
-     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
-     * provided when the resource was created or updated.</p>
-     */
     inline StartDeploymentResult& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
-     * provided when the resource was created or updated.</p>
-     */
     inline StartDeploymentResult& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A user-defined label for an AppConfig hosted configuration version.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabel = value; }
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline void SetVersionLabel(Aws::String&& value) { m_versionLabel = std::move(value); }
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline void SetVersionLabel(const char* value) { m_versionLabel.assign(value); }
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline StartDeploymentResult& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline StartDeploymentResult& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
-
-    /**
-     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
-     */
     inline StartDeploymentResult& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

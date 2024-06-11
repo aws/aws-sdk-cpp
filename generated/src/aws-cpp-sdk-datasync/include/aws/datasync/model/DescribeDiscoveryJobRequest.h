@@ -34,54 +34,20 @@ namespace Model
     AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
      * information about.</p>
      */
     inline const Aws::String& GetDiscoveryJobArn() const{ return m_discoveryJobArn; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * information about.</p>
-     */
     inline bool DiscoveryJobArnHasBeenSet() const { return m_discoveryJobArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * information about.</p>
-     */
     inline void SetDiscoveryJobArn(const Aws::String& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = value; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * information about.</p>
-     */
     inline void SetDiscoveryJobArn(Aws::String&& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * information about.</p>
-     */
     inline void SetDiscoveryJobArn(const char* value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn.assign(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * information about.</p>
-     */
     inline DescribeDiscoveryJobRequest& WithDiscoveryJobArn(const Aws::String& value) { SetDiscoveryJobArn(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * information about.</p>
-     */
     inline DescribeDiscoveryJobRequest& WithDiscoveryJobArn(Aws::String&& value) { SetDiscoveryJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * information about.</p>
-     */
     inline DescribeDiscoveryJobRequest& WithDiscoveryJobArn(const char* value) { SetDiscoveryJobArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_discoveryJobArn;

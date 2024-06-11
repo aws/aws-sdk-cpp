@@ -35,55 +35,27 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The creation time of the export task, expressed as the number of milliseconds
      * after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>The creation time of the export task, expressed as the number of milliseconds
-     * after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-     */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>The creation time of the export task, expressed as the number of milliseconds
-     * after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-     */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>The creation time of the export task, expressed as the number of milliseconds
-     * after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-     */
     inline ExportTaskExecutionInfo& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The completion time of the export task, expressed as the number of
      * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetCompletionTime() const{ return m_completionTime; }
-
-    /**
-     * <p>The completion time of the export task, expressed as the number of
-     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-     */
     inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
-
-    /**
-     * <p>The completion time of the export task, expressed as the number of
-     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-     */
     inline void SetCompletionTime(long long value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
-
-    /**
-     * <p>The completion time of the export task, expressed as the number of
-     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-     */
     inline ExportTaskExecutionInfo& WithCompletionTime(long long value) { SetCompletionTime(value); return *this;}
-
+    ///@}
   private:
 
     long long m_creationTime;

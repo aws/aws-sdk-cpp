@@ -34,83 +34,32 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The collection of Amazon Web Services resources used to create a monthly
      * DevOps Guru cost estimate.</p>
      */
     inline const CostEstimationResourceCollectionFilter& GetResourceCollection() const{ return m_resourceCollection; }
-
-    /**
-     * <p>The collection of Amazon Web Services resources used to create a monthly
-     * DevOps Guru cost estimate.</p>
-     */
     inline bool ResourceCollectionHasBeenSet() const { return m_resourceCollectionHasBeenSet; }
-
-    /**
-     * <p>The collection of Amazon Web Services resources used to create a monthly
-     * DevOps Guru cost estimate.</p>
-     */
     inline void SetResourceCollection(const CostEstimationResourceCollectionFilter& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = value; }
-
-    /**
-     * <p>The collection of Amazon Web Services resources used to create a monthly
-     * DevOps Guru cost estimate.</p>
-     */
     inline void SetResourceCollection(CostEstimationResourceCollectionFilter&& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = std::move(value); }
-
-    /**
-     * <p>The collection of Amazon Web Services resources used to create a monthly
-     * DevOps Guru cost estimate.</p>
-     */
     inline StartCostEstimationRequest& WithResourceCollection(const CostEstimationResourceCollectionFilter& value) { SetResourceCollection(value); return *this;}
-
-    /**
-     * <p>The collection of Amazon Web Services resources used to create a monthly
-     * DevOps Guru cost estimate.</p>
-     */
     inline StartCostEstimationRequest& WithResourceCollection(CostEstimationResourceCollectionFilter&& value) { SetResourceCollection(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The idempotency token used to identify each cost estimate request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The idempotency token used to identify each cost estimate request.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>The idempotency token used to identify each cost estimate request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>The idempotency token used to identify each cost estimate request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>The idempotency token used to identify each cost estimate request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>The idempotency token used to identify each cost estimate request.</p>
-     */
     inline StartCostEstimationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The idempotency token used to identify each cost estimate request.</p>
-     */
     inline StartCostEstimationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The idempotency token used to identify each cost estimate request.</p>
-     */
     inline StartCostEstimationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     CostEstimationResourceCollectionFilter m_resourceCollection;

@@ -36,30 +36,16 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes whether snapshots are enabled for a Managed Service for Apache
      * Flink application.</p>
      */
     inline bool GetSnapshotsEnabled() const{ return m_snapshotsEnabled; }
-
-    /**
-     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
-     * Flink application.</p>
-     */
     inline bool SnapshotsEnabledHasBeenSet() const { return m_snapshotsEnabledHasBeenSet; }
-
-    /**
-     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
-     * Flink application.</p>
-     */
     inline void SetSnapshotsEnabled(bool value) { m_snapshotsEnabledHasBeenSet = true; m_snapshotsEnabled = value; }
-
-    /**
-     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
-     * Flink application.</p>
-     */
     inline ApplicationSnapshotConfigurationDescription& WithSnapshotsEnabled(bool value) { SetSnapshotsEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_snapshotsEnabled;

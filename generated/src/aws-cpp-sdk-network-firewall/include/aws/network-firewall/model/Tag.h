@@ -42,119 +42,37 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The part of the key:value pair that defines a tag. You can use a tag key to
      * describe a category of information, such as "customer." Tag keys are
      * case-sensitive.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag key to
-     * describe a category of information, such as "customer." Tag keys are
-     * case-sensitive.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag key to
-     * describe a category of information, such as "customer." Tag keys are
-     * case-sensitive.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag key to
-     * describe a category of information, such as "customer." Tag keys are
-     * case-sensitive.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag key to
-     * describe a category of information, such as "customer." Tag keys are
-     * case-sensitive.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag key to
-     * describe a category of information, such as "customer." Tag keys are
-     * case-sensitive.</p>
-     */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag key to
-     * describe a category of information, such as "customer." Tag keys are
-     * case-sensitive.</p>
-     */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag key to
-     * describe a category of information, such as "customer." Tag keys are
-     * case-sensitive.</p>
-     */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The part of the key:value pair that defines a tag. You can use a tag value to
      * describe a specific value within a category, such as "companyA" or "companyB."
      * Tag values are case-sensitive.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag value to
-     * describe a specific value within a category, such as "companyA" or "companyB."
-     * Tag values are case-sensitive.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag value to
-     * describe a specific value within a category, such as "companyA" or "companyB."
-     * Tag values are case-sensitive.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag value to
-     * describe a specific value within a category, such as "companyA" or "companyB."
-     * Tag values are case-sensitive.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag value to
-     * describe a specific value within a category, such as "companyA" or "companyB."
-     * Tag values are case-sensitive.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag value to
-     * describe a specific value within a category, such as "companyA" or "companyB."
-     * Tag values are case-sensitive.</p>
-     */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag value to
-     * describe a specific value within a category, such as "companyA" or "companyB."
-     * Tag values are case-sensitive.</p>
-     */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The part of the key:value pair that defines a tag. You can use a tag value to
-     * describe a specific value within a category, such as "companyA" or "companyB."
-     * Tag values are case-sensitive.</p>
-     */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

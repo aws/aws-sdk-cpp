@@ -40,6 +40,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name or the unique stack ID that's associated with the stack, which
      * aren't always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
@@ -48,119 +49,29 @@ namespace Model
      * is no default value.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
-
-    /**
-     * <p>The name or the unique stack ID that's associated with the stack, which
-     * aren't always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
-     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
-     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
-     * is no default value.</p>
-     */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-
-    /**
-     * <p>The name or the unique stack ID that's associated with the stack, which
-     * aren't always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
-     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
-     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
-     * is no default value.</p>
-     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-
-    /**
-     * <p>The name or the unique stack ID that's associated with the stack, which
-     * aren't always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
-     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
-     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
-     * is no default value.</p>
-     */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-
-    /**
-     * <p>The name or the unique stack ID that's associated with the stack, which
-     * aren't always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
-     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
-     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
-     * is no default value.</p>
-     */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-
-    /**
-     * <p>The name or the unique stack ID that's associated with the stack, which
-     * aren't always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
-     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
-     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
-     * is no default value.</p>
-     */
     inline DescribeStackEventsRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-
-    /**
-     * <p>The name or the unique stack ID that's associated with the stack, which
-     * aren't always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
-     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
-     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
-     * is no default value.</p>
-     */
     inline DescribeStackEventsRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or the unique stack ID that's associated with the stack, which
-     * aren't always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
-     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
-     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
-     * is no default value.</p>
-     */
     inline DescribeStackEventsRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A string that identifies the next page of events that you want to
      * retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A string that identifies the next page of events that you want to
-     * retrieve.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A string that identifies the next page of events that you want to
-     * retrieve.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A string that identifies the next page of events that you want to
-     * retrieve.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A string that identifies the next page of events that you want to
-     * retrieve.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A string that identifies the next page of events that you want to
-     * retrieve.</p>
-     */
     inline DescribeStackEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A string that identifies the next page of events that you want to
-     * retrieve.</p>
-     */
     inline DescribeStackEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that identifies the next page of events that you want to
-     * retrieve.</p>
-     */
     inline DescribeStackEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stackName;

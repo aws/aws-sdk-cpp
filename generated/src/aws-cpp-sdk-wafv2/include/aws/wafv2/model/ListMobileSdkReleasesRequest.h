@@ -35,37 +35,19 @@ namespace Model
     AWS_WAFV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The device platform to retrieve the list for.</p>
      */
     inline const Platform& GetPlatform() const{ return m_platform; }
-
-    /**
-     * <p>The device platform to retrieve the list for.</p>
-     */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-
-    /**
-     * <p>The device platform to retrieve the list for.</p>
-     */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
-
-    /**
-     * <p>The device platform to retrieve the list for.</p>
-     */
     inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-
-    /**
-     * <p>The device platform to retrieve the list for.</p>
-     */
     inline ListMobileSdkReleasesRequest& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
-
-    /**
-     * <p>The device platform to retrieve the list for.</p>
-     */
     inline ListMobileSdkReleasesRequest& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When you request a list of objects with a <code>Limit</code> setting, if the
      * number of objects that are still available for retrieval exceeds the limit, WAF
@@ -74,71 +56,16 @@ namespace Model
      * request.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-
-    /**
-     * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, WAF
-     * returns a <code>NextMarker</code> value in the response. To retrieve the next
-     * batch of objects, provide the marker from the prior call in your next
-     * request.</p>
-     */
     inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
-
-    /**
-     * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, WAF
-     * returns a <code>NextMarker</code> value in the response. To retrieve the next
-     * batch of objects, provide the marker from the prior call in your next
-     * request.</p>
-     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
-
-    /**
-     * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, WAF
-     * returns a <code>NextMarker</code> value in the response. To retrieve the next
-     * batch of objects, provide the marker from the prior call in your next
-     * request.</p>
-     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
-
-    /**
-     * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, WAF
-     * returns a <code>NextMarker</code> value in the response. To retrieve the next
-     * batch of objects, provide the marker from the prior call in your next
-     * request.</p>
-     */
     inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
-
-    /**
-     * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, WAF
-     * returns a <code>NextMarker</code> value in the response. To retrieve the next
-     * batch of objects, provide the marker from the prior call in your next
-     * request.</p>
-     */
     inline ListMobileSdkReleasesRequest& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-
-    /**
-     * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, WAF
-     * returns a <code>NextMarker</code> value in the response. To retrieve the next
-     * batch of objects, provide the marker from the prior call in your next
-     * request.</p>
-     */
     inline ListMobileSdkReleasesRequest& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, WAF
-     * returns a <code>NextMarker</code> value in the response. To retrieve the next
-     * batch of objects, provide the marker from the prior call in your next
-     * request.</p>
-     */
     inline ListMobileSdkReleasesRequest& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of objects that you want WAF to return for this request.
      * If more objects are available, in the response, WAF provides a
@@ -146,31 +73,10 @@ namespace Model
      * next batch of objects.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The maximum number of objects that you want WAF to return for this request.
-     * If more objects are available, in the response, WAF provides a
-     * <code>NextMarker</code> value that you can use in a subsequent call to get the
-     * next batch of objects.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>The maximum number of objects that you want WAF to return for this request.
-     * If more objects are available, in the response, WAF provides a
-     * <code>NextMarker</code> value that you can use in a subsequent call to get the
-     * next batch of objects.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>The maximum number of objects that you want WAF to return for this request.
-     * If more objects are available, in the response, WAF provides a
-     * <code>NextMarker</code> value that you can use in a subsequent call to get the
-     * next batch of objects.</p>
-     */
     inline ListMobileSdkReleasesRequest& WithLimit(int value) { SetLimit(value); return *this;}
-
+    ///@}
   private:
 
     Platform m_platform;

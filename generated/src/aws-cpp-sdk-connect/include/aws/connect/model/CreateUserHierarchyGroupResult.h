@@ -32,99 +32,42 @@ namespace Model
     AWS_CONNECT_API CreateUserHierarchyGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier of the hierarchy group.</p>
      */
     inline const Aws::String& GetHierarchyGroupId() const{ return m_hierarchyGroupId; }
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline void SetHierarchyGroupId(const Aws::String& value) { m_hierarchyGroupId = value; }
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline void SetHierarchyGroupId(Aws::String&& value) { m_hierarchyGroupId = std::move(value); }
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline void SetHierarchyGroupId(const char* value) { m_hierarchyGroupId.assign(value); }
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline CreateUserHierarchyGroupResult& WithHierarchyGroupId(const Aws::String& value) { SetHierarchyGroupId(value); return *this;}
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline CreateUserHierarchyGroupResult& WithHierarchyGroupId(Aws::String&& value) { SetHierarchyGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline CreateUserHierarchyGroupResult& WithHierarchyGroupId(const char* value) { SetHierarchyGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
      */
     inline const Aws::String& GetHierarchyGroupArn() const{ return m_hierarchyGroupArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
-     */
     inline void SetHierarchyGroupArn(const Aws::String& value) { m_hierarchyGroupArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
-     */
     inline void SetHierarchyGroupArn(Aws::String&& value) { m_hierarchyGroupArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
-     */
     inline void SetHierarchyGroupArn(const char* value) { m_hierarchyGroupArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
-     */
     inline CreateUserHierarchyGroupResult& WithHierarchyGroupArn(const Aws::String& value) { SetHierarchyGroupArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
-     */
     inline CreateUserHierarchyGroupResult& WithHierarchyGroupArn(Aws::String&& value) { SetHierarchyGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
-     */
     inline CreateUserHierarchyGroupResult& WithHierarchyGroupArn(const char* value) { SetHierarchyGroupArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateUserHierarchyGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateUserHierarchyGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateUserHierarchyGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hierarchyGroupId;

@@ -33,51 +33,20 @@ namespace Model
     AWS_DETECTIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the behavior graph.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGraphArns() const{ return m_graphArns; }
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline bool GraphArnsHasBeenSet() const { return m_graphArnsHasBeenSet; }
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline void SetGraphArns(const Aws::Vector<Aws::String>& value) { m_graphArnsHasBeenSet = true; m_graphArns = value; }
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline void SetGraphArns(Aws::Vector<Aws::String>&& value) { m_graphArnsHasBeenSet = true; m_graphArns = std::move(value); }
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline BatchGetMembershipDatasourcesRequest& WithGraphArns(const Aws::Vector<Aws::String>& value) { SetGraphArns(value); return *this;}
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline BatchGetMembershipDatasourcesRequest& WithGraphArns(Aws::Vector<Aws::String>&& value) { SetGraphArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline BatchGetMembershipDatasourcesRequest& AddGraphArns(const Aws::String& value) { m_graphArnsHasBeenSet = true; m_graphArns.push_back(value); return *this; }
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline BatchGetMembershipDatasourcesRequest& AddGraphArns(Aws::String&& value) { m_graphArnsHasBeenSet = true; m_graphArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline BatchGetMembershipDatasourcesRequest& AddGraphArns(const char* value) { m_graphArnsHasBeenSet = true; m_graphArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_graphArns;

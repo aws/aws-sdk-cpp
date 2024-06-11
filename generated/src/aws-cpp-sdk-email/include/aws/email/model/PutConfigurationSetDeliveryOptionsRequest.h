@@ -41,83 +41,32 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the configuration set.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline PutConfigurationSetDeliveryOptionsRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline PutConfigurationSetDeliveryOptionsRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline PutConfigurationSetDeliveryOptionsRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether messages that use the configuration set are required to use
      * Transport Layer Security (TLS).</p>
      */
     inline const DeliveryOptions& GetDeliveryOptions() const{ return m_deliveryOptions; }
-
-    /**
-     * <p>Specifies whether messages that use the configuration set are required to use
-     * Transport Layer Security (TLS).</p>
-     */
     inline bool DeliveryOptionsHasBeenSet() const { return m_deliveryOptionsHasBeenSet; }
-
-    /**
-     * <p>Specifies whether messages that use the configuration set are required to use
-     * Transport Layer Security (TLS).</p>
-     */
     inline void SetDeliveryOptions(const DeliveryOptions& value) { m_deliveryOptionsHasBeenSet = true; m_deliveryOptions = value; }
-
-    /**
-     * <p>Specifies whether messages that use the configuration set are required to use
-     * Transport Layer Security (TLS).</p>
-     */
     inline void SetDeliveryOptions(DeliveryOptions&& value) { m_deliveryOptionsHasBeenSet = true; m_deliveryOptions = std::move(value); }
-
-    /**
-     * <p>Specifies whether messages that use the configuration set are required to use
-     * Transport Layer Security (TLS).</p>
-     */
     inline PutConfigurationSetDeliveryOptionsRequest& WithDeliveryOptions(const DeliveryOptions& value) { SetDeliveryOptions(value); return *this;}
-
-    /**
-     * <p>Specifies whether messages that use the configuration set are required to use
-     * Transport Layer Security (TLS).</p>
-     */
     inline PutConfigurationSetDeliveryOptionsRequest& WithDeliveryOptions(DeliveryOptions&& value) { SetDeliveryOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationSetName;

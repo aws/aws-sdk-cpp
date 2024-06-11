@@ -38,53 +38,27 @@ namespace Model
     AWS_APPMESH_API DescribeMeshResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The full description of your service mesh.</p>
      */
     inline const MeshData& GetMesh() const{ return m_mesh; }
-
-    /**
-     * <p>The full description of your service mesh.</p>
-     */
     inline void SetMesh(const MeshData& value) { m_mesh = value; }
-
-    /**
-     * <p>The full description of your service mesh.</p>
-     */
     inline void SetMesh(MeshData&& value) { m_mesh = std::move(value); }
-
-    /**
-     * <p>The full description of your service mesh.</p>
-     */
     inline DescribeMeshResult& WithMesh(const MeshData& value) { SetMesh(value); return *this;}
-
-    /**
-     * <p>The full description of your service mesh.</p>
-     */
     inline DescribeMeshResult& WithMesh(MeshData&& value) { SetMesh(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeMeshResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeMeshResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeMeshResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MeshData m_mesh;

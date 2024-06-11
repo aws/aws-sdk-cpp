@@ -34,54 +34,20 @@ namespace Model
     AWS_COMPREHEND_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A UTF-8 text string. The string must contain at least 20 characters. The
      * maximum string size is 100 KB.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>A UTF-8 text string. The string must contain at least 20 characters. The
-     * maximum string size is 100 KB.</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>A UTF-8 text string. The string must contain at least 20 characters. The
-     * maximum string size is 100 KB.</p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>A UTF-8 text string. The string must contain at least 20 characters. The
-     * maximum string size is 100 KB.</p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>A UTF-8 text string. The string must contain at least 20 characters. The
-     * maximum string size is 100 KB.</p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>A UTF-8 text string. The string must contain at least 20 characters. The
-     * maximum string size is 100 KB.</p>
-     */
     inline DetectDominantLanguageRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>A UTF-8 text string. The string must contain at least 20 characters. The
-     * maximum string size is 100 KB.</p>
-     */
     inline DetectDominantLanguageRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>A UTF-8 text string. The string must contain at least 20 characters. The
-     * maximum string size is 100 KB.</p>
-     */
     inline DetectDominantLanguageRequest& WithText(const char* value) { SetText(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_text;

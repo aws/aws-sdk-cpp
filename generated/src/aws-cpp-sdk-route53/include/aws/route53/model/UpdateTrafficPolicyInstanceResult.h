@@ -40,58 +40,28 @@ namespace Model
     AWS_ROUTE53_API UpdateTrafficPolicyInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A complex type that contains settings for the updated traffic policy
      * instance.</p>
      */
     inline const TrafficPolicyInstance& GetTrafficPolicyInstance() const{ return m_trafficPolicyInstance; }
-
-    /**
-     * <p>A complex type that contains settings for the updated traffic policy
-     * instance.</p>
-     */
     inline void SetTrafficPolicyInstance(const TrafficPolicyInstance& value) { m_trafficPolicyInstance = value; }
-
-    /**
-     * <p>A complex type that contains settings for the updated traffic policy
-     * instance.</p>
-     */
     inline void SetTrafficPolicyInstance(TrafficPolicyInstance&& value) { m_trafficPolicyInstance = std::move(value); }
-
-    /**
-     * <p>A complex type that contains settings for the updated traffic policy
-     * instance.</p>
-     */
     inline UpdateTrafficPolicyInstanceResult& WithTrafficPolicyInstance(const TrafficPolicyInstance& value) { SetTrafficPolicyInstance(value); return *this;}
-
-    /**
-     * <p>A complex type that contains settings for the updated traffic policy
-     * instance.</p>
-     */
     inline UpdateTrafficPolicyInstanceResult& WithTrafficPolicyInstance(TrafficPolicyInstance&& value) { SetTrafficPolicyInstance(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateTrafficPolicyInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateTrafficPolicyInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateTrafficPolicyInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TrafficPolicyInstance m_trafficPolicyInstance;

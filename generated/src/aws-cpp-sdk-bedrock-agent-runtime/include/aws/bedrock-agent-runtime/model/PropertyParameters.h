@@ -38,46 +38,19 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of parameters in the request body.</p>
      */
     inline const Aws::Vector<Parameter>& GetProperties() const{ return m_properties; }
-
-    /**
-     * <p>A list of parameters in the request body.</p>
-     */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-
-    /**
-     * <p>A list of parameters in the request body.</p>
-     */
     inline void SetProperties(const Aws::Vector<Parameter>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-
-    /**
-     * <p>A list of parameters in the request body.</p>
-     */
     inline void SetProperties(Aws::Vector<Parameter>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-
-    /**
-     * <p>A list of parameters in the request body.</p>
-     */
     inline PropertyParameters& WithProperties(const Aws::Vector<Parameter>& value) { SetProperties(value); return *this;}
-
-    /**
-     * <p>A list of parameters in the request body.</p>
-     */
     inline PropertyParameters& WithProperties(Aws::Vector<Parameter>&& value) { SetProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of parameters in the request body.</p>
-     */
     inline PropertyParameters& AddProperties(const Parameter& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
-
-    /**
-     * <p>A list of parameters in the request body.</p>
-     */
     inline PropertyParameters& AddProperties(Parameter&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Parameter> m_properties;

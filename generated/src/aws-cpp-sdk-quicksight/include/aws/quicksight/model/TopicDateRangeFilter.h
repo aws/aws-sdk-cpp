@@ -38,65 +38,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A Boolean value that indicates whether the date range filter should include
      * the boundary values. If set to true, the filter includes the start and end
      * dates. If set to false, the filter excludes them.</p>
      */
     inline bool GetInclusive() const{ return m_inclusive; }
-
-    /**
-     * <p>A Boolean value that indicates whether the date range filter should include
-     * the boundary values. If set to true, the filter includes the start and end
-     * dates. If set to false, the filter excludes them.</p>
-     */
     inline bool InclusiveHasBeenSet() const { return m_inclusiveHasBeenSet; }
-
-    /**
-     * <p>A Boolean value that indicates whether the date range filter should include
-     * the boundary values. If set to true, the filter includes the start and end
-     * dates. If set to false, the filter excludes them.</p>
-     */
     inline void SetInclusive(bool value) { m_inclusiveHasBeenSet = true; m_inclusive = value; }
-
-    /**
-     * <p>A Boolean value that indicates whether the date range filter should include
-     * the boundary values. If set to true, the filter includes the start and end
-     * dates. If set to false, the filter excludes them.</p>
-     */
     inline TopicDateRangeFilter& WithInclusive(bool value) { SetInclusive(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The constant used in a date range filter.</p>
      */
     inline const TopicRangeFilterConstant& GetConstant() const{ return m_constant; }
-
-    /**
-     * <p>The constant used in a date range filter.</p>
-     */
     inline bool ConstantHasBeenSet() const { return m_constantHasBeenSet; }
-
-    /**
-     * <p>The constant used in a date range filter.</p>
-     */
     inline void SetConstant(const TopicRangeFilterConstant& value) { m_constantHasBeenSet = true; m_constant = value; }
-
-    /**
-     * <p>The constant used in a date range filter.</p>
-     */
     inline void SetConstant(TopicRangeFilterConstant&& value) { m_constantHasBeenSet = true; m_constant = std::move(value); }
-
-    /**
-     * <p>The constant used in a date range filter.</p>
-     */
     inline TopicDateRangeFilter& WithConstant(const TopicRangeFilterConstant& value) { SetConstant(value); return *this;}
-
-    /**
-     * <p>The constant used in a date range filter.</p>
-     */
     inline TopicDateRangeFilter& WithConstant(TopicRangeFilterConstant&& value) { SetConstant(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_inclusive;

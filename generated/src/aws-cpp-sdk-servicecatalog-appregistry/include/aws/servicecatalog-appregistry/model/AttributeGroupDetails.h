@@ -38,185 +38,63 @@ namespace Model
     AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the attribute group.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The unique identifier of the attribute group.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the attribute group.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The unique identifier of the attribute group.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the attribute group.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The unique identifier of the attribute group.</p>
-     */
     inline AttributeGroupDetails& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the attribute group.</p>
-     */
     inline AttributeGroupDetails& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the attribute group.</p>
-     */
     inline AttributeGroupDetails& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-     */
     inline AttributeGroupDetails& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-     */
     inline AttributeGroupDetails& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-     */
     inline AttributeGroupDetails& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      *  <p> This field is no longer supported. We recommend you don't use
      * the field when using <code>ListAttributeGroupsForApplication</code>. </p>
      *  <p> The name of the attribute group. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     *  <p> This field is no longer supported. We recommend you don't use
-     * the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-     *  <p> The name of the attribute group. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     *  <p> This field is no longer supported. We recommend you don't use
-     * the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-     *  <p> The name of the attribute group. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     *  <p> This field is no longer supported. We recommend you don't use
-     * the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-     *  <p> The name of the attribute group. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     *  <p> This field is no longer supported. We recommend you don't use
-     * the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-     *  <p> The name of the attribute group. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     *  <p> This field is no longer supported. We recommend you don't use
-     * the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-     *  <p> The name of the attribute group. </p>
-     */
     inline AttributeGroupDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     *  <p> This field is no longer supported. We recommend you don't use
-     * the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-     *  <p> The name of the attribute group. </p>
-     */
     inline AttributeGroupDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     *  <p> This field is no longer supported. We recommend you don't use
-     * the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-     *  <p> The name of the attribute group. </p>
-     */
     inline AttributeGroupDetails& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The service principal that created the attribute group.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-
-    /**
-     * <p>The service principal that created the attribute group.</p>
-     */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-
-    /**
-     * <p>The service principal that created the attribute group.</p>
-     */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-
-    /**
-     * <p>The service principal that created the attribute group.</p>
-     */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-
-    /**
-     * <p>The service principal that created the attribute group.</p>
-     */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
-
-    /**
-     * <p>The service principal that created the attribute group.</p>
-     */
     inline AttributeGroupDetails& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-
-    /**
-     * <p>The service principal that created the attribute group.</p>
-     */
     inline AttributeGroupDetails& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-
-    /**
-     * <p>The service principal that created the attribute group.</p>
-     */
     inline AttributeGroupDetails& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

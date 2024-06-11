@@ -39,6 +39,7 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether your task report includes errors only or successes and
      * errors.</p> <p>For example, your report might mostly include only what didn't go
@@ -50,67 +51,12 @@ namespace Model
      * to transfer (<code>SUCCESSES_AND_ERRORS</code>).</p>
      */
     inline const ReportLevel& GetReportLevel() const{ return m_reportLevel; }
-
-    /**
-     * <p>Specifies whether your task report includes errors only or successes and
-     * errors.</p> <p>For example, your report might mostly include only what didn't go
-     * well in your transfer (<code>ERRORS_ONLY</code>). At the same time, you want to
-     * verify that your <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">task
-     * filter</a> is working correctly. In this situation, you can get a list of what
-     * files DataSync successfully skipped and if something transferred that you didn't
-     * to transfer (<code>SUCCESSES_AND_ERRORS</code>).</p>
-     */
     inline bool ReportLevelHasBeenSet() const { return m_reportLevelHasBeenSet; }
-
-    /**
-     * <p>Specifies whether your task report includes errors only or successes and
-     * errors.</p> <p>For example, your report might mostly include only what didn't go
-     * well in your transfer (<code>ERRORS_ONLY</code>). At the same time, you want to
-     * verify that your <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">task
-     * filter</a> is working correctly. In this situation, you can get a list of what
-     * files DataSync successfully skipped and if something transferred that you didn't
-     * to transfer (<code>SUCCESSES_AND_ERRORS</code>).</p>
-     */
     inline void SetReportLevel(const ReportLevel& value) { m_reportLevelHasBeenSet = true; m_reportLevel = value; }
-
-    /**
-     * <p>Specifies whether your task report includes errors only or successes and
-     * errors.</p> <p>For example, your report might mostly include only what didn't go
-     * well in your transfer (<code>ERRORS_ONLY</code>). At the same time, you want to
-     * verify that your <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">task
-     * filter</a> is working correctly. In this situation, you can get a list of what
-     * files DataSync successfully skipped and if something transferred that you didn't
-     * to transfer (<code>SUCCESSES_AND_ERRORS</code>).</p>
-     */
     inline void SetReportLevel(ReportLevel&& value) { m_reportLevelHasBeenSet = true; m_reportLevel = std::move(value); }
-
-    /**
-     * <p>Specifies whether your task report includes errors only or successes and
-     * errors.</p> <p>For example, your report might mostly include only what didn't go
-     * well in your transfer (<code>ERRORS_ONLY</code>). At the same time, you want to
-     * verify that your <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">task
-     * filter</a> is working correctly. In this situation, you can get a list of what
-     * files DataSync successfully skipped and if something transferred that you didn't
-     * to transfer (<code>SUCCESSES_AND_ERRORS</code>).</p>
-     */
     inline ReportOverride& WithReportLevel(const ReportLevel& value) { SetReportLevel(value); return *this;}
-
-    /**
-     * <p>Specifies whether your task report includes errors only or successes and
-     * errors.</p> <p>For example, your report might mostly include only what didn't go
-     * well in your transfer (<code>ERRORS_ONLY</code>). At the same time, you want to
-     * verify that your <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">task
-     * filter</a> is working correctly. In this situation, you can get a list of what
-     * files DataSync successfully skipped and if something transferred that you didn't
-     * to transfer (<code>SUCCESSES_AND_ERRORS</code>).</p>
-     */
     inline ReportOverride& WithReportLevel(ReportLevel&& value) { SetReportLevel(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReportLevel m_reportLevel;

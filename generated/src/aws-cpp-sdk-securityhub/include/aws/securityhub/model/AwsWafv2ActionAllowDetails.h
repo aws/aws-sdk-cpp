@@ -38,6 +38,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Defines custom handling for the web request. For information about
      * customizing web requests and responses, see <a
@@ -45,47 +46,12 @@ namespace Model
      * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
      */
     inline const AwsWafv2CustomRequestHandlingDetails& GetCustomRequestHandling() const{ return m_customRequestHandling; }
-
-    /**
-     * <p> Defines custom handling for the web request. For information about
-     * customizing web requests and responses, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-     */
     inline bool CustomRequestHandlingHasBeenSet() const { return m_customRequestHandlingHasBeenSet; }
-
-    /**
-     * <p> Defines custom handling for the web request. For information about
-     * customizing web requests and responses, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-     */
     inline void SetCustomRequestHandling(const AwsWafv2CustomRequestHandlingDetails& value) { m_customRequestHandlingHasBeenSet = true; m_customRequestHandling = value; }
-
-    /**
-     * <p> Defines custom handling for the web request. For information about
-     * customizing web requests and responses, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-     */
     inline void SetCustomRequestHandling(AwsWafv2CustomRequestHandlingDetails&& value) { m_customRequestHandlingHasBeenSet = true; m_customRequestHandling = std::move(value); }
-
-    /**
-     * <p> Defines custom handling for the web request. For information about
-     * customizing web requests and responses, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-     */
     inline AwsWafv2ActionAllowDetails& WithCustomRequestHandling(const AwsWafv2CustomRequestHandlingDetails& value) { SetCustomRequestHandling(value); return *this;}
-
-    /**
-     * <p> Defines custom handling for the web request. For information about
-     * customizing web requests and responses, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-     */
     inline AwsWafv2ActionAllowDetails& WithCustomRequestHandling(AwsWafv2CustomRequestHandlingDetails&& value) { SetCustomRequestHandling(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsWafv2CustomRequestHandlingDetails m_customRequestHandling;

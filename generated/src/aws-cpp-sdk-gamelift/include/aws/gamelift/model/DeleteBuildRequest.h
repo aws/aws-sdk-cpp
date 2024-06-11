@@ -34,54 +34,20 @@ namespace Model
     AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the build to delete. You can use either the build ID
      * or ARN value. </p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
-
-    /**
-     * <p>A unique identifier for the build to delete. You can use either the build ID
-     * or ARN value. </p>
-     */
     inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the build to delete. You can use either the build ID
-     * or ARN value. </p>
-     */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
-
-    /**
-     * <p>A unique identifier for the build to delete. You can use either the build ID
-     * or ARN value. </p>
-     */
     inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the build to delete. You can use either the build ID
-     * or ARN value. </p>
-     */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the build to delete. You can use either the build ID
-     * or ARN value. </p>
-     */
     inline DeleteBuildRequest& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the build to delete. You can use either the build ID
-     * or ARN value. </p>
-     */
     inline DeleteBuildRequest& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the build to delete. You can use either the build ID
-     * or ARN value. </p>
-     */
     inline DeleteBuildRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_buildId;

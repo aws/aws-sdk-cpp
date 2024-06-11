@@ -32,42 +32,18 @@ namespace Model
     AWS_LAKEFORMATION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A <code>DataCellsFilter</code> structure containing information about the
      * data cells filter.</p>
      */
     inline const DataCellsFilter& GetTableData() const{ return m_tableData; }
-
-    /**
-     * <p>A <code>DataCellsFilter</code> structure containing information about the
-     * data cells filter.</p>
-     */
     inline bool TableDataHasBeenSet() const { return m_tableDataHasBeenSet; }
-
-    /**
-     * <p>A <code>DataCellsFilter</code> structure containing information about the
-     * data cells filter.</p>
-     */
     inline void SetTableData(const DataCellsFilter& value) { m_tableDataHasBeenSet = true; m_tableData = value; }
-
-    /**
-     * <p>A <code>DataCellsFilter</code> structure containing information about the
-     * data cells filter.</p>
-     */
     inline void SetTableData(DataCellsFilter&& value) { m_tableDataHasBeenSet = true; m_tableData = std::move(value); }
-
-    /**
-     * <p>A <code>DataCellsFilter</code> structure containing information about the
-     * data cells filter.</p>
-     */
     inline CreateDataCellsFilterRequest& WithTableData(const DataCellsFilter& value) { SetTableData(value); return *this;}
-
-    /**
-     * <p>A <code>DataCellsFilter</code> structure containing information about the
-     * data cells filter.</p>
-     */
     inline CreateDataCellsFilterRequest& WithTableData(DataCellsFilter&& value) { SetTableData(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataCellsFilter m_tableData;

@@ -38,136 +38,48 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the
      * application code.</p>
      */
     inline const Aws::String& GetBucketARNUpdate() const{ return m_bucketARNUpdate; }
-
-    /**
-     * <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the
-     * application code.</p>
-     */
     inline bool BucketARNUpdateHasBeenSet() const { return m_bucketARNUpdateHasBeenSet; }
-
-    /**
-     * <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the
-     * application code.</p>
-     */
     inline void SetBucketARNUpdate(const Aws::String& value) { m_bucketARNUpdateHasBeenSet = true; m_bucketARNUpdate = value; }
-
-    /**
-     * <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the
-     * application code.</p>
-     */
     inline void SetBucketARNUpdate(Aws::String&& value) { m_bucketARNUpdateHasBeenSet = true; m_bucketARNUpdate = std::move(value); }
-
-    /**
-     * <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the
-     * application code.</p>
-     */
     inline void SetBucketARNUpdate(const char* value) { m_bucketARNUpdateHasBeenSet = true; m_bucketARNUpdate.assign(value); }
-
-    /**
-     * <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the
-     * application code.</p>
-     */
     inline S3ContentLocationUpdate& WithBucketARNUpdate(const Aws::String& value) { SetBucketARNUpdate(value); return *this;}
-
-    /**
-     * <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the
-     * application code.</p>
-     */
     inline S3ContentLocationUpdate& WithBucketARNUpdate(Aws::String&& value) { SetBucketARNUpdate(std::move(value)); return *this;}
-
-    /**
-     * <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the
-     * application code.</p>
-     */
     inline S3ContentLocationUpdate& WithBucketARNUpdate(const char* value) { SetBucketARNUpdate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new file key for the object containing the application code.</p>
      */
     inline const Aws::String& GetFileKeyUpdate() const{ return m_fileKeyUpdate; }
-
-    /**
-     * <p>The new file key for the object containing the application code.</p>
-     */
     inline bool FileKeyUpdateHasBeenSet() const { return m_fileKeyUpdateHasBeenSet; }
-
-    /**
-     * <p>The new file key for the object containing the application code.</p>
-     */
     inline void SetFileKeyUpdate(const Aws::String& value) { m_fileKeyUpdateHasBeenSet = true; m_fileKeyUpdate = value; }
-
-    /**
-     * <p>The new file key for the object containing the application code.</p>
-     */
     inline void SetFileKeyUpdate(Aws::String&& value) { m_fileKeyUpdateHasBeenSet = true; m_fileKeyUpdate = std::move(value); }
-
-    /**
-     * <p>The new file key for the object containing the application code.</p>
-     */
     inline void SetFileKeyUpdate(const char* value) { m_fileKeyUpdateHasBeenSet = true; m_fileKeyUpdate.assign(value); }
-
-    /**
-     * <p>The new file key for the object containing the application code.</p>
-     */
     inline S3ContentLocationUpdate& WithFileKeyUpdate(const Aws::String& value) { SetFileKeyUpdate(value); return *this;}
-
-    /**
-     * <p>The new file key for the object containing the application code.</p>
-     */
     inline S3ContentLocationUpdate& WithFileKeyUpdate(Aws::String&& value) { SetFileKeyUpdate(std::move(value)); return *this;}
-
-    /**
-     * <p>The new file key for the object containing the application code.</p>
-     */
     inline S3ContentLocationUpdate& WithFileKeyUpdate(const char* value) { SetFileKeyUpdate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new version of the object containing the application code.</p>
      */
     inline const Aws::String& GetObjectVersionUpdate() const{ return m_objectVersionUpdate; }
-
-    /**
-     * <p>The new version of the object containing the application code.</p>
-     */
     inline bool ObjectVersionUpdateHasBeenSet() const { return m_objectVersionUpdateHasBeenSet; }
-
-    /**
-     * <p>The new version of the object containing the application code.</p>
-     */
     inline void SetObjectVersionUpdate(const Aws::String& value) { m_objectVersionUpdateHasBeenSet = true; m_objectVersionUpdate = value; }
-
-    /**
-     * <p>The new version of the object containing the application code.</p>
-     */
     inline void SetObjectVersionUpdate(Aws::String&& value) { m_objectVersionUpdateHasBeenSet = true; m_objectVersionUpdate = std::move(value); }
-
-    /**
-     * <p>The new version of the object containing the application code.</p>
-     */
     inline void SetObjectVersionUpdate(const char* value) { m_objectVersionUpdateHasBeenSet = true; m_objectVersionUpdate.assign(value); }
-
-    /**
-     * <p>The new version of the object containing the application code.</p>
-     */
     inline S3ContentLocationUpdate& WithObjectVersionUpdate(const Aws::String& value) { SetObjectVersionUpdate(value); return *this;}
-
-    /**
-     * <p>The new version of the object containing the application code.</p>
-     */
     inline S3ContentLocationUpdate& WithObjectVersionUpdate(Aws::String&& value) { SetObjectVersionUpdate(std::move(value)); return *this;}
-
-    /**
-     * <p>The new version of the object containing the application code.</p>
-     */
     inline S3ContentLocationUpdate& WithObjectVersionUpdate(const char* value) { SetObjectVersionUpdate(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucketARNUpdate;

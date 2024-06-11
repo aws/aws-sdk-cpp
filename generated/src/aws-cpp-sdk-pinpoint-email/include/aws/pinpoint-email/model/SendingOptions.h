@@ -36,30 +36,16 @@ namespace Model
     AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If <code>true</code>, email sending is enabled for the configuration set. If
      * <code>false</code>, email sending is disabled for the configuration set.</p>
      */
     inline bool GetSendingEnabled() const{ return m_sendingEnabled; }
-
-    /**
-     * <p>If <code>true</code>, email sending is enabled for the configuration set. If
-     * <code>false</code>, email sending is disabled for the configuration set.</p>
-     */
     inline bool SendingEnabledHasBeenSet() const { return m_sendingEnabledHasBeenSet; }
-
-    /**
-     * <p>If <code>true</code>, email sending is enabled for the configuration set. If
-     * <code>false</code>, email sending is disabled for the configuration set.</p>
-     */
     inline void SetSendingEnabled(bool value) { m_sendingEnabledHasBeenSet = true; m_sendingEnabled = value; }
-
-    /**
-     * <p>If <code>true</code>, email sending is enabled for the configuration set. If
-     * <code>false</code>, email sending is disabled for the configuration set.</p>
-     */
     inline SendingOptions& WithSendingEnabled(bool value) { SetSendingEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_sendingEnabled;

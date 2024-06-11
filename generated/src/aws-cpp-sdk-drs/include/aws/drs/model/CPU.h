@@ -37,67 +37,29 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of CPU cores.</p>
      */
     inline long long GetCores() const{ return m_cores; }
-
-    /**
-     * <p>The number of CPU cores.</p>
-     */
     inline bool CoresHasBeenSet() const { return m_coresHasBeenSet; }
-
-    /**
-     * <p>The number of CPU cores.</p>
-     */
     inline void SetCores(long long value) { m_coresHasBeenSet = true; m_cores = value; }
-
-    /**
-     * <p>The number of CPU cores.</p>
-     */
     inline CPU& WithCores(long long value) { SetCores(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The model name of the CPU.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
-
-    /**
-     * <p>The model name of the CPU.</p>
-     */
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-
-    /**
-     * <p>The model name of the CPU.</p>
-     */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-
-    /**
-     * <p>The model name of the CPU.</p>
-     */
     inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-
-    /**
-     * <p>The model name of the CPU.</p>
-     */
     inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-
-    /**
-     * <p>The model name of the CPU.</p>
-     */
     inline CPU& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-
-    /**
-     * <p>The model name of the CPU.</p>
-     */
     inline CPU& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The model name of the CPU.</p>
-     */
     inline CPU& WithModelName(const char* value) { SetModelName(value); return *this;}
-
+    ///@}
   private:
 
     long long m_cores;

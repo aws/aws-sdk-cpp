@@ -34,55 +34,22 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN (or ID suffix of the ARN) of the event data store for which you want
      * to enable Lake query federation.</p>
      */
     inline const Aws::String& GetEventDataStore() const{ return m_eventDataStore; }
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store for which you want
-     * to enable Lake query federation.</p>
-     */
     inline bool EventDataStoreHasBeenSet() const { return m_eventDataStoreHasBeenSet; }
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store for which you want
-     * to enable Lake query federation.</p>
-     */
     inline void SetEventDataStore(const Aws::String& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = value; }
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store for which you want
-     * to enable Lake query federation.</p>
-     */
     inline void SetEventDataStore(Aws::String&& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = std::move(value); }
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store for which you want
-     * to enable Lake query federation.</p>
-     */
     inline void SetEventDataStore(const char* value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore.assign(value); }
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store for which you want
-     * to enable Lake query federation.</p>
-     */
     inline EnableFederationRequest& WithEventDataStore(const Aws::String& value) { SetEventDataStore(value); return *this;}
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store for which you want
-     * to enable Lake query federation.</p>
-     */
     inline EnableFederationRequest& WithEventDataStore(Aws::String&& value) { SetEventDataStore(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store for which you want
-     * to enable Lake query federation.</p>
-     */
     inline EnableFederationRequest& WithEventDataStore(const char* value) { SetEventDataStore(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The ARN of the federation role to use for the event data store. Amazon Web
      * Services services like Lake Formation use this federation role to access data
@@ -92,77 +59,14 @@ namespace Model
      * minimum permissions</a>. </p>
      */
     inline const Aws::String& GetFederationRoleArn() const{ return m_federationRoleArn; }
-
-    /**
-     * <p> The ARN of the federation role to use for the event data store. Amazon Web
-     * Services services like Lake Formation use this federation role to access data
-     * for the federated event data store. The federation role must exist in your
-     * account and provide the <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required
-     * minimum permissions</a>. </p>
-     */
     inline bool FederationRoleArnHasBeenSet() const { return m_federationRoleArnHasBeenSet; }
-
-    /**
-     * <p> The ARN of the federation role to use for the event data store. Amazon Web
-     * Services services like Lake Formation use this federation role to access data
-     * for the federated event data store. The federation role must exist in your
-     * account and provide the <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required
-     * minimum permissions</a>. </p>
-     */
     inline void SetFederationRoleArn(const Aws::String& value) { m_federationRoleArnHasBeenSet = true; m_federationRoleArn = value; }
-
-    /**
-     * <p> The ARN of the federation role to use for the event data store. Amazon Web
-     * Services services like Lake Formation use this federation role to access data
-     * for the federated event data store. The federation role must exist in your
-     * account and provide the <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required
-     * minimum permissions</a>. </p>
-     */
     inline void SetFederationRoleArn(Aws::String&& value) { m_federationRoleArnHasBeenSet = true; m_federationRoleArn = std::move(value); }
-
-    /**
-     * <p> The ARN of the federation role to use for the event data store. Amazon Web
-     * Services services like Lake Formation use this federation role to access data
-     * for the federated event data store. The federation role must exist in your
-     * account and provide the <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required
-     * minimum permissions</a>. </p>
-     */
     inline void SetFederationRoleArn(const char* value) { m_federationRoleArnHasBeenSet = true; m_federationRoleArn.assign(value); }
-
-    /**
-     * <p> The ARN of the federation role to use for the event data store. Amazon Web
-     * Services services like Lake Formation use this federation role to access data
-     * for the federated event data store. The federation role must exist in your
-     * account and provide the <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required
-     * minimum permissions</a>. </p>
-     */
     inline EnableFederationRequest& WithFederationRoleArn(const Aws::String& value) { SetFederationRoleArn(value); return *this;}
-
-    /**
-     * <p> The ARN of the federation role to use for the event data store. Amazon Web
-     * Services services like Lake Formation use this federation role to access data
-     * for the federated event data store. The federation role must exist in your
-     * account and provide the <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required
-     * minimum permissions</a>. </p>
-     */
     inline EnableFederationRequest& WithFederationRoleArn(Aws::String&& value) { SetFederationRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The ARN of the federation role to use for the event data store. Amazon Web
-     * Services services like Lake Formation use this federation role to access data
-     * for the federated event data store. The federation role must exist in your
-     * account and provide the <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required
-     * minimum permissions</a>. </p>
-     */
     inline EnableFederationRequest& WithFederationRoleArn(const char* value) { SetFederationRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_eventDataStore;

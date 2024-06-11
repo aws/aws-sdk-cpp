@@ -42,46 +42,19 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of policies related to topics that the guardrail should deny.</p>
      */
     inline const Aws::Vector<GuardrailTopic>& GetTopics() const{ return m_topics; }
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline bool TopicsHasBeenSet() const { return m_topicsHasBeenSet; }
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline void SetTopics(const Aws::Vector<GuardrailTopic>& value) { m_topicsHasBeenSet = true; m_topics = value; }
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline void SetTopics(Aws::Vector<GuardrailTopic>&& value) { m_topicsHasBeenSet = true; m_topics = std::move(value); }
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline GuardrailTopicPolicy& WithTopics(const Aws::Vector<GuardrailTopic>& value) { SetTopics(value); return *this;}
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline GuardrailTopicPolicy& WithTopics(Aws::Vector<GuardrailTopic>&& value) { SetTopics(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline GuardrailTopicPolicy& AddTopics(const GuardrailTopic& value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline GuardrailTopicPolicy& AddTopics(GuardrailTopic&& value) { m_topicsHasBeenSet = true; m_topics.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<GuardrailTopic> m_topics;

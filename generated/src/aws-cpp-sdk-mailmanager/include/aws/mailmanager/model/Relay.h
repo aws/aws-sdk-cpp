@@ -39,118 +39,45 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The timestamp of when the relay was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const{ return m_lastModifiedTimestamp; }
-
-    /**
-     * <p>The timestamp of when the relay was last modified.</p>
-     */
     inline bool LastModifiedTimestampHasBeenSet() const { return m_lastModifiedTimestampHasBeenSet; }
-
-    /**
-     * <p>The timestamp of when the relay was last modified.</p>
-     */
     inline void SetLastModifiedTimestamp(const Aws::Utils::DateTime& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = value; }
-
-    /**
-     * <p>The timestamp of when the relay was last modified.</p>
-     */
     inline void SetLastModifiedTimestamp(Aws::Utils::DateTime&& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp of when the relay was last modified.</p>
-     */
     inline Relay& WithLastModifiedTimestamp(const Aws::Utils::DateTime& value) { SetLastModifiedTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp of when the relay was last modified.</p>
-     */
     inline Relay& WithLastModifiedTimestamp(Aws::Utils::DateTime&& value) { SetLastModifiedTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique relay identifier.</p>
      */
     inline const Aws::String& GetRelayId() const{ return m_relayId; }
-
-    /**
-     * <p>The unique relay identifier.</p>
-     */
     inline bool RelayIdHasBeenSet() const { return m_relayIdHasBeenSet; }
-
-    /**
-     * <p>The unique relay identifier.</p>
-     */
     inline void SetRelayId(const Aws::String& value) { m_relayIdHasBeenSet = true; m_relayId = value; }
-
-    /**
-     * <p>The unique relay identifier.</p>
-     */
     inline void SetRelayId(Aws::String&& value) { m_relayIdHasBeenSet = true; m_relayId = std::move(value); }
-
-    /**
-     * <p>The unique relay identifier.</p>
-     */
     inline void SetRelayId(const char* value) { m_relayIdHasBeenSet = true; m_relayId.assign(value); }
-
-    /**
-     * <p>The unique relay identifier.</p>
-     */
     inline Relay& WithRelayId(const Aws::String& value) { SetRelayId(value); return *this;}
-
-    /**
-     * <p>The unique relay identifier.</p>
-     */
     inline Relay& WithRelayId(Aws::String&& value) { SetRelayId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique relay identifier.</p>
-     */
     inline Relay& WithRelayId(const char* value) { SetRelayId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique relay name.</p>
      */
     inline const Aws::String& GetRelayName() const{ return m_relayName; }
-
-    /**
-     * <p>The unique relay name.</p>
-     */
     inline bool RelayNameHasBeenSet() const { return m_relayNameHasBeenSet; }
-
-    /**
-     * <p>The unique relay name.</p>
-     */
     inline void SetRelayName(const Aws::String& value) { m_relayNameHasBeenSet = true; m_relayName = value; }
-
-    /**
-     * <p>The unique relay name.</p>
-     */
     inline void SetRelayName(Aws::String&& value) { m_relayNameHasBeenSet = true; m_relayName = std::move(value); }
-
-    /**
-     * <p>The unique relay name.</p>
-     */
     inline void SetRelayName(const char* value) { m_relayNameHasBeenSet = true; m_relayName.assign(value); }
-
-    /**
-     * <p>The unique relay name.</p>
-     */
     inline Relay& WithRelayName(const Aws::String& value) { SetRelayName(value); return *this;}
-
-    /**
-     * <p>The unique relay name.</p>
-     */
     inline Relay& WithRelayName(Aws::String&& value) { SetRelayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique relay name.</p>
-     */
     inline Relay& WithRelayName(const char* value) { SetRelayName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_lastModifiedTimestamp;

@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the data quality monitoring job definition to describe.</p>
      */
     inline const Aws::String& GetJobDefinitionName() const{ return m_jobDefinitionName; }
-
-    /**
-     * <p>The name of the data quality monitoring job definition to describe.</p>
-     */
     inline bool JobDefinitionNameHasBeenSet() const { return m_jobDefinitionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the data quality monitoring job definition to describe.</p>
-     */
     inline void SetJobDefinitionName(const Aws::String& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = value; }
-
-    /**
-     * <p>The name of the data quality monitoring job definition to describe.</p>
-     */
     inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::move(value); }
-
-    /**
-     * <p>The name of the data quality monitoring job definition to describe.</p>
-     */
     inline void SetJobDefinitionName(const char* value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName.assign(value); }
-
-    /**
-     * <p>The name of the data quality monitoring job definition to describe.</p>
-     */
     inline DescribeDataQualityJobDefinitionRequest& WithJobDefinitionName(const Aws::String& value) { SetJobDefinitionName(value); return *this;}
-
-    /**
-     * <p>The name of the data quality monitoring job definition to describe.</p>
-     */
     inline DescribeDataQualityJobDefinitionRequest& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the data quality monitoring job definition to describe.</p>
-     */
     inline DescribeDataQualityJobDefinitionRequest& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobDefinitionName;

@@ -38,103 +38,35 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the access point that generated the finding. The ARN format
      * depends on whether the ARN represents an access point or a multi-region access
      * point.</p>
      */
     inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
-
-    /**
-     * <p>The ARN of the access point that generated the finding. The ARN format
-     * depends on whether the ARN represents an access point or a multi-region access
-     * point.</p>
-     */
     inline bool AccessPointArnHasBeenSet() const { return m_accessPointArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the access point that generated the finding. The ARN format
-     * depends on whether the ARN represents an access point or a multi-region access
-     * point.</p>
-     */
     inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = value; }
-
-    /**
-     * <p>The ARN of the access point that generated the finding. The ARN format
-     * depends on whether the ARN represents an access point or a multi-region access
-     * point.</p>
-     */
     inline void SetAccessPointArn(Aws::String&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the access point that generated the finding. The ARN format
-     * depends on whether the ARN represents an access point or a multi-region access
-     * point.</p>
-     */
     inline void SetAccessPointArn(const char* value) { m_accessPointArnHasBeenSet = true; m_accessPointArn.assign(value); }
-
-    /**
-     * <p>The ARN of the access point that generated the finding. The ARN format
-     * depends on whether the ARN represents an access point or a multi-region access
-     * point.</p>
-     */
     inline FindingSourceDetail& WithAccessPointArn(const Aws::String& value) { SetAccessPointArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the access point that generated the finding. The ARN format
-     * depends on whether the ARN represents an access point or a multi-region access
-     * point.</p>
-     */
     inline FindingSourceDetail& WithAccessPointArn(Aws::String&& value) { SetAccessPointArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the access point that generated the finding. The ARN format
-     * depends on whether the ARN represents an access point or a multi-region access
-     * point.</p>
-     */
     inline FindingSourceDetail& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The account of the cross-account access point that generated the finding.</p>
      */
     inline const Aws::String& GetAccessPointAccount() const{ return m_accessPointAccount; }
-
-    /**
-     * <p>The account of the cross-account access point that generated the finding.</p>
-     */
     inline bool AccessPointAccountHasBeenSet() const { return m_accessPointAccountHasBeenSet; }
-
-    /**
-     * <p>The account of the cross-account access point that generated the finding.</p>
-     */
     inline void SetAccessPointAccount(const Aws::String& value) { m_accessPointAccountHasBeenSet = true; m_accessPointAccount = value; }
-
-    /**
-     * <p>The account of the cross-account access point that generated the finding.</p>
-     */
     inline void SetAccessPointAccount(Aws::String&& value) { m_accessPointAccountHasBeenSet = true; m_accessPointAccount = std::move(value); }
-
-    /**
-     * <p>The account of the cross-account access point that generated the finding.</p>
-     */
     inline void SetAccessPointAccount(const char* value) { m_accessPointAccountHasBeenSet = true; m_accessPointAccount.assign(value); }
-
-    /**
-     * <p>The account of the cross-account access point that generated the finding.</p>
-     */
     inline FindingSourceDetail& WithAccessPointAccount(const Aws::String& value) { SetAccessPointAccount(value); return *this;}
-
-    /**
-     * <p>The account of the cross-account access point that generated the finding.</p>
-     */
     inline FindingSourceDetail& WithAccessPointAccount(Aws::String&& value) { SetAccessPointAccount(std::move(value)); return *this;}
-
-    /**
-     * <p>The account of the cross-account access point that generated the finding.</p>
-     */
     inline FindingSourceDetail& WithAccessPointAccount(const char* value) { SetAccessPointAccount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accessPointArn;

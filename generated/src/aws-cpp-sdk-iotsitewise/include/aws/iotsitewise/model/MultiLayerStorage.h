@@ -38,36 +38,17 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about a customer managed Amazon S3 bucket.</p>
      */
     inline const CustomerManagedS3Storage& GetCustomerManagedS3Storage() const{ return m_customerManagedS3Storage; }
-
-    /**
-     * <p>Contains information about a customer managed Amazon S3 bucket.</p>
-     */
     inline bool CustomerManagedS3StorageHasBeenSet() const { return m_customerManagedS3StorageHasBeenSet; }
-
-    /**
-     * <p>Contains information about a customer managed Amazon S3 bucket.</p>
-     */
     inline void SetCustomerManagedS3Storage(const CustomerManagedS3Storage& value) { m_customerManagedS3StorageHasBeenSet = true; m_customerManagedS3Storage = value; }
-
-    /**
-     * <p>Contains information about a customer managed Amazon S3 bucket.</p>
-     */
     inline void SetCustomerManagedS3Storage(CustomerManagedS3Storage&& value) { m_customerManagedS3StorageHasBeenSet = true; m_customerManagedS3Storage = std::move(value); }
-
-    /**
-     * <p>Contains information about a customer managed Amazon S3 bucket.</p>
-     */
     inline MultiLayerStorage& WithCustomerManagedS3Storage(const CustomerManagedS3Storage& value) { SetCustomerManagedS3Storage(value); return *this;}
-
-    /**
-     * <p>Contains information about a customer managed Amazon S3 bucket.</p>
-     */
     inline MultiLayerStorage& WithCustomerManagedS3Storage(CustomerManagedS3Storage&& value) { SetCustomerManagedS3Storage(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CustomerManagedS3Storage m_customerManagedS3Storage;

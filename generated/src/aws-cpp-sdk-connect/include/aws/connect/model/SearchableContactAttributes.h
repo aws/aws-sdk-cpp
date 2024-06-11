@@ -40,91 +40,33 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of criteria based on user-defined contact attributes that are
      * configured for contact search.</p>
      */
     inline const Aws::Vector<SearchableContactAttributesCriteria>& GetCriteria() const{ return m_criteria; }
-
-    /**
-     * <p>The list of criteria based on user-defined contact attributes that are
-     * configured for contact search.</p>
-     */
     inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
-
-    /**
-     * <p>The list of criteria based on user-defined contact attributes that are
-     * configured for contact search.</p>
-     */
     inline void SetCriteria(const Aws::Vector<SearchableContactAttributesCriteria>& value) { m_criteriaHasBeenSet = true; m_criteria = value; }
-
-    /**
-     * <p>The list of criteria based on user-defined contact attributes that are
-     * configured for contact search.</p>
-     */
     inline void SetCriteria(Aws::Vector<SearchableContactAttributesCriteria>&& value) { m_criteriaHasBeenSet = true; m_criteria = std::move(value); }
-
-    /**
-     * <p>The list of criteria based on user-defined contact attributes that are
-     * configured for contact search.</p>
-     */
     inline SearchableContactAttributes& WithCriteria(const Aws::Vector<SearchableContactAttributesCriteria>& value) { SetCriteria(value); return *this;}
-
-    /**
-     * <p>The list of criteria based on user-defined contact attributes that are
-     * configured for contact search.</p>
-     */
     inline SearchableContactAttributes& WithCriteria(Aws::Vector<SearchableContactAttributesCriteria>&& value) { SetCriteria(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of criteria based on user-defined contact attributes that are
-     * configured for contact search.</p>
-     */
     inline SearchableContactAttributes& AddCriteria(const SearchableContactAttributesCriteria& value) { m_criteriaHasBeenSet = true; m_criteria.push_back(value); return *this; }
-
-    /**
-     * <p>The list of criteria based on user-defined contact attributes that are
-     * configured for contact search.</p>
-     */
     inline SearchableContactAttributes& AddCriteria(SearchableContactAttributesCriteria&& value) { m_criteriaHasBeenSet = true; m_criteria.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The match type combining search criteria using multiple searchable contact
      * attributes.</p>
      */
     inline const SearchContactsMatchType& GetMatchType() const{ return m_matchType; }
-
-    /**
-     * <p>The match type combining search criteria using multiple searchable contact
-     * attributes.</p>
-     */
     inline bool MatchTypeHasBeenSet() const { return m_matchTypeHasBeenSet; }
-
-    /**
-     * <p>The match type combining search criteria using multiple searchable contact
-     * attributes.</p>
-     */
     inline void SetMatchType(const SearchContactsMatchType& value) { m_matchTypeHasBeenSet = true; m_matchType = value; }
-
-    /**
-     * <p>The match type combining search criteria using multiple searchable contact
-     * attributes.</p>
-     */
     inline void SetMatchType(SearchContactsMatchType&& value) { m_matchTypeHasBeenSet = true; m_matchType = std::move(value); }
-
-    /**
-     * <p>The match type combining search criteria using multiple searchable contact
-     * attributes.</p>
-     */
     inline SearchableContactAttributes& WithMatchType(const SearchContactsMatchType& value) { SetMatchType(value); return *this;}
-
-    /**
-     * <p>The match type combining search criteria using multiple searchable contact
-     * attributes.</p>
-     */
     inline SearchableContactAttributes& WithMatchType(SearchContactsMatchType&& value) { SetMatchType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SearchableContactAttributesCriteria> m_criteria;

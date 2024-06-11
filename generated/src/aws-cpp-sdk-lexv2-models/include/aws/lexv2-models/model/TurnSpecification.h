@@ -39,67 +39,29 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about the agent messages in the turn.</p>
      */
     inline const AgentTurnSpecification& GetAgentTurn() const{ return m_agentTurn; }
-
-    /**
-     * <p>Contains information about the agent messages in the turn.</p>
-     */
     inline bool AgentTurnHasBeenSet() const { return m_agentTurnHasBeenSet; }
-
-    /**
-     * <p>Contains information about the agent messages in the turn.</p>
-     */
     inline void SetAgentTurn(const AgentTurnSpecification& value) { m_agentTurnHasBeenSet = true; m_agentTurn = value; }
-
-    /**
-     * <p>Contains information about the agent messages in the turn.</p>
-     */
     inline void SetAgentTurn(AgentTurnSpecification&& value) { m_agentTurnHasBeenSet = true; m_agentTurn = std::move(value); }
-
-    /**
-     * <p>Contains information about the agent messages in the turn.</p>
-     */
     inline TurnSpecification& WithAgentTurn(const AgentTurnSpecification& value) { SetAgentTurn(value); return *this;}
-
-    /**
-     * <p>Contains information about the agent messages in the turn.</p>
-     */
     inline TurnSpecification& WithAgentTurn(AgentTurnSpecification&& value) { SetAgentTurn(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains information about the user messages in the turn.</p>
      */
     inline const UserTurnSpecification& GetUserTurn() const{ return m_userTurn; }
-
-    /**
-     * <p>Contains information about the user messages in the turn.</p>
-     */
     inline bool UserTurnHasBeenSet() const { return m_userTurnHasBeenSet; }
-
-    /**
-     * <p>Contains information about the user messages in the turn.</p>
-     */
     inline void SetUserTurn(const UserTurnSpecification& value) { m_userTurnHasBeenSet = true; m_userTurn = value; }
-
-    /**
-     * <p>Contains information about the user messages in the turn.</p>
-     */
     inline void SetUserTurn(UserTurnSpecification&& value) { m_userTurnHasBeenSet = true; m_userTurn = std::move(value); }
-
-    /**
-     * <p>Contains information about the user messages in the turn.</p>
-     */
     inline TurnSpecification& WithUserTurn(const UserTurnSpecification& value) { SetUserTurn(value); return *this;}
-
-    /**
-     * <p>Contains information about the user messages in the turn.</p>
-     */
     inline TurnSpecification& WithUserTurn(UserTurnSpecification&& value) { SetUserTurn(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AgentTurnSpecification m_agentTurn;

@@ -55,153 +55,57 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Provides information on boosting <code>NUMBER</code> type document
      * attributes.</p>
      */
     inline const NumberAttributeBoostingConfiguration& GetNumberConfiguration() const{ return m_numberConfiguration; }
-
-    /**
-     * <p>Provides information on boosting <code>NUMBER</code> type document
-     * attributes.</p>
-     */
     inline bool NumberConfigurationHasBeenSet() const { return m_numberConfigurationHasBeenSet; }
-
-    /**
-     * <p>Provides information on boosting <code>NUMBER</code> type document
-     * attributes.</p>
-     */
     inline void SetNumberConfiguration(const NumberAttributeBoostingConfiguration& value) { m_numberConfigurationHasBeenSet = true; m_numberConfiguration = value; }
-
-    /**
-     * <p>Provides information on boosting <code>NUMBER</code> type document
-     * attributes.</p>
-     */
     inline void SetNumberConfiguration(NumberAttributeBoostingConfiguration&& value) { m_numberConfigurationHasBeenSet = true; m_numberConfiguration = std::move(value); }
-
-    /**
-     * <p>Provides information on boosting <code>NUMBER</code> type document
-     * attributes.</p>
-     */
     inline DocumentAttributeBoostingConfiguration& WithNumberConfiguration(const NumberAttributeBoostingConfiguration& value) { SetNumberConfiguration(value); return *this;}
-
-    /**
-     * <p>Provides information on boosting <code>NUMBER</code> type document
-     * attributes.</p>
-     */
     inline DocumentAttributeBoostingConfiguration& WithNumberConfiguration(NumberAttributeBoostingConfiguration&& value) { SetNumberConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides information on boosting <code>STRING</code> type document
      * attributes.</p>
      */
     inline const StringAttributeBoostingConfiguration& GetStringConfiguration() const{ return m_stringConfiguration; }
-
-    /**
-     * <p>Provides information on boosting <code>STRING</code> type document
-     * attributes.</p>
-     */
     inline bool StringConfigurationHasBeenSet() const { return m_stringConfigurationHasBeenSet; }
-
-    /**
-     * <p>Provides information on boosting <code>STRING</code> type document
-     * attributes.</p>
-     */
     inline void SetStringConfiguration(const StringAttributeBoostingConfiguration& value) { m_stringConfigurationHasBeenSet = true; m_stringConfiguration = value; }
-
-    /**
-     * <p>Provides information on boosting <code>STRING</code> type document
-     * attributes.</p>
-     */
     inline void SetStringConfiguration(StringAttributeBoostingConfiguration&& value) { m_stringConfigurationHasBeenSet = true; m_stringConfiguration = std::move(value); }
-
-    /**
-     * <p>Provides information on boosting <code>STRING</code> type document
-     * attributes.</p>
-     */
     inline DocumentAttributeBoostingConfiguration& WithStringConfiguration(const StringAttributeBoostingConfiguration& value) { SetStringConfiguration(value); return *this;}
-
-    /**
-     * <p>Provides information on boosting <code>STRING</code> type document
-     * attributes.</p>
-     */
     inline DocumentAttributeBoostingConfiguration& WithStringConfiguration(StringAttributeBoostingConfiguration&& value) { SetStringConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides information on boosting <code>DATE</code> type document
      * attributes.</p>
      */
     inline const DateAttributeBoostingConfiguration& GetDateConfiguration() const{ return m_dateConfiguration; }
-
-    /**
-     * <p>Provides information on boosting <code>DATE</code> type document
-     * attributes.</p>
-     */
     inline bool DateConfigurationHasBeenSet() const { return m_dateConfigurationHasBeenSet; }
-
-    /**
-     * <p>Provides information on boosting <code>DATE</code> type document
-     * attributes.</p>
-     */
     inline void SetDateConfiguration(const DateAttributeBoostingConfiguration& value) { m_dateConfigurationHasBeenSet = true; m_dateConfiguration = value; }
-
-    /**
-     * <p>Provides information on boosting <code>DATE</code> type document
-     * attributes.</p>
-     */
     inline void SetDateConfiguration(DateAttributeBoostingConfiguration&& value) { m_dateConfigurationHasBeenSet = true; m_dateConfiguration = std::move(value); }
-
-    /**
-     * <p>Provides information on boosting <code>DATE</code> type document
-     * attributes.</p>
-     */
     inline DocumentAttributeBoostingConfiguration& WithDateConfiguration(const DateAttributeBoostingConfiguration& value) { SetDateConfiguration(value); return *this;}
-
-    /**
-     * <p>Provides information on boosting <code>DATE</code> type document
-     * attributes.</p>
-     */
     inline DocumentAttributeBoostingConfiguration& WithDateConfiguration(DateAttributeBoostingConfiguration&& value) { SetDateConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides information on boosting <code>STRING_LIST</code> type document
      * attributes.</p>
      */
     inline const StringListAttributeBoostingConfiguration& GetStringListConfiguration() const{ return m_stringListConfiguration; }
-
-    /**
-     * <p>Provides information on boosting <code>STRING_LIST</code> type document
-     * attributes.</p>
-     */
     inline bool StringListConfigurationHasBeenSet() const { return m_stringListConfigurationHasBeenSet; }
-
-    /**
-     * <p>Provides information on boosting <code>STRING_LIST</code> type document
-     * attributes.</p>
-     */
     inline void SetStringListConfiguration(const StringListAttributeBoostingConfiguration& value) { m_stringListConfigurationHasBeenSet = true; m_stringListConfiguration = value; }
-
-    /**
-     * <p>Provides information on boosting <code>STRING_LIST</code> type document
-     * attributes.</p>
-     */
     inline void SetStringListConfiguration(StringListAttributeBoostingConfiguration&& value) { m_stringListConfigurationHasBeenSet = true; m_stringListConfiguration = std::move(value); }
-
-    /**
-     * <p>Provides information on boosting <code>STRING_LIST</code> type document
-     * attributes.</p>
-     */
     inline DocumentAttributeBoostingConfiguration& WithStringListConfiguration(const StringListAttributeBoostingConfiguration& value) { SetStringListConfiguration(value); return *this;}
-
-    /**
-     * <p>Provides information on boosting <code>STRING_LIST</code> type document
-     * attributes.</p>
-     */
     inline DocumentAttributeBoostingConfiguration& WithStringListConfiguration(StringListAttributeBoostingConfiguration&& value) { SetStringListConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NumberAttributeBoostingConfiguration m_numberConfiguration;

@@ -42,36 +42,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration that determines what the type of layout for a sheet.</p>
      */
     inline const LayoutConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p>The configuration that determines what the type of layout for a sheet.</p>
-     */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-
-    /**
-     * <p>The configuration that determines what the type of layout for a sheet.</p>
-     */
     inline void SetConfiguration(const LayoutConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-
-    /**
-     * <p>The configuration that determines what the type of layout for a sheet.</p>
-     */
     inline void SetConfiguration(LayoutConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-
-    /**
-     * <p>The configuration that determines what the type of layout for a sheet.</p>
-     */
     inline Layout& WithConfiguration(const LayoutConfiguration& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration that determines what the type of layout for a sheet.</p>
-     */
     inline Layout& WithConfiguration(LayoutConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LayoutConfiguration m_configuration;

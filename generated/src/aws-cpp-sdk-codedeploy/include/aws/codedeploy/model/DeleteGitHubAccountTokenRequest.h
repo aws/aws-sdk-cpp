@@ -38,46 +38,19 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the GitHub account connection to delete.</p>
      */
     inline const Aws::String& GetTokenName() const{ return m_tokenName; }
-
-    /**
-     * <p>The name of the GitHub account connection to delete.</p>
-     */
     inline bool TokenNameHasBeenSet() const { return m_tokenNameHasBeenSet; }
-
-    /**
-     * <p>The name of the GitHub account connection to delete.</p>
-     */
     inline void SetTokenName(const Aws::String& value) { m_tokenNameHasBeenSet = true; m_tokenName = value; }
-
-    /**
-     * <p>The name of the GitHub account connection to delete.</p>
-     */
     inline void SetTokenName(Aws::String&& value) { m_tokenNameHasBeenSet = true; m_tokenName = std::move(value); }
-
-    /**
-     * <p>The name of the GitHub account connection to delete.</p>
-     */
     inline void SetTokenName(const char* value) { m_tokenNameHasBeenSet = true; m_tokenName.assign(value); }
-
-    /**
-     * <p>The name of the GitHub account connection to delete.</p>
-     */
     inline DeleteGitHubAccountTokenRequest& WithTokenName(const Aws::String& value) { SetTokenName(value); return *this;}
-
-    /**
-     * <p>The name of the GitHub account connection to delete.</p>
-     */
     inline DeleteGitHubAccountTokenRequest& WithTokenName(Aws::String&& value) { SetTokenName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the GitHub account connection to delete.</p>
-     */
     inline DeleteGitHubAccountTokenRequest& WithTokenName(const char* value) { SetTokenName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tokenName;

@@ -38,67 +38,29 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status of the analysis.</p>
      */
     inline const RuntimeAnalysisStatus& GetRuntimeAnalysisStatus() const{ return m_runtimeAnalysisStatus; }
-
-    /**
-     * <p>The status of the analysis.</p>
-     */
     inline bool RuntimeAnalysisStatusHasBeenSet() const { return m_runtimeAnalysisStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the analysis.</p>
-     */
     inline void SetRuntimeAnalysisStatus(const RuntimeAnalysisStatus& value) { m_runtimeAnalysisStatusHasBeenSet = true; m_runtimeAnalysisStatus = value; }
-
-    /**
-     * <p>The status of the analysis.</p>
-     */
     inline void SetRuntimeAnalysisStatus(RuntimeAnalysisStatus&& value) { m_runtimeAnalysisStatusHasBeenSet = true; m_runtimeAnalysisStatus = std::move(value); }
-
-    /**
-     * <p>The status of the analysis.</p>
-     */
     inline AnalysisStatusUnion& WithRuntimeAnalysisStatus(const RuntimeAnalysisStatus& value) { SetRuntimeAnalysisStatus(value); return *this;}
-
-    /**
-     * <p>The status of the analysis.</p>
-     */
     inline AnalysisStatusUnion& WithRuntimeAnalysisStatus(RuntimeAnalysisStatus&& value) { SetRuntimeAnalysisStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the source code or database analysis.</p>
      */
     inline const SrcCodeOrDbAnalysisStatus& GetSrcCodeOrDbAnalysisStatus() const{ return m_srcCodeOrDbAnalysisStatus; }
-
-    /**
-     * <p>The status of the source code or database analysis.</p>
-     */
     inline bool SrcCodeOrDbAnalysisStatusHasBeenSet() const { return m_srcCodeOrDbAnalysisStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the source code or database analysis.</p>
-     */
     inline void SetSrcCodeOrDbAnalysisStatus(const SrcCodeOrDbAnalysisStatus& value) { m_srcCodeOrDbAnalysisStatusHasBeenSet = true; m_srcCodeOrDbAnalysisStatus = value; }
-
-    /**
-     * <p>The status of the source code or database analysis.</p>
-     */
     inline void SetSrcCodeOrDbAnalysisStatus(SrcCodeOrDbAnalysisStatus&& value) { m_srcCodeOrDbAnalysisStatusHasBeenSet = true; m_srcCodeOrDbAnalysisStatus = std::move(value); }
-
-    /**
-     * <p>The status of the source code or database analysis.</p>
-     */
     inline AnalysisStatusUnion& WithSrcCodeOrDbAnalysisStatus(const SrcCodeOrDbAnalysisStatus& value) { SetSrcCodeOrDbAnalysisStatus(value); return *this;}
-
-    /**
-     * <p>The status of the source code or database analysis.</p>
-     */
     inline AnalysisStatusUnion& WithSrcCodeOrDbAnalysisStatus(SrcCodeOrDbAnalysisStatus&& value) { SetSrcCodeOrDbAnalysisStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RuntimeAnalysisStatus m_runtimeAnalysisStatus;

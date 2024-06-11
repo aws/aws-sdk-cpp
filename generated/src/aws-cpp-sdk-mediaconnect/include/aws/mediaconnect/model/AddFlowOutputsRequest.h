@@ -37,87 +37,33 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The flow that you want to add outputs to.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The flow that you want to add outputs to.
-     */
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-
-    /**
-     * The flow that you want to add outputs to.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-
-    /**
-     * The flow that you want to add outputs to.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-
-    /**
-     * The flow that you want to add outputs to.
-     */
     inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-
-    /**
-     * The flow that you want to add outputs to.
-     */
     inline AddFlowOutputsRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The flow that you want to add outputs to.
-     */
     inline AddFlowOutputsRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The flow that you want to add outputs to.
-     */
     inline AddFlowOutputsRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * A list of outputs that you want to add.
      */
     inline const Aws::Vector<AddOutputRequest>& GetOutputs() const{ return m_outputs; }
-
-    /**
-     * A list of outputs that you want to add.
-     */
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
-
-    /**
-     * A list of outputs that you want to add.
-     */
     inline void SetOutputs(const Aws::Vector<AddOutputRequest>& value) { m_outputsHasBeenSet = true; m_outputs = value; }
-
-    /**
-     * A list of outputs that you want to add.
-     */
     inline void SetOutputs(Aws::Vector<AddOutputRequest>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
-
-    /**
-     * A list of outputs that you want to add.
-     */
     inline AddFlowOutputsRequest& WithOutputs(const Aws::Vector<AddOutputRequest>& value) { SetOutputs(value); return *this;}
-
-    /**
-     * A list of outputs that you want to add.
-     */
     inline AddFlowOutputsRequest& WithOutputs(Aws::Vector<AddOutputRequest>&& value) { SetOutputs(std::move(value)); return *this;}
-
-    /**
-     * A list of outputs that you want to add.
-     */
     inline AddFlowOutputsRequest& AddOutputs(const AddOutputRequest& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
-
-    /**
-     * A list of outputs that you want to add.
-     */
     inline AddFlowOutputsRequest& AddOutputs(AddOutputRequest&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

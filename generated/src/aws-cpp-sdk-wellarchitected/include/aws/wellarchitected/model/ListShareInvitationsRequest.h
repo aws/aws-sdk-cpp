@@ -42,254 +42,96 @@ namespace Model
     AWS_WELLARCHITECTED_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadNamePrefix() const{ return m_workloadNamePrefix; }
-
-    
     inline bool WorkloadNamePrefixHasBeenSet() const { return m_workloadNamePrefixHasBeenSet; }
-
-    
     inline void SetWorkloadNamePrefix(const Aws::String& value) { m_workloadNamePrefixHasBeenSet = true; m_workloadNamePrefix = value; }
-
-    
     inline void SetWorkloadNamePrefix(Aws::String&& value) { m_workloadNamePrefixHasBeenSet = true; m_workloadNamePrefix = std::move(value); }
-
-    
     inline void SetWorkloadNamePrefix(const char* value) { m_workloadNamePrefixHasBeenSet = true; m_workloadNamePrefix.assign(value); }
-
-    
     inline ListShareInvitationsRequest& WithWorkloadNamePrefix(const Aws::String& value) { SetWorkloadNamePrefix(value); return *this;}
-
-    
     inline ListShareInvitationsRequest& WithWorkloadNamePrefix(Aws::String&& value) { SetWorkloadNamePrefix(std::move(value)); return *this;}
-
-    
     inline ListShareInvitationsRequest& WithWorkloadNamePrefix(const char* value) { SetWorkloadNamePrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An optional string added to the beginning of each lens name returned in the
      * results.</p>
      */
     inline const Aws::String& GetLensNamePrefix() const{ return m_lensNamePrefix; }
-
-    /**
-     * <p>An optional string added to the beginning of each lens name returned in the
-     * results.</p>
-     */
     inline bool LensNamePrefixHasBeenSet() const { return m_lensNamePrefixHasBeenSet; }
-
-    /**
-     * <p>An optional string added to the beginning of each lens name returned in the
-     * results.</p>
-     */
     inline void SetLensNamePrefix(const Aws::String& value) { m_lensNamePrefixHasBeenSet = true; m_lensNamePrefix = value; }
-
-    /**
-     * <p>An optional string added to the beginning of each lens name returned in the
-     * results.</p>
-     */
     inline void SetLensNamePrefix(Aws::String&& value) { m_lensNamePrefixHasBeenSet = true; m_lensNamePrefix = std::move(value); }
-
-    /**
-     * <p>An optional string added to the beginning of each lens name returned in the
-     * results.</p>
-     */
     inline void SetLensNamePrefix(const char* value) { m_lensNamePrefixHasBeenSet = true; m_lensNamePrefix.assign(value); }
-
-    /**
-     * <p>An optional string added to the beginning of each lens name returned in the
-     * results.</p>
-     */
     inline ListShareInvitationsRequest& WithLensNamePrefix(const Aws::String& value) { SetLensNamePrefix(value); return *this;}
-
-    /**
-     * <p>An optional string added to the beginning of each lens name returned in the
-     * results.</p>
-     */
     inline ListShareInvitationsRequest& WithLensNamePrefix(Aws::String&& value) { SetLensNamePrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>An optional string added to the beginning of each lens name returned in the
-     * results.</p>
-     */
     inline ListShareInvitationsRequest& WithLensNamePrefix(const char* value) { SetLensNamePrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of share invitations to be returned.</p>
      */
     inline const ShareResourceType& GetShareResourceType() const{ return m_shareResourceType; }
-
-    /**
-     * <p>The type of share invitations to be returned.</p>
-     */
     inline bool ShareResourceTypeHasBeenSet() const { return m_shareResourceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of share invitations to be returned.</p>
-     */
     inline void SetShareResourceType(const ShareResourceType& value) { m_shareResourceTypeHasBeenSet = true; m_shareResourceType = value; }
-
-    /**
-     * <p>The type of share invitations to be returned.</p>
-     */
     inline void SetShareResourceType(ShareResourceType&& value) { m_shareResourceTypeHasBeenSet = true; m_shareResourceType = std::move(value); }
-
-    /**
-     * <p>The type of share invitations to be returned.</p>
-     */
     inline ListShareInvitationsRequest& WithShareResourceType(const ShareResourceType& value) { SetShareResourceType(value); return *this;}
-
-    /**
-     * <p>The type of share invitations to be returned.</p>
-     */
     inline ListShareInvitationsRequest& WithShareResourceType(ShareResourceType&& value) { SetShareResourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    
     inline ListShareInvitationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline ListShareInvitationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline ListShareInvitationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return for this request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return for this request.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return for this request.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return for this request.</p>
-     */
     inline ListShareInvitationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An optional string added to the beginning of each profile name returned in
      * the results.</p>
      */
     inline const Aws::String& GetProfileNamePrefix() const{ return m_profileNamePrefix; }
-
-    /**
-     * <p>An optional string added to the beginning of each profile name returned in
-     * the results.</p>
-     */
     inline bool ProfileNamePrefixHasBeenSet() const { return m_profileNamePrefixHasBeenSet; }
-
-    /**
-     * <p>An optional string added to the beginning of each profile name returned in
-     * the results.</p>
-     */
     inline void SetProfileNamePrefix(const Aws::String& value) { m_profileNamePrefixHasBeenSet = true; m_profileNamePrefix = value; }
-
-    /**
-     * <p>An optional string added to the beginning of each profile name returned in
-     * the results.</p>
-     */
     inline void SetProfileNamePrefix(Aws::String&& value) { m_profileNamePrefixHasBeenSet = true; m_profileNamePrefix = std::move(value); }
-
-    /**
-     * <p>An optional string added to the beginning of each profile name returned in
-     * the results.</p>
-     */
     inline void SetProfileNamePrefix(const char* value) { m_profileNamePrefixHasBeenSet = true; m_profileNamePrefix.assign(value); }
-
-    /**
-     * <p>An optional string added to the beginning of each profile name returned in
-     * the results.</p>
-     */
     inline ListShareInvitationsRequest& WithProfileNamePrefix(const Aws::String& value) { SetProfileNamePrefix(value); return *this;}
-
-    /**
-     * <p>An optional string added to the beginning of each profile name returned in
-     * the results.</p>
-     */
     inline ListShareInvitationsRequest& WithProfileNamePrefix(Aws::String&& value) { SetProfileNamePrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>An optional string added to the beginning of each profile name returned in
-     * the results.</p>
-     */
     inline ListShareInvitationsRequest& WithProfileNamePrefix(const char* value) { SetProfileNamePrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An optional string added to the beginning of each review template name
      * returned in the results.</p>
      */
     inline const Aws::String& GetTemplateNamePrefix() const{ return m_templateNamePrefix; }
-
-    /**
-     * <p>An optional string added to the beginning of each review template name
-     * returned in the results.</p>
-     */
     inline bool TemplateNamePrefixHasBeenSet() const { return m_templateNamePrefixHasBeenSet; }
-
-    /**
-     * <p>An optional string added to the beginning of each review template name
-     * returned in the results.</p>
-     */
     inline void SetTemplateNamePrefix(const Aws::String& value) { m_templateNamePrefixHasBeenSet = true; m_templateNamePrefix = value; }
-
-    /**
-     * <p>An optional string added to the beginning of each review template name
-     * returned in the results.</p>
-     */
     inline void SetTemplateNamePrefix(Aws::String&& value) { m_templateNamePrefixHasBeenSet = true; m_templateNamePrefix = std::move(value); }
-
-    /**
-     * <p>An optional string added to the beginning of each review template name
-     * returned in the results.</p>
-     */
     inline void SetTemplateNamePrefix(const char* value) { m_templateNamePrefixHasBeenSet = true; m_templateNamePrefix.assign(value); }
-
-    /**
-     * <p>An optional string added to the beginning of each review template name
-     * returned in the results.</p>
-     */
     inline ListShareInvitationsRequest& WithTemplateNamePrefix(const Aws::String& value) { SetTemplateNamePrefix(value); return *this;}
-
-    /**
-     * <p>An optional string added to the beginning of each review template name
-     * returned in the results.</p>
-     */
     inline ListShareInvitationsRequest& WithTemplateNamePrefix(Aws::String&& value) { SetTemplateNamePrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>An optional string added to the beginning of each review template name
-     * returned in the results.</p>
-     */
     inline ListShareInvitationsRequest& WithTemplateNamePrefix(const char* value) { SetTemplateNamePrefix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workloadNamePrefix;

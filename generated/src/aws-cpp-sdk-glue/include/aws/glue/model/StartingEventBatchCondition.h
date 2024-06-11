@@ -38,47 +38,25 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Number of events in the batch.</p>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
-
-    /**
-     * <p>Number of events in the batch.</p>
-     */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
-
-    /**
-     * <p>Number of events in the batch.</p>
-     */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
-
-    /**
-     * <p>Number of events in the batch.</p>
-     */
     inline StartingEventBatchCondition& WithBatchSize(int value) { SetBatchSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Duration of the batch window in seconds.</p>
      */
     inline int GetBatchWindow() const{ return m_batchWindow; }
-
-    /**
-     * <p>Duration of the batch window in seconds.</p>
-     */
     inline bool BatchWindowHasBeenSet() const { return m_batchWindowHasBeenSet; }
-
-    /**
-     * <p>Duration of the batch window in seconds.</p>
-     */
     inline void SetBatchWindow(int value) { m_batchWindowHasBeenSet = true; m_batchWindow = value; }
-
-    /**
-     * <p>Duration of the batch window in seconds.</p>
-     */
     inline StartingEventBatchCondition& WithBatchWindow(int value) { SetBatchWindow(value); return *this;}
-
+    ///@}
   private:
 
     int m_batchSize;

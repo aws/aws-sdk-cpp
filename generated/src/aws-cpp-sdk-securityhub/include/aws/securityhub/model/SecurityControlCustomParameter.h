@@ -40,119 +40,38 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The ID of the security control. </p>
      */
     inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }
-
-    /**
-     * <p> The ID of the security control. </p>
-     */
     inline bool SecurityControlIdHasBeenSet() const { return m_securityControlIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the security control. </p>
-     */
     inline void SetSecurityControlId(const Aws::String& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = value; }
-
-    /**
-     * <p> The ID of the security control. </p>
-     */
     inline void SetSecurityControlId(Aws::String&& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = std::move(value); }
-
-    /**
-     * <p> The ID of the security control. </p>
-     */
     inline void SetSecurityControlId(const char* value) { m_securityControlIdHasBeenSet = true; m_securityControlId.assign(value); }
-
-    /**
-     * <p> The ID of the security control. </p>
-     */
     inline SecurityControlCustomParameter& WithSecurityControlId(const Aws::String& value) { SetSecurityControlId(value); return *this;}
-
-    /**
-     * <p> The ID of the security control. </p>
-     */
     inline SecurityControlCustomParameter& WithSecurityControlId(Aws::String&& value) { SetSecurityControlId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the security control. </p>
-     */
     inline SecurityControlCustomParameter& WithSecurityControlId(const char* value) { SetSecurityControlId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> An object that specifies parameter values for a control in a configuration
      * policy. </p>
      */
     inline const Aws::Map<Aws::String, ParameterConfiguration>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p> An object that specifies parameter values for a control in a configuration
-     * policy. </p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p> An object that specifies parameter values for a control in a configuration
-     * policy. </p>
-     */
     inline void SetParameters(const Aws::Map<Aws::String, ParameterConfiguration>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p> An object that specifies parameter values for a control in a configuration
-     * policy. </p>
-     */
     inline void SetParameters(Aws::Map<Aws::String, ParameterConfiguration>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p> An object that specifies parameter values for a control in a configuration
-     * policy. </p>
-     */
     inline SecurityControlCustomParameter& WithParameters(const Aws::Map<Aws::String, ParameterConfiguration>& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p> An object that specifies parameter values for a control in a configuration
-     * policy. </p>
-     */
     inline SecurityControlCustomParameter& WithParameters(Aws::Map<Aws::String, ParameterConfiguration>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * <p> An object that specifies parameter values for a control in a configuration
-     * policy. </p>
-     */
     inline SecurityControlCustomParameter& AddParameters(const Aws::String& key, const ParameterConfiguration& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-
-    /**
-     * <p> An object that specifies parameter values for a control in a configuration
-     * policy. </p>
-     */
     inline SecurityControlCustomParameter& AddParameters(Aws::String&& key, const ParameterConfiguration& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> An object that specifies parameter values for a control in a configuration
-     * policy. </p>
-     */
     inline SecurityControlCustomParameter& AddParameters(const Aws::String& key, ParameterConfiguration&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> An object that specifies parameter values for a control in a configuration
-     * policy. </p>
-     */
     inline SecurityControlCustomParameter& AddParameters(Aws::String&& key, ParameterConfiguration&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p> An object that specifies parameter values for a control in a configuration
-     * policy. </p>
-     */
     inline SecurityControlCustomParameter& AddParameters(const char* key, ParameterConfiguration&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> An object that specifies parameter values for a control in a configuration
-     * policy. </p>
-     */
     inline SecurityControlCustomParameter& AddParameters(const char* key, const ParameterConfiguration& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_securityControlId;

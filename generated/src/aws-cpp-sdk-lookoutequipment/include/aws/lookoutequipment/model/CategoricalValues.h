@@ -38,63 +38,28 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Indicates whether there is a potential data issue related to categorical
      * values. </p>
      */
     inline const StatisticalIssueStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> Indicates whether there is a potential data issue related to categorical
-     * values. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> Indicates whether there is a potential data issue related to categorical
-     * values. </p>
-     */
     inline void SetStatus(const StatisticalIssueStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> Indicates whether there is a potential data issue related to categorical
-     * values. </p>
-     */
     inline void SetStatus(StatisticalIssueStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> Indicates whether there is a potential data issue related to categorical
-     * values. </p>
-     */
     inline CategoricalValues& WithStatus(const StatisticalIssueStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> Indicates whether there is a potential data issue related to categorical
-     * values. </p>
-     */
     inline CategoricalValues& WithStatus(StatisticalIssueStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Indicates the number of categories in the data. </p>
      */
     inline int GetNumberOfCategory() const{ return m_numberOfCategory; }
-
-    /**
-     * <p> Indicates the number of categories in the data. </p>
-     */
     inline bool NumberOfCategoryHasBeenSet() const { return m_numberOfCategoryHasBeenSet; }
-
-    /**
-     * <p> Indicates the number of categories in the data. </p>
-     */
     inline void SetNumberOfCategory(int value) { m_numberOfCategoryHasBeenSet = true; m_numberOfCategory = value; }
-
-    /**
-     * <p> Indicates the number of categories in the data. </p>
-     */
     inline CategoricalValues& WithNumberOfCategory(int value) { SetNumberOfCategory(value); return *this;}
-
+    ///@}
   private:
 
     StatisticalIssueStatus m_status;

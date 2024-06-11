@@ -43,46 +43,19 @@ namespace Model
     AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The domain that you want to use for tracking open and click events.</p>
      */
     inline const Aws::String& GetCustomRedirectDomain() const{ return m_customRedirectDomain; }
-
-    /**
-     * <p>The domain that you want to use for tracking open and click events.</p>
-     */
     inline bool CustomRedirectDomainHasBeenSet() const { return m_customRedirectDomainHasBeenSet; }
-
-    /**
-     * <p>The domain that you want to use for tracking open and click events.</p>
-     */
     inline void SetCustomRedirectDomain(const Aws::String& value) { m_customRedirectDomainHasBeenSet = true; m_customRedirectDomain = value; }
-
-    /**
-     * <p>The domain that you want to use for tracking open and click events.</p>
-     */
     inline void SetCustomRedirectDomain(Aws::String&& value) { m_customRedirectDomainHasBeenSet = true; m_customRedirectDomain = std::move(value); }
-
-    /**
-     * <p>The domain that you want to use for tracking open and click events.</p>
-     */
     inline void SetCustomRedirectDomain(const char* value) { m_customRedirectDomainHasBeenSet = true; m_customRedirectDomain.assign(value); }
-
-    /**
-     * <p>The domain that you want to use for tracking open and click events.</p>
-     */
     inline TrackingOptions& WithCustomRedirectDomain(const Aws::String& value) { SetCustomRedirectDomain(value); return *this;}
-
-    /**
-     * <p>The domain that you want to use for tracking open and click events.</p>
-     */
     inline TrackingOptions& WithCustomRedirectDomain(Aws::String&& value) { SetCustomRedirectDomain(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain that you want to use for tracking open and click events.</p>
-     */
     inline TrackingOptions& WithCustomRedirectDomain(const char* value) { SetCustomRedirectDomain(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_customRedirectDomain;

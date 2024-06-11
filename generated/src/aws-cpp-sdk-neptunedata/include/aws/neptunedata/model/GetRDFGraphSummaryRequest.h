@@ -38,42 +38,18 @@ namespace Model
     AWS_NEPTUNEDATA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Mode can take one of two values: <code>BASIC</code> (the default), and
      * <code>DETAILED</code>.</p>
      */
     inline const GraphSummaryType& GetMode() const{ return m_mode; }
-
-    /**
-     * <p>Mode can take one of two values: <code>BASIC</code> (the default), and
-     * <code>DETAILED</code>.</p>
-     */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-
-    /**
-     * <p>Mode can take one of two values: <code>BASIC</code> (the default), and
-     * <code>DETAILED</code>.</p>
-     */
     inline void SetMode(const GraphSummaryType& value) { m_modeHasBeenSet = true; m_mode = value; }
-
-    /**
-     * <p>Mode can take one of two values: <code>BASIC</code> (the default), and
-     * <code>DETAILED</code>.</p>
-     */
     inline void SetMode(GraphSummaryType&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-
-    /**
-     * <p>Mode can take one of two values: <code>BASIC</code> (the default), and
-     * <code>DETAILED</code>.</p>
-     */
     inline GetRDFGraphSummaryRequest& WithMode(const GraphSummaryType& value) { SetMode(value); return *this;}
-
-    /**
-     * <p>Mode can take one of two values: <code>BASIC</code> (the default), and
-     * <code>DETAILED</code>.</p>
-     */
     inline GetRDFGraphSummaryRequest& WithMode(GraphSummaryType&& value) { SetMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GraphSummaryType m_mode;

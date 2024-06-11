@@ -33,62 +33,21 @@ namespace Model
     AWS_CODEGURUSECURITY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A list of finding identifiers. Each identifier consists of a
      * <code>scanName</code> and a <code>findingId</code>. You retrieve the
      * <code>findingId</code> when you call <code>GetFindings</code>.</p>
      */
     inline const Aws::Vector<FindingIdentifier>& GetFindingIdentifiers() const{ return m_findingIdentifiers; }
-
-    /**
-     * <p>A list of finding identifiers. Each identifier consists of a
-     * <code>scanName</code> and a <code>findingId</code>. You retrieve the
-     * <code>findingId</code> when you call <code>GetFindings</code>.</p>
-     */
     inline bool FindingIdentifiersHasBeenSet() const { return m_findingIdentifiersHasBeenSet; }
-
-    /**
-     * <p>A list of finding identifiers. Each identifier consists of a
-     * <code>scanName</code> and a <code>findingId</code>. You retrieve the
-     * <code>findingId</code> when you call <code>GetFindings</code>.</p>
-     */
     inline void SetFindingIdentifiers(const Aws::Vector<FindingIdentifier>& value) { m_findingIdentifiersHasBeenSet = true; m_findingIdentifiers = value; }
-
-    /**
-     * <p>A list of finding identifiers. Each identifier consists of a
-     * <code>scanName</code> and a <code>findingId</code>. You retrieve the
-     * <code>findingId</code> when you call <code>GetFindings</code>.</p>
-     */
     inline void SetFindingIdentifiers(Aws::Vector<FindingIdentifier>&& value) { m_findingIdentifiersHasBeenSet = true; m_findingIdentifiers = std::move(value); }
-
-    /**
-     * <p>A list of finding identifiers. Each identifier consists of a
-     * <code>scanName</code> and a <code>findingId</code>. You retrieve the
-     * <code>findingId</code> when you call <code>GetFindings</code>.</p>
-     */
     inline BatchGetFindingsRequest& WithFindingIdentifiers(const Aws::Vector<FindingIdentifier>& value) { SetFindingIdentifiers(value); return *this;}
-
-    /**
-     * <p>A list of finding identifiers. Each identifier consists of a
-     * <code>scanName</code> and a <code>findingId</code>. You retrieve the
-     * <code>findingId</code> when you call <code>GetFindings</code>.</p>
-     */
     inline BatchGetFindingsRequest& WithFindingIdentifiers(Aws::Vector<FindingIdentifier>&& value) { SetFindingIdentifiers(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of finding identifiers. Each identifier consists of a
-     * <code>scanName</code> and a <code>findingId</code>. You retrieve the
-     * <code>findingId</code> when you call <code>GetFindings</code>.</p>
-     */
     inline BatchGetFindingsRequest& AddFindingIdentifiers(const FindingIdentifier& value) { m_findingIdentifiersHasBeenSet = true; m_findingIdentifiers.push_back(value); return *this; }
-
-    /**
-     * <p>A list of finding identifiers. Each identifier consists of a
-     * <code>scanName</code> and a <code>findingId</code>. You retrieve the
-     * <code>findingId</code> when you call <code>GetFindings</code>.</p>
-     */
     inline BatchGetFindingsRequest& AddFindingIdentifiers(FindingIdentifier&& value) { m_findingIdentifiersHasBeenSet = true; m_findingIdentifiers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<FindingIdentifier> m_findingIdentifiers;

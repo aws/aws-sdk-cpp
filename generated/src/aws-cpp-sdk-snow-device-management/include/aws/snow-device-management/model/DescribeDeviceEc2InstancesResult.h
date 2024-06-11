@@ -34,63 +34,29 @@ namespace Model
     AWS_SNOWDEVICEMANAGEMENT_API DescribeDeviceEc2InstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of structures containing information about each instance. </p>
      */
     inline const Aws::Vector<InstanceSummary>& GetInstances() const{ return m_instances; }
-
-    /**
-     * <p>A list of structures containing information about each instance. </p>
-     */
     inline void SetInstances(const Aws::Vector<InstanceSummary>& value) { m_instances = value; }
-
-    /**
-     * <p>A list of structures containing information about each instance. </p>
-     */
     inline void SetInstances(Aws::Vector<InstanceSummary>&& value) { m_instances = std::move(value); }
-
-    /**
-     * <p>A list of structures containing information about each instance. </p>
-     */
     inline DescribeDeviceEc2InstancesResult& WithInstances(const Aws::Vector<InstanceSummary>& value) { SetInstances(value); return *this;}
-
-    /**
-     * <p>A list of structures containing information about each instance. </p>
-     */
     inline DescribeDeviceEc2InstancesResult& WithInstances(Aws::Vector<InstanceSummary>&& value) { SetInstances(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of structures containing information about each instance. </p>
-     */
     inline DescribeDeviceEc2InstancesResult& AddInstances(const InstanceSummary& value) { m_instances.push_back(value); return *this; }
-
-    /**
-     * <p>A list of structures containing information about each instance. </p>
-     */
     inline DescribeDeviceEc2InstancesResult& AddInstances(InstanceSummary&& value) { m_instances.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDeviceEc2InstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDeviceEc2InstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDeviceEc2InstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<InstanceSummary> m_instances;

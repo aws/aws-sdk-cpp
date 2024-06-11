@@ -36,30 +36,16 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The duration of the Protected Query, from creation until query
      * completion.</p>
      */
     inline long long GetTotalDurationInMillis() const{ return m_totalDurationInMillis; }
-
-    /**
-     * <p>The duration of the Protected Query, from creation until query
-     * completion.</p>
-     */
     inline bool TotalDurationInMillisHasBeenSet() const { return m_totalDurationInMillisHasBeenSet; }
-
-    /**
-     * <p>The duration of the Protected Query, from creation until query
-     * completion.</p>
-     */
     inline void SetTotalDurationInMillis(long long value) { m_totalDurationInMillisHasBeenSet = true; m_totalDurationInMillis = value; }
-
-    /**
-     * <p>The duration of the Protected Query, from creation until query
-     * completion.</p>
-     */
     inline ProtectedQueryStatistics& WithTotalDurationInMillis(long long value) { SetTotalDurationInMillis(value); return *this;}
-
+    ///@}
   private:
 
     long long m_totalDurationInMillis;

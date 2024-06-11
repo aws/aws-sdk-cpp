@@ -38,61 +38,28 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A positive integer specifying priority of a method with 1 being the highest
      * priority.</p>
      */
     inline int GetPriority() const{ return m_priority; }
-
-    /**
-     * <p>A positive integer specifying priority of a method with 1 being the highest
-     * priority.</p>
-     */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-
-    /**
-     * <p>A positive integer specifying priority of a method with 1 being the highest
-     * priority.</p>
-     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
-
-    /**
-     * <p>A positive integer specifying priority of a method with 1 being the highest
-     * priority.</p>
-     */
     inline RecoveryOptionType& WithPriority(int value) { SetPriority(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The recovery method for a user.</p>
      */
     inline const RecoveryOptionNameType& GetName() const{ return m_name; }
-
-    /**
-     * <p>The recovery method for a user.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The recovery method for a user.</p>
-     */
     inline void SetName(const RecoveryOptionNameType& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The recovery method for a user.</p>
-     */
     inline void SetName(RecoveryOptionNameType&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The recovery method for a user.</p>
-     */
     inline RecoveryOptionType& WithName(const RecoveryOptionNameType& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The recovery method for a user.</p>
-     */
     inline RecoveryOptionType& WithName(RecoveryOptionNameType&& value) { SetName(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_priority;

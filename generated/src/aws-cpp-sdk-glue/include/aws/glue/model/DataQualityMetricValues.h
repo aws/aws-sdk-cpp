@@ -36,101 +36,48 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The actual value of the data quality metric.</p>
      */
     inline double GetActualValue() const{ return m_actualValue; }
-
-    /**
-     * <p>The actual value of the data quality metric.</p>
-     */
     inline bool ActualValueHasBeenSet() const { return m_actualValueHasBeenSet; }
-
-    /**
-     * <p>The actual value of the data quality metric.</p>
-     */
     inline void SetActualValue(double value) { m_actualValueHasBeenSet = true; m_actualValue = value; }
-
-    /**
-     * <p>The actual value of the data quality metric.</p>
-     */
     inline DataQualityMetricValues& WithActualValue(double value) { SetActualValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The expected value of the data quality metric according to the analysis of
      * historical data.</p>
      */
     inline double GetExpectedValue() const{ return m_expectedValue; }
-
-    /**
-     * <p>The expected value of the data quality metric according to the analysis of
-     * historical data.</p>
-     */
     inline bool ExpectedValueHasBeenSet() const { return m_expectedValueHasBeenSet; }
-
-    /**
-     * <p>The expected value of the data quality metric according to the analysis of
-     * historical data.</p>
-     */
     inline void SetExpectedValue(double value) { m_expectedValueHasBeenSet = true; m_expectedValue = value; }
-
-    /**
-     * <p>The expected value of the data quality metric according to the analysis of
-     * historical data.</p>
-     */
     inline DataQualityMetricValues& WithExpectedValue(double value) { SetExpectedValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The lower limit of the data quality metric value according to the analysis of
      * historical data.</p>
      */
     inline double GetLowerLimit() const{ return m_lowerLimit; }
-
-    /**
-     * <p>The lower limit of the data quality metric value according to the analysis of
-     * historical data.</p>
-     */
     inline bool LowerLimitHasBeenSet() const { return m_lowerLimitHasBeenSet; }
-
-    /**
-     * <p>The lower limit of the data quality metric value according to the analysis of
-     * historical data.</p>
-     */
     inline void SetLowerLimit(double value) { m_lowerLimitHasBeenSet = true; m_lowerLimit = value; }
-
-    /**
-     * <p>The lower limit of the data quality metric value according to the analysis of
-     * historical data.</p>
-     */
     inline DataQualityMetricValues& WithLowerLimit(double value) { SetLowerLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The upper limit of the data quality metric value according to the analysis of
      * historical data.</p>
      */
     inline double GetUpperLimit() const{ return m_upperLimit; }
-
-    /**
-     * <p>The upper limit of the data quality metric value according to the analysis of
-     * historical data.</p>
-     */
     inline bool UpperLimitHasBeenSet() const { return m_upperLimitHasBeenSet; }
-
-    /**
-     * <p>The upper limit of the data quality metric value according to the analysis of
-     * historical data.</p>
-     */
     inline void SetUpperLimit(double value) { m_upperLimitHasBeenSet = true; m_upperLimit = value; }
-
-    /**
-     * <p>The upper limit of the data quality metric value according to the analysis of
-     * historical data.</p>
-     */
     inline DataQualityMetricValues& WithUpperLimit(double value) { SetUpperLimit(value); return *this;}
-
+    ///@}
   private:
 
     double m_actualValue;

@@ -38,46 +38,19 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The user's ID.</p>
      */
     inline const Aws::String& GetUserIdentityId() const{ return m_userIdentityId; }
-
-    /**
-     * <p>The user's ID.</p>
-     */
     inline bool UserIdentityIdHasBeenSet() const { return m_userIdentityIdHasBeenSet; }
-
-    /**
-     * <p>The user's ID.</p>
-     */
     inline void SetUserIdentityId(const Aws::String& value) { m_userIdentityIdHasBeenSet = true; m_userIdentityId = value; }
-
-    /**
-     * <p>The user's ID.</p>
-     */
     inline void SetUserIdentityId(Aws::String&& value) { m_userIdentityIdHasBeenSet = true; m_userIdentityId = std::move(value); }
-
-    /**
-     * <p>The user's ID.</p>
-     */
     inline void SetUserIdentityId(const char* value) { m_userIdentityIdHasBeenSet = true; m_userIdentityId.assign(value); }
-
-    /**
-     * <p>The user's ID.</p>
-     */
     inline UserJobsFirst& WithUserIdentityId(const Aws::String& value) { SetUserIdentityId(value); return *this;}
-
-    /**
-     * <p>The user's ID.</p>
-     */
     inline UserJobsFirst& WithUserIdentityId(Aws::String&& value) { SetUserIdentityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The user's ID.</p>
-     */
     inline UserJobsFirst& WithUserIdentityId(const char* value) { SetUserIdentityId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userIdentityId;

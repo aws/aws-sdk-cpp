@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKVOICE_API PutVoiceConnectorTerminationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated termination settings.</p>
      */
     inline const Termination& GetTermination() const{ return m_termination; }
-
-    /**
-     * <p>The updated termination settings.</p>
-     */
     inline void SetTermination(const Termination& value) { m_termination = value; }
-
-    /**
-     * <p>The updated termination settings.</p>
-     */
     inline void SetTermination(Termination&& value) { m_termination = std::move(value); }
-
-    /**
-     * <p>The updated termination settings.</p>
-     */
     inline PutVoiceConnectorTerminationResult& WithTermination(const Termination& value) { SetTermination(value); return *this;}
-
-    /**
-     * <p>The updated termination settings.</p>
-     */
     inline PutVoiceConnectorTerminationResult& WithTermination(Termination&& value) { SetTermination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutVoiceConnectorTerminationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutVoiceConnectorTerminationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutVoiceConnectorTerminationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Termination m_termination;

@@ -38,36 +38,17 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The vector configuration details on the Bedrock embeddings model.</p>
      */
     inline const BedrockEmbeddingModelConfiguration& GetBedrockEmbeddingModelConfiguration() const{ return m_bedrockEmbeddingModelConfiguration; }
-
-    /**
-     * <p>The vector configuration details on the Bedrock embeddings model.</p>
-     */
     inline bool BedrockEmbeddingModelConfigurationHasBeenSet() const { return m_bedrockEmbeddingModelConfigurationHasBeenSet; }
-
-    /**
-     * <p>The vector configuration details on the Bedrock embeddings model.</p>
-     */
     inline void SetBedrockEmbeddingModelConfiguration(const BedrockEmbeddingModelConfiguration& value) { m_bedrockEmbeddingModelConfigurationHasBeenSet = true; m_bedrockEmbeddingModelConfiguration = value; }
-
-    /**
-     * <p>The vector configuration details on the Bedrock embeddings model.</p>
-     */
     inline void SetBedrockEmbeddingModelConfiguration(BedrockEmbeddingModelConfiguration&& value) { m_bedrockEmbeddingModelConfigurationHasBeenSet = true; m_bedrockEmbeddingModelConfiguration = std::move(value); }
-
-    /**
-     * <p>The vector configuration details on the Bedrock embeddings model.</p>
-     */
     inline EmbeddingModelConfiguration& WithBedrockEmbeddingModelConfiguration(const BedrockEmbeddingModelConfiguration& value) { SetBedrockEmbeddingModelConfiguration(value); return *this;}
-
-    /**
-     * <p>The vector configuration details on the Bedrock embeddings model.</p>
-     */
     inline EmbeddingModelConfiguration& WithBedrockEmbeddingModelConfiguration(BedrockEmbeddingModelConfiguration&& value) { SetBedrockEmbeddingModelConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BedrockEmbeddingModelConfiguration m_bedrockEmbeddingModelConfiguration;

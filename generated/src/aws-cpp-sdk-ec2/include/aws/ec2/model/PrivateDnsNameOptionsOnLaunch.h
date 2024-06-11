@@ -39,6 +39,7 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance
      * DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an
@@ -47,102 +48,34 @@ namespace Model
      * ID.</p>
      */
     inline const HostnameType& GetHostnameType() const{ return m_hostnameType; }
-
-    /**
-     * <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance
-     * DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an
-     * instance DNS name must be based on the instance ID. For dual-stack subnets, you
-     * can specify whether DNS names use the instance IPv4 address or the instance
-     * ID.</p>
-     */
     inline bool HostnameTypeHasBeenSet() const { return m_hostnameTypeHasBeenSet; }
-
-    /**
-     * <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance
-     * DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an
-     * instance DNS name must be based on the instance ID. For dual-stack subnets, you
-     * can specify whether DNS names use the instance IPv4 address or the instance
-     * ID.</p>
-     */
     inline void SetHostnameType(const HostnameType& value) { m_hostnameTypeHasBeenSet = true; m_hostnameType = value; }
-
-    /**
-     * <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance
-     * DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an
-     * instance DNS name must be based on the instance ID. For dual-stack subnets, you
-     * can specify whether DNS names use the instance IPv4 address or the instance
-     * ID.</p>
-     */
     inline void SetHostnameType(HostnameType&& value) { m_hostnameTypeHasBeenSet = true; m_hostnameType = std::move(value); }
-
-    /**
-     * <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance
-     * DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an
-     * instance DNS name must be based on the instance ID. For dual-stack subnets, you
-     * can specify whether DNS names use the instance IPv4 address or the instance
-     * ID.</p>
-     */
     inline PrivateDnsNameOptionsOnLaunch& WithHostnameType(const HostnameType& value) { SetHostnameType(value); return *this;}
-
-    /**
-     * <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance
-     * DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an
-     * instance DNS name must be based on the instance ID. For dual-stack subnets, you
-     * can specify whether DNS names use the instance IPv4 address or the instance
-     * ID.</p>
-     */
     inline PrivateDnsNameOptionsOnLaunch& WithHostnameType(HostnameType&& value) { SetHostnameType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
      * records.</p>
      */
     inline bool GetEnableResourceNameDnsARecord() const{ return m_enableResourceNameDnsARecord; }
-
-    /**
-     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
-     * records.</p>
-     */
     inline bool EnableResourceNameDnsARecordHasBeenSet() const { return m_enableResourceNameDnsARecordHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
-     * records.</p>
-     */
     inline void SetEnableResourceNameDnsARecord(bool value) { m_enableResourceNameDnsARecordHasBeenSet = true; m_enableResourceNameDnsARecord = value; }
-
-    /**
-     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
-     * records.</p>
-     */
     inline PrivateDnsNameOptionsOnLaunch& WithEnableResourceNameDnsARecord(bool value) { SetEnableResourceNameDnsARecord(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether to respond to DNS queries for instance hostname with DNS
      * AAAA records.</p>
      */
     inline bool GetEnableResourceNameDnsAAAARecord() const{ return m_enableResourceNameDnsAAAARecord; }
-
-    /**
-     * <p>Indicates whether to respond to DNS queries for instance hostname with DNS
-     * AAAA records.</p>
-     */
     inline bool EnableResourceNameDnsAAAARecordHasBeenSet() const { return m_enableResourceNameDnsAAAARecordHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to respond to DNS queries for instance hostname with DNS
-     * AAAA records.</p>
-     */
     inline void SetEnableResourceNameDnsAAAARecord(bool value) { m_enableResourceNameDnsAAAARecordHasBeenSet = true; m_enableResourceNameDnsAAAARecord = value; }
-
-    /**
-     * <p>Indicates whether to respond to DNS queries for instance hostname with DNS
-     * AAAA records.</p>
-     */
     inline PrivateDnsNameOptionsOnLaunch& WithEnableResourceNameDnsAAAARecord(bool value) { SetEnableResourceNameDnsAAAARecord(value); return *this;}
-
+    ///@}
   private:
 
     HostnameType m_hostnameType;

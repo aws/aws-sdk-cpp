@@ -32,46 +32,19 @@ namespace Model
     AWS_TNB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>ID of the network service descriptor in the network package.</p>
      */
     inline const Aws::String& GetNsdInfoId() const{ return m_nsdInfoId; }
-
-    /**
-     * <p>ID of the network service descriptor in the network package.</p>
-     */
     inline bool NsdInfoIdHasBeenSet() const { return m_nsdInfoIdHasBeenSet; }
-
-    /**
-     * <p>ID of the network service descriptor in the network package.</p>
-     */
     inline void SetNsdInfoId(const Aws::String& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = value; }
-
-    /**
-     * <p>ID of the network service descriptor in the network package.</p>
-     */
     inline void SetNsdInfoId(Aws::String&& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = std::move(value); }
-
-    /**
-     * <p>ID of the network service descriptor in the network package.</p>
-     */
     inline void SetNsdInfoId(const char* value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId.assign(value); }
-
-    /**
-     * <p>ID of the network service descriptor in the network package.</p>
-     */
     inline DeleteSolNetworkPackageRequest& WithNsdInfoId(const Aws::String& value) { SetNsdInfoId(value); return *this;}
-
-    /**
-     * <p>ID of the network service descriptor in the network package.</p>
-     */
     inline DeleteSolNetworkPackageRequest& WithNsdInfoId(Aws::String&& value) { SetNsdInfoId(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of the network service descriptor in the network package.</p>
-     */
     inline DeleteSolNetworkPackageRequest& WithNsdInfoId(const char* value) { SetNsdInfoId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nsdInfoId;

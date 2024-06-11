@@ -32,46 +32,19 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the route calculator resource.</p>
      */
     inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
-
-    /**
-     * <p>The name of the route calculator resource.</p>
-     */
     inline bool CalculatorNameHasBeenSet() const { return m_calculatorNameHasBeenSet; }
-
-    /**
-     * <p>The name of the route calculator resource.</p>
-     */
     inline void SetCalculatorName(const Aws::String& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = value; }
-
-    /**
-     * <p>The name of the route calculator resource.</p>
-     */
     inline void SetCalculatorName(Aws::String&& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = std::move(value); }
-
-    /**
-     * <p>The name of the route calculator resource.</p>
-     */
     inline void SetCalculatorName(const char* value) { m_calculatorNameHasBeenSet = true; m_calculatorName.assign(value); }
-
-    /**
-     * <p>The name of the route calculator resource.</p>
-     */
     inline DescribeRouteCalculatorRequest& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
-
-    /**
-     * <p>The name of the route calculator resource.</p>
-     */
     inline DescribeRouteCalculatorRequest& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the route calculator resource.</p>
-     */
     inline DescribeRouteCalculatorRequest& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_calculatorName;

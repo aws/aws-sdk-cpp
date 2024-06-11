@@ -37,167 +37,60 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the package.</p>
      */
     inline const Aws::String& GetPackageID() const{ return m_packageID; }
-
-    /**
-     * <p>The unique identifier for the package.</p>
-     */
     inline bool PackageIDHasBeenSet() const { return m_packageIDHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the package.</p>
-     */
     inline void SetPackageID(const Aws::String& value) { m_packageIDHasBeenSet = true; m_packageID = value; }
-
-    /**
-     * <p>The unique identifier for the package.</p>
-     */
     inline void SetPackageID(Aws::String&& value) { m_packageIDHasBeenSet = true; m_packageID = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the package.</p>
-     */
     inline void SetPackageID(const char* value) { m_packageIDHasBeenSet = true; m_packageID.assign(value); }
-
-    /**
-     * <p>The unique identifier for the package.</p>
-     */
     inline UpdatePackageRequest& WithPackageID(const Aws::String& value) { SetPackageID(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the package.</p>
-     */
     inline UpdatePackageRequest& WithPackageID(Aws::String&& value) { SetPackageID(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the package.</p>
-     */
     inline UpdatePackageRequest& WithPackageID(const char* value) { SetPackageID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Amazon S3 bucket and key for the package.</p>
      */
     inline const PackageSource& GetPackageSource() const{ return m_packageSource; }
-
-    /**
-     * <p>Amazon S3 bucket and key for the package.</p>
-     */
     inline bool PackageSourceHasBeenSet() const { return m_packageSourceHasBeenSet; }
-
-    /**
-     * <p>Amazon S3 bucket and key for the package.</p>
-     */
     inline void SetPackageSource(const PackageSource& value) { m_packageSourceHasBeenSet = true; m_packageSource = value; }
-
-    /**
-     * <p>Amazon S3 bucket and key for the package.</p>
-     */
     inline void SetPackageSource(PackageSource&& value) { m_packageSourceHasBeenSet = true; m_packageSource = std::move(value); }
-
-    /**
-     * <p>Amazon S3 bucket and key for the package.</p>
-     */
     inline UpdatePackageRequest& WithPackageSource(const PackageSource& value) { SetPackageSource(value); return *this;}
-
-    /**
-     * <p>Amazon S3 bucket and key for the package.</p>
-     */
     inline UpdatePackageRequest& WithPackageSource(PackageSource&& value) { SetPackageSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A new description of the package.</p>
      */
     inline const Aws::String& GetPackageDescription() const{ return m_packageDescription; }
-
-    /**
-     * <p>A new description of the package.</p>
-     */
     inline bool PackageDescriptionHasBeenSet() const { return m_packageDescriptionHasBeenSet; }
-
-    /**
-     * <p>A new description of the package.</p>
-     */
     inline void SetPackageDescription(const Aws::String& value) { m_packageDescriptionHasBeenSet = true; m_packageDescription = value; }
-
-    /**
-     * <p>A new description of the package.</p>
-     */
     inline void SetPackageDescription(Aws::String&& value) { m_packageDescriptionHasBeenSet = true; m_packageDescription = std::move(value); }
-
-    /**
-     * <p>A new description of the package.</p>
-     */
     inline void SetPackageDescription(const char* value) { m_packageDescriptionHasBeenSet = true; m_packageDescription.assign(value); }
-
-    /**
-     * <p>A new description of the package.</p>
-     */
     inline UpdatePackageRequest& WithPackageDescription(const Aws::String& value) { SetPackageDescription(value); return *this;}
-
-    /**
-     * <p>A new description of the package.</p>
-     */
     inline UpdatePackageRequest& WithPackageDescription(Aws::String&& value) { SetPackageDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A new description of the package.</p>
-     */
     inline UpdatePackageRequest& WithPackageDescription(const char* value) { SetPackageDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Commit message for the updated file, which is shown as part of
      * <code>GetPackageVersionHistoryResponse</code>.</p>
      */
     inline const Aws::String& GetCommitMessage() const{ return m_commitMessage; }
-
-    /**
-     * <p>Commit message for the updated file, which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>.</p>
-     */
     inline bool CommitMessageHasBeenSet() const { return m_commitMessageHasBeenSet; }
-
-    /**
-     * <p>Commit message for the updated file, which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>.</p>
-     */
     inline void SetCommitMessage(const Aws::String& value) { m_commitMessageHasBeenSet = true; m_commitMessage = value; }
-
-    /**
-     * <p>Commit message for the updated file, which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>.</p>
-     */
     inline void SetCommitMessage(Aws::String&& value) { m_commitMessageHasBeenSet = true; m_commitMessage = std::move(value); }
-
-    /**
-     * <p>Commit message for the updated file, which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>.</p>
-     */
     inline void SetCommitMessage(const char* value) { m_commitMessageHasBeenSet = true; m_commitMessage.assign(value); }
-
-    /**
-     * <p>Commit message for the updated file, which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>.</p>
-     */
     inline UpdatePackageRequest& WithCommitMessage(const Aws::String& value) { SetCommitMessage(value); return *this;}
-
-    /**
-     * <p>Commit message for the updated file, which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>.</p>
-     */
     inline UpdatePackageRequest& WithCommitMessage(Aws::String&& value) { SetCommitMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Commit message for the updated file, which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>.</p>
-     */
     inline UpdatePackageRequest& WithCommitMessage(const char* value) { SetCommitMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_packageID;

@@ -37,6 +37,7 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The total amount of time that Firehose spends on retries. This duration
      * starts after the initial attempt to send data to Splunk fails. It doesn't
@@ -44,31 +45,10 @@ namespace Model
      * after each attempt.</p>
      */
     inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
-
-    /**
-     * <p>The total amount of time that Firehose spends on retries. This duration
-     * starts after the initial attempt to send data to Splunk fails. It doesn't
-     * include the periods during which Firehose waits for acknowledgment from Splunk
-     * after each attempt.</p>
-     */
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
-
-    /**
-     * <p>The total amount of time that Firehose spends on retries. This duration
-     * starts after the initial attempt to send data to Splunk fails. It doesn't
-     * include the periods during which Firehose waits for acknowledgment from Splunk
-     * after each attempt.</p>
-     */
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
-
-    /**
-     * <p>The total amount of time that Firehose spends on retries. This duration
-     * starts after the initial attempt to send data to Splunk fails. It doesn't
-     * include the periods during which Firehose waits for acknowledgment from Splunk
-     * after each attempt.</p>
-     */
     inline SplunkRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_durationInSeconds;

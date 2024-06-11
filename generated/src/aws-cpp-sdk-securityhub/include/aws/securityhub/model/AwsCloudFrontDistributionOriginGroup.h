@@ -38,36 +38,17 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Provides the criteria for an origin group to fail over.</p>
      */
     inline const AwsCloudFrontDistributionOriginGroupFailover& GetFailoverCriteria() const{ return m_failoverCriteria; }
-
-    /**
-     * <p>Provides the criteria for an origin group to fail over.</p>
-     */
     inline bool FailoverCriteriaHasBeenSet() const { return m_failoverCriteriaHasBeenSet; }
-
-    /**
-     * <p>Provides the criteria for an origin group to fail over.</p>
-     */
     inline void SetFailoverCriteria(const AwsCloudFrontDistributionOriginGroupFailover& value) { m_failoverCriteriaHasBeenSet = true; m_failoverCriteria = value; }
-
-    /**
-     * <p>Provides the criteria for an origin group to fail over.</p>
-     */
     inline void SetFailoverCriteria(AwsCloudFrontDistributionOriginGroupFailover&& value) { m_failoverCriteriaHasBeenSet = true; m_failoverCriteria = std::move(value); }
-
-    /**
-     * <p>Provides the criteria for an origin group to fail over.</p>
-     */
     inline AwsCloudFrontDistributionOriginGroup& WithFailoverCriteria(const AwsCloudFrontDistributionOriginGroupFailover& value) { SetFailoverCriteria(value); return *this;}
-
-    /**
-     * <p>Provides the criteria for an origin group to fail over.</p>
-     */
     inline AwsCloudFrontDistributionOriginGroup& WithFailoverCriteria(AwsCloudFrontDistributionOriginGroupFailover&& value) { SetFailoverCriteria(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsCloudFrontDistributionOriginGroupFailover m_failoverCriteria;

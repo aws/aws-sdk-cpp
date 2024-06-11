@@ -33,133 +33,48 @@ namespace Model
     AWS_MGN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Account ID.</p>
      */
     inline const Aws::String& GetAccountID() const{ return m_accountID; }
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline AssociateSourceServersRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline AssociateSourceServersRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-
-    /**
-     * <p>Account ID.</p>
-     */
     inline AssociateSourceServersRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Application ID.</p>
      */
     inline const Aws::String& GetApplicationID() const{ return m_applicationID; }
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline bool ApplicationIDHasBeenSet() const { return m_applicationIDHasBeenSet; }
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline void SetApplicationID(const Aws::String& value) { m_applicationIDHasBeenSet = true; m_applicationID = value; }
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline void SetApplicationID(Aws::String&& value) { m_applicationIDHasBeenSet = true; m_applicationID = std::move(value); }
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline void SetApplicationID(const char* value) { m_applicationIDHasBeenSet = true; m_applicationID.assign(value); }
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline AssociateSourceServersRequest& WithApplicationID(const Aws::String& value) { SetApplicationID(value); return *this;}
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline AssociateSourceServersRequest& WithApplicationID(Aws::String&& value) { SetApplicationID(std::move(value)); return *this;}
-
-    /**
-     * <p>Application ID.</p>
-     */
     inline AssociateSourceServersRequest& WithApplicationID(const char* value) { SetApplicationID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Source server IDs list.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSourceServerIDs() const{ return m_sourceServerIDs; }
-
-    /**
-     * <p>Source server IDs list.</p>
-     */
     inline bool SourceServerIDsHasBeenSet() const { return m_sourceServerIDsHasBeenSet; }
-
-    /**
-     * <p>Source server IDs list.</p>
-     */
     inline void SetSourceServerIDs(const Aws::Vector<Aws::String>& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs = value; }
-
-    /**
-     * <p>Source server IDs list.</p>
-     */
     inline void SetSourceServerIDs(Aws::Vector<Aws::String>&& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs = std::move(value); }
-
-    /**
-     * <p>Source server IDs list.</p>
-     */
     inline AssociateSourceServersRequest& WithSourceServerIDs(const Aws::Vector<Aws::String>& value) { SetSourceServerIDs(value); return *this;}
-
-    /**
-     * <p>Source server IDs list.</p>
-     */
     inline AssociateSourceServersRequest& WithSourceServerIDs(Aws::Vector<Aws::String>&& value) { SetSourceServerIDs(std::move(value)); return *this;}
-
-    /**
-     * <p>Source server IDs list.</p>
-     */
     inline AssociateSourceServersRequest& AddSourceServerIDs(const Aws::String& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.push_back(value); return *this; }
-
-    /**
-     * <p>Source server IDs list.</p>
-     */
     inline AssociateSourceServersRequest& AddSourceServerIDs(Aws::String&& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Source server IDs list.</p>
-     */
     inline AssociateSourceServersRequest& AddSourceServerIDs(const char* value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_accountID;

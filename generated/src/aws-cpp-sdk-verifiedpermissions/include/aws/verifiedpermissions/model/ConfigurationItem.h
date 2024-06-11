@@ -41,6 +41,7 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains configuration details of a Amazon Cognito user pool that Verified
      * Permissions can use as a source of authenticated identities as entities. It
@@ -54,78 +55,14 @@ namespace Model
      * "MyCorp::Group"}}}</code> </p>
      */
     inline const CognitoUserPoolConfigurationItem& GetCognitoUserPoolConfiguration() const{ return m_cognitoUserPoolConfiguration; }
-
-    /**
-     * <p>Contains configuration details of a Amazon Cognito user pool that Verified
-     * Permissions can use as a source of authenticated identities as entities. It
-     * specifies the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of a Amazon Cognito user pool, the policy store entity
-     * that you want to assign to user groups, and one or more application client
-     * IDs.</p> <p>Example:
-     * <code>"configuration":{"cognitoUserPoolConfiguration":{"userPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","clientIds":
-     * ["a1b2c3d4e5f6g7h8i9j0kalbmc"],"groupConfiguration": {"groupEntityType":
-     * "MyCorp::Group"}}}</code> </p>
-     */
     inline bool CognitoUserPoolConfigurationHasBeenSet() const { return m_cognitoUserPoolConfigurationHasBeenSet; }
-
-    /**
-     * <p>Contains configuration details of a Amazon Cognito user pool that Verified
-     * Permissions can use as a source of authenticated identities as entities. It
-     * specifies the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of a Amazon Cognito user pool, the policy store entity
-     * that you want to assign to user groups, and one or more application client
-     * IDs.</p> <p>Example:
-     * <code>"configuration":{"cognitoUserPoolConfiguration":{"userPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","clientIds":
-     * ["a1b2c3d4e5f6g7h8i9j0kalbmc"],"groupConfiguration": {"groupEntityType":
-     * "MyCorp::Group"}}}</code> </p>
-     */
     inline void SetCognitoUserPoolConfiguration(const CognitoUserPoolConfigurationItem& value) { m_cognitoUserPoolConfigurationHasBeenSet = true; m_cognitoUserPoolConfiguration = value; }
-
-    /**
-     * <p>Contains configuration details of a Amazon Cognito user pool that Verified
-     * Permissions can use as a source of authenticated identities as entities. It
-     * specifies the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of a Amazon Cognito user pool, the policy store entity
-     * that you want to assign to user groups, and one or more application client
-     * IDs.</p> <p>Example:
-     * <code>"configuration":{"cognitoUserPoolConfiguration":{"userPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","clientIds":
-     * ["a1b2c3d4e5f6g7h8i9j0kalbmc"],"groupConfiguration": {"groupEntityType":
-     * "MyCorp::Group"}}}</code> </p>
-     */
     inline void SetCognitoUserPoolConfiguration(CognitoUserPoolConfigurationItem&& value) { m_cognitoUserPoolConfigurationHasBeenSet = true; m_cognitoUserPoolConfiguration = std::move(value); }
-
-    /**
-     * <p>Contains configuration details of a Amazon Cognito user pool that Verified
-     * Permissions can use as a source of authenticated identities as entities. It
-     * specifies the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of a Amazon Cognito user pool, the policy store entity
-     * that you want to assign to user groups, and one or more application client
-     * IDs.</p> <p>Example:
-     * <code>"configuration":{"cognitoUserPoolConfiguration":{"userPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","clientIds":
-     * ["a1b2c3d4e5f6g7h8i9j0kalbmc"],"groupConfiguration": {"groupEntityType":
-     * "MyCorp::Group"}}}</code> </p>
-     */
     inline ConfigurationItem& WithCognitoUserPoolConfiguration(const CognitoUserPoolConfigurationItem& value) { SetCognitoUserPoolConfiguration(value); return *this;}
-
-    /**
-     * <p>Contains configuration details of a Amazon Cognito user pool that Verified
-     * Permissions can use as a source of authenticated identities as entities. It
-     * specifies the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of a Amazon Cognito user pool, the policy store entity
-     * that you want to assign to user groups, and one or more application client
-     * IDs.</p> <p>Example:
-     * <code>"configuration":{"cognitoUserPoolConfiguration":{"userPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","clientIds":
-     * ["a1b2c3d4e5f6g7h8i9j0kalbmc"],"groupConfiguration": {"groupEntityType":
-     * "MyCorp::Group"}}}</code> </p>
-     */
     inline ConfigurationItem& WithCognitoUserPoolConfiguration(CognitoUserPoolConfigurationItem&& value) { SetCognitoUserPoolConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains configuration details of an OpenID Connect (OIDC) identity provider,
      * or identity source, that Verified Permissions can use to generate entities from
@@ -135,57 +72,12 @@ namespace Model
      * </p>
      */
     inline const OpenIdConnectConfigurationItem& GetOpenIdConnectConfiguration() const{ return m_openIdConnectConfiguration; }
-
-    /**
-     * <p>Contains configuration details of an OpenID Connect (OIDC) identity provider,
-     * or identity source, that Verified Permissions can use to generate entities from
-     * authenticated identities. It specifies the issuer URL, token type that you want
-     * to use, and policy store entity details.</p>
-     * <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code>
-     * </p>
-     */
     inline bool OpenIdConnectConfigurationHasBeenSet() const { return m_openIdConnectConfigurationHasBeenSet; }
-
-    /**
-     * <p>Contains configuration details of an OpenID Connect (OIDC) identity provider,
-     * or identity source, that Verified Permissions can use to generate entities from
-     * authenticated identities. It specifies the issuer URL, token type that you want
-     * to use, and policy store entity details.</p>
-     * <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code>
-     * </p>
-     */
     inline void SetOpenIdConnectConfiguration(const OpenIdConnectConfigurationItem& value) { m_openIdConnectConfigurationHasBeenSet = true; m_openIdConnectConfiguration = value; }
-
-    /**
-     * <p>Contains configuration details of an OpenID Connect (OIDC) identity provider,
-     * or identity source, that Verified Permissions can use to generate entities from
-     * authenticated identities. It specifies the issuer URL, token type that you want
-     * to use, and policy store entity details.</p>
-     * <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code>
-     * </p>
-     */
     inline void SetOpenIdConnectConfiguration(OpenIdConnectConfigurationItem&& value) { m_openIdConnectConfigurationHasBeenSet = true; m_openIdConnectConfiguration = std::move(value); }
-
-    /**
-     * <p>Contains configuration details of an OpenID Connect (OIDC) identity provider,
-     * or identity source, that Verified Permissions can use to generate entities from
-     * authenticated identities. It specifies the issuer URL, token type that you want
-     * to use, and policy store entity details.</p>
-     * <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code>
-     * </p>
-     */
     inline ConfigurationItem& WithOpenIdConnectConfiguration(const OpenIdConnectConfigurationItem& value) { SetOpenIdConnectConfiguration(value); return *this;}
-
-    /**
-     * <p>Contains configuration details of an OpenID Connect (OIDC) identity provider,
-     * or identity source, that Verified Permissions can use to generate entities from
-     * authenticated identities. It specifies the issuer URL, token type that you want
-     * to use, and policy store entity details.</p>
-     * <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code>
-     * </p>
-     */
     inline ConfigurationItem& WithOpenIdConnectConfiguration(OpenIdConnectConfigurationItem&& value) { SetOpenIdConnectConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CognitoUserPoolConfigurationItem m_cognitoUserPoolConfiguration;

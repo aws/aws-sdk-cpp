@@ -38,6 +38,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates when the attachment initiated.</p> <p>This field accepts only the
      * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
@@ -56,358 +57,92 @@ namespace Model
      * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetAttachTime() const{ return m_attachTime; }
-
-    /**
-     * <p>Indicates when the attachment initiated.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline bool AttachTimeHasBeenSet() const { return m_attachTimeHasBeenSet; }
-
-    /**
-     * <p>Indicates when the attachment initiated.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetAttachTime(const Aws::String& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
-
-    /**
-     * <p>Indicates when the attachment initiated.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetAttachTime(Aws::String&& value) { m_attachTimeHasBeenSet = true; m_attachTime = std::move(value); }
-
-    /**
-     * <p>Indicates when the attachment initiated.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetAttachTime(const char* value) { m_attachTimeHasBeenSet = true; m_attachTime.assign(value); }
-
-    /**
-     * <p>Indicates when the attachment initiated.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithAttachTime(const Aws::String& value) { SetAttachTime(value); return *this;}
-
-    /**
-     * <p>Indicates when the attachment initiated.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithAttachTime(Aws::String&& value) { SetAttachTime(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates when the attachment initiated.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithAttachTime(const char* value) { SetAttachTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the network interface attachment</p>
      */
     inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
-
-    /**
-     * <p>The identifier of the network interface attachment</p>
-     */
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the network interface attachment</p>
-     */
     inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-
-    /**
-     * <p>The identifier of the network interface attachment</p>
-     */
     inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-
-    /**
-     * <p>The identifier of the network interface attachment</p>
-     */
     inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-
-    /**
-     * <p>The identifier of the network interface attachment</p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-
-    /**
-     * <p>The identifier of the network interface attachment</p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the network interface attachment</p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the network interface is deleted when the instance is
      * terminated.</p>
      */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
-
-    /**
-     * <p>Indicates whether the network interface is deleted when the instance is
-     * terminated.</p>
-     */
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the network interface is deleted when the instance is
-     * terminated.</p>
-     */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
-
-    /**
-     * <p>Indicates whether the network interface is deleted when the instance is
-     * terminated.</p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The device index of the network interface attachment on the instance.</p>
      */
     inline int GetDeviceIndex() const{ return m_deviceIndex; }
-
-    /**
-     * <p>The device index of the network interface attachment on the instance.</p>
-     */
     inline bool DeviceIndexHasBeenSet() const { return m_deviceIndexHasBeenSet; }
-
-    /**
-     * <p>The device index of the network interface attachment on the instance.</p>
-     */
     inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
-
-    /**
-     * <p>The device index of the network interface attachment on the instance.</p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline const Aws::String& GetInstanceOwnerId() const{ return m_instanceOwnerId; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
-     */
     inline bool InstanceOwnerIdHasBeenSet() const { return m_instanceOwnerIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
-     */
     inline void SetInstanceOwnerId(const Aws::String& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
-     */
     inline void SetInstanceOwnerId(Aws::String&& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
-     */
     inline void SetInstanceOwnerId(const char* value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithInstanceOwnerId(const Aws::String& value) { SetInstanceOwnerId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithInstanceOwnerId(Aws::String&& value) { SetInstanceOwnerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithInstanceOwnerId(const char* value) { SetInstanceOwnerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The attachment state.</p> <p>Valid values: <code>attaching</code> |
      * <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The attachment state.</p> <p>Valid values: <code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The attachment state.</p> <p>Valid values: <code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The attachment state.</p> <p>Valid values: <code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The attachment state.</p> <p>Valid values: <code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The attachment state.</p> <p>Valid values: <code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The attachment state.</p> <p>Valid values: <code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The attachment state.</p> <p>Valid values: <code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
-     */
     inline AwsEc2NetworkInterfaceAttachment& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attachTime;

@@ -40,37 +40,19 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The operator to apply to the DMARC policy of the incoming email.</p>
      */
     inline const RuleDmarcOperator& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The operator to apply to the DMARC policy of the incoming email.</p>
-     */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The operator to apply to the DMARC policy of the incoming email.</p>
-     */
     inline void SetOperator(const RuleDmarcOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The operator to apply to the DMARC policy of the incoming email.</p>
-     */
     inline void SetOperator(RuleDmarcOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The operator to apply to the DMARC policy of the incoming email.</p>
-     */
     inline RuleDmarcExpression& WithOperator(const RuleDmarcOperator& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The operator to apply to the DMARC policy of the incoming email.</p>
-     */
     inline RuleDmarcExpression& WithOperator(RuleDmarcOperator&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The values to use for the given DMARC policy operator. For the operator
      * EQUALS, if multiple values are given, they are evaluated as an OR. That is, if
@@ -80,77 +62,14 @@ namespace Model
      * values, then the condition is deemed to match.</p>
      */
     inline const Aws::Vector<RuleDmarcPolicy>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The values to use for the given DMARC policy operator. For the operator
-     * EQUALS, if multiple values are given, they are evaluated as an OR. That is, if
-     * any of the given values match, the condition is deemed to match. For the
-     * operator NOT_EQUALS, if multiple values are given, they are evaluated as an AND.
-     * That is, only if the email's DMARC policy is not equal to any of the given
-     * values, then the condition is deemed to match.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The values to use for the given DMARC policy operator. For the operator
-     * EQUALS, if multiple values are given, they are evaluated as an OR. That is, if
-     * any of the given values match, the condition is deemed to match. For the
-     * operator NOT_EQUALS, if multiple values are given, they are evaluated as an AND.
-     * That is, only if the email's DMARC policy is not equal to any of the given
-     * values, then the condition is deemed to match.</p>
-     */
     inline void SetValues(const Aws::Vector<RuleDmarcPolicy>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The values to use for the given DMARC policy operator. For the operator
-     * EQUALS, if multiple values are given, they are evaluated as an OR. That is, if
-     * any of the given values match, the condition is deemed to match. For the
-     * operator NOT_EQUALS, if multiple values are given, they are evaluated as an AND.
-     * That is, only if the email's DMARC policy is not equal to any of the given
-     * values, then the condition is deemed to match.</p>
-     */
     inline void SetValues(Aws::Vector<RuleDmarcPolicy>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The values to use for the given DMARC policy operator. For the operator
-     * EQUALS, if multiple values are given, they are evaluated as an OR. That is, if
-     * any of the given values match, the condition is deemed to match. For the
-     * operator NOT_EQUALS, if multiple values are given, they are evaluated as an AND.
-     * That is, only if the email's DMARC policy is not equal to any of the given
-     * values, then the condition is deemed to match.</p>
-     */
     inline RuleDmarcExpression& WithValues(const Aws::Vector<RuleDmarcPolicy>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The values to use for the given DMARC policy operator. For the operator
-     * EQUALS, if multiple values are given, they are evaluated as an OR. That is, if
-     * any of the given values match, the condition is deemed to match. For the
-     * operator NOT_EQUALS, if multiple values are given, they are evaluated as an AND.
-     * That is, only if the email's DMARC policy is not equal to any of the given
-     * values, then the condition is deemed to match.</p>
-     */
     inline RuleDmarcExpression& WithValues(Aws::Vector<RuleDmarcPolicy>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The values to use for the given DMARC policy operator. For the operator
-     * EQUALS, if multiple values are given, they are evaluated as an OR. That is, if
-     * any of the given values match, the condition is deemed to match. For the
-     * operator NOT_EQUALS, if multiple values are given, they are evaluated as an AND.
-     * That is, only if the email's DMARC policy is not equal to any of the given
-     * values, then the condition is deemed to match.</p>
-     */
     inline RuleDmarcExpression& AddValues(const RuleDmarcPolicy& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The values to use for the given DMARC policy operator. For the operator
-     * EQUALS, if multiple values are given, they are evaluated as an OR. That is, if
-     * any of the given values match, the condition is deemed to match. For the
-     * operator NOT_EQUALS, if multiple values are given, they are evaluated as an AND.
-     * That is, only if the email's DMARC policy is not equal to any of the given
-     * values, then the condition is deemed to match.</p>
-     */
     inline RuleDmarcExpression& AddValues(RuleDmarcPolicy&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     RuleDmarcOperator m_operator;

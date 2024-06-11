@@ -34,47 +34,21 @@ namespace Model
     AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The organization that contains the user, group, or resource to update.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
-
-    /**
-     * <p>The organization that contains the user, group, or resource to update.</p>
-     */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-
-    /**
-     * <p>The organization that contains the user, group, or resource to update.</p>
-     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-
-    /**
-     * <p>The organization that contains the user, group, or resource to update.</p>
-     */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-
-    /**
-     * <p>The organization that contains the user, group, or resource to update.</p>
-     */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-
-    /**
-     * <p>The organization that contains the user, group, or resource to update.</p>
-     */
     inline UpdatePrimaryEmailAddressRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-
-    /**
-     * <p>The organization that contains the user, group, or resource to update.</p>
-     */
     inline UpdatePrimaryEmailAddressRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The organization that contains the user, group, or resource to update.</p>
-     */
     inline UpdatePrimaryEmailAddressRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The user, group, or resource to update.</p> <p>The identifier can accept
      * <i>UseriD, ResourceId, or GroupId</i>, <i>Username, Resourcename, or
@@ -85,125 +59,28 @@ namespace Model
      * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
-
-    /**
-     * <p>The user, group, or resource to update.</p> <p>The identifier can accept
-     * <i>UseriD, ResourceId, or GroupId</i>, <i>Username, Resourcename, or
-     * Groupname</i>, or <i>email</i>. The following identity formats are
-     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
-     * r-0123456789a0123456789b0123456789, or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
-     */
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-
-    /**
-     * <p>The user, group, or resource to update.</p> <p>The identifier can accept
-     * <i>UseriD, ResourceId, or GroupId</i>, <i>Username, Resourcename, or
-     * Groupname</i>, or <i>email</i>. The following identity formats are
-     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
-     * r-0123456789a0123456789b0123456789, or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
-     */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-
-    /**
-     * <p>The user, group, or resource to update.</p> <p>The identifier can accept
-     * <i>UseriD, ResourceId, or GroupId</i>, <i>Username, Resourcename, or
-     * Groupname</i>, or <i>email</i>. The following identity formats are
-     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
-     * r-0123456789a0123456789b0123456789, or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
-     */
     inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-
-    /**
-     * <p>The user, group, or resource to update.</p> <p>The identifier can accept
-     * <i>UseriD, ResourceId, or GroupId</i>, <i>Username, Resourcename, or
-     * Groupname</i>, or <i>email</i>. The following identity formats are
-     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
-     * r-0123456789a0123456789b0123456789, or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
-     */
     inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-
-    /**
-     * <p>The user, group, or resource to update.</p> <p>The identifier can accept
-     * <i>UseriD, ResourceId, or GroupId</i>, <i>Username, Resourcename, or
-     * Groupname</i>, or <i>email</i>. The following identity formats are
-     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
-     * r-0123456789a0123456789b0123456789, or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
-     */
     inline UpdatePrimaryEmailAddressRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-
-    /**
-     * <p>The user, group, or resource to update.</p> <p>The identifier can accept
-     * <i>UseriD, ResourceId, or GroupId</i>, <i>Username, Resourcename, or
-     * Groupname</i>, or <i>email</i>. The following identity formats are
-     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
-     * r-0123456789a0123456789b0123456789, or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
-     */
     inline UpdatePrimaryEmailAddressRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The user, group, or resource to update.</p> <p>The identifier can accept
-     * <i>UseriD, ResourceId, or GroupId</i>, <i>Username, Resourcename, or
-     * Groupname</i>, or <i>email</i>. The following identity formats are
-     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
-     * r-0123456789a0123456789b0123456789, or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
-     */
     inline UpdatePrimaryEmailAddressRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the email to be updated as primary.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
-
-    /**
-     * <p>The value of the email to be updated as primary.</p>
-     */
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-
-    /**
-     * <p>The value of the email to be updated as primary.</p>
-     */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-
-    /**
-     * <p>The value of the email to be updated as primary.</p>
-     */
     inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-
-    /**
-     * <p>The value of the email to be updated as primary.</p>
-     */
     inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-
-    /**
-     * <p>The value of the email to be updated as primary.</p>
-     */
     inline UpdatePrimaryEmailAddressRequest& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-
-    /**
-     * <p>The value of the email to be updated as primary.</p>
-     */
     inline UpdatePrimaryEmailAddressRequest& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the email to be updated as primary.</p>
-     */
     inline UpdatePrimaryEmailAddressRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_organizationId;

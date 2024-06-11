@@ -38,118 +38,45 @@ namespace Model
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the identity provider.</p>
      */
     inline const Aws::String& GetIdentityProviderArn() const{ return m_identityProviderArn; }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline bool IdentityProviderArnHasBeenSet() const { return m_identityProviderArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline void SetIdentityProviderArn(const Aws::String& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = value; }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline void SetIdentityProviderArn(Aws::String&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline void SetIdentityProviderArn(const char* value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn.assign(value); }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline IdentityProviderSummary& WithIdentityProviderArn(const Aws::String& value) { SetIdentityProviderArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline IdentityProviderSummary& WithIdentityProviderArn(Aws::String&& value) { SetIdentityProviderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline IdentityProviderSummary& WithIdentityProviderArn(const char* value) { SetIdentityProviderArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identity provider name.</p>
      */
     inline const Aws::String& GetIdentityProviderName() const{ return m_identityProviderName; }
-
-    /**
-     * <p>The identity provider name.</p>
-     */
     inline bool IdentityProviderNameHasBeenSet() const { return m_identityProviderNameHasBeenSet; }
-
-    /**
-     * <p>The identity provider name.</p>
-     */
     inline void SetIdentityProviderName(const Aws::String& value) { m_identityProviderNameHasBeenSet = true; m_identityProviderName = value; }
-
-    /**
-     * <p>The identity provider name.</p>
-     */
     inline void SetIdentityProviderName(Aws::String&& value) { m_identityProviderNameHasBeenSet = true; m_identityProviderName = std::move(value); }
-
-    /**
-     * <p>The identity provider name.</p>
-     */
     inline void SetIdentityProviderName(const char* value) { m_identityProviderNameHasBeenSet = true; m_identityProviderName.assign(value); }
-
-    /**
-     * <p>The identity provider name.</p>
-     */
     inline IdentityProviderSummary& WithIdentityProviderName(const Aws::String& value) { SetIdentityProviderName(value); return *this;}
-
-    /**
-     * <p>The identity provider name.</p>
-     */
     inline IdentityProviderSummary& WithIdentityProviderName(Aws::String&& value) { SetIdentityProviderName(std::move(value)); return *this;}
-
-    /**
-     * <p>The identity provider name.</p>
-     */
     inline IdentityProviderSummary& WithIdentityProviderName(const char* value) { SetIdentityProviderName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identity provider type.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
-
-    /**
-     * <p>The identity provider type.</p>
-     */
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
-
-    /**
-     * <p>The identity provider type.</p>
-     */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
-
-    /**
-     * <p>The identity provider type.</p>
-     */
     inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
-
-    /**
-     * <p>The identity provider type.</p>
-     */
     inline IdentityProviderSummary& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
-
-    /**
-     * <p>The identity provider type.</p>
-     */
     inline IdentityProviderSummary& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identityProviderArn;

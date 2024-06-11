@@ -34,46 +34,19 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the disconnected session to resume.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-
-    /**
-     * <p>The ID of the disconnected session to resume.</p>
-     */
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the disconnected session to resume.</p>
-     */
     inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-
-    /**
-     * <p>The ID of the disconnected session to resume.</p>
-     */
     inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-
-    /**
-     * <p>The ID of the disconnected session to resume.</p>
-     */
     inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-
-    /**
-     * <p>The ID of the disconnected session to resume.</p>
-     */
     inline ResumeSessionRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-
-    /**
-     * <p>The ID of the disconnected session to resume.</p>
-     */
     inline ResumeSessionRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the disconnected session to resume.</p>
-     */
     inline ResumeSessionRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sessionId;

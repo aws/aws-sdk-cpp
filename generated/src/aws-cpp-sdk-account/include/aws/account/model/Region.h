@@ -39,83 +39,32 @@ namespace Model
     AWS_ACCOUNT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
-
-    /**
-     * <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
-     */
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-
-    /**
-     * <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
-     */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-
-    /**
-     * <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
-     */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-
-    /**
-     * <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
-     */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-
-    /**
-     * <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
-     */
     inline Region& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-
-    /**
-     * <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
-     */
     inline Region& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
-     */
     inline Region& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled,
      * Disabling, Enabled_By_Default).</p>
      */
     inline const RegionOptStatus& GetRegionOptStatus() const{ return m_regionOptStatus; }
-
-    /**
-     * <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled,
-     * Disabling, Enabled_By_Default).</p>
-     */
     inline bool RegionOptStatusHasBeenSet() const { return m_regionOptStatusHasBeenSet; }
-
-    /**
-     * <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled,
-     * Disabling, Enabled_By_Default).</p>
-     */
     inline void SetRegionOptStatus(const RegionOptStatus& value) { m_regionOptStatusHasBeenSet = true; m_regionOptStatus = value; }
-
-    /**
-     * <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled,
-     * Disabling, Enabled_By_Default).</p>
-     */
     inline void SetRegionOptStatus(RegionOptStatus&& value) { m_regionOptStatusHasBeenSet = true; m_regionOptStatus = std::move(value); }
-
-    /**
-     * <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled,
-     * Disabling, Enabled_By_Default).</p>
-     */
     inline Region& WithRegionOptStatus(const RegionOptStatus& value) { SetRegionOptStatus(value); return *this;}
-
-    /**
-     * <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled,
-     * Disabling, Enabled_By_Default).</p>
-     */
     inline Region& WithRegionOptStatus(RegionOptStatus&& value) { SetRegionOptStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_regionName;

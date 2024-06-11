@@ -38,77 +38,31 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The error type for the batch delete unique ID operation.</p>
      */
     inline const DeleteUniqueIdErrorType& GetErrorType() const{ return m_errorType; }
-
-    /**
-     * <p> The error type for the batch delete unique ID operation.</p>
-     */
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
-
-    /**
-     * <p> The error type for the batch delete unique ID operation.</p>
-     */
     inline void SetErrorType(const DeleteUniqueIdErrorType& value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
-
-    /**
-     * <p> The error type for the batch delete unique ID operation.</p>
-     */
     inline void SetErrorType(DeleteUniqueIdErrorType&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::move(value); }
-
-    /**
-     * <p> The error type for the batch delete unique ID operation.</p>
-     */
     inline DeleteUniqueIdError& WithErrorType(const DeleteUniqueIdErrorType& value) { SetErrorType(value); return *this;}
-
-    /**
-     * <p> The error type for the batch delete unique ID operation.</p>
-     */
     inline DeleteUniqueIdError& WithErrorType(DeleteUniqueIdErrorType&& value) { SetErrorType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique ID that could not be deleted.</p>
      */
     inline const Aws::String& GetUniqueId() const{ return m_uniqueId; }
-
-    /**
-     * <p>The unique ID that could not be deleted.</p>
-     */
     inline bool UniqueIdHasBeenSet() const { return m_uniqueIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID that could not be deleted.</p>
-     */
     inline void SetUniqueId(const Aws::String& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = value; }
-
-    /**
-     * <p>The unique ID that could not be deleted.</p>
-     */
     inline void SetUniqueId(Aws::String&& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = std::move(value); }
-
-    /**
-     * <p>The unique ID that could not be deleted.</p>
-     */
     inline void SetUniqueId(const char* value) { m_uniqueIdHasBeenSet = true; m_uniqueId.assign(value); }
-
-    /**
-     * <p>The unique ID that could not be deleted.</p>
-     */
     inline DeleteUniqueIdError& WithUniqueId(const Aws::String& value) { SetUniqueId(value); return *this;}
-
-    /**
-     * <p>The unique ID that could not be deleted.</p>
-     */
     inline DeleteUniqueIdError& WithUniqueId(Aws::String&& value) { SetUniqueId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID that could not be deleted.</p>
-     */
     inline DeleteUniqueIdError& WithUniqueId(const char* value) { SetUniqueId(value); return *this;}
-
+    ///@}
   private:
 
     DeleteUniqueIdErrorType m_errorType;

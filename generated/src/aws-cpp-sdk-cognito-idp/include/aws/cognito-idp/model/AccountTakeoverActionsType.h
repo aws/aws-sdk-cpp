@@ -37,98 +37,41 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Action to take for a low risk.</p>
      */
     inline const AccountTakeoverActionType& GetLowAction() const{ return m_lowAction; }
-
-    /**
-     * <p>Action to take for a low risk.</p>
-     */
     inline bool LowActionHasBeenSet() const { return m_lowActionHasBeenSet; }
-
-    /**
-     * <p>Action to take for a low risk.</p>
-     */
     inline void SetLowAction(const AccountTakeoverActionType& value) { m_lowActionHasBeenSet = true; m_lowAction = value; }
-
-    /**
-     * <p>Action to take for a low risk.</p>
-     */
     inline void SetLowAction(AccountTakeoverActionType&& value) { m_lowActionHasBeenSet = true; m_lowAction = std::move(value); }
-
-    /**
-     * <p>Action to take for a low risk.</p>
-     */
     inline AccountTakeoverActionsType& WithLowAction(const AccountTakeoverActionType& value) { SetLowAction(value); return *this;}
-
-    /**
-     * <p>Action to take for a low risk.</p>
-     */
     inline AccountTakeoverActionsType& WithLowAction(AccountTakeoverActionType&& value) { SetLowAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Action to take for a medium risk.</p>
      */
     inline const AccountTakeoverActionType& GetMediumAction() const{ return m_mediumAction; }
-
-    /**
-     * <p>Action to take for a medium risk.</p>
-     */
     inline bool MediumActionHasBeenSet() const { return m_mediumActionHasBeenSet; }
-
-    /**
-     * <p>Action to take for a medium risk.</p>
-     */
     inline void SetMediumAction(const AccountTakeoverActionType& value) { m_mediumActionHasBeenSet = true; m_mediumAction = value; }
-
-    /**
-     * <p>Action to take for a medium risk.</p>
-     */
     inline void SetMediumAction(AccountTakeoverActionType&& value) { m_mediumActionHasBeenSet = true; m_mediumAction = std::move(value); }
-
-    /**
-     * <p>Action to take for a medium risk.</p>
-     */
     inline AccountTakeoverActionsType& WithMediumAction(const AccountTakeoverActionType& value) { SetMediumAction(value); return *this;}
-
-    /**
-     * <p>Action to take for a medium risk.</p>
-     */
     inline AccountTakeoverActionsType& WithMediumAction(AccountTakeoverActionType&& value) { SetMediumAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Action to take for a high risk.</p>
      */
     inline const AccountTakeoverActionType& GetHighAction() const{ return m_highAction; }
-
-    /**
-     * <p>Action to take for a high risk.</p>
-     */
     inline bool HighActionHasBeenSet() const { return m_highActionHasBeenSet; }
-
-    /**
-     * <p>Action to take for a high risk.</p>
-     */
     inline void SetHighAction(const AccountTakeoverActionType& value) { m_highActionHasBeenSet = true; m_highAction = value; }
-
-    /**
-     * <p>Action to take for a high risk.</p>
-     */
     inline void SetHighAction(AccountTakeoverActionType&& value) { m_highActionHasBeenSet = true; m_highAction = std::move(value); }
-
-    /**
-     * <p>Action to take for a high risk.</p>
-     */
     inline AccountTakeoverActionsType& WithHighAction(const AccountTakeoverActionType& value) { SetHighAction(value); return *this;}
-
-    /**
-     * <p>Action to take for a high risk.</p>
-     */
     inline AccountTakeoverActionsType& WithHighAction(AccountTakeoverActionType&& value) { SetHighAction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AccountTakeoverActionType m_lowAction;

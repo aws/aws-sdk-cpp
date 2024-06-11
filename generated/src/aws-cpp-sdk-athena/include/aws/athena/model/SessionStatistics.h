@@ -35,26 +35,15 @@ namespace Model
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data processing unit execution time for a session in milliseconds.</p>
      */
     inline long long GetDpuExecutionInMillis() const{ return m_dpuExecutionInMillis; }
-
-    /**
-     * <p>The data processing unit execution time for a session in milliseconds.</p>
-     */
     inline bool DpuExecutionInMillisHasBeenSet() const { return m_dpuExecutionInMillisHasBeenSet; }
-
-    /**
-     * <p>The data processing unit execution time for a session in milliseconds.</p>
-     */
     inline void SetDpuExecutionInMillis(long long value) { m_dpuExecutionInMillisHasBeenSet = true; m_dpuExecutionInMillis = value; }
-
-    /**
-     * <p>The data processing unit execution time for a session in milliseconds.</p>
-     */
     inline SessionStatistics& WithDpuExecutionInMillis(long long value) { SetDpuExecutionInMillis(value); return *this;}
-
+    ///@}
   private:
 
     long long m_dpuExecutionInMillis;

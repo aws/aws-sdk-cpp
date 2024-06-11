@@ -40,95 +40,34 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The ID of the tenant application with the device-identity provider.</p>
      */
     inline const Aws::String& GetTenantId() const{ return m_tenantId; }
-
-    /**
-     * <p>The ID of the tenant application with the device-identity provider.</p>
-     */
     inline bool TenantIdHasBeenSet() const { return m_tenantIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the tenant application with the device-identity provider.</p>
-     */
     inline void SetTenantId(const Aws::String& value) { m_tenantIdHasBeenSet = true; m_tenantId = value; }
-
-    /**
-     * <p>The ID of the tenant application with the device-identity provider.</p>
-     */
     inline void SetTenantId(Aws::String&& value) { m_tenantIdHasBeenSet = true; m_tenantId = std::move(value); }
-
-    /**
-     * <p>The ID of the tenant application with the device-identity provider.</p>
-     */
     inline void SetTenantId(const char* value) { m_tenantIdHasBeenSet = true; m_tenantId.assign(value); }
-
-    /**
-     * <p>The ID of the tenant application with the device-identity provider.</p>
-     */
     inline DeviceOptions& WithTenantId(const Aws::String& value) { SetTenantId(value); return *this;}
-
-    /**
-     * <p>The ID of the tenant application with the device-identity provider.</p>
-     */
     inline DeviceOptions& WithTenantId(Aws::String&& value) { SetTenantId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the tenant application with the device-identity provider.</p>
-     */
     inline DeviceOptions& WithTenantId(const char* value) { SetTenantId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The URL Amazon Web Services Verified Access will use to verify the
      * authenticity of the device tokens. </p>
      */
     inline const Aws::String& GetPublicSigningKeyUrl() const{ return m_publicSigningKeyUrl; }
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline bool PublicSigningKeyUrlHasBeenSet() const { return m_publicSigningKeyUrlHasBeenSet; }
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline void SetPublicSigningKeyUrl(const Aws::String& value) { m_publicSigningKeyUrlHasBeenSet = true; m_publicSigningKeyUrl = value; }
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline void SetPublicSigningKeyUrl(Aws::String&& value) { m_publicSigningKeyUrlHasBeenSet = true; m_publicSigningKeyUrl = std::move(value); }
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline void SetPublicSigningKeyUrl(const char* value) { m_publicSigningKeyUrlHasBeenSet = true; m_publicSigningKeyUrl.assign(value); }
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline DeviceOptions& WithPublicSigningKeyUrl(const Aws::String& value) { SetPublicSigningKeyUrl(value); return *this;}
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline DeviceOptions& WithPublicSigningKeyUrl(Aws::String&& value) { SetPublicSigningKeyUrl(std::move(value)); return *this;}
-
-    /**
-     * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
-     */
     inline DeviceOptions& WithPublicSigningKeyUrl(const char* value) { SetPublicSigningKeyUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tenantId;

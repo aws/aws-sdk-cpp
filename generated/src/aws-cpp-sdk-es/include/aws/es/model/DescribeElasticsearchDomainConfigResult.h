@@ -40,58 +40,28 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The configuration information of the domain requested in the
      * <code>DescribeElasticsearchDomainConfig</code> request.</p>
      */
     inline const ElasticsearchDomainConfig& GetDomainConfig() const{ return m_domainConfig; }
-
-    /**
-     * <p>The configuration information of the domain requested in the
-     * <code>DescribeElasticsearchDomainConfig</code> request.</p>
-     */
     inline void SetDomainConfig(const ElasticsearchDomainConfig& value) { m_domainConfig = value; }
-
-    /**
-     * <p>The configuration information of the domain requested in the
-     * <code>DescribeElasticsearchDomainConfig</code> request.</p>
-     */
     inline void SetDomainConfig(ElasticsearchDomainConfig&& value) { m_domainConfig = std::move(value); }
-
-    /**
-     * <p>The configuration information of the domain requested in the
-     * <code>DescribeElasticsearchDomainConfig</code> request.</p>
-     */
     inline DescribeElasticsearchDomainConfigResult& WithDomainConfig(const ElasticsearchDomainConfig& value) { SetDomainConfig(value); return *this;}
-
-    /**
-     * <p>The configuration information of the domain requested in the
-     * <code>DescribeElasticsearchDomainConfig</code> request.</p>
-     */
     inline DescribeElasticsearchDomainConfigResult& WithDomainConfig(ElasticsearchDomainConfig&& value) { SetDomainConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeElasticsearchDomainConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeElasticsearchDomainConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeElasticsearchDomainConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ElasticsearchDomainConfig m_domainConfig;

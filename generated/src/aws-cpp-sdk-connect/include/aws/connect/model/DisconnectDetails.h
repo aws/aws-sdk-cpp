@@ -38,54 +38,20 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates the potential disconnection issues for a call. This field is not
      * populated if the service does not detect potential issues.</p>
      */
     inline const Aws::String& GetPotentialDisconnectIssue() const{ return m_potentialDisconnectIssue; }
-
-    /**
-     * <p>Indicates the potential disconnection issues for a call. This field is not
-     * populated if the service does not detect potential issues.</p>
-     */
     inline bool PotentialDisconnectIssueHasBeenSet() const { return m_potentialDisconnectIssueHasBeenSet; }
-
-    /**
-     * <p>Indicates the potential disconnection issues for a call. This field is not
-     * populated if the service does not detect potential issues.</p>
-     */
     inline void SetPotentialDisconnectIssue(const Aws::String& value) { m_potentialDisconnectIssueHasBeenSet = true; m_potentialDisconnectIssue = value; }
-
-    /**
-     * <p>Indicates the potential disconnection issues for a call. This field is not
-     * populated if the service does not detect potential issues.</p>
-     */
     inline void SetPotentialDisconnectIssue(Aws::String&& value) { m_potentialDisconnectIssueHasBeenSet = true; m_potentialDisconnectIssue = std::move(value); }
-
-    /**
-     * <p>Indicates the potential disconnection issues for a call. This field is not
-     * populated if the service does not detect potential issues.</p>
-     */
     inline void SetPotentialDisconnectIssue(const char* value) { m_potentialDisconnectIssueHasBeenSet = true; m_potentialDisconnectIssue.assign(value); }
-
-    /**
-     * <p>Indicates the potential disconnection issues for a call. This field is not
-     * populated if the service does not detect potential issues.</p>
-     */
     inline DisconnectDetails& WithPotentialDisconnectIssue(const Aws::String& value) { SetPotentialDisconnectIssue(value); return *this;}
-
-    /**
-     * <p>Indicates the potential disconnection issues for a call. This field is not
-     * populated if the service does not detect potential issues.</p>
-     */
     inline DisconnectDetails& WithPotentialDisconnectIssue(Aws::String&& value) { SetPotentialDisconnectIssue(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates the potential disconnection issues for a call. This field is not
-     * populated if the service does not detect potential issues.</p>
-     */
     inline DisconnectDetails& WithPotentialDisconnectIssue(const char* value) { SetPotentialDisconnectIssue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_potentialDisconnectIssue;

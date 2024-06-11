@@ -39,79 +39,31 @@ namespace Model
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Source type for the relational database.</p> <ul> <li> <p>
      * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon
      * Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> </ul>
      */
     inline const RelationalDatabaseSourceType& GetRelationalDatabaseSourceType() const{ return m_relationalDatabaseSourceType; }
-
-    /**
-     * <p>Source type for the relational database.</p> <ul> <li> <p>
-     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon
-     * Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> </ul>
-     */
     inline bool RelationalDatabaseSourceTypeHasBeenSet() const { return m_relationalDatabaseSourceTypeHasBeenSet; }
-
-    /**
-     * <p>Source type for the relational database.</p> <ul> <li> <p>
-     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon
-     * Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> </ul>
-     */
     inline void SetRelationalDatabaseSourceType(const RelationalDatabaseSourceType& value) { m_relationalDatabaseSourceTypeHasBeenSet = true; m_relationalDatabaseSourceType = value; }
-
-    /**
-     * <p>Source type for the relational database.</p> <ul> <li> <p>
-     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon
-     * Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> </ul>
-     */
     inline void SetRelationalDatabaseSourceType(RelationalDatabaseSourceType&& value) { m_relationalDatabaseSourceTypeHasBeenSet = true; m_relationalDatabaseSourceType = std::move(value); }
-
-    /**
-     * <p>Source type for the relational database.</p> <ul> <li> <p>
-     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon
-     * Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> </ul>
-     */
     inline RelationalDatabaseDataSourceConfig& WithRelationalDatabaseSourceType(const RelationalDatabaseSourceType& value) { SetRelationalDatabaseSourceType(value); return *this;}
-
-    /**
-     * <p>Source type for the relational database.</p> <ul> <li> <p>
-     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon
-     * Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> </ul>
-     */
     inline RelationalDatabaseDataSourceConfig& WithRelationalDatabaseSourceType(RelationalDatabaseSourceType&& value) { SetRelationalDatabaseSourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Amazon RDS HTTP endpoint settings.</p>
      */
     inline const RdsHttpEndpointConfig& GetRdsHttpEndpointConfig() const{ return m_rdsHttpEndpointConfig; }
-
-    /**
-     * <p>Amazon RDS HTTP endpoint settings.</p>
-     */
     inline bool RdsHttpEndpointConfigHasBeenSet() const { return m_rdsHttpEndpointConfigHasBeenSet; }
-
-    /**
-     * <p>Amazon RDS HTTP endpoint settings.</p>
-     */
     inline void SetRdsHttpEndpointConfig(const RdsHttpEndpointConfig& value) { m_rdsHttpEndpointConfigHasBeenSet = true; m_rdsHttpEndpointConfig = value; }
-
-    /**
-     * <p>Amazon RDS HTTP endpoint settings.</p>
-     */
     inline void SetRdsHttpEndpointConfig(RdsHttpEndpointConfig&& value) { m_rdsHttpEndpointConfigHasBeenSet = true; m_rdsHttpEndpointConfig = std::move(value); }
-
-    /**
-     * <p>Amazon RDS HTTP endpoint settings.</p>
-     */
     inline RelationalDatabaseDataSourceConfig& WithRdsHttpEndpointConfig(const RdsHttpEndpointConfig& value) { SetRdsHttpEndpointConfig(value); return *this;}
-
-    /**
-     * <p>Amazon RDS HTTP endpoint settings.</p>
-     */
     inline RelationalDatabaseDataSourceConfig& WithRdsHttpEndpointConfig(RdsHttpEndpointConfig&& value) { SetRdsHttpEndpointConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RelationalDatabaseSourceType m_relationalDatabaseSourceType;

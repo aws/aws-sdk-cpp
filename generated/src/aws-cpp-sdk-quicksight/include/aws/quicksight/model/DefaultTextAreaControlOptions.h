@@ -39,77 +39,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The delimiter that is used to separate the lines in text.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
-
-    /**
-     * <p>The delimiter that is used to separate the lines in text.</p>
-     */
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
-
-    /**
-     * <p>The delimiter that is used to separate the lines in text.</p>
-     */
     inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
-
-    /**
-     * <p>The delimiter that is used to separate the lines in text.</p>
-     */
     inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
-
-    /**
-     * <p>The delimiter that is used to separate the lines in text.</p>
-     */
     inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
-
-    /**
-     * <p>The delimiter that is used to separate the lines in text.</p>
-     */
     inline DefaultTextAreaControlOptions& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
-
-    /**
-     * <p>The delimiter that is used to separate the lines in text.</p>
-     */
     inline DefaultTextAreaControlOptions& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
-
-    /**
-     * <p>The delimiter that is used to separate the lines in text.</p>
-     */
     inline DefaultTextAreaControlOptions& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The display options of a control.</p>
      */
     inline const TextAreaControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline void SetDisplayOptions(const TextAreaControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline void SetDisplayOptions(TextAreaControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline DefaultTextAreaControlOptions& WithDisplayOptions(const TextAreaControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline DefaultTextAreaControlOptions& WithDisplayOptions(TextAreaControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_delimiter;

@@ -49,108 +49,43 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The identifier for the response headers policy.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The identifier for the response headers policy.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The identifier for the response headers policy.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The identifier for the response headers policy.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The identifier for the response headers policy.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The identifier for the response headers policy.</p>
-     */
     inline ResponseHeadersPolicy& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The identifier for the response headers policy.</p>
-     */
     inline ResponseHeadersPolicy& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the response headers policy.</p>
-     */
     inline ResponseHeadersPolicy& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the response headers policy was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-
-    /**
-     * <p>The date and time when the response headers policy was last modified.</p>
-     */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time when the response headers policy was last modified.</p>
-     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-
-    /**
-     * <p>The date and time when the response headers policy was last modified.</p>
-     */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-
-    /**
-     * <p>The date and time when the response headers policy was last modified.</p>
-     */
     inline ResponseHeadersPolicy& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-
-    /**
-     * <p>The date and time when the response headers policy was last modified.</p>
-     */
     inline ResponseHeadersPolicy& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A response headers policy configuration.</p>
      */
     inline const ResponseHeadersPolicyConfig& GetResponseHeadersPolicyConfig() const{ return m_responseHeadersPolicyConfig; }
-
-    /**
-     * <p>A response headers policy configuration.</p>
-     */
     inline bool ResponseHeadersPolicyConfigHasBeenSet() const { return m_responseHeadersPolicyConfigHasBeenSet; }
-
-    /**
-     * <p>A response headers policy configuration.</p>
-     */
     inline void SetResponseHeadersPolicyConfig(const ResponseHeadersPolicyConfig& value) { m_responseHeadersPolicyConfigHasBeenSet = true; m_responseHeadersPolicyConfig = value; }
-
-    /**
-     * <p>A response headers policy configuration.</p>
-     */
     inline void SetResponseHeadersPolicyConfig(ResponseHeadersPolicyConfig&& value) { m_responseHeadersPolicyConfigHasBeenSet = true; m_responseHeadersPolicyConfig = std::move(value); }
-
-    /**
-     * <p>A response headers policy configuration.</p>
-     */
     inline ResponseHeadersPolicy& WithResponseHeadersPolicyConfig(const ResponseHeadersPolicyConfig& value) { SetResponseHeadersPolicyConfig(value); return *this;}
-
-    /**
-     * <p>A response headers policy configuration.</p>
-     */
     inline ResponseHeadersPolicy& WithResponseHeadersPolicyConfig(ResponseHeadersPolicyConfig&& value) { SetResponseHeadersPolicyConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

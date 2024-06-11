@@ -39,36 +39,17 @@ namespace Model
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details on SNS configuration. </p>
      */
     inline const SnsConfiguration& GetSnsConfiguration() const{ return m_snsConfiguration; }
-
-    /**
-     * <p>Details on SNS configuration. </p>
-     */
     inline bool SnsConfigurationHasBeenSet() const { return m_snsConfigurationHasBeenSet; }
-
-    /**
-     * <p>Details on SNS configuration. </p>
-     */
     inline void SetSnsConfiguration(const SnsConfiguration& value) { m_snsConfigurationHasBeenSet = true; m_snsConfiguration = value; }
-
-    /**
-     * <p>Details on SNS configuration. </p>
-     */
     inline void SetSnsConfiguration(SnsConfiguration&& value) { m_snsConfigurationHasBeenSet = true; m_snsConfiguration = std::move(value); }
-
-    /**
-     * <p>Details on SNS configuration. </p>
-     */
     inline NotificationConfiguration& WithSnsConfiguration(const SnsConfiguration& value) { SetSnsConfiguration(value); return *this;}
-
-    /**
-     * <p>Details on SNS configuration. </p>
-     */
     inline NotificationConfiguration& WithSnsConfiguration(SnsConfiguration&& value) { SetSnsConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SnsConfiguration m_snsConfiguration;

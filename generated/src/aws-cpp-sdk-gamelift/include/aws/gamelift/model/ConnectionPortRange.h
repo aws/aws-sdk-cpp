@@ -40,51 +40,26 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Starting value for the port range.</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
-
-    /**
-     * <p>Starting value for the port range.</p>
-     */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
-
-    /**
-     * <p>Starting value for the port range.</p>
-     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
-
-    /**
-     * <p>Starting value for the port range.</p>
-     */
     inline ConnectionPortRange& WithFromPort(int value) { SetFromPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Ending value for the port. Port numbers are end-inclusive. This value must be
      * equal to or greater than <code>FromPort</code>.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
-
-    /**
-     * <p>Ending value for the port. Port numbers are end-inclusive. This value must be
-     * equal to or greater than <code>FromPort</code>.</p>
-     */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
-
-    /**
-     * <p>Ending value for the port. Port numbers are end-inclusive. This value must be
-     * equal to or greater than <code>FromPort</code>.</p>
-     */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
-
-    /**
-     * <p>Ending value for the port. Port numbers are end-inclusive. This value must be
-     * equal to or greater than <code>FromPort</code>.</p>
-     */
     inline ConnectionPortRange& WithToPort(int value) { SetToPort(value); return *this;}
-
+    ///@}
   private:
 
     int m_fromPort;

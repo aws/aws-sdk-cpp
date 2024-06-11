@@ -33,89 +33,40 @@ namespace Model
     AWS_FMS_API PutAppsListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details of the Firewall Manager applications list.</p>
      */
     inline const AppsListData& GetAppsList() const{ return m_appsList; }
-
-    /**
-     * <p>The details of the Firewall Manager applications list.</p>
-     */
     inline void SetAppsList(const AppsListData& value) { m_appsList = value; }
-
-    /**
-     * <p>The details of the Firewall Manager applications list.</p>
-     */
     inline void SetAppsList(AppsListData&& value) { m_appsList = std::move(value); }
-
-    /**
-     * <p>The details of the Firewall Manager applications list.</p>
-     */
     inline PutAppsListResult& WithAppsList(const AppsListData& value) { SetAppsList(value); return *this;}
-
-    /**
-     * <p>The details of the Firewall Manager applications list.</p>
-     */
     inline PutAppsListResult& WithAppsList(AppsListData&& value) { SetAppsList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the applications list.</p>
      */
     inline const Aws::String& GetAppsListArn() const{ return m_appsListArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the applications list.</p>
-     */
     inline void SetAppsListArn(const Aws::String& value) { m_appsListArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the applications list.</p>
-     */
     inline void SetAppsListArn(Aws::String&& value) { m_appsListArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the applications list.</p>
-     */
     inline void SetAppsListArn(const char* value) { m_appsListArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the applications list.</p>
-     */
     inline PutAppsListResult& WithAppsListArn(const Aws::String& value) { SetAppsListArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the applications list.</p>
-     */
     inline PutAppsListResult& WithAppsListArn(Aws::String&& value) { SetAppsListArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the applications list.</p>
-     */
     inline PutAppsListResult& WithAppsListArn(const char* value) { SetAppsListArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutAppsListResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutAppsListResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutAppsListResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AppsListData m_appsList;

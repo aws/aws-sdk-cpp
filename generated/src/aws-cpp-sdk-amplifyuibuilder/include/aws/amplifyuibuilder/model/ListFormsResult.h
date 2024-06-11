@@ -34,99 +34,42 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API ListFormsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of forms for the Amplify app.</p>
      */
     inline const Aws::Vector<FormSummary>& GetEntities() const{ return m_entities; }
-
-    /**
-     * <p>The list of forms for the Amplify app.</p>
-     */
     inline void SetEntities(const Aws::Vector<FormSummary>& value) { m_entities = value; }
-
-    /**
-     * <p>The list of forms for the Amplify app.</p>
-     */
     inline void SetEntities(Aws::Vector<FormSummary>&& value) { m_entities = std::move(value); }
-
-    /**
-     * <p>The list of forms for the Amplify app.</p>
-     */
     inline ListFormsResult& WithEntities(const Aws::Vector<FormSummary>& value) { SetEntities(value); return *this;}
-
-    /**
-     * <p>The list of forms for the Amplify app.</p>
-     */
     inline ListFormsResult& WithEntities(Aws::Vector<FormSummary>&& value) { SetEntities(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of forms for the Amplify app.</p>
-     */
     inline ListFormsResult& AddEntities(const FormSummary& value) { m_entities.push_back(value); return *this; }
-
-    /**
-     * <p>The list of forms for the Amplify app.</p>
-     */
     inline ListFormsResult& AddEntities(FormSummary&& value) { m_entities.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token that's included if more results are available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListFormsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListFormsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListFormsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListFormsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListFormsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListFormsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FormSummary> m_entities;

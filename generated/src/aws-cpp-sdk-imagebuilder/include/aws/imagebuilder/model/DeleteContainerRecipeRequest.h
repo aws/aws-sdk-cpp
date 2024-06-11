@@ -38,46 +38,19 @@ namespace Model
     AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
      */
     inline const Aws::String& GetContainerRecipeArn() const{ return m_containerRecipeArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-     */
     inline bool ContainerRecipeArnHasBeenSet() const { return m_containerRecipeArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-     */
     inline void SetContainerRecipeArn(const Aws::String& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-     */
     inline void SetContainerRecipeArn(Aws::String&& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-     */
     inline void SetContainerRecipeArn(const char* value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-     */
     inline DeleteContainerRecipeRequest& WithContainerRecipeArn(const Aws::String& value) { SetContainerRecipeArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-     */
     inline DeleteContainerRecipeRequest& WithContainerRecipeArn(Aws::String&& value) { SetContainerRecipeArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-     */
     inline DeleteContainerRecipeRequest& WithContainerRecipeArn(const char* value) { SetContainerRecipeArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_containerRecipeArn;

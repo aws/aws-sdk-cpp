@@ -32,46 +32,19 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the action.</p>
      */
     inline const Aws::String& GetActionId() const{ return m_actionId; }
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = std::move(value); }
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline void SetActionId(const char* value) { m_actionIdHasBeenSet = true; m_actionId.assign(value); }
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline DescribeActionRequest& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline DescribeActionRequest& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline DescribeActionRequest& WithActionId(const char* value) { SetActionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_actionId;

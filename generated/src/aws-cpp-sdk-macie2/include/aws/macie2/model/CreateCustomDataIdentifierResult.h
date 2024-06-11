@@ -32,63 +32,29 @@ namespace Model
     AWS_MACIE2_API CreateCustomDataIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier for the custom data identifier that was created.</p>
      */
     inline const Aws::String& GetCustomDataIdentifierId() const{ return m_customDataIdentifierId; }
-
-    /**
-     * <p>The unique identifier for the custom data identifier that was created.</p>
-     */
     inline void SetCustomDataIdentifierId(const Aws::String& value) { m_customDataIdentifierId = value; }
-
-    /**
-     * <p>The unique identifier for the custom data identifier that was created.</p>
-     */
     inline void SetCustomDataIdentifierId(Aws::String&& value) { m_customDataIdentifierId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the custom data identifier that was created.</p>
-     */
     inline void SetCustomDataIdentifierId(const char* value) { m_customDataIdentifierId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the custom data identifier that was created.</p>
-     */
     inline CreateCustomDataIdentifierResult& WithCustomDataIdentifierId(const Aws::String& value) { SetCustomDataIdentifierId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the custom data identifier that was created.</p>
-     */
     inline CreateCustomDataIdentifierResult& WithCustomDataIdentifierId(Aws::String&& value) { SetCustomDataIdentifierId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the custom data identifier that was created.</p>
-     */
     inline CreateCustomDataIdentifierResult& WithCustomDataIdentifierId(const char* value) { SetCustomDataIdentifierId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateCustomDataIdentifierResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateCustomDataIdentifierResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateCustomDataIdentifierResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_customDataIdentifierId;

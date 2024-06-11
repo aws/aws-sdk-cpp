@@ -38,67 +38,29 @@ namespace Model
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>How the device gets an IP address.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
-
-    /**
-     * <p>How the device gets an IP address.</p>
-     */
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
-
-    /**
-     * <p>How the device gets an IP address.</p>
-     */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
-
-    /**
-     * <p>How the device gets an IP address.</p>
-     */
     inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
-
-    /**
-     * <p>How the device gets an IP address.</p>
-     */
     inline EthernetPayload& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
-
-    /**
-     * <p>How the device gets an IP address.</p>
-     */
     inline EthernetPayload& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Network configuration for a static IP connection.</p>
      */
     inline const StaticIpConnectionInfo& GetStaticIpConnectionInfo() const{ return m_staticIpConnectionInfo; }
-
-    /**
-     * <p>Network configuration for a static IP connection.</p>
-     */
     inline bool StaticIpConnectionInfoHasBeenSet() const { return m_staticIpConnectionInfoHasBeenSet; }
-
-    /**
-     * <p>Network configuration for a static IP connection.</p>
-     */
     inline void SetStaticIpConnectionInfo(const StaticIpConnectionInfo& value) { m_staticIpConnectionInfoHasBeenSet = true; m_staticIpConnectionInfo = value; }
-
-    /**
-     * <p>Network configuration for a static IP connection.</p>
-     */
     inline void SetStaticIpConnectionInfo(StaticIpConnectionInfo&& value) { m_staticIpConnectionInfoHasBeenSet = true; m_staticIpConnectionInfo = std::move(value); }
-
-    /**
-     * <p>Network configuration for a static IP connection.</p>
-     */
     inline EthernetPayload& WithStaticIpConnectionInfo(const StaticIpConnectionInfo& value) { SetStaticIpConnectionInfo(value); return *this;}
-
-    /**
-     * <p>Network configuration for a static IP connection.</p>
-     */
     inline EthernetPayload& WithStaticIpConnectionInfo(StaticIpConnectionInfo&& value) { SetStaticIpConnectionInfo(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConnectionType m_connectionType;

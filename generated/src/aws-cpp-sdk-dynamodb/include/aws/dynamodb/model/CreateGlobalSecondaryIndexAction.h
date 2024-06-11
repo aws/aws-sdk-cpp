@@ -43,131 +43,49 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the global secondary index to be created.</p>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
-
-    /**
-     * <p>The name of the global secondary index to be created.</p>
-     */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-
-    /**
-     * <p>The name of the global secondary index to be created.</p>
-     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-
-    /**
-     * <p>The name of the global secondary index to be created.</p>
-     */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-
-    /**
-     * <p>The name of the global secondary index to be created.</p>
-     */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-
-    /**
-     * <p>The name of the global secondary index to be created.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The name of the global secondary index to be created.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the global secondary index to be created.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key schema for the global secondary index.</p>
      */
     inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
-
-    /**
-     * <p>The key schema for the global secondary index.</p>
-     */
     inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }
-
-    /**
-     * <p>The key schema for the global secondary index.</p>
-     */
     inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
-
-    /**
-     * <p>The key schema for the global secondary index.</p>
-     */
     inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::move(value); }
-
-    /**
-     * <p>The key schema for the global secondary index.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
-
-    /**
-     * <p>The key schema for the global secondary index.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(std::move(value)); return *this;}
-
-    /**
-     * <p>The key schema for the global secondary index.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
-
-    /**
-     * <p>The key schema for the global secondary index.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents attributes that are copied (projected) from the table into an
      * index. These are in addition to the primary key attributes and index key
      * attributes, which are automatically projected.</p>
      */
     inline const Projection& GetProjection() const{ return m_projection; }
-
-    /**
-     * <p>Represents attributes that are copied (projected) from the table into an
-     * index. These are in addition to the primary key attributes and index key
-     * attributes, which are automatically projected.</p>
-     */
     inline bool ProjectionHasBeenSet() const { return m_projectionHasBeenSet; }
-
-    /**
-     * <p>Represents attributes that are copied (projected) from the table into an
-     * index. These are in addition to the primary key attributes and index key
-     * attributes, which are automatically projected.</p>
-     */
     inline void SetProjection(const Projection& value) { m_projectionHasBeenSet = true; m_projection = value; }
-
-    /**
-     * <p>Represents attributes that are copied (projected) from the table into an
-     * index. These are in addition to the primary key attributes and index key
-     * attributes, which are automatically projected.</p>
-     */
     inline void SetProjection(Projection&& value) { m_projectionHasBeenSet = true; m_projection = std::move(value); }
-
-    /**
-     * <p>Represents attributes that are copied (projected) from the table into an
-     * index. These are in addition to the primary key attributes and index key
-     * attributes, which are automatically projected.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& WithProjection(const Projection& value) { SetProjection(value); return *this;}
-
-    /**
-     * <p>Represents attributes that are copied (projected) from the table into an
-     * index. These are in addition to the primary key attributes and index key
-     * attributes, which are automatically projected.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& WithProjection(Projection&& value) { SetProjection(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
@@ -176,53 +94,14 @@ namespace Model
      * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
-
-    /**
-     * <p>Represents the provisioned throughput settings for the specified global
-     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
-     * values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     */
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
-
-    /**
-     * <p>Represents the provisioned throughput settings for the specified global
-     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
-     * values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     */
     inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
-
-    /**
-     * <p>Represents the provisioned throughput settings for the specified global
-     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
-     * values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     */
     inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
-
-    /**
-     * <p>Represents the provisioned throughput settings for the specified global
-     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
-     * values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
-
-    /**
-     * <p>Represents the provisioned throughput settings for the specified global
-     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
-     * values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of read and write units for the global secondary index
      * being created. If you use this parameter, you must specify
@@ -230,47 +109,12 @@ namespace Model
      * both.</p>
      */
     inline const OnDemandThroughput& GetOnDemandThroughput() const{ return m_onDemandThroughput; }
-
-    /**
-     * <p>The maximum number of read and write units for the global secondary index
-     * being created. If you use this parameter, you must specify
-     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
-     * both.</p>
-     */
     inline bool OnDemandThroughputHasBeenSet() const { return m_onDemandThroughputHasBeenSet; }
-
-    /**
-     * <p>The maximum number of read and write units for the global secondary index
-     * being created. If you use this parameter, you must specify
-     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
-     * both.</p>
-     */
     inline void SetOnDemandThroughput(const OnDemandThroughput& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = value; }
-
-    /**
-     * <p>The maximum number of read and write units for the global secondary index
-     * being created. If you use this parameter, you must specify
-     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
-     * both.</p>
-     */
     inline void SetOnDemandThroughput(OnDemandThroughput&& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = std::move(value); }
-
-    /**
-     * <p>The maximum number of read and write units for the global secondary index
-     * being created. If you use this parameter, you must specify
-     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
-     * both.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
-
-    /**
-     * <p>The maximum number of read and write units for the global secondary index
-     * being created. If you use this parameter, you must specify
-     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
-     * both.</p>
-     */
     inline CreateGlobalSecondaryIndexAction& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_indexName;

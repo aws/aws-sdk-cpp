@@ -33,53 +33,27 @@ namespace Model
     AWS_S3_API GetBucketIntelligentTieringConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Container for S3 Intelligent-Tiering configuration.</p>
      */
     inline const IntelligentTieringConfiguration& GetIntelligentTieringConfiguration() const{ return m_intelligentTieringConfiguration; }
-
-    /**
-     * <p>Container for S3 Intelligent-Tiering configuration.</p>
-     */
     inline void SetIntelligentTieringConfiguration(const IntelligentTieringConfiguration& value) { m_intelligentTieringConfiguration = value; }
-
-    /**
-     * <p>Container for S3 Intelligent-Tiering configuration.</p>
-     */
     inline void SetIntelligentTieringConfiguration(IntelligentTieringConfiguration&& value) { m_intelligentTieringConfiguration = std::move(value); }
-
-    /**
-     * <p>Container for S3 Intelligent-Tiering configuration.</p>
-     */
     inline GetBucketIntelligentTieringConfigurationResult& WithIntelligentTieringConfiguration(const IntelligentTieringConfiguration& value) { SetIntelligentTieringConfiguration(value); return *this;}
-
-    /**
-     * <p>Container for S3 Intelligent-Tiering configuration.</p>
-     */
     inline GetBucketIntelligentTieringConfigurationResult& WithIntelligentTieringConfiguration(IntelligentTieringConfiguration&& value) { SetIntelligentTieringConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBucketIntelligentTieringConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBucketIntelligentTieringConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBucketIntelligentTieringConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     IntelligentTieringConfiguration m_intelligentTieringConfiguration;

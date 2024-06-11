@@ -39,77 +39,31 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The key of the specific import group. </p>
      */
     inline const GroupName& GetName() const{ return m_name; }
-
-    /**
-     * <p> The key of the specific import group. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p> The key of the specific import group. </p>
-     */
     inline void SetName(const GroupName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p> The key of the specific import group. </p>
-     */
     inline void SetName(GroupName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p> The key of the specific import group. </p>
-     */
     inline Group& WithName(const GroupName& value) { SetName(value); return *this;}
-
-    /**
-     * <p> The key of the specific import group. </p>
-     */
     inline Group& WithName(GroupName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The value of the specific import group. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p> The value of the specific import group. </p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p> The value of the specific import group. </p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p> The value of the specific import group. </p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p> The value of the specific import group. </p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p> The value of the specific import group. </p>
-     */
     inline Group& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p> The value of the specific import group. </p>
-     */
     inline Group& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p> The value of the specific import group. </p>
-     */
     inline Group& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     GroupName m_name;

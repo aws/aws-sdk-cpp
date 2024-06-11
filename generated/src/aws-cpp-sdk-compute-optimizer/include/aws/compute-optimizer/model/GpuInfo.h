@@ -39,46 +39,19 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Describes the GPU accelerators for the instance type. </p>
      */
     inline const Aws::Vector<Gpu>& GetGpus() const{ return m_gpus; }
-
-    /**
-     * <p> Describes the GPU accelerators for the instance type. </p>
-     */
     inline bool GpusHasBeenSet() const { return m_gpusHasBeenSet; }
-
-    /**
-     * <p> Describes the GPU accelerators for the instance type. </p>
-     */
     inline void SetGpus(const Aws::Vector<Gpu>& value) { m_gpusHasBeenSet = true; m_gpus = value; }
-
-    /**
-     * <p> Describes the GPU accelerators for the instance type. </p>
-     */
     inline void SetGpus(Aws::Vector<Gpu>&& value) { m_gpusHasBeenSet = true; m_gpus = std::move(value); }
-
-    /**
-     * <p> Describes the GPU accelerators for the instance type. </p>
-     */
     inline GpuInfo& WithGpus(const Aws::Vector<Gpu>& value) { SetGpus(value); return *this;}
-
-    /**
-     * <p> Describes the GPU accelerators for the instance type. </p>
-     */
     inline GpuInfo& WithGpus(Aws::Vector<Gpu>&& value) { SetGpus(std::move(value)); return *this;}
-
-    /**
-     * <p> Describes the GPU accelerators for the instance type. </p>
-     */
     inline GpuInfo& AddGpus(const Gpu& value) { m_gpusHasBeenSet = true; m_gpus.push_back(value); return *this; }
-
-    /**
-     * <p> Describes the GPU accelerators for the instance type. </p>
-     */
     inline GpuInfo& AddGpus(Gpu&& value) { m_gpusHasBeenSet = true; m_gpus.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Gpu> m_gpus;

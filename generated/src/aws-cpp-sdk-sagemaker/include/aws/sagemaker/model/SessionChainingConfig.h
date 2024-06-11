@@ -41,34 +41,17 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Set to <code>True</code> to allow SageMaker to extract session tags from a
      * training job creation role and reuse these tags when assuming the training job
      * execution role.</p>
      */
     inline bool GetEnableSessionTagChaining() const{ return m_enableSessionTagChaining; }
-
-    /**
-     * <p>Set to <code>True</code> to allow SageMaker to extract session tags from a
-     * training job creation role and reuse these tags when assuming the training job
-     * execution role.</p>
-     */
     inline bool EnableSessionTagChainingHasBeenSet() const { return m_enableSessionTagChainingHasBeenSet; }
-
-    /**
-     * <p>Set to <code>True</code> to allow SageMaker to extract session tags from a
-     * training job creation role and reuse these tags when assuming the training job
-     * execution role.</p>
-     */
     inline void SetEnableSessionTagChaining(bool value) { m_enableSessionTagChainingHasBeenSet = true; m_enableSessionTagChaining = value; }
-
-    /**
-     * <p>Set to <code>True</code> to allow SageMaker to extract session tags from a
-     * training job creation role and reuse these tags when assuming the training job
-     * execution role.</p>
-     */
     inline SessionChainingConfig& WithEnableSessionTagChaining(bool value) { SetEnableSessionTagChaining(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enableSessionTagChaining;

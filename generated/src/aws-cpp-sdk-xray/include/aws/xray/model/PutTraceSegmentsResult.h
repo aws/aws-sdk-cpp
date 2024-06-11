@@ -34,63 +34,29 @@ namespace Model
     AWS_XRAY_API PutTraceSegmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Segments that failed processing.</p>
      */
     inline const Aws::Vector<UnprocessedTraceSegment>& GetUnprocessedTraceSegments() const{ return m_unprocessedTraceSegments; }
-
-    /**
-     * <p>Segments that failed processing.</p>
-     */
     inline void SetUnprocessedTraceSegments(const Aws::Vector<UnprocessedTraceSegment>& value) { m_unprocessedTraceSegments = value; }
-
-    /**
-     * <p>Segments that failed processing.</p>
-     */
     inline void SetUnprocessedTraceSegments(Aws::Vector<UnprocessedTraceSegment>&& value) { m_unprocessedTraceSegments = std::move(value); }
-
-    /**
-     * <p>Segments that failed processing.</p>
-     */
     inline PutTraceSegmentsResult& WithUnprocessedTraceSegments(const Aws::Vector<UnprocessedTraceSegment>& value) { SetUnprocessedTraceSegments(value); return *this;}
-
-    /**
-     * <p>Segments that failed processing.</p>
-     */
     inline PutTraceSegmentsResult& WithUnprocessedTraceSegments(Aws::Vector<UnprocessedTraceSegment>&& value) { SetUnprocessedTraceSegments(std::move(value)); return *this;}
-
-    /**
-     * <p>Segments that failed processing.</p>
-     */
     inline PutTraceSegmentsResult& AddUnprocessedTraceSegments(const UnprocessedTraceSegment& value) { m_unprocessedTraceSegments.push_back(value); return *this; }
-
-    /**
-     * <p>Segments that failed processing.</p>
-     */
     inline PutTraceSegmentsResult& AddUnprocessedTraceSegments(UnprocessedTraceSegment&& value) { m_unprocessedTraceSegments.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutTraceSegmentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutTraceSegmentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutTraceSegmentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<UnprocessedTraceSegment> m_unprocessedTraceSegments;

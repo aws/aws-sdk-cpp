@@ -39,106 +39,42 @@ namespace Model
     AWS_MEDICALIMAGING_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The data store status.</p>
      */
     inline const DatastoreStatus& GetDatastoreStatus() const{ return m_datastoreStatus; }
-
-    /**
-     * <p>The data store status.</p>
-     */
     inline bool DatastoreStatusHasBeenSet() const { return m_datastoreStatusHasBeenSet; }
-
-    /**
-     * <p>The data store status.</p>
-     */
     inline void SetDatastoreStatus(const DatastoreStatus& value) { m_datastoreStatusHasBeenSet = true; m_datastoreStatus = value; }
-
-    /**
-     * <p>The data store status.</p>
-     */
     inline void SetDatastoreStatus(DatastoreStatus&& value) { m_datastoreStatusHasBeenSet = true; m_datastoreStatus = std::move(value); }
-
-    /**
-     * <p>The data store status.</p>
-     */
     inline ListDatastoresRequest& WithDatastoreStatus(const DatastoreStatus& value) { SetDatastoreStatus(value); return *this;}
-
-    /**
-     * <p>The data store status.</p>
-     */
     inline ListDatastoresRequest& WithDatastoreStatus(DatastoreStatus&& value) { SetDatastoreStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token used to request the list of data stores on the next
      * page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token used to request the list of data stores on the next
-     * page.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The pagination token used to request the list of data stores on the next
-     * page.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The pagination token used to request the list of data stores on the next
-     * page.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token used to request the list of data stores on the next
-     * page.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token used to request the list of data stores on the next
-     * page.</p>
-     */
     inline ListDatastoresRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token used to request the list of data stores on the next
-     * page.</p>
-     */
     inline ListDatastoresRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token used to request the list of data stores on the next
-     * page.</p>
-     */
     inline ListDatastoresRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Valid Range: Minimum value of 1. Maximum value of 50.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Valid Range: Minimum value of 1. Maximum value of 50.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Valid Range: Minimum value of 1. Maximum value of 50.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Valid Range: Minimum value of 1. Maximum value of 50.</p>
-     */
     inline ListDatastoresRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     DatastoreStatus m_datastoreStatus;

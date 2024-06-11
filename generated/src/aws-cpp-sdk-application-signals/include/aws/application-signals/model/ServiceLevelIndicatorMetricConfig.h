@@ -42,6 +42,7 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If this SLO is related to a metric collected by Application Signals, you must
      * use this field to specify which service the SLO metric is related to. To do so,
@@ -62,352 +63,50 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetKeyAttributes() const{ return m_keyAttributes; }
-
-    /**
-     * <p>If this SLO is related to a metric collected by Application Signals, you must
-     * use this field to specify which service the SLO metric is related to. To do so,
-     * you must specify at least the <code>Type</code>, <code>Name</code>, and
-     * <code>Environment</code> attributes.</p> <p>This is a string-to-string map. It
-     * can include the following fields.</p> <ul> <li> <p> <code>Type</code> designates
-     * the type of object this is.</p> </li> <li> <p> <code>ResourceType</code>
-     * specifies the type of the resource. This field is used only when the value of
-     * the <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
-
-    /**
-     * <p>If this SLO is related to a metric collected by Application Signals, you must
-     * use this field to specify which service the SLO metric is related to. To do so,
-     * you must specify at least the <code>Type</code>, <code>Name</code>, and
-     * <code>Environment</code> attributes.</p> <p>This is a string-to-string map. It
-     * can include the following fields.</p> <ul> <li> <p> <code>Type</code> designates
-     * the type of object this is.</p> </li> <li> <p> <code>ResourceType</code>
-     * specifies the type of the resource. This field is used only when the value of
-     * the <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline void SetKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = value; }
-
-    /**
-     * <p>If this SLO is related to a metric collected by Application Signals, you must
-     * use this field to specify which service the SLO metric is related to. To do so,
-     * you must specify at least the <code>Type</code>, <code>Name</code>, and
-     * <code>Environment</code> attributes.</p> <p>This is a string-to-string map. It
-     * can include the following fields.</p> <ul> <li> <p> <code>Type</code> designates
-     * the type of object this is.</p> </li> <li> <p> <code>ResourceType</code>
-     * specifies the type of the resource. This field is used only when the value of
-     * the <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline void SetKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::move(value); }
-
-    /**
-     * <p>If this SLO is related to a metric collected by Application Signals, you must
-     * use this field to specify which service the SLO metric is related to. To do so,
-     * you must specify at least the <code>Type</code>, <code>Name</code>, and
-     * <code>Environment</code> attributes.</p> <p>This is a string-to-string map. It
-     * can include the following fields.</p> <ul> <li> <p> <code>Type</code> designates
-     * the type of object this is.</p> </li> <li> <p> <code>ResourceType</code>
-     * specifies the type of the resource. This field is used only when the value of
-     * the <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetKeyAttributes(value); return *this;}
-
-    /**
-     * <p>If this SLO is related to a metric collected by Application Signals, you must
-     * use this field to specify which service the SLO metric is related to. To do so,
-     * you must specify at least the <code>Type</code>, <code>Name</code>, and
-     * <code>Environment</code> attributes.</p> <p>This is a string-to-string map. It
-     * can include the following fields.</p> <ul> <li> <p> <code>Type</code> designates
-     * the type of object this is.</p> </li> <li> <p> <code>ResourceType</code>
-     * specifies the type of the resource. This field is used only when the value of
-     * the <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetKeyAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>If this SLO is related to a metric collected by Application Signals, you must
-     * use this field to specify which service the SLO metric is related to. To do so,
-     * you must specify at least the <code>Type</code>, <code>Name</code>, and
-     * <code>Environment</code> attributes.</p> <p>This is a string-to-string map. It
-     * can include the following fields.</p> <ul> <li> <p> <code>Type</code> designates
-     * the type of object this is.</p> </li> <li> <p> <code>ResourceType</code>
-     * specifies the type of the resource. This field is used only when the value of
-     * the <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelIndicatorMetricConfig& AddKeyAttributes(const Aws::String& key, const Aws::String& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, value); return *this; }
-
-    /**
-     * <p>If this SLO is related to a metric collected by Application Signals, you must
-     * use this field to specify which service the SLO metric is related to. To do so,
-     * you must specify at least the <code>Type</code>, <code>Name</code>, and
-     * <code>Environment</code> attributes.</p> <p>This is a string-to-string map. It
-     * can include the following fields.</p> <ul> <li> <p> <code>Type</code> designates
-     * the type of object this is.</p> </li> <li> <p> <code>ResourceType</code>
-     * specifies the type of the resource. This field is used only when the value of
-     * the <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelIndicatorMetricConfig& AddKeyAttributes(Aws::String&& key, const Aws::String& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>If this SLO is related to a metric collected by Application Signals, you must
-     * use this field to specify which service the SLO metric is related to. To do so,
-     * you must specify at least the <code>Type</code>, <code>Name</code>, and
-     * <code>Environment</code> attributes.</p> <p>This is a string-to-string map. It
-     * can include the following fields.</p> <ul> <li> <p> <code>Type</code> designates
-     * the type of object this is.</p> </li> <li> <p> <code>ResourceType</code>
-     * specifies the type of the resource. This field is used only when the value of
-     * the <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelIndicatorMetricConfig& AddKeyAttributes(const Aws::String& key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>If this SLO is related to a metric collected by Application Signals, you must
-     * use this field to specify which service the SLO metric is related to. To do so,
-     * you must specify at least the <code>Type</code>, <code>Name</code>, and
-     * <code>Environment</code> attributes.</p> <p>This is a string-to-string map. It
-     * can include the following fields.</p> <ul> <li> <p> <code>Type</code> designates
-     * the type of object this is.</p> </li> <li> <p> <code>ResourceType</code>
-     * specifies the type of the resource. This field is used only when the value of
-     * the <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelIndicatorMetricConfig& AddKeyAttributes(Aws::String&& key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>If this SLO is related to a metric collected by Application Signals, you must
-     * use this field to specify which service the SLO metric is related to. To do so,
-     * you must specify at least the <code>Type</code>, <code>Name</code>, and
-     * <code>Environment</code> attributes.</p> <p>This is a string-to-string map. It
-     * can include the following fields.</p> <ul> <li> <p> <code>Type</code> designates
-     * the type of object this is.</p> </li> <li> <p> <code>ResourceType</code>
-     * specifies the type of the resource. This field is used only when the value of
-     * the <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelIndicatorMetricConfig& AddKeyAttributes(const char* key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>If this SLO is related to a metric collected by Application Signals, you must
-     * use this field to specify which service the SLO metric is related to. To do so,
-     * you must specify at least the <code>Type</code>, <code>Name</code>, and
-     * <code>Environment</code> attributes.</p> <p>This is a string-to-string map. It
-     * can include the following fields.</p> <ul> <li> <p> <code>Type</code> designates
-     * the type of object this is.</p> </li> <li> <p> <code>ResourceType</code>
-     * specifies the type of the resource. This field is used only when the value of
-     * the <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelIndicatorMetricConfig& AddKeyAttributes(Aws::String&& key, const char* value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>If this SLO is related to a metric collected by Application Signals, you must
-     * use this field to specify which service the SLO metric is related to. To do so,
-     * you must specify at least the <code>Type</code>, <code>Name</code>, and
-     * <code>Environment</code> attributes.</p> <p>This is a string-to-string map. It
-     * can include the following fields.</p> <ul> <li> <p> <code>Type</code> designates
-     * the type of object this is.</p> </li> <li> <p> <code>ResourceType</code>
-     * specifies the type of the resource. This field is used only when the value of
-     * the <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelIndicatorMetricConfig& AddKeyAttributes(const char* key, const char* value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the SLO is to monitor a specific operation of the service, use this field
      * to specify the name of that operation.</p>
      */
     inline const Aws::String& GetOperationName() const{ return m_operationName; }
-
-    /**
-     * <p>If the SLO is to monitor a specific operation of the service, use this field
-     * to specify the name of that operation.</p>
-     */
     inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
-
-    /**
-     * <p>If the SLO is to monitor a specific operation of the service, use this field
-     * to specify the name of that operation.</p>
-     */
     inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
-
-    /**
-     * <p>If the SLO is to monitor a specific operation of the service, use this field
-     * to specify the name of that operation.</p>
-     */
     inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = std::move(value); }
-
-    /**
-     * <p>If the SLO is to monitor a specific operation of the service, use this field
-     * to specify the name of that operation.</p>
-     */
     inline void SetOperationName(const char* value) { m_operationNameHasBeenSet = true; m_operationName.assign(value); }
-
-    /**
-     * <p>If the SLO is to monitor a specific operation of the service, use this field
-     * to specify the name of that operation.</p>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
-
-    /**
-     * <p>If the SLO is to monitor a specific operation of the service, use this field
-     * to specify the name of that operation.</p>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
-
-    /**
-     * <p>If the SLO is to monitor a specific operation of the service, use this field
-     * to specify the name of that operation.</p>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithOperationName(const char* value) { SetOperationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the SLO is to monitor either the <code>LATENCY</code> or
      * <code>AVAILABILITY</code> metric that Application Signals collects, use this
      * field to specify which of those metrics is used.</p>
      */
     inline const ServiceLevelIndicatorMetricType& GetMetricType() const{ return m_metricType; }
-
-    /**
-     * <p>If the SLO is to monitor either the <code>LATENCY</code> or
-     * <code>AVAILABILITY</code> metric that Application Signals collects, use this
-     * field to specify which of those metrics is used.</p>
-     */
     inline bool MetricTypeHasBeenSet() const { return m_metricTypeHasBeenSet; }
-
-    /**
-     * <p>If the SLO is to monitor either the <code>LATENCY</code> or
-     * <code>AVAILABILITY</code> metric that Application Signals collects, use this
-     * field to specify which of those metrics is used.</p>
-     */
     inline void SetMetricType(const ServiceLevelIndicatorMetricType& value) { m_metricTypeHasBeenSet = true; m_metricType = value; }
-
-    /**
-     * <p>If the SLO is to monitor either the <code>LATENCY</code> or
-     * <code>AVAILABILITY</code> metric that Application Signals collects, use this
-     * field to specify which of those metrics is used.</p>
-     */
     inline void SetMetricType(ServiceLevelIndicatorMetricType&& value) { m_metricTypeHasBeenSet = true; m_metricType = std::move(value); }
-
-    /**
-     * <p>If the SLO is to monitor either the <code>LATENCY</code> or
-     * <code>AVAILABILITY</code> metric that Application Signals collects, use this
-     * field to specify which of those metrics is used.</p>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithMetricType(const ServiceLevelIndicatorMetricType& value) { SetMetricType(value); return *this;}
-
-    /**
-     * <p>If the SLO is to monitor either the <code>LATENCY</code> or
-     * <code>AVAILABILITY</code> metric that Application Signals collects, use this
-     * field to specify which of those metrics is used.</p>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithMetricType(ServiceLevelIndicatorMetricType&& value) { SetMetricType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The statistic to use for comparison to the threshold. It can be any
      * CloudWatch statistic or extended statistic. For more information about
@@ -416,71 +115,16 @@ namespace Model
      * statistics definitions</a>.</p>
      */
     inline const Aws::String& GetStatistic() const{ return m_statistic; }
-
-    /**
-     * <p>The statistic to use for comparison to the threshold. It can be any
-     * CloudWatch statistic or extended statistic. For more information about
-     * statistics, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
-     * statistics definitions</a>.</p>
-     */
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-
-    /**
-     * <p>The statistic to use for comparison to the threshold. It can be any
-     * CloudWatch statistic or extended statistic. For more information about
-     * statistics, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
-     * statistics definitions</a>.</p>
-     */
     inline void SetStatistic(const Aws::String& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-
-    /**
-     * <p>The statistic to use for comparison to the threshold. It can be any
-     * CloudWatch statistic or extended statistic. For more information about
-     * statistics, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
-     * statistics definitions</a>.</p>
-     */
     inline void SetStatistic(Aws::String&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-
-    /**
-     * <p>The statistic to use for comparison to the threshold. It can be any
-     * CloudWatch statistic or extended statistic. For more information about
-     * statistics, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
-     * statistics definitions</a>.</p>
-     */
     inline void SetStatistic(const char* value) { m_statisticHasBeenSet = true; m_statistic.assign(value); }
-
-    /**
-     * <p>The statistic to use for comparison to the threshold. It can be any
-     * CloudWatch statistic or extended statistic. For more information about
-     * statistics, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
-     * statistics definitions</a>.</p>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithStatistic(const Aws::String& value) { SetStatistic(value); return *this;}
-
-    /**
-     * <p>The statistic to use for comparison to the threshold. It can be any
-     * CloudWatch statistic or extended statistic. For more information about
-     * statistics, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
-     * statistics definitions</a>.</p>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithStatistic(Aws::String&& value) { SetStatistic(std::move(value)); return *this;}
-
-    /**
-     * <p>The statistic to use for comparison to the threshold. It can be any
-     * CloudWatch statistic or extended statistic. For more information about
-     * statistics, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
-     * statistics definitions</a>.</p>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithStatistic(const char* value) { SetStatistic(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of seconds to use as the period for SLO evaluation. Your
      * application's performance is compared to the SLI during each period. For each
@@ -488,80 +132,25 @@ namespace Model
      * the necessary performance.</p>
      */
     inline int GetPeriodSeconds() const{ return m_periodSeconds; }
-
-    /**
-     * <p>The number of seconds to use as the period for SLO evaluation. Your
-     * application's performance is compared to the SLI during each period. For each
-     * period, the application is determined to have either achieved or not achieved
-     * the necessary performance.</p>
-     */
     inline bool PeriodSecondsHasBeenSet() const { return m_periodSecondsHasBeenSet; }
-
-    /**
-     * <p>The number of seconds to use as the period for SLO evaluation. Your
-     * application's performance is compared to the SLI during each period. For each
-     * period, the application is determined to have either achieved or not achieved
-     * the necessary performance.</p>
-     */
     inline void SetPeriodSeconds(int value) { m_periodSecondsHasBeenSet = true; m_periodSeconds = value; }
-
-    /**
-     * <p>The number of seconds to use as the period for SLO evaluation. Your
-     * application's performance is compared to the SLI during each period. For each
-     * period, the application is determined to have either achieved or not achieved
-     * the necessary performance.</p>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithPeriodSeconds(int value) { SetPeriodSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If this SLO monitors a CloudWatch metric or the result of a CloudWatch metric
      * math expression, use this structure to specify that metric or expression. </p>
      */
     inline const Aws::Vector<MetricDataQuery>& GetMetricDataQueries() const{ return m_metricDataQueries; }
-
-    /**
-     * <p>If this SLO monitors a CloudWatch metric or the result of a CloudWatch metric
-     * math expression, use this structure to specify that metric or expression. </p>
-     */
     inline bool MetricDataQueriesHasBeenSet() const { return m_metricDataQueriesHasBeenSet; }
-
-    /**
-     * <p>If this SLO monitors a CloudWatch metric or the result of a CloudWatch metric
-     * math expression, use this structure to specify that metric or expression. </p>
-     */
     inline void SetMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = value; }
-
-    /**
-     * <p>If this SLO monitors a CloudWatch metric or the result of a CloudWatch metric
-     * math expression, use this structure to specify that metric or expression. </p>
-     */
     inline void SetMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = std::move(value); }
-
-    /**
-     * <p>If this SLO monitors a CloudWatch metric or the result of a CloudWatch metric
-     * math expression, use this structure to specify that metric or expression. </p>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { SetMetricDataQueries(value); return *this;}
-
-    /**
-     * <p>If this SLO monitors a CloudWatch metric or the result of a CloudWatch metric
-     * math expression, use this structure to specify that metric or expression. </p>
-     */
     inline ServiceLevelIndicatorMetricConfig& WithMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { SetMetricDataQueries(std::move(value)); return *this;}
-
-    /**
-     * <p>If this SLO monitors a CloudWatch metric or the result of a CloudWatch metric
-     * math expression, use this structure to specify that metric or expression. </p>
-     */
     inline ServiceLevelIndicatorMetricConfig& AddMetricDataQueries(const MetricDataQuery& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(value); return *this; }
-
-    /**
-     * <p>If this SLO monitors a CloudWatch metric or the result of a CloudWatch metric
-     * math expression, use this structure to specify that metric or expression. </p>
-     */
     inline ServiceLevelIndicatorMetricConfig& AddMetricDataQueries(MetricDataQuery&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_keyAttributes;

@@ -38,72 +38,30 @@ namespace Model
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of edges that have this specific structure.</p>
      */
     inline long long GetCount() const{ return m_count; }
-
-    /**
-     * <p>The number of edges that have this specific structure.</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>The number of edges that have this specific structure.</p>
-     */
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>The number of edges that have this specific structure.</p>
-     */
     inline EdgeStructure& WithCount(long long value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of edge properties present in this specific structure.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEdgeProperties() const{ return m_edgeProperties; }
-
-    /**
-     * <p>A list of edge properties present in this specific structure.</p>
-     */
     inline bool EdgePropertiesHasBeenSet() const { return m_edgePropertiesHasBeenSet; }
-
-    /**
-     * <p>A list of edge properties present in this specific structure.</p>
-     */
     inline void SetEdgeProperties(const Aws::Vector<Aws::String>& value) { m_edgePropertiesHasBeenSet = true; m_edgeProperties = value; }
-
-    /**
-     * <p>A list of edge properties present in this specific structure.</p>
-     */
     inline void SetEdgeProperties(Aws::Vector<Aws::String>&& value) { m_edgePropertiesHasBeenSet = true; m_edgeProperties = std::move(value); }
-
-    /**
-     * <p>A list of edge properties present in this specific structure.</p>
-     */
     inline EdgeStructure& WithEdgeProperties(const Aws::Vector<Aws::String>& value) { SetEdgeProperties(value); return *this;}
-
-    /**
-     * <p>A list of edge properties present in this specific structure.</p>
-     */
     inline EdgeStructure& WithEdgeProperties(Aws::Vector<Aws::String>&& value) { SetEdgeProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of edge properties present in this specific structure.</p>
-     */
     inline EdgeStructure& AddEdgeProperties(const Aws::String& value) { m_edgePropertiesHasBeenSet = true; m_edgeProperties.push_back(value); return *this; }
-
-    /**
-     * <p>A list of edge properties present in this specific structure.</p>
-     */
     inline EdgeStructure& AddEdgeProperties(Aws::String&& value) { m_edgePropertiesHasBeenSet = true; m_edgeProperties.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of edge properties present in this specific structure.</p>
-     */
     inline EdgeStructure& AddEdgeProperties(const char* value) { m_edgePropertiesHasBeenSet = true; m_edgeProperties.push_back(value); return *this; }
-
+    ///@}
   private:
 
     long long m_count;

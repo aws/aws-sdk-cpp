@@ -34,106 +34,43 @@ namespace Model
     AWS_GLUEDATABREW_API ListJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of jobs that are defined.</p>
      */
     inline const Aws::Vector<Job>& GetJobs() const{ return m_jobs; }
-
-    /**
-     * <p>A list of jobs that are defined.</p>
-     */
     inline void SetJobs(const Aws::Vector<Job>& value) { m_jobs = value; }
-
-    /**
-     * <p>A list of jobs that are defined.</p>
-     */
     inline void SetJobs(Aws::Vector<Job>&& value) { m_jobs = std::move(value); }
-
-    /**
-     * <p>A list of jobs that are defined.</p>
-     */
     inline ListJobsResult& WithJobs(const Aws::Vector<Job>& value) { SetJobs(value); return *this;}
-
-    /**
-     * <p>A list of jobs that are defined.</p>
-     */
     inline ListJobsResult& WithJobs(Aws::Vector<Job>&& value) { SetJobs(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of jobs that are defined.</p>
-     */
     inline ListJobsResult& AddJobs(const Job& value) { m_jobs.push_back(value); return *this; }
-
-    /**
-     * <p>A list of jobs that are defined.</p>
-     */
     inline ListJobsResult& AddJobs(Job&& value) { m_jobs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token that you can use in a subsequent call to retrieve the next set of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline ListJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline ListJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline ListJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Job> m_jobs;

@@ -39,85 +39,32 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines whether scale of the axes are shared or independent. The default
      * value is <code>SHARED</code>.</p>
      */
     inline const SmallMultiplesAxisScale& GetScale() const{ return m_scale; }
-
-    /**
-     * <p>Determines whether scale of the axes are shared or independent. The default
-     * value is <code>SHARED</code>.</p>
-     */
     inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
-
-    /**
-     * <p>Determines whether scale of the axes are shared or independent. The default
-     * value is <code>SHARED</code>.</p>
-     */
     inline void SetScale(const SmallMultiplesAxisScale& value) { m_scaleHasBeenSet = true; m_scale = value; }
-
-    /**
-     * <p>Determines whether scale of the axes are shared or independent. The default
-     * value is <code>SHARED</code>.</p>
-     */
     inline void SetScale(SmallMultiplesAxisScale&& value) { m_scaleHasBeenSet = true; m_scale = std::move(value); }
-
-    /**
-     * <p>Determines whether scale of the axes are shared or independent. The default
-     * value is <code>SHARED</code>.</p>
-     */
     inline SmallMultiplesAxisProperties& WithScale(const SmallMultiplesAxisScale& value) { SetScale(value); return *this;}
-
-    /**
-     * <p>Determines whether scale of the axes are shared or independent. The default
-     * value is <code>SHARED</code>.</p>
-     */
     inline SmallMultiplesAxisProperties& WithScale(SmallMultiplesAxisScale&& value) { SetScale(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines the placement of the axis. By default, axes are rendered
      * <code>OUTSIDE</code> of the panels. Axes with <code>INDEPENDENT</code> scale are
      * rendered <code>INSIDE</code> the panels.</p>
      */
     inline const SmallMultiplesAxisPlacement& GetPlacement() const{ return m_placement; }
-
-    /**
-     * <p>Defines the placement of the axis. By default, axes are rendered
-     * <code>OUTSIDE</code> of the panels. Axes with <code>INDEPENDENT</code> scale are
-     * rendered <code>INSIDE</code> the panels.</p>
-     */
     inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
-
-    /**
-     * <p>Defines the placement of the axis. By default, axes are rendered
-     * <code>OUTSIDE</code> of the panels. Axes with <code>INDEPENDENT</code> scale are
-     * rendered <code>INSIDE</code> the panels.</p>
-     */
     inline void SetPlacement(const SmallMultiplesAxisPlacement& value) { m_placementHasBeenSet = true; m_placement = value; }
-
-    /**
-     * <p>Defines the placement of the axis. By default, axes are rendered
-     * <code>OUTSIDE</code> of the panels. Axes with <code>INDEPENDENT</code> scale are
-     * rendered <code>INSIDE</code> the panels.</p>
-     */
     inline void SetPlacement(SmallMultiplesAxisPlacement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
-
-    /**
-     * <p>Defines the placement of the axis. By default, axes are rendered
-     * <code>OUTSIDE</code> of the panels. Axes with <code>INDEPENDENT</code> scale are
-     * rendered <code>INSIDE</code> the panels.</p>
-     */
     inline SmallMultiplesAxisProperties& WithPlacement(const SmallMultiplesAxisPlacement& value) { SetPlacement(value); return *this;}
-
-    /**
-     * <p>Defines the placement of the axis. By default, axes are rendered
-     * <code>OUTSIDE</code> of the panels. Axes with <code>INDEPENDENT</code> scale are
-     * rendered <code>INSIDE</code> the panels.</p>
-     */
     inline SmallMultiplesAxisProperties& WithPlacement(SmallMultiplesAxisPlacement&& value) { SetPlacement(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SmallMultiplesAxisScale m_scale;

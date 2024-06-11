@@ -35,47 +35,21 @@ namespace Model
     AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the ARN of the application.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline DeleteApplicationAssignmentRequest& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline DeleteApplicationAssignmentRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline DeleteApplicationAssignmentRequest& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An identifier for an object in IAM Identity Center, such as a user or group.
      * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
@@ -84,101 +58,26 @@ namespace Model
      * Center Identity Store API Reference</a>.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
-
-    /**
-     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
-     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
-     * more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
-     * Center Identity Store API Reference</a>.</p>
-     */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-
-    /**
-     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
-     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
-     * more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
-     * Center Identity Store API Reference</a>.</p>
-     */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-
-    /**
-     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
-     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
-     * more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
-     * Center Identity Store API Reference</a>.</p>
-     */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-
-    /**
-     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
-     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
-     * more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
-     * Center Identity Store API Reference</a>.</p>
-     */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-
-    /**
-     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
-     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
-     * more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
-     * Center Identity Store API Reference</a>.</p>
-     */
     inline DeleteApplicationAssignmentRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-
-    /**
-     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
-     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
-     * more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
-     * Center Identity Store API Reference</a>.</p>
-     */
     inline DeleteApplicationAssignmentRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-
-    /**
-     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
-     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
-     * more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
-     * Center Identity Store API Reference</a>.</p>
-     */
     inline DeleteApplicationAssignmentRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The entity type for which the assignment will be deleted.</p>
      */
     inline const PrincipalType& GetPrincipalType() const{ return m_principalType; }
-
-    /**
-     * <p>The entity type for which the assignment will be deleted.</p>
-     */
     inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
-
-    /**
-     * <p>The entity type for which the assignment will be deleted.</p>
-     */
     inline void SetPrincipalType(const PrincipalType& value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
-
-    /**
-     * <p>The entity type for which the assignment will be deleted.</p>
-     */
     inline void SetPrincipalType(PrincipalType&& value) { m_principalTypeHasBeenSet = true; m_principalType = std::move(value); }
-
-    /**
-     * <p>The entity type for which the assignment will be deleted.</p>
-     */
     inline DeleteApplicationAssignmentRequest& WithPrincipalType(const PrincipalType& value) { SetPrincipalType(value); return *this;}
-
-    /**
-     * <p>The entity type for which the assignment will be deleted.</p>
-     */
     inline DeleteApplicationAssignmentRequest& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationArn;

@@ -38,42 +38,18 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Device registration resource type state event configuration object for
      * enabling or disabling Sidewalk related event topics.</p>
      */
     inline const SidewalkResourceTypeEventConfiguration& GetSidewalk() const{ return m_sidewalk; }
-
-    /**
-     * <p>Device registration resource type state event configuration object for
-     * enabling or disabling Sidewalk related event topics.</p>
-     */
     inline bool SidewalkHasBeenSet() const { return m_sidewalkHasBeenSet; }
-
-    /**
-     * <p>Device registration resource type state event configuration object for
-     * enabling or disabling Sidewalk related event topics.</p>
-     */
     inline void SetSidewalk(const SidewalkResourceTypeEventConfiguration& value) { m_sidewalkHasBeenSet = true; m_sidewalk = value; }
-
-    /**
-     * <p>Device registration resource type state event configuration object for
-     * enabling or disabling Sidewalk related event topics.</p>
-     */
     inline void SetSidewalk(SidewalkResourceTypeEventConfiguration&& value) { m_sidewalkHasBeenSet = true; m_sidewalk = std::move(value); }
-
-    /**
-     * <p>Device registration resource type state event configuration object for
-     * enabling or disabling Sidewalk related event topics.</p>
-     */
     inline DeviceRegistrationStateResourceTypeEventConfiguration& WithSidewalk(const SidewalkResourceTypeEventConfiguration& value) { SetSidewalk(value); return *this;}
-
-    /**
-     * <p>Device registration resource type state event configuration object for
-     * enabling or disabling Sidewalk related event topics.</p>
-     */
     inline DeviceRegistrationStateResourceTypeEventConfiguration& WithSidewalk(SidewalkResourceTypeEventConfiguration&& value) { SetSidewalk(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SidewalkResourceTypeEventConfiguration m_sidewalk;

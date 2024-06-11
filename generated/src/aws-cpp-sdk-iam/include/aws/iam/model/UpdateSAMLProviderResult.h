@@ -39,57 +39,27 @@ namespace Model
     AWS_IAM_API UpdateSAMLProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
      */
     inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
-     */
     inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
-     */
     inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
-     */
     inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
-     */
     inline UpdateSAMLProviderResult& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
-     */
     inline UpdateSAMLProviderResult& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
-     */
     inline UpdateSAMLProviderResult& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline UpdateSAMLProviderResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline UpdateSAMLProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sAMLProviderArn;

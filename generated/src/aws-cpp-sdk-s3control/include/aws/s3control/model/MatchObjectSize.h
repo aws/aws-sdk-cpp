@@ -36,55 +36,27 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p> Specifies the minimum object size in Bytes. The value must be a positive
      * number, greater than 0 and less than 5 TB. </p>
      */
     inline long long GetBytesGreaterThan() const{ return m_bytesGreaterThan; }
-
-    /**
-     * <p> Specifies the minimum object size in Bytes. The value must be a positive
-     * number, greater than 0 and less than 5 TB. </p>
-     */
     inline bool BytesGreaterThanHasBeenSet() const { return m_bytesGreaterThanHasBeenSet; }
-
-    /**
-     * <p> Specifies the minimum object size in Bytes. The value must be a positive
-     * number, greater than 0 and less than 5 TB. </p>
-     */
     inline void SetBytesGreaterThan(long long value) { m_bytesGreaterThanHasBeenSet = true; m_bytesGreaterThan = value; }
-
-    /**
-     * <p> Specifies the minimum object size in Bytes. The value must be a positive
-     * number, greater than 0 and less than 5 TB. </p>
-     */
     inline MatchObjectSize& WithBytesGreaterThan(long long value) { SetBytesGreaterThan(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Specifies the maximum object size in Bytes. The value must be a positive
      * number, greater than the minimum object size and less than 5 TB. </p>
      */
     inline long long GetBytesLessThan() const{ return m_bytesLessThan; }
-
-    /**
-     * <p> Specifies the maximum object size in Bytes. The value must be a positive
-     * number, greater than the minimum object size and less than 5 TB. </p>
-     */
     inline bool BytesLessThanHasBeenSet() const { return m_bytesLessThanHasBeenSet; }
-
-    /**
-     * <p> Specifies the maximum object size in Bytes. The value must be a positive
-     * number, greater than the minimum object size and less than 5 TB. </p>
-     */
     inline void SetBytesLessThan(long long value) { m_bytesLessThanHasBeenSet = true; m_bytesLessThan = value; }
-
-    /**
-     * <p> Specifies the maximum object size in Bytes. The value must be a positive
-     * number, greater than the minimum object size and less than 5 TB. </p>
-     */
     inline MatchObjectSize& WithBytesLessThan(long long value) { SetBytesLessThan(value); return *this;}
-
+    ///@}
   private:
 
     long long m_bytesGreaterThan;

@@ -34,99 +34,42 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API ExportThemesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Represents the configuration of the exported themes.</p>
      */
     inline const Aws::Vector<Theme>& GetEntities() const{ return m_entities; }
-
-    /**
-     * <p>Represents the configuration of the exported themes.</p>
-     */
     inline void SetEntities(const Aws::Vector<Theme>& value) { m_entities = value; }
-
-    /**
-     * <p>Represents the configuration of the exported themes.</p>
-     */
     inline void SetEntities(Aws::Vector<Theme>&& value) { m_entities = std::move(value); }
-
-    /**
-     * <p>Represents the configuration of the exported themes.</p>
-     */
     inline ExportThemesResult& WithEntities(const Aws::Vector<Theme>& value) { SetEntities(value); return *this;}
-
-    /**
-     * <p>Represents the configuration of the exported themes.</p>
-     */
     inline ExportThemesResult& WithEntities(Aws::Vector<Theme>&& value) { SetEntities(std::move(value)); return *this;}
-
-    /**
-     * <p>Represents the configuration of the exported themes.</p>
-     */
     inline ExportThemesResult& AddEntities(const Theme& value) { m_entities.push_back(value); return *this; }
-
-    /**
-     * <p>Represents the configuration of the exported themes.</p>
-     */
     inline ExportThemesResult& AddEntities(Theme&& value) { m_entities.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token that's included if more results are available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ExportThemesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ExportThemesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ExportThemesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExportThemesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExportThemesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExportThemesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Theme> m_entities;

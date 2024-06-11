@@ -40,87 +40,33 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the final backup for this file system.</p>
      */
     inline const Aws::String& GetFinalBackupId() const{ return m_finalBackupId; }
-
-    /**
-     * <p>The ID of the final backup for this file system.</p>
-     */
     inline bool FinalBackupIdHasBeenSet() const { return m_finalBackupIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the final backup for this file system.</p>
-     */
     inline void SetFinalBackupId(const Aws::String& value) { m_finalBackupIdHasBeenSet = true; m_finalBackupId = value; }
-
-    /**
-     * <p>The ID of the final backup for this file system.</p>
-     */
     inline void SetFinalBackupId(Aws::String&& value) { m_finalBackupIdHasBeenSet = true; m_finalBackupId = std::move(value); }
-
-    /**
-     * <p>The ID of the final backup for this file system.</p>
-     */
     inline void SetFinalBackupId(const char* value) { m_finalBackupIdHasBeenSet = true; m_finalBackupId.assign(value); }
-
-    /**
-     * <p>The ID of the final backup for this file system.</p>
-     */
     inline DeleteFileSystemLustreResponse& WithFinalBackupId(const Aws::String& value) { SetFinalBackupId(value); return *this;}
-
-    /**
-     * <p>The ID of the final backup for this file system.</p>
-     */
     inline DeleteFileSystemLustreResponse& WithFinalBackupId(Aws::String&& value) { SetFinalBackupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the final backup for this file system.</p>
-     */
     inline DeleteFileSystemLustreResponse& WithFinalBackupId(const char* value) { SetFinalBackupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The set of tags applied to the final backup.</p>
      */
     inline const Aws::Vector<Tag>& GetFinalBackupTags() const{ return m_finalBackupTags; }
-
-    /**
-     * <p>The set of tags applied to the final backup.</p>
-     */
     inline bool FinalBackupTagsHasBeenSet() const { return m_finalBackupTagsHasBeenSet; }
-
-    /**
-     * <p>The set of tags applied to the final backup.</p>
-     */
     inline void SetFinalBackupTags(const Aws::Vector<Tag>& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = value; }
-
-    /**
-     * <p>The set of tags applied to the final backup.</p>
-     */
     inline void SetFinalBackupTags(Aws::Vector<Tag>&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = std::move(value); }
-
-    /**
-     * <p>The set of tags applied to the final backup.</p>
-     */
     inline DeleteFileSystemLustreResponse& WithFinalBackupTags(const Aws::Vector<Tag>& value) { SetFinalBackupTags(value); return *this;}
-
-    /**
-     * <p>The set of tags applied to the final backup.</p>
-     */
     inline DeleteFileSystemLustreResponse& WithFinalBackupTags(Aws::Vector<Tag>&& value) { SetFinalBackupTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The set of tags applied to the final backup.</p>
-     */
     inline DeleteFileSystemLustreResponse& AddFinalBackupTags(const Tag& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.push_back(value); return *this; }
-
-    /**
-     * <p>The set of tags applied to the final backup.</p>
-     */
     inline DeleteFileSystemLustreResponse& AddFinalBackupTags(Tag&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_finalBackupId;

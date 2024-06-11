@@ -38,95 +38,34 @@ namespace Model
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account identifier of the member account that was not
      * processed.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Web Services account identifier of the member account that was not
-     * processed.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account identifier of the member account that was not
-     * processed.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account identifier of the member account that was not
-     * processed.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account identifier of the member account that was not
-     * processed.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account identifier of the member account that was not
-     * processed.</p>
-     */
     inline UnprocessedAccount& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account identifier of the member account that was not
-     * processed.</p>
-     */
     inline UnprocessedAccount& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account identifier of the member account that was not
-     * processed.</p>
-     */
     inline UnprocessedAccount& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason that the member account request could not be processed.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>The reason that the member account request could not be processed.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>The reason that the member account request could not be processed.</p>
-     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>The reason that the member account request could not be processed.</p>
-     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>The reason that the member account request could not be processed.</p>
-     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>The reason that the member account request could not be processed.</p>
-     */
     inline UnprocessedAccount& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>The reason that the member account request could not be processed.</p>
-     */
     inline UnprocessedAccount& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason that the member account request could not be processed.</p>
-     */
     inline UnprocessedAccount& WithReason(const char* value) { SetReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

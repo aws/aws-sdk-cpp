@@ -45,46 +45,19 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The cited text from the data source.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>The cited text from the data source.</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>The cited text from the data source.</p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>The cited text from the data source.</p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>The cited text from the data source.</p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>The cited text from the data source.</p>
-     */
     inline RetrievalResultContent& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>The cited text from the data source.</p>
-     */
     inline RetrievalResultContent& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>The cited text from the data source.</p>
-     */
     inline RetrievalResultContent& WithText(const char* value) { SetText(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_text;

@@ -38,77 +38,31 @@ namespace Model
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field on which to order.</p>
      */
     inline const Aws::String& GetFieldName() const{ return m_fieldName; }
-
-    /**
-     * <p>The field on which to order.</p>
-     */
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-
-    /**
-     * <p>The field on which to order.</p>
-     */
     inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-
-    /**
-     * <p>The field on which to order.</p>
-     */
     inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-
-    /**
-     * <p>The field on which to order.</p>
-     */
     inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-
-    /**
-     * <p>The field on which to order.</p>
-     */
     inline OrderByElement& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-
-    /**
-     * <p>The field on which to order.</p>
-     */
     inline OrderByElement& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-
-    /**
-     * <p>The field on which to order.</p>
-     */
     inline OrderByElement& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Ordering direction.</p>
      */
     inline const OrderString& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>Ordering direction.</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>Ordering direction.</p>
-     */
     inline void SetSortOrder(const OrderString& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>Ordering direction.</p>
-     */
     inline void SetSortOrder(OrderString&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>Ordering direction.</p>
-     */
     inline OrderByElement& WithSortOrder(const OrderString& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>Ordering direction.</p>
-     */
     inline OrderByElement& WithSortOrder(OrderString&& value) { SetSortOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldName;

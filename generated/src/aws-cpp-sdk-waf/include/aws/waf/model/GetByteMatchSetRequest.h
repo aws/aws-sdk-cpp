@@ -34,62 +34,21 @@ namespace Model
     AWS_WAF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
      * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
      * <a>ListByteMatchSets</a>.</p>
      */
     inline const Aws::String& GetByteMatchSetId() const{ return m_byteMatchSetId; }
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
-     * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-     * <a>ListByteMatchSets</a>.</p>
-     */
     inline bool ByteMatchSetIdHasBeenSet() const { return m_byteMatchSetIdHasBeenSet; }
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
-     * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-     * <a>ListByteMatchSets</a>.</p>
-     */
     inline void SetByteMatchSetId(const Aws::String& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
-     * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-     * <a>ListByteMatchSets</a>.</p>
-     */
     inline void SetByteMatchSetId(Aws::String&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = std::move(value); }
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
-     * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-     * <a>ListByteMatchSets</a>.</p>
-     */
     inline void SetByteMatchSetId(const char* value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId.assign(value); }
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
-     * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-     * <a>ListByteMatchSets</a>.</p>
-     */
     inline GetByteMatchSetRequest& WithByteMatchSetId(const Aws::String& value) { SetByteMatchSetId(value); return *this;}
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
-     * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-     * <a>ListByteMatchSets</a>.</p>
-     */
     inline GetByteMatchSetRequest& WithByteMatchSetId(Aws::String&& value) { SetByteMatchSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
-     * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-     * <a>ListByteMatchSets</a>.</p>
-     */
     inline GetByteMatchSetRequest& WithByteMatchSetId(const char* value) { SetByteMatchSetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_byteMatchSetId;

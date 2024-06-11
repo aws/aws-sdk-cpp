@@ -39,42 +39,18 @@ namespace Model
     AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 bucket where the toolchain template file provided with the
      * project request is stored.</p>
      */
     inline const S3Location& GetS3() const{ return m_s3; }
-
-    /**
-     * <p>The Amazon S3 bucket where the toolchain template file provided with the
-     * project request is stored.</p>
-     */
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 bucket where the toolchain template file provided with the
-     * project request is stored.</p>
-     */
     inline void SetS3(const S3Location& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    /**
-     * <p>The Amazon S3 bucket where the toolchain template file provided with the
-     * project request is stored.</p>
-     */
     inline void SetS3(S3Location&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 bucket where the toolchain template file provided with the
-     * project request is stored.</p>
-     */
     inline ToolchainSource& WithS3(const S3Location& value) { SetS3(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket where the toolchain template file provided with the
-     * project request is stored.</p>
-     */
     inline ToolchainSource& WithS3(S3Location&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Location m_s3;

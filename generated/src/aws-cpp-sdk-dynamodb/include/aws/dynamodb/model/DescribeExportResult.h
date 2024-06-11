@@ -33,53 +33,27 @@ namespace Model
     AWS_DYNAMODB_API DescribeExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Represents the properties of the export.</p>
      */
     inline const ExportDescription& GetExportDescription() const{ return m_exportDescription; }
-
-    /**
-     * <p>Represents the properties of the export.</p>
-     */
     inline void SetExportDescription(const ExportDescription& value) { m_exportDescription = value; }
-
-    /**
-     * <p>Represents the properties of the export.</p>
-     */
     inline void SetExportDescription(ExportDescription&& value) { m_exportDescription = std::move(value); }
-
-    /**
-     * <p>Represents the properties of the export.</p>
-     */
     inline DescribeExportResult& WithExportDescription(const ExportDescription& value) { SetExportDescription(value); return *this;}
-
-    /**
-     * <p>Represents the properties of the export.</p>
-     */
     inline DescribeExportResult& WithExportDescription(ExportDescription&& value) { SetExportDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ExportDescription m_exportDescription;

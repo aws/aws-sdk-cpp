@@ -38,67 +38,29 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The attribute to update.</p>
      */
     inline const TypedLinkAttributeDefinition& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The attribute to update.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>The attribute to update.</p>
-     */
     inline void SetAttribute(const TypedLinkAttributeDefinition& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>The attribute to update.</p>
-     */
     inline void SetAttribute(TypedLinkAttributeDefinition&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The attribute to update.</p>
-     */
     inline TypedLinkFacetAttributeUpdate& WithAttribute(const TypedLinkAttributeDefinition& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The attribute to update.</p>
-     */
     inline TypedLinkFacetAttributeUpdate& WithAttribute(TypedLinkAttributeDefinition&& value) { SetAttribute(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The action to perform when updating the attribute.</p>
      */
     inline const UpdateActionType& GetAction() const{ return m_action; }
-
-    /**
-     * <p>The action to perform when updating the attribute.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>The action to perform when updating the attribute.</p>
-     */
     inline void SetAction(const UpdateActionType& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>The action to perform when updating the attribute.</p>
-     */
     inline void SetAction(UpdateActionType&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>The action to perform when updating the attribute.</p>
-     */
     inline TypedLinkFacetAttributeUpdate& WithAction(const UpdateActionType& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>The action to perform when updating the attribute.</p>
-     */
     inline TypedLinkFacetAttributeUpdate& WithAction(UpdateActionType&& value) { SetAction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TypedLinkAttributeDefinition m_attribute;

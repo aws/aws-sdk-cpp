@@ -34,79 +34,38 @@ namespace Model
     AWS_WORKDOCS_API InitiateDocumentVersionUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The document metadata.</p>
      */
     inline const DocumentMetadata& GetMetadata() const{ return m_metadata; }
-
-    /**
-     * <p>The document metadata.</p>
-     */
     inline void SetMetadata(const DocumentMetadata& value) { m_metadata = value; }
-
-    /**
-     * <p>The document metadata.</p>
-     */
     inline void SetMetadata(DocumentMetadata&& value) { m_metadata = std::move(value); }
-
-    /**
-     * <p>The document metadata.</p>
-     */
     inline InitiateDocumentVersionUploadResult& WithMetadata(const DocumentMetadata& value) { SetMetadata(value); return *this;}
-
-    /**
-     * <p>The document metadata.</p>
-     */
     inline InitiateDocumentVersionUploadResult& WithMetadata(DocumentMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The upload metadata.</p>
      */
     inline const UploadMetadata& GetUploadMetadata() const{ return m_uploadMetadata; }
-
-    /**
-     * <p>The upload metadata.</p>
-     */
     inline void SetUploadMetadata(const UploadMetadata& value) { m_uploadMetadata = value; }
-
-    /**
-     * <p>The upload metadata.</p>
-     */
     inline void SetUploadMetadata(UploadMetadata&& value) { m_uploadMetadata = std::move(value); }
-
-    /**
-     * <p>The upload metadata.</p>
-     */
     inline InitiateDocumentVersionUploadResult& WithUploadMetadata(const UploadMetadata& value) { SetUploadMetadata(value); return *this;}
-
-    /**
-     * <p>The upload metadata.</p>
-     */
     inline InitiateDocumentVersionUploadResult& WithUploadMetadata(UploadMetadata&& value) { SetUploadMetadata(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline InitiateDocumentVersionUploadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline InitiateDocumentVersionUploadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline InitiateDocumentVersionUploadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DocumentMetadata m_metadata;

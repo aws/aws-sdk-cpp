@@ -40,108 +40,43 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The computations configurations of the insight visual</p>
      */
     inline const Aws::Vector<Computation>& GetComputations() const{ return m_computations; }
-
-    /**
-     * <p>The computations configurations of the insight visual</p>
-     */
     inline bool ComputationsHasBeenSet() const { return m_computationsHasBeenSet; }
-
-    /**
-     * <p>The computations configurations of the insight visual</p>
-     */
     inline void SetComputations(const Aws::Vector<Computation>& value) { m_computationsHasBeenSet = true; m_computations = value; }
-
-    /**
-     * <p>The computations configurations of the insight visual</p>
-     */
     inline void SetComputations(Aws::Vector<Computation>&& value) { m_computationsHasBeenSet = true; m_computations = std::move(value); }
-
-    /**
-     * <p>The computations configurations of the insight visual</p>
-     */
     inline InsightConfiguration& WithComputations(const Aws::Vector<Computation>& value) { SetComputations(value); return *this;}
-
-    /**
-     * <p>The computations configurations of the insight visual</p>
-     */
     inline InsightConfiguration& WithComputations(Aws::Vector<Computation>&& value) { SetComputations(std::move(value)); return *this;}
-
-    /**
-     * <p>The computations configurations of the insight visual</p>
-     */
     inline InsightConfiguration& AddComputations(const Computation& value) { m_computationsHasBeenSet = true; m_computations.push_back(value); return *this; }
-
-    /**
-     * <p>The computations configurations of the insight visual</p>
-     */
     inline InsightConfiguration& AddComputations(Computation&& value) { m_computationsHasBeenSet = true; m_computations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The custom narrative of the insight visual.</p>
      */
     inline const CustomNarrativeOptions& GetCustomNarrative() const{ return m_customNarrative; }
-
-    /**
-     * <p>The custom narrative of the insight visual.</p>
-     */
     inline bool CustomNarrativeHasBeenSet() const { return m_customNarrativeHasBeenSet; }
-
-    /**
-     * <p>The custom narrative of the insight visual.</p>
-     */
     inline void SetCustomNarrative(const CustomNarrativeOptions& value) { m_customNarrativeHasBeenSet = true; m_customNarrative = value; }
-
-    /**
-     * <p>The custom narrative of the insight visual.</p>
-     */
     inline void SetCustomNarrative(CustomNarrativeOptions&& value) { m_customNarrativeHasBeenSet = true; m_customNarrative = std::move(value); }
-
-    /**
-     * <p>The custom narrative of the insight visual.</p>
-     */
     inline InsightConfiguration& WithCustomNarrative(const CustomNarrativeOptions& value) { SetCustomNarrative(value); return *this;}
-
-    /**
-     * <p>The custom narrative of the insight visual.</p>
-     */
     inline InsightConfiguration& WithCustomNarrative(CustomNarrativeOptions&& value) { SetCustomNarrative(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The general visual interactions setup for a visual.</p>
      */
     inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline InsightConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline InsightConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Computation> m_computations;

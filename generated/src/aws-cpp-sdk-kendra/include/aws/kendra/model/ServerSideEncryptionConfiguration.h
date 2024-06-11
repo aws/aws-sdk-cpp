@@ -39,54 +39,20 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
      * keys.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
-     * keys.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
-     * keys.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
-     * keys.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
-     * keys.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
-     * keys.</p>
-     */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
-     * keys.</p>
-     */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
-     * keys.</p>
-     */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;

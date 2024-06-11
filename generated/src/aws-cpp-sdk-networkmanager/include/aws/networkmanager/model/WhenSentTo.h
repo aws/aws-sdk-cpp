@@ -39,60 +39,21 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of destination segments when the service insertion action is
      * <code>send-to</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWhenSentToSegmentsList() const{ return m_whenSentToSegmentsList; }
-
-    /**
-     * <p>The list of destination segments when the service insertion action is
-     * <code>send-to</code>.</p>
-     */
     inline bool WhenSentToSegmentsListHasBeenSet() const { return m_whenSentToSegmentsListHasBeenSet; }
-
-    /**
-     * <p>The list of destination segments when the service insertion action is
-     * <code>send-to</code>.</p>
-     */
     inline void SetWhenSentToSegmentsList(const Aws::Vector<Aws::String>& value) { m_whenSentToSegmentsListHasBeenSet = true; m_whenSentToSegmentsList = value; }
-
-    /**
-     * <p>The list of destination segments when the service insertion action is
-     * <code>send-to</code>.</p>
-     */
     inline void SetWhenSentToSegmentsList(Aws::Vector<Aws::String>&& value) { m_whenSentToSegmentsListHasBeenSet = true; m_whenSentToSegmentsList = std::move(value); }
-
-    /**
-     * <p>The list of destination segments when the service insertion action is
-     * <code>send-to</code>.</p>
-     */
     inline WhenSentTo& WithWhenSentToSegmentsList(const Aws::Vector<Aws::String>& value) { SetWhenSentToSegmentsList(value); return *this;}
-
-    /**
-     * <p>The list of destination segments when the service insertion action is
-     * <code>send-to</code>.</p>
-     */
     inline WhenSentTo& WithWhenSentToSegmentsList(Aws::Vector<Aws::String>&& value) { SetWhenSentToSegmentsList(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of destination segments when the service insertion action is
-     * <code>send-to</code>.</p>
-     */
     inline WhenSentTo& AddWhenSentToSegmentsList(const Aws::String& value) { m_whenSentToSegmentsListHasBeenSet = true; m_whenSentToSegmentsList.push_back(value); return *this; }
-
-    /**
-     * <p>The list of destination segments when the service insertion action is
-     * <code>send-to</code>.</p>
-     */
     inline WhenSentTo& AddWhenSentToSegmentsList(Aws::String&& value) { m_whenSentToSegmentsListHasBeenSet = true; m_whenSentToSegmentsList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of destination segments when the service insertion action is
-     * <code>send-to</code>.</p>
-     */
     inline WhenSentTo& AddWhenSentToSegmentsList(const char* value) { m_whenSentToSegmentsListHasBeenSet = true; m_whenSentToSegmentsList.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_whenSentToSegmentsList;

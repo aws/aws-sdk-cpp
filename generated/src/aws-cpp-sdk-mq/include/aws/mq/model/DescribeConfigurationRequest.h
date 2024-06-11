@@ -32,46 +32,19 @@ namespace Model
     AWS_MQ_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
-
-    /**
-     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
-     */
     inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
-     */
     inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
-
-    /**
-     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
-     */
     inline void SetConfigurationId(Aws::String&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::move(value); }
-
-    /**
-     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
-     */
     inline void SetConfigurationId(const char* value) { m_configurationIdHasBeenSet = true; m_configurationId.assign(value); }
-
-    /**
-     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
-     */
     inline DescribeConfigurationRequest& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
-
-    /**
-     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
-     */
     inline DescribeConfigurationRequest& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
-     */
     inline DescribeConfigurationRequest& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationId;

@@ -40,92 +40,41 @@ namespace Model
     AWS_APPCONFIGDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline BadRequestException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline BadRequestException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline BadRequestException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Code indicating the reason the request was invalid.</p>
      */
     inline const BadRequestReason& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>Code indicating the reason the request was invalid.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>Code indicating the reason the request was invalid.</p>
-     */
     inline void SetReason(const BadRequestReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>Code indicating the reason the request was invalid.</p>
-     */
     inline void SetReason(BadRequestReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>Code indicating the reason the request was invalid.</p>
-     */
     inline BadRequestException& WithReason(const BadRequestReason& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>Code indicating the reason the request was invalid.</p>
-     */
     inline BadRequestException& WithReason(BadRequestReason&& value) { SetReason(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details describing why the request was invalid.</p>
      */
     inline const BadRequestDetails& GetDetails() const{ return m_details; }
-
-    /**
-     * <p>Details describing why the request was invalid.</p>
-     */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-
-    /**
-     * <p>Details describing why the request was invalid.</p>
-     */
     inline void SetDetails(const BadRequestDetails& value) { m_detailsHasBeenSet = true; m_details = value; }
-
-    /**
-     * <p>Details describing why the request was invalid.</p>
-     */
     inline void SetDetails(BadRequestDetails&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-
-    /**
-     * <p>Details describing why the request was invalid.</p>
-     */
     inline BadRequestException& WithDetails(const BadRequestDetails& value) { SetDetails(value); return *this;}
-
-    /**
-     * <p>Details describing why the request was invalid.</p>
-     */
     inline BadRequestException& WithDetails(BadRequestDetails&& value) { SetDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

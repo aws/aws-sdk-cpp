@@ -44,91 +44,33 @@ namespace Model
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies that Shield Advanced should configure its WAF rules with the WAF
      * <code>Block</code> action. </p> <p>You must specify exactly one action, either
      * <code>Block</code> or <code>Count</code>.</p>
      */
     inline const BlockAction& GetBlock() const{ return m_block; }
-
-    /**
-     * <p>Specifies that Shield Advanced should configure its WAF rules with the WAF
-     * <code>Block</code> action. </p> <p>You must specify exactly one action, either
-     * <code>Block</code> or <code>Count</code>.</p>
-     */
     inline bool BlockHasBeenSet() const { return m_blockHasBeenSet; }
-
-    /**
-     * <p>Specifies that Shield Advanced should configure its WAF rules with the WAF
-     * <code>Block</code> action. </p> <p>You must specify exactly one action, either
-     * <code>Block</code> or <code>Count</code>.</p>
-     */
     inline void SetBlock(const BlockAction& value) { m_blockHasBeenSet = true; m_block = value; }
-
-    /**
-     * <p>Specifies that Shield Advanced should configure its WAF rules with the WAF
-     * <code>Block</code> action. </p> <p>You must specify exactly one action, either
-     * <code>Block</code> or <code>Count</code>.</p>
-     */
     inline void SetBlock(BlockAction&& value) { m_blockHasBeenSet = true; m_block = std::move(value); }
-
-    /**
-     * <p>Specifies that Shield Advanced should configure its WAF rules with the WAF
-     * <code>Block</code> action. </p> <p>You must specify exactly one action, either
-     * <code>Block</code> or <code>Count</code>.</p>
-     */
     inline ResponseAction& WithBlock(const BlockAction& value) { SetBlock(value); return *this;}
-
-    /**
-     * <p>Specifies that Shield Advanced should configure its WAF rules with the WAF
-     * <code>Block</code> action. </p> <p>You must specify exactly one action, either
-     * <code>Block</code> or <code>Count</code>.</p>
-     */
     inline ResponseAction& WithBlock(BlockAction&& value) { SetBlock(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies that Shield Advanced should configure its WAF rules with the WAF
      * <code>Count</code> action. </p> <p>You must specify exactly one action, either
      * <code>Block</code> or <code>Count</code>.</p>
      */
     inline const CountAction& GetCount() const{ return m_count; }
-
-    /**
-     * <p>Specifies that Shield Advanced should configure its WAF rules with the WAF
-     * <code>Count</code> action. </p> <p>You must specify exactly one action, either
-     * <code>Block</code> or <code>Count</code>.</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>Specifies that Shield Advanced should configure its WAF rules with the WAF
-     * <code>Count</code> action. </p> <p>You must specify exactly one action, either
-     * <code>Block</code> or <code>Count</code>.</p>
-     */
     inline void SetCount(const CountAction& value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>Specifies that Shield Advanced should configure its WAF rules with the WAF
-     * <code>Count</code> action. </p> <p>You must specify exactly one action, either
-     * <code>Block</code> or <code>Count</code>.</p>
-     */
     inline void SetCount(CountAction&& value) { m_countHasBeenSet = true; m_count = std::move(value); }
-
-    /**
-     * <p>Specifies that Shield Advanced should configure its WAF rules with the WAF
-     * <code>Count</code> action. </p> <p>You must specify exactly one action, either
-     * <code>Block</code> or <code>Count</code>.</p>
-     */
     inline ResponseAction& WithCount(const CountAction& value) { SetCount(value); return *this;}
-
-    /**
-     * <p>Specifies that Shield Advanced should configure its WAF rules with the WAF
-     * <code>Count</code> action. </p> <p>You must specify exactly one action, either
-     * <code>Block</code> or <code>Count</code>.</p>
-     */
     inline ResponseAction& WithCount(CountAction&& value) { SetCount(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BlockAction m_block;

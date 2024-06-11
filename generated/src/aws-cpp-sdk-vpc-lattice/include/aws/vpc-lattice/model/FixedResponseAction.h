@@ -36,26 +36,15 @@ namespace Model
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The HTTP response code.</p>
      */
     inline int GetStatusCode() const{ return m_statusCode; }
-
-    /**
-     * <p>The HTTP response code.</p>
-     */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-
-    /**
-     * <p>The HTTP response code.</p>
-     */
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-
-    /**
-     * <p>The HTTP response code.</p>
-     */
     inline FixedResponseAction& WithStatusCode(int value) { SetStatusCode(value); return *this;}
-
+    ///@}
   private:
 
     int m_statusCode;

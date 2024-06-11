@@ -46,77 +46,31 @@ namespace Model
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status of the certificate-based authentication properties.</p>
      */
     inline const CertificateBasedAuthStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the certificate-based authentication properties.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the certificate-based authentication properties.</p>
-     */
     inline void SetStatus(const CertificateBasedAuthStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the certificate-based authentication properties.</p>
-     */
     inline void SetStatus(CertificateBasedAuthStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the certificate-based authentication properties.</p>
-     */
     inline CertificateBasedAuthProperties& WithStatus(const CertificateBasedAuthStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the certificate-based authentication properties.</p>
-     */
     inline CertificateBasedAuthProperties& WithStatus(CertificateBasedAuthStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
      */
     inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
-
-    /**
-     * <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
-     */
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
-     */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-
-    /**
-     * <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
-     */
     inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
-     */
     inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-
-    /**
-     * <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
-     */
     inline CertificateBasedAuthProperties& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
-     */
     inline CertificateBasedAuthProperties& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
-     */
     inline CertificateBasedAuthProperties& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
-
+    ///@}
   private:
 
     CertificateBasedAuthStatus m_status;

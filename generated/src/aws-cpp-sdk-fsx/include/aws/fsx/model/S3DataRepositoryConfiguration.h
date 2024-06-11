@@ -47,79 +47,31 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the type of updated objects (new, changed, deleted) that will be
      * automatically imported from the linked S3 bucket to your file system.</p>
      */
     inline const AutoImportPolicy& GetAutoImportPolicy() const{ return m_autoImportPolicy; }
-
-    /**
-     * <p>Specifies the type of updated objects (new, changed, deleted) that will be
-     * automatically imported from the linked S3 bucket to your file system.</p>
-     */
     inline bool AutoImportPolicyHasBeenSet() const { return m_autoImportPolicyHasBeenSet; }
-
-    /**
-     * <p>Specifies the type of updated objects (new, changed, deleted) that will be
-     * automatically imported from the linked S3 bucket to your file system.</p>
-     */
     inline void SetAutoImportPolicy(const AutoImportPolicy& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
-
-    /**
-     * <p>Specifies the type of updated objects (new, changed, deleted) that will be
-     * automatically imported from the linked S3 bucket to your file system.</p>
-     */
     inline void SetAutoImportPolicy(AutoImportPolicy&& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = std::move(value); }
-
-    /**
-     * <p>Specifies the type of updated objects (new, changed, deleted) that will be
-     * automatically imported from the linked S3 bucket to your file system.</p>
-     */
     inline S3DataRepositoryConfiguration& WithAutoImportPolicy(const AutoImportPolicy& value) { SetAutoImportPolicy(value); return *this;}
-
-    /**
-     * <p>Specifies the type of updated objects (new, changed, deleted) that will be
-     * automatically imported from the linked S3 bucket to your file system.</p>
-     */
     inline S3DataRepositoryConfiguration& WithAutoImportPolicy(AutoImportPolicy&& value) { SetAutoImportPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the type of updated objects (new, changed, deleted) that will be
      * automatically exported from your file system to the linked S3 bucket.</p>
      */
     inline const AutoExportPolicy& GetAutoExportPolicy() const{ return m_autoExportPolicy; }
-
-    /**
-     * <p>Specifies the type of updated objects (new, changed, deleted) that will be
-     * automatically exported from your file system to the linked S3 bucket.</p>
-     */
     inline bool AutoExportPolicyHasBeenSet() const { return m_autoExportPolicyHasBeenSet; }
-
-    /**
-     * <p>Specifies the type of updated objects (new, changed, deleted) that will be
-     * automatically exported from your file system to the linked S3 bucket.</p>
-     */
     inline void SetAutoExportPolicy(const AutoExportPolicy& value) { m_autoExportPolicyHasBeenSet = true; m_autoExportPolicy = value; }
-
-    /**
-     * <p>Specifies the type of updated objects (new, changed, deleted) that will be
-     * automatically exported from your file system to the linked S3 bucket.</p>
-     */
     inline void SetAutoExportPolicy(AutoExportPolicy&& value) { m_autoExportPolicyHasBeenSet = true; m_autoExportPolicy = std::move(value); }
-
-    /**
-     * <p>Specifies the type of updated objects (new, changed, deleted) that will be
-     * automatically exported from your file system to the linked S3 bucket.</p>
-     */
     inline S3DataRepositoryConfiguration& WithAutoExportPolicy(const AutoExportPolicy& value) { SetAutoExportPolicy(value); return *this;}
-
-    /**
-     * <p>Specifies the type of updated objects (new, changed, deleted) that will be
-     * automatically exported from your file system to the linked S3 bucket.</p>
-     */
     inline S3DataRepositoryConfiguration& WithAutoExportPolicy(AutoExportPolicy&& value) { SetAutoExportPolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AutoImportPolicy m_autoImportPolicy;

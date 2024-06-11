@@ -40,87 +40,33 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Pipeline ID
      */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
-
-    /**
-     * Pipeline ID
-     */
     inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
-
-    /**
-     * Pipeline ID
-     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
-
-    /**
-     * Pipeline ID
-     */
     inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
-
-    /**
-     * Pipeline ID
-     */
     inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
-
-    /**
-     * Pipeline ID
-     */
     inline ThumbnailDetail& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
-
-    /**
-     * Pipeline ID
-     */
     inline ThumbnailDetail& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
-
-    /**
-     * Pipeline ID
-     */
     inline ThumbnailDetail& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * thumbnails of a single pipeline
      */
     inline const Aws::Vector<Thumbnail>& GetThumbnails() const{ return m_thumbnails; }
-
-    /**
-     * thumbnails of a single pipeline
-     */
     inline bool ThumbnailsHasBeenSet() const { return m_thumbnailsHasBeenSet; }
-
-    /**
-     * thumbnails of a single pipeline
-     */
     inline void SetThumbnails(const Aws::Vector<Thumbnail>& value) { m_thumbnailsHasBeenSet = true; m_thumbnails = value; }
-
-    /**
-     * thumbnails of a single pipeline
-     */
     inline void SetThumbnails(Aws::Vector<Thumbnail>&& value) { m_thumbnailsHasBeenSet = true; m_thumbnails = std::move(value); }
-
-    /**
-     * thumbnails of a single pipeline
-     */
     inline ThumbnailDetail& WithThumbnails(const Aws::Vector<Thumbnail>& value) { SetThumbnails(value); return *this;}
-
-    /**
-     * thumbnails of a single pipeline
-     */
     inline ThumbnailDetail& WithThumbnails(Aws::Vector<Thumbnail>&& value) { SetThumbnails(std::move(value)); return *this;}
-
-    /**
-     * thumbnails of a single pipeline
-     */
     inline ThumbnailDetail& AddThumbnails(const Thumbnail& value) { m_thumbnailsHasBeenSet = true; m_thumbnails.push_back(value); return *this; }
-
-    /**
-     * thumbnails of a single pipeline
-     */
     inline ThumbnailDetail& AddThumbnails(Thumbnail&& value) { m_thumbnailsHasBeenSet = true; m_thumbnails.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_pipelineId;

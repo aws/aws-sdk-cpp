@@ -41,6 +41,7 @@ namespace Model
     AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of endpoint types of an API (RestApi) or its custom domain name
      * (DomainName). For an edge-optimized API and its custom domain name, the endpoint
@@ -49,125 +50,30 @@ namespace Model
      * <code>PRIVATE</code>.</p>
      */
     inline const Aws::Vector<EndpointType>& GetTypes() const{ return m_types; }
-
-    /**
-     * <p>A list of endpoint types of an API (RestApi) or its custom domain name
-     * (DomainName). For an edge-optimized API and its custom domain name, the endpoint
-     * type is <code>"EDGE"</code>. For a regional API and its custom domain name, the
-     * endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is
-     * <code>PRIVATE</code>.</p>
-     */
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-
-    /**
-     * <p>A list of endpoint types of an API (RestApi) or its custom domain name
-     * (DomainName). For an edge-optimized API and its custom domain name, the endpoint
-     * type is <code>"EDGE"</code>. For a regional API and its custom domain name, the
-     * endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is
-     * <code>PRIVATE</code>.</p>
-     */
     inline void SetTypes(const Aws::Vector<EndpointType>& value) { m_typesHasBeenSet = true; m_types = value; }
-
-    /**
-     * <p>A list of endpoint types of an API (RestApi) or its custom domain name
-     * (DomainName). For an edge-optimized API and its custom domain name, the endpoint
-     * type is <code>"EDGE"</code>. For a regional API and its custom domain name, the
-     * endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is
-     * <code>PRIVATE</code>.</p>
-     */
     inline void SetTypes(Aws::Vector<EndpointType>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
-
-    /**
-     * <p>A list of endpoint types of an API (RestApi) or its custom domain name
-     * (DomainName). For an edge-optimized API and its custom domain name, the endpoint
-     * type is <code>"EDGE"</code>. For a regional API and its custom domain name, the
-     * endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is
-     * <code>PRIVATE</code>.</p>
-     */
     inline EndpointConfiguration& WithTypes(const Aws::Vector<EndpointType>& value) { SetTypes(value); return *this;}
-
-    /**
-     * <p>A list of endpoint types of an API (RestApi) or its custom domain name
-     * (DomainName). For an edge-optimized API and its custom domain name, the endpoint
-     * type is <code>"EDGE"</code>. For a regional API and its custom domain name, the
-     * endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is
-     * <code>PRIVATE</code>.</p>
-     */
     inline EndpointConfiguration& WithTypes(Aws::Vector<EndpointType>&& value) { SetTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of endpoint types of an API (RestApi) or its custom domain name
-     * (DomainName). For an edge-optimized API and its custom domain name, the endpoint
-     * type is <code>"EDGE"</code>. For a regional API and its custom domain name, the
-     * endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is
-     * <code>PRIVATE</code>.</p>
-     */
     inline EndpointConfiguration& AddTypes(const EndpointType& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
-
-    /**
-     * <p>A list of endpoint types of an API (RestApi) or its custom domain name
-     * (DomainName). For an edge-optimized API and its custom domain name, the endpoint
-     * type is <code>"EDGE"</code>. For a regional API and its custom domain name, the
-     * endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is
-     * <code>PRIVATE</code>.</p>
-     */
     inline EndpointConfiguration& AddTypes(EndpointType&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53
      * ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcEndpointIds() const{ return m_vpcEndpointIds; }
-
-    /**
-     * <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53
-     * ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
-     */
     inline bool VpcEndpointIdsHasBeenSet() const { return m_vpcEndpointIdsHasBeenSet; }
-
-    /**
-     * <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53
-     * ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
-     */
     inline void SetVpcEndpointIds(const Aws::Vector<Aws::String>& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = value; }
-
-    /**
-     * <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53
-     * ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
-     */
     inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = std::move(value); }
-
-    /**
-     * <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53
-     * ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
-     */
     inline EndpointConfiguration& WithVpcEndpointIds(const Aws::Vector<Aws::String>& value) { SetVpcEndpointIds(value); return *this;}
-
-    /**
-     * <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53
-     * ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
-     */
     inline EndpointConfiguration& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53
-     * ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
-     */
     inline EndpointConfiguration& AddVpcEndpointIds(const Aws::String& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53
-     * ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
-     */
     inline EndpointConfiguration& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53
-     * ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
-     */
     inline EndpointConfiguration& AddVpcEndpointIds(const char* value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<EndpointType> m_types;

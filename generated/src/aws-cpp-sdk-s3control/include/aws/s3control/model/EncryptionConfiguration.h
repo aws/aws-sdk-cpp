@@ -39,6 +39,7 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies the ID of the customer managed KMS key that's stored in Key
      * Management Service (KMS) for the destination bucket. This ID is either the
@@ -50,91 +51,14 @@ namespace Model
      * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetReplicaKmsKeyID() const{ return m_replicaKmsKeyID; }
-
-    /**
-     * <p>Specifies the ID of the customer managed KMS key that's stored in Key
-     * Management Service (KMS) for the destination bucket. This ID is either the
-     * Amazon Resource Name (ARN) for the KMS key or the alias ARN for the KMS key.
-     * Amazon S3 uses this KMS key to encrypt replica objects. Amazon S3 supports only
-     * symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">Symmetric
-     * encryption KMS keys</a> in the <i>Amazon Web Services Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline bool ReplicaKmsKeyIDHasBeenSet() const { return m_replicaKmsKeyIDHasBeenSet; }
-
-    /**
-     * <p>Specifies the ID of the customer managed KMS key that's stored in Key
-     * Management Service (KMS) for the destination bucket. This ID is either the
-     * Amazon Resource Name (ARN) for the KMS key or the alias ARN for the KMS key.
-     * Amazon S3 uses this KMS key to encrypt replica objects. Amazon S3 supports only
-     * symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">Symmetric
-     * encryption KMS keys</a> in the <i>Amazon Web Services Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline void SetReplicaKmsKeyID(const Aws::String& value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID = value; }
-
-    /**
-     * <p>Specifies the ID of the customer managed KMS key that's stored in Key
-     * Management Service (KMS) for the destination bucket. This ID is either the
-     * Amazon Resource Name (ARN) for the KMS key or the alias ARN for the KMS key.
-     * Amazon S3 uses this KMS key to encrypt replica objects. Amazon S3 supports only
-     * symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">Symmetric
-     * encryption KMS keys</a> in the <i>Amazon Web Services Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline void SetReplicaKmsKeyID(Aws::String&& value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID = std::move(value); }
-
-    /**
-     * <p>Specifies the ID of the customer managed KMS key that's stored in Key
-     * Management Service (KMS) for the destination bucket. This ID is either the
-     * Amazon Resource Name (ARN) for the KMS key or the alias ARN for the KMS key.
-     * Amazon S3 uses this KMS key to encrypt replica objects. Amazon S3 supports only
-     * symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">Symmetric
-     * encryption KMS keys</a> in the <i>Amazon Web Services Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline void SetReplicaKmsKeyID(const char* value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID.assign(value); }
-
-    /**
-     * <p>Specifies the ID of the customer managed KMS key that's stored in Key
-     * Management Service (KMS) for the destination bucket. This ID is either the
-     * Amazon Resource Name (ARN) for the KMS key or the alias ARN for the KMS key.
-     * Amazon S3 uses this KMS key to encrypt replica objects. Amazon S3 supports only
-     * symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">Symmetric
-     * encryption KMS keys</a> in the <i>Amazon Web Services Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline EncryptionConfiguration& WithReplicaKmsKeyID(const Aws::String& value) { SetReplicaKmsKeyID(value); return *this;}
-
-    /**
-     * <p>Specifies the ID of the customer managed KMS key that's stored in Key
-     * Management Service (KMS) for the destination bucket. This ID is either the
-     * Amazon Resource Name (ARN) for the KMS key or the alias ARN for the KMS key.
-     * Amazon S3 uses this KMS key to encrypt replica objects. Amazon S3 supports only
-     * symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">Symmetric
-     * encryption KMS keys</a> in the <i>Amazon Web Services Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline EncryptionConfiguration& WithReplicaKmsKeyID(Aws::String&& value) { SetReplicaKmsKeyID(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ID of the customer managed KMS key that's stored in Key
-     * Management Service (KMS) for the destination bucket. This ID is either the
-     * Amazon Resource Name (ARN) for the KMS key or the alias ARN for the KMS key.
-     * Amazon S3 uses this KMS key to encrypt replica objects. Amazon S3 supports only
-     * symmetric encryption KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">Symmetric
-     * encryption KMS keys</a> in the <i>Amazon Web Services Key Management Service
-     * Developer Guide</i>.</p>
-     */
     inline EncryptionConfiguration& WithReplicaKmsKeyID(const char* value) { SetReplicaKmsKeyID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_replicaKmsKeyID;

@@ -36,54 +36,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The unique identifier of the cluster for which the primary compute unit will
      * be failed over to another Availability Zone.</p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
-
-    /**
-     * <p>The unique identifier of the cluster for which the primary compute unit will
-     * be failed over to another Availability Zone.</p>
-     */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the cluster for which the primary compute unit will
-     * be failed over to another Availability Zone.</p>
-     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of the cluster for which the primary compute unit will
-     * be failed over to another Availability Zone.</p>
-     */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the cluster for which the primary compute unit will
-     * be failed over to another Availability Zone.</p>
-     */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of the cluster for which the primary compute unit will
-     * be failed over to another Availability Zone.</p>
-     */
     inline FailoverPrimaryComputeRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the cluster for which the primary compute unit will
-     * be failed over to another Availability Zone.</p>
-     */
     inline FailoverPrimaryComputeRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the cluster for which the primary compute unit will
-     * be failed over to another Availability Zone.</p>
-     */
     inline FailoverPrimaryComputeRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterIdentifier;

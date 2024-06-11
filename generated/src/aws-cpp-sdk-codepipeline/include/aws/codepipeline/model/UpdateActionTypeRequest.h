@@ -34,36 +34,17 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The action type definition for the action type to be updated.</p>
      */
     inline const ActionTypeDeclaration& GetActionType() const{ return m_actionType; }
-
-    /**
-     * <p>The action type definition for the action type to be updated.</p>
-     */
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-
-    /**
-     * <p>The action type definition for the action type to be updated.</p>
-     */
     inline void SetActionType(const ActionTypeDeclaration& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-
-    /**
-     * <p>The action type definition for the action type to be updated.</p>
-     */
     inline void SetActionType(ActionTypeDeclaration&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-
-    /**
-     * <p>The action type definition for the action type to be updated.</p>
-     */
     inline UpdateActionTypeRequest& WithActionType(const ActionTypeDeclaration& value) { SetActionType(value); return *this;}
-
-    /**
-     * <p>The action type definition for the action type to be updated.</p>
-     */
     inline UpdateActionTypeRequest& WithActionType(ActionTypeDeclaration&& value) { SetActionType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ActionTypeDeclaration m_actionType;

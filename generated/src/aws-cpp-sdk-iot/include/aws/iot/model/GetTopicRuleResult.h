@@ -38,89 +38,40 @@ namespace Model
     AWS_IOT_API GetTopicRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The rule ARN.</p>
      */
     inline const Aws::String& GetRuleArn() const{ return m_ruleArn; }
-
-    /**
-     * <p>The rule ARN.</p>
-     */
     inline void SetRuleArn(const Aws::String& value) { m_ruleArn = value; }
-
-    /**
-     * <p>The rule ARN.</p>
-     */
     inline void SetRuleArn(Aws::String&& value) { m_ruleArn = std::move(value); }
-
-    /**
-     * <p>The rule ARN.</p>
-     */
     inline void SetRuleArn(const char* value) { m_ruleArn.assign(value); }
-
-    /**
-     * <p>The rule ARN.</p>
-     */
     inline GetTopicRuleResult& WithRuleArn(const Aws::String& value) { SetRuleArn(value); return *this;}
-
-    /**
-     * <p>The rule ARN.</p>
-     */
     inline GetTopicRuleResult& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The rule ARN.</p>
-     */
     inline GetTopicRuleResult& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rule.</p>
      */
     inline const TopicRule& GetRule() const{ return m_rule; }
-
-    /**
-     * <p>The rule.</p>
-     */
     inline void SetRule(const TopicRule& value) { m_rule = value; }
-
-    /**
-     * <p>The rule.</p>
-     */
     inline void SetRule(TopicRule&& value) { m_rule = std::move(value); }
-
-    /**
-     * <p>The rule.</p>
-     */
     inline GetTopicRuleResult& WithRule(const TopicRule& value) { SetRule(value); return *this;}
-
-    /**
-     * <p>The rule.</p>
-     */
     inline GetTopicRuleResult& WithRule(TopicRule&& value) { SetRule(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTopicRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTopicRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTopicRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleArn;

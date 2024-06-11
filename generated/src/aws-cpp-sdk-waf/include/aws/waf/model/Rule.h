@@ -57,6 +57,7 @@ namespace Model
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
      * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
@@ -67,134 +68,31 @@ namespace Model
      * and by <a>ListRules</a>.</p>
      */
     inline const Aws::String& GetRuleId() const{ return m_ruleId; }
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline Rule& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline Rule& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline Rule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The friendly name or description for the <code>Rule</code>. You can't change
      * the name of a <code>Rule</code> after you create it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The friendly name or description for the <code>Rule</code>. You can't change
-     * the name of a <code>Rule</code> after you create it.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The friendly name or description for the <code>Rule</code>. You can't change
-     * the name of a <code>Rule</code> after you create it.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The friendly name or description for the <code>Rule</code>. You can't change
-     * the name of a <code>Rule</code> after you create it.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The friendly name or description for the <code>Rule</code>. You can't change
-     * the name of a <code>Rule</code> after you create it.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The friendly name or description for the <code>Rule</code>. You can't change
-     * the name of a <code>Rule</code> after you create it.</p>
-     */
     inline Rule& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The friendly name or description for the <code>Rule</code>. You can't change
-     * the name of a <code>Rule</code> after you create it.</p>
-     */
     inline Rule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The friendly name or description for the <code>Rule</code>. You can't change
-     * the name of a <code>Rule</code> after you create it.</p>
-     */
     inline Rule& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A friendly name or description for the metrics for this <code>Rule</code>.
      * The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum
@@ -203,71 +101,16 @@ namespace Model
      * <code>MetricName</code> after you create the <code>Rule</code>.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
-
-    /**
-     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
-     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum
-     * length 128 and minimum length one. It can't contain whitespace or metric names
-     * reserved for AWS WAF, including "All" and "Default_Action." You can't change
-     * <code>MetricName</code> after you create the <code>Rule</code>.</p>
-     */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-
-    /**
-     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
-     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum
-     * length 128 and minimum length one. It can't contain whitespace or metric names
-     * reserved for AWS WAF, including "All" and "Default_Action." You can't change
-     * <code>MetricName</code> after you create the <code>Rule</code>.</p>
-     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-
-    /**
-     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
-     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum
-     * length 128 and minimum length one. It can't contain whitespace or metric names
-     * reserved for AWS WAF, including "All" and "Default_Action." You can't change
-     * <code>MetricName</code> after you create the <code>Rule</code>.</p>
-     */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-
-    /**
-     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
-     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum
-     * length 128 and minimum length one. It can't contain whitespace or metric names
-     * reserved for AWS WAF, including "All" and "Default_Action." You can't change
-     * <code>MetricName</code> after you create the <code>Rule</code>.</p>
-     */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-
-    /**
-     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
-     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum
-     * length 128 and minimum length one. It can't contain whitespace or metric names
-     * reserved for AWS WAF, including "All" and "Default_Action." You can't change
-     * <code>MetricName</code> after you create the <code>Rule</code>.</p>
-     */
     inline Rule& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-
-    /**
-     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
-     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum
-     * length 128 and minimum length one. It can't contain whitespace or metric names
-     * reserved for AWS WAF, including "All" and "Default_Action." You can't change
-     * <code>MetricName</code> after you create the <code>Rule</code>.</p>
-     */
     inline Rule& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-
-    /**
-     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
-     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum
-     * length 128 and minimum length one. It can't contain whitespace or metric names
-     * reserved for AWS WAF, including "All" and "Default_Action." You can't change
-     * <code>MetricName</code> after you create the <code>Rule</code>.</p>
-     */
     inline Rule& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
      * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
@@ -275,63 +118,14 @@ namespace Model
      * <code>Rule</code>.</p>
      */
     inline const Aws::Vector<Predicate>& GetPredicates() const{ return m_predicates; }
-
-    /**
-     * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
-     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
-     * <a>SqlInjectionMatchSet</a> object that you want to include in a
-     * <code>Rule</code>.</p>
-     */
     inline bool PredicatesHasBeenSet() const { return m_predicatesHasBeenSet; }
-
-    /**
-     * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
-     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
-     * <a>SqlInjectionMatchSet</a> object that you want to include in a
-     * <code>Rule</code>.</p>
-     */
     inline void SetPredicates(const Aws::Vector<Predicate>& value) { m_predicatesHasBeenSet = true; m_predicates = value; }
-
-    /**
-     * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
-     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
-     * <a>SqlInjectionMatchSet</a> object that you want to include in a
-     * <code>Rule</code>.</p>
-     */
     inline void SetPredicates(Aws::Vector<Predicate>&& value) { m_predicatesHasBeenSet = true; m_predicates = std::move(value); }
-
-    /**
-     * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
-     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
-     * <a>SqlInjectionMatchSet</a> object that you want to include in a
-     * <code>Rule</code>.</p>
-     */
     inline Rule& WithPredicates(const Aws::Vector<Predicate>& value) { SetPredicates(value); return *this;}
-
-    /**
-     * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
-     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
-     * <a>SqlInjectionMatchSet</a> object that you want to include in a
-     * <code>Rule</code>.</p>
-     */
     inline Rule& WithPredicates(Aws::Vector<Predicate>&& value) { SetPredicates(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
-     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
-     * <a>SqlInjectionMatchSet</a> object that you want to include in a
-     * <code>Rule</code>.</p>
-     */
     inline Rule& AddPredicates(const Predicate& value) { m_predicatesHasBeenSet = true; m_predicates.push_back(value); return *this; }
-
-    /**
-     * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
-     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
-     * <a>SqlInjectionMatchSet</a> object that you want to include in a
-     * <code>Rule</code>.</p>
-     */
     inline Rule& AddPredicates(Predicate&& value) { m_predicatesHasBeenSet = true; m_predicates.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_ruleId;

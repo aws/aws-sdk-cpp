@@ -41,87 +41,33 @@ namespace Model
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A description of the possible remediation actions list.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the possible remediation actions list.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the possible remediation actions list.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the possible remediation actions list.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the possible remediation actions list.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the possible remediation actions list.</p>
-     */
     inline PossibleRemediationActions& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the possible remediation actions list.</p>
-     */
     inline PossibleRemediationActions& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the possible remediation actions list.</p>
-     */
     inline PossibleRemediationActions& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the actions.</p>
      */
     inline const Aws::Vector<PossibleRemediationAction>& GetActions() const{ return m_actions; }
-
-    /**
-     * <p>Information about the actions.</p>
-     */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-
-    /**
-     * <p>Information about the actions.</p>
-     */
     inline void SetActions(const Aws::Vector<PossibleRemediationAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-
-    /**
-     * <p>Information about the actions.</p>
-     */
     inline void SetActions(Aws::Vector<PossibleRemediationAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-
-    /**
-     * <p>Information about the actions.</p>
-     */
     inline PossibleRemediationActions& WithActions(const Aws::Vector<PossibleRemediationAction>& value) { SetActions(value); return *this;}
-
-    /**
-     * <p>Information about the actions.</p>
-     */
     inline PossibleRemediationActions& WithActions(Aws::Vector<PossibleRemediationAction>&& value) { SetActions(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the actions.</p>
-     */
     inline PossibleRemediationActions& AddActions(const PossibleRemediationAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the actions.</p>
-     */
     inline PossibleRemediationActions& AddActions(PossibleRemediationAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_description;

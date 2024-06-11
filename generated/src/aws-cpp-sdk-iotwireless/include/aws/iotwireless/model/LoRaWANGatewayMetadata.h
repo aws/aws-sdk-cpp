@@ -37,88 +37,39 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The gateway's EUI value.</p>
      */
     inline const Aws::String& GetGatewayEui() const{ return m_gatewayEui; }
-
-    /**
-     * <p>The gateway's EUI value.</p>
-     */
     inline bool GatewayEuiHasBeenSet() const { return m_gatewayEuiHasBeenSet; }
-
-    /**
-     * <p>The gateway's EUI value.</p>
-     */
     inline void SetGatewayEui(const Aws::String& value) { m_gatewayEuiHasBeenSet = true; m_gatewayEui = value; }
-
-    /**
-     * <p>The gateway's EUI value.</p>
-     */
     inline void SetGatewayEui(Aws::String&& value) { m_gatewayEuiHasBeenSet = true; m_gatewayEui = std::move(value); }
-
-    /**
-     * <p>The gateway's EUI value.</p>
-     */
     inline void SetGatewayEui(const char* value) { m_gatewayEuiHasBeenSet = true; m_gatewayEui.assign(value); }
-
-    /**
-     * <p>The gateway's EUI value.</p>
-     */
     inline LoRaWANGatewayMetadata& WithGatewayEui(const Aws::String& value) { SetGatewayEui(value); return *this;}
-
-    /**
-     * <p>The gateway's EUI value.</p>
-     */
     inline LoRaWANGatewayMetadata& WithGatewayEui(Aws::String&& value) { SetGatewayEui(std::move(value)); return *this;}
-
-    /**
-     * <p>The gateway's EUI value.</p>
-     */
     inline LoRaWANGatewayMetadata& WithGatewayEui(const char* value) { SetGatewayEui(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The SNR value.</p>
      */
     inline double GetSnr() const{ return m_snr; }
-
-    /**
-     * <p>The SNR value.</p>
-     */
     inline bool SnrHasBeenSet() const { return m_snrHasBeenSet; }
-
-    /**
-     * <p>The SNR value.</p>
-     */
     inline void SetSnr(double value) { m_snrHasBeenSet = true; m_snr = value; }
-
-    /**
-     * <p>The SNR value.</p>
-     */
     inline LoRaWANGatewayMetadata& WithSnr(double value) { SetSnr(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The RSSI value.</p>
      */
     inline double GetRssi() const{ return m_rssi; }
-
-    /**
-     * <p>The RSSI value.</p>
-     */
     inline bool RssiHasBeenSet() const { return m_rssiHasBeenSet; }
-
-    /**
-     * <p>The RSSI value.</p>
-     */
     inline void SetRssi(double value) { m_rssiHasBeenSet = true; m_rssi = value; }
-
-    /**
-     * <p>The RSSI value.</p>
-     */
     inline LoRaWANGatewayMetadata& WithRssi(double value) { SetRssi(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayEui;

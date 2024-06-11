@@ -36,26 +36,15 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount allocated per month (in GB).</p>
      */
     inline int GetGbPerMonthAllocated() const{ return m_gbPerMonthAllocated; }
-
-    /**
-     * <p>The amount allocated per month (in GB).</p>
-     */
     inline bool GbPerMonthAllocatedHasBeenSet() const { return m_gbPerMonthAllocatedHasBeenSet; }
-
-    /**
-     * <p>The amount allocated per month (in GB).</p>
-     */
     inline void SetGbPerMonthAllocated(int value) { m_gbPerMonthAllocatedHasBeenSet = true; m_gbPerMonthAllocated = value; }
-
-    /**
-     * <p>The amount allocated per month (in GB).</p>
-     */
     inline MonthlyTransfer& WithGbPerMonthAllocated(int value) { SetGbPerMonthAllocated(value); return *this;}
-
+    ///@}
   private:
 
     int m_gbPerMonthAllocated;

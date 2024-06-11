@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The termination health details.</p>
      */
     inline const TerminationHealth& GetTerminationHealth() const{ return m_terminationHealth; }
-
-    /**
-     * <p>The termination health details.</p>
-     */
     inline void SetTerminationHealth(const TerminationHealth& value) { m_terminationHealth = value; }
-
-    /**
-     * <p>The termination health details.</p>
-     */
     inline void SetTerminationHealth(TerminationHealth&& value) { m_terminationHealth = std::move(value); }
-
-    /**
-     * <p>The termination health details.</p>
-     */
     inline GetVoiceConnectorTerminationHealthResult& WithTerminationHealth(const TerminationHealth& value) { SetTerminationHealth(value); return *this;}
-
-    /**
-     * <p>The termination health details.</p>
-     */
     inline GetVoiceConnectorTerminationHealthResult& WithTerminationHealth(TerminationHealth&& value) { SetTerminationHealth(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetVoiceConnectorTerminationHealthResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetVoiceConnectorTerminationHealthResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetVoiceConnectorTerminationHealthResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TerminationHealth m_terminationHealth;

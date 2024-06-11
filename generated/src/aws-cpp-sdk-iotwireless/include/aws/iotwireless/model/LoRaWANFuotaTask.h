@@ -37,24 +37,15 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const SupportedRfRegion& GetRfRegion() const{ return m_rfRegion; }
-
-    
     inline bool RfRegionHasBeenSet() const { return m_rfRegionHasBeenSet; }
-
-    
     inline void SetRfRegion(const SupportedRfRegion& value) { m_rfRegionHasBeenSet = true; m_rfRegion = value; }
-
-    
     inline void SetRfRegion(SupportedRfRegion&& value) { m_rfRegionHasBeenSet = true; m_rfRegion = std::move(value); }
-
-    
     inline LoRaWANFuotaTask& WithRfRegion(const SupportedRfRegion& value) { SetRfRegion(value); return *this;}
-
-    
     inline LoRaWANFuotaTask& WithRfRegion(SupportedRfRegion&& value) { SetRfRegion(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SupportedRfRegion m_rfRegion;

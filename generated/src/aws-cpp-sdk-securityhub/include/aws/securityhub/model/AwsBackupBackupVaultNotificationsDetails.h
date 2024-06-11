@@ -39,6 +39,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
      * the backup vault. The following events are supported:</p> <ul> <li> <p>
@@ -49,144 +50,30 @@ namespace Model
      * | S3_RESTORE_OBJECT_FAILED</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetBackupVaultEvents() const{ return m_backupVaultEvents; }
-
-    /**
-     * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault. The following events are supported:</p> <ul> <li> <p>
-     * <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
-     * <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
-     * <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED |
-     * RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p> <code>S3_BACKUP_OBJECT_FAILED
-     * | S3_RESTORE_OBJECT_FAILED</code> </p> </li> </ul>
-     */
     inline bool BackupVaultEventsHasBeenSet() const { return m_backupVaultEventsHasBeenSet; }
-
-    /**
-     * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault. The following events are supported:</p> <ul> <li> <p>
-     * <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
-     * <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
-     * <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED |
-     * RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p> <code>S3_BACKUP_OBJECT_FAILED
-     * | S3_RESTORE_OBJECT_FAILED</code> </p> </li> </ul>
-     */
     inline void SetBackupVaultEvents(const Aws::Vector<Aws::String>& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = value; }
-
-    /**
-     * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault. The following events are supported:</p> <ul> <li> <p>
-     * <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
-     * <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
-     * <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED |
-     * RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p> <code>S3_BACKUP_OBJECT_FAILED
-     * | S3_RESTORE_OBJECT_FAILED</code> </p> </li> </ul>
-     */
     inline void SetBackupVaultEvents(Aws::Vector<Aws::String>&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = std::move(value); }
-
-    /**
-     * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault. The following events are supported:</p> <ul> <li> <p>
-     * <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
-     * <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
-     * <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED |
-     * RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p> <code>S3_BACKUP_OBJECT_FAILED
-     * | S3_RESTORE_OBJECT_FAILED</code> </p> </li> </ul>
-     */
     inline AwsBackupBackupVaultNotificationsDetails& WithBackupVaultEvents(const Aws::Vector<Aws::String>& value) { SetBackupVaultEvents(value); return *this;}
-
-    /**
-     * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault. The following events are supported:</p> <ul> <li> <p>
-     * <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
-     * <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
-     * <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED |
-     * RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p> <code>S3_BACKUP_OBJECT_FAILED
-     * | S3_RESTORE_OBJECT_FAILED</code> </p> </li> </ul>
-     */
     inline AwsBackupBackupVaultNotificationsDetails& WithBackupVaultEvents(Aws::Vector<Aws::String>&& value) { SetBackupVaultEvents(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault. The following events are supported:</p> <ul> <li> <p>
-     * <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
-     * <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
-     * <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED |
-     * RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p> <code>S3_BACKUP_OBJECT_FAILED
-     * | S3_RESTORE_OBJECT_FAILED</code> </p> </li> </ul>
-     */
     inline AwsBackupBackupVaultNotificationsDetails& AddBackupVaultEvents(const Aws::String& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(value); return *this; }
-
-    /**
-     * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault. The following events are supported:</p> <ul> <li> <p>
-     * <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
-     * <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
-     * <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED |
-     * RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p> <code>S3_BACKUP_OBJECT_FAILED
-     * | S3_RESTORE_OBJECT_FAILED</code> </p> </li> </ul>
-     */
     inline AwsBackupBackupVaultNotificationsDetails& AddBackupVaultEvents(Aws::String&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault. The following events are supported:</p> <ul> <li> <p>
-     * <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
-     * <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
-     * <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED |
-     * RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p> <code>S3_BACKUP_OBJECT_FAILED
-     * | S3_RESTORE_OBJECT_FAILED</code> </p> </li> </ul>
-     */
     inline AwsBackupBackupVaultNotificationsDetails& AddBackupVaultEvents(const char* value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic
      * for a backup vault's events. </p>
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic
-     * for a backup vault's events. </p>
-     */
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic
-     * for a backup vault's events. </p>
-     */
     inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic
-     * for a backup vault's events. </p>
-     */
     inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic
-     * for a backup vault's events. </p>
-     */
     inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic
-     * for a backup vault's events. </p>
-     */
     inline AwsBackupBackupVaultNotificationsDetails& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic
-     * for a backup vault's events. </p>
-     */
     inline AwsBackupBackupVaultNotificationsDetails& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic
-     * for a backup vault's events. </p>
-     */
     inline AwsBackupBackupVaultNotificationsDetails& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_backupVaultEvents;

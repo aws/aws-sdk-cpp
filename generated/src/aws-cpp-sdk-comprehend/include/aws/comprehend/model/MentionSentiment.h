@@ -42,55 +42,27 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sentiment of the mention. </p>
      */
     inline const SentimentType& GetSentiment() const{ return m_sentiment; }
-
-    /**
-     * <p>The sentiment of the mention. </p>
-     */
     inline bool SentimentHasBeenSet() const { return m_sentimentHasBeenSet; }
-
-    /**
-     * <p>The sentiment of the mention. </p>
-     */
     inline void SetSentiment(const SentimentType& value) { m_sentimentHasBeenSet = true; m_sentiment = value; }
-
-    /**
-     * <p>The sentiment of the mention. </p>
-     */
     inline void SetSentiment(SentimentType&& value) { m_sentimentHasBeenSet = true; m_sentiment = std::move(value); }
-
-    /**
-     * <p>The sentiment of the mention. </p>
-     */
     inline MentionSentiment& WithSentiment(const SentimentType& value) { SetSentiment(value); return *this;}
-
-    /**
-     * <p>The sentiment of the mention. </p>
-     */
     inline MentionSentiment& WithSentiment(SentimentType&& value) { SetSentiment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const SentimentScore& GetSentimentScore() const{ return m_sentimentScore; }
-
-    
     inline bool SentimentScoreHasBeenSet() const { return m_sentimentScoreHasBeenSet; }
-
-    
     inline void SetSentimentScore(const SentimentScore& value) { m_sentimentScoreHasBeenSet = true; m_sentimentScore = value; }
-
-    
     inline void SetSentimentScore(SentimentScore&& value) { m_sentimentScoreHasBeenSet = true; m_sentimentScore = std::move(value); }
-
-    
     inline MentionSentiment& WithSentimentScore(const SentimentScore& value) { SetSentimentScore(value); return *this;}
-
-    
     inline MentionSentiment& WithSentimentScore(SentimentScore&& value) { SetSentimentScore(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SentimentType m_sentiment;

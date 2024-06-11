@@ -33,53 +33,27 @@ namespace Model
     AWS_BACKUP_API GetRestoreTestingSelectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Unique name of the restore testing selection.</p>
      */
     inline const RestoreTestingSelectionForGet& GetRestoreTestingSelection() const{ return m_restoreTestingSelection; }
-
-    /**
-     * <p>Unique name of the restore testing selection.</p>
-     */
     inline void SetRestoreTestingSelection(const RestoreTestingSelectionForGet& value) { m_restoreTestingSelection = value; }
-
-    /**
-     * <p>Unique name of the restore testing selection.</p>
-     */
     inline void SetRestoreTestingSelection(RestoreTestingSelectionForGet&& value) { m_restoreTestingSelection = std::move(value); }
-
-    /**
-     * <p>Unique name of the restore testing selection.</p>
-     */
     inline GetRestoreTestingSelectionResult& WithRestoreTestingSelection(const RestoreTestingSelectionForGet& value) { SetRestoreTestingSelection(value); return *this;}
-
-    /**
-     * <p>Unique name of the restore testing selection.</p>
-     */
     inline GetRestoreTestingSelectionResult& WithRestoreTestingSelection(RestoreTestingSelectionForGet&& value) { SetRestoreTestingSelection(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRestoreTestingSelectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRestoreTestingSelectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRestoreTestingSelectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RestoreTestingSelectionForGet m_restoreTestingSelection;

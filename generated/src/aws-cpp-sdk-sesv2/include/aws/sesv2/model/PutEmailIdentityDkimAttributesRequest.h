@@ -36,47 +36,21 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The email identity.</p>
      */
     inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline PutEmailIdentityDkimAttributesRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline PutEmailIdentityDkimAttributesRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline PutEmailIdentityDkimAttributesRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Sets the DKIM signing configuration for the identity.</p> <p>When you set
      * this value <code>true</code>, then the messages that are sent from the identity
@@ -84,31 +58,10 @@ namespace Model
      * messages are sent without DKIM signing.</p>
      */
     inline bool GetSigningEnabled() const{ return m_signingEnabled; }
-
-    /**
-     * <p>Sets the DKIM signing configuration for the identity.</p> <p>When you set
-     * this value <code>true</code>, then the messages that are sent from the identity
-     * are signed using DKIM. If you set this value to <code>false</code>, your
-     * messages are sent without DKIM signing.</p>
-     */
     inline bool SigningEnabledHasBeenSet() const { return m_signingEnabledHasBeenSet; }
-
-    /**
-     * <p>Sets the DKIM signing configuration for the identity.</p> <p>When you set
-     * this value <code>true</code>, then the messages that are sent from the identity
-     * are signed using DKIM. If you set this value to <code>false</code>, your
-     * messages are sent without DKIM signing.</p>
-     */
     inline void SetSigningEnabled(bool value) { m_signingEnabledHasBeenSet = true; m_signingEnabled = value; }
-
-    /**
-     * <p>Sets the DKIM signing configuration for the identity.</p> <p>When you set
-     * this value <code>true</code>, then the messages that are sent from the identity
-     * are signed using DKIM. If you set this value to <code>false</code>, your
-     * messages are sent without DKIM signing.</p>
-     */
     inline PutEmailIdentityDkimAttributesRequest& WithSigningEnabled(bool value) { SetSigningEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_emailIdentity;

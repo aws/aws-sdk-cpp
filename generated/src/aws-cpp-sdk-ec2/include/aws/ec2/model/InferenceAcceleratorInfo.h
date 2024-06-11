@@ -41,71 +41,30 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Describes the Inference accelerators for the instance type.</p>
      */
     inline const Aws::Vector<InferenceDeviceInfo>& GetAccelerators() const{ return m_accelerators; }
-
-    /**
-     * <p>Describes the Inference accelerators for the instance type.</p>
-     */
     inline bool AcceleratorsHasBeenSet() const { return m_acceleratorsHasBeenSet; }
-
-    /**
-     * <p>Describes the Inference accelerators for the instance type.</p>
-     */
     inline void SetAccelerators(const Aws::Vector<InferenceDeviceInfo>& value) { m_acceleratorsHasBeenSet = true; m_accelerators = value; }
-
-    /**
-     * <p>Describes the Inference accelerators for the instance type.</p>
-     */
     inline void SetAccelerators(Aws::Vector<InferenceDeviceInfo>&& value) { m_acceleratorsHasBeenSet = true; m_accelerators = std::move(value); }
-
-    /**
-     * <p>Describes the Inference accelerators for the instance type.</p>
-     */
     inline InferenceAcceleratorInfo& WithAccelerators(const Aws::Vector<InferenceDeviceInfo>& value) { SetAccelerators(value); return *this;}
-
-    /**
-     * <p>Describes the Inference accelerators for the instance type.</p>
-     */
     inline InferenceAcceleratorInfo& WithAccelerators(Aws::Vector<InferenceDeviceInfo>&& value) { SetAccelerators(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the Inference accelerators for the instance type.</p>
-     */
     inline InferenceAcceleratorInfo& AddAccelerators(const InferenceDeviceInfo& value) { m_acceleratorsHasBeenSet = true; m_accelerators.push_back(value); return *this; }
-
-    /**
-     * <p>Describes the Inference accelerators for the instance type.</p>
-     */
     inline InferenceAcceleratorInfo& AddAccelerators(InferenceDeviceInfo&& value) { m_acceleratorsHasBeenSet = true; m_accelerators.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total size of the memory for the inference accelerators for the instance
      * type, in MiB.</p>
      */
     inline int GetTotalInferenceMemoryInMiB() const{ return m_totalInferenceMemoryInMiB; }
-
-    /**
-     * <p>The total size of the memory for the inference accelerators for the instance
-     * type, in MiB.</p>
-     */
     inline bool TotalInferenceMemoryInMiBHasBeenSet() const { return m_totalInferenceMemoryInMiBHasBeenSet; }
-
-    /**
-     * <p>The total size of the memory for the inference accelerators for the instance
-     * type, in MiB.</p>
-     */
     inline void SetTotalInferenceMemoryInMiB(int value) { m_totalInferenceMemoryInMiBHasBeenSet = true; m_totalInferenceMemoryInMiB = value; }
-
-    /**
-     * <p>The total size of the memory for the inference accelerators for the instance
-     * type, in MiB.</p>
-     */
     inline InferenceAcceleratorInfo& WithTotalInferenceMemoryInMiB(int value) { SetTotalInferenceMemoryInMiB(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<InferenceDeviceInfo> m_accelerators;

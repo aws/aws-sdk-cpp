@@ -39,99 +39,34 @@ namespace Model
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of an Amazon Web Services service that can request an operation for
      * the specified service. This is typically in the form of a URL, such as: <code>
      * <i>servicename</i>.amazonaws.com</code>.</p>
      */
     inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
-
-    /**
-     * <p>The name of an Amazon Web Services service that can request an operation for
-     * the specified service. This is typically in the form of a URL, such as: <code>
-     * <i>servicename</i>.amazonaws.com</code>.</p>
-     */
     inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
-
-    /**
-     * <p>The name of an Amazon Web Services service that can request an operation for
-     * the specified service. This is typically in the form of a URL, such as: <code>
-     * <i>servicename</i>.amazonaws.com</code>.</p>
-     */
     inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
-
-    /**
-     * <p>The name of an Amazon Web Services service that can request an operation for
-     * the specified service. This is typically in the form of a URL, such as: <code>
-     * <i>servicename</i>.amazonaws.com</code>.</p>
-     */
     inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
-
-    /**
-     * <p>The name of an Amazon Web Services service that can request an operation for
-     * the specified service. This is typically in the form of a URL, such as: <code>
-     * <i>servicename</i>.amazonaws.com</code>.</p>
-     */
     inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
-
-    /**
-     * <p>The name of an Amazon Web Services service that can request an operation for
-     * the specified service. This is typically in the form of a URL, such as: <code>
-     * <i>servicename</i>.amazonaws.com</code>.</p>
-     */
     inline DelegatedService& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
-
-    /**
-     * <p>The name of an Amazon Web Services service that can request an operation for
-     * the specified service. This is typically in the form of a URL, such as: <code>
-     * <i>servicename</i>.amazonaws.com</code>.</p>
-     */
     inline DelegatedService& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an Amazon Web Services service that can request an operation for
-     * the specified service. This is typically in the form of a URL, such as: <code>
-     * <i>servicename</i>.amazonaws.com</code>.</p>
-     */
     inline DelegatedService& WithServicePrincipal(const char* value) { SetServicePrincipal(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date that the account became a delegated administrator for this service.
      * </p>
      */
     inline const Aws::Utils::DateTime& GetDelegationEnabledDate() const{ return m_delegationEnabledDate; }
-
-    /**
-     * <p>The date that the account became a delegated administrator for this service.
-     * </p>
-     */
     inline bool DelegationEnabledDateHasBeenSet() const { return m_delegationEnabledDateHasBeenSet; }
-
-    /**
-     * <p>The date that the account became a delegated administrator for this service.
-     * </p>
-     */
     inline void SetDelegationEnabledDate(const Aws::Utils::DateTime& value) { m_delegationEnabledDateHasBeenSet = true; m_delegationEnabledDate = value; }
-
-    /**
-     * <p>The date that the account became a delegated administrator for this service.
-     * </p>
-     */
     inline void SetDelegationEnabledDate(Aws::Utils::DateTime&& value) { m_delegationEnabledDateHasBeenSet = true; m_delegationEnabledDate = std::move(value); }
-
-    /**
-     * <p>The date that the account became a delegated administrator for this service.
-     * </p>
-     */
     inline DelegatedService& WithDelegationEnabledDate(const Aws::Utils::DateTime& value) { SetDelegationEnabledDate(value); return *this;}
-
-    /**
-     * <p>The date that the account became a delegated administrator for this service.
-     * </p>
-     */
     inline DelegatedService& WithDelegationEnabledDate(Aws::Utils::DateTime&& value) { SetDelegationEnabledDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_servicePrincipal;

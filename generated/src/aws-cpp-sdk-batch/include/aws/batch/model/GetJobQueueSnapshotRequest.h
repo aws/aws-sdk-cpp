@@ -32,46 +32,19 @@ namespace Model
     AWS_BATCH_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The job queue’s name or full queue Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
-
-    /**
-     * <p>The job queue’s name or full queue Amazon Resource Name (ARN).</p>
-     */
     inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
-
-    /**
-     * <p>The job queue’s name or full queue Amazon Resource Name (ARN).</p>
-     */
     inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
-
-    /**
-     * <p>The job queue’s name or full queue Amazon Resource Name (ARN).</p>
-     */
     inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
-
-    /**
-     * <p>The job queue’s name or full queue Amazon Resource Name (ARN).</p>
-     */
     inline void SetJobQueue(const char* value) { m_jobQueueHasBeenSet = true; m_jobQueue.assign(value); }
-
-    /**
-     * <p>The job queue’s name or full queue Amazon Resource Name (ARN).</p>
-     */
     inline GetJobQueueSnapshotRequest& WithJobQueue(const Aws::String& value) { SetJobQueue(value); return *this;}
-
-    /**
-     * <p>The job queue’s name or full queue Amazon Resource Name (ARN).</p>
-     */
     inline GetJobQueueSnapshotRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
-
-    /**
-     * <p>The job queue’s name or full queue Amazon Resource Name (ARN).</p>
-     */
     inline GetJobQueueSnapshotRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobQueue;

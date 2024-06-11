@@ -32,46 +32,19 @@ namespace Model
     AWS_MACIE2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the Amazon Web Services account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline GetBucketStatisticsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline GetBucketStatisticsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account.</p>
-     */
     inline GetBucketStatisticsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

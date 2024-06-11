@@ -34,95 +34,34 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Request the ID of the profile you want to delete from CloudFront.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>Request the ID of the profile you want to delete from CloudFront.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>Request the ID of the profile you want to delete from CloudFront.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>Request the ID of the profile you want to delete from CloudFront.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>Request the ID of the profile you want to delete from CloudFront.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>Request the ID of the profile you want to delete from CloudFront.</p>
-     */
     inline DeleteFieldLevelEncryptionProfile2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>Request the ID of the profile you want to delete from CloudFront.</p>
-     */
     inline DeleteFieldLevelEncryptionProfile2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>Request the ID of the profile you want to delete from CloudFront.</p>
-     */
     inline DeleteFieldLevelEncryptionProfile2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the <code>ETag</code> header that you received when retrieving
      * the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline DeleteFieldLevelEncryptionProfile2020_05_31Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline DeleteFieldLevelEncryptionProfile2020_05_31Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the <code>ETag</code> header that you received when retrieving
-     * the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline DeleteFieldLevelEncryptionProfile2020_05_31Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

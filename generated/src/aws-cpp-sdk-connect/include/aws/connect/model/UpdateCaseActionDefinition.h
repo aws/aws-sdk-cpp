@@ -38,46 +38,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of objects with <code>Field ID</code> and Value data.</p>
      */
     inline const Aws::Vector<FieldValue>& GetFields() const{ return m_fields; }
-
-    /**
-     * <p>An array of objects with <code>Field ID</code> and Value data.</p>
-     */
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-
-    /**
-     * <p>An array of objects with <code>Field ID</code> and Value data.</p>
-     */
     inline void SetFields(const Aws::Vector<FieldValue>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-
-    /**
-     * <p>An array of objects with <code>Field ID</code> and Value data.</p>
-     */
     inline void SetFields(Aws::Vector<FieldValue>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-
-    /**
-     * <p>An array of objects with <code>Field ID</code> and Value data.</p>
-     */
     inline UpdateCaseActionDefinition& WithFields(const Aws::Vector<FieldValue>& value) { SetFields(value); return *this;}
-
-    /**
-     * <p>An array of objects with <code>Field ID</code> and Value data.</p>
-     */
     inline UpdateCaseActionDefinition& WithFields(Aws::Vector<FieldValue>&& value) { SetFields(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of objects with <code>Field ID</code> and Value data.</p>
-     */
     inline UpdateCaseActionDefinition& AddFields(const FieldValue& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-
-    /**
-     * <p>An array of objects with <code>Field ID</code> and Value data.</p>
-     */
     inline UpdateCaseActionDefinition& AddFields(FieldValue&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<FieldValue> m_fields;

@@ -41,54 +41,20 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates that the from email address associated with the custom verification
      * email template is not verified.</p>
      */
     inline const Aws::String& GetFromEmailAddress() const{ return m_fromEmailAddress; }
-
-    /**
-     * <p>Indicates that the from email address associated with the custom verification
-     * email template is not verified.</p>
-     */
     inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
-
-    /**
-     * <p>Indicates that the from email address associated with the custom verification
-     * email template is not verified.</p>
-     */
     inline void SetFromEmailAddress(const Aws::String& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = value; }
-
-    /**
-     * <p>Indicates that the from email address associated with the custom verification
-     * email template is not verified.</p>
-     */
     inline void SetFromEmailAddress(Aws::String&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::move(value); }
-
-    /**
-     * <p>Indicates that the from email address associated with the custom verification
-     * email template is not verified.</p>
-     */
     inline void SetFromEmailAddress(const char* value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress.assign(value); }
-
-    /**
-     * <p>Indicates that the from email address associated with the custom verification
-     * email template is not verified.</p>
-     */
     inline FromEmailAddressNotVerifiedException& WithFromEmailAddress(const Aws::String& value) { SetFromEmailAddress(value); return *this;}
-
-    /**
-     * <p>Indicates that the from email address associated with the custom verification
-     * email template is not verified.</p>
-     */
     inline FromEmailAddressNotVerifiedException& WithFromEmailAddress(Aws::String&& value) { SetFromEmailAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates that the from email address associated with the custom verification
-     * email template is not verified.</p>
-     */
     inline FromEmailAddressNotVerifiedException& WithFromEmailAddress(const char* value) { SetFromEmailAddress(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fromEmailAddress;

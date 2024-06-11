@@ -39,154 +39,50 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the pipeline in which you want to enable the flow of artifacts
      * from one stage to another.</p>
      */
     inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
-
-    /**
-     * <p>The name of the pipeline in which you want to enable the flow of artifacts
-     * from one stage to another.</p>
-     */
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
-
-    /**
-     * <p>The name of the pipeline in which you want to enable the flow of artifacts
-     * from one stage to another.</p>
-     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-
-    /**
-     * <p>The name of the pipeline in which you want to enable the flow of artifacts
-     * from one stage to another.</p>
-     */
     inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-
-    /**
-     * <p>The name of the pipeline in which you want to enable the flow of artifacts
-     * from one stage to another.</p>
-     */
     inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-
-    /**
-     * <p>The name of the pipeline in which you want to enable the flow of artifacts
-     * from one stage to another.</p>
-     */
     inline EnableStageTransitionRequest& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-
-    /**
-     * <p>The name of the pipeline in which you want to enable the flow of artifacts
-     * from one stage to another.</p>
-     */
     inline EnableStageTransitionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the pipeline in which you want to enable the flow of artifacts
-     * from one stage to another.</p>
-     */
     inline EnableStageTransitionRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the stage where you want to enable the transition of artifacts,
      * either into the stage (inbound) or from that stage to the next stage
      * (outbound).</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
-
-    /**
-     * <p>The name of the stage where you want to enable the transition of artifacts,
-     * either into the stage (inbound) or from that stage to the next stage
-     * (outbound).</p>
-     */
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
-
-    /**
-     * <p>The name of the stage where you want to enable the transition of artifacts,
-     * either into the stage (inbound) or from that stage to the next stage
-     * (outbound).</p>
-     */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
-
-    /**
-     * <p>The name of the stage where you want to enable the transition of artifacts,
-     * either into the stage (inbound) or from that stage to the next stage
-     * (outbound).</p>
-     */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
-
-    /**
-     * <p>The name of the stage where you want to enable the transition of artifacts,
-     * either into the stage (inbound) or from that stage to the next stage
-     * (outbound).</p>
-     */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
-
-    /**
-     * <p>The name of the stage where you want to enable the transition of artifacts,
-     * either into the stage (inbound) or from that stage to the next stage
-     * (outbound).</p>
-     */
     inline EnableStageTransitionRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
-
-    /**
-     * <p>The name of the stage where you want to enable the transition of artifacts,
-     * either into the stage (inbound) or from that stage to the next stage
-     * (outbound).</p>
-     */
     inline EnableStageTransitionRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the stage where you want to enable the transition of artifacts,
-     * either into the stage (inbound) or from that stage to the next stage
-     * (outbound).</p>
-     */
     inline EnableStageTransitionRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether artifacts are allowed to enter the stage and be processed
      * by the actions in that stage (inbound) or whether already processed artifacts
      * are allowed to transition to the next stage (outbound).</p>
      */
     inline const StageTransitionType& GetTransitionType() const{ return m_transitionType; }
-
-    /**
-     * <p>Specifies whether artifacts are allowed to enter the stage and be processed
-     * by the actions in that stage (inbound) or whether already processed artifacts
-     * are allowed to transition to the next stage (outbound).</p>
-     */
     inline bool TransitionTypeHasBeenSet() const { return m_transitionTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies whether artifacts are allowed to enter the stage and be processed
-     * by the actions in that stage (inbound) or whether already processed artifacts
-     * are allowed to transition to the next stage (outbound).</p>
-     */
     inline void SetTransitionType(const StageTransitionType& value) { m_transitionTypeHasBeenSet = true; m_transitionType = value; }
-
-    /**
-     * <p>Specifies whether artifacts are allowed to enter the stage and be processed
-     * by the actions in that stage (inbound) or whether already processed artifacts
-     * are allowed to transition to the next stage (outbound).</p>
-     */
     inline void SetTransitionType(StageTransitionType&& value) { m_transitionTypeHasBeenSet = true; m_transitionType = std::move(value); }
-
-    /**
-     * <p>Specifies whether artifacts are allowed to enter the stage and be processed
-     * by the actions in that stage (inbound) or whether already processed artifacts
-     * are allowed to transition to the next stage (outbound).</p>
-     */
     inline EnableStageTransitionRequest& WithTransitionType(const StageTransitionType& value) { SetTransitionType(value); return *this;}
-
-    /**
-     * <p>Specifies whether artifacts are allowed to enter the stage and be processed
-     * by the actions in that stage (inbound) or whether already processed artifacts
-     * are allowed to transition to the next stage (outbound).</p>
-     */
     inline EnableStageTransitionRequest& WithTransitionType(StageTransitionType&& value) { SetTransitionType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pipelineName;

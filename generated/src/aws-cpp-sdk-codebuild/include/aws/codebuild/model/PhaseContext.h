@@ -38,95 +38,34 @@ namespace Model
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status code for the context of the build phase.</p>
      */
     inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
-
-    /**
-     * <p>The status code for the context of the build phase.</p>
-     */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-
-    /**
-     * <p>The status code for the context of the build phase.</p>
-     */
     inline void SetStatusCode(const Aws::String& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-
-    /**
-     * <p>The status code for the context of the build phase.</p>
-     */
     inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-
-    /**
-     * <p>The status code for the context of the build phase.</p>
-     */
     inline void SetStatusCode(const char* value) { m_statusCodeHasBeenSet = true; m_statusCode.assign(value); }
-
-    /**
-     * <p>The status code for the context of the build phase.</p>
-     */
     inline PhaseContext& WithStatusCode(const Aws::String& value) { SetStatusCode(value); return *this;}
-
-    /**
-     * <p>The status code for the context of the build phase.</p>
-     */
     inline PhaseContext& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The status code for the context of the build phase.</p>
-     */
     inline PhaseContext& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An explanation of the build phase's context. This might include a command ID
      * and an exit code.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>An explanation of the build phase's context. This might include a command ID
-     * and an exit code.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>An explanation of the build phase's context. This might include a command ID
-     * and an exit code.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>An explanation of the build phase's context. This might include a command ID
-     * and an exit code.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>An explanation of the build phase's context. This might include a command ID
-     * and an exit code.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>An explanation of the build phase's context. This might include a command ID
-     * and an exit code.</p>
-     */
     inline PhaseContext& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>An explanation of the build phase's context. This might include a command ID
-     * and an exit code.</p>
-     */
     inline PhaseContext& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>An explanation of the build phase's context. This might include a command ID
-     * and an exit code.</p>
-     */
     inline PhaseContext& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_statusCode;

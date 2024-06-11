@@ -34,103 +34,35 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the OpsItem for which you want to delete an association between the
      * OpsItem and a related item.</p>
      */
     inline const Aws::String& GetOpsItemId() const{ return m_opsItemId; }
-
-    /**
-     * <p>The ID of the OpsItem for which you want to delete an association between the
-     * OpsItem and a related item.</p>
-     */
     inline bool OpsItemIdHasBeenSet() const { return m_opsItemIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the OpsItem for which you want to delete an association between the
-     * OpsItem and a related item.</p>
-     */
     inline void SetOpsItemId(const Aws::String& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = value; }
-
-    /**
-     * <p>The ID of the OpsItem for which you want to delete an association between the
-     * OpsItem and a related item.</p>
-     */
     inline void SetOpsItemId(Aws::String&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::move(value); }
-
-    /**
-     * <p>The ID of the OpsItem for which you want to delete an association between the
-     * OpsItem and a related item.</p>
-     */
     inline void SetOpsItemId(const char* value) { m_opsItemIdHasBeenSet = true; m_opsItemId.assign(value); }
-
-    /**
-     * <p>The ID of the OpsItem for which you want to delete an association between the
-     * OpsItem and a related item.</p>
-     */
     inline DisassociateOpsItemRelatedItemRequest& WithOpsItemId(const Aws::String& value) { SetOpsItemId(value); return *this;}
-
-    /**
-     * <p>The ID of the OpsItem for which you want to delete an association between the
-     * OpsItem and a related item.</p>
-     */
     inline DisassociateOpsItemRelatedItemRequest& WithOpsItemId(Aws::String&& value) { SetOpsItemId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the OpsItem for which you want to delete an association between the
-     * OpsItem and a related item.</p>
-     */
     inline DisassociateOpsItemRelatedItemRequest& WithOpsItemId(const char* value) { SetOpsItemId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the association for which you want to delete an association between
      * the OpsItem and a related item.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-
-    /**
-     * <p>The ID of the association for which you want to delete an association between
-     * the OpsItem and a related item.</p>
-     */
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the association for which you want to delete an association between
-     * the OpsItem and a related item.</p>
-     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-
-    /**
-     * <p>The ID of the association for which you want to delete an association between
-     * the OpsItem and a related item.</p>
-     */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-
-    /**
-     * <p>The ID of the association for which you want to delete an association between
-     * the OpsItem and a related item.</p>
-     */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-
-    /**
-     * <p>The ID of the association for which you want to delete an association between
-     * the OpsItem and a related item.</p>
-     */
     inline DisassociateOpsItemRelatedItemRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-
-    /**
-     * <p>The ID of the association for which you want to delete an association between
-     * the OpsItem and a related item.</p>
-     */
     inline DisassociateOpsItemRelatedItemRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the association for which you want to delete an association between
-     * the OpsItem and a related item.</p>
-     */
     inline DisassociateOpsItemRelatedItemRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_opsItemId;

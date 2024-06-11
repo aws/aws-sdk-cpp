@@ -33,53 +33,27 @@ namespace Model
     AWS_ECS_API PutAccountSettingDefaultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The current setting for a resource.</p>
      */
     inline const Setting& GetSetting() const{ return m_setting; }
-
-    /**
-     * <p>The current setting for a resource.</p>
-     */
     inline void SetSetting(const Setting& value) { m_setting = value; }
-
-    /**
-     * <p>The current setting for a resource.</p>
-     */
     inline void SetSetting(Setting&& value) { m_setting = std::move(value); }
-
-    /**
-     * <p>The current setting for a resource.</p>
-     */
     inline PutAccountSettingDefaultResult& WithSetting(const Setting& value) { SetSetting(value); return *this;}
-
-    /**
-     * <p>The current setting for a resource.</p>
-     */
     inline PutAccountSettingDefaultResult& WithSetting(Setting&& value) { SetSetting(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutAccountSettingDefaultResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutAccountSettingDefaultResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutAccountSettingDefaultResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Setting m_setting;

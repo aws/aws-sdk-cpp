@@ -37,51 +37,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The dashboards to be deleted. This parameter is required.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDashboardNames() const{ return m_dashboardNames; }
-
-    /**
-     * <p>The dashboards to be deleted. This parameter is required.</p>
-     */
     inline bool DashboardNamesHasBeenSet() const { return m_dashboardNamesHasBeenSet; }
-
-    /**
-     * <p>The dashboards to be deleted. This parameter is required.</p>
-     */
     inline void SetDashboardNames(const Aws::Vector<Aws::String>& value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames = value; }
-
-    /**
-     * <p>The dashboards to be deleted. This parameter is required.</p>
-     */
     inline void SetDashboardNames(Aws::Vector<Aws::String>&& value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames = std::move(value); }
-
-    /**
-     * <p>The dashboards to be deleted. This parameter is required.</p>
-     */
     inline DeleteDashboardsRequest& WithDashboardNames(const Aws::Vector<Aws::String>& value) { SetDashboardNames(value); return *this;}
-
-    /**
-     * <p>The dashboards to be deleted. This parameter is required.</p>
-     */
     inline DeleteDashboardsRequest& WithDashboardNames(Aws::Vector<Aws::String>&& value) { SetDashboardNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The dashboards to be deleted. This parameter is required.</p>
-     */
     inline DeleteDashboardsRequest& AddDashboardNames(const Aws::String& value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames.push_back(value); return *this; }
-
-    /**
-     * <p>The dashboards to be deleted. This parameter is required.</p>
-     */
     inline DeleteDashboardsRequest& AddDashboardNames(Aws::String&& value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The dashboards to be deleted. This parameter is required.</p>
-     */
     inline DeleteDashboardsRequest& AddDashboardNames(const char* value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_dashboardNames;

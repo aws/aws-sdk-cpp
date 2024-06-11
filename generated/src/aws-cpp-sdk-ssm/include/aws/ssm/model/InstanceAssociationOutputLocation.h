@@ -42,36 +42,17 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An S3 bucket where you want to store the results of this request.</p>
      */
     inline const S3OutputLocation& GetS3Location() const{ return m_s3Location; }
-
-    /**
-     * <p>An S3 bucket where you want to store the results of this request.</p>
-     */
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-
-    /**
-     * <p>An S3 bucket where you want to store the results of this request.</p>
-     */
     inline void SetS3Location(const S3OutputLocation& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-
-    /**
-     * <p>An S3 bucket where you want to store the results of this request.</p>
-     */
     inline void SetS3Location(S3OutputLocation&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-
-    /**
-     * <p>An S3 bucket where you want to store the results of this request.</p>
-     */
     inline InstanceAssociationOutputLocation& WithS3Location(const S3OutputLocation& value) { SetS3Location(value); return *this;}
-
-    /**
-     * <p>An S3 bucket where you want to store the results of this request.</p>
-     */
     inline InstanceAssociationOutputLocation& WithS3Location(S3OutputLocation&& value) { SetS3Location(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3OutputLocation m_s3Location;

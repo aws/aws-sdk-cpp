@@ -42,127 +42,47 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-     */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-     */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-     */
     inline SavingsPlansCoverage& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-     */
     inline SavingsPlansCoverage& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-     */
     inline SavingsPlansCoverage& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-
-    /**
-     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-     */
     inline SavingsPlansCoverage& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-     */
     inline SavingsPlansCoverage& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-     */
     inline SavingsPlansCoverage& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-     */
     inline SavingsPlansCoverage& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-     */
     inline SavingsPlansCoverage& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-     */
     inline SavingsPlansCoverage& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of Savings Plans eligible usage that the Savings Plans
      * covered.</p>
      */
     inline const SavingsPlansCoverageData& GetCoverage() const{ return m_coverage; }
-
-    /**
-     * <p>The amount of Savings Plans eligible usage that the Savings Plans
-     * covered.</p>
-     */
     inline bool CoverageHasBeenSet() const { return m_coverageHasBeenSet; }
-
-    /**
-     * <p>The amount of Savings Plans eligible usage that the Savings Plans
-     * covered.</p>
-     */
     inline void SetCoverage(const SavingsPlansCoverageData& value) { m_coverageHasBeenSet = true; m_coverage = value; }
-
-    /**
-     * <p>The amount of Savings Plans eligible usage that the Savings Plans
-     * covered.</p>
-     */
     inline void SetCoverage(SavingsPlansCoverageData&& value) { m_coverageHasBeenSet = true; m_coverage = std::move(value); }
-
-    /**
-     * <p>The amount of Savings Plans eligible usage that the Savings Plans
-     * covered.</p>
-     */
     inline SavingsPlansCoverage& WithCoverage(const SavingsPlansCoverageData& value) { SetCoverage(value); return *this;}
-
-    /**
-     * <p>The amount of Savings Plans eligible usage that the Savings Plans
-     * covered.</p>
-     */
     inline SavingsPlansCoverage& WithCoverage(SavingsPlansCoverageData&& value) { SetCoverage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
-
-    
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-
-    
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-
-    
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-
-    
     inline SavingsPlansCoverage& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-
-    
     inline SavingsPlansCoverage& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_attributes;

@@ -38,46 +38,26 @@ namespace Model
     AWS_ROUTE53_API GetHostedZoneCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The total number of public and private hosted zones that are associated with
      * the current Amazon Web Services account.</p>
      */
     inline long long GetHostedZoneCount() const{ return m_hostedZoneCount; }
-
-    /**
-     * <p>The total number of public and private hosted zones that are associated with
-     * the current Amazon Web Services account.</p>
-     */
     inline void SetHostedZoneCount(long long value) { m_hostedZoneCount = value; }
-
-    /**
-     * <p>The total number of public and private hosted zones that are associated with
-     * the current Amazon Web Services account.</p>
-     */
     inline GetHostedZoneCountResult& WithHostedZoneCount(long long value) { SetHostedZoneCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetHostedZoneCountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetHostedZoneCountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetHostedZoneCountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     long long m_hostedZoneCount;

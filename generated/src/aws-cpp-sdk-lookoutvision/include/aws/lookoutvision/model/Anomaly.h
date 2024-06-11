@@ -40,6 +40,7 @@ namespace Model
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of an anomaly type found in an image. <code>Name</code> maps to an
      * anomaly type in the training dataset, apart from the anomaly type
@@ -48,101 +49,26 @@ namespace Model
      * <code>DetectAnomalies</code>. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of an anomaly type found in an image. <code>Name</code> maps to an
-     * anomaly type in the training dataset, apart from the anomaly type
-     * <code>background</code>. The service automatically inserts the
-     * <code>background</code> anomaly type into the response from
-     * <code>DetectAnomalies</code>. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of an anomaly type found in an image. <code>Name</code> maps to an
-     * anomaly type in the training dataset, apart from the anomaly type
-     * <code>background</code>. The service automatically inserts the
-     * <code>background</code> anomaly type into the response from
-     * <code>DetectAnomalies</code>. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of an anomaly type found in an image. <code>Name</code> maps to an
-     * anomaly type in the training dataset, apart from the anomaly type
-     * <code>background</code>. The service automatically inserts the
-     * <code>background</code> anomaly type into the response from
-     * <code>DetectAnomalies</code>. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of an anomaly type found in an image. <code>Name</code> maps to an
-     * anomaly type in the training dataset, apart from the anomaly type
-     * <code>background</code>. The service automatically inserts the
-     * <code>background</code> anomaly type into the response from
-     * <code>DetectAnomalies</code>. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of an anomaly type found in an image. <code>Name</code> maps to an
-     * anomaly type in the training dataset, apart from the anomaly type
-     * <code>background</code>. The service automatically inserts the
-     * <code>background</code> anomaly type into the response from
-     * <code>DetectAnomalies</code>. </p>
-     */
     inline Anomaly& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of an anomaly type found in an image. <code>Name</code> maps to an
-     * anomaly type in the training dataset, apart from the anomaly type
-     * <code>background</code>. The service automatically inserts the
-     * <code>background</code> anomaly type into the response from
-     * <code>DetectAnomalies</code>. </p>
-     */
     inline Anomaly& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an anomaly type found in an image. <code>Name</code> maps to an
-     * anomaly type in the training dataset, apart from the anomaly type
-     * <code>background</code>. The service automatically inserts the
-     * <code>background</code> anomaly type into the response from
-     * <code>DetectAnomalies</code>. </p>
-     */
     inline Anomaly& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the pixel mask that covers an anomaly type.</p>
      */
     inline const PixelAnomaly& GetPixelAnomaly() const{ return m_pixelAnomaly; }
-
-    /**
-     * <p>Information about the pixel mask that covers an anomaly type.</p>
-     */
     inline bool PixelAnomalyHasBeenSet() const { return m_pixelAnomalyHasBeenSet; }
-
-    /**
-     * <p>Information about the pixel mask that covers an anomaly type.</p>
-     */
     inline void SetPixelAnomaly(const PixelAnomaly& value) { m_pixelAnomalyHasBeenSet = true; m_pixelAnomaly = value; }
-
-    /**
-     * <p>Information about the pixel mask that covers an anomaly type.</p>
-     */
     inline void SetPixelAnomaly(PixelAnomaly&& value) { m_pixelAnomalyHasBeenSet = true; m_pixelAnomaly = std::move(value); }
-
-    /**
-     * <p>Information about the pixel mask that covers an anomaly type.</p>
-     */
     inline Anomaly& WithPixelAnomaly(const PixelAnomaly& value) { SetPixelAnomaly(value); return *this;}
-
-    /**
-     * <p>Information about the pixel mask that covers an anomaly type.</p>
-     */
     inline Anomaly& WithPixelAnomaly(PixelAnomaly&& value) { SetPixelAnomaly(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

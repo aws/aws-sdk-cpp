@@ -38,87 +38,33 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The message that's returned from the API.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The message that's returned from the API.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The message that's returned from the API.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The message that's returned from the API.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The message that's returned from the API.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The message that's returned from the API.</p>
-     */
     inline ForbiddenException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The message that's returned from the API.</p>
-     */
     inline ForbiddenException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The message that's returned from the API.</p>
-     */
     inline ForbiddenException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the request or response.</p>
      */
     inline const Aws::String& GetRequestID() const{ return m_requestID; }
-
-    /**
-     * <p>The unique identifier for the request or response.</p>
-     */
     inline bool RequestIDHasBeenSet() const { return m_requestIDHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the request or response.</p>
-     */
     inline void SetRequestID(const Aws::String& value) { m_requestIDHasBeenSet = true; m_requestID = value; }
-
-    /**
-     * <p>The unique identifier for the request or response.</p>
-     */
     inline void SetRequestID(Aws::String&& value) { m_requestIDHasBeenSet = true; m_requestID = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the request or response.</p>
-     */
     inline void SetRequestID(const char* value) { m_requestIDHasBeenSet = true; m_requestID.assign(value); }
-
-    /**
-     * <p>The unique identifier for the request or response.</p>
-     */
     inline ForbiddenException& WithRequestID(const Aws::String& value) { SetRequestID(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the request or response.</p>
-     */
     inline ForbiddenException& WithRequestID(Aws::String&& value) { SetRequestID(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the request or response.</p>
-     */
     inline ForbiddenException& WithRequestID(const char* value) { SetRequestID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

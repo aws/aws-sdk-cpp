@@ -39,103 +39,35 @@ namespace Model
     AWS_IOTSITEWISE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ID of the portal to delete.</p>
      */
     inline const Aws::String& GetPortalId() const{ return m_portalId; }
-
-    /**
-     * <p>The ID of the portal to delete.</p>
-     */
     inline bool PortalIdHasBeenSet() const { return m_portalIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the portal to delete.</p>
-     */
     inline void SetPortalId(const Aws::String& value) { m_portalIdHasBeenSet = true; m_portalId = value; }
-
-    /**
-     * <p>The ID of the portal to delete.</p>
-     */
     inline void SetPortalId(Aws::String&& value) { m_portalIdHasBeenSet = true; m_portalId = std::move(value); }
-
-    /**
-     * <p>The ID of the portal to delete.</p>
-     */
     inline void SetPortalId(const char* value) { m_portalIdHasBeenSet = true; m_portalId.assign(value); }
-
-    /**
-     * <p>The ID of the portal to delete.</p>
-     */
     inline DeletePortalRequest& WithPortalId(const Aws::String& value) { SetPortalId(value); return *this;}
-
-    /**
-     * <p>The ID of the portal to delete.</p>
-     */
     inline DeletePortalRequest& WithPortalId(Aws::String&& value) { SetPortalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the portal to delete.</p>
-     */
     inline DeletePortalRequest& WithPortalId(const char* value) { SetPortalId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique case-sensitive identifier that you can provide to ensure the
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline DeletePortalRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline DeletePortalRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline DeletePortalRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_portalId;

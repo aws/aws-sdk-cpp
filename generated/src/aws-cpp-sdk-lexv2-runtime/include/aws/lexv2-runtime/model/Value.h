@@ -39,55 +39,22 @@ namespace Model
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The part of the user's response to the slot elicitation that Amazon Lex V2
      * determines is relevant to the slot value.</p>
      */
     inline const Aws::String& GetOriginalValue() const{ return m_originalValue; }
-
-    /**
-     * <p>The part of the user's response to the slot elicitation that Amazon Lex V2
-     * determines is relevant to the slot value.</p>
-     */
     inline bool OriginalValueHasBeenSet() const { return m_originalValueHasBeenSet; }
-
-    /**
-     * <p>The part of the user's response to the slot elicitation that Amazon Lex V2
-     * determines is relevant to the slot value.</p>
-     */
     inline void SetOriginalValue(const Aws::String& value) { m_originalValueHasBeenSet = true; m_originalValue = value; }
-
-    /**
-     * <p>The part of the user's response to the slot elicitation that Amazon Lex V2
-     * determines is relevant to the slot value.</p>
-     */
     inline void SetOriginalValue(Aws::String&& value) { m_originalValueHasBeenSet = true; m_originalValue = std::move(value); }
-
-    /**
-     * <p>The part of the user's response to the slot elicitation that Amazon Lex V2
-     * determines is relevant to the slot value.</p>
-     */
     inline void SetOriginalValue(const char* value) { m_originalValueHasBeenSet = true; m_originalValue.assign(value); }
-
-    /**
-     * <p>The part of the user's response to the slot elicitation that Amazon Lex V2
-     * determines is relevant to the slot value.</p>
-     */
     inline Value& WithOriginalValue(const Aws::String& value) { SetOriginalValue(value); return *this;}
-
-    /**
-     * <p>The part of the user's response to the slot elicitation that Amazon Lex V2
-     * determines is relevant to the slot value.</p>
-     */
     inline Value& WithOriginalValue(Aws::String&& value) { SetOriginalValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The part of the user's response to the slot elicitation that Amazon Lex V2
-     * determines is relevant to the slot value.</p>
-     */
     inline Value& WithOriginalValue(const char* value) { SetOriginalValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value that Amazon Lex V2 determines for the slot, given the user input.
      * The actual value depends on the setting of the value selection strategy for the
@@ -95,118 +62,30 @@ namespace Model
      * Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
      */
     inline const Aws::String& GetInterpretedValue() const{ return m_interpretedValue; }
-
-    /**
-     * <p>The value that Amazon Lex V2 determines for the slot, given the user input.
-     * The actual value depends on the setting of the value selection strategy for the
-     * bot. You can choose to use the value entered by the user, or you can have Amazon
-     * Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
-     */
     inline bool InterpretedValueHasBeenSet() const { return m_interpretedValueHasBeenSet; }
-
-    /**
-     * <p>The value that Amazon Lex V2 determines for the slot, given the user input.
-     * The actual value depends on the setting of the value selection strategy for the
-     * bot. You can choose to use the value entered by the user, or you can have Amazon
-     * Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
-     */
     inline void SetInterpretedValue(const Aws::String& value) { m_interpretedValueHasBeenSet = true; m_interpretedValue = value; }
-
-    /**
-     * <p>The value that Amazon Lex V2 determines for the slot, given the user input.
-     * The actual value depends on the setting of the value selection strategy for the
-     * bot. You can choose to use the value entered by the user, or you can have Amazon
-     * Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
-     */
     inline void SetInterpretedValue(Aws::String&& value) { m_interpretedValueHasBeenSet = true; m_interpretedValue = std::move(value); }
-
-    /**
-     * <p>The value that Amazon Lex V2 determines for the slot, given the user input.
-     * The actual value depends on the setting of the value selection strategy for the
-     * bot. You can choose to use the value entered by the user, or you can have Amazon
-     * Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
-     */
     inline void SetInterpretedValue(const char* value) { m_interpretedValueHasBeenSet = true; m_interpretedValue.assign(value); }
-
-    /**
-     * <p>The value that Amazon Lex V2 determines for the slot, given the user input.
-     * The actual value depends on the setting of the value selection strategy for the
-     * bot. You can choose to use the value entered by the user, or you can have Amazon
-     * Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
-     */
     inline Value& WithInterpretedValue(const Aws::String& value) { SetInterpretedValue(value); return *this;}
-
-    /**
-     * <p>The value that Amazon Lex V2 determines for the slot, given the user input.
-     * The actual value depends on the setting of the value selection strategy for the
-     * bot. You can choose to use the value entered by the user, or you can have Amazon
-     * Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
-     */
     inline Value& WithInterpretedValue(Aws::String&& value) { SetInterpretedValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value that Amazon Lex V2 determines for the slot, given the user input.
-     * The actual value depends on the setting of the value selection strategy for the
-     * bot. You can choose to use the value entered by the user, or you can have Amazon
-     * Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
-     */
     inline Value& WithInterpretedValue(const char* value) { SetInterpretedValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of values that Amazon Lex V2 determines are possible resolutions for
      * the user input. The first value matches the <code>interpretedValue</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResolvedValues() const{ return m_resolvedValues; }
-
-    /**
-     * <p>A list of values that Amazon Lex V2 determines are possible resolutions for
-     * the user input. The first value matches the <code>interpretedValue</code>.</p>
-     */
     inline bool ResolvedValuesHasBeenSet() const { return m_resolvedValuesHasBeenSet; }
-
-    /**
-     * <p>A list of values that Amazon Lex V2 determines are possible resolutions for
-     * the user input. The first value matches the <code>interpretedValue</code>.</p>
-     */
     inline void SetResolvedValues(const Aws::Vector<Aws::String>& value) { m_resolvedValuesHasBeenSet = true; m_resolvedValues = value; }
-
-    /**
-     * <p>A list of values that Amazon Lex V2 determines are possible resolutions for
-     * the user input. The first value matches the <code>interpretedValue</code>.</p>
-     */
     inline void SetResolvedValues(Aws::Vector<Aws::String>&& value) { m_resolvedValuesHasBeenSet = true; m_resolvedValues = std::move(value); }
-
-    /**
-     * <p>A list of values that Amazon Lex V2 determines are possible resolutions for
-     * the user input. The first value matches the <code>interpretedValue</code>.</p>
-     */
     inline Value& WithResolvedValues(const Aws::Vector<Aws::String>& value) { SetResolvedValues(value); return *this;}
-
-    /**
-     * <p>A list of values that Amazon Lex V2 determines are possible resolutions for
-     * the user input. The first value matches the <code>interpretedValue</code>.</p>
-     */
     inline Value& WithResolvedValues(Aws::Vector<Aws::String>&& value) { SetResolvedValues(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of values that Amazon Lex V2 determines are possible resolutions for
-     * the user input. The first value matches the <code>interpretedValue</code>.</p>
-     */
     inline Value& AddResolvedValues(const Aws::String& value) { m_resolvedValuesHasBeenSet = true; m_resolvedValues.push_back(value); return *this; }
-
-    /**
-     * <p>A list of values that Amazon Lex V2 determines are possible resolutions for
-     * the user input. The first value matches the <code>interpretedValue</code>.</p>
-     */
     inline Value& AddResolvedValues(Aws::String&& value) { m_resolvedValuesHasBeenSet = true; m_resolvedValues.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of values that Amazon Lex V2 determines are possible resolutions for
-     * the user input. The first value matches the <code>interpretedValue</code>.</p>
-     */
     inline Value& AddResolvedValues(const char* value) { m_resolvedValuesHasBeenSet = true; m_resolvedValues.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_originalValue;

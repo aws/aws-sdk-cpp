@@ -40,114 +40,44 @@ namespace Model
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
      */
     inline const Aws::String& GetViolationTarget() const{ return m_violationTarget; }
-
-    /**
-     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-     */
     inline bool ViolationTargetHasBeenSet() const { return m_violationTargetHasBeenSet; }
-
-    /**
-     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-     */
     inline void SetViolationTarget(const Aws::String& value) { m_violationTargetHasBeenSet = true; m_violationTarget = value; }
-
-    /**
-     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-     */
     inline void SetViolationTarget(Aws::String&& value) { m_violationTargetHasBeenSet = true; m_violationTarget = std::move(value); }
-
-    /**
-     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-     */
     inline void SetViolationTarget(const char* value) { m_violationTargetHasBeenSet = true; m_violationTarget.assign(value); }
-
-    /**
-     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-     */
     inline NetworkFirewallPolicyModifiedViolation& WithViolationTarget(const Aws::String& value) { SetViolationTarget(value); return *this;}
-
-    /**
-     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-     */
     inline NetworkFirewallPolicyModifiedViolation& WithViolationTarget(Aws::String&& value) { SetViolationTarget(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-     */
     inline NetworkFirewallPolicyModifiedViolation& WithViolationTarget(const char* value) { SetViolationTarget(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The policy that's currently in use in the individual account. </p>
      */
     inline const NetworkFirewallPolicyDescription& GetCurrentPolicyDescription() const{ return m_currentPolicyDescription; }
-
-    /**
-     * <p>The policy that's currently in use in the individual account. </p>
-     */
     inline bool CurrentPolicyDescriptionHasBeenSet() const { return m_currentPolicyDescriptionHasBeenSet; }
-
-    /**
-     * <p>The policy that's currently in use in the individual account. </p>
-     */
     inline void SetCurrentPolicyDescription(const NetworkFirewallPolicyDescription& value) { m_currentPolicyDescriptionHasBeenSet = true; m_currentPolicyDescription = value; }
-
-    /**
-     * <p>The policy that's currently in use in the individual account. </p>
-     */
     inline void SetCurrentPolicyDescription(NetworkFirewallPolicyDescription&& value) { m_currentPolicyDescriptionHasBeenSet = true; m_currentPolicyDescription = std::move(value); }
-
-    /**
-     * <p>The policy that's currently in use in the individual account. </p>
-     */
     inline NetworkFirewallPolicyModifiedViolation& WithCurrentPolicyDescription(const NetworkFirewallPolicyDescription& value) { SetCurrentPolicyDescription(value); return *this;}
-
-    /**
-     * <p>The policy that's currently in use in the individual account. </p>
-     */
     inline NetworkFirewallPolicyModifiedViolation& WithCurrentPolicyDescription(NetworkFirewallPolicyDescription&& value) { SetCurrentPolicyDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The policy that should be in use in the individual account in order to be
      * compliant. </p>
      */
     inline const NetworkFirewallPolicyDescription& GetExpectedPolicyDescription() const{ return m_expectedPolicyDescription; }
-
-    /**
-     * <p>The policy that should be in use in the individual account in order to be
-     * compliant. </p>
-     */
     inline bool ExpectedPolicyDescriptionHasBeenSet() const { return m_expectedPolicyDescriptionHasBeenSet; }
-
-    /**
-     * <p>The policy that should be in use in the individual account in order to be
-     * compliant. </p>
-     */
     inline void SetExpectedPolicyDescription(const NetworkFirewallPolicyDescription& value) { m_expectedPolicyDescriptionHasBeenSet = true; m_expectedPolicyDescription = value; }
-
-    /**
-     * <p>The policy that should be in use in the individual account in order to be
-     * compliant. </p>
-     */
     inline void SetExpectedPolicyDescription(NetworkFirewallPolicyDescription&& value) { m_expectedPolicyDescriptionHasBeenSet = true; m_expectedPolicyDescription = std::move(value); }
-
-    /**
-     * <p>The policy that should be in use in the individual account in order to be
-     * compliant. </p>
-     */
     inline NetworkFirewallPolicyModifiedViolation& WithExpectedPolicyDescription(const NetworkFirewallPolicyDescription& value) { SetExpectedPolicyDescription(value); return *this;}
-
-    /**
-     * <p>The policy that should be in use in the individual account in order to be
-     * compliant. </p>
-     */
     inline NetworkFirewallPolicyModifiedViolation& WithExpectedPolicyDescription(NetworkFirewallPolicyDescription&& value) { SetExpectedPolicyDescription(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_violationTarget;

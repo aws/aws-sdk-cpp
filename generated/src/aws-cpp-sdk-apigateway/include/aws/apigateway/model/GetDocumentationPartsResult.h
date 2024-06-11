@@ -40,85 +40,40 @@ namespace Model
     AWS_APIGATEWAY_API GetDocumentationPartsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetPosition() const{ return m_position; }
-
-    
     inline void SetPosition(const Aws::String& value) { m_position = value; }
-
-    
     inline void SetPosition(Aws::String&& value) { m_position = std::move(value); }
-
-    
     inline void SetPosition(const char* value) { m_position.assign(value); }
-
-    
     inline GetDocumentationPartsResult& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-
-    
     inline GetDocumentationPartsResult& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-
-    
     inline GetDocumentationPartsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<DocumentationPart>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>The current page of elements from this collection.</p>
-     */
     inline void SetItems(const Aws::Vector<DocumentationPart>& value) { m_items = value; }
-
-    /**
-     * <p>The current page of elements from this collection.</p>
-     */
     inline void SetItems(Aws::Vector<DocumentationPart>&& value) { m_items = std::move(value); }
-
-    /**
-     * <p>The current page of elements from this collection.</p>
-     */
     inline GetDocumentationPartsResult& WithItems(const Aws::Vector<DocumentationPart>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>The current page of elements from this collection.</p>
-     */
     inline GetDocumentationPartsResult& WithItems(Aws::Vector<DocumentationPart>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>The current page of elements from this collection.</p>
-     */
     inline GetDocumentationPartsResult& AddItems(const DocumentationPart& value) { m_items.push_back(value); return *this; }
-
-    /**
-     * <p>The current page of elements from this collection.</p>
-     */
     inline GetDocumentationPartsResult& AddItems(DocumentationPart&& value) { m_items.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDocumentationPartsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDocumentationPartsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDocumentationPartsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_position;

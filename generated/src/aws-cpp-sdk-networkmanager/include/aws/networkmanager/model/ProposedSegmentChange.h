@@ -40,108 +40,43 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of key-value tags that changed for the segment.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The list of key-value tags that changed for the segment.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The list of key-value tags that changed for the segment.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The list of key-value tags that changed for the segment.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The list of key-value tags that changed for the segment.</p>
-     */
     inline ProposedSegmentChange& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The list of key-value tags that changed for the segment.</p>
-     */
     inline ProposedSegmentChange& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of key-value tags that changed for the segment.</p>
-     */
     inline ProposedSegmentChange& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The list of key-value tags that changed for the segment.</p>
-     */
     inline ProposedSegmentChange& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rule number in the policy document that applies to this change.</p>
      */
     inline int GetAttachmentPolicyRuleNumber() const{ return m_attachmentPolicyRuleNumber; }
-
-    /**
-     * <p>The rule number in the policy document that applies to this change.</p>
-     */
     inline bool AttachmentPolicyRuleNumberHasBeenSet() const { return m_attachmentPolicyRuleNumberHasBeenSet; }
-
-    /**
-     * <p>The rule number in the policy document that applies to this change.</p>
-     */
     inline void SetAttachmentPolicyRuleNumber(int value) { m_attachmentPolicyRuleNumberHasBeenSet = true; m_attachmentPolicyRuleNumber = value; }
-
-    /**
-     * <p>The rule number in the policy document that applies to this change.</p>
-     */
     inline ProposedSegmentChange& WithAttachmentPolicyRuleNumber(int value) { SetAttachmentPolicyRuleNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the segment to change.</p>
      */
     inline const Aws::String& GetSegmentName() const{ return m_segmentName; }
-
-    /**
-     * <p>The name of the segment to change.</p>
-     */
     inline bool SegmentNameHasBeenSet() const { return m_segmentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the segment to change.</p>
-     */
     inline void SetSegmentName(const Aws::String& value) { m_segmentNameHasBeenSet = true; m_segmentName = value; }
-
-    /**
-     * <p>The name of the segment to change.</p>
-     */
     inline void SetSegmentName(Aws::String&& value) { m_segmentNameHasBeenSet = true; m_segmentName = std::move(value); }
-
-    /**
-     * <p>The name of the segment to change.</p>
-     */
     inline void SetSegmentName(const char* value) { m_segmentNameHasBeenSet = true; m_segmentName.assign(value); }
-
-    /**
-     * <p>The name of the segment to change.</p>
-     */
     inline ProposedSegmentChange& WithSegmentName(const Aws::String& value) { SetSegmentName(value); return *this;}
-
-    /**
-     * <p>The name of the segment to change.</p>
-     */
     inline ProposedSegmentChange& WithSegmentName(Aws::String&& value) { SetSegmentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the segment to change.</p>
-     */
     inline ProposedSegmentChange& WithSegmentName(const char* value) { SetSegmentName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Tag> m_tags;

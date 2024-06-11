@@ -37,24 +37,15 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const M2tsSettings& GetM2tsSettings() const{ return m_m2tsSettings; }
-
-    
     inline bool M2tsSettingsHasBeenSet() const { return m_m2tsSettingsHasBeenSet; }
-
-    
     inline void SetM2tsSettings(const M2tsSettings& value) { m_m2tsSettingsHasBeenSet = true; m_m2tsSettings = value; }
-
-    
     inline void SetM2tsSettings(M2tsSettings&& value) { m_m2tsSettingsHasBeenSet = true; m_m2tsSettings = std::move(value); }
-
-    
     inline UdpContainerSettings& WithM2tsSettings(const M2tsSettings& value) { SetM2tsSettings(value); return *this;}
-
-    
     inline UdpContainerSettings& WithM2tsSettings(M2tsSettings&& value) { SetM2tsSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     M2tsSettings m_m2tsSettings;

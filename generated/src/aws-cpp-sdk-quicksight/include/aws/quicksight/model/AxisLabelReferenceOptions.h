@@ -39,77 +39,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field that the axis label is targeted to.</p>
      */
     inline const Aws::String& GetFieldId() const{ return m_fieldId; }
-
-    /**
-     * <p>The field that the axis label is targeted to.</p>
-     */
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-
-    /**
-     * <p>The field that the axis label is targeted to.</p>
-     */
     inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-
-    /**
-     * <p>The field that the axis label is targeted to.</p>
-     */
     inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-
-    /**
-     * <p>The field that the axis label is targeted to.</p>
-     */
     inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-
-    /**
-     * <p>The field that the axis label is targeted to.</p>
-     */
     inline AxisLabelReferenceOptions& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-
-    /**
-     * <p>The field that the axis label is targeted to.</p>
-     */
     inline AxisLabelReferenceOptions& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-
-    /**
-     * <p>The field that the axis label is targeted to.</p>
-     */
     inline AxisLabelReferenceOptions& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The column that the axis label is targeted to.</p>
      */
     inline const ColumnIdentifier& GetColumn() const{ return m_column; }
-
-    /**
-     * <p>The column that the axis label is targeted to.</p>
-     */
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-
-    /**
-     * <p>The column that the axis label is targeted to.</p>
-     */
     inline void SetColumn(const ColumnIdentifier& value) { m_columnHasBeenSet = true; m_column = value; }
-
-    /**
-     * <p>The column that the axis label is targeted to.</p>
-     */
     inline void SetColumn(ColumnIdentifier&& value) { m_columnHasBeenSet = true; m_column = std::move(value); }
-
-    /**
-     * <p>The column that the axis label is targeted to.</p>
-     */
     inline AxisLabelReferenceOptions& WithColumn(const ColumnIdentifier& value) { SetColumn(value); return *this;}
-
-    /**
-     * <p>The column that the axis label is targeted to.</p>
-     */
     inline AxisLabelReferenceOptions& WithColumn(ColumnIdentifier&& value) { SetColumn(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldId;

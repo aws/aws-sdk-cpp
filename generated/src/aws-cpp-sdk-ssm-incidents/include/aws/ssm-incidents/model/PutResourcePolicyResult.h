@@ -32,63 +32,29 @@ namespace Model
     AWS_SSMINCIDENTS_API PutResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the resource policy.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
-
-    /**
-     * <p>The ID of the resource policy.</p>
-     */
     inline void SetPolicyId(const Aws::String& value) { m_policyId = value; }
-
-    /**
-     * <p>The ID of the resource policy.</p>
-     */
     inline void SetPolicyId(Aws::String&& value) { m_policyId = std::move(value); }
-
-    /**
-     * <p>The ID of the resource policy.</p>
-     */
     inline void SetPolicyId(const char* value) { m_policyId.assign(value); }
-
-    /**
-     * <p>The ID of the resource policy.</p>
-     */
     inline PutResourcePolicyResult& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-
-    /**
-     * <p>The ID of the resource policy.</p>
-     */
     inline PutResourcePolicyResult& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the resource policy.</p>
-     */
     inline PutResourcePolicyResult& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutResourcePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutResourcePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutResourcePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyId;

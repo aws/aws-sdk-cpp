@@ -33,43 +33,25 @@ namespace Model
     AWS_FSX_API ReleaseFileSystemNfsV3LocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const FileSystem& GetFileSystem() const{ return m_fileSystem; }
-
-    
     inline void SetFileSystem(const FileSystem& value) { m_fileSystem = value; }
-
-    
     inline void SetFileSystem(FileSystem&& value) { m_fileSystem = std::move(value); }
-
-    
     inline ReleaseFileSystemNfsV3LocksResult& WithFileSystem(const FileSystem& value) { SetFileSystem(value); return *this;}
-
-    
     inline ReleaseFileSystemNfsV3LocksResult& WithFileSystem(FileSystem&& value) { SetFileSystem(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ReleaseFileSystemNfsV3LocksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ReleaseFileSystemNfsV3LocksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ReleaseFileSystemNfsV3LocksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FileSystem m_fileSystem;

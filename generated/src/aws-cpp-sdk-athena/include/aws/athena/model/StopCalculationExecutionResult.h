@@ -33,6 +33,7 @@ namespace Model
     AWS_ATHENA_API StopCalculationExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> <code>CREATING</code> - The calculation is in the process of being
      * created.</p> <p> <code>CREATED</code> - The calculation has been created and is
@@ -45,81 +46,22 @@ namespace Model
      * <code>FAILED</code> - The calculation failed and is no longer running.</p>
      */
     inline const CalculationExecutionState& GetState() const{ return m_state; }
-
-    /**
-     * <p> <code>CREATING</code> - The calculation is in the process of being
-     * created.</p> <p> <code>CREATED</code> - The calculation has been created and is
-     * ready to run.</p> <p> <code>QUEUED</code> - The calculation has been queued for
-     * processing.</p> <p> <code>RUNNING</code> - The calculation is running.</p> <p>
-     * <code>CANCELING</code> - A request to cancel the calculation has been received
-     * and the system is working to stop it.</p> <p> <code>CANCELED</code> - The
-     * calculation is no longer running as the result of a cancel request.</p> <p>
-     * <code>COMPLETED</code> - The calculation has completed without error.</p> <p>
-     * <code>FAILED</code> - The calculation failed and is no longer running.</p>
-     */
     inline void SetState(const CalculationExecutionState& value) { m_state = value; }
-
-    /**
-     * <p> <code>CREATING</code> - The calculation is in the process of being
-     * created.</p> <p> <code>CREATED</code> - The calculation has been created and is
-     * ready to run.</p> <p> <code>QUEUED</code> - The calculation has been queued for
-     * processing.</p> <p> <code>RUNNING</code> - The calculation is running.</p> <p>
-     * <code>CANCELING</code> - A request to cancel the calculation has been received
-     * and the system is working to stop it.</p> <p> <code>CANCELED</code> - The
-     * calculation is no longer running as the result of a cancel request.</p> <p>
-     * <code>COMPLETED</code> - The calculation has completed without error.</p> <p>
-     * <code>FAILED</code> - The calculation failed and is no longer running.</p>
-     */
     inline void SetState(CalculationExecutionState&& value) { m_state = std::move(value); }
-
-    /**
-     * <p> <code>CREATING</code> - The calculation is in the process of being
-     * created.</p> <p> <code>CREATED</code> - The calculation has been created and is
-     * ready to run.</p> <p> <code>QUEUED</code> - The calculation has been queued for
-     * processing.</p> <p> <code>RUNNING</code> - The calculation is running.</p> <p>
-     * <code>CANCELING</code> - A request to cancel the calculation has been received
-     * and the system is working to stop it.</p> <p> <code>CANCELED</code> - The
-     * calculation is no longer running as the result of a cancel request.</p> <p>
-     * <code>COMPLETED</code> - The calculation has completed without error.</p> <p>
-     * <code>FAILED</code> - The calculation failed and is no longer running.</p>
-     */
     inline StopCalculationExecutionResult& WithState(const CalculationExecutionState& value) { SetState(value); return *this;}
-
-    /**
-     * <p> <code>CREATING</code> - The calculation is in the process of being
-     * created.</p> <p> <code>CREATED</code> - The calculation has been created and is
-     * ready to run.</p> <p> <code>QUEUED</code> - The calculation has been queued for
-     * processing.</p> <p> <code>RUNNING</code> - The calculation is running.</p> <p>
-     * <code>CANCELING</code> - A request to cancel the calculation has been received
-     * and the system is working to stop it.</p> <p> <code>CANCELED</code> - The
-     * calculation is no longer running as the result of a cancel request.</p> <p>
-     * <code>COMPLETED</code> - The calculation has completed without error.</p> <p>
-     * <code>FAILED</code> - The calculation failed and is no longer running.</p>
-     */
     inline StopCalculationExecutionResult& WithState(CalculationExecutionState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StopCalculationExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StopCalculationExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StopCalculationExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CalculationExecutionState m_state;

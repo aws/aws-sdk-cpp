@@ -40,85 +40,40 @@ namespace Model
     AWS_MEDIALIVE_API ListInputSecurityGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * List of input security groups
      */
     inline const Aws::Vector<InputSecurityGroup>& GetInputSecurityGroups() const{ return m_inputSecurityGroups; }
-
-    /**
-     * List of input security groups
-     */
     inline void SetInputSecurityGroups(const Aws::Vector<InputSecurityGroup>& value) { m_inputSecurityGroups = value; }
-
-    /**
-     * List of input security groups
-     */
     inline void SetInputSecurityGroups(Aws::Vector<InputSecurityGroup>&& value) { m_inputSecurityGroups = std::move(value); }
-
-    /**
-     * List of input security groups
-     */
     inline ListInputSecurityGroupsResult& WithInputSecurityGroups(const Aws::Vector<InputSecurityGroup>& value) { SetInputSecurityGroups(value); return *this;}
-
-    /**
-     * List of input security groups
-     */
     inline ListInputSecurityGroupsResult& WithInputSecurityGroups(Aws::Vector<InputSecurityGroup>&& value) { SetInputSecurityGroups(std::move(value)); return *this;}
-
-    /**
-     * List of input security groups
-     */
     inline ListInputSecurityGroupsResult& AddInputSecurityGroups(const InputSecurityGroup& value) { m_inputSecurityGroups.push_back(value); return *this; }
-
-    /**
-     * List of input security groups
-     */
     inline ListInputSecurityGroupsResult& AddInputSecurityGroups(InputSecurityGroup&& value) { m_inputSecurityGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    
     inline ListInputSecurityGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline ListInputSecurityGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline ListInputSecurityGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListInputSecurityGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListInputSecurityGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListInputSecurityGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<InputSecurityGroup> m_inputSecurityGroups;

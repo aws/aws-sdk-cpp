@@ -38,57 +38,27 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The GPS coordinates to measure distance from.</p>
      */
     inline const GPSCoordinates& GetCoordinates() const{ return m_coordinates; }
-
-    /**
-     * <p>The GPS coordinates to measure distance from.</p>
-     */
     inline bool CoordinatesHasBeenSet() const { return m_coordinatesHasBeenSet; }
-
-    /**
-     * <p>The GPS coordinates to measure distance from.</p>
-     */
     inline void SetCoordinates(const GPSCoordinates& value) { m_coordinatesHasBeenSet = true; m_coordinates = value; }
-
-    /**
-     * <p>The GPS coordinates to measure distance from.</p>
-     */
     inline void SetCoordinates(GPSCoordinates&& value) { m_coordinatesHasBeenSet = true; m_coordinates = std::move(value); }
-
-    /**
-     * <p>The GPS coordinates to measure distance from.</p>
-     */
     inline GPSPointDimension& WithCoordinates(const GPSCoordinates& value) { SetCoordinates(value); return *this;}
-
-    /**
-     * <p>The GPS coordinates to measure distance from.</p>
-     */
     inline GPSPointDimension& WithCoordinates(GPSCoordinates&& value) { SetCoordinates(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The range, in kilometers, from the GPS coordinates.</p>
      */
     inline double GetRangeInKilometers() const{ return m_rangeInKilometers; }
-
-    /**
-     * <p>The range, in kilometers, from the GPS coordinates.</p>
-     */
     inline bool RangeInKilometersHasBeenSet() const { return m_rangeInKilometersHasBeenSet; }
-
-    /**
-     * <p>The range, in kilometers, from the GPS coordinates.</p>
-     */
     inline void SetRangeInKilometers(double value) { m_rangeInKilometersHasBeenSet = true; m_rangeInKilometers = value; }
-
-    /**
-     * <p>The range, in kilometers, from the GPS coordinates.</p>
-     */
     inline GPSPointDimension& WithRangeInKilometers(double value) { SetRangeInKilometers(value); return *this;}
-
+    ///@}
   private:
 
     GPSCoordinates m_coordinates;

@@ -33,149 +33,50 @@ namespace Model
     AWS_CONNECTWISDOMSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
     inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline NotifyRecommendationsReceivedRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline NotifyRecommendationsReceivedRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline NotifyRecommendationsReceivedRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifiers of the recommendations.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRecommendationIds() const{ return m_recommendationIds; }
-
-    /**
-     * <p>The identifiers of the recommendations.</p>
-     */
     inline bool RecommendationIdsHasBeenSet() const { return m_recommendationIdsHasBeenSet; }
-
-    /**
-     * <p>The identifiers of the recommendations.</p>
-     */
     inline void SetRecommendationIds(const Aws::Vector<Aws::String>& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds = value; }
-
-    /**
-     * <p>The identifiers of the recommendations.</p>
-     */
     inline void SetRecommendationIds(Aws::Vector<Aws::String>&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds = std::move(value); }
-
-    /**
-     * <p>The identifiers of the recommendations.</p>
-     */
     inline NotifyRecommendationsReceivedRequest& WithRecommendationIds(const Aws::Vector<Aws::String>& value) { SetRecommendationIds(value); return *this;}
-
-    /**
-     * <p>The identifiers of the recommendations.</p>
-     */
     inline NotifyRecommendationsReceivedRequest& WithRecommendationIds(Aws::Vector<Aws::String>&& value) { SetRecommendationIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifiers of the recommendations.</p>
-     */
     inline NotifyRecommendationsReceivedRequest& AddRecommendationIds(const Aws::String& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.push_back(value); return *this; }
-
-    /**
-     * <p>The identifiers of the recommendations.</p>
-     */
     inline NotifyRecommendationsReceivedRequest& AddRecommendationIds(Aws::String&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The identifiers of the recommendations.</p>
-     */
     inline NotifyRecommendationsReceivedRequest& AddRecommendationIds(const char* value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
      * contain the ARN.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-
-    /**
-     * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
-     * contain the ARN.</p>
-     */
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
-     * contain the ARN.</p>
-     */
     inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-
-    /**
-     * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
-     * contain the ARN.</p>
-     */
     inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-
-    /**
-     * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
-     * contain the ARN.</p>
-     */
     inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-
-    /**
-     * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
-     * contain the ARN.</p>
-     */
     inline NotifyRecommendationsReceivedRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-
-    /**
-     * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
-     * contain the ARN.</p>
-     */
     inline NotifyRecommendationsReceivedRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
-     * contain the ARN.</p>
-     */
     inline NotifyRecommendationsReceivedRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assistantId;

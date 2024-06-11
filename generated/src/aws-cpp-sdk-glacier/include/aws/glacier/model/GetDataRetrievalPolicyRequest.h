@@ -35,6 +35,7 @@ namespace Model
     AWS_GLACIER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
      * the AWS account ID associated with the credentials used to sign the request. You
@@ -44,77 +45,14 @@ namespace Model
      * include any hyphens ('-') in the ID. </p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
-     * the AWS account ID associated with the credentials used to sign the request. You
-     * can either specify an AWS account ID or optionally a single '<code>-</code>'
-     * (hyphen), in which case Amazon Glacier uses the AWS account ID associated with
-     * the credentials used to sign the request. If you specify your account ID, do not
-     * include any hyphens ('-') in the ID. </p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
-     * the AWS account ID associated with the credentials used to sign the request. You
-     * can either specify an AWS account ID or optionally a single '<code>-</code>'
-     * (hyphen), in which case Amazon Glacier uses the AWS account ID associated with
-     * the credentials used to sign the request. If you specify your account ID, do not
-     * include any hyphens ('-') in the ID. </p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
-     * the AWS account ID associated with the credentials used to sign the request. You
-     * can either specify an AWS account ID or optionally a single '<code>-</code>'
-     * (hyphen), in which case Amazon Glacier uses the AWS account ID associated with
-     * the credentials used to sign the request. If you specify your account ID, do not
-     * include any hyphens ('-') in the ID. </p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
-     * the AWS account ID associated with the credentials used to sign the request. You
-     * can either specify an AWS account ID or optionally a single '<code>-</code>'
-     * (hyphen), in which case Amazon Glacier uses the AWS account ID associated with
-     * the credentials used to sign the request. If you specify your account ID, do not
-     * include any hyphens ('-') in the ID. </p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
-     * the AWS account ID associated with the credentials used to sign the request. You
-     * can either specify an AWS account ID or optionally a single '<code>-</code>'
-     * (hyphen), in which case Amazon Glacier uses the AWS account ID associated with
-     * the credentials used to sign the request. If you specify your account ID, do not
-     * include any hyphens ('-') in the ID. </p>
-     */
     inline GetDataRetrievalPolicyRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
-     * the AWS account ID associated with the credentials used to sign the request. You
-     * can either specify an AWS account ID or optionally a single '<code>-</code>'
-     * (hyphen), in which case Amazon Glacier uses the AWS account ID associated with
-     * the credentials used to sign the request. If you specify your account ID, do not
-     * include any hyphens ('-') in the ID. </p>
-     */
     inline GetDataRetrievalPolicyRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
-     * the AWS account ID associated with the credentials used to sign the request. You
-     * can either specify an AWS account ID or optionally a single '<code>-</code>'
-     * (hyphen), in which case Amazon Glacier uses the AWS account ID associated with
-     * the credentials used to sign the request. If you specify your account ID, do not
-     * include any hyphens ('-') in the ID. </p>
-     */
     inline GetDataRetrievalPolicyRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

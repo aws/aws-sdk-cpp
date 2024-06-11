@@ -40,129 +40,53 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Sets the automatic ordering of the video tiles.</p>
      */
     inline const TileOrder& GetTileOrder() const{ return m_tileOrder; }
-
-    /**
-     * <p>Sets the automatic ordering of the video tiles.</p>
-     */
     inline bool TileOrderHasBeenSet() const { return m_tileOrderHasBeenSet; }
-
-    /**
-     * <p>Sets the automatic ordering of the video tiles.</p>
-     */
     inline void SetTileOrder(const TileOrder& value) { m_tileOrderHasBeenSet = true; m_tileOrder = value; }
-
-    /**
-     * <p>Sets the automatic ordering of the video tiles.</p>
-     */
     inline void SetTileOrder(TileOrder&& value) { m_tileOrderHasBeenSet = true; m_tileOrder = std::move(value); }
-
-    /**
-     * <p>Sets the automatic ordering of the video tiles.</p>
-     */
     inline VerticalLayoutConfiguration& WithTileOrder(const TileOrder& value) { SetTileOrder(value); return *this;}
-
-    /**
-     * <p>Sets the automatic ordering of the video tiles.</p>
-     */
     inline VerticalLayoutConfiguration& WithTileOrder(TileOrder&& value) { SetTileOrder(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Sets the position of vertical tiles.</p>
      */
     inline const VerticalTilePosition& GetTilePosition() const{ return m_tilePosition; }
-
-    /**
-     * <p>Sets the position of vertical tiles.</p>
-     */
     inline bool TilePositionHasBeenSet() const { return m_tilePositionHasBeenSet; }
-
-    /**
-     * <p>Sets the position of vertical tiles.</p>
-     */
     inline void SetTilePosition(const VerticalTilePosition& value) { m_tilePositionHasBeenSet = true; m_tilePosition = value; }
-
-    /**
-     * <p>Sets the position of vertical tiles.</p>
-     */
     inline void SetTilePosition(VerticalTilePosition&& value) { m_tilePositionHasBeenSet = true; m_tilePosition = std::move(value); }
-
-    /**
-     * <p>Sets the position of vertical tiles.</p>
-     */
     inline VerticalLayoutConfiguration& WithTilePosition(const VerticalTilePosition& value) { SetTilePosition(value); return *this;}
-
-    /**
-     * <p>Sets the position of vertical tiles.</p>
-     */
     inline VerticalLayoutConfiguration& WithTilePosition(VerticalTilePosition&& value) { SetTilePosition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of tiles to display.</p>
      */
     inline int GetTileCount() const{ return m_tileCount; }
-
-    /**
-     * <p>The maximum number of tiles to display.</p>
-     */
     inline bool TileCountHasBeenSet() const { return m_tileCountHasBeenSet; }
-
-    /**
-     * <p>The maximum number of tiles to display.</p>
-     */
     inline void SetTileCount(int value) { m_tileCountHasBeenSet = true; m_tileCount = value; }
-
-    /**
-     * <p>The maximum number of tiles to display.</p>
-     */
     inline VerticalLayoutConfiguration& WithTileCount(int value) { SetTileCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
      */
     inline const Aws::String& GetTileAspectRatio() const{ return m_tileAspectRatio; }
-
-    /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
-     */
     inline bool TileAspectRatioHasBeenSet() const { return m_tileAspectRatioHasBeenSet; }
-
-    /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
-     */
     inline void SetTileAspectRatio(const Aws::String& value) { m_tileAspectRatioHasBeenSet = true; m_tileAspectRatio = value; }
-
-    /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
-     */
     inline void SetTileAspectRatio(Aws::String&& value) { m_tileAspectRatioHasBeenSet = true; m_tileAspectRatio = std::move(value); }
-
-    /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
-     */
     inline void SetTileAspectRatio(const char* value) { m_tileAspectRatioHasBeenSet = true; m_tileAspectRatio.assign(value); }
-
-    /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
-     */
     inline VerticalLayoutConfiguration& WithTileAspectRatio(const Aws::String& value) { SetTileAspectRatio(value); return *this;}
-
-    /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
-     */
     inline VerticalLayoutConfiguration& WithTileAspectRatio(Aws::String&& value) { SetTileAspectRatio(std::move(value)); return *this;}
-
-    /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
-     */
     inline VerticalLayoutConfiguration& WithTileAspectRatio(const char* value) { SetTileAspectRatio(value); return *this;}
-
+    ///@}
   private:
 
     TileOrder m_tileOrder;

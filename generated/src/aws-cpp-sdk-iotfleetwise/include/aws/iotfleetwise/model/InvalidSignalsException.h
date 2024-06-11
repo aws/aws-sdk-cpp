@@ -40,71 +40,31 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline InvalidSignalsException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline InvalidSignalsException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline InvalidSignalsException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The signals which caused the exception.</p>
      */
     inline const Aws::Vector<InvalidSignal>& GetInvalidSignals() const{ return m_invalidSignals; }
-
-    /**
-     * <p>The signals which caused the exception.</p>
-     */
     inline bool InvalidSignalsHasBeenSet() const { return m_invalidSignalsHasBeenSet; }
-
-    /**
-     * <p>The signals which caused the exception.</p>
-     */
     inline void SetInvalidSignals(const Aws::Vector<InvalidSignal>& value) { m_invalidSignalsHasBeenSet = true; m_invalidSignals = value; }
-
-    /**
-     * <p>The signals which caused the exception.</p>
-     */
     inline void SetInvalidSignals(Aws::Vector<InvalidSignal>&& value) { m_invalidSignalsHasBeenSet = true; m_invalidSignals = std::move(value); }
-
-    /**
-     * <p>The signals which caused the exception.</p>
-     */
     inline InvalidSignalsException& WithInvalidSignals(const Aws::Vector<InvalidSignal>& value) { SetInvalidSignals(value); return *this;}
-
-    /**
-     * <p>The signals which caused the exception.</p>
-     */
     inline InvalidSignalsException& WithInvalidSignals(Aws::Vector<InvalidSignal>&& value) { SetInvalidSignals(std::move(value)); return *this;}
-
-    /**
-     * <p>The signals which caused the exception.</p>
-     */
     inline InvalidSignalsException& AddInvalidSignals(const InvalidSignal& value) { m_invalidSignalsHasBeenSet = true; m_invalidSignals.push_back(value); return *this; }
-
-    /**
-     * <p>The signals which caused the exception.</p>
-     */
     inline InvalidSignalsException& AddInvalidSignals(InvalidSignal&& value) { m_invalidSignalsHasBeenSet = true; m_invalidSignals.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_message;

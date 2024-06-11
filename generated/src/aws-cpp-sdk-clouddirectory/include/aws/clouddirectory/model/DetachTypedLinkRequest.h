@@ -35,85 +35,32 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the directory where you want to detach the
      * typed link.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where you want to detach the
-     * typed link.</p>
-     */
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where you want to detach the
-     * typed link.</p>
-     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where you want to detach the
-     * typed link.</p>
-     */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where you want to detach the
-     * typed link.</p>
-     */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where you want to detach the
-     * typed link.</p>
-     */
     inline DetachTypedLinkRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where you want to detach the
-     * typed link.</p>
-     */
     inline DetachTypedLinkRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where you want to detach the
-     * typed link.</p>
-     */
     inline DetachTypedLinkRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Used to accept a typed link specifier as input.</p>
      */
     inline const TypedLinkSpecifier& GetTypedLinkSpecifier() const{ return m_typedLinkSpecifier; }
-
-    /**
-     * <p>Used to accept a typed link specifier as input.</p>
-     */
     inline bool TypedLinkSpecifierHasBeenSet() const { return m_typedLinkSpecifierHasBeenSet; }
-
-    /**
-     * <p>Used to accept a typed link specifier as input.</p>
-     */
     inline void SetTypedLinkSpecifier(const TypedLinkSpecifier& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = value; }
-
-    /**
-     * <p>Used to accept a typed link specifier as input.</p>
-     */
     inline void SetTypedLinkSpecifier(TypedLinkSpecifier&& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = std::move(value); }
-
-    /**
-     * <p>Used to accept a typed link specifier as input.</p>
-     */
     inline DetachTypedLinkRequest& WithTypedLinkSpecifier(const TypedLinkSpecifier& value) { SetTypedLinkSpecifier(value); return *this;}
-
-    /**
-     * <p>Used to accept a typed link specifier as input.</p>
-     */
     inline DetachTypedLinkRequest& WithTypedLinkSpecifier(TypedLinkSpecifier&& value) { SetTypedLinkSpecifier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directoryArn;

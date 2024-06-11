@@ -36,26 +36,15 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The double input of the static data.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The double input of the static data.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The double input of the static data.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The double input of the static data.</p>
-     */
     inline ReferenceLineStaticDataConfiguration& WithValue(double value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     double m_value;

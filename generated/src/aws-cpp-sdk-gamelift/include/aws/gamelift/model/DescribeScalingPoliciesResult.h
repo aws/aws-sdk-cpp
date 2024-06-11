@@ -34,120 +34,45 @@ namespace Model
     AWS_GAMELIFT_API DescribeScalingPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A collection of objects containing the scaling policies matching the
      * request.</p>
      */
     inline const Aws::Vector<ScalingPolicy>& GetScalingPolicies() const{ return m_scalingPolicies; }
-
-    /**
-     * <p>A collection of objects containing the scaling policies matching the
-     * request.</p>
-     */
     inline void SetScalingPolicies(const Aws::Vector<ScalingPolicy>& value) { m_scalingPolicies = value; }
-
-    /**
-     * <p>A collection of objects containing the scaling policies matching the
-     * request.</p>
-     */
     inline void SetScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { m_scalingPolicies = std::move(value); }
-
-    /**
-     * <p>A collection of objects containing the scaling policies matching the
-     * request.</p>
-     */
     inline DescribeScalingPoliciesResult& WithScalingPolicies(const Aws::Vector<ScalingPolicy>& value) { SetScalingPolicies(value); return *this;}
-
-    /**
-     * <p>A collection of objects containing the scaling policies matching the
-     * request.</p>
-     */
     inline DescribeScalingPoliciesResult& WithScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { SetScalingPolicies(std::move(value)); return *this;}
-
-    /**
-     * <p>A collection of objects containing the scaling policies matching the
-     * request.</p>
-     */
     inline DescribeScalingPoliciesResult& AddScalingPolicies(const ScalingPolicy& value) { m_scalingPolicies.push_back(value); return *this; }
-
-    /**
-     * <p>A collection of objects containing the scaling policies matching the
-     * request.</p>
-     */
     inline DescribeScalingPoliciesResult& AddScalingPolicies(ScalingPolicy&& value) { m_scalingPolicies.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
-     */
     inline DescribeScalingPoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
-     */
     inline DescribeScalingPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
-     */
     inline DescribeScalingPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeScalingPoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeScalingPoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeScalingPoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ScalingPolicy> m_scalingPolicies;

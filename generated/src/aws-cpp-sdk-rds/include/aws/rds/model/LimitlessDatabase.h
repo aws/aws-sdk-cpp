@@ -39,61 +39,28 @@ namespace Model
     AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The status of Aurora Limitless Database.</p>
      */
     inline const LimitlessDatabaseStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of Aurora Limitless Database.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of Aurora Limitless Database.</p>
-     */
     inline void SetStatus(const LimitlessDatabaseStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of Aurora Limitless Database.</p>
-     */
     inline void SetStatus(LimitlessDatabaseStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of Aurora Limitless Database.</p>
-     */
     inline LimitlessDatabase& WithStatus(const LimitlessDatabaseStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of Aurora Limitless Database.</p>
-     */
     inline LimitlessDatabase& WithStatus(LimitlessDatabaseStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The minimum required capacity for Aurora Limitless Database in Aurora
      * capacity units (ACUs).</p>
      */
     inline double GetMinRequiredACU() const{ return m_minRequiredACU; }
-
-    /**
-     * <p>The minimum required capacity for Aurora Limitless Database in Aurora
-     * capacity units (ACUs).</p>
-     */
     inline bool MinRequiredACUHasBeenSet() const { return m_minRequiredACUHasBeenSet; }
-
-    /**
-     * <p>The minimum required capacity for Aurora Limitless Database in Aurora
-     * capacity units (ACUs).</p>
-     */
     inline void SetMinRequiredACU(double value) { m_minRequiredACUHasBeenSet = true; m_minRequiredACU = value; }
-
-    /**
-     * <p>The minimum required capacity for Aurora Limitless Database in Aurora
-     * capacity units (ACUs).</p>
-     */
     inline LimitlessDatabase& WithMinRequiredACU(double value) { SetMinRequiredACU(value); return *this;}
-
+    ///@}
   private:
 
     LimitlessDatabaseStatus m_status;

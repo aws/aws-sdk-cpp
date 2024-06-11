@@ -38,46 +38,19 @@ namespace Model
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of an application.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-
-    /**
-     * <p>The ARN of an application.</p>
-     */
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of an application.</p>
-     */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-
-    /**
-     * <p>The ARN of an application.</p>
-     */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-
-    /**
-     * <p>The ARN of an application.</p>
-     */
     inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-
-    /**
-     * <p>The ARN of an application.</p>
-     */
     inline ListApplicationAssignmentsFilter& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-
-    /**
-     * <p>The ARN of an application.</p>
-     */
     inline ListApplicationAssignmentsFilter& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of an application.</p>
-     */
     inline ListApplicationAssignmentsFilter& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationArn;

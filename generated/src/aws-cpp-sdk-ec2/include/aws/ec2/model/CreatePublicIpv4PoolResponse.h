@@ -33,57 +33,27 @@ namespace Model
     AWS_EC2_API CreatePublicIpv4PoolResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the public IPv4 pool.</p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
-
-    /**
-     * <p>The ID of the public IPv4 pool.</p>
-     */
     inline void SetPoolId(const Aws::String& value) { m_poolId = value; }
-
-    /**
-     * <p>The ID of the public IPv4 pool.</p>
-     */
     inline void SetPoolId(Aws::String&& value) { m_poolId = std::move(value); }
-
-    /**
-     * <p>The ID of the public IPv4 pool.</p>
-     */
     inline void SetPoolId(const char* value) { m_poolId.assign(value); }
-
-    /**
-     * <p>The ID of the public IPv4 pool.</p>
-     */
     inline CreatePublicIpv4PoolResponse& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
-
-    /**
-     * <p>The ID of the public IPv4 pool.</p>
-     */
     inline CreatePublicIpv4PoolResponse& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the public IPv4 pool.</p>
-     */
     inline CreatePublicIpv4PoolResponse& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreatePublicIpv4PoolResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreatePublicIpv4PoolResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_poolId;

@@ -40,129 +40,53 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The column.</p>
      */
     inline const ColumnIdentifier& GetColumn() const{ return m_column; }
-
-    /**
-     * <p>The column.</p>
-     */
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-
-    /**
-     * <p>The column.</p>
-     */
     inline void SetColumn(const ColumnIdentifier& value) { m_columnHasBeenSet = true; m_column = value; }
-
-    /**
-     * <p>The column.</p>
-     */
     inline void SetColumn(ColumnIdentifier&& value) { m_columnHasBeenSet = true; m_column = std::move(value); }
-
-    /**
-     * <p>The column.</p>
-     */
     inline ColumnConfiguration& WithColumn(const ColumnIdentifier& value) { SetColumn(value); return *this;}
-
-    /**
-     * <p>The column.</p>
-     */
     inline ColumnConfiguration& WithColumn(ColumnIdentifier&& value) { SetColumn(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The format configuration of a column.</p>
      */
     inline const FormatConfiguration& GetFormatConfiguration() const{ return m_formatConfiguration; }
-
-    /**
-     * <p>The format configuration of a column.</p>
-     */
     inline bool FormatConfigurationHasBeenSet() const { return m_formatConfigurationHasBeenSet; }
-
-    /**
-     * <p>The format configuration of a column.</p>
-     */
     inline void SetFormatConfiguration(const FormatConfiguration& value) { m_formatConfigurationHasBeenSet = true; m_formatConfiguration = value; }
-
-    /**
-     * <p>The format configuration of a column.</p>
-     */
     inline void SetFormatConfiguration(FormatConfiguration&& value) { m_formatConfigurationHasBeenSet = true; m_formatConfiguration = std::move(value); }
-
-    /**
-     * <p>The format configuration of a column.</p>
-     */
     inline ColumnConfiguration& WithFormatConfiguration(const FormatConfiguration& value) { SetFormatConfiguration(value); return *this;}
-
-    /**
-     * <p>The format configuration of a column.</p>
-     */
     inline ColumnConfiguration& WithFormatConfiguration(FormatConfiguration&& value) { SetFormatConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The role of the column.</p>
      */
     inline const ColumnRole& GetRole() const{ return m_role; }
-
-    /**
-     * <p>The role of the column.</p>
-     */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-
-    /**
-     * <p>The role of the column.</p>
-     */
     inline void SetRole(const ColumnRole& value) { m_roleHasBeenSet = true; m_role = value; }
-
-    /**
-     * <p>The role of the column.</p>
-     */
     inline void SetRole(ColumnRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-
-    /**
-     * <p>The role of the column.</p>
-     */
     inline ColumnConfiguration& WithRole(const ColumnRole& value) { SetRole(value); return *this;}
-
-    /**
-     * <p>The role of the column.</p>
-     */
     inline ColumnConfiguration& WithRole(ColumnRole&& value) { SetRole(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The color configurations of the column.</p>
      */
     inline const ColorsConfiguration& GetColorsConfiguration() const{ return m_colorsConfiguration; }
-
-    /**
-     * <p>The color configurations of the column.</p>
-     */
     inline bool ColorsConfigurationHasBeenSet() const { return m_colorsConfigurationHasBeenSet; }
-
-    /**
-     * <p>The color configurations of the column.</p>
-     */
     inline void SetColorsConfiguration(const ColorsConfiguration& value) { m_colorsConfigurationHasBeenSet = true; m_colorsConfiguration = value; }
-
-    /**
-     * <p>The color configurations of the column.</p>
-     */
     inline void SetColorsConfiguration(ColorsConfiguration&& value) { m_colorsConfigurationHasBeenSet = true; m_colorsConfiguration = std::move(value); }
-
-    /**
-     * <p>The color configurations of the column.</p>
-     */
     inline ColumnConfiguration& WithColorsConfiguration(const ColorsConfiguration& value) { SetColorsConfiguration(value); return *this;}
-
-    /**
-     * <p>The color configurations of the column.</p>
-     */
     inline ColumnConfiguration& WithColorsConfiguration(ColorsConfiguration&& value) { SetColorsConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ColumnIdentifier m_column;

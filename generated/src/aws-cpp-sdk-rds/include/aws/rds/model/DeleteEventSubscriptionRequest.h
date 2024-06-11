@@ -39,46 +39,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the RDS event notification subscription you want to delete.</p>
      */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
-
-    /**
-     * <p>The name of the RDS event notification subscription you want to delete.</p>
-     */
     inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the RDS event notification subscription you want to delete.</p>
-     */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
-
-    /**
-     * <p>The name of the RDS event notification subscription you want to delete.</p>
-     */
     inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
-
-    /**
-     * <p>The name of the RDS event notification subscription you want to delete.</p>
-     */
     inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
-
-    /**
-     * <p>The name of the RDS event notification subscription you want to delete.</p>
-     */
     inline DeleteEventSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
-
-    /**
-     * <p>The name of the RDS event notification subscription you want to delete.</p>
-     */
     inline DeleteEventSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the RDS event notification subscription you want to delete.</p>
-     */
     inline DeleteEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_subscriptionName;

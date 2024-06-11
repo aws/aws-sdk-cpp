@@ -39,58 +39,28 @@ namespace Model
     AWS_SUPPORT_API RefreshTrustedAdvisorCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The current refresh status for a check, including the amount of time until
      * the check is eligible for refresh.</p>
      */
     inline const TrustedAdvisorCheckRefreshStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current refresh status for a check, including the amount of time until
-     * the check is eligible for refresh.</p>
-     */
     inline void SetStatus(const TrustedAdvisorCheckRefreshStatus& value) { m_status = value; }
-
-    /**
-     * <p>The current refresh status for a check, including the amount of time until
-     * the check is eligible for refresh.</p>
-     */
     inline void SetStatus(TrustedAdvisorCheckRefreshStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The current refresh status for a check, including the amount of time until
-     * the check is eligible for refresh.</p>
-     */
     inline RefreshTrustedAdvisorCheckResult& WithStatus(const TrustedAdvisorCheckRefreshStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current refresh status for a check, including the amount of time until
-     * the check is eligible for refresh.</p>
-     */
     inline RefreshTrustedAdvisorCheckResult& WithStatus(TrustedAdvisorCheckRefreshStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RefreshTrustedAdvisorCheckResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RefreshTrustedAdvisorCheckResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RefreshTrustedAdvisorCheckResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TrustedAdvisorCheckRefreshStatus m_status;

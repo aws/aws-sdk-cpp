@@ -37,46 +37,19 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The reference's ARN.</p>
      */
     inline const Aws::String& GetReferenceArn() const{ return m_referenceArn; }
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
     inline bool ReferenceArnHasBeenSet() const { return m_referenceArnHasBeenSet; }
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
     inline void SetReferenceArn(const Aws::String& value) { m_referenceArnHasBeenSet = true; m_referenceArn = value; }
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
     inline void SetReferenceArn(Aws::String&& value) { m_referenceArnHasBeenSet = true; m_referenceArn = std::move(value); }
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
     inline void SetReferenceArn(const char* value) { m_referenceArnHasBeenSet = true; m_referenceArn.assign(value); }
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
     inline ReferenceItem& WithReferenceArn(const Aws::String& value) { SetReferenceArn(value); return *this;}
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
     inline ReferenceItem& WithReferenceArn(Aws::String&& value) { SetReferenceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
     inline ReferenceItem& WithReferenceArn(const char* value) { SetReferenceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_referenceArn;

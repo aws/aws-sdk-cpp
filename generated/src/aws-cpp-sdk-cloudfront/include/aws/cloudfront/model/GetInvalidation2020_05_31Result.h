@@ -39,63 +39,29 @@ namespace Model
     AWS_CLOUDFRONT_API GetInvalidation2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The invalidation's information. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
      * Complex Type</a>.</p>
      */
     inline const Invalidation& GetInvalidation() const{ return m_invalidation; }
-
-    /**
-     * <p>The invalidation's information. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
-     * Complex Type</a>.</p>
-     */
     inline void SetInvalidation(const Invalidation& value) { m_invalidation = value; }
-
-    /**
-     * <p>The invalidation's information. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
-     * Complex Type</a>.</p>
-     */
     inline void SetInvalidation(Invalidation&& value) { m_invalidation = std::move(value); }
-
-    /**
-     * <p>The invalidation's information. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
-     * Complex Type</a>.</p>
-     */
     inline GetInvalidation2020_05_31Result& WithInvalidation(const Invalidation& value) { SetInvalidation(value); return *this;}
-
-    /**
-     * <p>The invalidation's information. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
-     * Complex Type</a>.</p>
-     */
     inline GetInvalidation2020_05_31Result& WithInvalidation(Invalidation&& value) { SetInvalidation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetInvalidation2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetInvalidation2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetInvalidation2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Invalidation m_invalidation;

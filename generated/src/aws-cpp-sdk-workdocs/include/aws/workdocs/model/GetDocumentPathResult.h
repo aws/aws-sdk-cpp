@@ -33,53 +33,27 @@ namespace Model
     AWS_WORKDOCS_API GetDocumentPathResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The path information.</p>
      */
     inline const ResourcePath& GetPath() const{ return m_path; }
-
-    /**
-     * <p>The path information.</p>
-     */
     inline void SetPath(const ResourcePath& value) { m_path = value; }
-
-    /**
-     * <p>The path information.</p>
-     */
     inline void SetPath(ResourcePath&& value) { m_path = std::move(value); }
-
-    /**
-     * <p>The path information.</p>
-     */
     inline GetDocumentPathResult& WithPath(const ResourcePath& value) { SetPath(value); return *this;}
-
-    /**
-     * <p>The path information.</p>
-     */
     inline GetDocumentPathResult& WithPath(ResourcePath&& value) { SetPath(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDocumentPathResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDocumentPathResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDocumentPathResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ResourcePath m_path;

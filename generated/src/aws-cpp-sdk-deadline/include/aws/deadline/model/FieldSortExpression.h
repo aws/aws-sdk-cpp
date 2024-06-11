@@ -38,77 +38,31 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the field.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the field.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the field.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the field.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the field.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the field.</p>
-     */
     inline FieldSortExpression& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the field.</p>
-     */
     inline FieldSortExpression& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the field.</p>
-     */
     inline FieldSortExpression& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sort order for the field.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>The sort order for the field.</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>The sort order for the field.</p>
-     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>The sort order for the field.</p>
-     */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>The sort order for the field.</p>
-     */
     inline FieldSortExpression& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>The sort order for the field.</p>
-     */
     inline FieldSortExpression& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

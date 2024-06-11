@@ -39,37 +39,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
      */
     inline const ClarifyShapBaselineConfig& GetShapBaselineConfig() const{ return m_shapBaselineConfig; }
-
-    /**
-     * <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
-     */
     inline bool ShapBaselineConfigHasBeenSet() const { return m_shapBaselineConfigHasBeenSet; }
-
-    /**
-     * <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
-     */
     inline void SetShapBaselineConfig(const ClarifyShapBaselineConfig& value) { m_shapBaselineConfigHasBeenSet = true; m_shapBaselineConfig = value; }
-
-    /**
-     * <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
-     */
     inline void SetShapBaselineConfig(ClarifyShapBaselineConfig&& value) { m_shapBaselineConfigHasBeenSet = true; m_shapBaselineConfig = std::move(value); }
-
-    /**
-     * <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
-     */
     inline ClarifyShapConfig& WithShapBaselineConfig(const ClarifyShapBaselineConfig& value) { SetShapBaselineConfig(value); return *this;}
-
-    /**
-     * <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
-     */
     inline ClarifyShapConfig& WithShapBaselineConfig(ClarifyShapBaselineConfig&& value) { SetShapBaselineConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.
      * </p>  <p>The number of samples determines the size of the synthetic
@@ -79,134 +61,47 @@ namespace Model
      * and create an endpoint</a>.</p> 
      */
     inline int GetNumberOfSamples() const{ return m_numberOfSamples; }
-
-    /**
-     * <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.
-     * </p>  <p>The number of samples determines the size of the synthetic
-     * dataset, which has an impact on latency of explainability requests. For more
-     * information, see the <b>Synthetic data</b> of <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure
-     * and create an endpoint</a>.</p> 
-     */
     inline bool NumberOfSamplesHasBeenSet() const { return m_numberOfSamplesHasBeenSet; }
-
-    /**
-     * <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.
-     * </p>  <p>The number of samples determines the size of the synthetic
-     * dataset, which has an impact on latency of explainability requests. For more
-     * information, see the <b>Synthetic data</b> of <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure
-     * and create an endpoint</a>.</p> 
-     */
     inline void SetNumberOfSamples(int value) { m_numberOfSamplesHasBeenSet = true; m_numberOfSamples = value; }
-
-    /**
-     * <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.
-     * </p>  <p>The number of samples determines the size of the synthetic
-     * dataset, which has an impact on latency of explainability requests. For more
-     * information, see the <b>Synthetic data</b> of <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure
-     * and create an endpoint</a>.</p> 
-     */
     inline ClarifyShapConfig& WithNumberOfSamples(int value) { SetNumberOfSamples(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean toggle to indicate if you want to use the logit function (true) or
      * log-odds units (false) for model predictions. Defaults to false.</p>
      */
     inline bool GetUseLogit() const{ return m_useLogit; }
-
-    /**
-     * <p>A Boolean toggle to indicate if you want to use the logit function (true) or
-     * log-odds units (false) for model predictions. Defaults to false.</p>
-     */
     inline bool UseLogitHasBeenSet() const { return m_useLogitHasBeenSet; }
-
-    /**
-     * <p>A Boolean toggle to indicate if you want to use the logit function (true) or
-     * log-odds units (false) for model predictions. Defaults to false.</p>
-     */
     inline void SetUseLogit(bool value) { m_useLogitHasBeenSet = true; m_useLogit = value; }
-
-    /**
-     * <p>A Boolean toggle to indicate if you want to use the logit function (true) or
-     * log-odds units (false) for model predictions. Defaults to false.</p>
-     */
     inline ClarifyShapConfig& WithUseLogit(bool value) { SetUseLogit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The starting value used to initialize the random number generator in the
      * explainer. Provide a value for this parameter to obtain a deterministic SHAP
      * result.</p>
      */
     inline int GetSeed() const{ return m_seed; }
-
-    /**
-     * <p>The starting value used to initialize the random number generator in the
-     * explainer. Provide a value for this parameter to obtain a deterministic SHAP
-     * result.</p>
-     */
     inline bool SeedHasBeenSet() const { return m_seedHasBeenSet; }
-
-    /**
-     * <p>The starting value used to initialize the random number generator in the
-     * explainer. Provide a value for this parameter to obtain a deterministic SHAP
-     * result.</p>
-     */
     inline void SetSeed(int value) { m_seedHasBeenSet = true; m_seed = value; }
-
-    /**
-     * <p>The starting value used to initialize the random number generator in the
-     * explainer. Provide a value for this parameter to obtain a deterministic SHAP
-     * result.</p>
-     */
     inline ClarifyShapConfig& WithSeed(int value) { SetSeed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A parameter that indicates if text features are treated as text and
      * explanations are provided for individual units of text. Required for natural
      * language processing (NLP) explainability only.</p>
      */
     inline const ClarifyTextConfig& GetTextConfig() const{ return m_textConfig; }
-
-    /**
-     * <p>A parameter that indicates if text features are treated as text and
-     * explanations are provided for individual units of text. Required for natural
-     * language processing (NLP) explainability only.</p>
-     */
     inline bool TextConfigHasBeenSet() const { return m_textConfigHasBeenSet; }
-
-    /**
-     * <p>A parameter that indicates if text features are treated as text and
-     * explanations are provided for individual units of text. Required for natural
-     * language processing (NLP) explainability only.</p>
-     */
     inline void SetTextConfig(const ClarifyTextConfig& value) { m_textConfigHasBeenSet = true; m_textConfig = value; }
-
-    /**
-     * <p>A parameter that indicates if text features are treated as text and
-     * explanations are provided for individual units of text. Required for natural
-     * language processing (NLP) explainability only.</p>
-     */
     inline void SetTextConfig(ClarifyTextConfig&& value) { m_textConfigHasBeenSet = true; m_textConfig = std::move(value); }
-
-    /**
-     * <p>A parameter that indicates if text features are treated as text and
-     * explanations are provided for individual units of text. Required for natural
-     * language processing (NLP) explainability only.</p>
-     */
     inline ClarifyShapConfig& WithTextConfig(const ClarifyTextConfig& value) { SetTextConfig(value); return *this;}
-
-    /**
-     * <p>A parameter that indicates if text features are treated as text and
-     * explanations are provided for individual units of text. Required for natural
-     * language processing (NLP) explainability only.</p>
-     */
     inline ClarifyShapConfig& WithTextConfig(ClarifyTextConfig&& value) { SetTextConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ClarifyShapBaselineConfig m_shapBaselineConfig;

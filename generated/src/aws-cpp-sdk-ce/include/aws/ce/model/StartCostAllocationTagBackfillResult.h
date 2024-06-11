@@ -33,53 +33,27 @@ namespace Model
     AWS_COSTEXPLORER_API StartCostAllocationTagBackfillResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> An object containing detailed metadata of your new backfill request. </p>
      */
     inline const CostAllocationTagBackfillRequest& GetBackfillRequest() const{ return m_backfillRequest; }
-
-    /**
-     * <p> An object containing detailed metadata of your new backfill request. </p>
-     */
     inline void SetBackfillRequest(const CostAllocationTagBackfillRequest& value) { m_backfillRequest = value; }
-
-    /**
-     * <p> An object containing detailed metadata of your new backfill request. </p>
-     */
     inline void SetBackfillRequest(CostAllocationTagBackfillRequest&& value) { m_backfillRequest = std::move(value); }
-
-    /**
-     * <p> An object containing detailed metadata of your new backfill request. </p>
-     */
     inline StartCostAllocationTagBackfillResult& WithBackfillRequest(const CostAllocationTagBackfillRequest& value) { SetBackfillRequest(value); return *this;}
-
-    /**
-     * <p> An object containing detailed metadata of your new backfill request. </p>
-     */
     inline StartCostAllocationTagBackfillResult& WithBackfillRequest(CostAllocationTagBackfillRequest&& value) { SetBackfillRequest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartCostAllocationTagBackfillResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartCostAllocationTagBackfillResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartCostAllocationTagBackfillResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CostAllocationTagBackfillRequest m_backfillRequest;

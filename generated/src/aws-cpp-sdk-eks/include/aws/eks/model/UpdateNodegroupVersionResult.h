@@ -33,43 +33,25 @@ namespace Model
     AWS_EKS_API UpdateNodegroupVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Update& GetUpdate() const{ return m_update; }
-
-    
     inline void SetUpdate(const Update& value) { m_update = value; }
-
-    
     inline void SetUpdate(Update&& value) { m_update = std::move(value); }
-
-    
     inline UpdateNodegroupVersionResult& WithUpdate(const Update& value) { SetUpdate(value); return *this;}
-
-    
     inline UpdateNodegroupVersionResult& WithUpdate(Update&& value) { SetUpdate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateNodegroupVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateNodegroupVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateNodegroupVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Update m_update;

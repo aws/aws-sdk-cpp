@@ -35,99 +35,42 @@ namespace Model
     AWS_IVS_API BatchGetStreamKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::Vector<BatchError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p/>
-     */
     inline void SetErrors(const Aws::Vector<BatchError>& value) { m_errors = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetErrors(Aws::Vector<BatchError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline BatchGetStreamKeyResult& WithErrors(const Aws::Vector<BatchError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline BatchGetStreamKeyResult& WithErrors(Aws::Vector<BatchError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline BatchGetStreamKeyResult& AddErrors(const BatchError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p/>
-     */
     inline BatchGetStreamKeyResult& AddErrors(BatchError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::Vector<StreamKey>& GetStreamKeys() const{ return m_streamKeys; }
-
-    /**
-     * <p/>
-     */
     inline void SetStreamKeys(const Aws::Vector<StreamKey>& value) { m_streamKeys = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetStreamKeys(Aws::Vector<StreamKey>&& value) { m_streamKeys = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline BatchGetStreamKeyResult& WithStreamKeys(const Aws::Vector<StreamKey>& value) { SetStreamKeys(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline BatchGetStreamKeyResult& WithStreamKeys(Aws::Vector<StreamKey>&& value) { SetStreamKeys(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline BatchGetStreamKeyResult& AddStreamKeys(const StreamKey& value) { m_streamKeys.push_back(value); return *this; }
-
-    /**
-     * <p/>
-     */
     inline BatchGetStreamKeyResult& AddStreamKeys(StreamKey&& value) { m_streamKeys.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetStreamKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetStreamKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetStreamKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BatchError> m_errors;

@@ -37,36 +37,17 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The file's read options.</p>
      */
     inline const ReadOptions& GetReadOptions() const{ return m_readOptions; }
-
-    /**
-     * <p>The file's read options.</p>
-     */
     inline bool ReadOptionsHasBeenSet() const { return m_readOptionsHasBeenSet; }
-
-    /**
-     * <p>The file's read options.</p>
-     */
     inline void SetReadOptions(const ReadOptions& value) { m_readOptionsHasBeenSet = true; m_readOptions = value; }
-
-    /**
-     * <p>The file's read options.</p>
-     */
     inline void SetReadOptions(ReadOptions&& value) { m_readOptionsHasBeenSet = true; m_readOptions = std::move(value); }
-
-    /**
-     * <p>The file's read options.</p>
-     */
     inline TsvOptions& WithReadOptions(const ReadOptions& value) { SetReadOptions(value); return *this;}
-
-    /**
-     * <p>The file's read options.</p>
-     */
     inline TsvOptions& WithReadOptions(ReadOptions&& value) { SetReadOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReadOptions m_readOptions;

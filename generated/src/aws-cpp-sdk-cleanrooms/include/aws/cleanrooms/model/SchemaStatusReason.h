@@ -39,77 +39,31 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The schema status reason code.</p>
      */
     inline const SchemaStatusReasonCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The schema status reason code.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The schema status reason code.</p>
-     */
     inline void SetCode(const SchemaStatusReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The schema status reason code.</p>
-     */
     inline void SetCode(SchemaStatusReasonCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The schema status reason code.</p>
-     */
     inline SchemaStatusReason& WithCode(const SchemaStatusReasonCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The schema status reason code.</p>
-     */
     inline SchemaStatusReason& WithCode(SchemaStatusReasonCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An explanation of the schema status reason code.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>An explanation of the schema status reason code.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>An explanation of the schema status reason code.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>An explanation of the schema status reason code.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>An explanation of the schema status reason code.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>An explanation of the schema status reason code.</p>
-     */
     inline SchemaStatusReason& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>An explanation of the schema status reason code.</p>
-     */
     inline SchemaStatusReason& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>An explanation of the schema status reason code.</p>
-     */
     inline SchemaStatusReason& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     SchemaStatusReasonCode m_code;

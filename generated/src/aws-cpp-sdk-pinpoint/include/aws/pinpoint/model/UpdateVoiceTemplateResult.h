@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API UpdateVoiceTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const MessageBody& GetMessageBody() const{ return m_messageBody; }
-
-    
     inline void SetMessageBody(const MessageBody& value) { m_messageBody = value; }
-
-    
     inline void SetMessageBody(MessageBody&& value) { m_messageBody = std::move(value); }
-
-    
     inline UpdateVoiceTemplateResult& WithMessageBody(const MessageBody& value) { SetMessageBody(value); return *this;}
-
-    
     inline UpdateVoiceTemplateResult& WithMessageBody(MessageBody&& value) { SetMessageBody(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateVoiceTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateVoiceTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateVoiceTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MessageBody m_messageBody;

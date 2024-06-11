@@ -39,46 +39,19 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The IPv4 CIDR block.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline CidrBlock& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline CidrBlock& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline CidrBlock& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cidrBlock;

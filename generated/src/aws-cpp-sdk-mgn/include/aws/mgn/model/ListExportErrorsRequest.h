@@ -35,108 +35,43 @@ namespace Model
     AWS_MGN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>List export errors request export id.</p>
      */
     inline const Aws::String& GetExportID() const{ return m_exportID; }
-
-    /**
-     * <p>List export errors request export id.</p>
-     */
     inline bool ExportIDHasBeenSet() const { return m_exportIDHasBeenSet; }
-
-    /**
-     * <p>List export errors request export id.</p>
-     */
     inline void SetExportID(const Aws::String& value) { m_exportIDHasBeenSet = true; m_exportID = value; }
-
-    /**
-     * <p>List export errors request export id.</p>
-     */
     inline void SetExportID(Aws::String&& value) { m_exportIDHasBeenSet = true; m_exportID = std::move(value); }
-
-    /**
-     * <p>List export errors request export id.</p>
-     */
     inline void SetExportID(const char* value) { m_exportIDHasBeenSet = true; m_exportID.assign(value); }
-
-    /**
-     * <p>List export errors request export id.</p>
-     */
     inline ListExportErrorsRequest& WithExportID(const Aws::String& value) { SetExportID(value); return *this;}
-
-    /**
-     * <p>List export errors request export id.</p>
-     */
     inline ListExportErrorsRequest& WithExportID(Aws::String&& value) { SetExportID(std::move(value)); return *this;}
-
-    /**
-     * <p>List export errors request export id.</p>
-     */
     inline ListExportErrorsRequest& WithExportID(const char* value) { SetExportID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List export errors request max results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>List export errors request max results.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>List export errors request max results.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>List export errors request max results.</p>
-     */
     inline ListExportErrorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List export errors request next token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>List export errors request next token.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>List export errors request next token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>List export errors request next token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>List export errors request next token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>List export errors request next token.</p>
-     */
     inline ListExportErrorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>List export errors request next token.</p>
-     */
     inline ListExportErrorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>List export errors request next token.</p>
-     */
     inline ListExportErrorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exportID;

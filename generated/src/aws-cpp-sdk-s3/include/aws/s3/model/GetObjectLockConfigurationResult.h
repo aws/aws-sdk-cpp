@@ -33,53 +33,27 @@ namespace Model
     AWS_S3_API GetObjectLockConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The specified bucket's Object Lock configuration.</p>
      */
     inline const ObjectLockConfiguration& GetObjectLockConfiguration() const{ return m_objectLockConfiguration; }
-
-    /**
-     * <p>The specified bucket's Object Lock configuration.</p>
-     */
     inline void SetObjectLockConfiguration(const ObjectLockConfiguration& value) { m_objectLockConfiguration = value; }
-
-    /**
-     * <p>The specified bucket's Object Lock configuration.</p>
-     */
     inline void SetObjectLockConfiguration(ObjectLockConfiguration&& value) { m_objectLockConfiguration = std::move(value); }
-
-    /**
-     * <p>The specified bucket's Object Lock configuration.</p>
-     */
     inline GetObjectLockConfigurationResult& WithObjectLockConfiguration(const ObjectLockConfiguration& value) { SetObjectLockConfiguration(value); return *this;}
-
-    /**
-     * <p>The specified bucket's Object Lock configuration.</p>
-     */
     inline GetObjectLockConfigurationResult& WithObjectLockConfiguration(ObjectLockConfiguration&& value) { SetObjectLockConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetObjectLockConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetObjectLockConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetObjectLockConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ObjectLockConfiguration m_objectLockConfiguration;

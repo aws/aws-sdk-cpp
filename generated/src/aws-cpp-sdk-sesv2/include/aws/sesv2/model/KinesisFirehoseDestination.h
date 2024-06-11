@@ -39,103 +39,35 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2
      * uses to send email events to the Amazon Kinesis Data Firehose stream.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2
-     * uses to send email events to the Amazon Kinesis Data Firehose stream.</p>
-     */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2
-     * uses to send email events to the Amazon Kinesis Data Firehose stream.</p>
-     */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2
-     * uses to send email events to the Amazon Kinesis Data Firehose stream.</p>
-     */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2
-     * uses to send email events to the Amazon Kinesis Data Firehose stream.</p>
-     */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2
-     * uses to send email events to the Amazon Kinesis Data Firehose stream.</p>
-     */
     inline KinesisFirehoseDestination& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2
-     * uses to send email events to the Amazon Kinesis Data Firehose stream.</p>
-     */
     inline KinesisFirehoseDestination& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2
-     * uses to send email events to the Amazon Kinesis Data Firehose stream.</p>
-     */
     inline KinesisFirehoseDestination& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream
      * that the Amazon SES API v2 sends email events to.</p>
      */
     inline const Aws::String& GetDeliveryStreamArn() const{ return m_deliveryStreamArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream
-     * that the Amazon SES API v2 sends email events to.</p>
-     */
     inline bool DeliveryStreamArnHasBeenSet() const { return m_deliveryStreamArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream
-     * that the Amazon SES API v2 sends email events to.</p>
-     */
     inline void SetDeliveryStreamArn(const Aws::String& value) { m_deliveryStreamArnHasBeenSet = true; m_deliveryStreamArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream
-     * that the Amazon SES API v2 sends email events to.</p>
-     */
     inline void SetDeliveryStreamArn(Aws::String&& value) { m_deliveryStreamArnHasBeenSet = true; m_deliveryStreamArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream
-     * that the Amazon SES API v2 sends email events to.</p>
-     */
     inline void SetDeliveryStreamArn(const char* value) { m_deliveryStreamArnHasBeenSet = true; m_deliveryStreamArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream
-     * that the Amazon SES API v2 sends email events to.</p>
-     */
     inline KinesisFirehoseDestination& WithDeliveryStreamArn(const Aws::String& value) { SetDeliveryStreamArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream
-     * that the Amazon SES API v2 sends email events to.</p>
-     */
     inline KinesisFirehoseDestination& WithDeliveryStreamArn(Aws::String&& value) { SetDeliveryStreamArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream
-     * that the Amazon SES API v2 sends email events to.</p>
-     */
     inline KinesisFirehoseDestination& WithDeliveryStreamArn(const char* value) { SetDeliveryStreamArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_iamRoleArn;

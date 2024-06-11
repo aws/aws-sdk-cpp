@@ -38,97 +38,35 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>VPC configuration subnets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
-
-    /**
-     * <p>VPC configuration subnets.</p>
-     */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-
-    /**
-     * <p>VPC configuration subnets.</p>
-     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-
-    /**
-     * <p>VPC configuration subnets.</p>
-     */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-
-    /**
-     * <p>VPC configuration subnets.</p>
-     */
     inline VpcConfig& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-
-    /**
-     * <p>VPC configuration subnets.</p>
-     */
     inline VpcConfig& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>VPC configuration subnets.</p>
-     */
     inline VpcConfig& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-
-    /**
-     * <p>VPC configuration subnets.</p>
-     */
     inline VpcConfig& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>VPC configuration subnets.</p>
-     */
     inline VpcConfig& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>VPC configuration security group Ids.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
-
-    /**
-     * <p>VPC configuration security group Ids.</p>
-     */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-
-    /**
-     * <p>VPC configuration security group Ids.</p>
-     */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-
-    /**
-     * <p>VPC configuration security group Ids.</p>
-     */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-
-    /**
-     * <p>VPC configuration security group Ids.</p>
-     */
     inline VpcConfig& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-
-    /**
-     * <p>VPC configuration security group Ids.</p>
-     */
     inline VpcConfig& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-
-    /**
-     * <p>VPC configuration security group Ids.</p>
-     */
     inline VpcConfig& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-
-    /**
-     * <p>VPC configuration security group Ids.</p>
-     */
     inline VpcConfig& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>VPC configuration security group Ids.</p>
-     */
     inline VpcConfig& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;

@@ -39,54 +39,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The DB snapshot identifier.</p> <p>Constraints: Must be the name of an
      * existing DB snapshot in the <code>available</code> state.</p>
      */
     inline const Aws::String& GetDBSnapshotIdentifier() const{ return m_dBSnapshotIdentifier; }
-
-    /**
-     * <p>The DB snapshot identifier.</p> <p>Constraints: Must be the name of an
-     * existing DB snapshot in the <code>available</code> state.</p>
-     */
     inline bool DBSnapshotIdentifierHasBeenSet() const { return m_dBSnapshotIdentifierHasBeenSet; }
-
-    /**
-     * <p>The DB snapshot identifier.</p> <p>Constraints: Must be the name of an
-     * existing DB snapshot in the <code>available</code> state.</p>
-     */
     inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
-
-    /**
-     * <p>The DB snapshot identifier.</p> <p>Constraints: Must be the name of an
-     * existing DB snapshot in the <code>available</code> state.</p>
-     */
     inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = std::move(value); }
-
-    /**
-     * <p>The DB snapshot identifier.</p> <p>Constraints: Must be the name of an
-     * existing DB snapshot in the <code>available</code> state.</p>
-     */
     inline void SetDBSnapshotIdentifier(const char* value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier.assign(value); }
-
-    /**
-     * <p>The DB snapshot identifier.</p> <p>Constraints: Must be the name of an
-     * existing DB snapshot in the <code>available</code> state.</p>
-     */
     inline DeleteDBSnapshotRequest& WithDBSnapshotIdentifier(const Aws::String& value) { SetDBSnapshotIdentifier(value); return *this;}
-
-    /**
-     * <p>The DB snapshot identifier.</p> <p>Constraints: Must be the name of an
-     * existing DB snapshot in the <code>available</code> state.</p>
-     */
     inline DeleteDBSnapshotRequest& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The DB snapshot identifier.</p> <p>Constraints: Must be the name of an
-     * existing DB snapshot in the <code>available</code> state.</p>
-     */
     inline DeleteDBSnapshotRequest& WithDBSnapshotIdentifier(const char* value) { SetDBSnapshotIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dBSnapshotIdentifier;

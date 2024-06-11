@@ -40,85 +40,32 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The aggregated field wells of a scatter plot. The x and y-axes of scatter
      * plots with aggregated field wells are aggregated by category, label, or
      * both.</p>
      */
     inline const ScatterPlotCategoricallyAggregatedFieldWells& GetScatterPlotCategoricallyAggregatedFieldWells() const{ return m_scatterPlotCategoricallyAggregatedFieldWells; }
-
-    /**
-     * <p>The aggregated field wells of a scatter plot. The x and y-axes of scatter
-     * plots with aggregated field wells are aggregated by category, label, or
-     * both.</p>
-     */
     inline bool ScatterPlotCategoricallyAggregatedFieldWellsHasBeenSet() const { return m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The aggregated field wells of a scatter plot. The x and y-axes of scatter
-     * plots with aggregated field wells are aggregated by category, label, or
-     * both.</p>
-     */
     inline void SetScatterPlotCategoricallyAggregatedFieldWells(const ScatterPlotCategoricallyAggregatedFieldWells& value) { m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet = true; m_scatterPlotCategoricallyAggregatedFieldWells = value; }
-
-    /**
-     * <p>The aggregated field wells of a scatter plot. The x and y-axes of scatter
-     * plots with aggregated field wells are aggregated by category, label, or
-     * both.</p>
-     */
     inline void SetScatterPlotCategoricallyAggregatedFieldWells(ScatterPlotCategoricallyAggregatedFieldWells&& value) { m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet = true; m_scatterPlotCategoricallyAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The aggregated field wells of a scatter plot. The x and y-axes of scatter
-     * plots with aggregated field wells are aggregated by category, label, or
-     * both.</p>
-     */
     inline ScatterPlotFieldWells& WithScatterPlotCategoricallyAggregatedFieldWells(const ScatterPlotCategoricallyAggregatedFieldWells& value) { SetScatterPlotCategoricallyAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The aggregated field wells of a scatter plot. The x and y-axes of scatter
-     * plots with aggregated field wells are aggregated by category, label, or
-     * both.</p>
-     */
     inline ScatterPlotFieldWells& WithScatterPlotCategoricallyAggregatedFieldWells(ScatterPlotCategoricallyAggregatedFieldWells&& value) { SetScatterPlotCategoricallyAggregatedFieldWells(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unaggregated field wells of a scatter plot. The x and y-axes of these
      * scatter plots are unaggregated.</p>
      */
     inline const ScatterPlotUnaggregatedFieldWells& GetScatterPlotUnaggregatedFieldWells() const{ return m_scatterPlotUnaggregatedFieldWells; }
-
-    /**
-     * <p>The unaggregated field wells of a scatter plot. The x and y-axes of these
-     * scatter plots are unaggregated.</p>
-     */
     inline bool ScatterPlotUnaggregatedFieldWellsHasBeenSet() const { return m_scatterPlotUnaggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The unaggregated field wells of a scatter plot. The x and y-axes of these
-     * scatter plots are unaggregated.</p>
-     */
     inline void SetScatterPlotUnaggregatedFieldWells(const ScatterPlotUnaggregatedFieldWells& value) { m_scatterPlotUnaggregatedFieldWellsHasBeenSet = true; m_scatterPlotUnaggregatedFieldWells = value; }
-
-    /**
-     * <p>The unaggregated field wells of a scatter plot. The x and y-axes of these
-     * scatter plots are unaggregated.</p>
-     */
     inline void SetScatterPlotUnaggregatedFieldWells(ScatterPlotUnaggregatedFieldWells&& value) { m_scatterPlotUnaggregatedFieldWellsHasBeenSet = true; m_scatterPlotUnaggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The unaggregated field wells of a scatter plot. The x and y-axes of these
-     * scatter plots are unaggregated.</p>
-     */
     inline ScatterPlotFieldWells& WithScatterPlotUnaggregatedFieldWells(const ScatterPlotUnaggregatedFieldWells& value) { SetScatterPlotUnaggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The unaggregated field wells of a scatter plot. The x and y-axes of these
-     * scatter plots are unaggregated.</p>
-     */
     inline ScatterPlotFieldWells& WithScatterPlotUnaggregatedFieldWells(ScatterPlotUnaggregatedFieldWells&& value) { SetScatterPlotUnaggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ScatterPlotCategoricallyAggregatedFieldWells m_scatterPlotCategoricallyAggregatedFieldWells;

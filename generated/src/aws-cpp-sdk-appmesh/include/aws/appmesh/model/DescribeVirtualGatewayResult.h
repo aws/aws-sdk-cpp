@@ -33,53 +33,27 @@ namespace Model
     AWS_APPMESH_API DescribeVirtualGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The full description of your virtual gateway.</p>
      */
     inline const VirtualGatewayData& GetVirtualGateway() const{ return m_virtualGateway; }
-
-    /**
-     * <p>The full description of your virtual gateway.</p>
-     */
     inline void SetVirtualGateway(const VirtualGatewayData& value) { m_virtualGateway = value; }
-
-    /**
-     * <p>The full description of your virtual gateway.</p>
-     */
     inline void SetVirtualGateway(VirtualGatewayData&& value) { m_virtualGateway = std::move(value); }
-
-    /**
-     * <p>The full description of your virtual gateway.</p>
-     */
     inline DescribeVirtualGatewayResult& WithVirtualGateway(const VirtualGatewayData& value) { SetVirtualGateway(value); return *this;}
-
-    /**
-     * <p>The full description of your virtual gateway.</p>
-     */
     inline DescribeVirtualGatewayResult& WithVirtualGateway(VirtualGatewayData&& value) { SetVirtualGateway(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeVirtualGatewayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeVirtualGatewayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeVirtualGatewayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VirtualGatewayData m_virtualGateway;

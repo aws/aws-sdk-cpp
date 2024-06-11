@@ -37,185 +37,63 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The AppKey value.</p>
      */
     inline const Aws::String& GetAppKey() const{ return m_appKey; }
-
-    /**
-     * <p>The AppKey value.</p>
-     */
     inline bool AppKeyHasBeenSet() const { return m_appKeyHasBeenSet; }
-
-    /**
-     * <p>The AppKey value.</p>
-     */
     inline void SetAppKey(const Aws::String& value) { m_appKeyHasBeenSet = true; m_appKey = value; }
-
-    /**
-     * <p>The AppKey value.</p>
-     */
     inline void SetAppKey(Aws::String&& value) { m_appKeyHasBeenSet = true; m_appKey = std::move(value); }
-
-    /**
-     * <p>The AppKey value.</p>
-     */
     inline void SetAppKey(const char* value) { m_appKeyHasBeenSet = true; m_appKey.assign(value); }
-
-    /**
-     * <p>The AppKey value.</p>
-     */
     inline OtaaV1_0_x& WithAppKey(const Aws::String& value) { SetAppKey(value); return *this;}
-
-    /**
-     * <p>The AppKey value.</p>
-     */
     inline OtaaV1_0_x& WithAppKey(Aws::String&& value) { SetAppKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The AppKey value.</p>
-     */
     inline OtaaV1_0_x& WithAppKey(const char* value) { SetAppKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
      * or v1.0.3.</p>
      */
     inline const Aws::String& GetAppEui() const{ return m_appEui; }
-
-    /**
-     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
-     * or v1.0.3.</p>
-     */
     inline bool AppEuiHasBeenSet() const { return m_appEuiHasBeenSet; }
-
-    /**
-     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
-     * or v1.0.3.</p>
-     */
     inline void SetAppEui(const Aws::String& value) { m_appEuiHasBeenSet = true; m_appEui = value; }
-
-    /**
-     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
-     * or v1.0.3.</p>
-     */
     inline void SetAppEui(Aws::String&& value) { m_appEuiHasBeenSet = true; m_appEui = std::move(value); }
-
-    /**
-     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
-     * or v1.0.3.</p>
-     */
     inline void SetAppEui(const char* value) { m_appEuiHasBeenSet = true; m_appEui.assign(value); }
-
-    /**
-     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
-     * or v1.0.3.</p>
-     */
     inline OtaaV1_0_x& WithAppEui(const Aws::String& value) { SetAppEui(value); return *this;}
-
-    /**
-     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
-     * or v1.0.3.</p>
-     */
     inline OtaaV1_0_x& WithAppEui(Aws::String&& value) { SetAppEui(std::move(value)); return *this;}
-
-    /**
-     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
-     * or v1.0.3.</p>
-     */
     inline OtaaV1_0_x& WithAppEui(const char* value) { SetAppEui(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
      * LoRaWAN version v1.0.4.</p>
      */
     inline const Aws::String& GetJoinEui() const{ return m_joinEui; }
-
-    /**
-     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
-     * LoRaWAN version v1.0.4.</p>
-     */
     inline bool JoinEuiHasBeenSet() const { return m_joinEuiHasBeenSet; }
-
-    /**
-     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
-     * LoRaWAN version v1.0.4.</p>
-     */
     inline void SetJoinEui(const Aws::String& value) { m_joinEuiHasBeenSet = true; m_joinEui = value; }
-
-    /**
-     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
-     * LoRaWAN version v1.0.4.</p>
-     */
     inline void SetJoinEui(Aws::String&& value) { m_joinEuiHasBeenSet = true; m_joinEui = std::move(value); }
-
-    /**
-     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
-     * LoRaWAN version v1.0.4.</p>
-     */
     inline void SetJoinEui(const char* value) { m_joinEuiHasBeenSet = true; m_joinEui.assign(value); }
-
-    /**
-     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
-     * LoRaWAN version v1.0.4.</p>
-     */
     inline OtaaV1_0_x& WithJoinEui(const Aws::String& value) { SetJoinEui(value); return *this;}
-
-    /**
-     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
-     * LoRaWAN version v1.0.4.</p>
-     */
     inline OtaaV1_0_x& WithJoinEui(Aws::String&& value) { SetJoinEui(std::move(value)); return *this;}
-
-    /**
-     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
-     * LoRaWAN version v1.0.4.</p>
-     */
     inline OtaaV1_0_x& WithJoinEui(const char* value) { SetJoinEui(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The GenAppKey value.</p>
      */
     inline const Aws::String& GetGenAppKey() const{ return m_genAppKey; }
-
-    /**
-     * <p>The GenAppKey value.</p>
-     */
     inline bool GenAppKeyHasBeenSet() const { return m_genAppKeyHasBeenSet; }
-
-    /**
-     * <p>The GenAppKey value.</p>
-     */
     inline void SetGenAppKey(const Aws::String& value) { m_genAppKeyHasBeenSet = true; m_genAppKey = value; }
-
-    /**
-     * <p>The GenAppKey value.</p>
-     */
     inline void SetGenAppKey(Aws::String&& value) { m_genAppKeyHasBeenSet = true; m_genAppKey = std::move(value); }
-
-    /**
-     * <p>The GenAppKey value.</p>
-     */
     inline void SetGenAppKey(const char* value) { m_genAppKeyHasBeenSet = true; m_genAppKey.assign(value); }
-
-    /**
-     * <p>The GenAppKey value.</p>
-     */
     inline OtaaV1_0_x& WithGenAppKey(const Aws::String& value) { SetGenAppKey(value); return *this;}
-
-    /**
-     * <p>The GenAppKey value.</p>
-     */
     inline OtaaV1_0_x& WithGenAppKey(Aws::String&& value) { SetGenAppKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The GenAppKey value.</p>
-     */
     inline OtaaV1_0_x& WithGenAppKey(const char* value) { SetGenAppKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appKey;

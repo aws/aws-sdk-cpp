@@ -37,36 +37,17 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Maximum CDI input resolution
      */
     inline const CdiInputResolution& GetResolution() const{ return m_resolution; }
-
-    /**
-     * Maximum CDI input resolution
-     */
     inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
-
-    /**
-     * Maximum CDI input resolution
-     */
     inline void SetResolution(const CdiInputResolution& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
-
-    /**
-     * Maximum CDI input resolution
-     */
     inline void SetResolution(CdiInputResolution&& value) { m_resolutionHasBeenSet = true; m_resolution = std::move(value); }
-
-    /**
-     * Maximum CDI input resolution
-     */
     inline CdiInputSpecification& WithResolution(const CdiInputResolution& value) { SetResolution(value); return *this;}
-
-    /**
-     * Maximum CDI input resolution
-     */
     inline CdiInputSpecification& WithResolution(CdiInputResolution&& value) { SetResolution(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CdiInputResolution m_resolution;

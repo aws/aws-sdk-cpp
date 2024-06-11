@@ -40,88 +40,35 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of this service level objective.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The ARN of this service level objective.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The ARN of this service level objective.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The ARN of this service level objective.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The ARN of this service level objective.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The ARN of this service level objective.</p>
-     */
     inline ServiceLevelObjectiveSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of this service level objective.</p>
-     */
     inline ServiceLevelObjectiveSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of this service level objective.</p>
-     */
     inline ServiceLevelObjectiveSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the service level objective.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the service level objective.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the service level objective.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the service level objective.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the service level objective.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the service level objective.</p>
-     */
     inline ServiceLevelObjectiveSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the service level objective.</p>
-     */
     inline ServiceLevelObjectiveSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service level objective.</p>
-     */
     inline ServiceLevelObjectiveSummary& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
      * <li> <p> <code>Type</code> designates the type of object this service level
@@ -139,309 +86,47 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetKeyAttributes() const{ return m_keyAttributes; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this service level
-     * objective is for.</p> </li> <li> <p> <code>ResourceType</code> specifies the
-     * type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this service level
-     * objective is for.</p> </li> <li> <p> <code>ResourceType</code> specifies the
-     * type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline void SetKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = value; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this service level
-     * objective is for.</p> </li> <li> <p> <code>ResourceType</code> specifies the
-     * type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline void SetKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::move(value); }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this service level
-     * objective is for.</p> </li> <li> <p> <code>ResourceType</code> specifies the
-     * type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelObjectiveSummary& WithKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetKeyAttributes(value); return *this;}
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this service level
-     * objective is for.</p> </li> <li> <p> <code>ResourceType</code> specifies the
-     * type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelObjectiveSummary& WithKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetKeyAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this service level
-     * objective is for.</p> </li> <li> <p> <code>ResourceType</code> specifies the
-     * type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelObjectiveSummary& AddKeyAttributes(const Aws::String& key, const Aws::String& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, value); return *this; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this service level
-     * objective is for.</p> </li> <li> <p> <code>ResourceType</code> specifies the
-     * type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelObjectiveSummary& AddKeyAttributes(Aws::String&& key, const Aws::String& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this service level
-     * objective is for.</p> </li> <li> <p> <code>ResourceType</code> specifies the
-     * type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelObjectiveSummary& AddKeyAttributes(const Aws::String& key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this service level
-     * objective is for.</p> </li> <li> <p> <code>ResourceType</code> specifies the
-     * type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelObjectiveSummary& AddKeyAttributes(Aws::String&& key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this service level
-     * objective is for.</p> </li> <li> <p> <code>ResourceType</code> specifies the
-     * type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelObjectiveSummary& AddKeyAttributes(const char* key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this service level
-     * objective is for.</p> </li> <li> <p> <code>ResourceType</code> specifies the
-     * type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelObjectiveSummary& AddKeyAttributes(Aws::String&& key, const char* value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this service level
-     * objective is for.</p> </li> <li> <p> <code>ResourceType</code> specifies the
-     * type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceLevelObjectiveSummary& AddKeyAttributes(const char* key, const char* value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If this service level objective is specific to a single operation, this field
      * displays the name of that operation.</p>
      */
     inline const Aws::String& GetOperationName() const{ return m_operationName; }
-
-    /**
-     * <p>If this service level objective is specific to a single operation, this field
-     * displays the name of that operation.</p>
-     */
     inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
-
-    /**
-     * <p>If this service level objective is specific to a single operation, this field
-     * displays the name of that operation.</p>
-     */
     inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
-
-    /**
-     * <p>If this service level objective is specific to a single operation, this field
-     * displays the name of that operation.</p>
-     */
     inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = std::move(value); }
-
-    /**
-     * <p>If this service level objective is specific to a single operation, this field
-     * displays the name of that operation.</p>
-     */
     inline void SetOperationName(const char* value) { m_operationNameHasBeenSet = true; m_operationName.assign(value); }
-
-    /**
-     * <p>If this service level objective is specific to a single operation, this field
-     * displays the name of that operation.</p>
-     */
     inline ServiceLevelObjectiveSummary& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
-
-    /**
-     * <p>If this service level objective is specific to a single operation, this field
-     * displays the name of that operation.</p>
-     */
     inline ServiceLevelObjectiveSummary& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
-
-    /**
-     * <p>If this service level objective is specific to a single operation, this field
-     * displays the name of that operation.</p>
-     */
     inline ServiceLevelObjectiveSummary& WithOperationName(const char* value) { SetOperationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that this service level objective was created. It is
      * expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
-
-    /**
-     * <p>The date and time that this service level objective was created. It is
-     * expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-     */
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time that this service level objective was created. It is
-     * expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-
-    /**
-     * <p>The date and time that this service level objective was created. It is
-     * expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-     */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-
-    /**
-     * <p>The date and time that this service level objective was created. It is
-     * expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-     */
     inline ServiceLevelObjectiveSummary& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-
-    /**
-     * <p>The date and time that this service level objective was created. It is
-     * expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-     */
     inline ServiceLevelObjectiveSummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

@@ -39,190 +39,71 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the field.</p>
      */
     inline const Aws::String& GetFieldArn() const{ return m_fieldArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the field.</p>
-     */
     inline bool FieldArnHasBeenSet() const { return m_fieldArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the field.</p>
-     */
     inline void SetFieldArn(const Aws::String& value) { m_fieldArnHasBeenSet = true; m_fieldArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the field.</p>
-     */
     inline void SetFieldArn(Aws::String&& value) { m_fieldArnHasBeenSet = true; m_fieldArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the field.</p>
-     */
     inline void SetFieldArn(const char* value) { m_fieldArnHasBeenSet = true; m_fieldArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the field.</p>
-     */
     inline FieldSummary& WithFieldArn(const Aws::String& value) { SetFieldArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the field.</p>
-     */
     inline FieldSummary& WithFieldArn(Aws::String&& value) { SetFieldArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the field.</p>
-     */
     inline FieldSummary& WithFieldArn(const char* value) { SetFieldArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of a field.</p>
      */
     inline const Aws::String& GetFieldId() const{ return m_fieldId; }
-
-    /**
-     * <p>The unique identifier of a field.</p>
-     */
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of a field.</p>
-     */
     inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-
-    /**
-     * <p>The unique identifier of a field.</p>
-     */
     inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of a field.</p>
-     */
     inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-
-    /**
-     * <p>The unique identifier of a field.</p>
-     */
     inline FieldSummary& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of a field.</p>
-     */
     inline FieldSummary& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of a field.</p>
-     */
     inline FieldSummary& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Name of the field.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Name of the field.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Name of the field.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Name of the field.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Name of the field.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Name of the field.</p>
-     */
     inline FieldSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Name of the field.</p>
-     */
     inline FieldSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the field.</p>
-     */
     inline FieldSummary& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The namespace of a field.</p>
      */
     inline const FieldNamespace& GetNamespace() const{ return m_namespace; }
-
-    /**
-     * <p>The namespace of a field.</p>
-     */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-
-    /**
-     * <p>The namespace of a field.</p>
-     */
     inline void SetNamespace(const FieldNamespace& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-
-    /**
-     * <p>The namespace of a field.</p>
-     */
     inline void SetNamespace(FieldNamespace&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-
-    /**
-     * <p>The namespace of a field.</p>
-     */
     inline FieldSummary& WithNamespace(const FieldNamespace& value) { SetNamespace(value); return *this;}
-
-    /**
-     * <p>The namespace of a field.</p>
-     */
     inline FieldSummary& WithNamespace(FieldNamespace&& value) { SetNamespace(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of a field.</p>
      */
     inline const FieldType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of a field.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of a field.</p>
-     */
     inline void SetType(const FieldType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of a field.</p>
-     */
     inline void SetType(FieldType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of a field.</p>
-     */
     inline FieldSummary& WithType(const FieldType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of a field.</p>
-     */
     inline FieldSummary& WithType(FieldType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldArn;

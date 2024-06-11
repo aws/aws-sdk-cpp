@@ -39,53 +39,27 @@ namespace Model
     AWS_MAILMANAGER_API GetArchiveMessageContentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The textual body content of the email message.</p>
      */
     inline const MessageBody& GetBody() const{ return m_body; }
-
-    /**
-     * <p>The textual body content of the email message.</p>
-     */
     inline void SetBody(const MessageBody& value) { m_body = value; }
-
-    /**
-     * <p>The textual body content of the email message.</p>
-     */
     inline void SetBody(MessageBody&& value) { m_body = std::move(value); }
-
-    /**
-     * <p>The textual body content of the email message.</p>
-     */
     inline GetArchiveMessageContentResult& WithBody(const MessageBody& value) { SetBody(value); return *this;}
-
-    /**
-     * <p>The textual body content of the email message.</p>
-     */
     inline GetArchiveMessageContentResult& WithBody(MessageBody&& value) { SetBody(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetArchiveMessageContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetArchiveMessageContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetArchiveMessageContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MessageBody m_body;

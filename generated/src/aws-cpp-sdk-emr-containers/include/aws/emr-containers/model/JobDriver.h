@@ -40,67 +40,29 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The job driver parameters specified for spark submit.</p>
      */
     inline const SparkSubmitJobDriver& GetSparkSubmitJobDriver() const{ return m_sparkSubmitJobDriver; }
-
-    /**
-     * <p>The job driver parameters specified for spark submit.</p>
-     */
     inline bool SparkSubmitJobDriverHasBeenSet() const { return m_sparkSubmitJobDriverHasBeenSet; }
-
-    /**
-     * <p>The job driver parameters specified for spark submit.</p>
-     */
     inline void SetSparkSubmitJobDriver(const SparkSubmitJobDriver& value) { m_sparkSubmitJobDriverHasBeenSet = true; m_sparkSubmitJobDriver = value; }
-
-    /**
-     * <p>The job driver parameters specified for spark submit.</p>
-     */
     inline void SetSparkSubmitJobDriver(SparkSubmitJobDriver&& value) { m_sparkSubmitJobDriverHasBeenSet = true; m_sparkSubmitJobDriver = std::move(value); }
-
-    /**
-     * <p>The job driver parameters specified for spark submit.</p>
-     */
     inline JobDriver& WithSparkSubmitJobDriver(const SparkSubmitJobDriver& value) { SetSparkSubmitJobDriver(value); return *this;}
-
-    /**
-     * <p>The job driver parameters specified for spark submit.</p>
-     */
     inline JobDriver& WithSparkSubmitJobDriver(SparkSubmitJobDriver&& value) { SetSparkSubmitJobDriver(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The job driver for job type.</p>
      */
     inline const SparkSqlJobDriver& GetSparkSqlJobDriver() const{ return m_sparkSqlJobDriver; }
-
-    /**
-     * <p>The job driver for job type.</p>
-     */
     inline bool SparkSqlJobDriverHasBeenSet() const { return m_sparkSqlJobDriverHasBeenSet; }
-
-    /**
-     * <p>The job driver for job type.</p>
-     */
     inline void SetSparkSqlJobDriver(const SparkSqlJobDriver& value) { m_sparkSqlJobDriverHasBeenSet = true; m_sparkSqlJobDriver = value; }
-
-    /**
-     * <p>The job driver for job type.</p>
-     */
     inline void SetSparkSqlJobDriver(SparkSqlJobDriver&& value) { m_sparkSqlJobDriverHasBeenSet = true; m_sparkSqlJobDriver = std::move(value); }
-
-    /**
-     * <p>The job driver for job type.</p>
-     */
     inline JobDriver& WithSparkSqlJobDriver(const SparkSqlJobDriver& value) { SetSparkSqlJobDriver(value); return *this;}
-
-    /**
-     * <p>The job driver for job type.</p>
-     */
     inline JobDriver& WithSparkSqlJobDriver(SparkSqlJobDriver&& value) { SetSparkSqlJobDriver(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SparkSubmitJobDriver m_sparkSubmitJobDriver;

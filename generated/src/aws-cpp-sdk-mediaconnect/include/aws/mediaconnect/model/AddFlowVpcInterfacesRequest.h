@@ -37,87 +37,33 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The flow that you want to mutate.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The flow that you want to mutate.
-     */
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-
-    /**
-     * The flow that you want to mutate.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-
-    /**
-     * The flow that you want to mutate.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-
-    /**
-     * The flow that you want to mutate.
-     */
     inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-
-    /**
-     * The flow that you want to mutate.
-     */
     inline AddFlowVpcInterfacesRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The flow that you want to mutate.
-     */
     inline AddFlowVpcInterfacesRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The flow that you want to mutate.
-     */
     inline AddFlowVpcInterfacesRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * A list of VPC interfaces that you want to add.
      */
     inline const Aws::Vector<VpcInterfaceRequest>& GetVpcInterfaces() const{ return m_vpcInterfaces; }
-
-    /**
-     * A list of VPC interfaces that you want to add.
-     */
     inline bool VpcInterfacesHasBeenSet() const { return m_vpcInterfacesHasBeenSet; }
-
-    /**
-     * A list of VPC interfaces that you want to add.
-     */
     inline void SetVpcInterfaces(const Aws::Vector<VpcInterfaceRequest>& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces = value; }
-
-    /**
-     * A list of VPC interfaces that you want to add.
-     */
     inline void SetVpcInterfaces(Aws::Vector<VpcInterfaceRequest>&& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces = std::move(value); }
-
-    /**
-     * A list of VPC interfaces that you want to add.
-     */
     inline AddFlowVpcInterfacesRequest& WithVpcInterfaces(const Aws::Vector<VpcInterfaceRequest>& value) { SetVpcInterfaces(value); return *this;}
-
-    /**
-     * A list of VPC interfaces that you want to add.
-     */
     inline AddFlowVpcInterfacesRequest& WithVpcInterfaces(Aws::Vector<VpcInterfaceRequest>&& value) { SetVpcInterfaces(std::move(value)); return *this;}
-
-    /**
-     * A list of VPC interfaces that you want to add.
-     */
     inline AddFlowVpcInterfacesRequest& AddVpcInterfaces(const VpcInterfaceRequest& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces.push_back(value); return *this; }
-
-    /**
-     * A list of VPC interfaces that you want to add.
-     */
     inline AddFlowVpcInterfacesRequest& AddVpcInterfaces(VpcInterfaceRequest&& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

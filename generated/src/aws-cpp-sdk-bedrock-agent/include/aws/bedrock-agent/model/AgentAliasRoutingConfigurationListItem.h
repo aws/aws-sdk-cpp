@@ -38,87 +38,33 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The version of the agent with which the alias is associated.</p>
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
-
-    /**
-     * <p>The version of the agent with which the alias is associated.</p>
-     */
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the agent with which the alias is associated.</p>
-     */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-
-    /**
-     * <p>The version of the agent with which the alias is associated.</p>
-     */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-
-    /**
-     * <p>The version of the agent with which the alias is associated.</p>
-     */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-
-    /**
-     * <p>The version of the agent with which the alias is associated.</p>
-     */
     inline AgentAliasRoutingConfigurationListItem& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-
-    /**
-     * <p>The version of the agent with which the alias is associated.</p>
-     */
     inline AgentAliasRoutingConfigurationListItem& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the agent with which the alias is associated.</p>
-     */
     inline AgentAliasRoutingConfigurationListItem& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
      */
     inline const Aws::String& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
-
-    /**
-     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
-     */
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
-
-    /**
-     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
-     */
     inline void SetProvisionedThroughput(const Aws::String& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
-
-    /**
-     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
-     */
     inline void SetProvisionedThroughput(Aws::String&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
-
-    /**
-     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
-     */
     inline void SetProvisionedThroughput(const char* value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput.assign(value); }
-
-    /**
-     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
-     */
     inline AgentAliasRoutingConfigurationListItem& WithProvisionedThroughput(const Aws::String& value) { SetProvisionedThroughput(value); return *this;}
-
-    /**
-     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
-     */
     inline AgentAliasRoutingConfigurationListItem& WithProvisionedThroughput(Aws::String&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
-
-    /**
-     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
-     */
     inline AgentAliasRoutingConfigurationListItem& WithProvisionedThroughput(const char* value) { SetProvisionedThroughput(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agentVersion;

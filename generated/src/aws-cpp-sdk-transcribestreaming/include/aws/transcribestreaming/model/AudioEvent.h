@@ -29,41 +29,18 @@ namespace Model
     AWS_TRANSCRIBESTREAMINGSERVICE_API AudioEvent() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API AudioEvent(Aws::Vector<unsigned char>&& value) { m_audioChunk = std::move(value); }
 
+    ///@{
     /**
      * <p>An audio blob that contains the next part of the audio that you want to
      * transcribe. The maximum audio chunk size is 32 KB.</p>
      */
     inline const Aws::Vector<unsigned char>& GetAudioChunk() const { return m_audioChunk; }
-
-    /**
-     * <p>An audio blob that contains the next part of the audio that you want to
-     * transcribe. The maximum audio chunk size is 32 KB.</p>
-     */
     inline Aws::Vector<unsigned char>&& GetAudioChunkWithOwnership() { return std::move(m_audioChunk); }
-
-    /**
-     * <p>An audio blob that contains the next part of the audio that you want to
-     * transcribe. The maximum audio chunk size is 32 KB.</p>
-     */
     inline void SetAudioChunk(const Aws::Vector<unsigned char>& value) { m_audioChunkHasBeenSet = true; m_audioChunk = value; }
-
-    /**
-     * <p>An audio blob that contains the next part of the audio that you want to
-     * transcribe. The maximum audio chunk size is 32 KB.</p>
-     */
     inline void SetAudioChunk(Aws::Vector<unsigned char>&& value) { m_audioChunkHasBeenSet = true; m_audioChunk = std::move(value); }
-
-    /**
-     * <p>An audio blob that contains the next part of the audio that you want to
-     * transcribe. The maximum audio chunk size is 32 KB.</p>
-     */
     inline AudioEvent& WithAudioChunk(const Aws::Vector<unsigned char>& value) { SetAudioChunk(value); return *this;}
-
-    /**
-     * <p>An audio blob that contains the next part of the audio that you want to
-     * transcribe. The maximum audio chunk size is 32 KB.</p>
-     */
     inline AudioEvent& WithAudioChunk(Aws::Vector<unsigned char>&& value) { SetAudioChunk(std::move(value)); return *this;}
+    ///@}
 
   private:
 

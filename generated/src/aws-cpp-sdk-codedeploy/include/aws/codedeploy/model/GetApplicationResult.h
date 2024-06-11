@@ -39,53 +39,27 @@ namespace Model
     AWS_CODEDEPLOY_API GetApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the application.</p>
      */
     inline const ApplicationInfo& GetApplication() const{ return m_application; }
-
-    /**
-     * <p>Information about the application.</p>
-     */
     inline void SetApplication(const ApplicationInfo& value) { m_application = value; }
-
-    /**
-     * <p>Information about the application.</p>
-     */
     inline void SetApplication(ApplicationInfo&& value) { m_application = std::move(value); }
-
-    /**
-     * <p>Information about the application.</p>
-     */
     inline GetApplicationResult& WithApplication(const ApplicationInfo& value) { SetApplication(value); return *this;}
-
-    /**
-     * <p>Information about the application.</p>
-     */
     inline GetApplicationResult& WithApplication(ApplicationInfo&& value) { SetApplication(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ApplicationInfo m_application;

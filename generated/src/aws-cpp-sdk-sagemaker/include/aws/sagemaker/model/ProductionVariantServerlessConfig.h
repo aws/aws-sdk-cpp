@@ -36,56 +36,29 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The memory size of your serverless endpoint. Valid values are in 1 GB
      * increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
      */
     inline int GetMemorySizeInMB() const{ return m_memorySizeInMB; }
-
-    /**
-     * <p>The memory size of your serverless endpoint. Valid values are in 1 GB
-     * increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
-     */
     inline bool MemorySizeInMBHasBeenSet() const { return m_memorySizeInMBHasBeenSet; }
-
-    /**
-     * <p>The memory size of your serverless endpoint. Valid values are in 1 GB
-     * increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
-     */
     inline void SetMemorySizeInMB(int value) { m_memorySizeInMBHasBeenSet = true; m_memorySizeInMB = value; }
-
-    /**
-     * <p>The memory size of your serverless endpoint. Valid values are in 1 GB
-     * increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
-     */
     inline ProductionVariantServerlessConfig& WithMemorySizeInMB(int value) { SetMemorySizeInMB(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of concurrent invocations your serverless endpoint can
      * process.</p>
      */
     inline int GetMaxConcurrency() const{ return m_maxConcurrency; }
-
-    /**
-     * <p>The maximum number of concurrent invocations your serverless endpoint can
-     * process.</p>
-     */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
-
-    /**
-     * <p>The maximum number of concurrent invocations your serverless endpoint can
-     * process.</p>
-     */
     inline void SetMaxConcurrency(int value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
-
-    /**
-     * <p>The maximum number of concurrent invocations your serverless endpoint can
-     * process.</p>
-     */
     inline ProductionVariantServerlessConfig& WithMaxConcurrency(int value) { SetMaxConcurrency(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of provisioned concurrency to allocate for the serverless
      * endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
@@ -96,40 +69,10 @@ namespace Model
      * 
      */
     inline int GetProvisionedConcurrency() const{ return m_provisionedConcurrency; }
-
-    /**
-     * <p>The amount of provisioned concurrency to allocate for the serverless
-     * endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
-     *  <p>This field is not supported for serverless endpoint recommendations
-     * for Inference Recommender jobs. For more information about creating an Inference
-     * Recommender job, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.</p>
-     * 
-     */
     inline bool ProvisionedConcurrencyHasBeenSet() const { return m_provisionedConcurrencyHasBeenSet; }
-
-    /**
-     * <p>The amount of provisioned concurrency to allocate for the serverless
-     * endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
-     *  <p>This field is not supported for serverless endpoint recommendations
-     * for Inference Recommender jobs. For more information about creating an Inference
-     * Recommender job, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.</p>
-     * 
-     */
     inline void SetProvisionedConcurrency(int value) { m_provisionedConcurrencyHasBeenSet = true; m_provisionedConcurrency = value; }
-
-    /**
-     * <p>The amount of provisioned concurrency to allocate for the serverless
-     * endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
-     *  <p>This field is not supported for serverless endpoint recommendations
-     * for Inference Recommender jobs. For more information about creating an Inference
-     * Recommender job, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.</p>
-     * 
-     */
     inline ProductionVariantServerlessConfig& WithProvisionedConcurrency(int value) { SetProvisionedConcurrency(value); return *this;}
-
+    ///@}
   private:
 
     int m_memorySizeInMB;

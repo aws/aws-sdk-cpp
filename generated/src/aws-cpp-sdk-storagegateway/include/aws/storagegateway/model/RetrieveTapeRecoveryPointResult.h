@@ -37,70 +37,30 @@ namespace Model
     AWS_STORAGEGATEWAY_API RetrieveTapeRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery
      * point was retrieved.</p>
      */
     inline const Aws::String& GetTapeARN() const{ return m_tapeARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery
-     * point was retrieved.</p>
-     */
     inline void SetTapeARN(const Aws::String& value) { m_tapeARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery
-     * point was retrieved.</p>
-     */
     inline void SetTapeARN(Aws::String&& value) { m_tapeARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery
-     * point was retrieved.</p>
-     */
     inline void SetTapeARN(const char* value) { m_tapeARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery
-     * point was retrieved.</p>
-     */
     inline RetrieveTapeRecoveryPointResult& WithTapeARN(const Aws::String& value) { SetTapeARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery
-     * point was retrieved.</p>
-     */
     inline RetrieveTapeRecoveryPointResult& WithTapeARN(Aws::String&& value) { SetTapeARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery
-     * point was retrieved.</p>
-     */
     inline RetrieveTapeRecoveryPointResult& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RetrieveTapeRecoveryPointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RetrieveTapeRecoveryPointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RetrieveTapeRecoveryPointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tapeARN;

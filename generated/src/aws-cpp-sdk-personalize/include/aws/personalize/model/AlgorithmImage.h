@@ -37,87 +37,33 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the algorithm image.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the algorithm image.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the algorithm image.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the algorithm image.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the algorithm image.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the algorithm image.</p>
-     */
     inline AlgorithmImage& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the algorithm image.</p>
-     */
     inline AlgorithmImage& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the algorithm image.</p>
-     */
     inline AlgorithmImage& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The URI of the Docker container for the algorithm image.</p>
      */
     inline const Aws::String& GetDockerURI() const{ return m_dockerURI; }
-
-    /**
-     * <p>The URI of the Docker container for the algorithm image.</p>
-     */
     inline bool DockerURIHasBeenSet() const { return m_dockerURIHasBeenSet; }
-
-    /**
-     * <p>The URI of the Docker container for the algorithm image.</p>
-     */
     inline void SetDockerURI(const Aws::String& value) { m_dockerURIHasBeenSet = true; m_dockerURI = value; }
-
-    /**
-     * <p>The URI of the Docker container for the algorithm image.</p>
-     */
     inline void SetDockerURI(Aws::String&& value) { m_dockerURIHasBeenSet = true; m_dockerURI = std::move(value); }
-
-    /**
-     * <p>The URI of the Docker container for the algorithm image.</p>
-     */
     inline void SetDockerURI(const char* value) { m_dockerURIHasBeenSet = true; m_dockerURI.assign(value); }
-
-    /**
-     * <p>The URI of the Docker container for the algorithm image.</p>
-     */
     inline AlgorithmImage& WithDockerURI(const Aws::String& value) { SetDockerURI(value); return *this;}
-
-    /**
-     * <p>The URI of the Docker container for the algorithm image.</p>
-     */
     inline AlgorithmImage& WithDockerURI(Aws::String&& value) { SetDockerURI(std::move(value)); return *this;}
-
-    /**
-     * <p>The URI of the Docker container for the algorithm image.</p>
-     */
     inline AlgorithmImage& WithDockerURI(const char* value) { SetDockerURI(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

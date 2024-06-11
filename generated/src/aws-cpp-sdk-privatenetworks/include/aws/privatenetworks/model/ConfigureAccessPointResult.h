@@ -33,53 +33,27 @@ namespace Model
     AWS_PRIVATENETWORKS_API ConfigureAccessPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the network resource.</p>
      */
     inline const NetworkResource& GetAccessPoint() const{ return m_accessPoint; }
-
-    /**
-     * <p>Information about the network resource.</p>
-     */
     inline void SetAccessPoint(const NetworkResource& value) { m_accessPoint = value; }
-
-    /**
-     * <p>Information about the network resource.</p>
-     */
     inline void SetAccessPoint(NetworkResource&& value) { m_accessPoint = std::move(value); }
-
-    /**
-     * <p>Information about the network resource.</p>
-     */
     inline ConfigureAccessPointResult& WithAccessPoint(const NetworkResource& value) { SetAccessPoint(value); return *this;}
-
-    /**
-     * <p>Information about the network resource.</p>
-     */
     inline ConfigureAccessPointResult& WithAccessPoint(NetworkResource&& value) { SetAccessPoint(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ConfigureAccessPointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ConfigureAccessPointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ConfigureAccessPointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     NetworkResource m_accessPoint;

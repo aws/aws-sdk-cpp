@@ -40,136 +40,48 @@ namespace Model
     AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The message.</p>
      */
     inline const Aws::String& GetMessageBody() const{ return m_messageBody; }
-
-    /**
-     * <p>The message.</p>
-     */
     inline bool MessageBodyHasBeenSet() const { return m_messageBodyHasBeenSet; }
-
-    /**
-     * <p>The message.</p>
-     */
     inline void SetMessageBody(const Aws::String& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
-
-    /**
-     * <p>The message.</p>
-     */
     inline void SetMessageBody(Aws::String&& value) { m_messageBodyHasBeenSet = true; m_messageBody = std::move(value); }
-
-    /**
-     * <p>The message.</p>
-     */
     inline void SetMessageBody(const char* value) { m_messageBodyHasBeenSet = true; m_messageBody.assign(value); }
-
-    /**
-     * <p>The message.</p>
-     */
     inline FixedResponseActionConfig& WithMessageBody(const Aws::String& value) { SetMessageBody(value); return *this;}
-
-    /**
-     * <p>The message.</p>
-     */
     inline FixedResponseActionConfig& WithMessageBody(Aws::String&& value) { SetMessageBody(std::move(value)); return *this;}
-
-    /**
-     * <p>The message.</p>
-     */
     inline FixedResponseActionConfig& WithMessageBody(const char* value) { SetMessageBody(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
      */
     inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
-
-    /**
-     * <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
-     */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-
-    /**
-     * <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
-     */
     inline void SetStatusCode(const Aws::String& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-
-    /**
-     * <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
-     */
     inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-
-    /**
-     * <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
-     */
     inline void SetStatusCode(const char* value) { m_statusCodeHasBeenSet = true; m_statusCode.assign(value); }
-
-    /**
-     * <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
-     */
     inline FixedResponseActionConfig& WithStatusCode(const Aws::String& value) { SetStatusCode(value); return *this;}
-
-    /**
-     * <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
-     */
     inline FixedResponseActionConfig& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
-     */
     inline FixedResponseActionConfig& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The content type.</p> <p>Valid Values: text/plain | text/css | text/html |
      * application/javascript | application/json</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
-
-    /**
-     * <p>The content type.</p> <p>Valid Values: text/plain | text/css | text/html |
-     * application/javascript | application/json</p>
-     */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-
-    /**
-     * <p>The content type.</p> <p>Valid Values: text/plain | text/css | text/html |
-     * application/javascript | application/json</p>
-     */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-
-    /**
-     * <p>The content type.</p> <p>Valid Values: text/plain | text/css | text/html |
-     * application/javascript | application/json</p>
-     */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-
-    /**
-     * <p>The content type.</p> <p>Valid Values: text/plain | text/css | text/html |
-     * application/javascript | application/json</p>
-     */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-
-    /**
-     * <p>The content type.</p> <p>Valid Values: text/plain | text/css | text/html |
-     * application/javascript | application/json</p>
-     */
     inline FixedResponseActionConfig& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-
-    /**
-     * <p>The content type.</p> <p>Valid Values: text/plain | text/css | text/html |
-     * application/javascript | application/json</p>
-     */
     inline FixedResponseActionConfig& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-
-    /**
-     * <p>The content type.</p> <p>Valid Values: text/plain | text/css | text/html |
-     * application/javascript | application/json</p>
-     */
     inline FixedResponseActionConfig& WithContentType(const char* value) { SetContentType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_messageBody;

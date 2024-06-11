@@ -38,67 +38,29 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The comparison value of the CIS result status filter.</p>
      */
     inline const CisResultStatusComparison& GetComparison() const{ return m_comparison; }
-
-    /**
-     * <p>The comparison value of the CIS result status filter.</p>
-     */
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
-
-    /**
-     * <p>The comparison value of the CIS result status filter.</p>
-     */
     inline void SetComparison(const CisResultStatusComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
-
-    /**
-     * <p>The comparison value of the CIS result status filter.</p>
-     */
     inline void SetComparison(CisResultStatusComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
-
-    /**
-     * <p>The comparison value of the CIS result status filter.</p>
-     */
     inline CisResultStatusFilter& WithComparison(const CisResultStatusComparison& value) { SetComparison(value); return *this;}
-
-    /**
-     * <p>The comparison value of the CIS result status filter.</p>
-     */
     inline CisResultStatusFilter& WithComparison(CisResultStatusComparison&& value) { SetComparison(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the CIS result status filter.</p>
      */
     inline const CisResultStatus& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the CIS result status filter.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the CIS result status filter.</p>
-     */
     inline void SetValue(const CisResultStatus& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the CIS result status filter.</p>
-     */
     inline void SetValue(CisResultStatus&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the CIS result status filter.</p>
-     */
     inline CisResultStatusFilter& WithValue(const CisResultStatus& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the CIS result status filter.</p>
-     */
     inline CisResultStatusFilter& WithValue(CisResultStatus&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CisResultStatusComparison m_comparison;

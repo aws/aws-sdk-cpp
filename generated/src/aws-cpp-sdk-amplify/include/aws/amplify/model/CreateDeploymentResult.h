@@ -39,191 +39,63 @@ namespace Model
     AWS_AMPLIFY_API CreateDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The job ID for this deployment. will supply to start deployment api. </p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p> The job ID for this deployment. will supply to start deployment api. </p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-
-    /**
-     * <p> The job ID for this deployment. will supply to start deployment api. </p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-
-    /**
-     * <p> The job ID for this deployment. will supply to start deployment api. </p>
-     */
     inline void SetJobId(const char* value) { m_jobId.assign(value); }
-
-    /**
-     * <p> The job ID for this deployment. will supply to start deployment api. </p>
-     */
     inline CreateDeploymentResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p> The job ID for this deployment. will supply to start deployment api. </p>
-     */
     inline CreateDeploymentResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p> The job ID for this deployment. will supply to start deployment api. </p>
-     */
     inline CreateDeploymentResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> When the <code>fileMap</code> argument is provided in the request,
      * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
      * </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetFileUploadUrls() const{ return m_fileUploadUrls; }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is provided in the request,
-     * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
-     * </p>
-     */
     inline void SetFileUploadUrls(const Aws::Map<Aws::String, Aws::String>& value) { m_fileUploadUrls = value; }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is provided in the request,
-     * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
-     * </p>
-     */
     inline void SetFileUploadUrls(Aws::Map<Aws::String, Aws::String>&& value) { m_fileUploadUrls = std::move(value); }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is provided in the request,
-     * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
-     * </p>
-     */
     inline CreateDeploymentResult& WithFileUploadUrls(const Aws::Map<Aws::String, Aws::String>& value) { SetFileUploadUrls(value); return *this;}
-
-    /**
-     * <p> When the <code>fileMap</code> argument is provided in the request,
-     * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
-     * </p>
-     */
     inline CreateDeploymentResult& WithFileUploadUrls(Aws::Map<Aws::String, Aws::String>&& value) { SetFileUploadUrls(std::move(value)); return *this;}
-
-    /**
-     * <p> When the <code>fileMap</code> argument is provided in the request,
-     * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
-     * </p>
-     */
     inline CreateDeploymentResult& AddFileUploadUrls(const Aws::String& key, const Aws::String& value) { m_fileUploadUrls.emplace(key, value); return *this; }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is provided in the request,
-     * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
-     * </p>
-     */
     inline CreateDeploymentResult& AddFileUploadUrls(Aws::String&& key, const Aws::String& value) { m_fileUploadUrls.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is provided in the request,
-     * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
-     * </p>
-     */
     inline CreateDeploymentResult& AddFileUploadUrls(const Aws::String& key, Aws::String&& value) { m_fileUploadUrls.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is provided in the request,
-     * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
-     * </p>
-     */
     inline CreateDeploymentResult& AddFileUploadUrls(Aws::String&& key, Aws::String&& value) { m_fileUploadUrls.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is provided in the request,
-     * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
-     * </p>
-     */
     inline CreateDeploymentResult& AddFileUploadUrls(const char* key, Aws::String&& value) { m_fileUploadUrls.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is provided in the request,
-     * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
-     * </p>
-     */
     inline CreateDeploymentResult& AddFileUploadUrls(Aws::String&& key, const char* value) { m_fileUploadUrls.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is provided in the request,
-     * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
-     * </p>
-     */
     inline CreateDeploymentResult& AddFileUploadUrls(const char* key, const char* value) { m_fileUploadUrls.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> When the <code>fileMap</code> argument is not provided in the request, this
      * <code>zipUploadUrl</code> is returned. </p>
      */
     inline const Aws::String& GetZipUploadUrl() const{ return m_zipUploadUrl; }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is not provided in the request, this
-     * <code>zipUploadUrl</code> is returned. </p>
-     */
     inline void SetZipUploadUrl(const Aws::String& value) { m_zipUploadUrl = value; }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is not provided in the request, this
-     * <code>zipUploadUrl</code> is returned. </p>
-     */
     inline void SetZipUploadUrl(Aws::String&& value) { m_zipUploadUrl = std::move(value); }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is not provided in the request, this
-     * <code>zipUploadUrl</code> is returned. </p>
-     */
     inline void SetZipUploadUrl(const char* value) { m_zipUploadUrl.assign(value); }
-
-    /**
-     * <p> When the <code>fileMap</code> argument is not provided in the request, this
-     * <code>zipUploadUrl</code> is returned. </p>
-     */
     inline CreateDeploymentResult& WithZipUploadUrl(const Aws::String& value) { SetZipUploadUrl(value); return *this;}
-
-    /**
-     * <p> When the <code>fileMap</code> argument is not provided in the request, this
-     * <code>zipUploadUrl</code> is returned. </p>
-     */
     inline CreateDeploymentResult& WithZipUploadUrl(Aws::String&& value) { SetZipUploadUrl(std::move(value)); return *this;}
-
-    /**
-     * <p> When the <code>fileMap</code> argument is not provided in the request, this
-     * <code>zipUploadUrl</code> is returned. </p>
-     */
     inline CreateDeploymentResult& WithZipUploadUrl(const char* value) { SetZipUploadUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

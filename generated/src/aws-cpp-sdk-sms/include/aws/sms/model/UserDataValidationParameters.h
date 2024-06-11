@@ -38,67 +38,29 @@ namespace Model
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The location of the validation script.</p>
      */
     inline const Source& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The location of the validation script.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The location of the validation script.</p>
-     */
     inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The location of the validation script.</p>
-     */
     inline void SetSource(Source&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The location of the validation script.</p>
-     */
     inline UserDataValidationParameters& WithSource(const Source& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The location of the validation script.</p>
-     */
     inline UserDataValidationParameters& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of validation script.</p>
      */
     inline const ScriptType& GetScriptType() const{ return m_scriptType; }
-
-    /**
-     * <p>The type of validation script.</p>
-     */
     inline bool ScriptTypeHasBeenSet() const { return m_scriptTypeHasBeenSet; }
-
-    /**
-     * <p>The type of validation script.</p>
-     */
     inline void SetScriptType(const ScriptType& value) { m_scriptTypeHasBeenSet = true; m_scriptType = value; }
-
-    /**
-     * <p>The type of validation script.</p>
-     */
     inline void SetScriptType(ScriptType&& value) { m_scriptTypeHasBeenSet = true; m_scriptType = std::move(value); }
-
-    /**
-     * <p>The type of validation script.</p>
-     */
     inline UserDataValidationParameters& WithScriptType(const ScriptType& value) { SetScriptType(value); return *this;}
-
-    /**
-     * <p>The type of validation script.</p>
-     */
     inline UserDataValidationParameters& WithScriptType(ScriptType&& value) { SetScriptType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Source m_source;

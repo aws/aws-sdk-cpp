@@ -38,330 +38,128 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API CreatePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the policy store that contains the new policy.</p>
      */
     inline const Aws::String& GetPolicyStoreId() const{ return m_policyStoreId; }
-
-    /**
-     * <p>The ID of the policy store that contains the new policy.</p>
-     */
     inline void SetPolicyStoreId(const Aws::String& value) { m_policyStoreId = value; }
-
-    /**
-     * <p>The ID of the policy store that contains the new policy.</p>
-     */
     inline void SetPolicyStoreId(Aws::String&& value) { m_policyStoreId = std::move(value); }
-
-    /**
-     * <p>The ID of the policy store that contains the new policy.</p>
-     */
     inline void SetPolicyStoreId(const char* value) { m_policyStoreId.assign(value); }
-
-    /**
-     * <p>The ID of the policy store that contains the new policy.</p>
-     */
     inline CreatePolicyResult& WithPolicyStoreId(const Aws::String& value) { SetPolicyStoreId(value); return *this;}
-
-    /**
-     * <p>The ID of the policy store that contains the new policy.</p>
-     */
     inline CreatePolicyResult& WithPolicyStoreId(Aws::String&& value) { SetPolicyStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the policy store that contains the new policy.</p>
-     */
     inline CreatePolicyResult& WithPolicyStoreId(const char* value) { SetPolicyStoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique ID of the new policy.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
-
-    /**
-     * <p>The unique ID of the new policy.</p>
-     */
     inline void SetPolicyId(const Aws::String& value) { m_policyId = value; }
-
-    /**
-     * <p>The unique ID of the new policy.</p>
-     */
     inline void SetPolicyId(Aws::String&& value) { m_policyId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the new policy.</p>
-     */
     inline void SetPolicyId(const char* value) { m_policyId.assign(value); }
-
-    /**
-     * <p>The unique ID of the new policy.</p>
-     */
     inline CreatePolicyResult& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the new policy.</p>
-     */
     inline CreatePolicyResult& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the new policy.</p>
-     */
     inline CreatePolicyResult& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The policy type of the new policy.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
-
-    /**
-     * <p>The policy type of the new policy.</p>
-     */
     inline void SetPolicyType(const PolicyType& value) { m_policyType = value; }
-
-    /**
-     * <p>The policy type of the new policy.</p>
-     */
     inline void SetPolicyType(PolicyType&& value) { m_policyType = std::move(value); }
-
-    /**
-     * <p>The policy type of the new policy.</p>
-     */
     inline CreatePolicyResult& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
-
-    /**
-     * <p>The policy type of the new policy.</p>
-     */
     inline CreatePolicyResult& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The principal specified in the new policy's scope. This response element
      * isn't present when <code>principal</code> isn't specified in the policy
      * content.</p>
      */
     inline const EntityIdentifier& GetPrincipal() const{ return m_principal; }
-
-    /**
-     * <p>The principal specified in the new policy's scope. This response element
-     * isn't present when <code>principal</code> isn't specified in the policy
-     * content.</p>
-     */
     inline void SetPrincipal(const EntityIdentifier& value) { m_principal = value; }
-
-    /**
-     * <p>The principal specified in the new policy's scope. This response element
-     * isn't present when <code>principal</code> isn't specified in the policy
-     * content.</p>
-     */
     inline void SetPrincipal(EntityIdentifier&& value) { m_principal = std::move(value); }
-
-    /**
-     * <p>The principal specified in the new policy's scope. This response element
-     * isn't present when <code>principal</code> isn't specified in the policy
-     * content.</p>
-     */
     inline CreatePolicyResult& WithPrincipal(const EntityIdentifier& value) { SetPrincipal(value); return *this;}
-
-    /**
-     * <p>The principal specified in the new policy's scope. This response element
-     * isn't present when <code>principal</code> isn't specified in the policy
-     * content.</p>
-     */
     inline CreatePolicyResult& WithPrincipal(EntityIdentifier&& value) { SetPrincipal(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource specified in the new policy's scope. This response element isn't
      * present when the <code>resource</code> isn't specified in the policy
      * content.</p>
      */
     inline const EntityIdentifier& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>The resource specified in the new policy's scope. This response element isn't
-     * present when the <code>resource</code> isn't specified in the policy
-     * content.</p>
-     */
     inline void SetResource(const EntityIdentifier& value) { m_resource = value; }
-
-    /**
-     * <p>The resource specified in the new policy's scope. This response element isn't
-     * present when the <code>resource</code> isn't specified in the policy
-     * content.</p>
-     */
     inline void SetResource(EntityIdentifier&& value) { m_resource = std::move(value); }
-
-    /**
-     * <p>The resource specified in the new policy's scope. This response element isn't
-     * present when the <code>resource</code> isn't specified in the policy
-     * content.</p>
-     */
     inline CreatePolicyResult& WithResource(const EntityIdentifier& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>The resource specified in the new policy's scope. This response element isn't
-     * present when the <code>resource</code> isn't specified in the policy
-     * content.</p>
-     */
     inline CreatePolicyResult& WithResource(EntityIdentifier&& value) { SetResource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The action that a policy permits or forbids. For example, <code>{"actions":
      * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
      * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
      */
     inline const Aws::Vector<ActionIdentifier>& GetActions() const{ return m_actions; }
-
-    /**
-     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
-     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
-     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
-     */
     inline void SetActions(const Aws::Vector<ActionIdentifier>& value) { m_actions = value; }
-
-    /**
-     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
-     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
-     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
-     */
     inline void SetActions(Aws::Vector<ActionIdentifier>&& value) { m_actions = std::move(value); }
-
-    /**
-     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
-     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
-     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
-     */
     inline CreatePolicyResult& WithActions(const Aws::Vector<ActionIdentifier>& value) { SetActions(value); return *this;}
-
-    /**
-     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
-     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
-     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
-     */
     inline CreatePolicyResult& WithActions(Aws::Vector<ActionIdentifier>&& value) { SetActions(std::move(value)); return *this;}
-
-    /**
-     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
-     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
-     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
-     */
     inline CreatePolicyResult& AddActions(const ActionIdentifier& value) { m_actions.push_back(value); return *this; }
-
-    /**
-     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
-     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
-     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
-     */
     inline CreatePolicyResult& AddActions(ActionIdentifier&& value) { m_actions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time the policy was originally created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-
-    /**
-     * <p>The date and time the policy was originally created.</p>
-     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-
-    /**
-     * <p>The date and time the policy was originally created.</p>
-     */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-
-    /**
-     * <p>The date and time the policy was originally created.</p>
-     */
     inline CreatePolicyResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-
-    /**
-     * <p>The date and time the policy was originally created.</p>
-     */
     inline CreatePolicyResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time the policy was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
-
-    /**
-     * <p>The date and time the policy was last updated.</p>
-     */
     inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDate = value; }
-
-    /**
-     * <p>The date and time the policy was last updated.</p>
-     */
     inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDate = std::move(value); }
-
-    /**
-     * <p>The date and time the policy was last updated.</p>
-     */
     inline CreatePolicyResult& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
-
-    /**
-     * <p>The date and time the policy was last updated.</p>
-     */
     inline CreatePolicyResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The effect of the decision that a policy returns to an authorization request.
      * For example, <code>"effect": "Permit"</code>.</p>
      */
     inline const PolicyEffect& GetEffect() const{ return m_effect; }
-
-    /**
-     * <p>The effect of the decision that a policy returns to an authorization request.
-     * For example, <code>"effect": "Permit"</code>.</p>
-     */
     inline void SetEffect(const PolicyEffect& value) { m_effect = value; }
-
-    /**
-     * <p>The effect of the decision that a policy returns to an authorization request.
-     * For example, <code>"effect": "Permit"</code>.</p>
-     */
     inline void SetEffect(PolicyEffect&& value) { m_effect = std::move(value); }
-
-    /**
-     * <p>The effect of the decision that a policy returns to an authorization request.
-     * For example, <code>"effect": "Permit"</code>.</p>
-     */
     inline CreatePolicyResult& WithEffect(const PolicyEffect& value) { SetEffect(value); return *this;}
-
-    /**
-     * <p>The effect of the decision that a policy returns to an authorization request.
-     * For example, <code>"effect": "Permit"</code>.</p>
-     */
     inline CreatePolicyResult& WithEffect(PolicyEffect&& value) { SetEffect(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreatePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreatePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreatePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyStoreId;

@@ -34,46 +34,19 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Add On instance ID to retrieve information for.</p>
      */
     inline const Aws::String& GetAddonInstanceId() const{ return m_addonInstanceId; }
-
-    /**
-     * <p>The Add On instance ID to retrieve information for.</p>
-     */
     inline bool AddonInstanceIdHasBeenSet() const { return m_addonInstanceIdHasBeenSet; }
-
-    /**
-     * <p>The Add On instance ID to retrieve information for.</p>
-     */
     inline void SetAddonInstanceId(const Aws::String& value) { m_addonInstanceIdHasBeenSet = true; m_addonInstanceId = value; }
-
-    /**
-     * <p>The Add On instance ID to retrieve information for.</p>
-     */
     inline void SetAddonInstanceId(Aws::String&& value) { m_addonInstanceIdHasBeenSet = true; m_addonInstanceId = std::move(value); }
-
-    /**
-     * <p>The Add On instance ID to retrieve information for.</p>
-     */
     inline void SetAddonInstanceId(const char* value) { m_addonInstanceIdHasBeenSet = true; m_addonInstanceId.assign(value); }
-
-    /**
-     * <p>The Add On instance ID to retrieve information for.</p>
-     */
     inline GetAddonInstanceRequest& WithAddonInstanceId(const Aws::String& value) { SetAddonInstanceId(value); return *this;}
-
-    /**
-     * <p>The Add On instance ID to retrieve information for.</p>
-     */
     inline GetAddonInstanceRequest& WithAddonInstanceId(Aws::String&& value) { SetAddonInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Add On instance ID to retrieve information for.</p>
-     */
     inline GetAddonInstanceRequest& WithAddonInstanceId(const char* value) { SetAddonInstanceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_addonInstanceId;

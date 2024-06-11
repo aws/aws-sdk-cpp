@@ -39,46 +39,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Text that begins a property's name.</p>
      */
     inline const Aws::String& GetPropertyNameHint() const{ return m_propertyNameHint; }
-
-    /**
-     * <p>Text that begins a property's name.</p>
-     */
     inline bool PropertyNameHintHasBeenSet() const { return m_propertyNameHintHasBeenSet; }
-
-    /**
-     * <p>Text that begins a property's name.</p>
-     */
     inline void SetPropertyNameHint(const Aws::String& value) { m_propertyNameHintHasBeenSet = true; m_propertyNameHint = value; }
-
-    /**
-     * <p>Text that begins a property's name.</p>
-     */
     inline void SetPropertyNameHint(Aws::String&& value) { m_propertyNameHintHasBeenSet = true; m_propertyNameHint = std::move(value); }
-
-    /**
-     * <p>Text that begins a property's name.</p>
-     */
     inline void SetPropertyNameHint(const char* value) { m_propertyNameHintHasBeenSet = true; m_propertyNameHint.assign(value); }
-
-    /**
-     * <p>Text that begins a property's name.</p>
-     */
     inline PropertyNameQuery& WithPropertyNameHint(const Aws::String& value) { SetPropertyNameHint(value); return *this;}
-
-    /**
-     * <p>Text that begins a property's name.</p>
-     */
     inline PropertyNameQuery& WithPropertyNameHint(Aws::String&& value) { SetPropertyNameHint(std::move(value)); return *this;}
-
-    /**
-     * <p>Text that begins a property's name.</p>
-     */
     inline PropertyNameQuery& WithPropertyNameHint(const char* value) { SetPropertyNameHint(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_propertyNameHint;

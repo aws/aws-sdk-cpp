@@ -35,26 +35,15 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The port number to match on.</p>
      */
     inline int GetPort() const{ return m_port; }
-
-    /**
-     * <p>The port number to match on.</p>
-     */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-
-    /**
-     * <p>The port number to match on.</p>
-     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-
-    /**
-     * <p>The port number to match on.</p>
-     */
     inline TcpRouteMatch& WithPort(int value) { SetPort(value); return *this;}
-
+    ///@}
   private:
 
     int m_port;

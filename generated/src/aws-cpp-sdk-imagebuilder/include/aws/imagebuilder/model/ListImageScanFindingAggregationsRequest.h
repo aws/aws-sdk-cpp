@@ -33,73 +33,30 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Filter& GetFilter() const{ return m_filter; }
-
-    
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    
     inline void SetFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    
     inline void SetFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    
     inline ListImageScanFindingAggregationsRequest& WithFilter(const Filter& value) { SetFilter(value); return *this;}
-
-    
     inline ListImageScanFindingAggregationsRequest& WithFilter(Filter&& value) { SetFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token to specify where to start paginating. This is the nextToken from a
      * previously truncated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline ListImageScanFindingAggregationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline ListImageScanFindingAggregationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline ListImageScanFindingAggregationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Filter m_filter;

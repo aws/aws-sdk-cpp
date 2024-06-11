@@ -38,46 +38,19 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
      */
     inline const Aws::String& GetApiToken() const{ return m_apiToken; }
-
-    /**
-     * <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
-     */
     inline bool ApiTokenHasBeenSet() const { return m_apiTokenHasBeenSet; }
-
-    /**
-     * <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
-     */
     inline void SetApiToken(const Aws::String& value) { m_apiTokenHasBeenSet = true; m_apiToken = value; }
-
-    /**
-     * <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
-     */
     inline void SetApiToken(Aws::String&& value) { m_apiTokenHasBeenSet = true; m_apiToken = std::move(value); }
-
-    /**
-     * <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
-     */
     inline void SetApiToken(const char* value) { m_apiTokenHasBeenSet = true; m_apiToken.assign(value); }
-
-    /**
-     * <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
-     */
     inline DynatraceConnectorProfileCredentials& WithApiToken(const Aws::String& value) { SetApiToken(value); return *this;}
-
-    /**
-     * <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
-     */
     inline DynatraceConnectorProfileCredentials& WithApiToken(Aws::String&& value) { SetApiToken(std::move(value)); return *this;}
-
-    /**
-     * <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
-     */
     inline DynatraceConnectorProfileCredentials& WithApiToken(const char* value) { SetApiToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_apiToken;

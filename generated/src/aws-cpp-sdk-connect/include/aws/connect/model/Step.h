@@ -40,98 +40,41 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object to specify the expiration of a routing step.</p>
      */
     inline const Expiry& GetExpiry() const{ return m_expiry; }
-
-    /**
-     * <p>An object to specify the expiration of a routing step.</p>
-     */
     inline bool ExpiryHasBeenSet() const { return m_expiryHasBeenSet; }
-
-    /**
-     * <p>An object to specify the expiration of a routing step.</p>
-     */
     inline void SetExpiry(const Expiry& value) { m_expiryHasBeenSet = true; m_expiry = value; }
-
-    /**
-     * <p>An object to specify the expiration of a routing step.</p>
-     */
     inline void SetExpiry(Expiry&& value) { m_expiryHasBeenSet = true; m_expiry = std::move(value); }
-
-    /**
-     * <p>An object to specify the expiration of a routing step.</p>
-     */
     inline Step& WithExpiry(const Expiry& value) { SetExpiry(value); return *this;}
-
-    /**
-     * <p>An object to specify the expiration of a routing step.</p>
-     */
     inline Step& WithExpiry(Expiry&& value) { SetExpiry(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A tagged union to specify expression for a routing step.</p>
      */
     inline const Expression& GetExpression() const{ return m_expression; }
-
-    /**
-     * <p>A tagged union to specify expression for a routing step.</p>
-     */
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-
-    /**
-     * <p>A tagged union to specify expression for a routing step.</p>
-     */
     inline void SetExpression(const Expression& value) { m_expressionHasBeenSet = true; m_expression = value; }
-
-    /**
-     * <p>A tagged union to specify expression for a routing step.</p>
-     */
     inline void SetExpression(Expression&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-
-    /**
-     * <p>A tagged union to specify expression for a routing step.</p>
-     */
     inline Step& WithExpression(const Expression& value) { SetExpression(value); return *this;}
-
-    /**
-     * <p>A tagged union to specify expression for a routing step.</p>
-     */
     inline Step& WithExpression(Expression&& value) { SetExpression(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents status of the Routing step.</p>
      */
     inline const RoutingCriteriaStepStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Represents status of the Routing step.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Represents status of the Routing step.</p>
-     */
     inline void SetStatus(const RoutingCriteriaStepStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Represents status of the Routing step.</p>
-     */
     inline void SetStatus(RoutingCriteriaStepStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Represents status of the Routing step.</p>
-     */
     inline Step& WithStatus(const RoutingCriteriaStepStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Represents status of the Routing step.</p>
-     */
     inline Step& WithStatus(RoutingCriteriaStepStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Expiry m_expiry;

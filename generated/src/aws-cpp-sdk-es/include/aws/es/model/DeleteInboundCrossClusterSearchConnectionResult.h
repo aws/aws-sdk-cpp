@@ -40,58 +40,28 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API DeleteInboundCrossClusterSearchConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of
      * deleted inbound connection. </p>
      */
     inline const InboundCrossClusterSearchConnection& GetCrossClusterSearchConnection() const{ return m_crossClusterSearchConnection; }
-
-    /**
-     * <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of
-     * deleted inbound connection. </p>
-     */
     inline void SetCrossClusterSearchConnection(const InboundCrossClusterSearchConnection& value) { m_crossClusterSearchConnection = value; }
-
-    /**
-     * <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of
-     * deleted inbound connection. </p>
-     */
     inline void SetCrossClusterSearchConnection(InboundCrossClusterSearchConnection&& value) { m_crossClusterSearchConnection = std::move(value); }
-
-    /**
-     * <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of
-     * deleted inbound connection. </p>
-     */
     inline DeleteInboundCrossClusterSearchConnectionResult& WithCrossClusterSearchConnection(const InboundCrossClusterSearchConnection& value) { SetCrossClusterSearchConnection(value); return *this;}
-
-    /**
-     * <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of
-     * deleted inbound connection. </p>
-     */
     inline DeleteInboundCrossClusterSearchConnectionResult& WithCrossClusterSearchConnection(InboundCrossClusterSearchConnection&& value) { SetCrossClusterSearchConnection(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteInboundCrossClusterSearchConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteInboundCrossClusterSearchConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteInboundCrossClusterSearchConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     InboundCrossClusterSearchConnection m_crossClusterSearchConnection;

@@ -40,129 +40,53 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of task run.</p>
      */
     inline const TaskType& GetTaskRunType() const{ return m_taskRunType; }
-
-    /**
-     * <p>The type of task run.</p>
-     */
     inline bool TaskRunTypeHasBeenSet() const { return m_taskRunTypeHasBeenSet; }
-
-    /**
-     * <p>The type of task run.</p>
-     */
     inline void SetTaskRunType(const TaskType& value) { m_taskRunTypeHasBeenSet = true; m_taskRunType = value; }
-
-    /**
-     * <p>The type of task run.</p>
-     */
     inline void SetTaskRunType(TaskType&& value) { m_taskRunTypeHasBeenSet = true; m_taskRunType = std::move(value); }
-
-    /**
-     * <p>The type of task run.</p>
-     */
     inline TaskRunFilterCriteria& WithTaskRunType(const TaskType& value) { SetTaskRunType(value); return *this;}
-
-    /**
-     * <p>The type of task run.</p>
-     */
     inline TaskRunFilterCriteria& WithTaskRunType(TaskType&& value) { SetTaskRunType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of the task run.</p>
      */
     inline const TaskStatusType& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the task run.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of the task run.</p>
-     */
     inline void SetStatus(const TaskStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of the task run.</p>
-     */
     inline void SetStatus(TaskStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the task run.</p>
-     */
     inline TaskRunFilterCriteria& WithStatus(const TaskStatusType& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the task run.</p>
-     */
     inline TaskRunFilterCriteria& WithStatus(TaskStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filter on task runs started before this date.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedBefore() const{ return m_startedBefore; }
-
-    /**
-     * <p>Filter on task runs started before this date.</p>
-     */
     inline bool StartedBeforeHasBeenSet() const { return m_startedBeforeHasBeenSet; }
-
-    /**
-     * <p>Filter on task runs started before this date.</p>
-     */
     inline void SetStartedBefore(const Aws::Utils::DateTime& value) { m_startedBeforeHasBeenSet = true; m_startedBefore = value; }
-
-    /**
-     * <p>Filter on task runs started before this date.</p>
-     */
     inline void SetStartedBefore(Aws::Utils::DateTime&& value) { m_startedBeforeHasBeenSet = true; m_startedBefore = std::move(value); }
-
-    /**
-     * <p>Filter on task runs started before this date.</p>
-     */
     inline TaskRunFilterCriteria& WithStartedBefore(const Aws::Utils::DateTime& value) { SetStartedBefore(value); return *this;}
-
-    /**
-     * <p>Filter on task runs started before this date.</p>
-     */
     inline TaskRunFilterCriteria& WithStartedBefore(Aws::Utils::DateTime&& value) { SetStartedBefore(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filter on task runs started after this date.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAfter() const{ return m_startedAfter; }
-
-    /**
-     * <p>Filter on task runs started after this date.</p>
-     */
     inline bool StartedAfterHasBeenSet() const { return m_startedAfterHasBeenSet; }
-
-    /**
-     * <p>Filter on task runs started after this date.</p>
-     */
     inline void SetStartedAfter(const Aws::Utils::DateTime& value) { m_startedAfterHasBeenSet = true; m_startedAfter = value; }
-
-    /**
-     * <p>Filter on task runs started after this date.</p>
-     */
     inline void SetStartedAfter(Aws::Utils::DateTime&& value) { m_startedAfterHasBeenSet = true; m_startedAfter = std::move(value); }
-
-    /**
-     * <p>Filter on task runs started after this date.</p>
-     */
     inline TaskRunFilterCriteria& WithStartedAfter(const Aws::Utils::DateTime& value) { SetStartedAfter(value); return *this;}
-
-    /**
-     * <p>Filter on task runs started after this date.</p>
-     */
     inline TaskRunFilterCriteria& WithStartedAfter(Aws::Utils::DateTime&& value) { SetStartedAfter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TaskType m_taskRunType;

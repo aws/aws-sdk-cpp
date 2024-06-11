@@ -35,30 +35,16 @@ namespace Model
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The target CPU utilization percentage threshold at which you want connector
      * scale in to be triggered.</p>
      */
     inline int GetCpuUtilizationPercentage() const{ return m_cpuUtilizationPercentage; }
-
-    /**
-     * <p>The target CPU utilization percentage threshold at which you want connector
-     * scale in to be triggered.</p>
-     */
     inline bool CpuUtilizationPercentageHasBeenSet() const { return m_cpuUtilizationPercentageHasBeenSet; }
-
-    /**
-     * <p>The target CPU utilization percentage threshold at which you want connector
-     * scale in to be triggered.</p>
-     */
     inline void SetCpuUtilizationPercentage(int value) { m_cpuUtilizationPercentageHasBeenSet = true; m_cpuUtilizationPercentage = value; }
-
-    /**
-     * <p>The target CPU utilization percentage threshold at which you want connector
-     * scale in to be triggered.</p>
-     */
     inline ScaleInPolicyUpdate& WithCpuUtilizationPercentage(int value) { SetCpuUtilizationPercentage(value); return *this;}
-
+    ///@}
   private:
 
     int m_cpuUtilizationPercentage;

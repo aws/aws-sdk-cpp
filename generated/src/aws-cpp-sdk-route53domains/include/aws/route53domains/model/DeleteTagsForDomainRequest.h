@@ -39,92 +39,34 @@ namespace Model
     AWS_ROUTE53DOMAINS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The domain for which you want to delete one or more tags.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The domain for which you want to delete one or more tags.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The domain for which you want to delete one or more tags.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The domain for which you want to delete one or more tags.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The domain for which you want to delete one or more tags.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The domain for which you want to delete one or more tags.</p>
-     */
     inline DeleteTagsForDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The domain for which you want to delete one or more tags.</p>
-     */
     inline DeleteTagsForDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain for which you want to delete one or more tags.</p>
-     */
     inline DeleteTagsForDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of tag keys to delete.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagsToDelete() const{ return m_tagsToDelete; }
-
-    /**
-     * <p>A list of tag keys to delete.</p>
-     */
     inline bool TagsToDeleteHasBeenSet() const { return m_tagsToDeleteHasBeenSet; }
-
-    /**
-     * <p>A list of tag keys to delete.</p>
-     */
     inline void SetTagsToDelete(const Aws::Vector<Aws::String>& value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete = value; }
-
-    /**
-     * <p>A list of tag keys to delete.</p>
-     */
     inline void SetTagsToDelete(Aws::Vector<Aws::String>&& value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete = std::move(value); }
-
-    /**
-     * <p>A list of tag keys to delete.</p>
-     */
     inline DeleteTagsForDomainRequest& WithTagsToDelete(const Aws::Vector<Aws::String>& value) { SetTagsToDelete(value); return *this;}
-
-    /**
-     * <p>A list of tag keys to delete.</p>
-     */
     inline DeleteTagsForDomainRequest& WithTagsToDelete(Aws::Vector<Aws::String>&& value) { SetTagsToDelete(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tag keys to delete.</p>
-     */
     inline DeleteTagsForDomainRequest& AddTagsToDelete(const Aws::String& value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tag keys to delete.</p>
-     */
     inline DeleteTagsForDomainRequest& AddTagsToDelete(Aws::String&& value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of tag keys to delete.</p>
-     */
     inline DeleteTagsForDomainRequest& AddTagsToDelete(const char* value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_domainName;

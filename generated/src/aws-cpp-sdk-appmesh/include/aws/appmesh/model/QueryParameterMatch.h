@@ -38,46 +38,19 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The exact query parameter to match on.</p>
      */
     inline const Aws::String& GetExact() const{ return m_exact; }
-
-    /**
-     * <p>The exact query parameter to match on.</p>
-     */
     inline bool ExactHasBeenSet() const { return m_exactHasBeenSet; }
-
-    /**
-     * <p>The exact query parameter to match on.</p>
-     */
     inline void SetExact(const Aws::String& value) { m_exactHasBeenSet = true; m_exact = value; }
-
-    /**
-     * <p>The exact query parameter to match on.</p>
-     */
     inline void SetExact(Aws::String&& value) { m_exactHasBeenSet = true; m_exact = std::move(value); }
-
-    /**
-     * <p>The exact query parameter to match on.</p>
-     */
     inline void SetExact(const char* value) { m_exactHasBeenSet = true; m_exact.assign(value); }
-
-    /**
-     * <p>The exact query parameter to match on.</p>
-     */
     inline QueryParameterMatch& WithExact(const Aws::String& value) { SetExact(value); return *this;}
-
-    /**
-     * <p>The exact query parameter to match on.</p>
-     */
     inline QueryParameterMatch& WithExact(Aws::String&& value) { SetExact(std::move(value)); return *this;}
-
-    /**
-     * <p>The exact query parameter to match on.</p>
-     */
     inline QueryParameterMatch& WithExact(const char* value) { SetExact(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exact;

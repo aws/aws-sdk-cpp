@@ -38,36 +38,17 @@ namespace Model
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that contains details about the CVSS score given to a finding.</p>
      */
     inline const CvssScoreDetails& GetCvss() const{ return m_cvss; }
-
-    /**
-     * <p>An object that contains details about the CVSS score given to a finding.</p>
-     */
     inline bool CvssHasBeenSet() const { return m_cvssHasBeenSet; }
-
-    /**
-     * <p>An object that contains details about the CVSS score given to a finding.</p>
-     */
     inline void SetCvss(const CvssScoreDetails& value) { m_cvssHasBeenSet = true; m_cvss = value; }
-
-    /**
-     * <p>An object that contains details about the CVSS score given to a finding.</p>
-     */
     inline void SetCvss(CvssScoreDetails&& value) { m_cvssHasBeenSet = true; m_cvss = std::move(value); }
-
-    /**
-     * <p>An object that contains details about the CVSS score given to a finding.</p>
-     */
     inline ScoreDetails& WithCvss(const CvssScoreDetails& value) { SetCvss(value); return *this;}
-
-    /**
-     * <p>An object that contains details about the CVSS score given to a finding.</p>
-     */
     inline ScoreDetails& WithCvss(CvssScoreDetails&& value) { SetCvss(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CvssScoreDetails m_cvss;

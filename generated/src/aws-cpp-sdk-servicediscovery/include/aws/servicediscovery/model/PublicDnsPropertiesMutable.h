@@ -37,42 +37,18 @@ namespace Model
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Start of Authority (SOA) record for the hosted zone for the public DNS
      * namespace.</p>
      */
     inline const SOA& GetSOA() const{ return m_sOA; }
-
-    /**
-     * <p>Start of Authority (SOA) record for the hosted zone for the public DNS
-     * namespace.</p>
-     */
     inline bool SOAHasBeenSet() const { return m_sOAHasBeenSet; }
-
-    /**
-     * <p>Start of Authority (SOA) record for the hosted zone for the public DNS
-     * namespace.</p>
-     */
     inline void SetSOA(const SOA& value) { m_sOAHasBeenSet = true; m_sOA = value; }
-
-    /**
-     * <p>Start of Authority (SOA) record for the hosted zone for the public DNS
-     * namespace.</p>
-     */
     inline void SetSOA(SOA&& value) { m_sOAHasBeenSet = true; m_sOA = std::move(value); }
-
-    /**
-     * <p>Start of Authority (SOA) record for the hosted zone for the public DNS
-     * namespace.</p>
-     */
     inline PublicDnsPropertiesMutable& WithSOA(const SOA& value) { SetSOA(value); return *this;}
-
-    /**
-     * <p>Start of Authority (SOA) record for the hosted zone for the public DNS
-     * namespace.</p>
-     */
     inline PublicDnsPropertiesMutable& WithSOA(SOA&& value) { SetSOA(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SOA m_sOA;

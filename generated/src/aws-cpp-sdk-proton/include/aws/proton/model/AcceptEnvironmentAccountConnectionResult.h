@@ -33,53 +33,27 @@ namespace Model
     AWS_PROTON_API AcceptEnvironmentAccountConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The environment account connection data that's returned by Proton.</p>
      */
     inline const EnvironmentAccountConnection& GetEnvironmentAccountConnection() const{ return m_environmentAccountConnection; }
-
-    /**
-     * <p>The environment account connection data that's returned by Proton.</p>
-     */
     inline void SetEnvironmentAccountConnection(const EnvironmentAccountConnection& value) { m_environmentAccountConnection = value; }
-
-    /**
-     * <p>The environment account connection data that's returned by Proton.</p>
-     */
     inline void SetEnvironmentAccountConnection(EnvironmentAccountConnection&& value) { m_environmentAccountConnection = std::move(value); }
-
-    /**
-     * <p>The environment account connection data that's returned by Proton.</p>
-     */
     inline AcceptEnvironmentAccountConnectionResult& WithEnvironmentAccountConnection(const EnvironmentAccountConnection& value) { SetEnvironmentAccountConnection(value); return *this;}
-
-    /**
-     * <p>The environment account connection data that's returned by Proton.</p>
-     */
     inline AcceptEnvironmentAccountConnectionResult& WithEnvironmentAccountConnection(EnvironmentAccountConnection&& value) { SetEnvironmentAccountConnection(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AcceptEnvironmentAccountConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AcceptEnvironmentAccountConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AcceptEnvironmentAccountConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     EnvironmentAccountConnection m_environmentAccountConnection;

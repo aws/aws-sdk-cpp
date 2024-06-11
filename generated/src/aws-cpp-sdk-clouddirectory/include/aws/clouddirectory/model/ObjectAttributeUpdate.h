@@ -39,67 +39,29 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The key of the attribute being updated.</p>
      */
     inline const AttributeKey& GetObjectAttributeKey() const{ return m_objectAttributeKey; }
-
-    /**
-     * <p>The key of the attribute being updated.</p>
-     */
     inline bool ObjectAttributeKeyHasBeenSet() const { return m_objectAttributeKeyHasBeenSet; }
-
-    /**
-     * <p>The key of the attribute being updated.</p>
-     */
     inline void SetObjectAttributeKey(const AttributeKey& value) { m_objectAttributeKeyHasBeenSet = true; m_objectAttributeKey = value; }
-
-    /**
-     * <p>The key of the attribute being updated.</p>
-     */
     inline void SetObjectAttributeKey(AttributeKey&& value) { m_objectAttributeKeyHasBeenSet = true; m_objectAttributeKey = std::move(value); }
-
-    /**
-     * <p>The key of the attribute being updated.</p>
-     */
     inline ObjectAttributeUpdate& WithObjectAttributeKey(const AttributeKey& value) { SetObjectAttributeKey(value); return *this;}
-
-    /**
-     * <p>The key of the attribute being updated.</p>
-     */
     inline ObjectAttributeUpdate& WithObjectAttributeKey(AttributeKey&& value) { SetObjectAttributeKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The action to perform as part of the attribute update.</p>
      */
     inline const ObjectAttributeAction& GetObjectAttributeAction() const{ return m_objectAttributeAction; }
-
-    /**
-     * <p>The action to perform as part of the attribute update.</p>
-     */
     inline bool ObjectAttributeActionHasBeenSet() const { return m_objectAttributeActionHasBeenSet; }
-
-    /**
-     * <p>The action to perform as part of the attribute update.</p>
-     */
     inline void SetObjectAttributeAction(const ObjectAttributeAction& value) { m_objectAttributeActionHasBeenSet = true; m_objectAttributeAction = value; }
-
-    /**
-     * <p>The action to perform as part of the attribute update.</p>
-     */
     inline void SetObjectAttributeAction(ObjectAttributeAction&& value) { m_objectAttributeActionHasBeenSet = true; m_objectAttributeAction = std::move(value); }
-
-    /**
-     * <p>The action to perform as part of the attribute update.</p>
-     */
     inline ObjectAttributeUpdate& WithObjectAttributeAction(const ObjectAttributeAction& value) { SetObjectAttributeAction(value); return *this;}
-
-    /**
-     * <p>The action to perform as part of the attribute update.</p>
-     */
     inline ObjectAttributeUpdate& WithObjectAttributeAction(ObjectAttributeAction&& value) { SetObjectAttributeAction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AttributeKey m_objectAttributeKey;

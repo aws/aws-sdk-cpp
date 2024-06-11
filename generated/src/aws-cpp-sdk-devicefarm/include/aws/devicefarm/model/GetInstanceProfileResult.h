@@ -33,53 +33,27 @@ namespace Model
     AWS_DEVICEFARM_API GetInstanceProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains information about an instance profile.</p>
      */
     inline const InstanceProfile& GetInstanceProfile() const{ return m_instanceProfile; }
-
-    /**
-     * <p>An object that contains information about an instance profile.</p>
-     */
     inline void SetInstanceProfile(const InstanceProfile& value) { m_instanceProfile = value; }
-
-    /**
-     * <p>An object that contains information about an instance profile.</p>
-     */
     inline void SetInstanceProfile(InstanceProfile&& value) { m_instanceProfile = std::move(value); }
-
-    /**
-     * <p>An object that contains information about an instance profile.</p>
-     */
     inline GetInstanceProfileResult& WithInstanceProfile(const InstanceProfile& value) { SetInstanceProfile(value); return *this;}
-
-    /**
-     * <p>An object that contains information about an instance profile.</p>
-     */
     inline GetInstanceProfileResult& WithInstanceProfile(InstanceProfile&& value) { SetInstanceProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetInstanceProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetInstanceProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetInstanceProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     InstanceProfile m_instanceProfile;

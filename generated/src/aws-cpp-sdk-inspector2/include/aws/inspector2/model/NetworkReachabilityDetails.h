@@ -40,110 +40,43 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that contains details about a network path associated with a
      * finding.</p>
      */
     inline const NetworkPath& GetNetworkPath() const{ return m_networkPath; }
-
-    /**
-     * <p>An object that contains details about a network path associated with a
-     * finding.</p>
-     */
     inline bool NetworkPathHasBeenSet() const { return m_networkPathHasBeenSet; }
-
-    /**
-     * <p>An object that contains details about a network path associated with a
-     * finding.</p>
-     */
     inline void SetNetworkPath(const NetworkPath& value) { m_networkPathHasBeenSet = true; m_networkPath = value; }
-
-    /**
-     * <p>An object that contains details about a network path associated with a
-     * finding.</p>
-     */
     inline void SetNetworkPath(NetworkPath&& value) { m_networkPathHasBeenSet = true; m_networkPath = std::move(value); }
-
-    /**
-     * <p>An object that contains details about a network path associated with a
-     * finding.</p>
-     */
     inline NetworkReachabilityDetails& WithNetworkPath(const NetworkPath& value) { SetNetworkPath(value); return *this;}
-
-    /**
-     * <p>An object that contains details about a network path associated with a
-     * finding.</p>
-     */
     inline NetworkReachabilityDetails& WithNetworkPath(NetworkPath&& value) { SetNetworkPath(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that contains details about the open port range associated with a
      * finding.</p>
      */
     inline const PortRange& GetOpenPortRange() const{ return m_openPortRange; }
-
-    /**
-     * <p>An object that contains details about the open port range associated with a
-     * finding.</p>
-     */
     inline bool OpenPortRangeHasBeenSet() const { return m_openPortRangeHasBeenSet; }
-
-    /**
-     * <p>An object that contains details about the open port range associated with a
-     * finding.</p>
-     */
     inline void SetOpenPortRange(const PortRange& value) { m_openPortRangeHasBeenSet = true; m_openPortRange = value; }
-
-    /**
-     * <p>An object that contains details about the open port range associated with a
-     * finding.</p>
-     */
     inline void SetOpenPortRange(PortRange&& value) { m_openPortRangeHasBeenSet = true; m_openPortRange = std::move(value); }
-
-    /**
-     * <p>An object that contains details about the open port range associated with a
-     * finding.</p>
-     */
     inline NetworkReachabilityDetails& WithOpenPortRange(const PortRange& value) { SetOpenPortRange(value); return *this;}
-
-    /**
-     * <p>An object that contains details about the open port range associated with a
-     * finding.</p>
-     */
     inline NetworkReachabilityDetails& WithOpenPortRange(PortRange&& value) { SetOpenPortRange(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The protocol associated with a finding.</p>
      */
     inline const NetworkProtocol& GetProtocol() const{ return m_protocol; }
-
-    /**
-     * <p>The protocol associated with a finding.</p>
-     */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-
-    /**
-     * <p>The protocol associated with a finding.</p>
-     */
     inline void SetProtocol(const NetworkProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-
-    /**
-     * <p>The protocol associated with a finding.</p>
-     */
     inline void SetProtocol(NetworkProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-
-    /**
-     * <p>The protocol associated with a finding.</p>
-     */
     inline NetworkReachabilityDetails& WithProtocol(const NetworkProtocol& value) { SetProtocol(value); return *this;}
-
-    /**
-     * <p>The protocol associated with a finding.</p>
-     */
     inline NetworkReachabilityDetails& WithProtocol(NetworkProtocol&& value) { SetProtocol(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NetworkPath m_networkPath;

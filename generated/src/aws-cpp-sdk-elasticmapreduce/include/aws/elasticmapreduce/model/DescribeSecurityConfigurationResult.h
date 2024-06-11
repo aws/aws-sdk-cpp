@@ -33,125 +33,53 @@ namespace Model
     AWS_EMR_API DescribeSecurityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the security configuration.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline DescribeSecurityConfigurationResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline DescribeSecurityConfigurationResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline DescribeSecurityConfigurationResult& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The security configuration details in JSON format.</p>
      */
     inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
-
-    /**
-     * <p>The security configuration details in JSON format.</p>
-     */
     inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfiguration = value; }
-
-    /**
-     * <p>The security configuration details in JSON format.</p>
-     */
     inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfiguration = std::move(value); }
-
-    /**
-     * <p>The security configuration details in JSON format.</p>
-     */
     inline void SetSecurityConfiguration(const char* value) { m_securityConfiguration.assign(value); }
-
-    /**
-     * <p>The security configuration details in JSON format.</p>
-     */
     inline DescribeSecurityConfigurationResult& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
-
-    /**
-     * <p>The security configuration details in JSON format.</p>
-     */
     inline DescribeSecurityConfigurationResult& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
-
-    /**
-     * <p>The security configuration details in JSON format.</p>
-     */
     inline DescribeSecurityConfigurationResult& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time the security configuration was created</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-
-    /**
-     * <p>The date and time the security configuration was created</p>
-     */
     inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-
-    /**
-     * <p>The date and time the security configuration was created</p>
-     */
     inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time the security configuration was created</p>
-     */
     inline DescribeSecurityConfigurationResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time the security configuration was created</p>
-     */
     inline DescribeSecurityConfigurationResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeSecurityConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeSecurityConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeSecurityConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

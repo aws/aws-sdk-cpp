@@ -34,54 +34,20 @@ namespace Model
     AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system
      * that you're using with DataSync Discovery.</p>
      */
     inline const Aws::String& GetStorageSystemArn() const{ return m_storageSystemArn; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system
-     * that you're using with DataSync Discovery.</p>
-     */
     inline bool StorageSystemArnHasBeenSet() const { return m_storageSystemArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system
-     * that you're using with DataSync Discovery.</p>
-     */
     inline void SetStorageSystemArn(const Aws::String& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = value; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system
-     * that you're using with DataSync Discovery.</p>
-     */
     inline void SetStorageSystemArn(Aws::String&& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system
-     * that you're using with DataSync Discovery.</p>
-     */
     inline void SetStorageSystemArn(const char* value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn.assign(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system
-     * that you're using with DataSync Discovery.</p>
-     */
     inline DescribeStorageSystemRequest& WithStorageSystemArn(const Aws::String& value) { SetStorageSystemArn(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system
-     * that you're using with DataSync Discovery.</p>
-     */
     inline DescribeStorageSystemRequest& WithStorageSystemArn(Aws::String&& value) { SetStorageSystemArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system
-     * that you're using with DataSync Discovery.</p>
-     */
     inline DescribeStorageSystemRequest& WithStorageSystemArn(const char* value) { SetStorageSystemArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_storageSystemArn;

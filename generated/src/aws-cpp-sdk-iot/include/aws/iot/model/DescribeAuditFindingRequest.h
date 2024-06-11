@@ -32,54 +32,20 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for a single audit finding. You can use this identifier
      * to apply mitigation actions to the finding.</p>
      */
     inline const Aws::String& GetFindingId() const{ return m_findingId; }
-
-    /**
-     * <p>A unique identifier for a single audit finding. You can use this identifier
-     * to apply mitigation actions to the finding.</p>
-     */
     inline bool FindingIdHasBeenSet() const { return m_findingIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for a single audit finding. You can use this identifier
-     * to apply mitigation actions to the finding.</p>
-     */
     inline void SetFindingId(const Aws::String& value) { m_findingIdHasBeenSet = true; m_findingId = value; }
-
-    /**
-     * <p>A unique identifier for a single audit finding. You can use this identifier
-     * to apply mitigation actions to the finding.</p>
-     */
     inline void SetFindingId(Aws::String&& value) { m_findingIdHasBeenSet = true; m_findingId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for a single audit finding. You can use this identifier
-     * to apply mitigation actions to the finding.</p>
-     */
     inline void SetFindingId(const char* value) { m_findingIdHasBeenSet = true; m_findingId.assign(value); }
-
-    /**
-     * <p>A unique identifier for a single audit finding. You can use this identifier
-     * to apply mitigation actions to the finding.</p>
-     */
     inline DescribeAuditFindingRequest& WithFindingId(const Aws::String& value) { SetFindingId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for a single audit finding. You can use this identifier
-     * to apply mitigation actions to the finding.</p>
-     */
     inline DescribeAuditFindingRequest& WithFindingId(Aws::String&& value) { SetFindingId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for a single audit finding. You can use this identifier
-     * to apply mitigation actions to the finding.</p>
-     */
     inline DescribeAuditFindingRequest& WithFindingId(const char* value) { SetFindingId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_findingId;

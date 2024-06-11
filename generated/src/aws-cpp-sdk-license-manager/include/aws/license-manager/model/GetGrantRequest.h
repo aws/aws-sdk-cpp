@@ -34,87 +34,33 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Amazon Resource Name (ARN) of the grant.</p>
      */
     inline const Aws::String& GetGrantArn() const{ return m_grantArn; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline bool GrantArnHasBeenSet() const { return m_grantArnHasBeenSet; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline void SetGrantArn(const Aws::String& value) { m_grantArnHasBeenSet = true; m_grantArn = value; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline void SetGrantArn(Aws::String&& value) { m_grantArnHasBeenSet = true; m_grantArn = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline void SetGrantArn(const char* value) { m_grantArnHasBeenSet = true; m_grantArn.assign(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline GetGrantRequest& WithGrantArn(const Aws::String& value) { SetGrantArn(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline GetGrantRequest& WithGrantArn(Aws::String&& value) { SetGrantArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline GetGrantRequest& WithGrantArn(const char* value) { SetGrantArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Grant version.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline GetGrantRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline GetGrantRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>Grant version.</p>
-     */
     inline GetGrantRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_grantArn;

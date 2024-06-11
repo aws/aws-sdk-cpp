@@ -34,46 +34,19 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the batch prediction job to cancel.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The ID of the batch prediction job to cancel.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the batch prediction job to cancel.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The ID of the batch prediction job to cancel.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The ID of the batch prediction job to cancel.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The ID of the batch prediction job to cancel.</p>
-     */
     inline CancelBatchPredictionJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The ID of the batch prediction job to cancel.</p>
-     */
     inline CancelBatchPredictionJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the batch prediction job to cancel.</p>
-     */
     inline CancelBatchPredictionJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

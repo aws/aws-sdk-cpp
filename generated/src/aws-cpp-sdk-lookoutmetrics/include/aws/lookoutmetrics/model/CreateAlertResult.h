@@ -32,63 +32,29 @@ namespace Model
     AWS_LOOKOUTMETRICS_API CreateAlertResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the alert.</p>
      */
     inline const Aws::String& GetAlertArn() const{ return m_alertArn; }
-
-    /**
-     * <p>The ARN of the alert.</p>
-     */
     inline void SetAlertArn(const Aws::String& value) { m_alertArn = value; }
-
-    /**
-     * <p>The ARN of the alert.</p>
-     */
     inline void SetAlertArn(Aws::String&& value) { m_alertArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the alert.</p>
-     */
     inline void SetAlertArn(const char* value) { m_alertArn.assign(value); }
-
-    /**
-     * <p>The ARN of the alert.</p>
-     */
     inline CreateAlertResult& WithAlertArn(const Aws::String& value) { SetAlertArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the alert.</p>
-     */
     inline CreateAlertResult& WithAlertArn(Aws::String&& value) { SetAlertArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the alert.</p>
-     */
     inline CreateAlertResult& WithAlertArn(const char* value) { SetAlertArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAlertResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAlertResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAlertResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_alertArn;

@@ -39,103 +39,35 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Availability Zone where the node in the SageMaker HyperPod cluster is
      * launched.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-
-    /**
-     * <p>The Availability Zone where the node in the SageMaker HyperPod cluster is
-     * launched.</p>
-     */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-
-    /**
-     * <p>The Availability Zone where the node in the SageMaker HyperPod cluster is
-     * launched.</p>
-     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-
-    /**
-     * <p>The Availability Zone where the node in the SageMaker HyperPod cluster is
-     * launched.</p>
-     */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-
-    /**
-     * <p>The Availability Zone where the node in the SageMaker HyperPod cluster is
-     * launched.</p>
-     */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-
-    /**
-     * <p>The Availability Zone where the node in the SageMaker HyperPod cluster is
-     * launched.</p>
-     */
     inline ClusterInstancePlacement& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-
-    /**
-     * <p>The Availability Zone where the node in the SageMaker HyperPod cluster is
-     * launched.</p>
-     */
     inline ClusterInstancePlacement& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-
-    /**
-     * <p>The Availability Zone where the node in the SageMaker HyperPod cluster is
-     * launched.</p>
-     */
     inline ClusterInstancePlacement& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier (ID) of the Availability Zone where the node in the
      * SageMaker HyperPod cluster is launched.</p>
      */
     inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
-
-    /**
-     * <p>The unique identifier (ID) of the Availability Zone where the node in the
-     * SageMaker HyperPod cluster is launched.</p>
-     */
     inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier (ID) of the Availability Zone where the node in the
-     * SageMaker HyperPod cluster is launched.</p>
-     */
     inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
-
-    /**
-     * <p>The unique identifier (ID) of the Availability Zone where the node in the
-     * SageMaker HyperPod cluster is launched.</p>
-     */
     inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
-
-    /**
-     * <p>The unique identifier (ID) of the Availability Zone where the node in the
-     * SageMaker HyperPod cluster is launched.</p>
-     */
     inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
-
-    /**
-     * <p>The unique identifier (ID) of the Availability Zone where the node in the
-     * SageMaker HyperPod cluster is launched.</p>
-     */
     inline ClusterInstancePlacement& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
-
-    /**
-     * <p>The unique identifier (ID) of the Availability Zone where the node in the
-     * SageMaker HyperPod cluster is launched.</p>
-     */
     inline ClusterInstancePlacement& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier (ID) of the Availability Zone where the node in the
-     * SageMaker HyperPod cluster is launched.</p>
-     */
     inline ClusterInstancePlacement& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_availabilityZone;

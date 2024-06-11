@@ -38,54 +38,20 @@ namespace Model
     AWS_CODEGURUSECURITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
      * for encryption, returns empty.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-
-    /**
-     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
-     * for encryption, returns empty.</p>
-     */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-
-    /**
-     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
-     * for encryption, returns empty.</p>
-     */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-
-    /**
-     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
-     * for encryption, returns empty.</p>
-     */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
-     * for encryption, returns empty.</p>
-     */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-
-    /**
-     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
-     * for encryption, returns empty.</p>
-     */
     inline EncryptionConfig& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
-     * for encryption, returns empty.</p>
-     */
     inline EncryptionConfig& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
-     * for encryption, returns empty.</p>
-     */
     inline EncryptionConfig& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyArn;

@@ -38,54 +38,20 @@ namespace Model
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The HTTP code to use when checking for a successful response from a
      * target.</p>
      */
     inline const Aws::String& GetHttpCode() const{ return m_httpCode; }
-
-    /**
-     * <p>The HTTP code to use when checking for a successful response from a
-     * target.</p>
-     */
     inline bool HttpCodeHasBeenSet() const { return m_httpCodeHasBeenSet; }
-
-    /**
-     * <p>The HTTP code to use when checking for a successful response from a
-     * target.</p>
-     */
     inline void SetHttpCode(const Aws::String& value) { m_httpCodeHasBeenSet = true; m_httpCode = value; }
-
-    /**
-     * <p>The HTTP code to use when checking for a successful response from a
-     * target.</p>
-     */
     inline void SetHttpCode(Aws::String&& value) { m_httpCodeHasBeenSet = true; m_httpCode = std::move(value); }
-
-    /**
-     * <p>The HTTP code to use when checking for a successful response from a
-     * target.</p>
-     */
     inline void SetHttpCode(const char* value) { m_httpCodeHasBeenSet = true; m_httpCode.assign(value); }
-
-    /**
-     * <p>The HTTP code to use when checking for a successful response from a
-     * target.</p>
-     */
     inline Matcher& WithHttpCode(const Aws::String& value) { SetHttpCode(value); return *this;}
-
-    /**
-     * <p>The HTTP code to use when checking for a successful response from a
-     * target.</p>
-     */
     inline Matcher& WithHttpCode(Aws::String&& value) { SetHttpCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The HTTP code to use when checking for a successful response from a
-     * target.</p>
-     */
     inline Matcher& WithHttpCode(const char* value) { SetHttpCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_httpCode;

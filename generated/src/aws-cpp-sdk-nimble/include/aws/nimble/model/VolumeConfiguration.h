@@ -38,80 +38,38 @@ namespace Model
     AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of I/O operations per second for the root volume that is attached
      * to streaming session.</p>
      */
     inline int GetIops() const{ return m_iops; }
-
-    /**
-     * <p>The number of I/O operations per second for the root volume that is attached
-     * to streaming session.</p>
-     */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
-
-    /**
-     * <p>The number of I/O operations per second for the root volume that is attached
-     * to streaming session.</p>
-     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
-
-    /**
-     * <p>The number of I/O operations per second for the root volume that is attached
-     * to streaming session.</p>
-     */
     inline VolumeConfiguration& WithIops(int value) { SetIops(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The size of the root volume that is attached to the streaming session. The
      * root volume size is measured in GiBs.</p>
      */
     inline int GetSize() const{ return m_size; }
-
-    /**
-     * <p>The size of the root volume that is attached to the streaming session. The
-     * root volume size is measured in GiBs.</p>
-     */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-
-    /**
-     * <p>The size of the root volume that is attached to the streaming session. The
-     * root volume size is measured in GiBs.</p>
-     */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
-
-    /**
-     * <p>The size of the root volume that is attached to the streaming session. The
-     * root volume size is measured in GiBs.</p>
-     */
     inline VolumeConfiguration& WithSize(int value) { SetSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The throughput to provision for the root volume that is attached to the
      * streaming session. The throughput is measured in MiB/s.</p>
      */
     inline int GetThroughput() const{ return m_throughput; }
-
-    /**
-     * <p>The throughput to provision for the root volume that is attached to the
-     * streaming session. The throughput is measured in MiB/s.</p>
-     */
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
-
-    /**
-     * <p>The throughput to provision for the root volume that is attached to the
-     * streaming session. The throughput is measured in MiB/s.</p>
-     */
     inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
-
-    /**
-     * <p>The throughput to provision for the root volume that is attached to the
-     * streaming session. The throughput is measured in MiB/s.</p>
-     */
     inline VolumeConfiguration& WithThroughput(int value) { SetThroughput(value); return *this;}
-
+    ///@}
   private:
 
     int m_iops;

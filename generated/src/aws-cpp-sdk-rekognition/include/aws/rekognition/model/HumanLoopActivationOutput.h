@@ -40,141 +40,49 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
      */
     inline const Aws::String& GetHumanLoopArn() const{ return m_humanLoopArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
-     */
     inline bool HumanLoopArnHasBeenSet() const { return m_humanLoopArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
-     */
     inline void SetHumanLoopArn(const Aws::String& value) { m_humanLoopArnHasBeenSet = true; m_humanLoopArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
-     */
     inline void SetHumanLoopArn(Aws::String&& value) { m_humanLoopArnHasBeenSet = true; m_humanLoopArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
-     */
     inline void SetHumanLoopArn(const char* value) { m_humanLoopArnHasBeenSet = true; m_humanLoopArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
-     */
     inline HumanLoopActivationOutput& WithHumanLoopArn(const Aws::String& value) { SetHumanLoopArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
-     */
     inline HumanLoopActivationOutput& WithHumanLoopArn(Aws::String&& value) { SetHumanLoopArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
-     */
     inline HumanLoopActivationOutput& WithHumanLoopArn(const char* value) { SetHumanLoopArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Shows if and why human review was needed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHumanLoopActivationReasons() const{ return m_humanLoopActivationReasons; }
-
-    /**
-     * <p>Shows if and why human review was needed.</p>
-     */
     inline bool HumanLoopActivationReasonsHasBeenSet() const { return m_humanLoopActivationReasonsHasBeenSet; }
-
-    /**
-     * <p>Shows if and why human review was needed.</p>
-     */
     inline void SetHumanLoopActivationReasons(const Aws::Vector<Aws::String>& value) { m_humanLoopActivationReasonsHasBeenSet = true; m_humanLoopActivationReasons = value; }
-
-    /**
-     * <p>Shows if and why human review was needed.</p>
-     */
     inline void SetHumanLoopActivationReasons(Aws::Vector<Aws::String>&& value) { m_humanLoopActivationReasonsHasBeenSet = true; m_humanLoopActivationReasons = std::move(value); }
-
-    /**
-     * <p>Shows if and why human review was needed.</p>
-     */
     inline HumanLoopActivationOutput& WithHumanLoopActivationReasons(const Aws::Vector<Aws::String>& value) { SetHumanLoopActivationReasons(value); return *this;}
-
-    /**
-     * <p>Shows if and why human review was needed.</p>
-     */
     inline HumanLoopActivationOutput& WithHumanLoopActivationReasons(Aws::Vector<Aws::String>&& value) { SetHumanLoopActivationReasons(std::move(value)); return *this;}
-
-    /**
-     * <p>Shows if and why human review was needed.</p>
-     */
     inline HumanLoopActivationOutput& AddHumanLoopActivationReasons(const Aws::String& value) { m_humanLoopActivationReasonsHasBeenSet = true; m_humanLoopActivationReasons.push_back(value); return *this; }
-
-    /**
-     * <p>Shows if and why human review was needed.</p>
-     */
     inline HumanLoopActivationOutput& AddHumanLoopActivationReasons(Aws::String&& value) { m_humanLoopActivationReasonsHasBeenSet = true; m_humanLoopActivationReasons.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Shows if and why human review was needed.</p>
-     */
     inline HumanLoopActivationOutput& AddHumanLoopActivationReasons(const char* value) { m_humanLoopActivationReasonsHasBeenSet = true; m_humanLoopActivationReasons.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Shows the result of condition evaluations, including those conditions which
      * activated a human review.</p>
      */
     inline const Aws::String& GetHumanLoopActivationConditionsEvaluationResults() const{ return m_humanLoopActivationConditionsEvaluationResults; }
-
-    /**
-     * <p>Shows the result of condition evaluations, including those conditions which
-     * activated a human review.</p>
-     */
     inline bool HumanLoopActivationConditionsEvaluationResultsHasBeenSet() const { return m_humanLoopActivationConditionsEvaluationResultsHasBeenSet; }
-
-    /**
-     * <p>Shows the result of condition evaluations, including those conditions which
-     * activated a human review.</p>
-     */
     inline void SetHumanLoopActivationConditionsEvaluationResults(const Aws::String& value) { m_humanLoopActivationConditionsEvaluationResultsHasBeenSet = true; m_humanLoopActivationConditionsEvaluationResults = value; }
-
-    /**
-     * <p>Shows the result of condition evaluations, including those conditions which
-     * activated a human review.</p>
-     */
     inline void SetHumanLoopActivationConditionsEvaluationResults(Aws::String&& value) { m_humanLoopActivationConditionsEvaluationResultsHasBeenSet = true; m_humanLoopActivationConditionsEvaluationResults = std::move(value); }
-
-    /**
-     * <p>Shows the result of condition evaluations, including those conditions which
-     * activated a human review.</p>
-     */
     inline void SetHumanLoopActivationConditionsEvaluationResults(const char* value) { m_humanLoopActivationConditionsEvaluationResultsHasBeenSet = true; m_humanLoopActivationConditionsEvaluationResults.assign(value); }
-
-    /**
-     * <p>Shows the result of condition evaluations, including those conditions which
-     * activated a human review.</p>
-     */
     inline HumanLoopActivationOutput& WithHumanLoopActivationConditionsEvaluationResults(const Aws::String& value) { SetHumanLoopActivationConditionsEvaluationResults(value); return *this;}
-
-    /**
-     * <p>Shows the result of condition evaluations, including those conditions which
-     * activated a human review.</p>
-     */
     inline HumanLoopActivationOutput& WithHumanLoopActivationConditionsEvaluationResults(Aws::String&& value) { SetHumanLoopActivationConditionsEvaluationResults(std::move(value)); return *this;}
-
-    /**
-     * <p>Shows the result of condition evaluations, including those conditions which
-     * activated a human review.</p>
-     */
     inline HumanLoopActivationOutput& WithHumanLoopActivationConditionsEvaluationResults(const char* value) { SetHumanLoopActivationConditionsEvaluationResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_humanLoopArn;

@@ -33,112 +33,44 @@ namespace Model
     AWS_CLOUDDIRECTORY_API ListObjectPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttachedPolicyIds() const{ return m_attachedPolicyIds; }
-
-    /**
-     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
-     * object.</p>
-     */
     inline void SetAttachedPolicyIds(const Aws::Vector<Aws::String>& value) { m_attachedPolicyIds = value; }
-
-    /**
-     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
-     * object.</p>
-     */
     inline void SetAttachedPolicyIds(Aws::Vector<Aws::String>&& value) { m_attachedPolicyIds = std::move(value); }
-
-    /**
-     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
-     * object.</p>
-     */
     inline ListObjectPoliciesResult& WithAttachedPolicyIds(const Aws::Vector<Aws::String>& value) { SetAttachedPolicyIds(value); return *this;}
-
-    /**
-     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
-     * object.</p>
-     */
     inline ListObjectPoliciesResult& WithAttachedPolicyIds(Aws::Vector<Aws::String>&& value) { SetAttachedPolicyIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
-     * object.</p>
-     */
     inline ListObjectPoliciesResult& AddAttachedPolicyIds(const Aws::String& value) { m_attachedPolicyIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
-     * object.</p>
-     */
     inline ListObjectPoliciesResult& AddAttachedPolicyIds(Aws::String&& value) { m_attachedPolicyIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
-     * object.</p>
-     */
     inline ListObjectPoliciesResult& AddAttachedPolicyIds(const char* value) { m_attachedPolicyIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline ListObjectPoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline ListObjectPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline ListObjectPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListObjectPoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListObjectPoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListObjectPoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_attachedPolicyIds;

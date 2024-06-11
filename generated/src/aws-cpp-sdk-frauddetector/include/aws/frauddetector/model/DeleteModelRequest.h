@@ -35,77 +35,31 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The model ID of the model to delete.</p>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
-
-    /**
-     * <p>The model ID of the model to delete.</p>
-     */
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-
-    /**
-     * <p>The model ID of the model to delete.</p>
-     */
     inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-
-    /**
-     * <p>The model ID of the model to delete.</p>
-     */
     inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-
-    /**
-     * <p>The model ID of the model to delete.</p>
-     */
     inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-
-    /**
-     * <p>The model ID of the model to delete.</p>
-     */
     inline DeleteModelRequest& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-
-    /**
-     * <p>The model ID of the model to delete.</p>
-     */
     inline DeleteModelRequest& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The model ID of the model to delete.</p>
-     */
     inline DeleteModelRequest& WithModelId(const char* value) { SetModelId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The model type of the model to delete.</p>
      */
     inline const ModelTypeEnum& GetModelType() const{ return m_modelType; }
-
-    /**
-     * <p>The model type of the model to delete.</p>
-     */
     inline bool ModelTypeHasBeenSet() const { return m_modelTypeHasBeenSet; }
-
-    /**
-     * <p>The model type of the model to delete.</p>
-     */
     inline void SetModelType(const ModelTypeEnum& value) { m_modelTypeHasBeenSet = true; m_modelType = value; }
-
-    /**
-     * <p>The model type of the model to delete.</p>
-     */
     inline void SetModelType(ModelTypeEnum&& value) { m_modelTypeHasBeenSet = true; m_modelType = std::move(value); }
-
-    /**
-     * <p>The model type of the model to delete.</p>
-     */
     inline DeleteModelRequest& WithModelType(const ModelTypeEnum& value) { SetModelType(value); return *this;}
-
-    /**
-     * <p>The model type of the model to delete.</p>
-     */
     inline DeleteModelRequest& WithModelType(ModelTypeEnum&& value) { SetModelType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelId;

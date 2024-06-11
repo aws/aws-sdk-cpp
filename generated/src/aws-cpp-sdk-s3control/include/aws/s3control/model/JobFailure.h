@@ -38,87 +38,33 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The failure code, if any, for the specified job.</p>
      */
     inline const Aws::String& GetFailureCode() const{ return m_failureCode; }
-
-    /**
-     * <p>The failure code, if any, for the specified job.</p>
-     */
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-
-    /**
-     * <p>The failure code, if any, for the specified job.</p>
-     */
     inline void SetFailureCode(const Aws::String& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-
-    /**
-     * <p>The failure code, if any, for the specified job.</p>
-     */
     inline void SetFailureCode(Aws::String&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-
-    /**
-     * <p>The failure code, if any, for the specified job.</p>
-     */
     inline void SetFailureCode(const char* value) { m_failureCodeHasBeenSet = true; m_failureCode.assign(value); }
-
-    /**
-     * <p>The failure code, if any, for the specified job.</p>
-     */
     inline JobFailure& WithFailureCode(const Aws::String& value) { SetFailureCode(value); return *this;}
-
-    /**
-     * <p>The failure code, if any, for the specified job.</p>
-     */
     inline JobFailure& WithFailureCode(Aws::String&& value) { SetFailureCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The failure code, if any, for the specified job.</p>
-     */
     inline JobFailure& WithFailureCode(const char* value) { SetFailureCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The failure reason, if any, for the specified job.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-
-    /**
-     * <p>The failure reason, if any, for the specified job.</p>
-     */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-
-    /**
-     * <p>The failure reason, if any, for the specified job.</p>
-     */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-
-    /**
-     * <p>The failure reason, if any, for the specified job.</p>
-     */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-
-    /**
-     * <p>The failure reason, if any, for the specified job.</p>
-     */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-
-    /**
-     * <p>The failure reason, if any, for the specified job.</p>
-     */
     inline JobFailure& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-
-    /**
-     * <p>The failure reason, if any, for the specified job.</p>
-     */
     inline JobFailure& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The failure reason, if any, for the specified job.</p>
-     */
     inline JobFailure& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_failureCode;

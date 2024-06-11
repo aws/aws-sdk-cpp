@@ -37,46 +37,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The unique ID for the device.
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * The unique ID for the device.
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * The unique ID for the device.
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * The unique ID for the device.
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * The unique ID for the device.
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * The unique ID for the device.
-     */
     inline InputDeviceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * The unique ID for the device.
-     */
     inline InputDeviceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * The unique ID for the device.
-     */
     inline InputDeviceRequest& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

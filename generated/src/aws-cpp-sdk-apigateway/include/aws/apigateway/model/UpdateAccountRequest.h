@@ -37,62 +37,21 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>For more information about supported patch operations, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
      * Operations</a>.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline UpdateAccountRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline UpdateAccountRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline UpdateAccountRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline UpdateAccountRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<PatchOperation> m_patchOperations;

@@ -38,51 +38,20 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of connections used by the job.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConnections() const{ return m_connections; }
-
-    /**
-     * <p>A list of connections used by the job.</p>
-     */
     inline bool ConnectionsHasBeenSet() const { return m_connectionsHasBeenSet; }
-
-    /**
-     * <p>A list of connections used by the job.</p>
-     */
     inline void SetConnections(const Aws::Vector<Aws::String>& value) { m_connectionsHasBeenSet = true; m_connections = value; }
-
-    /**
-     * <p>A list of connections used by the job.</p>
-     */
     inline void SetConnections(Aws::Vector<Aws::String>&& value) { m_connectionsHasBeenSet = true; m_connections = std::move(value); }
-
-    /**
-     * <p>A list of connections used by the job.</p>
-     */
     inline ConnectionsList& WithConnections(const Aws::Vector<Aws::String>& value) { SetConnections(value); return *this;}
-
-    /**
-     * <p>A list of connections used by the job.</p>
-     */
     inline ConnectionsList& WithConnections(Aws::Vector<Aws::String>&& value) { SetConnections(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of connections used by the job.</p>
-     */
     inline ConnectionsList& AddConnections(const Aws::String& value) { m_connectionsHasBeenSet = true; m_connections.push_back(value); return *this; }
-
-    /**
-     * <p>A list of connections used by the job.</p>
-     */
     inline ConnectionsList& AddConnections(Aws::String&& value) { m_connectionsHasBeenSet = true; m_connections.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of connections used by the job.</p>
-     */
     inline ConnectionsList& AddConnections(const char* value) { m_connectionsHasBeenSet = true; m_connections.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_connections;

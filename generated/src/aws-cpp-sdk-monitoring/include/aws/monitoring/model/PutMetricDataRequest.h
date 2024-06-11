@@ -43,6 +43,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The namespace for the metric data. You can use ASCII characters for the
      * namespace, except for control characters which are not supported.</p> <p>To
@@ -50,112 +51,29 @@ namespace Model
      * specify a namespace that begins with <code>AWS/</code> </p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
-
-    /**
-     * <p>The namespace for the metric data. You can use ASCII characters for the
-     * namespace, except for control characters which are not supported.</p> <p>To
-     * avoid conflicts with Amazon Web Services service namespaces, you should not
-     * specify a namespace that begins with <code>AWS/</code> </p>
-     */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-
-    /**
-     * <p>The namespace for the metric data. You can use ASCII characters for the
-     * namespace, except for control characters which are not supported.</p> <p>To
-     * avoid conflicts with Amazon Web Services service namespaces, you should not
-     * specify a namespace that begins with <code>AWS/</code> </p>
-     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-
-    /**
-     * <p>The namespace for the metric data. You can use ASCII characters for the
-     * namespace, except for control characters which are not supported.</p> <p>To
-     * avoid conflicts with Amazon Web Services service namespaces, you should not
-     * specify a namespace that begins with <code>AWS/</code> </p>
-     */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-
-    /**
-     * <p>The namespace for the metric data. You can use ASCII characters for the
-     * namespace, except for control characters which are not supported.</p> <p>To
-     * avoid conflicts with Amazon Web Services service namespaces, you should not
-     * specify a namespace that begins with <code>AWS/</code> </p>
-     */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-
-    /**
-     * <p>The namespace for the metric data. You can use ASCII characters for the
-     * namespace, except for control characters which are not supported.</p> <p>To
-     * avoid conflicts with Amazon Web Services service namespaces, you should not
-     * specify a namespace that begins with <code>AWS/</code> </p>
-     */
     inline PutMetricDataRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-
-    /**
-     * <p>The namespace for the metric data. You can use ASCII characters for the
-     * namespace, except for control characters which are not supported.</p> <p>To
-     * avoid conflicts with Amazon Web Services service namespaces, you should not
-     * specify a namespace that begins with <code>AWS/</code> </p>
-     */
     inline PutMetricDataRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-
-    /**
-     * <p>The namespace for the metric data. You can use ASCII characters for the
-     * namespace, except for control characters which are not supported.</p> <p>To
-     * avoid conflicts with Amazon Web Services service namespaces, you should not
-     * specify a namespace that begins with <code>AWS/</code> </p>
-     */
     inline PutMetricDataRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline const Aws::Vector<MetricDatum>& GetMetricData() const{ return m_metricData; }
-
-    /**
-     * <p>The data for the metric. The array can include no more than 1000 metrics per
-     * call.</p>
-     */
     inline bool MetricDataHasBeenSet() const { return m_metricDataHasBeenSet; }
-
-    /**
-     * <p>The data for the metric. The array can include no more than 1000 metrics per
-     * call.</p>
-     */
     inline void SetMetricData(const Aws::Vector<MetricDatum>& value) { m_metricDataHasBeenSet = true; m_metricData = value; }
-
-    /**
-     * <p>The data for the metric. The array can include no more than 1000 metrics per
-     * call.</p>
-     */
     inline void SetMetricData(Aws::Vector<MetricDatum>&& value) { m_metricDataHasBeenSet = true; m_metricData = std::move(value); }
-
-    /**
-     * <p>The data for the metric. The array can include no more than 1000 metrics per
-     * call.</p>
-     */
     inline PutMetricDataRequest& WithMetricData(const Aws::Vector<MetricDatum>& value) { SetMetricData(value); return *this;}
-
-    /**
-     * <p>The data for the metric. The array can include no more than 1000 metrics per
-     * call.</p>
-     */
     inline PutMetricDataRequest& WithMetricData(Aws::Vector<MetricDatum>&& value) { SetMetricData(std::move(value)); return *this;}
-
-    /**
-     * <p>The data for the metric. The array can include no more than 1000 metrics per
-     * call.</p>
-     */
     inline PutMetricDataRequest& AddMetricData(const MetricDatum& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
-
-    /**
-     * <p>The data for the metric. The array can include no more than 1000 metrics per
-     * call.</p>
-     */
     inline PutMetricDataRequest& AddMetricData(MetricDatum&& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_namespace;

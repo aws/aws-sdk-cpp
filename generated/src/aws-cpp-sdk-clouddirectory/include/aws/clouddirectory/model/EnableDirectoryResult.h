@@ -32,63 +32,29 @@ namespace Model
     AWS_CLOUDDIRECTORY_API EnableDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the enabled directory.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
-
-    /**
-     * <p>The ARN of the enabled directory.</p>
-     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArn = value; }
-
-    /**
-     * <p>The ARN of the enabled directory.</p>
-     */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the enabled directory.</p>
-     */
     inline void SetDirectoryArn(const char* value) { m_directoryArn.assign(value); }
-
-    /**
-     * <p>The ARN of the enabled directory.</p>
-     */
     inline EnableDirectoryResult& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the enabled directory.</p>
-     */
     inline EnableDirectoryResult& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the enabled directory.</p>
-     */
     inline EnableDirectoryResult& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline EnableDirectoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline EnableDirectoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline EnableDirectoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directoryArn;

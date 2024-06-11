@@ -33,53 +33,27 @@ namespace Model
     AWS_PROTON_API GetServiceTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The detailed data of the requested service template.</p>
      */
     inline const ServiceTemplate& GetServiceTemplate() const{ return m_serviceTemplate; }
-
-    /**
-     * <p>The detailed data of the requested service template.</p>
-     */
     inline void SetServiceTemplate(const ServiceTemplate& value) { m_serviceTemplate = value; }
-
-    /**
-     * <p>The detailed data of the requested service template.</p>
-     */
     inline void SetServiceTemplate(ServiceTemplate&& value) { m_serviceTemplate = std::move(value); }
-
-    /**
-     * <p>The detailed data of the requested service template.</p>
-     */
     inline GetServiceTemplateResult& WithServiceTemplate(const ServiceTemplate& value) { SetServiceTemplate(value); return *this;}
-
-    /**
-     * <p>The detailed data of the requested service template.</p>
-     */
     inline GetServiceTemplateResult& WithServiceTemplate(ServiceTemplate&& value) { SetServiceTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetServiceTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetServiceTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetServiceTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceTemplate m_serviceTemplate;

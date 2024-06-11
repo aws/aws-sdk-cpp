@@ -36,30 +36,16 @@ namespace Model
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies if this billing group will automatically associate newly added
      * Amazon Web Services accounts that join your consolidated billing family.</p>
      */
     inline bool GetAutoAssociate() const{ return m_autoAssociate; }
-
-    /**
-     * <p>Specifies if this billing group will automatically associate newly added
-     * Amazon Web Services accounts that join your consolidated billing family.</p>
-     */
     inline bool AutoAssociateHasBeenSet() const { return m_autoAssociateHasBeenSet; }
-
-    /**
-     * <p>Specifies if this billing group will automatically associate newly added
-     * Amazon Web Services accounts that join your consolidated billing family.</p>
-     */
     inline void SetAutoAssociate(bool value) { m_autoAssociateHasBeenSet = true; m_autoAssociate = value; }
-
-    /**
-     * <p>Specifies if this billing group will automatically associate newly added
-     * Amazon Web Services accounts that join your consolidated billing family.</p>
-     */
     inline ListBillingGroupAccountGrouping& WithAutoAssociate(bool value) { SetAutoAssociate(value); return *this;}
-
+    ///@}
   private:
 
     bool m_autoAssociate;

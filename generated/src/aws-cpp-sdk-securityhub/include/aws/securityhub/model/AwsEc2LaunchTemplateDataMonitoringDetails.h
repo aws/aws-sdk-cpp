@@ -35,6 +35,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Enables detailed monitoring when <code>true</code> is specified. Otherwise,
      * basic monitoring is enabled. For more information about detailed monitoring, see
@@ -44,37 +45,10 @@ namespace Model
      * Guide</i>. </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p> Enables detailed monitoring when <code>true</code> is specified. Otherwise,
-     * basic monitoring is enabled. For more information about detailed monitoring, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch-new.html">Enable
-     * or turn off detailed monitoring for your instances</a> in the <i>Amazon EC2 User
-     * Guide</i>. </p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p> Enables detailed monitoring when <code>true</code> is specified. Otherwise,
-     * basic monitoring is enabled. For more information about detailed monitoring, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch-new.html">Enable
-     * or turn off detailed monitoring for your instances</a> in the <i>Amazon EC2 User
-     * Guide</i>. </p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p> Enables detailed monitoring when <code>true</code> is specified. Otherwise,
-     * basic monitoring is enabled. For more information about detailed monitoring, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch-new.html">Enable
-     * or turn off detailed monitoring for your instances</a> in the <i>Amazon EC2 User
-     * Guide</i>. </p>
-     */
     inline AwsEc2LaunchTemplateDataMonitoringDetails& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

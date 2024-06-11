@@ -38,36 +38,17 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A description of the bootstrap action.</p>
      */
     inline const BootstrapActionConfig& GetBootstrapActionConfig() const{ return m_bootstrapActionConfig; }
-
-    /**
-     * <p>A description of the bootstrap action.</p>
-     */
     inline bool BootstrapActionConfigHasBeenSet() const { return m_bootstrapActionConfigHasBeenSet; }
-
-    /**
-     * <p>A description of the bootstrap action.</p>
-     */
     inline void SetBootstrapActionConfig(const BootstrapActionConfig& value) { m_bootstrapActionConfigHasBeenSet = true; m_bootstrapActionConfig = value; }
-
-    /**
-     * <p>A description of the bootstrap action.</p>
-     */
     inline void SetBootstrapActionConfig(BootstrapActionConfig&& value) { m_bootstrapActionConfigHasBeenSet = true; m_bootstrapActionConfig = std::move(value); }
-
-    /**
-     * <p>A description of the bootstrap action.</p>
-     */
     inline BootstrapActionDetail& WithBootstrapActionConfig(const BootstrapActionConfig& value) { SetBootstrapActionConfig(value); return *this;}
-
-    /**
-     * <p>A description of the bootstrap action.</p>
-     */
     inline BootstrapActionDetail& WithBootstrapActionConfig(BootstrapActionConfig&& value) { SetBootstrapActionConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BootstrapActionConfig m_bootstrapActionConfig;

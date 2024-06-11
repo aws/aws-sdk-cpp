@@ -36,95 +36,34 @@ namespace Model
     AWS_CODEGURUPROFILER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The id of the channel that we want to stop receiving notifications.</p>
      */
     inline const Aws::String& GetChannelId() const{ return m_channelId; }
-
-    /**
-     * <p>The id of the channel that we want to stop receiving notifications.</p>
-     */
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-
-    /**
-     * <p>The id of the channel that we want to stop receiving notifications.</p>
-     */
     inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
-
-    /**
-     * <p>The id of the channel that we want to stop receiving notifications.</p>
-     */
     inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
-
-    /**
-     * <p>The id of the channel that we want to stop receiving notifications.</p>
-     */
     inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
-
-    /**
-     * <p>The id of the channel that we want to stop receiving notifications.</p>
-     */
     inline RemoveNotificationChannelRequest& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
-
-    /**
-     * <p>The id of the channel that we want to stop receiving notifications.</p>
-     */
     inline RemoveNotificationChannelRequest& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The id of the channel that we want to stop receiving notifications.</p>
-     */
     inline RemoveNotificationChannelRequest& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the profiling group we want to change notification configuration
      * for.</p>
      */
     inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
-
-    /**
-     * <p>The name of the profiling group we want to change notification configuration
-     * for.</p>
-     */
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the profiling group we want to change notification configuration
-     * for.</p>
-     */
     inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
-
-    /**
-     * <p>The name of the profiling group we want to change notification configuration
-     * for.</p>
-     */
     inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the profiling group we want to change notification configuration
-     * for.</p>
-     */
     inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the profiling group we want to change notification configuration
-     * for.</p>
-     */
     inline RemoveNotificationChannelRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the profiling group we want to change notification configuration
-     * for.</p>
-     */
     inline RemoveNotificationChannelRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the profiling group we want to change notification configuration
-     * for.</p>
-     */
     inline RemoveNotificationChannelRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelId;

@@ -39,66 +39,23 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of IP set references.</p>
      */
     inline const Aws::Map<Aws::String, IPSetReference>& GetIPSetReferences() const{ return m_iPSetReferences; }
-
-    /**
-     * <p>The list of IP set references.</p>
-     */
     inline bool IPSetReferencesHasBeenSet() const { return m_iPSetReferencesHasBeenSet; }
-
-    /**
-     * <p>The list of IP set references.</p>
-     */
     inline void SetIPSetReferences(const Aws::Map<Aws::String, IPSetReference>& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences = value; }
-
-    /**
-     * <p>The list of IP set references.</p>
-     */
     inline void SetIPSetReferences(Aws::Map<Aws::String, IPSetReference>&& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences = std::move(value); }
-
-    /**
-     * <p>The list of IP set references.</p>
-     */
     inline ReferenceSets& WithIPSetReferences(const Aws::Map<Aws::String, IPSetReference>& value) { SetIPSetReferences(value); return *this;}
-
-    /**
-     * <p>The list of IP set references.</p>
-     */
     inline ReferenceSets& WithIPSetReferences(Aws::Map<Aws::String, IPSetReference>&& value) { SetIPSetReferences(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of IP set references.</p>
-     */
     inline ReferenceSets& AddIPSetReferences(const Aws::String& key, const IPSetReference& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(key, value); return *this; }
-
-    /**
-     * <p>The list of IP set references.</p>
-     */
     inline ReferenceSets& AddIPSetReferences(Aws::String&& key, const IPSetReference& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The list of IP set references.</p>
-     */
     inline ReferenceSets& AddIPSetReferences(const Aws::String& key, IPSetReference&& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The list of IP set references.</p>
-     */
     inline ReferenceSets& AddIPSetReferences(Aws::String&& key, IPSetReference&& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The list of IP set references.</p>
-     */
     inline ReferenceSets& AddIPSetReferences(const char* key, IPSetReference&& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The list of IP set references.</p>
-     */
     inline ReferenceSets& AddIPSetReferences(const char* key, const IPSetReference& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, IPSetReference> m_iPSetReferences;

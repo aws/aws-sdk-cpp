@@ -39,77 +39,31 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The definition of the custom action.</p>
      */
     inline const StatelessCustomActionDefinition& GetActionDefinition() const{ return m_actionDefinition; }
-
-    /**
-     * <p>The definition of the custom action.</p>
-     */
     inline bool ActionDefinitionHasBeenSet() const { return m_actionDefinitionHasBeenSet; }
-
-    /**
-     * <p>The definition of the custom action.</p>
-     */
     inline void SetActionDefinition(const StatelessCustomActionDefinition& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = value; }
-
-    /**
-     * <p>The definition of the custom action.</p>
-     */
     inline void SetActionDefinition(StatelessCustomActionDefinition&& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = std::move(value); }
-
-    /**
-     * <p>The definition of the custom action.</p>
-     */
     inline FirewallPolicyStatelessCustomActionsDetails& WithActionDefinition(const StatelessCustomActionDefinition& value) { SetActionDefinition(value); return *this;}
-
-    /**
-     * <p>The definition of the custom action.</p>
-     */
     inline FirewallPolicyStatelessCustomActionsDetails& WithActionDefinition(StatelessCustomActionDefinition&& value) { SetActionDefinition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the custom action.</p>
      */
     inline const Aws::String& GetActionName() const{ return m_actionName; }
-
-    /**
-     * <p>The name of the custom action.</p>
-     */
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the custom action.</p>
-     */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-
-    /**
-     * <p>The name of the custom action.</p>
-     */
     inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-
-    /**
-     * <p>The name of the custom action.</p>
-     */
     inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-
-    /**
-     * <p>The name of the custom action.</p>
-     */
     inline FirewallPolicyStatelessCustomActionsDetails& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-
-    /**
-     * <p>The name of the custom action.</p>
-     */
     inline FirewallPolicyStatelessCustomActionsDetails& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the custom action.</p>
-     */
     inline FirewallPolicyStatelessCustomActionsDetails& WithActionName(const char* value) { SetActionName(value); return *this;}
-
+    ///@}
   private:
 
     StatelessCustomActionDefinition m_actionDefinition;

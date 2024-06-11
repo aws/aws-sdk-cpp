@@ -38,46 +38,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The string text of the custom label.</p>
      */
     inline const Aws::String& GetCustomLabel() const{ return m_customLabel; }
-
-    /**
-     * <p>The string text of the custom label.</p>
-     */
     inline bool CustomLabelHasBeenSet() const { return m_customLabelHasBeenSet; }
-
-    /**
-     * <p>The string text of the custom label.</p>
-     */
     inline void SetCustomLabel(const Aws::String& value) { m_customLabelHasBeenSet = true; m_customLabel = value; }
-
-    /**
-     * <p>The string text of the custom label.</p>
-     */
     inline void SetCustomLabel(Aws::String&& value) { m_customLabelHasBeenSet = true; m_customLabel = std::move(value); }
-
-    /**
-     * <p>The string text of the custom label.</p>
-     */
     inline void SetCustomLabel(const char* value) { m_customLabelHasBeenSet = true; m_customLabel.assign(value); }
-
-    /**
-     * <p>The string text of the custom label.</p>
-     */
     inline ReferenceLineCustomLabelConfiguration& WithCustomLabel(const Aws::String& value) { SetCustomLabel(value); return *this;}
-
-    /**
-     * <p>The string text of the custom label.</p>
-     */
     inline ReferenceLineCustomLabelConfiguration& WithCustomLabel(Aws::String&& value) { SetCustomLabel(std::move(value)); return *this;}
-
-    /**
-     * <p>The string text of the custom label.</p>
-     */
     inline ReferenceLineCustomLabelConfiguration& WithCustomLabel(const char* value) { SetCustomLabel(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_customLabel;

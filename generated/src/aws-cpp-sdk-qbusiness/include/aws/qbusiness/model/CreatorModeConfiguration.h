@@ -42,42 +42,18 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Status information about whether <code>CREATOR_MODE</code> has been enabled
      * or disabled. The default status is <code>DISABLED</code>.</p>
      */
     inline const CreatorModeControl& GetCreatorModeControl() const{ return m_creatorModeControl; }
-
-    /**
-     * <p>Status information about whether <code>CREATOR_MODE</code> has been enabled
-     * or disabled. The default status is <code>DISABLED</code>.</p>
-     */
     inline bool CreatorModeControlHasBeenSet() const { return m_creatorModeControlHasBeenSet; }
-
-    /**
-     * <p>Status information about whether <code>CREATOR_MODE</code> has been enabled
-     * or disabled. The default status is <code>DISABLED</code>.</p>
-     */
     inline void SetCreatorModeControl(const CreatorModeControl& value) { m_creatorModeControlHasBeenSet = true; m_creatorModeControl = value; }
-
-    /**
-     * <p>Status information about whether <code>CREATOR_MODE</code> has been enabled
-     * or disabled. The default status is <code>DISABLED</code>.</p>
-     */
     inline void SetCreatorModeControl(CreatorModeControl&& value) { m_creatorModeControlHasBeenSet = true; m_creatorModeControl = std::move(value); }
-
-    /**
-     * <p>Status information about whether <code>CREATOR_MODE</code> has been enabled
-     * or disabled. The default status is <code>DISABLED</code>.</p>
-     */
     inline CreatorModeConfiguration& WithCreatorModeControl(const CreatorModeControl& value) { SetCreatorModeControl(value); return *this;}
-
-    /**
-     * <p>Status information about whether <code>CREATOR_MODE</code> has been enabled
-     * or disabled. The default status is <code>DISABLED</code>.</p>
-     */
     inline CreatorModeConfiguration& WithCreatorModeControl(CreatorModeControl&& value) { SetCreatorModeControl(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CreatorModeControl m_creatorModeControl;

@@ -33,6 +33,7 @@ namespace Model
     AWS_CLOUDCONTROLAPI_API CreateResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Represents the current status of the resource creation request.</p> <p>After
      * you have initiated a resource creation request, you can monitor the progress of
@@ -42,69 +43,22 @@ namespace Model
      * by <code>CreateResource</code>.</p>
      */
     inline const ProgressEvent& GetProgressEvent() const{ return m_progressEvent; }
-
-    /**
-     * <p>Represents the current status of the resource creation request.</p> <p>After
-     * you have initiated a resource creation request, you can monitor the progress of
-     * your request by calling <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-     * using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned
-     * by <code>CreateResource</code>.</p>
-     */
     inline void SetProgressEvent(const ProgressEvent& value) { m_progressEvent = value; }
-
-    /**
-     * <p>Represents the current status of the resource creation request.</p> <p>After
-     * you have initiated a resource creation request, you can monitor the progress of
-     * your request by calling <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-     * using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned
-     * by <code>CreateResource</code>.</p>
-     */
     inline void SetProgressEvent(ProgressEvent&& value) { m_progressEvent = std::move(value); }
-
-    /**
-     * <p>Represents the current status of the resource creation request.</p> <p>After
-     * you have initiated a resource creation request, you can monitor the progress of
-     * your request by calling <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-     * using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned
-     * by <code>CreateResource</code>.</p>
-     */
     inline CreateResourceResult& WithProgressEvent(const ProgressEvent& value) { SetProgressEvent(value); return *this;}
-
-    /**
-     * <p>Represents the current status of the resource creation request.</p> <p>After
-     * you have initiated a resource creation request, you can monitor the progress of
-     * your request by calling <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-     * using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned
-     * by <code>CreateResource</code>.</p>
-     */
     inline CreateResourceResult& WithProgressEvent(ProgressEvent&& value) { SetProgressEvent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ProgressEvent m_progressEvent;

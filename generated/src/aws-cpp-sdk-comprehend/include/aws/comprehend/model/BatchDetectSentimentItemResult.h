@@ -40,94 +40,40 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
     inline int GetIndex() const{ return m_index; }
-
-    /**
-     * <p>The zero-based index of the document in the input list.</p>
-     */
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-
-    /**
-     * <p>The zero-based index of the document in the input list.</p>
-     */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
-
-    /**
-     * <p>The zero-based index of the document in the input list.</p>
-     */
     inline BatchDetectSentimentItemResult& WithIndex(int value) { SetIndex(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sentiment detected in the document.</p>
      */
     inline const SentimentType& GetSentiment() const{ return m_sentiment; }
-
-    /**
-     * <p>The sentiment detected in the document.</p>
-     */
     inline bool SentimentHasBeenSet() const { return m_sentimentHasBeenSet; }
-
-    /**
-     * <p>The sentiment detected in the document.</p>
-     */
     inline void SetSentiment(const SentimentType& value) { m_sentimentHasBeenSet = true; m_sentiment = value; }
-
-    /**
-     * <p>The sentiment detected in the document.</p>
-     */
     inline void SetSentiment(SentimentType&& value) { m_sentimentHasBeenSet = true; m_sentiment = std::move(value); }
-
-    /**
-     * <p>The sentiment detected in the document.</p>
-     */
     inline BatchDetectSentimentItemResult& WithSentiment(const SentimentType& value) { SetSentiment(value); return *this;}
-
-    /**
-     * <p>The sentiment detected in the document.</p>
-     */
     inline BatchDetectSentimentItemResult& WithSentiment(SentimentType&& value) { SetSentiment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
      * sentiment detection.</p>
      */
     inline const SentimentScore& GetSentimentScore() const{ return m_sentimentScore; }
-
-    /**
-     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
-     * sentiment detection.</p>
-     */
     inline bool SentimentScoreHasBeenSet() const { return m_sentimentScoreHasBeenSet; }
-
-    /**
-     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
-     * sentiment detection.</p>
-     */
     inline void SetSentimentScore(const SentimentScore& value) { m_sentimentScoreHasBeenSet = true; m_sentimentScore = value; }
-
-    /**
-     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
-     * sentiment detection.</p>
-     */
     inline void SetSentimentScore(SentimentScore&& value) { m_sentimentScoreHasBeenSet = true; m_sentimentScore = std::move(value); }
-
-    /**
-     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
-     * sentiment detection.</p>
-     */
     inline BatchDetectSentimentItemResult& WithSentimentScore(const SentimentScore& value) { SetSentimentScore(value); return *this;}
-
-    /**
-     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
-     * sentiment detection.</p>
-     */
     inline BatchDetectSentimentItemResult& WithSentimentScore(SentimentScore&& value) { SetSentimentScore(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_index;

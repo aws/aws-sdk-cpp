@@ -34,179 +34,61 @@ namespace Model
     AWS_CLEANROOMS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for one of your memberships for a collaboration. The
      * privacy budget template is updated in the collaboration that this membership
      * belongs to. Accepts a membership ID.</p>
      */
     inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
-
-    /**
-     * <p>A unique identifier for one of your memberships for a collaboration. The
-     * privacy budget template is updated in the collaboration that this membership
-     * belongs to. Accepts a membership ID.</p>
-     */
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for one of your memberships for a collaboration. The
-     * privacy budget template is updated in the collaboration that this membership
-     * belongs to. Accepts a membership ID.</p>
-     */
     inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-
-    /**
-     * <p>A unique identifier for one of your memberships for a collaboration. The
-     * privacy budget template is updated in the collaboration that this membership
-     * belongs to. Accepts a membership ID.</p>
-     */
     inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-
-    /**
-     * <p>A unique identifier for one of your memberships for a collaboration. The
-     * privacy budget template is updated in the collaboration that this membership
-     * belongs to. Accepts a membership ID.</p>
-     */
     inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-
-    /**
-     * <p>A unique identifier for one of your memberships for a collaboration. The
-     * privacy budget template is updated in the collaboration that this membership
-     * belongs to. Accepts a membership ID.</p>
-     */
     inline UpdatePrivacyBudgetTemplateRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-
-    /**
-     * <p>A unique identifier for one of your memberships for a collaboration. The
-     * privacy budget template is updated in the collaboration that this membership
-     * belongs to. Accepts a membership ID.</p>
-     */
     inline UpdatePrivacyBudgetTemplateRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for one of your memberships for a collaboration. The
-     * privacy budget template is updated in the collaboration that this membership
-     * belongs to. Accepts a membership ID.</p>
-     */
     inline UpdatePrivacyBudgetTemplateRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique identifier for your privacy budget template that you want to
      * update.</p>
      */
     inline const Aws::String& GetPrivacyBudgetTemplateIdentifier() const{ return m_privacyBudgetTemplateIdentifier; }
-
-    /**
-     * <p>A unique identifier for your privacy budget template that you want to
-     * update.</p>
-     */
     inline bool PrivacyBudgetTemplateIdentifierHasBeenSet() const { return m_privacyBudgetTemplateIdentifierHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for your privacy budget template that you want to
-     * update.</p>
-     */
     inline void SetPrivacyBudgetTemplateIdentifier(const Aws::String& value) { m_privacyBudgetTemplateIdentifierHasBeenSet = true; m_privacyBudgetTemplateIdentifier = value; }
-
-    /**
-     * <p>A unique identifier for your privacy budget template that you want to
-     * update.</p>
-     */
     inline void SetPrivacyBudgetTemplateIdentifier(Aws::String&& value) { m_privacyBudgetTemplateIdentifierHasBeenSet = true; m_privacyBudgetTemplateIdentifier = std::move(value); }
-
-    /**
-     * <p>A unique identifier for your privacy budget template that you want to
-     * update.</p>
-     */
     inline void SetPrivacyBudgetTemplateIdentifier(const char* value) { m_privacyBudgetTemplateIdentifierHasBeenSet = true; m_privacyBudgetTemplateIdentifier.assign(value); }
-
-    /**
-     * <p>A unique identifier for your privacy budget template that you want to
-     * update.</p>
-     */
     inline UpdatePrivacyBudgetTemplateRequest& WithPrivacyBudgetTemplateIdentifier(const Aws::String& value) { SetPrivacyBudgetTemplateIdentifier(value); return *this;}
-
-    /**
-     * <p>A unique identifier for your privacy budget template that you want to
-     * update.</p>
-     */
     inline UpdatePrivacyBudgetTemplateRequest& WithPrivacyBudgetTemplateIdentifier(Aws::String&& value) { SetPrivacyBudgetTemplateIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for your privacy budget template that you want to
-     * update.</p>
-     */
     inline UpdatePrivacyBudgetTemplateRequest& WithPrivacyBudgetTemplateIdentifier(const char* value) { SetPrivacyBudgetTemplateIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the type of the privacy budget template.</p>
      */
     inline const PrivacyBudgetType& GetPrivacyBudgetType() const{ return m_privacyBudgetType; }
-
-    /**
-     * <p>Specifies the type of the privacy budget template.</p>
-     */
     inline bool PrivacyBudgetTypeHasBeenSet() const { return m_privacyBudgetTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies the type of the privacy budget template.</p>
-     */
     inline void SetPrivacyBudgetType(const PrivacyBudgetType& value) { m_privacyBudgetTypeHasBeenSet = true; m_privacyBudgetType = value; }
-
-    /**
-     * <p>Specifies the type of the privacy budget template.</p>
-     */
     inline void SetPrivacyBudgetType(PrivacyBudgetType&& value) { m_privacyBudgetTypeHasBeenSet = true; m_privacyBudgetType = std::move(value); }
-
-    /**
-     * <p>Specifies the type of the privacy budget template.</p>
-     */
     inline UpdatePrivacyBudgetTemplateRequest& WithPrivacyBudgetType(const PrivacyBudgetType& value) { SetPrivacyBudgetType(value); return *this;}
-
-    /**
-     * <p>Specifies the type of the privacy budget template.</p>
-     */
     inline UpdatePrivacyBudgetTemplateRequest& WithPrivacyBudgetType(PrivacyBudgetType&& value) { SetPrivacyBudgetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the epsilon and noise parameters for the privacy budget
      * template.</p>
      */
     inline const PrivacyBudgetTemplateUpdateParameters& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>Specifies the epsilon and noise parameters for the privacy budget
-     * template.</p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>Specifies the epsilon and noise parameters for the privacy budget
-     * template.</p>
-     */
     inline void SetParameters(const PrivacyBudgetTemplateUpdateParameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>Specifies the epsilon and noise parameters for the privacy budget
-     * template.</p>
-     */
     inline void SetParameters(PrivacyBudgetTemplateUpdateParameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>Specifies the epsilon and noise parameters for the privacy budget
-     * template.</p>
-     */
     inline UpdatePrivacyBudgetTemplateRequest& WithParameters(const PrivacyBudgetTemplateUpdateParameters& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>Specifies the epsilon and noise parameters for the privacy budget
-     * template.</p>
-     */
     inline UpdatePrivacyBudgetTemplateRequest& WithParameters(PrivacyBudgetTemplateUpdateParameters&& value) { SetParameters(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_membershipIdentifier;

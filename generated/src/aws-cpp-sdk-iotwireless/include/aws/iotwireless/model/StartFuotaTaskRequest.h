@@ -33,49 +33,27 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetId() const{ return m_id; }
-
-    
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    
     inline StartFuotaTaskRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    
     inline StartFuotaTaskRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    
     inline StartFuotaTaskRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const LoRaWANStartFuotaTask& GetLoRaWAN() const{ return m_loRaWAN; }
-
-    
     inline bool LoRaWANHasBeenSet() const { return m_loRaWANHasBeenSet; }
-
-    
     inline void SetLoRaWAN(const LoRaWANStartFuotaTask& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = value; }
-
-    
     inline void SetLoRaWAN(LoRaWANStartFuotaTask&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::move(value); }
-
-    
     inline StartFuotaTaskRequest& WithLoRaWAN(const LoRaWANStartFuotaTask& value) { SetLoRaWAN(value); return *this;}
-
-    
     inline StartFuotaTaskRequest& WithLoRaWAN(LoRaWANStartFuotaTask&& value) { SetLoRaWAN(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

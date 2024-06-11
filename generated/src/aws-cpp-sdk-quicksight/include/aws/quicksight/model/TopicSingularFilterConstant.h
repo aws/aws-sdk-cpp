@@ -39,83 +39,32 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of the singular filter constant. Valid values for this structure are
      * <code>SINGULAR</code>.</p>
      */
     inline const ConstantType& GetConstantType() const{ return m_constantType; }
-
-    /**
-     * <p>The type of the singular filter constant. Valid values for this structure are
-     * <code>SINGULAR</code>.</p>
-     */
     inline bool ConstantTypeHasBeenSet() const { return m_constantTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the singular filter constant. Valid values for this structure are
-     * <code>SINGULAR</code>.</p>
-     */
     inline void SetConstantType(const ConstantType& value) { m_constantTypeHasBeenSet = true; m_constantType = value; }
-
-    /**
-     * <p>The type of the singular filter constant. Valid values for this structure are
-     * <code>SINGULAR</code>.</p>
-     */
     inline void SetConstantType(ConstantType&& value) { m_constantTypeHasBeenSet = true; m_constantType = std::move(value); }
-
-    /**
-     * <p>The type of the singular filter constant. Valid values for this structure are
-     * <code>SINGULAR</code>.</p>
-     */
     inline TopicSingularFilterConstant& WithConstantType(const ConstantType& value) { SetConstantType(value); return *this;}
-
-    /**
-     * <p>The type of the singular filter constant. Valid values for this structure are
-     * <code>SINGULAR</code>.</p>
-     */
     inline TopicSingularFilterConstant& WithConstantType(ConstantType&& value) { SetConstantType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the singular filter constant.</p>
      */
     inline const Aws::String& GetSingularConstant() const{ return m_singularConstant; }
-
-    /**
-     * <p>The value of the singular filter constant.</p>
-     */
     inline bool SingularConstantHasBeenSet() const { return m_singularConstantHasBeenSet; }
-
-    /**
-     * <p>The value of the singular filter constant.</p>
-     */
     inline void SetSingularConstant(const Aws::String& value) { m_singularConstantHasBeenSet = true; m_singularConstant = value; }
-
-    /**
-     * <p>The value of the singular filter constant.</p>
-     */
     inline void SetSingularConstant(Aws::String&& value) { m_singularConstantHasBeenSet = true; m_singularConstant = std::move(value); }
-
-    /**
-     * <p>The value of the singular filter constant.</p>
-     */
     inline void SetSingularConstant(const char* value) { m_singularConstantHasBeenSet = true; m_singularConstant.assign(value); }
-
-    /**
-     * <p>The value of the singular filter constant.</p>
-     */
     inline TopicSingularFilterConstant& WithSingularConstant(const Aws::String& value) { SetSingularConstant(value); return *this;}
-
-    /**
-     * <p>The value of the singular filter constant.</p>
-     */
     inline TopicSingularFilterConstant& WithSingularConstant(Aws::String&& value) { SetSingularConstant(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the singular filter constant.</p>
-     */
     inline TopicSingularFilterConstant& WithSingularConstant(const char* value) { SetSingularConstant(value); return *this;}
-
+    ///@}
   private:
 
     ConstantType m_constantType;

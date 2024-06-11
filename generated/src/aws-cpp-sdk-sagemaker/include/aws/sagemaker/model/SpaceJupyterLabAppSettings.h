@@ -40,73 +40,30 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
-
-    
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
-
-    
     inline void SetDefaultResourceSpec(const ResourceSpec& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = value; }
-
-    
     inline void SetDefaultResourceSpec(ResourceSpec&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::move(value); }
-
-    
     inline SpaceJupyterLabAppSettings& WithDefaultResourceSpec(const ResourceSpec& value) { SetDefaultResourceSpec(value); return *this;}
-
-    
     inline SpaceJupyterLabAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of Git repositories that SageMaker automatically displays to users for
      * cloning in the JupyterLab application.</p>
      */
     inline const Aws::Vector<CodeRepository>& GetCodeRepositories() const{ return m_codeRepositories; }
-
-    /**
-     * <p>A list of Git repositories that SageMaker automatically displays to users for
-     * cloning in the JupyterLab application.</p>
-     */
     inline bool CodeRepositoriesHasBeenSet() const { return m_codeRepositoriesHasBeenSet; }
-
-    /**
-     * <p>A list of Git repositories that SageMaker automatically displays to users for
-     * cloning in the JupyterLab application.</p>
-     */
     inline void SetCodeRepositories(const Aws::Vector<CodeRepository>& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories = value; }
-
-    /**
-     * <p>A list of Git repositories that SageMaker automatically displays to users for
-     * cloning in the JupyterLab application.</p>
-     */
     inline void SetCodeRepositories(Aws::Vector<CodeRepository>&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories = std::move(value); }
-
-    /**
-     * <p>A list of Git repositories that SageMaker automatically displays to users for
-     * cloning in the JupyterLab application.</p>
-     */
     inline SpaceJupyterLabAppSettings& WithCodeRepositories(const Aws::Vector<CodeRepository>& value) { SetCodeRepositories(value); return *this;}
-
-    /**
-     * <p>A list of Git repositories that SageMaker automatically displays to users for
-     * cloning in the JupyterLab application.</p>
-     */
     inline SpaceJupyterLabAppSettings& WithCodeRepositories(Aws::Vector<CodeRepository>&& value) { SetCodeRepositories(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of Git repositories that SageMaker automatically displays to users for
-     * cloning in the JupyterLab application.</p>
-     */
     inline SpaceJupyterLabAppSettings& AddCodeRepositories(const CodeRepository& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.push_back(value); return *this; }
-
-    /**
-     * <p>A list of Git repositories that SageMaker automatically displays to users for
-     * cloning in the JupyterLab application.</p>
-     */
     inline SpaceJupyterLabAppSettings& AddCodeRepositories(CodeRepository&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     ResourceSpec m_defaultResourceSpec;

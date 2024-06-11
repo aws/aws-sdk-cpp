@@ -36,116 +36,44 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the trust store.</p>
      */
     inline const Aws::String& GetTrustStoreArn() const{ return m_trustStoreArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline void SetTrustStoreArn(const Aws::String& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline void SetTrustStoreArn(Aws::String&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline void SetTrustStoreArn(const char* value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline DescribeTrustStoreAssociationsRequest& WithTrustStoreArn(const Aws::String& value) { SetTrustStoreArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline DescribeTrustStoreAssociationsRequest& WithTrustStoreArn(Aws::String&& value) { SetTrustStoreArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline DescribeTrustStoreAssociationsRequest& WithTrustStoreArn(const char* value) { SetTrustStoreArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The marker for the next set of results. (You received this marker from a
      * previous call.)</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline DescribeTrustStoreAssociationsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline DescribeTrustStoreAssociationsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline DescribeTrustStoreAssociationsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return with this call.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
-
-    /**
-     * <p>The maximum number of results to return with this call.</p>
-     */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return with this call.</p>
-     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-
-    /**
-     * <p>The maximum number of results to return with this call.</p>
-     */
     inline DescribeTrustStoreAssociationsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trustStoreArn;

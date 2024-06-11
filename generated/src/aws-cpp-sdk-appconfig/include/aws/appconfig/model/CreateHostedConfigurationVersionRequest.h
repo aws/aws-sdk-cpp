@@ -33,129 +33,49 @@ namespace Model
     AWS_APPCONFIG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The application ID.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration profile ID.</p>
      */
     inline const Aws::String& GetConfigurationProfileId() const{ return m_configurationProfileId; }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline bool ConfigurationProfileIdHasBeenSet() const { return m_configurationProfileIdHasBeenSet; }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline void SetConfigurationProfileId(const Aws::String& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = value; }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline void SetConfigurationProfileId(Aws::String&& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = std::move(value); }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline void SetConfigurationProfileId(const char* value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId.assign(value); }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithConfigurationProfileId(const Aws::String& value) { SetConfigurationProfileId(value); return *this;}
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithConfigurationProfileId(Aws::String&& value) { SetConfigurationProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithConfigurationProfileId(const char* value) { SetConfigurationProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the configuration.</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An optional locking token used to prevent race conditions from overwriting
      * configuration updates when creating a new version. To ensure your data is not
@@ -164,91 +84,26 @@ namespace Model
      * version.</p>
      */
     inline int GetLatestVersionNumber() const{ return m_latestVersionNumber; }
-
-    /**
-     * <p>An optional locking token used to prevent race conditions from overwriting
-     * configuration updates when creating a new version. To ensure your data is not
-     * overwritten when creating multiple hosted configuration versions in rapid
-     * succession, specify the version number of the latest hosted configuration
-     * version.</p>
-     */
     inline bool LatestVersionNumberHasBeenSet() const { return m_latestVersionNumberHasBeenSet; }
-
-    /**
-     * <p>An optional locking token used to prevent race conditions from overwriting
-     * configuration updates when creating a new version. To ensure your data is not
-     * overwritten when creating multiple hosted configuration versions in rapid
-     * succession, specify the version number of the latest hosted configuration
-     * version.</p>
-     */
     inline void SetLatestVersionNumber(int value) { m_latestVersionNumberHasBeenSet = true; m_latestVersionNumber = value; }
-
-    /**
-     * <p>An optional locking token used to prevent race conditions from overwriting
-     * configuration updates when creating a new version. To ensure your data is not
-     * overwritten when creating multiple hosted configuration versions in rapid
-     * succession, specify the version number of the latest hosted configuration
-     * version.</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithLatestVersionNumber(int value) { SetLatestVersionNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An optional, user-defined label for the AppConfig hosted configuration
      * version. This value must contain at least one non-numeric character. For
      * example, "v2.2.0".</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
-
-    /**
-     * <p>An optional, user-defined label for the AppConfig hosted configuration
-     * version. This value must contain at least one non-numeric character. For
-     * example, "v2.2.0".</p>
-     */
     inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
-
-    /**
-     * <p>An optional, user-defined label for the AppConfig hosted configuration
-     * version. This value must contain at least one non-numeric character. For
-     * example, "v2.2.0".</p>
-     */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
-
-    /**
-     * <p>An optional, user-defined label for the AppConfig hosted configuration
-     * version. This value must contain at least one non-numeric character. For
-     * example, "v2.2.0".</p>
-     */
     inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
-
-    /**
-     * <p>An optional, user-defined label for the AppConfig hosted configuration
-     * version. This value must contain at least one non-numeric character. For
-     * example, "v2.2.0".</p>
-     */
     inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
-
-    /**
-     * <p>An optional, user-defined label for the AppConfig hosted configuration
-     * version. This value must contain at least one non-numeric character. For
-     * example, "v2.2.0".</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
-
-    /**
-     * <p>An optional, user-defined label for the AppConfig hosted configuration
-     * version. This value must contain at least one non-numeric character. For
-     * example, "v2.2.0".</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
-
-    /**
-     * <p>An optional, user-defined label for the AppConfig hosted configuration
-     * version. This value must contain at least one non-numeric character. For
-     * example, "v2.2.0".</p>
-     */
     inline CreateHostedConfigurationVersionRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

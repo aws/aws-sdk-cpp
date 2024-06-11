@@ -39,118 +39,45 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The MIME type of the document contained in the wrapper object.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
-
-    /**
-     * <p>The MIME type of the document contained in the wrapper object.</p>
-     */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-
-    /**
-     * <p>The MIME type of the document contained in the wrapper object.</p>
-     */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-
-    /**
-     * <p>The MIME type of the document contained in the wrapper object.</p>
-     */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-
-    /**
-     * <p>The MIME type of the document contained in the wrapper object.</p>
-     */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-
-    /**
-     * <p>The MIME type of the document contained in the wrapper object.</p>
-     */
     inline ByteContentDoc& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-
-    /**
-     * <p>The MIME type of the document contained in the wrapper object.</p>
-     */
     inline ByteContentDoc& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-
-    /**
-     * <p>The MIME type of the document contained in the wrapper object.</p>
-     */
     inline ByteContentDoc& WithContentType(const char* value) { SetContentType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The byte value of the file to upload, encoded as a Base-64 string.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetData() const{ return m_data; }
-
-    /**
-     * <p>The byte value of the file to upload, encoded as a Base-64 string.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The byte value of the file to upload, encoded as a Base-64 string.</p>
-     */
     inline void SetData(const Aws::Utils::CryptoBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The byte value of the file to upload, encoded as a Base-64 string.</p>
-     */
     inline void SetData(Aws::Utils::CryptoBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The byte value of the file to upload, encoded as a Base-64 string.</p>
-     */
     inline ByteContentDoc& WithData(const Aws::Utils::CryptoBuffer& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The byte value of the file to upload, encoded as a Base-64 string.</p>
-     */
     inline ByteContentDoc& WithData(Aws::Utils::CryptoBuffer&& value) { SetData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The file name of the document contained in the wrapper object.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>The file name of the document contained in the wrapper object.</p>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p>The file name of the document contained in the wrapper object.</p>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p>The file name of the document contained in the wrapper object.</p>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p>The file name of the document contained in the wrapper object.</p>
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * <p>The file name of the document contained in the wrapper object.</p>
-     */
     inline ByteContentDoc& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>The file name of the document contained in the wrapper object.</p>
-     */
     inline ByteContentDoc& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The file name of the document contained in the wrapper object.</p>
-     */
     inline ByteContentDoc& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_contentType;

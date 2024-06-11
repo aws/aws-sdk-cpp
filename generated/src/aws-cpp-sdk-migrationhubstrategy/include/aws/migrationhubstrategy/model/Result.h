@@ -41,149 +41,57 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The error in server analysis.</p>
      */
     inline const AnalysisStatusUnion& GetAnalysisStatus() const{ return m_analysisStatus; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline bool AnalysisStatusHasBeenSet() const { return m_analysisStatusHasBeenSet; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline void SetAnalysisStatus(const AnalysisStatusUnion& value) { m_analysisStatusHasBeenSet = true; m_analysisStatus = value; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline void SetAnalysisStatus(AnalysisStatusUnion&& value) { m_analysisStatusHasBeenSet = true; m_analysisStatus = std::move(value); }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline Result& WithAnalysisStatus(const AnalysisStatusUnion& value) { SetAnalysisStatus(value); return *this;}
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline Result& WithAnalysisStatus(AnalysisStatusUnion&& value) { SetAnalysisStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error in server analysis.</p>
      */
     inline const AnalysisType& GetAnalysisType() const{ return m_analysisType; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline bool AnalysisTypeHasBeenSet() const { return m_analysisTypeHasBeenSet; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline void SetAnalysisType(const AnalysisType& value) { m_analysisTypeHasBeenSet = true; m_analysisType = value; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline void SetAnalysisType(AnalysisType&& value) { m_analysisTypeHasBeenSet = true; m_analysisType = std::move(value); }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline Result& WithAnalysisType(const AnalysisType& value) { SetAnalysisType(value); return *this;}
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline Result& WithAnalysisType(AnalysisType&& value) { SetAnalysisType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error in server analysis.</p>
      */
     inline const Aws::Vector<AntipatternReportResult>& GetAntipatternReportResultList() const{ return m_antipatternReportResultList; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline bool AntipatternReportResultListHasBeenSet() const { return m_antipatternReportResultListHasBeenSet; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline void SetAntipatternReportResultList(const Aws::Vector<AntipatternReportResult>& value) { m_antipatternReportResultListHasBeenSet = true; m_antipatternReportResultList = value; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline void SetAntipatternReportResultList(Aws::Vector<AntipatternReportResult>&& value) { m_antipatternReportResultListHasBeenSet = true; m_antipatternReportResultList = std::move(value); }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline Result& WithAntipatternReportResultList(const Aws::Vector<AntipatternReportResult>& value) { SetAntipatternReportResultList(value); return *this;}
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline Result& WithAntipatternReportResultList(Aws::Vector<AntipatternReportResult>&& value) { SetAntipatternReportResultList(std::move(value)); return *this;}
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline Result& AddAntipatternReportResultList(const AntipatternReportResult& value) { m_antipatternReportResultListHasBeenSet = true; m_antipatternReportResultList.push_back(value); return *this; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline Result& AddAntipatternReportResultList(AntipatternReportResult&& value) { m_antipatternReportResultListHasBeenSet = true; m_antipatternReportResultList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error in server analysis.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline Result& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline Result& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error in server analysis.</p>
-     */
     inline Result& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
-
+    ///@}
   private:
 
     AnalysisStatusUnion m_analysisStatus;

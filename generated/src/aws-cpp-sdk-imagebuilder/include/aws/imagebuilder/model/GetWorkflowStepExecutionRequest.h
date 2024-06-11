@@ -38,54 +38,20 @@ namespace Model
     AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Use the unique identifier for a specific runtime instance of the workflow
      * step to get runtime details for that step.</p>
      */
     inline const Aws::String& GetStepExecutionId() const{ return m_stepExecutionId; }
-
-    /**
-     * <p>Use the unique identifier for a specific runtime instance of the workflow
-     * step to get runtime details for that step.</p>
-     */
     inline bool StepExecutionIdHasBeenSet() const { return m_stepExecutionIdHasBeenSet; }
-
-    /**
-     * <p>Use the unique identifier for a specific runtime instance of the workflow
-     * step to get runtime details for that step.</p>
-     */
     inline void SetStepExecutionId(const Aws::String& value) { m_stepExecutionIdHasBeenSet = true; m_stepExecutionId = value; }
-
-    /**
-     * <p>Use the unique identifier for a specific runtime instance of the workflow
-     * step to get runtime details for that step.</p>
-     */
     inline void SetStepExecutionId(Aws::String&& value) { m_stepExecutionIdHasBeenSet = true; m_stepExecutionId = std::move(value); }
-
-    /**
-     * <p>Use the unique identifier for a specific runtime instance of the workflow
-     * step to get runtime details for that step.</p>
-     */
     inline void SetStepExecutionId(const char* value) { m_stepExecutionIdHasBeenSet = true; m_stepExecutionId.assign(value); }
-
-    /**
-     * <p>Use the unique identifier for a specific runtime instance of the workflow
-     * step to get runtime details for that step.</p>
-     */
     inline GetWorkflowStepExecutionRequest& WithStepExecutionId(const Aws::String& value) { SetStepExecutionId(value); return *this;}
-
-    /**
-     * <p>Use the unique identifier for a specific runtime instance of the workflow
-     * step to get runtime details for that step.</p>
-     */
     inline GetWorkflowStepExecutionRequest& WithStepExecutionId(Aws::String&& value) { SetStepExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>Use the unique identifier for a specific runtime instance of the workflow
-     * step to get runtime details for that step.</p>
-     */
     inline GetWorkflowStepExecutionRequest& WithStepExecutionId(const char* value) { SetStepExecutionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stepExecutionId;

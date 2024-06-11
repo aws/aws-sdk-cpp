@@ -48,67 +48,29 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A Boolean value that indicates whether the role is activated.</p>
      */
     inline bool GetIsActive() const{ return m_isActive; }
-
-    /**
-     * <p>A Boolean value that indicates whether the role is activated.</p>
-     */
     inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
-
-    /**
-     * <p>A Boolean value that indicates whether the role is activated.</p>
-     */
     inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
-
-    /**
-     * <p>A Boolean value that indicates whether the role is activated.</p>
-     */
     inline ContainerServiceECRImagePullerRole& WithIsActive(bool value) { SetIsActive(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
      */
     inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
-     */
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
-     */
     inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
-     */
     inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
-     */
     inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
-     */
     inline ContainerServiceECRImagePullerRole& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
-     */
     inline ContainerServiceECRImagePullerRole& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
-     */
     inline ContainerServiceECRImagePullerRole& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
-
+    ///@}
   private:
 
     bool m_isActive;

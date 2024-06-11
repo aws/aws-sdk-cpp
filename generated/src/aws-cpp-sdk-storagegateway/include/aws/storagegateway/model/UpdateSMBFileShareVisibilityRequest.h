@@ -34,51 +34,27 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-
-    
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-
-    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-
-    
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-
-    
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-
-    
     inline UpdateSMBFileShareVisibilityRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-
-    
     inline UpdateSMBFileShareVisibilityRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-
-    
     inline UpdateSMBFileShareVisibilityRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The shares on this gateway appear when listing shares.</p>
      */
     inline bool GetFileSharesVisible() const{ return m_fileSharesVisible; }
-
-    /**
-     * <p>The shares on this gateway appear when listing shares.</p>
-     */
     inline bool FileSharesVisibleHasBeenSet() const { return m_fileSharesVisibleHasBeenSet; }
-
-    /**
-     * <p>The shares on this gateway appear when listing shares.</p>
-     */
     inline void SetFileSharesVisible(bool value) { m_fileSharesVisibleHasBeenSet = true; m_fileSharesVisible = value; }
-
-    /**
-     * <p>The shares on this gateway appear when listing shares.</p>
-     */
     inline UpdateSMBFileShareVisibilityRequest& WithFileSharesVisible(bool value) { SetFileSharesVisible(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayARN;

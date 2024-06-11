@@ -43,219 +43,82 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The phone number order ID.</p>
      */
     inline const Aws::String& GetPhoneNumberOrderId() const{ return m_phoneNumberOrderId; }
-
-    /**
-     * <p>The phone number order ID.</p>
-     */
     inline bool PhoneNumberOrderIdHasBeenSet() const { return m_phoneNumberOrderIdHasBeenSet; }
-
-    /**
-     * <p>The phone number order ID.</p>
-     */
     inline void SetPhoneNumberOrderId(const Aws::String& value) { m_phoneNumberOrderIdHasBeenSet = true; m_phoneNumberOrderId = value; }
-
-    /**
-     * <p>The phone number order ID.</p>
-     */
     inline void SetPhoneNumberOrderId(Aws::String&& value) { m_phoneNumberOrderIdHasBeenSet = true; m_phoneNumberOrderId = std::move(value); }
-
-    /**
-     * <p>The phone number order ID.</p>
-     */
     inline void SetPhoneNumberOrderId(const char* value) { m_phoneNumberOrderIdHasBeenSet = true; m_phoneNumberOrderId.assign(value); }
-
-    /**
-     * <p>The phone number order ID.</p>
-     */
     inline PhoneNumberOrder& WithPhoneNumberOrderId(const Aws::String& value) { SetPhoneNumberOrderId(value); return *this;}
-
-    /**
-     * <p>The phone number order ID.</p>
-     */
     inline PhoneNumberOrder& WithPhoneNumberOrderId(Aws::String&& value) { SetPhoneNumberOrderId(std::move(value)); return *this;}
-
-    /**
-     * <p>The phone number order ID.</p>
-     */
     inline PhoneNumberOrder& WithPhoneNumberOrderId(const char* value) { SetPhoneNumberOrderId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The phone number order product type.</p>
      */
     inline const PhoneNumberProductType& GetProductType() const{ return m_productType; }
-
-    /**
-     * <p>The phone number order product type.</p>
-     */
     inline bool ProductTypeHasBeenSet() const { return m_productTypeHasBeenSet; }
-
-    /**
-     * <p>The phone number order product type.</p>
-     */
     inline void SetProductType(const PhoneNumberProductType& value) { m_productTypeHasBeenSet = true; m_productType = value; }
-
-    /**
-     * <p>The phone number order product type.</p>
-     */
     inline void SetProductType(PhoneNumberProductType&& value) { m_productTypeHasBeenSet = true; m_productType = std::move(value); }
-
-    /**
-     * <p>The phone number order product type.</p>
-     */
     inline PhoneNumberOrder& WithProductType(const PhoneNumberProductType& value) { SetProductType(value); return *this;}
-
-    /**
-     * <p>The phone number order product type.</p>
-     */
     inline PhoneNumberOrder& WithProductType(PhoneNumberProductType&& value) { SetProductType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the phone number order.</p>
      */
     inline const PhoneNumberOrderStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the phone number order.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the phone number order.</p>
-     */
     inline void SetStatus(const PhoneNumberOrderStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the phone number order.</p>
-     */
     inline void SetStatus(PhoneNumberOrderStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the phone number order.</p>
-     */
     inline PhoneNumberOrder& WithStatus(const PhoneNumberOrderStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the phone number order.</p>
-     */
     inline PhoneNumberOrder& WithStatus(PhoneNumberOrderStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ordered phone number details, such as the phone number in E.164 format
      * and the phone number status.</p>
      */
     inline const Aws::Vector<OrderedPhoneNumber>& GetOrderedPhoneNumbers() const{ return m_orderedPhoneNumbers; }
-
-    /**
-     * <p>The ordered phone number details, such as the phone number in E.164 format
-     * and the phone number status.</p>
-     */
     inline bool OrderedPhoneNumbersHasBeenSet() const { return m_orderedPhoneNumbersHasBeenSet; }
-
-    /**
-     * <p>The ordered phone number details, such as the phone number in E.164 format
-     * and the phone number status.</p>
-     */
     inline void SetOrderedPhoneNumbers(const Aws::Vector<OrderedPhoneNumber>& value) { m_orderedPhoneNumbersHasBeenSet = true; m_orderedPhoneNumbers = value; }
-
-    /**
-     * <p>The ordered phone number details, such as the phone number in E.164 format
-     * and the phone number status.</p>
-     */
     inline void SetOrderedPhoneNumbers(Aws::Vector<OrderedPhoneNumber>&& value) { m_orderedPhoneNumbersHasBeenSet = true; m_orderedPhoneNumbers = std::move(value); }
-
-    /**
-     * <p>The ordered phone number details, such as the phone number in E.164 format
-     * and the phone number status.</p>
-     */
     inline PhoneNumberOrder& WithOrderedPhoneNumbers(const Aws::Vector<OrderedPhoneNumber>& value) { SetOrderedPhoneNumbers(value); return *this;}
-
-    /**
-     * <p>The ordered phone number details, such as the phone number in E.164 format
-     * and the phone number status.</p>
-     */
     inline PhoneNumberOrder& WithOrderedPhoneNumbers(Aws::Vector<OrderedPhoneNumber>&& value) { SetOrderedPhoneNumbers(std::move(value)); return *this;}
-
-    /**
-     * <p>The ordered phone number details, such as the phone number in E.164 format
-     * and the phone number status.</p>
-     */
     inline PhoneNumberOrder& AddOrderedPhoneNumbers(const OrderedPhoneNumber& value) { m_orderedPhoneNumbersHasBeenSet = true; m_orderedPhoneNumbers.push_back(value); return *this; }
-
-    /**
-     * <p>The ordered phone number details, such as the phone number in E.164 format
-     * and the phone number status.</p>
-     */
     inline PhoneNumberOrder& AddOrderedPhoneNumbers(OrderedPhoneNumber&& value) { m_orderedPhoneNumbersHasBeenSet = true; m_orderedPhoneNumbers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The phone number order creation time stamp, in ISO 8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-
-    /**
-     * <p>The phone number order creation time stamp, in ISO 8601 format.</p>
-     */
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-
-    /**
-     * <p>The phone number order creation time stamp, in ISO 8601 format.</p>
-     */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-
-    /**
-     * <p>The phone number order creation time stamp, in ISO 8601 format.</p>
-     */
     inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-
-    /**
-     * <p>The phone number order creation time stamp, in ISO 8601 format.</p>
-     */
     inline PhoneNumberOrder& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-
-    /**
-     * <p>The phone number order creation time stamp, in ISO 8601 format.</p>
-     */
     inline PhoneNumberOrder& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The updated phone number order time stamp, in ISO 8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const{ return m_updatedTimestamp; }
-
-    /**
-     * <p>The updated phone number order time stamp, in ISO 8601 format.</p>
-     */
     inline bool UpdatedTimestampHasBeenSet() const { return m_updatedTimestampHasBeenSet; }
-
-    /**
-     * <p>The updated phone number order time stamp, in ISO 8601 format.</p>
-     */
     inline void SetUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = value; }
-
-    /**
-     * <p>The updated phone number order time stamp, in ISO 8601 format.</p>
-     */
     inline void SetUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::move(value); }
-
-    /**
-     * <p>The updated phone number order time stamp, in ISO 8601 format.</p>
-     */
     inline PhoneNumberOrder& WithUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetUpdatedTimestamp(value); return *this;}
-
-    /**
-     * <p>The updated phone number order time stamp, in ISO 8601 format.</p>
-     */
     inline PhoneNumberOrder& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_phoneNumberOrderId;

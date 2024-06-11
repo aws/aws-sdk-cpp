@@ -38,46 +38,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A code that indicates how the contact was terminated.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
-
-    /**
-     * <p>A code that indicates how the contact was terminated.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>A code that indicates how the contact was terminated.</p>
-     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>A code that indicates how the contact was terminated.</p>
-     */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>A code that indicates how the contact was terminated.</p>
-     */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-
-    /**
-     * <p>A code that indicates how the contact was terminated.</p>
-     */
     inline DisconnectReason& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>A code that indicates how the contact was terminated.</p>
-     */
     inline DisconnectReason& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-
-    /**
-     * <p>A code that indicates how the contact was terminated.</p>
-     */
     inline DisconnectReason& WithCode(const char* value) { SetCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_code;

@@ -33,43 +33,25 @@ namespace Model
     AWS_DOCDBELASTIC_API CopyClusterSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const ClusterSnapshot& GetSnapshot() const{ return m_snapshot; }
-
-    
     inline void SetSnapshot(const ClusterSnapshot& value) { m_snapshot = value; }
-
-    
     inline void SetSnapshot(ClusterSnapshot&& value) { m_snapshot = std::move(value); }
-
-    
     inline CopyClusterSnapshotResult& WithSnapshot(const ClusterSnapshot& value) { SetSnapshot(value); return *this;}
-
-    
     inline CopyClusterSnapshotResult& WithSnapshot(ClusterSnapshot&& value) { SetSnapshot(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CopyClusterSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CopyClusterSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CopyClusterSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ClusterSnapshot m_snapshot;

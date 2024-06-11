@@ -41,100 +41,41 @@ namespace Model
     AWS_EC2_API DescribeSpotInstanceRequestsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The Spot Instance requests.</p>
      */
     inline const Aws::Vector<SpotInstanceRequest>& GetSpotInstanceRequests() const{ return m_spotInstanceRequests; }
-
-    /**
-     * <p>The Spot Instance requests.</p>
-     */
     inline void SetSpotInstanceRequests(const Aws::Vector<SpotInstanceRequest>& value) { m_spotInstanceRequests = value; }
-
-    /**
-     * <p>The Spot Instance requests.</p>
-     */
     inline void SetSpotInstanceRequests(Aws::Vector<SpotInstanceRequest>&& value) { m_spotInstanceRequests = std::move(value); }
-
-    /**
-     * <p>The Spot Instance requests.</p>
-     */
     inline DescribeSpotInstanceRequestsResponse& WithSpotInstanceRequests(const Aws::Vector<SpotInstanceRequest>& value) { SetSpotInstanceRequests(value); return *this;}
-
-    /**
-     * <p>The Spot Instance requests.</p>
-     */
     inline DescribeSpotInstanceRequestsResponse& WithSpotInstanceRequests(Aws::Vector<SpotInstanceRequest>&& value) { SetSpotInstanceRequests(std::move(value)); return *this;}
-
-    /**
-     * <p>The Spot Instance requests.</p>
-     */
     inline DescribeSpotInstanceRequestsResponse& AddSpotInstanceRequests(const SpotInstanceRequest& value) { m_spotInstanceRequests.push_back(value); return *this; }
-
-    /**
-     * <p>The Spot Instance requests.</p>
-     */
     inline DescribeSpotInstanceRequestsResponse& AddSpotInstanceRequests(SpotInstanceRequest&& value) { m_spotInstanceRequests.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline DescribeSpotInstanceRequestsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline DescribeSpotInstanceRequestsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline DescribeSpotInstanceRequestsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeSpotInstanceRequestsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeSpotInstanceRequestsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SpotInstanceRequest> m_spotInstanceRequests;

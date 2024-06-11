@@ -34,106 +34,43 @@ namespace Model
     AWS_CONNECT_API ListRoutingProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the routing profiles.</p>
      */
     inline const Aws::Vector<RoutingProfileSummary>& GetRoutingProfileSummaryList() const{ return m_routingProfileSummaryList; }
-
-    /**
-     * <p>Information about the routing profiles.</p>
-     */
     inline void SetRoutingProfileSummaryList(const Aws::Vector<RoutingProfileSummary>& value) { m_routingProfileSummaryList = value; }
-
-    /**
-     * <p>Information about the routing profiles.</p>
-     */
     inline void SetRoutingProfileSummaryList(Aws::Vector<RoutingProfileSummary>&& value) { m_routingProfileSummaryList = std::move(value); }
-
-    /**
-     * <p>Information about the routing profiles.</p>
-     */
     inline ListRoutingProfilesResult& WithRoutingProfileSummaryList(const Aws::Vector<RoutingProfileSummary>& value) { SetRoutingProfileSummaryList(value); return *this;}
-
-    /**
-     * <p>Information about the routing profiles.</p>
-     */
     inline ListRoutingProfilesResult& WithRoutingProfileSummaryList(Aws::Vector<RoutingProfileSummary>&& value) { SetRoutingProfileSummaryList(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the routing profiles.</p>
-     */
     inline ListRoutingProfilesResult& AddRoutingProfileSummaryList(const RoutingProfileSummary& value) { m_routingProfileSummaryList.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the routing profiles.</p>
-     */
     inline ListRoutingProfilesResult& AddRoutingProfileSummaryList(RoutingProfileSummary&& value) { m_routingProfileSummaryList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline ListRoutingProfilesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline ListRoutingProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline ListRoutingProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRoutingProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRoutingProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRoutingProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<RoutingProfileSummary> m_routingProfileSummaryList;

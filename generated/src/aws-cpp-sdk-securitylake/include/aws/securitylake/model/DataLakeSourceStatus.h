@@ -39,85 +39,32 @@ namespace Model
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines path the stored logs are available which has information on your
      * systems, applications, and services.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>Defines path the stored logs are available which has information on your
-     * systems, applications, and services.</p>
-     */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-
-    /**
-     * <p>Defines path the stored logs are available which has information on your
-     * systems, applications, and services.</p>
-     */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-
-    /**
-     * <p>Defines path the stored logs are available which has information on your
-     * systems, applications, and services.</p>
-     */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-
-    /**
-     * <p>Defines path the stored logs are available which has information on your
-     * systems, applications, and services.</p>
-     */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-
-    /**
-     * <p>Defines path the stored logs are available which has information on your
-     * systems, applications, and services.</p>
-     */
     inline DataLakeSourceStatus& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>Defines path the stored logs are available which has information on your
-     * systems, applications, and services.</p>
-     */
     inline DataLakeSourceStatus& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-
-    /**
-     * <p>Defines path the stored logs are available which has information on your
-     * systems, applications, and services.</p>
-     */
     inline DataLakeSourceStatus& WithResource(const char* value) { SetResource(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The health status of services, including error codes and patterns.</p>
      */
     inline const SourceCollectionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The health status of services, including error codes and patterns.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The health status of services, including error codes and patterns.</p>
-     */
     inline void SetStatus(const SourceCollectionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The health status of services, including error codes and patterns.</p>
-     */
     inline void SetStatus(SourceCollectionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The health status of services, including error codes and patterns.</p>
-     */
     inline DataLakeSourceStatus& WithStatus(const SourceCollectionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The health status of services, including error codes and patterns.</p>
-     */
     inline DataLakeSourceStatus& WithStatus(SourceCollectionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resource;

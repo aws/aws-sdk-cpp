@@ -38,99 +38,42 @@ namespace Model
     AWS_OPSWORKS_API GetHostnameSuggestionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The layer ID.</p>
      */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline void SetLayerId(const Aws::String& value) { m_layerId = value; }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline void SetLayerId(Aws::String&& value) { m_layerId = std::move(value); }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline void SetLayerId(const char* value) { m_layerId.assign(value); }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline GetHostnameSuggestionResult& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline GetHostnameSuggestionResult& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline GetHostnameSuggestionResult& WithLayerId(const char* value) { SetLayerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The generated host name.</p>
      */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
-
-    /**
-     * <p>The generated host name.</p>
-     */
     inline void SetHostname(const Aws::String& value) { m_hostname = value; }
-
-    /**
-     * <p>The generated host name.</p>
-     */
     inline void SetHostname(Aws::String&& value) { m_hostname = std::move(value); }
-
-    /**
-     * <p>The generated host name.</p>
-     */
     inline void SetHostname(const char* value) { m_hostname.assign(value); }
-
-    /**
-     * <p>The generated host name.</p>
-     */
     inline GetHostnameSuggestionResult& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-
-    /**
-     * <p>The generated host name.</p>
-     */
     inline GetHostnameSuggestionResult& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-
-    /**
-     * <p>The generated host name.</p>
-     */
     inline GetHostnameSuggestionResult& WithHostname(const char* value) { SetHostname(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetHostnameSuggestionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetHostnameSuggestionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetHostnameSuggestionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_layerId;

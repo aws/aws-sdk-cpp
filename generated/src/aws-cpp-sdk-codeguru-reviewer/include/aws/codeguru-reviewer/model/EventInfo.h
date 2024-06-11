@@ -38,103 +38,35 @@ namespace Model
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the event. The possible names are <code>pull_request</code>,
      * <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code>
      * </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the event. The possible names are <code>pull_request</code>,
-     * <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code>
-     * </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the event. The possible names are <code>pull_request</code>,
-     * <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code>
-     * </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the event. The possible names are <code>pull_request</code>,
-     * <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code>
-     * </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the event. The possible names are <code>pull_request</code>,
-     * <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code>
-     * </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the event. The possible names are <code>pull_request</code>,
-     * <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code>
-     * </p>
-     */
     inline EventInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the event. The possible names are <code>pull_request</code>,
-     * <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code>
-     * </p>
-     */
     inline EventInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the event. The possible names are <code>pull_request</code>,
-     * <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code>
-     * </p>
-     */
     inline EventInfo& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of an event. The state might be open, closed, or another state.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of an event. The state might be open, closed, or another state.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of an event. The state might be open, closed, or another state.</p>
-     */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of an event. The state might be open, closed, or another state.</p>
-     */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of an event. The state might be open, closed, or another state.</p>
-     */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-
-    /**
-     * <p>The state of an event. The state might be open, closed, or another state.</p>
-     */
     inline EventInfo& WithState(const Aws::String& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of an event. The state might be open, closed, or another state.</p>
-     */
     inline EventInfo& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-
-    /**
-     * <p>The state of an event. The state might be open, closed, or another state.</p>
-     */
     inline EventInfo& WithState(const char* value) { SetState(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

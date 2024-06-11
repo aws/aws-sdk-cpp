@@ -33,69 +33,36 @@ namespace Model
     AWS_QUICKSIGHT_API UpdateTemplateAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The template alias.</p>
      */
     inline const TemplateAlias& GetTemplateAlias() const{ return m_templateAlias; }
-
-    /**
-     * <p>The template alias.</p>
-     */
     inline void SetTemplateAlias(const TemplateAlias& value) { m_templateAlias = value; }
-
-    /**
-     * <p>The template alias.</p>
-     */
     inline void SetTemplateAlias(TemplateAlias&& value) { m_templateAlias = std::move(value); }
-
-    /**
-     * <p>The template alias.</p>
-     */
     inline UpdateTemplateAliasResult& WithTemplateAlias(const TemplateAlias& value) { SetTemplateAlias(value); return *this;}
-
-    /**
-     * <p>The template alias.</p>
-     */
     inline UpdateTemplateAliasResult& WithTemplateAlias(TemplateAlias&& value) { SetTemplateAlias(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline void SetStatus(int value) { m_status = value; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline UpdateTemplateAliasResult& WithStatus(int value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateTemplateAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateTemplateAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateTemplateAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TemplateAlias m_templateAlias;

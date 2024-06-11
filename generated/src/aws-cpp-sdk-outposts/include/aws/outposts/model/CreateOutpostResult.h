@@ -33,43 +33,25 @@ namespace Model
     AWS_OUTPOSTS_API CreateOutpostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Outpost& GetOutpost() const{ return m_outpost; }
-
-    
     inline void SetOutpost(const Outpost& value) { m_outpost = value; }
-
-    
     inline void SetOutpost(Outpost&& value) { m_outpost = std::move(value); }
-
-    
     inline CreateOutpostResult& WithOutpost(const Outpost& value) { SetOutpost(value); return *this;}
-
-    
     inline CreateOutpostResult& WithOutpost(Outpost&& value) { SetOutpost(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateOutpostResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateOutpostResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateOutpostResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Outpost m_outpost;

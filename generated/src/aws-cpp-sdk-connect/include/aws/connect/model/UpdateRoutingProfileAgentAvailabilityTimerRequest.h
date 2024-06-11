@@ -33,146 +33,49 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline UpdateRoutingProfileAgentAvailabilityTimerRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline UpdateRoutingProfileAgentAvailabilityTimerRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline UpdateRoutingProfileAgentAvailabilityTimerRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the routing profile.</p>
      */
     inline const Aws::String& GetRoutingProfileId() const{ return m_routingProfileId; }
-
-    /**
-     * <p>The identifier of the routing profile.</p>
-     */
     inline bool RoutingProfileIdHasBeenSet() const { return m_routingProfileIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the routing profile.</p>
-     */
     inline void SetRoutingProfileId(const Aws::String& value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId = value; }
-
-    /**
-     * <p>The identifier of the routing profile.</p>
-     */
     inline void SetRoutingProfileId(Aws::String&& value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId = std::move(value); }
-
-    /**
-     * <p>The identifier of the routing profile.</p>
-     */
     inline void SetRoutingProfileId(const char* value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId.assign(value); }
-
-    /**
-     * <p>The identifier of the routing profile.</p>
-     */
     inline UpdateRoutingProfileAgentAvailabilityTimerRequest& WithRoutingProfileId(const Aws::String& value) { SetRoutingProfileId(value); return *this;}
-
-    /**
-     * <p>The identifier of the routing profile.</p>
-     */
     inline UpdateRoutingProfileAgentAvailabilityTimerRequest& WithRoutingProfileId(Aws::String&& value) { SetRoutingProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the routing profile.</p>
-     */
     inline UpdateRoutingProfileAgentAvailabilityTimerRequest& WithRoutingProfileId(const char* value) { SetRoutingProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether agents with this routing profile will have their routing order
      * calculated based on <i>time since their last inbound contact</i> or <i>longest
      * idle time</i>. </p>
      */
     inline const AgentAvailabilityTimer& GetAgentAvailabilityTimer() const{ return m_agentAvailabilityTimer; }
-
-    /**
-     * <p>Whether agents with this routing profile will have their routing order
-     * calculated based on <i>time since their last inbound contact</i> or <i>longest
-     * idle time</i>. </p>
-     */
     inline bool AgentAvailabilityTimerHasBeenSet() const { return m_agentAvailabilityTimerHasBeenSet; }
-
-    /**
-     * <p>Whether agents with this routing profile will have their routing order
-     * calculated based on <i>time since their last inbound contact</i> or <i>longest
-     * idle time</i>. </p>
-     */
     inline void SetAgentAvailabilityTimer(const AgentAvailabilityTimer& value) { m_agentAvailabilityTimerHasBeenSet = true; m_agentAvailabilityTimer = value; }
-
-    /**
-     * <p>Whether agents with this routing profile will have their routing order
-     * calculated based on <i>time since their last inbound contact</i> or <i>longest
-     * idle time</i>. </p>
-     */
     inline void SetAgentAvailabilityTimer(AgentAvailabilityTimer&& value) { m_agentAvailabilityTimerHasBeenSet = true; m_agentAvailabilityTimer = std::move(value); }
-
-    /**
-     * <p>Whether agents with this routing profile will have their routing order
-     * calculated based on <i>time since their last inbound contact</i> or <i>longest
-     * idle time</i>. </p>
-     */
     inline UpdateRoutingProfileAgentAvailabilityTimerRequest& WithAgentAvailabilityTimer(const AgentAvailabilityTimer& value) { SetAgentAvailabilityTimer(value); return *this;}
-
-    /**
-     * <p>Whether agents with this routing profile will have their routing order
-     * calculated based on <i>time since their last inbound contact</i> or <i>longest
-     * idle time</i>. </p>
-     */
     inline UpdateRoutingProfileAgentAvailabilityTimerRequest& WithAgentAvailabilityTimer(AgentAvailabilityTimer&& value) { SetAgentAvailabilityTimer(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

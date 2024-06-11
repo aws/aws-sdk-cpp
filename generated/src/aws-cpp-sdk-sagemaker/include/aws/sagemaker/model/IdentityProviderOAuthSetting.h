@@ -41,136 +41,47 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the data source that you're connecting to. Canvas currently
      * supports OAuth for Snowflake and Salesforce Data Cloud.</p>
      */
     inline const DataSourceName& GetDataSourceName() const{ return m_dataSourceName; }
-
-    /**
-     * <p>The name of the data source that you're connecting to. Canvas currently
-     * supports OAuth for Snowflake and Salesforce Data Cloud.</p>
-     */
     inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the data source that you're connecting to. Canvas currently
-     * supports OAuth for Snowflake and Salesforce Data Cloud.</p>
-     */
     inline void SetDataSourceName(const DataSourceName& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = value; }
-
-    /**
-     * <p>The name of the data source that you're connecting to. Canvas currently
-     * supports OAuth for Snowflake and Salesforce Data Cloud.</p>
-     */
     inline void SetDataSourceName(DataSourceName&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::move(value); }
-
-    /**
-     * <p>The name of the data source that you're connecting to. Canvas currently
-     * supports OAuth for Snowflake and Salesforce Data Cloud.</p>
-     */
     inline IdentityProviderOAuthSetting& WithDataSourceName(const DataSourceName& value) { SetDataSourceName(value); return *this;}
-
-    /**
-     * <p>The name of the data source that you're connecting to. Canvas currently
-     * supports OAuth for Snowflake and Salesforce Data Cloud.</p>
-     */
     inline IdentityProviderOAuthSetting& WithDataSourceName(DataSourceName&& value) { SetDataSourceName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes whether OAuth for a data source is enabled or disabled in the
      * Canvas application.</p>
      */
     inline const FeatureStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Describes whether OAuth for a data source is enabled or disabled in the
-     * Canvas application.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Describes whether OAuth for a data source is enabled or disabled in the
-     * Canvas application.</p>
-     */
     inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Describes whether OAuth for a data source is enabled or disabled in the
-     * Canvas application.</p>
-     */
     inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Describes whether OAuth for a data source is enabled or disabled in the
-     * Canvas application.</p>
-     */
     inline IdentityProviderOAuthSetting& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Describes whether OAuth for a data source is enabled or disabled in the
-     * Canvas application.</p>
-     */
     inline IdentityProviderOAuthSetting& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the
      * credentials from your identity provider, such as the client ID and secret,
      * authorization URL, and token URL. </p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
-
-    /**
-     * <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the
-     * credentials from your identity provider, such as the client ID and secret,
-     * authorization URL, and token URL. </p>
-     */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the
-     * credentials from your identity provider, such as the client ID and secret,
-     * authorization URL, and token URL. </p>
-     */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-
-    /**
-     * <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the
-     * credentials from your identity provider, such as the client ID and secret,
-     * authorization URL, and token URL. </p>
-     */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-
-    /**
-     * <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the
-     * credentials from your identity provider, such as the client ID and secret,
-     * authorization URL, and token URL. </p>
-     */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-
-    /**
-     * <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the
-     * credentials from your identity provider, such as the client ID and secret,
-     * authorization URL, and token URL. </p>
-     */
     inline IdentityProviderOAuthSetting& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-
-    /**
-     * <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the
-     * credentials from your identity provider, such as the client ID and secret,
-     * authorization URL, and token URL. </p>
-     */
     inline IdentityProviderOAuthSetting& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the
-     * credentials from your identity provider, such as the client ID and secret,
-     * authorization URL, and token URL. </p>
-     */
     inline IdentityProviderOAuthSetting& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
-
+    ///@}
   private:
 
     DataSourceName m_dataSourceName;

@@ -36,6 +36,7 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The length of time during which Firehose retries delivery after a failure,
      * starting from the initial request and including the first attempt. The default
@@ -44,34 +45,10 @@ namespace Model
      * takes longer than the current value.</p>
      */
     inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
-
-    /**
-     * <p>The length of time during which Firehose retries delivery after a failure,
-     * starting from the initial request and including the first attempt. The default
-     * value is 3600 seconds (60 minutes). Firehose does not retry if the value of
-     * <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt
-     * takes longer than the current value.</p>
-     */
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
-
-    /**
-     * <p>The length of time during which Firehose retries delivery after a failure,
-     * starting from the initial request and including the first attempt. The default
-     * value is 3600 seconds (60 minutes). Firehose does not retry if the value of
-     * <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt
-     * takes longer than the current value.</p>
-     */
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
-
-    /**
-     * <p>The length of time during which Firehose retries delivery after a failure,
-     * starting from the initial request and including the first attempt. The default
-     * value is 3600 seconds (60 minutes). Firehose does not retry if the value of
-     * <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt
-     * takes longer than the current value.</p>
-     */
     inline RedshiftRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_durationInSeconds;

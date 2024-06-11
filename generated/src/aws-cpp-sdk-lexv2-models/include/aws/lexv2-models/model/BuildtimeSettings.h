@@ -40,73 +40,30 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object containing specifications for the descriptive bot building
      * feature.</p>
      */
     inline const DescriptiveBotBuilderSpecification& GetDescriptiveBotBuilder() const{ return m_descriptiveBotBuilder; }
-
-    /**
-     * <p>An object containing specifications for the descriptive bot building
-     * feature.</p>
-     */
     inline bool DescriptiveBotBuilderHasBeenSet() const { return m_descriptiveBotBuilderHasBeenSet; }
-
-    /**
-     * <p>An object containing specifications for the descriptive bot building
-     * feature.</p>
-     */
     inline void SetDescriptiveBotBuilder(const DescriptiveBotBuilderSpecification& value) { m_descriptiveBotBuilderHasBeenSet = true; m_descriptiveBotBuilder = value; }
-
-    /**
-     * <p>An object containing specifications for the descriptive bot building
-     * feature.</p>
-     */
     inline void SetDescriptiveBotBuilder(DescriptiveBotBuilderSpecification&& value) { m_descriptiveBotBuilderHasBeenSet = true; m_descriptiveBotBuilder = std::move(value); }
-
-    /**
-     * <p>An object containing specifications for the descriptive bot building
-     * feature.</p>
-     */
     inline BuildtimeSettings& WithDescriptiveBotBuilder(const DescriptiveBotBuilderSpecification& value) { SetDescriptiveBotBuilder(value); return *this;}
-
-    /**
-     * <p>An object containing specifications for the descriptive bot building
-     * feature.</p>
-     */
     inline BuildtimeSettings& WithDescriptiveBotBuilder(DescriptiveBotBuilderSpecification&& value) { SetDescriptiveBotBuilder(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains specifications for the sample utterance generation feature.</p>
      */
     inline const SampleUtteranceGenerationSpecification& GetSampleUtteranceGeneration() const{ return m_sampleUtteranceGeneration; }
-
-    /**
-     * <p>Contains specifications for the sample utterance generation feature.</p>
-     */
     inline bool SampleUtteranceGenerationHasBeenSet() const { return m_sampleUtteranceGenerationHasBeenSet; }
-
-    /**
-     * <p>Contains specifications for the sample utterance generation feature.</p>
-     */
     inline void SetSampleUtteranceGeneration(const SampleUtteranceGenerationSpecification& value) { m_sampleUtteranceGenerationHasBeenSet = true; m_sampleUtteranceGeneration = value; }
-
-    /**
-     * <p>Contains specifications for the sample utterance generation feature.</p>
-     */
     inline void SetSampleUtteranceGeneration(SampleUtteranceGenerationSpecification&& value) { m_sampleUtteranceGenerationHasBeenSet = true; m_sampleUtteranceGeneration = std::move(value); }
-
-    /**
-     * <p>Contains specifications for the sample utterance generation feature.</p>
-     */
     inline BuildtimeSettings& WithSampleUtteranceGeneration(const SampleUtteranceGenerationSpecification& value) { SetSampleUtteranceGeneration(value); return *this;}
-
-    /**
-     * <p>Contains specifications for the sample utterance generation feature.</p>
-     */
     inline BuildtimeSettings& WithSampleUtteranceGeneration(SampleUtteranceGenerationSpecification&& value) { SetSampleUtteranceGeneration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DescriptiveBotBuilderSpecification m_descriptiveBotBuilder;

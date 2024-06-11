@@ -35,85 +35,32 @@ namespace Model
     AWS_CLOUDHSMV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A policy that defines how the service retains backups.</p>
      */
     inline const BackupRetentionPolicy& GetBackupRetentionPolicy() const{ return m_backupRetentionPolicy; }
-
-    /**
-     * <p>A policy that defines how the service retains backups.</p>
-     */
     inline bool BackupRetentionPolicyHasBeenSet() const { return m_backupRetentionPolicyHasBeenSet; }
-
-    /**
-     * <p>A policy that defines how the service retains backups.</p>
-     */
     inline void SetBackupRetentionPolicy(const BackupRetentionPolicy& value) { m_backupRetentionPolicyHasBeenSet = true; m_backupRetentionPolicy = value; }
-
-    /**
-     * <p>A policy that defines how the service retains backups.</p>
-     */
     inline void SetBackupRetentionPolicy(BackupRetentionPolicy&& value) { m_backupRetentionPolicyHasBeenSet = true; m_backupRetentionPolicy = std::move(value); }
-
-    /**
-     * <p>A policy that defines how the service retains backups.</p>
-     */
     inline ModifyClusterRequest& WithBackupRetentionPolicy(const BackupRetentionPolicy& value) { SetBackupRetentionPolicy(value); return *this;}
-
-    /**
-     * <p>A policy that defines how the service retains backups.</p>
-     */
     inline ModifyClusterRequest& WithBackupRetentionPolicy(BackupRetentionPolicy&& value) { SetBackupRetentionPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier (ID) of the cluster that you want to modify. To find the
      * cluster ID, use <a>DescribeClusters</a>.</p>
      */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
-
-    /**
-     * <p>The identifier (ID) of the cluster that you want to modify. To find the
-     * cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-
-    /**
-     * <p>The identifier (ID) of the cluster that you want to modify. To find the
-     * cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-
-    /**
-     * <p>The identifier (ID) of the cluster that you want to modify. To find the
-     * cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-
-    /**
-     * <p>The identifier (ID) of the cluster that you want to modify. To find the
-     * cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-
-    /**
-     * <p>The identifier (ID) of the cluster that you want to modify. To find the
-     * cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline ModifyClusterRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-
-    /**
-     * <p>The identifier (ID) of the cluster that you want to modify. To find the
-     * cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline ModifyClusterRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier (ID) of the cluster that you want to modify. To find the
-     * cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline ModifyClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
-
+    ///@}
   private:
 
     BackupRetentionPolicy m_backupRetentionPolicy;

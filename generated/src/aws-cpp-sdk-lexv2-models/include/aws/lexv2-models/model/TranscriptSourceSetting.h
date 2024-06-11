@@ -38,42 +38,18 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates the setting of the Amazon S3 bucket where the transcript is
      * stored.</p>
      */
     inline const S3BucketTranscriptSource& GetS3BucketTranscriptSource() const{ return m_s3BucketTranscriptSource; }
-
-    /**
-     * <p>Indicates the setting of the Amazon S3 bucket where the transcript is
-     * stored.</p>
-     */
     inline bool S3BucketTranscriptSourceHasBeenSet() const { return m_s3BucketTranscriptSourceHasBeenSet; }
-
-    /**
-     * <p>Indicates the setting of the Amazon S3 bucket where the transcript is
-     * stored.</p>
-     */
     inline void SetS3BucketTranscriptSource(const S3BucketTranscriptSource& value) { m_s3BucketTranscriptSourceHasBeenSet = true; m_s3BucketTranscriptSource = value; }
-
-    /**
-     * <p>Indicates the setting of the Amazon S3 bucket where the transcript is
-     * stored.</p>
-     */
     inline void SetS3BucketTranscriptSource(S3BucketTranscriptSource&& value) { m_s3BucketTranscriptSourceHasBeenSet = true; m_s3BucketTranscriptSource = std::move(value); }
-
-    /**
-     * <p>Indicates the setting of the Amazon S3 bucket where the transcript is
-     * stored.</p>
-     */
     inline TranscriptSourceSetting& WithS3BucketTranscriptSource(const S3BucketTranscriptSource& value) { SetS3BucketTranscriptSource(value); return *this;}
-
-    /**
-     * <p>Indicates the setting of the Amazon S3 bucket where the transcript is
-     * stored.</p>
-     */
     inline TranscriptSourceSetting& WithS3BucketTranscriptSource(S3BucketTranscriptSource&& value) { SetS3BucketTranscriptSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3BucketTranscriptSource m_s3BucketTranscriptSource;

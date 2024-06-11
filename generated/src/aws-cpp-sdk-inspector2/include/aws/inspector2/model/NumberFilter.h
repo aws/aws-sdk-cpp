@@ -36,47 +36,25 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The lowest number to be included in the filter.</p>
      */
     inline double GetLowerInclusive() const{ return m_lowerInclusive; }
-
-    /**
-     * <p>The lowest number to be included in the filter.</p>
-     */
     inline bool LowerInclusiveHasBeenSet() const { return m_lowerInclusiveHasBeenSet; }
-
-    /**
-     * <p>The lowest number to be included in the filter.</p>
-     */
     inline void SetLowerInclusive(double value) { m_lowerInclusiveHasBeenSet = true; m_lowerInclusive = value; }
-
-    /**
-     * <p>The lowest number to be included in the filter.</p>
-     */
     inline NumberFilter& WithLowerInclusive(double value) { SetLowerInclusive(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The highest number to be included in the filter.</p>
      */
     inline double GetUpperInclusive() const{ return m_upperInclusive; }
-
-    /**
-     * <p>The highest number to be included in the filter.</p>
-     */
     inline bool UpperInclusiveHasBeenSet() const { return m_upperInclusiveHasBeenSet; }
-
-    /**
-     * <p>The highest number to be included in the filter.</p>
-     */
     inline void SetUpperInclusive(double value) { m_upperInclusiveHasBeenSet = true; m_upperInclusive = value; }
-
-    /**
-     * <p>The highest number to be included in the filter.</p>
-     */
     inline NumberFilter& WithUpperInclusive(double value) { SetUpperInclusive(value); return *this;}
-
+    ///@}
   private:
 
     double m_lowerInclusive;

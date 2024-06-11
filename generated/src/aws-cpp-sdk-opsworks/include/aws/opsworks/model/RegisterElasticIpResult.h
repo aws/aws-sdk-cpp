@@ -38,63 +38,29 @@ namespace Model
     AWS_OPSWORKS_API RegisterElasticIpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Elastic IP address.</p>
      */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIp = value; }
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline void SetElasticIp(Aws::String&& value) { m_elasticIp = std::move(value); }
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline void SetElasticIp(const char* value) { m_elasticIp.assign(value); }
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline RegisterElasticIpResult& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline RegisterElasticIpResult& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
-
-    /**
-     * <p>The Elastic IP address.</p>
-     */
     inline RegisterElasticIpResult& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RegisterElasticIpResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RegisterElasticIpResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RegisterElasticIpResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_elasticIp;

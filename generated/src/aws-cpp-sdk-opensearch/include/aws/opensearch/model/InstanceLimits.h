@@ -38,42 +38,18 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Limits on the number of instances that can be created for a given instance
      * type.</p>
      */
     inline const InstanceCountLimits& GetInstanceCountLimits() const{ return m_instanceCountLimits; }
-
-    /**
-     * <p>Limits on the number of instances that can be created for a given instance
-     * type.</p>
-     */
     inline bool InstanceCountLimitsHasBeenSet() const { return m_instanceCountLimitsHasBeenSet; }
-
-    /**
-     * <p>Limits on the number of instances that can be created for a given instance
-     * type.</p>
-     */
     inline void SetInstanceCountLimits(const InstanceCountLimits& value) { m_instanceCountLimitsHasBeenSet = true; m_instanceCountLimits = value; }
-
-    /**
-     * <p>Limits on the number of instances that can be created for a given instance
-     * type.</p>
-     */
     inline void SetInstanceCountLimits(InstanceCountLimits&& value) { m_instanceCountLimitsHasBeenSet = true; m_instanceCountLimits = std::move(value); }
-
-    /**
-     * <p>Limits on the number of instances that can be created for a given instance
-     * type.</p>
-     */
     inline InstanceLimits& WithInstanceCountLimits(const InstanceCountLimits& value) { SetInstanceCountLimits(value); return *this;}
-
-    /**
-     * <p>Limits on the number of instances that can be created for a given instance
-     * type.</p>
-     */
     inline InstanceLimits& WithInstanceCountLimits(InstanceCountLimits&& value) { SetInstanceCountLimits(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InstanceCountLimits m_instanceCountLimits;

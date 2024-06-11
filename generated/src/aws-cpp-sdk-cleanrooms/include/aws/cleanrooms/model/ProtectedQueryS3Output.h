@@ -38,46 +38,19 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The S3 location of the result.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>The S3 location of the result.</p>
-     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-
-    /**
-     * <p>The S3 location of the result.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-
-    /**
-     * <p>The S3 location of the result.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-
-    /**
-     * <p>The S3 location of the result.</p>
-     */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-
-    /**
-     * <p>The S3 location of the result.</p>
-     */
     inline ProtectedQueryS3Output& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>The S3 location of the result.</p>
-     */
     inline ProtectedQueryS3Output& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The S3 location of the result.</p>
-     */
     inline ProtectedQueryS3Output& WithLocation(const char* value) { SetLocation(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_location;

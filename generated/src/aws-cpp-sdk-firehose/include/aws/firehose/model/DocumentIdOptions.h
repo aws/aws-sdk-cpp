@@ -39,6 +39,7 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>When the <code>FIREHOSE_DEFAULT</code> option is chosen, Firehose generates a
      * unique document ID for each record based on a unique internal identifier. The
@@ -54,87 +55,12 @@ namespace Model
      * domain, resulting in improved performance.</p>
      */
     inline const DefaultDocumentIdFormat& GetDefaultDocumentIdFormat() const{ return m_defaultDocumentIdFormat; }
-
-    /**
-     * <p>When the <code>FIREHOSE_DEFAULT</code> option is chosen, Firehose generates a
-     * unique document ID for each record based on a unique internal identifier. The
-     * generated document ID is stable across multiple delivery attempts, which helps
-     * prevent the same record from being indexed multiple times with different
-     * document IDs.</p> <p>When the <code>NO_DOCUMENT_ID</code> option is chosen,
-     * Firehose does not include any document IDs in the requests it sends to the
-     * Amazon OpenSearch Service. This causes the Amazon OpenSearch Service domain to
-     * generate document IDs. In case of multiple delivery attempts, this may cause the
-     * same record to be indexed more than once with different document IDs. This
-     * option enables write-heavy operations, such as the ingestion of logs and
-     * observability data, to consume less resources in the Amazon OpenSearch Service
-     * domain, resulting in improved performance.</p>
-     */
     inline bool DefaultDocumentIdFormatHasBeenSet() const { return m_defaultDocumentIdFormatHasBeenSet; }
-
-    /**
-     * <p>When the <code>FIREHOSE_DEFAULT</code> option is chosen, Firehose generates a
-     * unique document ID for each record based on a unique internal identifier. The
-     * generated document ID is stable across multiple delivery attempts, which helps
-     * prevent the same record from being indexed multiple times with different
-     * document IDs.</p> <p>When the <code>NO_DOCUMENT_ID</code> option is chosen,
-     * Firehose does not include any document IDs in the requests it sends to the
-     * Amazon OpenSearch Service. This causes the Amazon OpenSearch Service domain to
-     * generate document IDs. In case of multiple delivery attempts, this may cause the
-     * same record to be indexed more than once with different document IDs. This
-     * option enables write-heavy operations, such as the ingestion of logs and
-     * observability data, to consume less resources in the Amazon OpenSearch Service
-     * domain, resulting in improved performance.</p>
-     */
     inline void SetDefaultDocumentIdFormat(const DefaultDocumentIdFormat& value) { m_defaultDocumentIdFormatHasBeenSet = true; m_defaultDocumentIdFormat = value; }
-
-    /**
-     * <p>When the <code>FIREHOSE_DEFAULT</code> option is chosen, Firehose generates a
-     * unique document ID for each record based on a unique internal identifier. The
-     * generated document ID is stable across multiple delivery attempts, which helps
-     * prevent the same record from being indexed multiple times with different
-     * document IDs.</p> <p>When the <code>NO_DOCUMENT_ID</code> option is chosen,
-     * Firehose does not include any document IDs in the requests it sends to the
-     * Amazon OpenSearch Service. This causes the Amazon OpenSearch Service domain to
-     * generate document IDs. In case of multiple delivery attempts, this may cause the
-     * same record to be indexed more than once with different document IDs. This
-     * option enables write-heavy operations, such as the ingestion of logs and
-     * observability data, to consume less resources in the Amazon OpenSearch Service
-     * domain, resulting in improved performance.</p>
-     */
     inline void SetDefaultDocumentIdFormat(DefaultDocumentIdFormat&& value) { m_defaultDocumentIdFormatHasBeenSet = true; m_defaultDocumentIdFormat = std::move(value); }
-
-    /**
-     * <p>When the <code>FIREHOSE_DEFAULT</code> option is chosen, Firehose generates a
-     * unique document ID for each record based on a unique internal identifier. The
-     * generated document ID is stable across multiple delivery attempts, which helps
-     * prevent the same record from being indexed multiple times with different
-     * document IDs.</p> <p>When the <code>NO_DOCUMENT_ID</code> option is chosen,
-     * Firehose does not include any document IDs in the requests it sends to the
-     * Amazon OpenSearch Service. This causes the Amazon OpenSearch Service domain to
-     * generate document IDs. In case of multiple delivery attempts, this may cause the
-     * same record to be indexed more than once with different document IDs. This
-     * option enables write-heavy operations, such as the ingestion of logs and
-     * observability data, to consume less resources in the Amazon OpenSearch Service
-     * domain, resulting in improved performance.</p>
-     */
     inline DocumentIdOptions& WithDefaultDocumentIdFormat(const DefaultDocumentIdFormat& value) { SetDefaultDocumentIdFormat(value); return *this;}
-
-    /**
-     * <p>When the <code>FIREHOSE_DEFAULT</code> option is chosen, Firehose generates a
-     * unique document ID for each record based on a unique internal identifier. The
-     * generated document ID is stable across multiple delivery attempts, which helps
-     * prevent the same record from being indexed multiple times with different
-     * document IDs.</p> <p>When the <code>NO_DOCUMENT_ID</code> option is chosen,
-     * Firehose does not include any document IDs in the requests it sends to the
-     * Amazon OpenSearch Service. This causes the Amazon OpenSearch Service domain to
-     * generate document IDs. In case of multiple delivery attempts, this may cause the
-     * same record to be indexed more than once with different document IDs. This
-     * option enables write-heavy operations, such as the ingestion of logs and
-     * observability data, to consume less resources in the Amazon OpenSearch Service
-     * domain, resulting in improved performance.</p>
-     */
     inline DocumentIdOptions& WithDefaultDocumentIdFormat(DefaultDocumentIdFormat&& value) { SetDefaultDocumentIdFormat(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DefaultDocumentIdFormat m_defaultDocumentIdFormat;

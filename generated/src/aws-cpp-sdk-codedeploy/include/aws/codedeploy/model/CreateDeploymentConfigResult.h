@@ -38,63 +38,29 @@ namespace Model
     AWS_CODEDEPLOY_API CreateDeploymentConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A unique deployment configuration ID.</p>
      */
     inline const Aws::String& GetDeploymentConfigId() const{ return m_deploymentConfigId; }
-
-    /**
-     * <p>A unique deployment configuration ID.</p>
-     */
     inline void SetDeploymentConfigId(const Aws::String& value) { m_deploymentConfigId = value; }
-
-    /**
-     * <p>A unique deployment configuration ID.</p>
-     */
     inline void SetDeploymentConfigId(Aws::String&& value) { m_deploymentConfigId = std::move(value); }
-
-    /**
-     * <p>A unique deployment configuration ID.</p>
-     */
     inline void SetDeploymentConfigId(const char* value) { m_deploymentConfigId.assign(value); }
-
-    /**
-     * <p>A unique deployment configuration ID.</p>
-     */
     inline CreateDeploymentConfigResult& WithDeploymentConfigId(const Aws::String& value) { SetDeploymentConfigId(value); return *this;}
-
-    /**
-     * <p>A unique deployment configuration ID.</p>
-     */
     inline CreateDeploymentConfigResult& WithDeploymentConfigId(Aws::String&& value) { SetDeploymentConfigId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique deployment configuration ID.</p>
-     */
     inline CreateDeploymentConfigResult& WithDeploymentConfigId(const char* value) { SetDeploymentConfigId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDeploymentConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDeploymentConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDeploymentConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deploymentConfigId;

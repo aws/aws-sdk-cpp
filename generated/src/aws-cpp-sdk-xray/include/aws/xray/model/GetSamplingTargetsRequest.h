@@ -33,46 +33,19 @@ namespace Model
     AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Information about rules that the service is using to sample requests.</p>
      */
     inline const Aws::Vector<SamplingStatisticsDocument>& GetSamplingStatisticsDocuments() const{ return m_samplingStatisticsDocuments; }
-
-    /**
-     * <p>Information about rules that the service is using to sample requests.</p>
-     */
     inline bool SamplingStatisticsDocumentsHasBeenSet() const { return m_samplingStatisticsDocumentsHasBeenSet; }
-
-    /**
-     * <p>Information about rules that the service is using to sample requests.</p>
-     */
     inline void SetSamplingStatisticsDocuments(const Aws::Vector<SamplingStatisticsDocument>& value) { m_samplingStatisticsDocumentsHasBeenSet = true; m_samplingStatisticsDocuments = value; }
-
-    /**
-     * <p>Information about rules that the service is using to sample requests.</p>
-     */
     inline void SetSamplingStatisticsDocuments(Aws::Vector<SamplingStatisticsDocument>&& value) { m_samplingStatisticsDocumentsHasBeenSet = true; m_samplingStatisticsDocuments = std::move(value); }
-
-    /**
-     * <p>Information about rules that the service is using to sample requests.</p>
-     */
     inline GetSamplingTargetsRequest& WithSamplingStatisticsDocuments(const Aws::Vector<SamplingStatisticsDocument>& value) { SetSamplingStatisticsDocuments(value); return *this;}
-
-    /**
-     * <p>Information about rules that the service is using to sample requests.</p>
-     */
     inline GetSamplingTargetsRequest& WithSamplingStatisticsDocuments(Aws::Vector<SamplingStatisticsDocument>&& value) { SetSamplingStatisticsDocuments(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about rules that the service is using to sample requests.</p>
-     */
     inline GetSamplingTargetsRequest& AddSamplingStatisticsDocuments(const SamplingStatisticsDocument& value) { m_samplingStatisticsDocumentsHasBeenSet = true; m_samplingStatisticsDocuments.push_back(value); return *this; }
-
-    /**
-     * <p>Information about rules that the service is using to sample requests.</p>
-     */
     inline GetSamplingTargetsRequest& AddSamplingStatisticsDocuments(SamplingStatisticsDocument&& value) { m_samplingStatisticsDocumentsHasBeenSet = true; m_samplingStatisticsDocuments.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<SamplingStatisticsDocument> m_samplingStatisticsDocuments;

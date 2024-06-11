@@ -40,108 +40,43 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines the <code>DateTime</code> format.</p>
      */
     inline const Aws::String& GetDateTimeFormat() const{ return m_dateTimeFormat; }
-
-    /**
-     * <p>Determines the <code>DateTime</code> format.</p>
-     */
     inline bool DateTimeFormatHasBeenSet() const { return m_dateTimeFormatHasBeenSet; }
-
-    /**
-     * <p>Determines the <code>DateTime</code> format.</p>
-     */
     inline void SetDateTimeFormat(const Aws::String& value) { m_dateTimeFormatHasBeenSet = true; m_dateTimeFormat = value; }
-
-    /**
-     * <p>Determines the <code>DateTime</code> format.</p>
-     */
     inline void SetDateTimeFormat(Aws::String&& value) { m_dateTimeFormatHasBeenSet = true; m_dateTimeFormat = std::move(value); }
-
-    /**
-     * <p>Determines the <code>DateTime</code> format.</p>
-     */
     inline void SetDateTimeFormat(const char* value) { m_dateTimeFormatHasBeenSet = true; m_dateTimeFormat.assign(value); }
-
-    /**
-     * <p>Determines the <code>DateTime</code> format.</p>
-     */
     inline DateTimeFormatConfiguration& WithDateTimeFormat(const Aws::String& value) { SetDateTimeFormat(value); return *this;}
-
-    /**
-     * <p>Determines the <code>DateTime</code> format.</p>
-     */
     inline DateTimeFormatConfiguration& WithDateTimeFormat(Aws::String&& value) { SetDateTimeFormat(std::move(value)); return *this;}
-
-    /**
-     * <p>Determines the <code>DateTime</code> format.</p>
-     */
     inline DateTimeFormatConfiguration& WithDateTimeFormat(const char* value) { SetDateTimeFormat(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The options that determine the null value format configuration.</p>
      */
     inline const NullValueFormatConfiguration& GetNullValueFormatConfiguration() const{ return m_nullValueFormatConfiguration; }
-
-    /**
-     * <p>The options that determine the null value format configuration.</p>
-     */
     inline bool NullValueFormatConfigurationHasBeenSet() const { return m_nullValueFormatConfigurationHasBeenSet; }
-
-    /**
-     * <p>The options that determine the null value format configuration.</p>
-     */
     inline void SetNullValueFormatConfiguration(const NullValueFormatConfiguration& value) { m_nullValueFormatConfigurationHasBeenSet = true; m_nullValueFormatConfiguration = value; }
-
-    /**
-     * <p>The options that determine the null value format configuration.</p>
-     */
     inline void SetNullValueFormatConfiguration(NullValueFormatConfiguration&& value) { m_nullValueFormatConfigurationHasBeenSet = true; m_nullValueFormatConfiguration = std::move(value); }
-
-    /**
-     * <p>The options that determine the null value format configuration.</p>
-     */
     inline DateTimeFormatConfiguration& WithNullValueFormatConfiguration(const NullValueFormatConfiguration& value) { SetNullValueFormatConfiguration(value); return *this;}
-
-    /**
-     * <p>The options that determine the null value format configuration.</p>
-     */
     inline DateTimeFormatConfiguration& WithNullValueFormatConfiguration(NullValueFormatConfiguration&& value) { SetNullValueFormatConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
      */
     inline const NumericFormatConfiguration& GetNumericFormatConfiguration() const{ return m_numericFormatConfiguration; }
-
-    /**
-     * <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
-     */
     inline bool NumericFormatConfigurationHasBeenSet() const { return m_numericFormatConfigurationHasBeenSet; }
-
-    /**
-     * <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
-     */
     inline void SetNumericFormatConfiguration(const NumericFormatConfiguration& value) { m_numericFormatConfigurationHasBeenSet = true; m_numericFormatConfiguration = value; }
-
-    /**
-     * <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
-     */
     inline void SetNumericFormatConfiguration(NumericFormatConfiguration&& value) { m_numericFormatConfigurationHasBeenSet = true; m_numericFormatConfiguration = std::move(value); }
-
-    /**
-     * <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
-     */
     inline DateTimeFormatConfiguration& WithNumericFormatConfiguration(const NumericFormatConfiguration& value) { SetNumericFormatConfiguration(value); return *this;}
-
-    /**
-     * <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
-     */
     inline DateTimeFormatConfiguration& WithNumericFormatConfiguration(NumericFormatConfiguration&& value) { SetNumericFormatConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dateTimeFormat;

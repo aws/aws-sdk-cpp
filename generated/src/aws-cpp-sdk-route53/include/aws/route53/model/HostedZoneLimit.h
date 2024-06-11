@@ -38,6 +38,7 @@ namespace Model
     AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The limit that you requested. Valid values include the following:</p> <ul>
      * <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can
@@ -46,73 +47,22 @@ namespace Model
      * can associate with the specified private hosted zone.</p> </li> </ul>
      */
     inline const HostedZoneLimitType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The limit that you requested. Valid values include the following:</p> <ul>
-     * <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can
-     * create in the specified hosted zone.</p> </li> <li> <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you
-     * can associate with the specified private hosted zone.</p> </li> </ul>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The limit that you requested. Valid values include the following:</p> <ul>
-     * <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can
-     * create in the specified hosted zone.</p> </li> <li> <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you
-     * can associate with the specified private hosted zone.</p> </li> </ul>
-     */
     inline void SetType(const HostedZoneLimitType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The limit that you requested. Valid values include the following:</p> <ul>
-     * <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can
-     * create in the specified hosted zone.</p> </li> <li> <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you
-     * can associate with the specified private hosted zone.</p> </li> </ul>
-     */
     inline void SetType(HostedZoneLimitType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The limit that you requested. Valid values include the following:</p> <ul>
-     * <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can
-     * create in the specified hosted zone.</p> </li> <li> <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you
-     * can associate with the specified private hosted zone.</p> </li> </ul>
-     */
     inline HostedZoneLimit& WithType(const HostedZoneLimitType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The limit that you requested. Valid values include the following:</p> <ul>
-     * <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can
-     * create in the specified hosted zone.</p> </li> <li> <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you
-     * can associate with the specified private hosted zone.</p> </li> </ul>
-     */
     inline HostedZoneLimit& WithType(HostedZoneLimitType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current value for the limit that is specified by <code>Type</code>.</p>
      */
     inline long long GetValue() const{ return m_value; }
-
-    /**
-     * <p>The current value for the limit that is specified by <code>Type</code>.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The current value for the limit that is specified by <code>Type</code>.</p>
-     */
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The current value for the limit that is specified by <code>Type</code>.</p>
-     */
     inline HostedZoneLimit& WithValue(long long value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     HostedZoneLimitType m_type;

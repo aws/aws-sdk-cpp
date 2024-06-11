@@ -33,125 +33,53 @@ namespace Model
     AWS_MACIE2_API GetClassificationScopeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier for the classification scope.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The unique identifier for the classification scope.</p>
-     */
     inline void SetId(const Aws::String& value) { m_id = value; }
-
-    /**
-     * <p>The unique identifier for the classification scope.</p>
-     */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the classification scope.</p>
-     */
     inline void SetId(const char* value) { m_id.assign(value); }
-
-    /**
-     * <p>The unique identifier for the classification scope.</p>
-     */
     inline GetClassificationScopeResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the classification scope.</p>
-     */
     inline GetClassificationScopeResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the classification scope.</p>
-     */
     inline GetClassificationScopeResult& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
-     */
     inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
-     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
-     */
     inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
-     */
     inline GetClassificationScopeResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
-     */
     inline GetClassificationScopeResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
-     */
     inline GetClassificationScopeResult& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
      */
     inline const S3ClassificationScope& GetS3() const{ return m_s3; }
-
-    /**
-     * <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
-     */
     inline void SetS3(const S3ClassificationScope& value) { m_s3 = value; }
-
-    /**
-     * <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
-     */
     inline void SetS3(S3ClassificationScope&& value) { m_s3 = std::move(value); }
-
-    /**
-     * <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
-     */
     inline GetClassificationScopeResult& WithS3(const S3ClassificationScope& value) { SetS3(value); return *this;}
-
-    /**
-     * <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
-     */
     inline GetClassificationScopeResult& WithS3(S3ClassificationScope&& value) { SetS3(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetClassificationScopeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetClassificationScopeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetClassificationScopeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

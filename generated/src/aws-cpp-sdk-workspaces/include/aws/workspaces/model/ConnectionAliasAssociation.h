@@ -42,183 +42,62 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The association status of the connection alias.</p>
      */
     inline const AssociationStatus& GetAssociationStatus() const{ return m_associationStatus; }
-
-    /**
-     * <p>The association status of the connection alias.</p>
-     */
     inline bool AssociationStatusHasBeenSet() const { return m_associationStatusHasBeenSet; }
-
-    /**
-     * <p>The association status of the connection alias.</p>
-     */
     inline void SetAssociationStatus(const AssociationStatus& value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
-
-    /**
-     * <p>The association status of the connection alias.</p>
-     */
     inline void SetAssociationStatus(AssociationStatus&& value) { m_associationStatusHasBeenSet = true; m_associationStatus = std::move(value); }
-
-    /**
-     * <p>The association status of the connection alias.</p>
-     */
     inline ConnectionAliasAssociation& WithAssociationStatus(const AssociationStatus& value) { SetAssociationStatus(value); return *this;}
-
-    /**
-     * <p>The association status of the connection alias.</p>
-     */
     inline ConnectionAliasAssociation& WithAssociationStatus(AssociationStatus&& value) { SetAssociationStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the Amazon Web Services account that associated the
      * connection alias with a directory.</p>
      */
     inline const Aws::String& GetAssociatedAccountId() const{ return m_associatedAccountId; }
-
-    /**
-     * <p>The identifier of the Amazon Web Services account that associated the
-     * connection alias with a directory.</p>
-     */
     inline bool AssociatedAccountIdHasBeenSet() const { return m_associatedAccountIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Web Services account that associated the
-     * connection alias with a directory.</p>
-     */
     inline void SetAssociatedAccountId(const Aws::String& value) { m_associatedAccountIdHasBeenSet = true; m_associatedAccountId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Web Services account that associated the
-     * connection alias with a directory.</p>
-     */
     inline void SetAssociatedAccountId(Aws::String&& value) { m_associatedAccountIdHasBeenSet = true; m_associatedAccountId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Web Services account that associated the
-     * connection alias with a directory.</p>
-     */
     inline void SetAssociatedAccountId(const char* value) { m_associatedAccountIdHasBeenSet = true; m_associatedAccountId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Web Services account that associated the
-     * connection alias with a directory.</p>
-     */
     inline ConnectionAliasAssociation& WithAssociatedAccountId(const Aws::String& value) { SetAssociatedAccountId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Web Services account that associated the
-     * connection alias with a directory.</p>
-     */
     inline ConnectionAliasAssociation& WithAssociatedAccountId(Aws::String&& value) { SetAssociatedAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Web Services account that associated the
-     * connection alias with a directory.</p>
-     */
     inline ConnectionAliasAssociation& WithAssociatedAccountId(const char* value) { SetAssociatedAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the directory associated with a connection alias.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The identifier of the directory associated with a connection alias.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the directory associated with a connection alias.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>The identifier of the directory associated with a connection alias.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the directory associated with a connection alias.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>The identifier of the directory associated with a connection alias.</p>
-     */
     inline ConnectionAliasAssociation& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the directory associated with a connection alias.</p>
-     */
     inline ConnectionAliasAssociation& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the directory associated with a connection alias.</p>
-     */
     inline ConnectionAliasAssociation& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the connection alias association. You use the connection
      * identifier in the DNS TXT record when you're configuring your DNS routing
      * policies.</p>
      */
     inline const Aws::String& GetConnectionIdentifier() const{ return m_connectionIdentifier; }
-
-    /**
-     * <p>The identifier of the connection alias association. You use the connection
-     * identifier in the DNS TXT record when you're configuring your DNS routing
-     * policies.</p>
-     */
     inline bool ConnectionIdentifierHasBeenSet() const { return m_connectionIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the connection alias association. You use the connection
-     * identifier in the DNS TXT record when you're configuring your DNS routing
-     * policies.</p>
-     */
     inline void SetConnectionIdentifier(const Aws::String& value) { m_connectionIdentifierHasBeenSet = true; m_connectionIdentifier = value; }
-
-    /**
-     * <p>The identifier of the connection alias association. You use the connection
-     * identifier in the DNS TXT record when you're configuring your DNS routing
-     * policies.</p>
-     */
     inline void SetConnectionIdentifier(Aws::String&& value) { m_connectionIdentifierHasBeenSet = true; m_connectionIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the connection alias association. You use the connection
-     * identifier in the DNS TXT record when you're configuring your DNS routing
-     * policies.</p>
-     */
     inline void SetConnectionIdentifier(const char* value) { m_connectionIdentifierHasBeenSet = true; m_connectionIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the connection alias association. You use the connection
-     * identifier in the DNS TXT record when you're configuring your DNS routing
-     * policies.</p>
-     */
     inline ConnectionAliasAssociation& WithConnectionIdentifier(const Aws::String& value) { SetConnectionIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the connection alias association. You use the connection
-     * identifier in the DNS TXT record when you're configuring your DNS routing
-     * policies.</p>
-     */
     inline ConnectionAliasAssociation& WithConnectionIdentifier(Aws::String&& value) { SetConnectionIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the connection alias association. You use the connection
-     * identifier in the DNS TXT record when you're configuring your DNS routing
-     * policies.</p>
-     */
     inline ConnectionAliasAssociation& WithConnectionIdentifier(const char* value) { SetConnectionIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     AssociationStatus m_associationStatus;

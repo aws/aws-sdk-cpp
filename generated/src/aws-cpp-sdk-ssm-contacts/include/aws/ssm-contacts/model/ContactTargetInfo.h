@@ -38,71 +38,30 @@ namespace Model
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact.</p>
-     */
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact.</p>
-     */
     inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact.</p>
-     */
     inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact.</p>
-     */
     inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact.</p>
-     */
     inline ContactTargetInfo& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact.</p>
-     */
     inline ContactTargetInfo& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact.</p>
-     */
     inline ContactTargetInfo& WithContactId(const char* value) { SetContactId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean value determining if the contact's acknowledgement stops the
      * progress of stages in the plan.</p>
      */
     inline bool GetIsEssential() const{ return m_isEssential; }
-
-    /**
-     * <p>A Boolean value determining if the contact's acknowledgement stops the
-     * progress of stages in the plan.</p>
-     */
     inline bool IsEssentialHasBeenSet() const { return m_isEssentialHasBeenSet; }
-
-    /**
-     * <p>A Boolean value determining if the contact's acknowledgement stops the
-     * progress of stages in the plan.</p>
-     */
     inline void SetIsEssential(bool value) { m_isEssentialHasBeenSet = true; m_isEssential = value; }
-
-    /**
-     * <p>A Boolean value determining if the contact's acknowledgement stops the
-     * progress of stages in the plan.</p>
-     */
     inline ContactTargetInfo& WithIsEssential(bool value) { SetIsEssential(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_contactId;

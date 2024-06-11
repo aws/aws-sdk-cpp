@@ -38,108 +38,43 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The host name of the Databricks data source.</p>
      */
     inline const Aws::String& GetHost() const{ return m_host; }
-
-    /**
-     * <p>The host name of the Databricks data source.</p>
-     */
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
-
-    /**
-     * <p>The host name of the Databricks data source.</p>
-     */
     inline void SetHost(const Aws::String& value) { m_hostHasBeenSet = true; m_host = value; }
-
-    /**
-     * <p>The host name of the Databricks data source.</p>
-     */
     inline void SetHost(Aws::String&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
-
-    /**
-     * <p>The host name of the Databricks data source.</p>
-     */
     inline void SetHost(const char* value) { m_hostHasBeenSet = true; m_host.assign(value); }
-
-    /**
-     * <p>The host name of the Databricks data source.</p>
-     */
     inline DatabricksParameters& WithHost(const Aws::String& value) { SetHost(value); return *this;}
-
-    /**
-     * <p>The host name of the Databricks data source.</p>
-     */
     inline DatabricksParameters& WithHost(Aws::String&& value) { SetHost(std::move(value)); return *this;}
-
-    /**
-     * <p>The host name of the Databricks data source.</p>
-     */
     inline DatabricksParameters& WithHost(const char* value) { SetHost(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The port for the Databricks data source.</p>
      */
     inline int GetPort() const{ return m_port; }
-
-    /**
-     * <p>The port for the Databricks data source.</p>
-     */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-
-    /**
-     * <p>The port for the Databricks data source.</p>
-     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-
-    /**
-     * <p>The port for the Databricks data source.</p>
-     */
     inline DatabricksParameters& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP path of the Databricks data source.</p>
      */
     inline const Aws::String& GetSqlEndpointPath() const{ return m_sqlEndpointPath; }
-
-    /**
-     * <p>The HTTP path of the Databricks data source.</p>
-     */
     inline bool SqlEndpointPathHasBeenSet() const { return m_sqlEndpointPathHasBeenSet; }
-
-    /**
-     * <p>The HTTP path of the Databricks data source.</p>
-     */
     inline void SetSqlEndpointPath(const Aws::String& value) { m_sqlEndpointPathHasBeenSet = true; m_sqlEndpointPath = value; }
-
-    /**
-     * <p>The HTTP path of the Databricks data source.</p>
-     */
     inline void SetSqlEndpointPath(Aws::String&& value) { m_sqlEndpointPathHasBeenSet = true; m_sqlEndpointPath = std::move(value); }
-
-    /**
-     * <p>The HTTP path of the Databricks data source.</p>
-     */
     inline void SetSqlEndpointPath(const char* value) { m_sqlEndpointPathHasBeenSet = true; m_sqlEndpointPath.assign(value); }
-
-    /**
-     * <p>The HTTP path of the Databricks data source.</p>
-     */
     inline DatabricksParameters& WithSqlEndpointPath(const Aws::String& value) { SetSqlEndpointPath(value); return *this;}
-
-    /**
-     * <p>The HTTP path of the Databricks data source.</p>
-     */
     inline DatabricksParameters& WithSqlEndpointPath(Aws::String&& value) { SetSqlEndpointPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The HTTP path of the Databricks data source.</p>
-     */
     inline DatabricksParameters& WithSqlEndpointPath(const char* value) { SetSqlEndpointPath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_host;

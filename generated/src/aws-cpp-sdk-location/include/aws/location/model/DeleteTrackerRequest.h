@@ -32,46 +32,19 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the tracker resource to be deleted.</p>
      */
     inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
-
-    /**
-     * <p>The name of the tracker resource to be deleted.</p>
-     */
     inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the tracker resource to be deleted.</p>
-     */
     inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
-
-    /**
-     * <p>The name of the tracker resource to be deleted.</p>
-     */
     inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
-
-    /**
-     * <p>The name of the tracker resource to be deleted.</p>
-     */
     inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
-
-    /**
-     * <p>The name of the tracker resource to be deleted.</p>
-     */
     inline DeleteTrackerRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-
-    /**
-     * <p>The name of the tracker resource to be deleted.</p>
-     */
     inline DeleteTrackerRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the tracker resource to be deleted.</p>
-     */
     inline DeleteTrackerRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trackerName;

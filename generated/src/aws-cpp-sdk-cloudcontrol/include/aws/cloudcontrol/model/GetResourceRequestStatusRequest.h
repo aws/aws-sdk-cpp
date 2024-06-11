@@ -34,62 +34,21 @@ namespace Model
     AWS_CLOUDCONTROLAPI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique token used to track the progress of the resource operation
      * request.</p> <p>Request tokens are included in the <code>ProgressEvent</code>
      * type returned by a resource operation request.</p>
      */
     inline const Aws::String& GetRequestToken() const{ return m_requestToken; }
-
-    /**
-     * <p>A unique token used to track the progress of the resource operation
-     * request.</p> <p>Request tokens are included in the <code>ProgressEvent</code>
-     * type returned by a resource operation request.</p>
-     */
     inline bool RequestTokenHasBeenSet() const { return m_requestTokenHasBeenSet; }
-
-    /**
-     * <p>A unique token used to track the progress of the resource operation
-     * request.</p> <p>Request tokens are included in the <code>ProgressEvent</code>
-     * type returned by a resource operation request.</p>
-     */
     inline void SetRequestToken(const Aws::String& value) { m_requestTokenHasBeenSet = true; m_requestToken = value; }
-
-    /**
-     * <p>A unique token used to track the progress of the resource operation
-     * request.</p> <p>Request tokens are included in the <code>ProgressEvent</code>
-     * type returned by a resource operation request.</p>
-     */
     inline void SetRequestToken(Aws::String&& value) { m_requestTokenHasBeenSet = true; m_requestToken = std::move(value); }
-
-    /**
-     * <p>A unique token used to track the progress of the resource operation
-     * request.</p> <p>Request tokens are included in the <code>ProgressEvent</code>
-     * type returned by a resource operation request.</p>
-     */
     inline void SetRequestToken(const char* value) { m_requestTokenHasBeenSet = true; m_requestToken.assign(value); }
-
-    /**
-     * <p>A unique token used to track the progress of the resource operation
-     * request.</p> <p>Request tokens are included in the <code>ProgressEvent</code>
-     * type returned by a resource operation request.</p>
-     */
     inline GetResourceRequestStatusRequest& WithRequestToken(const Aws::String& value) { SetRequestToken(value); return *this;}
-
-    /**
-     * <p>A unique token used to track the progress of the resource operation
-     * request.</p> <p>Request tokens are included in the <code>ProgressEvent</code>
-     * type returned by a resource operation request.</p>
-     */
     inline GetResourceRequestStatusRequest& WithRequestToken(Aws::String&& value) { SetRequestToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique token used to track the progress of the resource operation
-     * request.</p> <p>Request tokens are included in the <code>ProgressEvent</code>
-     * type returned by a resource operation request.</p>
-     */
     inline GetResourceRequestStatusRequest& WithRequestToken(const char* value) { SetRequestToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_requestToken;

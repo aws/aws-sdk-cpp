@@ -34,87 +34,33 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the key pair for which you want to import the public key.</p>
      */
     inline const Aws::String& GetKeyPairName() const{ return m_keyPairName; }
-
-    /**
-     * <p>The name of the key pair for which you want to import the public key.</p>
-     */
     inline bool KeyPairNameHasBeenSet() const { return m_keyPairNameHasBeenSet; }
-
-    /**
-     * <p>The name of the key pair for which you want to import the public key.</p>
-     */
     inline void SetKeyPairName(const Aws::String& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = value; }
-
-    /**
-     * <p>The name of the key pair for which you want to import the public key.</p>
-     */
     inline void SetKeyPairName(Aws::String&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = std::move(value); }
-
-    /**
-     * <p>The name of the key pair for which you want to import the public key.</p>
-     */
     inline void SetKeyPairName(const char* value) { m_keyPairNameHasBeenSet = true; m_keyPairName.assign(value); }
-
-    /**
-     * <p>The name of the key pair for which you want to import the public key.</p>
-     */
     inline ImportKeyPairRequest& WithKeyPairName(const Aws::String& value) { SetKeyPairName(value); return *this;}
-
-    /**
-     * <p>The name of the key pair for which you want to import the public key.</p>
-     */
     inline ImportKeyPairRequest& WithKeyPairName(Aws::String&& value) { SetKeyPairName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the key pair for which you want to import the public key.</p>
-     */
     inline ImportKeyPairRequest& WithKeyPairName(const char* value) { SetKeyPairName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
      */
     inline const Aws::String& GetPublicKeyBase64() const{ return m_publicKeyBase64; }
-
-    /**
-     * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-     */
     inline bool PublicKeyBase64HasBeenSet() const { return m_publicKeyBase64HasBeenSet; }
-
-    /**
-     * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-     */
     inline void SetPublicKeyBase64(const Aws::String& value) { m_publicKeyBase64HasBeenSet = true; m_publicKeyBase64 = value; }
-
-    /**
-     * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-     */
     inline void SetPublicKeyBase64(Aws::String&& value) { m_publicKeyBase64HasBeenSet = true; m_publicKeyBase64 = std::move(value); }
-
-    /**
-     * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-     */
     inline void SetPublicKeyBase64(const char* value) { m_publicKeyBase64HasBeenSet = true; m_publicKeyBase64.assign(value); }
-
-    /**
-     * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-     */
     inline ImportKeyPairRequest& WithPublicKeyBase64(const Aws::String& value) { SetPublicKeyBase64(value); return *this;}
-
-    /**
-     * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-     */
     inline ImportKeyPairRequest& WithPublicKeyBase64(Aws::String&& value) { SetPublicKeyBase64(std::move(value)); return *this;}
-
-    /**
-     * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-     */
     inline ImportKeyPairRequest& WithPublicKeyBase64(const char* value) { SetPublicKeyBase64(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_keyPairName;

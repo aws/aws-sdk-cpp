@@ -34,46 +34,19 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier for the particular column statistics task run.</p>
      */
     inline const Aws::String& GetColumnStatisticsTaskRunId() const{ return m_columnStatisticsTaskRunId; }
-
-    /**
-     * <p>The identifier for the particular column statistics task run.</p>
-     */
     inline bool ColumnStatisticsTaskRunIdHasBeenSet() const { return m_columnStatisticsTaskRunIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the particular column statistics task run.</p>
-     */
     inline void SetColumnStatisticsTaskRunId(const Aws::String& value) { m_columnStatisticsTaskRunIdHasBeenSet = true; m_columnStatisticsTaskRunId = value; }
-
-    /**
-     * <p>The identifier for the particular column statistics task run.</p>
-     */
     inline void SetColumnStatisticsTaskRunId(Aws::String&& value) { m_columnStatisticsTaskRunIdHasBeenSet = true; m_columnStatisticsTaskRunId = std::move(value); }
-
-    /**
-     * <p>The identifier for the particular column statistics task run.</p>
-     */
     inline void SetColumnStatisticsTaskRunId(const char* value) { m_columnStatisticsTaskRunIdHasBeenSet = true; m_columnStatisticsTaskRunId.assign(value); }
-
-    /**
-     * <p>The identifier for the particular column statistics task run.</p>
-     */
     inline GetColumnStatisticsTaskRunRequest& WithColumnStatisticsTaskRunId(const Aws::String& value) { SetColumnStatisticsTaskRunId(value); return *this;}
-
-    /**
-     * <p>The identifier for the particular column statistics task run.</p>
-     */
     inline GetColumnStatisticsTaskRunRequest& WithColumnStatisticsTaskRunId(Aws::String&& value) { SetColumnStatisticsTaskRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the particular column statistics task run.</p>
-     */
     inline GetColumnStatisticsTaskRunRequest& WithColumnStatisticsTaskRunId(const char* value) { SetColumnStatisticsTaskRunId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_columnStatisticsTaskRunId;

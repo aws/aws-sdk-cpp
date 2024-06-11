@@ -34,106 +34,43 @@ namespace Model
     AWS_CODEARTIFACT_API ListRepositoriesInDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The returned list of repositories. </p>
      */
     inline const Aws::Vector<RepositorySummary>& GetRepositories() const{ return m_repositories; }
-
-    /**
-     * <p> The returned list of repositories. </p>
-     */
     inline void SetRepositories(const Aws::Vector<RepositorySummary>& value) { m_repositories = value; }
-
-    /**
-     * <p> The returned list of repositories. </p>
-     */
     inline void SetRepositories(Aws::Vector<RepositorySummary>&& value) { m_repositories = std::move(value); }
-
-    /**
-     * <p> The returned list of repositories. </p>
-     */
     inline ListRepositoriesInDomainResult& WithRepositories(const Aws::Vector<RepositorySummary>& value) { SetRepositories(value); return *this;}
-
-    /**
-     * <p> The returned list of repositories. </p>
-     */
     inline ListRepositoriesInDomainResult& WithRepositories(Aws::Vector<RepositorySummary>&& value) { SetRepositories(std::move(value)); return *this;}
-
-    /**
-     * <p> The returned list of repositories. </p>
-     */
     inline ListRepositoriesInDomainResult& AddRepositories(const RepositorySummary& value) { m_repositories.push_back(value); return *this; }
-
-    /**
-     * <p> The returned list of repositories. </p>
-     */
     inline ListRepositoriesInDomainResult& AddRepositories(RepositorySummary&& value) { m_repositories.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> If there are additional results, this is the token for the next set of
      * results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> If there are additional results, this is the token for the next set of
-     * results. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p> If there are additional results, this is the token for the next set of
-     * results. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p> If there are additional results, this is the token for the next set of
-     * results. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p> If there are additional results, this is the token for the next set of
-     * results. </p>
-     */
     inline ListRepositoriesInDomainResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> If there are additional results, this is the token for the next set of
-     * results. </p>
-     */
     inline ListRepositoriesInDomainResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> If there are additional results, this is the token for the next set of
-     * results. </p>
-     */
     inline ListRepositoriesInDomainResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRepositoriesInDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRepositoriesInDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRepositoriesInDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<RepositorySummary> m_repositories;

@@ -39,118 +39,45 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline const Aws::String& GetConversationId() const{ return m_conversationId; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business conversation.</p>
-     */
     inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business conversation.</p>
-     */
     inline void SetConversationId(const Aws::String& value) { m_conversationIdHasBeenSet = true; m_conversationId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business conversation.</p>
-     */
     inline void SetConversationId(Aws::String&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business conversation.</p>
-     */
     inline void SetConversationId(const char* value) { m_conversationIdHasBeenSet = true; m_conversationId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business conversation.</p>
-     */
     inline Conversation& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business conversation.</p>
-     */
     inline Conversation& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business conversation.</p>
-     */
     inline Conversation& WithConversationId(const char* value) { SetConversationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The title of the conversation.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
-
-    /**
-     * <p>The title of the conversation.</p>
-     */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-
-    /**
-     * <p>The title of the conversation.</p>
-     */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-
-    /**
-     * <p>The title of the conversation.</p>
-     */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-
-    /**
-     * <p>The title of the conversation.</p>
-     */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-
-    /**
-     * <p>The title of the conversation.</p>
-     */
     inline Conversation& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-
-    /**
-     * <p>The title of the conversation.</p>
-     */
     inline Conversation& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-
-    /**
-     * <p>The title of the conversation.</p>
-     */
     inline Conversation& WithTitle(const char* value) { SetTitle(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The start time of the conversation.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The start time of the conversation.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The start time of the conversation.</p>
-     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The start time of the conversation.</p>
-     */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The start time of the conversation.</p>
-     */
     inline Conversation& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The start time of the conversation.</p>
-     */
     inline Conversation& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_conversationId;

@@ -34,63 +34,29 @@ namespace Model
     AWS_S3CONTROL_API GetBucketTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The tags set of the Outposts bucket.</p>
      */
     inline const Aws::Vector<S3Tag>& GetTagSet() const{ return m_tagSet; }
-
-    /**
-     * <p>The tags set of the Outposts bucket.</p>
-     */
     inline void SetTagSet(const Aws::Vector<S3Tag>& value) { m_tagSet = value; }
-
-    /**
-     * <p>The tags set of the Outposts bucket.</p>
-     */
     inline void SetTagSet(Aws::Vector<S3Tag>&& value) { m_tagSet = std::move(value); }
-
-    /**
-     * <p>The tags set of the Outposts bucket.</p>
-     */
     inline GetBucketTaggingResult& WithTagSet(const Aws::Vector<S3Tag>& value) { SetTagSet(value); return *this;}
-
-    /**
-     * <p>The tags set of the Outposts bucket.</p>
-     */
     inline GetBucketTaggingResult& WithTagSet(Aws::Vector<S3Tag>&& value) { SetTagSet(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags set of the Outposts bucket.</p>
-     */
     inline GetBucketTaggingResult& AddTagSet(const S3Tag& value) { m_tagSet.push_back(value); return *this; }
-
-    /**
-     * <p>The tags set of the Outposts bucket.</p>
-     */
     inline GetBucketTaggingResult& AddTagSet(S3Tag&& value) { m_tagSet.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBucketTaggingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBucketTaggingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBucketTaggingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<S3Tag> m_tagSet;

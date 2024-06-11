@@ -37,129 +37,53 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A <code>GrokClassifier</code> object with updated fields.</p>
      */
     inline const UpdateGrokClassifierRequest& GetGrokClassifier() const{ return m_grokClassifier; }
-
-    /**
-     * <p>A <code>GrokClassifier</code> object with updated fields.</p>
-     */
     inline bool GrokClassifierHasBeenSet() const { return m_grokClassifierHasBeenSet; }
-
-    /**
-     * <p>A <code>GrokClassifier</code> object with updated fields.</p>
-     */
     inline void SetGrokClassifier(const UpdateGrokClassifierRequest& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = value; }
-
-    /**
-     * <p>A <code>GrokClassifier</code> object with updated fields.</p>
-     */
     inline void SetGrokClassifier(UpdateGrokClassifierRequest&& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = std::move(value); }
-
-    /**
-     * <p>A <code>GrokClassifier</code> object with updated fields.</p>
-     */
     inline UpdateClassifierRequest& WithGrokClassifier(const UpdateGrokClassifierRequest& value) { SetGrokClassifier(value); return *this;}
-
-    /**
-     * <p>A <code>GrokClassifier</code> object with updated fields.</p>
-     */
     inline UpdateClassifierRequest& WithGrokClassifier(UpdateGrokClassifierRequest&& value) { SetGrokClassifier(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An <code>XMLClassifier</code> object with updated fields.</p>
      */
     inline const UpdateXMLClassifierRequest& GetXMLClassifier() const{ return m_xMLClassifier; }
-
-    /**
-     * <p>An <code>XMLClassifier</code> object with updated fields.</p>
-     */
     inline bool XMLClassifierHasBeenSet() const { return m_xMLClassifierHasBeenSet; }
-
-    /**
-     * <p>An <code>XMLClassifier</code> object with updated fields.</p>
-     */
     inline void SetXMLClassifier(const UpdateXMLClassifierRequest& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = value; }
-
-    /**
-     * <p>An <code>XMLClassifier</code> object with updated fields.</p>
-     */
     inline void SetXMLClassifier(UpdateXMLClassifierRequest&& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = std::move(value); }
-
-    /**
-     * <p>An <code>XMLClassifier</code> object with updated fields.</p>
-     */
     inline UpdateClassifierRequest& WithXMLClassifier(const UpdateXMLClassifierRequest& value) { SetXMLClassifier(value); return *this;}
-
-    /**
-     * <p>An <code>XMLClassifier</code> object with updated fields.</p>
-     */
     inline UpdateClassifierRequest& WithXMLClassifier(UpdateXMLClassifierRequest&& value) { SetXMLClassifier(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A <code>JsonClassifier</code> object with updated fields.</p>
      */
     inline const UpdateJsonClassifierRequest& GetJsonClassifier() const{ return m_jsonClassifier; }
-
-    /**
-     * <p>A <code>JsonClassifier</code> object with updated fields.</p>
-     */
     inline bool JsonClassifierHasBeenSet() const { return m_jsonClassifierHasBeenSet; }
-
-    /**
-     * <p>A <code>JsonClassifier</code> object with updated fields.</p>
-     */
     inline void SetJsonClassifier(const UpdateJsonClassifierRequest& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = value; }
-
-    /**
-     * <p>A <code>JsonClassifier</code> object with updated fields.</p>
-     */
     inline void SetJsonClassifier(UpdateJsonClassifierRequest&& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = std::move(value); }
-
-    /**
-     * <p>A <code>JsonClassifier</code> object with updated fields.</p>
-     */
     inline UpdateClassifierRequest& WithJsonClassifier(const UpdateJsonClassifierRequest& value) { SetJsonClassifier(value); return *this;}
-
-    /**
-     * <p>A <code>JsonClassifier</code> object with updated fields.</p>
-     */
     inline UpdateClassifierRequest& WithJsonClassifier(UpdateJsonClassifierRequest&& value) { SetJsonClassifier(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A <code>CsvClassifier</code> object with updated fields.</p>
      */
     inline const UpdateCsvClassifierRequest& GetCsvClassifier() const{ return m_csvClassifier; }
-
-    /**
-     * <p>A <code>CsvClassifier</code> object with updated fields.</p>
-     */
     inline bool CsvClassifierHasBeenSet() const { return m_csvClassifierHasBeenSet; }
-
-    /**
-     * <p>A <code>CsvClassifier</code> object with updated fields.</p>
-     */
     inline void SetCsvClassifier(const UpdateCsvClassifierRequest& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = value; }
-
-    /**
-     * <p>A <code>CsvClassifier</code> object with updated fields.</p>
-     */
     inline void SetCsvClassifier(UpdateCsvClassifierRequest&& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = std::move(value); }
-
-    /**
-     * <p>A <code>CsvClassifier</code> object with updated fields.</p>
-     */
     inline UpdateClassifierRequest& WithCsvClassifier(const UpdateCsvClassifierRequest& value) { SetCsvClassifier(value); return *this;}
-
-    /**
-     * <p>A <code>CsvClassifier</code> object with updated fields.</p>
-     */
     inline UpdateClassifierRequest& WithCsvClassifier(UpdateCsvClassifierRequest&& value) { SetCsvClassifier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UpdateGrokClassifierRequest m_grokClassifier;

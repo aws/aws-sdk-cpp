@@ -32,87 +32,33 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique name of the domain.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline DeleteCalculatedAttributeDefinitionRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline DeleteCalculatedAttributeDefinitionRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline DeleteCalculatedAttributeDefinitionRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique name of the calculated attribute.</p>
      */
     inline const Aws::String& GetCalculatedAttributeName() const{ return m_calculatedAttributeName; }
-
-    /**
-     * <p>The unique name of the calculated attribute.</p>
-     */
     inline bool CalculatedAttributeNameHasBeenSet() const { return m_calculatedAttributeNameHasBeenSet; }
-
-    /**
-     * <p>The unique name of the calculated attribute.</p>
-     */
     inline void SetCalculatedAttributeName(const Aws::String& value) { m_calculatedAttributeNameHasBeenSet = true; m_calculatedAttributeName = value; }
-
-    /**
-     * <p>The unique name of the calculated attribute.</p>
-     */
     inline void SetCalculatedAttributeName(Aws::String&& value) { m_calculatedAttributeNameHasBeenSet = true; m_calculatedAttributeName = std::move(value); }
-
-    /**
-     * <p>The unique name of the calculated attribute.</p>
-     */
     inline void SetCalculatedAttributeName(const char* value) { m_calculatedAttributeNameHasBeenSet = true; m_calculatedAttributeName.assign(value); }
-
-    /**
-     * <p>The unique name of the calculated attribute.</p>
-     */
     inline DeleteCalculatedAttributeDefinitionRequest& WithCalculatedAttributeName(const Aws::String& value) { SetCalculatedAttributeName(value); return *this;}
-
-    /**
-     * <p>The unique name of the calculated attribute.</p>
-     */
     inline DeleteCalculatedAttributeDefinitionRequest& WithCalculatedAttributeName(Aws::String&& value) { SetCalculatedAttributeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique name of the calculated attribute.</p>
-     */
     inline DeleteCalculatedAttributeDefinitionRequest& WithCalculatedAttributeName(const char* value) { SetCalculatedAttributeName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

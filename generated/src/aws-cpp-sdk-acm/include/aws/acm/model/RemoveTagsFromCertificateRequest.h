@@ -36,6 +36,7 @@ namespace Model
     AWS_ACM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>String that contains the ARN of the ACM Certificate with one or more tags
      * that you want to remove. This must be of the form:</p> <p>
@@ -45,118 +46,28 @@ namespace Model
      * Resource Names (ARNs)</a>.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
-
-    /**
-     * <p>String that contains the ARN of the ACM Certificate with one or more tags
-     * that you want to remove. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a>.</p>
-     */
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-
-    /**
-     * <p>String that contains the ARN of the ACM Certificate with one or more tags
-     * that you want to remove. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a>.</p>
-     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
-
-    /**
-     * <p>String that contains the ARN of the ACM Certificate with one or more tags
-     * that you want to remove. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a>.</p>
-     */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
-
-    /**
-     * <p>String that contains the ARN of the ACM Certificate with one or more tags
-     * that you want to remove. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a>.</p>
-     */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
-
-    /**
-     * <p>String that contains the ARN of the ACM Certificate with one or more tags
-     * that you want to remove. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a>.</p>
-     */
     inline RemoveTagsFromCertificateRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-
-    /**
-     * <p>String that contains the ARN of the ACM Certificate with one or more tags
-     * that you want to remove. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a>.</p>
-     */
     inline RemoveTagsFromCertificateRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>String that contains the ARN of the ACM Certificate with one or more tags
-     * that you want to remove. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a>.</p>
-     */
     inline RemoveTagsFromCertificateRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key-value pair that defines the tag to remove.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The key-value pair that defines the tag to remove.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The key-value pair that defines the tag to remove.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The key-value pair that defines the tag to remove.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The key-value pair that defines the tag to remove.</p>
-     */
     inline RemoveTagsFromCertificateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The key-value pair that defines the tag to remove.</p>
-     */
     inline RemoveTagsFromCertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The key-value pair that defines the tag to remove.</p>
-     */
     inline RemoveTagsFromCertificateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The key-value pair that defines the tag to remove.</p>
-     */
     inline RemoveTagsFromCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_certificateArn;

@@ -38,99 +38,42 @@ namespace Model
     AWS_IOT_API RegisterCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The certificate ARN.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
-
-    /**
-     * <p>The certificate ARN.</p>
-     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArn = value; }
-
-    /**
-     * <p>The certificate ARN.</p>
-     */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArn = std::move(value); }
-
-    /**
-     * <p>The certificate ARN.</p>
-     */
     inline void SetCertificateArn(const char* value) { m_certificateArn.assign(value); }
-
-    /**
-     * <p>The certificate ARN.</p>
-     */
     inline RegisterCertificateResult& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-
-    /**
-     * <p>The certificate ARN.</p>
-     */
     inline RegisterCertificateResult& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The certificate ARN.</p>
-     */
     inline RegisterCertificateResult& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The certificate identifier.</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
-
-    /**
-     * <p>The certificate identifier.</p>
-     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateId = value; }
-
-    /**
-     * <p>The certificate identifier.</p>
-     */
     inline void SetCertificateId(Aws::String&& value) { m_certificateId = std::move(value); }
-
-    /**
-     * <p>The certificate identifier.</p>
-     */
     inline void SetCertificateId(const char* value) { m_certificateId.assign(value); }
-
-    /**
-     * <p>The certificate identifier.</p>
-     */
     inline RegisterCertificateResult& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
-
-    /**
-     * <p>The certificate identifier.</p>
-     */
     inline RegisterCertificateResult& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The certificate identifier.</p>
-     */
     inline RegisterCertificateResult& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RegisterCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RegisterCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RegisterCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificateArn;

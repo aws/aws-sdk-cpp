@@ -40,73 +40,30 @@ namespace Model
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
      */
     inline const EngineTranscribeSettings& GetEngineTranscribeSettings() const{ return m_engineTranscribeSettings; }
-
-    /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
-     */
     inline bool EngineTranscribeSettingsHasBeenSet() const { return m_engineTranscribeSettingsHasBeenSet; }
-
-    /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
-     */
     inline void SetEngineTranscribeSettings(const EngineTranscribeSettings& value) { m_engineTranscribeSettingsHasBeenSet = true; m_engineTranscribeSettings = value; }
-
-    /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
-     */
     inline void SetEngineTranscribeSettings(EngineTranscribeSettings&& value) { m_engineTranscribeSettingsHasBeenSet = true; m_engineTranscribeSettings = std::move(value); }
-
-    /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
-     */
     inline TranscriptionConfiguration& WithEngineTranscribeSettings(const EngineTranscribeSettings& value) { SetEngineTranscribeSettings(value); return *this;}
-
-    /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
-     */
     inline TranscriptionConfiguration& WithEngineTranscribeSettings(EngineTranscribeSettings&& value) { SetEngineTranscribeSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The transcription configuration settings passed to Amazon Transcribe
      * Medical.</p>
      */
     inline const EngineTranscribeMedicalSettings& GetEngineTranscribeMedicalSettings() const{ return m_engineTranscribeMedicalSettings; }
-
-    /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe
-     * Medical.</p>
-     */
     inline bool EngineTranscribeMedicalSettingsHasBeenSet() const { return m_engineTranscribeMedicalSettingsHasBeenSet; }
-
-    /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe
-     * Medical.</p>
-     */
     inline void SetEngineTranscribeMedicalSettings(const EngineTranscribeMedicalSettings& value) { m_engineTranscribeMedicalSettingsHasBeenSet = true; m_engineTranscribeMedicalSettings = value; }
-
-    /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe
-     * Medical.</p>
-     */
     inline void SetEngineTranscribeMedicalSettings(EngineTranscribeMedicalSettings&& value) { m_engineTranscribeMedicalSettingsHasBeenSet = true; m_engineTranscribeMedicalSettings = std::move(value); }
-
-    /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe
-     * Medical.</p>
-     */
     inline TranscriptionConfiguration& WithEngineTranscribeMedicalSettings(const EngineTranscribeMedicalSettings& value) { SetEngineTranscribeMedicalSettings(value); return *this;}
-
-    /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe
-     * Medical.</p>
-     */
     inline TranscriptionConfiguration& WithEngineTranscribeMedicalSettings(EngineTranscribeMedicalSettings&& value) { SetEngineTranscribeMedicalSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EngineTranscribeSettings m_engineTranscribeSettings;

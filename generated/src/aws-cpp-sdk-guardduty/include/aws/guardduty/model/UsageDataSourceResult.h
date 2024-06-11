@@ -39,67 +39,29 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data source type that generated usage.</p>
      */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
-
-    /**
-     * <p>The data source type that generated usage.</p>
-     */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-
-    /**
-     * <p>The data source type that generated usage.</p>
-     */
     inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-
-    /**
-     * <p>The data source type that generated usage.</p>
-     */
     inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-
-    /**
-     * <p>The data source type that generated usage.</p>
-     */
     inline UsageDataSourceResult& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-
-    /**
-     * <p>The data source type that generated usage.</p>
-     */
     inline UsageDataSourceResult& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents the total of usage for the specified data source.</p>
      */
     inline const Total& GetTotal() const{ return m_total; }
-
-    /**
-     * <p>Represents the total of usage for the specified data source.</p>
-     */
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-
-    /**
-     * <p>Represents the total of usage for the specified data source.</p>
-     */
     inline void SetTotal(const Total& value) { m_totalHasBeenSet = true; m_total = value; }
-
-    /**
-     * <p>Represents the total of usage for the specified data source.</p>
-     */
     inline void SetTotal(Total&& value) { m_totalHasBeenSet = true; m_total = std::move(value); }
-
-    /**
-     * <p>Represents the total of usage for the specified data source.</p>
-     */
     inline UsageDataSourceResult& WithTotal(const Total& value) { SetTotal(value); return *this;}
-
-    /**
-     * <p>Represents the total of usage for the specified data source.</p>
-     */
     inline UsageDataSourceResult& WithTotal(Total&& value) { SetTotal(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataSource m_dataSource;

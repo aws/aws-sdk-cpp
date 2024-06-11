@@ -33,58 +33,28 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API CreateServiceLevelObjectiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains information about the SLO that you just
      * created.</p>
      */
     inline const ServiceLevelObjective& GetSlo() const{ return m_slo; }
-
-    /**
-     * <p>A structure that contains information about the SLO that you just
-     * created.</p>
-     */
     inline void SetSlo(const ServiceLevelObjective& value) { m_slo = value; }
-
-    /**
-     * <p>A structure that contains information about the SLO that you just
-     * created.</p>
-     */
     inline void SetSlo(ServiceLevelObjective&& value) { m_slo = std::move(value); }
-
-    /**
-     * <p>A structure that contains information about the SLO that you just
-     * created.</p>
-     */
     inline CreateServiceLevelObjectiveResult& WithSlo(const ServiceLevelObjective& value) { SetSlo(value); return *this;}
-
-    /**
-     * <p>A structure that contains information about the SLO that you just
-     * created.</p>
-     */
     inline CreateServiceLevelObjectiveResult& WithSlo(ServiceLevelObjective&& value) { SetSlo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateServiceLevelObjectiveResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateServiceLevelObjectiveResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateServiceLevelObjectiveResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceLevelObjective m_slo;

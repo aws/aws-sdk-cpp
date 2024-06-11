@@ -33,58 +33,28 @@ namespace Model
     AWS_SYNTHETICS_API CreateGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains information about the group that was just
      * created.</p>
      */
     inline const Group& GetGroup() const{ return m_group; }
-
-    /**
-     * <p>A structure that contains information about the group that was just
-     * created.</p>
-     */
     inline void SetGroup(const Group& value) { m_group = value; }
-
-    /**
-     * <p>A structure that contains information about the group that was just
-     * created.</p>
-     */
     inline void SetGroup(Group&& value) { m_group = std::move(value); }
-
-    /**
-     * <p>A structure that contains information about the group that was just
-     * created.</p>
-     */
     inline CreateGroupResult& WithGroup(const Group& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p>A structure that contains information about the group that was just
-     * created.</p>
-     */
     inline CreateGroupResult& WithGroup(Group&& value) { SetGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Group m_group;

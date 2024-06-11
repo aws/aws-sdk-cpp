@@ -38,87 +38,33 @@ namespace Model
     AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name for the LDAP attribute.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name for the LDAP attribute.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name for the LDAP attribute.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name for the LDAP attribute.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name for the LDAP attribute.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name for the LDAP attribute.</p>
-     */
     inline ActiveDirectoryComputerAttribute& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name for the LDAP attribute.</p>
-     */
     inline ActiveDirectoryComputerAttribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name for the LDAP attribute.</p>
-     */
     inline ActiveDirectoryComputerAttribute& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value for the LDAP attribute.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value for the LDAP attribute.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value for the LDAP attribute.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value for the LDAP attribute.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value for the LDAP attribute.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value for the LDAP attribute.</p>
-     */
     inline ActiveDirectoryComputerAttribute& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value for the LDAP attribute.</p>
-     */
     inline ActiveDirectoryComputerAttribute& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value for the LDAP attribute.</p>
-     */
     inline ActiveDirectoryComputerAttribute& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

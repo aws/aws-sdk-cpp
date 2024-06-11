@@ -38,108 +38,43 @@ namespace Model
     AWS_ENTITYRESOLUTION_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of objects returned per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of objects returned per page.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of objects returned per page.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of objects returned per page.</p>
-     */
     inline ListIdMappingJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token from the previous API call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token from the previous API call.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The pagination token from the previous API call.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The pagination token from the previous API call.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token from the previous API call.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token from the previous API call.</p>
-     */
     inline ListIdMappingJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token from the previous API call.</p>
-     */
     inline ListIdMappingJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token from the previous API call.</p>
-     */
     inline ListIdMappingJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the workflow to be retrieved.</p>
      */
     inline const Aws::String& GetWorkflowName() const{ return m_workflowName; }
-
-    /**
-     * <p>The name of the workflow to be retrieved.</p>
-     */
     inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-
-    /**
-     * <p>The name of the workflow to be retrieved.</p>
-     */
     inline void SetWorkflowName(const Aws::String& value) { m_workflowNameHasBeenSet = true; m_workflowName = value; }
-
-    /**
-     * <p>The name of the workflow to be retrieved.</p>
-     */
     inline void SetWorkflowName(Aws::String&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::move(value); }
-
-    /**
-     * <p>The name of the workflow to be retrieved.</p>
-     */
     inline void SetWorkflowName(const char* value) { m_workflowNameHasBeenSet = true; m_workflowName.assign(value); }
-
-    /**
-     * <p>The name of the workflow to be retrieved.</p>
-     */
     inline ListIdMappingJobsRequest& WithWorkflowName(const Aws::String& value) { SetWorkflowName(value); return *this;}
-
-    /**
-     * <p>The name of the workflow to be retrieved.</p>
-     */
     inline ListIdMappingJobsRequest& WithWorkflowName(Aws::String&& value) { SetWorkflowName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the workflow to be retrieved.</p>
-     */
     inline ListIdMappingJobsRequest& WithWorkflowName(const char* value) { SetWorkflowName(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

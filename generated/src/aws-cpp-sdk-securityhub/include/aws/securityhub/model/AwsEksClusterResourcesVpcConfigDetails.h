@@ -39,116 +39,39 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The security groups that are associated with the cross-account elastic
      * network interfaces that are used to allow communication between your nodes and
      * the Amazon EKS control plane.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
-
-    /**
-     * <p>The security groups that are associated with the cross-account elastic
-     * network interfaces that are used to allow communication between your nodes and
-     * the Amazon EKS control plane.</p>
-     */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-
-    /**
-     * <p>The security groups that are associated with the cross-account elastic
-     * network interfaces that are used to allow communication between your nodes and
-     * the Amazon EKS control plane.</p>
-     */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-
-    /**
-     * <p>The security groups that are associated with the cross-account elastic
-     * network interfaces that are used to allow communication between your nodes and
-     * the Amazon EKS control plane.</p>
-     */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-
-    /**
-     * <p>The security groups that are associated with the cross-account elastic
-     * network interfaces that are used to allow communication between your nodes and
-     * the Amazon EKS control plane.</p>
-     */
     inline AwsEksClusterResourcesVpcConfigDetails& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-
-    /**
-     * <p>The security groups that are associated with the cross-account elastic
-     * network interfaces that are used to allow communication between your nodes and
-     * the Amazon EKS control plane.</p>
-     */
     inline AwsEksClusterResourcesVpcConfigDetails& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The security groups that are associated with the cross-account elastic
-     * network interfaces that are used to allow communication between your nodes and
-     * the Amazon EKS control plane.</p>
-     */
     inline AwsEksClusterResourcesVpcConfigDetails& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-
-    /**
-     * <p>The security groups that are associated with the cross-account elastic
-     * network interfaces that are used to allow communication between your nodes and
-     * the Amazon EKS control plane.</p>
-     */
     inline AwsEksClusterResourcesVpcConfigDetails& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The security groups that are associated with the cross-account elastic
-     * network interfaces that are used to allow communication between your nodes and
-     * the Amazon EKS control plane.</p>
-     */
     inline AwsEksClusterResourcesVpcConfigDetails& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The subnets that are associated with the cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
-
-    /**
-     * <p>The subnets that are associated with the cluster.</p>
-     */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-
-    /**
-     * <p>The subnets that are associated with the cluster.</p>
-     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-
-    /**
-     * <p>The subnets that are associated with the cluster.</p>
-     */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-
-    /**
-     * <p>The subnets that are associated with the cluster.</p>
-     */
     inline AwsEksClusterResourcesVpcConfigDetails& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-
-    /**
-     * <p>The subnets that are associated with the cluster.</p>
-     */
     inline AwsEksClusterResourcesVpcConfigDetails& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The subnets that are associated with the cluster.</p>
-     */
     inline AwsEksClusterResourcesVpcConfigDetails& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-
-    /**
-     * <p>The subnets that are associated with the cluster.</p>
-     */
     inline AwsEksClusterResourcesVpcConfigDetails& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The subnets that are associated with the cluster.</p>
-     */
     inline AwsEksClusterResourcesVpcConfigDetails& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If
      * the Amazon EKS public API server endpoint is turned off, your cluster's
@@ -156,31 +79,10 @@ namespace Model
      * cluster VPC. </p>
      */
     inline bool GetEndpointPublicAccess() const{ return m_endpointPublicAccess; }
-
-    /**
-     * <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If
-     * the Amazon EKS public API server endpoint is turned off, your cluster's
-     * Kubernetes API server can only receive requests that originate from within the
-     * cluster VPC. </p>
-     */
     inline bool EndpointPublicAccessHasBeenSet() const { return m_endpointPublicAccessHasBeenSet; }
-
-    /**
-     * <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If
-     * the Amazon EKS public API server endpoint is turned off, your cluster's
-     * Kubernetes API server can only receive requests that originate from within the
-     * cluster VPC. </p>
-     */
     inline void SetEndpointPublicAccess(bool value) { m_endpointPublicAccessHasBeenSet = true; m_endpointPublicAccess = value; }
-
-    /**
-     * <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If
-     * the Amazon EKS public API server endpoint is turned off, your cluster's
-     * Kubernetes API server can only receive requests that originate from within the
-     * cluster VPC. </p>
-     */
     inline AwsEksClusterResourcesVpcConfigDetails& WithEndpointPublicAccess(bool value) { SetEndpointPublicAccess(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_securityGroupIds;

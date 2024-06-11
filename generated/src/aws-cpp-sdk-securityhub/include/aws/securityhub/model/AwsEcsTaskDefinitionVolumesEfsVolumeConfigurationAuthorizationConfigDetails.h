@@ -37,95 +37,34 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon EFS access point identifier to use.</p>
      */
     inline const Aws::String& GetAccessPointId() const{ return m_accessPointId; }
-
-    /**
-     * <p>The Amazon EFS access point identifier to use.</p>
-     */
     inline bool AccessPointIdHasBeenSet() const { return m_accessPointIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon EFS access point identifier to use.</p>
-     */
     inline void SetAccessPointId(const Aws::String& value) { m_accessPointIdHasBeenSet = true; m_accessPointId = value; }
-
-    /**
-     * <p>The Amazon EFS access point identifier to use.</p>
-     */
     inline void SetAccessPointId(Aws::String&& value) { m_accessPointIdHasBeenSet = true; m_accessPointId = std::move(value); }
-
-    /**
-     * <p>The Amazon EFS access point identifier to use.</p>
-     */
     inline void SetAccessPointId(const char* value) { m_accessPointIdHasBeenSet = true; m_accessPointId.assign(value); }
-
-    /**
-     * <p>The Amazon EFS access point identifier to use.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails& WithAccessPointId(const Aws::String& value) { SetAccessPointId(value); return *this;}
-
-    /**
-     * <p>The Amazon EFS access point identifier to use.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails& WithAccessPointId(Aws::String&& value) { SetAccessPointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon EFS access point identifier to use.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails& WithAccessPointId(const char* value) { SetAccessPointId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether to use the Amazon ECS task IAM role defined in a task definition when
      * mounting the Amazon EFS file system.</p>
      */
     inline const Aws::String& GetIam() const{ return m_iam; }
-
-    /**
-     * <p>Whether to use the Amazon ECS task IAM role defined in a task definition when
-     * mounting the Amazon EFS file system.</p>
-     */
     inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
-
-    /**
-     * <p>Whether to use the Amazon ECS task IAM role defined in a task definition when
-     * mounting the Amazon EFS file system.</p>
-     */
     inline void SetIam(const Aws::String& value) { m_iamHasBeenSet = true; m_iam = value; }
-
-    /**
-     * <p>Whether to use the Amazon ECS task IAM role defined in a task definition when
-     * mounting the Amazon EFS file system.</p>
-     */
     inline void SetIam(Aws::String&& value) { m_iamHasBeenSet = true; m_iam = std::move(value); }
-
-    /**
-     * <p>Whether to use the Amazon ECS task IAM role defined in a task definition when
-     * mounting the Amazon EFS file system.</p>
-     */
     inline void SetIam(const char* value) { m_iamHasBeenSet = true; m_iam.assign(value); }
-
-    /**
-     * <p>Whether to use the Amazon ECS task IAM role defined in a task definition when
-     * mounting the Amazon EFS file system.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails& WithIam(const Aws::String& value) { SetIam(value); return *this;}
-
-    /**
-     * <p>Whether to use the Amazon ECS task IAM role defined in a task definition when
-     * mounting the Amazon EFS file system.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails& WithIam(Aws::String&& value) { SetIam(std::move(value)); return *this;}
-
-    /**
-     * <p>Whether to use the Amazon ECS task IAM role defined in a task definition when
-     * mounting the Amazon EFS file system.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails& WithIam(const char* value) { SetIam(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accessPointId;

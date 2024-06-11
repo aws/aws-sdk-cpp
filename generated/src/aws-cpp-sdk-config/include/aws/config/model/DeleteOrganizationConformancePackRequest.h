@@ -34,46 +34,19 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of organization conformance pack that you want to delete.</p>
      */
     inline const Aws::String& GetOrganizationConformancePackName() const{ return m_organizationConformancePackName; }
-
-    /**
-     * <p>The name of organization conformance pack that you want to delete.</p>
-     */
     inline bool OrganizationConformancePackNameHasBeenSet() const { return m_organizationConformancePackNameHasBeenSet; }
-
-    /**
-     * <p>The name of organization conformance pack that you want to delete.</p>
-     */
     inline void SetOrganizationConformancePackName(const Aws::String& value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName = value; }
-
-    /**
-     * <p>The name of organization conformance pack that you want to delete.</p>
-     */
     inline void SetOrganizationConformancePackName(Aws::String&& value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName = std::move(value); }
-
-    /**
-     * <p>The name of organization conformance pack that you want to delete.</p>
-     */
     inline void SetOrganizationConformancePackName(const char* value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName.assign(value); }
-
-    /**
-     * <p>The name of organization conformance pack that you want to delete.</p>
-     */
     inline DeleteOrganizationConformancePackRequest& WithOrganizationConformancePackName(const Aws::String& value) { SetOrganizationConformancePackName(value); return *this;}
-
-    /**
-     * <p>The name of organization conformance pack that you want to delete.</p>
-     */
     inline DeleteOrganizationConformancePackRequest& WithOrganizationConformancePackName(Aws::String&& value) { SetOrganizationConformancePackName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of organization conformance pack that you want to delete.</p>
-     */
     inline DeleteOrganizationConformancePackRequest& WithOrganizationConformancePackName(const char* value) { SetOrganizationConformancePackName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_organizationConformancePackName;

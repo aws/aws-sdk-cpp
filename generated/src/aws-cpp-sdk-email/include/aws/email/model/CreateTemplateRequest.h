@@ -42,42 +42,18 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The content of the email, composed of a subject line and either an HTML part
      * or a text-only part.</p>
      */
     inline const Template& GetTemplate() const{ return m_template; }
-
-    /**
-     * <p>The content of the email, composed of a subject line and either an HTML part
-     * or a text-only part.</p>
-     */
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-
-    /**
-     * <p>The content of the email, composed of a subject line and either an HTML part
-     * or a text-only part.</p>
-     */
     inline void SetTemplate(const Template& value) { m_templateHasBeenSet = true; m_template = value; }
-
-    /**
-     * <p>The content of the email, composed of a subject line and either an HTML part
-     * or a text-only part.</p>
-     */
     inline void SetTemplate(Template&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-
-    /**
-     * <p>The content of the email, composed of a subject line and either an HTML part
-     * or a text-only part.</p>
-     */
     inline CreateTemplateRequest& WithTemplate(const Template& value) { SetTemplate(value); return *this;}
-
-    /**
-     * <p>The content of the email, composed of a subject line and either an HTML part
-     * or a text-only part.</p>
-     */
     inline CreateTemplateRequest& WithTemplate(Template&& value) { SetTemplate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Template m_template;

@@ -37,67 +37,29 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The port number of the remote connection.</p>
      */
     inline int GetPort() const{ return m_port; }
-
-    /**
-     * <p>The port number of the remote connection.</p>
-     */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-
-    /**
-     * <p>The port number of the remote connection.</p>
-     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-
-    /**
-     * <p>The port number of the remote connection.</p>
-     */
     inline RemotePortDetails& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The port name of the remote connection.</p>
      */
     inline const Aws::String& GetPortName() const{ return m_portName; }
-
-    /**
-     * <p>The port name of the remote connection.</p>
-     */
     inline bool PortNameHasBeenSet() const { return m_portNameHasBeenSet; }
-
-    /**
-     * <p>The port name of the remote connection.</p>
-     */
     inline void SetPortName(const Aws::String& value) { m_portNameHasBeenSet = true; m_portName = value; }
-
-    /**
-     * <p>The port name of the remote connection.</p>
-     */
     inline void SetPortName(Aws::String&& value) { m_portNameHasBeenSet = true; m_portName = std::move(value); }
-
-    /**
-     * <p>The port name of the remote connection.</p>
-     */
     inline void SetPortName(const char* value) { m_portNameHasBeenSet = true; m_portName.assign(value); }
-
-    /**
-     * <p>The port name of the remote connection.</p>
-     */
     inline RemotePortDetails& WithPortName(const Aws::String& value) { SetPortName(value); return *this;}
-
-    /**
-     * <p>The port name of the remote connection.</p>
-     */
     inline RemotePortDetails& WithPortName(Aws::String&& value) { SetPortName(std::move(value)); return *this;}
-
-    /**
-     * <p>The port name of the remote connection.</p>
-     */
     inline RemotePortDetails& WithPortName(const char* value) { SetPortName(value); return *this;}
-
+    ///@}
   private:
 
     int m_port;

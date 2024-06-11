@@ -39,47 +39,25 @@ namespace Model
     AWS_IAM_API CreateGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A structure containing details about the new group.</p>
      */
     inline const Group& GetGroup() const{ return m_group; }
-
-    /**
-     * <p>A structure containing details about the new group.</p>
-     */
     inline void SetGroup(const Group& value) { m_group = value; }
-
-    /**
-     * <p>A structure containing details about the new group.</p>
-     */
     inline void SetGroup(Group&& value) { m_group = std::move(value); }
-
-    /**
-     * <p>A structure containing details about the new group.</p>
-     */
     inline CreateGroupResult& WithGroup(const Group& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p>A structure containing details about the new group.</p>
-     */
     inline CreateGroupResult& WithGroup(Group&& value) { SetGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Group m_group;

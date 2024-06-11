@@ -38,46 +38,26 @@ namespace Model
     AWS_ROUTE53_API GetHealthCheckCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The number of health checks associated with the current Amazon Web Services
      * account.</p>
      */
     inline long long GetHealthCheckCount() const{ return m_healthCheckCount; }
-
-    /**
-     * <p>The number of health checks associated with the current Amazon Web Services
-     * account.</p>
-     */
     inline void SetHealthCheckCount(long long value) { m_healthCheckCount = value; }
-
-    /**
-     * <p>The number of health checks associated with the current Amazon Web Services
-     * account.</p>
-     */
     inline GetHealthCheckCountResult& WithHealthCheckCount(long long value) { SetHealthCheckCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetHealthCheckCountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetHealthCheckCountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetHealthCheckCountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     long long m_healthCheckCount;

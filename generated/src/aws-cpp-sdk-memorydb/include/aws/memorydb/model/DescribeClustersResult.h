@@ -34,6 +34,7 @@ namespace Model
     AWS_MEMORYDB_API DescribeClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An optional argument to pass in case the total number of records exceeds the
      * value of MaxResults. If nextToken is returned, there are more results available.
@@ -42,119 +43,37 @@ namespace Model
      * arguments unchanged. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An optional argument to pass in case the total number of records exceeds the
-     * value of MaxResults. If nextToken is returned, there are more results available.
-     * The value of nextToken is a unique pagination token for each page. Make the call
-     * again using the returned token to retrieve the next page. Keep all other
-     * arguments unchanged. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>An optional argument to pass in case the total number of records exceeds the
-     * value of MaxResults. If nextToken is returned, there are more results available.
-     * The value of nextToken is a unique pagination token for each page. Make the call
-     * again using the returned token to retrieve the next page. Keep all other
-     * arguments unchanged. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>An optional argument to pass in case the total number of records exceeds the
-     * value of MaxResults. If nextToken is returned, there are more results available.
-     * The value of nextToken is a unique pagination token for each page. Make the call
-     * again using the returned token to retrieve the next page. Keep all other
-     * arguments unchanged. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>An optional argument to pass in case the total number of records exceeds the
-     * value of MaxResults. If nextToken is returned, there are more results available.
-     * The value of nextToken is a unique pagination token for each page. Make the call
-     * again using the returned token to retrieve the next page. Keep all other
-     * arguments unchanged. </p>
-     */
     inline DescribeClustersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An optional argument to pass in case the total number of records exceeds the
-     * value of MaxResults. If nextToken is returned, there are more results available.
-     * The value of nextToken is a unique pagination token for each page. Make the call
-     * again using the returned token to retrieve the next page. Keep all other
-     * arguments unchanged. </p>
-     */
     inline DescribeClustersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An optional argument to pass in case the total number of records exceeds the
-     * value of MaxResults. If nextToken is returned, there are more results available.
-     * The value of nextToken is a unique pagination token for each page. Make the call
-     * again using the returned token to retrieve the next page. Keep all other
-     * arguments unchanged. </p>
-     */
     inline DescribeClustersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of clusters</p>
      */
     inline const Aws::Vector<Cluster>& GetClusters() const{ return m_clusters; }
-
-    /**
-     * <p>A list of clusters</p>
-     */
     inline void SetClusters(const Aws::Vector<Cluster>& value) { m_clusters = value; }
-
-    /**
-     * <p>A list of clusters</p>
-     */
     inline void SetClusters(Aws::Vector<Cluster>&& value) { m_clusters = std::move(value); }
-
-    /**
-     * <p>A list of clusters</p>
-     */
     inline DescribeClustersResult& WithClusters(const Aws::Vector<Cluster>& value) { SetClusters(value); return *this;}
-
-    /**
-     * <p>A list of clusters</p>
-     */
     inline DescribeClustersResult& WithClusters(Aws::Vector<Cluster>&& value) { SetClusters(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of clusters</p>
-     */
     inline DescribeClustersResult& AddClusters(const Cluster& value) { m_clusters.push_back(value); return *this; }
-
-    /**
-     * <p>A list of clusters</p>
-     */
     inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeClustersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeClustersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeClustersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

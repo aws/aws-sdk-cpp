@@ -36,87 +36,33 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DeletePolicyRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DeletePolicyRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DeletePolicyRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of the policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline DeletePolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline DeletePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline DeletePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;

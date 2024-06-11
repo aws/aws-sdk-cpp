@@ -37,95 +37,34 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The directory ID for which you are deleting the conditional forwarder.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-
-    /**
-     * <p>The directory ID for which you are deleting the conditional forwarder.</p>
-     */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-
-    /**
-     * <p>The directory ID for which you are deleting the conditional forwarder.</p>
-     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-
-    /**
-     * <p>The directory ID for which you are deleting the conditional forwarder.</p>
-     */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-
-    /**
-     * <p>The directory ID for which you are deleting the conditional forwarder.</p>
-     */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-
-    /**
-     * <p>The directory ID for which you are deleting the conditional forwarder.</p>
-     */
     inline DeleteConditionalForwarderRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-
-    /**
-     * <p>The directory ID for which you are deleting the conditional forwarder.</p>
-     */
     inline DeleteConditionalForwarderRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The directory ID for which you are deleting the conditional forwarder.</p>
-     */
     inline DeleteConditionalForwarderRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The fully qualified domain name (FQDN) of the remote domain with which you
      * are deleting the conditional forwarder.</p>
      */
     inline const Aws::String& GetRemoteDomainName() const{ return m_remoteDomainName; }
-
-    /**
-     * <p>The fully qualified domain name (FQDN) of the remote domain with which you
-     * are deleting the conditional forwarder.</p>
-     */
     inline bool RemoteDomainNameHasBeenSet() const { return m_remoteDomainNameHasBeenSet; }
-
-    /**
-     * <p>The fully qualified domain name (FQDN) of the remote domain with which you
-     * are deleting the conditional forwarder.</p>
-     */
     inline void SetRemoteDomainName(const Aws::String& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = value; }
-
-    /**
-     * <p>The fully qualified domain name (FQDN) of the remote domain with which you
-     * are deleting the conditional forwarder.</p>
-     */
     inline void SetRemoteDomainName(Aws::String&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = std::move(value); }
-
-    /**
-     * <p>The fully qualified domain name (FQDN) of the remote domain with which you
-     * are deleting the conditional forwarder.</p>
-     */
     inline void SetRemoteDomainName(const char* value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName.assign(value); }
-
-    /**
-     * <p>The fully qualified domain name (FQDN) of the remote domain with which you
-     * are deleting the conditional forwarder.</p>
-     */
     inline DeleteConditionalForwarderRequest& WithRemoteDomainName(const Aws::String& value) { SetRemoteDomainName(value); return *this;}
-
-    /**
-     * <p>The fully qualified domain name (FQDN) of the remote domain with which you
-     * are deleting the conditional forwarder.</p>
-     */
     inline DeleteConditionalForwarderRequest& WithRemoteDomainName(Aws::String&& value) { SetRemoteDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The fully qualified domain name (FQDN) of the remote domain with which you
-     * are deleting the conditional forwarder.</p>
-     */
     inline DeleteConditionalForwarderRequest& WithRemoteDomainName(const char* value) { SetRemoteDomainName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directoryId;

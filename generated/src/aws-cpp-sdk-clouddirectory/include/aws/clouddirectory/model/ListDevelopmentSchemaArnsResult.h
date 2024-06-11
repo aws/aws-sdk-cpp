@@ -33,104 +33,43 @@ namespace Model
     AWS_CLOUDDIRECTORY_API ListDevelopmentSchemaArnsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARNs of retrieved development schemas.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSchemaArns() const{ return m_schemaArns; }
-
-    /**
-     * <p>The ARNs of retrieved development schemas.</p>
-     */
     inline void SetSchemaArns(const Aws::Vector<Aws::String>& value) { m_schemaArns = value; }
-
-    /**
-     * <p>The ARNs of retrieved development schemas.</p>
-     */
     inline void SetSchemaArns(Aws::Vector<Aws::String>&& value) { m_schemaArns = std::move(value); }
-
-    /**
-     * <p>The ARNs of retrieved development schemas.</p>
-     */
     inline ListDevelopmentSchemaArnsResult& WithSchemaArns(const Aws::Vector<Aws::String>& value) { SetSchemaArns(value); return *this;}
-
-    /**
-     * <p>The ARNs of retrieved development schemas.</p>
-     */
     inline ListDevelopmentSchemaArnsResult& WithSchemaArns(Aws::Vector<Aws::String>&& value) { SetSchemaArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARNs of retrieved development schemas.</p>
-     */
     inline ListDevelopmentSchemaArnsResult& AddSchemaArns(const Aws::String& value) { m_schemaArns.push_back(value); return *this; }
-
-    /**
-     * <p>The ARNs of retrieved development schemas.</p>
-     */
     inline ListDevelopmentSchemaArnsResult& AddSchemaArns(Aws::String&& value) { m_schemaArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The ARNs of retrieved development schemas.</p>
-     */
     inline ListDevelopmentSchemaArnsResult& AddSchemaArns(const char* value) { m_schemaArns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline ListDevelopmentSchemaArnsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline ListDevelopmentSchemaArnsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline ListDevelopmentSchemaArnsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListDevelopmentSchemaArnsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListDevelopmentSchemaArnsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListDevelopmentSchemaArnsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_schemaArns;

@@ -32,46 +32,19 @@ namespace Model
     AWS_ROUTE53RECOVERYREADINESS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of a recovery group.</p>
      */
     inline const Aws::String& GetRecoveryGroupName() const{ return m_recoveryGroupName; }
-
-    /**
-     * <p>The name of a recovery group.</p>
-     */
     inline bool RecoveryGroupNameHasBeenSet() const { return m_recoveryGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of a recovery group.</p>
-     */
     inline void SetRecoveryGroupName(const Aws::String& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = value; }
-
-    /**
-     * <p>The name of a recovery group.</p>
-     */
     inline void SetRecoveryGroupName(Aws::String&& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = std::move(value); }
-
-    /**
-     * <p>The name of a recovery group.</p>
-     */
     inline void SetRecoveryGroupName(const char* value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName.assign(value); }
-
-    /**
-     * <p>The name of a recovery group.</p>
-     */
     inline GetRecoveryGroupRequest& WithRecoveryGroupName(const Aws::String& value) { SetRecoveryGroupName(value); return *this;}
-
-    /**
-     * <p>The name of a recovery group.</p>
-     */
     inline GetRecoveryGroupRequest& WithRecoveryGroupName(Aws::String&& value) { SetRecoveryGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of a recovery group.</p>
-     */
     inline GetRecoveryGroupRequest& WithRecoveryGroupName(const char* value) { SetRecoveryGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_recoveryGroupName;

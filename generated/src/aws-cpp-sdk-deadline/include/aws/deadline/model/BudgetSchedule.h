@@ -37,36 +37,17 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The fixed start and end time of the budget's schedule.</p>
      */
     inline const FixedBudgetSchedule& GetFixed() const{ return m_fixed; }
-
-    /**
-     * <p>The fixed start and end time of the budget's schedule.</p>
-     */
     inline bool FixedHasBeenSet() const { return m_fixedHasBeenSet; }
-
-    /**
-     * <p>The fixed start and end time of the budget's schedule.</p>
-     */
     inline void SetFixed(const FixedBudgetSchedule& value) { m_fixedHasBeenSet = true; m_fixed = value; }
-
-    /**
-     * <p>The fixed start and end time of the budget's schedule.</p>
-     */
     inline void SetFixed(FixedBudgetSchedule&& value) { m_fixedHasBeenSet = true; m_fixed = std::move(value); }
-
-    /**
-     * <p>The fixed start and end time of the budget's schedule.</p>
-     */
     inline BudgetSchedule& WithFixed(const FixedBudgetSchedule& value) { SetFixed(value); return *this;}
-
-    /**
-     * <p>The fixed start and end time of the budget's schedule.</p>
-     */
     inline BudgetSchedule& WithFixed(FixedBudgetSchedule&& value) { SetFixed(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FixedBudgetSchedule m_fixed;

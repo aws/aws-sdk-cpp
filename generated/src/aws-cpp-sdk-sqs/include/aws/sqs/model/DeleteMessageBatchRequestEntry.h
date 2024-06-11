@@ -38,6 +38,7 @@ namespace Model
     AWS_SQS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier for this particular receipt handle. This is used to
      * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
@@ -46,111 +47,28 @@ namespace Model
      * hyphens(-), and underscores (_).</p> 
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The identifier for this particular receipt handle. This is used to
-     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
-     * need to be unique within a request.</p> <p>This identifier can have up to 80
-     * characters. The following characters are accepted: alphanumeric characters,
-     * hyphens(-), and underscores (_).</p> 
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The identifier for this particular receipt handle. This is used to
-     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
-     * need to be unique within a request.</p> <p>This identifier can have up to 80
-     * characters. The following characters are accepted: alphanumeric characters,
-     * hyphens(-), and underscores (_).</p> 
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The identifier for this particular receipt handle. This is used to
-     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
-     * need to be unique within a request.</p> <p>This identifier can have up to 80
-     * characters. The following characters are accepted: alphanumeric characters,
-     * hyphens(-), and underscores (_).</p> 
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The identifier for this particular receipt handle. This is used to
-     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
-     * need to be unique within a request.</p> <p>This identifier can have up to 80
-     * characters. The following characters are accepted: alphanumeric characters,
-     * hyphens(-), and underscores (_).</p> 
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The identifier for this particular receipt handle. This is used to
-     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
-     * need to be unique within a request.</p> <p>This identifier can have up to 80
-     * characters. The following characters are accepted: alphanumeric characters,
-     * hyphens(-), and underscores (_).</p> 
-     */
     inline DeleteMessageBatchRequestEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The identifier for this particular receipt handle. This is used to
-     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
-     * need to be unique within a request.</p> <p>This identifier can have up to 80
-     * characters. The following characters are accepted: alphanumeric characters,
-     * hyphens(-), and underscores (_).</p> 
-     */
     inline DeleteMessageBatchRequestEntry& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for this particular receipt handle. This is used to
-     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
-     * need to be unique within a request.</p> <p>This identifier can have up to 80
-     * characters. The following characters are accepted: alphanumeric characters,
-     * hyphens(-), and underscores (_).</p> 
-     */
     inline DeleteMessageBatchRequestEntry& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A receipt handle.</p>
      */
     inline const Aws::String& GetReceiptHandle() const{ return m_receiptHandle; }
-
-    /**
-     * <p>A receipt handle.</p>
-     */
     inline bool ReceiptHandleHasBeenSet() const { return m_receiptHandleHasBeenSet; }
-
-    /**
-     * <p>A receipt handle.</p>
-     */
     inline void SetReceiptHandle(const Aws::String& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
-
-    /**
-     * <p>A receipt handle.</p>
-     */
     inline void SetReceiptHandle(Aws::String&& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = std::move(value); }
-
-    /**
-     * <p>A receipt handle.</p>
-     */
     inline void SetReceiptHandle(const char* value) { m_receiptHandleHasBeenSet = true; m_receiptHandle.assign(value); }
-
-    /**
-     * <p>A receipt handle.</p>
-     */
     inline DeleteMessageBatchRequestEntry& WithReceiptHandle(const Aws::String& value) { SetReceiptHandle(value); return *this;}
-
-    /**
-     * <p>A receipt handle.</p>
-     */
     inline DeleteMessageBatchRequestEntry& WithReceiptHandle(Aws::String&& value) { SetReceiptHandle(std::move(value)); return *this;}
-
-    /**
-     * <p>A receipt handle.</p>
-     */
     inline DeleteMessageBatchRequestEntry& WithReceiptHandle(const char* value) { SetReceiptHandle(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

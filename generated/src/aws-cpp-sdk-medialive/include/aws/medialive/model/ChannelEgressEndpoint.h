@@ -37,46 +37,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Public IP of where a channel's output comes from
      */
     inline const Aws::String& GetSourceIp() const{ return m_sourceIp; }
-
-    /**
-     * Public IP of where a channel's output comes from
-     */
     inline bool SourceIpHasBeenSet() const { return m_sourceIpHasBeenSet; }
-
-    /**
-     * Public IP of where a channel's output comes from
-     */
     inline void SetSourceIp(const Aws::String& value) { m_sourceIpHasBeenSet = true; m_sourceIp = value; }
-
-    /**
-     * Public IP of where a channel's output comes from
-     */
     inline void SetSourceIp(Aws::String&& value) { m_sourceIpHasBeenSet = true; m_sourceIp = std::move(value); }
-
-    /**
-     * Public IP of where a channel's output comes from
-     */
     inline void SetSourceIp(const char* value) { m_sourceIpHasBeenSet = true; m_sourceIp.assign(value); }
-
-    /**
-     * Public IP of where a channel's output comes from
-     */
     inline ChannelEgressEndpoint& WithSourceIp(const Aws::String& value) { SetSourceIp(value); return *this;}
-
-    /**
-     * Public IP of where a channel's output comes from
-     */
     inline ChannelEgressEndpoint& WithSourceIp(Aws::String&& value) { SetSourceIp(std::move(value)); return *this;}
-
-    /**
-     * Public IP of where a channel's output comes from
-     */
     inline ChannelEgressEndpoint& WithSourceIp(const char* value) { SetSourceIp(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceIp;

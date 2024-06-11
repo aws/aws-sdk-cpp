@@ -38,117 +38,51 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Sets the upper limit for the target size of the dataset in bytes that will be
      * processed.</p>
      */
     inline long long GetBoundedSize() const{ return m_boundedSize; }
-
-    /**
-     * <p>Sets the upper limit for the target size of the dataset in bytes that will be
-     * processed.</p>
-     */
     inline bool BoundedSizeHasBeenSet() const { return m_boundedSizeHasBeenSet; }
-
-    /**
-     * <p>Sets the upper limit for the target size of the dataset in bytes that will be
-     * processed.</p>
-     */
     inline void SetBoundedSize(long long value) { m_boundedSizeHasBeenSet = true; m_boundedSize = value; }
-
-    /**
-     * <p>Sets the upper limit for the target size of the dataset in bytes that will be
-     * processed.</p>
-     */
     inline S3DirectSourceAdditionalOptions& WithBoundedSize(long long value) { SetBoundedSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Sets the upper limit for the target number of files that will be
      * processed.</p>
      */
     inline long long GetBoundedFiles() const{ return m_boundedFiles; }
-
-    /**
-     * <p>Sets the upper limit for the target number of files that will be
-     * processed.</p>
-     */
     inline bool BoundedFilesHasBeenSet() const { return m_boundedFilesHasBeenSet; }
-
-    /**
-     * <p>Sets the upper limit for the target number of files that will be
-     * processed.</p>
-     */
     inline void SetBoundedFiles(long long value) { m_boundedFilesHasBeenSet = true; m_boundedFiles = value; }
-
-    /**
-     * <p>Sets the upper limit for the target number of files that will be
-     * processed.</p>
-     */
     inline S3DirectSourceAdditionalOptions& WithBoundedFiles(long long value) { SetBoundedFiles(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Sets option to enable a sample path.</p>
      */
     inline bool GetEnableSamplePath() const{ return m_enableSamplePath; }
-
-    /**
-     * <p>Sets option to enable a sample path.</p>
-     */
     inline bool EnableSamplePathHasBeenSet() const { return m_enableSamplePathHasBeenSet; }
-
-    /**
-     * <p>Sets option to enable a sample path.</p>
-     */
     inline void SetEnableSamplePath(bool value) { m_enableSamplePathHasBeenSet = true; m_enableSamplePath = value; }
-
-    /**
-     * <p>Sets option to enable a sample path.</p>
-     */
     inline S3DirectSourceAdditionalOptions& WithEnableSamplePath(bool value) { SetEnableSamplePath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If enabled, specifies the sample path.</p>
      */
     inline const Aws::String& GetSamplePath() const{ return m_samplePath; }
-
-    /**
-     * <p>If enabled, specifies the sample path.</p>
-     */
     inline bool SamplePathHasBeenSet() const { return m_samplePathHasBeenSet; }
-
-    /**
-     * <p>If enabled, specifies the sample path.</p>
-     */
     inline void SetSamplePath(const Aws::String& value) { m_samplePathHasBeenSet = true; m_samplePath = value; }
-
-    /**
-     * <p>If enabled, specifies the sample path.</p>
-     */
     inline void SetSamplePath(Aws::String&& value) { m_samplePathHasBeenSet = true; m_samplePath = std::move(value); }
-
-    /**
-     * <p>If enabled, specifies the sample path.</p>
-     */
     inline void SetSamplePath(const char* value) { m_samplePathHasBeenSet = true; m_samplePath.assign(value); }
-
-    /**
-     * <p>If enabled, specifies the sample path.</p>
-     */
     inline S3DirectSourceAdditionalOptions& WithSamplePath(const Aws::String& value) { SetSamplePath(value); return *this;}
-
-    /**
-     * <p>If enabled, specifies the sample path.</p>
-     */
     inline S3DirectSourceAdditionalOptions& WithSamplePath(Aws::String&& value) { SetSamplePath(std::move(value)); return *this;}
-
-    /**
-     * <p>If enabled, specifies the sample path.</p>
-     */
     inline S3DirectSourceAdditionalOptions& WithSamplePath(const char* value) { SetSamplePath(value); return *this;}
-
+    ///@}
   private:
 
     long long m_boundedSize;

@@ -33,53 +33,27 @@ namespace Model
     AWS_IOTEVENTS_API DescribeInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the input.</p>
      */
     inline const Input& GetInput() const{ return m_input; }
-
-    /**
-     * <p>Information about the input.</p>
-     */
     inline void SetInput(const Input& value) { m_input = value; }
-
-    /**
-     * <p>Information about the input.</p>
-     */
     inline void SetInput(Input&& value) { m_input = std::move(value); }
-
-    /**
-     * <p>Information about the input.</p>
-     */
     inline DescribeInputResult& WithInput(const Input& value) { SetInput(value); return *this;}
-
-    /**
-     * <p>Information about the input.</p>
-     */
     inline DescribeInputResult& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeInputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeInputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeInputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Input m_input;

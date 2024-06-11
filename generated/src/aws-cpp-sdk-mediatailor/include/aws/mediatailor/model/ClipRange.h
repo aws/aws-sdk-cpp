@@ -36,55 +36,27 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The end offset of the clip range, in milliseconds, starting from the
      * beginning of the VOD source associated with the program.</p>
      */
     inline long long GetEndOffsetMillis() const{ return m_endOffsetMillis; }
-
-    /**
-     * <p>The end offset of the clip range, in milliseconds, starting from the
-     * beginning of the VOD source associated with the program.</p>
-     */
     inline bool EndOffsetMillisHasBeenSet() const { return m_endOffsetMillisHasBeenSet; }
-
-    /**
-     * <p>The end offset of the clip range, in milliseconds, starting from the
-     * beginning of the VOD source associated with the program.</p>
-     */
     inline void SetEndOffsetMillis(long long value) { m_endOffsetMillisHasBeenSet = true; m_endOffsetMillis = value; }
-
-    /**
-     * <p>The end offset of the clip range, in milliseconds, starting from the
-     * beginning of the VOD source associated with the program.</p>
-     */
     inline ClipRange& WithEndOffsetMillis(long long value) { SetEndOffsetMillis(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The start offset of the clip range, in milliseconds. This offset truncates
      * the start at the number of milliseconds into the duration of the VOD source.</p>
      */
     inline long long GetStartOffsetMillis() const{ return m_startOffsetMillis; }
-
-    /**
-     * <p>The start offset of the clip range, in milliseconds. This offset truncates
-     * the start at the number of milliseconds into the duration of the VOD source.</p>
-     */
     inline bool StartOffsetMillisHasBeenSet() const { return m_startOffsetMillisHasBeenSet; }
-
-    /**
-     * <p>The start offset of the clip range, in milliseconds. This offset truncates
-     * the start at the number of milliseconds into the duration of the VOD source.</p>
-     */
     inline void SetStartOffsetMillis(long long value) { m_startOffsetMillisHasBeenSet = true; m_startOffsetMillis = value; }
-
-    /**
-     * <p>The start offset of the clip range, in milliseconds. This offset truncates
-     * the start at the number of milliseconds into the duration of the VOD source.</p>
-     */
     inline ClipRange& WithStartOffsetMillis(long long value) { SetStartOffsetMillis(value); return *this;}
-
+    ///@}
   private:
 
     long long m_endOffsetMillis;

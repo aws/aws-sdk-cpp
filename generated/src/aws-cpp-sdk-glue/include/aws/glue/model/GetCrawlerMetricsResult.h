@@ -34,106 +34,43 @@ namespace Model
     AWS_GLUE_API GetCrawlerMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of metrics for the specified crawler.</p>
      */
     inline const Aws::Vector<CrawlerMetrics>& GetCrawlerMetricsList() const{ return m_crawlerMetricsList; }
-
-    /**
-     * <p>A list of metrics for the specified crawler.</p>
-     */
     inline void SetCrawlerMetricsList(const Aws::Vector<CrawlerMetrics>& value) { m_crawlerMetricsList = value; }
-
-    /**
-     * <p>A list of metrics for the specified crawler.</p>
-     */
     inline void SetCrawlerMetricsList(Aws::Vector<CrawlerMetrics>&& value) { m_crawlerMetricsList = std::move(value); }
-
-    /**
-     * <p>A list of metrics for the specified crawler.</p>
-     */
     inline GetCrawlerMetricsResult& WithCrawlerMetricsList(const Aws::Vector<CrawlerMetrics>& value) { SetCrawlerMetricsList(value); return *this;}
-
-    /**
-     * <p>A list of metrics for the specified crawler.</p>
-     */
     inline GetCrawlerMetricsResult& WithCrawlerMetricsList(Aws::Vector<CrawlerMetrics>&& value) { SetCrawlerMetricsList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of metrics for the specified crawler.</p>
-     */
     inline GetCrawlerMetricsResult& AddCrawlerMetricsList(const CrawlerMetrics& value) { m_crawlerMetricsList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of metrics for the specified crawler.</p>
-     */
     inline GetCrawlerMetricsResult& AddCrawlerMetricsList(CrawlerMetrics&& value) { m_crawlerMetricsList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A continuation token, if the returned list does not contain the last metric
      * available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A continuation token, if the returned list does not contain the last metric
-     * available.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A continuation token, if the returned list does not contain the last metric
-     * available.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A continuation token, if the returned list does not contain the last metric
-     * available.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A continuation token, if the returned list does not contain the last metric
-     * available.</p>
-     */
     inline GetCrawlerMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A continuation token, if the returned list does not contain the last metric
-     * available.</p>
-     */
     inline GetCrawlerMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A continuation token, if the returned list does not contain the last metric
-     * available.</p>
-     */
     inline GetCrawlerMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCrawlerMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCrawlerMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCrawlerMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CrawlerMetrics> m_crawlerMetricsList;

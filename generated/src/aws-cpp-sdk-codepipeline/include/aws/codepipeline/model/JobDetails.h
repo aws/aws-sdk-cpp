@@ -39,124 +39,46 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique system-generated ID of the job.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The unique system-generated ID of the job.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The unique system-generated ID of the job.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The unique system-generated ID of the job.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The unique system-generated ID of the job.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The unique system-generated ID of the job.</p>
-     */
     inline JobDetails& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The unique system-generated ID of the job.</p>
-     */
     inline JobDetails& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique system-generated ID of the job.</p>
-     */
     inline JobDetails& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents other information about a job required for a job worker to
      * complete the job. </p>
      */
     inline const JobData& GetData() const{ return m_data; }
-
-    /**
-     * <p>Represents other information about a job required for a job worker to
-     * complete the job. </p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>Represents other information about a job required for a job worker to
-     * complete the job. </p>
-     */
     inline void SetData(const JobData& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>Represents other information about a job required for a job worker to
-     * complete the job. </p>
-     */
     inline void SetData(JobData&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>Represents other information about a job required for a job worker to
-     * complete the job. </p>
-     */
     inline JobDetails& WithData(const JobData& value) { SetData(value); return *this;}
-
-    /**
-     * <p>Represents other information about a job required for a job worker to
-     * complete the job. </p>
-     */
     inline JobDetails& WithData(JobData&& value) { SetData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services account ID associated with the job.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the job.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the job.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the job.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the job.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the job.</p>
-     */
     inline JobDetails& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the job.</p>
-     */
     inline JobDetails& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the job.</p>
-     */
     inline JobDetails& WithAccountId(const char* value) { SetAccountId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

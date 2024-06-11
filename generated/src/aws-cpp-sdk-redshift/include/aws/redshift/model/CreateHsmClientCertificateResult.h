@@ -33,37 +33,23 @@ namespace Model
     AWS_REDSHIFT_API CreateHsmClientCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const HsmClientCertificate& GetHsmClientCertificate() const{ return m_hsmClientCertificate; }
-
-    
     inline void SetHsmClientCertificate(const HsmClientCertificate& value) { m_hsmClientCertificate = value; }
-
-    
     inline void SetHsmClientCertificate(HsmClientCertificate&& value) { m_hsmClientCertificate = std::move(value); }
-
-    
     inline CreateHsmClientCertificateResult& WithHsmClientCertificate(const HsmClientCertificate& value) { SetHsmClientCertificate(value); return *this;}
-
-    
     inline CreateHsmClientCertificateResult& WithHsmClientCertificate(HsmClientCertificate&& value) { SetHsmClientCertificate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateHsmClientCertificateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateHsmClientCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HsmClientCertificate m_hsmClientCertificate;

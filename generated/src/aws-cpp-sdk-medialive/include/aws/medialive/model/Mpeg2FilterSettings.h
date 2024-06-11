@@ -37,24 +37,15 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const TemporalFilterSettings& GetTemporalFilterSettings() const{ return m_temporalFilterSettings; }
-
-    
     inline bool TemporalFilterSettingsHasBeenSet() const { return m_temporalFilterSettingsHasBeenSet; }
-
-    
     inline void SetTemporalFilterSettings(const TemporalFilterSettings& value) { m_temporalFilterSettingsHasBeenSet = true; m_temporalFilterSettings = value; }
-
-    
     inline void SetTemporalFilterSettings(TemporalFilterSettings&& value) { m_temporalFilterSettingsHasBeenSet = true; m_temporalFilterSettings = std::move(value); }
-
-    
     inline Mpeg2FilterSettings& WithTemporalFilterSettings(const TemporalFilterSettings& value) { SetTemporalFilterSettings(value); return *this;}
-
-    
     inline Mpeg2FilterSettings& WithTemporalFilterSettings(TemporalFilterSettings&& value) { SetTemporalFilterSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TemporalFilterSettings m_temporalFilterSettings;

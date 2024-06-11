@@ -41,85 +41,32 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The total value of the Convertible Reserved Instances that make up the
      * exchange. This is the sum of the list value, remaining upfront price, and
      * additional upfront cost of the exchange.</p>
      */
     inline const ReservationValue& GetReservationValue() const{ return m_reservationValue; }
-
-    /**
-     * <p>The total value of the Convertible Reserved Instances that make up the
-     * exchange. This is the sum of the list value, remaining upfront price, and
-     * additional upfront cost of the exchange.</p>
-     */
     inline bool ReservationValueHasBeenSet() const { return m_reservationValueHasBeenSet; }
-
-    /**
-     * <p>The total value of the Convertible Reserved Instances that make up the
-     * exchange. This is the sum of the list value, remaining upfront price, and
-     * additional upfront cost of the exchange.</p>
-     */
     inline void SetReservationValue(const ReservationValue& value) { m_reservationValueHasBeenSet = true; m_reservationValue = value; }
-
-    /**
-     * <p>The total value of the Convertible Reserved Instances that make up the
-     * exchange. This is the sum of the list value, remaining upfront price, and
-     * additional upfront cost of the exchange.</p>
-     */
     inline void SetReservationValue(ReservationValue&& value) { m_reservationValueHasBeenSet = true; m_reservationValue = std::move(value); }
-
-    /**
-     * <p>The total value of the Convertible Reserved Instances that make up the
-     * exchange. This is the sum of the list value, remaining upfront price, and
-     * additional upfront cost of the exchange.</p>
-     */
     inline TargetReservationValue& WithReservationValue(const ReservationValue& value) { SetReservationValue(value); return *this;}
-
-    /**
-     * <p>The total value of the Convertible Reserved Instances that make up the
-     * exchange. This is the sum of the list value, remaining upfront price, and
-     * additional upfront cost of the exchange.</p>
-     */
     inline TargetReservationValue& WithReservationValue(ReservationValue&& value) { SetReservationValue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration of the Convertible Reserved Instances that make up the
      * exchange.</p>
      */
     inline const TargetConfiguration& GetTargetConfiguration() const{ return m_targetConfiguration; }
-
-    /**
-     * <p>The configuration of the Convertible Reserved Instances that make up the
-     * exchange.</p>
-     */
     inline bool TargetConfigurationHasBeenSet() const { return m_targetConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration of the Convertible Reserved Instances that make up the
-     * exchange.</p>
-     */
     inline void SetTargetConfiguration(const TargetConfiguration& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = value; }
-
-    /**
-     * <p>The configuration of the Convertible Reserved Instances that make up the
-     * exchange.</p>
-     */
     inline void SetTargetConfiguration(TargetConfiguration&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration of the Convertible Reserved Instances that make up the
-     * exchange.</p>
-     */
     inline TargetReservationValue& WithTargetConfiguration(const TargetConfiguration& value) { SetTargetConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration of the Convertible Reserved Instances that make up the
-     * exchange.</p>
-     */
     inline TargetReservationValue& WithTargetConfiguration(TargetConfiguration&& value) { SetTargetConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReservationValue m_reservationValue;

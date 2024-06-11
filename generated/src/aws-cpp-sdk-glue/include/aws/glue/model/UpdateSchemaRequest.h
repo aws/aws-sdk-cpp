@@ -37,6 +37,7 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>This is a wrapper structure to contain schema identity fields. The structure
      * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
@@ -46,166 +47,51 @@ namespace Model
      * </ul>
      */
     inline const SchemaId& GetSchemaId() const{ return m_schemaId; }
-
-    /**
-     * <p>This is a wrapper structure to contain schema identity fields. The structure
-     * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
-     * the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be
-     * provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. One of
-     * <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
-     * </ul>
-     */
     inline bool SchemaIdHasBeenSet() const { return m_schemaIdHasBeenSet; }
-
-    /**
-     * <p>This is a wrapper structure to contain schema identity fields. The structure
-     * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
-     * the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be
-     * provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. One of
-     * <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
-     * </ul>
-     */
     inline void SetSchemaId(const SchemaId& value) { m_schemaIdHasBeenSet = true; m_schemaId = value; }
-
-    /**
-     * <p>This is a wrapper structure to contain schema identity fields. The structure
-     * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
-     * the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be
-     * provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. One of
-     * <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
-     * </ul>
-     */
     inline void SetSchemaId(SchemaId&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::move(value); }
-
-    /**
-     * <p>This is a wrapper structure to contain schema identity fields. The structure
-     * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
-     * the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be
-     * provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. One of
-     * <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
-     * </ul>
-     */
     inline UpdateSchemaRequest& WithSchemaId(const SchemaId& value) { SetSchemaId(value); return *this;}
-
-    /**
-     * <p>This is a wrapper structure to contain schema identity fields. The structure
-     * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
-     * the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be
-     * provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. One of
-     * <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
-     * </ul>
-     */
     inline UpdateSchemaRequest& WithSchemaId(SchemaId&& value) { SetSchemaId(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Version number required for check pointing. One of <code>VersionNumber</code>
      * or <code>Compatibility</code> has to be provided.</p>
      */
     inline const SchemaVersionNumber& GetSchemaVersionNumber() const{ return m_schemaVersionNumber; }
-
-    /**
-     * <p>Version number required for check pointing. One of <code>VersionNumber</code>
-     * or <code>Compatibility</code> has to be provided.</p>
-     */
     inline bool SchemaVersionNumberHasBeenSet() const { return m_schemaVersionNumberHasBeenSet; }
-
-    /**
-     * <p>Version number required for check pointing. One of <code>VersionNumber</code>
-     * or <code>Compatibility</code> has to be provided.</p>
-     */
     inline void SetSchemaVersionNumber(const SchemaVersionNumber& value) { m_schemaVersionNumberHasBeenSet = true; m_schemaVersionNumber = value; }
-
-    /**
-     * <p>Version number required for check pointing. One of <code>VersionNumber</code>
-     * or <code>Compatibility</code> has to be provided.</p>
-     */
     inline void SetSchemaVersionNumber(SchemaVersionNumber&& value) { m_schemaVersionNumberHasBeenSet = true; m_schemaVersionNumber = std::move(value); }
-
-    /**
-     * <p>Version number required for check pointing. One of <code>VersionNumber</code>
-     * or <code>Compatibility</code> has to be provided.</p>
-     */
     inline UpdateSchemaRequest& WithSchemaVersionNumber(const SchemaVersionNumber& value) { SetSchemaVersionNumber(value); return *this;}
-
-    /**
-     * <p>Version number required for check pointing. One of <code>VersionNumber</code>
-     * or <code>Compatibility</code> has to be provided.</p>
-     */
     inline UpdateSchemaRequest& WithSchemaVersionNumber(SchemaVersionNumber&& value) { SetSchemaVersionNumber(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new compatibility setting for the schema.</p>
      */
     inline const Compatibility& GetCompatibility() const{ return m_compatibility; }
-
-    /**
-     * <p>The new compatibility setting for the schema.</p>
-     */
     inline bool CompatibilityHasBeenSet() const { return m_compatibilityHasBeenSet; }
-
-    /**
-     * <p>The new compatibility setting for the schema.</p>
-     */
     inline void SetCompatibility(const Compatibility& value) { m_compatibilityHasBeenSet = true; m_compatibility = value; }
-
-    /**
-     * <p>The new compatibility setting for the schema.</p>
-     */
     inline void SetCompatibility(Compatibility&& value) { m_compatibilityHasBeenSet = true; m_compatibility = std::move(value); }
-
-    /**
-     * <p>The new compatibility setting for the schema.</p>
-     */
     inline UpdateSchemaRequest& WithCompatibility(const Compatibility& value) { SetCompatibility(value); return *this;}
-
-    /**
-     * <p>The new compatibility setting for the schema.</p>
-     */
     inline UpdateSchemaRequest& WithCompatibility(Compatibility&& value) { SetCompatibility(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new description for the schema.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The new description for the schema.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The new description for the schema.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The new description for the schema.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The new description for the schema.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The new description for the schema.</p>
-     */
     inline UpdateSchemaRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The new description for the schema.</p>
-     */
     inline UpdateSchemaRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The new description for the schema.</p>
-     */
     inline UpdateSchemaRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     SchemaId m_schemaId;

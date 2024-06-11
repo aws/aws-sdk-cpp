@@ -48,57 +48,27 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The predicted gender of the face.</p>
      */
     inline const GenderType& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The predicted gender of the face.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The predicted gender of the face.</p>
-     */
     inline void SetValue(const GenderType& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The predicted gender of the face.</p>
-     */
     inline void SetValue(GenderType&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The predicted gender of the face.</p>
-     */
     inline Gender& WithValue(const GenderType& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The predicted gender of the face.</p>
-     */
     inline Gender& WithValue(GenderType&& value) { SetValue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Level of confidence in the prediction.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
-
-    /**
-     * <p>Level of confidence in the prediction.</p>
-     */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-
-    /**
-     * <p>Level of confidence in the prediction.</p>
-     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-
-    /**
-     * <p>Level of confidence in the prediction.</p>
-     */
     inline Gender& WithConfidence(double value) { SetConfidence(value); return *this;}
-
+    ///@}
   private:
 
     GenderType m_value;

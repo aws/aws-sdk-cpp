@@ -38,55 +38,27 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The percentage of traffic to shift in the first increment of a
      * <code>TimeBasedCanary</code> deployment.</p>
      */
     inline int GetCanaryPercentage() const{ return m_canaryPercentage; }
-
-    /**
-     * <p>The percentage of traffic to shift in the first increment of a
-     * <code>TimeBasedCanary</code> deployment.</p>
-     */
     inline bool CanaryPercentageHasBeenSet() const { return m_canaryPercentageHasBeenSet; }
-
-    /**
-     * <p>The percentage of traffic to shift in the first increment of a
-     * <code>TimeBasedCanary</code> deployment.</p>
-     */
     inline void SetCanaryPercentage(int value) { m_canaryPercentageHasBeenSet = true; m_canaryPercentage = value; }
-
-    /**
-     * <p>The percentage of traffic to shift in the first increment of a
-     * <code>TimeBasedCanary</code> deployment.</p>
-     */
     inline TimeBasedCanary& WithCanaryPercentage(int value) { SetCanaryPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of minutes between the first and second traffic shifts of a
      * <code>TimeBasedCanary</code> deployment.</p>
      */
     inline int GetCanaryInterval() const{ return m_canaryInterval; }
-
-    /**
-     * <p>The number of minutes between the first and second traffic shifts of a
-     * <code>TimeBasedCanary</code> deployment.</p>
-     */
     inline bool CanaryIntervalHasBeenSet() const { return m_canaryIntervalHasBeenSet; }
-
-    /**
-     * <p>The number of minutes between the first and second traffic shifts of a
-     * <code>TimeBasedCanary</code> deployment.</p>
-     */
     inline void SetCanaryInterval(int value) { m_canaryIntervalHasBeenSet = true; m_canaryInterval = value; }
-
-    /**
-     * <p>The number of minutes between the first and second traffic shifts of a
-     * <code>TimeBasedCanary</code> deployment.</p>
-     */
     inline TimeBasedCanary& WithCanaryInterval(int value) { SetCanaryInterval(value); return *this;}
-
+    ///@}
   private:
 
     int m_canaryPercentage;

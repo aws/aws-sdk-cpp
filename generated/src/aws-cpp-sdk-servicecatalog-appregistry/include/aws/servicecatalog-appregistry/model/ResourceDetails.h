@@ -37,46 +37,19 @@ namespace Model
     AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of the tag.</p>
      */
     inline const Aws::String& GetTagValue() const{ return m_tagValue; }
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline bool TagValueHasBeenSet() const { return m_tagValueHasBeenSet; }
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline void SetTagValue(const Aws::String& value) { m_tagValueHasBeenSet = true; m_tagValue = value; }
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline void SetTagValue(Aws::String&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::move(value); }
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline void SetTagValue(const char* value) { m_tagValueHasBeenSet = true; m_tagValue.assign(value); }
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline ResourceDetails& WithTagValue(const Aws::String& value) { SetTagValue(value); return *this;}
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline ResourceDetails& WithTagValue(Aws::String&& value) { SetTagValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline ResourceDetails& WithTagValue(const char* value) { SetTagValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tagValue;

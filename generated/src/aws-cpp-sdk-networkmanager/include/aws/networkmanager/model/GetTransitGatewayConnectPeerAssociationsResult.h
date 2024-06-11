@@ -34,99 +34,42 @@ namespace Model
     AWS_NETWORKMANAGER_API GetTransitGatewayConnectPeerAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the transit gateway Connect peer associations.</p>
      */
     inline const Aws::Vector<TransitGatewayConnectPeerAssociation>& GetTransitGatewayConnectPeerAssociations() const{ return m_transitGatewayConnectPeerAssociations; }
-
-    /**
-     * <p>Information about the transit gateway Connect peer associations.</p>
-     */
     inline void SetTransitGatewayConnectPeerAssociations(const Aws::Vector<TransitGatewayConnectPeerAssociation>& value) { m_transitGatewayConnectPeerAssociations = value; }
-
-    /**
-     * <p>Information about the transit gateway Connect peer associations.</p>
-     */
     inline void SetTransitGatewayConnectPeerAssociations(Aws::Vector<TransitGatewayConnectPeerAssociation>&& value) { m_transitGatewayConnectPeerAssociations = std::move(value); }
-
-    /**
-     * <p>Information about the transit gateway Connect peer associations.</p>
-     */
     inline GetTransitGatewayConnectPeerAssociationsResult& WithTransitGatewayConnectPeerAssociations(const Aws::Vector<TransitGatewayConnectPeerAssociation>& value) { SetTransitGatewayConnectPeerAssociations(value); return *this;}
-
-    /**
-     * <p>Information about the transit gateway Connect peer associations.</p>
-     */
     inline GetTransitGatewayConnectPeerAssociationsResult& WithTransitGatewayConnectPeerAssociations(Aws::Vector<TransitGatewayConnectPeerAssociation>&& value) { SetTransitGatewayConnectPeerAssociations(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the transit gateway Connect peer associations.</p>
-     */
     inline GetTransitGatewayConnectPeerAssociationsResult& AddTransitGatewayConnectPeerAssociations(const TransitGatewayConnectPeerAssociation& value) { m_transitGatewayConnectPeerAssociations.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the transit gateway Connect peer associations.</p>
-     */
     inline GetTransitGatewayConnectPeerAssociationsResult& AddTransitGatewayConnectPeerAssociations(TransitGatewayConnectPeerAssociation&& value) { m_transitGatewayConnectPeerAssociations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use for the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use for the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use for the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use for the next page of results.</p>
-     */
     inline GetTransitGatewayConnectPeerAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use for the next page of results.</p>
-     */
     inline GetTransitGatewayConnectPeerAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use for the next page of results.</p>
-     */
     inline GetTransitGatewayConnectPeerAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTransitGatewayConnectPeerAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTransitGatewayConnectPeerAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTransitGatewayConnectPeerAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TransitGatewayConnectPeerAssociation> m_transitGatewayConnectPeerAssociations;

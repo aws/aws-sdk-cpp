@@ -38,95 +38,34 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The bucket containing the output results from the inference </p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
-
-    /**
-     * <p> The bucket containing the output results from the inference </p>
-     */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-
-    /**
-     * <p> The bucket containing the output results from the inference </p>
-     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-
-    /**
-     * <p> The bucket containing the output results from the inference </p>
-     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-
-    /**
-     * <p> The bucket containing the output results from the inference </p>
-     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-
-    /**
-     * <p> The bucket containing the output results from the inference </p>
-     */
     inline InferenceS3OutputConfiguration& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-
-    /**
-     * <p> The bucket containing the output results from the inference </p>
-     */
     inline InferenceS3OutputConfiguration& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-
-    /**
-     * <p> The bucket containing the output results from the inference </p>
-     */
     inline InferenceS3OutputConfiguration& WithBucket(const char* value) { SetBucket(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The prefix for the S3 bucket used for the output results from the inference.
      * </p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p> The prefix for the S3 bucket used for the output results from the inference.
-     * </p>
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p> The prefix for the S3 bucket used for the output results from the inference.
-     * </p>
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p> The prefix for the S3 bucket used for the output results from the inference.
-     * </p>
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p> The prefix for the S3 bucket used for the output results from the inference.
-     * </p>
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p> The prefix for the S3 bucket used for the output results from the inference.
-     * </p>
-     */
     inline InferenceS3OutputConfiguration& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p> The prefix for the S3 bucket used for the output results from the inference.
-     * </p>
-     */
     inline InferenceS3OutputConfiguration& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p> The prefix for the S3 bucket used for the output results from the inference.
-     * </p>
-     */
     inline InferenceS3OutputConfiguration& WithPrefix(const char* value) { SetPrefix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucket;

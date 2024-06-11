@@ -32,6 +32,7 @@ namespace Model
     AWS_SAGEMAKER_API CreateCompilationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>If the action is successful, the service sends back an HTTP 200 response.
      * Amazon SageMaker returns the following data in JSON format:</p> <ul> <li> <p>
@@ -39,77 +40,24 @@ namespace Model
      * job.</p> </li> </ul>
      */
     inline const Aws::String& GetCompilationJobArn() const{ return m_compilationJobArn; }
-
-    /**
-     * <p>If the action is successful, the service sends back an HTTP 200 response.
-     * Amazon SageMaker returns the following data in JSON format:</p> <ul> <li> <p>
-     * <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled
-     * job.</p> </li> </ul>
-     */
     inline void SetCompilationJobArn(const Aws::String& value) { m_compilationJobArn = value; }
-
-    /**
-     * <p>If the action is successful, the service sends back an HTTP 200 response.
-     * Amazon SageMaker returns the following data in JSON format:</p> <ul> <li> <p>
-     * <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled
-     * job.</p> </li> </ul>
-     */
     inline void SetCompilationJobArn(Aws::String&& value) { m_compilationJobArn = std::move(value); }
-
-    /**
-     * <p>If the action is successful, the service sends back an HTTP 200 response.
-     * Amazon SageMaker returns the following data in JSON format:</p> <ul> <li> <p>
-     * <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled
-     * job.</p> </li> </ul>
-     */
     inline void SetCompilationJobArn(const char* value) { m_compilationJobArn.assign(value); }
-
-    /**
-     * <p>If the action is successful, the service sends back an HTTP 200 response.
-     * Amazon SageMaker returns the following data in JSON format:</p> <ul> <li> <p>
-     * <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled
-     * job.</p> </li> </ul>
-     */
     inline CreateCompilationJobResult& WithCompilationJobArn(const Aws::String& value) { SetCompilationJobArn(value); return *this;}
-
-    /**
-     * <p>If the action is successful, the service sends back an HTTP 200 response.
-     * Amazon SageMaker returns the following data in JSON format:</p> <ul> <li> <p>
-     * <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled
-     * job.</p> </li> </ul>
-     */
     inline CreateCompilationJobResult& WithCompilationJobArn(Aws::String&& value) { SetCompilationJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>If the action is successful, the service sends back an HTTP 200 response.
-     * Amazon SageMaker returns the following data in JSON format:</p> <ul> <li> <p>
-     * <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled
-     * job.</p> </li> </ul>
-     */
     inline CreateCompilationJobResult& WithCompilationJobArn(const char* value) { SetCompilationJobArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateCompilationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateCompilationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateCompilationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_compilationJobArn;

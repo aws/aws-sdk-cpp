@@ -56,103 +56,35 @@ namespace Model
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The timestamp, in seconds, in the Unix epoch format. The valid range is
      * between 1-31556889864403199.</p>
      */
     inline const Aws::String& GetTimeInSeconds() const{ return m_timeInSeconds; }
-
-    /**
-     * <p>The timestamp, in seconds, in the Unix epoch format. The valid range is
-     * between 1-31556889864403199.</p>
-     */
     inline bool TimeInSecondsHasBeenSet() const { return m_timeInSecondsHasBeenSet; }
-
-    /**
-     * <p>The timestamp, in seconds, in the Unix epoch format. The valid range is
-     * between 1-31556889864403199.</p>
-     */
     inline void SetTimeInSeconds(const Aws::String& value) { m_timeInSecondsHasBeenSet = true; m_timeInSeconds = value; }
-
-    /**
-     * <p>The timestamp, in seconds, in the Unix epoch format. The valid range is
-     * between 1-31556889864403199.</p>
-     */
     inline void SetTimeInSeconds(Aws::String&& value) { m_timeInSecondsHasBeenSet = true; m_timeInSeconds = std::move(value); }
-
-    /**
-     * <p>The timestamp, in seconds, in the Unix epoch format. The valid range is
-     * between 1-31556889864403199.</p>
-     */
     inline void SetTimeInSeconds(const char* value) { m_timeInSecondsHasBeenSet = true; m_timeInSeconds.assign(value); }
-
-    /**
-     * <p>The timestamp, in seconds, in the Unix epoch format. The valid range is
-     * between 1-31556889864403199.</p>
-     */
     inline AssetPropertyTimestamp& WithTimeInSeconds(const Aws::String& value) { SetTimeInSeconds(value); return *this;}
-
-    /**
-     * <p>The timestamp, in seconds, in the Unix epoch format. The valid range is
-     * between 1-31556889864403199.</p>
-     */
     inline AssetPropertyTimestamp& WithTimeInSeconds(Aws::String&& value) { SetTimeInSeconds(std::move(value)); return *this;}
-
-    /**
-     * <p>The timestamp, in seconds, in the Unix epoch format. The valid range is
-     * between 1-31556889864403199.</p>
-     */
     inline AssetPropertyTimestamp& WithTimeInSeconds(const char* value) { SetTimeInSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid
      * range is between 0-999999999.</p>
      */
     inline const Aws::String& GetOffsetInNanos() const{ return m_offsetInNanos; }
-
-    /**
-     * <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid
-     * range is between 0-999999999.</p>
-     */
     inline bool OffsetInNanosHasBeenSet() const { return m_offsetInNanosHasBeenSet; }
-
-    /**
-     * <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid
-     * range is between 0-999999999.</p>
-     */
     inline void SetOffsetInNanos(const Aws::String& value) { m_offsetInNanosHasBeenSet = true; m_offsetInNanos = value; }
-
-    /**
-     * <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid
-     * range is between 0-999999999.</p>
-     */
     inline void SetOffsetInNanos(Aws::String&& value) { m_offsetInNanosHasBeenSet = true; m_offsetInNanos = std::move(value); }
-
-    /**
-     * <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid
-     * range is between 0-999999999.</p>
-     */
     inline void SetOffsetInNanos(const char* value) { m_offsetInNanosHasBeenSet = true; m_offsetInNanos.assign(value); }
-
-    /**
-     * <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid
-     * range is between 0-999999999.</p>
-     */
     inline AssetPropertyTimestamp& WithOffsetInNanos(const Aws::String& value) { SetOffsetInNanos(value); return *this;}
-
-    /**
-     * <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid
-     * range is between 0-999999999.</p>
-     */
     inline AssetPropertyTimestamp& WithOffsetInNanos(Aws::String&& value) { SetOffsetInNanos(std::move(value)); return *this;}
-
-    /**
-     * <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid
-     * range is between 0-999999999.</p>
-     */
     inline AssetPropertyTimestamp& WithOffsetInNanos(const char* value) { SetOffsetInNanos(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_timeInSeconds;

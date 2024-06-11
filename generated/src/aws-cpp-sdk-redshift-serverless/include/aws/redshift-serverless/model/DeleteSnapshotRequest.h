@@ -34,46 +34,19 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the snapshot to be deleted.</p>
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
-
-    /**
-     * <p>The name of the snapshot to be deleted.</p>
-     */
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
-
-    /**
-     * <p>The name of the snapshot to be deleted.</p>
-     */
     inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
-
-    /**
-     * <p>The name of the snapshot to be deleted.</p>
-     */
     inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
-
-    /**
-     * <p>The name of the snapshot to be deleted.</p>
-     */
     inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
-
-    /**
-     * <p>The name of the snapshot to be deleted.</p>
-     */
     inline DeleteSnapshotRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
-
-    /**
-     * <p>The name of the snapshot to be deleted.</p>
-     */
     inline DeleteSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the snapshot to be deleted.</p>
-     */
     inline DeleteSnapshotRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_snapshotName;

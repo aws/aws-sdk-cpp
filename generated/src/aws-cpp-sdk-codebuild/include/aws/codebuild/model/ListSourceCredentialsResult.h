@@ -34,77 +34,31 @@ namespace Model
     AWS_CODEBUILD_API ListSourceCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> A list of <code>SourceCredentialsInfo</code> objects. Each
      * <code>SourceCredentialsInfo</code> object includes the authentication type,
      * token ARN, and type of source provider for one set of credentials. </p>
      */
     inline const Aws::Vector<SourceCredentialsInfo>& GetSourceCredentialsInfos() const{ return m_sourceCredentialsInfos; }
-
-    /**
-     * <p> A list of <code>SourceCredentialsInfo</code> objects. Each
-     * <code>SourceCredentialsInfo</code> object includes the authentication type,
-     * token ARN, and type of source provider for one set of credentials. </p>
-     */
     inline void SetSourceCredentialsInfos(const Aws::Vector<SourceCredentialsInfo>& value) { m_sourceCredentialsInfos = value; }
-
-    /**
-     * <p> A list of <code>SourceCredentialsInfo</code> objects. Each
-     * <code>SourceCredentialsInfo</code> object includes the authentication type,
-     * token ARN, and type of source provider for one set of credentials. </p>
-     */
     inline void SetSourceCredentialsInfos(Aws::Vector<SourceCredentialsInfo>&& value) { m_sourceCredentialsInfos = std::move(value); }
-
-    /**
-     * <p> A list of <code>SourceCredentialsInfo</code> objects. Each
-     * <code>SourceCredentialsInfo</code> object includes the authentication type,
-     * token ARN, and type of source provider for one set of credentials. </p>
-     */
     inline ListSourceCredentialsResult& WithSourceCredentialsInfos(const Aws::Vector<SourceCredentialsInfo>& value) { SetSourceCredentialsInfos(value); return *this;}
-
-    /**
-     * <p> A list of <code>SourceCredentialsInfo</code> objects. Each
-     * <code>SourceCredentialsInfo</code> object includes the authentication type,
-     * token ARN, and type of source provider for one set of credentials. </p>
-     */
     inline ListSourceCredentialsResult& WithSourceCredentialsInfos(Aws::Vector<SourceCredentialsInfo>&& value) { SetSourceCredentialsInfos(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of <code>SourceCredentialsInfo</code> objects. Each
-     * <code>SourceCredentialsInfo</code> object includes the authentication type,
-     * token ARN, and type of source provider for one set of credentials. </p>
-     */
     inline ListSourceCredentialsResult& AddSourceCredentialsInfos(const SourceCredentialsInfo& value) { m_sourceCredentialsInfos.push_back(value); return *this; }
-
-    /**
-     * <p> A list of <code>SourceCredentialsInfo</code> objects. Each
-     * <code>SourceCredentialsInfo</code> object includes the authentication type,
-     * token ARN, and type of source provider for one set of credentials. </p>
-     */
     inline ListSourceCredentialsResult& AddSourceCredentialsInfos(SourceCredentialsInfo&& value) { m_sourceCredentialsInfos.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListSourceCredentialsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListSourceCredentialsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListSourceCredentialsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SourceCredentialsInfo> m_sourceCredentialsInfos;

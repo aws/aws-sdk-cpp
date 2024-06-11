@@ -37,127 +37,48 @@ namespace Model
     AWS_SSMINCIDENTS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
-     */
     inline UpdateIncidentRecordRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
-     */
     inline UpdateIncidentRecordRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
-     */
     inline UpdateIncidentRecordRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Chatbot chat channel where responders can collaborate.</p>
      */
     inline const ChatChannel& GetChatChannel() const{ return m_chatChannel; }
-
-    /**
-     * <p>The Chatbot chat channel where responders can collaborate.</p>
-     */
     inline bool ChatChannelHasBeenSet() const { return m_chatChannelHasBeenSet; }
-
-    /**
-     * <p>The Chatbot chat channel where responders can collaborate.</p>
-     */
     inline void SetChatChannel(const ChatChannel& value) { m_chatChannelHasBeenSet = true; m_chatChannel = value; }
-
-    /**
-     * <p>The Chatbot chat channel where responders can collaborate.</p>
-     */
     inline void SetChatChannel(ChatChannel&& value) { m_chatChannelHasBeenSet = true; m_chatChannel = std::move(value); }
-
-    /**
-     * <p>The Chatbot chat channel where responders can collaborate.</p>
-     */
     inline UpdateIncidentRecordRequest& WithChatChannel(const ChatChannel& value) { SetChatChannel(value); return *this;}
-
-    /**
-     * <p>The Chatbot chat channel where responders can collaborate.</p>
-     */
     inline UpdateIncidentRecordRequest& WithChatChannel(ChatChannel&& value) { SetChatChannel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token that ensures that a client calls the operation only once with the
      * specified details.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A token that ensures that a client calls the operation only once with the
-     * specified details.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A token that ensures that a client calls the operation only once with the
-     * specified details.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A token that ensures that a client calls the operation only once with the
-     * specified details.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A token that ensures that a client calls the operation only once with the
-     * specified details.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A token that ensures that a client calls the operation only once with the
-     * specified details.</p>
-     */
     inline UpdateIncidentRecordRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A token that ensures that a client calls the operation only once with the
-     * specified details.</p>
-     */
     inline UpdateIncidentRecordRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that ensures that a client calls the operation only once with the
-     * specified details.</p>
-     */
     inline UpdateIncidentRecordRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines the impact of the incident to customers and applications. If you
      * provide an impact for an incident, it overwrites the impact provided by the
@@ -167,213 +88,67 @@ namespace Model
      * Low</p> </li> <li> <p> <code>5</code> - No Impact</p> </li> </ul>
      */
     inline int GetImpact() const{ return m_impact; }
-
-    /**
-     * <p>Defines the impact of the incident to customers and applications. If you
-     * provide an impact for an incident, it overwrites the impact provided by the
-     * response plan.</p> <p class="title"> <b>Supported impact codes</b> </p> <ul>
-     * <li> <p> <code>1</code> - Critical</p> </li> <li> <p> <code>2</code> - High</p>
-     * </li> <li> <p> <code>3</code> - Medium</p> </li> <li> <p> <code>4</code> -
-     * Low</p> </li> <li> <p> <code>5</code> - No Impact</p> </li> </ul>
-     */
     inline bool ImpactHasBeenSet() const { return m_impactHasBeenSet; }
-
-    /**
-     * <p>Defines the impact of the incident to customers and applications. If you
-     * provide an impact for an incident, it overwrites the impact provided by the
-     * response plan.</p> <p class="title"> <b>Supported impact codes</b> </p> <ul>
-     * <li> <p> <code>1</code> - Critical</p> </li> <li> <p> <code>2</code> - High</p>
-     * </li> <li> <p> <code>3</code> - Medium</p> </li> <li> <p> <code>4</code> -
-     * Low</p> </li> <li> <p> <code>5</code> - No Impact</p> </li> </ul>
-     */
     inline void SetImpact(int value) { m_impactHasBeenSet = true; m_impact = value; }
-
-    /**
-     * <p>Defines the impact of the incident to customers and applications. If you
-     * provide an impact for an incident, it overwrites the impact provided by the
-     * response plan.</p> <p class="title"> <b>Supported impact codes</b> </p> <ul>
-     * <li> <p> <code>1</code> - Critical</p> </li> <li> <p> <code>2</code> - High</p>
-     * </li> <li> <p> <code>3</code> - Medium</p> </li> <li> <p> <code>4</code> -
-     * Low</p> </li> <li> <p> <code>5</code> - No Impact</p> </li> </ul>
-     */
     inline UpdateIncidentRecordRequest& WithImpact(int value) { SetImpact(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon SNS targets that Incident Manager notifies when a client updates
      * an incident.</p> <p>Using multiple SNS topics creates redundancy in the event
      * that a Region is down during the incident.</p>
      */
     inline const Aws::Vector<NotificationTargetItem>& GetNotificationTargets() const{ return m_notificationTargets; }
-
-    /**
-     * <p>The Amazon SNS targets that Incident Manager notifies when a client updates
-     * an incident.</p> <p>Using multiple SNS topics creates redundancy in the event
-     * that a Region is down during the incident.</p>
-     */
     inline bool NotificationTargetsHasBeenSet() const { return m_notificationTargetsHasBeenSet; }
-
-    /**
-     * <p>The Amazon SNS targets that Incident Manager notifies when a client updates
-     * an incident.</p> <p>Using multiple SNS topics creates redundancy in the event
-     * that a Region is down during the incident.</p>
-     */
     inline void SetNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets = value; }
-
-    /**
-     * <p>The Amazon SNS targets that Incident Manager notifies when a client updates
-     * an incident.</p> <p>Using multiple SNS topics creates redundancy in the event
-     * that a Region is down during the incident.</p>
-     */
     inline void SetNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets = std::move(value); }
-
-    /**
-     * <p>The Amazon SNS targets that Incident Manager notifies when a client updates
-     * an incident.</p> <p>Using multiple SNS topics creates redundancy in the event
-     * that a Region is down during the incident.</p>
-     */
     inline UpdateIncidentRecordRequest& WithNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { SetNotificationTargets(value); return *this;}
-
-    /**
-     * <p>The Amazon SNS targets that Incident Manager notifies when a client updates
-     * an incident.</p> <p>Using multiple SNS topics creates redundancy in the event
-     * that a Region is down during the incident.</p>
-     */
     inline UpdateIncidentRecordRequest& WithNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { SetNotificationTargets(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon SNS targets that Incident Manager notifies when a client updates
-     * an incident.</p> <p>Using multiple SNS topics creates redundancy in the event
-     * that a Region is down during the incident.</p>
-     */
     inline UpdateIncidentRecordRequest& AddNotificationTargets(const NotificationTargetItem& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets.push_back(value); return *this; }
-
-    /**
-     * <p>The Amazon SNS targets that Incident Manager notifies when a client updates
-     * an incident.</p> <p>Using multiple SNS topics creates redundancy in the event
-     * that a Region is down during the incident.</p>
-     */
     inline UpdateIncidentRecordRequest& AddNotificationTargets(NotificationTargetItem&& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the incident. Possible statuses are <code>Open</code> or
      * <code>Resolved</code>.</p>
      */
     inline const IncidentRecordStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the incident. Possible statuses are <code>Open</code> or
-     * <code>Resolved</code>.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the incident. Possible statuses are <code>Open</code> or
-     * <code>Resolved</code>.</p>
-     */
     inline void SetStatus(const IncidentRecordStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the incident. Possible statuses are <code>Open</code> or
-     * <code>Resolved</code>.</p>
-     */
     inline void SetStatus(IncidentRecordStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the incident. Possible statuses are <code>Open</code> or
-     * <code>Resolved</code>.</p>
-     */
     inline UpdateIncidentRecordRequest& WithStatus(const IncidentRecordStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the incident. Possible statuses are <code>Open</code> or
-     * <code>Resolved</code>.</p>
-     */
     inline UpdateIncidentRecordRequest& WithStatus(IncidentRecordStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A longer description of what occurred during the incident.</p>
      */
     inline const Aws::String& GetSummary() const{ return m_summary; }
-
-    /**
-     * <p>A longer description of what occurred during the incident.</p>
-     */
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-
-    /**
-     * <p>A longer description of what occurred during the incident.</p>
-     */
     inline void SetSummary(const Aws::String& value) { m_summaryHasBeenSet = true; m_summary = value; }
-
-    /**
-     * <p>A longer description of what occurred during the incident.</p>
-     */
     inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-
-    /**
-     * <p>A longer description of what occurred during the incident.</p>
-     */
     inline void SetSummary(const char* value) { m_summaryHasBeenSet = true; m_summary.assign(value); }
-
-    /**
-     * <p>A longer description of what occurred during the incident.</p>
-     */
     inline UpdateIncidentRecordRequest& WithSummary(const Aws::String& value) { SetSummary(value); return *this;}
-
-    /**
-     * <p>A longer description of what occurred during the incident.</p>
-     */
     inline UpdateIncidentRecordRequest& WithSummary(Aws::String&& value) { SetSummary(std::move(value)); return *this;}
-
-    /**
-     * <p>A longer description of what occurred during the incident.</p>
-     */
     inline UpdateIncidentRecordRequest& WithSummary(const char* value) { SetSummary(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A brief description of the incident.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
-
-    /**
-     * <p>A brief description of the incident.</p>
-     */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-
-    /**
-     * <p>A brief description of the incident.</p>
-     */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-
-    /**
-     * <p>A brief description of the incident.</p>
-     */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-
-    /**
-     * <p>A brief description of the incident.</p>
-     */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-
-    /**
-     * <p>A brief description of the incident.</p>
-     */
     inline UpdateIncidentRecordRequest& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-
-    /**
-     * <p>A brief description of the incident.</p>
-     */
     inline UpdateIncidentRecordRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-
-    /**
-     * <p>A brief description of the incident.</p>
-     */
     inline UpdateIncidentRecordRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

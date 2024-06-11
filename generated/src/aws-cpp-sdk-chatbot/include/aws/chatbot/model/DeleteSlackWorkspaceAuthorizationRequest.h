@@ -32,46 +32,19 @@ namespace Model
     AWS_CHATBOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ID of the Slack workspace authorized with AWS Chatbot.
      */
     inline const Aws::String& GetSlackTeamId() const{ return m_slackTeamId; }
-
-    /**
-     * The ID of the Slack workspace authorized with AWS Chatbot.
-     */
     inline bool SlackTeamIdHasBeenSet() const { return m_slackTeamIdHasBeenSet; }
-
-    /**
-     * The ID of the Slack workspace authorized with AWS Chatbot.
-     */
     inline void SetSlackTeamId(const Aws::String& value) { m_slackTeamIdHasBeenSet = true; m_slackTeamId = value; }
-
-    /**
-     * The ID of the Slack workspace authorized with AWS Chatbot.
-     */
     inline void SetSlackTeamId(Aws::String&& value) { m_slackTeamIdHasBeenSet = true; m_slackTeamId = std::move(value); }
-
-    /**
-     * The ID of the Slack workspace authorized with AWS Chatbot.
-     */
     inline void SetSlackTeamId(const char* value) { m_slackTeamIdHasBeenSet = true; m_slackTeamId.assign(value); }
-
-    /**
-     * The ID of the Slack workspace authorized with AWS Chatbot.
-     */
     inline DeleteSlackWorkspaceAuthorizationRequest& WithSlackTeamId(const Aws::String& value) { SetSlackTeamId(value); return *this;}
-
-    /**
-     * The ID of the Slack workspace authorized with AWS Chatbot.
-     */
     inline DeleteSlackWorkspaceAuthorizationRequest& WithSlackTeamId(Aws::String&& value) { SetSlackTeamId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the Slack workspace authorized with AWS Chatbot.
-     */
     inline DeleteSlackWorkspaceAuthorizationRequest& WithSlackTeamId(const char* value) { SetSlackTeamId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_slackTeamId;

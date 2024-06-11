@@ -38,103 +38,35 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An identifier of a revision of an asset published in a Amazon DataZone
      * catalog.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>An identifier of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>An identifier of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>An identifier of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>An identifier of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>An identifier of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline ListingRevision& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>An identifier of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline ListingRevision& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>An identifier of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline ListingRevision& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of a revision of an asset published in a Amazon DataZone
      * catalog.</p>
      */
     inline const Aws::String& GetRevision() const{ return m_revision; }
-
-    /**
-     * <p>The details of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-
-    /**
-     * <p>The details of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline void SetRevision(const Aws::String& value) { m_revisionHasBeenSet = true; m_revision = value; }
-
-    /**
-     * <p>The details of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
-
-    /**
-     * <p>The details of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline void SetRevision(const char* value) { m_revisionHasBeenSet = true; m_revision.assign(value); }
-
-    /**
-     * <p>The details of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline ListingRevision& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
-
-    /**
-     * <p>The details of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline ListingRevision& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
-
-    /**
-     * <p>The details of a revision of an asset published in a Amazon DataZone
-     * catalog.</p>
-     */
     inline ListingRevision& WithRevision(const char* value) { SetRevision(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

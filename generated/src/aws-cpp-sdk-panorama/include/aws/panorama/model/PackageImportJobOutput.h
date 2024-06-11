@@ -38,159 +38,59 @@ namespace Model
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The package's output location.</p>
      */
     inline const OutPutS3Location& GetOutputS3Location() const{ return m_outputS3Location; }
-
-    /**
-     * <p>The package's output location.</p>
-     */
     inline bool OutputS3LocationHasBeenSet() const { return m_outputS3LocationHasBeenSet; }
-
-    /**
-     * <p>The package's output location.</p>
-     */
     inline void SetOutputS3Location(const OutPutS3Location& value) { m_outputS3LocationHasBeenSet = true; m_outputS3Location = value; }
-
-    /**
-     * <p>The package's output location.</p>
-     */
     inline void SetOutputS3Location(OutPutS3Location&& value) { m_outputS3LocationHasBeenSet = true; m_outputS3Location = std::move(value); }
-
-    /**
-     * <p>The package's output location.</p>
-     */
     inline PackageImportJobOutput& WithOutputS3Location(const OutPutS3Location& value) { SetOutputS3Location(value); return *this;}
-
-    /**
-     * <p>The package's output location.</p>
-     */
     inline PackageImportJobOutput& WithOutputS3Location(OutPutS3Location&& value) { SetOutputS3Location(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The package's ID.</p>
      */
     inline const Aws::String& GetPackageId() const{ return m_packageId; }
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline bool PackageIdHasBeenSet() const { return m_packageIdHasBeenSet; }
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline void SetPackageId(const Aws::String& value) { m_packageIdHasBeenSet = true; m_packageId = value; }
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline void SetPackageId(Aws::String&& value) { m_packageIdHasBeenSet = true; m_packageId = std::move(value); }
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline void SetPackageId(const char* value) { m_packageIdHasBeenSet = true; m_packageId.assign(value); }
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline PackageImportJobOutput& WithPackageId(const Aws::String& value) { SetPackageId(value); return *this;}
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline PackageImportJobOutput& WithPackageId(Aws::String&& value) { SetPackageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline PackageImportJobOutput& WithPackageId(const char* value) { SetPackageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The package's version.</p>
      */
     inline const Aws::String& GetPackageVersion() const{ return m_packageVersion; }
-
-    /**
-     * <p>The package's version.</p>
-     */
     inline bool PackageVersionHasBeenSet() const { return m_packageVersionHasBeenSet; }
-
-    /**
-     * <p>The package's version.</p>
-     */
     inline void SetPackageVersion(const Aws::String& value) { m_packageVersionHasBeenSet = true; m_packageVersion = value; }
-
-    /**
-     * <p>The package's version.</p>
-     */
     inline void SetPackageVersion(Aws::String&& value) { m_packageVersionHasBeenSet = true; m_packageVersion = std::move(value); }
-
-    /**
-     * <p>The package's version.</p>
-     */
     inline void SetPackageVersion(const char* value) { m_packageVersionHasBeenSet = true; m_packageVersion.assign(value); }
-
-    /**
-     * <p>The package's version.</p>
-     */
     inline PackageImportJobOutput& WithPackageVersion(const Aws::String& value) { SetPackageVersion(value); return *this;}
-
-    /**
-     * <p>The package's version.</p>
-     */
     inline PackageImportJobOutput& WithPackageVersion(Aws::String&& value) { SetPackageVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The package's version.</p>
-     */
     inline PackageImportJobOutput& WithPackageVersion(const char* value) { SetPackageVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The package's patch version.</p>
      */
     inline const Aws::String& GetPatchVersion() const{ return m_patchVersion; }
-
-    /**
-     * <p>The package's patch version.</p>
-     */
     inline bool PatchVersionHasBeenSet() const { return m_patchVersionHasBeenSet; }
-
-    /**
-     * <p>The package's patch version.</p>
-     */
     inline void SetPatchVersion(const Aws::String& value) { m_patchVersionHasBeenSet = true; m_patchVersion = value; }
-
-    /**
-     * <p>The package's patch version.</p>
-     */
     inline void SetPatchVersion(Aws::String&& value) { m_patchVersionHasBeenSet = true; m_patchVersion = std::move(value); }
-
-    /**
-     * <p>The package's patch version.</p>
-     */
     inline void SetPatchVersion(const char* value) { m_patchVersionHasBeenSet = true; m_patchVersion.assign(value); }
-
-    /**
-     * <p>The package's patch version.</p>
-     */
     inline PackageImportJobOutput& WithPatchVersion(const Aws::String& value) { SetPatchVersion(value); return *this;}
-
-    /**
-     * <p>The package's patch version.</p>
-     */
     inline PackageImportJobOutput& WithPatchVersion(Aws::String&& value) { SetPatchVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The package's patch version.</p>
-     */
     inline PackageImportJobOutput& WithPatchVersion(const char* value) { SetPatchVersion(value); return *this;}
-
+    ///@}
   private:
 
     OutPutS3Location m_outputS3Location;

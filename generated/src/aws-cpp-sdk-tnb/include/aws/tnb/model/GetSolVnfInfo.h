@@ -40,77 +40,31 @@ namespace Model
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>State of the network function instance.</p>
      */
     inline const VnfOperationalState& GetVnfState() const{ return m_vnfState; }
-
-    /**
-     * <p>State of the network function instance.</p>
-     */
     inline bool VnfStateHasBeenSet() const { return m_vnfStateHasBeenSet; }
-
-    /**
-     * <p>State of the network function instance.</p>
-     */
     inline void SetVnfState(const VnfOperationalState& value) { m_vnfStateHasBeenSet = true; m_vnfState = value; }
-
-    /**
-     * <p>State of the network function instance.</p>
-     */
     inline void SetVnfState(VnfOperationalState&& value) { m_vnfStateHasBeenSet = true; m_vnfState = std::move(value); }
-
-    /**
-     * <p>State of the network function instance.</p>
-     */
     inline GetSolVnfInfo& WithVnfState(const VnfOperationalState& value) { SetVnfState(value); return *this;}
-
-    /**
-     * <p>State of the network function instance.</p>
-     */
     inline GetSolVnfInfo& WithVnfState(VnfOperationalState&& value) { SetVnfState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Compute info used by the network function instance.</p>
      */
     inline const Aws::Vector<GetSolVnfcResourceInfo>& GetVnfcResourceInfo() const{ return m_vnfcResourceInfo; }
-
-    /**
-     * <p>Compute info used by the network function instance.</p>
-     */
     inline bool VnfcResourceInfoHasBeenSet() const { return m_vnfcResourceInfoHasBeenSet; }
-
-    /**
-     * <p>Compute info used by the network function instance.</p>
-     */
     inline void SetVnfcResourceInfo(const Aws::Vector<GetSolVnfcResourceInfo>& value) { m_vnfcResourceInfoHasBeenSet = true; m_vnfcResourceInfo = value; }
-
-    /**
-     * <p>Compute info used by the network function instance.</p>
-     */
     inline void SetVnfcResourceInfo(Aws::Vector<GetSolVnfcResourceInfo>&& value) { m_vnfcResourceInfoHasBeenSet = true; m_vnfcResourceInfo = std::move(value); }
-
-    /**
-     * <p>Compute info used by the network function instance.</p>
-     */
     inline GetSolVnfInfo& WithVnfcResourceInfo(const Aws::Vector<GetSolVnfcResourceInfo>& value) { SetVnfcResourceInfo(value); return *this;}
-
-    /**
-     * <p>Compute info used by the network function instance.</p>
-     */
     inline GetSolVnfInfo& WithVnfcResourceInfo(Aws::Vector<GetSolVnfcResourceInfo>&& value) { SetVnfcResourceInfo(std::move(value)); return *this;}
-
-    /**
-     * <p>Compute info used by the network function instance.</p>
-     */
     inline GetSolVnfInfo& AddVnfcResourceInfo(const GetSolVnfcResourceInfo& value) { m_vnfcResourceInfoHasBeenSet = true; m_vnfcResourceInfo.push_back(value); return *this; }
-
-    /**
-     * <p>Compute info used by the network function instance.</p>
-     */
     inline GetSolVnfInfo& AddVnfcResourceInfo(GetSolVnfcResourceInfo&& value) { m_vnfcResourceInfoHasBeenSet = true; m_vnfcResourceInfo.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     VnfOperationalState m_vnfState;

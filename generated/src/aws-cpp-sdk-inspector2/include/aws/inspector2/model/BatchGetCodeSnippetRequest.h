@@ -33,60 +33,21 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>An array of finding ARNs for the findings you want to retrieve code snippets
      * from.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFindingArns() const{ return m_findingArns; }
-
-    /**
-     * <p>An array of finding ARNs for the findings you want to retrieve code snippets
-     * from.</p>
-     */
     inline bool FindingArnsHasBeenSet() const { return m_findingArnsHasBeenSet; }
-
-    /**
-     * <p>An array of finding ARNs for the findings you want to retrieve code snippets
-     * from.</p>
-     */
     inline void SetFindingArns(const Aws::Vector<Aws::String>& value) { m_findingArnsHasBeenSet = true; m_findingArns = value; }
-
-    /**
-     * <p>An array of finding ARNs for the findings you want to retrieve code snippets
-     * from.</p>
-     */
     inline void SetFindingArns(Aws::Vector<Aws::String>&& value) { m_findingArnsHasBeenSet = true; m_findingArns = std::move(value); }
-
-    /**
-     * <p>An array of finding ARNs for the findings you want to retrieve code snippets
-     * from.</p>
-     */
     inline BatchGetCodeSnippetRequest& WithFindingArns(const Aws::Vector<Aws::String>& value) { SetFindingArns(value); return *this;}
-
-    /**
-     * <p>An array of finding ARNs for the findings you want to retrieve code snippets
-     * from.</p>
-     */
     inline BatchGetCodeSnippetRequest& WithFindingArns(Aws::Vector<Aws::String>&& value) { SetFindingArns(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of finding ARNs for the findings you want to retrieve code snippets
-     * from.</p>
-     */
     inline BatchGetCodeSnippetRequest& AddFindingArns(const Aws::String& value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
-
-    /**
-     * <p>An array of finding ARNs for the findings you want to retrieve code snippets
-     * from.</p>
-     */
     inline BatchGetCodeSnippetRequest& AddFindingArns(Aws::String&& value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of finding ARNs for the findings you want to retrieve code snippets
-     * from.</p>
-     */
     inline BatchGetCodeSnippetRequest& AddFindingArns(const char* value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_findingArns;

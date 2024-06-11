@@ -39,30 +39,16 @@ namespace Model
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A <code>Boolean</code> that specifies whether the profiling agent collects
      * profiling data or not. Set to <code>true</code> to enable profiling. </p>
      */
     inline bool GetProfilingEnabled() const{ return m_profilingEnabled; }
-
-    /**
-     * <p> A <code>Boolean</code> that specifies whether the profiling agent collects
-     * profiling data or not. Set to <code>true</code> to enable profiling. </p>
-     */
     inline bool ProfilingEnabledHasBeenSet() const { return m_profilingEnabledHasBeenSet; }
-
-    /**
-     * <p> A <code>Boolean</code> that specifies whether the profiling agent collects
-     * profiling data or not. Set to <code>true</code> to enable profiling. </p>
-     */
     inline void SetProfilingEnabled(bool value) { m_profilingEnabledHasBeenSet = true; m_profilingEnabled = value; }
-
-    /**
-     * <p> A <code>Boolean</code> that specifies whether the profiling agent collects
-     * profiling data or not. Set to <code>true</code> to enable profiling. </p>
-     */
     inline AgentOrchestrationConfig& WithProfilingEnabled(bool value) { SetProfilingEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_profilingEnabled;

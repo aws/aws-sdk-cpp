@@ -33,58 +33,28 @@ namespace Model
     AWS_SSOADMIN_API GetApplicationAuthenticationMethodResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains details about the requested authentication
      * method.</p>
      */
     inline const AuthenticationMethod& GetAuthenticationMethod() const{ return m_authenticationMethod; }
-
-    /**
-     * <p>A structure that contains details about the requested authentication
-     * method.</p>
-     */
     inline void SetAuthenticationMethod(const AuthenticationMethod& value) { m_authenticationMethod = value; }
-
-    /**
-     * <p>A structure that contains details about the requested authentication
-     * method.</p>
-     */
     inline void SetAuthenticationMethod(AuthenticationMethod&& value) { m_authenticationMethod = std::move(value); }
-
-    /**
-     * <p>A structure that contains details about the requested authentication
-     * method.</p>
-     */
     inline GetApplicationAuthenticationMethodResult& WithAuthenticationMethod(const AuthenticationMethod& value) { SetAuthenticationMethod(value); return *this;}
-
-    /**
-     * <p>A structure that contains details about the requested authentication
-     * method.</p>
-     */
     inline GetApplicationAuthenticationMethodResult& WithAuthenticationMethod(AuthenticationMethod&& value) { SetAuthenticationMethod(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetApplicationAuthenticationMethodResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetApplicationAuthenticationMethodResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetApplicationAuthenticationMethodResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AuthenticationMethod m_authenticationMethod;

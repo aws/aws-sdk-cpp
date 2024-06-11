@@ -34,103 +34,35 @@ namespace Model
     AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the agreement. This identifier is returned when you
      * create an agreement.</p>
      */
     inline const Aws::String& GetAgreementId() const{ return m_agreementId; }
-
-    /**
-     * <p>A unique identifier for the agreement. This identifier is returned when you
-     * create an agreement.</p>
-     */
     inline bool AgreementIdHasBeenSet() const { return m_agreementIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the agreement. This identifier is returned when you
-     * create an agreement.</p>
-     */
     inline void SetAgreementId(const Aws::String& value) { m_agreementIdHasBeenSet = true; m_agreementId = value; }
-
-    /**
-     * <p>A unique identifier for the agreement. This identifier is returned when you
-     * create an agreement.</p>
-     */
     inline void SetAgreementId(Aws::String&& value) { m_agreementIdHasBeenSet = true; m_agreementId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the agreement. This identifier is returned when you
-     * create an agreement.</p>
-     */
     inline void SetAgreementId(const char* value) { m_agreementIdHasBeenSet = true; m_agreementId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the agreement. This identifier is returned when you
-     * create an agreement.</p>
-     */
     inline DeleteAgreementRequest& WithAgreementId(const Aws::String& value) { SetAgreementId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the agreement. This identifier is returned when you
-     * create an agreement.</p>
-     */
     inline DeleteAgreementRequest& WithAgreementId(Aws::String&& value) { SetAgreementId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the agreement. This identifier is returned when you
-     * create an agreement.</p>
-     */
     inline DeleteAgreementRequest& WithAgreementId(const char* value) { SetAgreementId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The server identifier associated with the agreement that you are
      * deleting.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
-
-    /**
-     * <p>The server identifier associated with the agreement that you are
-     * deleting.</p>
-     */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
-
-    /**
-     * <p>The server identifier associated with the agreement that you are
-     * deleting.</p>
-     */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
-
-    /**
-     * <p>The server identifier associated with the agreement that you are
-     * deleting.</p>
-     */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
-
-    /**
-     * <p>The server identifier associated with the agreement that you are
-     * deleting.</p>
-     */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
-
-    /**
-     * <p>The server identifier associated with the agreement that you are
-     * deleting.</p>
-     */
     inline DeleteAgreementRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-
-    /**
-     * <p>The server identifier associated with the agreement that you are
-     * deleting.</p>
-     */
     inline DeleteAgreementRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The server identifier associated with the agreement that you are
-     * deleting.</p>
-     */
     inline DeleteAgreementRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agreementId;

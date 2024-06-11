@@ -38,77 +38,31 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The workspace Id.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The workspace Id.</p>
-     */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The workspace Id.</p>
-     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The workspace Id.</p>
-     */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The workspace Id.</p>
-     */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The workspace Id.</p>
-     */
     inline ListMetadataTransferJobsFilter& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The workspace Id.</p>
-     */
     inline ListMetadataTransferJobsFilter& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The workspace Id.</p>
-     */
     inline ListMetadataTransferJobsFilter& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The filter state.</p>
      */
     inline const MetadataTransferJobState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The filter state.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The filter state.</p>
-     */
     inline void SetState(const MetadataTransferJobState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The filter state.</p>
-     */
     inline void SetState(MetadataTransferJobState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The filter state.</p>
-     */
     inline ListMetadataTransferJobsFilter& WithState(const MetadataTransferJobState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The filter state.</p>
-     */
     inline ListMetadataTransferJobsFilter& WithState(MetadataTransferJobState&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workspaceId;

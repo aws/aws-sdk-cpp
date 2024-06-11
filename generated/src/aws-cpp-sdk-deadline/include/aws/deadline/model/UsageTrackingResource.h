@@ -37,46 +37,19 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The queue ID.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
-
-    /**
-     * <p>The queue ID.</p>
-     */
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-
-    /**
-     * <p>The queue ID.</p>
-     */
     inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-
-    /**
-     * <p>The queue ID.</p>
-     */
     inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-
-    /**
-     * <p>The queue ID.</p>
-     */
     inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-
-    /**
-     * <p>The queue ID.</p>
-     */
     inline UsageTrackingResource& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-
-    /**
-     * <p>The queue ID.</p>
-     */
     inline UsageTrackingResource& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-
-    /**
-     * <p>The queue ID.</p>
-     */
     inline UsageTrackingResource& WithQueueId(const char* value) { SetQueueId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_queueId;

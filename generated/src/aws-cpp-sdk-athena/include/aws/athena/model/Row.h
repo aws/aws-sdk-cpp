@@ -38,46 +38,19 @@ namespace Model
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data that populates a row in a query result table.</p>
      */
     inline const Aws::Vector<Datum>& GetData() const{ return m_data; }
-
-    /**
-     * <p>The data that populates a row in a query result table.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The data that populates a row in a query result table.</p>
-     */
     inline void SetData(const Aws::Vector<Datum>& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The data that populates a row in a query result table.</p>
-     */
     inline void SetData(Aws::Vector<Datum>&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The data that populates a row in a query result table.</p>
-     */
     inline Row& WithData(const Aws::Vector<Datum>& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The data that populates a row in a query result table.</p>
-     */
     inline Row& WithData(Aws::Vector<Datum>&& value) { SetData(std::move(value)); return *this;}
-
-    /**
-     * <p>The data that populates a row in a query result table.</p>
-     */
     inline Row& AddData(const Datum& value) { m_dataHasBeenSet = true; m_data.push_back(value); return *this; }
-
-    /**
-     * <p>The data that populates a row in a query result table.</p>
-     */
     inline Row& AddData(Datum&& value) { m_dataHasBeenSet = true; m_data.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Datum> m_data;

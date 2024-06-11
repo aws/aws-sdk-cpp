@@ -38,26 +38,15 @@ namespace Model
     AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The value of a scalar reference.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of a scalar reference.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of a scalar reference.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of a scalar reference.</p>
-     */
     inline ScalarReferenceDetails& WithValue(double value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     double m_value;

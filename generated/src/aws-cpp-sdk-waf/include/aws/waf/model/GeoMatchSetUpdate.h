@@ -47,79 +47,31 @@ namespace Model
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether to insert or delete a country with
      * <a>UpdateGeoMatchSet</a>.</p>
      */
     inline const ChangeAction& GetAction() const{ return m_action; }
-
-    /**
-     * <p>Specifies whether to insert or delete a country with
-     * <a>UpdateGeoMatchSet</a>.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to insert or delete a country with
-     * <a>UpdateGeoMatchSet</a>.</p>
-     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>Specifies whether to insert or delete a country with
-     * <a>UpdateGeoMatchSet</a>.</p>
-     */
     inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>Specifies whether to insert or delete a country with
-     * <a>UpdateGeoMatchSet</a>.</p>
-     */
     inline GeoMatchSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>Specifies whether to insert or delete a country with
-     * <a>UpdateGeoMatchSet</a>.</p>
-     */
     inline GeoMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The country from which web requests originate that you want AWS WAF to search
      * for.</p>
      */
     inline const GeoMatchConstraint& GetGeoMatchConstraint() const{ return m_geoMatchConstraint; }
-
-    /**
-     * <p>The country from which web requests originate that you want AWS WAF to search
-     * for.</p>
-     */
     inline bool GeoMatchConstraintHasBeenSet() const { return m_geoMatchConstraintHasBeenSet; }
-
-    /**
-     * <p>The country from which web requests originate that you want AWS WAF to search
-     * for.</p>
-     */
     inline void SetGeoMatchConstraint(const GeoMatchConstraint& value) { m_geoMatchConstraintHasBeenSet = true; m_geoMatchConstraint = value; }
-
-    /**
-     * <p>The country from which web requests originate that you want AWS WAF to search
-     * for.</p>
-     */
     inline void SetGeoMatchConstraint(GeoMatchConstraint&& value) { m_geoMatchConstraintHasBeenSet = true; m_geoMatchConstraint = std::move(value); }
-
-    /**
-     * <p>The country from which web requests originate that you want AWS WAF to search
-     * for.</p>
-     */
     inline GeoMatchSetUpdate& WithGeoMatchConstraint(const GeoMatchConstraint& value) { SetGeoMatchConstraint(value); return *this;}
-
-    /**
-     * <p>The country from which web requests originate that you want AWS WAF to search
-     * for.</p>
-     */
     inline GeoMatchSetUpdate& WithGeoMatchConstraint(GeoMatchConstraint&& value) { SetGeoMatchConstraint(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ChangeAction m_action;

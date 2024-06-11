@@ -38,46 +38,19 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Unique identifier assigned to the face.</p>
      */
     inline const Aws::String& GetFaceId() const{ return m_faceId; }
-
-    /**
-     * <p>Unique identifier assigned to the face.</p>
-     */
     inline bool FaceIdHasBeenSet() const { return m_faceIdHasBeenSet; }
-
-    /**
-     * <p>Unique identifier assigned to the face.</p>
-     */
     inline void SetFaceId(const Aws::String& value) { m_faceIdHasBeenSet = true; m_faceId = value; }
-
-    /**
-     * <p>Unique identifier assigned to the face.</p>
-     */
     inline void SetFaceId(Aws::String&& value) { m_faceIdHasBeenSet = true; m_faceId = std::move(value); }
-
-    /**
-     * <p>Unique identifier assigned to the face.</p>
-     */
     inline void SetFaceId(const char* value) { m_faceIdHasBeenSet = true; m_faceId.assign(value); }
-
-    /**
-     * <p>Unique identifier assigned to the face.</p>
-     */
     inline DisassociatedFace& WithFaceId(const Aws::String& value) { SetFaceId(value); return *this;}
-
-    /**
-     * <p>Unique identifier assigned to the face.</p>
-     */
     inline DisassociatedFace& WithFaceId(Aws::String&& value) { SetFaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique identifier assigned to the face.</p>
-     */
     inline DisassociatedFace& WithFaceId(const char* value) { SetFaceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_faceId;

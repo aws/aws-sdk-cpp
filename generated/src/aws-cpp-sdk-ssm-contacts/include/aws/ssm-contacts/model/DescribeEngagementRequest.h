@@ -34,46 +34,19 @@ namespace Model
     AWS_SSMCONTACTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
      */
     inline const Aws::String& GetEngagementId() const{ return m_engagementId; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
-     */
     inline bool EngagementIdHasBeenSet() const { return m_engagementIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
-     */
     inline void SetEngagementId(const Aws::String& value) { m_engagementIdHasBeenSet = true; m_engagementId = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
-     */
     inline void SetEngagementId(Aws::String&& value) { m_engagementIdHasBeenSet = true; m_engagementId = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
-     */
     inline void SetEngagementId(const char* value) { m_engagementIdHasBeenSet = true; m_engagementId.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
-     */
     inline DescribeEngagementRequest& WithEngagementId(const Aws::String& value) { SetEngagementId(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
-     */
     inline DescribeEngagementRequest& WithEngagementId(Aws::String&& value) { SetEngagementId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
-     */
     inline DescribeEngagementRequest& WithEngagementId(const char* value) { SetEngagementId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_engagementId;

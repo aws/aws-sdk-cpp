@@ -39,53 +39,27 @@ namespace Model
     AWS_OPSWORKS_API DescribeStackSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <code>StackSummary</code> object that contains the results.</p>
      */
     inline const StackSummary& GetStackSummary() const{ return m_stackSummary; }
-
-    /**
-     * <p>A <code>StackSummary</code> object that contains the results.</p>
-     */
     inline void SetStackSummary(const StackSummary& value) { m_stackSummary = value; }
-
-    /**
-     * <p>A <code>StackSummary</code> object that contains the results.</p>
-     */
     inline void SetStackSummary(StackSummary&& value) { m_stackSummary = std::move(value); }
-
-    /**
-     * <p>A <code>StackSummary</code> object that contains the results.</p>
-     */
     inline DescribeStackSummaryResult& WithStackSummary(const StackSummary& value) { SetStackSummary(value); return *this;}
-
-    /**
-     * <p>A <code>StackSummary</code> object that contains the results.</p>
-     */
     inline DescribeStackSummaryResult& WithStackSummary(StackSummary&& value) { SetStackSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeStackSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeStackSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeStackSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     StackSummary m_stackSummary;

@@ -38,160 +38,51 @@ namespace Model
     AWS_CODEARTIFACT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p> The name of the domain associated with the resource policy to be deleted.
      * </p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
-
-    /**
-     * <p> The name of the domain associated with the resource policy to be deleted.
-     * </p>
-     */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-
-    /**
-     * <p> The name of the domain associated with the resource policy to be deleted.
-     * </p>
-     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-
-    /**
-     * <p> The name of the domain associated with the resource policy to be deleted.
-     * </p>
-     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-
-    /**
-     * <p> The name of the domain associated with the resource policy to be deleted.
-     * </p>
-     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-
-    /**
-     * <p> The name of the domain associated with the resource policy to be deleted.
-     * </p>
-     */
     inline DeleteDomainPermissionsPolicyRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-
-    /**
-     * <p> The name of the domain associated with the resource policy to be deleted.
-     * </p>
-     */
     inline DeleteDomainPermissionsPolicyRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the domain associated with the resource policy to be deleted.
-     * </p>
-     */
     inline DeleteDomainPermissionsPolicyRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The 12-digit account number of the Amazon Web Services account that owns the
      * domain. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
-
-    /**
-     * <p> The 12-digit account number of the Amazon Web Services account that owns the
-     * domain. It does not include dashes or spaces. </p>
-     */
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
-
-    /**
-     * <p> The 12-digit account number of the Amazon Web Services account that owns the
-     * domain. It does not include dashes or spaces. </p>
-     */
     inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
-
-    /**
-     * <p> The 12-digit account number of the Amazon Web Services account that owns the
-     * domain. It does not include dashes or spaces. </p>
-     */
     inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
-
-    /**
-     * <p> The 12-digit account number of the Amazon Web Services account that owns the
-     * domain. It does not include dashes or spaces. </p>
-     */
     inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
-
-    /**
-     * <p> The 12-digit account number of the Amazon Web Services account that owns the
-     * domain. It does not include dashes or spaces. </p>
-     */
     inline DeleteDomainPermissionsPolicyRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
-
-    /**
-     * <p> The 12-digit account number of the Amazon Web Services account that owns the
-     * domain. It does not include dashes or spaces. </p>
-     */
     inline DeleteDomainPermissionsPolicyRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
-
-    /**
-     * <p> The 12-digit account number of the Amazon Web Services account that owns the
-     * domain. It does not include dashes or spaces. </p>
-     */
     inline DeleteDomainPermissionsPolicyRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The current revision of the resource policy to be deleted. This revision is
      * used for optimistic locking, which prevents others from overwriting your changes
      * to the domain's resource policy. </p>
      */
     inline const Aws::String& GetPolicyRevision() const{ return m_policyRevision; }
-
-    /**
-     * <p> The current revision of the resource policy to be deleted. This revision is
-     * used for optimistic locking, which prevents others from overwriting your changes
-     * to the domain's resource policy. </p>
-     */
     inline bool PolicyRevisionHasBeenSet() const { return m_policyRevisionHasBeenSet; }
-
-    /**
-     * <p> The current revision of the resource policy to be deleted. This revision is
-     * used for optimistic locking, which prevents others from overwriting your changes
-     * to the domain's resource policy. </p>
-     */
     inline void SetPolicyRevision(const Aws::String& value) { m_policyRevisionHasBeenSet = true; m_policyRevision = value; }
-
-    /**
-     * <p> The current revision of the resource policy to be deleted. This revision is
-     * used for optimistic locking, which prevents others from overwriting your changes
-     * to the domain's resource policy. </p>
-     */
     inline void SetPolicyRevision(Aws::String&& value) { m_policyRevisionHasBeenSet = true; m_policyRevision = std::move(value); }
-
-    /**
-     * <p> The current revision of the resource policy to be deleted. This revision is
-     * used for optimistic locking, which prevents others from overwriting your changes
-     * to the domain's resource policy. </p>
-     */
     inline void SetPolicyRevision(const char* value) { m_policyRevisionHasBeenSet = true; m_policyRevision.assign(value); }
-
-    /**
-     * <p> The current revision of the resource policy to be deleted. This revision is
-     * used for optimistic locking, which prevents others from overwriting your changes
-     * to the domain's resource policy. </p>
-     */
     inline DeleteDomainPermissionsPolicyRequest& WithPolicyRevision(const Aws::String& value) { SetPolicyRevision(value); return *this;}
-
-    /**
-     * <p> The current revision of the resource policy to be deleted. This revision is
-     * used for optimistic locking, which prevents others from overwriting your changes
-     * to the domain's resource policy. </p>
-     */
     inline DeleteDomainPermissionsPolicyRequest& WithPolicyRevision(Aws::String&& value) { SetPolicyRevision(std::move(value)); return *this;}
-
-    /**
-     * <p> The current revision of the resource policy to be deleted. This revision is
-     * used for optimistic locking, which prevents others from overwriting your changes
-     * to the domain's resource policy. </p>
-     */
     inline DeleteDomainPermissionsPolicyRequest& WithPolicyRevision(const char* value) { SetPolicyRevision(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domain;

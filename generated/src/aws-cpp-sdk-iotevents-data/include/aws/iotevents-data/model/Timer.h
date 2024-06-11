@@ -38,77 +38,31 @@ namespace Model
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the timer.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the timer.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the timer.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the timer.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the timer.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the timer.</p>
-     */
     inline Timer& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the timer.</p>
-     */
     inline Timer& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the timer.</p>
-     */
     inline Timer& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The expiration time for the timer.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The expiration time for the timer.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The expiration time for the timer.</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The expiration time for the timer.</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>The expiration time for the timer.</p>
-     */
     inline Timer& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The expiration time for the timer.</p>
-     */
     inline Timer& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

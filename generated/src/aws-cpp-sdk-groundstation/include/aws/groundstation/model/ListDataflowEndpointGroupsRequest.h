@@ -41,83 +41,31 @@ namespace Model
     AWS_GROUNDSTATION_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Maximum number of dataflow endpoint groups returned.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of dataflow endpoint groups returned.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of dataflow endpoint groups returned.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of dataflow endpoint groups returned.</p>
-     */
     inline ListDataflowEndpointGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Next token returned in the request of a previous
      * <code>ListDataflowEndpointGroups</code> call. Used to get the next page of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Next token returned in the request of a previous
-     * <code>ListDataflowEndpointGroups</code> call. Used to get the next page of
-     * results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Next token returned in the request of a previous
-     * <code>ListDataflowEndpointGroups</code> call. Used to get the next page of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Next token returned in the request of a previous
-     * <code>ListDataflowEndpointGroups</code> call. Used to get the next page of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Next token returned in the request of a previous
-     * <code>ListDataflowEndpointGroups</code> call. Used to get the next page of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Next token returned in the request of a previous
-     * <code>ListDataflowEndpointGroups</code> call. Used to get the next page of
-     * results.</p>
-     */
     inline ListDataflowEndpointGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Next token returned in the request of a previous
-     * <code>ListDataflowEndpointGroups</code> call. Used to get the next page of
-     * results.</p>
-     */
     inline ListDataflowEndpointGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Next token returned in the request of a previous
-     * <code>ListDataflowEndpointGroups</code> call. Used to get the next page of
-     * results.</p>
-     */
     inline ListDataflowEndpointGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

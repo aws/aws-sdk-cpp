@@ -32,46 +32,19 @@ namespace Model
     AWS_MACIE2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the finding.</p>
      */
     inline const Aws::String& GetFindingId() const{ return m_findingId; }
-
-    /**
-     * <p>The unique identifier for the finding.</p>
-     */
     inline bool FindingIdHasBeenSet() const { return m_findingIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the finding.</p>
-     */
     inline void SetFindingId(const Aws::String& value) { m_findingIdHasBeenSet = true; m_findingId = value; }
-
-    /**
-     * <p>The unique identifier for the finding.</p>
-     */
     inline void SetFindingId(Aws::String&& value) { m_findingIdHasBeenSet = true; m_findingId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the finding.</p>
-     */
     inline void SetFindingId(const char* value) { m_findingIdHasBeenSet = true; m_findingId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the finding.</p>
-     */
     inline GetSensitiveDataOccurrencesRequest& WithFindingId(const Aws::String& value) { SetFindingId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the finding.</p>
-     */
     inline GetSensitiveDataOccurrencesRequest& WithFindingId(Aws::String&& value) { SetFindingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the finding.</p>
-     */
     inline GetSensitiveDataOccurrencesRequest& WithFindingId(const char* value) { SetFindingId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_findingId;

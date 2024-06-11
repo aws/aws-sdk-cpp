@@ -36,26 +36,15 @@ namespace Model
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of shards in the cluster</p>
      */
     inline int GetShardCount() const{ return m_shardCount; }
-
-    /**
-     * <p>The number of shards in the cluster</p>
-     */
     inline bool ShardCountHasBeenSet() const { return m_shardCountHasBeenSet; }
-
-    /**
-     * <p>The number of shards in the cluster</p>
-     */
     inline void SetShardCount(int value) { m_shardCountHasBeenSet = true; m_shardCount = value; }
-
-    /**
-     * <p>The number of shards in the cluster</p>
-     */
     inline ShardConfigurationRequest& WithShardCount(int value) { SetShardCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_shardCount;

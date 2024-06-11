@@ -39,98 +39,49 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The total number of parts.</p>
      */
     inline int GetTotalPartsCount() const{ return m_totalPartsCount; }
-
-    /**
-     * <p>The total number of parts.</p>
-     */
     inline bool TotalPartsCountHasBeenSet() const { return m_totalPartsCountHasBeenSet; }
-
-    /**
-     * <p>The total number of parts.</p>
-     */
     inline void SetTotalPartsCount(int value) { m_totalPartsCountHasBeenSet = true; m_totalPartsCount = value; }
-
-    /**
-     * <p>The total number of parts.</p>
-     */
     inline GetObjectAttributesParts& WithTotalPartsCount(int value) { SetTotalPartsCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The marker for the current part.</p>
      */
     inline int GetPartNumberMarker() const{ return m_partNumberMarker; }
-
-    /**
-     * <p>The marker for the current part.</p>
-     */
     inline bool PartNumberMarkerHasBeenSet() const { return m_partNumberMarkerHasBeenSet; }
-
-    /**
-     * <p>The marker for the current part.</p>
-     */
     inline void SetPartNumberMarker(int value) { m_partNumberMarkerHasBeenSet = true; m_partNumberMarker = value; }
-
-    /**
-     * <p>The marker for the current part.</p>
-     */
     inline GetObjectAttributesParts& WithPartNumberMarker(int value) { SetPartNumberMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When a list is truncated, this element specifies the last part in the list,
      * as well as the value to use for the <code>PartNumberMarker</code> request
      * parameter in a subsequent request.</p>
      */
     inline int GetNextPartNumberMarker() const{ return m_nextPartNumberMarker; }
-
-    /**
-     * <p>When a list is truncated, this element specifies the last part in the list,
-     * as well as the value to use for the <code>PartNumberMarker</code> request
-     * parameter in a subsequent request.</p>
-     */
     inline bool NextPartNumberMarkerHasBeenSet() const { return m_nextPartNumberMarkerHasBeenSet; }
-
-    /**
-     * <p>When a list is truncated, this element specifies the last part in the list,
-     * as well as the value to use for the <code>PartNumberMarker</code> request
-     * parameter in a subsequent request.</p>
-     */
     inline void SetNextPartNumberMarker(int value) { m_nextPartNumberMarkerHasBeenSet = true; m_nextPartNumberMarker = value; }
-
-    /**
-     * <p>When a list is truncated, this element specifies the last part in the list,
-     * as well as the value to use for the <code>PartNumberMarker</code> request
-     * parameter in a subsequent request.</p>
-     */
     inline GetObjectAttributesParts& WithNextPartNumberMarker(int value) { SetNextPartNumberMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of parts allowed in the response.</p>
      */
     inline int GetMaxParts() const{ return m_maxParts; }
-
-    /**
-     * <p>The maximum number of parts allowed in the response.</p>
-     */
     inline bool MaxPartsHasBeenSet() const { return m_maxPartsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of parts allowed in the response.</p>
-     */
     inline void SetMaxParts(int value) { m_maxPartsHasBeenSet = true; m_maxParts = value; }
-
-    /**
-     * <p>The maximum number of parts allowed in the response.</p>
-     */
     inline GetObjectAttributesParts& WithMaxParts(int value) { SetMaxParts(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the returned list of parts is truncated. A value of
      * <code>true</code> indicates that the list was truncated. A list can be truncated
@@ -138,32 +89,12 @@ namespace Model
      * element.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
-
-    /**
-     * <p>Indicates whether the returned list of parts is truncated. A value of
-     * <code>true</code> indicates that the list was truncated. A list can be truncated
-     * if the number of parts exceeds the limit returned in the <code>MaxParts</code>
-     * element.</p>
-     */
     inline bool IsTruncatedHasBeenSet() const { return m_isTruncatedHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the returned list of parts is truncated. A value of
-     * <code>true</code> indicates that the list was truncated. A list can be truncated
-     * if the number of parts exceeds the limit returned in the <code>MaxParts</code>
-     * element.</p>
-     */
     inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
-
-    /**
-     * <p>Indicates whether the returned list of parts is truncated. A value of
-     * <code>true</code> indicates that the list was truncated. A list can be truncated
-     * if the number of parts exceeds the limit returned in the <code>MaxParts</code>
-     * element.</p>
-     */
     inline GetObjectAttributesParts& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A container for elements related to a particular part. A response can contain
      * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
@@ -177,105 +108,14 @@ namespace Model
      * the response returns <code>Part</code>.</p> </li> </ul> 
      */
     inline const Aws::Vector<ObjectPart>& GetParts() const{ return m_parts; }
-
-    /**
-     * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
-     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
-     * checksum (including <code>x-amz-checksum-crc32</code>,
-     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
-     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
-     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
-     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
-     * whether a additional checksum is applied to the object specified in the request,
-     * the response returns <code>Part</code>.</p> </li> </ul> 
-     */
     inline bool PartsHasBeenSet() const { return m_partsHasBeenSet; }
-
-    /**
-     * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
-     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
-     * checksum (including <code>x-amz-checksum-crc32</code>,
-     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
-     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
-     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
-     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
-     * whether a additional checksum is applied to the object specified in the request,
-     * the response returns <code>Part</code>.</p> </li> </ul> 
-     */
     inline void SetParts(const Aws::Vector<ObjectPart>& value) { m_partsHasBeenSet = true; m_parts = value; }
-
-    /**
-     * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
-     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
-     * checksum (including <code>x-amz-checksum-crc32</code>,
-     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
-     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
-     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
-     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
-     * whether a additional checksum is applied to the object specified in the request,
-     * the response returns <code>Part</code>.</p> </li> </ul> 
-     */
     inline void SetParts(Aws::Vector<ObjectPart>&& value) { m_partsHasBeenSet = true; m_parts = std::move(value); }
-
-    /**
-     * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
-     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
-     * checksum (including <code>x-amz-checksum-crc32</code>,
-     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
-     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
-     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
-     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
-     * whether a additional checksum is applied to the object specified in the request,
-     * the response returns <code>Part</code>.</p> </li> </ul> 
-     */
     inline GetObjectAttributesParts& WithParts(const Aws::Vector<ObjectPart>& value) { SetParts(value); return *this;}
-
-    /**
-     * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
-     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
-     * checksum (including <code>x-amz-checksum-crc32</code>,
-     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
-     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
-     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
-     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
-     * whether a additional checksum is applied to the object specified in the request,
-     * the response returns <code>Part</code>.</p> </li> </ul> 
-     */
     inline GetObjectAttributesParts& WithParts(Aws::Vector<ObjectPart>&& value) { SetParts(std::move(value)); return *this;}
-
-    /**
-     * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
-     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
-     * checksum (including <code>x-amz-checksum-crc32</code>,
-     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
-     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
-     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
-     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
-     * whether a additional checksum is applied to the object specified in the request,
-     * the response returns <code>Part</code>.</p> </li> </ul> 
-     */
     inline GetObjectAttributesParts& AddParts(const ObjectPart& value) { m_partsHasBeenSet = true; m_parts.push_back(value); return *this; }
-
-    /**
-     * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
-     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
-     * checksum (including <code>x-amz-checksum-crc32</code>,
-     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
-     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
-     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
-     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
-     * whether a additional checksum is applied to the object specified in the request,
-     * the response returns <code>Part</code>.</p> </li> </ul> 
-     */
     inline GetObjectAttributesParts& AddParts(ObjectPart&& value) { m_partsHasBeenSet = true; m_parts.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_totalPartsCount;

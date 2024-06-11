@@ -38,42 +38,18 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Describes the source for calculation of savings opportunity for Lambda
      * functions. </p>
      */
     inline const LambdaSavingsEstimationModeSource& GetSource() const{ return m_source; }
-
-    /**
-     * <p> Describes the source for calculation of savings opportunity for Lambda
-     * functions. </p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p> Describes the source for calculation of savings opportunity for Lambda
-     * functions. </p>
-     */
     inline void SetSource(const LambdaSavingsEstimationModeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p> Describes the source for calculation of savings opportunity for Lambda
-     * functions. </p>
-     */
     inline void SetSource(LambdaSavingsEstimationModeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p> Describes the source for calculation of savings opportunity for Lambda
-     * functions. </p>
-     */
     inline LambdaSavingsEstimationMode& WithSource(const LambdaSavingsEstimationModeSource& value) { SetSource(value); return *this;}
-
-    /**
-     * <p> Describes the source for calculation of savings opportunity for Lambda
-     * functions. </p>
-     */
     inline LambdaSavingsEstimationMode& WithSource(LambdaSavingsEstimationModeSource&& value) { SetSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LambdaSavingsEstimationModeSource m_source;

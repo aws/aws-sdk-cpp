@@ -35,105 +35,49 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Number of seconds to wait before retrying connection to the CDN if the
      * connection is lost.
      */
     inline int GetConnectionRetryInterval() const{ return m_connectionRetryInterval; }
-
-    /**
-     * Number of seconds to wait before retrying connection to the CDN if the
-     * connection is lost.
-     */
     inline bool ConnectionRetryIntervalHasBeenSet() const { return m_connectionRetryIntervalHasBeenSet; }
-
-    /**
-     * Number of seconds to wait before retrying connection to the CDN if the
-     * connection is lost.
-     */
     inline void SetConnectionRetryInterval(int value) { m_connectionRetryIntervalHasBeenSet = true; m_connectionRetryInterval = value; }
-
-    /**
-     * Number of seconds to wait before retrying connection to the CDN if the
-     * connection is lost.
-     */
     inline HlsBasicPutSettings& WithConnectionRetryInterval(int value) { SetConnectionRetryInterval(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Size in seconds of file cache for streaming outputs.
      */
     inline int GetFilecacheDuration() const{ return m_filecacheDuration; }
-
-    /**
-     * Size in seconds of file cache for streaming outputs.
-     */
     inline bool FilecacheDurationHasBeenSet() const { return m_filecacheDurationHasBeenSet; }
-
-    /**
-     * Size in seconds of file cache for streaming outputs.
-     */
     inline void SetFilecacheDuration(int value) { m_filecacheDurationHasBeenSet = true; m_filecacheDuration = value; }
-
-    /**
-     * Size in seconds of file cache for streaming outputs.
-     */
     inline HlsBasicPutSettings& WithFilecacheDuration(int value) { SetFilecacheDuration(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Number of retry attempts that will be made before the Live Event is put into an
      * error state. Applies only if the CDN destination URI begins with "s3" or
      * "mediastore". For other URIs, the value is always 3.
      */
     inline int GetNumRetries() const{ return m_numRetries; }
-
-    /**
-     * Number of retry attempts that will be made before the Live Event is put into an
-     * error state. Applies only if the CDN destination URI begins with "s3" or
-     * "mediastore". For other URIs, the value is always 3.
-     */
     inline bool NumRetriesHasBeenSet() const { return m_numRetriesHasBeenSet; }
-
-    /**
-     * Number of retry attempts that will be made before the Live Event is put into an
-     * error state. Applies only if the CDN destination URI begins with "s3" or
-     * "mediastore". For other URIs, the value is always 3.
-     */
     inline void SetNumRetries(int value) { m_numRetriesHasBeenSet = true; m_numRetries = value; }
-
-    /**
-     * Number of retry attempts that will be made before the Live Event is put into an
-     * error state. Applies only if the CDN destination URI begins with "s3" or
-     * "mediastore". For other URIs, the value is always 3.
-     */
     inline HlsBasicPutSettings& WithNumRetries(int value) { SetNumRetries(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * If a streaming output fails, number of seconds to wait until a restart is
      * initiated. A value of 0 means never restart.
      */
     inline int GetRestartDelay() const{ return m_restartDelay; }
-
-    /**
-     * If a streaming output fails, number of seconds to wait until a restart is
-     * initiated. A value of 0 means never restart.
-     */
     inline bool RestartDelayHasBeenSet() const { return m_restartDelayHasBeenSet; }
-
-    /**
-     * If a streaming output fails, number of seconds to wait until a restart is
-     * initiated. A value of 0 means never restart.
-     */
     inline void SetRestartDelay(int value) { m_restartDelayHasBeenSet = true; m_restartDelay = value; }
-
-    /**
-     * If a streaming output fails, number of seconds to wait until a restart is
-     * initiated. A value of 0 means never restart.
-     */
     inline HlsBasicPutSettings& WithRestartDelay(int value) { SetRestartDelay(value); return *this;}
-
+    ///@}
   private:
 
     int m_connectionRetryInterval;

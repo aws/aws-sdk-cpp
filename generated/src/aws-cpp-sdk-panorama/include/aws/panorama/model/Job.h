@@ -37,87 +37,33 @@ namespace Model
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The target device's ID.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-
-    /**
-     * <p>The target device's ID.</p>
-     */
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-
-    /**
-     * <p>The target device's ID.</p>
-     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-
-    /**
-     * <p>The target device's ID.</p>
-     */
     inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-
-    /**
-     * <p>The target device's ID.</p>
-     */
     inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-
-    /**
-     * <p>The target device's ID.</p>
-     */
     inline Job& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-
-    /**
-     * <p>The target device's ID.</p>
-     */
     inline Job& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The target device's ID.</p>
-     */
     inline Job& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The job's ID.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline Job& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline Job& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline Job& WithJobId(const char* value) { SetJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceId;

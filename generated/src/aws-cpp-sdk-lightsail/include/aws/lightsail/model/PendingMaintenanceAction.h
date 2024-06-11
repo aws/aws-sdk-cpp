@@ -39,118 +39,45 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of pending database maintenance action.</p>
      */
     inline const Aws::String& GetAction() const{ return m_action; }
-
-    /**
-     * <p>The type of pending database maintenance action.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>The type of pending database maintenance action.</p>
-     */
     inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>The type of pending database maintenance action.</p>
-     */
     inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>The type of pending database maintenance action.</p>
-     */
     inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
-
-    /**
-     * <p>The type of pending database maintenance action.</p>
-     */
     inline PendingMaintenanceAction& WithAction(const Aws::String& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>The type of pending database maintenance action.</p>
-     */
     inline PendingMaintenanceAction& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of pending database maintenance action.</p>
-     */
     inline PendingMaintenanceAction& WithAction(const char* value) { SetAction(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Additional detail about the pending database maintenance action.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>Additional detail about the pending database maintenance action.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>Additional detail about the pending database maintenance action.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>Additional detail about the pending database maintenance action.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>Additional detail about the pending database maintenance action.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>Additional detail about the pending database maintenance action.</p>
-     */
     inline PendingMaintenanceAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>Additional detail about the pending database maintenance action.</p>
-     */
     inline PendingMaintenanceAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>Additional detail about the pending database maintenance action.</p>
-     */
     inline PendingMaintenanceAction& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The effective date of the pending database maintenance action.</p>
      */
     inline const Aws::Utils::DateTime& GetCurrentApplyDate() const{ return m_currentApplyDate; }
-
-    /**
-     * <p>The effective date of the pending database maintenance action.</p>
-     */
     inline bool CurrentApplyDateHasBeenSet() const { return m_currentApplyDateHasBeenSet; }
-
-    /**
-     * <p>The effective date of the pending database maintenance action.</p>
-     */
     inline void SetCurrentApplyDate(const Aws::Utils::DateTime& value) { m_currentApplyDateHasBeenSet = true; m_currentApplyDate = value; }
-
-    /**
-     * <p>The effective date of the pending database maintenance action.</p>
-     */
     inline void SetCurrentApplyDate(Aws::Utils::DateTime&& value) { m_currentApplyDateHasBeenSet = true; m_currentApplyDate = std::move(value); }
-
-    /**
-     * <p>The effective date of the pending database maintenance action.</p>
-     */
     inline PendingMaintenanceAction& WithCurrentApplyDate(const Aws::Utils::DateTime& value) { SetCurrentApplyDate(value); return *this;}
-
-    /**
-     * <p>The effective date of the pending database maintenance action.</p>
-     */
     inline PendingMaintenanceAction& WithCurrentApplyDate(Aws::Utils::DateTime&& value) { SetCurrentApplyDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_action;

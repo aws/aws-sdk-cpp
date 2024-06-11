@@ -38,54 +38,20 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> AWS Secrets Manager key that holds the credentials that you use to connect
      * to a database. </p>
      */
     inline const Aws::String& GetSecretName() const{ return m_secretName; }
-
-    /**
-     * <p> AWS Secrets Manager key that holds the credentials that you use to connect
-     * to a database. </p>
-     */
     inline bool SecretNameHasBeenSet() const { return m_secretNameHasBeenSet; }
-
-    /**
-     * <p> AWS Secrets Manager key that holds the credentials that you use to connect
-     * to a database. </p>
-     */
     inline void SetSecretName(const Aws::String& value) { m_secretNameHasBeenSet = true; m_secretName = value; }
-
-    /**
-     * <p> AWS Secrets Manager key that holds the credentials that you use to connect
-     * to a database. </p>
-     */
     inline void SetSecretName(Aws::String&& value) { m_secretNameHasBeenSet = true; m_secretName = std::move(value); }
-
-    /**
-     * <p> AWS Secrets Manager key that holds the credentials that you use to connect
-     * to a database. </p>
-     */
     inline void SetSecretName(const char* value) { m_secretNameHasBeenSet = true; m_secretName.assign(value); }
-
-    /**
-     * <p> AWS Secrets Manager key that holds the credentials that you use to connect
-     * to a database. </p>
-     */
     inline DatabaseConfigDetail& WithSecretName(const Aws::String& value) { SetSecretName(value); return *this;}
-
-    /**
-     * <p> AWS Secrets Manager key that holds the credentials that you use to connect
-     * to a database. </p>
-     */
     inline DatabaseConfigDetail& WithSecretName(Aws::String&& value) { SetSecretName(std::move(value)); return *this;}
-
-    /**
-     * <p> AWS Secrets Manager key that holds the credentials that you use to connect
-     * to a database. </p>
-     */
     inline DatabaseConfigDetail& WithSecretName(const char* value) { SetSecretName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_secretName;

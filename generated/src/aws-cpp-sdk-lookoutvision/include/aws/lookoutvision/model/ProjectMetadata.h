@@ -39,118 +39,45 @@ namespace Model
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the project.</p>
      */
     inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline ProjectMetadata& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline ProjectMetadata& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline ProjectMetadata& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the project.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
-
-    /**
-     * <p>The name of the project.</p>
-     */
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-
-    /**
-     * <p>The name of the project.</p>
-     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-
-    /**
-     * <p>The name of the project.</p>
-     */
     inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-
-    /**
-     * <p>The name of the project.</p>
-     */
     inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-
-    /**
-     * <p>The name of the project.</p>
-     */
     inline ProjectMetadata& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-
-    /**
-     * <p>The name of the project.</p>
-     */
     inline ProjectMetadata& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the project.</p>
-     */
     inline ProjectMetadata& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unix timestamp for the date and time that the project was created. </p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
-
-    /**
-     * <p>The unix timestamp for the date and time that the project was created. </p>
-     */
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
-
-    /**
-     * <p>The unix timestamp for the date and time that the project was created. </p>
-     */
     inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
-
-    /**
-     * <p>The unix timestamp for the date and time that the project was created. </p>
-     */
     inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
-
-    /**
-     * <p>The unix timestamp for the date and time that the project was created. </p>
-     */
     inline ProjectMetadata& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
-
-    /**
-     * <p>The unix timestamp for the date and time that the project was created. </p>
-     */
     inline ProjectMetadata& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectArn;

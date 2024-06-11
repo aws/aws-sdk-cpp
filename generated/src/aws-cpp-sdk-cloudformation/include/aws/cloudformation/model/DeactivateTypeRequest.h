@@ -37,6 +37,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The type name of the extension, in this account and Region. If you specified
      * a type name alias when enabling the extension, use the type name alias.</p>
@@ -44,157 +45,43 @@ namespace Model
      * <code>TypeName</code> and <code>Type</code>.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
-
-    /**
-     * <p>The type name of the extension, in this account and Region. If you specified
-     * a type name alias when enabling the extension, use the type name alias.</p>
-     * <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-
-    /**
-     * <p>The type name of the extension, in this account and Region. If you specified
-     * a type name alias when enabling the extension, use the type name alias.</p>
-     * <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-
-    /**
-     * <p>The type name of the extension, in this account and Region. If you specified
-     * a type name alias when enabling the extension, use the type name alias.</p>
-     * <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-
-    /**
-     * <p>The type name of the extension, in this account and Region. If you specified
-     * a type name alias when enabling the extension, use the type name alias.</p>
-     * <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-
-    /**
-     * <p>The type name of the extension, in this account and Region. If you specified
-     * a type name alias when enabling the extension, use the type name alias.</p>
-     * <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline DeactivateTypeRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-
-    /**
-     * <p>The type name of the extension, in this account and Region. If you specified
-     * a type name alias when enabling the extension, use the type name alias.</p>
-     * <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline DeactivateTypeRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The type name of the extension, in this account and Region. If you specified
-     * a type name alias when enabling the extension, use the type name alias.</p>
-     * <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline DeactivateTypeRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The extension type.</p> <p>Conditional: You must specify either
      * <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
      */
     inline const ThirdPartyType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The extension type.</p> <p>Conditional: You must specify either
-     * <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The extension type.</p> <p>Conditional: You must specify either
-     * <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline void SetType(const ThirdPartyType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The extension type.</p> <p>Conditional: You must specify either
-     * <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline void SetType(ThirdPartyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The extension type.</p> <p>Conditional: You must specify either
-     * <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline DeactivateTypeRequest& WithType(const ThirdPartyType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The extension type.</p> <p>Conditional: You must specify either
-     * <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline DeactivateTypeRequest& WithType(ThirdPartyType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
      * Region.</p> <p>Conditional: You must specify either <code>Arn</code>, or
      * <code>TypeName</code> and <code>Type</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * Region.</p> <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * Region.</p> <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * Region.</p> <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * Region.</p> <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * Region.</p> <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline DeactivateTypeRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * Region.</p> <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline DeactivateTypeRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * Region.</p> <p>Conditional: You must specify either <code>Arn</code>, or
-     * <code>TypeName</code> and <code>Type</code>.</p>
-     */
     inline DeactivateTypeRequest& WithArn(const char* value) { SetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_typeName;

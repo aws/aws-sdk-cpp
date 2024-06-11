@@ -33,63 +33,29 @@ namespace Model
     AWS_S3CRT_API GetBucketOwnershipControlsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The <code>OwnershipControls</code> (BucketOwnerEnforced,
      * BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3
      * bucket.</p>
      */
     inline const OwnershipControls& GetOwnershipControls() const{ return m_ownershipControls; }
-
-    /**
-     * <p>The <code>OwnershipControls</code> (BucketOwnerEnforced,
-     * BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3
-     * bucket.</p>
-     */
     inline void SetOwnershipControls(const OwnershipControls& value) { m_ownershipControls = value; }
-
-    /**
-     * <p>The <code>OwnershipControls</code> (BucketOwnerEnforced,
-     * BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3
-     * bucket.</p>
-     */
     inline void SetOwnershipControls(OwnershipControls&& value) { m_ownershipControls = std::move(value); }
-
-    /**
-     * <p>The <code>OwnershipControls</code> (BucketOwnerEnforced,
-     * BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3
-     * bucket.</p>
-     */
     inline GetBucketOwnershipControlsResult& WithOwnershipControls(const OwnershipControls& value) { SetOwnershipControls(value); return *this;}
-
-    /**
-     * <p>The <code>OwnershipControls</code> (BucketOwnerEnforced,
-     * BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3
-     * bucket.</p>
-     */
     inline GetBucketOwnershipControlsResult& WithOwnershipControls(OwnershipControls&& value) { SetOwnershipControls(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBucketOwnershipControlsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBucketOwnershipControlsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBucketOwnershipControlsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     OwnershipControls m_ownershipControls;

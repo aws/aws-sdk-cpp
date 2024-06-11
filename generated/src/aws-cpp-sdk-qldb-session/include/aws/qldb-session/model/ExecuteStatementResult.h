@@ -39,98 +39,41 @@ namespace Model
     AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains the details of the first fetched page.</p>
      */
     inline const Page& GetFirstPage() const{ return m_firstPage; }
-
-    /**
-     * <p>Contains the details of the first fetched page.</p>
-     */
     inline bool FirstPageHasBeenSet() const { return m_firstPageHasBeenSet; }
-
-    /**
-     * <p>Contains the details of the first fetched page.</p>
-     */
     inline void SetFirstPage(const Page& value) { m_firstPageHasBeenSet = true; m_firstPage = value; }
-
-    /**
-     * <p>Contains the details of the first fetched page.</p>
-     */
     inline void SetFirstPage(Page&& value) { m_firstPageHasBeenSet = true; m_firstPage = std::move(value); }
-
-    /**
-     * <p>Contains the details of the first fetched page.</p>
-     */
     inline ExecuteStatementResult& WithFirstPage(const Page& value) { SetFirstPage(value); return *this;}
-
-    /**
-     * <p>Contains the details of the first fetched page.</p>
-     */
     inline ExecuteStatementResult& WithFirstPage(Page&& value) { SetFirstPage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains server-side performance information for the command.</p>
      */
     inline const TimingInformation& GetTimingInformation() const{ return m_timingInformation; }
-
-    /**
-     * <p>Contains server-side performance information for the command.</p>
-     */
     inline bool TimingInformationHasBeenSet() const { return m_timingInformationHasBeenSet; }
-
-    /**
-     * <p>Contains server-side performance information for the command.</p>
-     */
     inline void SetTimingInformation(const TimingInformation& value) { m_timingInformationHasBeenSet = true; m_timingInformation = value; }
-
-    /**
-     * <p>Contains server-side performance information for the command.</p>
-     */
     inline void SetTimingInformation(TimingInformation&& value) { m_timingInformationHasBeenSet = true; m_timingInformation = std::move(value); }
-
-    /**
-     * <p>Contains server-side performance information for the command.</p>
-     */
     inline ExecuteStatementResult& WithTimingInformation(const TimingInformation& value) { SetTimingInformation(value); return *this;}
-
-    /**
-     * <p>Contains server-side performance information for the command.</p>
-     */
     inline ExecuteStatementResult& WithTimingInformation(TimingInformation&& value) { SetTimingInformation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains metrics about the number of I/O requests that were consumed.</p>
      */
     inline const IOUsage& GetConsumedIOs() const{ return m_consumedIOs; }
-
-    /**
-     * <p>Contains metrics about the number of I/O requests that were consumed.</p>
-     */
     inline bool ConsumedIOsHasBeenSet() const { return m_consumedIOsHasBeenSet; }
-
-    /**
-     * <p>Contains metrics about the number of I/O requests that were consumed.</p>
-     */
     inline void SetConsumedIOs(const IOUsage& value) { m_consumedIOsHasBeenSet = true; m_consumedIOs = value; }
-
-    /**
-     * <p>Contains metrics about the number of I/O requests that were consumed.</p>
-     */
     inline void SetConsumedIOs(IOUsage&& value) { m_consumedIOsHasBeenSet = true; m_consumedIOs = std::move(value); }
-
-    /**
-     * <p>Contains metrics about the number of I/O requests that were consumed.</p>
-     */
     inline ExecuteStatementResult& WithConsumedIOs(const IOUsage& value) { SetConsumedIOs(value); return *this;}
-
-    /**
-     * <p>Contains metrics about the number of I/O requests that were consumed.</p>
-     */
     inline ExecuteStatementResult& WithConsumedIOs(IOUsage&& value) { SetConsumedIOs(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Page m_firstPage;

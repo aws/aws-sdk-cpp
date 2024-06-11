@@ -40,105 +40,49 @@ namespace Model
     AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 2xx
      * (200, 201, etc.) status code.</p>
      */
     inline int GetStatus2xx() const{ return m_status2xx; }
-
-    /**
-     * <p>The percentage of requests over the last 10 seconds that resulted in a 2xx
-     * (200, 201, etc.) status code.</p>
-     */
     inline bool Status2xxHasBeenSet() const { return m_status2xxHasBeenSet; }
-
-    /**
-     * <p>The percentage of requests over the last 10 seconds that resulted in a 2xx
-     * (200, 201, etc.) status code.</p>
-     */
     inline void SetStatus2xx(int value) { m_status2xxHasBeenSet = true; m_status2xx = value; }
-
-    /**
-     * <p>The percentage of requests over the last 10 seconds that resulted in a 2xx
-     * (200, 201, etc.) status code.</p>
-     */
     inline StatusCodes& WithStatus2xx(int value) { SetStatus2xx(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 3xx
      * (300, 301, etc.) status code.</p>
      */
     inline int GetStatus3xx() const{ return m_status3xx; }
-
-    /**
-     * <p>The percentage of requests over the last 10 seconds that resulted in a 3xx
-     * (300, 301, etc.) status code.</p>
-     */
     inline bool Status3xxHasBeenSet() const { return m_status3xxHasBeenSet; }
-
-    /**
-     * <p>The percentage of requests over the last 10 seconds that resulted in a 3xx
-     * (300, 301, etc.) status code.</p>
-     */
     inline void SetStatus3xx(int value) { m_status3xxHasBeenSet = true; m_status3xx = value; }
-
-    /**
-     * <p>The percentage of requests over the last 10 seconds that resulted in a 3xx
-     * (300, 301, etc.) status code.</p>
-     */
     inline StatusCodes& WithStatus3xx(int value) { SetStatus3xx(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 4xx
      * (400, 401, etc.) status code.</p>
      */
     inline int GetStatus4xx() const{ return m_status4xx; }
-
-    /**
-     * <p>The percentage of requests over the last 10 seconds that resulted in a 4xx
-     * (400, 401, etc.) status code.</p>
-     */
     inline bool Status4xxHasBeenSet() const { return m_status4xxHasBeenSet; }
-
-    /**
-     * <p>The percentage of requests over the last 10 seconds that resulted in a 4xx
-     * (400, 401, etc.) status code.</p>
-     */
     inline void SetStatus4xx(int value) { m_status4xxHasBeenSet = true; m_status4xx = value; }
-
-    /**
-     * <p>The percentage of requests over the last 10 seconds that resulted in a 4xx
-     * (400, 401, etc.) status code.</p>
-     */
     inline StatusCodes& WithStatus4xx(int value) { SetStatus4xx(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 5xx
      * (500, 501, etc.) status code.</p>
      */
     inline int GetStatus5xx() const{ return m_status5xx; }
-
-    /**
-     * <p>The percentage of requests over the last 10 seconds that resulted in a 5xx
-     * (500, 501, etc.) status code.</p>
-     */
     inline bool Status5xxHasBeenSet() const { return m_status5xxHasBeenSet; }
-
-    /**
-     * <p>The percentage of requests over the last 10 seconds that resulted in a 5xx
-     * (500, 501, etc.) status code.</p>
-     */
     inline void SetStatus5xx(int value) { m_status5xxHasBeenSet = true; m_status5xx = value; }
-
-    /**
-     * <p>The percentage of requests over the last 10 seconds that resulted in a 5xx
-     * (500, 501, etc.) status code.</p>
-     */
     inline StatusCodes& WithStatus5xx(int value) { SetStatus5xx(value); return *this;}
-
+    ///@}
   private:
 
     int m_status2xx;

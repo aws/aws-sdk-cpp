@@ -33,62 +33,21 @@ namespace Model
     AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The list of accounts to associate with the Security Hub administrator
      * account. For each account, the list includes the account ID and optionally the
      * email address.</p>
      */
     inline const Aws::Vector<AccountDetails>& GetAccountDetails() const{ return m_accountDetails; }
-
-    /**
-     * <p>The list of accounts to associate with the Security Hub administrator
-     * account. For each account, the list includes the account ID and optionally the
-     * email address.</p>
-     */
     inline bool AccountDetailsHasBeenSet() const { return m_accountDetailsHasBeenSet; }
-
-    /**
-     * <p>The list of accounts to associate with the Security Hub administrator
-     * account. For each account, the list includes the account ID and optionally the
-     * email address.</p>
-     */
     inline void SetAccountDetails(const Aws::Vector<AccountDetails>& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = value; }
-
-    /**
-     * <p>The list of accounts to associate with the Security Hub administrator
-     * account. For each account, the list includes the account ID and optionally the
-     * email address.</p>
-     */
     inline void SetAccountDetails(Aws::Vector<AccountDetails>&& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = std::move(value); }
-
-    /**
-     * <p>The list of accounts to associate with the Security Hub administrator
-     * account. For each account, the list includes the account ID and optionally the
-     * email address.</p>
-     */
     inline CreateMembersRequest& WithAccountDetails(const Aws::Vector<AccountDetails>& value) { SetAccountDetails(value); return *this;}
-
-    /**
-     * <p>The list of accounts to associate with the Security Hub administrator
-     * account. For each account, the list includes the account ID and optionally the
-     * email address.</p>
-     */
     inline CreateMembersRequest& WithAccountDetails(Aws::Vector<AccountDetails>&& value) { SetAccountDetails(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of accounts to associate with the Security Hub administrator
-     * account. For each account, the list includes the account ID and optionally the
-     * email address.</p>
-     */
     inline CreateMembersRequest& AddAccountDetails(const AccountDetails& value) { m_accountDetailsHasBeenSet = true; m_accountDetails.push_back(value); return *this; }
-
-    /**
-     * <p>The list of accounts to associate with the Security Hub administrator
-     * account. For each account, the list includes the account ID and optionally the
-     * email address.</p>
-     */
     inline CreateMembersRequest& AddAccountDetails(AccountDetails&& value) { m_accountDetailsHasBeenSet = true; m_accountDetails.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AccountDetails> m_accountDetails;

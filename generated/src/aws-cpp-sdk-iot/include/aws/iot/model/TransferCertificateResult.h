@@ -38,63 +38,29 @@ namespace Model
     AWS_IOT_API TransferCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the certificate.</p>
      */
     inline const Aws::String& GetTransferredCertificateArn() const{ return m_transferredCertificateArn; }
-
-    /**
-     * <p>The ARN of the certificate.</p>
-     */
     inline void SetTransferredCertificateArn(const Aws::String& value) { m_transferredCertificateArn = value; }
-
-    /**
-     * <p>The ARN of the certificate.</p>
-     */
     inline void SetTransferredCertificateArn(Aws::String&& value) { m_transferredCertificateArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the certificate.</p>
-     */
     inline void SetTransferredCertificateArn(const char* value) { m_transferredCertificateArn.assign(value); }
-
-    /**
-     * <p>The ARN of the certificate.</p>
-     */
     inline TransferCertificateResult& WithTransferredCertificateArn(const Aws::String& value) { SetTransferredCertificateArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the certificate.</p>
-     */
     inline TransferCertificateResult& WithTransferredCertificateArn(Aws::String&& value) { SetTransferredCertificateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the certificate.</p>
-     */
     inline TransferCertificateResult& WithTransferredCertificateArn(const char* value) { SetTransferredCertificateArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline TransferCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline TransferCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline TransferCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transferredCertificateArn;

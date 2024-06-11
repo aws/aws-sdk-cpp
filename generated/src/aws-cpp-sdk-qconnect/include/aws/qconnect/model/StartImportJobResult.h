@@ -33,53 +33,27 @@ namespace Model
     AWS_QCONNECT_API StartImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The import job.</p>
      */
     inline const ImportJobData& GetImportJob() const{ return m_importJob; }
-
-    /**
-     * <p>The import job.</p>
-     */
     inline void SetImportJob(const ImportJobData& value) { m_importJob = value; }
-
-    /**
-     * <p>The import job.</p>
-     */
     inline void SetImportJob(ImportJobData&& value) { m_importJob = std::move(value); }
-
-    /**
-     * <p>The import job.</p>
-     */
     inline StartImportJobResult& WithImportJob(const ImportJobData& value) { SetImportJob(value); return *this;}
-
-    /**
-     * <p>The import job.</p>
-     */
     inline StartImportJobResult& WithImportJob(ImportJobData&& value) { SetImportJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartImportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartImportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartImportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ImportJobData m_importJob;

@@ -32,63 +32,29 @@ namespace Model
     AWS_IOT_API StartThingRegistrationTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The bulk thing provisioning task ID.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
-
-    /**
-     * <p>The bulk thing provisioning task ID.</p>
-     */
     inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
-
-    /**
-     * <p>The bulk thing provisioning task ID.</p>
-     */
     inline void SetTaskId(Aws::String&& value) { m_taskId = std::move(value); }
-
-    /**
-     * <p>The bulk thing provisioning task ID.</p>
-     */
     inline void SetTaskId(const char* value) { m_taskId.assign(value); }
-
-    /**
-     * <p>The bulk thing provisioning task ID.</p>
-     */
     inline StartThingRegistrationTaskResult& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-
-    /**
-     * <p>The bulk thing provisioning task ID.</p>
-     */
     inline StartThingRegistrationTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The bulk thing provisioning task ID.</p>
-     */
     inline StartThingRegistrationTaskResult& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartThingRegistrationTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartThingRegistrationTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartThingRegistrationTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskId;

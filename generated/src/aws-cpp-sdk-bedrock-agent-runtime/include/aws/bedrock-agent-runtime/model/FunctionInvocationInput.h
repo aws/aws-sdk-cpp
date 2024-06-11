@@ -43,128 +43,47 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The action group that the function belongs to.</p>
      */
     inline const Aws::String& GetActionGroup() const{ return m_actionGroup; }
-
-    /**
-     * <p>The action group that the function belongs to.</p>
-     */
     inline bool ActionGroupHasBeenSet() const { return m_actionGroupHasBeenSet; }
-
-    /**
-     * <p>The action group that the function belongs to.</p>
-     */
     inline void SetActionGroup(const Aws::String& value) { m_actionGroupHasBeenSet = true; m_actionGroup = value; }
-
-    /**
-     * <p>The action group that the function belongs to.</p>
-     */
     inline void SetActionGroup(Aws::String&& value) { m_actionGroupHasBeenSet = true; m_actionGroup = std::move(value); }
-
-    /**
-     * <p>The action group that the function belongs to.</p>
-     */
     inline void SetActionGroup(const char* value) { m_actionGroupHasBeenSet = true; m_actionGroup.assign(value); }
-
-    /**
-     * <p>The action group that the function belongs to.</p>
-     */
     inline FunctionInvocationInput& WithActionGroup(const Aws::String& value) { SetActionGroup(value); return *this;}
-
-    /**
-     * <p>The action group that the function belongs to.</p>
-     */
     inline FunctionInvocationInput& WithActionGroup(Aws::String&& value) { SetActionGroup(std::move(value)); return *this;}
-
-    /**
-     * <p>The action group that the function belongs to.</p>
-     */
     inline FunctionInvocationInput& WithActionGroup(const char* value) { SetActionGroup(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the function.</p>
      */
     inline const Aws::String& GetFunction() const{ return m_function; }
-
-    /**
-     * <p>The name of the function.</p>
-     */
     inline bool FunctionHasBeenSet() const { return m_functionHasBeenSet; }
-
-    /**
-     * <p>The name of the function.</p>
-     */
     inline void SetFunction(const Aws::String& value) { m_functionHasBeenSet = true; m_function = value; }
-
-    /**
-     * <p>The name of the function.</p>
-     */
     inline void SetFunction(Aws::String&& value) { m_functionHasBeenSet = true; m_function = std::move(value); }
-
-    /**
-     * <p>The name of the function.</p>
-     */
     inline void SetFunction(const char* value) { m_functionHasBeenSet = true; m_function.assign(value); }
-
-    /**
-     * <p>The name of the function.</p>
-     */
     inline FunctionInvocationInput& WithFunction(const Aws::String& value) { SetFunction(value); return *this;}
-
-    /**
-     * <p>The name of the function.</p>
-     */
     inline FunctionInvocationInput& WithFunction(Aws::String&& value) { SetFunction(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the function.</p>
-     */
     inline FunctionInvocationInput& WithFunction(const char* value) { SetFunction(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of parameters of the function.</p>
      */
     inline const Aws::Vector<FunctionParameter>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>A list of parameters of the function.</p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>A list of parameters of the function.</p>
-     */
     inline void SetParameters(const Aws::Vector<FunctionParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>A list of parameters of the function.</p>
-     */
     inline void SetParameters(Aws::Vector<FunctionParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>A list of parameters of the function.</p>
-     */
     inline FunctionInvocationInput& WithParameters(const Aws::Vector<FunctionParameter>& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>A list of parameters of the function.</p>
-     */
     inline FunctionInvocationInput& WithParameters(Aws::Vector<FunctionParameter>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of parameters of the function.</p>
-     */
     inline FunctionInvocationInput& AddParameters(const FunctionParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-
-    /**
-     * <p>A list of parameters of the function.</p>
-     */
     inline FunctionInvocationInput& AddParameters(FunctionParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_actionGroup;

@@ -34,46 +34,19 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
      */
     inline const Aws::String& GetEventTrackerArn() const{ return m_eventTrackerArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
-     */
     inline bool EventTrackerArnHasBeenSet() const { return m_eventTrackerArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
-     */
     inline void SetEventTrackerArn(const Aws::String& value) { m_eventTrackerArnHasBeenSet = true; m_eventTrackerArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
-     */
     inline void SetEventTrackerArn(Aws::String&& value) { m_eventTrackerArnHasBeenSet = true; m_eventTrackerArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
-     */
     inline void SetEventTrackerArn(const char* value) { m_eventTrackerArnHasBeenSet = true; m_eventTrackerArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
-     */
     inline DeleteEventTrackerRequest& WithEventTrackerArn(const Aws::String& value) { SetEventTrackerArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
-     */
     inline DeleteEventTrackerRequest& WithEventTrackerArn(Aws::String&& value) { SetEventTrackerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
-     */
     inline DeleteEventTrackerRequest& WithEventTrackerArn(const char* value) { SetEventTrackerArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_eventTrackerArn;

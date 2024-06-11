@@ -38,36 +38,17 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>In-transit encryption-related input for the security configuration.</p>
      */
     inline const InTransitEncryptionConfiguration& GetInTransitEncryptionConfiguration() const{ return m_inTransitEncryptionConfiguration; }
-
-    /**
-     * <p>In-transit encryption-related input for the security configuration.</p>
-     */
     inline bool InTransitEncryptionConfigurationHasBeenSet() const { return m_inTransitEncryptionConfigurationHasBeenSet; }
-
-    /**
-     * <p>In-transit encryption-related input for the security configuration.</p>
-     */
     inline void SetInTransitEncryptionConfiguration(const InTransitEncryptionConfiguration& value) { m_inTransitEncryptionConfigurationHasBeenSet = true; m_inTransitEncryptionConfiguration = value; }
-
-    /**
-     * <p>In-transit encryption-related input for the security configuration.</p>
-     */
     inline void SetInTransitEncryptionConfiguration(InTransitEncryptionConfiguration&& value) { m_inTransitEncryptionConfigurationHasBeenSet = true; m_inTransitEncryptionConfiguration = std::move(value); }
-
-    /**
-     * <p>In-transit encryption-related input for the security configuration.</p>
-     */
     inline EncryptionConfiguration& WithInTransitEncryptionConfiguration(const InTransitEncryptionConfiguration& value) { SetInTransitEncryptionConfiguration(value); return *this;}
-
-    /**
-     * <p>In-transit encryption-related input for the security configuration.</p>
-     */
     inline EncryptionConfiguration& WithInTransitEncryptionConfiguration(InTransitEncryptionConfiguration&& value) { SetInTransitEncryptionConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InTransitEncryptionConfiguration m_inTransitEncryptionConfiguration;

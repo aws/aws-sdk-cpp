@@ -37,80 +37,38 @@ namespace Model
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>When specified, represents the total minutes used by the resource to run
      * tests.</p>
      */
     inline double GetTotal() const{ return m_total; }
-
-    /**
-     * <p>When specified, represents the total minutes used by the resource to run
-     * tests.</p>
-     */
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-
-    /**
-     * <p>When specified, represents the total minutes used by the resource to run
-     * tests.</p>
-     */
     inline void SetTotal(double value) { m_totalHasBeenSet = true; m_total = value; }
-
-    /**
-     * <p>When specified, represents the total minutes used by the resource to run
-     * tests.</p>
-     */
     inline DeviceMinutes& WithTotal(double value) { SetTotal(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When specified, represents only the sum of metered minutes used by the
      * resource to run tests.</p>
      */
     inline double GetMetered() const{ return m_metered; }
-
-    /**
-     * <p>When specified, represents only the sum of metered minutes used by the
-     * resource to run tests.</p>
-     */
     inline bool MeteredHasBeenSet() const { return m_meteredHasBeenSet; }
-
-    /**
-     * <p>When specified, represents only the sum of metered minutes used by the
-     * resource to run tests.</p>
-     */
     inline void SetMetered(double value) { m_meteredHasBeenSet = true; m_metered = value; }
-
-    /**
-     * <p>When specified, represents only the sum of metered minutes used by the
-     * resource to run tests.</p>
-     */
     inline DeviceMinutes& WithMetered(double value) { SetMetered(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When specified, represents only the sum of unmetered minutes used by the
      * resource to run tests.</p>
      */
     inline double GetUnmetered() const{ return m_unmetered; }
-
-    /**
-     * <p>When specified, represents only the sum of unmetered minutes used by the
-     * resource to run tests.</p>
-     */
     inline bool UnmeteredHasBeenSet() const { return m_unmeteredHasBeenSet; }
-
-    /**
-     * <p>When specified, represents only the sum of unmetered minutes used by the
-     * resource to run tests.</p>
-     */
     inline void SetUnmetered(double value) { m_unmeteredHasBeenSet = true; m_unmetered = value; }
-
-    /**
-     * <p>When specified, represents only the sum of unmetered minutes used by the
-     * resource to run tests.</p>
-     */
     inline DeviceMinutes& WithUnmetered(double value) { SetUnmetered(value); return *this;}
-
+    ///@}
   private:
 
     double m_total;

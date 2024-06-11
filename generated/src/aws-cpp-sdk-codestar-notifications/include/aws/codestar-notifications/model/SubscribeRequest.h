@@ -33,122 +33,45 @@ namespace Model
     AWS_CODESTARNOTIFICATIONS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the notification rule for which you want to
      * create the association.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification rule for which you want to
-     * create the association.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification rule for which you want to
-     * create the association.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification rule for which you want to
-     * create the association.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification rule for which you want to
-     * create the association.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification rule for which you want to
-     * create the association.</p>
-     */
     inline SubscribeRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification rule for which you want to
-     * create the association.</p>
-     */
     inline SubscribeRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification rule for which you want to
-     * create the association.</p>
-     */
     inline SubscribeRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Target& GetTarget() const{ return m_target; }
-
-    
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    
     inline void SetTarget(const Target& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    
     inline void SetTarget(Target&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    
     inline SubscribeRequest& WithTarget(const Target& value) { SetTarget(value); return *this;}
-
-    
     inline SubscribeRequest& WithTarget(Target&& value) { SetTarget(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An enumeration token that, when provided in a request, returns the next batch
      * of the results.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline SubscribeRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline SubscribeRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline SubscribeRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

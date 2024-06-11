@@ -33,94 +33,41 @@ namespace Model
     AWS_ATHENA_API ExportNotebookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The notebook metadata, including notebook ID, notebook name, and workgroup
      * name.</p>
      */
     inline const NotebookMetadata& GetNotebookMetadata() const{ return m_notebookMetadata; }
-
-    /**
-     * <p>The notebook metadata, including notebook ID, notebook name, and workgroup
-     * name.</p>
-     */
     inline void SetNotebookMetadata(const NotebookMetadata& value) { m_notebookMetadata = value; }
-
-    /**
-     * <p>The notebook metadata, including notebook ID, notebook name, and workgroup
-     * name.</p>
-     */
     inline void SetNotebookMetadata(NotebookMetadata&& value) { m_notebookMetadata = std::move(value); }
-
-    /**
-     * <p>The notebook metadata, including notebook ID, notebook name, and workgroup
-     * name.</p>
-     */
     inline ExportNotebookResult& WithNotebookMetadata(const NotebookMetadata& value) { SetNotebookMetadata(value); return *this;}
-
-    /**
-     * <p>The notebook metadata, including notebook ID, notebook name, and workgroup
-     * name.</p>
-     */
     inline ExportNotebookResult& WithNotebookMetadata(NotebookMetadata&& value) { SetNotebookMetadata(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The content of the exported notebook.</p>
      */
     inline const Aws::String& GetPayload() const{ return m_payload; }
-
-    /**
-     * <p>The content of the exported notebook.</p>
-     */
     inline void SetPayload(const Aws::String& value) { m_payload = value; }
-
-    /**
-     * <p>The content of the exported notebook.</p>
-     */
     inline void SetPayload(Aws::String&& value) { m_payload = std::move(value); }
-
-    /**
-     * <p>The content of the exported notebook.</p>
-     */
     inline void SetPayload(const char* value) { m_payload.assign(value); }
-
-    /**
-     * <p>The content of the exported notebook.</p>
-     */
     inline ExportNotebookResult& WithPayload(const Aws::String& value) { SetPayload(value); return *this;}
-
-    /**
-     * <p>The content of the exported notebook.</p>
-     */
     inline ExportNotebookResult& WithPayload(Aws::String&& value) { SetPayload(std::move(value)); return *this;}
-
-    /**
-     * <p>The content of the exported notebook.</p>
-     */
     inline ExportNotebookResult& WithPayload(const char* value) { SetPayload(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExportNotebookResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExportNotebookResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExportNotebookResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     NotebookMetadata m_notebookMetadata;

@@ -41,128 +41,47 @@ namespace Model
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the state.</p>
      */
     inline const Aws::String& GetStateName() const{ return m_stateName; }
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline bool StateNameHasBeenSet() const { return m_stateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline void SetStateName(const Aws::String& value) { m_stateNameHasBeenSet = true; m_stateName = value; }
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline void SetStateName(Aws::String&& value) { m_stateNameHasBeenSet = true; m_stateName = std::move(value); }
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline void SetStateName(const char* value) { m_stateNameHasBeenSet = true; m_stateName.assign(value); }
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline DetectorState& WithStateName(const Aws::String& value) { SetStateName(value); return *this;}
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline DetectorState& WithStateName(Aws::String&& value) { SetStateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline DetectorState& WithStateName(const char* value) { SetStateName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current values of the detector's variables.</p>
      */
     inline const Aws::Vector<Variable>& GetVariables() const{ return m_variables; }
-
-    /**
-     * <p>The current values of the detector's variables.</p>
-     */
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
-
-    /**
-     * <p>The current values of the detector's variables.</p>
-     */
     inline void SetVariables(const Aws::Vector<Variable>& value) { m_variablesHasBeenSet = true; m_variables = value; }
-
-    /**
-     * <p>The current values of the detector's variables.</p>
-     */
     inline void SetVariables(Aws::Vector<Variable>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
-
-    /**
-     * <p>The current values of the detector's variables.</p>
-     */
     inline DetectorState& WithVariables(const Aws::Vector<Variable>& value) { SetVariables(value); return *this;}
-
-    /**
-     * <p>The current values of the detector's variables.</p>
-     */
     inline DetectorState& WithVariables(Aws::Vector<Variable>&& value) { SetVariables(std::move(value)); return *this;}
-
-    /**
-     * <p>The current values of the detector's variables.</p>
-     */
     inline DetectorState& AddVariables(const Variable& value) { m_variablesHasBeenSet = true; m_variables.push_back(value); return *this; }
-
-    /**
-     * <p>The current values of the detector's variables.</p>
-     */
     inline DetectorState& AddVariables(Variable&& value) { m_variablesHasBeenSet = true; m_variables.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current state of the detector's timers.</p>
      */
     inline const Aws::Vector<Timer>& GetTimers() const{ return m_timers; }
-
-    /**
-     * <p>The current state of the detector's timers.</p>
-     */
     inline bool TimersHasBeenSet() const { return m_timersHasBeenSet; }
-
-    /**
-     * <p>The current state of the detector's timers.</p>
-     */
     inline void SetTimers(const Aws::Vector<Timer>& value) { m_timersHasBeenSet = true; m_timers = value; }
-
-    /**
-     * <p>The current state of the detector's timers.</p>
-     */
     inline void SetTimers(Aws::Vector<Timer>&& value) { m_timersHasBeenSet = true; m_timers = std::move(value); }
-
-    /**
-     * <p>The current state of the detector's timers.</p>
-     */
     inline DetectorState& WithTimers(const Aws::Vector<Timer>& value) { SetTimers(value); return *this;}
-
-    /**
-     * <p>The current state of the detector's timers.</p>
-     */
     inline DetectorState& WithTimers(Aws::Vector<Timer>&& value) { SetTimers(std::move(value)); return *this;}
-
-    /**
-     * <p>The current state of the detector's timers.</p>
-     */
     inline DetectorState& AddTimers(const Timer& value) { m_timersHasBeenSet = true; m_timers.push_back(value); return *this; }
-
-    /**
-     * <p>The current state of the detector's timers.</p>
-     */
     inline DetectorState& AddTimers(Timer&& value) { m_timersHasBeenSet = true; m_timers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_stateName;

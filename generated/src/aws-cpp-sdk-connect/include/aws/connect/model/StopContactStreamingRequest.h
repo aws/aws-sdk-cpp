@@ -32,152 +32,50 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline StopContactStreamingRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline StopContactStreamingRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline StopContactStreamingRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the contact. This is the identifier of the contact that is
      * associated with the first interaction with the contact center.</p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
-
-    /**
-     * <p>The identifier of the contact. This is the identifier of the contact that is
-     * associated with the first interaction with the contact center.</p>
-     */
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the contact. This is the identifier of the contact that is
-     * associated with the first interaction with the contact center.</p>
-     */
     inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-
-    /**
-     * <p>The identifier of the contact. This is the identifier of the contact that is
-     * associated with the first interaction with the contact center.</p>
-     */
     inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-
-    /**
-     * <p>The identifier of the contact. This is the identifier of the contact that is
-     * associated with the first interaction with the contact center.</p>
-     */
     inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-
-    /**
-     * <p>The identifier of the contact. This is the identifier of the contact that is
-     * associated with the first interaction with the contact center.</p>
-     */
     inline StopContactStreamingRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-
-    /**
-     * <p>The identifier of the contact. This is the identifier of the contact that is
-     * associated with the first interaction with the contact center.</p>
-     */
     inline StopContactStreamingRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the contact. This is the identifier of the contact that is
-     * associated with the first interaction with the contact center.</p>
-     */
     inline StopContactStreamingRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the streaming configuration enabled. </p>
      */
     inline const Aws::String& GetStreamingId() const{ return m_streamingId; }
-
-    /**
-     * <p>The identifier of the streaming configuration enabled. </p>
-     */
     inline bool StreamingIdHasBeenSet() const { return m_streamingIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the streaming configuration enabled. </p>
-     */
     inline void SetStreamingId(const Aws::String& value) { m_streamingIdHasBeenSet = true; m_streamingId = value; }
-
-    /**
-     * <p>The identifier of the streaming configuration enabled. </p>
-     */
     inline void SetStreamingId(Aws::String&& value) { m_streamingIdHasBeenSet = true; m_streamingId = std::move(value); }
-
-    /**
-     * <p>The identifier of the streaming configuration enabled. </p>
-     */
     inline void SetStreamingId(const char* value) { m_streamingIdHasBeenSet = true; m_streamingId.assign(value); }
-
-    /**
-     * <p>The identifier of the streaming configuration enabled. </p>
-     */
     inline StopContactStreamingRequest& WithStreamingId(const Aws::String& value) { SetStreamingId(value); return *this;}
-
-    /**
-     * <p>The identifier of the streaming configuration enabled. </p>
-     */
     inline StopContactStreamingRequest& WithStreamingId(Aws::String&& value) { SetStreamingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the streaming configuration enabled. </p>
-     */
     inline StopContactStreamingRequest& WithStreamingId(const char* value) { SetStreamingId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

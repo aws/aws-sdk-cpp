@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The user-supplied DB cluster identifier. If this parameter is specified, only
      * information about the specified DB cluster is returned. This parameter is not
@@ -43,64 +44,16 @@ namespace Model
      * cluster identifier.</p>
      */
     inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
-
-    /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified, only
-     * information about the specified DB cluster is returned. This parameter is not
-     * case-sensitive.</p> <p>Constraints: If supplied, must match an existing DB
-     * cluster identifier.</p>
-     */
     inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified, only
-     * information about the specified DB cluster is returned. This parameter is not
-     * case-sensitive.</p> <p>Constraints: If supplied, must match an existing DB
-     * cluster identifier.</p>
-     */
     inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
-
-    /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified, only
-     * information about the specified DB cluster is returned. This parameter is not
-     * case-sensitive.</p> <p>Constraints: If supplied, must match an existing DB
-     * cluster identifier.</p>
-     */
     inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
-
-    /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified, only
-     * information about the specified DB cluster is returned. This parameter is not
-     * case-sensitive.</p> <p>Constraints: If supplied, must match an existing DB
-     * cluster identifier.</p>
-     */
     inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
-
-    /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified, only
-     * information about the specified DB cluster is returned. This parameter is not
-     * case-sensitive.</p> <p>Constraints: If supplied, must match an existing DB
-     * cluster identifier.</p>
-     */
     inline DescribeGlobalClustersRequest& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified, only
-     * information about the specified DB cluster is returned. This parameter is not
-     * case-sensitive.</p> <p>Constraints: If supplied, must match an existing DB
-     * cluster identifier.</p>
-     */
     inline DescribeGlobalClustersRequest& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified, only
-     * information about the specified DB cluster is returned. This parameter is not
-     * case-sensitive.</p> <p>Constraints: If supplied, must match an existing DB
-     * cluster identifier.</p>
-     */
     inline DescribeGlobalClustersRequest& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination marker
@@ -109,35 +62,12 @@ namespace Model
      * maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
-
-    /**
-     * <p>The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination marker
-     * token is included in the response that you can use to retrieve the remaining
-     * results.</p> <p>Default: <code>100</code> </p> <p>Constraints: Minimum 20,
-     * maximum 100.</p>
-     */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination marker
-     * token is included in the response that you can use to retrieve the remaining
-     * results.</p> <p>Default: <code>100</code> </p> <p>Constraints: Minimum 20,
-     * maximum 100.</p>
-     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
-
-    /**
-     * <p>The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination marker
-     * token is included in the response that you can use to retrieve the remaining
-     * results.</p> <p>Default: <code>100</code> </p> <p>Constraints: Minimum 20,
-     * maximum 100.</p>
-     */
     inline DescribeGlobalClustersRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>(<i>Optional</i>) A pagination token returned by a previous call to
      * <code>DescribeGlobalClusters</code>. If this parameter is specified, the
@@ -145,63 +75,14 @@ namespace Model
      * by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>(<i>Optional</i>) A pagination token returned by a previous call to
-     * <code>DescribeGlobalClusters</code>. If this parameter is specified, the
-     * response will only include records beyond the marker, up to the number specified
-     * by <code>MaxRecords</code>.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>(<i>Optional</i>) A pagination token returned by a previous call to
-     * <code>DescribeGlobalClusters</code>. If this parameter is specified, the
-     * response will only include records beyond the marker, up to the number specified
-     * by <code>MaxRecords</code>.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>(<i>Optional</i>) A pagination token returned by a previous call to
-     * <code>DescribeGlobalClusters</code>. If this parameter is specified, the
-     * response will only include records beyond the marker, up to the number specified
-     * by <code>MaxRecords</code>.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>(<i>Optional</i>) A pagination token returned by a previous call to
-     * <code>DescribeGlobalClusters</code>. If this parameter is specified, the
-     * response will only include records beyond the marker, up to the number specified
-     * by <code>MaxRecords</code>.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>(<i>Optional</i>) A pagination token returned by a previous call to
-     * <code>DescribeGlobalClusters</code>. If this parameter is specified, the
-     * response will only include records beyond the marker, up to the number specified
-     * by <code>MaxRecords</code>.</p>
-     */
     inline DescribeGlobalClustersRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>(<i>Optional</i>) A pagination token returned by a previous call to
-     * <code>DescribeGlobalClusters</code>. If this parameter is specified, the
-     * response will only include records beyond the marker, up to the number specified
-     * by <code>MaxRecords</code>.</p>
-     */
     inline DescribeGlobalClustersRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>(<i>Optional</i>) A pagination token returned by a previous call to
-     * <code>DescribeGlobalClusters</code>. If this parameter is specified, the
-     * response will only include records beyond the marker, up to the number specified
-     * by <code>MaxRecords</code>.</p>
-     */
     inline DescribeGlobalClustersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_globalClusterIdentifier;

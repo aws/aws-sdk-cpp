@@ -34,46 +34,19 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline const Aws::String& GetLicenseManagerReportGeneratorArn() const{ return m_licenseManagerReportGeneratorArn; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the report generator.</p>
-     */
     inline bool LicenseManagerReportGeneratorArnHasBeenSet() const { return m_licenseManagerReportGeneratorArnHasBeenSet; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the report generator.</p>
-     */
     inline void SetLicenseManagerReportGeneratorArn(const Aws::String& value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn = value; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the report generator.</p>
-     */
     inline void SetLicenseManagerReportGeneratorArn(Aws::String&& value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the report generator.</p>
-     */
     inline void SetLicenseManagerReportGeneratorArn(const char* value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn.assign(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the report generator.</p>
-     */
     inline GetLicenseManagerReportGeneratorRequest& WithLicenseManagerReportGeneratorArn(const Aws::String& value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the report generator.</p>
-     */
     inline GetLicenseManagerReportGeneratorRequest& WithLicenseManagerReportGeneratorArn(Aws::String&& value) { SetLicenseManagerReportGeneratorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the report generator.</p>
-     */
     inline GetLicenseManagerReportGeneratorRequest& WithLicenseManagerReportGeneratorArn(const char* value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_licenseManagerReportGeneratorArn;

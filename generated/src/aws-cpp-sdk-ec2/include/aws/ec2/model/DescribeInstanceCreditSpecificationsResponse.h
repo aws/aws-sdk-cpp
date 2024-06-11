@@ -35,100 +35,41 @@ namespace Model
     AWS_EC2_API DescribeInstanceCreditSpecificationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the credit option for CPU usage of an instance.</p>
      */
     inline const Aws::Vector<InstanceCreditSpecification>& GetInstanceCreditSpecifications() const{ return m_instanceCreditSpecifications; }
-
-    /**
-     * <p>Information about the credit option for CPU usage of an instance.</p>
-     */
     inline void SetInstanceCreditSpecifications(const Aws::Vector<InstanceCreditSpecification>& value) { m_instanceCreditSpecifications = value; }
-
-    /**
-     * <p>Information about the credit option for CPU usage of an instance.</p>
-     */
     inline void SetInstanceCreditSpecifications(Aws::Vector<InstanceCreditSpecification>&& value) { m_instanceCreditSpecifications = std::move(value); }
-
-    /**
-     * <p>Information about the credit option for CPU usage of an instance.</p>
-     */
     inline DescribeInstanceCreditSpecificationsResponse& WithInstanceCreditSpecifications(const Aws::Vector<InstanceCreditSpecification>& value) { SetInstanceCreditSpecifications(value); return *this;}
-
-    /**
-     * <p>Information about the credit option for CPU usage of an instance.</p>
-     */
     inline DescribeInstanceCreditSpecificationsResponse& WithInstanceCreditSpecifications(Aws::Vector<InstanceCreditSpecification>&& value) { SetInstanceCreditSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the credit option for CPU usage of an instance.</p>
-     */
     inline DescribeInstanceCreditSpecificationsResponse& AddInstanceCreditSpecifications(const InstanceCreditSpecification& value) { m_instanceCreditSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the credit option for CPU usage of an instance.</p>
-     */
     inline DescribeInstanceCreditSpecificationsResponse& AddInstanceCreditSpecifications(InstanceCreditSpecification&& value) { m_instanceCreditSpecifications.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline DescribeInstanceCreditSpecificationsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline DescribeInstanceCreditSpecificationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline DescribeInstanceCreditSpecificationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeInstanceCreditSpecificationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeInstanceCreditSpecificationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<InstanceCreditSpecification> m_instanceCreditSpecifications;

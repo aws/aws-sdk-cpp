@@ -32,63 +32,29 @@ namespace Model
     AWS_LAKEFORMATION_API UpdateTableStorageOptimizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A response indicating the success of failure of the operation.</p>
      */
     inline const Aws::String& GetResult() const{ return m_result; }
-
-    /**
-     * <p>A response indicating the success of failure of the operation.</p>
-     */
     inline void SetResult(const Aws::String& value) { m_result = value; }
-
-    /**
-     * <p>A response indicating the success of failure of the operation.</p>
-     */
     inline void SetResult(Aws::String&& value) { m_result = std::move(value); }
-
-    /**
-     * <p>A response indicating the success of failure of the operation.</p>
-     */
     inline void SetResult(const char* value) { m_result.assign(value); }
-
-    /**
-     * <p>A response indicating the success of failure of the operation.</p>
-     */
     inline UpdateTableStorageOptimizerResult& WithResult(const Aws::String& value) { SetResult(value); return *this;}
-
-    /**
-     * <p>A response indicating the success of failure of the operation.</p>
-     */
     inline UpdateTableStorageOptimizerResult& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
-
-    /**
-     * <p>A response indicating the success of failure of the operation.</p>
-     */
     inline UpdateTableStorageOptimizerResult& WithResult(const char* value) { SetResult(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateTableStorageOptimizerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateTableStorageOptimizerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateTableStorageOptimizerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_result;

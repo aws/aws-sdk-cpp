@@ -42,54 +42,20 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the schema entity type that's mapped to the user pool group.
      * Defaults to <code>AWS::CognitoGroup</code>.</p>
      */
     inline const Aws::String& GetGroupEntityType() const{ return m_groupEntityType; }
-
-    /**
-     * <p>The name of the schema entity type that's mapped to the user pool group.
-     * Defaults to <code>AWS::CognitoGroup</code>.</p>
-     */
     inline bool GroupEntityTypeHasBeenSet() const { return m_groupEntityTypeHasBeenSet; }
-
-    /**
-     * <p>The name of the schema entity type that's mapped to the user pool group.
-     * Defaults to <code>AWS::CognitoGroup</code>.</p>
-     */
     inline void SetGroupEntityType(const Aws::String& value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType = value; }
-
-    /**
-     * <p>The name of the schema entity type that's mapped to the user pool group.
-     * Defaults to <code>AWS::CognitoGroup</code>.</p>
-     */
     inline void SetGroupEntityType(Aws::String&& value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType = std::move(value); }
-
-    /**
-     * <p>The name of the schema entity type that's mapped to the user pool group.
-     * Defaults to <code>AWS::CognitoGroup</code>.</p>
-     */
     inline void SetGroupEntityType(const char* value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType.assign(value); }
-
-    /**
-     * <p>The name of the schema entity type that's mapped to the user pool group.
-     * Defaults to <code>AWS::CognitoGroup</code>.</p>
-     */
     inline CognitoGroupConfigurationDetail& WithGroupEntityType(const Aws::String& value) { SetGroupEntityType(value); return *this;}
-
-    /**
-     * <p>The name of the schema entity type that's mapped to the user pool group.
-     * Defaults to <code>AWS::CognitoGroup</code>.</p>
-     */
     inline CognitoGroupConfigurationDetail& WithGroupEntityType(Aws::String&& value) { SetGroupEntityType(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the schema entity type that's mapped to the user pool group.
-     * Defaults to <code>AWS::CognitoGroup</code>.</p>
-     */
     inline CognitoGroupConfigurationDetail& WithGroupEntityType(const char* value) { SetGroupEntityType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupEntityType;

@@ -34,106 +34,43 @@ namespace Model
     AWS_CODECONNECTIONS_API ListSyncConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of repository sync definitions returned by the request.</p>
      */
     inline const Aws::Vector<SyncConfiguration>& GetSyncConfigurations() const{ return m_syncConfigurations; }
-
-    /**
-     * <p>The list of repository sync definitions returned by the request.</p>
-     */
     inline void SetSyncConfigurations(const Aws::Vector<SyncConfiguration>& value) { m_syncConfigurations = value; }
-
-    /**
-     * <p>The list of repository sync definitions returned by the request.</p>
-     */
     inline void SetSyncConfigurations(Aws::Vector<SyncConfiguration>&& value) { m_syncConfigurations = std::move(value); }
-
-    /**
-     * <p>The list of repository sync definitions returned by the request.</p>
-     */
     inline ListSyncConfigurationsResult& WithSyncConfigurations(const Aws::Vector<SyncConfiguration>& value) { SetSyncConfigurations(value); return *this;}
-
-    /**
-     * <p>The list of repository sync definitions returned by the request.</p>
-     */
     inline ListSyncConfigurationsResult& WithSyncConfigurations(Aws::Vector<SyncConfiguration>&& value) { SetSyncConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of repository sync definitions returned by the request.</p>
-     */
     inline ListSyncConfigurationsResult& AddSyncConfigurations(const SyncConfiguration& value) { m_syncConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>The list of repository sync definitions returned by the request.</p>
-     */
     inline ListSyncConfigurationsResult& AddSyncConfigurations(SyncConfiguration&& value) { m_syncConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An enumeration token that allows the operation to batch the next results of
      * the operation.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the next results of
-     * the operation.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the next results of
-     * the operation.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the next results of
-     * the operation.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the next results of
-     * the operation.</p>
-     */
     inline ListSyncConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the next results of
-     * the operation.</p>
-     */
     inline ListSyncConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the next results of
-     * the operation.</p>
-     */
     inline ListSyncConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListSyncConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListSyncConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListSyncConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SyncConfiguration> m_syncConfigurations;

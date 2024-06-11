@@ -36,47 +36,25 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of text documents indexed.</p>
      */
     inline int GetIndexedTextDocumentsCount() const{ return m_indexedTextDocumentsCount; }
-
-    /**
-     * <p>The number of text documents indexed.</p>
-     */
     inline bool IndexedTextDocumentsCountHasBeenSet() const { return m_indexedTextDocumentsCountHasBeenSet; }
-
-    /**
-     * <p>The number of text documents indexed.</p>
-     */
     inline void SetIndexedTextDocumentsCount(int value) { m_indexedTextDocumentsCountHasBeenSet = true; m_indexedTextDocumentsCount = value; }
-
-    /**
-     * <p>The number of text documents indexed.</p>
-     */
     inline TextDocumentStatistics& WithIndexedTextDocumentsCount(int value) { SetIndexedTextDocumentsCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total size, in bytes, of the indexed documents.</p>
      */
     inline long long GetIndexedTextBytes() const{ return m_indexedTextBytes; }
-
-    /**
-     * <p>The total size, in bytes, of the indexed documents.</p>
-     */
     inline bool IndexedTextBytesHasBeenSet() const { return m_indexedTextBytesHasBeenSet; }
-
-    /**
-     * <p>The total size, in bytes, of the indexed documents.</p>
-     */
     inline void SetIndexedTextBytes(long long value) { m_indexedTextBytesHasBeenSet = true; m_indexedTextBytes = value; }
-
-    /**
-     * <p>The total size, in bytes, of the indexed documents.</p>
-     */
     inline TextDocumentStatistics& WithIndexedTextBytes(long long value) { SetIndexedTextBytes(value); return *this;}
-
+    ///@}
   private:
 
     int m_indexedTextDocumentsCount;

@@ -34,46 +34,19 @@ namespace Model
     AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> The name of the customer agreement. </p>
      */
     inline const Aws::String& GetAgreementName() const{ return m_agreementName; }
-
-    /**
-     * <p> The name of the customer agreement. </p>
-     */
     inline bool AgreementNameHasBeenSet() const { return m_agreementNameHasBeenSet; }
-
-    /**
-     * <p> The name of the customer agreement. </p>
-     */
     inline void SetAgreementName(const Aws::String& value) { m_agreementNameHasBeenSet = true; m_agreementName = value; }
-
-    /**
-     * <p> The name of the customer agreement. </p>
-     */
     inline void SetAgreementName(Aws::String&& value) { m_agreementNameHasBeenSet = true; m_agreementName = std::move(value); }
-
-    /**
-     * <p> The name of the customer agreement. </p>
-     */
     inline void SetAgreementName(const char* value) { m_agreementNameHasBeenSet = true; m_agreementName.assign(value); }
-
-    /**
-     * <p> The name of the customer agreement. </p>
-     */
     inline ConfirmCustomerAgreementRequest& WithAgreementName(const Aws::String& value) { SetAgreementName(value); return *this;}
-
-    /**
-     * <p> The name of the customer agreement. </p>
-     */
     inline ConfirmCustomerAgreementRequest& WithAgreementName(Aws::String&& value) { SetAgreementName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the customer agreement. </p>
-     */
     inline ConfirmCustomerAgreementRequest& WithAgreementName(const char* value) { SetAgreementName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agreementName;

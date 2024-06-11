@@ -39,77 +39,31 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the patch group registered with the patch baseline.</p>
      */
     inline const Aws::String& GetPatchGroup() const{ return m_patchGroup; }
-
-    /**
-     * <p>The name of the patch group registered with the patch baseline.</p>
-     */
     inline bool PatchGroupHasBeenSet() const { return m_patchGroupHasBeenSet; }
-
-    /**
-     * <p>The name of the patch group registered with the patch baseline.</p>
-     */
     inline void SetPatchGroup(const Aws::String& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
-
-    /**
-     * <p>The name of the patch group registered with the patch baseline.</p>
-     */
     inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = std::move(value); }
-
-    /**
-     * <p>The name of the patch group registered with the patch baseline.</p>
-     */
     inline void SetPatchGroup(const char* value) { m_patchGroupHasBeenSet = true; m_patchGroup.assign(value); }
-
-    /**
-     * <p>The name of the patch group registered with the patch baseline.</p>
-     */
     inline PatchGroupPatchBaselineMapping& WithPatchGroup(const Aws::String& value) { SetPatchGroup(value); return *this;}
-
-    /**
-     * <p>The name of the patch group registered with the patch baseline.</p>
-     */
     inline PatchGroupPatchBaselineMapping& WithPatchGroup(Aws::String&& value) { SetPatchGroup(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the patch group registered with the patch baseline.</p>
-     */
     inline PatchGroupPatchBaselineMapping& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The patch baseline the patch group is registered with.</p>
      */
     inline const PatchBaselineIdentity& GetBaselineIdentity() const{ return m_baselineIdentity; }
-
-    /**
-     * <p>The patch baseline the patch group is registered with.</p>
-     */
     inline bool BaselineIdentityHasBeenSet() const { return m_baselineIdentityHasBeenSet; }
-
-    /**
-     * <p>The patch baseline the patch group is registered with.</p>
-     */
     inline void SetBaselineIdentity(const PatchBaselineIdentity& value) { m_baselineIdentityHasBeenSet = true; m_baselineIdentity = value; }
-
-    /**
-     * <p>The patch baseline the patch group is registered with.</p>
-     */
     inline void SetBaselineIdentity(PatchBaselineIdentity&& value) { m_baselineIdentityHasBeenSet = true; m_baselineIdentity = std::move(value); }
-
-    /**
-     * <p>The patch baseline the patch group is registered with.</p>
-     */
     inline PatchGroupPatchBaselineMapping& WithBaselineIdentity(const PatchBaselineIdentity& value) { SetBaselineIdentity(value); return *this;}
-
-    /**
-     * <p>The patch baseline the patch group is registered with.</p>
-     */
     inline PatchGroupPatchBaselineMapping& WithBaselineIdentity(PatchBaselineIdentity&& value) { SetBaselineIdentity(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_patchGroup;

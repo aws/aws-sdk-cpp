@@ -34,46 +34,19 @@ namespace Model
     AWS_MTURK_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the HIT to be deleted.</p>
      */
     inline const Aws::String& GetHITId() const{ return m_hITId; }
-
-    /**
-     * <p>The ID of the HIT to be deleted.</p>
-     */
     inline bool HITIdHasBeenSet() const { return m_hITIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the HIT to be deleted.</p>
-     */
     inline void SetHITId(const Aws::String& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
-
-    /**
-     * <p>The ID of the HIT to be deleted.</p>
-     */
     inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
-
-    /**
-     * <p>The ID of the HIT to be deleted.</p>
-     */
     inline void SetHITId(const char* value) { m_hITIdHasBeenSet = true; m_hITId.assign(value); }
-
-    /**
-     * <p>The ID of the HIT to be deleted.</p>
-     */
     inline DeleteHITRequest& WithHITId(const Aws::String& value) { SetHITId(value); return *this;}
-
-    /**
-     * <p>The ID of the HIT to be deleted.</p>
-     */
     inline DeleteHITRequest& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the HIT to be deleted.</p>
-     */
     inline DeleteHITRequest& WithHITId(const char* value) { SetHITId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hITId;

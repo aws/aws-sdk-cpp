@@ -39,6 +39,7 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * UDP output buffering in milliseconds. Larger values increase latency through the
      * transcoder but simultaneously assist the transcoder in maintaining a constant,
@@ -46,118 +47,45 @@ namespace Model
      * input disruptions, picture reordering, etc.
      */
     inline int GetBufferMsec() const{ return m_bufferMsec; }
-
-    /**
-     * UDP output buffering in milliseconds. Larger values increase latency through the
-     * transcoder but simultaneously assist the transcoder in maintaining a constant,
-     * low-jitter UDP/RTP output while accommodating clock recovery, input switching,
-     * input disruptions, picture reordering, etc.
-     */
     inline bool BufferMsecHasBeenSet() const { return m_bufferMsecHasBeenSet; }
-
-    /**
-     * UDP output buffering in milliseconds. Larger values increase latency through the
-     * transcoder but simultaneously assist the transcoder in maintaining a constant,
-     * low-jitter UDP/RTP output while accommodating clock recovery, input switching,
-     * input disruptions, picture reordering, etc.
-     */
     inline void SetBufferMsec(int value) { m_bufferMsecHasBeenSet = true; m_bufferMsec = value; }
-
-    /**
-     * UDP output buffering in milliseconds. Larger values increase latency through the
-     * transcoder but simultaneously assist the transcoder in maintaining a constant,
-     * low-jitter UDP/RTP output while accommodating clock recovery, input switching,
-     * input disruptions, picture reordering, etc.
-     */
     inline UdpOutputSettings& WithBufferMsec(int value) { SetBufferMsec(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const UdpContainerSettings& GetContainerSettings() const{ return m_containerSettings; }
-
-    
     inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }
-
-    
     inline void SetContainerSettings(const UdpContainerSettings& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = value; }
-
-    
     inline void SetContainerSettings(UdpContainerSettings&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::move(value); }
-
-    
     inline UdpOutputSettings& WithContainerSettings(const UdpContainerSettings& value) { SetContainerSettings(value); return *this;}
-
-    
     inline UdpOutputSettings& WithContainerSettings(UdpContainerSettings&& value) { SetContainerSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Destination address and port number for RTP or UDP packets. Can be unicast or
      * multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
      */
     inline const OutputLocationRef& GetDestination() const{ return m_destination; }
-
-    /**
-     * Destination address and port number for RTP or UDP packets. Can be unicast or
-     * multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
-     */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-
-    /**
-     * Destination address and port number for RTP or UDP packets. Can be unicast or
-     * multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
-     */
     inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
-
-    /**
-     * Destination address and port number for RTP or UDP packets. Can be unicast or
-     * multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
-     */
     inline void SetDestination(OutputLocationRef&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-
-    /**
-     * Destination address and port number for RTP or UDP packets. Can be unicast or
-     * multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
-     */
     inline UdpOutputSettings& WithDestination(const OutputLocationRef& value) { SetDestination(value); return *this;}
-
-    /**
-     * Destination address and port number for RTP or UDP packets. Can be unicast or
-     * multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
-     */
     inline UdpOutputSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Settings for enabling and adjusting Forward Error Correction on UDP outputs.
      */
     inline const FecOutputSettings& GetFecOutputSettings() const{ return m_fecOutputSettings; }
-
-    /**
-     * Settings for enabling and adjusting Forward Error Correction on UDP outputs.
-     */
     inline bool FecOutputSettingsHasBeenSet() const { return m_fecOutputSettingsHasBeenSet; }
-
-    /**
-     * Settings for enabling and adjusting Forward Error Correction on UDP outputs.
-     */
     inline void SetFecOutputSettings(const FecOutputSettings& value) { m_fecOutputSettingsHasBeenSet = true; m_fecOutputSettings = value; }
-
-    /**
-     * Settings for enabling and adjusting Forward Error Correction on UDP outputs.
-     */
     inline void SetFecOutputSettings(FecOutputSettings&& value) { m_fecOutputSettingsHasBeenSet = true; m_fecOutputSettings = std::move(value); }
-
-    /**
-     * Settings for enabling and adjusting Forward Error Correction on UDP outputs.
-     */
     inline UdpOutputSettings& WithFecOutputSettings(const FecOutputSettings& value) { SetFecOutputSettings(value); return *this;}
-
-    /**
-     * Settings for enabling and adjusting Forward Error Correction on UDP outputs.
-     */
     inline UdpOutputSettings& WithFecOutputSettings(FecOutputSettings&& value) { SetFecOutputSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_bufferMsec;

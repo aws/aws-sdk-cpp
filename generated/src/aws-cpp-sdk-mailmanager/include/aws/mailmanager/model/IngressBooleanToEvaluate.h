@@ -38,42 +38,18 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The structure type for a boolean condition stating the Add On ARN and its
      * returned value.</p>
      */
     inline const IngressAnalysis& GetAnalysis() const{ return m_analysis; }
-
-    /**
-     * <p>The structure type for a boolean condition stating the Add On ARN and its
-     * returned value.</p>
-     */
     inline bool AnalysisHasBeenSet() const { return m_analysisHasBeenSet; }
-
-    /**
-     * <p>The structure type for a boolean condition stating the Add On ARN and its
-     * returned value.</p>
-     */
     inline void SetAnalysis(const IngressAnalysis& value) { m_analysisHasBeenSet = true; m_analysis = value; }
-
-    /**
-     * <p>The structure type for a boolean condition stating the Add On ARN and its
-     * returned value.</p>
-     */
     inline void SetAnalysis(IngressAnalysis&& value) { m_analysisHasBeenSet = true; m_analysis = std::move(value); }
-
-    /**
-     * <p>The structure type for a boolean condition stating the Add On ARN and its
-     * returned value.</p>
-     */
     inline IngressBooleanToEvaluate& WithAnalysis(const IngressAnalysis& value) { SetAnalysis(value); return *this;}
-
-    /**
-     * <p>The structure type for a boolean condition stating the Add On ARN and its
-     * returned value.</p>
-     */
     inline IngressBooleanToEvaluate& WithAnalysis(IngressAnalysis&& value) { SetAnalysis(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IngressAnalysis m_analysis;

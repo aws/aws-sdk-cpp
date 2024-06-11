@@ -38,42 +38,18 @@ namespace Model
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer with
      * date range as input.</p>
      */
     inline const OfferAvailabilityEndDateFilterDateRange& GetDateRange() const{ return m_dateRange; }
-
-    /**
-     * <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer with
-     * date range as input.</p>
-     */
     inline bool DateRangeHasBeenSet() const { return m_dateRangeHasBeenSet; }
-
-    /**
-     * <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer with
-     * date range as input.</p>
-     */
     inline void SetDateRange(const OfferAvailabilityEndDateFilterDateRange& value) { m_dateRangeHasBeenSet = true; m_dateRange = value; }
-
-    /**
-     * <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer with
-     * date range as input.</p>
-     */
     inline void SetDateRange(OfferAvailabilityEndDateFilterDateRange&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::move(value); }
-
-    /**
-     * <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer with
-     * date range as input.</p>
-     */
     inline OfferAvailabilityEndDateFilter& WithDateRange(const OfferAvailabilityEndDateFilterDateRange& value) { SetDateRange(value); return *this;}
-
-    /**
-     * <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer with
-     * date range as input.</p>
-     */
     inline OfferAvailabilityEndDateFilter& WithDateRange(OfferAvailabilityEndDateFilterDateRange&& value) { SetDateRange(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OfferAvailabilityEndDateFilterDateRange m_dateRange;

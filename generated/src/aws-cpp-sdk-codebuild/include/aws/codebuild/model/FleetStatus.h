@@ -39,6 +39,7 @@ namespace Model
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status code of the compute fleet. Valid values include:</p> <ul> <li> <p>
      * <code>CREATING</code>: The compute fleet is being created.</p> </li> <li> <p>
@@ -53,83 +54,14 @@ namespace Model
      * </ul>
      */
     inline const FleetStatusCode& GetStatusCode() const{ return m_statusCode; }
-
-    /**
-     * <p>The status code of the compute fleet. Valid values include:</p> <ul> <li> <p>
-     * <code>CREATING</code>: The compute fleet is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code>: The compute fleet is being updated.</p> </li> <li> <p>
-     * <code>ROTATING</code>: The compute fleet is being rotated.</p> </li> <li> <p>
-     * <code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p> </li>
-     * <li> <p> <code>DELETING</code>: The compute fleet is being deleted.</p> </li>
-     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
-     * </li> <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed
-     * to update and could not rollback to previous state.</p> </li> <li> <p>
-     * <code>ACTIVE</code>: The compute fleet has succeeded and is active.</p> </li>
-     * </ul>
-     */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-
-    /**
-     * <p>The status code of the compute fleet. Valid values include:</p> <ul> <li> <p>
-     * <code>CREATING</code>: The compute fleet is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code>: The compute fleet is being updated.</p> </li> <li> <p>
-     * <code>ROTATING</code>: The compute fleet is being rotated.</p> </li> <li> <p>
-     * <code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p> </li>
-     * <li> <p> <code>DELETING</code>: The compute fleet is being deleted.</p> </li>
-     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
-     * </li> <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed
-     * to update and could not rollback to previous state.</p> </li> <li> <p>
-     * <code>ACTIVE</code>: The compute fleet has succeeded and is active.</p> </li>
-     * </ul>
-     */
     inline void SetStatusCode(const FleetStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-
-    /**
-     * <p>The status code of the compute fleet. Valid values include:</p> <ul> <li> <p>
-     * <code>CREATING</code>: The compute fleet is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code>: The compute fleet is being updated.</p> </li> <li> <p>
-     * <code>ROTATING</code>: The compute fleet is being rotated.</p> </li> <li> <p>
-     * <code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p> </li>
-     * <li> <p> <code>DELETING</code>: The compute fleet is being deleted.</p> </li>
-     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
-     * </li> <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed
-     * to update and could not rollback to previous state.</p> </li> <li> <p>
-     * <code>ACTIVE</code>: The compute fleet has succeeded and is active.</p> </li>
-     * </ul>
-     */
     inline void SetStatusCode(FleetStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-
-    /**
-     * <p>The status code of the compute fleet. Valid values include:</p> <ul> <li> <p>
-     * <code>CREATING</code>: The compute fleet is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code>: The compute fleet is being updated.</p> </li> <li> <p>
-     * <code>ROTATING</code>: The compute fleet is being rotated.</p> </li> <li> <p>
-     * <code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p> </li>
-     * <li> <p> <code>DELETING</code>: The compute fleet is being deleted.</p> </li>
-     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
-     * </li> <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed
-     * to update and could not rollback to previous state.</p> </li> <li> <p>
-     * <code>ACTIVE</code>: The compute fleet has succeeded and is active.</p> </li>
-     * </ul>
-     */
     inline FleetStatus& WithStatusCode(const FleetStatusCode& value) { SetStatusCode(value); return *this;}
-
-    /**
-     * <p>The status code of the compute fleet. Valid values include:</p> <ul> <li> <p>
-     * <code>CREATING</code>: The compute fleet is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code>: The compute fleet is being updated.</p> </li> <li> <p>
-     * <code>ROTATING</code>: The compute fleet is being rotated.</p> </li> <li> <p>
-     * <code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p> </li>
-     * <li> <p> <code>DELETING</code>: The compute fleet is being deleted.</p> </li>
-     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
-     * </li> <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed
-     * to update and could not rollback to previous state.</p> </li> <li> <p>
-     * <code>ACTIVE</code>: The compute fleet has succeeded and is active.</p> </li>
-     * </ul>
-     */
     inline FleetStatus& WithStatusCode(FleetStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Additional information about a compute fleet. Valid values include:</p> <ul>
      * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
@@ -137,88 +69,26 @@ namespace Model
      * update.</p> </li> </ul>
      */
     inline const FleetContextCode& GetContext() const{ return m_context; }
-
-    /**
-     * <p>Additional information about a compute fleet. Valid values include:</p> <ul>
-     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
-     * </li> <li> <p> <code>UPDATE_FAILED</code>: The compute fleet has failed to
-     * update.</p> </li> </ul>
-     */
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-
-    /**
-     * <p>Additional information about a compute fleet. Valid values include:</p> <ul>
-     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
-     * </li> <li> <p> <code>UPDATE_FAILED</code>: The compute fleet has failed to
-     * update.</p> </li> </ul>
-     */
     inline void SetContext(const FleetContextCode& value) { m_contextHasBeenSet = true; m_context = value; }
-
-    /**
-     * <p>Additional information about a compute fleet. Valid values include:</p> <ul>
-     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
-     * </li> <li> <p> <code>UPDATE_FAILED</code>: The compute fleet has failed to
-     * update.</p> </li> </ul>
-     */
     inline void SetContext(FleetContextCode&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-
-    /**
-     * <p>Additional information about a compute fleet. Valid values include:</p> <ul>
-     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
-     * </li> <li> <p> <code>UPDATE_FAILED</code>: The compute fleet has failed to
-     * update.</p> </li> </ul>
-     */
     inline FleetStatus& WithContext(const FleetContextCode& value) { SetContext(value); return *this;}
-
-    /**
-     * <p>Additional information about a compute fleet. Valid values include:</p> <ul>
-     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
-     * </li> <li> <p> <code>UPDATE_FAILED</code>: The compute fleet has failed to
-     * update.</p> </li> </ul>
-     */
     inline FleetStatus& WithContext(FleetContextCode&& value) { SetContext(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A message associated with the status of a compute fleet.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A message associated with the status of a compute fleet.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A message associated with the status of a compute fleet.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A message associated with the status of a compute fleet.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A message associated with the status of a compute fleet.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A message associated with the status of a compute fleet.</p>
-     */
     inline FleetStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A message associated with the status of a compute fleet.</p>
-     */
     inline FleetStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message associated with the status of a compute fleet.</p>
-     */
     inline FleetStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     FleetStatusCode m_statusCode;

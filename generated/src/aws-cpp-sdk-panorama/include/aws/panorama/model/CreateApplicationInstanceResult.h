@@ -32,63 +32,29 @@ namespace Model
     AWS_PANORAMA_API CreateApplicationInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The application instance's ID.</p>
      */
     inline const Aws::String& GetApplicationInstanceId() const{ return m_applicationInstanceId; }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline void SetApplicationInstanceId(const Aws::String& value) { m_applicationInstanceId = value; }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline void SetApplicationInstanceId(Aws::String&& value) { m_applicationInstanceId = std::move(value); }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline void SetApplicationInstanceId(const char* value) { m_applicationInstanceId.assign(value); }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline CreateApplicationInstanceResult& WithApplicationInstanceId(const Aws::String& value) { SetApplicationInstanceId(value); return *this;}
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline CreateApplicationInstanceResult& WithApplicationInstanceId(Aws::String&& value) { SetApplicationInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline CreateApplicationInstanceResult& WithApplicationInstanceId(const char* value) { SetApplicationInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateApplicationInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateApplicationInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateApplicationInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationInstanceId;

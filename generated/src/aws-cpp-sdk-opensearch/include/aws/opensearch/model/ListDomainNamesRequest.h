@@ -42,36 +42,17 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Filters the output by domain engine type.</p>
      */
     inline const EngineType& GetEngineType() const{ return m_engineType; }
-
-    /**
-     * <p>Filters the output by domain engine type.</p>
-     */
     inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
-
-    /**
-     * <p>Filters the output by domain engine type.</p>
-     */
     inline void SetEngineType(const EngineType& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
-
-    /**
-     * <p>Filters the output by domain engine type.</p>
-     */
     inline void SetEngineType(EngineType&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::move(value); }
-
-    /**
-     * <p>Filters the output by domain engine type.</p>
-     */
     inline ListDomainNamesRequest& WithEngineType(const EngineType& value) { SetEngineType(value); return *this;}
-
-    /**
-     * <p>Filters the output by domain engine type.</p>
-     */
     inline ListDomainNamesRequest& WithEngineType(EngineType&& value) { SetEngineType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EngineType m_engineType;

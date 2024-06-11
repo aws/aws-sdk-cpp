@@ -41,47 +41,25 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The group ID whose permissions are used to run a Lambda function.
      */
     inline int GetGid() const{ return m_gid; }
-
-    /**
-     * The group ID whose permissions are used to run a Lambda function.
-     */
     inline bool GidHasBeenSet() const { return m_gidHasBeenSet; }
-
-    /**
-     * The group ID whose permissions are used to run a Lambda function.
-     */
     inline void SetGid(int value) { m_gidHasBeenSet = true; m_gid = value; }
-
-    /**
-     * The group ID whose permissions are used to run a Lambda function.
-     */
     inline FunctionRunAsConfig& WithGid(int value) { SetGid(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The user ID whose permissions are used to run a Lambda function.
      */
     inline int GetUid() const{ return m_uid; }
-
-    /**
-     * The user ID whose permissions are used to run a Lambda function.
-     */
     inline bool UidHasBeenSet() const { return m_uidHasBeenSet; }
-
-    /**
-     * The user ID whose permissions are used to run a Lambda function.
-     */
     inline void SetUid(int value) { m_uidHasBeenSet = true; m_uid = value; }
-
-    /**
-     * The user ID whose permissions are used to run a Lambda function.
-     */
     inline FunctionRunAsConfig& WithUid(int value) { SetUid(value); return *this;}
-
+    ///@}
   private:
 
     int m_gid;

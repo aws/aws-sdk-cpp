@@ -39,54 +39,20 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of default values. Amazon Lex chooses the default value to use in the
      * order that they are presented in the list.</p>
      */
     inline const Aws::Vector<SlotDefaultValue>& GetDefaultValueList() const{ return m_defaultValueList; }
-
-    /**
-     * <p>A list of default values. Amazon Lex chooses the default value to use in the
-     * order that they are presented in the list.</p>
-     */
     inline bool DefaultValueListHasBeenSet() const { return m_defaultValueListHasBeenSet; }
-
-    /**
-     * <p>A list of default values. Amazon Lex chooses the default value to use in the
-     * order that they are presented in the list.</p>
-     */
     inline void SetDefaultValueList(const Aws::Vector<SlotDefaultValue>& value) { m_defaultValueListHasBeenSet = true; m_defaultValueList = value; }
-
-    /**
-     * <p>A list of default values. Amazon Lex chooses the default value to use in the
-     * order that they are presented in the list.</p>
-     */
     inline void SetDefaultValueList(Aws::Vector<SlotDefaultValue>&& value) { m_defaultValueListHasBeenSet = true; m_defaultValueList = std::move(value); }
-
-    /**
-     * <p>A list of default values. Amazon Lex chooses the default value to use in the
-     * order that they are presented in the list.</p>
-     */
     inline SlotDefaultValueSpecification& WithDefaultValueList(const Aws::Vector<SlotDefaultValue>& value) { SetDefaultValueList(value); return *this;}
-
-    /**
-     * <p>A list of default values. Amazon Lex chooses the default value to use in the
-     * order that they are presented in the list.</p>
-     */
     inline SlotDefaultValueSpecification& WithDefaultValueList(Aws::Vector<SlotDefaultValue>&& value) { SetDefaultValueList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of default values. Amazon Lex chooses the default value to use in the
-     * order that they are presented in the list.</p>
-     */
     inline SlotDefaultValueSpecification& AddDefaultValueList(const SlotDefaultValue& value) { m_defaultValueListHasBeenSet = true; m_defaultValueList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of default values. Amazon Lex chooses the default value to use in the
-     * order that they are presented in the list.</p>
-     */
     inline SlotDefaultValueSpecification& AddDefaultValueList(SlotDefaultValue&& value) { m_defaultValueListHasBeenSet = true; m_defaultValueList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<SlotDefaultValue> m_defaultValueList;

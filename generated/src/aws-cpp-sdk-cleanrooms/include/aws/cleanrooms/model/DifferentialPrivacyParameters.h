@@ -39,54 +39,20 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Provides the sensitivity parameters that you can use to better understand the
      * total amount of noise in query results.</p>
      */
     inline const Aws::Vector<DifferentialPrivacySensitivityParameters>& GetSensitivityParameters() const{ return m_sensitivityParameters; }
-
-    /**
-     * <p>Provides the sensitivity parameters that you can use to better understand the
-     * total amount of noise in query results.</p>
-     */
     inline bool SensitivityParametersHasBeenSet() const { return m_sensitivityParametersHasBeenSet; }
-
-    /**
-     * <p>Provides the sensitivity parameters that you can use to better understand the
-     * total amount of noise in query results.</p>
-     */
     inline void SetSensitivityParameters(const Aws::Vector<DifferentialPrivacySensitivityParameters>& value) { m_sensitivityParametersHasBeenSet = true; m_sensitivityParameters = value; }
-
-    /**
-     * <p>Provides the sensitivity parameters that you can use to better understand the
-     * total amount of noise in query results.</p>
-     */
     inline void SetSensitivityParameters(Aws::Vector<DifferentialPrivacySensitivityParameters>&& value) { m_sensitivityParametersHasBeenSet = true; m_sensitivityParameters = std::move(value); }
-
-    /**
-     * <p>Provides the sensitivity parameters that you can use to better understand the
-     * total amount of noise in query results.</p>
-     */
     inline DifferentialPrivacyParameters& WithSensitivityParameters(const Aws::Vector<DifferentialPrivacySensitivityParameters>& value) { SetSensitivityParameters(value); return *this;}
-
-    /**
-     * <p>Provides the sensitivity parameters that you can use to better understand the
-     * total amount of noise in query results.</p>
-     */
     inline DifferentialPrivacyParameters& WithSensitivityParameters(Aws::Vector<DifferentialPrivacySensitivityParameters>&& value) { SetSensitivityParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides the sensitivity parameters that you can use to better understand the
-     * total amount of noise in query results.</p>
-     */
     inline DifferentialPrivacyParameters& AddSensitivityParameters(const DifferentialPrivacySensitivityParameters& value) { m_sensitivityParametersHasBeenSet = true; m_sensitivityParameters.push_back(value); return *this; }
-
-    /**
-     * <p>Provides the sensitivity parameters that you can use to better understand the
-     * total amount of noise in query results.</p>
-     */
     inline DifferentialPrivacyParameters& AddSensitivityParameters(DifferentialPrivacySensitivityParameters&& value) { m_sensitivityParametersHasBeenSet = true; m_sensitivityParameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<DifferentialPrivacySensitivityParameters> m_sensitivityParameters;

@@ -40,70 +40,30 @@ namespace Model
     AWS_OPSWORKS_API DescribeElasticIpsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
      * addresses.</p>
      */
     inline const Aws::Vector<ElasticIp>& GetElasticIps() const{ return m_elasticIps; }
-
-    /**
-     * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
-     * addresses.</p>
-     */
     inline void SetElasticIps(const Aws::Vector<ElasticIp>& value) { m_elasticIps = value; }
-
-    /**
-     * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
-     * addresses.</p>
-     */
     inline void SetElasticIps(Aws::Vector<ElasticIp>&& value) { m_elasticIps = std::move(value); }
-
-    /**
-     * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
-     * addresses.</p>
-     */
     inline DescribeElasticIpsResult& WithElasticIps(const Aws::Vector<ElasticIp>& value) { SetElasticIps(value); return *this;}
-
-    /**
-     * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
-     * addresses.</p>
-     */
     inline DescribeElasticIpsResult& WithElasticIps(Aws::Vector<ElasticIp>&& value) { SetElasticIps(std::move(value)); return *this;}
-
-    /**
-     * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
-     * addresses.</p>
-     */
     inline DescribeElasticIpsResult& AddElasticIps(const ElasticIp& value) { m_elasticIps.push_back(value); return *this; }
-
-    /**
-     * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
-     * addresses.</p>
-     */
     inline DescribeElasticIpsResult& AddElasticIps(ElasticIp&& value) { m_elasticIps.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeElasticIpsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeElasticIpsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeElasticIpsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ElasticIp> m_elasticIps;

@@ -34,113 +34,44 @@ namespace Model
     AWS_SNOWBALL_API DescribeAddressesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline const Aws::Vector<Address>& GetAddresses() const{ return m_addresses; }
-
-    /**
-     * <p>The Snow device shipping addresses that were created for this account.</p>
-     */
     inline void SetAddresses(const Aws::Vector<Address>& value) { m_addresses = value; }
-
-    /**
-     * <p>The Snow device shipping addresses that were created for this account.</p>
-     */
     inline void SetAddresses(Aws::Vector<Address>&& value) { m_addresses = std::move(value); }
-
-    /**
-     * <p>The Snow device shipping addresses that were created for this account.</p>
-     */
     inline DescribeAddressesResult& WithAddresses(const Aws::Vector<Address>& value) { SetAddresses(value); return *this;}
-
-    /**
-     * <p>The Snow device shipping addresses that were created for this account.</p>
-     */
     inline DescribeAddressesResult& WithAddresses(Aws::Vector<Address>&& value) { SetAddresses(std::move(value)); return *this;}
-
-    /**
-     * <p>The Snow device shipping addresses that were created for this account.</p>
-     */
     inline DescribeAddressesResult& AddAddresses(const Address& value) { m_addresses.push_back(value); return *this; }
-
-    /**
-     * <p>The Snow device shipping addresses that were created for this account.</p>
-     */
     inline DescribeAddressesResult& AddAddresses(Address&& value) { m_addresses.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>HTTP requests are stateless. If you use the automatically generated
      * <code>NextToken</code> value in your next <code>DescribeAddresses</code> call,
      * your list of returned addresses will start from this point in the array.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>HTTP requests are stateless. If you use the automatically generated
-     * <code>NextToken</code> value in your next <code>DescribeAddresses</code> call,
-     * your list of returned addresses will start from this point in the array.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>HTTP requests are stateless. If you use the automatically generated
-     * <code>NextToken</code> value in your next <code>DescribeAddresses</code> call,
-     * your list of returned addresses will start from this point in the array.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>HTTP requests are stateless. If you use the automatically generated
-     * <code>NextToken</code> value in your next <code>DescribeAddresses</code> call,
-     * your list of returned addresses will start from this point in the array.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>HTTP requests are stateless. If you use the automatically generated
-     * <code>NextToken</code> value in your next <code>DescribeAddresses</code> call,
-     * your list of returned addresses will start from this point in the array.</p>
-     */
     inline DescribeAddressesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>HTTP requests are stateless. If you use the automatically generated
-     * <code>NextToken</code> value in your next <code>DescribeAddresses</code> call,
-     * your list of returned addresses will start from this point in the array.</p>
-     */
     inline DescribeAddressesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>HTTP requests are stateless. If you use the automatically generated
-     * <code>NextToken</code> value in your next <code>DescribeAddresses</code> call,
-     * your list of returned addresses will start from this point in the array.</p>
-     */
     inline DescribeAddressesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAddressesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAddressesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAddressesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Address> m_addresses;

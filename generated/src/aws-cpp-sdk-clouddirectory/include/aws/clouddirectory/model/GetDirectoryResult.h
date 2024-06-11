@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDDIRECTORY_API GetDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Metadata about the directory.</p>
      */
     inline const Directory& GetDirectory() const{ return m_directory; }
-
-    /**
-     * <p>Metadata about the directory.</p>
-     */
     inline void SetDirectory(const Directory& value) { m_directory = value; }
-
-    /**
-     * <p>Metadata about the directory.</p>
-     */
     inline void SetDirectory(Directory&& value) { m_directory = std::move(value); }
-
-    /**
-     * <p>Metadata about the directory.</p>
-     */
     inline GetDirectoryResult& WithDirectory(const Directory& value) { SetDirectory(value); return *this;}
-
-    /**
-     * <p>Metadata about the directory.</p>
-     */
     inline GetDirectoryResult& WithDirectory(Directory&& value) { SetDirectory(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDirectoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDirectoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDirectoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Directory m_directory;

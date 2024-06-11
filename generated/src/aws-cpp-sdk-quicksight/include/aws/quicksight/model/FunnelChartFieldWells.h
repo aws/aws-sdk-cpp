@@ -39,36 +39,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
      */
     inline const FunnelChartAggregatedFieldWells& GetFunnelChartAggregatedFieldWells() const{ return m_funnelChartAggregatedFieldWells; }
-
-    /**
-     * <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-     */
     inline bool FunnelChartAggregatedFieldWellsHasBeenSet() const { return m_funnelChartAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-     */
     inline void SetFunnelChartAggregatedFieldWells(const FunnelChartAggregatedFieldWells& value) { m_funnelChartAggregatedFieldWellsHasBeenSet = true; m_funnelChartAggregatedFieldWells = value; }
-
-    /**
-     * <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-     */
     inline void SetFunnelChartAggregatedFieldWells(FunnelChartAggregatedFieldWells&& value) { m_funnelChartAggregatedFieldWellsHasBeenSet = true; m_funnelChartAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-     */
     inline FunnelChartFieldWells& WithFunnelChartAggregatedFieldWells(const FunnelChartAggregatedFieldWells& value) { SetFunnelChartAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-     */
     inline FunnelChartFieldWells& WithFunnelChartAggregatedFieldWells(FunnelChartAggregatedFieldWells&& value) { SetFunnelChartAggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FunnelChartAggregatedFieldWells m_funnelChartAggregatedFieldWells;

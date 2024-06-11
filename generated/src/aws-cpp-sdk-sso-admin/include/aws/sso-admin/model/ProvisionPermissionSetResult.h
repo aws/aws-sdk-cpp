@@ -33,53 +33,27 @@ namespace Model
     AWS_SSOADMIN_API ProvisionPermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status object for the permission set provisioning operation.</p>
      */
     inline const PermissionSetProvisioningStatus& GetPermissionSetProvisioningStatus() const{ return m_permissionSetProvisioningStatus; }
-
-    /**
-     * <p>The status object for the permission set provisioning operation.</p>
-     */
     inline void SetPermissionSetProvisioningStatus(const PermissionSetProvisioningStatus& value) { m_permissionSetProvisioningStatus = value; }
-
-    /**
-     * <p>The status object for the permission set provisioning operation.</p>
-     */
     inline void SetPermissionSetProvisioningStatus(PermissionSetProvisioningStatus&& value) { m_permissionSetProvisioningStatus = std::move(value); }
-
-    /**
-     * <p>The status object for the permission set provisioning operation.</p>
-     */
     inline ProvisionPermissionSetResult& WithPermissionSetProvisioningStatus(const PermissionSetProvisioningStatus& value) { SetPermissionSetProvisioningStatus(value); return *this;}
-
-    /**
-     * <p>The status object for the permission set provisioning operation.</p>
-     */
     inline ProvisionPermissionSetResult& WithPermissionSetProvisioningStatus(PermissionSetProvisioningStatus&& value) { SetPermissionSetProvisioningStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ProvisionPermissionSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ProvisionPermissionSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ProvisionPermissionSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PermissionSetProvisioningStatus m_permissionSetProvisioningStatus;

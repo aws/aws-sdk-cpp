@@ -33,53 +33,27 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API DeleteInstanceProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The instance profile that was deleted.</p>
      */
     inline const InstanceProfile& GetInstanceProfile() const{ return m_instanceProfile; }
-
-    /**
-     * <p>The instance profile that was deleted.</p>
-     */
     inline void SetInstanceProfile(const InstanceProfile& value) { m_instanceProfile = value; }
-
-    /**
-     * <p>The instance profile that was deleted.</p>
-     */
     inline void SetInstanceProfile(InstanceProfile&& value) { m_instanceProfile = std::move(value); }
-
-    /**
-     * <p>The instance profile that was deleted.</p>
-     */
     inline DeleteInstanceProfileResult& WithInstanceProfile(const InstanceProfile& value) { SetInstanceProfile(value); return *this;}
-
-    /**
-     * <p>The instance profile that was deleted.</p>
-     */
     inline DeleteInstanceProfileResult& WithInstanceProfile(InstanceProfile&& value) { SetInstanceProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteInstanceProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteInstanceProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteInstanceProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     InstanceProfile m_instanceProfile;

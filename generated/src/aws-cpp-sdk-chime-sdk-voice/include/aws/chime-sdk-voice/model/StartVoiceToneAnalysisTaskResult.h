@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKVOICE_API StartVoiceToneAnalysisTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details of the voice tone analysis task.</p>
      */
     inline const VoiceToneAnalysisTask& GetVoiceToneAnalysisTask() const{ return m_voiceToneAnalysisTask; }
-
-    /**
-     * <p>The details of the voice tone analysis task.</p>
-     */
     inline void SetVoiceToneAnalysisTask(const VoiceToneAnalysisTask& value) { m_voiceToneAnalysisTask = value; }
-
-    /**
-     * <p>The details of the voice tone analysis task.</p>
-     */
     inline void SetVoiceToneAnalysisTask(VoiceToneAnalysisTask&& value) { m_voiceToneAnalysisTask = std::move(value); }
-
-    /**
-     * <p>The details of the voice tone analysis task.</p>
-     */
     inline StartVoiceToneAnalysisTaskResult& WithVoiceToneAnalysisTask(const VoiceToneAnalysisTask& value) { SetVoiceToneAnalysisTask(value); return *this;}
-
-    /**
-     * <p>The details of the voice tone analysis task.</p>
-     */
     inline StartVoiceToneAnalysisTaskResult& WithVoiceToneAnalysisTask(VoiceToneAnalysisTask&& value) { SetVoiceToneAnalysisTask(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartVoiceToneAnalysisTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartVoiceToneAnalysisTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartVoiceToneAnalysisTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VoiceToneAnalysisTask m_voiceToneAnalysisTask;

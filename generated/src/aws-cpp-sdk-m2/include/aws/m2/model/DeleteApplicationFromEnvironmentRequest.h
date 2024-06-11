@@ -32,95 +32,34 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the application you want to delete.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The unique identifier of the application you want to delete.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the application you want to delete.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The unique identifier of the application you want to delete.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the application you want to delete.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the application you want to delete.</p>
-     */
     inline DeleteApplicationFromEnvironmentRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the application you want to delete.</p>
-     */
     inline DeleteApplicationFromEnvironmentRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the application you want to delete.</p>
-     */
     inline DeleteApplicationFromEnvironmentRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the runtime environment where the application was
      * previously deployed.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-
-    /**
-     * <p>The unique identifier of the runtime environment where the application was
-     * previously deployed.</p>
-     */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the runtime environment where the application was
-     * previously deployed.</p>
-     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-
-    /**
-     * <p>The unique identifier of the runtime environment where the application was
-     * previously deployed.</p>
-     */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the runtime environment where the application was
-     * previously deployed.</p>
-     */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the runtime environment where the application was
-     * previously deployed.</p>
-     */
     inline DeleteApplicationFromEnvironmentRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the runtime environment where the application was
-     * previously deployed.</p>
-     */
     inline DeleteApplicationFromEnvironmentRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the runtime environment where the application was
-     * previously deployed.</p>
-     */
     inline DeleteApplicationFromEnvironmentRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

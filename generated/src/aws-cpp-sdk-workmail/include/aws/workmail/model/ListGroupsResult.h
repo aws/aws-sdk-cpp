@@ -34,106 +34,43 @@ namespace Model
     AWS_WORKMAIL_API ListGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The overview of groups for an organization.</p>
      */
     inline const Aws::Vector<Group>& GetGroups() const{ return m_groups; }
-
-    /**
-     * <p>The overview of groups for an organization.</p>
-     */
     inline void SetGroups(const Aws::Vector<Group>& value) { m_groups = value; }
-
-    /**
-     * <p>The overview of groups for an organization.</p>
-     */
     inline void SetGroups(Aws::Vector<Group>&& value) { m_groups = std::move(value); }
-
-    /**
-     * <p>The overview of groups for an organization.</p>
-     */
     inline ListGroupsResult& WithGroups(const Aws::Vector<Group>& value) { SetGroups(value); return *this;}
-
-    /**
-     * <p>The overview of groups for an organization.</p>
-     */
     inline ListGroupsResult& WithGroups(Aws::Vector<Group>&& value) { SetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The overview of groups for an organization.</p>
-     */
     inline ListGroupsResult& AddGroups(const Group& value) { m_groups.push_back(value); return *this; }
-
-    /**
-     * <p>The overview of groups for an organization.</p>
-     */
     inline ListGroupsResult& AddGroups(Group&& value) { m_groups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to retrieve the next page of results. The value is "null"
      * when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The value is "null"
-     * when there are no more results to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The value is "null"
-     * when there are no more results to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The value is "null"
-     * when there are no more results to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The value is "null"
-     * when there are no more results to return.</p>
-     */
     inline ListGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The value is "null"
-     * when there are no more results to return.</p>
-     */
     inline ListGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The value is "null"
-     * when there are no more results to return.</p>
-     */
     inline ListGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Group> m_groups;

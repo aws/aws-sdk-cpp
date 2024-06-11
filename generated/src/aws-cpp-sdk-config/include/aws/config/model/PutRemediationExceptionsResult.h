@@ -34,70 +34,30 @@ namespace Model
     AWS_CONFIGSERVICE_API PutRemediationExceptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns a list of failed remediation exceptions batch objects. Each object in
      * the batch consists of a list of failed items and failure messages.</p>
      */
     inline const Aws::Vector<FailedRemediationExceptionBatch>& GetFailedBatches() const{ return m_failedBatches; }
-
-    /**
-     * <p>Returns a list of failed remediation exceptions batch objects. Each object in
-     * the batch consists of a list of failed items and failure messages.</p>
-     */
     inline void SetFailedBatches(const Aws::Vector<FailedRemediationExceptionBatch>& value) { m_failedBatches = value; }
-
-    /**
-     * <p>Returns a list of failed remediation exceptions batch objects. Each object in
-     * the batch consists of a list of failed items and failure messages.</p>
-     */
     inline void SetFailedBatches(Aws::Vector<FailedRemediationExceptionBatch>&& value) { m_failedBatches = std::move(value); }
-
-    /**
-     * <p>Returns a list of failed remediation exceptions batch objects. Each object in
-     * the batch consists of a list of failed items and failure messages.</p>
-     */
     inline PutRemediationExceptionsResult& WithFailedBatches(const Aws::Vector<FailedRemediationExceptionBatch>& value) { SetFailedBatches(value); return *this;}
-
-    /**
-     * <p>Returns a list of failed remediation exceptions batch objects. Each object in
-     * the batch consists of a list of failed items and failure messages.</p>
-     */
     inline PutRemediationExceptionsResult& WithFailedBatches(Aws::Vector<FailedRemediationExceptionBatch>&& value) { SetFailedBatches(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns a list of failed remediation exceptions batch objects. Each object in
-     * the batch consists of a list of failed items and failure messages.</p>
-     */
     inline PutRemediationExceptionsResult& AddFailedBatches(const FailedRemediationExceptionBatch& value) { m_failedBatches.push_back(value); return *this; }
-
-    /**
-     * <p>Returns a list of failed remediation exceptions batch objects. Each object in
-     * the batch consists of a list of failed items and failure messages.</p>
-     */
     inline PutRemediationExceptionsResult& AddFailedBatches(FailedRemediationExceptionBatch&& value) { m_failedBatches.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutRemediationExceptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutRemediationExceptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutRemediationExceptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FailedRemediationExceptionBatch> m_failedBatches;

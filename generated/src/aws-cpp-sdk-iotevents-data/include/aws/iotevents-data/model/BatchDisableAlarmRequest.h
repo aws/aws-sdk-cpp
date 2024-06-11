@@ -33,54 +33,20 @@ namespace Model
     AWS_IOTEVENTSDATA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The list of disable action requests. You can specify up to 10 requests per
      * operation.</p>
      */
     inline const Aws::Vector<DisableAlarmActionRequest>& GetDisableActionRequests() const{ return m_disableActionRequests; }
-
-    /**
-     * <p>The list of disable action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline bool DisableActionRequestsHasBeenSet() const { return m_disableActionRequestsHasBeenSet; }
-
-    /**
-     * <p>The list of disable action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline void SetDisableActionRequests(const Aws::Vector<DisableAlarmActionRequest>& value) { m_disableActionRequestsHasBeenSet = true; m_disableActionRequests = value; }
-
-    /**
-     * <p>The list of disable action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline void SetDisableActionRequests(Aws::Vector<DisableAlarmActionRequest>&& value) { m_disableActionRequestsHasBeenSet = true; m_disableActionRequests = std::move(value); }
-
-    /**
-     * <p>The list of disable action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline BatchDisableAlarmRequest& WithDisableActionRequests(const Aws::Vector<DisableAlarmActionRequest>& value) { SetDisableActionRequests(value); return *this;}
-
-    /**
-     * <p>The list of disable action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline BatchDisableAlarmRequest& WithDisableActionRequests(Aws::Vector<DisableAlarmActionRequest>&& value) { SetDisableActionRequests(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of disable action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline BatchDisableAlarmRequest& AddDisableActionRequests(const DisableAlarmActionRequest& value) { m_disableActionRequestsHasBeenSet = true; m_disableActionRequests.push_back(value); return *this; }
-
-    /**
-     * <p>The list of disable action requests. You can specify up to 10 requests per
-     * operation.</p>
-     */
     inline BatchDisableAlarmRequest& AddDisableActionRequests(DisableAlarmActionRequest&& value) { m_disableActionRequestsHasBeenSet = true; m_disableActionRequests.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<DisableAlarmActionRequest> m_disableActionRequests;

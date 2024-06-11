@@ -36,88 +36,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p> A customer-owned IP address range that you want to delete. </p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
-
-    /**
-     * <p> A customer-owned IP address range that you want to delete. </p>
-     */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-
-    /**
-     * <p> A customer-owned IP address range that you want to delete. </p>
-     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-
-    /**
-     * <p> A customer-owned IP address range that you want to delete. </p>
-     */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-
-    /**
-     * <p> A customer-owned IP address range that you want to delete. </p>
-     */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-
-    /**
-     * <p> A customer-owned IP address range that you want to delete. </p>
-     */
     inline DeleteCoipCidrRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-
-    /**
-     * <p> A customer-owned IP address range that you want to delete. </p>
-     */
     inline DeleteCoipCidrRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-
-    /**
-     * <p> A customer-owned IP address range that you want to delete. </p>
-     */
     inline DeleteCoipCidrRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The ID of the customer-owned address pool. </p>
      */
     inline const Aws::String& GetCoipPoolId() const{ return m_coipPoolId; }
-
-    /**
-     * <p> The ID of the customer-owned address pool. </p>
-     */
     inline bool CoipPoolIdHasBeenSet() const { return m_coipPoolIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the customer-owned address pool. </p>
-     */
     inline void SetCoipPoolId(const Aws::String& value) { m_coipPoolIdHasBeenSet = true; m_coipPoolId = value; }
-
-    /**
-     * <p> The ID of the customer-owned address pool. </p>
-     */
     inline void SetCoipPoolId(Aws::String&& value) { m_coipPoolIdHasBeenSet = true; m_coipPoolId = std::move(value); }
-
-    /**
-     * <p> The ID of the customer-owned address pool. </p>
-     */
     inline void SetCoipPoolId(const char* value) { m_coipPoolIdHasBeenSet = true; m_coipPoolId.assign(value); }
-
-    /**
-     * <p> The ID of the customer-owned address pool. </p>
-     */
     inline DeleteCoipCidrRequest& WithCoipPoolId(const Aws::String& value) { SetCoipPoolId(value); return *this;}
-
-    /**
-     * <p> The ID of the customer-owned address pool. </p>
-     */
     inline DeleteCoipCidrRequest& WithCoipPoolId(Aws::String&& value) { SetCoipPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the customer-owned address pool. </p>
-     */
     inline DeleteCoipCidrRequest& WithCoipPoolId(const char* value) { SetCoipPoolId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -125,31 +72,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DeleteCoipCidrRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cidr;

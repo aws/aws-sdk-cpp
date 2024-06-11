@@ -38,124 +38,45 @@ namespace Model
     AWS_KAFKACONNECT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name prefix that you want to use to search for and list connectors.</p>
      */
     inline const Aws::String& GetConnectorNamePrefix() const{ return m_connectorNamePrefix; }
-
-    /**
-     * <p>The name prefix that you want to use to search for and list connectors.</p>
-     */
     inline bool ConnectorNamePrefixHasBeenSet() const { return m_connectorNamePrefixHasBeenSet; }
-
-    /**
-     * <p>The name prefix that you want to use to search for and list connectors.</p>
-     */
     inline void SetConnectorNamePrefix(const Aws::String& value) { m_connectorNamePrefixHasBeenSet = true; m_connectorNamePrefix = value; }
-
-    /**
-     * <p>The name prefix that you want to use to search for and list connectors.</p>
-     */
     inline void SetConnectorNamePrefix(Aws::String&& value) { m_connectorNamePrefixHasBeenSet = true; m_connectorNamePrefix = std::move(value); }
-
-    /**
-     * <p>The name prefix that you want to use to search for and list connectors.</p>
-     */
     inline void SetConnectorNamePrefix(const char* value) { m_connectorNamePrefixHasBeenSet = true; m_connectorNamePrefix.assign(value); }
-
-    /**
-     * <p>The name prefix that you want to use to search for and list connectors.</p>
-     */
     inline ListConnectorsRequest& WithConnectorNamePrefix(const Aws::String& value) { SetConnectorNamePrefix(value); return *this;}
-
-    /**
-     * <p>The name prefix that you want to use to search for and list connectors.</p>
-     */
     inline ListConnectorsRequest& WithConnectorNamePrefix(Aws::String&& value) { SetConnectorNamePrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The name prefix that you want to use to search for and list connectors.</p>
-     */
     inline ListConnectorsRequest& WithConnectorNamePrefix(const char* value) { SetConnectorNamePrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of connectors to list in one response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of connectors to list in one response.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of connectors to list in one response.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of connectors to list in one response.</p>
-     */
     inline ListConnectorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the response of a ListConnectors operation is truncated, it will include a
      * NextToken. Send this NextToken in a subsequent request to continue listing from
      * where the previous operation left off.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the response of a ListConnectors operation is truncated, it will include a
-     * NextToken. Send this NextToken in a subsequent request to continue listing from
-     * where the previous operation left off.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If the response of a ListConnectors operation is truncated, it will include a
-     * NextToken. Send this NextToken in a subsequent request to continue listing from
-     * where the previous operation left off.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If the response of a ListConnectors operation is truncated, it will include a
-     * NextToken. Send this NextToken in a subsequent request to continue listing from
-     * where the previous operation left off.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the response of a ListConnectors operation is truncated, it will include a
-     * NextToken. Send this NextToken in a subsequent request to continue listing from
-     * where the previous operation left off.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If the response of a ListConnectors operation is truncated, it will include a
-     * NextToken. Send this NextToken in a subsequent request to continue listing from
-     * where the previous operation left off.</p>
-     */
     inline ListConnectorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the response of a ListConnectors operation is truncated, it will include a
-     * NextToken. Send this NextToken in a subsequent request to continue listing from
-     * where the previous operation left off.</p>
-     */
     inline ListConnectorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the response of a ListConnectors operation is truncated, it will include a
-     * NextToken. Send this NextToken in a subsequent request to continue listing from
-     * where the previous operation left off.</p>
-     */
     inline ListConnectorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectorNamePrefix;

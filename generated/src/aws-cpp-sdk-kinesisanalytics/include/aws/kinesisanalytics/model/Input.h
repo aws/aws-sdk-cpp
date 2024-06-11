@@ -46,6 +46,7 @@ namespace Model
     AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Name prefix to use when creating an in-application stream. Suppose that you
      * specify a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates
@@ -54,71 +55,16 @@ namespace Model
      * "MyInApplicationStream_002," and so on. </p>
      */
     inline const Aws::String& GetNamePrefix() const{ return m_namePrefix; }
-
-    /**
-     * <p>Name prefix to use when creating an in-application stream. Suppose that you
-     * specify a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates
-     * one or more (as per the <code>InputParallelism</code> count you specified)
-     * in-application streams with names "MyInApplicationStream_001,"
-     * "MyInApplicationStream_002," and so on. </p>
-     */
     inline bool NamePrefixHasBeenSet() const { return m_namePrefixHasBeenSet; }
-
-    /**
-     * <p>Name prefix to use when creating an in-application stream. Suppose that you
-     * specify a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates
-     * one or more (as per the <code>InputParallelism</code> count you specified)
-     * in-application streams with names "MyInApplicationStream_001,"
-     * "MyInApplicationStream_002," and so on. </p>
-     */
     inline void SetNamePrefix(const Aws::String& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
-
-    /**
-     * <p>Name prefix to use when creating an in-application stream. Suppose that you
-     * specify a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates
-     * one or more (as per the <code>InputParallelism</code> count you specified)
-     * in-application streams with names "MyInApplicationStream_001,"
-     * "MyInApplicationStream_002," and so on. </p>
-     */
     inline void SetNamePrefix(Aws::String&& value) { m_namePrefixHasBeenSet = true; m_namePrefix = std::move(value); }
-
-    /**
-     * <p>Name prefix to use when creating an in-application stream. Suppose that you
-     * specify a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates
-     * one or more (as per the <code>InputParallelism</code> count you specified)
-     * in-application streams with names "MyInApplicationStream_001,"
-     * "MyInApplicationStream_002," and so on. </p>
-     */
     inline void SetNamePrefix(const char* value) { m_namePrefixHasBeenSet = true; m_namePrefix.assign(value); }
-
-    /**
-     * <p>Name prefix to use when creating an in-application stream. Suppose that you
-     * specify a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates
-     * one or more (as per the <code>InputParallelism</code> count you specified)
-     * in-application streams with names "MyInApplicationStream_001,"
-     * "MyInApplicationStream_002," and so on. </p>
-     */
     inline Input& WithNamePrefix(const Aws::String& value) { SetNamePrefix(value); return *this;}
-
-    /**
-     * <p>Name prefix to use when creating an in-application stream. Suppose that you
-     * specify a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates
-     * one or more (as per the <code>InputParallelism</code> count you specified)
-     * in-application streams with names "MyInApplicationStream_001,"
-     * "MyInApplicationStream_002," and so on. </p>
-     */
     inline Input& WithNamePrefix(Aws::String&& value) { SetNamePrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>Name prefix to use when creating an in-application stream. Suppose that you
-     * specify a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates
-     * one or more (as per the <code>InputParallelism</code> count you specified)
-     * in-application streams with names "MyInApplicationStream_001,"
-     * "MyInApplicationStream_002," and so on. </p>
-     */
     inline Input& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
@@ -128,58 +74,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
      */
     inline const InputProcessingConfiguration& GetInputProcessingConfiguration() const{ return m_inputProcessingConfiguration; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
-     * for the input. An input processor transforms records as they are received from
-     * the stream, before the application's SQL code executes. Currently, the only
-     * input processing configuration available is <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
-     */
     inline bool InputProcessingConfigurationHasBeenSet() const { return m_inputProcessingConfigurationHasBeenSet; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
-     * for the input. An input processor transforms records as they are received from
-     * the stream, before the application's SQL code executes. Currently, the only
-     * input processing configuration available is <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
-     */
     inline void SetInputProcessingConfiguration(const InputProcessingConfiguration& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = value; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
-     * for the input. An input processor transforms records as they are received from
-     * the stream, before the application's SQL code executes. Currently, the only
-     * input processing configuration available is <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
-     */
     inline void SetInputProcessingConfiguration(InputProcessingConfiguration&& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = std::move(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
-     * for the input. An input processor transforms records as they are received from
-     * the stream, before the application's SQL code executes. Currently, the only
-     * input processing configuration available is <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
-     */
     inline Input& WithInputProcessingConfiguration(const InputProcessingConfiguration& value) { SetInputProcessingConfiguration(value); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
-     * for the input. An input processor transforms records as they are received from
-     * the stream, before the application's SQL code executes. Currently, the only
-     * input processing configuration available is <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
-     */
     inline Input& WithInputProcessingConfiguration(InputProcessingConfiguration&& value) { SetInputProcessingConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's
      * Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics
@@ -188,53 +90,14 @@ namespace Model
      * required.</p>
      */
     inline const KinesisStreamsInput& GetKinesisStreamsInput() const{ return m_kinesisStreamsInput; }
-
-    /**
-     * <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's
-     * Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics
-     * to access the stream on your behalf.</p> <p>Note: Either
-     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
-     * required.</p>
-     */
     inline bool KinesisStreamsInputHasBeenSet() const { return m_kinesisStreamsInputHasBeenSet; }
-
-    /**
-     * <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's
-     * Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics
-     * to access the stream on your behalf.</p> <p>Note: Either
-     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
-     * required.</p>
-     */
     inline void SetKinesisStreamsInput(const KinesisStreamsInput& value) { m_kinesisStreamsInputHasBeenSet = true; m_kinesisStreamsInput = value; }
-
-    /**
-     * <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's
-     * Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics
-     * to access the stream on your behalf.</p> <p>Note: Either
-     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
-     * required.</p>
-     */
     inline void SetKinesisStreamsInput(KinesisStreamsInput&& value) { m_kinesisStreamsInputHasBeenSet = true; m_kinesisStreamsInput = std::move(value); }
-
-    /**
-     * <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's
-     * Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics
-     * to access the stream on your behalf.</p> <p>Note: Either
-     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
-     * required.</p>
-     */
     inline Input& WithKinesisStreamsInput(const KinesisStreamsInput& value) { SetKinesisStreamsInput(value); return *this;}
-
-    /**
-     * <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's
-     * Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics
-     * to access the stream on your behalf.</p> <p>Note: Either
-     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
-     * required.</p>
-     */
     inline Input& WithKinesisStreamsInput(KinesisStreamsInput&& value) { SetKinesisStreamsInput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the streaming source is an Amazon Kinesis Firehose delivery stream,
      * identifies the delivery stream's ARN and an IAM role that enables Amazon Kinesis
@@ -243,53 +106,14 @@ namespace Model
      * required.</p>
      */
     inline const KinesisFirehoseInput& GetKinesisFirehoseInput() const{ return m_kinesisFirehoseInput; }
-
-    /**
-     * <p>If the streaming source is an Amazon Kinesis Firehose delivery stream,
-     * identifies the delivery stream's ARN and an IAM role that enables Amazon Kinesis
-     * Analytics to access the stream on your behalf.</p> <p>Note: Either
-     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
-     * required.</p>
-     */
     inline bool KinesisFirehoseInputHasBeenSet() const { return m_kinesisFirehoseInputHasBeenSet; }
-
-    /**
-     * <p>If the streaming source is an Amazon Kinesis Firehose delivery stream,
-     * identifies the delivery stream's ARN and an IAM role that enables Amazon Kinesis
-     * Analytics to access the stream on your behalf.</p> <p>Note: Either
-     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
-     * required.</p>
-     */
     inline void SetKinesisFirehoseInput(const KinesisFirehoseInput& value) { m_kinesisFirehoseInputHasBeenSet = true; m_kinesisFirehoseInput = value; }
-
-    /**
-     * <p>If the streaming source is an Amazon Kinesis Firehose delivery stream,
-     * identifies the delivery stream's ARN and an IAM role that enables Amazon Kinesis
-     * Analytics to access the stream on your behalf.</p> <p>Note: Either
-     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
-     * required.</p>
-     */
     inline void SetKinesisFirehoseInput(KinesisFirehoseInput&& value) { m_kinesisFirehoseInputHasBeenSet = true; m_kinesisFirehoseInput = std::move(value); }
-
-    /**
-     * <p>If the streaming source is an Amazon Kinesis Firehose delivery stream,
-     * identifies the delivery stream's ARN and an IAM role that enables Amazon Kinesis
-     * Analytics to access the stream on your behalf.</p> <p>Note: Either
-     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
-     * required.</p>
-     */
     inline Input& WithKinesisFirehoseInput(const KinesisFirehoseInput& value) { SetKinesisFirehoseInput(value); return *this;}
-
-    /**
-     * <p>If the streaming source is an Amazon Kinesis Firehose delivery stream,
-     * identifies the delivery stream's ARN and an IAM role that enables Amazon Kinesis
-     * Analytics to access the stream on your behalf.</p> <p>Note: Either
-     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
-     * required.</p>
-     */
     inline Input& WithKinesisFirehoseInput(KinesisFirehoseInput&& value) { SetKinesisFirehoseInput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the number of in-application streams to create. </p> <p>Data from
      * your source is routed to these in-application input streams.</p> <p> (see <a
@@ -297,48 +121,14 @@ namespace Model
      * Application Input</a>.</p>
      */
     inline const InputParallelism& GetInputParallelism() const{ return m_inputParallelism; }
-
-    /**
-     * <p>Describes the number of in-application streams to create. </p> <p>Data from
-     * your source is routed to these in-application input streams.</p> <p> (see <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
-     * Application Input</a>.</p>
-     */
     inline bool InputParallelismHasBeenSet() const { return m_inputParallelismHasBeenSet; }
-
-    /**
-     * <p>Describes the number of in-application streams to create. </p> <p>Data from
-     * your source is routed to these in-application input streams.</p> <p> (see <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
-     * Application Input</a>.</p>
-     */
     inline void SetInputParallelism(const InputParallelism& value) { m_inputParallelismHasBeenSet = true; m_inputParallelism = value; }
-
-    /**
-     * <p>Describes the number of in-application streams to create. </p> <p>Data from
-     * your source is routed to these in-application input streams.</p> <p> (see <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
-     * Application Input</a>.</p>
-     */
     inline void SetInputParallelism(InputParallelism&& value) { m_inputParallelismHasBeenSet = true; m_inputParallelism = std::move(value); }
-
-    /**
-     * <p>Describes the number of in-application streams to create. </p> <p>Data from
-     * your source is routed to these in-application input streams.</p> <p> (see <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
-     * Application Input</a>.</p>
-     */
     inline Input& WithInputParallelism(const InputParallelism& value) { SetInputParallelism(value); return *this;}
-
-    /**
-     * <p>Describes the number of in-application streams to create. </p> <p>Data from
-     * your source is routed to these in-application input streams.</p> <p> (see <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
-     * Application Input</a>.</p>
-     */
     inline Input& WithInputParallelism(InputParallelism&& value) { SetInputParallelism(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the format of the data in the streaming source, and how each data
      * element maps to corresponding columns in the in-application stream that is being
@@ -346,47 +136,12 @@ namespace Model
      * source.</p>
      */
     inline const SourceSchema& GetInputSchema() const{ return m_inputSchema; }
-
-    /**
-     * <p>Describes the format of the data in the streaming source, and how each data
-     * element maps to corresponding columns in the in-application stream that is being
-     * created.</p> <p>Also used to describe the format of the reference data
-     * source.</p>
-     */
     inline bool InputSchemaHasBeenSet() const { return m_inputSchemaHasBeenSet; }
-
-    /**
-     * <p>Describes the format of the data in the streaming source, and how each data
-     * element maps to corresponding columns in the in-application stream that is being
-     * created.</p> <p>Also used to describe the format of the reference data
-     * source.</p>
-     */
     inline void SetInputSchema(const SourceSchema& value) { m_inputSchemaHasBeenSet = true; m_inputSchema = value; }
-
-    /**
-     * <p>Describes the format of the data in the streaming source, and how each data
-     * element maps to corresponding columns in the in-application stream that is being
-     * created.</p> <p>Also used to describe the format of the reference data
-     * source.</p>
-     */
     inline void SetInputSchema(SourceSchema&& value) { m_inputSchemaHasBeenSet = true; m_inputSchema = std::move(value); }
-
-    /**
-     * <p>Describes the format of the data in the streaming source, and how each data
-     * element maps to corresponding columns in the in-application stream that is being
-     * created.</p> <p>Also used to describe the format of the reference data
-     * source.</p>
-     */
     inline Input& WithInputSchema(const SourceSchema& value) { SetInputSchema(value); return *this;}
-
-    /**
-     * <p>Describes the format of the data in the streaming source, and how each data
-     * element maps to corresponding columns in the in-application stream that is being
-     * created.</p> <p>Also used to describe the format of the reference data
-     * source.</p>
-     */
     inline Input& WithInputSchema(SourceSchema&& value) { SetInputSchema(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_namePrefix;

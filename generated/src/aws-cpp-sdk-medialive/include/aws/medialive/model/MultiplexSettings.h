@@ -35,89 +35,45 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Maximum video buffer delay in milliseconds.
      */
     inline int GetMaximumVideoBufferDelayMilliseconds() const{ return m_maximumVideoBufferDelayMilliseconds; }
-
-    /**
-     * Maximum video buffer delay in milliseconds.
-     */
     inline bool MaximumVideoBufferDelayMillisecondsHasBeenSet() const { return m_maximumVideoBufferDelayMillisecondsHasBeenSet; }
-
-    /**
-     * Maximum video buffer delay in milliseconds.
-     */
     inline void SetMaximumVideoBufferDelayMilliseconds(int value) { m_maximumVideoBufferDelayMillisecondsHasBeenSet = true; m_maximumVideoBufferDelayMilliseconds = value; }
-
-    /**
-     * Maximum video buffer delay in milliseconds.
-     */
     inline MultiplexSettings& WithMaximumVideoBufferDelayMilliseconds(int value) { SetMaximumVideoBufferDelayMilliseconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Transport stream bit rate.
      */
     inline int GetTransportStreamBitrate() const{ return m_transportStreamBitrate; }
-
-    /**
-     * Transport stream bit rate.
-     */
     inline bool TransportStreamBitrateHasBeenSet() const { return m_transportStreamBitrateHasBeenSet; }
-
-    /**
-     * Transport stream bit rate.
-     */
     inline void SetTransportStreamBitrate(int value) { m_transportStreamBitrateHasBeenSet = true; m_transportStreamBitrate = value; }
-
-    /**
-     * Transport stream bit rate.
-     */
     inline MultiplexSettings& WithTransportStreamBitrate(int value) { SetTransportStreamBitrate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Transport stream ID.
      */
     inline int GetTransportStreamId() const{ return m_transportStreamId; }
-
-    /**
-     * Transport stream ID.
-     */
     inline bool TransportStreamIdHasBeenSet() const { return m_transportStreamIdHasBeenSet; }
-
-    /**
-     * Transport stream ID.
-     */
     inline void SetTransportStreamId(int value) { m_transportStreamIdHasBeenSet = true; m_transportStreamId = value; }
-
-    /**
-     * Transport stream ID.
-     */
     inline MultiplexSettings& WithTransportStreamId(int value) { SetTransportStreamId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Transport stream reserved bit rate.
      */
     inline int GetTransportStreamReservedBitrate() const{ return m_transportStreamReservedBitrate; }
-
-    /**
-     * Transport stream reserved bit rate.
-     */
     inline bool TransportStreamReservedBitrateHasBeenSet() const { return m_transportStreamReservedBitrateHasBeenSet; }
-
-    /**
-     * Transport stream reserved bit rate.
-     */
     inline void SetTransportStreamReservedBitrate(int value) { m_transportStreamReservedBitrateHasBeenSet = true; m_transportStreamReservedBitrate = value; }
-
-    /**
-     * Transport stream reserved bit rate.
-     */
     inline MultiplexSettings& WithTransportStreamReservedBitrate(int value) { SetTransportStreamReservedBitrate(value); return *this;}
-
+    ///@}
   private:
 
     int m_maximumVideoBufferDelayMilliseconds;

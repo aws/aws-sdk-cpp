@@ -39,46 +39,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List of the issues detected.</p>
      */
     inline const Aws::Vector<RealTimeContactAnalysisIssueDetected>& GetIssuesDetected() const{ return m_issuesDetected; }
-
-    /**
-     * <p>List of the issues detected.</p>
-     */
     inline bool IssuesDetectedHasBeenSet() const { return m_issuesDetectedHasBeenSet; }
-
-    /**
-     * <p>List of the issues detected.</p>
-     */
     inline void SetIssuesDetected(const Aws::Vector<RealTimeContactAnalysisIssueDetected>& value) { m_issuesDetectedHasBeenSet = true; m_issuesDetected = value; }
-
-    /**
-     * <p>List of the issues detected.</p>
-     */
     inline void SetIssuesDetected(Aws::Vector<RealTimeContactAnalysisIssueDetected>&& value) { m_issuesDetectedHasBeenSet = true; m_issuesDetected = std::move(value); }
-
-    /**
-     * <p>List of the issues detected.</p>
-     */
     inline RealTimeContactAnalysisSegmentIssues& WithIssuesDetected(const Aws::Vector<RealTimeContactAnalysisIssueDetected>& value) { SetIssuesDetected(value); return *this;}
-
-    /**
-     * <p>List of the issues detected.</p>
-     */
     inline RealTimeContactAnalysisSegmentIssues& WithIssuesDetected(Aws::Vector<RealTimeContactAnalysisIssueDetected>&& value) { SetIssuesDetected(std::move(value)); return *this;}
-
-    /**
-     * <p>List of the issues detected.</p>
-     */
     inline RealTimeContactAnalysisSegmentIssues& AddIssuesDetected(const RealTimeContactAnalysisIssueDetected& value) { m_issuesDetectedHasBeenSet = true; m_issuesDetected.push_back(value); return *this; }
-
-    /**
-     * <p>List of the issues detected.</p>
-     */
     inline RealTimeContactAnalysisSegmentIssues& AddIssuesDetected(RealTimeContactAnalysisIssueDetected&& value) { m_issuesDetectedHasBeenSet = true; m_issuesDetected.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<RealTimeContactAnalysisIssueDetected> m_issuesDetected;

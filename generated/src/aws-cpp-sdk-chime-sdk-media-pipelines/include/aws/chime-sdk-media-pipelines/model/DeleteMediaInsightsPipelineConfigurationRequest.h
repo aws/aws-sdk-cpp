@@ -32,54 +32,20 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the resource to be deleted. Valid values include the
      * name and ARN of the media insights pipeline configuration.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>The unique identifier of the resource to be deleted. Valid values include the
-     * name and ARN of the media insights pipeline configuration.</p>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the resource to be deleted. Valid values include the
-     * name and ARN of the media insights pipeline configuration.</p>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p>The unique identifier of the resource to be deleted. Valid values include the
-     * name and ARN of the media insights pipeline configuration.</p>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the resource to be deleted. Valid values include the
-     * name and ARN of the media insights pipeline configuration.</p>
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of the resource to be deleted. Valid values include the
-     * name and ARN of the media insights pipeline configuration.</p>
-     */
     inline DeleteMediaInsightsPipelineConfigurationRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the resource to be deleted. Valid values include the
-     * name and ARN of the media insights pipeline configuration.</p>
-     */
     inline DeleteMediaInsightsPipelineConfigurationRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the resource to be deleted. Valid values include the
-     * name and ARN of the media insights pipeline configuration.</p>
-     */
     inline DeleteMediaInsightsPipelineConfigurationRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identifier;

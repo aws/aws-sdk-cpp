@@ -37,57 +37,27 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the finding reason code.</p>
      */
     inline const FindingReasonCode& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the finding reason code.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the finding reason code.</p>
-     */
     inline void SetName(const FindingReasonCode& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the finding reason code.</p>
-     */
     inline void SetName(FindingReasonCode&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the finding reason code.</p>
-     */
     inline ReasonCodeSummary& WithName(const FindingReasonCode& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the finding reason code.</p>
-     */
     inline ReasonCodeSummary& WithName(FindingReasonCode&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the finding reason code summary.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the finding reason code summary.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the finding reason code summary.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the finding reason code summary.</p>
-     */
     inline ReasonCodeSummary& WithValue(double value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     FindingReasonCode m_name;

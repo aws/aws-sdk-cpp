@@ -39,24 +39,15 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const FunctionDefaultExecutionConfig& GetExecution() const{ return m_execution; }
-
-    
     inline bool ExecutionHasBeenSet() const { return m_executionHasBeenSet; }
-
-    
     inline void SetExecution(const FunctionDefaultExecutionConfig& value) { m_executionHasBeenSet = true; m_execution = value; }
-
-    
     inline void SetExecution(FunctionDefaultExecutionConfig&& value) { m_executionHasBeenSet = true; m_execution = std::move(value); }
-
-    
     inline FunctionDefaultConfig& WithExecution(const FunctionDefaultExecutionConfig& value) { SetExecution(value); return *this;}
-
-    
     inline FunctionDefaultConfig& WithExecution(FunctionDefaultExecutionConfig&& value) { SetExecution(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FunctionDefaultExecutionConfig m_execution;

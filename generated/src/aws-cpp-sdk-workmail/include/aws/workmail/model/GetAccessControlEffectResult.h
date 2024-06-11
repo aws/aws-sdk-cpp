@@ -34,94 +34,41 @@ namespace Model
     AWS_WORKMAIL_API GetAccessControlEffectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The rule effect.</p>
      */
     inline const AccessControlRuleEffect& GetEffect() const{ return m_effect; }
-
-    /**
-     * <p>The rule effect.</p>
-     */
     inline void SetEffect(const AccessControlRuleEffect& value) { m_effect = value; }
-
-    /**
-     * <p>The rule effect.</p>
-     */
     inline void SetEffect(AccessControlRuleEffect&& value) { m_effect = std::move(value); }
-
-    /**
-     * <p>The rule effect.</p>
-     */
     inline GetAccessControlEffectResult& WithEffect(const AccessControlRuleEffect& value) { SetEffect(value); return *this;}
-
-    /**
-     * <p>The rule effect.</p>
-     */
     inline GetAccessControlEffectResult& WithEffect(AccessControlRuleEffect&& value) { SetEffect(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rules that match the given parameters, resulting in an effect.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMatchedRules() const{ return m_matchedRules; }
-
-    /**
-     * <p>The rules that match the given parameters, resulting in an effect.</p>
-     */
     inline void SetMatchedRules(const Aws::Vector<Aws::String>& value) { m_matchedRules = value; }
-
-    /**
-     * <p>The rules that match the given parameters, resulting in an effect.</p>
-     */
     inline void SetMatchedRules(Aws::Vector<Aws::String>&& value) { m_matchedRules = std::move(value); }
-
-    /**
-     * <p>The rules that match the given parameters, resulting in an effect.</p>
-     */
     inline GetAccessControlEffectResult& WithMatchedRules(const Aws::Vector<Aws::String>& value) { SetMatchedRules(value); return *this;}
-
-    /**
-     * <p>The rules that match the given parameters, resulting in an effect.</p>
-     */
     inline GetAccessControlEffectResult& WithMatchedRules(Aws::Vector<Aws::String>&& value) { SetMatchedRules(std::move(value)); return *this;}
-
-    /**
-     * <p>The rules that match the given parameters, resulting in an effect.</p>
-     */
     inline GetAccessControlEffectResult& AddMatchedRules(const Aws::String& value) { m_matchedRules.push_back(value); return *this; }
-
-    /**
-     * <p>The rules that match the given parameters, resulting in an effect.</p>
-     */
     inline GetAccessControlEffectResult& AddMatchedRules(Aws::String&& value) { m_matchedRules.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The rules that match the given parameters, resulting in an effect.</p>
-     */
     inline GetAccessControlEffectResult& AddMatchedRules(const char* value) { m_matchedRules.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAccessControlEffectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAccessControlEffectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAccessControlEffectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AccessControlRuleEffect m_effect;

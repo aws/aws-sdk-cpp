@@ -39,36 +39,17 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the protected S3 bucket resource.</p>
      */
     inline const CreateS3BucketResource& GetS3Bucket() const{ return m_s3Bucket; }
-
-    /**
-     * <p>Information about the protected S3 bucket resource.</p>
-     */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-
-    /**
-     * <p>Information about the protected S3 bucket resource.</p>
-     */
     inline void SetS3Bucket(const CreateS3BucketResource& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-
-    /**
-     * <p>Information about the protected S3 bucket resource.</p>
-     */
     inline void SetS3Bucket(CreateS3BucketResource&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-
-    /**
-     * <p>Information about the protected S3 bucket resource.</p>
-     */
     inline CreateProtectedResource& WithS3Bucket(const CreateS3BucketResource& value) { SetS3Bucket(value); return *this;}
-
-    /**
-     * <p>Information about the protected S3 bucket resource.</p>
-     */
     inline CreateProtectedResource& WithS3Bucket(CreateS3BucketResource&& value) { SetS3Bucket(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CreateS3BucketResource m_s3Bucket;

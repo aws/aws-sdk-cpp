@@ -37,108 +37,43 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The HTML body content of the message.</p>
      */
     inline const Aws::String& GetHtml() const{ return m_html; }
-
-    /**
-     * <p>The HTML body content of the message.</p>
-     */
     inline bool HtmlHasBeenSet() const { return m_htmlHasBeenSet; }
-
-    /**
-     * <p>The HTML body content of the message.</p>
-     */
     inline void SetHtml(const Aws::String& value) { m_htmlHasBeenSet = true; m_html = value; }
-
-    /**
-     * <p>The HTML body content of the message.</p>
-     */
     inline void SetHtml(Aws::String&& value) { m_htmlHasBeenSet = true; m_html = std::move(value); }
-
-    /**
-     * <p>The HTML body content of the message.</p>
-     */
     inline void SetHtml(const char* value) { m_htmlHasBeenSet = true; m_html.assign(value); }
-
-    /**
-     * <p>The HTML body content of the message.</p>
-     */
     inline MessageBody& WithHtml(const Aws::String& value) { SetHtml(value); return *this;}
-
-    /**
-     * <p>The HTML body content of the message.</p>
-     */
     inline MessageBody& WithHtml(Aws::String&& value) { SetHtml(std::move(value)); return *this;}
-
-    /**
-     * <p>The HTML body content of the message.</p>
-     */
     inline MessageBody& WithHtml(const char* value) { SetHtml(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A flag indicating if the email was malformed.</p>
      */
     inline bool GetMessageMalformed() const{ return m_messageMalformed; }
-
-    /**
-     * <p>A flag indicating if the email was malformed.</p>
-     */
     inline bool MessageMalformedHasBeenSet() const { return m_messageMalformedHasBeenSet; }
-
-    /**
-     * <p>A flag indicating if the email was malformed.</p>
-     */
     inline void SetMessageMalformed(bool value) { m_messageMalformedHasBeenSet = true; m_messageMalformed = value; }
-
-    /**
-     * <p>A flag indicating if the email was malformed.</p>
-     */
     inline MessageBody& WithMessageMalformed(bool value) { SetMessageMalformed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The plain text body content of the message.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>The plain text body content of the message.</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>The plain text body content of the message.</p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>The plain text body content of the message.</p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>The plain text body content of the message.</p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>The plain text body content of the message.</p>
-     */
     inline MessageBody& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>The plain text body content of the message.</p>
-     */
     inline MessageBody& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>The plain text body content of the message.</p>
-     */
     inline MessageBody& WithText(const char* value) { SetText(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_html;

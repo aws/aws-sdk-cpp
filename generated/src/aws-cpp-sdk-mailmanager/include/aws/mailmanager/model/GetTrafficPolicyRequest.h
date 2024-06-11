@@ -34,46 +34,19 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the traffic policy resource.</p>
      */
     inline const Aws::String& GetTrafficPolicyId() const{ return m_trafficPolicyId; }
-
-    /**
-     * <p>The identifier of the traffic policy resource.</p>
-     */
     inline bool TrafficPolicyIdHasBeenSet() const { return m_trafficPolicyIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the traffic policy resource.</p>
-     */
     inline void SetTrafficPolicyId(const Aws::String& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = value; }
-
-    /**
-     * <p>The identifier of the traffic policy resource.</p>
-     */
     inline void SetTrafficPolicyId(Aws::String&& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = std::move(value); }
-
-    /**
-     * <p>The identifier of the traffic policy resource.</p>
-     */
     inline void SetTrafficPolicyId(const char* value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId.assign(value); }
-
-    /**
-     * <p>The identifier of the traffic policy resource.</p>
-     */
     inline GetTrafficPolicyRequest& WithTrafficPolicyId(const Aws::String& value) { SetTrafficPolicyId(value); return *this;}
-
-    /**
-     * <p>The identifier of the traffic policy resource.</p>
-     */
     inline GetTrafficPolicyRequest& WithTrafficPolicyId(Aws::String&& value) { SetTrafficPolicyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the traffic policy resource.</p>
-     */
     inline GetTrafficPolicyRequest& WithTrafficPolicyId(const char* value) { SetTrafficPolicyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trafficPolicyId;

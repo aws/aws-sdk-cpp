@@ -40,243 +40,71 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name used to label and identify the VPC link.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name used to label and identify the VPC link.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name used to label and identify the VPC link.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name used to label and identify the VPC link.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name used to label and identify the VPC link.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name used to label and identify the VPC link.</p>
-     */
     inline CreateVpcLinkRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name used to label and identify the VPC link.</p>
-     */
     inline CreateVpcLinkRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name used to label and identify the VPC link.</p>
-     */
     inline CreateVpcLinkRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the VPC link.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the VPC link.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the VPC link.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the VPC link.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the VPC link.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the VPC link.</p>
-     */
     inline CreateVpcLinkRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the VPC link.</p>
-     */
     inline CreateVpcLinkRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the VPC link.</p>
-     */
     inline CreateVpcLinkRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
      * network load balancer must be owned by the same Amazon Web Services account of
      * the API owner.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetArns() const{ return m_targetArns; }
-
-    /**
-     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
-     * network load balancer must be owned by the same Amazon Web Services account of
-     * the API owner.</p>
-     */
     inline bool TargetArnsHasBeenSet() const { return m_targetArnsHasBeenSet; }
-
-    /**
-     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
-     * network load balancer must be owned by the same Amazon Web Services account of
-     * the API owner.</p>
-     */
     inline void SetTargetArns(const Aws::Vector<Aws::String>& value) { m_targetArnsHasBeenSet = true; m_targetArns = value; }
-
-    /**
-     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
-     * network load balancer must be owned by the same Amazon Web Services account of
-     * the API owner.</p>
-     */
     inline void SetTargetArns(Aws::Vector<Aws::String>&& value) { m_targetArnsHasBeenSet = true; m_targetArns = std::move(value); }
-
-    /**
-     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
-     * network load balancer must be owned by the same Amazon Web Services account of
-     * the API owner.</p>
-     */
     inline CreateVpcLinkRequest& WithTargetArns(const Aws::Vector<Aws::String>& value) { SetTargetArns(value); return *this;}
-
-    /**
-     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
-     * network load balancer must be owned by the same Amazon Web Services account of
-     * the API owner.</p>
-     */
     inline CreateVpcLinkRequest& WithTargetArns(Aws::Vector<Aws::String>&& value) { SetTargetArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
-     * network load balancer must be owned by the same Amazon Web Services account of
-     * the API owner.</p>
-     */
     inline CreateVpcLinkRequest& AddTargetArns(const Aws::String& value) { m_targetArnsHasBeenSet = true; m_targetArns.push_back(value); return *this; }
-
-    /**
-     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
-     * network load balancer must be owned by the same Amazon Web Services account of
-     * the API owner.</p>
-     */
     inline CreateVpcLinkRequest& AddTargetArns(Aws::String&& value) { m_targetArnsHasBeenSet = true; m_targetArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
-     * network load balancer must be owned by the same Amazon Web Services account of
-     * the API owner.</p>
-     */
     inline CreateVpcLinkRequest& AddTargetArns(const char* value) { m_targetArnsHasBeenSet = true; m_targetArns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
      * tag key can be up to 128 characters and must not start with <code>aws:</code>.
      * The tag value can be up to 256 characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateVpcLinkRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateVpcLinkRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateVpcLinkRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateVpcLinkRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateVpcLinkRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateVpcLinkRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateVpcLinkRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateVpcLinkRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateVpcLinkRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

@@ -41,67 +41,29 @@ namespace Model
     AWS_APIGATEWAY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>A query parameter to specify the input format to imported API keys.
      * Currently, only the <code>csv</code> format is supported.</p>
      */
     inline const ApiKeysFormat& GetFormat() const{ return m_format; }
-
-    /**
-     * <p>A query parameter to specify the input format to imported API keys.
-     * Currently, only the <code>csv</code> format is supported.</p>
-     */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-
-    /**
-     * <p>A query parameter to specify the input format to imported API keys.
-     * Currently, only the <code>csv</code> format is supported.</p>
-     */
     inline void SetFormat(const ApiKeysFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-
-    /**
-     * <p>A query parameter to specify the input format to imported API keys.
-     * Currently, only the <code>csv</code> format is supported.</p>
-     */
     inline void SetFormat(ApiKeysFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-
-    /**
-     * <p>A query parameter to specify the input format to imported API keys.
-     * Currently, only the <code>csv</code> format is supported.</p>
-     */
     inline ImportApiKeysRequest& WithFormat(const ApiKeysFormat& value) { SetFormat(value); return *this;}
-
-    /**
-     * <p>A query parameter to specify the input format to imported API keys.
-     * Currently, only the <code>csv</code> format is supported.</p>
-     */
     inline ImportApiKeysRequest& WithFormat(ApiKeysFormat&& value) { SetFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A query parameter to indicate whether to rollback ApiKey importation
      * (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
      */
     inline bool GetFailOnWarnings() const{ return m_failOnWarnings; }
-
-    /**
-     * <p>A query parameter to indicate whether to rollback ApiKey importation
-     * (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
-     */
     inline bool FailOnWarningsHasBeenSet() const { return m_failOnWarningsHasBeenSet; }
-
-    /**
-     * <p>A query parameter to indicate whether to rollback ApiKey importation
-     * (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
-     */
     inline void SetFailOnWarnings(bool value) { m_failOnWarningsHasBeenSet = true; m_failOnWarnings = value; }
-
-    /**
-     * <p>A query parameter to indicate whether to rollback ApiKey importation
-     * (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
-     */
     inline ImportApiKeysRequest& WithFailOnWarnings(bool value) { SetFailOnWarnings(value); return *this;}
-
+    ///@}
   private:
 
 

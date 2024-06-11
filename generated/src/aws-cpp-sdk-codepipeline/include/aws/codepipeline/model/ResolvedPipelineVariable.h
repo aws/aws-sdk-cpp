@@ -38,87 +38,33 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of a pipeline-level variable.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of a pipeline-level variable.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of a pipeline-level variable.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of a pipeline-level variable.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of a pipeline-level variable.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of a pipeline-level variable.</p>
-     */
     inline ResolvedPipelineVariable& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of a pipeline-level variable.</p>
-     */
     inline ResolvedPipelineVariable& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of a pipeline-level variable.</p>
-     */
     inline ResolvedPipelineVariable& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resolved value of a pipeline-level variable.</p>
      */
     inline const Aws::String& GetResolvedValue() const{ return m_resolvedValue; }
-
-    /**
-     * <p>The resolved value of a pipeline-level variable.</p>
-     */
     inline bool ResolvedValueHasBeenSet() const { return m_resolvedValueHasBeenSet; }
-
-    /**
-     * <p>The resolved value of a pipeline-level variable.</p>
-     */
     inline void SetResolvedValue(const Aws::String& value) { m_resolvedValueHasBeenSet = true; m_resolvedValue = value; }
-
-    /**
-     * <p>The resolved value of a pipeline-level variable.</p>
-     */
     inline void SetResolvedValue(Aws::String&& value) { m_resolvedValueHasBeenSet = true; m_resolvedValue = std::move(value); }
-
-    /**
-     * <p>The resolved value of a pipeline-level variable.</p>
-     */
     inline void SetResolvedValue(const char* value) { m_resolvedValueHasBeenSet = true; m_resolvedValue.assign(value); }
-
-    /**
-     * <p>The resolved value of a pipeline-level variable.</p>
-     */
     inline ResolvedPipelineVariable& WithResolvedValue(const Aws::String& value) { SetResolvedValue(value); return *this;}
-
-    /**
-     * <p>The resolved value of a pipeline-level variable.</p>
-     */
     inline ResolvedPipelineVariable& WithResolvedValue(Aws::String&& value) { SetResolvedValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The resolved value of a pipeline-level variable.</p>
-     */
     inline ResolvedPipelineVariable& WithResolvedValue(const char* value) { SetResolvedValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

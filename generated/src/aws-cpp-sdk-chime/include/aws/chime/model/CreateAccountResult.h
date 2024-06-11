@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIME_API CreateAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Chime account details.</p>
      */
     inline const Account& GetAccount() const{ return m_account; }
-
-    /**
-     * <p>The Amazon Chime account details.</p>
-     */
     inline void SetAccount(const Account& value) { m_account = value; }
-
-    /**
-     * <p>The Amazon Chime account details.</p>
-     */
     inline void SetAccount(Account&& value) { m_account = std::move(value); }
-
-    /**
-     * <p>The Amazon Chime account details.</p>
-     */
     inline CreateAccountResult& WithAccount(const Account& value) { SetAccount(value); return *this;}
-
-    /**
-     * <p>The Amazon Chime account details.</p>
-     */
     inline CreateAccountResult& WithAccount(Account&& value) { SetAccount(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Account m_account;

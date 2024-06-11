@@ -41,42 +41,20 @@ namespace Model
     AWS_EMR_API ListStepsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The filtered list of steps for the cluster.</p>
      */
     inline const Aws::Vector<StepSummary>& GetSteps() const{ return m_steps; }
-
-    /**
-     * <p>The filtered list of steps for the cluster.</p>
-     */
     inline void SetSteps(const Aws::Vector<StepSummary>& value) { m_steps = value; }
-
-    /**
-     * <p>The filtered list of steps for the cluster.</p>
-     */
     inline void SetSteps(Aws::Vector<StepSummary>&& value) { m_steps = std::move(value); }
-
-    /**
-     * <p>The filtered list of steps for the cluster.</p>
-     */
     inline ListStepsResult& WithSteps(const Aws::Vector<StepSummary>& value) { SetSteps(value); return *this;}
-
-    /**
-     * <p>The filtered list of steps for the cluster.</p>
-     */
     inline ListStepsResult& WithSteps(Aws::Vector<StepSummary>&& value) { SetSteps(std::move(value)); return *this;}
-
-    /**
-     * <p>The filtered list of steps for the cluster.</p>
-     */
     inline ListStepsResult& AddSteps(const StepSummary& value) { m_steps.push_back(value); return *this; }
-
-    /**
-     * <p>The filtered list of steps for the cluster.</p>
-     */
     inline ListStepsResult& AddSteps(StepSummary&& value) { m_steps.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of steps that a single <code>ListSteps</code> action
      * returns is 50. To return a longer list of steps, use multiple
@@ -85,83 +63,24 @@ namespace Model
      * retrieve.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>The maximum number of steps that a single <code>ListSteps</code> action
-     * returns is 50. To return a longer list of steps, use multiple
-     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
-     * which is a pagination token that indicates the next set of results to
-     * retrieve.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
-
-    /**
-     * <p>The maximum number of steps that a single <code>ListSteps</code> action
-     * returns is 50. To return a longer list of steps, use multiple
-     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
-     * which is a pagination token that indicates the next set of results to
-     * retrieve.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-
-    /**
-     * <p>The maximum number of steps that a single <code>ListSteps</code> action
-     * returns is 50. To return a longer list of steps, use multiple
-     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
-     * which is a pagination token that indicates the next set of results to
-     * retrieve.</p>
-     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
-
-    /**
-     * <p>The maximum number of steps that a single <code>ListSteps</code> action
-     * returns is 50. To return a longer list of steps, use multiple
-     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
-     * which is a pagination token that indicates the next set of results to
-     * retrieve.</p>
-     */
     inline ListStepsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>The maximum number of steps that a single <code>ListSteps</code> action
-     * returns is 50. To return a longer list of steps, use multiple
-     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
-     * which is a pagination token that indicates the next set of results to
-     * retrieve.</p>
-     */
     inline ListStepsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The maximum number of steps that a single <code>ListSteps</code> action
-     * returns is 50. To return a longer list of steps, use multiple
-     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
-     * which is a pagination token that indicates the next set of results to
-     * retrieve.</p>
-     */
     inline ListStepsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListStepsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListStepsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListStepsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<StepSummary> m_steps;

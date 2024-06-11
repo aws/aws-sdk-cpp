@@ -37,6 +37,7 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>The value DISABLED indicates that public access is turned off.
@@ -44,63 +45,14 @@ namespace Model
          
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * 
-            <p>The value DISABLED indicates that public access is turned off.
-     * SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
-         
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * 
-            <p>The value DISABLED indicates that public access is turned off.
-     * SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
-         
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * 
-            <p>The value DISABLED indicates that public access is turned off.
-     * SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
-         
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * 
-            <p>The value DISABLED indicates that public access is turned off.
-     * SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
-         
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * 
-            <p>The value DISABLED indicates that public access is turned off.
-     * SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
-         
-     */
     inline PublicAccess& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * 
-            <p>The value DISABLED indicates that public access is turned off.
-     * SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
-         
-     */
     inline PublicAccess& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The value DISABLED indicates that public access is turned off.
-     * SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
-         
-     */
     inline PublicAccess& WithType(const char* value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_type;

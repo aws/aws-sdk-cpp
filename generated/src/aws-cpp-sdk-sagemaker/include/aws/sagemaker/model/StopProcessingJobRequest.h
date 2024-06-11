@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the processing job to stop.</p>
      */
     inline const Aws::String& GetProcessingJobName() const{ return m_processingJobName; }
-
-    /**
-     * <p>The name of the processing job to stop.</p>
-     */
     inline bool ProcessingJobNameHasBeenSet() const { return m_processingJobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the processing job to stop.</p>
-     */
     inline void SetProcessingJobName(const Aws::String& value) { m_processingJobNameHasBeenSet = true; m_processingJobName = value; }
-
-    /**
-     * <p>The name of the processing job to stop.</p>
-     */
     inline void SetProcessingJobName(Aws::String&& value) { m_processingJobNameHasBeenSet = true; m_processingJobName = std::move(value); }
-
-    /**
-     * <p>The name of the processing job to stop.</p>
-     */
     inline void SetProcessingJobName(const char* value) { m_processingJobNameHasBeenSet = true; m_processingJobName.assign(value); }
-
-    /**
-     * <p>The name of the processing job to stop.</p>
-     */
     inline StopProcessingJobRequest& WithProcessingJobName(const Aws::String& value) { SetProcessingJobName(value); return *this;}
-
-    /**
-     * <p>The name of the processing job to stop.</p>
-     */
     inline StopProcessingJobRequest& WithProcessingJobName(Aws::String&& value) { SetProcessingJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the processing job to stop.</p>
-     */
     inline StopProcessingJobRequest& WithProcessingJobName(const char* value) { SetProcessingJobName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_processingJobName;

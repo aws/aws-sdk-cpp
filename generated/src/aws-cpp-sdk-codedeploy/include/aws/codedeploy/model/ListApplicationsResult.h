@@ -39,118 +39,45 @@ namespace Model
     AWS_CODEDEPLOY_API ListApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of application names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetApplications() const{ return m_applications; }
-
-    /**
-     * <p>A list of application names.</p>
-     */
     inline void SetApplications(const Aws::Vector<Aws::String>& value) { m_applications = value; }
-
-    /**
-     * <p>A list of application names.</p>
-     */
     inline void SetApplications(Aws::Vector<Aws::String>&& value) { m_applications = std::move(value); }
-
-    /**
-     * <p>A list of application names.</p>
-     */
     inline ListApplicationsResult& WithApplications(const Aws::Vector<Aws::String>& value) { SetApplications(value); return *this;}
-
-    /**
-     * <p>A list of application names.</p>
-     */
     inline ListApplicationsResult& WithApplications(Aws::Vector<Aws::String>&& value) { SetApplications(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of application names.</p>
-     */
     inline ListApplicationsResult& AddApplications(const Aws::String& value) { m_applications.push_back(value); return *this; }
-
-    /**
-     * <p>A list of application names.</p>
-     */
     inline ListApplicationsResult& AddApplications(Aws::String&& value) { m_applications.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of application names.</p>
-     */
     inline ListApplicationsResult& AddApplications(const char* value) { m_applications.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
      * It can be used in a subsequent list applications call to return the next set of
      * applications in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent list applications call to return the next set of
-     * applications in the list.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent list applications call to return the next set of
-     * applications in the list.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent list applications call to return the next set of
-     * applications in the list.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent list applications call to return the next set of
-     * applications in the list.</p>
-     */
     inline ListApplicationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent list applications call to return the next set of
-     * applications in the list.</p>
-     */
     inline ListApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent list applications call to return the next set of
-     * applications in the list.</p>
-     */
     inline ListApplicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListApplicationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListApplicationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListApplicationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_applications;

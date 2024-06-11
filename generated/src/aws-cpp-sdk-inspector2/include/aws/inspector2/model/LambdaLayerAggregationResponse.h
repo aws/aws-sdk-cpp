@@ -39,204 +39,73 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The account ID of the Amazon Web Services Lambda function layer.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The account ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The account ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The account ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The account ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The account ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline LambdaLayerAggregationResponse& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The account ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline LambdaLayerAggregationResponse& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The account ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline LambdaLayerAggregationResponse& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The names of the Amazon Web Services Lambda functions associated with the
      * layers.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
-
-    /**
-     * <p>The names of the Amazon Web Services Lambda functions associated with the
-     * layers.</p>
-     */
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
-
-    /**
-     * <p>The names of the Amazon Web Services Lambda functions associated with the
-     * layers.</p>
-     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
-
-    /**
-     * <p>The names of the Amazon Web Services Lambda functions associated with the
-     * layers.</p>
-     */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
-
-    /**
-     * <p>The names of the Amazon Web Services Lambda functions associated with the
-     * layers.</p>
-     */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
-
-    /**
-     * <p>The names of the Amazon Web Services Lambda functions associated with the
-     * layers.</p>
-     */
     inline LambdaLayerAggregationResponse& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
-
-    /**
-     * <p>The names of the Amazon Web Services Lambda functions associated with the
-     * layers.</p>
-     */
     inline LambdaLayerAggregationResponse& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the Amazon Web Services Lambda functions associated with the
-     * layers.</p>
-     */
     inline LambdaLayerAggregationResponse& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
      * layer.</p>
      */
     inline const Aws::String& GetLayerArn() const{ return m_layerArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
-     * layer.</p>
-     */
     inline bool LayerArnHasBeenSet() const { return m_layerArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
-     * layer.</p>
-     */
     inline void SetLayerArn(const Aws::String& value) { m_layerArnHasBeenSet = true; m_layerArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
-     * layer.</p>
-     */
     inline void SetLayerArn(Aws::String&& value) { m_layerArnHasBeenSet = true; m_layerArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
-     * layer.</p>
-     */
     inline void SetLayerArn(const char* value) { m_layerArnHasBeenSet = true; m_layerArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
-     * layer.</p>
-     */
     inline LambdaLayerAggregationResponse& WithLayerArn(const Aws::String& value) { SetLayerArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
-     * layer.</p>
-     */
     inline LambdaLayerAggregationResponse& WithLayerArn(Aws::String&& value) { SetLayerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
-     * layer.</p>
-     */
     inline LambdaLayerAggregationResponse& WithLayerArn(const char* value) { SetLayerArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline LambdaLayerAggregationResponse& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline LambdaLayerAggregationResponse& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
-     */
     inline LambdaLayerAggregationResponse& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const SeverityCounts& GetSeverityCounts() const{ return m_severityCounts; }
-
-    
     inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
-
-    
     inline void SetSeverityCounts(const SeverityCounts& value) { m_severityCountsHasBeenSet = true; m_severityCounts = value; }
-
-    
     inline void SetSeverityCounts(SeverityCounts&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::move(value); }
-
-    
     inline LambdaLayerAggregationResponse& WithSeverityCounts(const SeverityCounts& value) { SetSeverityCounts(value); return *this;}
-
-    
     inline LambdaLayerAggregationResponse& WithSeverityCounts(SeverityCounts&& value) { SetSeverityCounts(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

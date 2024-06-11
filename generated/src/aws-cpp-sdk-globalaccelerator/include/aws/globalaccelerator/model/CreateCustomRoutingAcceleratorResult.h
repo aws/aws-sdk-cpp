@@ -33,53 +33,27 @@ namespace Model
     AWS_GLOBALACCELERATOR_API CreateCustomRoutingAcceleratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The accelerator that is created.</p>
      */
     inline const CustomRoutingAccelerator& GetAccelerator() const{ return m_accelerator; }
-
-    /**
-     * <p>The accelerator that is created.</p>
-     */
     inline void SetAccelerator(const CustomRoutingAccelerator& value) { m_accelerator = value; }
-
-    /**
-     * <p>The accelerator that is created.</p>
-     */
     inline void SetAccelerator(CustomRoutingAccelerator&& value) { m_accelerator = std::move(value); }
-
-    /**
-     * <p>The accelerator that is created.</p>
-     */
     inline CreateCustomRoutingAcceleratorResult& WithAccelerator(const CustomRoutingAccelerator& value) { SetAccelerator(value); return *this;}
-
-    /**
-     * <p>The accelerator that is created.</p>
-     */
     inline CreateCustomRoutingAcceleratorResult& WithAccelerator(CustomRoutingAccelerator&& value) { SetAccelerator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateCustomRoutingAcceleratorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateCustomRoutingAcceleratorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateCustomRoutingAcceleratorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CustomRoutingAccelerator m_accelerator;

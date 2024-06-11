@@ -34,6 +34,7 @@ namespace Model
     AWS_ORGANIZATIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier (ID) of the handshake that you want information about.
      * You can get the ID from the original call to <a>InviteAccountToOrganization</a>,
@@ -43,77 +44,14 @@ namespace Model
      * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline const Aws::String& GetHandshakeId() const{ return m_handshakeId; }
-
-    /**
-     * <p>The unique identifier (ID) of the handshake that you want information about.
-     * You can get the ID from the original call to <a>InviteAccountToOrganization</a>,
-     * or from a call to <a>ListHandshakesForAccount</a> or
-     * <a>ListHandshakesForOrganization</a>.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-     */
     inline bool HandshakeIdHasBeenSet() const { return m_handshakeIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier (ID) of the handshake that you want information about.
-     * You can get the ID from the original call to <a>InviteAccountToOrganization</a>,
-     * or from a call to <a>ListHandshakesForAccount</a> or
-     * <a>ListHandshakesForOrganization</a>.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-     */
     inline void SetHandshakeId(const Aws::String& value) { m_handshakeIdHasBeenSet = true; m_handshakeId = value; }
-
-    /**
-     * <p>The unique identifier (ID) of the handshake that you want information about.
-     * You can get the ID from the original call to <a>InviteAccountToOrganization</a>,
-     * or from a call to <a>ListHandshakesForAccount</a> or
-     * <a>ListHandshakesForOrganization</a>.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-     */
     inline void SetHandshakeId(Aws::String&& value) { m_handshakeIdHasBeenSet = true; m_handshakeId = std::move(value); }
-
-    /**
-     * <p>The unique identifier (ID) of the handshake that you want information about.
-     * You can get the ID from the original call to <a>InviteAccountToOrganization</a>,
-     * or from a call to <a>ListHandshakesForAccount</a> or
-     * <a>ListHandshakesForOrganization</a>.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-     */
     inline void SetHandshakeId(const char* value) { m_handshakeIdHasBeenSet = true; m_handshakeId.assign(value); }
-
-    /**
-     * <p>The unique identifier (ID) of the handshake that you want information about.
-     * You can get the ID from the original call to <a>InviteAccountToOrganization</a>,
-     * or from a call to <a>ListHandshakesForAccount</a> or
-     * <a>ListHandshakesForOrganization</a>.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-     */
     inline DescribeHandshakeRequest& WithHandshakeId(const Aws::String& value) { SetHandshakeId(value); return *this;}
-
-    /**
-     * <p>The unique identifier (ID) of the handshake that you want information about.
-     * You can get the ID from the original call to <a>InviteAccountToOrganization</a>,
-     * or from a call to <a>ListHandshakesForAccount</a> or
-     * <a>ListHandshakesForOrganization</a>.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-     */
     inline DescribeHandshakeRequest& WithHandshakeId(Aws::String&& value) { SetHandshakeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier (ID) of the handshake that you want information about.
-     * You can get the ID from the original call to <a>InviteAccountToOrganization</a>,
-     * or from a call to <a>ListHandshakesForAccount</a> or
-     * <a>ListHandshakesForOrganization</a>.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-     */
     inline DescribeHandshakeRequest& WithHandshakeId(const char* value) { SetHandshakeId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_handshakeId;

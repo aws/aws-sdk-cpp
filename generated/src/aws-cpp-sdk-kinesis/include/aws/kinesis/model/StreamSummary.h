@@ -40,168 +40,67 @@ namespace Model
     AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of a stream.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
-
-    /**
-     * <p>The name of a stream.</p>
-     */
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-
-    /**
-     * <p>The name of a stream.</p>
-     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-
-    /**
-     * <p>The name of a stream.</p>
-     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-
-    /**
-     * <p>The name of a stream.</p>
-     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-
-    /**
-     * <p>The name of a stream.</p>
-     */
     inline StreamSummary& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-
-    /**
-     * <p>The name of a stream.</p>
-     */
     inline StreamSummary& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of a stream.</p>
-     */
     inline StreamSummary& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the stream.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline StreamSummary& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline StreamSummary& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline StreamSummary& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the stream.</p>
      */
     inline const StreamStatus& GetStreamStatus() const{ return m_streamStatus; }
-
-    /**
-     * <p>The status of the stream.</p>
-     */
     inline bool StreamStatusHasBeenSet() const { return m_streamStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the stream.</p>
-     */
     inline void SetStreamStatus(const StreamStatus& value) { m_streamStatusHasBeenSet = true; m_streamStatus = value; }
-
-    /**
-     * <p>The status of the stream.</p>
-     */
     inline void SetStreamStatus(StreamStatus&& value) { m_streamStatusHasBeenSet = true; m_streamStatus = std::move(value); }
-
-    /**
-     * <p>The status of the stream.</p>
-     */
     inline StreamSummary& WithStreamStatus(const StreamStatus& value) { SetStreamStatus(value); return *this;}
-
-    /**
-     * <p>The status of the stream.</p>
-     */
     inline StreamSummary& WithStreamStatus(StreamStatus&& value) { SetStreamStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const StreamModeDetails& GetStreamModeDetails() const{ return m_streamModeDetails; }
-
-    
     inline bool StreamModeDetailsHasBeenSet() const { return m_streamModeDetailsHasBeenSet; }
-
-    
     inline void SetStreamModeDetails(const StreamModeDetails& value) { m_streamModeDetailsHasBeenSet = true; m_streamModeDetails = value; }
-
-    
     inline void SetStreamModeDetails(StreamModeDetails&& value) { m_streamModeDetailsHasBeenSet = true; m_streamModeDetails = std::move(value); }
-
-    
     inline StreamSummary& WithStreamModeDetails(const StreamModeDetails& value) { SetStreamModeDetails(value); return *this;}
-
-    
     inline StreamSummary& WithStreamModeDetails(StreamModeDetails&& value) { SetStreamModeDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp at which the stream was created.</p>
      */
     inline const Aws::Utils::DateTime& GetStreamCreationTimestamp() const{ return m_streamCreationTimestamp; }
-
-    /**
-     * <p>The timestamp at which the stream was created.</p>
-     */
     inline bool StreamCreationTimestampHasBeenSet() const { return m_streamCreationTimestampHasBeenSet; }
-
-    /**
-     * <p>The timestamp at which the stream was created.</p>
-     */
     inline void SetStreamCreationTimestamp(const Aws::Utils::DateTime& value) { m_streamCreationTimestampHasBeenSet = true; m_streamCreationTimestamp = value; }
-
-    /**
-     * <p>The timestamp at which the stream was created.</p>
-     */
     inline void SetStreamCreationTimestamp(Aws::Utils::DateTime&& value) { m_streamCreationTimestampHasBeenSet = true; m_streamCreationTimestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp at which the stream was created.</p>
-     */
     inline StreamSummary& WithStreamCreationTimestamp(const Aws::Utils::DateTime& value) { SetStreamCreationTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp at which the stream was created.</p>
-     */
     inline StreamSummary& WithStreamCreationTimestamp(Aws::Utils::DateTime&& value) { SetStreamCreationTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamName;

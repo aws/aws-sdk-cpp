@@ -40,70 +40,30 @@ namespace Model
     AWS_SESV2_API SendBulkEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>One object per intended recipient. Check each response object and retry any
      * messages with a failure status.</p>
      */
     inline const Aws::Vector<BulkEmailEntryResult>& GetBulkEmailEntryResults() const{ return m_bulkEmailEntryResults; }
-
-    /**
-     * <p>One object per intended recipient. Check each response object and retry any
-     * messages with a failure status.</p>
-     */
     inline void SetBulkEmailEntryResults(const Aws::Vector<BulkEmailEntryResult>& value) { m_bulkEmailEntryResults = value; }
-
-    /**
-     * <p>One object per intended recipient. Check each response object and retry any
-     * messages with a failure status.</p>
-     */
     inline void SetBulkEmailEntryResults(Aws::Vector<BulkEmailEntryResult>&& value) { m_bulkEmailEntryResults = std::move(value); }
-
-    /**
-     * <p>One object per intended recipient. Check each response object and retry any
-     * messages with a failure status.</p>
-     */
     inline SendBulkEmailResult& WithBulkEmailEntryResults(const Aws::Vector<BulkEmailEntryResult>& value) { SetBulkEmailEntryResults(value); return *this;}
-
-    /**
-     * <p>One object per intended recipient. Check each response object and retry any
-     * messages with a failure status.</p>
-     */
     inline SendBulkEmailResult& WithBulkEmailEntryResults(Aws::Vector<BulkEmailEntryResult>&& value) { SetBulkEmailEntryResults(std::move(value)); return *this;}
-
-    /**
-     * <p>One object per intended recipient. Check each response object and retry any
-     * messages with a failure status.</p>
-     */
     inline SendBulkEmailResult& AddBulkEmailEntryResults(const BulkEmailEntryResult& value) { m_bulkEmailEntryResults.push_back(value); return *this; }
-
-    /**
-     * <p>One object per intended recipient. Check each response object and retry any
-     * messages with a failure status.</p>
-     */
     inline SendBulkEmailResult& AddBulkEmailEntryResults(BulkEmailEntryResult&& value) { m_bulkEmailEntryResults.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SendBulkEmailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SendBulkEmailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SendBulkEmailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BulkEmailEntryResult> m_bulkEmailEntryResults;

@@ -33,53 +33,27 @@ namespace Model
     AWS_SSOADMIN_API DescribePermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Describes the level of access on an Amazon Web Services account.</p>
      */
     inline const PermissionSet& GetPermissionSet() const{ return m_permissionSet; }
-
-    /**
-     * <p>Describes the level of access on an Amazon Web Services account.</p>
-     */
     inline void SetPermissionSet(const PermissionSet& value) { m_permissionSet = value; }
-
-    /**
-     * <p>Describes the level of access on an Amazon Web Services account.</p>
-     */
     inline void SetPermissionSet(PermissionSet&& value) { m_permissionSet = std::move(value); }
-
-    /**
-     * <p>Describes the level of access on an Amazon Web Services account.</p>
-     */
     inline DescribePermissionSetResult& WithPermissionSet(const PermissionSet& value) { SetPermissionSet(value); return *this;}
-
-    /**
-     * <p>Describes the level of access on an Amazon Web Services account.</p>
-     */
     inline DescribePermissionSetResult& WithPermissionSet(PermissionSet&& value) { SetPermissionSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribePermissionSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribePermissionSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribePermissionSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PermissionSet m_permissionSet;

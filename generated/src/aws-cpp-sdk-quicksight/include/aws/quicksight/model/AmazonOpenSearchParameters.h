@@ -37,46 +37,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The OpenSearch domain.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
-
-    /**
-     * <p>The OpenSearch domain.</p>
-     */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-
-    /**
-     * <p>The OpenSearch domain.</p>
-     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-
-    /**
-     * <p>The OpenSearch domain.</p>
-     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-
-    /**
-     * <p>The OpenSearch domain.</p>
-     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-
-    /**
-     * <p>The OpenSearch domain.</p>
-     */
     inline AmazonOpenSearchParameters& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-
-    /**
-     * <p>The OpenSearch domain.</p>
-     */
     inline AmazonOpenSearchParameters& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-
-    /**
-     * <p>The OpenSearch domain.</p>
-     */
     inline AmazonOpenSearchParameters& WithDomain(const char* value) { SetDomain(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domain;

@@ -34,46 +34,19 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Add On subscription ID to delete.</p>
      */
     inline const Aws::String& GetAddonSubscriptionId() const{ return m_addonSubscriptionId; }
-
-    /**
-     * <p>The Add On subscription ID to delete.</p>
-     */
     inline bool AddonSubscriptionIdHasBeenSet() const { return m_addonSubscriptionIdHasBeenSet; }
-
-    /**
-     * <p>The Add On subscription ID to delete.</p>
-     */
     inline void SetAddonSubscriptionId(const Aws::String& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = value; }
-
-    /**
-     * <p>The Add On subscription ID to delete.</p>
-     */
     inline void SetAddonSubscriptionId(Aws::String&& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = std::move(value); }
-
-    /**
-     * <p>The Add On subscription ID to delete.</p>
-     */
     inline void SetAddonSubscriptionId(const char* value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId.assign(value); }
-
-    /**
-     * <p>The Add On subscription ID to delete.</p>
-     */
     inline DeleteAddonSubscriptionRequest& WithAddonSubscriptionId(const Aws::String& value) { SetAddonSubscriptionId(value); return *this;}
-
-    /**
-     * <p>The Add On subscription ID to delete.</p>
-     */
     inline DeleteAddonSubscriptionRequest& WithAddonSubscriptionId(Aws::String&& value) { SetAddonSubscriptionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Add On subscription ID to delete.</p>
-     */
     inline DeleteAddonSubscriptionRequest& WithAddonSubscriptionId(const char* value) { SetAddonSubscriptionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_addonSubscriptionId;

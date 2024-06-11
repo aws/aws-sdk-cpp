@@ -37,104 +37,43 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-
-    
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-
-    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-
-    
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-
-    
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-
-    
     inline DescribeTapeRecoveryPointsRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-
-    
     inline DescribeTapeRecoveryPointsRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-
-    
     inline DescribeTapeRecoveryPointsRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An opaque string that indicates the position at which to begin describing the
      * virtual tape recovery points.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin describing the
-     * virtual tape recovery points.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin describing the
-     * virtual tape recovery points.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin describing the
-     * virtual tape recovery points.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin describing the
-     * virtual tape recovery points.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin describing the
-     * virtual tape recovery points.</p>
-     */
     inline DescribeTapeRecoveryPointsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin describing the
-     * virtual tape recovery points.</p>
-     */
     inline DescribeTapeRecoveryPointsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin describing the
-     * virtual tape recovery points.</p>
-     */
     inline DescribeTapeRecoveryPointsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies that the number of virtual tape recovery points that are described
      * be limited to the specified number.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>Specifies that the number of virtual tape recovery points that are described
-     * be limited to the specified number.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>Specifies that the number of virtual tape recovery points that are described
-     * be limited to the specified number.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>Specifies that the number of virtual tape recovery points that are described
-     * be limited to the specified number.</p>
-     */
     inline DescribeTapeRecoveryPointsRequest& WithLimit(int value) { SetLimit(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayARN;

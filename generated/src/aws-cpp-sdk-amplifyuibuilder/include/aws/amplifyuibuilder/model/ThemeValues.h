@@ -40,77 +40,31 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the property.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The name of the property.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The name of the property.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The name of the property.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The name of the property.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The name of the property.</p>
-     */
     inline ThemeValues& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The name of the property.</p>
-     */
     inline ThemeValues& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the property.</p>
-     */
     inline ThemeValues& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the property.</p>
      */
     AWS_AMPLIFYUIBUILDER_API const ThemeValue& GetValue() const;
-
-    /**
-     * <p>The value of the property.</p>
-     */
     AWS_AMPLIFYUIBUILDER_API bool ValueHasBeenSet() const;
-
-    /**
-     * <p>The value of the property.</p>
-     */
     AWS_AMPLIFYUIBUILDER_API void SetValue(const ThemeValue& value);
-
-    /**
-     * <p>The value of the property.</p>
-     */
     AWS_AMPLIFYUIBUILDER_API void SetValue(ThemeValue&& value);
-
-    /**
-     * <p>The value of the property.</p>
-     */
     AWS_AMPLIFYUIBUILDER_API ThemeValues& WithValue(const ThemeValue& value);
-
-    /**
-     * <p>The value of the property.</p>
-     */
     AWS_AMPLIFYUIBUILDER_API ThemeValues& WithValue(ThemeValue&& value);
-
+    ///@}
   private:
 
     Aws::String m_key;

@@ -37,6 +37,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -44,77 +45,25 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CancelCapacityReservationFleetsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCapacityReservationFleetIds() const{ return m_capacityReservationFleetIds; }
-
-    /**
-     * <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-     */
     inline bool CapacityReservationFleetIdsHasBeenSet() const { return m_capacityReservationFleetIdsHasBeenSet; }
-
-    /**
-     * <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-     */
     inline void SetCapacityReservationFleetIds(const Aws::Vector<Aws::String>& value) { m_capacityReservationFleetIdsHasBeenSet = true; m_capacityReservationFleetIds = value; }
-
-    /**
-     * <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-     */
     inline void SetCapacityReservationFleetIds(Aws::Vector<Aws::String>&& value) { m_capacityReservationFleetIdsHasBeenSet = true; m_capacityReservationFleetIds = std::move(value); }
-
-    /**
-     * <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-     */
     inline CancelCapacityReservationFleetsRequest& WithCapacityReservationFleetIds(const Aws::Vector<Aws::String>& value) { SetCapacityReservationFleetIds(value); return *this;}
-
-    /**
-     * <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-     */
     inline CancelCapacityReservationFleetsRequest& WithCapacityReservationFleetIds(Aws::Vector<Aws::String>&& value) { SetCapacityReservationFleetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-     */
     inline CancelCapacityReservationFleetsRequest& AddCapacityReservationFleetIds(const Aws::String& value) { m_capacityReservationFleetIdsHasBeenSet = true; m_capacityReservationFleetIds.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-     */
     inline CancelCapacityReservationFleetsRequest& AddCapacityReservationFleetIds(Aws::String&& value) { m_capacityReservationFleetIdsHasBeenSet = true; m_capacityReservationFleetIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-     */
     inline CancelCapacityReservationFleetsRequest& AddCapacityReservationFleetIds(const char* value) { m_capacityReservationFleetIdsHasBeenSet = true; m_capacityReservationFleetIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     bool m_dryRun;

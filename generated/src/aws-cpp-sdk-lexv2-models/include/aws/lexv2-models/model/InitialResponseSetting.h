@@ -41,93 +41,47 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const ResponseSpecification& GetInitialResponse() const{ return m_initialResponse; }
-
-    
     inline bool InitialResponseHasBeenSet() const { return m_initialResponseHasBeenSet; }
-
-    
     inline void SetInitialResponse(const ResponseSpecification& value) { m_initialResponseHasBeenSet = true; m_initialResponse = value; }
-
-    
     inline void SetInitialResponse(ResponseSpecification&& value) { m_initialResponseHasBeenSet = true; m_initialResponse = std::move(value); }
-
-    
     inline InitialResponseSetting& WithInitialResponse(const ResponseSpecification& value) { SetInitialResponse(value); return *this;}
-
-    
     inline InitialResponseSetting& WithInitialResponse(ResponseSpecification&& value) { SetInitialResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The next step in the conversation.</p>
      */
     inline const DialogState& GetNextStep() const{ return m_nextStep; }
-
-    /**
-     * <p>The next step in the conversation.</p>
-     */
     inline bool NextStepHasBeenSet() const { return m_nextStepHasBeenSet; }
-
-    /**
-     * <p>The next step in the conversation.</p>
-     */
     inline void SetNextStep(const DialogState& value) { m_nextStepHasBeenSet = true; m_nextStep = value; }
-
-    /**
-     * <p>The next step in the conversation.</p>
-     */
     inline void SetNextStep(DialogState&& value) { m_nextStepHasBeenSet = true; m_nextStep = std::move(value); }
-
-    /**
-     * <p>The next step in the conversation.</p>
-     */
     inline InitialResponseSetting& WithNextStep(const DialogState& value) { SetNextStep(value); return *this;}
-
-    /**
-     * <p>The next step in the conversation.</p>
-     */
     inline InitialResponseSetting& WithNextStep(DialogState&& value) { SetNextStep(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ConditionalSpecification& GetConditional() const{ return m_conditional; }
-
-    
     inline bool ConditionalHasBeenSet() const { return m_conditionalHasBeenSet; }
-
-    
     inline void SetConditional(const ConditionalSpecification& value) { m_conditionalHasBeenSet = true; m_conditional = value; }
-
-    
     inline void SetConditional(ConditionalSpecification&& value) { m_conditionalHasBeenSet = true; m_conditional = std::move(value); }
-
-    
     inline InitialResponseSetting& WithConditional(const ConditionalSpecification& value) { SetConditional(value); return *this;}
-
-    
     inline InitialResponseSetting& WithConditional(ConditionalSpecification&& value) { SetConditional(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const DialogCodeHookInvocationSetting& GetCodeHook() const{ return m_codeHook; }
-
-    
     inline bool CodeHookHasBeenSet() const { return m_codeHookHasBeenSet; }
-
-    
     inline void SetCodeHook(const DialogCodeHookInvocationSetting& value) { m_codeHookHasBeenSet = true; m_codeHook = value; }
-
-    
     inline void SetCodeHook(DialogCodeHookInvocationSetting&& value) { m_codeHookHasBeenSet = true; m_codeHook = std::move(value); }
-
-    
     inline InitialResponseSetting& WithCodeHook(const DialogCodeHookInvocationSetting& value) { SetCodeHook(value); return *this;}
-
-    
     inline InitialResponseSetting& WithCodeHook(DialogCodeHookInvocationSetting&& value) { SetCodeHook(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResponseSpecification m_initialResponse;

@@ -33,43 +33,25 @@ namespace Model
     AWS_MEDIACONNECT_API DescribeOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Offering& GetOffering() const{ return m_offering; }
-
-    
     inline void SetOffering(const Offering& value) { m_offering = value; }
-
-    
     inline void SetOffering(Offering&& value) { m_offering = std::move(value); }
-
-    
     inline DescribeOfferingResult& WithOffering(const Offering& value) { SetOffering(value); return *this;}
-
-    
     inline DescribeOfferingResult& WithOffering(Offering&& value) { SetOffering(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeOfferingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeOfferingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeOfferingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Offering m_offering;

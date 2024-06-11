@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetAppsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const ApplicationsResponse& GetApplicationsResponse() const{ return m_applicationsResponse; }
-
-    
     inline void SetApplicationsResponse(const ApplicationsResponse& value) { m_applicationsResponse = value; }
-
-    
     inline void SetApplicationsResponse(ApplicationsResponse&& value) { m_applicationsResponse = std::move(value); }
-
-    
     inline GetAppsResult& WithApplicationsResponse(const ApplicationsResponse& value) { SetApplicationsResponse(value); return *this;}
-
-    
     inline GetAppsResult& WithApplicationsResponse(ApplicationsResponse&& value) { SetApplicationsResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAppsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAppsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAppsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ApplicationsResponse m_applicationsResponse;

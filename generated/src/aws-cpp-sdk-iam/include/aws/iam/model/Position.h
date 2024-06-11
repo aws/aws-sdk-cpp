@@ -39,47 +39,25 @@ namespace Model
     AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The line containing the specified position in the document.</p>
      */
     inline int GetLine() const{ return m_line; }
-
-    /**
-     * <p>The line containing the specified position in the document.</p>
-     */
     inline bool LineHasBeenSet() const { return m_lineHasBeenSet; }
-
-    /**
-     * <p>The line containing the specified position in the document.</p>
-     */
     inline void SetLine(int value) { m_lineHasBeenSet = true; m_line = value; }
-
-    /**
-     * <p>The line containing the specified position in the document.</p>
-     */
     inline Position& WithLine(int value) { SetLine(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The column in the line containing the specified position in the document.</p>
      */
     inline int GetColumn() const{ return m_column; }
-
-    /**
-     * <p>The column in the line containing the specified position in the document.</p>
-     */
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-
-    /**
-     * <p>The column in the line containing the specified position in the document.</p>
-     */
     inline void SetColumn(int value) { m_columnHasBeenSet = true; m_column = value; }
-
-    /**
-     * <p>The column in the line containing the specified position in the document.</p>
-     */
     inline Position& WithColumn(int value) { SetColumn(value); return *this;}
-
+    ///@}
   private:
 
     int m_line;

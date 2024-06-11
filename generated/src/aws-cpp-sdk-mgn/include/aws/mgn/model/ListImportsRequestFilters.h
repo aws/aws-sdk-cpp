@@ -38,51 +38,20 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List imports request filters import IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetImportIDs() const{ return m_importIDs; }
-
-    /**
-     * <p>List imports request filters import IDs.</p>
-     */
     inline bool ImportIDsHasBeenSet() const { return m_importIDsHasBeenSet; }
-
-    /**
-     * <p>List imports request filters import IDs.</p>
-     */
     inline void SetImportIDs(const Aws::Vector<Aws::String>& value) { m_importIDsHasBeenSet = true; m_importIDs = value; }
-
-    /**
-     * <p>List imports request filters import IDs.</p>
-     */
     inline void SetImportIDs(Aws::Vector<Aws::String>&& value) { m_importIDsHasBeenSet = true; m_importIDs = std::move(value); }
-
-    /**
-     * <p>List imports request filters import IDs.</p>
-     */
     inline ListImportsRequestFilters& WithImportIDs(const Aws::Vector<Aws::String>& value) { SetImportIDs(value); return *this;}
-
-    /**
-     * <p>List imports request filters import IDs.</p>
-     */
     inline ListImportsRequestFilters& WithImportIDs(Aws::Vector<Aws::String>&& value) { SetImportIDs(std::move(value)); return *this;}
-
-    /**
-     * <p>List imports request filters import IDs.</p>
-     */
     inline ListImportsRequestFilters& AddImportIDs(const Aws::String& value) { m_importIDsHasBeenSet = true; m_importIDs.push_back(value); return *this; }
-
-    /**
-     * <p>List imports request filters import IDs.</p>
-     */
     inline ListImportsRequestFilters& AddImportIDs(Aws::String&& value) { m_importIDsHasBeenSet = true; m_importIDs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>List imports request filters import IDs.</p>
-     */
     inline ListImportsRequestFilters& AddImportIDs(const char* value) { m_importIDsHasBeenSet = true; m_importIDs.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_importIDs;

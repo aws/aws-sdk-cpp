@@ -37,36 +37,17 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The start and stop time of the ingested events.</p>
      */
     inline const IngestedEventsTimeWindow& GetIngestedEventsTimeWindow() const{ return m_ingestedEventsTimeWindow; }
-
-    /**
-     * <p>The start and stop time of the ingested events.</p>
-     */
     inline bool IngestedEventsTimeWindowHasBeenSet() const { return m_ingestedEventsTimeWindowHasBeenSet; }
-
-    /**
-     * <p>The start and stop time of the ingested events.</p>
-     */
     inline void SetIngestedEventsTimeWindow(const IngestedEventsTimeWindow& value) { m_ingestedEventsTimeWindowHasBeenSet = true; m_ingestedEventsTimeWindow = value; }
-
-    /**
-     * <p>The start and stop time of the ingested events.</p>
-     */
     inline void SetIngestedEventsTimeWindow(IngestedEventsTimeWindow&& value) { m_ingestedEventsTimeWindowHasBeenSet = true; m_ingestedEventsTimeWindow = std::move(value); }
-
-    /**
-     * <p>The start and stop time of the ingested events.</p>
-     */
     inline IngestedEventsDetail& WithIngestedEventsTimeWindow(const IngestedEventsTimeWindow& value) { SetIngestedEventsTimeWindow(value); return *this;}
-
-    /**
-     * <p>The start and stop time of the ingested events.</p>
-     */
     inline IngestedEventsDetail& WithIngestedEventsTimeWindow(IngestedEventsTimeWindow&& value) { SetIngestedEventsTimeWindow(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IngestedEventsTimeWindow m_ingestedEventsTimeWindow;

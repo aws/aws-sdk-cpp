@@ -42,110 +42,38 @@ namespace Model
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The name of the method that appears as a frame in any stack in a profile.
      * </p>
      */
     inline const Aws::String& GetFrameName() const{ return m_frameName; }
-
-    /**
-     * <p> The name of the method that appears as a frame in any stack in a profile.
-     * </p>
-     */
     inline bool FrameNameHasBeenSet() const { return m_frameNameHasBeenSet; }
-
-    /**
-     * <p> The name of the method that appears as a frame in any stack in a profile.
-     * </p>
-     */
     inline void SetFrameName(const Aws::String& value) { m_frameNameHasBeenSet = true; m_frameName = value; }
-
-    /**
-     * <p> The name of the method that appears as a frame in any stack in a profile.
-     * </p>
-     */
     inline void SetFrameName(Aws::String&& value) { m_frameNameHasBeenSet = true; m_frameName = std::move(value); }
-
-    /**
-     * <p> The name of the method that appears as a frame in any stack in a profile.
-     * </p>
-     */
     inline void SetFrameName(const char* value) { m_frameNameHasBeenSet = true; m_frameName.assign(value); }
-
-    /**
-     * <p> The name of the method that appears as a frame in any stack in a profile.
-     * </p>
-     */
     inline Metric& WithFrameName(const Aws::String& value) { SetFrameName(value); return *this;}
-
-    /**
-     * <p> The name of the method that appears as a frame in any stack in a profile.
-     * </p>
-     */
     inline Metric& WithFrameName(Aws::String&& value) { SetFrameName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the method that appears as a frame in any stack in a profile.
-     * </p>
-     */
     inline Metric& WithFrameName(const char* value) { SetFrameName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The list of application runtime thread states that is used to calculate the
      * metric value for the frame. </p>
      */
     inline const Aws::Vector<Aws::String>& GetThreadStates() const{ return m_threadStates; }
-
-    /**
-     * <p> The list of application runtime thread states that is used to calculate the
-     * metric value for the frame. </p>
-     */
     inline bool ThreadStatesHasBeenSet() const { return m_threadStatesHasBeenSet; }
-
-    /**
-     * <p> The list of application runtime thread states that is used to calculate the
-     * metric value for the frame. </p>
-     */
     inline void SetThreadStates(const Aws::Vector<Aws::String>& value) { m_threadStatesHasBeenSet = true; m_threadStates = value; }
-
-    /**
-     * <p> The list of application runtime thread states that is used to calculate the
-     * metric value for the frame. </p>
-     */
     inline void SetThreadStates(Aws::Vector<Aws::String>&& value) { m_threadStatesHasBeenSet = true; m_threadStates = std::move(value); }
-
-    /**
-     * <p> The list of application runtime thread states that is used to calculate the
-     * metric value for the frame. </p>
-     */
     inline Metric& WithThreadStates(const Aws::Vector<Aws::String>& value) { SetThreadStates(value); return *this;}
-
-    /**
-     * <p> The list of application runtime thread states that is used to calculate the
-     * metric value for the frame. </p>
-     */
     inline Metric& WithThreadStates(Aws::Vector<Aws::String>&& value) { SetThreadStates(std::move(value)); return *this;}
-
-    /**
-     * <p> The list of application runtime thread states that is used to calculate the
-     * metric value for the frame. </p>
-     */
     inline Metric& AddThreadStates(const Aws::String& value) { m_threadStatesHasBeenSet = true; m_threadStates.push_back(value); return *this; }
-
-    /**
-     * <p> The list of application runtime thread states that is used to calculate the
-     * metric value for the frame. </p>
-     */
     inline Metric& AddThreadStates(Aws::String&& value) { m_threadStatesHasBeenSet = true; m_threadStates.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> The list of application runtime thread states that is used to calculate the
-     * metric value for the frame. </p>
-     */
     inline Metric& AddThreadStates(const char* value) { m_threadStatesHasBeenSet = true; m_threadStates.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> A type that specifies how a metric for a frame is analyzed. The supported
      * value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric
@@ -153,47 +81,12 @@ namespace Model
      * profile.</p>
      */
     inline const MetricType& GetType() const{ return m_type; }
-
-    /**
-     * <p> A type that specifies how a metric for a frame is analyzed. The supported
-     * value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric
-     * value for one frame that is calculated across the occurences of all frames in a
-     * profile.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p> A type that specifies how a metric for a frame is analyzed. The supported
-     * value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric
-     * value for one frame that is calculated across the occurences of all frames in a
-     * profile.</p>
-     */
     inline void SetType(const MetricType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p> A type that specifies how a metric for a frame is analyzed. The supported
-     * value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric
-     * value for one frame that is calculated across the occurences of all frames in a
-     * profile.</p>
-     */
     inline void SetType(MetricType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p> A type that specifies how a metric for a frame is analyzed. The supported
-     * value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric
-     * value for one frame that is calculated across the occurences of all frames in a
-     * profile.</p>
-     */
     inline Metric& WithType(const MetricType& value) { SetType(value); return *this;}
-
-    /**
-     * <p> A type that specifies how a metric for a frame is analyzed. The supported
-     * value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric
-     * value for one frame that is calculated across the occurences of all frames in a
-     * profile.</p>
-     */
     inline Metric& WithType(MetricType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_frameName;

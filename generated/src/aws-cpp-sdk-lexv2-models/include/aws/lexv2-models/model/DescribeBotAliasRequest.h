@@ -32,87 +32,33 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the bot alias to describe.</p>
      */
     inline const Aws::String& GetBotAliasId() const{ return m_botAliasId; }
-
-    /**
-     * <p>The identifier of the bot alias to describe.</p>
-     */
     inline bool BotAliasIdHasBeenSet() const { return m_botAliasIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the bot alias to describe.</p>
-     */
     inline void SetBotAliasId(const Aws::String& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = value; }
-
-    /**
-     * <p>The identifier of the bot alias to describe.</p>
-     */
     inline void SetBotAliasId(Aws::String&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::move(value); }
-
-    /**
-     * <p>The identifier of the bot alias to describe.</p>
-     */
     inline void SetBotAliasId(const char* value) { m_botAliasIdHasBeenSet = true; m_botAliasId.assign(value); }
-
-    /**
-     * <p>The identifier of the bot alias to describe.</p>
-     */
     inline DescribeBotAliasRequest& WithBotAliasId(const Aws::String& value) { SetBotAliasId(value); return *this;}
-
-    /**
-     * <p>The identifier of the bot alias to describe.</p>
-     */
     inline DescribeBotAliasRequest& WithBotAliasId(Aws::String&& value) { SetBotAliasId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the bot alias to describe.</p>
-     */
     inline DescribeBotAliasRequest& WithBotAliasId(const char* value) { SetBotAliasId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the bot associated with the bot alias to describe.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
-
-    /**
-     * <p>The identifier of the bot associated with the bot alias to describe.</p>
-     */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the bot associated with the bot alias to describe.</p>
-     */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-
-    /**
-     * <p>The identifier of the bot associated with the bot alias to describe.</p>
-     */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-
-    /**
-     * <p>The identifier of the bot associated with the bot alias to describe.</p>
-     */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-
-    /**
-     * <p>The identifier of the bot associated with the bot alias to describe.</p>
-     */
     inline DescribeBotAliasRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-
-    /**
-     * <p>The identifier of the bot associated with the bot alias to describe.</p>
-     */
     inline DescribeBotAliasRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the bot associated with the bot alias to describe.</p>
-     */
     inline DescribeBotAliasRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_botAliasId;

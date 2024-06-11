@@ -40,77 +40,31 @@ namespace Model
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A database that has LF-tags attached to it.</p>
      */
     inline const DatabaseResource& GetDatabase() const{ return m_database; }
-
-    /**
-     * <p>A database that has LF-tags attached to it.</p>
-     */
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-
-    /**
-     * <p>A database that has LF-tags attached to it.</p>
-     */
     inline void SetDatabase(const DatabaseResource& value) { m_databaseHasBeenSet = true; m_database = value; }
-
-    /**
-     * <p>A database that has LF-tags attached to it.</p>
-     */
     inline void SetDatabase(DatabaseResource&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-
-    /**
-     * <p>A database that has LF-tags attached to it.</p>
-     */
     inline TaggedDatabase& WithDatabase(const DatabaseResource& value) { SetDatabase(value); return *this;}
-
-    /**
-     * <p>A database that has LF-tags attached to it.</p>
-     */
     inline TaggedDatabase& WithDatabase(DatabaseResource&& value) { SetDatabase(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of LF-tags attached to the database.</p>
      */
     inline const Aws::Vector<LFTagPair>& GetLFTags() const{ return m_lFTags; }
-
-    /**
-     * <p>A list of LF-tags attached to the database.</p>
-     */
     inline bool LFTagsHasBeenSet() const { return m_lFTagsHasBeenSet; }
-
-    /**
-     * <p>A list of LF-tags attached to the database.</p>
-     */
     inline void SetLFTags(const Aws::Vector<LFTagPair>& value) { m_lFTagsHasBeenSet = true; m_lFTags = value; }
-
-    /**
-     * <p>A list of LF-tags attached to the database.</p>
-     */
     inline void SetLFTags(Aws::Vector<LFTagPair>&& value) { m_lFTagsHasBeenSet = true; m_lFTags = std::move(value); }
-
-    /**
-     * <p>A list of LF-tags attached to the database.</p>
-     */
     inline TaggedDatabase& WithLFTags(const Aws::Vector<LFTagPair>& value) { SetLFTags(value); return *this;}
-
-    /**
-     * <p>A list of LF-tags attached to the database.</p>
-     */
     inline TaggedDatabase& WithLFTags(Aws::Vector<LFTagPair>&& value) { SetLFTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of LF-tags attached to the database.</p>
-     */
     inline TaggedDatabase& AddLFTags(const LFTagPair& value) { m_lFTagsHasBeenSet = true; m_lFTags.push_back(value); return *this; }
-
-    /**
-     * <p>A list of LF-tags attached to the database.</p>
-     */
     inline TaggedDatabase& AddLFTags(LFTagPair&& value) { m_lFTagsHasBeenSet = true; m_lFTags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     DatabaseResource m_database;

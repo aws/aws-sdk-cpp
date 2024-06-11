@@ -45,43 +45,20 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The scope of the StopAction. The only acceptable value is
      * <code>RuleSet</code>.</p>
      */
     inline const StopScope& GetScope() const{ return m_scope; }
-
-    /**
-     * <p>The scope of the StopAction. The only acceptable value is
-     * <code>RuleSet</code>.</p>
-     */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-
-    /**
-     * <p>The scope of the StopAction. The only acceptable value is
-     * <code>RuleSet</code>.</p>
-     */
     inline void SetScope(const StopScope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-
-    /**
-     * <p>The scope of the StopAction. The only acceptable value is
-     * <code>RuleSet</code>.</p>
-     */
     inline void SetScope(StopScope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-
-    /**
-     * <p>The scope of the StopAction. The only acceptable value is
-     * <code>RuleSet</code>.</p>
-     */
     inline StopAction& WithScope(const StopScope& value) { SetScope(value); return *this;}
-
-    /**
-     * <p>The scope of the StopAction. The only acceptable value is
-     * <code>RuleSet</code>.</p>
-     */
     inline StopAction& WithScope(StopScope&& value) { SetScope(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
      * stop action is taken. You can find the ARN of a topic by using the <a
@@ -91,77 +68,14 @@ namespace Model
      * SNS Developer Guide</a>.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * stop action is taken. You can find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * stop action is taken. You can find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * stop action is taken. You can find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * stop action is taken. You can find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * stop action is taken. You can find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline StopAction& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * stop action is taken. You can find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline StopAction& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * stop action is taken. You can find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline StopAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
-
+    ///@}
   private:
 
     StopScope m_scope;

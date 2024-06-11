@@ -34,95 +34,34 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Data Catalog in which the connection resides. If none is
      * provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline DeleteConnectionRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline DeleteConnectionRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline DeleteConnectionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the connection to delete.</p>
      */
     inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
-
-    /**
-     * <p>The name of the connection to delete.</p>
-     */
     inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the connection to delete.</p>
-     */
     inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
-
-    /**
-     * <p>The name of the connection to delete.</p>
-     */
     inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
-
-    /**
-     * <p>The name of the connection to delete.</p>
-     */
     inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
-
-    /**
-     * <p>The name of the connection to delete.</p>
-     */
     inline DeleteConnectionRequest& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
-
-    /**
-     * <p>The name of the connection to delete.</p>
-     */
     inline DeleteConnectionRequest& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the connection to delete.</p>
-     */
     inline DeleteConnectionRequest& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_catalogId;

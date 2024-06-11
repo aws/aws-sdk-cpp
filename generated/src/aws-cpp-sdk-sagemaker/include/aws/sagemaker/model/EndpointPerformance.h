@@ -39,55 +39,27 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The metrics for an existing endpoint.</p>
      */
     inline const InferenceMetrics& GetMetrics() const{ return m_metrics; }
-
-    /**
-     * <p>The metrics for an existing endpoint.</p>
-     */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-
-    /**
-     * <p>The metrics for an existing endpoint.</p>
-     */
     inline void SetMetrics(const InferenceMetrics& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-
-    /**
-     * <p>The metrics for an existing endpoint.</p>
-     */
     inline void SetMetrics(InferenceMetrics&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-
-    /**
-     * <p>The metrics for an existing endpoint.</p>
-     */
     inline EndpointPerformance& WithMetrics(const InferenceMetrics& value) { SetMetrics(value); return *this;}
-
-    /**
-     * <p>The metrics for an existing endpoint.</p>
-     */
     inline EndpointPerformance& WithMetrics(InferenceMetrics&& value) { SetMetrics(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const EndpointInfo& GetEndpointInfo() const{ return m_endpointInfo; }
-
-    
     inline bool EndpointInfoHasBeenSet() const { return m_endpointInfoHasBeenSet; }
-
-    
     inline void SetEndpointInfo(const EndpointInfo& value) { m_endpointInfoHasBeenSet = true; m_endpointInfo = value; }
-
-    
     inline void SetEndpointInfo(EndpointInfo&& value) { m_endpointInfoHasBeenSet = true; m_endpointInfo = std::move(value); }
-
-    
     inline EndpointPerformance& WithEndpointInfo(const EndpointInfo& value) { SetEndpointInfo(value); return *this;}
-
-    
     inline EndpointPerformance& WithEndpointInfo(EndpointInfo&& value) { SetEndpointInfo(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InferenceMetrics m_metrics;

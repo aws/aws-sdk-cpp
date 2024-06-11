@@ -33,53 +33,27 @@ namespace Model
     AWS_ATHENA_API GetNamedQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the query.</p>
      */
     inline const NamedQuery& GetNamedQuery() const{ return m_namedQuery; }
-
-    /**
-     * <p>Information about the query.</p>
-     */
     inline void SetNamedQuery(const NamedQuery& value) { m_namedQuery = value; }
-
-    /**
-     * <p>Information about the query.</p>
-     */
     inline void SetNamedQuery(NamedQuery&& value) { m_namedQuery = std::move(value); }
-
-    /**
-     * <p>Information about the query.</p>
-     */
     inline GetNamedQueryResult& WithNamedQuery(const NamedQuery& value) { SetNamedQuery(value); return *this;}
-
-    /**
-     * <p>Information about the query.</p>
-     */
     inline GetNamedQueryResult& WithNamedQuery(NamedQuery&& value) { SetNamedQuery(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetNamedQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetNamedQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetNamedQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     NamedQuery m_namedQuery;

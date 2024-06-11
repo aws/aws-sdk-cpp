@@ -39,77 +39,31 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The geofence associated with the error message.</p>
      */
     inline const Aws::String& GetGeofenceId() const{ return m_geofenceId; }
-
-    /**
-     * <p>The geofence associated with the error message.</p>
-     */
     inline bool GeofenceIdHasBeenSet() const { return m_geofenceIdHasBeenSet; }
-
-    /**
-     * <p>The geofence associated with the error message.</p>
-     */
     inline void SetGeofenceId(const Aws::String& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = value; }
-
-    /**
-     * <p>The geofence associated with the error message.</p>
-     */
     inline void SetGeofenceId(Aws::String&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::move(value); }
-
-    /**
-     * <p>The geofence associated with the error message.</p>
-     */
     inline void SetGeofenceId(const char* value) { m_geofenceIdHasBeenSet = true; m_geofenceId.assign(value); }
-
-    /**
-     * <p>The geofence associated with the error message.</p>
-     */
     inline BatchPutGeofenceError& WithGeofenceId(const Aws::String& value) { SetGeofenceId(value); return *this;}
-
-    /**
-     * <p>The geofence associated with the error message.</p>
-     */
     inline BatchPutGeofenceError& WithGeofenceId(Aws::String&& value) { SetGeofenceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The geofence associated with the error message.</p>
-     */
     inline BatchPutGeofenceError& WithGeofenceId(const char* value) { SetGeofenceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains details associated to the batch error.</p>
      */
     inline const BatchItemError& GetError() const{ return m_error; }
-
-    /**
-     * <p>Contains details associated to the batch error.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>Contains details associated to the batch error.</p>
-     */
     inline void SetError(const BatchItemError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>Contains details associated to the batch error.</p>
-     */
     inline void SetError(BatchItemError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>Contains details associated to the batch error.</p>
-     */
     inline BatchPutGeofenceError& WithError(const BatchItemError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>Contains details associated to the batch error.</p>
-     */
     inline BatchPutGeofenceError& WithError(BatchItemError&& value) { SetError(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_geofenceId;

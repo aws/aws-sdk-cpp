@@ -38,75 +38,30 @@ namespace Model
     AWS_LAMBDA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Specify the pagination token that's returned by a previous request to
      * retrieve the next page of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>Specify the pagination token that's returned by a previous request to
-     * retrieve the next page of results.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>Specify the pagination token that's returned by a previous request to
-     * retrieve the next page of results.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>Specify the pagination token that's returned by a previous request to
-     * retrieve the next page of results.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>Specify the pagination token that's returned by a previous request to
-     * retrieve the next page of results.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>Specify the pagination token that's returned by a previous request to
-     * retrieve the next page of results.</p>
-     */
     inline ListCodeSigningConfigsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>Specify the pagination token that's returned by a previous request to
-     * retrieve the next page of results.</p>
-     */
     inline ListCodeSigningConfigsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify the pagination token that's returned by a previous request to
-     * retrieve the next page of results.</p>
-     */
     inline ListCodeSigningConfigsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum number of items to return.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
-
-    /**
-     * <p>Maximum number of items to return.</p>
-     */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of items to return.</p>
-     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-
-    /**
-     * <p>Maximum number of items to return.</p>
-     */
     inline ListCodeSigningConfigsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_marker;

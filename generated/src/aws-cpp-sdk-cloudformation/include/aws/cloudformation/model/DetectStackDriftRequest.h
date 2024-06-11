@@ -37,92 +37,34 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the stack for which you want to detect drift.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
-
-    /**
-     * <p>The name of the stack for which you want to detect drift.</p>
-     */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-
-    /**
-     * <p>The name of the stack for which you want to detect drift.</p>
-     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-
-    /**
-     * <p>The name of the stack for which you want to detect drift.</p>
-     */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-
-    /**
-     * <p>The name of the stack for which you want to detect drift.</p>
-     */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-
-    /**
-     * <p>The name of the stack for which you want to detect drift.</p>
-     */
     inline DetectStackDriftRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-
-    /**
-     * <p>The name of the stack for which you want to detect drift.</p>
-     */
     inline DetectStackDriftRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the stack for which you want to detect drift.</p>
-     */
     inline DetectStackDriftRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The logical names of any resources you want to use as filters.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogicalResourceIds() const{ return m_logicalResourceIds; }
-
-    /**
-     * <p>The logical names of any resources you want to use as filters.</p>
-     */
     inline bool LogicalResourceIdsHasBeenSet() const { return m_logicalResourceIdsHasBeenSet; }
-
-    /**
-     * <p>The logical names of any resources you want to use as filters.</p>
-     */
     inline void SetLogicalResourceIds(const Aws::Vector<Aws::String>& value) { m_logicalResourceIdsHasBeenSet = true; m_logicalResourceIds = value; }
-
-    /**
-     * <p>The logical names of any resources you want to use as filters.</p>
-     */
     inline void SetLogicalResourceIds(Aws::Vector<Aws::String>&& value) { m_logicalResourceIdsHasBeenSet = true; m_logicalResourceIds = std::move(value); }
-
-    /**
-     * <p>The logical names of any resources you want to use as filters.</p>
-     */
     inline DetectStackDriftRequest& WithLogicalResourceIds(const Aws::Vector<Aws::String>& value) { SetLogicalResourceIds(value); return *this;}
-
-    /**
-     * <p>The logical names of any resources you want to use as filters.</p>
-     */
     inline DetectStackDriftRequest& WithLogicalResourceIds(Aws::Vector<Aws::String>&& value) { SetLogicalResourceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The logical names of any resources you want to use as filters.</p>
-     */
     inline DetectStackDriftRequest& AddLogicalResourceIds(const Aws::String& value) { m_logicalResourceIdsHasBeenSet = true; m_logicalResourceIds.push_back(value); return *this; }
-
-    /**
-     * <p>The logical names of any resources you want to use as filters.</p>
-     */
     inline DetectStackDriftRequest& AddLogicalResourceIds(Aws::String&& value) { m_logicalResourceIdsHasBeenSet = true; m_logicalResourceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The logical names of any resources you want to use as filters.</p>
-     */
     inline DetectStackDriftRequest& AddLogicalResourceIds(const char* value) { m_logicalResourceIdsHasBeenSet = true; m_logicalResourceIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_stackName;

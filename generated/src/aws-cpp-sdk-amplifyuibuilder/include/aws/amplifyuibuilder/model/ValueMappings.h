@@ -42,107 +42,37 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value and display value pairs.</p>
      */
     inline const Aws::Vector<ValueMapping>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The value and display value pairs.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The value and display value pairs.</p>
-     */
     inline void SetValues(const Aws::Vector<ValueMapping>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The value and display value pairs.</p>
-     */
     inline void SetValues(Aws::Vector<ValueMapping>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The value and display value pairs.</p>
-     */
     inline ValueMappings& WithValues(const Aws::Vector<ValueMapping>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The value and display value pairs.</p>
-     */
     inline ValueMappings& WithValues(Aws::Vector<ValueMapping>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The value and display value pairs.</p>
-     */
     inline ValueMappings& AddValues(const ValueMapping& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The value and display value pairs.</p>
-     */
     inline ValueMappings& AddValues(ValueMapping&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The information to bind fields to data at runtime.</p>
      */
     inline const Aws::Map<Aws::String, FormInputBindingPropertiesValue>& GetBindingProperties() const{ return m_bindingProperties; }
-
-    /**
-     * <p>The information to bind fields to data at runtime.</p>
-     */
     inline bool BindingPropertiesHasBeenSet() const { return m_bindingPropertiesHasBeenSet; }
-
-    /**
-     * <p>The information to bind fields to data at runtime.</p>
-     */
     inline void SetBindingProperties(const Aws::Map<Aws::String, FormInputBindingPropertiesValue>& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = value; }
-
-    /**
-     * <p>The information to bind fields to data at runtime.</p>
-     */
     inline void SetBindingProperties(Aws::Map<Aws::String, FormInputBindingPropertiesValue>&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::move(value); }
-
-    /**
-     * <p>The information to bind fields to data at runtime.</p>
-     */
     inline ValueMappings& WithBindingProperties(const Aws::Map<Aws::String, FormInputBindingPropertiesValue>& value) { SetBindingProperties(value); return *this;}
-
-    /**
-     * <p>The information to bind fields to data at runtime.</p>
-     */
     inline ValueMappings& WithBindingProperties(Aws::Map<Aws::String, FormInputBindingPropertiesValue>&& value) { SetBindingProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>The information to bind fields to data at runtime.</p>
-     */
     inline ValueMappings& AddBindingProperties(const Aws::String& key, const FormInputBindingPropertiesValue& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, value); return *this; }
-
-    /**
-     * <p>The information to bind fields to data at runtime.</p>
-     */
     inline ValueMappings& AddBindingProperties(Aws::String&& key, const FormInputBindingPropertiesValue& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The information to bind fields to data at runtime.</p>
-     */
     inline ValueMappings& AddBindingProperties(const Aws::String& key, FormInputBindingPropertiesValue&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The information to bind fields to data at runtime.</p>
-     */
     inline ValueMappings& AddBindingProperties(Aws::String&& key, FormInputBindingPropertiesValue&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The information to bind fields to data at runtime.</p>
-     */
     inline ValueMappings& AddBindingProperties(const char* key, FormInputBindingPropertiesValue&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The information to bind fields to data at runtime.</p>
-     */
     inline ValueMappings& AddBindingProperties(const char* key, const FormInputBindingPropertiesValue& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ValueMapping> m_values;

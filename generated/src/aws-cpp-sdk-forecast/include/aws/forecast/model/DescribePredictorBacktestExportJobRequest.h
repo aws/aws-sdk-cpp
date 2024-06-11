@@ -34,46 +34,19 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
      */
     inline const Aws::String& GetPredictorBacktestExportJobArn() const{ return m_predictorBacktestExportJobArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-     */
     inline bool PredictorBacktestExportJobArnHasBeenSet() const { return m_predictorBacktestExportJobArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-     */
     inline void SetPredictorBacktestExportJobArn(const Aws::String& value) { m_predictorBacktestExportJobArnHasBeenSet = true; m_predictorBacktestExportJobArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-     */
     inline void SetPredictorBacktestExportJobArn(Aws::String&& value) { m_predictorBacktestExportJobArnHasBeenSet = true; m_predictorBacktestExportJobArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-     */
     inline void SetPredictorBacktestExportJobArn(const char* value) { m_predictorBacktestExportJobArnHasBeenSet = true; m_predictorBacktestExportJobArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-     */
     inline DescribePredictorBacktestExportJobRequest& WithPredictorBacktestExportJobArn(const Aws::String& value) { SetPredictorBacktestExportJobArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-     */
     inline DescribePredictorBacktestExportJobRequest& WithPredictorBacktestExportJobArn(Aws::String&& value) { SetPredictorBacktestExportJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-     */
     inline DescribePredictorBacktestExportJobRequest& WithPredictorBacktestExportJobArn(const char* value) { SetPredictorBacktestExportJobArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_predictorBacktestExportJobArn;

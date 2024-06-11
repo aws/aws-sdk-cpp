@@ -39,99 +39,42 @@ namespace Model
     AWS_COGNITOIDENTITY_API GetOpenIdTokenForDeveloperIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline void SetIdentityId(Aws::String&& value) { m_identityId = std::move(value); }
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline void SetIdentityId(const char* value) { m_identityId.assign(value); }
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline GetOpenIdTokenForDeveloperIdentityResult& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline GetOpenIdTokenForDeveloperIdentityResult& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline GetOpenIdTokenForDeveloperIdentityResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An OpenID token.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
-
-    /**
-     * <p>An OpenID token.</p>
-     */
     inline void SetToken(const Aws::String& value) { m_token = value; }
-
-    /**
-     * <p>An OpenID token.</p>
-     */
     inline void SetToken(Aws::String&& value) { m_token = std::move(value); }
-
-    /**
-     * <p>An OpenID token.</p>
-     */
     inline void SetToken(const char* value) { m_token.assign(value); }
-
-    /**
-     * <p>An OpenID token.</p>
-     */
     inline GetOpenIdTokenForDeveloperIdentityResult& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-
-    /**
-     * <p>An OpenID token.</p>
-     */
     inline GetOpenIdTokenForDeveloperIdentityResult& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An OpenID token.</p>
-     */
     inline GetOpenIdTokenForDeveloperIdentityResult& WithToken(const char* value) { SetToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetOpenIdTokenForDeveloperIdentityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetOpenIdTokenForDeveloperIdentityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetOpenIdTokenForDeveloperIdentityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identityId;

@@ -33,58 +33,28 @@ namespace Model
     AWS_EKS_API DeletePodIdentityAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The full description of the EKS Pod Identity association that was
      * deleted.</p>
      */
     inline const PodIdentityAssociation& GetAssociation() const{ return m_association; }
-
-    /**
-     * <p>The full description of the EKS Pod Identity association that was
-     * deleted.</p>
-     */
     inline void SetAssociation(const PodIdentityAssociation& value) { m_association = value; }
-
-    /**
-     * <p>The full description of the EKS Pod Identity association that was
-     * deleted.</p>
-     */
     inline void SetAssociation(PodIdentityAssociation&& value) { m_association = std::move(value); }
-
-    /**
-     * <p>The full description of the EKS Pod Identity association that was
-     * deleted.</p>
-     */
     inline DeletePodIdentityAssociationResult& WithAssociation(const PodIdentityAssociation& value) { SetAssociation(value); return *this;}
-
-    /**
-     * <p>The full description of the EKS Pod Identity association that was
-     * deleted.</p>
-     */
     inline DeletePodIdentityAssociationResult& WithAssociation(PodIdentityAssociation&& value) { SetAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeletePodIdentityAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeletePodIdentityAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeletePodIdentityAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PodIdentityAssociation m_association;

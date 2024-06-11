@@ -38,87 +38,33 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the template that created the approval rule.</p>
      */
     inline const Aws::String& GetApprovalRuleTemplateId() const{ return m_approvalRuleTemplateId; }
-
-    /**
-     * <p>The ID of the template that created the approval rule.</p>
-     */
     inline bool ApprovalRuleTemplateIdHasBeenSet() const { return m_approvalRuleTemplateIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the template that created the approval rule.</p>
-     */
     inline void SetApprovalRuleTemplateId(const Aws::String& value) { m_approvalRuleTemplateIdHasBeenSet = true; m_approvalRuleTemplateId = value; }
-
-    /**
-     * <p>The ID of the template that created the approval rule.</p>
-     */
     inline void SetApprovalRuleTemplateId(Aws::String&& value) { m_approvalRuleTemplateIdHasBeenSet = true; m_approvalRuleTemplateId = std::move(value); }
-
-    /**
-     * <p>The ID of the template that created the approval rule.</p>
-     */
     inline void SetApprovalRuleTemplateId(const char* value) { m_approvalRuleTemplateIdHasBeenSet = true; m_approvalRuleTemplateId.assign(value); }
-
-    /**
-     * <p>The ID of the template that created the approval rule.</p>
-     */
     inline OriginApprovalRuleTemplate& WithApprovalRuleTemplateId(const Aws::String& value) { SetApprovalRuleTemplateId(value); return *this;}
-
-    /**
-     * <p>The ID of the template that created the approval rule.</p>
-     */
     inline OriginApprovalRuleTemplate& WithApprovalRuleTemplateId(Aws::String&& value) { SetApprovalRuleTemplateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the template that created the approval rule.</p>
-     */
     inline OriginApprovalRuleTemplate& WithApprovalRuleTemplateId(const char* value) { SetApprovalRuleTemplateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the template that created the approval rule.</p>
      */
     inline const Aws::String& GetApprovalRuleTemplateName() const{ return m_approvalRuleTemplateName; }
-
-    /**
-     * <p>The name of the template that created the approval rule.</p>
-     */
     inline bool ApprovalRuleTemplateNameHasBeenSet() const { return m_approvalRuleTemplateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the template that created the approval rule.</p>
-     */
     inline void SetApprovalRuleTemplateName(const Aws::String& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = value; }
-
-    /**
-     * <p>The name of the template that created the approval rule.</p>
-     */
     inline void SetApprovalRuleTemplateName(Aws::String&& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = std::move(value); }
-
-    /**
-     * <p>The name of the template that created the approval rule.</p>
-     */
     inline void SetApprovalRuleTemplateName(const char* value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName.assign(value); }
-
-    /**
-     * <p>The name of the template that created the approval rule.</p>
-     */
     inline OriginApprovalRuleTemplate& WithApprovalRuleTemplateName(const Aws::String& value) { SetApprovalRuleTemplateName(value); return *this;}
-
-    /**
-     * <p>The name of the template that created the approval rule.</p>
-     */
     inline OriginApprovalRuleTemplate& WithApprovalRuleTemplateName(Aws::String&& value) { SetApprovalRuleTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the template that created the approval rule.</p>
-     */
     inline OriginApprovalRuleTemplate& WithApprovalRuleTemplateName(const char* value) { SetApprovalRuleTemplateName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_approvalRuleTemplateId;

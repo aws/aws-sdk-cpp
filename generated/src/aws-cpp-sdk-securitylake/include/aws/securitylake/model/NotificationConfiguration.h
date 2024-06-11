@@ -40,67 +40,29 @@ namespace Model
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configurations for HTTPS subscriber notification.</p>
      */
     inline const HttpsNotificationConfiguration& GetHttpsNotificationConfiguration() const{ return m_httpsNotificationConfiguration; }
-
-    /**
-     * <p>The configurations for HTTPS subscriber notification.</p>
-     */
     inline bool HttpsNotificationConfigurationHasBeenSet() const { return m_httpsNotificationConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configurations for HTTPS subscriber notification.</p>
-     */
     inline void SetHttpsNotificationConfiguration(const HttpsNotificationConfiguration& value) { m_httpsNotificationConfigurationHasBeenSet = true; m_httpsNotificationConfiguration = value; }
-
-    /**
-     * <p>The configurations for HTTPS subscriber notification.</p>
-     */
     inline void SetHttpsNotificationConfiguration(HttpsNotificationConfiguration&& value) { m_httpsNotificationConfigurationHasBeenSet = true; m_httpsNotificationConfiguration = std::move(value); }
-
-    /**
-     * <p>The configurations for HTTPS subscriber notification.</p>
-     */
     inline NotificationConfiguration& WithHttpsNotificationConfiguration(const HttpsNotificationConfiguration& value) { SetHttpsNotificationConfiguration(value); return *this;}
-
-    /**
-     * <p>The configurations for HTTPS subscriber notification.</p>
-     */
     inline NotificationConfiguration& WithHttpsNotificationConfiguration(HttpsNotificationConfiguration&& value) { SetHttpsNotificationConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configurations for SQS subscriber notification.</p>
      */
     inline const SqsNotificationConfiguration& GetSqsNotificationConfiguration() const{ return m_sqsNotificationConfiguration; }
-
-    /**
-     * <p>The configurations for SQS subscriber notification.</p>
-     */
     inline bool SqsNotificationConfigurationHasBeenSet() const { return m_sqsNotificationConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configurations for SQS subscriber notification.</p>
-     */
     inline void SetSqsNotificationConfiguration(const SqsNotificationConfiguration& value) { m_sqsNotificationConfigurationHasBeenSet = true; m_sqsNotificationConfiguration = value; }
-
-    /**
-     * <p>The configurations for SQS subscriber notification.</p>
-     */
     inline void SetSqsNotificationConfiguration(SqsNotificationConfiguration&& value) { m_sqsNotificationConfigurationHasBeenSet = true; m_sqsNotificationConfiguration = std::move(value); }
-
-    /**
-     * <p>The configurations for SQS subscriber notification.</p>
-     */
     inline NotificationConfiguration& WithSqsNotificationConfiguration(const SqsNotificationConfiguration& value) { SetSqsNotificationConfiguration(value); return *this;}
-
-    /**
-     * <p>The configurations for SQS subscriber notification.</p>
-     */
     inline NotificationConfiguration& WithSqsNotificationConfiguration(SqsNotificationConfiguration&& value) { SetSqsNotificationConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HttpsNotificationConfiguration m_httpsNotificationConfiguration;

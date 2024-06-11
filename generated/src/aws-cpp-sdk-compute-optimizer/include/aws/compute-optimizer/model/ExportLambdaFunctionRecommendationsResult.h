@@ -33,93 +33,40 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API ExportLambdaFunctionRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identification number of the export job.</p> <p>Use the
      * <a>DescribeRecommendationExportJobs</a> action, and specify the job ID to view
      * the status of an export job.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The identification number of the export job.</p> <p>Use the
-     * <a>DescribeRecommendationExportJobs</a> action, and specify the job ID to view
-     * the status of an export job.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-
-    /**
-     * <p>The identification number of the export job.</p> <p>Use the
-     * <a>DescribeRecommendationExportJobs</a> action, and specify the job ID to view
-     * the status of an export job.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-
-    /**
-     * <p>The identification number of the export job.</p> <p>Use the
-     * <a>DescribeRecommendationExportJobs</a> action, and specify the job ID to view
-     * the status of an export job.</p>
-     */
     inline void SetJobId(const char* value) { m_jobId.assign(value); }
-
-    /**
-     * <p>The identification number of the export job.</p> <p>Use the
-     * <a>DescribeRecommendationExportJobs</a> action, and specify the job ID to view
-     * the status of an export job.</p>
-     */
     inline ExportLambdaFunctionRecommendationsResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The identification number of the export job.</p> <p>Use the
-     * <a>DescribeRecommendationExportJobs</a> action, and specify the job ID to view
-     * the status of an export job.</p>
-     */
     inline ExportLambdaFunctionRecommendationsResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identification number of the export job.</p> <p>Use the
-     * <a>DescribeRecommendationExportJobs</a> action, and specify the job ID to view
-     * the status of an export job.</p>
-     */
     inline ExportLambdaFunctionRecommendationsResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const S3Destination& GetS3Destination() const{ return m_s3Destination; }
-
-    
     inline void SetS3Destination(const S3Destination& value) { m_s3Destination = value; }
-
-    
     inline void SetS3Destination(S3Destination&& value) { m_s3Destination = std::move(value); }
-
-    
     inline ExportLambdaFunctionRecommendationsResult& WithS3Destination(const S3Destination& value) { SetS3Destination(value); return *this;}
-
-    
     inline ExportLambdaFunctionRecommendationsResult& WithS3Destination(S3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExportLambdaFunctionRecommendationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExportLambdaFunctionRecommendationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExportLambdaFunctionRecommendationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

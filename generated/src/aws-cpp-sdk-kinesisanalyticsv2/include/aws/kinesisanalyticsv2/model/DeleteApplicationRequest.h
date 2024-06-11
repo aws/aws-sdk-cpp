@@ -35,77 +35,31 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the application to delete.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of the application to delete.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the application to delete.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of the application to delete.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of the application to delete.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of the application to delete.</p>
-     */
     inline DeleteApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of the application to delete.</p>
-     */
     inline DeleteApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application to delete.</p>
-     */
     inline DeleteApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
-
-    /**
-     * <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
-     */
     inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
-
-    /**
-     * <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
-     */
     inline void SetCreateTimestamp(const Aws::Utils::DateTime& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
-
-    /**
-     * <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
-     */
     inline void SetCreateTimestamp(Aws::Utils::DateTime&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::move(value); }
-
-    /**
-     * <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
-     */
     inline DeleteApplicationRequest& WithCreateTimestamp(const Aws::Utils::DateTime& value) { SetCreateTimestamp(value); return *this;}
-
-    /**
-     * <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
-     */
     inline DeleteApplicationRequest& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

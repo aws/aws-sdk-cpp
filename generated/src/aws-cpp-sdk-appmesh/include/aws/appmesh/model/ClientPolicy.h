@@ -37,42 +37,18 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A reference to an object that represents a Transport Layer Security (TLS)
      * client policy.</p>
      */
     inline const ClientPolicyTls& GetTls() const{ return m_tls; }
-
-    /**
-     * <p>A reference to an object that represents a Transport Layer Security (TLS)
-     * client policy.</p>
-     */
     inline bool TlsHasBeenSet() const { return m_tlsHasBeenSet; }
-
-    /**
-     * <p>A reference to an object that represents a Transport Layer Security (TLS)
-     * client policy.</p>
-     */
     inline void SetTls(const ClientPolicyTls& value) { m_tlsHasBeenSet = true; m_tls = value; }
-
-    /**
-     * <p>A reference to an object that represents a Transport Layer Security (TLS)
-     * client policy.</p>
-     */
     inline void SetTls(ClientPolicyTls&& value) { m_tlsHasBeenSet = true; m_tls = std::move(value); }
-
-    /**
-     * <p>A reference to an object that represents a Transport Layer Security (TLS)
-     * client policy.</p>
-     */
     inline ClientPolicy& WithTls(const ClientPolicyTls& value) { SetTls(value); return *this;}
-
-    /**
-     * <p>A reference to an object that represents a Transport Layer Security (TLS)
-     * client policy.</p>
-     */
     inline ClientPolicy& WithTls(ClientPolicyTls&& value) { SetTls(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ClientPolicyTls m_tls;

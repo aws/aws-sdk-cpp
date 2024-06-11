@@ -38,42 +38,18 @@ namespace Model
     AWS_TIMESTREAMINFLUXDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>All the customer-modifiable InfluxDB v2 parameters in Timestream for
      * InfluxDB.</p>
      */
     inline const InfluxDBv2Parameters& GetInfluxDBv2() const{ return m_influxDBv2; }
-
-    /**
-     * <p>All the customer-modifiable InfluxDB v2 parameters in Timestream for
-     * InfluxDB.</p>
-     */
     inline bool InfluxDBv2HasBeenSet() const { return m_influxDBv2HasBeenSet; }
-
-    /**
-     * <p>All the customer-modifiable InfluxDB v2 parameters in Timestream for
-     * InfluxDB.</p>
-     */
     inline void SetInfluxDBv2(const InfluxDBv2Parameters& value) { m_influxDBv2HasBeenSet = true; m_influxDBv2 = value; }
-
-    /**
-     * <p>All the customer-modifiable InfluxDB v2 parameters in Timestream for
-     * InfluxDB.</p>
-     */
     inline void SetInfluxDBv2(InfluxDBv2Parameters&& value) { m_influxDBv2HasBeenSet = true; m_influxDBv2 = std::move(value); }
-
-    /**
-     * <p>All the customer-modifiable InfluxDB v2 parameters in Timestream for
-     * InfluxDB.</p>
-     */
     inline Parameters& WithInfluxDBv2(const InfluxDBv2Parameters& value) { SetInfluxDBv2(value); return *this;}
-
-    /**
-     * <p>All the customer-modifiable InfluxDB v2 parameters in Timestream for
-     * InfluxDB.</p>
-     */
     inline Parameters& WithInfluxDBv2(InfluxDBv2Parameters&& value) { SetInfluxDBv2(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InfluxDBv2Parameters m_influxDBv2;

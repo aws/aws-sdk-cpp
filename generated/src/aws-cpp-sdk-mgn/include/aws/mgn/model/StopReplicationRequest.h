@@ -32,87 +32,33 @@ namespace Model
     AWS_MGN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Stop Replication Request account ID.</p>
      */
     inline const Aws::String& GetAccountID() const{ return m_accountID; }
-
-    /**
-     * <p>Stop Replication Request account ID.</p>
-     */
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-
-    /**
-     * <p>Stop Replication Request account ID.</p>
-     */
     inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-
-    /**
-     * <p>Stop Replication Request account ID.</p>
-     */
     inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-
-    /**
-     * <p>Stop Replication Request account ID.</p>
-     */
     inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-
-    /**
-     * <p>Stop Replication Request account ID.</p>
-     */
     inline StopReplicationRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-
-    /**
-     * <p>Stop Replication Request account ID.</p>
-     */
     inline StopReplicationRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-
-    /**
-     * <p>Stop Replication Request account ID.</p>
-     */
     inline StopReplicationRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Stop Replication Request source server ID.</p>
      */
     inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
-
-    /**
-     * <p>Stop Replication Request source server ID.</p>
-     */
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-
-    /**
-     * <p>Stop Replication Request source server ID.</p>
-     */
     inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
-
-    /**
-     * <p>Stop Replication Request source server ID.</p>
-     */
     inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
-
-    /**
-     * <p>Stop Replication Request source server ID.</p>
-     */
     inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
-
-    /**
-     * <p>Stop Replication Request source server ID.</p>
-     */
     inline StopReplicationRequest& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
-
-    /**
-     * <p>Stop Replication Request source server ID.</p>
-     */
     inline StopReplicationRequest& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
-
-    /**
-     * <p>Stop Replication Request source server ID.</p>
-     */
     inline StopReplicationRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountID;

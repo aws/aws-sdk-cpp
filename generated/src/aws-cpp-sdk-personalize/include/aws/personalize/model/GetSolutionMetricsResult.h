@@ -33,120 +33,45 @@ namespace Model
     AWS_PERSONALIZE_API GetSolutionMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The same solution version ARN as specified in the request.</p>
      */
     inline const Aws::String& GetSolutionVersionArn() const{ return m_solutionVersionArn; }
-
-    /**
-     * <p>The same solution version ARN as specified in the request.</p>
-     */
     inline void SetSolutionVersionArn(const Aws::String& value) { m_solutionVersionArn = value; }
-
-    /**
-     * <p>The same solution version ARN as specified in the request.</p>
-     */
     inline void SetSolutionVersionArn(Aws::String&& value) { m_solutionVersionArn = std::move(value); }
-
-    /**
-     * <p>The same solution version ARN as specified in the request.</p>
-     */
     inline void SetSolutionVersionArn(const char* value) { m_solutionVersionArn.assign(value); }
-
-    /**
-     * <p>The same solution version ARN as specified in the request.</p>
-     */
     inline GetSolutionMetricsResult& WithSolutionVersionArn(const Aws::String& value) { SetSolutionVersionArn(value); return *this;}
-
-    /**
-     * <p>The same solution version ARN as specified in the request.</p>
-     */
     inline GetSolutionMetricsResult& WithSolutionVersionArn(Aws::String&& value) { SetSolutionVersionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The same solution version ARN as specified in the request.</p>
-     */
     inline GetSolutionMetricsResult& WithSolutionVersionArn(const char* value) { SetSolutionVersionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The metrics for the solution version. For more information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html">
      * Evaluating a solution version with metrics </a>.</p>
      */
     inline const Aws::Map<Aws::String, double>& GetMetrics() const{ return m_metrics; }
-
-    /**
-     * <p>The metrics for the solution version. For more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html">
-     * Evaluating a solution version with metrics </a>.</p>
-     */
     inline void SetMetrics(const Aws::Map<Aws::String, double>& value) { m_metrics = value; }
-
-    /**
-     * <p>The metrics for the solution version. For more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html">
-     * Evaluating a solution version with metrics </a>.</p>
-     */
     inline void SetMetrics(Aws::Map<Aws::String, double>&& value) { m_metrics = std::move(value); }
-
-    /**
-     * <p>The metrics for the solution version. For more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html">
-     * Evaluating a solution version with metrics </a>.</p>
-     */
     inline GetSolutionMetricsResult& WithMetrics(const Aws::Map<Aws::String, double>& value) { SetMetrics(value); return *this;}
-
-    /**
-     * <p>The metrics for the solution version. For more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html">
-     * Evaluating a solution version with metrics </a>.</p>
-     */
     inline GetSolutionMetricsResult& WithMetrics(Aws::Map<Aws::String, double>&& value) { SetMetrics(std::move(value)); return *this;}
-
-    /**
-     * <p>The metrics for the solution version. For more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html">
-     * Evaluating a solution version with metrics </a>.</p>
-     */
     inline GetSolutionMetricsResult& AddMetrics(const Aws::String& key, double value) { m_metrics.emplace(key, value); return *this; }
-
-    /**
-     * <p>The metrics for the solution version. For more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html">
-     * Evaluating a solution version with metrics </a>.</p>
-     */
     inline GetSolutionMetricsResult& AddMetrics(Aws::String&& key, double value) { m_metrics.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The metrics for the solution version. For more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html">
-     * Evaluating a solution version with metrics </a>.</p>
-     */
     inline GetSolutionMetricsResult& AddMetrics(const char* key, double value) { m_metrics.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSolutionMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSolutionMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSolutionMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_solutionVersionArn;

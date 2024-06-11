@@ -38,62 +38,28 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The device's position.</p>
      */
     inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
-
-    /**
-     * <p>The device's position.</p>
-     */
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-
-    /**
-     * <p>The device's position.</p>
-     */
     inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-
-    /**
-     * <p>The device's position.</p>
-     */
     inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-
-    /**
-     * <p>The device's position.</p>
-     */
     inline ForecastGeofenceEventsDeviceState& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-
-    /**
-     * <p>The device's position.</p>
-     */
     inline ForecastGeofenceEventsDeviceState& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
-
-    /**
-     * <p>The device's position.</p>
-     */
     inline ForecastGeofenceEventsDeviceState& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The device's speed.</p>
      */
     inline double GetSpeed() const{ return m_speed; }
-
-    /**
-     * <p>The device's speed.</p>
-     */
     inline bool SpeedHasBeenSet() const { return m_speedHasBeenSet; }
-
-    /**
-     * <p>The device's speed.</p>
-     */
     inline void SetSpeed(double value) { m_speedHasBeenSet = true; m_speed = value; }
-
-    /**
-     * <p>The device's speed.</p>
-     */
     inline ForecastGeofenceEventsDeviceState& WithSpeed(double value) { SetSpeed(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<double> m_position;

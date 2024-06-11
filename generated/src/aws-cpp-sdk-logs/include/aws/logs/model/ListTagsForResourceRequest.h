@@ -34,6 +34,7 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the resource that you want to view tags for.</p> <p>The ARN format
      * of a log group is
@@ -45,91 +46,14 @@ namespace Model
      * Logs resources and operations</a>.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The ARN of the resource that you want to view tags for.</p> <p>The ARN format
-     * of a log group is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i>
-     * </code> </p> <p>The ARN format of a destination is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i>
-     * </code> </p> <p>For more information about ARN format, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch
-     * Logs resources and operations</a>.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the resource that you want to view tags for.</p> <p>The ARN format
-     * of a log group is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i>
-     * </code> </p> <p>The ARN format of a destination is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i>
-     * </code> </p> <p>For more information about ARN format, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch
-     * Logs resources and operations</a>.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The ARN of the resource that you want to view tags for.</p> <p>The ARN format
-     * of a log group is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i>
-     * </code> </p> <p>The ARN format of a destination is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i>
-     * </code> </p> <p>For more information about ARN format, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch
-     * Logs resources and operations</a>.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the resource that you want to view tags for.</p> <p>The ARN format
-     * of a log group is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i>
-     * </code> </p> <p>The ARN format of a destination is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i>
-     * </code> </p> <p>For more information about ARN format, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch
-     * Logs resources and operations</a>.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the resource that you want to view tags for.</p> <p>The ARN format
-     * of a log group is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i>
-     * </code> </p> <p>The ARN format of a destination is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i>
-     * </code> </p> <p>For more information about ARN format, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch
-     * Logs resources and operations</a>.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the resource that you want to view tags for.</p> <p>The ARN format
-     * of a log group is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i>
-     * </code> </p> <p>The ARN format of a destination is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i>
-     * </code> </p> <p>For more information about ARN format, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch
-     * Logs resources and operations</a>.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the resource that you want to view tags for.</p> <p>The ARN format
-     * of a log group is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i>
-     * </code> </p> <p>The ARN format of a destination is
-     * <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i>
-     * </code> </p> <p>For more information about ARN format, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch
-     * Logs resources and operations</a>.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

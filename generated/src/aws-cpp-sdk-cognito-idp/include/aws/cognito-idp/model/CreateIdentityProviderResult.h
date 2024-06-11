@@ -33,53 +33,27 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API CreateIdentityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The newly created IdP object.</p>
      */
     inline const IdentityProviderType& GetIdentityProvider() const{ return m_identityProvider; }
-
-    /**
-     * <p>The newly created IdP object.</p>
-     */
     inline void SetIdentityProvider(const IdentityProviderType& value) { m_identityProvider = value; }
-
-    /**
-     * <p>The newly created IdP object.</p>
-     */
     inline void SetIdentityProvider(IdentityProviderType&& value) { m_identityProvider = std::move(value); }
-
-    /**
-     * <p>The newly created IdP object.</p>
-     */
     inline CreateIdentityProviderResult& WithIdentityProvider(const IdentityProviderType& value) { SetIdentityProvider(value); return *this;}
-
-    /**
-     * <p>The newly created IdP object.</p>
-     */
     inline CreateIdentityProviderResult& WithIdentityProvider(IdentityProviderType&& value) { SetIdentityProvider(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateIdentityProviderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateIdentityProviderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateIdentityProviderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     IdentityProviderType m_identityProvider;

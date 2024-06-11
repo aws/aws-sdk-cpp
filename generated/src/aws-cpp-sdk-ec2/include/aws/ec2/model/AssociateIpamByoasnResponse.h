@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API AssociateIpamByoasnResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ASN and BYOIP CIDR association.</p>
      */
     inline const AsnAssociation& GetAsnAssociation() const{ return m_asnAssociation; }
-
-    /**
-     * <p>The ASN and BYOIP CIDR association.</p>
-     */
     inline void SetAsnAssociation(const AsnAssociation& value) { m_asnAssociation = value; }
-
-    /**
-     * <p>The ASN and BYOIP CIDR association.</p>
-     */
     inline void SetAsnAssociation(AsnAssociation&& value) { m_asnAssociation = std::move(value); }
-
-    /**
-     * <p>The ASN and BYOIP CIDR association.</p>
-     */
     inline AssociateIpamByoasnResponse& WithAsnAssociation(const AsnAssociation& value) { SetAsnAssociation(value); return *this;}
-
-    /**
-     * <p>The ASN and BYOIP CIDR association.</p>
-     */
     inline AssociateIpamByoasnResponse& WithAsnAssociation(AsnAssociation&& value) { SetAsnAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline AssociateIpamByoasnResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline AssociateIpamByoasnResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AsnAssociation m_asnAssociation;

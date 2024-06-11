@@ -34,106 +34,43 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API SearchChannelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of the channels in the request.</p>
      */
     inline const Aws::Vector<ChannelSummary>& GetChannels() const{ return m_channels; }
-
-    /**
-     * <p>A list of the channels in the request.</p>
-     */
     inline void SetChannels(const Aws::Vector<ChannelSummary>& value) { m_channels = value; }
-
-    /**
-     * <p>A list of the channels in the request.</p>
-     */
     inline void SetChannels(Aws::Vector<ChannelSummary>&& value) { m_channels = std::move(value); }
-
-    /**
-     * <p>A list of the channels in the request.</p>
-     */
     inline SearchChannelsResult& WithChannels(const Aws::Vector<ChannelSummary>& value) { SetChannels(value); return *this;}
-
-    /**
-     * <p>A list of the channels in the request.</p>
-     */
     inline SearchChannelsResult& WithChannels(Aws::Vector<ChannelSummary>&& value) { SetChannels(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the channels in the request.</p>
-     */
     inline SearchChannelsResult& AddChannels(const ChannelSummary& value) { m_channels.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the channels in the request.</p>
-     */
     inline SearchChannelsResult& AddChannels(ChannelSummary&& value) { m_channels.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token returned from previous API responses until the number of channels
      * is reached.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token returned from previous API responses until the number of channels
-     * is reached.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token returned from previous API responses until the number of channels
-     * is reached.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token returned from previous API responses until the number of channels
-     * is reached.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token returned from previous API responses until the number of channels
-     * is reached.</p>
-     */
     inline SearchChannelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token returned from previous API responses until the number of channels
-     * is reached.</p>
-     */
     inline SearchChannelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token returned from previous API responses until the number of channels
-     * is reached.</p>
-     */
     inline SearchChannelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SearchChannelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SearchChannelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SearchChannelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ChannelSummary> m_channels;

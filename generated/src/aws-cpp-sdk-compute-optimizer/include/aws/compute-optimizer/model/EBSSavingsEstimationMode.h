@@ -38,42 +38,18 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Describes the source for calculating the savings opportunity for Amazon EBS
      * volumes. </p>
      */
     inline const EBSSavingsEstimationModeSource& GetSource() const{ return m_source; }
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon EBS
-     * volumes. </p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon EBS
-     * volumes. </p>
-     */
     inline void SetSource(const EBSSavingsEstimationModeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon EBS
-     * volumes. </p>
-     */
     inline void SetSource(EBSSavingsEstimationModeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon EBS
-     * volumes. </p>
-     */
     inline EBSSavingsEstimationMode& WithSource(const EBSSavingsEstimationModeSource& value) { SetSource(value); return *this;}
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon EBS
-     * volumes. </p>
-     */
     inline EBSSavingsEstimationMode& WithSource(EBSSavingsEstimationModeSource&& value) { SetSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EBSSavingsEstimationModeSource m_source;

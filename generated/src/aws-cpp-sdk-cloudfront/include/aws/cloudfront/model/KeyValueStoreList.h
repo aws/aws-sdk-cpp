@@ -39,129 +39,53 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The next marker associated with the key value store list.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-
-    /**
-     * <p>The next marker associated with the key value store list.</p>
-     */
     inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
-
-    /**
-     * <p>The next marker associated with the key value store list.</p>
-     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
-
-    /**
-     * <p>The next marker associated with the key value store list.</p>
-     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
-
-    /**
-     * <p>The next marker associated with the key value store list.</p>
-     */
     inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
-
-    /**
-     * <p>The next marker associated with the key value store list.</p>
-     */
     inline KeyValueStoreList& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-
-    /**
-     * <p>The next marker associated with the key value store list.</p>
-     */
     inline KeyValueStoreList& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The next marker associated with the key value store list.</p>
-     */
     inline KeyValueStoreList& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items in the key value store list.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
-
-    /**
-     * <p>The maximum number of items in the key value store list.</p>
-     */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items in the key value store list.</p>
-     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-
-    /**
-     * <p>The maximum number of items in the key value store list.</p>
-     */
     inline KeyValueStoreList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The quantity of the key value store list.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
-
-    /**
-     * <p>The quantity of the key value store list.</p>
-     */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-
-    /**
-     * <p>The quantity of the key value store list.</p>
-     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-
-    /**
-     * <p>The quantity of the key value store list.</p>
-     */
     inline KeyValueStoreList& WithQuantity(int value) { SetQuantity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The items of the key value store list.</p>
      */
     inline const Aws::Vector<KeyValueStore>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>The items of the key value store list.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>The items of the key value store list.</p>
-     */
     inline void SetItems(const Aws::Vector<KeyValueStore>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>The items of the key value store list.</p>
-     */
     inline void SetItems(Aws::Vector<KeyValueStore>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>The items of the key value store list.</p>
-     */
     inline KeyValueStoreList& WithItems(const Aws::Vector<KeyValueStore>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>The items of the key value store list.</p>
-     */
     inline KeyValueStoreList& WithItems(Aws::Vector<KeyValueStore>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>The items of the key value store list.</p>
-     */
     inline KeyValueStoreList& AddItems(const KeyValueStore& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>The items of the key value store list.</p>
-     */
     inline KeyValueStoreList& AddItems(KeyValueStore&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_nextMarker;

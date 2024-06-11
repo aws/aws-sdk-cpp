@@ -40,111 +40,36 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of responses, one for each segment that's associated with the
      * application (Segments resource) or each version of a segment that's associated
      * with the application (Segment Versions resource).</p>
      */
     inline const Aws::Vector<SegmentResponse>& GetItem() const{ return m_item; }
-
-    /**
-     * <p>An array of responses, one for each segment that's associated with the
-     * application (Segments resource) or each version of a segment that's associated
-     * with the application (Segment Versions resource).</p>
-     */
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
-
-    /**
-     * <p>An array of responses, one for each segment that's associated with the
-     * application (Segments resource) or each version of a segment that's associated
-     * with the application (Segment Versions resource).</p>
-     */
     inline void SetItem(const Aws::Vector<SegmentResponse>& value) { m_itemHasBeenSet = true; m_item = value; }
-
-    /**
-     * <p>An array of responses, one for each segment that's associated with the
-     * application (Segments resource) or each version of a segment that's associated
-     * with the application (Segment Versions resource).</p>
-     */
     inline void SetItem(Aws::Vector<SegmentResponse>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
-
-    /**
-     * <p>An array of responses, one for each segment that's associated with the
-     * application (Segments resource) or each version of a segment that's associated
-     * with the application (Segment Versions resource).</p>
-     */
     inline SegmentsResponse& WithItem(const Aws::Vector<SegmentResponse>& value) { SetItem(value); return *this;}
-
-    /**
-     * <p>An array of responses, one for each segment that's associated with the
-     * application (Segments resource) or each version of a segment that's associated
-     * with the application (Segment Versions resource).</p>
-     */
     inline SegmentsResponse& WithItem(Aws::Vector<SegmentResponse>&& value) { SetItem(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of responses, one for each segment that's associated with the
-     * application (Segments resource) or each version of a segment that's associated
-     * with the application (Segment Versions resource).</p>
-     */
     inline SegmentsResponse& AddItem(const SegmentResponse& value) { m_itemHasBeenSet = true; m_item.push_back(value); return *this; }
-
-    /**
-     * <p>An array of responses, one for each segment that's associated with the
-     * application (Segments resource) or each version of a segment that's associated
-     * with the application (Segment Versions resource).</p>
-     */
     inline SegmentsResponse& AddItem(SegmentResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The string to use in a subsequent request to get the next page of results in
      * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline SegmentsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline SegmentsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline SegmentsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SegmentResponse> m_item;

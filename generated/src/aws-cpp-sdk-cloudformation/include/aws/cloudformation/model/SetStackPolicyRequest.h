@@ -39,47 +39,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name or unique stack ID that you want to associate a policy with.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
-
-    /**
-     * <p>The name or unique stack ID that you want to associate a policy with.</p>
-     */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-
-    /**
-     * <p>The name or unique stack ID that you want to associate a policy with.</p>
-     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-
-    /**
-     * <p>The name or unique stack ID that you want to associate a policy with.</p>
-     */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-
-    /**
-     * <p>The name or unique stack ID that you want to associate a policy with.</p>
-     */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-
-    /**
-     * <p>The name or unique stack ID that you want to associate a policy with.</p>
-     */
     inline SetStackPolicyRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-
-    /**
-     * <p>The name or unique stack ID that you want to associate a policy with.</p>
-     */
     inline SetStackPolicyRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or unique stack ID that you want to associate a policy with.</p>
-     */
     inline SetStackPolicyRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Structure containing the stack policy body. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
@@ -88,71 +62,16 @@ namespace Model
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline const Aws::String& GetStackPolicyBody() const{ return m_stackPolicyBody; }
-
-    /**
-     * <p>Structure containing the stack policy body. For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
-     * You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.</p>
-     */
     inline bool StackPolicyBodyHasBeenSet() const { return m_stackPolicyBodyHasBeenSet; }
-
-    /**
-     * <p>Structure containing the stack policy body. For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
-     * You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.</p>
-     */
     inline void SetStackPolicyBody(const Aws::String& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = value; }
-
-    /**
-     * <p>Structure containing the stack policy body. For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
-     * You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.</p>
-     */
     inline void SetStackPolicyBody(Aws::String&& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = std::move(value); }
-
-    /**
-     * <p>Structure containing the stack policy body. For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
-     * You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.</p>
-     */
     inline void SetStackPolicyBody(const char* value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody.assign(value); }
-
-    /**
-     * <p>Structure containing the stack policy body. For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
-     * You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.</p>
-     */
     inline SetStackPolicyRequest& WithStackPolicyBody(const Aws::String& value) { SetStackPolicyBody(value); return *this;}
-
-    /**
-     * <p>Structure containing the stack policy body. For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
-     * You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.</p>
-     */
     inline SetStackPolicyRequest& WithStackPolicyBody(Aws::String&& value) { SetStackPolicyBody(std::move(value)); return *this;}
-
-    /**
-     * <p>Structure containing the stack policy body. For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
-     * You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.</p>
-     */
     inline SetStackPolicyRequest& WithStackPolicyBody(const char* value) { SetStackPolicyBody(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
      * policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon
@@ -162,77 +81,14 @@ namespace Model
      * not both.</p>
      */
     inline const Aws::String& GetStackPolicyURL() const{ return m_stackPolicyURL; }
-
-    /**
-     * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon
-     * Web Services Region as the stack. The location for an Amazon S3 bucket must
-     * start with <code>https://</code>. You can specify either the
-     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
-     * not both.</p>
-     */
     inline bool StackPolicyURLHasBeenSet() const { return m_stackPolicyURLHasBeenSet; }
-
-    /**
-     * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon
-     * Web Services Region as the stack. The location for an Amazon S3 bucket must
-     * start with <code>https://</code>. You can specify either the
-     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
-     * not both.</p>
-     */
     inline void SetStackPolicyURL(const Aws::String& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = value; }
-
-    /**
-     * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon
-     * Web Services Region as the stack. The location for an Amazon S3 bucket must
-     * start with <code>https://</code>. You can specify either the
-     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
-     * not both.</p>
-     */
     inline void SetStackPolicyURL(Aws::String&& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = std::move(value); }
-
-    /**
-     * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon
-     * Web Services Region as the stack. The location for an Amazon S3 bucket must
-     * start with <code>https://</code>. You can specify either the
-     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
-     * not both.</p>
-     */
     inline void SetStackPolicyURL(const char* value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL.assign(value); }
-
-    /**
-     * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon
-     * Web Services Region as the stack. The location for an Amazon S3 bucket must
-     * start with <code>https://</code>. You can specify either the
-     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
-     * not both.</p>
-     */
     inline SetStackPolicyRequest& WithStackPolicyURL(const Aws::String& value) { SetStackPolicyURL(value); return *this;}
-
-    /**
-     * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon
-     * Web Services Region as the stack. The location for an Amazon S3 bucket must
-     * start with <code>https://</code>. You can specify either the
-     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
-     * not both.</p>
-     */
     inline SetStackPolicyRequest& WithStackPolicyURL(Aws::String&& value) { SetStackPolicyURL(std::move(value)); return *this;}
-
-    /**
-     * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon
-     * Web Services Region as the stack. The location for an Amazon S3 bucket must
-     * start with <code>https://</code>. You can specify either the
-     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
-     * not both.</p>
-     */
     inline SetStackPolicyRequest& WithStackPolicyURL(const char* value) { SetStackPolicyURL(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stackName;

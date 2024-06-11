@@ -33,37 +33,23 @@ namespace Model
     AWS_RDS_API PurchaseReservedDBInstancesOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const ReservedDBInstance& GetReservedDBInstance() const{ return m_reservedDBInstance; }
-
-    
     inline void SetReservedDBInstance(const ReservedDBInstance& value) { m_reservedDBInstance = value; }
-
-    
     inline void SetReservedDBInstance(ReservedDBInstance&& value) { m_reservedDBInstance = std::move(value); }
-
-    
     inline PurchaseReservedDBInstancesOfferingResult& WithReservedDBInstance(const ReservedDBInstance& value) { SetReservedDBInstance(value); return *this;}
-
-    
     inline PurchaseReservedDBInstancesOfferingResult& WithReservedDBInstance(ReservedDBInstance&& value) { SetReservedDBInstance(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline PurchaseReservedDBInstancesOfferingResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline PurchaseReservedDBInstancesOfferingResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReservedDBInstance m_reservedDBInstance;

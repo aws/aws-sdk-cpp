@@ -39,36 +39,17 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
      */
     inline const S3ObjectCannedAcl& GetCannedAcl() const{ return m_cannedAcl; }
-
-    /**
-     * Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
-     */
     inline bool CannedAclHasBeenSet() const { return m_cannedAclHasBeenSet; }
-
-    /**
-     * Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
-     */
     inline void SetCannedAcl(const S3ObjectCannedAcl& value) { m_cannedAclHasBeenSet = true; m_cannedAcl = value; }
-
-    /**
-     * Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
-     */
     inline void SetCannedAcl(S3ObjectCannedAcl&& value) { m_cannedAclHasBeenSet = true; m_cannedAcl = std::move(value); }
-
-    /**
-     * Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
-     */
     inline S3DestinationAccessControl& WithCannedAcl(const S3ObjectCannedAcl& value) { SetCannedAcl(value); return *this;}
-
-    /**
-     * Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
-     */
     inline S3DestinationAccessControl& WithCannedAcl(S3ObjectCannedAcl&& value) { SetCannedAcl(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3ObjectCannedAcl m_cannedAcl;

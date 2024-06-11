@@ -32,37 +32,23 @@ namespace Model
     AWS_EC2_API DisableEbsEncryptionByDefaultResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The updated status of encryption by default.</p>
      */
     inline bool GetEbsEncryptionByDefault() const{ return m_ebsEncryptionByDefault; }
-
-    /**
-     * <p>The updated status of encryption by default.</p>
-     */
     inline void SetEbsEncryptionByDefault(bool value) { m_ebsEncryptionByDefault = value; }
-
-    /**
-     * <p>The updated status of encryption by default.</p>
-     */
     inline DisableEbsEncryptionByDefaultResponse& WithEbsEncryptionByDefault(bool value) { SetEbsEncryptionByDefault(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DisableEbsEncryptionByDefaultResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DisableEbsEncryptionByDefaultResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_ebsEncryptionByDefault;

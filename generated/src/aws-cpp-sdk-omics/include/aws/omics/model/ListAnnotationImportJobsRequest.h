@@ -40,152 +40,57 @@ namespace Model
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of jobs to return in one page of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of jobs to return in one page of results.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of jobs to return in one page of results.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of jobs to return in one page of results.</p>
-     */
     inline ListAnnotationImportJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>IDs of annotation import jobs to retrieve.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
-
-    /**
-     * <p>IDs of annotation import jobs to retrieve.</p>
-     */
     inline bool IdsHasBeenSet() const { return m_idsHasBeenSet; }
-
-    /**
-     * <p>IDs of annotation import jobs to retrieve.</p>
-     */
     inline void SetIds(const Aws::Vector<Aws::String>& value) { m_idsHasBeenSet = true; m_ids = value; }
-
-    /**
-     * <p>IDs of annotation import jobs to retrieve.</p>
-     */
     inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = std::move(value); }
-
-    /**
-     * <p>IDs of annotation import jobs to retrieve.</p>
-     */
     inline ListAnnotationImportJobsRequest& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
-
-    /**
-     * <p>IDs of annotation import jobs to retrieve.</p>
-     */
     inline ListAnnotationImportJobsRequest& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>IDs of annotation import jobs to retrieve.</p>
-     */
     inline ListAnnotationImportJobsRequest& AddIds(const Aws::String& value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
-
-    /**
-     * <p>IDs of annotation import jobs to retrieve.</p>
-     */
     inline ListAnnotationImportJobsRequest& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>IDs of annotation import jobs to retrieve.</p>
-     */
     inline ListAnnotationImportJobsRequest& AddIds(const char* value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the pagination token from a previous request to retrieve the next
      * page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Specifies the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Specifies the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Specifies the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Specifies the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Specifies the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline ListAnnotationImportJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Specifies the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline ListAnnotationImportJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline ListAnnotationImportJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A filter to apply to the list.</p>
      */
     inline const ListAnnotationImportJobsFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
     inline void SetFilter(const ListAnnotationImportJobsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
     inline void SetFilter(ListAnnotationImportJobsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
     inline ListAnnotationImportJobsRequest& WithFilter(const ListAnnotationImportJobsFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
     inline ListAnnotationImportJobsRequest& WithFilter(ListAnnotationImportJobsFilter&& value) { SetFilter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

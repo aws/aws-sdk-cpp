@@ -37,87 +37,33 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The prefix for a negative format.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p>The prefix for a negative format.</p>
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p>The prefix for a negative format.</p>
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p>The prefix for a negative format.</p>
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p>The prefix for a negative format.</p>
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p>The prefix for a negative format.</p>
-     */
     inline NegativeFormat& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p>The prefix for a negative format.</p>
-     */
     inline NegativeFormat& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The prefix for a negative format.</p>
-     */
     inline NegativeFormat& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The suffix for a negative format.</p>
      */
     inline const Aws::String& GetSuffix() const{ return m_suffix; }
-
-    /**
-     * <p>The suffix for a negative format.</p>
-     */
     inline bool SuffixHasBeenSet() const { return m_suffixHasBeenSet; }
-
-    /**
-     * <p>The suffix for a negative format.</p>
-     */
     inline void SetSuffix(const Aws::String& value) { m_suffixHasBeenSet = true; m_suffix = value; }
-
-    /**
-     * <p>The suffix for a negative format.</p>
-     */
     inline void SetSuffix(Aws::String&& value) { m_suffixHasBeenSet = true; m_suffix = std::move(value); }
-
-    /**
-     * <p>The suffix for a negative format.</p>
-     */
     inline void SetSuffix(const char* value) { m_suffixHasBeenSet = true; m_suffix.assign(value); }
-
-    /**
-     * <p>The suffix for a negative format.</p>
-     */
     inline NegativeFormat& WithSuffix(const Aws::String& value) { SetSuffix(value); return *this;}
-
-    /**
-     * <p>The suffix for a negative format.</p>
-     */
     inline NegativeFormat& WithSuffix(Aws::String&& value) { SetSuffix(std::move(value)); return *this;}
-
-    /**
-     * <p>The suffix for a negative format.</p>
-     */
     inline NegativeFormat& WithSuffix(const char* value) { SetSuffix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_prefix;

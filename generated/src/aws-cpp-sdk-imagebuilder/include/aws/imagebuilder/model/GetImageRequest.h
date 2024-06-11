@@ -38,46 +38,19 @@ namespace Model
     AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
      */
     inline const Aws::String& GetImageBuildVersionArn() const{ return m_imageBuildVersionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
-     */
     inline bool ImageBuildVersionArnHasBeenSet() const { return m_imageBuildVersionArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
-     */
     inline void SetImageBuildVersionArn(const Aws::String& value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
-     */
     inline void SetImageBuildVersionArn(Aws::String&& value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
-     */
     inline void SetImageBuildVersionArn(const char* value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
-     */
     inline GetImageRequest& WithImageBuildVersionArn(const Aws::String& value) { SetImageBuildVersionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
-     */
     inline GetImageRequest& WithImageBuildVersionArn(Aws::String&& value) { SetImageBuildVersionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
-     */
     inline GetImageRequest& WithImageBuildVersionArn(const char* value) { SetImageBuildVersionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageBuildVersionArn;

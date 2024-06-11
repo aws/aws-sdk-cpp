@@ -33,53 +33,27 @@ namespace Model
     AWS_NETWORKMANAGER_API GetVpcAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns details about a VPC attachment.</p>
      */
     inline const VpcAttachment& GetVpcAttachment() const{ return m_vpcAttachment; }
-
-    /**
-     * <p>Returns details about a VPC attachment.</p>
-     */
     inline void SetVpcAttachment(const VpcAttachment& value) { m_vpcAttachment = value; }
-
-    /**
-     * <p>Returns details about a VPC attachment.</p>
-     */
     inline void SetVpcAttachment(VpcAttachment&& value) { m_vpcAttachment = std::move(value); }
-
-    /**
-     * <p>Returns details about a VPC attachment.</p>
-     */
     inline GetVpcAttachmentResult& WithVpcAttachment(const VpcAttachment& value) { SetVpcAttachment(value); return *this;}
-
-    /**
-     * <p>Returns details about a VPC attachment.</p>
-     */
     inline GetVpcAttachmentResult& WithVpcAttachment(VpcAttachment&& value) { SetVpcAttachment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetVpcAttachmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetVpcAttachmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetVpcAttachmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VpcAttachment m_vpcAttachment;

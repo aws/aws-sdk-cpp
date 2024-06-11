@@ -32,63 +32,29 @@ namespace Model
     AWS_KEYSPACES_API RestoreTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the restored table.</p>
      */
     inline const Aws::String& GetRestoredTableARN() const{ return m_restoredTableARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the restored table.</p>
-     */
     inline void SetRestoredTableARN(const Aws::String& value) { m_restoredTableARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the restored table.</p>
-     */
     inline void SetRestoredTableARN(Aws::String&& value) { m_restoredTableARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the restored table.</p>
-     */
     inline void SetRestoredTableARN(const char* value) { m_restoredTableARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the restored table.</p>
-     */
     inline RestoreTableResult& WithRestoredTableARN(const Aws::String& value) { SetRestoredTableARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the restored table.</p>
-     */
     inline RestoreTableResult& WithRestoredTableARN(Aws::String&& value) { SetRestoredTableARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the restored table.</p>
-     */
     inline RestoreTableResult& WithRestoredTableARN(const char* value) { SetRestoredTableARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RestoreTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RestoreTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RestoreTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_restoredTableARN;

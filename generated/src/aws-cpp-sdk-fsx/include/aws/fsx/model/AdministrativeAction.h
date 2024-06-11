@@ -46,85 +46,41 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const AdministrativeActionType& GetAdministrativeActionType() const{ return m_administrativeActionType; }
-
-    
     inline bool AdministrativeActionTypeHasBeenSet() const { return m_administrativeActionTypeHasBeenSet; }
-
-    
     inline void SetAdministrativeActionType(const AdministrativeActionType& value) { m_administrativeActionTypeHasBeenSet = true; m_administrativeActionType = value; }
-
-    
     inline void SetAdministrativeActionType(AdministrativeActionType&& value) { m_administrativeActionTypeHasBeenSet = true; m_administrativeActionType = std::move(value); }
-
-    
     inline AdministrativeAction& WithAdministrativeActionType(const AdministrativeActionType& value) { SetAdministrativeActionType(value); return *this;}
-
-    
     inline AdministrativeAction& WithAdministrativeActionType(AdministrativeActionType&& value) { SetAdministrativeActionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>
      * administrative action. Does not apply to any other administrative action
      * type.</p>
      */
     inline int GetProgressPercent() const{ return m_progressPercent; }
-
-    /**
-     * <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>
-     * administrative action. Does not apply to any other administrative action
-     * type.</p>
-     */
     inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
-
-    /**
-     * <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>
-     * administrative action. Does not apply to any other administrative action
-     * type.</p>
-     */
     inline void SetProgressPercent(int value) { m_progressPercentHasBeenSet = true; m_progressPercent = value; }
-
-    /**
-     * <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>
-     * administrative action. Does not apply to any other administrative action
-     * type.</p>
-     */
     inline AdministrativeAction& WithProgressPercent(int value) { SetProgressPercent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time that the administrative action request was received.</p>
      */
     inline const Aws::Utils::DateTime& GetRequestTime() const{ return m_requestTime; }
-
-    /**
-     * <p>The time that the administrative action request was received.</p>
-     */
     inline bool RequestTimeHasBeenSet() const { return m_requestTimeHasBeenSet; }
-
-    /**
-     * <p>The time that the administrative action request was received.</p>
-     */
     inline void SetRequestTime(const Aws::Utils::DateTime& value) { m_requestTimeHasBeenSet = true; m_requestTime = value; }
-
-    /**
-     * <p>The time that the administrative action request was received.</p>
-     */
     inline void SetRequestTime(Aws::Utils::DateTime&& value) { m_requestTimeHasBeenSet = true; m_requestTime = std::move(value); }
-
-    /**
-     * <p>The time that the administrative action request was received.</p>
-     */
     inline AdministrativeAction& WithRequestTime(const Aws::Utils::DateTime& value) { SetRequestTime(value); return *this;}
-
-    /**
-     * <p>The time that the administrative action request was received.</p>
-     */
     inline AdministrativeAction& WithRequestTime(Aws::Utils::DateTime&& value) { SetRequestTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the administrative action, as follows:</p> <ul> <li> <p>
      * <code>FAILED</code> - Amazon FSx failed to process the administrative action
@@ -138,227 +94,78 @@ namespace Model
      * process.</p> </li> </ul>
      */
     inline const Status& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the administrative action, as follows:</p> <ul> <li> <p>
-     * <code>FAILED</code> - Amazon FSx failed to process the administrative action
-     * successfully.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is
-     * processing the administrative action.</p> </li> <li> <p> <code>PENDING</code> -
-     * Amazon FSx is waiting to process the administrative action.</p> </li> <li> <p>
-     * <code>COMPLETED</code> - Amazon FSx has finished processing the administrative
-     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a
-     * storage-capacity increase update, Amazon FSx has updated the file system with
-     * the new storage capacity, and is now performing the storage-optimization
-     * process.</p> </li> </ul>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the administrative action, as follows:</p> <ul> <li> <p>
-     * <code>FAILED</code> - Amazon FSx failed to process the administrative action
-     * successfully.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is
-     * processing the administrative action.</p> </li> <li> <p> <code>PENDING</code> -
-     * Amazon FSx is waiting to process the administrative action.</p> </li> <li> <p>
-     * <code>COMPLETED</code> - Amazon FSx has finished processing the administrative
-     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a
-     * storage-capacity increase update, Amazon FSx has updated the file system with
-     * the new storage capacity, and is now performing the storage-optimization
-     * process.</p> </li> </ul>
-     */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the administrative action, as follows:</p> <ul> <li> <p>
-     * <code>FAILED</code> - Amazon FSx failed to process the administrative action
-     * successfully.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is
-     * processing the administrative action.</p> </li> <li> <p> <code>PENDING</code> -
-     * Amazon FSx is waiting to process the administrative action.</p> </li> <li> <p>
-     * <code>COMPLETED</code> - Amazon FSx has finished processing the administrative
-     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a
-     * storage-capacity increase update, Amazon FSx has updated the file system with
-     * the new storage capacity, and is now performing the storage-optimization
-     * process.</p> </li> </ul>
-     */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the administrative action, as follows:</p> <ul> <li> <p>
-     * <code>FAILED</code> - Amazon FSx failed to process the administrative action
-     * successfully.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is
-     * processing the administrative action.</p> </li> <li> <p> <code>PENDING</code> -
-     * Amazon FSx is waiting to process the administrative action.</p> </li> <li> <p>
-     * <code>COMPLETED</code> - Amazon FSx has finished processing the administrative
-     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a
-     * storage-capacity increase update, Amazon FSx has updated the file system with
-     * the new storage capacity, and is now performing the storage-optimization
-     * process.</p> </li> </ul>
-     */
     inline AdministrativeAction& WithStatus(const Status& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the administrative action, as follows:</p> <ul> <li> <p>
-     * <code>FAILED</code> - Amazon FSx failed to process the administrative action
-     * successfully.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is
-     * processing the administrative action.</p> </li> <li> <p> <code>PENDING</code> -
-     * Amazon FSx is waiting to process the administrative action.</p> </li> <li> <p>
-     * <code>COMPLETED</code> - Amazon FSx has finished processing the administrative
-     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a
-     * storage-capacity increase update, Amazon FSx has updated the file system with
-     * the new storage capacity, and is now performing the storage-optimization
-     * process.</p> </li> </ul>
-     */
     inline AdministrativeAction& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The target value for the administration action, provided in the
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
     AWS_FSX_API const FileSystem& GetTargetFileSystemValues() const;
-
-    /**
-     * <p>The target value for the administration action, provided in the
-     * <code>UpdateFileSystem</code> operation. Returned for
-     * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
-     */
     AWS_FSX_API bool TargetFileSystemValuesHasBeenSet() const;
-
-    /**
-     * <p>The target value for the administration action, provided in the
-     * <code>UpdateFileSystem</code> operation. Returned for
-     * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
-     */
     AWS_FSX_API void SetTargetFileSystemValues(const FileSystem& value);
-
-    /**
-     * <p>The target value for the administration action, provided in the
-     * <code>UpdateFileSystem</code> operation. Returned for
-     * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
-     */
     AWS_FSX_API void SetTargetFileSystemValues(FileSystem&& value);
-
-    /**
-     * <p>The target value for the administration action, provided in the
-     * <code>UpdateFileSystem</code> operation. Returned for
-     * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
-     */
     AWS_FSX_API AdministrativeAction& WithTargetFileSystemValues(const FileSystem& value);
-
-    /**
-     * <p>The target value for the administration action, provided in the
-     * <code>UpdateFileSystem</code> operation. Returned for
-     * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
-     */
     AWS_FSX_API AdministrativeAction& WithTargetFileSystemValues(FileSystem&& value);
+    ///@}
 
-
+    ///@{
     
     inline const AdministrativeActionFailureDetails& GetFailureDetails() const{ return m_failureDetails; }
-
-    
     inline bool FailureDetailsHasBeenSet() const { return m_failureDetailsHasBeenSet; }
-
-    
     inline void SetFailureDetails(const AdministrativeActionFailureDetails& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
-
-    
     inline void SetFailureDetails(AdministrativeActionFailureDetails&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = std::move(value); }
-
-    
     inline AdministrativeAction& WithFailureDetails(const AdministrativeActionFailureDetails& value) { SetFailureDetails(value); return *this;}
-
-    
     inline AdministrativeAction& WithFailureDetails(AdministrativeActionFailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     AWS_FSX_API const Volume& GetTargetVolumeValues() const;
-
-    
     AWS_FSX_API bool TargetVolumeValuesHasBeenSet() const;
-
-    
     AWS_FSX_API void SetTargetVolumeValues(const Volume& value);
-
-    
     AWS_FSX_API void SetTargetVolumeValues(Volume&& value);
-
-    
     AWS_FSX_API AdministrativeAction& WithTargetVolumeValues(const Volume& value);
-
-    
     AWS_FSX_API AdministrativeAction& WithTargetVolumeValues(Volume&& value);
+    ///@}
 
-
+    ///@{
     
     AWS_FSX_API const Snapshot& GetTargetSnapshotValues() const;
-
-    
     AWS_FSX_API bool TargetSnapshotValuesHasBeenSet() const;
-
-    
     AWS_FSX_API void SetTargetSnapshotValues(const Snapshot& value);
-
-    
     AWS_FSX_API void SetTargetSnapshotValues(Snapshot&& value);
-
-    
     AWS_FSX_API AdministrativeAction& WithTargetSnapshotValues(const Snapshot& value);
-
-    
     AWS_FSX_API AdministrativeAction& WithTargetSnapshotValues(Snapshot&& value);
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of bytes that have transferred for the FSx for OpenZFS snapshot
      * that you're copying.</p>
      */
     inline long long GetTotalTransferBytes() const{ return m_totalTransferBytes; }
-
-    /**
-     * <p>The number of bytes that have transferred for the FSx for OpenZFS snapshot
-     * that you're copying.</p>
-     */
     inline bool TotalTransferBytesHasBeenSet() const { return m_totalTransferBytesHasBeenSet; }
-
-    /**
-     * <p>The number of bytes that have transferred for the FSx for OpenZFS snapshot
-     * that you're copying.</p>
-     */
     inline void SetTotalTransferBytes(long long value) { m_totalTransferBytesHasBeenSet = true; m_totalTransferBytes = value; }
-
-    /**
-     * <p>The number of bytes that have transferred for the FSx for OpenZFS snapshot
-     * that you're copying.</p>
-     */
     inline AdministrativeAction& WithTotalTransferBytes(long long value) { SetTotalTransferBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're
      * copying.</p>
      */
     inline long long GetRemainingTransferBytes() const{ return m_remainingTransferBytes; }
-
-    /**
-     * <p>The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're
-     * copying.</p>
-     */
     inline bool RemainingTransferBytesHasBeenSet() const { return m_remainingTransferBytesHasBeenSet; }
-
-    /**
-     * <p>The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're
-     * copying.</p>
-     */
     inline void SetRemainingTransferBytes(long long value) { m_remainingTransferBytesHasBeenSet = true; m_remainingTransferBytes = value; }
-
-    /**
-     * <p>The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're
-     * copying.</p>
-     */
     inline AdministrativeAction& WithRemainingTransferBytes(long long value) { SetRemainingTransferBytes(value); return *this;}
-
+    ///@}
   private:
 
     AdministrativeActionType m_administrativeActionType;

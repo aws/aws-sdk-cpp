@@ -33,118 +33,45 @@ namespace Model
     AWS_CHIMESDKMEETINGS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the meeting associated with the update request.</p>
      */
     inline const Aws::String& GetMeetingId() const{ return m_meetingId; }
-
-    /**
-     * <p>The ID of the meeting associated with the update request.</p>
-     */
     inline bool MeetingIdHasBeenSet() const { return m_meetingIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the meeting associated with the update request.</p>
-     */
     inline void SetMeetingId(const Aws::String& value) { m_meetingIdHasBeenSet = true; m_meetingId = value; }
-
-    /**
-     * <p>The ID of the meeting associated with the update request.</p>
-     */
     inline void SetMeetingId(Aws::String&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::move(value); }
-
-    /**
-     * <p>The ID of the meeting associated with the update request.</p>
-     */
     inline void SetMeetingId(const char* value) { m_meetingIdHasBeenSet = true; m_meetingId.assign(value); }
-
-    /**
-     * <p>The ID of the meeting associated with the update request.</p>
-     */
     inline UpdateAttendeeCapabilitiesRequest& WithMeetingId(const Aws::String& value) { SetMeetingId(value); return *this;}
-
-    /**
-     * <p>The ID of the meeting associated with the update request.</p>
-     */
     inline UpdateAttendeeCapabilitiesRequest& WithMeetingId(Aws::String&& value) { SetMeetingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the meeting associated with the update request.</p>
-     */
     inline UpdateAttendeeCapabilitiesRequest& WithMeetingId(const char* value) { SetMeetingId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the attendee associated with the update request.</p>
      */
     inline const Aws::String& GetAttendeeId() const{ return m_attendeeId; }
-
-    /**
-     * <p>The ID of the attendee associated with the update request.</p>
-     */
     inline bool AttendeeIdHasBeenSet() const { return m_attendeeIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the attendee associated with the update request.</p>
-     */
     inline void SetAttendeeId(const Aws::String& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = value; }
-
-    /**
-     * <p>The ID of the attendee associated with the update request.</p>
-     */
     inline void SetAttendeeId(Aws::String&& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = std::move(value); }
-
-    /**
-     * <p>The ID of the attendee associated with the update request.</p>
-     */
     inline void SetAttendeeId(const char* value) { m_attendeeIdHasBeenSet = true; m_attendeeId.assign(value); }
-
-    /**
-     * <p>The ID of the attendee associated with the update request.</p>
-     */
     inline UpdateAttendeeCapabilitiesRequest& WithAttendeeId(const Aws::String& value) { SetAttendeeId(value); return *this;}
-
-    /**
-     * <p>The ID of the attendee associated with the update request.</p>
-     */
     inline UpdateAttendeeCapabilitiesRequest& WithAttendeeId(Aws::String&& value) { SetAttendeeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the attendee associated with the update request.</p>
-     */
     inline UpdateAttendeeCapabilitiesRequest& WithAttendeeId(const char* value) { SetAttendeeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The capabilities that you want to update.</p>
      */
     inline const AttendeeCapabilities& GetCapabilities() const{ return m_capabilities; }
-
-    /**
-     * <p>The capabilities that you want to update.</p>
-     */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-
-    /**
-     * <p>The capabilities that you want to update.</p>
-     */
     inline void SetCapabilities(const AttendeeCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-
-    /**
-     * <p>The capabilities that you want to update.</p>
-     */
     inline void SetCapabilities(AttendeeCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-
-    /**
-     * <p>The capabilities that you want to update.</p>
-     */
     inline UpdateAttendeeCapabilitiesRequest& WithCapabilities(const AttendeeCapabilities& value) { SetCapabilities(value); return *this;}
-
-    /**
-     * <p>The capabilities that you want to update.</p>
-     */
     inline UpdateAttendeeCapabilitiesRequest& WithCapabilities(AttendeeCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_meetingId;

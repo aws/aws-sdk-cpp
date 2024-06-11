@@ -40,6 +40,7 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Desired value to use with a target-based scaling policy. The value must be
      * relevant for whatever metric the scaling policy is using. For example, in a
@@ -48,34 +49,10 @@ namespace Model
      * idle and ready for new game sessions).</p>
      */
     inline double GetTargetValue() const{ return m_targetValue; }
-
-    /**
-     * <p>Desired value to use with a target-based scaling policy. The value must be
-     * relevant for whatever metric the scaling policy is using. For example, in a
-     * policy using the metric PercentAvailableGameSessions, the target value should be
-     * the preferred size of the fleet's buffer (the percent of capacity that should be
-     * idle and ready for new game sessions).</p>
-     */
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
-
-    /**
-     * <p>Desired value to use with a target-based scaling policy. The value must be
-     * relevant for whatever metric the scaling policy is using. For example, in a
-     * policy using the metric PercentAvailableGameSessions, the target value should be
-     * the preferred size of the fleet's buffer (the percent of capacity that should be
-     * idle and ready for new game sessions).</p>
-     */
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
-
-    /**
-     * <p>Desired value to use with a target-based scaling policy. The value must be
-     * relevant for whatever metric the scaling policy is using. For example, in a
-     * policy using the metric PercentAvailableGameSessions, the target value should be
-     * the preferred size of the fleet's buffer (the percent of capacity that should be
-     * idle and ready for new game sessions).</p>
-     */
     inline TargetConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
-
+    ///@}
   private:
 
     double m_targetValue;

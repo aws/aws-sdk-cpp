@@ -37,47 +37,25 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
      */
     inline int GetCode() const{ return m_code; }
-
-    /**
-     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
-     */
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
-     */
     inline IcmpTypeCode& WithCode(int value) { SetCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ICMP type. A value of -1 means all types.</p>
      */
     inline int GetType() const{ return m_type; }
-
-    /**
-     * <p>The ICMP type. A value of -1 means all types.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The ICMP type. A value of -1 means all types.</p>
-     */
     inline void SetType(int value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The ICMP type. A value of -1 means all types.</p>
-     */
     inline IcmpTypeCode& WithType(int value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     int m_code;

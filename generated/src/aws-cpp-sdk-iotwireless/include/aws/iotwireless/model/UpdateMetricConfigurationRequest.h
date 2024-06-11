@@ -32,36 +32,17 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The value to be used to set summary metric configuration.</p>
      */
     inline const SummaryMetricConfiguration& GetSummaryMetric() const{ return m_summaryMetric; }
-
-    /**
-     * <p>The value to be used to set summary metric configuration.</p>
-     */
     inline bool SummaryMetricHasBeenSet() const { return m_summaryMetricHasBeenSet; }
-
-    /**
-     * <p>The value to be used to set summary metric configuration.</p>
-     */
     inline void SetSummaryMetric(const SummaryMetricConfiguration& value) { m_summaryMetricHasBeenSet = true; m_summaryMetric = value; }
-
-    /**
-     * <p>The value to be used to set summary metric configuration.</p>
-     */
     inline void SetSummaryMetric(SummaryMetricConfiguration&& value) { m_summaryMetricHasBeenSet = true; m_summaryMetric = std::move(value); }
-
-    /**
-     * <p>The value to be used to set summary metric configuration.</p>
-     */
     inline UpdateMetricConfigurationRequest& WithSummaryMetric(const SummaryMetricConfiguration& value) { SetSummaryMetric(value); return *this;}
-
-    /**
-     * <p>The value to be used to set summary metric configuration.</p>
-     */
     inline UpdateMetricConfigurationRequest& WithSummaryMetric(SummaryMetricConfiguration&& value) { SetSummaryMetric(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SummaryMetricConfiguration m_summaryMetric;

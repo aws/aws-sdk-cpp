@@ -37,6 +37,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -44,118 +45,39 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline AcceptVpcEndpointConnectionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the VPC endpoint service.</p>
      */
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
-
-    /**
-     * <p>The ID of the VPC endpoint service.</p>
-     */
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the VPC endpoint service.</p>
-     */
     inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-
-    /**
-     * <p>The ID of the VPC endpoint service.</p>
-     */
     inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC endpoint service.</p>
-     */
     inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC endpoint service.</p>
-     */
     inline AcceptVpcEndpointConnectionsRequest& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC endpoint service.</p>
-     */
     inline AcceptVpcEndpointConnectionsRequest& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC endpoint service.</p>
-     */
     inline AcceptVpcEndpointConnectionsRequest& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IDs of the interface VPC endpoints.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcEndpointIds() const{ return m_vpcEndpointIds; }
-
-    /**
-     * <p>The IDs of the interface VPC endpoints.</p>
-     */
     inline bool VpcEndpointIdsHasBeenSet() const { return m_vpcEndpointIdsHasBeenSet; }
-
-    /**
-     * <p>The IDs of the interface VPC endpoints.</p>
-     */
     inline void SetVpcEndpointIds(const Aws::Vector<Aws::String>& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = value; }
-
-    /**
-     * <p>The IDs of the interface VPC endpoints.</p>
-     */
     inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = std::move(value); }
-
-    /**
-     * <p>The IDs of the interface VPC endpoints.</p>
-     */
     inline AcceptVpcEndpointConnectionsRequest& WithVpcEndpointIds(const Aws::Vector<Aws::String>& value) { SetVpcEndpointIds(value); return *this;}
-
-    /**
-     * <p>The IDs of the interface VPC endpoints.</p>
-     */
     inline AcceptVpcEndpointConnectionsRequest& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the interface VPC endpoints.</p>
-     */
     inline AcceptVpcEndpointConnectionsRequest& AddVpcEndpointIds(const Aws::String& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the interface VPC endpoints.</p>
-     */
     inline AcceptVpcEndpointConnectionsRequest& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the interface VPC endpoints.</p>
-     */
     inline AcceptVpcEndpointConnectionsRequest& AddVpcEndpointIds(const char* value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     bool m_dryRun;

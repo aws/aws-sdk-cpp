@@ -37,6 +37,7 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The canonical user ID of the bucket owner. For information about locating
      * your canonical user ID see <a
@@ -44,63 +45,14 @@ namespace Model
      * Your Account Canonical User ID.</a> </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The canonical user ID of the bucket owner. For information about locating
-     * your canonical user ID see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId">Finding
-     * Your Account Canonical User ID.</a> </p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The canonical user ID of the bucket owner. For information about locating
-     * your canonical user ID see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId">Finding
-     * Your Account Canonical User ID.</a> </p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The canonical user ID of the bucket owner. For information about locating
-     * your canonical user ID see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId">Finding
-     * Your Account Canonical User ID.</a> </p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The canonical user ID of the bucket owner. For information about locating
-     * your canonical user ID see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId">Finding
-     * Your Account Canonical User ID.</a> </p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The canonical user ID of the bucket owner. For information about locating
-     * your canonical user ID see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId">Finding
-     * Your Account Canonical User ID.</a> </p>
-     */
     inline Owner& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The canonical user ID of the bucket owner. For information about locating
-     * your canonical user ID see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId">Finding
-     * Your Account Canonical User ID.</a> </p>
-     */
     inline Owner& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The canonical user ID of the bucket owner. For information about locating
-     * your canonical user ID see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId">Finding
-     * Your Account Canonical User ID.</a> </p>
-     */
     inline Owner& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

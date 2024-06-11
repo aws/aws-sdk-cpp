@@ -38,77 +38,31 @@ namespace Model
     AWS_SUPPORT_API CreateCaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string in the following format:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline const Aws::String& GetCaseId() const{ return m_caseId; }
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string in the following format:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline void SetCaseId(const Aws::String& value) { m_caseId = value; }
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string in the following format:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline void SetCaseId(Aws::String&& value) { m_caseId = std::move(value); }
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string in the following format:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline void SetCaseId(const char* value) { m_caseId.assign(value); }
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string in the following format:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline CreateCaseResult& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string in the following format:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline CreateCaseResult& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string in the following format:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline CreateCaseResult& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateCaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateCaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateCaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_caseId;

@@ -35,77 +35,31 @@ namespace Model
     AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The stack ID.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline DescribeAgentVersionsRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline DescribeAgentVersionsRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline DescribeAgentVersionsRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration manager.</p>
      */
     inline const StackConfigurationManager& GetConfigurationManager() const{ return m_configurationManager; }
-
-    /**
-     * <p>The configuration manager.</p>
-     */
     inline bool ConfigurationManagerHasBeenSet() const { return m_configurationManagerHasBeenSet; }
-
-    /**
-     * <p>The configuration manager.</p>
-     */
     inline void SetConfigurationManager(const StackConfigurationManager& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
-
-    /**
-     * <p>The configuration manager.</p>
-     */
     inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::move(value); }
-
-    /**
-     * <p>The configuration manager.</p>
-     */
     inline DescribeAgentVersionsRequest& WithConfigurationManager(const StackConfigurationManager& value) { SetConfigurationManager(value); return *this;}
-
-    /**
-     * <p>The configuration manager.</p>
-     */
     inline DescribeAgentVersionsRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stackId;

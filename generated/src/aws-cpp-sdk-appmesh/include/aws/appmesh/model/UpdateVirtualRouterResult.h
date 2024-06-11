@@ -38,53 +38,27 @@ namespace Model
     AWS_APPMESH_API UpdateVirtualRouterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A full description of the virtual router that was updated.</p>
      */
     inline const VirtualRouterData& GetVirtualRouter() const{ return m_virtualRouter; }
-
-    /**
-     * <p>A full description of the virtual router that was updated.</p>
-     */
     inline void SetVirtualRouter(const VirtualRouterData& value) { m_virtualRouter = value; }
-
-    /**
-     * <p>A full description of the virtual router that was updated.</p>
-     */
     inline void SetVirtualRouter(VirtualRouterData&& value) { m_virtualRouter = std::move(value); }
-
-    /**
-     * <p>A full description of the virtual router that was updated.</p>
-     */
     inline UpdateVirtualRouterResult& WithVirtualRouter(const VirtualRouterData& value) { SetVirtualRouter(value); return *this;}
-
-    /**
-     * <p>A full description of the virtual router that was updated.</p>
-     */
     inline UpdateVirtualRouterResult& WithVirtualRouter(VirtualRouterData&& value) { SetVirtualRouter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateVirtualRouterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateVirtualRouterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateVirtualRouterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VirtualRouterData m_virtualRouter;

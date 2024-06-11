@@ -38,54 +38,20 @@ namespace Model
     AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Use the unique identifier for a runtime instance of the workflow to get
      * runtime details.</p>
      */
     inline const Aws::String& GetWorkflowExecutionId() const{ return m_workflowExecutionId; }
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the workflow to get
-     * runtime details.</p>
-     */
     inline bool WorkflowExecutionIdHasBeenSet() const { return m_workflowExecutionIdHasBeenSet; }
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the workflow to get
-     * runtime details.</p>
-     */
     inline void SetWorkflowExecutionId(const Aws::String& value) { m_workflowExecutionIdHasBeenSet = true; m_workflowExecutionId = value; }
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the workflow to get
-     * runtime details.</p>
-     */
     inline void SetWorkflowExecutionId(Aws::String&& value) { m_workflowExecutionIdHasBeenSet = true; m_workflowExecutionId = std::move(value); }
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the workflow to get
-     * runtime details.</p>
-     */
     inline void SetWorkflowExecutionId(const char* value) { m_workflowExecutionIdHasBeenSet = true; m_workflowExecutionId.assign(value); }
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the workflow to get
-     * runtime details.</p>
-     */
     inline GetWorkflowExecutionRequest& WithWorkflowExecutionId(const Aws::String& value) { SetWorkflowExecutionId(value); return *this;}
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the workflow to get
-     * runtime details.</p>
-     */
     inline GetWorkflowExecutionRequest& WithWorkflowExecutionId(Aws::String&& value) { SetWorkflowExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the workflow to get
-     * runtime details.</p>
-     */
     inline GetWorkflowExecutionRequest& WithWorkflowExecutionId(const char* value) { SetWorkflowExecutionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workflowExecutionId;

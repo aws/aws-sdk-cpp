@@ -35,26 +35,15 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount of the budget consumed.</p>
      */
     inline double GetApproximateDollarUsage() const{ return m_approximateDollarUsage; }
-
-    /**
-     * <p>The amount of the budget consumed.</p>
-     */
     inline bool ApproximateDollarUsageHasBeenSet() const { return m_approximateDollarUsageHasBeenSet; }
-
-    /**
-     * <p>The amount of the budget consumed.</p>
-     */
     inline void SetApproximateDollarUsage(double value) { m_approximateDollarUsageHasBeenSet = true; m_approximateDollarUsage = value; }
-
-    /**
-     * <p>The amount of the budget consumed.</p>
-     */
     inline ConsumedUsages& WithApproximateDollarUsage(double value) { SetApproximateDollarUsage(value); return *this;}
-
+    ///@}
   private:
 
     double m_approximateDollarUsage;

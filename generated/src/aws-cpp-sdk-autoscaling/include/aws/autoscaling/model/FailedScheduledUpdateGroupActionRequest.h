@@ -40,128 +40,47 @@ namespace Model
     AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the scheduled action.</p>
      */
     inline const Aws::String& GetScheduledActionName() const{ return m_scheduledActionName; }
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline bool ScheduledActionNameHasBeenSet() const { return m_scheduledActionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline void SetScheduledActionName(Aws::String&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::move(value); }
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline void SetScheduledActionName(const char* value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName.assign(value); }
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline FailedScheduledUpdateGroupActionRequest& WithScheduledActionName(const Aws::String& value) { SetScheduledActionName(value); return *this;}
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline FailedScheduledUpdateGroupActionRequest& WithScheduledActionName(Aws::String&& value) { SetScheduledActionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline FailedScheduledUpdateGroupActionRequest& WithScheduledActionName(const char* value) { SetScheduledActionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error code.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline FailedScheduledUpdateGroupActionRequest& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code.</p>
-     */
     inline FailedScheduledUpdateGroupActionRequest& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The error code.</p>
-     */
     inline FailedScheduledUpdateGroupActionRequest& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error message accompanying the error code.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>The error message accompanying the error code.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>The error message accompanying the error code.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>The error message accompanying the error code.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>The error message accompanying the error code.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>The error message accompanying the error code.</p>
-     */
     inline FailedScheduledUpdateGroupActionRequest& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>The error message accompanying the error code.</p>
-     */
     inline FailedScheduledUpdateGroupActionRequest& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message accompanying the error code.</p>
-     */
     inline FailedScheduledUpdateGroupActionRequest& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scheduledActionName;

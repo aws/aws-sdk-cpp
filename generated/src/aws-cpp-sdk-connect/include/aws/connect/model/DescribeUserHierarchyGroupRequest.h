@@ -32,103 +32,35 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the hierarchy group.</p>
      */
     inline const Aws::String& GetHierarchyGroupId() const{ return m_hierarchyGroupId; }
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline bool HierarchyGroupIdHasBeenSet() const { return m_hierarchyGroupIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline void SetHierarchyGroupId(const Aws::String& value) { m_hierarchyGroupIdHasBeenSet = true; m_hierarchyGroupId = value; }
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline void SetHierarchyGroupId(Aws::String&& value) { m_hierarchyGroupIdHasBeenSet = true; m_hierarchyGroupId = std::move(value); }
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline void SetHierarchyGroupId(const char* value) { m_hierarchyGroupIdHasBeenSet = true; m_hierarchyGroupId.assign(value); }
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline DescribeUserHierarchyGroupRequest& WithHierarchyGroupId(const Aws::String& value) { SetHierarchyGroupId(value); return *this;}
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline DescribeUserHierarchyGroupRequest& WithHierarchyGroupId(Aws::String&& value) { SetHierarchyGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the hierarchy group.</p>
-     */
     inline DescribeUserHierarchyGroupRequest& WithHierarchyGroupId(const char* value) { SetHierarchyGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline DescribeUserHierarchyGroupRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline DescribeUserHierarchyGroupRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline DescribeUserHierarchyGroupRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hierarchyGroupId;

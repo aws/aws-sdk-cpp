@@ -39,103 +39,35 @@ namespace Model
     AWS_IOTSITEWISE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ID of the project.</p>
      */
     inline const Aws::String& GetProjectId() const{ return m_projectId; }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline void SetProjectId(Aws::String&& value) { m_projectIdHasBeenSet = true; m_projectId = std::move(value); }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline void SetProjectId(const char* value) { m_projectIdHasBeenSet = true; m_projectId.assign(value); }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline DeleteProjectRequest& WithProjectId(const Aws::String& value) { SetProjectId(value); return *this;}
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline DeleteProjectRequest& WithProjectId(Aws::String&& value) { SetProjectId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline DeleteProjectRequest& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique case-sensitive identifier that you can provide to ensure the
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline DeleteProjectRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline DeleteProjectRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline DeleteProjectRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectId;

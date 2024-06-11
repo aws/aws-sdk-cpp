@@ -35,87 +35,33 @@ namespace Model
     AWS_OPENSEARCHSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-     */
     inline DeleteVpcEndpointRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-     */
     inline DeleteVpcEndpointRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-     */
     inline DeleteVpcEndpointRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The VPC endpoint identifier.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The VPC endpoint identifier.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The VPC endpoint identifier.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The VPC endpoint identifier.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The VPC endpoint identifier.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The VPC endpoint identifier.</p>
-     */
     inline DeleteVpcEndpointRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The VPC endpoint identifier.</p>
-     */
     inline DeleteVpcEndpointRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The VPC endpoint identifier.</p>
-     */
     inline DeleteVpcEndpointRequest& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

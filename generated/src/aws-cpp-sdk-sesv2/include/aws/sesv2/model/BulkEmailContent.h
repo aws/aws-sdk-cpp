@@ -38,36 +38,17 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The template to use for the bulk email message.</p>
      */
     inline const Template& GetTemplate() const{ return m_template; }
-
-    /**
-     * <p>The template to use for the bulk email message.</p>
-     */
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-
-    /**
-     * <p>The template to use for the bulk email message.</p>
-     */
     inline void SetTemplate(const Template& value) { m_templateHasBeenSet = true; m_template = value; }
-
-    /**
-     * <p>The template to use for the bulk email message.</p>
-     */
     inline void SetTemplate(Template&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-
-    /**
-     * <p>The template to use for the bulk email message.</p>
-     */
     inline BulkEmailContent& WithTemplate(const Template& value) { SetTemplate(value); return *this;}
-
-    /**
-     * <p>The template to use for the bulk email message.</p>
-     */
     inline BulkEmailContent& WithTemplate(Template&& value) { SetTemplate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Template m_template;

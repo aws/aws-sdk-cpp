@@ -36,46 +36,19 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the inbound connection to permanently delete.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
-
-    /**
-     * <p>The ID of the inbound connection to permanently delete.</p>
-     */
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the inbound connection to permanently delete.</p>
-     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-
-    /**
-     * <p>The ID of the inbound connection to permanently delete.</p>
-     */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-
-    /**
-     * <p>The ID of the inbound connection to permanently delete.</p>
-     */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-
-    /**
-     * <p>The ID of the inbound connection to permanently delete.</p>
-     */
     inline DeleteInboundConnectionRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-
-    /**
-     * <p>The ID of the inbound connection to permanently delete.</p>
-     */
     inline DeleteInboundConnectionRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the inbound connection to permanently delete.</p>
-     */
     inline DeleteInboundConnectionRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectionId;

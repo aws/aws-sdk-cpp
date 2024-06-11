@@ -37,36 +37,17 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A key group.</p>
      */
     inline const KeyGroup& GetKeyGroup() const{ return m_keyGroup; }
-
-    /**
-     * <p>A key group.</p>
-     */
     inline bool KeyGroupHasBeenSet() const { return m_keyGroupHasBeenSet; }
-
-    /**
-     * <p>A key group.</p>
-     */
     inline void SetKeyGroup(const KeyGroup& value) { m_keyGroupHasBeenSet = true; m_keyGroup = value; }
-
-    /**
-     * <p>A key group.</p>
-     */
     inline void SetKeyGroup(KeyGroup&& value) { m_keyGroupHasBeenSet = true; m_keyGroup = std::move(value); }
-
-    /**
-     * <p>A key group.</p>
-     */
     inline KeyGroupSummary& WithKeyGroup(const KeyGroup& value) { SetKeyGroup(value); return *this;}
-
-    /**
-     * <p>A key group.</p>
-     */
     inline KeyGroupSummary& WithKeyGroup(KeyGroup&& value) { SetKeyGroup(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KeyGroup m_keyGroup;

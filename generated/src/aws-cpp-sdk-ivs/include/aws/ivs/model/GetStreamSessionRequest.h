@@ -32,103 +32,35 @@ namespace Model
     AWS_IVS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>ARN of the channel resource</p>
      */
     inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
-
-    /**
-     * <p>ARN of the channel resource</p>
-     */
     inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
-
-    /**
-     * <p>ARN of the channel resource</p>
-     */
     inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
-
-    /**
-     * <p>ARN of the channel resource</p>
-     */
     inline void SetChannelArn(Aws::String&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::move(value); }
-
-    /**
-     * <p>ARN of the channel resource</p>
-     */
     inline void SetChannelArn(const char* value) { m_channelArnHasBeenSet = true; m_channelArn.assign(value); }
-
-    /**
-     * <p>ARN of the channel resource</p>
-     */
     inline GetStreamSessionRequest& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-
-    /**
-     * <p>ARN of the channel resource</p>
-     */
     inline GetStreamSessionRequest& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN of the channel resource</p>
-     */
     inline GetStreamSessionRequest& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Unique identifier for a live or previously live stream in the specified
      * channel. If no <code>streamId</code> is provided, this returns the most recent
      * stream session for the channel, if it exists.</p>
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
-
-    /**
-     * <p>Unique identifier for a live or previously live stream in the specified
-     * channel. If no <code>streamId</code> is provided, this returns the most recent
-     * stream session for the channel, if it exists.</p>
-     */
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-
-    /**
-     * <p>Unique identifier for a live or previously live stream in the specified
-     * channel. If no <code>streamId</code> is provided, this returns the most recent
-     * stream session for the channel, if it exists.</p>
-     */
     inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
-
-    /**
-     * <p>Unique identifier for a live or previously live stream in the specified
-     * channel. If no <code>streamId</code> is provided, this returns the most recent
-     * stream session for the channel, if it exists.</p>
-     */
     inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
-
-    /**
-     * <p>Unique identifier for a live or previously live stream in the specified
-     * channel. If no <code>streamId</code> is provided, this returns the most recent
-     * stream session for the channel, if it exists.</p>
-     */
     inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
-
-    /**
-     * <p>Unique identifier for a live or previously live stream in the specified
-     * channel. If no <code>streamId</code> is provided, this returns the most recent
-     * stream session for the channel, if it exists.</p>
-     */
     inline GetStreamSessionRequest& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-
-    /**
-     * <p>Unique identifier for a live or previously live stream in the specified
-     * channel. If no <code>streamId</code> is provided, this returns the most recent
-     * stream session for the channel, if it exists.</p>
-     */
     inline GetStreamSessionRequest& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique identifier for a live or previously live stream in the specified
-     * channel. If no <code>streamId</code> is provided, this returns the most recent
-     * stream session for the channel, if it exists.</p>
-     */
     inline GetStreamSessionRequest& WithStreamId(const char* value) { SetStreamId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelArn;

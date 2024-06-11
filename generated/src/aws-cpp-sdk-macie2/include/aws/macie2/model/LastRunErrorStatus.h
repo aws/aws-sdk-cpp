@@ -42,6 +42,7 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether any account- or bucket-level access errors occurred when
      * the job ran. For a recurring job, this value indicates the error status of the
@@ -51,57 +52,12 @@ namespace Model
      * specified for the job.</p></li></ul>
      */
     inline const LastRunErrorStatusCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>Specifies whether any account- or bucket-level access errors occurred when
-     * the job ran. For a recurring job, this value indicates the error status of the
-     * job's most recent run. Possible values are:</p> <ul><li><p>ERROR - One or more
-     * errors occurred. Amazon Macie didn't process all the data specified for the
-     * job.</p></li> <li><p>NONE - No errors occurred. Macie processed all the data
-     * specified for the job.</p></li></ul>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>Specifies whether any account- or bucket-level access errors occurred when
-     * the job ran. For a recurring job, this value indicates the error status of the
-     * job's most recent run. Possible values are:</p> <ul><li><p>ERROR - One or more
-     * errors occurred. Amazon Macie didn't process all the data specified for the
-     * job.</p></li> <li><p>NONE - No errors occurred. Macie processed all the data
-     * specified for the job.</p></li></ul>
-     */
     inline void SetCode(const LastRunErrorStatusCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>Specifies whether any account- or bucket-level access errors occurred when
-     * the job ran. For a recurring job, this value indicates the error status of the
-     * job's most recent run. Possible values are:</p> <ul><li><p>ERROR - One or more
-     * errors occurred. Amazon Macie didn't process all the data specified for the
-     * job.</p></li> <li><p>NONE - No errors occurred. Macie processed all the data
-     * specified for the job.</p></li></ul>
-     */
     inline void SetCode(LastRunErrorStatusCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>Specifies whether any account- or bucket-level access errors occurred when
-     * the job ran. For a recurring job, this value indicates the error status of the
-     * job's most recent run. Possible values are:</p> <ul><li><p>ERROR - One or more
-     * errors occurred. Amazon Macie didn't process all the data specified for the
-     * job.</p></li> <li><p>NONE - No errors occurred. Macie processed all the data
-     * specified for the job.</p></li></ul>
-     */
     inline LastRunErrorStatus& WithCode(const LastRunErrorStatusCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>Specifies whether any account- or bucket-level access errors occurred when
-     * the job ran. For a recurring job, this value indicates the error status of the
-     * job's most recent run. Possible values are:</p> <ul><li><p>ERROR - One or more
-     * errors occurred. Amazon Macie didn't process all the data specified for the
-     * job.</p></li> <li><p>NONE - No errors occurred. Macie processed all the data
-     * specified for the job.</p></li></ul>
-     */
     inline LastRunErrorStatus& WithCode(LastRunErrorStatusCode&& value) { SetCode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LastRunErrorStatusCode m_code;

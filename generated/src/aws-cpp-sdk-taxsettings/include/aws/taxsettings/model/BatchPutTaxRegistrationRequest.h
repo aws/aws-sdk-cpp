@@ -34,88 +34,33 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> List of unique account identifiers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
-
-    /**
-     * <p> List of unique account identifiers.</p>
-     */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-
-    /**
-     * <p> List of unique account identifiers.</p>
-     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-
-    /**
-     * <p> List of unique account identifiers.</p>
-     */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-
-    /**
-     * <p> List of unique account identifiers.</p>
-     */
     inline BatchPutTaxRegistrationRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-
-    /**
-     * <p> List of unique account identifiers.</p>
-     */
     inline BatchPutTaxRegistrationRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-
-    /**
-     * <p> List of unique account identifiers.</p>
-     */
     inline BatchPutTaxRegistrationRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-    /**
-     * <p> List of unique account identifiers.</p>
-     */
     inline BatchPutTaxRegistrationRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> List of unique account identifiers.</p>
-     */
     inline BatchPutTaxRegistrationRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Your TRN information that will be stored to the accounts mentioned in
      * <code>putEntries</code>. </p>
      */
     inline const TaxRegistrationEntry& GetTaxRegistrationEntry() const{ return m_taxRegistrationEntry; }
-
-    /**
-     * <p>Your TRN information that will be stored to the accounts mentioned in
-     * <code>putEntries</code>. </p>
-     */
     inline bool TaxRegistrationEntryHasBeenSet() const { return m_taxRegistrationEntryHasBeenSet; }
-
-    /**
-     * <p>Your TRN information that will be stored to the accounts mentioned in
-     * <code>putEntries</code>. </p>
-     */
     inline void SetTaxRegistrationEntry(const TaxRegistrationEntry& value) { m_taxRegistrationEntryHasBeenSet = true; m_taxRegistrationEntry = value; }
-
-    /**
-     * <p>Your TRN information that will be stored to the accounts mentioned in
-     * <code>putEntries</code>. </p>
-     */
     inline void SetTaxRegistrationEntry(TaxRegistrationEntry&& value) { m_taxRegistrationEntryHasBeenSet = true; m_taxRegistrationEntry = std::move(value); }
-
-    /**
-     * <p>Your TRN information that will be stored to the accounts mentioned in
-     * <code>putEntries</code>. </p>
-     */
     inline BatchPutTaxRegistrationRequest& WithTaxRegistrationEntry(const TaxRegistrationEntry& value) { SetTaxRegistrationEntry(value); return *this;}
-
-    /**
-     * <p>Your TRN information that will be stored to the accounts mentioned in
-     * <code>putEntries</code>. </p>
-     */
     inline BatchPutTaxRegistrationRequest& WithTaxRegistrationEntry(TaxRegistrationEntry&& value) { SetTaxRegistrationEntry(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_accountIds;

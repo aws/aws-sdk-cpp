@@ -38,87 +38,33 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The resource policy.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The resource policy.</p>
-     */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-
-    /**
-     * <p>The resource policy.</p>
-     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-
-    /**
-     * <p>The resource policy.</p>
-     */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-
-    /**
-     * <p>The resource policy.</p>
-     */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-
-    /**
-     * <p>The resource policy.</p>
-     */
     inline ResourcePolicy& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The resource policy.</p>
-     */
     inline ResourcePolicy& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource policy.</p>
-     */
     inline ResourcePolicy& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline ResourcePolicy& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline ResourcePolicy& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline ResourcePolicy& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policy;

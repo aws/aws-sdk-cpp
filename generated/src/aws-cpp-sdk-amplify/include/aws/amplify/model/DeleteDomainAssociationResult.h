@@ -33,43 +33,25 @@ namespace Model
     AWS_AMPLIFY_API DeleteDomainAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const DomainAssociation& GetDomainAssociation() const{ return m_domainAssociation; }
-
-    
     inline void SetDomainAssociation(const DomainAssociation& value) { m_domainAssociation = value; }
-
-    
     inline void SetDomainAssociation(DomainAssociation&& value) { m_domainAssociation = std::move(value); }
-
-    
     inline DeleteDomainAssociationResult& WithDomainAssociation(const DomainAssociation& value) { SetDomainAssociation(value); return *this;}
-
-    
     inline DeleteDomainAssociationResult& WithDomainAssociation(DomainAssociation&& value) { SetDomainAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteDomainAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteDomainAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteDomainAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DomainAssociation m_domainAssociation;

@@ -38,77 +38,31 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current status of the alert manager. </p>
      */
     inline const AlertManagerDefinitionStatusCode& GetStatusCode() const{ return m_statusCode; }
-
-    /**
-     * <p>The current status of the alert manager. </p>
-     */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-
-    /**
-     * <p>The current status of the alert manager. </p>
-     */
     inline void SetStatusCode(const AlertManagerDefinitionStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-
-    /**
-     * <p>The current status of the alert manager. </p>
-     */
     inline void SetStatusCode(AlertManagerDefinitionStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-
-    /**
-     * <p>The current status of the alert manager. </p>
-     */
     inline AlertManagerDefinitionStatus& WithStatusCode(const AlertManagerDefinitionStatusCode& value) { SetStatusCode(value); return *this;}
-
-    /**
-     * <p>The current status of the alert manager. </p>
-     */
     inline AlertManagerDefinitionStatus& WithStatusCode(AlertManagerDefinitionStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If there is a failure, the reason for the failure.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
-
-    /**
-     * <p>If there is a failure, the reason for the failure.</p>
-     */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-
-    /**
-     * <p>If there is a failure, the reason for the failure.</p>
-     */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-
-    /**
-     * <p>If there is a failure, the reason for the failure.</p>
-     */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-
-    /**
-     * <p>If there is a failure, the reason for the failure.</p>
-     */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-
-    /**
-     * <p>If there is a failure, the reason for the failure.</p>
-     */
     inline AlertManagerDefinitionStatus& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-
-    /**
-     * <p>If there is a failure, the reason for the failure.</p>
-     */
     inline AlertManagerDefinitionStatus& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-
-    /**
-     * <p>If there is a failure, the reason for the failure.</p>
-     */
     inline AlertManagerDefinitionStatus& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
-
+    ///@}
   private:
 
     AlertManagerDefinitionStatusCode m_statusCode;

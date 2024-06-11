@@ -39,73 +39,30 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The service software update options for a domain.</p>
      */
     inline const SoftwareUpdateOptions& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>The service software update options for a domain.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p>The service software update options for a domain.</p>
-     */
     inline void SetOptions(const SoftwareUpdateOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>The service software update options for a domain.</p>
-     */
     inline void SetOptions(SoftwareUpdateOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>The service software update options for a domain.</p>
-     */
     inline SoftwareUpdateOptionsStatus& WithOptions(const SoftwareUpdateOptions& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>The service software update options for a domain.</p>
-     */
     inline SoftwareUpdateOptionsStatus& WithOptions(SoftwareUpdateOptions&& value) { SetOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of service software update options, including creation date and
      * last updated date.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of service software update options, including creation date and
-     * last updated date.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of service software update options, including creation date and
-     * last updated date.</p>
-     */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of service software update options, including creation date and
-     * last updated date.</p>
-     */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of service software update options, including creation date and
-     * last updated date.</p>
-     */
     inline SoftwareUpdateOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of service software update options, including creation date and
-     * last updated date.</p>
-     */
     inline SoftwareUpdateOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SoftwareUpdateOptions m_options;

@@ -38,92 +38,40 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Mapping of input channels to output channels, with appropriate gain adjustments.
      */
     inline const Aws::Vector<AudioChannelMapping>& GetChannelMappings() const{ return m_channelMappings; }
-
-    /**
-     * Mapping of input channels to output channels, with appropriate gain adjustments.
-     */
     inline bool ChannelMappingsHasBeenSet() const { return m_channelMappingsHasBeenSet; }
-
-    /**
-     * Mapping of input channels to output channels, with appropriate gain adjustments.
-     */
     inline void SetChannelMappings(const Aws::Vector<AudioChannelMapping>& value) { m_channelMappingsHasBeenSet = true; m_channelMappings = value; }
-
-    /**
-     * Mapping of input channels to output channels, with appropriate gain adjustments.
-     */
     inline void SetChannelMappings(Aws::Vector<AudioChannelMapping>&& value) { m_channelMappingsHasBeenSet = true; m_channelMappings = std::move(value); }
-
-    /**
-     * Mapping of input channels to output channels, with appropriate gain adjustments.
-     */
     inline RemixSettings& WithChannelMappings(const Aws::Vector<AudioChannelMapping>& value) { SetChannelMappings(value); return *this;}
-
-    /**
-     * Mapping of input channels to output channels, with appropriate gain adjustments.
-     */
     inline RemixSettings& WithChannelMappings(Aws::Vector<AudioChannelMapping>&& value) { SetChannelMappings(std::move(value)); return *this;}
-
-    /**
-     * Mapping of input channels to output channels, with appropriate gain adjustments.
-     */
     inline RemixSettings& AddChannelMappings(const AudioChannelMapping& value) { m_channelMappingsHasBeenSet = true; m_channelMappings.push_back(value); return *this; }
-
-    /**
-     * Mapping of input channels to output channels, with appropriate gain adjustments.
-     */
     inline RemixSettings& AddChannelMappings(AudioChannelMapping&& value) { m_channelMappingsHasBeenSet = true; m_channelMappings.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * Number of input channels to be used.
      */
     inline int GetChannelsIn() const{ return m_channelsIn; }
-
-    /**
-     * Number of input channels to be used.
-     */
     inline bool ChannelsInHasBeenSet() const { return m_channelsInHasBeenSet; }
-
-    /**
-     * Number of input channels to be used.
-     */
     inline void SetChannelsIn(int value) { m_channelsInHasBeenSet = true; m_channelsIn = value; }
-
-    /**
-     * Number of input channels to be used.
-     */
     inline RemixSettings& WithChannelsIn(int value) { SetChannelsIn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Number of output channels to be produced.
 Valid values: 1, 2, 4, 6, 8
      */
     inline int GetChannelsOut() const{ return m_channelsOut; }
-
-    /**
-     * Number of output channels to be produced.
-Valid values: 1, 2, 4, 6, 8
-     */
     inline bool ChannelsOutHasBeenSet() const { return m_channelsOutHasBeenSet; }
-
-    /**
-     * Number of output channels to be produced.
-Valid values: 1, 2, 4, 6, 8
-     */
     inline void SetChannelsOut(int value) { m_channelsOutHasBeenSet = true; m_channelsOut = value; }
-
-    /**
-     * Number of output channels to be produced.
-Valid values: 1, 2, 4, 6, 8
-     */
     inline RemixSettings& WithChannelsOut(int value) { SetChannelsOut(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AudioChannelMapping> m_channelMappings;

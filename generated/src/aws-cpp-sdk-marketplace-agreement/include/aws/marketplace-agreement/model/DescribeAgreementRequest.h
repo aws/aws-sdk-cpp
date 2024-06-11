@@ -34,46 +34,19 @@ namespace Model
     AWS_AGREEMENTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the agreement.</p>
      */
     inline const Aws::String& GetAgreementId() const{ return m_agreementId; }
-
-    /**
-     * <p>The unique identifier of the agreement.</p>
-     */
     inline bool AgreementIdHasBeenSet() const { return m_agreementIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the agreement.</p>
-     */
     inline void SetAgreementId(const Aws::String& value) { m_agreementIdHasBeenSet = true; m_agreementId = value; }
-
-    /**
-     * <p>The unique identifier of the agreement.</p>
-     */
     inline void SetAgreementId(Aws::String&& value) { m_agreementIdHasBeenSet = true; m_agreementId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the agreement.</p>
-     */
     inline void SetAgreementId(const char* value) { m_agreementIdHasBeenSet = true; m_agreementId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the agreement.</p>
-     */
     inline DescribeAgreementRequest& WithAgreementId(const Aws::String& value) { SetAgreementId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the agreement.</p>
-     */
     inline DescribeAgreementRequest& WithAgreementId(Aws::String&& value) { SetAgreementId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the agreement.</p>
-     */
     inline DescribeAgreementRequest& WithAgreementId(const char* value) { SetAgreementId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agreementId;

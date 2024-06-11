@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The simple cluster marker of the cluster marker.</p>
      */
     inline const SimpleClusterMarker& GetSimpleClusterMarker() const{ return m_simpleClusterMarker; }
-
-    /**
-     * <p>The simple cluster marker of the cluster marker.</p>
-     */
     inline bool SimpleClusterMarkerHasBeenSet() const { return m_simpleClusterMarkerHasBeenSet; }
-
-    /**
-     * <p>The simple cluster marker of the cluster marker.</p>
-     */
     inline void SetSimpleClusterMarker(const SimpleClusterMarker& value) { m_simpleClusterMarkerHasBeenSet = true; m_simpleClusterMarker = value; }
-
-    /**
-     * <p>The simple cluster marker of the cluster marker.</p>
-     */
     inline void SetSimpleClusterMarker(SimpleClusterMarker&& value) { m_simpleClusterMarkerHasBeenSet = true; m_simpleClusterMarker = std::move(value); }
-
-    /**
-     * <p>The simple cluster marker of the cluster marker.</p>
-     */
     inline ClusterMarker& WithSimpleClusterMarker(const SimpleClusterMarker& value) { SetSimpleClusterMarker(value); return *this;}
-
-    /**
-     * <p>The simple cluster marker of the cluster marker.</p>
-     */
     inline ClusterMarker& WithSimpleClusterMarker(SimpleClusterMarker&& value) { SetSimpleClusterMarker(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SimpleClusterMarker m_simpleClusterMarker;

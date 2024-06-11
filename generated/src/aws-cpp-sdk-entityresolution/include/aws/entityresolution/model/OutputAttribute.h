@@ -40,75 +40,30 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Enables the ability to hash the column values in the output.</p>
      */
     inline bool GetHashed() const{ return m_hashed; }
-
-    /**
-     * <p>Enables the ability to hash the column values in the output.</p>
-     */
     inline bool HashedHasBeenSet() const { return m_hashedHasBeenSet; }
-
-    /**
-     * <p>Enables the ability to hash the column values in the output.</p>
-     */
     inline void SetHashed(bool value) { m_hashedHasBeenSet = true; m_hashed = value; }
-
-    /**
-     * <p>Enables the ability to hash the column values in the output.</p>
-     */
     inline OutputAttribute& WithHashed(bool value) { SetHashed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A name of a column to be written to the output. This must be an
      * <code>InputField</code> name in the schema mapping.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A name of a column to be written to the output. This must be an
-     * <code>InputField</code> name in the schema mapping.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A name of a column to be written to the output. This must be an
-     * <code>InputField</code> name in the schema mapping.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A name of a column to be written to the output. This must be an
-     * <code>InputField</code> name in the schema mapping.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A name of a column to be written to the output. This must be an
-     * <code>InputField</code> name in the schema mapping.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A name of a column to be written to the output. This must be an
-     * <code>InputField</code> name in the schema mapping.</p>
-     */
     inline OutputAttribute& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A name of a column to be written to the output. This must be an
-     * <code>InputField</code> name in the schema mapping.</p>
-     */
     inline OutputAttribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name of a column to be written to the output. This must be an
-     * <code>InputField</code> name in the schema mapping.</p>
-     */
     inline OutputAttribute& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     bool m_hashed;

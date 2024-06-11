@@ -32,54 +32,20 @@ namespace Model
     AWS_SUPPORTAPP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
      * <code>T012ABCDEFG</code>.</p>
      */
     inline const Aws::String& GetTeamId() const{ return m_teamId; }
-
-    /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
-     * <code>T012ABCDEFG</code>.</p>
-     */
     inline bool TeamIdHasBeenSet() const { return m_teamIdHasBeenSet; }
-
-    /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
-     * <code>T012ABCDEFG</code>.</p>
-     */
     inline void SetTeamId(const Aws::String& value) { m_teamIdHasBeenSet = true; m_teamId = value; }
-
-    /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
-     * <code>T012ABCDEFG</code>.</p>
-     */
     inline void SetTeamId(Aws::String&& value) { m_teamIdHasBeenSet = true; m_teamId = std::move(value); }
-
-    /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
-     * <code>T012ABCDEFG</code>.</p>
-     */
     inline void SetTeamId(const char* value) { m_teamIdHasBeenSet = true; m_teamId.assign(value); }
-
-    /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
-     * <code>T012ABCDEFG</code>.</p>
-     */
     inline DeleteSlackWorkspaceConfigurationRequest& WithTeamId(const Aws::String& value) { SetTeamId(value); return *this;}
-
-    /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
-     * <code>T012ABCDEFG</code>.</p>
-     */
     inline DeleteSlackWorkspaceConfigurationRequest& WithTeamId(Aws::String&& value) { SetTeamId(std::move(value)); return *this;}
-
-    /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
-     * <code>T012ABCDEFG</code>.</p>
-     */
     inline DeleteSlackWorkspaceConfigurationRequest& WithTeamId(const char* value) { SetTeamId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_teamId;

@@ -39,53 +39,27 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API CancelElasticsearchServiceSoftwareUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The current status of the Elasticsearch service software update.</p>
      */
     inline const ServiceSoftwareOptions& GetServiceSoftwareOptions() const{ return m_serviceSoftwareOptions; }
-
-    /**
-     * <p>The current status of the Elasticsearch service software update.</p>
-     */
     inline void SetServiceSoftwareOptions(const ServiceSoftwareOptions& value) { m_serviceSoftwareOptions = value; }
-
-    /**
-     * <p>The current status of the Elasticsearch service software update.</p>
-     */
     inline void SetServiceSoftwareOptions(ServiceSoftwareOptions&& value) { m_serviceSoftwareOptions = std::move(value); }
-
-    /**
-     * <p>The current status of the Elasticsearch service software update.</p>
-     */
     inline CancelElasticsearchServiceSoftwareUpdateResult& WithServiceSoftwareOptions(const ServiceSoftwareOptions& value) { SetServiceSoftwareOptions(value); return *this;}
-
-    /**
-     * <p>The current status of the Elasticsearch service software update.</p>
-     */
     inline CancelElasticsearchServiceSoftwareUpdateResult& WithServiceSoftwareOptions(ServiceSoftwareOptions&& value) { SetServiceSoftwareOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CancelElasticsearchServiceSoftwareUpdateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CancelElasticsearchServiceSoftwareUpdateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CancelElasticsearchServiceSoftwareUpdateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceSoftwareOptions m_serviceSoftwareOptions;

@@ -41,51 +41,20 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates the supported NitroTPM versions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedVersions() const{ return m_supportedVersions; }
-
-    /**
-     * <p>Indicates the supported NitroTPM versions.</p>
-     */
     inline bool SupportedVersionsHasBeenSet() const { return m_supportedVersionsHasBeenSet; }
-
-    /**
-     * <p>Indicates the supported NitroTPM versions.</p>
-     */
     inline void SetSupportedVersions(const Aws::Vector<Aws::String>& value) { m_supportedVersionsHasBeenSet = true; m_supportedVersions = value; }
-
-    /**
-     * <p>Indicates the supported NitroTPM versions.</p>
-     */
     inline void SetSupportedVersions(Aws::Vector<Aws::String>&& value) { m_supportedVersionsHasBeenSet = true; m_supportedVersions = std::move(value); }
-
-    /**
-     * <p>Indicates the supported NitroTPM versions.</p>
-     */
     inline NitroTpmInfo& WithSupportedVersions(const Aws::Vector<Aws::String>& value) { SetSupportedVersions(value); return *this;}
-
-    /**
-     * <p>Indicates the supported NitroTPM versions.</p>
-     */
     inline NitroTpmInfo& WithSupportedVersions(Aws::Vector<Aws::String>&& value) { SetSupportedVersions(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates the supported NitroTPM versions.</p>
-     */
     inline NitroTpmInfo& AddSupportedVersions(const Aws::String& value) { m_supportedVersionsHasBeenSet = true; m_supportedVersions.push_back(value); return *this; }
-
-    /**
-     * <p>Indicates the supported NitroTPM versions.</p>
-     */
     inline NitroTpmInfo& AddSupportedVersions(Aws::String&& value) { m_supportedVersionsHasBeenSet = true; m_supportedVersions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Indicates the supported NitroTPM versions.</p>
-     */
     inline NitroTpmInfo& AddSupportedVersions(const char* value) { m_supportedVersionsHasBeenSet = true; m_supportedVersions.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_supportedVersions;

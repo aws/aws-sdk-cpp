@@ -36,148 +36,49 @@ namespace Model
     AWS_CONNECTPARTICIPANT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Type of connection information required. If you need
      * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
      * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
      */
     inline const Aws::Vector<ConnectionType>& GetType() const{ return m_type; }
-
-    /**
-     * <p>Type of connection information required. If you need
-     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
-     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Type of connection information required. If you need
-     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
-     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
-     */
     inline void SetType(const Aws::Vector<ConnectionType>& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Type of connection information required. If you need
-     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
-     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
-     */
     inline void SetType(Aws::Vector<ConnectionType>&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Type of connection information required. If you need
-     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
-     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
-     */
     inline CreateParticipantConnectionRequest& WithType(const Aws::Vector<ConnectionType>& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Type of connection information required. If you need
-     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
-     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
-     */
     inline CreateParticipantConnectionRequest& WithType(Aws::Vector<ConnectionType>&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>Type of connection information required. If you need
-     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
-     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
-     */
     inline CreateParticipantConnectionRequest& AddType(const ConnectionType& value) { m_typeHasBeenSet = true; m_type.push_back(value); return *this; }
-
-    /**
-     * <p>Type of connection information required. If you need
-     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
-     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
-     */
     inline CreateParticipantConnectionRequest& AddType(ConnectionType&& value) { m_typeHasBeenSet = true; m_type.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>This is a header parameter.</p> <p>The ParticipantToken as obtained from <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
      * API response.</p>
      */
     inline const Aws::String& GetParticipantToken() const{ return m_participantToken; }
-
-    /**
-     * <p>This is a header parameter.</p> <p>The ParticipantToken as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-     * API response.</p>
-     */
     inline bool ParticipantTokenHasBeenSet() const { return m_participantTokenHasBeenSet; }
-
-    /**
-     * <p>This is a header parameter.</p> <p>The ParticipantToken as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-     * API response.</p>
-     */
     inline void SetParticipantToken(const Aws::String& value) { m_participantTokenHasBeenSet = true; m_participantToken = value; }
-
-    /**
-     * <p>This is a header parameter.</p> <p>The ParticipantToken as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-     * API response.</p>
-     */
     inline void SetParticipantToken(Aws::String&& value) { m_participantTokenHasBeenSet = true; m_participantToken = std::move(value); }
-
-    /**
-     * <p>This is a header parameter.</p> <p>The ParticipantToken as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-     * API response.</p>
-     */
     inline void SetParticipantToken(const char* value) { m_participantTokenHasBeenSet = true; m_participantToken.assign(value); }
-
-    /**
-     * <p>This is a header parameter.</p> <p>The ParticipantToken as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-     * API response.</p>
-     */
     inline CreateParticipantConnectionRequest& WithParticipantToken(const Aws::String& value) { SetParticipantToken(value); return *this;}
-
-    /**
-     * <p>This is a header parameter.</p> <p>The ParticipantToken as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-     * API response.</p>
-     */
     inline CreateParticipantConnectionRequest& WithParticipantToken(Aws::String&& value) { SetParticipantToken(std::move(value)); return *this;}
-
-    /**
-     * <p>This is a header parameter.</p> <p>The ParticipantToken as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-     * API response.</p>
-     */
     inline CreateParticipantConnectionRequest& WithParticipantToken(const char* value) { SetParticipantToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Amazon Connect Participant is used to mark the participant as connected for
      * customer participant in message streaming, as well as for agent or manager
      * participant in non-streaming chats.</p>
      */
     inline bool GetConnectParticipant() const{ return m_connectParticipant; }
-
-    /**
-     * <p>Amazon Connect Participant is used to mark the participant as connected for
-     * customer participant in message streaming, as well as for agent or manager
-     * participant in non-streaming chats.</p>
-     */
     inline bool ConnectParticipantHasBeenSet() const { return m_connectParticipantHasBeenSet; }
-
-    /**
-     * <p>Amazon Connect Participant is used to mark the participant as connected for
-     * customer participant in message streaming, as well as for agent or manager
-     * participant in non-streaming chats.</p>
-     */
     inline void SetConnectParticipant(bool value) { m_connectParticipantHasBeenSet = true; m_connectParticipant = value; }
-
-    /**
-     * <p>Amazon Connect Participant is used to mark the participant as connected for
-     * customer participant in message streaming, as well as for agent or manager
-     * participant in non-streaming chats.</p>
-     */
     inline CreateParticipantConnectionRequest& WithConnectParticipant(bool value) { SetConnectParticipant(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ConnectionType> m_type;

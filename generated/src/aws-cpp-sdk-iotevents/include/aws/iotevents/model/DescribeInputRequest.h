@@ -32,46 +32,19 @@ namespace Model
     AWS_IOTEVENTS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the input.</p>
      */
     inline const Aws::String& GetInputName() const{ return m_inputName; }
-
-    /**
-     * <p>The name of the input.</p>
-     */
     inline bool InputNameHasBeenSet() const { return m_inputNameHasBeenSet; }
-
-    /**
-     * <p>The name of the input.</p>
-     */
     inline void SetInputName(const Aws::String& value) { m_inputNameHasBeenSet = true; m_inputName = value; }
-
-    /**
-     * <p>The name of the input.</p>
-     */
     inline void SetInputName(Aws::String&& value) { m_inputNameHasBeenSet = true; m_inputName = std::move(value); }
-
-    /**
-     * <p>The name of the input.</p>
-     */
     inline void SetInputName(const char* value) { m_inputNameHasBeenSet = true; m_inputName.assign(value); }
-
-    /**
-     * <p>The name of the input.</p>
-     */
     inline DescribeInputRequest& WithInputName(const Aws::String& value) { SetInputName(value); return *this;}
-
-    /**
-     * <p>The name of the input.</p>
-     */
     inline DescribeInputRequest& WithInputName(Aws::String&& value) { SetInputName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the input.</p>
-     */
     inline DescribeInputRequest& WithInputName(const char* value) { SetInputName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_inputName;

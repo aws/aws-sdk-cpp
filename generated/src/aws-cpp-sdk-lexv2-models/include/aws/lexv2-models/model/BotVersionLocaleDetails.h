@@ -37,46 +37,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The version of a bot used for a bot locale.</p>
      */
     inline const Aws::String& GetSourceBotVersion() const{ return m_sourceBotVersion; }
-
-    /**
-     * <p>The version of a bot used for a bot locale.</p>
-     */
     inline bool SourceBotVersionHasBeenSet() const { return m_sourceBotVersionHasBeenSet; }
-
-    /**
-     * <p>The version of a bot used for a bot locale.</p>
-     */
     inline void SetSourceBotVersion(const Aws::String& value) { m_sourceBotVersionHasBeenSet = true; m_sourceBotVersion = value; }
-
-    /**
-     * <p>The version of a bot used for a bot locale.</p>
-     */
     inline void SetSourceBotVersion(Aws::String&& value) { m_sourceBotVersionHasBeenSet = true; m_sourceBotVersion = std::move(value); }
-
-    /**
-     * <p>The version of a bot used for a bot locale.</p>
-     */
     inline void SetSourceBotVersion(const char* value) { m_sourceBotVersionHasBeenSet = true; m_sourceBotVersion.assign(value); }
-
-    /**
-     * <p>The version of a bot used for a bot locale.</p>
-     */
     inline BotVersionLocaleDetails& WithSourceBotVersion(const Aws::String& value) { SetSourceBotVersion(value); return *this;}
-
-    /**
-     * <p>The version of a bot used for a bot locale.</p>
-     */
     inline BotVersionLocaleDetails& WithSourceBotVersion(Aws::String&& value) { SetSourceBotVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of a bot used for a bot locale.</p>
-     */
     inline BotVersionLocaleDetails& WithSourceBotVersion(const char* value) { SetSourceBotVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceBotVersion;

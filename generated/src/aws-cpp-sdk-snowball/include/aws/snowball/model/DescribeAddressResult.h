@@ -33,58 +33,28 @@ namespace Model
     AWS_SNOWBALL_API DescribeAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The address that you want the Snow device(s) associated with a specific job
      * to be shipped to.</p>
      */
     inline const Address& GetAddress() const{ return m_address; }
-
-    /**
-     * <p>The address that you want the Snow device(s) associated with a specific job
-     * to be shipped to.</p>
-     */
     inline void SetAddress(const Address& value) { m_address = value; }
-
-    /**
-     * <p>The address that you want the Snow device(s) associated with a specific job
-     * to be shipped to.</p>
-     */
     inline void SetAddress(Address&& value) { m_address = std::move(value); }
-
-    /**
-     * <p>The address that you want the Snow device(s) associated with a specific job
-     * to be shipped to.</p>
-     */
     inline DescribeAddressResult& WithAddress(const Address& value) { SetAddress(value); return *this;}
-
-    /**
-     * <p>The address that you want the Snow device(s) associated with a specific job
-     * to be shipped to.</p>
-     */
     inline DescribeAddressResult& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAddressResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAddressResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAddressResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Address m_address;

@@ -38,6 +38,7 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The edition of Amazon Managed Blockchain that the network uses. For more
      * information, see <a
@@ -45,47 +46,12 @@ namespace Model
      * Blockchain Pricing</a>.</p>
      */
     inline const Edition& GetEdition() const{ return m_edition; }
-
-    /**
-     * <p>The edition of Amazon Managed Blockchain that the network uses. For more
-     * information, see <a
-     * href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed
-     * Blockchain Pricing</a>.</p>
-     */
     inline bool EditionHasBeenSet() const { return m_editionHasBeenSet; }
-
-    /**
-     * <p>The edition of Amazon Managed Blockchain that the network uses. For more
-     * information, see <a
-     * href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed
-     * Blockchain Pricing</a>.</p>
-     */
     inline void SetEdition(const Edition& value) { m_editionHasBeenSet = true; m_edition = value; }
-
-    /**
-     * <p>The edition of Amazon Managed Blockchain that the network uses. For more
-     * information, see <a
-     * href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed
-     * Blockchain Pricing</a>.</p>
-     */
     inline void SetEdition(Edition&& value) { m_editionHasBeenSet = true; m_edition = std::move(value); }
-
-    /**
-     * <p>The edition of Amazon Managed Blockchain that the network uses. For more
-     * information, see <a
-     * href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed
-     * Blockchain Pricing</a>.</p>
-     */
     inline NetworkFabricConfiguration& WithEdition(const Edition& value) { SetEdition(value); return *this;}
-
-    /**
-     * <p>The edition of Amazon Managed Blockchain that the network uses. For more
-     * information, see <a
-     * href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed
-     * Blockchain Pricing</a>.</p>
-     */
     inline NetworkFabricConfiguration& WithEdition(Edition&& value) { SetEdition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Edition m_edition;

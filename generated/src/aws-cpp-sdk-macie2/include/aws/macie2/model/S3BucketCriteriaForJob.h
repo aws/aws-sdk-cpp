@@ -39,79 +39,31 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The property- and tag-based conditions that determine which buckets to
      * exclude from the job.</p>
      */
     inline const CriteriaBlockForJob& GetExcludes() const{ return m_excludes; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * exclude from the job.</p>
-     */
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * exclude from the job.</p>
-     */
     inline void SetExcludes(const CriteriaBlockForJob& value) { m_excludesHasBeenSet = true; m_excludes = value; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * exclude from the job.</p>
-     */
     inline void SetExcludes(CriteriaBlockForJob&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * exclude from the job.</p>
-     */
     inline S3BucketCriteriaForJob& WithExcludes(const CriteriaBlockForJob& value) { SetExcludes(value); return *this;}
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * exclude from the job.</p>
-     */
     inline S3BucketCriteriaForJob& WithExcludes(CriteriaBlockForJob&& value) { SetExcludes(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The property- and tag-based conditions that determine which buckets to
      * include in the job.</p>
      */
     inline const CriteriaBlockForJob& GetIncludes() const{ return m_includes; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * include in the job.</p>
-     */
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * include in the job.</p>
-     */
     inline void SetIncludes(const CriteriaBlockForJob& value) { m_includesHasBeenSet = true; m_includes = value; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * include in the job.</p>
-     */
     inline void SetIncludes(CriteriaBlockForJob&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * include in the job.</p>
-     */
     inline S3BucketCriteriaForJob& WithIncludes(const CriteriaBlockForJob& value) { SetIncludes(value); return *this;}
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * include in the job.</p>
-     */
     inline S3BucketCriteriaForJob& WithIncludes(CriteriaBlockForJob&& value) { SetIncludes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CriteriaBlockForJob m_excludes;

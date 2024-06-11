@@ -41,100 +41,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon DocumentDB resource that the tags are removed from. This value is
      * an Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are removed from. This value is
-     * an Amazon Resource Name (ARN).</p>
-     */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are removed from. This value is
-     * an Amazon Resource Name (ARN).</p>
-     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are removed from. This value is
-     * an Amazon Resource Name (ARN).</p>
-     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are removed from. This value is
-     * an Amazon Resource Name (ARN).</p>
-     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are removed from. This value is
-     * an Amazon Resource Name (ARN).</p>
-     */
     inline RemoveTagsFromResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are removed from. This value is
-     * an Amazon Resource Name (ARN).</p>
-     */
     inline RemoveTagsFromResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are removed from. This value is
-     * an Amazon Resource Name (ARN).</p>
-     */
     inline RemoveTagsFromResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tag key (name) of the tag to be removed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
-
-    /**
-     * <p>The tag key (name) of the tag to be removed.</p>
-     */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-
-    /**
-     * <p>The tag key (name) of the tag to be removed.</p>
-     */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
-
-    /**
-     * <p>The tag key (name) of the tag to be removed.</p>
-     */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
-
-    /**
-     * <p>The tag key (name) of the tag to be removed.</p>
-     */
     inline RemoveTagsFromResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
-
-    /**
-     * <p>The tag key (name) of the tag to be removed.</p>
-     */
     inline RemoveTagsFromResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag key (name) of the tag to be removed.</p>
-     */
     inline RemoveTagsFromResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
-    /**
-     * <p>The tag key (name) of the tag to be removed.</p>
-     */
     inline RemoveTagsFromResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The tag key (name) of the tag to be removed.</p>
-     */
     inline RemoveTagsFromResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceName;

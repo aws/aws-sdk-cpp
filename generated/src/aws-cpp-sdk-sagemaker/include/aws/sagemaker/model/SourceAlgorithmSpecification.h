@@ -39,46 +39,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of the algorithms that were used to create a model package.</p>
      */
     inline const Aws::Vector<SourceAlgorithm>& GetSourceAlgorithms() const{ return m_sourceAlgorithms; }
-
-    /**
-     * <p>A list of the algorithms that were used to create a model package.</p>
-     */
     inline bool SourceAlgorithmsHasBeenSet() const { return m_sourceAlgorithmsHasBeenSet; }
-
-    /**
-     * <p>A list of the algorithms that were used to create a model package.</p>
-     */
     inline void SetSourceAlgorithms(const Aws::Vector<SourceAlgorithm>& value) { m_sourceAlgorithmsHasBeenSet = true; m_sourceAlgorithms = value; }
-
-    /**
-     * <p>A list of the algorithms that were used to create a model package.</p>
-     */
     inline void SetSourceAlgorithms(Aws::Vector<SourceAlgorithm>&& value) { m_sourceAlgorithmsHasBeenSet = true; m_sourceAlgorithms = std::move(value); }
-
-    /**
-     * <p>A list of the algorithms that were used to create a model package.</p>
-     */
     inline SourceAlgorithmSpecification& WithSourceAlgorithms(const Aws::Vector<SourceAlgorithm>& value) { SetSourceAlgorithms(value); return *this;}
-
-    /**
-     * <p>A list of the algorithms that were used to create a model package.</p>
-     */
     inline SourceAlgorithmSpecification& WithSourceAlgorithms(Aws::Vector<SourceAlgorithm>&& value) { SetSourceAlgorithms(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the algorithms that were used to create a model package.</p>
-     */
     inline SourceAlgorithmSpecification& AddSourceAlgorithms(const SourceAlgorithm& value) { m_sourceAlgorithmsHasBeenSet = true; m_sourceAlgorithms.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the algorithms that were used to create a model package.</p>
-     */
     inline SourceAlgorithmSpecification& AddSourceAlgorithms(SourceAlgorithm&& value) { m_sourceAlgorithmsHasBeenSet = true; m_sourceAlgorithms.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<SourceAlgorithm> m_sourceAlgorithms;

@@ -40,67 +40,29 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies that WAF should block requests by default. </p>
      */
     inline const BlockAction& GetBlock() const{ return m_block; }
-
-    /**
-     * <p>Specifies that WAF should block requests by default. </p>
-     */
     inline bool BlockHasBeenSet() const { return m_blockHasBeenSet; }
-
-    /**
-     * <p>Specifies that WAF should block requests by default. </p>
-     */
     inline void SetBlock(const BlockAction& value) { m_blockHasBeenSet = true; m_block = value; }
-
-    /**
-     * <p>Specifies that WAF should block requests by default. </p>
-     */
     inline void SetBlock(BlockAction&& value) { m_blockHasBeenSet = true; m_block = std::move(value); }
-
-    /**
-     * <p>Specifies that WAF should block requests by default. </p>
-     */
     inline DefaultAction& WithBlock(const BlockAction& value) { SetBlock(value); return *this;}
-
-    /**
-     * <p>Specifies that WAF should block requests by default. </p>
-     */
     inline DefaultAction& WithBlock(BlockAction&& value) { SetBlock(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies that WAF should allow requests by default.</p>
      */
     inline const AllowAction& GetAllow() const{ return m_allow; }
-
-    /**
-     * <p>Specifies that WAF should allow requests by default.</p>
-     */
     inline bool AllowHasBeenSet() const { return m_allowHasBeenSet; }
-
-    /**
-     * <p>Specifies that WAF should allow requests by default.</p>
-     */
     inline void SetAllow(const AllowAction& value) { m_allowHasBeenSet = true; m_allow = value; }
-
-    /**
-     * <p>Specifies that WAF should allow requests by default.</p>
-     */
     inline void SetAllow(AllowAction&& value) { m_allowHasBeenSet = true; m_allow = std::move(value); }
-
-    /**
-     * <p>Specifies that WAF should allow requests by default.</p>
-     */
     inline DefaultAction& WithAllow(const AllowAction& value) { SetAllow(value); return *this;}
-
-    /**
-     * <p>Specifies that WAF should allow requests by default.</p>
-     */
     inline DefaultAction& WithAllow(AllowAction&& value) { SetAllow(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BlockAction m_block;

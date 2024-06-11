@@ -35,136 +35,48 @@ namespace Model
     AWS_DEADLINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique token which the server uses to recognize retries of the same
      * request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline DeleteFleetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline DeleteFleetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
     inline DeleteFleetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The farm ID of the farm to remove from the fleet.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
-
-    /**
-     * <p>The farm ID of the farm to remove from the fleet.</p>
-     */
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-
-    /**
-     * <p>The farm ID of the farm to remove from the fleet.</p>
-     */
     inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-
-    /**
-     * <p>The farm ID of the farm to remove from the fleet.</p>
-     */
     inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-
-    /**
-     * <p>The farm ID of the farm to remove from the fleet.</p>
-     */
     inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-
-    /**
-     * <p>The farm ID of the farm to remove from the fleet.</p>
-     */
     inline DeleteFleetRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-
-    /**
-     * <p>The farm ID of the farm to remove from the fleet.</p>
-     */
     inline DeleteFleetRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-
-    /**
-     * <p>The farm ID of the farm to remove from the fleet.</p>
-     */
     inline DeleteFleetRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The fleet ID of the fleet to delete.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-
-    /**
-     * <p>The fleet ID of the fleet to delete.</p>
-     */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-
-    /**
-     * <p>The fleet ID of the fleet to delete.</p>
-     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-
-    /**
-     * <p>The fleet ID of the fleet to delete.</p>
-     */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-
-    /**
-     * <p>The fleet ID of the fleet to delete.</p>
-     */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-
-    /**
-     * <p>The fleet ID of the fleet to delete.</p>
-     */
     inline DeleteFleetRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-
-    /**
-     * <p>The fleet ID of the fleet to delete.</p>
-     */
     inline DeleteFleetRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The fleet ID of the fleet to delete.</p>
-     */
     inline DeleteFleetRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

@@ -42,71 +42,30 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Used to indicate that a principal or resource is not specified. This can be
      * used to search for policies that are not associated with a specific principal or
      * resource.</p>
      */
     inline bool GetUnspecified() const{ return m_unspecified; }
-
-    /**
-     * <p>Used to indicate that a principal or resource is not specified. This can be
-     * used to search for policies that are not associated with a specific principal or
-     * resource.</p>
-     */
     inline bool UnspecifiedHasBeenSet() const { return m_unspecifiedHasBeenSet; }
-
-    /**
-     * <p>Used to indicate that a principal or resource is not specified. This can be
-     * used to search for policies that are not associated with a specific principal or
-     * resource.</p>
-     */
     inline void SetUnspecified(bool value) { m_unspecifiedHasBeenSet = true; m_unspecified = value; }
-
-    /**
-     * <p>Used to indicate that a principal or resource is not specified. This can be
-     * used to search for policies that are not associated with a specific principal or
-     * resource.</p>
-     */
     inline EntityReference& WithUnspecified(bool value) { SetUnspecified(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the entity. It can consist of either an EntityType and
      * EntityId, a principal, or a resource.</p>
      */
     inline const EntityIdentifier& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>The identifier of the entity. It can consist of either an EntityType and
-     * EntityId, a principal, or a resource.</p>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the entity. It can consist of either an EntityType and
-     * EntityId, a principal, or a resource.</p>
-     */
     inline void SetIdentifier(const EntityIdentifier& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p>The identifier of the entity. It can consist of either an EntityType and
-     * EntityId, a principal, or a resource.</p>
-     */
     inline void SetIdentifier(EntityIdentifier&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the entity. It can consist of either an EntityType and
-     * EntityId, a principal, or a resource.</p>
-     */
     inline EntityReference& WithIdentifier(const EntityIdentifier& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the entity. It can consist of either an EntityType and
-     * EntityId, a principal, or a resource.</p>
-     */
     inline EntityReference& WithIdentifier(EntityIdentifier&& value) { SetIdentifier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_unspecified;

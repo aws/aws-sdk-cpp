@@ -35,26 +35,15 @@ namespace Model
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of the timestamp, in the Unix epoch format.</p>
      */
     inline long long GetTimeInMillis() const{ return m_timeInMillis; }
-
-    /**
-     * <p>The value of the timestamp, in the Unix epoch format.</p>
-     */
     inline bool TimeInMillisHasBeenSet() const { return m_timeInMillisHasBeenSet; }
-
-    /**
-     * <p>The value of the timestamp, in the Unix epoch format.</p>
-     */
     inline void SetTimeInMillis(long long value) { m_timeInMillisHasBeenSet = true; m_timeInMillis = value; }
-
-    /**
-     * <p>The value of the timestamp, in the Unix epoch format.</p>
-     */
     inline TimestampValue& WithTimeInMillis(long long value) { SetTimeInMillis(value); return *this;}
-
+    ///@}
   private:
 
     long long m_timeInMillis;

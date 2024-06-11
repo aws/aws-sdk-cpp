@@ -41,47 +41,21 @@ namespace Model
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the remedial action.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>Describes the remedial action.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>Describes the remedial action.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>Describes the remedial action.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>Describes the remedial action.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>Describes the remedial action.</p>
-     */
     inline FMSPolicyUpdateFirewallCreationConfigAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>Describes the remedial action.</p>
-     */
     inline FMSPolicyUpdateFirewallCreationConfigAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the remedial action.</p>
-     */
     inline FMSPolicyUpdateFirewallCreationConfigAction& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A <code>FirewallCreationConfig</code> that you can copy into your current
      * policy's <a
@@ -89,63 +63,14 @@ namespace Model
      * in order to remedy scope violations.</p>
      */
     inline const Aws::String& GetFirewallCreationConfig() const{ return m_firewallCreationConfig; }
-
-    /**
-     * <p>A <code>FirewallCreationConfig</code> that you can copy into your current
-     * policy's <a
-     * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a>
-     * in order to remedy scope violations.</p>
-     */
     inline bool FirewallCreationConfigHasBeenSet() const { return m_firewallCreationConfigHasBeenSet; }
-
-    /**
-     * <p>A <code>FirewallCreationConfig</code> that you can copy into your current
-     * policy's <a
-     * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a>
-     * in order to remedy scope violations.</p>
-     */
     inline void SetFirewallCreationConfig(const Aws::String& value) { m_firewallCreationConfigHasBeenSet = true; m_firewallCreationConfig = value; }
-
-    /**
-     * <p>A <code>FirewallCreationConfig</code> that you can copy into your current
-     * policy's <a
-     * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a>
-     * in order to remedy scope violations.</p>
-     */
     inline void SetFirewallCreationConfig(Aws::String&& value) { m_firewallCreationConfigHasBeenSet = true; m_firewallCreationConfig = std::move(value); }
-
-    /**
-     * <p>A <code>FirewallCreationConfig</code> that you can copy into your current
-     * policy's <a
-     * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a>
-     * in order to remedy scope violations.</p>
-     */
     inline void SetFirewallCreationConfig(const char* value) { m_firewallCreationConfigHasBeenSet = true; m_firewallCreationConfig.assign(value); }
-
-    /**
-     * <p>A <code>FirewallCreationConfig</code> that you can copy into your current
-     * policy's <a
-     * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a>
-     * in order to remedy scope violations.</p>
-     */
     inline FMSPolicyUpdateFirewallCreationConfigAction& WithFirewallCreationConfig(const Aws::String& value) { SetFirewallCreationConfig(value); return *this;}
-
-    /**
-     * <p>A <code>FirewallCreationConfig</code> that you can copy into your current
-     * policy's <a
-     * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a>
-     * in order to remedy scope violations.</p>
-     */
     inline FMSPolicyUpdateFirewallCreationConfigAction& WithFirewallCreationConfig(Aws::String&& value) { SetFirewallCreationConfig(std::move(value)); return *this;}
-
-    /**
-     * <p>A <code>FirewallCreationConfig</code> that you can copy into your current
-     * policy's <a
-     * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a>
-     * in order to remedy scope violations.</p>
-     */
     inline FMSPolicyUpdateFirewallCreationConfigAction& WithFirewallCreationConfig(const char* value) { SetFirewallCreationConfig(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_description;

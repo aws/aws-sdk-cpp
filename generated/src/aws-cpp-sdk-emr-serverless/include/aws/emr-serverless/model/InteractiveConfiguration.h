@@ -36,55 +36,27 @@ namespace Model
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Enables you to connect an application to Amazon EMR Studio to run interactive
      * workloads in a notebook.</p>
      */
     inline bool GetStudioEnabled() const{ return m_studioEnabled; }
-
-    /**
-     * <p>Enables you to connect an application to Amazon EMR Studio to run interactive
-     * workloads in a notebook.</p>
-     */
     inline bool StudioEnabledHasBeenSet() const { return m_studioEnabledHasBeenSet; }
-
-    /**
-     * <p>Enables you to connect an application to Amazon EMR Studio to run interactive
-     * workloads in a notebook.</p>
-     */
     inline void SetStudioEnabled(bool value) { m_studioEnabledHasBeenSet = true; m_studioEnabled = value; }
-
-    /**
-     * <p>Enables you to connect an application to Amazon EMR Studio to run interactive
-     * workloads in a notebook.</p>
-     */
     inline InteractiveConfiguration& WithStudioEnabled(bool value) { SetStudioEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Enables an Apache Livy endpoint that you can connect to and run interactive
      * jobs.</p>
      */
     inline bool GetLivyEndpointEnabled() const{ return m_livyEndpointEnabled; }
-
-    /**
-     * <p>Enables an Apache Livy endpoint that you can connect to and run interactive
-     * jobs.</p>
-     */
     inline bool LivyEndpointEnabledHasBeenSet() const { return m_livyEndpointEnabledHasBeenSet; }
-
-    /**
-     * <p>Enables an Apache Livy endpoint that you can connect to and run interactive
-     * jobs.</p>
-     */
     inline void SetLivyEndpointEnabled(bool value) { m_livyEndpointEnabledHasBeenSet = true; m_livyEndpointEnabled = value; }
-
-    /**
-     * <p>Enables an Apache Livy endpoint that you can connect to and run interactive
-     * jobs.</p>
-     */
     inline InteractiveConfiguration& WithLivyEndpointEnabled(bool value) { SetLivyEndpointEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_studioEnabled;

@@ -41,69 +41,22 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>Endpoints for accessing the Controller.</p>
          
      */
     inline const Aws::Vector<Aws::String>& GetEndpoints() const{ return m_endpoints; }
-
-    /**
-     * 
-            <p>Endpoints for accessing the Controller.</p>
-         
-     */
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-
-    /**
-     * 
-            <p>Endpoints for accessing the Controller.</p>
-         
-     */
     inline void SetEndpoints(const Aws::Vector<Aws::String>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-
-    /**
-     * 
-            <p>Endpoints for accessing the Controller.</p>
-         
-     */
     inline void SetEndpoints(Aws::Vector<Aws::String>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-
-    /**
-     * 
-            <p>Endpoints for accessing the Controller.</p>
-         
-     */
     inline ControllerNodeInfo& WithEndpoints(const Aws::Vector<Aws::String>& value) { SetEndpoints(value); return *this;}
-
-    /**
-     * 
-            <p>Endpoints for accessing the Controller.</p>
-         
-     */
     inline ControllerNodeInfo& WithEndpoints(Aws::Vector<Aws::String>&& value) { SetEndpoints(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>Endpoints for accessing the Controller.</p>
-         
-     */
     inline ControllerNodeInfo& AddEndpoints(const Aws::String& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-
-    /**
-     * 
-            <p>Endpoints for accessing the Controller.</p>
-         
-     */
     inline ControllerNodeInfo& AddEndpoints(Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
-
-    /**
-     * 
-            <p>Endpoints for accessing the Controller.</p>
-         
-     */
     inline ControllerNodeInfo& AddEndpoints(const char* value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_endpoints;

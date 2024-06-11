@@ -39,37 +39,23 @@ namespace Model
     AWS_CLOUDSEARCH_API DefineExpressionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const ExpressionStatus& GetExpression() const{ return m_expression; }
-
-    
     inline void SetExpression(const ExpressionStatus& value) { m_expression = value; }
-
-    
     inline void SetExpression(ExpressionStatus&& value) { m_expression = std::move(value); }
-
-    
     inline DefineExpressionResult& WithExpression(const ExpressionStatus& value) { SetExpression(value); return *this;}
-
-    
     inline DefineExpressionResult& WithExpression(ExpressionStatus&& value) { SetExpression(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DefineExpressionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DefineExpressionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ExpressionStatus m_expression;

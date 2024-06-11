@@ -32,135 +32,55 @@ namespace Model
     AWS_DATAZONE_API AcceptPredictionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the asset.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
-
-    /**
-     * <p>The ID of the asset.</p>
-     */
     inline void SetAssetId(const Aws::String& value) { m_assetId = value; }
-
-    /**
-     * <p>The ID of the asset.</p>
-     */
     inline void SetAssetId(Aws::String&& value) { m_assetId = std::move(value); }
-
-    /**
-     * <p>The ID of the asset.</p>
-     */
     inline void SetAssetId(const char* value) { m_assetId.assign(value); }
-
-    /**
-     * <p>The ID of the asset.</p>
-     */
     inline AcceptPredictionsResult& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-
-    /**
-     * <p>The ID of the asset.</p>
-     */
     inline AcceptPredictionsResult& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the asset.</p>
-     */
     inline AcceptPredictionsResult& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the Amazon DataZone domain.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
-
-    /**
-     * <p>The identifier of the Amazon DataZone domain.</p>
-     */
     inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
-
-    /**
-     * <p>The identifier of the Amazon DataZone domain.</p>
-     */
     inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon DataZone domain.</p>
-     */
     inline void SetDomainId(const char* value) { m_domainId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon DataZone domain.</p>
-     */
     inline AcceptPredictionsResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon DataZone domain.</p>
-     */
     inline AcceptPredictionsResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon DataZone domain.</p>
-     */
     inline AcceptPredictionsResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The revision that is to be made to the asset.</p>
      */
     inline const Aws::String& GetRevision() const{ return m_revision; }
-
-    /**
-     * <p>The revision that is to be made to the asset.</p>
-     */
     inline void SetRevision(const Aws::String& value) { m_revision = value; }
-
-    /**
-     * <p>The revision that is to be made to the asset.</p>
-     */
     inline void SetRevision(Aws::String&& value) { m_revision = std::move(value); }
-
-    /**
-     * <p>The revision that is to be made to the asset.</p>
-     */
     inline void SetRevision(const char* value) { m_revision.assign(value); }
-
-    /**
-     * <p>The revision that is to be made to the asset.</p>
-     */
     inline AcceptPredictionsResult& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
-
-    /**
-     * <p>The revision that is to be made to the asset.</p>
-     */
     inline AcceptPredictionsResult& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
-
-    /**
-     * <p>The revision that is to be made to the asset.</p>
-     */
     inline AcceptPredictionsResult& WithRevision(const char* value) { SetRevision(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AcceptPredictionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AcceptPredictionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AcceptPredictionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assetId;

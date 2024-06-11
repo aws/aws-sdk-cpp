@@ -38,46 +38,19 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The error code for a given file system association status.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code for a given file system association status.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code for a given file system association status.</p>
-     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code for a given file system association status.</p>
-     */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code for a given file system association status.</p>
-     */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-
-    /**
-     * <p>The error code for a given file system association status.</p>
-     */
     inline FileSystemAssociationStatusDetail& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code for a given file system association status.</p>
-     */
     inline FileSystemAssociationStatusDetail& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The error code for a given file system association status.</p>
-     */
     inline FileSystemAssociationStatusDetail& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_errorCode;

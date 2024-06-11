@@ -37,54 +37,20 @@ namespace Model
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An expression that denotes when to trigger the scheduled query run. This can
      * be a cron expression or a rate expression. </p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
-
-    /**
-     * <p>An expression that denotes when to trigger the scheduled query run. This can
-     * be a cron expression or a rate expression. </p>
-     */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-
-    /**
-     * <p>An expression that denotes when to trigger the scheduled query run. This can
-     * be a cron expression or a rate expression. </p>
-     */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-
-    /**
-     * <p>An expression that denotes when to trigger the scheduled query run. This can
-     * be a cron expression or a rate expression. </p>
-     */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-
-    /**
-     * <p>An expression that denotes when to trigger the scheduled query run. This can
-     * be a cron expression or a rate expression. </p>
-     */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-
-    /**
-     * <p>An expression that denotes when to trigger the scheduled query run. This can
-     * be a cron expression or a rate expression. </p>
-     */
     inline ScheduleConfiguration& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-
-    /**
-     * <p>An expression that denotes when to trigger the scheduled query run. This can
-     * be a cron expression or a rate expression. </p>
-     */
     inline ScheduleConfiguration& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>An expression that denotes when to trigger the scheduled query run. This can
-     * be a cron expression or a rate expression. </p>
-     */
     inline ScheduleConfiguration& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scheduleExpression;

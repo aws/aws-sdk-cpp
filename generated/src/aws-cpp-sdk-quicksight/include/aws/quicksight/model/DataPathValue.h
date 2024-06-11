@@ -38,118 +38,45 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field ID of the field that needs to be sorted.</p>
      */
     inline const Aws::String& GetFieldId() const{ return m_fieldId; }
-
-    /**
-     * <p>The field ID of the field that needs to be sorted.</p>
-     */
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-
-    /**
-     * <p>The field ID of the field that needs to be sorted.</p>
-     */
     inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-
-    /**
-     * <p>The field ID of the field that needs to be sorted.</p>
-     */
     inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-
-    /**
-     * <p>The field ID of the field that needs to be sorted.</p>
-     */
     inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-
-    /**
-     * <p>The field ID of the field that needs to be sorted.</p>
-     */
     inline DataPathValue& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-
-    /**
-     * <p>The field ID of the field that needs to be sorted.</p>
-     */
     inline DataPathValue& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-
-    /**
-     * <p>The field ID of the field that needs to be sorted.</p>
-     */
     inline DataPathValue& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The actual value of the field that needs to be sorted.</p>
      */
     inline const Aws::String& GetFieldValue() const{ return m_fieldValue; }
-
-    /**
-     * <p>The actual value of the field that needs to be sorted.</p>
-     */
     inline bool FieldValueHasBeenSet() const { return m_fieldValueHasBeenSet; }
-
-    /**
-     * <p>The actual value of the field that needs to be sorted.</p>
-     */
     inline void SetFieldValue(const Aws::String& value) { m_fieldValueHasBeenSet = true; m_fieldValue = value; }
-
-    /**
-     * <p>The actual value of the field that needs to be sorted.</p>
-     */
     inline void SetFieldValue(Aws::String&& value) { m_fieldValueHasBeenSet = true; m_fieldValue = std::move(value); }
-
-    /**
-     * <p>The actual value of the field that needs to be sorted.</p>
-     */
     inline void SetFieldValue(const char* value) { m_fieldValueHasBeenSet = true; m_fieldValue.assign(value); }
-
-    /**
-     * <p>The actual value of the field that needs to be sorted.</p>
-     */
     inline DataPathValue& WithFieldValue(const Aws::String& value) { SetFieldValue(value); return *this;}
-
-    /**
-     * <p>The actual value of the field that needs to be sorted.</p>
-     */
     inline DataPathValue& WithFieldValue(Aws::String&& value) { SetFieldValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The actual value of the field that needs to be sorted.</p>
-     */
     inline DataPathValue& WithFieldValue(const char* value) { SetFieldValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type configuration of the field.</p>
      */
     inline const DataPathType& GetDataPathType() const{ return m_dataPathType; }
-
-    /**
-     * <p>The type configuration of the field.</p>
-     */
     inline bool DataPathTypeHasBeenSet() const { return m_dataPathTypeHasBeenSet; }
-
-    /**
-     * <p>The type configuration of the field.</p>
-     */
     inline void SetDataPathType(const DataPathType& value) { m_dataPathTypeHasBeenSet = true; m_dataPathType = value; }
-
-    /**
-     * <p>The type configuration of the field.</p>
-     */
     inline void SetDataPathType(DataPathType&& value) { m_dataPathTypeHasBeenSet = true; m_dataPathType = std::move(value); }
-
-    /**
-     * <p>The type configuration of the field.</p>
-     */
     inline DataPathValue& WithDataPathType(const DataPathType& value) { SetDataPathType(value); return *this;}
-
-    /**
-     * <p>The type configuration of the field.</p>
-     */
     inline DataPathValue& WithDataPathType(DataPathType&& value) { SetDataPathType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldId;

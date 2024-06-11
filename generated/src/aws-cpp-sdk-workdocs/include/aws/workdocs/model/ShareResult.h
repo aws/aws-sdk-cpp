@@ -39,231 +39,85 @@ namespace Model
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the principal.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
-
-    /**
-     * <p>The ID of the principal.</p>
-     */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the principal.</p>
-     */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-
-    /**
-     * <p>The ID of the principal.</p>
-     */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-
-    /**
-     * <p>The ID of the principal.</p>
-     */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-
-    /**
-     * <p>The ID of the principal.</p>
-     */
     inline ShareResult& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-
-    /**
-     * <p>The ID of the principal.</p>
-     */
     inline ShareResult& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the principal.</p>
-     */
     inline ShareResult& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the invited user.</p>
      */
     inline const Aws::String& GetInviteePrincipalId() const{ return m_inviteePrincipalId; }
-
-    /**
-     * <p>The ID of the invited user.</p>
-     */
     inline bool InviteePrincipalIdHasBeenSet() const { return m_inviteePrincipalIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the invited user.</p>
-     */
     inline void SetInviteePrincipalId(const Aws::String& value) { m_inviteePrincipalIdHasBeenSet = true; m_inviteePrincipalId = value; }
-
-    /**
-     * <p>The ID of the invited user.</p>
-     */
     inline void SetInviteePrincipalId(Aws::String&& value) { m_inviteePrincipalIdHasBeenSet = true; m_inviteePrincipalId = std::move(value); }
-
-    /**
-     * <p>The ID of the invited user.</p>
-     */
     inline void SetInviteePrincipalId(const char* value) { m_inviteePrincipalIdHasBeenSet = true; m_inviteePrincipalId.assign(value); }
-
-    /**
-     * <p>The ID of the invited user.</p>
-     */
     inline ShareResult& WithInviteePrincipalId(const Aws::String& value) { SetInviteePrincipalId(value); return *this;}
-
-    /**
-     * <p>The ID of the invited user.</p>
-     */
     inline ShareResult& WithInviteePrincipalId(Aws::String&& value) { SetInviteePrincipalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the invited user.</p>
-     */
     inline ShareResult& WithInviteePrincipalId(const char* value) { SetInviteePrincipalId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The role.</p>
      */
     inline const RoleType& GetRole() const{ return m_role; }
-
-    /**
-     * <p>The role.</p>
-     */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-
-    /**
-     * <p>The role.</p>
-     */
     inline void SetRole(const RoleType& value) { m_roleHasBeenSet = true; m_role = value; }
-
-    /**
-     * <p>The role.</p>
-     */
     inline void SetRole(RoleType&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-
-    /**
-     * <p>The role.</p>
-     */
     inline ShareResult& WithRole(const RoleType& value) { SetRole(value); return *this;}
-
-    /**
-     * <p>The role.</p>
-     */
     inline ShareResult& WithRole(RoleType&& value) { SetRole(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status.</p>
      */
     inline const ShareStatusType& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status.</p>
-     */
     inline void SetStatus(const ShareStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status.</p>
-     */
     inline void SetStatus(ShareStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status.</p>
-     */
     inline ShareResult& WithStatus(const ShareStatusType& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status.</p>
-     */
     inline ShareResult& WithStatus(ShareStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the resource that was shared.</p>
      */
     inline const Aws::String& GetShareId() const{ return m_shareId; }
-
-    /**
-     * <p>The ID of the resource that was shared.</p>
-     */
     inline bool ShareIdHasBeenSet() const { return m_shareIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the resource that was shared.</p>
-     */
     inline void SetShareId(const Aws::String& value) { m_shareIdHasBeenSet = true; m_shareId = value; }
-
-    /**
-     * <p>The ID of the resource that was shared.</p>
-     */
     inline void SetShareId(Aws::String&& value) { m_shareIdHasBeenSet = true; m_shareId = std::move(value); }
-
-    /**
-     * <p>The ID of the resource that was shared.</p>
-     */
     inline void SetShareId(const char* value) { m_shareIdHasBeenSet = true; m_shareId.assign(value); }
-
-    /**
-     * <p>The ID of the resource that was shared.</p>
-     */
     inline ShareResult& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-
-    /**
-     * <p>The ID of the resource that was shared.</p>
-     */
     inline ShareResult& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the resource that was shared.</p>
-     */
     inline ShareResult& WithShareId(const char* value) { SetShareId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status message.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline ShareResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>The status message.</p>
-     */
     inline ShareResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The status message.</p>
-     */
     inline ShareResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_principalId;

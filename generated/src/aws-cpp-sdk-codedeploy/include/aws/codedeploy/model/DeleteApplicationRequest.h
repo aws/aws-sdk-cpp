@@ -38,54 +38,20 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of an CodeDeploy application associated with the user or Amazon Web
      * Services account.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
-     * Services account.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
-     * Services account.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
-     * Services account.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
-     * Services account.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
-     * Services account.</p>
-     */
     inline DeleteApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
-     * Services account.</p>
-     */
     inline DeleteApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
-     * Services account.</p>
-     */
     inline DeleteApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

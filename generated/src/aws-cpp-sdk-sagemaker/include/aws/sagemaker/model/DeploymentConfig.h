@@ -40,6 +40,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Update policy for a blue/green deployment. If this update policy is
      * specified, SageMaker creates a new fleet during the deployment while maintaining
@@ -50,136 +51,38 @@ namespace Model
      * default.</p>
      */
     inline const BlueGreenUpdatePolicy& GetBlueGreenUpdatePolicy() const{ return m_blueGreenUpdatePolicy; }
-
-    /**
-     * <p>Update policy for a blue/green deployment. If this update policy is
-     * specified, SageMaker creates a new fleet during the deployment while maintaining
-     * the old fleet. SageMaker flips traffic to the new fleet according to the
-     * specified traffic routing configuration. Only one update policy should be used
-     * in the deployment configuration. If no update policy is specified, SageMaker
-     * uses a blue/green deployment strategy with all at once traffic shifting by
-     * default.</p>
-     */
     inline bool BlueGreenUpdatePolicyHasBeenSet() const { return m_blueGreenUpdatePolicyHasBeenSet; }
-
-    /**
-     * <p>Update policy for a blue/green deployment. If this update policy is
-     * specified, SageMaker creates a new fleet during the deployment while maintaining
-     * the old fleet. SageMaker flips traffic to the new fleet according to the
-     * specified traffic routing configuration. Only one update policy should be used
-     * in the deployment configuration. If no update policy is specified, SageMaker
-     * uses a blue/green deployment strategy with all at once traffic shifting by
-     * default.</p>
-     */
     inline void SetBlueGreenUpdatePolicy(const BlueGreenUpdatePolicy& value) { m_blueGreenUpdatePolicyHasBeenSet = true; m_blueGreenUpdatePolicy = value; }
-
-    /**
-     * <p>Update policy for a blue/green deployment. If this update policy is
-     * specified, SageMaker creates a new fleet during the deployment while maintaining
-     * the old fleet. SageMaker flips traffic to the new fleet according to the
-     * specified traffic routing configuration. Only one update policy should be used
-     * in the deployment configuration. If no update policy is specified, SageMaker
-     * uses a blue/green deployment strategy with all at once traffic shifting by
-     * default.</p>
-     */
     inline void SetBlueGreenUpdatePolicy(BlueGreenUpdatePolicy&& value) { m_blueGreenUpdatePolicyHasBeenSet = true; m_blueGreenUpdatePolicy = std::move(value); }
-
-    /**
-     * <p>Update policy for a blue/green deployment. If this update policy is
-     * specified, SageMaker creates a new fleet during the deployment while maintaining
-     * the old fleet. SageMaker flips traffic to the new fleet according to the
-     * specified traffic routing configuration. Only one update policy should be used
-     * in the deployment configuration. If no update policy is specified, SageMaker
-     * uses a blue/green deployment strategy with all at once traffic shifting by
-     * default.</p>
-     */
     inline DeploymentConfig& WithBlueGreenUpdatePolicy(const BlueGreenUpdatePolicy& value) { SetBlueGreenUpdatePolicy(value); return *this;}
-
-    /**
-     * <p>Update policy for a blue/green deployment. If this update policy is
-     * specified, SageMaker creates a new fleet during the deployment while maintaining
-     * the old fleet. SageMaker flips traffic to the new fleet according to the
-     * specified traffic routing configuration. Only one update policy should be used
-     * in the deployment configuration. If no update policy is specified, SageMaker
-     * uses a blue/green deployment strategy with all at once traffic shifting by
-     * default.</p>
-     */
     inline DeploymentConfig& WithBlueGreenUpdatePolicy(BlueGreenUpdatePolicy&& value) { SetBlueGreenUpdatePolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies a rolling deployment strategy for updating a SageMaker
      * endpoint.</p>
      */
     inline const RollingUpdatePolicy& GetRollingUpdatePolicy() const{ return m_rollingUpdatePolicy; }
-
-    /**
-     * <p>Specifies a rolling deployment strategy for updating a SageMaker
-     * endpoint.</p>
-     */
     inline bool RollingUpdatePolicyHasBeenSet() const { return m_rollingUpdatePolicyHasBeenSet; }
-
-    /**
-     * <p>Specifies a rolling deployment strategy for updating a SageMaker
-     * endpoint.</p>
-     */
     inline void SetRollingUpdatePolicy(const RollingUpdatePolicy& value) { m_rollingUpdatePolicyHasBeenSet = true; m_rollingUpdatePolicy = value; }
-
-    /**
-     * <p>Specifies a rolling deployment strategy for updating a SageMaker
-     * endpoint.</p>
-     */
     inline void SetRollingUpdatePolicy(RollingUpdatePolicy&& value) { m_rollingUpdatePolicyHasBeenSet = true; m_rollingUpdatePolicy = std::move(value); }
-
-    /**
-     * <p>Specifies a rolling deployment strategy for updating a SageMaker
-     * endpoint.</p>
-     */
     inline DeploymentConfig& WithRollingUpdatePolicy(const RollingUpdatePolicy& value) { SetRollingUpdatePolicy(value); return *this;}
-
-    /**
-     * <p>Specifies a rolling deployment strategy for updating a SageMaker
-     * endpoint.</p>
-     */
     inline DeploymentConfig& WithRollingUpdatePolicy(RollingUpdatePolicy&& value) { SetRollingUpdatePolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Automatic rollback configuration for handling endpoint deployment failures
      * and recovery.</p>
      */
     inline const AutoRollbackConfig& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
-
-    /**
-     * <p>Automatic rollback configuration for handling endpoint deployment failures
-     * and recovery.</p>
-     */
     inline bool AutoRollbackConfigurationHasBeenSet() const { return m_autoRollbackConfigurationHasBeenSet; }
-
-    /**
-     * <p>Automatic rollback configuration for handling endpoint deployment failures
-     * and recovery.</p>
-     */
     inline void SetAutoRollbackConfiguration(const AutoRollbackConfig& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
-
-    /**
-     * <p>Automatic rollback configuration for handling endpoint deployment failures
-     * and recovery.</p>
-     */
     inline void SetAutoRollbackConfiguration(AutoRollbackConfig&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = std::move(value); }
-
-    /**
-     * <p>Automatic rollback configuration for handling endpoint deployment failures
-     * and recovery.</p>
-     */
     inline DeploymentConfig& WithAutoRollbackConfiguration(const AutoRollbackConfig& value) { SetAutoRollbackConfiguration(value); return *this;}
-
-    /**
-     * <p>Automatic rollback configuration for handling endpoint deployment failures
-     * and recovery.</p>
-     */
     inline DeploymentConfig& WithAutoRollbackConfiguration(AutoRollbackConfig&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BlueGreenUpdatePolicy m_blueGreenUpdatePolicy;

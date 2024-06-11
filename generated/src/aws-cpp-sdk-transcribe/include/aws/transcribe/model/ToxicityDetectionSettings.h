@@ -40,62 +40,21 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> If you include <code>ToxicityDetection</code> in your transcription request,
      * you must also include <code>ToxicityCategories</code>. The only accepted value
      * for this parameter is <code>ALL</code>.</p>
      */
     inline const Aws::Vector<ToxicityCategory>& GetToxicityCategories() const{ return m_toxicityCategories; }
-
-    /**
-     * <p> If you include <code>ToxicityDetection</code> in your transcription request,
-     * you must also include <code>ToxicityCategories</code>. The only accepted value
-     * for this parameter is <code>ALL</code>.</p>
-     */
     inline bool ToxicityCategoriesHasBeenSet() const { return m_toxicityCategoriesHasBeenSet; }
-
-    /**
-     * <p> If you include <code>ToxicityDetection</code> in your transcription request,
-     * you must also include <code>ToxicityCategories</code>. The only accepted value
-     * for this parameter is <code>ALL</code>.</p>
-     */
     inline void SetToxicityCategories(const Aws::Vector<ToxicityCategory>& value) { m_toxicityCategoriesHasBeenSet = true; m_toxicityCategories = value; }
-
-    /**
-     * <p> If you include <code>ToxicityDetection</code> in your transcription request,
-     * you must also include <code>ToxicityCategories</code>. The only accepted value
-     * for this parameter is <code>ALL</code>.</p>
-     */
     inline void SetToxicityCategories(Aws::Vector<ToxicityCategory>&& value) { m_toxicityCategoriesHasBeenSet = true; m_toxicityCategories = std::move(value); }
-
-    /**
-     * <p> If you include <code>ToxicityDetection</code> in your transcription request,
-     * you must also include <code>ToxicityCategories</code>. The only accepted value
-     * for this parameter is <code>ALL</code>.</p>
-     */
     inline ToxicityDetectionSettings& WithToxicityCategories(const Aws::Vector<ToxicityCategory>& value) { SetToxicityCategories(value); return *this;}
-
-    /**
-     * <p> If you include <code>ToxicityDetection</code> in your transcription request,
-     * you must also include <code>ToxicityCategories</code>. The only accepted value
-     * for this parameter is <code>ALL</code>.</p>
-     */
     inline ToxicityDetectionSettings& WithToxicityCategories(Aws::Vector<ToxicityCategory>&& value) { SetToxicityCategories(std::move(value)); return *this;}
-
-    /**
-     * <p> If you include <code>ToxicityDetection</code> in your transcription request,
-     * you must also include <code>ToxicityCategories</code>. The only accepted value
-     * for this parameter is <code>ALL</code>.</p>
-     */
     inline ToxicityDetectionSettings& AddToxicityCategories(const ToxicityCategory& value) { m_toxicityCategoriesHasBeenSet = true; m_toxicityCategories.push_back(value); return *this; }
-
-    /**
-     * <p> If you include <code>ToxicityDetection</code> in your transcription request,
-     * you must also include <code>ToxicityCategories</code>. The only accepted value
-     * for this parameter is <code>ALL</code>.</p>
-     */
     inline ToxicityDetectionSettings& AddToxicityCategories(ToxicityCategory&& value) { m_toxicityCategoriesHasBeenSet = true; m_toxicityCategories.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ToxicityCategory> m_toxicityCategories;

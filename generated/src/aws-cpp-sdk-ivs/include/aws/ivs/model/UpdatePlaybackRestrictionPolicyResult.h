@@ -33,53 +33,27 @@ namespace Model
     AWS_IVS_API UpdatePlaybackRestrictionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Object specifying the updated policy.</p>
      */
     inline const PlaybackRestrictionPolicy& GetPlaybackRestrictionPolicy() const{ return m_playbackRestrictionPolicy; }
-
-    /**
-     * <p>Object specifying the updated policy.</p>
-     */
     inline void SetPlaybackRestrictionPolicy(const PlaybackRestrictionPolicy& value) { m_playbackRestrictionPolicy = value; }
-
-    /**
-     * <p>Object specifying the updated policy.</p>
-     */
     inline void SetPlaybackRestrictionPolicy(PlaybackRestrictionPolicy&& value) { m_playbackRestrictionPolicy = std::move(value); }
-
-    /**
-     * <p>Object specifying the updated policy.</p>
-     */
     inline UpdatePlaybackRestrictionPolicyResult& WithPlaybackRestrictionPolicy(const PlaybackRestrictionPolicy& value) { SetPlaybackRestrictionPolicy(value); return *this;}
-
-    /**
-     * <p>Object specifying the updated policy.</p>
-     */
     inline UpdatePlaybackRestrictionPolicyResult& WithPlaybackRestrictionPolicy(PlaybackRestrictionPolicy&& value) { SetPlaybackRestrictionPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdatePlaybackRestrictionPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdatePlaybackRestrictionPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdatePlaybackRestrictionPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PlaybackRestrictionPolicy m_playbackRestrictionPolicy;

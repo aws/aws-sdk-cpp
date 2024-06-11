@@ -34,46 +34,19 @@ namespace Model
     AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the proposal.</p>
      */
     inline const Aws::String& GetProposalId() const{ return m_proposalId; }
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline bool ProposalIdHasBeenSet() const { return m_proposalIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline void SetProposalId(const Aws::String& value) { m_proposalIdHasBeenSet = true; m_proposalId = value; }
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline void SetProposalId(Aws::String&& value) { m_proposalIdHasBeenSet = true; m_proposalId = std::move(value); }
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline void SetProposalId(const char* value) { m_proposalIdHasBeenSet = true; m_proposalId.assign(value); }
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline DeleteDirectConnectGatewayAssociationProposalRequest& WithProposalId(const Aws::String& value) { SetProposalId(value); return *this;}
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline DeleteDirectConnectGatewayAssociationProposalRequest& WithProposalId(Aws::String&& value) { SetProposalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline DeleteDirectConnectGatewayAssociationProposalRequest& WithProposalId(const char* value) { SetProposalId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_proposalId;

@@ -52,84 +52,34 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A collection of server process configurations that identify what server
      * processes to run on fleet computes.</p>
      */
     inline const Aws::Vector<ServerProcess>& GetServerProcesses() const{ return m_serverProcesses; }
-
-    /**
-     * <p>A collection of server process configurations that identify what server
-     * processes to run on fleet computes.</p>
-     */
     inline bool ServerProcessesHasBeenSet() const { return m_serverProcessesHasBeenSet; }
-
-    /**
-     * <p>A collection of server process configurations that identify what server
-     * processes to run on fleet computes.</p>
-     */
     inline void SetServerProcesses(const Aws::Vector<ServerProcess>& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = value; }
-
-    /**
-     * <p>A collection of server process configurations that identify what server
-     * processes to run on fleet computes.</p>
-     */
     inline void SetServerProcesses(Aws::Vector<ServerProcess>&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = std::move(value); }
-
-    /**
-     * <p>A collection of server process configurations that identify what server
-     * processes to run on fleet computes.</p>
-     */
     inline RuntimeConfiguration& WithServerProcesses(const Aws::Vector<ServerProcess>& value) { SetServerProcesses(value); return *this;}
-
-    /**
-     * <p>A collection of server process configurations that identify what server
-     * processes to run on fleet computes.</p>
-     */
     inline RuntimeConfiguration& WithServerProcesses(Aws::Vector<ServerProcess>&& value) { SetServerProcesses(std::move(value)); return *this;}
-
-    /**
-     * <p>A collection of server process configurations that identify what server
-     * processes to run on fleet computes.</p>
-     */
     inline RuntimeConfiguration& AddServerProcesses(const ServerProcess& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(value); return *this; }
-
-    /**
-     * <p>A collection of server process configurations that identify what server
-     * processes to run on fleet computes.</p>
-     */
     inline RuntimeConfiguration& AddServerProcesses(ServerProcess&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an
      * instance or container. This setting limits the instance resources that can be
      * used for new game activations at any one time.</p>
      */
     inline int GetMaxConcurrentGameSessionActivations() const{ return m_maxConcurrentGameSessionActivations; }
-
-    /**
-     * <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an
-     * instance or container. This setting limits the instance resources that can be
-     * used for new game activations at any one time.</p>
-     */
     inline bool MaxConcurrentGameSessionActivationsHasBeenSet() const { return m_maxConcurrentGameSessionActivationsHasBeenSet; }
-
-    /**
-     * <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an
-     * instance or container. This setting limits the instance resources that can be
-     * used for new game activations at any one time.</p>
-     */
     inline void SetMaxConcurrentGameSessionActivations(int value) { m_maxConcurrentGameSessionActivationsHasBeenSet = true; m_maxConcurrentGameSessionActivations = value; }
-
-    /**
-     * <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an
-     * instance or container. This setting limits the instance resources that can be
-     * used for new game activations at any one time.</p>
-     */
     inline RuntimeConfiguration& WithMaxConcurrentGameSessionActivations(int value) { SetMaxConcurrentGameSessionActivations(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum amount of time (in seconds) allowed to launch a new game session
      * and have it report ready to host players. During this time, the game session is
@@ -138,34 +88,10 @@ namespace Model
      * <code>TERMINATED</code>.</p>
      */
     inline int GetGameSessionActivationTimeoutSeconds() const{ return m_gameSessionActivationTimeoutSeconds; }
-
-    /**
-     * <p>The maximum amount of time (in seconds) allowed to launch a new game session
-     * and have it report ready to host players. During this time, the game session is
-     * in status <code>ACTIVATING</code>. If the game session does not become active
-     * before the timeout, it is ended and the game session status is changed to
-     * <code>TERMINATED</code>.</p>
-     */
     inline bool GameSessionActivationTimeoutSecondsHasBeenSet() const { return m_gameSessionActivationTimeoutSecondsHasBeenSet; }
-
-    /**
-     * <p>The maximum amount of time (in seconds) allowed to launch a new game session
-     * and have it report ready to host players. During this time, the game session is
-     * in status <code>ACTIVATING</code>. If the game session does not become active
-     * before the timeout, it is ended and the game session status is changed to
-     * <code>TERMINATED</code>.</p>
-     */
     inline void SetGameSessionActivationTimeoutSeconds(int value) { m_gameSessionActivationTimeoutSecondsHasBeenSet = true; m_gameSessionActivationTimeoutSeconds = value; }
-
-    /**
-     * <p>The maximum amount of time (in seconds) allowed to launch a new game session
-     * and have it report ready to host players. During this time, the game session is
-     * in status <code>ACTIVATING</code>. If the game session does not become active
-     * before the timeout, it is ended and the game session status is changed to
-     * <code>TERMINATED</code>.</p>
-     */
     inline RuntimeConfiguration& WithGameSessionActivationTimeoutSeconds(int value) { SetGameSessionActivationTimeoutSeconds(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ServerProcess> m_serverProcesses;

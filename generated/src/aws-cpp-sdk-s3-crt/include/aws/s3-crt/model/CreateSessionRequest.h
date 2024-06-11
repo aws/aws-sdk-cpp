@@ -46,6 +46,7 @@ namespace Model
      */
     AWS_S3CRT_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>Specifies the mode of the session that will be created, either
      * <code>ReadWrite</code> or <code>ReadOnly</code>. By default, a
@@ -57,148 +58,43 @@ namespace Model
      * <code>ListParts</code>, and <code>ListMultipartUploads</code>.</p>
      */
     inline const SessionMode& GetSessionMode() const{ return m_sessionMode; }
-
-    /**
-     * <p>Specifies the mode of the session that will be created, either
-     * <code>ReadWrite</code> or <code>ReadOnly</code>. By default, a
-     * <code>ReadWrite</code> session is created. A <code>ReadWrite</code> session is
-     * capable of executing all the Zonal endpoint APIs on a directory bucket. A
-     * <code>ReadOnly</code> session is constrained to execute the following Zonal
-     * endpoint APIs: <code>GetObject</code>, <code>HeadObject</code>,
-     * <code>ListObjectsV2</code>, <code>GetObjectAttributes</code>,
-     * <code>ListParts</code>, and <code>ListMultipartUploads</code>.</p>
-     */
     inline bool SessionModeHasBeenSet() const { return m_sessionModeHasBeenSet; }
-
-    /**
-     * <p>Specifies the mode of the session that will be created, either
-     * <code>ReadWrite</code> or <code>ReadOnly</code>. By default, a
-     * <code>ReadWrite</code> session is created. A <code>ReadWrite</code> session is
-     * capable of executing all the Zonal endpoint APIs on a directory bucket. A
-     * <code>ReadOnly</code> session is constrained to execute the following Zonal
-     * endpoint APIs: <code>GetObject</code>, <code>HeadObject</code>,
-     * <code>ListObjectsV2</code>, <code>GetObjectAttributes</code>,
-     * <code>ListParts</code>, and <code>ListMultipartUploads</code>.</p>
-     */
     inline void SetSessionMode(const SessionMode& value) { m_sessionModeHasBeenSet = true; m_sessionMode = value; }
-
-    /**
-     * <p>Specifies the mode of the session that will be created, either
-     * <code>ReadWrite</code> or <code>ReadOnly</code>. By default, a
-     * <code>ReadWrite</code> session is created. A <code>ReadWrite</code> session is
-     * capable of executing all the Zonal endpoint APIs on a directory bucket. A
-     * <code>ReadOnly</code> session is constrained to execute the following Zonal
-     * endpoint APIs: <code>GetObject</code>, <code>HeadObject</code>,
-     * <code>ListObjectsV2</code>, <code>GetObjectAttributes</code>,
-     * <code>ListParts</code>, and <code>ListMultipartUploads</code>.</p>
-     */
     inline void SetSessionMode(SessionMode&& value) { m_sessionModeHasBeenSet = true; m_sessionMode = std::move(value); }
-
-    /**
-     * <p>Specifies the mode of the session that will be created, either
-     * <code>ReadWrite</code> or <code>ReadOnly</code>. By default, a
-     * <code>ReadWrite</code> session is created. A <code>ReadWrite</code> session is
-     * capable of executing all the Zonal endpoint APIs on a directory bucket. A
-     * <code>ReadOnly</code> session is constrained to execute the following Zonal
-     * endpoint APIs: <code>GetObject</code>, <code>HeadObject</code>,
-     * <code>ListObjectsV2</code>, <code>GetObjectAttributes</code>,
-     * <code>ListParts</code>, and <code>ListMultipartUploads</code>.</p>
-     */
     inline CreateSessionRequest& WithSessionMode(const SessionMode& value) { SetSessionMode(value); return *this;}
-
-    /**
-     * <p>Specifies the mode of the session that will be created, either
-     * <code>ReadWrite</code> or <code>ReadOnly</code>. By default, a
-     * <code>ReadWrite</code> session is created. A <code>ReadWrite</code> session is
-     * capable of executing all the Zonal endpoint APIs on a directory bucket. A
-     * <code>ReadOnly</code> session is constrained to execute the following Zonal
-     * endpoint APIs: <code>GetObject</code>, <code>HeadObject</code>,
-     * <code>ListObjectsV2</code>, <code>GetObjectAttributes</code>,
-     * <code>ListParts</code>, and <code>ListMultipartUploads</code>.</p>
-     */
     inline CreateSessionRequest& WithSessionMode(SessionMode&& value) { SetSessionMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the bucket that you create a session for.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
-
-    /**
-     * <p>The name of the bucket that you create a session for.</p>
-     */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-
-    /**
-     * <p>The name of the bucket that you create a session for.</p>
-     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-
-    /**
-     * <p>The name of the bucket that you create a session for.</p>
-     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-
-    /**
-     * <p>The name of the bucket that you create a session for.</p>
-     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-
-    /**
-     * <p>The name of the bucket that you create a session for.</p>
-     */
     inline CreateSessionRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-
-    /**
-     * <p>The name of the bucket that you create a session for.</p>
-     */
     inline CreateSessionRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the bucket that you create a session for.</p>
-     */
     inline CreateSessionRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
-
-    
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
-
-    
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
-
-    
     inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
-
-    
     inline CreateSessionRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
-
-    
     inline CreateSessionRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
-
-    
     inline CreateSessionRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
-
-    
     inline CreateSessionRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-
-    
     inline CreateSessionRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-
-    
     inline CreateSessionRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
-
-    
     inline CreateSessionRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-
-    
     inline CreateSessionRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-
-    
     inline CreateSessionRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     SessionMode m_sessionMode;

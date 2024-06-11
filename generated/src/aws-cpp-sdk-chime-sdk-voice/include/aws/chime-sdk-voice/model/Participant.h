@@ -38,87 +38,33 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The participant's phone number.</p>
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
-
-    /**
-     * <p>The participant's phone number.</p>
-     */
     inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
-
-    /**
-     * <p>The participant's phone number.</p>
-     */
     inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
-
-    /**
-     * <p>The participant's phone number.</p>
-     */
     inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
-
-    /**
-     * <p>The participant's phone number.</p>
-     */
     inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
-
-    /**
-     * <p>The participant's phone number.</p>
-     */
     inline Participant& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
-
-    /**
-     * <p>The participant's phone number.</p>
-     */
     inline Participant& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
-
-    /**
-     * <p>The participant's phone number.</p>
-     */
     inline Participant& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The participant's proxy phone number.</p>
      */
     inline const Aws::String& GetProxyPhoneNumber() const{ return m_proxyPhoneNumber; }
-
-    /**
-     * <p>The participant's proxy phone number.</p>
-     */
     inline bool ProxyPhoneNumberHasBeenSet() const { return m_proxyPhoneNumberHasBeenSet; }
-
-    /**
-     * <p>The participant's proxy phone number.</p>
-     */
     inline void SetProxyPhoneNumber(const Aws::String& value) { m_proxyPhoneNumberHasBeenSet = true; m_proxyPhoneNumber = value; }
-
-    /**
-     * <p>The participant's proxy phone number.</p>
-     */
     inline void SetProxyPhoneNumber(Aws::String&& value) { m_proxyPhoneNumberHasBeenSet = true; m_proxyPhoneNumber = std::move(value); }
-
-    /**
-     * <p>The participant's proxy phone number.</p>
-     */
     inline void SetProxyPhoneNumber(const char* value) { m_proxyPhoneNumberHasBeenSet = true; m_proxyPhoneNumber.assign(value); }
-
-    /**
-     * <p>The participant's proxy phone number.</p>
-     */
     inline Participant& WithProxyPhoneNumber(const Aws::String& value) { SetProxyPhoneNumber(value); return *this;}
-
-    /**
-     * <p>The participant's proxy phone number.</p>
-     */
     inline Participant& WithProxyPhoneNumber(Aws::String&& value) { SetProxyPhoneNumber(std::move(value)); return *this;}
-
-    /**
-     * <p>The participant's proxy phone number.</p>
-     */
     inline Participant& WithProxyPhoneNumber(const char* value) { SetProxyPhoneNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_phoneNumber;

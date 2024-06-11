@@ -34,54 +34,20 @@ namespace Model
     AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) associated with the table you're importing
      * to. </p>
      */
     inline const Aws::String& GetImportArn() const{ return m_importArn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) associated with the table you're importing
-     * to. </p>
-     */
     inline bool ImportArnHasBeenSet() const { return m_importArnHasBeenSet; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) associated with the table you're importing
-     * to. </p>
-     */
     inline void SetImportArn(const Aws::String& value) { m_importArnHasBeenSet = true; m_importArn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) associated with the table you're importing
-     * to. </p>
-     */
     inline void SetImportArn(Aws::String&& value) { m_importArnHasBeenSet = true; m_importArn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) associated with the table you're importing
-     * to. </p>
-     */
     inline void SetImportArn(const char* value) { m_importArnHasBeenSet = true; m_importArn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) associated with the table you're importing
-     * to. </p>
-     */
     inline DescribeImportRequest& WithImportArn(const Aws::String& value) { SetImportArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) associated with the table you're importing
-     * to. </p>
-     */
     inline DescribeImportRequest& WithImportArn(Aws::String&& value) { SetImportArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) associated with the table you're importing
-     * to. </p>
-     */
     inline DescribeImportRequest& WithImportArn(const char* value) { SetImportArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_importArn;

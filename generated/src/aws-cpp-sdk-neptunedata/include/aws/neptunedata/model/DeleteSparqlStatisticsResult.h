@@ -33,108 +33,50 @@ namespace Model
     AWS_NEPTUNEDATA_API DeleteSparqlStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The HTTP response code: 200 if the delete was successful, or 204 if there
      * were no statistics to delete.</p>
      */
     inline int GetStatusCode() const{ return m_statusCode; }
-
-    /**
-     * <p>The HTTP response code: 200 if the delete was successful, or 204 if there
-     * were no statistics to delete.</p>
-     */
     inline void SetStatusCode(int value) { m_statusCode = value; }
-
-    /**
-     * <p>The HTTP response code: 200 if the delete was successful, or 204 if there
-     * were no statistics to delete.</p>
-     */
     inline DeleteSparqlStatisticsResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The cancel status.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The cancel status.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
-
-    /**
-     * <p>The cancel status.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The cancel status.</p>
-     */
     inline void SetStatus(const char* value) { m_status.assign(value); }
-
-    /**
-     * <p>The cancel status.</p>
-     */
     inline DeleteSparqlStatisticsResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The cancel status.</p>
-     */
     inline DeleteSparqlStatisticsResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The cancel status.</p>
-     */
     inline DeleteSparqlStatisticsResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The deletion payload.</p>
      */
     inline const DeleteStatisticsValueMap& GetPayload() const{ return m_payload; }
-
-    /**
-     * <p>The deletion payload.</p>
-     */
     inline void SetPayload(const DeleteStatisticsValueMap& value) { m_payload = value; }
-
-    /**
-     * <p>The deletion payload.</p>
-     */
     inline void SetPayload(DeleteStatisticsValueMap&& value) { m_payload = std::move(value); }
-
-    /**
-     * <p>The deletion payload.</p>
-     */
     inline DeleteSparqlStatisticsResult& WithPayload(const DeleteStatisticsValueMap& value) { SetPayload(value); return *this;}
-
-    /**
-     * <p>The deletion payload.</p>
-     */
     inline DeleteSparqlStatisticsResult& WithPayload(DeleteStatisticsValueMap&& value) { SetPayload(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteSparqlStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteSparqlStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteSparqlStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_statusCode;

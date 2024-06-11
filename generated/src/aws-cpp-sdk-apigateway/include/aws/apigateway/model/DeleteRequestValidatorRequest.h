@@ -36,87 +36,33 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline DeleteRequestValidatorRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline DeleteRequestValidatorRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline DeleteRequestValidatorRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the RequestValidator to be deleted.</p>
      */
     inline const Aws::String& GetRequestValidatorId() const{ return m_requestValidatorId; }
-
-    /**
-     * <p>The identifier of the RequestValidator to be deleted.</p>
-     */
     inline bool RequestValidatorIdHasBeenSet() const { return m_requestValidatorIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the RequestValidator to be deleted.</p>
-     */
     inline void SetRequestValidatorId(const Aws::String& value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId = value; }
-
-    /**
-     * <p>The identifier of the RequestValidator to be deleted.</p>
-     */
     inline void SetRequestValidatorId(Aws::String&& value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId = std::move(value); }
-
-    /**
-     * <p>The identifier of the RequestValidator to be deleted.</p>
-     */
     inline void SetRequestValidatorId(const char* value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId.assign(value); }
-
-    /**
-     * <p>The identifier of the RequestValidator to be deleted.</p>
-     */
     inline DeleteRequestValidatorRequest& WithRequestValidatorId(const Aws::String& value) { SetRequestValidatorId(value); return *this;}
-
-    /**
-     * <p>The identifier of the RequestValidator to be deleted.</p>
-     */
     inline DeleteRequestValidatorRequest& WithRequestValidatorId(Aws::String&& value) { SetRequestValidatorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the RequestValidator to be deleted.</p>
-     */
     inline DeleteRequestValidatorRequest& WithRequestValidatorId(const char* value) { SetRequestValidatorId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_restApiId;

@@ -36,87 +36,33 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An automatic tape creation policy consists of a list of automatic tape
      * creation rules. The rules determine when and how to automatically create new
      * tapes.</p>
      */
     inline const Aws::Vector<AutomaticTapeCreationRule>& GetAutomaticTapeCreationRules() const{ return m_automaticTapeCreationRules; }
-
-    /**
-     * <p>An automatic tape creation policy consists of a list of automatic tape
-     * creation rules. The rules determine when and how to automatically create new
-     * tapes.</p>
-     */
     inline bool AutomaticTapeCreationRulesHasBeenSet() const { return m_automaticTapeCreationRulesHasBeenSet; }
-
-    /**
-     * <p>An automatic tape creation policy consists of a list of automatic tape
-     * creation rules. The rules determine when and how to automatically create new
-     * tapes.</p>
-     */
     inline void SetAutomaticTapeCreationRules(const Aws::Vector<AutomaticTapeCreationRule>& value) { m_automaticTapeCreationRulesHasBeenSet = true; m_automaticTapeCreationRules = value; }
-
-    /**
-     * <p>An automatic tape creation policy consists of a list of automatic tape
-     * creation rules. The rules determine when and how to automatically create new
-     * tapes.</p>
-     */
     inline void SetAutomaticTapeCreationRules(Aws::Vector<AutomaticTapeCreationRule>&& value) { m_automaticTapeCreationRulesHasBeenSet = true; m_automaticTapeCreationRules = std::move(value); }
-
-    /**
-     * <p>An automatic tape creation policy consists of a list of automatic tape
-     * creation rules. The rules determine when and how to automatically create new
-     * tapes.</p>
-     */
     inline UpdateAutomaticTapeCreationPolicyRequest& WithAutomaticTapeCreationRules(const Aws::Vector<AutomaticTapeCreationRule>& value) { SetAutomaticTapeCreationRules(value); return *this;}
-
-    /**
-     * <p>An automatic tape creation policy consists of a list of automatic tape
-     * creation rules. The rules determine when and how to automatically create new
-     * tapes.</p>
-     */
     inline UpdateAutomaticTapeCreationPolicyRequest& WithAutomaticTapeCreationRules(Aws::Vector<AutomaticTapeCreationRule>&& value) { SetAutomaticTapeCreationRules(std::move(value)); return *this;}
-
-    /**
-     * <p>An automatic tape creation policy consists of a list of automatic tape
-     * creation rules. The rules determine when and how to automatically create new
-     * tapes.</p>
-     */
     inline UpdateAutomaticTapeCreationPolicyRequest& AddAutomaticTapeCreationRules(const AutomaticTapeCreationRule& value) { m_automaticTapeCreationRulesHasBeenSet = true; m_automaticTapeCreationRules.push_back(value); return *this; }
-
-    /**
-     * <p>An automatic tape creation policy consists of a list of automatic tape
-     * creation rules. The rules determine when and how to automatically create new
-     * tapes.</p>
-     */
     inline UpdateAutomaticTapeCreationPolicyRequest& AddAutomaticTapeCreationRules(AutomaticTapeCreationRule&& value) { m_automaticTapeCreationRulesHasBeenSet = true; m_automaticTapeCreationRules.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-
-    
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-
-    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-
-    
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-
-    
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-
-    
     inline UpdateAutomaticTapeCreationPolicyRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-
-    
     inline UpdateAutomaticTapeCreationPolicyRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-
-    
     inline UpdateAutomaticTapeCreationPolicyRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AutomaticTapeCreationRule> m_automaticTapeCreationRules;

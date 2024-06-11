@@ -38,36 +38,17 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the email attribute to evaluate.</p>
      */
     inline const ArchiveStringEmailAttribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The name of the email attribute to evaluate.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>The name of the email attribute to evaluate.</p>
-     */
     inline void SetAttribute(const ArchiveStringEmailAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>The name of the email attribute to evaluate.</p>
-     */
     inline void SetAttribute(ArchiveStringEmailAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The name of the email attribute to evaluate.</p>
-     */
     inline ArchiveStringToEvaluate& WithAttribute(const ArchiveStringEmailAttribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The name of the email attribute to evaluate.</p>
-     */
     inline ArchiveStringToEvaluate& WithAttribute(ArchiveStringEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ArchiveStringEmailAttribute m_attribute;

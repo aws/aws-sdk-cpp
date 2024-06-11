@@ -38,6 +38,7 @@ namespace Model
     AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The string that contains the search keywords, prefixes, and operators to
      * control the results that can be returned by a <a>Search</a> operation. For more
@@ -46,70 +47,14 @@ namespace Model
      * query syntax</a>.</p>
      */
     inline const Aws::String& GetFilterString() const{ return m_filterString; }
-
-    /**
-     * <p>The string that contains the search keywords, prefixes, and operators to
-     * control the results that can be returned by a <a>Search</a> operation. For more
-     * details, see <a
-     * href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search
-     * query syntax</a>.</p>
-     */
     inline bool FilterStringHasBeenSet() const { return m_filterStringHasBeenSet; }
-
-    /**
-     * <p>The string that contains the search keywords, prefixes, and operators to
-     * control the results that can be returned by a <a>Search</a> operation. For more
-     * details, see <a
-     * href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search
-     * query syntax</a>.</p>
-     */
     inline void SetFilterString(const Aws::String& value) { m_filterStringHasBeenSet = true; m_filterString = value; }
-
-    /**
-     * <p>The string that contains the search keywords, prefixes, and operators to
-     * control the results that can be returned by a <a>Search</a> operation. For more
-     * details, see <a
-     * href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search
-     * query syntax</a>.</p>
-     */
     inline void SetFilterString(Aws::String&& value) { m_filterStringHasBeenSet = true; m_filterString = std::move(value); }
-
-    /**
-     * <p>The string that contains the search keywords, prefixes, and operators to
-     * control the results that can be returned by a <a>Search</a> operation. For more
-     * details, see <a
-     * href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search
-     * query syntax</a>.</p>
-     */
     inline void SetFilterString(const char* value) { m_filterStringHasBeenSet = true; m_filterString.assign(value); }
-
-    /**
-     * <p>The string that contains the search keywords, prefixes, and operators to
-     * control the results that can be returned by a <a>Search</a> operation. For more
-     * details, see <a
-     * href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search
-     * query syntax</a>.</p>
-     */
     inline SearchFilter& WithFilterString(const Aws::String& value) { SetFilterString(value); return *this;}
-
-    /**
-     * <p>The string that contains the search keywords, prefixes, and operators to
-     * control the results that can be returned by a <a>Search</a> operation. For more
-     * details, see <a
-     * href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search
-     * query syntax</a>.</p>
-     */
     inline SearchFilter& WithFilterString(Aws::String&& value) { SetFilterString(std::move(value)); return *this;}
-
-    /**
-     * <p>The string that contains the search keywords, prefixes, and operators to
-     * control the results that can be returned by a <a>Search</a> operation. For more
-     * details, see <a
-     * href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search
-     * query syntax</a>.</p>
-     */
     inline SearchFilter& WithFilterString(const char* value) { SetFilterString(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_filterString;

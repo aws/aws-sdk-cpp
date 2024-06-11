@@ -38,46 +38,19 @@ namespace Model
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the Secrets Manager secret.</p>
      */
     inline const Aws::String& GetBasicAuth() const{ return m_basicAuth; }
-
-    /**
-     * <p>The ARN of the Secrets Manager secret.</p>
-     */
     inline bool BasicAuthHasBeenSet() const { return m_basicAuthHasBeenSet; }
-
-    /**
-     * <p>The ARN of the Secrets Manager secret.</p>
-     */
     inline void SetBasicAuth(const Aws::String& value) { m_basicAuthHasBeenSet = true; m_basicAuth = value; }
-
-    /**
-     * <p>The ARN of the Secrets Manager secret.</p>
-     */
     inline void SetBasicAuth(Aws::String&& value) { m_basicAuthHasBeenSet = true; m_basicAuth = std::move(value); }
-
-    /**
-     * <p>The ARN of the Secrets Manager secret.</p>
-     */
     inline void SetBasicAuth(const char* value) { m_basicAuthHasBeenSet = true; m_basicAuth.assign(value); }
-
-    /**
-     * <p>The ARN of the Secrets Manager secret.</p>
-     */
     inline MQBrokerAccessCredentials& WithBasicAuth(const Aws::String& value) { SetBasicAuth(value); return *this;}
-
-    /**
-     * <p>The ARN of the Secrets Manager secret.</p>
-     */
     inline MQBrokerAccessCredentials& WithBasicAuth(Aws::String&& value) { SetBasicAuth(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Secrets Manager secret.</p>
-     */
     inline MQBrokerAccessCredentials& WithBasicAuth(const char* value) { SetBasicAuth(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_basicAuth;

@@ -39,159 +39,59 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the specific progress stage.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the specific progress stage.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the specific progress stage.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the specific progress stage.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the specific progress stage.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the specific progress stage.</p>
-     */
     inline ChangeProgressStage& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the specific progress stage.</p>
-     */
     inline ChangeProgressStage& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the specific progress stage.</p>
-     */
     inline ChangeProgressStage& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The overall status of a specific progress stage.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The overall status of a specific progress stage.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The overall status of a specific progress stage.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The overall status of a specific progress stage.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The overall status of a specific progress stage.</p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The overall status of a specific progress stage.</p>
-     */
     inline ChangeProgressStage& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The overall status of a specific progress stage.</p>
-     */
     inline ChangeProgressStage& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The overall status of a specific progress stage.</p>
-     */
     inline ChangeProgressStage& WithStatus(const char* value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the progress stage.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the progress stage.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the progress stage.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the progress stage.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the progress stage.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the progress stage.</p>
-     */
     inline ChangeProgressStage& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the progress stage.</p>
-     */
     inline ChangeProgressStage& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the progress stage.</p>
-     */
     inline ChangeProgressStage& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The last updated timestamp of the progress stage.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
-
-    /**
-     * <p>The last updated timestamp of the progress stage.</p>
-     */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
-
-    /**
-     * <p>The last updated timestamp of the progress stage.</p>
-     */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
-
-    /**
-     * <p>The last updated timestamp of the progress stage.</p>
-     */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
-
-    /**
-     * <p>The last updated timestamp of the progress stage.</p>
-     */
     inline ChangeProgressStage& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
-
-    /**
-     * <p>The last updated timestamp of the progress stage.</p>
-     */
     inline ChangeProgressStage& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

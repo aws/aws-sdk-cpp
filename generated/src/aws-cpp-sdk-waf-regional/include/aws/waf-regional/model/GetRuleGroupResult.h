@@ -33,58 +33,28 @@ namespace Model
     AWS_WAFREGIONAL_API GetRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the <a>RuleGroup</a> that you specified in the
      * <code>GetRuleGroup</code> request. </p>
      */
     inline const RuleGroup& GetRuleGroup() const{ return m_ruleGroup; }
-
-    /**
-     * <p>Information about the <a>RuleGroup</a> that you specified in the
-     * <code>GetRuleGroup</code> request. </p>
-     */
     inline void SetRuleGroup(const RuleGroup& value) { m_ruleGroup = value; }
-
-    /**
-     * <p>Information about the <a>RuleGroup</a> that you specified in the
-     * <code>GetRuleGroup</code> request. </p>
-     */
     inline void SetRuleGroup(RuleGroup&& value) { m_ruleGroup = std::move(value); }
-
-    /**
-     * <p>Information about the <a>RuleGroup</a> that you specified in the
-     * <code>GetRuleGroup</code> request. </p>
-     */
     inline GetRuleGroupResult& WithRuleGroup(const RuleGroup& value) { SetRuleGroup(value); return *this;}
-
-    /**
-     * <p>Information about the <a>RuleGroup</a> that you specified in the
-     * <code>GetRuleGroup</code> request. </p>
-     */
     inline GetRuleGroupResult& WithRuleGroup(RuleGroup&& value) { SetRuleGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRuleGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRuleGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRuleGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RuleGroup m_ruleGroup;

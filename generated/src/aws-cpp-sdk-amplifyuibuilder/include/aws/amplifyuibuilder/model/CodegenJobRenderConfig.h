@@ -38,36 +38,17 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the <code>ReactStartCodegenJobData</code> object.</p>
      */
     inline const ReactStartCodegenJobData& GetReact() const{ return m_react; }
-
-    /**
-     * <p>The name of the <code>ReactStartCodegenJobData</code> object.</p>
-     */
     inline bool ReactHasBeenSet() const { return m_reactHasBeenSet; }
-
-    /**
-     * <p>The name of the <code>ReactStartCodegenJobData</code> object.</p>
-     */
     inline void SetReact(const ReactStartCodegenJobData& value) { m_reactHasBeenSet = true; m_react = value; }
-
-    /**
-     * <p>The name of the <code>ReactStartCodegenJobData</code> object.</p>
-     */
     inline void SetReact(ReactStartCodegenJobData&& value) { m_reactHasBeenSet = true; m_react = std::move(value); }
-
-    /**
-     * <p>The name of the <code>ReactStartCodegenJobData</code> object.</p>
-     */
     inline CodegenJobRenderConfig& WithReact(const ReactStartCodegenJobData& value) { SetReact(value); return *this;}
-
-    /**
-     * <p>The name of the <code>ReactStartCodegenJobData</code> object.</p>
-     */
     inline CodegenJobRenderConfig& WithReact(ReactStartCodegenJobData&& value) { SetReact(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReactStartCodegenJobData m_react;

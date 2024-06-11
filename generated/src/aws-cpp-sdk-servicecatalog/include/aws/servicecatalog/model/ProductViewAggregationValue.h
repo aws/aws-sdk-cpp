@@ -38,67 +38,29 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of the product view aggregation.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the product view aggregation.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the product view aggregation.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the product view aggregation.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the product view aggregation.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of the product view aggregation.</p>
-     */
     inline ProductViewAggregationValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the product view aggregation.</p>
-     */
     inline ProductViewAggregationValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the product view aggregation.</p>
-     */
     inline ProductViewAggregationValue& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An approximate count of the products that match the value.</p>
      */
     inline int GetApproximateCount() const{ return m_approximateCount; }
-
-    /**
-     * <p>An approximate count of the products that match the value.</p>
-     */
     inline bool ApproximateCountHasBeenSet() const { return m_approximateCountHasBeenSet; }
-
-    /**
-     * <p>An approximate count of the products that match the value.</p>
-     */
     inline void SetApproximateCount(int value) { m_approximateCountHasBeenSet = true; m_approximateCount = value; }
-
-    /**
-     * <p>An approximate count of the products that match the value.</p>
-     */
     inline ProductViewAggregationValue& WithApproximateCount(int value) { SetApproximateCount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_value;

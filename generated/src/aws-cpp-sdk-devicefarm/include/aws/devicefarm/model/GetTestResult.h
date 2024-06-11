@@ -38,53 +38,27 @@ namespace Model
     AWS_DEVICEFARM_API GetTestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A test condition that is evaluated.</p>
      */
     inline const Test& GetTest() const{ return m_test; }
-
-    /**
-     * <p>A test condition that is evaluated.</p>
-     */
     inline void SetTest(const Test& value) { m_test = value; }
-
-    /**
-     * <p>A test condition that is evaluated.</p>
-     */
     inline void SetTest(Test&& value) { m_test = std::move(value); }
-
-    /**
-     * <p>A test condition that is evaluated.</p>
-     */
     inline GetTestResult& WithTest(const Test& value) { SetTest(value); return *this;}
-
-    /**
-     * <p>A test condition that is evaluated.</p>
-     */
     inline GetTestResult& WithTest(Test&& value) { SetTest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTestResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTestResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTestResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Test m_test;

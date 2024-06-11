@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API AcceptTransitGatewayMulticastDomainAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the multicast domain associations.</p>
      */
     inline const TransitGatewayMulticastDomainAssociations& GetAssociations() const{ return m_associations; }
-
-    /**
-     * <p>Information about the multicast domain associations.</p>
-     */
     inline void SetAssociations(const TransitGatewayMulticastDomainAssociations& value) { m_associations = value; }
-
-    /**
-     * <p>Information about the multicast domain associations.</p>
-     */
     inline void SetAssociations(TransitGatewayMulticastDomainAssociations&& value) { m_associations = std::move(value); }
-
-    /**
-     * <p>Information about the multicast domain associations.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsResponse& WithAssociations(const TransitGatewayMulticastDomainAssociations& value) { SetAssociations(value); return *this;}
-
-    /**
-     * <p>Information about the multicast domain associations.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsResponse& WithAssociations(TransitGatewayMulticastDomainAssociations&& value) { SetAssociations(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline AcceptTransitGatewayMulticastDomainAssociationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline AcceptTransitGatewayMulticastDomainAssociationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TransitGatewayMulticastDomainAssociations m_associations;

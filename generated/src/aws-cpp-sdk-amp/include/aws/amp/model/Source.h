@@ -37,36 +37,17 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
      */
     inline const EksConfiguration& GetEksConfiguration() const{ return m_eksConfiguration; }
-
-    /**
-     * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
-     */
     inline bool EksConfigurationHasBeenSet() const { return m_eksConfigurationHasBeenSet; }
-
-    /**
-     * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
-     */
     inline void SetEksConfiguration(const EksConfiguration& value) { m_eksConfigurationHasBeenSet = true; m_eksConfiguration = value; }
-
-    /**
-     * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
-     */
     inline void SetEksConfiguration(EksConfiguration&& value) { m_eksConfigurationHasBeenSet = true; m_eksConfiguration = std::move(value); }
-
-    /**
-     * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
-     */
     inline Source& WithEksConfiguration(const EksConfiguration& value) { SetEksConfiguration(value); return *this;}
-
-    /**
-     * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
-     */
     inline Source& WithEksConfiguration(EksConfiguration&& value) { SetEksConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EksConfiguration m_eksConfiguration;

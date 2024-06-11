@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Specifies whether CloudTrail is activated as a data source for the detector.
      * </p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> Specifies whether CloudTrail is activated as a data source for the detector.
-     * </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> Specifies whether CloudTrail is activated as a data source for the detector.
-     * </p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> Specifies whether CloudTrail is activated as a data source for the detector.
-     * </p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> Specifies whether CloudTrail is activated as a data source for the detector.
-     * </p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p> Specifies whether CloudTrail is activated as a data source for the detector.
-     * </p>
-     */
     inline AwsGuardDutyDetectorDataSourcesCloudTrailDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> Specifies whether CloudTrail is activated as a data source for the detector.
-     * </p>
-     */
     inline AwsGuardDutyDetectorDataSourcesCloudTrailDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p> Specifies whether CloudTrail is activated as a data source for the detector.
-     * </p>
-     */
     inline AwsGuardDutyDetectorDataSourcesCloudTrailDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_status;

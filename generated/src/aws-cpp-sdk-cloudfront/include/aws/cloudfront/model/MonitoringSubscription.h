@@ -39,36 +39,17 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A subscription configuration for additional CloudWatch metrics.</p>
      */
     inline const RealtimeMetricsSubscriptionConfig& GetRealtimeMetricsSubscriptionConfig() const{ return m_realtimeMetricsSubscriptionConfig; }
-
-    /**
-     * <p>A subscription configuration for additional CloudWatch metrics.</p>
-     */
     inline bool RealtimeMetricsSubscriptionConfigHasBeenSet() const { return m_realtimeMetricsSubscriptionConfigHasBeenSet; }
-
-    /**
-     * <p>A subscription configuration for additional CloudWatch metrics.</p>
-     */
     inline void SetRealtimeMetricsSubscriptionConfig(const RealtimeMetricsSubscriptionConfig& value) { m_realtimeMetricsSubscriptionConfigHasBeenSet = true; m_realtimeMetricsSubscriptionConfig = value; }
-
-    /**
-     * <p>A subscription configuration for additional CloudWatch metrics.</p>
-     */
     inline void SetRealtimeMetricsSubscriptionConfig(RealtimeMetricsSubscriptionConfig&& value) { m_realtimeMetricsSubscriptionConfigHasBeenSet = true; m_realtimeMetricsSubscriptionConfig = std::move(value); }
-
-    /**
-     * <p>A subscription configuration for additional CloudWatch metrics.</p>
-     */
     inline MonitoringSubscription& WithRealtimeMetricsSubscriptionConfig(const RealtimeMetricsSubscriptionConfig& value) { SetRealtimeMetricsSubscriptionConfig(value); return *this;}
-
-    /**
-     * <p>A subscription configuration for additional CloudWatch metrics.</p>
-     */
     inline MonitoringSubscription& WithRealtimeMetricsSubscriptionConfig(RealtimeMetricsSubscriptionConfig&& value) { SetRealtimeMetricsSubscriptionConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RealtimeMetricsSubscriptionConfig m_realtimeMetricsSubscriptionConfig;

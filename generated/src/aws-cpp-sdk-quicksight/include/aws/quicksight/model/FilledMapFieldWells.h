@@ -39,36 +39,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The aggregated field well of the filled map.</p>
      */
     inline const FilledMapAggregatedFieldWells& GetFilledMapAggregatedFieldWells() const{ return m_filledMapAggregatedFieldWells; }
-
-    /**
-     * <p>The aggregated field well of the filled map.</p>
-     */
     inline bool FilledMapAggregatedFieldWellsHasBeenSet() const { return m_filledMapAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The aggregated field well of the filled map.</p>
-     */
     inline void SetFilledMapAggregatedFieldWells(const FilledMapAggregatedFieldWells& value) { m_filledMapAggregatedFieldWellsHasBeenSet = true; m_filledMapAggregatedFieldWells = value; }
-
-    /**
-     * <p>The aggregated field well of the filled map.</p>
-     */
     inline void SetFilledMapAggregatedFieldWells(FilledMapAggregatedFieldWells&& value) { m_filledMapAggregatedFieldWellsHasBeenSet = true; m_filledMapAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The aggregated field well of the filled map.</p>
-     */
     inline FilledMapFieldWells& WithFilledMapAggregatedFieldWells(const FilledMapAggregatedFieldWells& value) { SetFilledMapAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The aggregated field well of the filled map.</p>
-     */
     inline FilledMapFieldWells& WithFilledMapAggregatedFieldWells(FilledMapAggregatedFieldWells&& value) { SetFilledMapAggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FilledMapAggregatedFieldWells m_filledMapAggregatedFieldWells;

@@ -40,87 +40,33 @@ namespace Model
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The source branch for a diff in an associated repository.</p>
      */
     inline const Aws::String& GetSourceBranchName() const{ return m_sourceBranchName; }
-
-    /**
-     * <p>The source branch for a diff in an associated repository.</p>
-     */
     inline bool SourceBranchNameHasBeenSet() const { return m_sourceBranchNameHasBeenSet; }
-
-    /**
-     * <p>The source branch for a diff in an associated repository.</p>
-     */
     inline void SetSourceBranchName(const Aws::String& value) { m_sourceBranchNameHasBeenSet = true; m_sourceBranchName = value; }
-
-    /**
-     * <p>The source branch for a diff in an associated repository.</p>
-     */
     inline void SetSourceBranchName(Aws::String&& value) { m_sourceBranchNameHasBeenSet = true; m_sourceBranchName = std::move(value); }
-
-    /**
-     * <p>The source branch for a diff in an associated repository.</p>
-     */
     inline void SetSourceBranchName(const char* value) { m_sourceBranchNameHasBeenSet = true; m_sourceBranchName.assign(value); }
-
-    /**
-     * <p>The source branch for a diff in an associated repository.</p>
-     */
     inline BranchDiffSourceCodeType& WithSourceBranchName(const Aws::String& value) { SetSourceBranchName(value); return *this;}
-
-    /**
-     * <p>The source branch for a diff in an associated repository.</p>
-     */
     inline BranchDiffSourceCodeType& WithSourceBranchName(Aws::String&& value) { SetSourceBranchName(std::move(value)); return *this;}
-
-    /**
-     * <p>The source branch for a diff in an associated repository.</p>
-     */
     inline BranchDiffSourceCodeType& WithSourceBranchName(const char* value) { SetSourceBranchName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The destination branch for a diff in an associated repository.</p>
      */
     inline const Aws::String& GetDestinationBranchName() const{ return m_destinationBranchName; }
-
-    /**
-     * <p>The destination branch for a diff in an associated repository.</p>
-     */
     inline bool DestinationBranchNameHasBeenSet() const { return m_destinationBranchNameHasBeenSet; }
-
-    /**
-     * <p>The destination branch for a diff in an associated repository.</p>
-     */
     inline void SetDestinationBranchName(const Aws::String& value) { m_destinationBranchNameHasBeenSet = true; m_destinationBranchName = value; }
-
-    /**
-     * <p>The destination branch for a diff in an associated repository.</p>
-     */
     inline void SetDestinationBranchName(Aws::String&& value) { m_destinationBranchNameHasBeenSet = true; m_destinationBranchName = std::move(value); }
-
-    /**
-     * <p>The destination branch for a diff in an associated repository.</p>
-     */
     inline void SetDestinationBranchName(const char* value) { m_destinationBranchNameHasBeenSet = true; m_destinationBranchName.assign(value); }
-
-    /**
-     * <p>The destination branch for a diff in an associated repository.</p>
-     */
     inline BranchDiffSourceCodeType& WithDestinationBranchName(const Aws::String& value) { SetDestinationBranchName(value); return *this;}
-
-    /**
-     * <p>The destination branch for a diff in an associated repository.</p>
-     */
     inline BranchDiffSourceCodeType& WithDestinationBranchName(Aws::String&& value) { SetDestinationBranchName(std::move(value)); return *this;}
-
-    /**
-     * <p>The destination branch for a diff in an associated repository.</p>
-     */
     inline BranchDiffSourceCodeType& WithDestinationBranchName(const char* value) { SetDestinationBranchName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceBranchName;

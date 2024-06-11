@@ -40,46 +40,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p> <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.</p>
      */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
-
-    /**
-     * <p> <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.</p>
-     */
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
-
-    /**
-     * <p> <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.</p>
-     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
-
-    /**
-     * <p> <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.</p>
-     */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
-
-    /**
-     * <p> <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.</p>
-     */
     inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
-
-    /**
-     * <p> <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.</p>
-     */
     inline GetEndpointAttributesRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-
-    /**
-     * <p> <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.</p>
-     */
     inline GetEndpointAttributesRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-
-    /**
-     * <p> <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.</p>
-     */
     inline GetEndpointAttributesRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpointArn;

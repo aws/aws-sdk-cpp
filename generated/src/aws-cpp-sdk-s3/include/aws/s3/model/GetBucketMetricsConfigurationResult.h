@@ -33,53 +33,27 @@ namespace Model
     AWS_S3_API GetBucketMetricsConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Specifies the metrics configuration.</p>
      */
     inline const MetricsConfiguration& GetMetricsConfiguration() const{ return m_metricsConfiguration; }
-
-    /**
-     * <p>Specifies the metrics configuration.</p>
-     */
     inline void SetMetricsConfiguration(const MetricsConfiguration& value) { m_metricsConfiguration = value; }
-
-    /**
-     * <p>Specifies the metrics configuration.</p>
-     */
     inline void SetMetricsConfiguration(MetricsConfiguration&& value) { m_metricsConfiguration = std::move(value); }
-
-    /**
-     * <p>Specifies the metrics configuration.</p>
-     */
     inline GetBucketMetricsConfigurationResult& WithMetricsConfiguration(const MetricsConfiguration& value) { SetMetricsConfiguration(value); return *this;}
-
-    /**
-     * <p>Specifies the metrics configuration.</p>
-     */
     inline GetBucketMetricsConfigurationResult& WithMetricsConfiguration(MetricsConfiguration&& value) { SetMetricsConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBucketMetricsConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBucketMetricsConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBucketMetricsConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MetricsConfiguration m_metricsConfiguration;

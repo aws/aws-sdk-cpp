@@ -39,67 +39,29 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The location and type of the application code.</p>
      */
     inline const CodeContent& GetCodeContent() const{ return m_codeContent; }
-
-    /**
-     * <p>The location and type of the application code.</p>
-     */
     inline bool CodeContentHasBeenSet() const { return m_codeContentHasBeenSet; }
-
-    /**
-     * <p>The location and type of the application code.</p>
-     */
     inline void SetCodeContent(const CodeContent& value) { m_codeContentHasBeenSet = true; m_codeContent = value; }
-
-    /**
-     * <p>The location and type of the application code.</p>
-     */
     inline void SetCodeContent(CodeContent&& value) { m_codeContentHasBeenSet = true; m_codeContent = std::move(value); }
-
-    /**
-     * <p>The location and type of the application code.</p>
-     */
     inline ApplicationCodeConfiguration& WithCodeContent(const CodeContent& value) { SetCodeContent(value); return *this;}
-
-    /**
-     * <p>The location and type of the application code.</p>
-     */
     inline ApplicationCodeConfiguration& WithCodeContent(CodeContent&& value) { SetCodeContent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the code content is in text or zip format.</p>
      */
     inline const CodeContentType& GetCodeContentType() const{ return m_codeContentType; }
-
-    /**
-     * <p>Specifies whether the code content is in text or zip format.</p>
-     */
     inline bool CodeContentTypeHasBeenSet() const { return m_codeContentTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the code content is in text or zip format.</p>
-     */
     inline void SetCodeContentType(const CodeContentType& value) { m_codeContentTypeHasBeenSet = true; m_codeContentType = value; }
-
-    /**
-     * <p>Specifies whether the code content is in text or zip format.</p>
-     */
     inline void SetCodeContentType(CodeContentType&& value) { m_codeContentTypeHasBeenSet = true; m_codeContentType = std::move(value); }
-
-    /**
-     * <p>Specifies whether the code content is in text or zip format.</p>
-     */
     inline ApplicationCodeConfiguration& WithCodeContentType(const CodeContentType& value) { SetCodeContentType(value); return *this;}
-
-    /**
-     * <p>Specifies whether the code content is in text or zip format.</p>
-     */
     inline ApplicationCodeConfiguration& WithCodeContentType(CodeContentType&& value) { SetCodeContentType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CodeContent m_codeContent;

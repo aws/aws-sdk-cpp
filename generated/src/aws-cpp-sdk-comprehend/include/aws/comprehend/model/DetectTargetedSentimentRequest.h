@@ -35,83 +35,32 @@ namespace Model
     AWS_COMPREHEND_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
-     */
     inline DetectTargetedSentimentRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
-     */
     inline DetectTargetedSentimentRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
-     */
     inline DetectTargetedSentimentRequest& WithText(const char* value) { SetText(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The language of the input documents. Currently, English is the only supported
      * language.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
-
-    /**
-     * <p>The language of the input documents. Currently, English is the only supported
-     * language.</p>
-     */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-
-    /**
-     * <p>The language of the input documents. Currently, English is the only supported
-     * language.</p>
-     */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-
-    /**
-     * <p>The language of the input documents. Currently, English is the only supported
-     * language.</p>
-     */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-
-    /**
-     * <p>The language of the input documents. Currently, English is the only supported
-     * language.</p>
-     */
     inline DetectTargetedSentimentRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-
-    /**
-     * <p>The language of the input documents. Currently, English is the only supported
-     * language.</p>
-     */
     inline DetectTargetedSentimentRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_text;

@@ -34,95 +34,47 @@ namespace Model
     AWS_SECURITYHUB_API BatchImportFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The number of findings that failed to import.</p>
      */
     inline int GetFailedCount() const{ return m_failedCount; }
-
-    /**
-     * <p>The number of findings that failed to import.</p>
-     */
     inline void SetFailedCount(int value) { m_failedCount = value; }
-
-    /**
-     * <p>The number of findings that failed to import.</p>
-     */
     inline BatchImportFindingsResult& WithFailedCount(int value) { SetFailedCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of findings that were successfully imported.</p>
      */
     inline int GetSuccessCount() const{ return m_successCount; }
-
-    /**
-     * <p>The number of findings that were successfully imported.</p>
-     */
     inline void SetSuccessCount(int value) { m_successCount = value; }
-
-    /**
-     * <p>The number of findings that were successfully imported.</p>
-     */
     inline BatchImportFindingsResult& WithSuccessCount(int value) { SetSuccessCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of findings that failed to import.</p>
      */
     inline const Aws::Vector<ImportFindingsError>& GetFailedFindings() const{ return m_failedFindings; }
-
-    /**
-     * <p>The list of findings that failed to import.</p>
-     */
     inline void SetFailedFindings(const Aws::Vector<ImportFindingsError>& value) { m_failedFindings = value; }
-
-    /**
-     * <p>The list of findings that failed to import.</p>
-     */
     inline void SetFailedFindings(Aws::Vector<ImportFindingsError>&& value) { m_failedFindings = std::move(value); }
-
-    /**
-     * <p>The list of findings that failed to import.</p>
-     */
     inline BatchImportFindingsResult& WithFailedFindings(const Aws::Vector<ImportFindingsError>& value) { SetFailedFindings(value); return *this;}
-
-    /**
-     * <p>The list of findings that failed to import.</p>
-     */
     inline BatchImportFindingsResult& WithFailedFindings(Aws::Vector<ImportFindingsError>&& value) { SetFailedFindings(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of findings that failed to import.</p>
-     */
     inline BatchImportFindingsResult& AddFailedFindings(const ImportFindingsError& value) { m_failedFindings.push_back(value); return *this; }
-
-    /**
-     * <p>The list of findings that failed to import.</p>
-     */
     inline BatchImportFindingsResult& AddFailedFindings(ImportFindingsError&& value) { m_failedFindings.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchImportFindingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchImportFindingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchImportFindingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_failedCount;

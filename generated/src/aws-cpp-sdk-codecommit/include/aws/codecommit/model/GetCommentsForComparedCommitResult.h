@@ -34,106 +34,43 @@ namespace Model
     AWS_CODECOMMIT_API GetCommentsForComparedCommitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of comment objects on the compared commit.</p>
      */
     inline const Aws::Vector<CommentsForComparedCommit>& GetCommentsForComparedCommitData() const{ return m_commentsForComparedCommitData; }
-
-    /**
-     * <p>A list of comment objects on the compared commit.</p>
-     */
     inline void SetCommentsForComparedCommitData(const Aws::Vector<CommentsForComparedCommit>& value) { m_commentsForComparedCommitData = value; }
-
-    /**
-     * <p>A list of comment objects on the compared commit.</p>
-     */
     inline void SetCommentsForComparedCommitData(Aws::Vector<CommentsForComparedCommit>&& value) { m_commentsForComparedCommitData = std::move(value); }
-
-    /**
-     * <p>A list of comment objects on the compared commit.</p>
-     */
     inline GetCommentsForComparedCommitResult& WithCommentsForComparedCommitData(const Aws::Vector<CommentsForComparedCommit>& value) { SetCommentsForComparedCommitData(value); return *this;}
-
-    /**
-     * <p>A list of comment objects on the compared commit.</p>
-     */
     inline GetCommentsForComparedCommitResult& WithCommentsForComparedCommitData(Aws::Vector<CommentsForComparedCommit>&& value) { SetCommentsForComparedCommitData(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of comment objects on the compared commit.</p>
-     */
     inline GetCommentsForComparedCommitResult& AddCommentsForComparedCommitData(const CommentsForComparedCommit& value) { m_commentsForComparedCommitData.push_back(value); return *this; }
-
-    /**
-     * <p>A list of comment objects on the compared commit.</p>
-     */
     inline GetCommentsForComparedCommitResult& AddCommentsForComparedCommitData(CommentsForComparedCommit&& value) { m_commentsForComparedCommitData.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An enumeration token that can be used in a request to return the next batch
      * of the results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An enumeration token that can be used in a request to return the next batch
-     * of the results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>An enumeration token that can be used in a request to return the next batch
-     * of the results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>An enumeration token that can be used in a request to return the next batch
-     * of the results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>An enumeration token that can be used in a request to return the next batch
-     * of the results.</p>
-     */
     inline GetCommentsForComparedCommitResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An enumeration token that can be used in a request to return the next batch
-     * of the results.</p>
-     */
     inline GetCommentsForComparedCommitResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An enumeration token that can be used in a request to return the next batch
-     * of the results.</p>
-     */
     inline GetCommentsForComparedCommitResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCommentsForComparedCommitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCommentsForComparedCommitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCommentsForComparedCommitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CommentsForComparedCommit> m_commentsForComparedCommitData;

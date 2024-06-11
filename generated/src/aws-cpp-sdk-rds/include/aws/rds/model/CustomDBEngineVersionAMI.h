@@ -39,87 +39,33 @@ namespace Model
     AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>A value that indicates the ID of the AMI.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
-
-    /**
-     * <p>A value that indicates the ID of the AMI.</p>
-     */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-
-    /**
-     * <p>A value that indicates the ID of the AMI.</p>
-     */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-
-    /**
-     * <p>A value that indicates the ID of the AMI.</p>
-     */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-
-    /**
-     * <p>A value that indicates the ID of the AMI.</p>
-     */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-
-    /**
-     * <p>A value that indicates the ID of the AMI.</p>
-     */
     inline CustomDBEngineVersionAMI& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-
-    /**
-     * <p>A value that indicates the ID of the AMI.</p>
-     */
     inline CustomDBEngineVersionAMI& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-
-    /**
-     * <p>A value that indicates the ID of the AMI.</p>
-     */
     inline CustomDBEngineVersionAMI& WithImageId(const char* value) { SetImageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A value that indicates the status of a custom engine version (CEV).</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>A value that indicates the status of a custom engine version (CEV).</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>A value that indicates the status of a custom engine version (CEV).</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>A value that indicates the status of a custom engine version (CEV).</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>A value that indicates the status of a custom engine version (CEV).</p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>A value that indicates the status of a custom engine version (CEV).</p>
-     */
     inline CustomDBEngineVersionAMI& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>A value that indicates the status of a custom engine version (CEV).</p>
-     */
     inline CustomDBEngineVersionAMI& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>A value that indicates the status of a custom engine version (CEV).</p>
-     */
     inline CustomDBEngineVersionAMI& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageId;

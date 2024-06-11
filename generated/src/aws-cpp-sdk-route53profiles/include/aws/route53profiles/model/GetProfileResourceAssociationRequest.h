@@ -32,54 +32,20 @@ namespace Model
     AWS_ROUTE53PROFILES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> <p>The ID of the profile resource association that you want to get
      * information about.</p> </p>
      */
     inline const Aws::String& GetProfileResourceAssociationId() const{ return m_profileResourceAssociationId; }
-
-    /**
-     * <p> <p>The ID of the profile resource association that you want to get
-     * information about.</p> </p>
-     */
     inline bool ProfileResourceAssociationIdHasBeenSet() const { return m_profileResourceAssociationIdHasBeenSet; }
-
-    /**
-     * <p> <p>The ID of the profile resource association that you want to get
-     * information about.</p> </p>
-     */
     inline void SetProfileResourceAssociationId(const Aws::String& value) { m_profileResourceAssociationIdHasBeenSet = true; m_profileResourceAssociationId = value; }
-
-    /**
-     * <p> <p>The ID of the profile resource association that you want to get
-     * information about.</p> </p>
-     */
     inline void SetProfileResourceAssociationId(Aws::String&& value) { m_profileResourceAssociationIdHasBeenSet = true; m_profileResourceAssociationId = std::move(value); }
-
-    /**
-     * <p> <p>The ID of the profile resource association that you want to get
-     * information about.</p> </p>
-     */
     inline void SetProfileResourceAssociationId(const char* value) { m_profileResourceAssociationIdHasBeenSet = true; m_profileResourceAssociationId.assign(value); }
-
-    /**
-     * <p> <p>The ID of the profile resource association that you want to get
-     * information about.</p> </p>
-     */
     inline GetProfileResourceAssociationRequest& WithProfileResourceAssociationId(const Aws::String& value) { SetProfileResourceAssociationId(value); return *this;}
-
-    /**
-     * <p> <p>The ID of the profile resource association that you want to get
-     * information about.</p> </p>
-     */
     inline GetProfileResourceAssociationRequest& WithProfileResourceAssociationId(Aws::String&& value) { SetProfileResourceAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p> <p>The ID of the profile resource association that you want to get
-     * information about.</p> </p>
-     */
     inline GetProfileResourceAssociationRequest& WithProfileResourceAssociationId(const char* value) { SetProfileResourceAssociationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_profileResourceAssociationId;

@@ -35,46 +35,19 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
      */
     inline const Aws::Vector<RebuildRequest>& GetRebuildWorkspaceRequests() const{ return m_rebuildWorkspaceRequests; }
-
-    /**
-     * <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-     */
     inline bool RebuildWorkspaceRequestsHasBeenSet() const { return m_rebuildWorkspaceRequestsHasBeenSet; }
-
-    /**
-     * <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-     */
     inline void SetRebuildWorkspaceRequests(const Aws::Vector<RebuildRequest>& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests = value; }
-
-    /**
-     * <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-     */
     inline void SetRebuildWorkspaceRequests(Aws::Vector<RebuildRequest>&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests = std::move(value); }
-
-    /**
-     * <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-     */
     inline RebuildWorkspacesRequest& WithRebuildWorkspaceRequests(const Aws::Vector<RebuildRequest>& value) { SetRebuildWorkspaceRequests(value); return *this;}
-
-    /**
-     * <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-     */
     inline RebuildWorkspacesRequest& WithRebuildWorkspaceRequests(Aws::Vector<RebuildRequest>&& value) { SetRebuildWorkspaceRequests(std::move(value)); return *this;}
-
-    /**
-     * <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-     */
     inline RebuildWorkspacesRequest& AddRebuildWorkspaceRequests(const RebuildRequest& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests.push_back(value); return *this; }
-
-    /**
-     * <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-     */
     inline RebuildWorkspacesRequest& AddRebuildWorkspaceRequests(RebuildRequest&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<RebuildRequest> m_rebuildWorkspaceRequests;

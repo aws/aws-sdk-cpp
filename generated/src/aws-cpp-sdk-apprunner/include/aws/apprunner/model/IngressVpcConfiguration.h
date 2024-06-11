@@ -40,87 +40,33 @@ namespace Model
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the VPC that is used for the VPC endpoint.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the VPC that is used for the VPC endpoint.</p>
-     */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the VPC that is used for the VPC endpoint.</p>
-     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the VPC that is used for the VPC endpoint.</p>
-     */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC that is used for the VPC endpoint.</p>
-     */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC that is used for the VPC endpoint.</p>
-     */
     inline IngressVpcConfiguration& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC that is used for the VPC endpoint.</p>
-     */
     inline IngressVpcConfiguration& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC that is used for the VPC endpoint.</p>
-     */
     inline IngressVpcConfiguration& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
      */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
-
-    /**
-     * <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
-     */
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
-     */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
-
-    /**
-     * <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
-     */
     inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
-     */
     inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
-     */
     inline IngressVpcConfiguration& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
-     */
     inline IngressVpcConfiguration& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
-     */
     inline IngressVpcConfiguration& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_vpcId;

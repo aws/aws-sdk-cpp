@@ -32,36 +32,17 @@ namespace Model
     AWS_ARTIFACT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Desired notification subscription status.</p>
      */
     inline const NotificationSubscriptionStatus& GetNotificationSubscriptionStatus() const{ return m_notificationSubscriptionStatus; }
-
-    /**
-     * <p>Desired notification subscription status.</p>
-     */
     inline bool NotificationSubscriptionStatusHasBeenSet() const { return m_notificationSubscriptionStatusHasBeenSet; }
-
-    /**
-     * <p>Desired notification subscription status.</p>
-     */
     inline void SetNotificationSubscriptionStatus(const NotificationSubscriptionStatus& value) { m_notificationSubscriptionStatusHasBeenSet = true; m_notificationSubscriptionStatus = value; }
-
-    /**
-     * <p>Desired notification subscription status.</p>
-     */
     inline void SetNotificationSubscriptionStatus(NotificationSubscriptionStatus&& value) { m_notificationSubscriptionStatusHasBeenSet = true; m_notificationSubscriptionStatus = std::move(value); }
-
-    /**
-     * <p>Desired notification subscription status.</p>
-     */
     inline PutAccountSettingsRequest& WithNotificationSubscriptionStatus(const NotificationSubscriptionStatus& value) { SetNotificationSubscriptionStatus(value); return *this;}
-
-    /**
-     * <p>Desired notification subscription status.</p>
-     */
     inline PutAccountSettingsRequest& WithNotificationSubscriptionStatus(NotificationSubscriptionStatus&& value) { SetNotificationSubscriptionStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NotificationSubscriptionStatus m_notificationSubscriptionStatus;

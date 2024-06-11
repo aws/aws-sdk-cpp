@@ -39,6 +39,7 @@ namespace Model
     AWS_CONFIGSERVICE_API GetComplianceSummaryByResourceTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The number of resources that are compliant and the number that are
      * noncompliant. If one or more resource types were provided with the request, the
@@ -46,77 +47,24 @@ namespace Model
      * 100.</p>
      */
     inline const Aws::Vector<ComplianceSummaryByResourceType>& GetComplianceSummariesByResourceType() const{ return m_complianceSummariesByResourceType; }
-
-    /**
-     * <p>The number of resources that are compliant and the number that are
-     * noncompliant. If one or more resource types were provided with the request, the
-     * numbers are returned for each resource type. The maximum number returned is
-     * 100.</p>
-     */
     inline void SetComplianceSummariesByResourceType(const Aws::Vector<ComplianceSummaryByResourceType>& value) { m_complianceSummariesByResourceType = value; }
-
-    /**
-     * <p>The number of resources that are compliant and the number that are
-     * noncompliant. If one or more resource types were provided with the request, the
-     * numbers are returned for each resource type. The maximum number returned is
-     * 100.</p>
-     */
     inline void SetComplianceSummariesByResourceType(Aws::Vector<ComplianceSummaryByResourceType>&& value) { m_complianceSummariesByResourceType = std::move(value); }
-
-    /**
-     * <p>The number of resources that are compliant and the number that are
-     * noncompliant. If one or more resource types were provided with the request, the
-     * numbers are returned for each resource type. The maximum number returned is
-     * 100.</p>
-     */
     inline GetComplianceSummaryByResourceTypeResult& WithComplianceSummariesByResourceType(const Aws::Vector<ComplianceSummaryByResourceType>& value) { SetComplianceSummariesByResourceType(value); return *this;}
-
-    /**
-     * <p>The number of resources that are compliant and the number that are
-     * noncompliant. If one or more resource types were provided with the request, the
-     * numbers are returned for each resource type. The maximum number returned is
-     * 100.</p>
-     */
     inline GetComplianceSummaryByResourceTypeResult& WithComplianceSummariesByResourceType(Aws::Vector<ComplianceSummaryByResourceType>&& value) { SetComplianceSummariesByResourceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The number of resources that are compliant and the number that are
-     * noncompliant. If one or more resource types were provided with the request, the
-     * numbers are returned for each resource type. The maximum number returned is
-     * 100.</p>
-     */
     inline GetComplianceSummaryByResourceTypeResult& AddComplianceSummariesByResourceType(const ComplianceSummaryByResourceType& value) { m_complianceSummariesByResourceType.push_back(value); return *this; }
-
-    /**
-     * <p>The number of resources that are compliant and the number that are
-     * noncompliant. If one or more resource types were provided with the request, the
-     * numbers are returned for each resource type. The maximum number returned is
-     * 100.</p>
-     */
     inline GetComplianceSummaryByResourceTypeResult& AddComplianceSummariesByResourceType(ComplianceSummaryByResourceType&& value) { m_complianceSummariesByResourceType.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetComplianceSummaryByResourceTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetComplianceSummaryByResourceTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetComplianceSummaryByResourceTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ComplianceSummaryByResourceType> m_complianceSummariesByResourceType;

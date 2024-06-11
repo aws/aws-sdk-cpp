@@ -39,32 +39,18 @@ namespace Model
     AWS_WAFREGIONAL_API CreateXssMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An <a>XssMatchSet</a>.</p>
      */
     inline const XssMatchSet& GetXssMatchSet() const{ return m_xssMatchSet; }
-
-    /**
-     * <p>An <a>XssMatchSet</a>.</p>
-     */
     inline void SetXssMatchSet(const XssMatchSet& value) { m_xssMatchSet = value; }
-
-    /**
-     * <p>An <a>XssMatchSet</a>.</p>
-     */
     inline void SetXssMatchSet(XssMatchSet&& value) { m_xssMatchSet = std::move(value); }
-
-    /**
-     * <p>An <a>XssMatchSet</a>.</p>
-     */
     inline CreateXssMatchSetResult& WithXssMatchSet(const XssMatchSet& value) { SetXssMatchSet(value); return *this;}
-
-    /**
-     * <p>An <a>XssMatchSet</a>.</p>
-     */
     inline CreateXssMatchSetResult& WithXssMatchSet(XssMatchSet&& value) { SetXssMatchSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
      * <code>CreateXssMatchSet</code> request. You can also use this value to query the
@@ -72,77 +58,24 @@ namespace Model
      * <a>GetChangeTokenStatus</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
-
-    /**
-     * <p>The <code>ChangeToken</code> that you used to submit the
-     * <code>CreateXssMatchSet</code> request. You can also use this value to query the
-     * status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.</p>
-     */
     inline void SetChangeToken(const Aws::String& value) { m_changeToken = value; }
-
-    /**
-     * <p>The <code>ChangeToken</code> that you used to submit the
-     * <code>CreateXssMatchSet</code> request. You can also use this value to query the
-     * status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.</p>
-     */
     inline void SetChangeToken(Aws::String&& value) { m_changeToken = std::move(value); }
-
-    /**
-     * <p>The <code>ChangeToken</code> that you used to submit the
-     * <code>CreateXssMatchSet</code> request. You can also use this value to query the
-     * status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.</p>
-     */
     inline void SetChangeToken(const char* value) { m_changeToken.assign(value); }
-
-    /**
-     * <p>The <code>ChangeToken</code> that you used to submit the
-     * <code>CreateXssMatchSet</code> request. You can also use this value to query the
-     * status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.</p>
-     */
     inline CreateXssMatchSetResult& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-
-    /**
-     * <p>The <code>ChangeToken</code> that you used to submit the
-     * <code>CreateXssMatchSet</code> request. You can also use this value to query the
-     * status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.</p>
-     */
     inline CreateXssMatchSetResult& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>ChangeToken</code> that you used to submit the
-     * <code>CreateXssMatchSet</code> request. You can also use this value to query the
-     * status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.</p>
-     */
     inline CreateXssMatchSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateXssMatchSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateXssMatchSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateXssMatchSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     XssMatchSet m_xssMatchSet;

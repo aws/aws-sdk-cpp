@@ -40,87 +40,33 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The CIDR block associated with the local subnet of the customer network.</p>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
-
-    /**
-     * <p>The CIDR block associated with the local subnet of the customer network.</p>
-     */
     inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
-
-    /**
-     * <p>The CIDR block associated with the local subnet of the customer network.</p>
-     */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
-
-    /**
-     * <p>The CIDR block associated with the local subnet of the customer network.</p>
-     */
     inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
-
-    /**
-     * <p>The CIDR block associated with the local subnet of the customer network.</p>
-     */
     inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
-
-    /**
-     * <p>The CIDR block associated with the local subnet of the customer network.</p>
-     */
     inline DeleteVpnConnectionRouteRequest& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
-
-    /**
-     * <p>The CIDR block associated with the local subnet of the customer network.</p>
-     */
     inline DeleteVpnConnectionRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIDR block associated with the local subnet of the customer network.</p>
-     */
     inline DeleteVpnConnectionRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the VPN connection.</p>
      */
     inline const Aws::String& GetVpnConnectionId() const{ return m_vpnConnectionId; }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
     inline bool VpnConnectionIdHasBeenSet() const { return m_vpnConnectionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
     inline void SetVpnConnectionId(const Aws::String& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = value; }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
     inline void SetVpnConnectionId(Aws::String&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
     inline void SetVpnConnectionId(const char* value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId.assign(value); }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
     inline DeleteVpnConnectionRouteRequest& WithVpnConnectionId(const Aws::String& value) { SetVpnConnectionId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
     inline DeleteVpnConnectionRouteRequest& WithVpnConnectionId(Aws::String&& value) { SetVpnConnectionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
     inline DeleteVpnConnectionRouteRequest& WithVpnConnectionId(const char* value) { SetVpnConnectionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destinationCidrBlock;

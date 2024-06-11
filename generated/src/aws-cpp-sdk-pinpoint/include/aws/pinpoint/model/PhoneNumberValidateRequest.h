@@ -32,24 +32,15 @@ namespace Model
     AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const NumberValidateRequest& GetNumberValidateRequest() const{ return m_numberValidateRequest; }
-
-    
     inline bool NumberValidateRequestHasBeenSet() const { return m_numberValidateRequestHasBeenSet; }
-
-    
     inline void SetNumberValidateRequest(const NumberValidateRequest& value) { m_numberValidateRequestHasBeenSet = true; m_numberValidateRequest = value; }
-
-    
     inline void SetNumberValidateRequest(NumberValidateRequest&& value) { m_numberValidateRequestHasBeenSet = true; m_numberValidateRequest = std::move(value); }
-
-    
     inline PhoneNumberValidateRequest& WithNumberValidateRequest(const NumberValidateRequest& value) { SetNumberValidateRequest(value); return *this;}
-
-    
     inline PhoneNumberValidateRequest& WithNumberValidateRequest(NumberValidateRequest&& value) { SetNumberValidateRequest(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NumberValidateRequest m_numberValidateRequest;

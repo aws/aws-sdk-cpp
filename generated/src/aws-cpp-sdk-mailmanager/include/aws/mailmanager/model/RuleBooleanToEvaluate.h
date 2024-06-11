@@ -38,36 +38,17 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The boolean type representing the allowed attribute types for an email.</p>
      */
     inline const RuleBooleanEmailAttribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The boolean type representing the allowed attribute types for an email.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>The boolean type representing the allowed attribute types for an email.</p>
-     */
     inline void SetAttribute(const RuleBooleanEmailAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>The boolean type representing the allowed attribute types for an email.</p>
-     */
     inline void SetAttribute(RuleBooleanEmailAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The boolean type representing the allowed attribute types for an email.</p>
-     */
     inline RuleBooleanToEvaluate& WithAttribute(const RuleBooleanEmailAttribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The boolean type representing the allowed attribute types for an email.</p>
-     */
     inline RuleBooleanToEvaluate& WithAttribute(RuleBooleanEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RuleBooleanEmailAttribute m_attribute;

@@ -35,46 +35,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * Unique ID of the input
      */
     inline const Aws::String& GetInputId() const{ return m_inputId; }
-
-    /**
-     * Unique ID of the input
-     */
     inline bool InputIdHasBeenSet() const { return m_inputIdHasBeenSet; }
-
-    /**
-     * Unique ID of the input
-     */
     inline void SetInputId(const Aws::String& value) { m_inputIdHasBeenSet = true; m_inputId = value; }
-
-    /**
-     * Unique ID of the input
-     */
     inline void SetInputId(Aws::String&& value) { m_inputIdHasBeenSet = true; m_inputId = std::move(value); }
-
-    /**
-     * Unique ID of the input
-     */
     inline void SetInputId(const char* value) { m_inputIdHasBeenSet = true; m_inputId.assign(value); }
-
-    /**
-     * Unique ID of the input
-     */
     inline DeleteInputRequest& WithInputId(const Aws::String& value) { SetInputId(value); return *this;}
-
-    /**
-     * Unique ID of the input
-     */
     inline DeleteInputRequest& WithInputId(Aws::String&& value) { SetInputId(std::move(value)); return *this;}
-
-    /**
-     * Unique ID of the input
-     */
     inline DeleteInputRequest& WithInputId(const char* value) { SetInputId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_inputId;

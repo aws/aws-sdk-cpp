@@ -32,63 +32,29 @@ namespace Model
     AWS_IOT_API GetJobDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The job document content.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
-
-    /**
-     * <p>The job document content.</p>
-     */
     inline void SetDocument(const Aws::String& value) { m_document = value; }
-
-    /**
-     * <p>The job document content.</p>
-     */
     inline void SetDocument(Aws::String&& value) { m_document = std::move(value); }
-
-    /**
-     * <p>The job document content.</p>
-     */
     inline void SetDocument(const char* value) { m_document.assign(value); }
-
-    /**
-     * <p>The job document content.</p>
-     */
     inline GetJobDocumentResult& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
-
-    /**
-     * <p>The job document content.</p>
-     */
     inline GetJobDocumentResult& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
-
-    /**
-     * <p>The job document content.</p>
-     */
     inline GetJobDocumentResult& WithDocument(const char* value) { SetDocument(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetJobDocumentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetJobDocumentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetJobDocumentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_document;

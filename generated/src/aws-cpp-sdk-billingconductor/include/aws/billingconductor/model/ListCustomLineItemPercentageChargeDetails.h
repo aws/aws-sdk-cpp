@@ -36,30 +36,16 @@ namespace Model
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The custom line item's percentage value. This will be multiplied against the
      * combined value of its associated resources to determine its charge value. </p>
      */
     inline double GetPercentageValue() const{ return m_percentageValue; }
-
-    /**
-     * <p> The custom line item's percentage value. This will be multiplied against the
-     * combined value of its associated resources to determine its charge value. </p>
-     */
     inline bool PercentageValueHasBeenSet() const { return m_percentageValueHasBeenSet; }
-
-    /**
-     * <p> The custom line item's percentage value. This will be multiplied against the
-     * combined value of its associated resources to determine its charge value. </p>
-     */
     inline void SetPercentageValue(double value) { m_percentageValueHasBeenSet = true; m_percentageValue = value; }
-
-    /**
-     * <p> The custom line item's percentage value. This will be multiplied against the
-     * combined value of its associated resources to determine its charge value. </p>
-     */
     inline ListCustomLineItemPercentageChargeDetails& WithPercentageValue(double value) { SetPercentageValue(value); return *this;}
-
+    ///@}
   private:
 
     double m_percentageValue;

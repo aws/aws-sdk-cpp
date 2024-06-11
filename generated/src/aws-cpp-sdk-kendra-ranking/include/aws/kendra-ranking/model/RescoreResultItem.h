@@ -38,71 +38,30 @@ namespace Model
     AWS_KENDRARANKING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the document from the search service.</p>
      */
     inline const Aws::String& GetDocumentId() const{ return m_documentId; }
-
-    /**
-     * <p>The identifier of the document from the search service.</p>
-     */
     inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the document from the search service.</p>
-     */
     inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
-
-    /**
-     * <p>The identifier of the document from the search service.</p>
-     */
     inline void SetDocumentId(Aws::String&& value) { m_documentIdHasBeenSet = true; m_documentId = std::move(value); }
-
-    /**
-     * <p>The identifier of the document from the search service.</p>
-     */
     inline void SetDocumentId(const char* value) { m_documentIdHasBeenSet = true; m_documentId.assign(value); }
-
-    /**
-     * <p>The identifier of the document from the search service.</p>
-     */
     inline RescoreResultItem& WithDocumentId(const Aws::String& value) { SetDocumentId(value); return *this;}
-
-    /**
-     * <p>The identifier of the document from the search service.</p>
-     */
     inline RescoreResultItem& WithDocumentId(Aws::String&& value) { SetDocumentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the document from the search service.</p>
-     */
     inline RescoreResultItem& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to
      * the result.</p>
      */
     inline double GetScore() const{ return m_score; }
-
-    /**
-     * <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to
-     * the result.</p>
-     */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-
-    /**
-     * <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to
-     * the result.</p>
-     */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
-
-    /**
-     * <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to
-     * the result.</p>
-     */
     inline RescoreResultItem& WithScore(double value) { SetScore(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_documentId;

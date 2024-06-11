@@ -46,63 +46,23 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The issuer URL of an OIDC identity provider. This URL must have an OIDC
      * discovery endpoint at the path
      * <code>.well-known/openid-configuration</code>.</p>
      */
     inline const Aws::String& GetIssuer() const{ return m_issuer; }
-
-    /**
-     * <p>The issuer URL of an OIDC identity provider. This URL must have an OIDC
-     * discovery endpoint at the path
-     * <code>.well-known/openid-configuration</code>.</p>
-     */
     inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
-
-    /**
-     * <p>The issuer URL of an OIDC identity provider. This URL must have an OIDC
-     * discovery endpoint at the path
-     * <code>.well-known/openid-configuration</code>.</p>
-     */
     inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
-
-    /**
-     * <p>The issuer URL of an OIDC identity provider. This URL must have an OIDC
-     * discovery endpoint at the path
-     * <code>.well-known/openid-configuration</code>.</p>
-     */
     inline void SetIssuer(Aws::String&& value) { m_issuerHasBeenSet = true; m_issuer = std::move(value); }
-
-    /**
-     * <p>The issuer URL of an OIDC identity provider. This URL must have an OIDC
-     * discovery endpoint at the path
-     * <code>.well-known/openid-configuration</code>.</p>
-     */
     inline void SetIssuer(const char* value) { m_issuerHasBeenSet = true; m_issuer.assign(value); }
-
-    /**
-     * <p>The issuer URL of an OIDC identity provider. This URL must have an OIDC
-     * discovery endpoint at the path
-     * <code>.well-known/openid-configuration</code>.</p>
-     */
     inline OpenIdConnectConfigurationItem& WithIssuer(const Aws::String& value) { SetIssuer(value); return *this;}
-
-    /**
-     * <p>The issuer URL of an OIDC identity provider. This URL must have an OIDC
-     * discovery endpoint at the path
-     * <code>.well-known/openid-configuration</code>.</p>
-     */
     inline OpenIdConnectConfigurationItem& WithIssuer(Aws::String&& value) { SetIssuer(std::move(value)); return *this;}
-
-    /**
-     * <p>The issuer URL of an OIDC identity provider. This URL must have an OIDC
-     * discovery endpoint at the path
-     * <code>.well-known/openid-configuration</code>.</p>
-     */
     inline OpenIdConnectConfigurationItem& WithIssuer(const char* value) { SetIssuer(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A descriptive string that you want to prefix to user entities from your OIDC
      * identity provider. For example, if you set an <code>entityIdPrefix</code> of
@@ -110,64 +70,16 @@ namespace Model
      * the format <code>MyCorp::User::MyOIDCProvider|Carlos</code>.</p>
      */
     inline const Aws::String& GetEntityIdPrefix() const{ return m_entityIdPrefix; }
-
-    /**
-     * <p>A descriptive string that you want to prefix to user entities from your OIDC
-     * identity provider. For example, if you set an <code>entityIdPrefix</code> of
-     * <code>MyOIDCProvider</code>, you can reference principals in your policies in
-     * the format <code>MyCorp::User::MyOIDCProvider|Carlos</code>.</p>
-     */
     inline bool EntityIdPrefixHasBeenSet() const { return m_entityIdPrefixHasBeenSet; }
-
-    /**
-     * <p>A descriptive string that you want to prefix to user entities from your OIDC
-     * identity provider. For example, if you set an <code>entityIdPrefix</code> of
-     * <code>MyOIDCProvider</code>, you can reference principals in your policies in
-     * the format <code>MyCorp::User::MyOIDCProvider|Carlos</code>.</p>
-     */
     inline void SetEntityIdPrefix(const Aws::String& value) { m_entityIdPrefixHasBeenSet = true; m_entityIdPrefix = value; }
-
-    /**
-     * <p>A descriptive string that you want to prefix to user entities from your OIDC
-     * identity provider. For example, if you set an <code>entityIdPrefix</code> of
-     * <code>MyOIDCProvider</code>, you can reference principals in your policies in
-     * the format <code>MyCorp::User::MyOIDCProvider|Carlos</code>.</p>
-     */
     inline void SetEntityIdPrefix(Aws::String&& value) { m_entityIdPrefixHasBeenSet = true; m_entityIdPrefix = std::move(value); }
-
-    /**
-     * <p>A descriptive string that you want to prefix to user entities from your OIDC
-     * identity provider. For example, if you set an <code>entityIdPrefix</code> of
-     * <code>MyOIDCProvider</code>, you can reference principals in your policies in
-     * the format <code>MyCorp::User::MyOIDCProvider|Carlos</code>.</p>
-     */
     inline void SetEntityIdPrefix(const char* value) { m_entityIdPrefixHasBeenSet = true; m_entityIdPrefix.assign(value); }
-
-    /**
-     * <p>A descriptive string that you want to prefix to user entities from your OIDC
-     * identity provider. For example, if you set an <code>entityIdPrefix</code> of
-     * <code>MyOIDCProvider</code>, you can reference principals in your policies in
-     * the format <code>MyCorp::User::MyOIDCProvider|Carlos</code>.</p>
-     */
     inline OpenIdConnectConfigurationItem& WithEntityIdPrefix(const Aws::String& value) { SetEntityIdPrefix(value); return *this;}
-
-    /**
-     * <p>A descriptive string that you want to prefix to user entities from your OIDC
-     * identity provider. For example, if you set an <code>entityIdPrefix</code> of
-     * <code>MyOIDCProvider</code>, you can reference principals in your policies in
-     * the format <code>MyCorp::User::MyOIDCProvider|Carlos</code>.</p>
-     */
     inline OpenIdConnectConfigurationItem& WithEntityIdPrefix(Aws::String&& value) { SetEntityIdPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>A descriptive string that you want to prefix to user entities from your OIDC
-     * identity provider. For example, if you set an <code>entityIdPrefix</code> of
-     * <code>MyOIDCProvider</code>, you can reference principals in your policies in
-     * the format <code>MyCorp::User::MyOIDCProvider|Carlos</code>.</p>
-     */
     inline OpenIdConnectConfigurationItem& WithEntityIdPrefix(const char* value) { SetEntityIdPrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The claim in OIDC identity provider tokens that indicates a user's group
      * membership, and the entity type that you want to map it to. For example, this
@@ -175,90 +87,26 @@ namespace Model
      * <code>MyCorp::UserGroup</code>.</p>
      */
     inline const OpenIdConnectGroupConfigurationItem& GetGroupConfiguration() const{ return m_groupConfiguration; }
-
-    /**
-     * <p>The claim in OIDC identity provider tokens that indicates a user's group
-     * membership, and the entity type that you want to map it to. For example, this
-     * object can map the contents of a <code>groups</code> claim to
-     * <code>MyCorp::UserGroup</code>.</p>
-     */
     inline bool GroupConfigurationHasBeenSet() const { return m_groupConfigurationHasBeenSet; }
-
-    /**
-     * <p>The claim in OIDC identity provider tokens that indicates a user's group
-     * membership, and the entity type that you want to map it to. For example, this
-     * object can map the contents of a <code>groups</code> claim to
-     * <code>MyCorp::UserGroup</code>.</p>
-     */
     inline void SetGroupConfiguration(const OpenIdConnectGroupConfigurationItem& value) { m_groupConfigurationHasBeenSet = true; m_groupConfiguration = value; }
-
-    /**
-     * <p>The claim in OIDC identity provider tokens that indicates a user's group
-     * membership, and the entity type that you want to map it to. For example, this
-     * object can map the contents of a <code>groups</code> claim to
-     * <code>MyCorp::UserGroup</code>.</p>
-     */
     inline void SetGroupConfiguration(OpenIdConnectGroupConfigurationItem&& value) { m_groupConfigurationHasBeenSet = true; m_groupConfiguration = std::move(value); }
-
-    /**
-     * <p>The claim in OIDC identity provider tokens that indicates a user's group
-     * membership, and the entity type that you want to map it to. For example, this
-     * object can map the contents of a <code>groups</code> claim to
-     * <code>MyCorp::UserGroup</code>.</p>
-     */
     inline OpenIdConnectConfigurationItem& WithGroupConfiguration(const OpenIdConnectGroupConfigurationItem& value) { SetGroupConfiguration(value); return *this;}
-
-    /**
-     * <p>The claim in OIDC identity provider tokens that indicates a user's group
-     * membership, and the entity type that you want to map it to. For example, this
-     * object can map the contents of a <code>groups</code> claim to
-     * <code>MyCorp::UserGroup</code>.</p>
-     */
     inline OpenIdConnectConfigurationItem& WithGroupConfiguration(OpenIdConnectGroupConfigurationItem&& value) { SetGroupConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token type that you want to process from your OIDC identity provider.
      * Your policy store can process either identity (ID) or access tokens from a given
      * OIDC identity source.</p>
      */
     inline const OpenIdConnectTokenSelectionItem& GetTokenSelection() const{ return m_tokenSelection; }
-
-    /**
-     * <p>The token type that you want to process from your OIDC identity provider.
-     * Your policy store can process either identity (ID) or access tokens from a given
-     * OIDC identity source.</p>
-     */
     inline bool TokenSelectionHasBeenSet() const { return m_tokenSelectionHasBeenSet; }
-
-    /**
-     * <p>The token type that you want to process from your OIDC identity provider.
-     * Your policy store can process either identity (ID) or access tokens from a given
-     * OIDC identity source.</p>
-     */
     inline void SetTokenSelection(const OpenIdConnectTokenSelectionItem& value) { m_tokenSelectionHasBeenSet = true; m_tokenSelection = value; }
-
-    /**
-     * <p>The token type that you want to process from your OIDC identity provider.
-     * Your policy store can process either identity (ID) or access tokens from a given
-     * OIDC identity source.</p>
-     */
     inline void SetTokenSelection(OpenIdConnectTokenSelectionItem&& value) { m_tokenSelectionHasBeenSet = true; m_tokenSelection = std::move(value); }
-
-    /**
-     * <p>The token type that you want to process from your OIDC identity provider.
-     * Your policy store can process either identity (ID) or access tokens from a given
-     * OIDC identity source.</p>
-     */
     inline OpenIdConnectConfigurationItem& WithTokenSelection(const OpenIdConnectTokenSelectionItem& value) { SetTokenSelection(value); return *this;}
-
-    /**
-     * <p>The token type that you want to process from your OIDC identity provider.
-     * Your policy store can process either identity (ID) or access tokens from a given
-     * OIDC identity source.</p>
-     */
     inline OpenIdConnectConfigurationItem& WithTokenSelection(OpenIdConnectTokenSelectionItem&& value) { SetTokenSelection(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_issuer;

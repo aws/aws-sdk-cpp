@@ -38,42 +38,18 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Connection status resource type event configuration object for enabling or
      * disabling LoRaWAN related event topics.</p>
      */
     inline const LoRaWANConnectionStatusResourceTypeEventConfiguration& GetLoRaWAN() const{ return m_loRaWAN; }
-
-    /**
-     * <p>Connection status resource type event configuration object for enabling or
-     * disabling LoRaWAN related event topics.</p>
-     */
     inline bool LoRaWANHasBeenSet() const { return m_loRaWANHasBeenSet; }
-
-    /**
-     * <p>Connection status resource type event configuration object for enabling or
-     * disabling LoRaWAN related event topics.</p>
-     */
     inline void SetLoRaWAN(const LoRaWANConnectionStatusResourceTypeEventConfiguration& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = value; }
-
-    /**
-     * <p>Connection status resource type event configuration object for enabling or
-     * disabling LoRaWAN related event topics.</p>
-     */
     inline void SetLoRaWAN(LoRaWANConnectionStatusResourceTypeEventConfiguration&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::move(value); }
-
-    /**
-     * <p>Connection status resource type event configuration object for enabling or
-     * disabling LoRaWAN related event topics.</p>
-     */
     inline ConnectionStatusResourceTypeEventConfiguration& WithLoRaWAN(const LoRaWANConnectionStatusResourceTypeEventConfiguration& value) { SetLoRaWAN(value); return *this;}
-
-    /**
-     * <p>Connection status resource type event configuration object for enabling or
-     * disabling LoRaWAN related event topics.</p>
-     */
     inline ConnectionStatusResourceTypeEventConfiguration& WithLoRaWAN(LoRaWANConnectionStatusResourceTypeEventConfiguration&& value) { SetLoRaWAN(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LoRaWANConnectionStatusResourceTypeEventConfiguration m_loRaWAN;

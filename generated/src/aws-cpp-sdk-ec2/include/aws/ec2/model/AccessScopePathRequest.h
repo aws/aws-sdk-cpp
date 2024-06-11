@@ -41,108 +41,43 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The source.</p>
      */
     inline const PathStatementRequest& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The source.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The source.</p>
-     */
     inline void SetSource(const PathStatementRequest& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The source.</p>
-     */
     inline void SetSource(PathStatementRequest&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The source.</p>
-     */
     inline AccessScopePathRequest& WithSource(const PathStatementRequest& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The source.</p>
-     */
     inline AccessScopePathRequest& WithSource(PathStatementRequest&& value) { SetSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The destination.</p>
      */
     inline const PathStatementRequest& GetDestination() const{ return m_destination; }
-
-    /**
-     * <p>The destination.</p>
-     */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-
-    /**
-     * <p>The destination.</p>
-     */
     inline void SetDestination(const PathStatementRequest& value) { m_destinationHasBeenSet = true; m_destination = value; }
-
-    /**
-     * <p>The destination.</p>
-     */
     inline void SetDestination(PathStatementRequest&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-
-    /**
-     * <p>The destination.</p>
-     */
     inline AccessScopePathRequest& WithDestination(const PathStatementRequest& value) { SetDestination(value); return *this;}
-
-    /**
-     * <p>The destination.</p>
-     */
     inline AccessScopePathRequest& WithDestination(PathStatementRequest&& value) { SetDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The through resources.</p>
      */
     inline const Aws::Vector<ThroughResourcesStatementRequest>& GetThroughResources() const{ return m_throughResources; }
-
-    /**
-     * <p>The through resources.</p>
-     */
     inline bool ThroughResourcesHasBeenSet() const { return m_throughResourcesHasBeenSet; }
-
-    /**
-     * <p>The through resources.</p>
-     */
     inline void SetThroughResources(const Aws::Vector<ThroughResourcesStatementRequest>& value) { m_throughResourcesHasBeenSet = true; m_throughResources = value; }
-
-    /**
-     * <p>The through resources.</p>
-     */
     inline void SetThroughResources(Aws::Vector<ThroughResourcesStatementRequest>&& value) { m_throughResourcesHasBeenSet = true; m_throughResources = std::move(value); }
-
-    /**
-     * <p>The through resources.</p>
-     */
     inline AccessScopePathRequest& WithThroughResources(const Aws::Vector<ThroughResourcesStatementRequest>& value) { SetThroughResources(value); return *this;}
-
-    /**
-     * <p>The through resources.</p>
-     */
     inline AccessScopePathRequest& WithThroughResources(Aws::Vector<ThroughResourcesStatementRequest>&& value) { SetThroughResources(std::move(value)); return *this;}
-
-    /**
-     * <p>The through resources.</p>
-     */
     inline AccessScopePathRequest& AddThroughResources(const ThroughResourcesStatementRequest& value) { m_throughResourcesHasBeenSet = true; m_throughResources.push_back(value); return *this; }
-
-    /**
-     * <p>The through resources.</p>
-     */
     inline AccessScopePathRequest& AddThroughResources(ThroughResourcesStatementRequest&& value) { m_throughResourcesHasBeenSet = true; m_throughResources.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     PathStatementRequest m_source;

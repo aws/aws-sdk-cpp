@@ -38,46 +38,19 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 bucket designated for call detail record storage.</p>
      */
     inline const Aws::String& GetCdrBucket() const{ return m_cdrBucket; }
-
-    /**
-     * <p>The Amazon S3 bucket designated for call detail record storage.</p>
-     */
     inline bool CdrBucketHasBeenSet() const { return m_cdrBucketHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 bucket designated for call detail record storage.</p>
-     */
     inline void SetCdrBucket(const Aws::String& value) { m_cdrBucketHasBeenSet = true; m_cdrBucket = value; }
-
-    /**
-     * <p>The Amazon S3 bucket designated for call detail record storage.</p>
-     */
     inline void SetCdrBucket(Aws::String&& value) { m_cdrBucketHasBeenSet = true; m_cdrBucket = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 bucket designated for call detail record storage.</p>
-     */
     inline void SetCdrBucket(const char* value) { m_cdrBucketHasBeenSet = true; m_cdrBucket.assign(value); }
-
-    /**
-     * <p>The Amazon S3 bucket designated for call detail record storage.</p>
-     */
     inline VoiceConnectorSettings& WithCdrBucket(const Aws::String& value) { SetCdrBucket(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket designated for call detail record storage.</p>
-     */
     inline VoiceConnectorSettings& WithCdrBucket(Aws::String&& value) { SetCdrBucket(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket designated for call detail record storage.</p>
-     */
     inline VoiceConnectorSettings& WithCdrBucket(const char* value) { SetCdrBucket(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cdrBucket;

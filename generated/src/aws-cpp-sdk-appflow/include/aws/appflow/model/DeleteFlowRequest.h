@@ -32,79 +32,31 @@ namespace Model
     AWS_APPFLOW_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
      * or hyphens (-) only. </p>
      */
     inline const Aws::String& GetFlowName() const{ return m_flowName; }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline bool FlowNameHasBeenSet() const { return m_flowNameHasBeenSet; }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline void SetFlowName(const Aws::String& value) { m_flowNameHasBeenSet = true; m_flowName = value; }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline void SetFlowName(Aws::String&& value) { m_flowNameHasBeenSet = true; m_flowName = std::move(value); }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline void SetFlowName(const char* value) { m_flowNameHasBeenSet = true; m_flowName.assign(value); }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline DeleteFlowRequest& WithFlowName(const Aws::String& value) { SetFlowName(value); return *this;}
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline DeleteFlowRequest& WithFlowName(Aws::String&& value) { SetFlowName(std::move(value)); return *this;}
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline DeleteFlowRequest& WithFlowName(const char* value) { SetFlowName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Indicates whether Amazon AppFlow should delete the flow, even if it is
      * currently in use. </p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
-
-    /**
-     * <p> Indicates whether Amazon AppFlow should delete the flow, even if it is
-     * currently in use. </p>
-     */
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
-
-    /**
-     * <p> Indicates whether Amazon AppFlow should delete the flow, even if it is
-     * currently in use. </p>
-     */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
-
-    /**
-     * <p> Indicates whether Amazon AppFlow should delete the flow, even if it is
-     * currently in use. </p>
-     */
     inline DeleteFlowRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowName;

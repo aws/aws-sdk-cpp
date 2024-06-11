@@ -38,36 +38,17 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The streaming notification target.</p>
      */
     inline const NotificationTarget& GetNotificationTarget() const{ return m_notificationTarget; }
-
-    /**
-     * <p>The streaming notification target.</p>
-     */
     inline bool NotificationTargetHasBeenSet() const { return m_notificationTargetHasBeenSet; }
-
-    /**
-     * <p>The streaming notification target.</p>
-     */
     inline void SetNotificationTarget(const NotificationTarget& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = value; }
-
-    /**
-     * <p>The streaming notification target.</p>
-     */
     inline void SetNotificationTarget(NotificationTarget&& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = std::move(value); }
-
-    /**
-     * <p>The streaming notification target.</p>
-     */
     inline StreamingNotificationTarget& WithNotificationTarget(const NotificationTarget& value) { SetNotificationTarget(value); return *this;}
-
-    /**
-     * <p>The streaming notification target.</p>
-     */
     inline StreamingNotificationTarget& WithNotificationTarget(NotificationTarget&& value) { SetNotificationTarget(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NotificationTarget m_notificationTarget;

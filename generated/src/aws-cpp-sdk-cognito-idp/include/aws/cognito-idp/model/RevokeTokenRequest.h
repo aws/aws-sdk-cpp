@@ -34,136 +34,48 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The refresh token that you want to revoke.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
-
-    /**
-     * <p>The refresh token that you want to revoke.</p>
-     */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-
-    /**
-     * <p>The refresh token that you want to revoke.</p>
-     */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-
-    /**
-     * <p>The refresh token that you want to revoke.</p>
-     */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-
-    /**
-     * <p>The refresh token that you want to revoke.</p>
-     */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-
-    /**
-     * <p>The refresh token that you want to revoke.</p>
-     */
     inline RevokeTokenRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-
-    /**
-     * <p>The refresh token that you want to revoke.</p>
-     */
     inline RevokeTokenRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The refresh token that you want to revoke.</p>
-     */
     inline RevokeTokenRequest& WithToken(const char* value) { SetToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The client ID for the token that you want to revoke.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
-
-    /**
-     * <p>The client ID for the token that you want to revoke.</p>
-     */
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-
-    /**
-     * <p>The client ID for the token that you want to revoke.</p>
-     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-
-    /**
-     * <p>The client ID for the token that you want to revoke.</p>
-     */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-
-    /**
-     * <p>The client ID for the token that you want to revoke.</p>
-     */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-
-    /**
-     * <p>The client ID for the token that you want to revoke.</p>
-     */
     inline RevokeTokenRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-
-    /**
-     * <p>The client ID for the token that you want to revoke.</p>
-     */
     inline RevokeTokenRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-
-    /**
-     * <p>The client ID for the token that you want to revoke.</p>
-     */
     inline RevokeTokenRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The secret for the client ID. This is required only if the client ID has a
      * secret.</p>
      */
     inline const Aws::String& GetClientSecret() const{ return m_clientSecret; }
-
-    /**
-     * <p>The secret for the client ID. This is required only if the client ID has a
-     * secret.</p>
-     */
     inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
-
-    /**
-     * <p>The secret for the client ID. This is required only if the client ID has a
-     * secret.</p>
-     */
     inline void SetClientSecret(const Aws::String& value) { m_clientSecretHasBeenSet = true; m_clientSecret = value; }
-
-    /**
-     * <p>The secret for the client ID. This is required only if the client ID has a
-     * secret.</p>
-     */
     inline void SetClientSecret(Aws::String&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::move(value); }
-
-    /**
-     * <p>The secret for the client ID. This is required only if the client ID has a
-     * secret.</p>
-     */
     inline void SetClientSecret(const char* value) { m_clientSecretHasBeenSet = true; m_clientSecret.assign(value); }
-
-    /**
-     * <p>The secret for the client ID. This is required only if the client ID has a
-     * secret.</p>
-     */
     inline RevokeTokenRequest& WithClientSecret(const Aws::String& value) { SetClientSecret(value); return *this;}
-
-    /**
-     * <p>The secret for the client ID. This is required only if the client ID has a
-     * secret.</p>
-     */
     inline RevokeTokenRequest& WithClientSecret(Aws::String&& value) { SetClientSecret(std::move(value)); return *this;}
-
-    /**
-     * <p>The secret for the client ID. This is required only if the client ID has a
-     * secret.</p>
-     */
     inline RevokeTokenRequest& WithClientSecret(const char* value) { SetClientSecret(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_token;

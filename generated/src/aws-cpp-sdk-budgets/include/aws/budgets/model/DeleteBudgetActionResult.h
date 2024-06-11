@@ -33,87 +33,47 @@ namespace Model
     AWS_BUDGETS_API DeleteBudgetActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    
     inline void SetAccountId(const Aws::String& value) { m_accountId = value; }
-
-    
     inline void SetAccountId(Aws::String&& value) { m_accountId = std::move(value); }
-
-    
     inline void SetAccountId(const char* value) { m_accountId.assign(value); }
-
-    
     inline DeleteBudgetActionResult& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    
     inline DeleteBudgetActionResult& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    
     inline DeleteBudgetActionResult& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
-
-    
     inline void SetBudgetName(const Aws::String& value) { m_budgetName = value; }
-
-    
     inline void SetBudgetName(Aws::String&& value) { m_budgetName = std::move(value); }
-
-    
     inline void SetBudgetName(const char* value) { m_budgetName.assign(value); }
-
-    
     inline DeleteBudgetActionResult& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
-
-    
     inline DeleteBudgetActionResult& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
-
-    
     inline DeleteBudgetActionResult& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Action& GetAction() const{ return m_action; }
-
-    
     inline void SetAction(const Action& value) { m_action = value; }
-
-    
     inline void SetAction(Action&& value) { m_action = std::move(value); }
-
-    
     inline DeleteBudgetActionResult& WithAction(const Action& value) { SetAction(value); return *this;}
-
-    
     inline DeleteBudgetActionResult& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteBudgetActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteBudgetActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteBudgetActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

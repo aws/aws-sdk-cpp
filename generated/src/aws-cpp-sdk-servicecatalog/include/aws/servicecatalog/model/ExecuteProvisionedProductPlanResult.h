@@ -33,53 +33,27 @@ namespace Model
     AWS_SERVICECATALOG_API ExecuteProvisionedProductPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the result of provisioning the product.</p>
      */
     inline const RecordDetail& GetRecordDetail() const{ return m_recordDetail; }
-
-    /**
-     * <p>Information about the result of provisioning the product.</p>
-     */
     inline void SetRecordDetail(const RecordDetail& value) { m_recordDetail = value; }
-
-    /**
-     * <p>Information about the result of provisioning the product.</p>
-     */
     inline void SetRecordDetail(RecordDetail&& value) { m_recordDetail = std::move(value); }
-
-    /**
-     * <p>Information about the result of provisioning the product.</p>
-     */
     inline ExecuteProvisionedProductPlanResult& WithRecordDetail(const RecordDetail& value) { SetRecordDetail(value); return *this;}
-
-    /**
-     * <p>Information about the result of provisioning the product.</p>
-     */
     inline ExecuteProvisionedProductPlanResult& WithRecordDetail(RecordDetail&& value) { SetRecordDetail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExecuteProvisionedProductPlanResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExecuteProvisionedProductPlanResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExecuteProvisionedProductPlanResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RecordDetail m_recordDetail;

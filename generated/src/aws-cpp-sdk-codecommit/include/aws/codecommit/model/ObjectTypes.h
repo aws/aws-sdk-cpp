@@ -38,98 +38,41 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of the object in the source branch.</p>
      */
     inline const ObjectTypeEnum& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The type of the object in the source branch.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The type of the object in the source branch.</p>
-     */
     inline void SetSource(const ObjectTypeEnum& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The type of the object in the source branch.</p>
-     */
     inline void SetSource(ObjectTypeEnum&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The type of the object in the source branch.</p>
-     */
     inline ObjectTypes& WithSource(const ObjectTypeEnum& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The type of the object in the source branch.</p>
-     */
     inline ObjectTypes& WithSource(ObjectTypeEnum&& value) { SetSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the object in the destination branch.</p>
      */
     inline const ObjectTypeEnum& GetDestination() const{ return m_destination; }
-
-    /**
-     * <p>The type of the object in the destination branch.</p>
-     */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-
-    /**
-     * <p>The type of the object in the destination branch.</p>
-     */
     inline void SetDestination(const ObjectTypeEnum& value) { m_destinationHasBeenSet = true; m_destination = value; }
-
-    /**
-     * <p>The type of the object in the destination branch.</p>
-     */
     inline void SetDestination(ObjectTypeEnum&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-
-    /**
-     * <p>The type of the object in the destination branch.</p>
-     */
     inline ObjectTypes& WithDestination(const ObjectTypeEnum& value) { SetDestination(value); return *this;}
-
-    /**
-     * <p>The type of the object in the destination branch.</p>
-     */
     inline ObjectTypes& WithDestination(ObjectTypeEnum&& value) { SetDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the object in the base commit of the merge.</p>
      */
     inline const ObjectTypeEnum& GetBase() const{ return m_base; }
-
-    /**
-     * <p>The type of the object in the base commit of the merge.</p>
-     */
     inline bool BaseHasBeenSet() const { return m_baseHasBeenSet; }
-
-    /**
-     * <p>The type of the object in the base commit of the merge.</p>
-     */
     inline void SetBase(const ObjectTypeEnum& value) { m_baseHasBeenSet = true; m_base = value; }
-
-    /**
-     * <p>The type of the object in the base commit of the merge.</p>
-     */
     inline void SetBase(ObjectTypeEnum&& value) { m_baseHasBeenSet = true; m_base = std::move(value); }
-
-    /**
-     * <p>The type of the object in the base commit of the merge.</p>
-     */
     inline ObjectTypes& WithBase(const ObjectTypeEnum& value) { SetBase(value); return *this;}
-
-    /**
-     * <p>The type of the object in the base commit of the merge.</p>
-     */
     inline ObjectTypes& WithBase(ObjectTypeEnum&& value) { SetBase(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ObjectTypeEnum m_source;

@@ -34,62 +34,21 @@ namespace Model
     AWS_WAFREGIONAL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get.
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
      * <a>ListWebACLs</a>.</p>
      */
     inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
-
-    /**
-     * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get.
-     * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-     * <a>ListWebACLs</a>.</p>
-     */
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
-
-    /**
-     * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get.
-     * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-     * <a>ListWebACLs</a>.</p>
-     */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
-
-    /**
-     * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get.
-     * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-     * <a>ListWebACLs</a>.</p>
-     */
     inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
-
-    /**
-     * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get.
-     * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-     * <a>ListWebACLs</a>.</p>
-     */
     inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
-
-    /**
-     * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get.
-     * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-     * <a>ListWebACLs</a>.</p>
-     */
     inline GetWebACLRequest& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
-
-    /**
-     * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get.
-     * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-     * <a>ListWebACLs</a>.</p>
-     */
     inline GetWebACLRequest& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get.
-     * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-     * <a>ListWebACLs</a>.</p>
-     */
     inline GetWebACLRequest& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_webACLId;

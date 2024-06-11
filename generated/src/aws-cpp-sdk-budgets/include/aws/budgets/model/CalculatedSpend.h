@@ -44,79 +44,31 @@ namespace Model
     AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount of cost, usage, RI units, or Savings Plans units that you
      * used.</p>
      */
     inline const Spend& GetActualSpend() const{ return m_actualSpend; }
-
-    /**
-     * <p>The amount of cost, usage, RI units, or Savings Plans units that you
-     * used.</p>
-     */
     inline bool ActualSpendHasBeenSet() const { return m_actualSpendHasBeenSet; }
-
-    /**
-     * <p>The amount of cost, usage, RI units, or Savings Plans units that you
-     * used.</p>
-     */
     inline void SetActualSpend(const Spend& value) { m_actualSpendHasBeenSet = true; m_actualSpend = value; }
-
-    /**
-     * <p>The amount of cost, usage, RI units, or Savings Plans units that you
-     * used.</p>
-     */
     inline void SetActualSpend(Spend&& value) { m_actualSpendHasBeenSet = true; m_actualSpend = std::move(value); }
-
-    /**
-     * <p>The amount of cost, usage, RI units, or Savings Plans units that you
-     * used.</p>
-     */
     inline CalculatedSpend& WithActualSpend(const Spend& value) { SetActualSpend(value); return *this;}
-
-    /**
-     * <p>The amount of cost, usage, RI units, or Savings Plans units that you
-     * used.</p>
-     */
     inline CalculatedSpend& WithActualSpend(Spend&& value) { SetActualSpend(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of cost, usage, RI units, or Savings Plans units that you're
      * forecasted to use.</p>
      */
     inline const Spend& GetForecastedSpend() const{ return m_forecastedSpend; }
-
-    /**
-     * <p>The amount of cost, usage, RI units, or Savings Plans units that you're
-     * forecasted to use.</p>
-     */
     inline bool ForecastedSpendHasBeenSet() const { return m_forecastedSpendHasBeenSet; }
-
-    /**
-     * <p>The amount of cost, usage, RI units, or Savings Plans units that you're
-     * forecasted to use.</p>
-     */
     inline void SetForecastedSpend(const Spend& value) { m_forecastedSpendHasBeenSet = true; m_forecastedSpend = value; }
-
-    /**
-     * <p>The amount of cost, usage, RI units, or Savings Plans units that you're
-     * forecasted to use.</p>
-     */
     inline void SetForecastedSpend(Spend&& value) { m_forecastedSpendHasBeenSet = true; m_forecastedSpend = std::move(value); }
-
-    /**
-     * <p>The amount of cost, usage, RI units, or Savings Plans units that you're
-     * forecasted to use.</p>
-     */
     inline CalculatedSpend& WithForecastedSpend(const Spend& value) { SetForecastedSpend(value); return *this;}
-
-    /**
-     * <p>The amount of cost, usage, RI units, or Savings Plans units that you're
-     * forecasted to use.</p>
-     */
     inline CalculatedSpend& WithForecastedSpend(Spend&& value) { SetForecastedSpend(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Spend m_actualSpend;

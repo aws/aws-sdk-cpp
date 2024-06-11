@@ -40,104 +40,42 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains the details of the backup created for the table. </p>
      */
     inline const BackupDetails& GetBackupDetails() const{ return m_backupDetails; }
-
-    /**
-     * <p>Contains the details of the backup created for the table. </p>
-     */
     inline bool BackupDetailsHasBeenSet() const { return m_backupDetailsHasBeenSet; }
-
-    /**
-     * <p>Contains the details of the backup created for the table. </p>
-     */
     inline void SetBackupDetails(const BackupDetails& value) { m_backupDetailsHasBeenSet = true; m_backupDetails = value; }
-
-    /**
-     * <p>Contains the details of the backup created for the table. </p>
-     */
     inline void SetBackupDetails(BackupDetails&& value) { m_backupDetailsHasBeenSet = true; m_backupDetails = std::move(value); }
-
-    /**
-     * <p>Contains the details of the backup created for the table. </p>
-     */
     inline BackupDescription& WithBackupDetails(const BackupDetails& value) { SetBackupDetails(value); return *this;}
-
-    /**
-     * <p>Contains the details of the backup created for the table. </p>
-     */
     inline BackupDescription& WithBackupDetails(BackupDetails&& value) { SetBackupDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains the details of the table when the backup was created. </p>
      */
     inline const SourceTableDetails& GetSourceTableDetails() const{ return m_sourceTableDetails; }
-
-    /**
-     * <p>Contains the details of the table when the backup was created. </p>
-     */
     inline bool SourceTableDetailsHasBeenSet() const { return m_sourceTableDetailsHasBeenSet; }
-
-    /**
-     * <p>Contains the details of the table when the backup was created. </p>
-     */
     inline void SetSourceTableDetails(const SourceTableDetails& value) { m_sourceTableDetailsHasBeenSet = true; m_sourceTableDetails = value; }
-
-    /**
-     * <p>Contains the details of the table when the backup was created. </p>
-     */
     inline void SetSourceTableDetails(SourceTableDetails&& value) { m_sourceTableDetailsHasBeenSet = true; m_sourceTableDetails = std::move(value); }
-
-    /**
-     * <p>Contains the details of the table when the backup was created. </p>
-     */
     inline BackupDescription& WithSourceTableDetails(const SourceTableDetails& value) { SetSourceTableDetails(value); return *this;}
-
-    /**
-     * <p>Contains the details of the table when the backup was created. </p>
-     */
     inline BackupDescription& WithSourceTableDetails(SourceTableDetails&& value) { SetSourceTableDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains the details of the features enabled on the table when the backup was
      * created. For example, LSIs, GSIs, streams, TTL.</p>
      */
     inline const SourceTableFeatureDetails& GetSourceTableFeatureDetails() const{ return m_sourceTableFeatureDetails; }
-
-    /**
-     * <p>Contains the details of the features enabled on the table when the backup was
-     * created. For example, LSIs, GSIs, streams, TTL.</p>
-     */
     inline bool SourceTableFeatureDetailsHasBeenSet() const { return m_sourceTableFeatureDetailsHasBeenSet; }
-
-    /**
-     * <p>Contains the details of the features enabled on the table when the backup was
-     * created. For example, LSIs, GSIs, streams, TTL.</p>
-     */
     inline void SetSourceTableFeatureDetails(const SourceTableFeatureDetails& value) { m_sourceTableFeatureDetailsHasBeenSet = true; m_sourceTableFeatureDetails = value; }
-
-    /**
-     * <p>Contains the details of the features enabled on the table when the backup was
-     * created. For example, LSIs, GSIs, streams, TTL.</p>
-     */
     inline void SetSourceTableFeatureDetails(SourceTableFeatureDetails&& value) { m_sourceTableFeatureDetailsHasBeenSet = true; m_sourceTableFeatureDetails = std::move(value); }
-
-    /**
-     * <p>Contains the details of the features enabled on the table when the backup was
-     * created. For example, LSIs, GSIs, streams, TTL.</p>
-     */
     inline BackupDescription& WithSourceTableFeatureDetails(const SourceTableFeatureDetails& value) { SetSourceTableFeatureDetails(value); return *this;}
-
-    /**
-     * <p>Contains the details of the features enabled on the table when the backup was
-     * created. For example, LSIs, GSIs, streams, TTL.</p>
-     */
     inline BackupDescription& WithSourceTableFeatureDetails(SourceTableFeatureDetails&& value) { SetSourceTableFeatureDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BackupDetails m_backupDetails;

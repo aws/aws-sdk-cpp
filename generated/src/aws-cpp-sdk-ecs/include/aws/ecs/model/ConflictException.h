@@ -45,60 +45,21 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The existing task ARNs which are already associated with the
      * <code>clientToken</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
-
-    /**
-     * <p>The existing task ARNs which are already associated with the
-     * <code>clientToken</code>.</p>
-     */
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-
-    /**
-     * <p>The existing task ARNs which are already associated with the
-     * <code>clientToken</code>.</p>
-     */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-
-    /**
-     * <p>The existing task ARNs which are already associated with the
-     * <code>clientToken</code>.</p>
-     */
     inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-
-    /**
-     * <p>The existing task ARNs which are already associated with the
-     * <code>clientToken</code>.</p>
-     */
     inline ConflictException& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-
-    /**
-     * <p>The existing task ARNs which are already associated with the
-     * <code>clientToken</code>.</p>
-     */
     inline ConflictException& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The existing task ARNs which are already associated with the
-     * <code>clientToken</code>.</p>
-     */
     inline ConflictException& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-
-    /**
-     * <p>The existing task ARNs which are already associated with the
-     * <code>clientToken</code>.</p>
-     */
     inline ConflictException& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The existing task ARNs which are already associated with the
-     * <code>clientToken</code>.</p>
-     */
     inline ConflictException& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_resourceIds;

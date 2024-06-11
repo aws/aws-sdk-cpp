@@ -39,67 +39,29 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The details of the execute command configuration.</p>
      */
     inline const ExecuteCommandConfiguration& GetExecuteCommandConfiguration() const{ return m_executeCommandConfiguration; }
-
-    /**
-     * <p>The details of the execute command configuration.</p>
-     */
     inline bool ExecuteCommandConfigurationHasBeenSet() const { return m_executeCommandConfigurationHasBeenSet; }
-
-    /**
-     * <p>The details of the execute command configuration.</p>
-     */
     inline void SetExecuteCommandConfiguration(const ExecuteCommandConfiguration& value) { m_executeCommandConfigurationHasBeenSet = true; m_executeCommandConfiguration = value; }
-
-    /**
-     * <p>The details of the execute command configuration.</p>
-     */
     inline void SetExecuteCommandConfiguration(ExecuteCommandConfiguration&& value) { m_executeCommandConfigurationHasBeenSet = true; m_executeCommandConfiguration = std::move(value); }
-
-    /**
-     * <p>The details of the execute command configuration.</p>
-     */
     inline ClusterConfiguration& WithExecuteCommandConfiguration(const ExecuteCommandConfiguration& value) { SetExecuteCommandConfiguration(value); return *this;}
-
-    /**
-     * <p>The details of the execute command configuration.</p>
-     */
     inline ClusterConfiguration& WithExecuteCommandConfiguration(ExecuteCommandConfiguration&& value) { SetExecuteCommandConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of the managed storage configuration.</p>
      */
     inline const ManagedStorageConfiguration& GetManagedStorageConfiguration() const{ return m_managedStorageConfiguration; }
-
-    /**
-     * <p>The details of the managed storage configuration.</p>
-     */
     inline bool ManagedStorageConfigurationHasBeenSet() const { return m_managedStorageConfigurationHasBeenSet; }
-
-    /**
-     * <p>The details of the managed storage configuration.</p>
-     */
     inline void SetManagedStorageConfiguration(const ManagedStorageConfiguration& value) { m_managedStorageConfigurationHasBeenSet = true; m_managedStorageConfiguration = value; }
-
-    /**
-     * <p>The details of the managed storage configuration.</p>
-     */
     inline void SetManagedStorageConfiguration(ManagedStorageConfiguration&& value) { m_managedStorageConfigurationHasBeenSet = true; m_managedStorageConfiguration = std::move(value); }
-
-    /**
-     * <p>The details of the managed storage configuration.</p>
-     */
     inline ClusterConfiguration& WithManagedStorageConfiguration(const ManagedStorageConfiguration& value) { SetManagedStorageConfiguration(value); return *this;}
-
-    /**
-     * <p>The details of the managed storage configuration.</p>
-     */
     inline ClusterConfiguration& WithManagedStorageConfiguration(ManagedStorageConfiguration&& value) { SetManagedStorageConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ExecuteCommandConfiguration m_executeCommandConfiguration;

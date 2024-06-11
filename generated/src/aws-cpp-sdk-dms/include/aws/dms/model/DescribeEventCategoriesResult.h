@@ -39,63 +39,29 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API DescribeEventCategoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of event categories.</p>
      */
     inline const Aws::Vector<EventCategoryGroup>& GetEventCategoryGroupList() const{ return m_eventCategoryGroupList; }
-
-    /**
-     * <p>A list of event categories.</p>
-     */
     inline void SetEventCategoryGroupList(const Aws::Vector<EventCategoryGroup>& value) { m_eventCategoryGroupList = value; }
-
-    /**
-     * <p>A list of event categories.</p>
-     */
     inline void SetEventCategoryGroupList(Aws::Vector<EventCategoryGroup>&& value) { m_eventCategoryGroupList = std::move(value); }
-
-    /**
-     * <p>A list of event categories.</p>
-     */
     inline DescribeEventCategoriesResult& WithEventCategoryGroupList(const Aws::Vector<EventCategoryGroup>& value) { SetEventCategoryGroupList(value); return *this;}
-
-    /**
-     * <p>A list of event categories.</p>
-     */
     inline DescribeEventCategoriesResult& WithEventCategoryGroupList(Aws::Vector<EventCategoryGroup>&& value) { SetEventCategoryGroupList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of event categories.</p>
-     */
     inline DescribeEventCategoriesResult& AddEventCategoryGroupList(const EventCategoryGroup& value) { m_eventCategoryGroupList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of event categories.</p>
-     */
     inline DescribeEventCategoriesResult& AddEventCategoryGroupList(EventCategoryGroup&& value) { m_eventCategoryGroupList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeEventCategoriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeEventCategoriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeEventCategoriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EventCategoryGroup> m_eventCategoryGroupList;

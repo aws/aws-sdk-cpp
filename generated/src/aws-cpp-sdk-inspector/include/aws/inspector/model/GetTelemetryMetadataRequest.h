@@ -34,54 +34,20 @@ namespace Model
     AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN that specifies the assessment run that has the telemetry data that
      * you want to obtain.</p>
      */
     inline const Aws::String& GetAssessmentRunArn() const{ return m_assessmentRunArn; }
-
-    /**
-     * <p>The ARN that specifies the assessment run that has the telemetry data that
-     * you want to obtain.</p>
-     */
     inline bool AssessmentRunArnHasBeenSet() const { return m_assessmentRunArnHasBeenSet; }
-
-    /**
-     * <p>The ARN that specifies the assessment run that has the telemetry data that
-     * you want to obtain.</p>
-     */
     inline void SetAssessmentRunArn(const Aws::String& value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn = value; }
-
-    /**
-     * <p>The ARN that specifies the assessment run that has the telemetry data that
-     * you want to obtain.</p>
-     */
     inline void SetAssessmentRunArn(Aws::String&& value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn = std::move(value); }
-
-    /**
-     * <p>The ARN that specifies the assessment run that has the telemetry data that
-     * you want to obtain.</p>
-     */
     inline void SetAssessmentRunArn(const char* value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn.assign(value); }
-
-    /**
-     * <p>The ARN that specifies the assessment run that has the telemetry data that
-     * you want to obtain.</p>
-     */
     inline GetTelemetryMetadataRequest& WithAssessmentRunArn(const Aws::String& value) { SetAssessmentRunArn(value); return *this;}
-
-    /**
-     * <p>The ARN that specifies the assessment run that has the telemetry data that
-     * you want to obtain.</p>
-     */
     inline GetTelemetryMetadataRequest& WithAssessmentRunArn(Aws::String&& value) { SetAssessmentRunArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN that specifies the assessment run that has the telemetry data that
-     * you want to obtain.</p>
-     */
     inline GetTelemetryMetadataRequest& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assessmentRunArn;

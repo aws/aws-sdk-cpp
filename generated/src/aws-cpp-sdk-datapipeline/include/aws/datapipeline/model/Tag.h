@@ -42,6 +42,7 @@ namespace Model
     AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The key name of a tag defined by a user. For more information, see <a
      * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
@@ -49,64 +50,16 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The key name of a tag defined by a user. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The key name of a tag defined by a user. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The key name of a tag defined by a user. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The key name of a tag defined by a user. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The key name of a tag defined by a user. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The key name of a tag defined by a user. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The key name of a tag defined by a user. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The optional value portion of a tag defined by a user. For more information,
      * see <a
@@ -115,70 +68,14 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The optional value portion of a tag defined by a user. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The optional value portion of a tag defined by a user. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The optional value portion of a tag defined by a user. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The optional value portion of a tag defined by a user. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The optional value portion of a tag defined by a user. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The optional value portion of a tag defined by a user. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The optional value portion of a tag defined by a user. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
-     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-     * Guide</i>.</p>
-     */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

@@ -33,53 +33,27 @@ namespace Model
     AWS_ECS_API DeleteCapacityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details of the capacity provider.</p>
      */
     inline const CapacityProvider& GetCapacityProvider() const{ return m_capacityProvider; }
-
-    /**
-     * <p>The details of the capacity provider.</p>
-     */
     inline void SetCapacityProvider(const CapacityProvider& value) { m_capacityProvider = value; }
-
-    /**
-     * <p>The details of the capacity provider.</p>
-     */
     inline void SetCapacityProvider(CapacityProvider&& value) { m_capacityProvider = std::move(value); }
-
-    /**
-     * <p>The details of the capacity provider.</p>
-     */
     inline DeleteCapacityProviderResult& WithCapacityProvider(const CapacityProvider& value) { SetCapacityProvider(value); return *this;}
-
-    /**
-     * <p>The details of the capacity provider.</p>
-     */
     inline DeleteCapacityProviderResult& WithCapacityProvider(CapacityProvider&& value) { SetCapacityProvider(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteCapacityProviderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteCapacityProviderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteCapacityProviderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CapacityProvider m_capacityProvider;

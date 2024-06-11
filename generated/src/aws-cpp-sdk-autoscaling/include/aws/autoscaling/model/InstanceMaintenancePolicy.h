@@ -40,6 +40,7 @@ namespace Model
     AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Specifies the lower threshold as a percentage of the desired capacity of the
      * Auto Scaling group. It represents the minimum percentage of the group to keep in
@@ -48,35 +49,12 @@ namespace Model
      * value of <code>-1</code>.</p>
      */
     inline int GetMinHealthyPercentage() const{ return m_minHealthyPercentage; }
-
-    /**
-     * <p>Specifies the lower threshold as a percentage of the desired capacity of the
-     * Auto Scaling group. It represents the minimum percentage of the group to keep in
-     * service, healthy, and ready to use to support your workload when replacing
-     * instances. Value range is 0 to 100. To clear a previously set value, specify a
-     * value of <code>-1</code>.</p>
-     */
     inline bool MinHealthyPercentageHasBeenSet() const { return m_minHealthyPercentageHasBeenSet; }
-
-    /**
-     * <p>Specifies the lower threshold as a percentage of the desired capacity of the
-     * Auto Scaling group. It represents the minimum percentage of the group to keep in
-     * service, healthy, and ready to use to support your workload when replacing
-     * instances. Value range is 0 to 100. To clear a previously set value, specify a
-     * value of <code>-1</code>.</p>
-     */
     inline void SetMinHealthyPercentage(int value) { m_minHealthyPercentageHasBeenSet = true; m_minHealthyPercentage = value; }
-
-    /**
-     * <p>Specifies the lower threshold as a percentage of the desired capacity of the
-     * Auto Scaling group. It represents the minimum percentage of the group to keep in
-     * service, healthy, and ready to use to support your workload when replacing
-     * instances. Value range is 0 to 100. To clear a previously set value, specify a
-     * value of <code>-1</code>.</p>
-     */
     inline InstanceMaintenancePolicy& WithMinHealthyPercentage(int value) { SetMinHealthyPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the upper threshold as a percentage of the desired capacity of the
      * Auto Scaling group. It represents the maximum percentage of the group that can
@@ -88,43 +66,10 @@ namespace Model
      * that can be replaced at the same time.</p>
      */
     inline int GetMaxHealthyPercentage() const{ return m_maxHealthyPercentage; }
-
-    /**
-     * <p>Specifies the upper threshold as a percentage of the desired capacity of the
-     * Auto Scaling group. It represents the maximum percentage of the group that can
-     * be in service and healthy, or pending, to support your workload when replacing
-     * instances. Value range is 100 to 200. To clear a previously set value, specify a
-     * value of <code>-1</code>.</p> <p>Both <code>MinHealthyPercentage</code> and
-     * <code>MaxHealthyPercentage</code> must be specified, and the difference between
-     * them cannot be greater than 100. A large range increases the number of instances
-     * that can be replaced at the same time.</p>
-     */
     inline bool MaxHealthyPercentageHasBeenSet() const { return m_maxHealthyPercentageHasBeenSet; }
-
-    /**
-     * <p>Specifies the upper threshold as a percentage of the desired capacity of the
-     * Auto Scaling group. It represents the maximum percentage of the group that can
-     * be in service and healthy, or pending, to support your workload when replacing
-     * instances. Value range is 100 to 200. To clear a previously set value, specify a
-     * value of <code>-1</code>.</p> <p>Both <code>MinHealthyPercentage</code> and
-     * <code>MaxHealthyPercentage</code> must be specified, and the difference between
-     * them cannot be greater than 100. A large range increases the number of instances
-     * that can be replaced at the same time.</p>
-     */
     inline void SetMaxHealthyPercentage(int value) { m_maxHealthyPercentageHasBeenSet = true; m_maxHealthyPercentage = value; }
-
-    /**
-     * <p>Specifies the upper threshold as a percentage of the desired capacity of the
-     * Auto Scaling group. It represents the maximum percentage of the group that can
-     * be in service and healthy, or pending, to support your workload when replacing
-     * instances. Value range is 100 to 200. To clear a previously set value, specify a
-     * value of <code>-1</code>.</p> <p>Both <code>MinHealthyPercentage</code> and
-     * <code>MaxHealthyPercentage</code> must be specified, and the difference between
-     * them cannot be greater than 100. A large range increases the number of instances
-     * that can be replaced at the same time.</p>
-     */
     inline InstanceMaintenancePolicy& WithMaxHealthyPercentage(int value) { SetMaxHealthyPercentage(value); return *this;}
-
+    ///@}
   private:
 
     int m_minHealthyPercentage;

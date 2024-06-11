@@ -35,51 +35,20 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The IDs of the Fleet Advisor collector databases to delete.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDatabaseIds() const{ return m_databaseIds; }
-
-    /**
-     * <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-     */
     inline bool DatabaseIdsHasBeenSet() const { return m_databaseIdsHasBeenSet; }
-
-    /**
-     * <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-     */
     inline void SetDatabaseIds(const Aws::Vector<Aws::String>& value) { m_databaseIdsHasBeenSet = true; m_databaseIds = value; }
-
-    /**
-     * <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-     */
     inline void SetDatabaseIds(Aws::Vector<Aws::String>&& value) { m_databaseIdsHasBeenSet = true; m_databaseIds = std::move(value); }
-
-    /**
-     * <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-     */
     inline DeleteFleetAdvisorDatabasesRequest& WithDatabaseIds(const Aws::Vector<Aws::String>& value) { SetDatabaseIds(value); return *this;}
-
-    /**
-     * <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-     */
     inline DeleteFleetAdvisorDatabasesRequest& WithDatabaseIds(Aws::Vector<Aws::String>&& value) { SetDatabaseIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-     */
     inline DeleteFleetAdvisorDatabasesRequest& AddDatabaseIds(const Aws::String& value) { m_databaseIdsHasBeenSet = true; m_databaseIds.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-     */
     inline DeleteFleetAdvisorDatabasesRequest& AddDatabaseIds(Aws::String&& value) { m_databaseIdsHasBeenSet = true; m_databaseIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-     */
     inline DeleteFleetAdvisorDatabasesRequest& AddDatabaseIds(const char* value) { m_databaseIdsHasBeenSet = true; m_databaseIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_databaseIds;

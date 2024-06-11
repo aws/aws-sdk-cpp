@@ -32,87 +32,33 @@ namespace Model
     AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A description for the device.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description for the device.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description for the device.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description for the device.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description for the device.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description for the device.</p>
-     */
     inline UpdateDeviceMetadataRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the device.</p>
-     */
     inline UpdateDeviceMetadataRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the device.</p>
-     */
     inline UpdateDeviceMetadataRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The device's ID.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline UpdateDeviceMetadataRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline UpdateDeviceMetadataRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline UpdateDeviceMetadataRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_description;

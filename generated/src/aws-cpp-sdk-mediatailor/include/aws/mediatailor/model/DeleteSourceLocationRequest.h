@@ -32,46 +32,19 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the source location.</p>
      */
     inline const Aws::String& GetSourceLocationName() const{ return m_sourceLocationName; }
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline bool SourceLocationNameHasBeenSet() const { return m_sourceLocationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline void SetSourceLocationName(const Aws::String& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = value; }
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline void SetSourceLocationName(Aws::String&& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = std::move(value); }
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline void SetSourceLocationName(const char* value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName.assign(value); }
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline DeleteSourceLocationRequest& WithSourceLocationName(const Aws::String& value) { SetSourceLocationName(value); return *this;}
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline DeleteSourceLocationRequest& WithSourceLocationName(Aws::String&& value) { SetSourceLocationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline DeleteSourceLocationRequest& WithSourceLocationName(const char* value) { SetSourceLocationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceLocationName;

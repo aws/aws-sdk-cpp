@@ -36,34 +36,17 @@ namespace Model
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If
      * <code>FALSE</code>, all alarm instances created based on the alarm model are
      * activated. The default value is <code>TRUE</code>.</p>
      */
     inline bool GetDisabledOnInitialization() const{ return m_disabledOnInitialization; }
-
-    /**
-     * <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If
-     * <code>FALSE</code>, all alarm instances created based on the alarm model are
-     * activated. The default value is <code>TRUE</code>.</p>
-     */
     inline bool DisabledOnInitializationHasBeenSet() const { return m_disabledOnInitializationHasBeenSet; }
-
-    /**
-     * <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If
-     * <code>FALSE</code>, all alarm instances created based on the alarm model are
-     * activated. The default value is <code>TRUE</code>.</p>
-     */
     inline void SetDisabledOnInitialization(bool value) { m_disabledOnInitializationHasBeenSet = true; m_disabledOnInitialization = value; }
-
-    /**
-     * <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If
-     * <code>FALSE</code>, all alarm instances created based on the alarm model are
-     * activated. The default value is <code>TRUE</code>.</p>
-     */
     inline InitializationConfiguration& WithDisabledOnInitialization(bool value) { SetDisabledOnInitialization(value); return *this;}
-
+    ///@}
   private:
 
     bool m_disabledOnInitialization;

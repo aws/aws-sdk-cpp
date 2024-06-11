@@ -38,67 +38,29 @@ namespace Model
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ECS service configuration used for recommendations.</p>
      */
     inline const EcsServiceConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p>The ECS service configuration used for recommendations.</p>
-     */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-
-    /**
-     * <p>The ECS service configuration used for recommendations.</p>
-     */
     inline void SetConfiguration(const EcsServiceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-
-    /**
-     * <p>The ECS service configuration used for recommendations.</p>
-     */
     inline void SetConfiguration(EcsServiceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-
-    /**
-     * <p>The ECS service configuration used for recommendations.</p>
-     */
     inline EcsService& WithConfiguration(const EcsServiceConfiguration& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p>The ECS service configuration used for recommendations.</p>
-     */
     inline EcsService& WithConfiguration(EcsServiceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Cost impact of the recommendation.</p>
      */
     inline const ResourceCostCalculation& GetCostCalculation() const{ return m_costCalculation; }
-
-    /**
-     * <p>Cost impact of the recommendation.</p>
-     */
     inline bool CostCalculationHasBeenSet() const { return m_costCalculationHasBeenSet; }
-
-    /**
-     * <p>Cost impact of the recommendation.</p>
-     */
     inline void SetCostCalculation(const ResourceCostCalculation& value) { m_costCalculationHasBeenSet = true; m_costCalculation = value; }
-
-    /**
-     * <p>Cost impact of the recommendation.</p>
-     */
     inline void SetCostCalculation(ResourceCostCalculation&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::move(value); }
-
-    /**
-     * <p>Cost impact of the recommendation.</p>
-     */
     inline EcsService& WithCostCalculation(const ResourceCostCalculation& value) { SetCostCalculation(value); return *this;}
-
-    /**
-     * <p>Cost impact of the recommendation.</p>
-     */
     inline EcsService& WithCostCalculation(ResourceCostCalculation&& value) { SetCostCalculation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EcsServiceConfiguration m_configuration;

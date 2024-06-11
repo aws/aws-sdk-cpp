@@ -32,99 +32,42 @@ namespace Model
     AWS_CONNECTCASES_API CreateTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the newly created template.</p>
      */
     inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the newly created template.</p>
-     */
     inline void SetTemplateArn(const Aws::String& value) { m_templateArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the newly created template.</p>
-     */
     inline void SetTemplateArn(Aws::String&& value) { m_templateArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the newly created template.</p>
-     */
     inline void SetTemplateArn(const char* value) { m_templateArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the newly created template.</p>
-     */
     inline CreateTemplateResult& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the newly created template.</p>
-     */
     inline CreateTemplateResult& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the newly created template.</p>
-     */
     inline CreateTemplateResult& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique identifier of a template.</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline void SetTemplateId(const Aws::String& value) { m_templateId = value; }
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline void SetTemplateId(Aws::String&& value) { m_templateId = std::move(value); }
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline void SetTemplateId(const char* value) { m_templateId.assign(value); }
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline CreateTemplateResult& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline CreateTemplateResult& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline CreateTemplateResult& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateArn;

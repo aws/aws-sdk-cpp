@@ -37,67 +37,29 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the worker amount capability.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the worker amount capability.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the worker amount capability.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the worker amount capability.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the worker amount capability.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the worker amount capability.</p>
-     */
     inline WorkerAmountCapability& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the worker amount capability.</p>
-     */
     inline WorkerAmountCapability& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the worker amount capability.</p>
-     */
     inline WorkerAmountCapability& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the worker amount capability.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the worker amount capability.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the worker amount capability.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the worker amount capability.</p>
-     */
     inline WorkerAmountCapability& WithValue(double value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

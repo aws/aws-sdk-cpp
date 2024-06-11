@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API UpdateCodeRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the Git repository.</p>
      */
     inline const Aws::String& GetCodeRepositoryArn() const{ return m_codeRepositoryArn; }
-
-    /**
-     * <p>The ARN of the Git repository.</p>
-     */
     inline void SetCodeRepositoryArn(const Aws::String& value) { m_codeRepositoryArn = value; }
-
-    /**
-     * <p>The ARN of the Git repository.</p>
-     */
     inline void SetCodeRepositoryArn(Aws::String&& value) { m_codeRepositoryArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the Git repository.</p>
-     */
     inline void SetCodeRepositoryArn(const char* value) { m_codeRepositoryArn.assign(value); }
-
-    /**
-     * <p>The ARN of the Git repository.</p>
-     */
     inline UpdateCodeRepositoryResult& WithCodeRepositoryArn(const Aws::String& value) { SetCodeRepositoryArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the Git repository.</p>
-     */
     inline UpdateCodeRepositoryResult& WithCodeRepositoryArn(Aws::String&& value) { SetCodeRepositoryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Git repository.</p>
-     */
     inline UpdateCodeRepositoryResult& WithCodeRepositoryArn(const char* value) { SetCodeRepositoryArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateCodeRepositoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateCodeRepositoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateCodeRepositoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_codeRepositoryArn;

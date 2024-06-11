@@ -33,53 +33,27 @@ namespace Model
     AWS_IVSREALTIME_API GetStageSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The stage session that is returned.</p>
      */
     inline const StageSession& GetStageSession() const{ return m_stageSession; }
-
-    /**
-     * <p>The stage session that is returned.</p>
-     */
     inline void SetStageSession(const StageSession& value) { m_stageSession = value; }
-
-    /**
-     * <p>The stage session that is returned.</p>
-     */
     inline void SetStageSession(StageSession&& value) { m_stageSession = std::move(value); }
-
-    /**
-     * <p>The stage session that is returned.</p>
-     */
     inline GetStageSessionResult& WithStageSession(const StageSession& value) { SetStageSession(value); return *this;}
-
-    /**
-     * <p>The stage session that is returned.</p>
-     */
     inline GetStageSessionResult& WithStageSession(StageSession&& value) { SetStageSession(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetStageSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetStageSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetStageSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     StageSession m_stageSession;

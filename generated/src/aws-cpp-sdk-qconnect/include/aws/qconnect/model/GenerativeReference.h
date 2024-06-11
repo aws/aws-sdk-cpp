@@ -37,87 +37,33 @@ namespace Model
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The identifier of the LLM model. </p>
      */
     inline const Aws::String& GetGenerationId() const{ return m_generationId; }
-
-    /**
-     * <p> The identifier of the LLM model. </p>
-     */
     inline bool GenerationIdHasBeenSet() const { return m_generationIdHasBeenSet; }
-
-    /**
-     * <p> The identifier of the LLM model. </p>
-     */
     inline void SetGenerationId(const Aws::String& value) { m_generationIdHasBeenSet = true; m_generationId = value; }
-
-    /**
-     * <p> The identifier of the LLM model. </p>
-     */
     inline void SetGenerationId(Aws::String&& value) { m_generationIdHasBeenSet = true; m_generationId = std::move(value); }
-
-    /**
-     * <p> The identifier of the LLM model. </p>
-     */
     inline void SetGenerationId(const char* value) { m_generationIdHasBeenSet = true; m_generationId.assign(value); }
-
-    /**
-     * <p> The identifier of the LLM model. </p>
-     */
     inline GenerativeReference& WithGenerationId(const Aws::String& value) { SetGenerationId(value); return *this;}
-
-    /**
-     * <p> The identifier of the LLM model. </p>
-     */
     inline GenerativeReference& WithGenerationId(Aws::String&& value) { SetGenerationId(std::move(value)); return *this;}
-
-    /**
-     * <p> The identifier of the LLM model. </p>
-     */
     inline GenerativeReference& WithGenerationId(const char* value) { SetGenerationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the LLM model. </p>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
-
-    /**
-     * <p>The identifier of the LLM model. </p>
-     */
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the LLM model. </p>
-     */
     inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-
-    /**
-     * <p>The identifier of the LLM model. </p>
-     */
     inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-
-    /**
-     * <p>The identifier of the LLM model. </p>
-     */
     inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-
-    /**
-     * <p>The identifier of the LLM model. </p>
-     */
     inline GenerativeReference& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-
-    /**
-     * <p>The identifier of the LLM model. </p>
-     */
     inline GenerativeReference& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the LLM model. </p>
-     */
     inline GenerativeReference& WithModelId(const char* value) { SetModelId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_generationId;

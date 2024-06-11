@@ -41,77 +41,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
      */
     inline const IpamPoolCidrFailureCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
-     */
     inline void SetCode(const IpamPoolCidrFailureCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
-     */
     inline void SetCode(IpamPoolCidrFailureCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
-     */
     inline IpamPoolCidrFailureReason& WithCode(const IpamPoolCidrFailureCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
-     */
     inline IpamPoolCidrFailureReason& WithCode(IpamPoolCidrFailureCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
-     */
     inline IpamPoolCidrFailureReason& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
-     */
     inline IpamPoolCidrFailureReason& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
-     */
     inline IpamPoolCidrFailureReason& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     IpamPoolCidrFailureCode m_code;

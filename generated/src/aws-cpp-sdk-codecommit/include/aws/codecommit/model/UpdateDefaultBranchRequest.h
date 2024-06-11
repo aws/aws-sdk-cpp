@@ -38,95 +38,34 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the repository for which you want to set or change the default
      * branch.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the repository for which you want to set or change the default
-     * branch.</p>
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the repository for which you want to set or change the default
-     * branch.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the repository for which you want to set or change the default
-     * branch.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the repository for which you want to set or change the default
-     * branch.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the repository for which you want to set or change the default
-     * branch.</p>
-     */
     inline UpdateDefaultBranchRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the repository for which you want to set or change the default
-     * branch.</p>
-     */
     inline UpdateDefaultBranchRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the repository for which you want to set or change the default
-     * branch.</p>
-     */
     inline UpdateDefaultBranchRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the branch to set as the default branch.</p>
      */
     inline const Aws::String& GetDefaultBranchName() const{ return m_defaultBranchName; }
-
-    /**
-     * <p>The name of the branch to set as the default branch.</p>
-     */
     inline bool DefaultBranchNameHasBeenSet() const { return m_defaultBranchNameHasBeenSet; }
-
-    /**
-     * <p>The name of the branch to set as the default branch.</p>
-     */
     inline void SetDefaultBranchName(const Aws::String& value) { m_defaultBranchNameHasBeenSet = true; m_defaultBranchName = value; }
-
-    /**
-     * <p>The name of the branch to set as the default branch.</p>
-     */
     inline void SetDefaultBranchName(Aws::String&& value) { m_defaultBranchNameHasBeenSet = true; m_defaultBranchName = std::move(value); }
-
-    /**
-     * <p>The name of the branch to set as the default branch.</p>
-     */
     inline void SetDefaultBranchName(const char* value) { m_defaultBranchNameHasBeenSet = true; m_defaultBranchName.assign(value); }
-
-    /**
-     * <p>The name of the branch to set as the default branch.</p>
-     */
     inline UpdateDefaultBranchRequest& WithDefaultBranchName(const Aws::String& value) { SetDefaultBranchName(value); return *this;}
-
-    /**
-     * <p>The name of the branch to set as the default branch.</p>
-     */
     inline UpdateDefaultBranchRequest& WithDefaultBranchName(Aws::String&& value) { SetDefaultBranchName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the branch to set as the default branch.</p>
-     */
     inline UpdateDefaultBranchRequest& WithDefaultBranchName(const char* value) { SetDefaultBranchName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_repositoryName;

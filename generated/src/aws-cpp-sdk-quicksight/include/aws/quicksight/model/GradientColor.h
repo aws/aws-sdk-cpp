@@ -38,46 +38,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of gradient color stops.</p>
      */
     inline const Aws::Vector<GradientStop>& GetStops() const{ return m_stops; }
-
-    /**
-     * <p>The list of gradient color stops.</p>
-     */
     inline bool StopsHasBeenSet() const { return m_stopsHasBeenSet; }
-
-    /**
-     * <p>The list of gradient color stops.</p>
-     */
     inline void SetStops(const Aws::Vector<GradientStop>& value) { m_stopsHasBeenSet = true; m_stops = value; }
-
-    /**
-     * <p>The list of gradient color stops.</p>
-     */
     inline void SetStops(Aws::Vector<GradientStop>&& value) { m_stopsHasBeenSet = true; m_stops = std::move(value); }
-
-    /**
-     * <p>The list of gradient color stops.</p>
-     */
     inline GradientColor& WithStops(const Aws::Vector<GradientStop>& value) { SetStops(value); return *this;}
-
-    /**
-     * <p>The list of gradient color stops.</p>
-     */
     inline GradientColor& WithStops(Aws::Vector<GradientStop>&& value) { SetStops(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of gradient color stops.</p>
-     */
     inline GradientColor& AddStops(const GradientStop& value) { m_stopsHasBeenSet = true; m_stops.push_back(value); return *this; }
-
-    /**
-     * <p>The list of gradient color stops.</p>
-     */
     inline GradientColor& AddStops(GradientStop&& value) { m_stopsHasBeenSet = true; m_stops.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<GradientStop> m_stops;

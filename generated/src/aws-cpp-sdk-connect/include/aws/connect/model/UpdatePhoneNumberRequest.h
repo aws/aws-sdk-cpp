@@ -33,104 +33,37 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the phone number.</p>
      */
     inline const Aws::String& GetPhoneNumberId() const{ return m_phoneNumberId; }
-
-    /**
-     * <p>A unique identifier for the phone number.</p>
-     */
     inline bool PhoneNumberIdHasBeenSet() const { return m_phoneNumberIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the phone number.</p>
-     */
     inline void SetPhoneNumberId(const Aws::String& value) { m_phoneNumberIdHasBeenSet = true; m_phoneNumberId = value; }
-
-    /**
-     * <p>A unique identifier for the phone number.</p>
-     */
     inline void SetPhoneNumberId(Aws::String&& value) { m_phoneNumberIdHasBeenSet = true; m_phoneNumberId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the phone number.</p>
-     */
     inline void SetPhoneNumberId(const char* value) { m_phoneNumberIdHasBeenSet = true; m_phoneNumberId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the phone number.</p>
-     */
     inline UpdatePhoneNumberRequest& WithPhoneNumberId(const Aws::String& value) { SetPhoneNumberId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the phone number.</p>
-     */
     inline UpdatePhoneNumberRequest& WithPhoneNumberId(Aws::String&& value) { SetPhoneNumberId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the phone number.</p>
-     */
     inline UpdatePhoneNumberRequest& WithPhoneNumberId(const char* value) { SetPhoneNumberId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
      * distribution groups that phone number inbound traffic is routed through. You
      * must enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone number inbound traffic is routed through. You
-     * must enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone number inbound traffic is routed through. You
-     * must enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone number inbound traffic is routed through. You
-     * must enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone number inbound traffic is routed through. You
-     * must enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone number inbound traffic is routed through. You
-     * must enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline UpdatePhoneNumberRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone number inbound traffic is routed through. You
-     * must enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline UpdatePhoneNumberRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone number inbound traffic is routed through. You
-     * must enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline UpdatePhoneNumberRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
      * to. You can <a
@@ -139,71 +72,16 @@ namespace Model
      * enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
-     * to. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You must
-     * enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
-     * to. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You must
-     * enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
-     * to. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You must
-     * enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
-     * to. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You must
-     * enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
-     * to. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You must
-     * enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline UpdatePhoneNumberRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
-     * to. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You must
-     * enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline UpdatePhoneNumberRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
-     * to. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You must
-     * enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
-     */
     inline UpdatePhoneNumberRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If not provided, the Amazon Web Services SDK
@@ -212,70 +90,14 @@ namespace Model
      * retries safe with idempotent APIs</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline UpdatePhoneNumberRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline UpdatePhoneNumberRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline UpdatePhoneNumberRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_phoneNumberId;

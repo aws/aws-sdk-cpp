@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the model card to delete.</p>
      */
     inline const Aws::String& GetModelCardName() const{ return m_modelCardName; }
-
-    /**
-     * <p>The name of the model card to delete.</p>
-     */
     inline bool ModelCardNameHasBeenSet() const { return m_modelCardNameHasBeenSet; }
-
-    /**
-     * <p>The name of the model card to delete.</p>
-     */
     inline void SetModelCardName(const Aws::String& value) { m_modelCardNameHasBeenSet = true; m_modelCardName = value; }
-
-    /**
-     * <p>The name of the model card to delete.</p>
-     */
     inline void SetModelCardName(Aws::String&& value) { m_modelCardNameHasBeenSet = true; m_modelCardName = std::move(value); }
-
-    /**
-     * <p>The name of the model card to delete.</p>
-     */
     inline void SetModelCardName(const char* value) { m_modelCardNameHasBeenSet = true; m_modelCardName.assign(value); }
-
-    /**
-     * <p>The name of the model card to delete.</p>
-     */
     inline DeleteModelCardRequest& WithModelCardName(const Aws::String& value) { SetModelCardName(value); return *this;}
-
-    /**
-     * <p>The name of the model card to delete.</p>
-     */
     inline DeleteModelCardRequest& WithModelCardName(Aws::String&& value) { SetModelCardName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the model card to delete.</p>
-     */
     inline DeleteModelCardRequest& WithModelCardName(const char* value) { SetModelCardName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelCardName;

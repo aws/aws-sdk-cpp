@@ -37,67 +37,29 @@ namespace Model
     AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The domain name.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline MailDomainSummary& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline MailDomainSummary& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline MailDomainSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether the domain is default or not.</p>
      */
     inline bool GetDefaultDomain() const{ return m_defaultDomain; }
-
-    /**
-     * <p>Whether the domain is default or not.</p>
-     */
     inline bool DefaultDomainHasBeenSet() const { return m_defaultDomainHasBeenSet; }
-
-    /**
-     * <p>Whether the domain is default or not.</p>
-     */
     inline void SetDefaultDomain(bool value) { m_defaultDomainHasBeenSet = true; m_defaultDomain = value; }
-
-    /**
-     * <p>Whether the domain is default or not.</p>
-     */
     inline MailDomainSummary& WithDefaultDomain(bool value) { SetDefaultDomain(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

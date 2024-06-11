@@ -42,239 +42,85 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the Amazon Web Services account included in the configuration
      * details of the Amazon Redshift data source.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account included in the configuration
-     * details of the Amazon Redshift data source.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account included in the configuration
-     * details of the Amazon Redshift data source.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account included in the configuration
-     * details of the Amazon Redshift data source.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account included in the configuration
-     * details of the Amazon Redshift data source.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account included in the configuration
-     * details of the Amazon Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account included in the configuration
-     * details of the Amazon Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account included in the configuration
-     * details of the Amazon Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data access role included in the configuration details of the Amazon
      * Redshift data source.</p>
      */
     inline const Aws::String& GetDataAccessRole() const{ return m_dataAccessRole; }
-
-    /**
-     * <p>The data access role included in the configuration details of the Amazon
-     * Redshift data source.</p>
-     */
     inline bool DataAccessRoleHasBeenSet() const { return m_dataAccessRoleHasBeenSet; }
-
-    /**
-     * <p>The data access role included in the configuration details of the Amazon
-     * Redshift data source.</p>
-     */
     inline void SetDataAccessRole(const Aws::String& value) { m_dataAccessRoleHasBeenSet = true; m_dataAccessRole = value; }
-
-    /**
-     * <p>The data access role included in the configuration details of the Amazon
-     * Redshift data source.</p>
-     */
     inline void SetDataAccessRole(Aws::String&& value) { m_dataAccessRoleHasBeenSet = true; m_dataAccessRole = std::move(value); }
-
-    /**
-     * <p>The data access role included in the configuration details of the Amazon
-     * Redshift data source.</p>
-     */
     inline void SetDataAccessRole(const char* value) { m_dataAccessRoleHasBeenSet = true; m_dataAccessRole.assign(value); }
-
-    /**
-     * <p>The data access role included in the configuration details of the Amazon
-     * Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& WithDataAccessRole(const Aws::String& value) { SetDataAccessRole(value); return *this;}
-
-    /**
-     * <p>The data access role included in the configuration details of the Amazon
-     * Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& WithDataAccessRole(Aws::String&& value) { SetDataAccessRole(std::move(value)); return *this;}
-
-    /**
-     * <p>The data access role included in the configuration details of the Amazon
-     * Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& WithDataAccessRole(const char* value) { SetDataAccessRole(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const RedshiftCredentialConfiguration& GetRedshiftCredentialConfiguration() const{ return m_redshiftCredentialConfiguration; }
-
-    
     inline bool RedshiftCredentialConfigurationHasBeenSet() const { return m_redshiftCredentialConfigurationHasBeenSet; }
-
-    
     inline void SetRedshiftCredentialConfiguration(const RedshiftCredentialConfiguration& value) { m_redshiftCredentialConfigurationHasBeenSet = true; m_redshiftCredentialConfiguration = value; }
-
-    
     inline void SetRedshiftCredentialConfiguration(RedshiftCredentialConfiguration&& value) { m_redshiftCredentialConfigurationHasBeenSet = true; m_redshiftCredentialConfiguration = std::move(value); }
-
-    
     inline RedshiftRunConfigurationOutput& WithRedshiftCredentialConfiguration(const RedshiftCredentialConfiguration& value) { SetRedshiftCredentialConfiguration(value); return *this;}
-
-    
     inline RedshiftRunConfigurationOutput& WithRedshiftCredentialConfiguration(RedshiftCredentialConfiguration&& value) { SetRedshiftCredentialConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const RedshiftStorage& GetRedshiftStorage() const{ return m_redshiftStorage; }
-
-    
     inline bool RedshiftStorageHasBeenSet() const { return m_redshiftStorageHasBeenSet; }
-
-    
     inline void SetRedshiftStorage(const RedshiftStorage& value) { m_redshiftStorageHasBeenSet = true; m_redshiftStorage = value; }
-
-    
     inline void SetRedshiftStorage(RedshiftStorage&& value) { m_redshiftStorageHasBeenSet = true; m_redshiftStorage = std::move(value); }
-
-    
     inline RedshiftRunConfigurationOutput& WithRedshiftStorage(const RedshiftStorage& value) { SetRedshiftStorage(value); return *this;}
-
-    
     inline RedshiftRunConfigurationOutput& WithRedshiftStorage(RedshiftStorage&& value) { SetRedshiftStorage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services region included in the configuration details of the
      * Amazon Redshift data source.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
-
-    /**
-     * <p>The Amazon Web Services region included in the configuration details of the
-     * Amazon Redshift data source.</p>
-     */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services region included in the configuration details of the
-     * Amazon Redshift data source.</p>
-     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-
-    /**
-     * <p>The Amazon Web Services region included in the configuration details of the
-     * Amazon Redshift data source.</p>
-     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services region included in the configuration details of the
-     * Amazon Redshift data source.</p>
-     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services region included in the configuration details of the
-     * Amazon Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services region included in the configuration details of the
-     * Amazon Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services region included in the configuration details of the
-     * Amazon Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& WithRegion(const char* value) { SetRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The relational filger configurations included in the configuration details of
      * the Amazon Redshift data source.</p>
      */
     inline const Aws::Vector<RelationalFilterConfiguration>& GetRelationalFilterConfigurations() const{ return m_relationalFilterConfigurations; }
-
-    /**
-     * <p>The relational filger configurations included in the configuration details of
-     * the Amazon Redshift data source.</p>
-     */
     inline bool RelationalFilterConfigurationsHasBeenSet() const { return m_relationalFilterConfigurationsHasBeenSet; }
-
-    /**
-     * <p>The relational filger configurations included in the configuration details of
-     * the Amazon Redshift data source.</p>
-     */
     inline void SetRelationalFilterConfigurations(const Aws::Vector<RelationalFilterConfiguration>& value) { m_relationalFilterConfigurationsHasBeenSet = true; m_relationalFilterConfigurations = value; }
-
-    /**
-     * <p>The relational filger configurations included in the configuration details of
-     * the Amazon Redshift data source.</p>
-     */
     inline void SetRelationalFilterConfigurations(Aws::Vector<RelationalFilterConfiguration>&& value) { m_relationalFilterConfigurationsHasBeenSet = true; m_relationalFilterConfigurations = std::move(value); }
-
-    /**
-     * <p>The relational filger configurations included in the configuration details of
-     * the Amazon Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& WithRelationalFilterConfigurations(const Aws::Vector<RelationalFilterConfiguration>& value) { SetRelationalFilterConfigurations(value); return *this;}
-
-    /**
-     * <p>The relational filger configurations included in the configuration details of
-     * the Amazon Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& WithRelationalFilterConfigurations(Aws::Vector<RelationalFilterConfiguration>&& value) { SetRelationalFilterConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>The relational filger configurations included in the configuration details of
-     * the Amazon Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& AddRelationalFilterConfigurations(const RelationalFilterConfiguration& value) { m_relationalFilterConfigurationsHasBeenSet = true; m_relationalFilterConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>The relational filger configurations included in the configuration details of
-     * the Amazon Redshift data source.</p>
-     */
     inline RedshiftRunConfigurationOutput& AddRelationalFilterConfigurations(RelationalFilterConfiguration&& value) { m_relationalFilterConfigurationsHasBeenSet = true; m_relationalFilterConfigurations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_accountId;

@@ -39,73 +39,30 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The state persistence settings of an embedded dashboard.</p>
      */
     inline const StatePersistenceConfigurations& GetStatePersistence() const{ return m_statePersistence; }
-
-    /**
-     * <p>The state persistence settings of an embedded dashboard.</p>
-     */
     inline bool StatePersistenceHasBeenSet() const { return m_statePersistenceHasBeenSet; }
-
-    /**
-     * <p>The state persistence settings of an embedded dashboard.</p>
-     */
     inline void SetStatePersistence(const StatePersistenceConfigurations& value) { m_statePersistenceHasBeenSet = true; m_statePersistence = value; }
-
-    /**
-     * <p>The state persistence settings of an embedded dashboard.</p>
-     */
     inline void SetStatePersistence(StatePersistenceConfigurations&& value) { m_statePersistenceHasBeenSet = true; m_statePersistence = std::move(value); }
-
-    /**
-     * <p>The state persistence settings of an embedded dashboard.</p>
-     */
     inline RegisteredUserDashboardFeatureConfigurations& WithStatePersistence(const StatePersistenceConfigurations& value) { SetStatePersistence(value); return *this;}
-
-    /**
-     * <p>The state persistence settings of an embedded dashboard.</p>
-     */
     inline RegisteredUserDashboardFeatureConfigurations& WithStatePersistence(StatePersistenceConfigurations&& value) { SetStatePersistence(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The bookmarks configuration for an embedded dashboard in Amazon
      * QuickSight.</p>
      */
     inline const BookmarksConfigurations& GetBookmarks() const{ return m_bookmarks; }
-
-    /**
-     * <p>The bookmarks configuration for an embedded dashboard in Amazon
-     * QuickSight.</p>
-     */
     inline bool BookmarksHasBeenSet() const { return m_bookmarksHasBeenSet; }
-
-    /**
-     * <p>The bookmarks configuration for an embedded dashboard in Amazon
-     * QuickSight.</p>
-     */
     inline void SetBookmarks(const BookmarksConfigurations& value) { m_bookmarksHasBeenSet = true; m_bookmarks = value; }
-
-    /**
-     * <p>The bookmarks configuration for an embedded dashboard in Amazon
-     * QuickSight.</p>
-     */
     inline void SetBookmarks(BookmarksConfigurations&& value) { m_bookmarksHasBeenSet = true; m_bookmarks = std::move(value); }
-
-    /**
-     * <p>The bookmarks configuration for an embedded dashboard in Amazon
-     * QuickSight.</p>
-     */
     inline RegisteredUserDashboardFeatureConfigurations& WithBookmarks(const BookmarksConfigurations& value) { SetBookmarks(value); return *this;}
-
-    /**
-     * <p>The bookmarks configuration for an embedded dashboard in Amazon
-     * QuickSight.</p>
-     */
     inline RegisteredUserDashboardFeatureConfigurations& WithBookmarks(BookmarksConfigurations&& value) { SetBookmarks(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StatePersistenceConfigurations m_statePersistence;

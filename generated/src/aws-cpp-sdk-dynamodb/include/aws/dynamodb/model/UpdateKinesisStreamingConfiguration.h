@@ -38,36 +38,17 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Enables updating the precision of Kinesis data stream timestamp. </p>
      */
     inline const ApproximateCreationDateTimePrecision& GetApproximateCreationDateTimePrecision() const{ return m_approximateCreationDateTimePrecision; }
-
-    /**
-     * <p>Enables updating the precision of Kinesis data stream timestamp. </p>
-     */
     inline bool ApproximateCreationDateTimePrecisionHasBeenSet() const { return m_approximateCreationDateTimePrecisionHasBeenSet; }
-
-    /**
-     * <p>Enables updating the precision of Kinesis data stream timestamp. </p>
-     */
     inline void SetApproximateCreationDateTimePrecision(const ApproximateCreationDateTimePrecision& value) { m_approximateCreationDateTimePrecisionHasBeenSet = true; m_approximateCreationDateTimePrecision = value; }
-
-    /**
-     * <p>Enables updating the precision of Kinesis data stream timestamp. </p>
-     */
     inline void SetApproximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision&& value) { m_approximateCreationDateTimePrecisionHasBeenSet = true; m_approximateCreationDateTimePrecision = std::move(value); }
-
-    /**
-     * <p>Enables updating the precision of Kinesis data stream timestamp. </p>
-     */
     inline UpdateKinesisStreamingConfiguration& WithApproximateCreationDateTimePrecision(const ApproximateCreationDateTimePrecision& value) { SetApproximateCreationDateTimePrecision(value); return *this;}
-
-    /**
-     * <p>Enables updating the precision of Kinesis data stream timestamp. </p>
-     */
     inline UpdateKinesisStreamingConfiguration& WithApproximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision&& value) { SetApproximateCreationDateTimePrecision(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ApproximateCreationDateTimePrecision m_approximateCreationDateTimePrecision;

@@ -33,111 +33,44 @@ namespace Model
     AWS_IOTFLEETWISE_API ListFleetsForVehicleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> A list of fleet IDs that the vehicle is associated with. </p>
      */
     inline const Aws::Vector<Aws::String>& GetFleets() const{ return m_fleets; }
-
-    /**
-     * <p> A list of fleet IDs that the vehicle is associated with. </p>
-     */
     inline void SetFleets(const Aws::Vector<Aws::String>& value) { m_fleets = value; }
-
-    /**
-     * <p> A list of fleet IDs that the vehicle is associated with. </p>
-     */
     inline void SetFleets(Aws::Vector<Aws::String>&& value) { m_fleets = std::move(value); }
-
-    /**
-     * <p> A list of fleet IDs that the vehicle is associated with. </p>
-     */
     inline ListFleetsForVehicleResult& WithFleets(const Aws::Vector<Aws::String>& value) { SetFleets(value); return *this;}
-
-    /**
-     * <p> A list of fleet IDs that the vehicle is associated with. </p>
-     */
     inline ListFleetsForVehicleResult& WithFleets(Aws::Vector<Aws::String>&& value) { SetFleets(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of fleet IDs that the vehicle is associated with. </p>
-     */
     inline ListFleetsForVehicleResult& AddFleets(const Aws::String& value) { m_fleets.push_back(value); return *this; }
-
-    /**
-     * <p> A list of fleet IDs that the vehicle is associated with. </p>
-     */
     inline ListFleetsForVehicleResult& AddFleets(Aws::String&& value) { m_fleets.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> A list of fleet IDs that the vehicle is associated with. </p>
-     */
     inline ListFleetsForVehicleResult& AddFleets(const char* value) { m_fleets.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The token to retrieve the next set of results, or <code>null</code> if there
      * are no more results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> The token to retrieve the next set of results, or <code>null</code> if there
-     * are no more results. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p> The token to retrieve the next set of results, or <code>null</code> if there
-     * are no more results. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p> The token to retrieve the next set of results, or <code>null</code> if there
-     * are no more results. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p> The token to retrieve the next set of results, or <code>null</code> if there
-     * are no more results. </p>
-     */
     inline ListFleetsForVehicleResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> The token to retrieve the next set of results, or <code>null</code> if there
-     * are no more results. </p>
-     */
     inline ListFleetsForVehicleResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> The token to retrieve the next set of results, or <code>null</code> if there
-     * are no more results. </p>
-     */
     inline ListFleetsForVehicleResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListFleetsForVehicleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListFleetsForVehicleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListFleetsForVehicleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_fleets;

@@ -39,67 +39,29 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Name of the additional configuration.</p>
      */
     inline const OrgFeatureAdditionalConfiguration& GetName() const{ return m_name; }
-
-    /**
-     * <p>Name of the additional configuration.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Name of the additional configuration.</p>
-     */
     inline void SetName(const OrgFeatureAdditionalConfiguration& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Name of the additional configuration.</p>
-     */
     inline void SetName(OrgFeatureAdditionalConfiguration&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Name of the additional configuration.</p>
-     */
     inline MemberAdditionalConfiguration& WithName(const OrgFeatureAdditionalConfiguration& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Name of the additional configuration.</p>
-     */
     inline MemberAdditionalConfiguration& WithName(OrgFeatureAdditionalConfiguration&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Status of the additional configuration.</p>
      */
     inline const FeatureStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Status of the additional configuration.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Status of the additional configuration.</p>
-     */
     inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Status of the additional configuration.</p>
-     */
     inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Status of the additional configuration.</p>
-     */
     inline MemberAdditionalConfiguration& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Status of the additional configuration.</p>
-     */
     inline MemberAdditionalConfiguration& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OrgFeatureAdditionalConfiguration m_name;

@@ -38,42 +38,18 @@ namespace Model
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The status used to filter reports. You can filter using one status only.
      * </p>
      */
     inline const ReportStatusType& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> The status used to filter reports. You can filter using one status only.
-     * </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> The status used to filter reports. You can filter using one status only.
-     * </p>
-     */
     inline void SetStatus(const ReportStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> The status used to filter reports. You can filter using one status only.
-     * </p>
-     */
     inline void SetStatus(ReportStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> The status used to filter reports. You can filter using one status only.
-     * </p>
-     */
     inline ReportFilter& WithStatus(const ReportStatusType& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> The status used to filter reports. You can filter using one status only.
-     * </p>
-     */
     inline ReportFilter& WithStatus(ReportStatusType&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReportStatusType m_status;

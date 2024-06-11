@@ -33,125 +33,53 @@ namespace Model
     AWS_SERVICECATALOG_API DescribeCopyProductStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the copy product operation.</p>
      */
     inline const CopyProductStatus& GetCopyProductStatus() const{ return m_copyProductStatus; }
-
-    /**
-     * <p>The status of the copy product operation.</p>
-     */
     inline void SetCopyProductStatus(const CopyProductStatus& value) { m_copyProductStatus = value; }
-
-    /**
-     * <p>The status of the copy product operation.</p>
-     */
     inline void SetCopyProductStatus(CopyProductStatus&& value) { m_copyProductStatus = std::move(value); }
-
-    /**
-     * <p>The status of the copy product operation.</p>
-     */
     inline DescribeCopyProductStatusResult& WithCopyProductStatus(const CopyProductStatus& value) { SetCopyProductStatus(value); return *this;}
-
-    /**
-     * <p>The status of the copy product operation.</p>
-     */
     inline DescribeCopyProductStatusResult& WithCopyProductStatus(CopyProductStatus&& value) { SetCopyProductStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the copied product.</p>
      */
     inline const Aws::String& GetTargetProductId() const{ return m_targetProductId; }
-
-    /**
-     * <p>The identifier of the copied product.</p>
-     */
     inline void SetTargetProductId(const Aws::String& value) { m_targetProductId = value; }
-
-    /**
-     * <p>The identifier of the copied product.</p>
-     */
     inline void SetTargetProductId(Aws::String&& value) { m_targetProductId = std::move(value); }
-
-    /**
-     * <p>The identifier of the copied product.</p>
-     */
     inline void SetTargetProductId(const char* value) { m_targetProductId.assign(value); }
-
-    /**
-     * <p>The identifier of the copied product.</p>
-     */
     inline DescribeCopyProductStatusResult& WithTargetProductId(const Aws::String& value) { SetTargetProductId(value); return *this;}
-
-    /**
-     * <p>The identifier of the copied product.</p>
-     */
     inline DescribeCopyProductStatusResult& WithTargetProductId(Aws::String&& value) { SetTargetProductId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the copied product.</p>
-     */
     inline DescribeCopyProductStatusResult& WithTargetProductId(const char* value) { SetTargetProductId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status message.</p>
      */
     inline const Aws::String& GetStatusDetail() const{ return m_statusDetail; }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline void SetStatusDetail(const Aws::String& value) { m_statusDetail = value; }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline void SetStatusDetail(Aws::String&& value) { m_statusDetail = std::move(value); }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline void SetStatusDetail(const char* value) { m_statusDetail.assign(value); }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline DescribeCopyProductStatusResult& WithStatusDetail(const Aws::String& value) { SetStatusDetail(value); return *this;}
-
-    /**
-     * <p>The status message.</p>
-     */
     inline DescribeCopyProductStatusResult& WithStatusDetail(Aws::String&& value) { SetStatusDetail(std::move(value)); return *this;}
-
-    /**
-     * <p>The status message.</p>
-     */
     inline DescribeCopyProductStatusResult& WithStatusDetail(const char* value) { SetStatusDetail(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCopyProductStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCopyProductStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCopyProductStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CopyProductStatus m_copyProductStatus;

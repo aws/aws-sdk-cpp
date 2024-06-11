@@ -38,71 +38,31 @@ namespace Model
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ConflictException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ConflictException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ConflictException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason for the conflict exception.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>The reason for the conflict exception.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>The reason for the conflict exception.</p>
-     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>The reason for the conflict exception.</p>
-     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>The reason for the conflict exception.</p>
-     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>The reason for the conflict exception.</p>
-     */
     inline ConflictException& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>The reason for the conflict exception.</p>
-     */
     inline ConflictException& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for the conflict exception.</p>
-     */
     inline ConflictException& WithReason(const char* value) { SetReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

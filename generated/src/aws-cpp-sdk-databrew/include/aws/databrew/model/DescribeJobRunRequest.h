@@ -32,87 +32,33 @@ namespace Model
     AWS_GLUEDATABREW_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the job being processed during this run.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the job being processed during this run.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the job being processed during this run.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the job being processed during this run.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the job being processed during this run.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the job being processed during this run.</p>
-     */
     inline DescribeJobRunRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the job being processed during this run.</p>
-     */
     inline DescribeJobRunRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the job being processed during this run.</p>
-     */
     inline DescribeJobRunRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the job run.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
-
-    /**
-     * <p>The unique identifier of the job run.</p>
-     */
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the job run.</p>
-     */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-
-    /**
-     * <p>The unique identifier of the job run.</p>
-     */
     inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the job run.</p>
-     */
     inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the job run.</p>
-     */
     inline DescribeJobRunRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the job run.</p>
-     */
     inline DescribeJobRunRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the job run.</p>
-     */
     inline DescribeJobRunRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

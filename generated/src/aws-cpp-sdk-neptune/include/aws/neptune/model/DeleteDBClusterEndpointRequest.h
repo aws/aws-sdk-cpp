@@ -36,54 +36,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The identifier associated with the custom endpoint. This parameter is stored
      * as a lowercase string.</p>
      */
     inline const Aws::String& GetDBClusterEndpointIdentifier() const{ return m_dBClusterEndpointIdentifier; }
-
-    /**
-     * <p>The identifier associated with the custom endpoint. This parameter is stored
-     * as a lowercase string.</p>
-     */
     inline bool DBClusterEndpointIdentifierHasBeenSet() const { return m_dBClusterEndpointIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier associated with the custom endpoint. This parameter is stored
-     * as a lowercase string.</p>
-     */
     inline void SetDBClusterEndpointIdentifier(const Aws::String& value) { m_dBClusterEndpointIdentifierHasBeenSet = true; m_dBClusterEndpointIdentifier = value; }
-
-    /**
-     * <p>The identifier associated with the custom endpoint. This parameter is stored
-     * as a lowercase string.</p>
-     */
     inline void SetDBClusterEndpointIdentifier(Aws::String&& value) { m_dBClusterEndpointIdentifierHasBeenSet = true; m_dBClusterEndpointIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier associated with the custom endpoint. This parameter is stored
-     * as a lowercase string.</p>
-     */
     inline void SetDBClusterEndpointIdentifier(const char* value) { m_dBClusterEndpointIdentifierHasBeenSet = true; m_dBClusterEndpointIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier associated with the custom endpoint. This parameter is stored
-     * as a lowercase string.</p>
-     */
     inline DeleteDBClusterEndpointRequest& WithDBClusterEndpointIdentifier(const Aws::String& value) { SetDBClusterEndpointIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier associated with the custom endpoint. This parameter is stored
-     * as a lowercase string.</p>
-     */
     inline DeleteDBClusterEndpointRequest& WithDBClusterEndpointIdentifier(Aws::String&& value) { SetDBClusterEndpointIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier associated with the custom endpoint. This parameter is stored
-     * as a lowercase string.</p>
-     */
     inline DeleteDBClusterEndpointRequest& WithDBClusterEndpointIdentifier(const char* value) { SetDBClusterEndpointIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dBClusterEndpointIdentifier;

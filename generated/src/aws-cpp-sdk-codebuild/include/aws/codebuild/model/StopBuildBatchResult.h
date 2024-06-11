@@ -33,43 +33,25 @@ namespace Model
     AWS_CODEBUILD_API StopBuildBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const BuildBatch& GetBuildBatch() const{ return m_buildBatch; }
-
-    
     inline void SetBuildBatch(const BuildBatch& value) { m_buildBatch = value; }
-
-    
     inline void SetBuildBatch(BuildBatch&& value) { m_buildBatch = std::move(value); }
-
-    
     inline StopBuildBatchResult& WithBuildBatch(const BuildBatch& value) { SetBuildBatch(value); return *this;}
-
-    
     inline StopBuildBatchResult& WithBuildBatch(BuildBatch&& value) { SetBuildBatch(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StopBuildBatchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StopBuildBatchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StopBuildBatchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BuildBatch m_buildBatch;

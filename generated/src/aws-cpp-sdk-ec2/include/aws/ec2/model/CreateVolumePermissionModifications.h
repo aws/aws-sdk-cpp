@@ -41,95 +41,34 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
      */
     inline const Aws::Vector<CreateVolumePermission>& GetAdd() const{ return m_add; }
-
-    /**
-     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
-     */
     inline bool AddHasBeenSet() const { return m_addHasBeenSet; }
-
-    /**
-     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
-     */
     inline void SetAdd(const Aws::Vector<CreateVolumePermission>& value) { m_addHasBeenSet = true; m_add = value; }
-
-    /**
-     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
-     */
     inline void SetAdd(Aws::Vector<CreateVolumePermission>&& value) { m_addHasBeenSet = true; m_add = std::move(value); }
-
-    /**
-     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
-     */
     inline CreateVolumePermissionModifications& WithAdd(const Aws::Vector<CreateVolumePermission>& value) { SetAdd(value); return *this;}
-
-    /**
-     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
-     */
     inline CreateVolumePermissionModifications& WithAdd(Aws::Vector<CreateVolumePermission>&& value) { SetAdd(std::move(value)); return *this;}
-
-    /**
-     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
-     */
     inline CreateVolumePermissionModifications& AddAdd(const CreateVolumePermission& value) { m_addHasBeenSet = true; m_add.push_back(value); return *this; }
-
-    /**
-     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
-     */
     inline CreateVolumePermissionModifications& AddAdd(CreateVolumePermission&& value) { m_addHasBeenSet = true; m_add.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Removes the specified Amazon Web Services account ID or group from the
      * list.</p>
      */
     inline const Aws::Vector<CreateVolumePermission>& GetRemove() const{ return m_remove; }
-
-    /**
-     * <p>Removes the specified Amazon Web Services account ID or group from the
-     * list.</p>
-     */
     inline bool RemoveHasBeenSet() const { return m_removeHasBeenSet; }
-
-    /**
-     * <p>Removes the specified Amazon Web Services account ID or group from the
-     * list.</p>
-     */
     inline void SetRemove(const Aws::Vector<CreateVolumePermission>& value) { m_removeHasBeenSet = true; m_remove = value; }
-
-    /**
-     * <p>Removes the specified Amazon Web Services account ID or group from the
-     * list.</p>
-     */
     inline void SetRemove(Aws::Vector<CreateVolumePermission>&& value) { m_removeHasBeenSet = true; m_remove = std::move(value); }
-
-    /**
-     * <p>Removes the specified Amazon Web Services account ID or group from the
-     * list.</p>
-     */
     inline CreateVolumePermissionModifications& WithRemove(const Aws::Vector<CreateVolumePermission>& value) { SetRemove(value); return *this;}
-
-    /**
-     * <p>Removes the specified Amazon Web Services account ID or group from the
-     * list.</p>
-     */
     inline CreateVolumePermissionModifications& WithRemove(Aws::Vector<CreateVolumePermission>&& value) { SetRemove(std::move(value)); return *this;}
-
-    /**
-     * <p>Removes the specified Amazon Web Services account ID or group from the
-     * list.</p>
-     */
     inline CreateVolumePermissionModifications& AddRemove(const CreateVolumePermission& value) { m_removeHasBeenSet = true; m_remove.push_back(value); return *this; }
-
-    /**
-     * <p>Removes the specified Amazon Web Services account ID or group from the
-     * list.</p>
-     */
     inline CreateVolumePermissionModifications& AddRemove(CreateVolumePermission&& value) { m_removeHasBeenSet = true; m_remove.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CreateVolumePermission> m_add;

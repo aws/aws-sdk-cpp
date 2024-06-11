@@ -32,63 +32,29 @@ namespace Model
     AWS_SSM_API CreatePatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the created patch baseline.</p>
      */
     inline const Aws::String& GetBaselineId() const{ return m_baselineId; }
-
-    /**
-     * <p>The ID of the created patch baseline.</p>
-     */
     inline void SetBaselineId(const Aws::String& value) { m_baselineId = value; }
-
-    /**
-     * <p>The ID of the created patch baseline.</p>
-     */
     inline void SetBaselineId(Aws::String&& value) { m_baselineId = std::move(value); }
-
-    /**
-     * <p>The ID of the created patch baseline.</p>
-     */
     inline void SetBaselineId(const char* value) { m_baselineId.assign(value); }
-
-    /**
-     * <p>The ID of the created patch baseline.</p>
-     */
     inline CreatePatchBaselineResult& WithBaselineId(const Aws::String& value) { SetBaselineId(value); return *this;}
-
-    /**
-     * <p>The ID of the created patch baseline.</p>
-     */
     inline CreatePatchBaselineResult& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the created patch baseline.</p>
-     */
     inline CreatePatchBaselineResult& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreatePatchBaselineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreatePatchBaselineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreatePatchBaselineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_baselineId;

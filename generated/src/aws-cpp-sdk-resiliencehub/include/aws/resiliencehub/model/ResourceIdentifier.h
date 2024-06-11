@@ -39,77 +39,31 @@ namespace Model
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Logical identifier of the drifted resource.</p>
      */
     inline const LogicalResourceId& GetLogicalResourceId() const{ return m_logicalResourceId; }
-
-    /**
-     * <p>Logical identifier of the drifted resource.</p>
-     */
     inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
-
-    /**
-     * <p>Logical identifier of the drifted resource.</p>
-     */
     inline void SetLogicalResourceId(const LogicalResourceId& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
-
-    /**
-     * <p>Logical identifier of the drifted resource.</p>
-     */
     inline void SetLogicalResourceId(LogicalResourceId&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::move(value); }
-
-    /**
-     * <p>Logical identifier of the drifted resource.</p>
-     */
     inline ResourceIdentifier& WithLogicalResourceId(const LogicalResourceId& value) { SetLogicalResourceId(value); return *this;}
-
-    /**
-     * <p>Logical identifier of the drifted resource.</p>
-     */
     inline ResourceIdentifier& WithLogicalResourceId(LogicalResourceId&& value) { SetLogicalResourceId(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Type of the drifted resource.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>Type of the drifted resource.</p>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>Type of the drifted resource.</p>
-     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>Type of the drifted resource.</p>
-     */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>Type of the drifted resource.</p>
-     */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-
-    /**
-     * <p>Type of the drifted resource.</p>
-     */
     inline ResourceIdentifier& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>Type of the drifted resource.</p>
-     */
     inline ResourceIdentifier& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-
-    /**
-     * <p>Type of the drifted resource.</p>
-     */
     inline ResourceIdentifier& WithResourceType(const char* value) { SetResourceType(value); return *this;}
-
+    ///@}
   private:
 
     LogicalResourceId m_logicalResourceId;

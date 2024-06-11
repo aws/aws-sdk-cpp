@@ -38,36 +38,17 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The information of the trigger represented by the trigger node.</p>
      */
     inline const Trigger& GetTrigger() const{ return m_trigger; }
-
-    /**
-     * <p>The information of the trigger represented by the trigger node.</p>
-     */
     inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
-
-    /**
-     * <p>The information of the trigger represented by the trigger node.</p>
-     */
     inline void SetTrigger(const Trigger& value) { m_triggerHasBeenSet = true; m_trigger = value; }
-
-    /**
-     * <p>The information of the trigger represented by the trigger node.</p>
-     */
     inline void SetTrigger(Trigger&& value) { m_triggerHasBeenSet = true; m_trigger = std::move(value); }
-
-    /**
-     * <p>The information of the trigger represented by the trigger node.</p>
-     */
     inline TriggerNodeDetails& WithTrigger(const Trigger& value) { SetTrigger(value); return *this;}
-
-    /**
-     * <p>The information of the trigger represented by the trigger node.</p>
-     */
     inline TriggerNodeDetails& WithTrigger(Trigger&& value) { SetTrigger(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Trigger m_trigger;

@@ -32,63 +32,29 @@ namespace Model
     AWS_WORKMAIL_API StartMailboxExportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The job ID.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline void SetJobId(const char* value) { m_jobId.assign(value); }
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline StartMailboxExportJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline StartMailboxExportJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The job ID.</p>
-     */
     inline StartMailboxExportJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartMailboxExportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartMailboxExportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartMailboxExportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

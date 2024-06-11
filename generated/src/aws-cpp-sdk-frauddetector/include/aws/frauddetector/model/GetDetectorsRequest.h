@@ -34,108 +34,43 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The detector ID.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
-
-    /**
-     * <p>The detector ID.</p>
-     */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-
-    /**
-     * <p>The detector ID.</p>
-     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-
-    /**
-     * <p>The detector ID.</p>
-     */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-
-    /**
-     * <p>The detector ID.</p>
-     */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-
-    /**
-     * <p>The detector ID.</p>
-     */
     inline GetDetectorsRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-
-    /**
-     * <p>The detector ID.</p>
-     */
     inline GetDetectorsRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The detector ID.</p>
-     */
     inline GetDetectorsRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The next token for the subsequent request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline GetDetectorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline GetDetectorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline GetDetectorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of objects to return for the request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of objects to return for the request.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of objects to return for the request.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of objects to return for the request.</p>
-     */
     inline GetDetectorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_detectorId;

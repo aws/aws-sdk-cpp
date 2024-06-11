@@ -39,6 +39,7 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * A value that is used to calculate compression for an output. The bitrate of the
      * output is calculated as follows: Output bitrate = (1 / compressionFactor) *
@@ -47,77 +48,24 @@ namespace Model
      * floating point numbers in the range of 3.0 to 10.0, inclusive.
      */
     inline double GetCompressionFactor() const{ return m_compressionFactor; }
-
-    /**
-     * A value that is used to calculate compression for an output. The bitrate of the
-     * output is calculated as follows: Output bitrate = (1 / compressionFactor) *
-     * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG
-     * XS protocol, with a flow source that uses the CDI protocol. Valid values are
-     * floating point numbers in the range of 3.0 to 10.0, inclusive.
-     */
     inline bool CompressionFactorHasBeenSet() const { return m_compressionFactorHasBeenSet; }
-
-    /**
-     * A value that is used to calculate compression for an output. The bitrate of the
-     * output is calculated as follows: Output bitrate = (1 / compressionFactor) *
-     * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG
-     * XS protocol, with a flow source that uses the CDI protocol. Valid values are
-     * floating point numbers in the range of 3.0 to 10.0, inclusive.
-     */
     inline void SetCompressionFactor(double value) { m_compressionFactorHasBeenSet = true; m_compressionFactor = value; }
-
-    /**
-     * A value that is used to calculate compression for an output. The bitrate of the
-     * output is calculated as follows: Output bitrate = (1 / compressionFactor) *
-     * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG
-     * XS protocol, with a flow source that uses the CDI protocol. Valid values are
-     * floating point numbers in the range of 3.0 to 10.0, inclusive.
-     */
     inline EncodingParameters& WithCompressionFactor(double value) { SetCompressionFactor(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * A setting on the encoder that drives compression settings. This property only
      * applies to video media streams associated with outputs that use the ST 2110 JPEG
      * XS protocol, with a flow source that uses the CDI protocol.
      */
     inline const EncoderProfile& GetEncoderProfile() const{ return m_encoderProfile; }
-
-    /**
-     * A setting on the encoder that drives compression settings. This property only
-     * applies to video media streams associated with outputs that use the ST 2110 JPEG
-     * XS protocol, with a flow source that uses the CDI protocol.
-     */
     inline bool EncoderProfileHasBeenSet() const { return m_encoderProfileHasBeenSet; }
-
-    /**
-     * A setting on the encoder that drives compression settings. This property only
-     * applies to video media streams associated with outputs that use the ST 2110 JPEG
-     * XS protocol, with a flow source that uses the CDI protocol.
-     */
     inline void SetEncoderProfile(const EncoderProfile& value) { m_encoderProfileHasBeenSet = true; m_encoderProfile = value; }
-
-    /**
-     * A setting on the encoder that drives compression settings. This property only
-     * applies to video media streams associated with outputs that use the ST 2110 JPEG
-     * XS protocol, with a flow source that uses the CDI protocol.
-     */
     inline void SetEncoderProfile(EncoderProfile&& value) { m_encoderProfileHasBeenSet = true; m_encoderProfile = std::move(value); }
-
-    /**
-     * A setting on the encoder that drives compression settings. This property only
-     * applies to video media streams associated with outputs that use the ST 2110 JPEG
-     * XS protocol, with a flow source that uses the CDI protocol.
-     */
     inline EncodingParameters& WithEncoderProfile(const EncoderProfile& value) { SetEncoderProfile(value); return *this;}
-
-    /**
-     * A setting on the encoder that drives compression settings. This property only
-     * applies to video media streams associated with outputs that use the ST 2110 JPEG
-     * XS protocol, with a flow source that uses the CDI protocol.
-     */
     inline EncodingParameters& WithEncoderProfile(EncoderProfile&& value) { SetEncoderProfile(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_compressionFactor;

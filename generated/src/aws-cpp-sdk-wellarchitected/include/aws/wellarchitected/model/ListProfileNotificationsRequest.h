@@ -38,68 +38,37 @@ namespace Model
     AWS_WELLARCHITECTED_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-
-    
     inline ListProfileNotificationsRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline ListProfileNotificationsRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline ListProfileNotificationsRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    
     inline ListProfileNotificationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline ListProfileNotificationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline ListProfileNotificationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    
     inline ListProfileNotificationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workloadId;

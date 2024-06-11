@@ -34,54 +34,20 @@ namespace Model
     AWS_APPRUNNER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that
      * you want to delete.</p>
      */
     inline const Aws::String& GetVpcIngressConnectionArn() const{ return m_vpcIngressConnectionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that
-     * you want to delete.</p>
-     */
     inline bool VpcIngressConnectionArnHasBeenSet() const { return m_vpcIngressConnectionArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that
-     * you want to delete.</p>
-     */
     inline void SetVpcIngressConnectionArn(const Aws::String& value) { m_vpcIngressConnectionArnHasBeenSet = true; m_vpcIngressConnectionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that
-     * you want to delete.</p>
-     */
     inline void SetVpcIngressConnectionArn(Aws::String&& value) { m_vpcIngressConnectionArnHasBeenSet = true; m_vpcIngressConnectionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that
-     * you want to delete.</p>
-     */
     inline void SetVpcIngressConnectionArn(const char* value) { m_vpcIngressConnectionArnHasBeenSet = true; m_vpcIngressConnectionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that
-     * you want to delete.</p>
-     */
     inline DeleteVpcIngressConnectionRequest& WithVpcIngressConnectionArn(const Aws::String& value) { SetVpcIngressConnectionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that
-     * you want to delete.</p>
-     */
     inline DeleteVpcIngressConnectionRequest& WithVpcIngressConnectionArn(Aws::String&& value) { SetVpcIngressConnectionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that
-     * you want to delete.</p>
-     */
     inline DeleteVpcIngressConnectionRequest& WithVpcIngressConnectionArn(const char* value) { SetVpcIngressConnectionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_vpcIngressConnectionArn;

@@ -34,71 +34,30 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of the model card to describe.</p>
      */
     inline const Aws::String& GetModelCardName() const{ return m_modelCardName; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the model card to describe.</p>
-     */
     inline bool ModelCardNameHasBeenSet() const { return m_modelCardNameHasBeenSet; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the model card to describe.</p>
-     */
     inline void SetModelCardName(const Aws::String& value) { m_modelCardNameHasBeenSet = true; m_modelCardName = value; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the model card to describe.</p>
-     */
     inline void SetModelCardName(Aws::String&& value) { m_modelCardNameHasBeenSet = true; m_modelCardName = std::move(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the model card to describe.</p>
-     */
     inline void SetModelCardName(const char* value) { m_modelCardNameHasBeenSet = true; m_modelCardName.assign(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the model card to describe.</p>
-     */
     inline DescribeModelCardRequest& WithModelCardName(const Aws::String& value) { SetModelCardName(value); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the model card to describe.</p>
-     */
     inline DescribeModelCardRequest& WithModelCardName(Aws::String&& value) { SetModelCardName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the model card to describe.</p>
-     */
     inline DescribeModelCardRequest& WithModelCardName(const char* value) { SetModelCardName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the model card to describe. If a version is not provided, then
      * the latest version of the model card is described.</p>
      */
     inline int GetModelCardVersion() const{ return m_modelCardVersion; }
-
-    /**
-     * <p>The version of the model card to describe. If a version is not provided, then
-     * the latest version of the model card is described.</p>
-     */
     inline bool ModelCardVersionHasBeenSet() const { return m_modelCardVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the model card to describe. If a version is not provided, then
-     * the latest version of the model card is described.</p>
-     */
     inline void SetModelCardVersion(int value) { m_modelCardVersionHasBeenSet = true; m_modelCardVersion = value; }
-
-    /**
-     * <p>The version of the model card to describe. If a version is not provided, then
-     * the latest version of the model card is described.</p>
-     */
     inline DescribeModelCardRequest& WithModelCardVersion(int value) { SetModelCardVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelCardName;

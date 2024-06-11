@@ -38,87 +38,33 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the OpenSearch Service domain to provide access to.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The name of the OpenSearch Service domain to provide access to.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The name of the OpenSearch Service domain to provide access to.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The name of the OpenSearch Service domain to provide access to.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The name of the OpenSearch Service domain to provide access to.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The name of the OpenSearch Service domain to provide access to.</p>
-     */
     inline AuthorizeVpcEndpointAccessRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The name of the OpenSearch Service domain to provide access to.</p>
-     */
     inline AuthorizeVpcEndpointAccessRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the OpenSearch Service domain to provide access to.</p>
-     */
     inline AuthorizeVpcEndpointAccessRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The account ID to grant access to.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
-
-    /**
-     * <p>The account ID to grant access to.</p>
-     */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-
-    /**
-     * <p>The account ID to grant access to.</p>
-     */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
-
-    /**
-     * <p>The account ID to grant access to.</p>
-     */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-
-    /**
-     * <p>The account ID to grant access to.</p>
-     */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
-
-    /**
-     * <p>The account ID to grant access to.</p>
-     */
     inline AuthorizeVpcEndpointAccessRequest& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-
-    /**
-     * <p>The account ID to grant access to.</p>
-     */
     inline AuthorizeVpcEndpointAccessRequest& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-
-    /**
-     * <p>The account ID to grant access to.</p>
-     */
     inline AuthorizeVpcEndpointAccessRequest& WithAccount(const char* value) { SetAccount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

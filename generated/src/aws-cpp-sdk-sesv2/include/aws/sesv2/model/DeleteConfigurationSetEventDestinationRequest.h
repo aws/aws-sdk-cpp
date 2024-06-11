@@ -36,95 +36,34 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the configuration set that contains the event destination to
      * delete.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-
-    /**
-     * <p>The name of the configuration set that contains the event destination to
-     * delete.</p>
-     */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the configuration set that contains the event destination to
-     * delete.</p>
-     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-
-    /**
-     * <p>The name of the configuration set that contains the event destination to
-     * delete.</p>
-     */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-
-    /**
-     * <p>The name of the configuration set that contains the event destination to
-     * delete.</p>
-     */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-
-    /**
-     * <p>The name of the configuration set that contains the event destination to
-     * delete.</p>
-     */
     inline DeleteConfigurationSetEventDestinationRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-
-    /**
-     * <p>The name of the configuration set that contains the event destination to
-     * delete.</p>
-     */
     inline DeleteConfigurationSetEventDestinationRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the configuration set that contains the event destination to
-     * delete.</p>
-     */
     inline DeleteConfigurationSetEventDestinationRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the event destination to delete.</p>
      */
     inline const Aws::String& GetEventDestinationName() const{ return m_eventDestinationName; }
-
-    /**
-     * <p>The name of the event destination to delete.</p>
-     */
     inline bool EventDestinationNameHasBeenSet() const { return m_eventDestinationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the event destination to delete.</p>
-     */
     inline void SetEventDestinationName(const Aws::String& value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName = value; }
-
-    /**
-     * <p>The name of the event destination to delete.</p>
-     */
     inline void SetEventDestinationName(Aws::String&& value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName = std::move(value); }
-
-    /**
-     * <p>The name of the event destination to delete.</p>
-     */
     inline void SetEventDestinationName(const char* value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName.assign(value); }
-
-    /**
-     * <p>The name of the event destination to delete.</p>
-     */
     inline DeleteConfigurationSetEventDestinationRequest& WithEventDestinationName(const Aws::String& value) { SetEventDestinationName(value); return *this;}
-
-    /**
-     * <p>The name of the event destination to delete.</p>
-     */
     inline DeleteConfigurationSetEventDestinationRequest& WithEventDestinationName(Aws::String&& value) { SetEventDestinationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the event destination to delete.</p>
-     */
     inline DeleteConfigurationSetEventDestinationRequest& WithEventDestinationName(const char* value) { SetEventDestinationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationSetName;

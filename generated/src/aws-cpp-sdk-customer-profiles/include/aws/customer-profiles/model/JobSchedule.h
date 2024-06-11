@@ -39,77 +39,31 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The day when the Identity Resolution Job should run every week.</p>
      */
     inline const JobScheduleDayOfTheWeek& GetDayOfTheWeek() const{ return m_dayOfTheWeek; }
-
-    /**
-     * <p>The day when the Identity Resolution Job should run every week.</p>
-     */
     inline bool DayOfTheWeekHasBeenSet() const { return m_dayOfTheWeekHasBeenSet; }
-
-    /**
-     * <p>The day when the Identity Resolution Job should run every week.</p>
-     */
     inline void SetDayOfTheWeek(const JobScheduleDayOfTheWeek& value) { m_dayOfTheWeekHasBeenSet = true; m_dayOfTheWeek = value; }
-
-    /**
-     * <p>The day when the Identity Resolution Job should run every week.</p>
-     */
     inline void SetDayOfTheWeek(JobScheduleDayOfTheWeek&& value) { m_dayOfTheWeekHasBeenSet = true; m_dayOfTheWeek = std::move(value); }
-
-    /**
-     * <p>The day when the Identity Resolution Job should run every week.</p>
-     */
     inline JobSchedule& WithDayOfTheWeek(const JobScheduleDayOfTheWeek& value) { SetDayOfTheWeek(value); return *this;}
-
-    /**
-     * <p>The day when the Identity Resolution Job should run every week.</p>
-     */
     inline JobSchedule& WithDayOfTheWeek(JobScheduleDayOfTheWeek&& value) { SetDayOfTheWeek(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time when the Identity Resolution Job should run every week.</p>
      */
     inline const Aws::String& GetTime() const{ return m_time; }
-
-    /**
-     * <p>The time when the Identity Resolution Job should run every week.</p>
-     */
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-
-    /**
-     * <p>The time when the Identity Resolution Job should run every week.</p>
-     */
     inline void SetTime(const Aws::String& value) { m_timeHasBeenSet = true; m_time = value; }
-
-    /**
-     * <p>The time when the Identity Resolution Job should run every week.</p>
-     */
     inline void SetTime(Aws::String&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-
-    /**
-     * <p>The time when the Identity Resolution Job should run every week.</p>
-     */
     inline void SetTime(const char* value) { m_timeHasBeenSet = true; m_time.assign(value); }
-
-    /**
-     * <p>The time when the Identity Resolution Job should run every week.</p>
-     */
     inline JobSchedule& WithTime(const Aws::String& value) { SetTime(value); return *this;}
-
-    /**
-     * <p>The time when the Identity Resolution Job should run every week.</p>
-     */
     inline JobSchedule& WithTime(Aws::String&& value) { SetTime(std::move(value)); return *this;}
-
-    /**
-     * <p>The time when the Identity Resolution Job should run every week.</p>
-     */
     inline JobSchedule& WithTime(const char* value) { SetTime(value); return *this;}
-
+    ///@}
   private:
 
     JobScheduleDayOfTheWeek m_dayOfTheWeek;

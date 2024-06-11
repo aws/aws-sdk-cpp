@@ -39,54 +39,20 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of participant timers. You can specify any unique combination of role
      * and timer type. Duplicate entries error out the request with a 400.</p>
      */
     inline const Aws::Vector<ParticipantTimerConfiguration>& GetParticipantTimerConfigList() const{ return m_participantTimerConfigList; }
-
-    /**
-     * <p>A list of participant timers. You can specify any unique combination of role
-     * and timer type. Duplicate entries error out the request with a 400.</p>
-     */
     inline bool ParticipantTimerConfigListHasBeenSet() const { return m_participantTimerConfigListHasBeenSet; }
-
-    /**
-     * <p>A list of participant timers. You can specify any unique combination of role
-     * and timer type. Duplicate entries error out the request with a 400.</p>
-     */
     inline void SetParticipantTimerConfigList(const Aws::Vector<ParticipantTimerConfiguration>& value) { m_participantTimerConfigListHasBeenSet = true; m_participantTimerConfigList = value; }
-
-    /**
-     * <p>A list of participant timers. You can specify any unique combination of role
-     * and timer type. Duplicate entries error out the request with a 400.</p>
-     */
     inline void SetParticipantTimerConfigList(Aws::Vector<ParticipantTimerConfiguration>&& value) { m_participantTimerConfigListHasBeenSet = true; m_participantTimerConfigList = std::move(value); }
-
-    /**
-     * <p>A list of participant timers. You can specify any unique combination of role
-     * and timer type. Duplicate entries error out the request with a 400.</p>
-     */
     inline ChatParticipantRoleConfig& WithParticipantTimerConfigList(const Aws::Vector<ParticipantTimerConfiguration>& value) { SetParticipantTimerConfigList(value); return *this;}
-
-    /**
-     * <p>A list of participant timers. You can specify any unique combination of role
-     * and timer type. Duplicate entries error out the request with a 400.</p>
-     */
     inline ChatParticipantRoleConfig& WithParticipantTimerConfigList(Aws::Vector<ParticipantTimerConfiguration>&& value) { SetParticipantTimerConfigList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of participant timers. You can specify any unique combination of role
-     * and timer type. Duplicate entries error out the request with a 400.</p>
-     */
     inline ChatParticipantRoleConfig& AddParticipantTimerConfigList(const ParticipantTimerConfiguration& value) { m_participantTimerConfigListHasBeenSet = true; m_participantTimerConfigList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of participant timers. You can specify any unique combination of role
-     * and timer type. Duplicate entries error out the request with a 400.</p>
-     */
     inline ChatParticipantRoleConfig& AddParticipantTimerConfigList(ParticipantTimerConfiguration&& value) { m_participantTimerConfigListHasBeenSet = true; m_participantTimerConfigList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ParticipantTimerConfiguration> m_participantTimerConfigList;

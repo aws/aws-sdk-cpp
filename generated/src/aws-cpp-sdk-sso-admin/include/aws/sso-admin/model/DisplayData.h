@@ -38,128 +38,47 @@ namespace Model
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The description of the application provider that appears in the portal.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the application provider that appears in the portal.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the application provider that appears in the portal.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the application provider that appears in the portal.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the application provider that appears in the portal.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the application provider that appears in the portal.</p>
-     */
     inline DisplayData& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the application provider that appears in the portal.</p>
-     */
     inline DisplayData& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the application provider that appears in the portal.</p>
-     */
     inline DisplayData& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the application provider that appears in the portal.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-
-    /**
-     * <p>The name of the application provider that appears in the portal.</p>
-     */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-
-    /**
-     * <p>The name of the application provider that appears in the portal.</p>
-     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-
-    /**
-     * <p>The name of the application provider that appears in the portal.</p>
-     */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-
-    /**
-     * <p>The name of the application provider that appears in the portal.</p>
-     */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-
-    /**
-     * <p>The name of the application provider that appears in the portal.</p>
-     */
     inline DisplayData& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-
-    /**
-     * <p>The name of the application provider that appears in the portal.</p>
-     */
     inline DisplayData& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application provider that appears in the portal.</p>
-     */
     inline DisplayData& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A URL that points to an icon that represents the application provider.</p>
      */
     inline const Aws::String& GetIconUrl() const{ return m_iconUrl; }
-
-    /**
-     * <p>A URL that points to an icon that represents the application provider.</p>
-     */
     inline bool IconUrlHasBeenSet() const { return m_iconUrlHasBeenSet; }
-
-    /**
-     * <p>A URL that points to an icon that represents the application provider.</p>
-     */
     inline void SetIconUrl(const Aws::String& value) { m_iconUrlHasBeenSet = true; m_iconUrl = value; }
-
-    /**
-     * <p>A URL that points to an icon that represents the application provider.</p>
-     */
     inline void SetIconUrl(Aws::String&& value) { m_iconUrlHasBeenSet = true; m_iconUrl = std::move(value); }
-
-    /**
-     * <p>A URL that points to an icon that represents the application provider.</p>
-     */
     inline void SetIconUrl(const char* value) { m_iconUrlHasBeenSet = true; m_iconUrl.assign(value); }
-
-    /**
-     * <p>A URL that points to an icon that represents the application provider.</p>
-     */
     inline DisplayData& WithIconUrl(const Aws::String& value) { SetIconUrl(value); return *this;}
-
-    /**
-     * <p>A URL that points to an icon that represents the application provider.</p>
-     */
     inline DisplayData& WithIconUrl(Aws::String&& value) { SetIconUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>A URL that points to an icon that represents the application provider.</p>
-     */
     inline DisplayData& WithIconUrl(const char* value) { SetIconUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_description;

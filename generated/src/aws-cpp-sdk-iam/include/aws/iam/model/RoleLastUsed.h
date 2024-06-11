@@ -48,6 +48,7 @@ namespace Model
     AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a> that the role was last used.</p> <p>This field is null if
@@ -57,106 +58,27 @@ namespace Model
      * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
      */
     inline const Aws::Utils::DateTime& GetLastUsedDate() const{ return m_lastUsedDate; }
-
-    /**
-     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a> that the role was last used.</p> <p>This field is null if
-     * the role has not been used within the IAM tracking period. For more information
-     * about the tracking period, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-     * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline bool LastUsedDateHasBeenSet() const { return m_lastUsedDateHasBeenSet; }
-
-    /**
-     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a> that the role was last used.</p> <p>This field is null if
-     * the role has not been used within the IAM tracking period. For more information
-     * about the tracking period, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-     * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline void SetLastUsedDate(const Aws::Utils::DateTime& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = value; }
-
-    /**
-     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a> that the role was last used.</p> <p>This field is null if
-     * the role has not been used within the IAM tracking period. For more information
-     * about the tracking period, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-     * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline void SetLastUsedDate(Aws::Utils::DateTime&& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = std::move(value); }
-
-    /**
-     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a> that the role was last used.</p> <p>This field is null if
-     * the role has not been used within the IAM tracking period. For more information
-     * about the tracking period, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-     * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline RoleLastUsed& WithLastUsedDate(const Aws::Utils::DateTime& value) { SetLastUsedDate(value); return *this;}
-
-    /**
-     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a> that the role was last used.</p> <p>This field is null if
-     * the role has not been used within the IAM tracking period. For more information
-     * about the tracking period, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-     * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline RoleLastUsed& WithLastUsedDate(Aws::Utils::DateTime&& value) { SetLastUsedDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the Amazon Web Services Region in which the role was last
      * used.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
-
-    /**
-     * <p>The name of the Amazon Web Services Region in which the role was last
-     * used.</p>
-     */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon Web Services Region in which the role was last
-     * used.</p>
-     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-
-    /**
-     * <p>The name of the Amazon Web Services Region in which the role was last
-     * used.</p>
-     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services Region in which the role was last
-     * used.</p>
-     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services Region in which the role was last
-     * used.</p>
-     */
     inline RoleLastUsed& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services Region in which the role was last
-     * used.</p>
-     */
     inline RoleLastUsed& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services Region in which the role was last
-     * used.</p>
-     */
     inline RoleLastUsed& WithRegion(const char* value) { SetRegion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_lastUsedDate;

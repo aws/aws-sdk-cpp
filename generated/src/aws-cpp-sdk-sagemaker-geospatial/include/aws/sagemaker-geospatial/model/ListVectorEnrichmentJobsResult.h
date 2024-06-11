@@ -34,106 +34,43 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API ListVectorEnrichmentJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>If the previous response was truncated, you receive this token. Use it in
      * your next request to receive the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline ListVectorEnrichmentJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline ListVectorEnrichmentJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline ListVectorEnrichmentJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains summary information about the Vector Enrichment jobs.</p>
      */
     inline const Aws::Vector<ListVectorEnrichmentJobOutputConfig>& GetVectorEnrichmentJobSummaries() const{ return m_vectorEnrichmentJobSummaries; }
-
-    /**
-     * <p>Contains summary information about the Vector Enrichment jobs.</p>
-     */
     inline void SetVectorEnrichmentJobSummaries(const Aws::Vector<ListVectorEnrichmentJobOutputConfig>& value) { m_vectorEnrichmentJobSummaries = value; }
-
-    /**
-     * <p>Contains summary information about the Vector Enrichment jobs.</p>
-     */
     inline void SetVectorEnrichmentJobSummaries(Aws::Vector<ListVectorEnrichmentJobOutputConfig>&& value) { m_vectorEnrichmentJobSummaries = std::move(value); }
-
-    /**
-     * <p>Contains summary information about the Vector Enrichment jobs.</p>
-     */
     inline ListVectorEnrichmentJobsResult& WithVectorEnrichmentJobSummaries(const Aws::Vector<ListVectorEnrichmentJobOutputConfig>& value) { SetVectorEnrichmentJobSummaries(value); return *this;}
-
-    /**
-     * <p>Contains summary information about the Vector Enrichment jobs.</p>
-     */
     inline ListVectorEnrichmentJobsResult& WithVectorEnrichmentJobSummaries(Aws::Vector<ListVectorEnrichmentJobOutputConfig>&& value) { SetVectorEnrichmentJobSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains summary information about the Vector Enrichment jobs.</p>
-     */
     inline ListVectorEnrichmentJobsResult& AddVectorEnrichmentJobSummaries(const ListVectorEnrichmentJobOutputConfig& value) { m_vectorEnrichmentJobSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>Contains summary information about the Vector Enrichment jobs.</p>
-     */
     inline ListVectorEnrichmentJobsResult& AddVectorEnrichmentJobSummaries(ListVectorEnrichmentJobOutputConfig&& value) { m_vectorEnrichmentJobSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListVectorEnrichmentJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListVectorEnrichmentJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListVectorEnrichmentJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

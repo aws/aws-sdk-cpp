@@ -32,63 +32,29 @@ namespace Model
     AWS_WORKSPACESWEB_API CreateIdentityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the identity provider.</p>
      */
     inline const Aws::String& GetIdentityProviderArn() const{ return m_identityProviderArn; }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline void SetIdentityProviderArn(const Aws::String& value) { m_identityProviderArn = value; }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline void SetIdentityProviderArn(Aws::String&& value) { m_identityProviderArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline void SetIdentityProviderArn(const char* value) { m_identityProviderArn.assign(value); }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline CreateIdentityProviderResult& WithIdentityProviderArn(const Aws::String& value) { SetIdentityProviderArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline CreateIdentityProviderResult& WithIdentityProviderArn(Aws::String&& value) { SetIdentityProviderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline CreateIdentityProviderResult& WithIdentityProviderArn(const char* value) { SetIdentityProviderArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateIdentityProviderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateIdentityProviderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateIdentityProviderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identityProviderArn;

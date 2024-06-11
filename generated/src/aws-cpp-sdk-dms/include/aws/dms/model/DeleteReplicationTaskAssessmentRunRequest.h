@@ -37,54 +37,20 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Amazon Resource Name (ARN) of the premigration assessment run to be
      * deleted.</p>
      */
     inline const Aws::String& GetReplicationTaskAssessmentRunArn() const{ return m_replicationTaskAssessmentRunArn; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the premigration assessment run to be
-     * deleted.</p>
-     */
     inline bool ReplicationTaskAssessmentRunArnHasBeenSet() const { return m_replicationTaskAssessmentRunArnHasBeenSet; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the premigration assessment run to be
-     * deleted.</p>
-     */
     inline void SetReplicationTaskAssessmentRunArn(const Aws::String& value) { m_replicationTaskAssessmentRunArnHasBeenSet = true; m_replicationTaskAssessmentRunArn = value; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the premigration assessment run to be
-     * deleted.</p>
-     */
     inline void SetReplicationTaskAssessmentRunArn(Aws::String&& value) { m_replicationTaskAssessmentRunArnHasBeenSet = true; m_replicationTaskAssessmentRunArn = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the premigration assessment run to be
-     * deleted.</p>
-     */
     inline void SetReplicationTaskAssessmentRunArn(const char* value) { m_replicationTaskAssessmentRunArnHasBeenSet = true; m_replicationTaskAssessmentRunArn.assign(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the premigration assessment run to be
-     * deleted.</p>
-     */
     inline DeleteReplicationTaskAssessmentRunRequest& WithReplicationTaskAssessmentRunArn(const Aws::String& value) { SetReplicationTaskAssessmentRunArn(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the premigration assessment run to be
-     * deleted.</p>
-     */
     inline DeleteReplicationTaskAssessmentRunRequest& WithReplicationTaskAssessmentRunArn(Aws::String&& value) { SetReplicationTaskAssessmentRunArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the premigration assessment run to be
-     * deleted.</p>
-     */
     inline DeleteReplicationTaskAssessmentRunRequest& WithReplicationTaskAssessmentRunArn(const char* value) { SetReplicationTaskAssessmentRunArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_replicationTaskAssessmentRunArn;

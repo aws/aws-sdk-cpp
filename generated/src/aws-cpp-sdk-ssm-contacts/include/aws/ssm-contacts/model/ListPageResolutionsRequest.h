@@ -34,87 +34,33 @@ namespace Model
     AWS_SSMCONTACTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A token to start the list. Use this token to get the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
-     */
     inline ListPageResolutionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
-     */
     inline ListPageResolutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
-     */
     inline ListPageResolutionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
      */
     inline const Aws::String& GetPageId() const{ return m_pageId; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
-     */
     inline bool PageIdHasBeenSet() const { return m_pageIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
-     */
     inline void SetPageId(const Aws::String& value) { m_pageIdHasBeenSet = true; m_pageId = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
-     */
     inline void SetPageId(Aws::String&& value) { m_pageIdHasBeenSet = true; m_pageId = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
-     */
     inline void SetPageId(const char* value) { m_pageIdHasBeenSet = true; m_pageId.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
-     */
     inline ListPageResolutionsRequest& WithPageId(const Aws::String& value) { SetPageId(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
-     */
     inline ListPageResolutionsRequest& WithPageId(Aws::String&& value) { SetPageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
-     */
     inline ListPageResolutionsRequest& WithPageId(const char* value) { SetPageId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

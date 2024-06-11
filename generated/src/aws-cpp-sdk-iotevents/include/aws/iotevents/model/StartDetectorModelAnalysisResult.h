@@ -32,63 +32,29 @@ namespace Model
     AWS_IOTEVENTS_API StartDetectorModelAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID that you can use to retrieve the analysis result.</p>
      */
     inline const Aws::String& GetAnalysisId() const{ return m_analysisId; }
-
-    /**
-     * <p>The ID that you can use to retrieve the analysis result.</p>
-     */
     inline void SetAnalysisId(const Aws::String& value) { m_analysisId = value; }
-
-    /**
-     * <p>The ID that you can use to retrieve the analysis result.</p>
-     */
     inline void SetAnalysisId(Aws::String&& value) { m_analysisId = std::move(value); }
-
-    /**
-     * <p>The ID that you can use to retrieve the analysis result.</p>
-     */
     inline void SetAnalysisId(const char* value) { m_analysisId.assign(value); }
-
-    /**
-     * <p>The ID that you can use to retrieve the analysis result.</p>
-     */
     inline StartDetectorModelAnalysisResult& WithAnalysisId(const Aws::String& value) { SetAnalysisId(value); return *this;}
-
-    /**
-     * <p>The ID that you can use to retrieve the analysis result.</p>
-     */
     inline StartDetectorModelAnalysisResult& WithAnalysisId(Aws::String&& value) { SetAnalysisId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID that you can use to retrieve the analysis result.</p>
-     */
     inline StartDetectorModelAnalysisResult& WithAnalysisId(const char* value) { SetAnalysisId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartDetectorModelAnalysisResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartDetectorModelAnalysisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartDetectorModelAnalysisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_analysisId;

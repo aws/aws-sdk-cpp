@@ -32,87 +32,33 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The job's ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline GetReferenceImportJobRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline GetReferenceImportJobRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline GetReferenceImportJobRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The job's reference store ID.</p>
      */
     inline const Aws::String& GetReferenceStoreId() const{ return m_referenceStoreId; }
-
-    /**
-     * <p>The job's reference store ID.</p>
-     */
     inline bool ReferenceStoreIdHasBeenSet() const { return m_referenceStoreIdHasBeenSet; }
-
-    /**
-     * <p>The job's reference store ID.</p>
-     */
     inline void SetReferenceStoreId(const Aws::String& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = value; }
-
-    /**
-     * <p>The job's reference store ID.</p>
-     */
     inline void SetReferenceStoreId(Aws::String&& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = std::move(value); }
-
-    /**
-     * <p>The job's reference store ID.</p>
-     */
     inline void SetReferenceStoreId(const char* value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId.assign(value); }
-
-    /**
-     * <p>The job's reference store ID.</p>
-     */
     inline GetReferenceImportJobRequest& WithReferenceStoreId(const Aws::String& value) { SetReferenceStoreId(value); return *this;}
-
-    /**
-     * <p>The job's reference store ID.</p>
-     */
     inline GetReferenceImportJobRequest& WithReferenceStoreId(Aws::String&& value) { SetReferenceStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's reference store ID.</p>
-     */
     inline GetReferenceImportJobRequest& WithReferenceStoreId(const char* value) { SetReferenceStoreId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

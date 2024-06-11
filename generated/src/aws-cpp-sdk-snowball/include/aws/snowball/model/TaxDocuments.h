@@ -38,24 +38,15 @@ namespace Model
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const INDTaxDocuments& GetIND() const{ return m_iND; }
-
-    
     inline bool INDHasBeenSet() const { return m_iNDHasBeenSet; }
-
-    
     inline void SetIND(const INDTaxDocuments& value) { m_iNDHasBeenSet = true; m_iND = value; }
-
-    
     inline void SetIND(INDTaxDocuments&& value) { m_iNDHasBeenSet = true; m_iND = std::move(value); }
-
-    
     inline TaxDocuments& WithIND(const INDTaxDocuments& value) { SetIND(value); return *this;}
-
-    
     inline TaxDocuments& WithIND(INDTaxDocuments&& value) { SetIND(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     INDTaxDocuments m_iND;

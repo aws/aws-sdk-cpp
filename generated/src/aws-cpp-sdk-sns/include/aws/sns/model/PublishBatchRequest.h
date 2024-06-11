@@ -38,95 +38,34 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
-     */
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
-     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
-     */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
-     */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
-     */
     inline PublishBatchRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-
-    /**
-     * <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
-     */
     inline PublishBatchRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
-     */
     inline PublishBatchRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS
      * topic.</p>
      */
     inline const Aws::Vector<PublishBatchRequestEntry>& GetPublishBatchRequestEntries() const{ return m_publishBatchRequestEntries; }
-
-    /**
-     * <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS
-     * topic.</p>
-     */
     inline bool PublishBatchRequestEntriesHasBeenSet() const { return m_publishBatchRequestEntriesHasBeenSet; }
-
-    /**
-     * <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS
-     * topic.</p>
-     */
     inline void SetPublishBatchRequestEntries(const Aws::Vector<PublishBatchRequestEntry>& value) { m_publishBatchRequestEntriesHasBeenSet = true; m_publishBatchRequestEntries = value; }
-
-    /**
-     * <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS
-     * topic.</p>
-     */
     inline void SetPublishBatchRequestEntries(Aws::Vector<PublishBatchRequestEntry>&& value) { m_publishBatchRequestEntriesHasBeenSet = true; m_publishBatchRequestEntries = std::move(value); }
-
-    /**
-     * <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS
-     * topic.</p>
-     */
     inline PublishBatchRequest& WithPublishBatchRequestEntries(const Aws::Vector<PublishBatchRequestEntry>& value) { SetPublishBatchRequestEntries(value); return *this;}
-
-    /**
-     * <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS
-     * topic.</p>
-     */
     inline PublishBatchRequest& WithPublishBatchRequestEntries(Aws::Vector<PublishBatchRequestEntry>&& value) { SetPublishBatchRequestEntries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS
-     * topic.</p>
-     */
     inline PublishBatchRequest& AddPublishBatchRequestEntries(const PublishBatchRequestEntry& value) { m_publishBatchRequestEntriesHasBeenSet = true; m_publishBatchRequestEntries.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS
-     * topic.</p>
-     */
     inline PublishBatchRequest& AddPublishBatchRequestEntries(PublishBatchRequestEntry&& value) { m_publishBatchRequestEntriesHasBeenSet = true; m_publishBatchRequestEntries.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_topicArn;

@@ -36,62 +36,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop
      * replicating automate backups, for example,
      * <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
      */
     inline const Aws::String& GetSourceDBInstanceArn() const{ return m_sourceDBInstanceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop
-     * replicating automate backups, for example,
-     * <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-     */
     inline bool SourceDBInstanceArnHasBeenSet() const { return m_sourceDBInstanceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop
-     * replicating automate backups, for example,
-     * <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-     */
     inline void SetSourceDBInstanceArn(const Aws::String& value) { m_sourceDBInstanceArnHasBeenSet = true; m_sourceDBInstanceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop
-     * replicating automate backups, for example,
-     * <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-     */
     inline void SetSourceDBInstanceArn(Aws::String&& value) { m_sourceDBInstanceArnHasBeenSet = true; m_sourceDBInstanceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop
-     * replicating automate backups, for example,
-     * <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-     */
     inline void SetSourceDBInstanceArn(const char* value) { m_sourceDBInstanceArnHasBeenSet = true; m_sourceDBInstanceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop
-     * replicating automate backups, for example,
-     * <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-     */
     inline StopDBInstanceAutomatedBackupsReplicationRequest& WithSourceDBInstanceArn(const Aws::String& value) { SetSourceDBInstanceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop
-     * replicating automate backups, for example,
-     * <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-     */
     inline StopDBInstanceAutomatedBackupsReplicationRequest& WithSourceDBInstanceArn(Aws::String&& value) { SetSourceDBInstanceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop
-     * replicating automate backups, for example,
-     * <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-     */
     inline StopDBInstanceAutomatedBackupsReplicationRequest& WithSourceDBInstanceArn(const char* value) { SetSourceDBInstanceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceDBInstanceArn;

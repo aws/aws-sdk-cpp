@@ -43,78 +43,24 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The content of the request body. The key of the object in this field is a
      * media type defining the format of the request body.</p>
      */
     inline const Aws::Map<Aws::String, PropertyParameters>& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The content of the request body. The key of the object in this field is a
-     * media type defining the format of the request body.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The content of the request body. The key of the object in this field is a
-     * media type defining the format of the request body.</p>
-     */
     inline void SetContent(const Aws::Map<Aws::String, PropertyParameters>& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The content of the request body. The key of the object in this field is a
-     * media type defining the format of the request body.</p>
-     */
     inline void SetContent(Aws::Map<Aws::String, PropertyParameters>&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The content of the request body. The key of the object in this field is a
-     * media type defining the format of the request body.</p>
-     */
     inline ApiRequestBody& WithContent(const Aws::Map<Aws::String, PropertyParameters>& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The content of the request body. The key of the object in this field is a
-     * media type defining the format of the request body.</p>
-     */
     inline ApiRequestBody& WithContent(Aws::Map<Aws::String, PropertyParameters>&& value) { SetContent(std::move(value)); return *this;}
-
-    /**
-     * <p>The content of the request body. The key of the object in this field is a
-     * media type defining the format of the request body.</p>
-     */
     inline ApiRequestBody& AddContent(const Aws::String& key, const PropertyParameters& value) { m_contentHasBeenSet = true; m_content.emplace(key, value); return *this; }
-
-    /**
-     * <p>The content of the request body. The key of the object in this field is a
-     * media type defining the format of the request body.</p>
-     */
     inline ApiRequestBody& AddContent(Aws::String&& key, const PropertyParameters& value) { m_contentHasBeenSet = true; m_content.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The content of the request body. The key of the object in this field is a
-     * media type defining the format of the request body.</p>
-     */
     inline ApiRequestBody& AddContent(const Aws::String& key, PropertyParameters&& value) { m_contentHasBeenSet = true; m_content.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The content of the request body. The key of the object in this field is a
-     * media type defining the format of the request body.</p>
-     */
     inline ApiRequestBody& AddContent(Aws::String&& key, PropertyParameters&& value) { m_contentHasBeenSet = true; m_content.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The content of the request body. The key of the object in this field is a
-     * media type defining the format of the request body.</p>
-     */
     inline ApiRequestBody& AddContent(const char* key, PropertyParameters&& value) { m_contentHasBeenSet = true; m_content.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The content of the request body. The key of the object in this field is a
-     * media type defining the format of the request body.</p>
-     */
     inline ApiRequestBody& AddContent(const char* key, const PropertyParameters& value) { m_contentHasBeenSet = true; m_content.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, PropertyParameters> m_content;

@@ -44,228 +44,86 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Additional tax information associated with your TRN. </p>
      */
     inline const AdditionalInfoResponse& GetAdditionalTaxInformation() const{ return m_additionalTaxInformation; }
-
-    /**
-     * <p> Additional tax information associated with your TRN. </p>
-     */
     inline bool AdditionalTaxInformationHasBeenSet() const { return m_additionalTaxInformationHasBeenSet; }
-
-    /**
-     * <p> Additional tax information associated with your TRN. </p>
-     */
     inline void SetAdditionalTaxInformation(const AdditionalInfoResponse& value) { m_additionalTaxInformationHasBeenSet = true; m_additionalTaxInformation = value; }
-
-    /**
-     * <p> Additional tax information associated with your TRN. </p>
-     */
     inline void SetAdditionalTaxInformation(AdditionalInfoResponse&& value) { m_additionalTaxInformationHasBeenSet = true; m_additionalTaxInformation = std::move(value); }
-
-    /**
-     * <p> Additional tax information associated with your TRN. </p>
-     */
     inline TaxRegistration& WithAdditionalTaxInformation(const AdditionalInfoResponse& value) { SetAdditionalTaxInformation(value); return *this;}
-
-    /**
-     * <p> Additional tax information associated with your TRN. </p>
-     */
     inline TaxRegistration& WithAdditionalTaxInformation(AdditionalInfoResponse&& value) { SetAdditionalTaxInformation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The email address to receive VAT invoices.</p>
      */
     inline const Aws::String& GetCertifiedEmailId() const{ return m_certifiedEmailId; }
-
-    /**
-     * <p>The email address to receive VAT invoices.</p>
-     */
     inline bool CertifiedEmailIdHasBeenSet() const { return m_certifiedEmailIdHasBeenSet; }
-
-    /**
-     * <p>The email address to receive VAT invoices.</p>
-     */
     inline void SetCertifiedEmailId(const Aws::String& value) { m_certifiedEmailIdHasBeenSet = true; m_certifiedEmailId = value; }
-
-    /**
-     * <p>The email address to receive VAT invoices.</p>
-     */
     inline void SetCertifiedEmailId(Aws::String&& value) { m_certifiedEmailIdHasBeenSet = true; m_certifiedEmailId = std::move(value); }
-
-    /**
-     * <p>The email address to receive VAT invoices.</p>
-     */
     inline void SetCertifiedEmailId(const char* value) { m_certifiedEmailIdHasBeenSet = true; m_certifiedEmailId.assign(value); }
-
-    /**
-     * <p>The email address to receive VAT invoices.</p>
-     */
     inline TaxRegistration& WithCertifiedEmailId(const Aws::String& value) { SetCertifiedEmailId(value); return *this;}
-
-    /**
-     * <p>The email address to receive VAT invoices.</p>
-     */
     inline TaxRegistration& WithCertifiedEmailId(Aws::String&& value) { SetCertifiedEmailId(std::move(value)); return *this;}
-
-    /**
-     * <p>The email address to receive VAT invoices.</p>
-     */
     inline TaxRegistration& WithCertifiedEmailId(const char* value) { SetCertifiedEmailId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The legal address associated with your TRN registration. </p>
      */
     inline const Address& GetLegalAddress() const{ return m_legalAddress; }
-
-    /**
-     * <p> The legal address associated with your TRN registration. </p>
-     */
     inline bool LegalAddressHasBeenSet() const { return m_legalAddressHasBeenSet; }
-
-    /**
-     * <p> The legal address associated with your TRN registration. </p>
-     */
     inline void SetLegalAddress(const Address& value) { m_legalAddressHasBeenSet = true; m_legalAddress = value; }
-
-    /**
-     * <p> The legal address associated with your TRN registration. </p>
-     */
     inline void SetLegalAddress(Address&& value) { m_legalAddressHasBeenSet = true; m_legalAddress = std::move(value); }
-
-    /**
-     * <p> The legal address associated with your TRN registration. </p>
-     */
     inline TaxRegistration& WithLegalAddress(const Address& value) { SetLegalAddress(value); return *this;}
-
-    /**
-     * <p> The legal address associated with your TRN registration. </p>
-     */
     inline TaxRegistration& WithLegalAddress(Address&& value) { SetLegalAddress(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The legal name associated with your TRN registration. </p>
      */
     inline const Aws::String& GetLegalName() const{ return m_legalName; }
-
-    /**
-     * <p> The legal name associated with your TRN registration. </p>
-     */
     inline bool LegalNameHasBeenSet() const { return m_legalNameHasBeenSet; }
-
-    /**
-     * <p> The legal name associated with your TRN registration. </p>
-     */
     inline void SetLegalName(const Aws::String& value) { m_legalNameHasBeenSet = true; m_legalName = value; }
-
-    /**
-     * <p> The legal name associated with your TRN registration. </p>
-     */
     inline void SetLegalName(Aws::String&& value) { m_legalNameHasBeenSet = true; m_legalName = std::move(value); }
-
-    /**
-     * <p> The legal name associated with your TRN registration. </p>
-     */
     inline void SetLegalName(const char* value) { m_legalNameHasBeenSet = true; m_legalName.assign(value); }
-
-    /**
-     * <p> The legal name associated with your TRN registration. </p>
-     */
     inline TaxRegistration& WithLegalName(const Aws::String& value) { SetLegalName(value); return *this;}
-
-    /**
-     * <p> The legal name associated with your TRN registration. </p>
-     */
     inline TaxRegistration& WithLegalName(Aws::String&& value) { SetLegalName(std::move(value)); return *this;}
-
-    /**
-     * <p> The legal name associated with your TRN registration. </p>
-     */
     inline TaxRegistration& WithLegalName(const char* value) { SetLegalName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Your tax registration unique identifier. </p>
      */
     inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
-
-    /**
-     * <p> Your tax registration unique identifier. </p>
-     */
     inline bool RegistrationIdHasBeenSet() const { return m_registrationIdHasBeenSet; }
-
-    /**
-     * <p> Your tax registration unique identifier. </p>
-     */
     inline void SetRegistrationId(const Aws::String& value) { m_registrationIdHasBeenSet = true; m_registrationId = value; }
-
-    /**
-     * <p> Your tax registration unique identifier. </p>
-     */
     inline void SetRegistrationId(Aws::String&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::move(value); }
-
-    /**
-     * <p> Your tax registration unique identifier. </p>
-     */
     inline void SetRegistrationId(const char* value) { m_registrationIdHasBeenSet = true; m_registrationId.assign(value); }
-
-    /**
-     * <p> Your tax registration unique identifier. </p>
-     */
     inline TaxRegistration& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
-
-    /**
-     * <p> Your tax registration unique identifier. </p>
-     */
     inline TaxRegistration& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
-
-    /**
-     * <p> Your tax registration unique identifier. </p>
-     */
     inline TaxRegistration& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Type of your tax registration. This can be either <code>VAT</code> or
      * <code>GST</code>. </p>
      */
     inline const TaxRegistrationType& GetRegistrationType() const{ return m_registrationType; }
-
-    /**
-     * <p>Type of your tax registration. This can be either <code>VAT</code> or
-     * <code>GST</code>. </p>
-     */
     inline bool RegistrationTypeHasBeenSet() const { return m_registrationTypeHasBeenSet; }
-
-    /**
-     * <p>Type of your tax registration. This can be either <code>VAT</code> or
-     * <code>GST</code>. </p>
-     */
     inline void SetRegistrationType(const TaxRegistrationType& value) { m_registrationTypeHasBeenSet = true; m_registrationType = value; }
-
-    /**
-     * <p>Type of your tax registration. This can be either <code>VAT</code> or
-     * <code>GST</code>. </p>
-     */
     inline void SetRegistrationType(TaxRegistrationType&& value) { m_registrationTypeHasBeenSet = true; m_registrationType = std::move(value); }
-
-    /**
-     * <p>Type of your tax registration. This can be either <code>VAT</code> or
-     * <code>GST</code>. </p>
-     */
     inline TaxRegistration& WithRegistrationType(const TaxRegistrationType& value) { SetRegistrationType(value); return *this;}
-
-    /**
-     * <p>Type of your tax registration. This can be either <code>VAT</code> or
-     * <code>GST</code>. </p>
-     */
     inline TaxRegistration& WithRegistrationType(TaxRegistrationType&& value) { SetRegistrationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The industry that describes your business. For business-to-business (B2B)
      * customers, specify Business. For business-to-consumer (B2C) customers, specify
@@ -274,130 +132,39 @@ namespace Model
      * country specific information in API document. </p>
      */
     inline const Sector& GetSector() const{ return m_sector; }
-
-    /**
-     * <p>The industry that describes your business. For business-to-business (B2B)
-     * customers, specify Business. For business-to-consumer (B2C) customers, specify
-     * Individual. For business-to-government (B2G), specify Government. Note that
-     * certain values may not applicable for the request country. Please refer to
-     * country specific information in API document. </p>
-     */
     inline bool SectorHasBeenSet() const { return m_sectorHasBeenSet; }
-
-    /**
-     * <p>The industry that describes your business. For business-to-business (B2B)
-     * customers, specify Business. For business-to-consumer (B2C) customers, specify
-     * Individual. For business-to-government (B2G), specify Government. Note that
-     * certain values may not applicable for the request country. Please refer to
-     * country specific information in API document. </p>
-     */
     inline void SetSector(const Sector& value) { m_sectorHasBeenSet = true; m_sector = value; }
-
-    /**
-     * <p>The industry that describes your business. For business-to-business (B2B)
-     * customers, specify Business. For business-to-consumer (B2C) customers, specify
-     * Individual. For business-to-government (B2G), specify Government. Note that
-     * certain values may not applicable for the request country. Please refer to
-     * country specific information in API document. </p>
-     */
     inline void SetSector(Sector&& value) { m_sectorHasBeenSet = true; m_sector = std::move(value); }
-
-    /**
-     * <p>The industry that describes your business. For business-to-business (B2B)
-     * customers, specify Business. For business-to-consumer (B2C) customers, specify
-     * Individual. For business-to-government (B2G), specify Government. Note that
-     * certain values may not applicable for the request country. Please refer to
-     * country specific information in API document. </p>
-     */
     inline TaxRegistration& WithSector(const Sector& value) { SetSector(value); return *this;}
-
-    /**
-     * <p>The industry that describes your business. For business-to-business (B2B)
-     * customers, specify Business. For business-to-consumer (B2C) customers, specify
-     * Individual. For business-to-government (B2G), specify Government. Note that
-     * certain values may not applicable for the request country. Please refer to
-     * country specific information in API document. </p>
-     */
     inline TaxRegistration& WithSector(Sector&& value) { SetSector(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The status of your TRN. This can be either <code>Verified</code>,
      * <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. </p>
      */
     inline const TaxRegistrationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> The status of your TRN. This can be either <code>Verified</code>,
-     * <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> The status of your TRN. This can be either <code>Verified</code>,
-     * <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. </p>
-     */
     inline void SetStatus(const TaxRegistrationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> The status of your TRN. This can be either <code>Verified</code>,
-     * <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. </p>
-     */
     inline void SetStatus(TaxRegistrationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> The status of your TRN. This can be either <code>Verified</code>,
-     * <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. </p>
-     */
     inline TaxRegistration& WithStatus(const TaxRegistrationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> The status of your TRN. This can be either <code>Verified</code>,
-     * <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. </p>
-     */
     inline TaxRegistration& WithStatus(TaxRegistrationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The metadata for your tax document.</p>
      */
     inline const Aws::Vector<TaxDocumentMetadata>& GetTaxDocumentMetadatas() const{ return m_taxDocumentMetadatas; }
-
-    /**
-     * <p>The metadata for your tax document.</p>
-     */
     inline bool TaxDocumentMetadatasHasBeenSet() const { return m_taxDocumentMetadatasHasBeenSet; }
-
-    /**
-     * <p>The metadata for your tax document.</p>
-     */
     inline void SetTaxDocumentMetadatas(const Aws::Vector<TaxDocumentMetadata>& value) { m_taxDocumentMetadatasHasBeenSet = true; m_taxDocumentMetadatas = value; }
-
-    /**
-     * <p>The metadata for your tax document.</p>
-     */
     inline void SetTaxDocumentMetadatas(Aws::Vector<TaxDocumentMetadata>&& value) { m_taxDocumentMetadatasHasBeenSet = true; m_taxDocumentMetadatas = std::move(value); }
-
-    /**
-     * <p>The metadata for your tax document.</p>
-     */
     inline TaxRegistration& WithTaxDocumentMetadatas(const Aws::Vector<TaxDocumentMetadata>& value) { SetTaxDocumentMetadatas(value); return *this;}
-
-    /**
-     * <p>The metadata for your tax document.</p>
-     */
     inline TaxRegistration& WithTaxDocumentMetadatas(Aws::Vector<TaxDocumentMetadata>&& value) { SetTaxDocumentMetadatas(std::move(value)); return *this;}
-
-    /**
-     * <p>The metadata for your tax document.</p>
-     */
     inline TaxRegistration& AddTaxDocumentMetadatas(const TaxDocumentMetadata& value) { m_taxDocumentMetadatasHasBeenSet = true; m_taxDocumentMetadatas.push_back(value); return *this; }
-
-    /**
-     * <p>The metadata for your tax document.</p>
-     */
     inline TaxRegistration& AddTaxDocumentMetadatas(TaxDocumentMetadata&& value) { m_taxDocumentMetadatasHasBeenSet = true; m_taxDocumentMetadatas.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     AdditionalInfoResponse m_additionalTaxInformation;

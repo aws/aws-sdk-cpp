@@ -34,54 +34,20 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource
      * execution for which you want to retrieve the evaluation summary.</p>
      */
     inline const Aws::String& GetResourceEvaluationId() const{ return m_resourceEvaluationId; }
-
-    /**
-     * <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource
-     * execution for which you want to retrieve the evaluation summary.</p>
-     */
     inline bool ResourceEvaluationIdHasBeenSet() const { return m_resourceEvaluationIdHasBeenSet; }
-
-    /**
-     * <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource
-     * execution for which you want to retrieve the evaluation summary.</p>
-     */
     inline void SetResourceEvaluationId(const Aws::String& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = value; }
-
-    /**
-     * <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource
-     * execution for which you want to retrieve the evaluation summary.</p>
-     */
     inline void SetResourceEvaluationId(Aws::String&& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = std::move(value); }
-
-    /**
-     * <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource
-     * execution for which you want to retrieve the evaluation summary.</p>
-     */
     inline void SetResourceEvaluationId(const char* value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId.assign(value); }
-
-    /**
-     * <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource
-     * execution for which you want to retrieve the evaluation summary.</p>
-     */
     inline GetResourceEvaluationSummaryRequest& WithResourceEvaluationId(const Aws::String& value) { SetResourceEvaluationId(value); return *this;}
-
-    /**
-     * <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource
-     * execution for which you want to retrieve the evaluation summary.</p>
-     */
     inline GetResourceEvaluationSummaryRequest& WithResourceEvaluationId(Aws::String&& value) { SetResourceEvaluationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource
-     * execution for which you want to retrieve the evaluation summary.</p>
-     */
     inline GetResourceEvaluationSummaryRequest& WithResourceEvaluationId(const char* value) { SetResourceEvaluationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceEvaluationId;

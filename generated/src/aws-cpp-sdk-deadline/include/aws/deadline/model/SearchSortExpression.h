@@ -39,98 +39,41 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Options for sorting by a field.</p>
      */
     inline const FieldSortExpression& GetFieldSort() const{ return m_fieldSort; }
-
-    /**
-     * <p>Options for sorting by a field.</p>
-     */
     inline bool FieldSortHasBeenSet() const { return m_fieldSortHasBeenSet; }
-
-    /**
-     * <p>Options for sorting by a field.</p>
-     */
     inline void SetFieldSort(const FieldSortExpression& value) { m_fieldSortHasBeenSet = true; m_fieldSort = value; }
-
-    /**
-     * <p>Options for sorting by a field.</p>
-     */
     inline void SetFieldSort(FieldSortExpression&& value) { m_fieldSortHasBeenSet = true; m_fieldSort = std::move(value); }
-
-    /**
-     * <p>Options for sorting by a field.</p>
-     */
     inline SearchSortExpression& WithFieldSort(const FieldSortExpression& value) { SetFieldSort(value); return *this;}
-
-    /**
-     * <p>Options for sorting by a field.</p>
-     */
     inline SearchSortExpression& WithFieldSort(FieldSortExpression&& value) { SetFieldSort(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Options for sorting by a parameter.</p>
      */
     inline const ParameterSortExpression& GetParameterSort() const{ return m_parameterSort; }
-
-    /**
-     * <p>Options for sorting by a parameter.</p>
-     */
     inline bool ParameterSortHasBeenSet() const { return m_parameterSortHasBeenSet; }
-
-    /**
-     * <p>Options for sorting by a parameter.</p>
-     */
     inline void SetParameterSort(const ParameterSortExpression& value) { m_parameterSortHasBeenSet = true; m_parameterSort = value; }
-
-    /**
-     * <p>Options for sorting by a parameter.</p>
-     */
     inline void SetParameterSort(ParameterSortExpression&& value) { m_parameterSortHasBeenSet = true; m_parameterSort = std::move(value); }
-
-    /**
-     * <p>Options for sorting by a parameter.</p>
-     */
     inline SearchSortExpression& WithParameterSort(const ParameterSortExpression& value) { SetParameterSort(value); return *this;}
-
-    /**
-     * <p>Options for sorting by a parameter.</p>
-     */
     inline SearchSortExpression& WithParameterSort(ParameterSortExpression&& value) { SetParameterSort(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Options for sorting a particular user's jobs first.</p>
      */
     inline const UserJobsFirst& GetUserJobsFirst() const{ return m_userJobsFirst; }
-
-    /**
-     * <p>Options for sorting a particular user's jobs first.</p>
-     */
     inline bool UserJobsFirstHasBeenSet() const { return m_userJobsFirstHasBeenSet; }
-
-    /**
-     * <p>Options for sorting a particular user's jobs first.</p>
-     */
     inline void SetUserJobsFirst(const UserJobsFirst& value) { m_userJobsFirstHasBeenSet = true; m_userJobsFirst = value; }
-
-    /**
-     * <p>Options for sorting a particular user's jobs first.</p>
-     */
     inline void SetUserJobsFirst(UserJobsFirst&& value) { m_userJobsFirstHasBeenSet = true; m_userJobsFirst = std::move(value); }
-
-    /**
-     * <p>Options for sorting a particular user's jobs first.</p>
-     */
     inline SearchSortExpression& WithUserJobsFirst(const UserJobsFirst& value) { SetUserJobsFirst(value); return *this;}
-
-    /**
-     * <p>Options for sorting a particular user's jobs first.</p>
-     */
     inline SearchSortExpression& WithUserJobsFirst(UserJobsFirst&& value) { SetUserJobsFirst(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FieldSortExpression m_fieldSort;

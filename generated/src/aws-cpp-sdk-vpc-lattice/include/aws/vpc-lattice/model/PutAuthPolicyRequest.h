@@ -32,103 +32,35 @@ namespace Model
     AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The auth policy. The policy string in JSON must not contain newlines or blank
      * lines.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
-     */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-
-    /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
-     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-
-    /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
-     */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-
-    /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
-     */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-
-    /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
-     */
     inline PutAuthPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
-     */
     inline PutAuthPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
-     */
     inline PutAuthPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID or Amazon Resource Name (ARN) of the service network or service for
      * which the policy is created.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service network or service for
-     * which the policy is created.</p>
-     */
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service network or service for
-     * which the policy is created.</p>
-     */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service network or service for
-     * which the policy is created.</p>
-     */
     inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service network or service for
-     * which the policy is created.</p>
-     */
     inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service network or service for
-     * which the policy is created.</p>
-     */
     inline PutAuthPolicyRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service network or service for
-     * which the policy is created.</p>
-     */
     inline PutAuthPolicyRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service network or service for
-     * which the policy is created.</p>
-     */
     inline PutAuthPolicyRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policy;

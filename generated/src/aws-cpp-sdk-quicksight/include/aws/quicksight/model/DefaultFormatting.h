@@ -39,79 +39,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The display format. Valid values for this structure are <code>AUTO</code>,
      * <code>PERCENT</code>, <code>CURRENCY</code>, <code>NUMBER</code>,
      * <code>DATE</code>, and <code>STRING</code>.</p>
      */
     inline const DisplayFormat& GetDisplayFormat() const{ return m_displayFormat; }
-
-    /**
-     * <p>The display format. Valid values for this structure are <code>AUTO</code>,
-     * <code>PERCENT</code>, <code>CURRENCY</code>, <code>NUMBER</code>,
-     * <code>DATE</code>, and <code>STRING</code>.</p>
-     */
     inline bool DisplayFormatHasBeenSet() const { return m_displayFormatHasBeenSet; }
-
-    /**
-     * <p>The display format. Valid values for this structure are <code>AUTO</code>,
-     * <code>PERCENT</code>, <code>CURRENCY</code>, <code>NUMBER</code>,
-     * <code>DATE</code>, and <code>STRING</code>.</p>
-     */
     inline void SetDisplayFormat(const DisplayFormat& value) { m_displayFormatHasBeenSet = true; m_displayFormat = value; }
-
-    /**
-     * <p>The display format. Valid values for this structure are <code>AUTO</code>,
-     * <code>PERCENT</code>, <code>CURRENCY</code>, <code>NUMBER</code>,
-     * <code>DATE</code>, and <code>STRING</code>.</p>
-     */
     inline void SetDisplayFormat(DisplayFormat&& value) { m_displayFormatHasBeenSet = true; m_displayFormat = std::move(value); }
-
-    /**
-     * <p>The display format. Valid values for this structure are <code>AUTO</code>,
-     * <code>PERCENT</code>, <code>CURRENCY</code>, <code>NUMBER</code>,
-     * <code>DATE</code>, and <code>STRING</code>.</p>
-     */
     inline DefaultFormatting& WithDisplayFormat(const DisplayFormat& value) { SetDisplayFormat(value); return *this;}
-
-    /**
-     * <p>The display format. Valid values for this structure are <code>AUTO</code>,
-     * <code>PERCENT</code>, <code>CURRENCY</code>, <code>NUMBER</code>,
-     * <code>DATE</code>, and <code>STRING</code>.</p>
-     */
     inline DefaultFormatting& WithDisplayFormat(DisplayFormat&& value) { SetDisplayFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The additional options for display formatting.</p>
      */
     inline const DisplayFormatOptions& GetDisplayFormatOptions() const{ return m_displayFormatOptions; }
-
-    /**
-     * <p>The additional options for display formatting.</p>
-     */
     inline bool DisplayFormatOptionsHasBeenSet() const { return m_displayFormatOptionsHasBeenSet; }
-
-    /**
-     * <p>The additional options for display formatting.</p>
-     */
     inline void SetDisplayFormatOptions(const DisplayFormatOptions& value) { m_displayFormatOptionsHasBeenSet = true; m_displayFormatOptions = value; }
-
-    /**
-     * <p>The additional options for display formatting.</p>
-     */
     inline void SetDisplayFormatOptions(DisplayFormatOptions&& value) { m_displayFormatOptionsHasBeenSet = true; m_displayFormatOptions = std::move(value); }
-
-    /**
-     * <p>The additional options for display formatting.</p>
-     */
     inline DefaultFormatting& WithDisplayFormatOptions(const DisplayFormatOptions& value) { SetDisplayFormatOptions(value); return *this;}
-
-    /**
-     * <p>The additional options for display formatting.</p>
-     */
     inline DefaultFormatting& WithDisplayFormatOptions(DisplayFormatOptions&& value) { SetDisplayFormatOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DisplayFormat m_displayFormat;

@@ -33,97 +33,35 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Amazon Web Services account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account.</p>
-     */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account.</p>
-     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account.</p>
-     */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account.</p>
-     */
     inline DescribeOrganizationHealthRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account.</p>
-     */
     inline DescribeOrganizationHealthRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account.</p>
-     */
     inline DescribeOrganizationHealthRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account.</p>
-     */
     inline DescribeOrganizationHealthRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account.</p>
-     */
     inline DescribeOrganizationHealthRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the organizational unit.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const{ return m_organizationalUnitIds; }
-
-    /**
-     * <p>The ID of the organizational unit.</p>
-     */
     inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
-
-    /**
-     * <p>The ID of the organizational unit.</p>
-     */
     inline void SetOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = value; }
-
-    /**
-     * <p>The ID of the organizational unit.</p>
-     */
     inline void SetOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = std::move(value); }
-
-    /**
-     * <p>The ID of the organizational unit.</p>
-     */
     inline DescribeOrganizationHealthRequest& WithOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitIds(value); return *this;}
-
-    /**
-     * <p>The ID of the organizational unit.</p>
-     */
     inline DescribeOrganizationHealthRequest& WithOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the organizational unit.</p>
-     */
     inline DescribeOrganizationHealthRequest& AddOrganizationalUnitIds(const Aws::String& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
-
-    /**
-     * <p>The ID of the organizational unit.</p>
-     */
     inline DescribeOrganizationHealthRequest& AddOrganizationalUnitIds(Aws::String&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The ID of the organizational unit.</p>
-     */
     inline DescribeOrganizationHealthRequest& AddOrganizationalUnitIds(const char* value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_accountIds;

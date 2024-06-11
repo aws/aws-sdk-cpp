@@ -38,42 +38,18 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Describes an S3 location that will receive the results of the restore
      * request.</p>
      */
     inline const S3Location& GetS3() const{ return m_s3; }
-
-    /**
-     * <p>Describes an S3 location that will receive the results of the restore
-     * request.</p>
-     */
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    /**
-     * <p>Describes an S3 location that will receive the results of the restore
-     * request.</p>
-     */
     inline void SetS3(const S3Location& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    /**
-     * <p>Describes an S3 location that will receive the results of the restore
-     * request.</p>
-     */
     inline void SetS3(S3Location&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    /**
-     * <p>Describes an S3 location that will receive the results of the restore
-     * request.</p>
-     */
     inline OutputLocation& WithS3(const S3Location& value) { SetS3(value); return *this;}
-
-    /**
-     * <p>Describes an S3 location that will receive the results of the restore
-     * request.</p>
-     */
     inline OutputLocation& WithS3(S3Location&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Location m_s3;

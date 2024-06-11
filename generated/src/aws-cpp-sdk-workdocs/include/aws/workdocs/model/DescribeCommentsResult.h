@@ -34,106 +34,43 @@ namespace Model
     AWS_WORKDOCS_API DescribeCommentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of comments for the specified document version.</p>
      */
     inline const Aws::Vector<Comment>& GetComments() const{ return m_comments; }
-
-    /**
-     * <p>The list of comments for the specified document version.</p>
-     */
     inline void SetComments(const Aws::Vector<Comment>& value) { m_comments = value; }
-
-    /**
-     * <p>The list of comments for the specified document version.</p>
-     */
     inline void SetComments(Aws::Vector<Comment>&& value) { m_comments = std::move(value); }
-
-    /**
-     * <p>The list of comments for the specified document version.</p>
-     */
     inline DescribeCommentsResult& WithComments(const Aws::Vector<Comment>& value) { SetComments(value); return *this;}
-
-    /**
-     * <p>The list of comments for the specified document version.</p>
-     */
     inline DescribeCommentsResult& WithComments(Aws::Vector<Comment>&& value) { SetComments(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of comments for the specified document version.</p>
-     */
     inline DescribeCommentsResult& AddComments(const Comment& value) { m_comments.push_back(value); return *this; }
-
-    /**
-     * <p>The list of comments for the specified document version.</p>
-     */
     inline DescribeCommentsResult& AddComments(Comment&& value) { m_comments.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The marker for the next set of results. This marker was received from a
      * previous call.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>The marker for the next set of results. This marker was received from a
-     * previous call.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
-
-    /**
-     * <p>The marker for the next set of results. This marker was received from a
-     * previous call.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-
-    /**
-     * <p>The marker for the next set of results. This marker was received from a
-     * previous call.</p>
-     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
-
-    /**
-     * <p>The marker for the next set of results. This marker was received from a
-     * previous call.</p>
-     */
     inline DescribeCommentsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>The marker for the next set of results. This marker was received from a
-     * previous call.</p>
-     */
     inline DescribeCommentsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The marker for the next set of results. This marker was received from a
-     * previous call.</p>
-     */
     inline DescribeCommentsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCommentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCommentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCommentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Comment> m_comments;

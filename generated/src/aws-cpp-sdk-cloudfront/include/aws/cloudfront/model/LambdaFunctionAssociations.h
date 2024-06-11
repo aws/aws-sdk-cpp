@@ -48,83 +48,31 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The number of Lambda@Edge function associations for this cache behavior.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
-
-    /**
-     * <p>The number of Lambda@Edge function associations for this cache behavior.</p>
-     */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-
-    /**
-     * <p>The number of Lambda@Edge function associations for this cache behavior.</p>
-     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-
-    /**
-     * <p>The number of Lambda@Edge function associations for this cache behavior.</p>
-     */
     inline LambdaFunctionAssociations& WithQuantity(int value) { SetQuantity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> <b>Optional</b>: A complex type that contains
      * <code>LambdaFunctionAssociation</code> items for this cache behavior. If
      * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
      */
     inline const Aws::Vector<LambdaFunctionAssociation>& GetItems() const{ return m_items; }
-
-    /**
-     * <p> <b>Optional</b>: A complex type that contains
-     * <code>LambdaFunctionAssociation</code> items for this cache behavior. If
-     * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p> <b>Optional</b>: A complex type that contains
-     * <code>LambdaFunctionAssociation</code> items for this cache behavior. If
-     * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline void SetItems(const Aws::Vector<LambdaFunctionAssociation>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p> <b>Optional</b>: A complex type that contains
-     * <code>LambdaFunctionAssociation</code> items for this cache behavior. If
-     * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline void SetItems(Aws::Vector<LambdaFunctionAssociation>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p> <b>Optional</b>: A complex type that contains
-     * <code>LambdaFunctionAssociation</code> items for this cache behavior. If
-     * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline LambdaFunctionAssociations& WithItems(const Aws::Vector<LambdaFunctionAssociation>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p> <b>Optional</b>: A complex type that contains
-     * <code>LambdaFunctionAssociation</code> items for this cache behavior. If
-     * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline LambdaFunctionAssociations& WithItems(Aws::Vector<LambdaFunctionAssociation>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p> <b>Optional</b>: A complex type that contains
-     * <code>LambdaFunctionAssociation</code> items for this cache behavior. If
-     * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline LambdaFunctionAssociations& AddItems(const LambdaFunctionAssociation& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p> <b>Optional</b>: A complex type that contains
-     * <code>LambdaFunctionAssociation</code> items for this cache behavior. If
-     * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline LambdaFunctionAssociations& AddItems(LambdaFunctionAssociation&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_quantity;

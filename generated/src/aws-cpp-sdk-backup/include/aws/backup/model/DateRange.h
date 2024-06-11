@@ -42,91 +42,33 @@ namespace Model
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This value is the beginning date, inclusive.</p> <p>The date and time are in
      * Unix format and Coordinated Universal Time (UTC), and it is accurate to
      * milliseconds (milliseconds are optional).</p>
      */
     inline const Aws::Utils::DateTime& GetFromDate() const{ return m_fromDate; }
-
-    /**
-     * <p>This value is the beginning date, inclusive.</p> <p>The date and time are in
-     * Unix format and Coordinated Universal Time (UTC), and it is accurate to
-     * milliseconds (milliseconds are optional).</p>
-     */
     inline bool FromDateHasBeenSet() const { return m_fromDateHasBeenSet; }
-
-    /**
-     * <p>This value is the beginning date, inclusive.</p> <p>The date and time are in
-     * Unix format and Coordinated Universal Time (UTC), and it is accurate to
-     * milliseconds (milliseconds are optional).</p>
-     */
     inline void SetFromDate(const Aws::Utils::DateTime& value) { m_fromDateHasBeenSet = true; m_fromDate = value; }
-
-    /**
-     * <p>This value is the beginning date, inclusive.</p> <p>The date and time are in
-     * Unix format and Coordinated Universal Time (UTC), and it is accurate to
-     * milliseconds (milliseconds are optional).</p>
-     */
     inline void SetFromDate(Aws::Utils::DateTime&& value) { m_fromDateHasBeenSet = true; m_fromDate = std::move(value); }
-
-    /**
-     * <p>This value is the beginning date, inclusive.</p> <p>The date and time are in
-     * Unix format and Coordinated Universal Time (UTC), and it is accurate to
-     * milliseconds (milliseconds are optional).</p>
-     */
     inline DateRange& WithFromDate(const Aws::Utils::DateTime& value) { SetFromDate(value); return *this;}
-
-    /**
-     * <p>This value is the beginning date, inclusive.</p> <p>The date and time are in
-     * Unix format and Coordinated Universal Time (UTC), and it is accurate to
-     * milliseconds (milliseconds are optional).</p>
-     */
     inline DateRange& WithFromDate(Aws::Utils::DateTime&& value) { SetFromDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This value is the end date, inclusive.</p> <p>The date and time are in Unix
      * format and Coordinated Universal Time (UTC), and it is accurate to milliseconds
      * (milliseconds are optional).</p>
      */
     inline const Aws::Utils::DateTime& GetToDate() const{ return m_toDate; }
-
-    /**
-     * <p>This value is the end date, inclusive.</p> <p>The date and time are in Unix
-     * format and Coordinated Universal Time (UTC), and it is accurate to milliseconds
-     * (milliseconds are optional).</p>
-     */
     inline bool ToDateHasBeenSet() const { return m_toDateHasBeenSet; }
-
-    /**
-     * <p>This value is the end date, inclusive.</p> <p>The date and time are in Unix
-     * format and Coordinated Universal Time (UTC), and it is accurate to milliseconds
-     * (milliseconds are optional).</p>
-     */
     inline void SetToDate(const Aws::Utils::DateTime& value) { m_toDateHasBeenSet = true; m_toDate = value; }
-
-    /**
-     * <p>This value is the end date, inclusive.</p> <p>The date and time are in Unix
-     * format and Coordinated Universal Time (UTC), and it is accurate to milliseconds
-     * (milliseconds are optional).</p>
-     */
     inline void SetToDate(Aws::Utils::DateTime&& value) { m_toDateHasBeenSet = true; m_toDate = std::move(value); }
-
-    /**
-     * <p>This value is the end date, inclusive.</p> <p>The date and time are in Unix
-     * format and Coordinated Universal Time (UTC), and it is accurate to milliseconds
-     * (milliseconds are optional).</p>
-     */
     inline DateRange& WithToDate(const Aws::Utils::DateTime& value) { SetToDate(value); return *this;}
-
-    /**
-     * <p>This value is the end date, inclusive.</p> <p>The date and time are in Unix
-     * format and Coordinated Universal Time (UTC), and it is accurate to milliseconds
-     * (milliseconds are optional).</p>
-     */
     inline DateRange& WithToDate(Aws::Utils::DateTime&& value) { SetToDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_fromDate;

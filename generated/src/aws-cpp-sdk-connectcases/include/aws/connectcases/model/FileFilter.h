@@ -38,46 +38,19 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the file.</p>
      */
     inline const Aws::String& GetFileArn() const{ return m_fileArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the file.</p>
-     */
     inline bool FileArnHasBeenSet() const { return m_fileArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the file.</p>
-     */
     inline void SetFileArn(const Aws::String& value) { m_fileArnHasBeenSet = true; m_fileArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the file.</p>
-     */
     inline void SetFileArn(Aws::String&& value) { m_fileArnHasBeenSet = true; m_fileArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the file.</p>
-     */
     inline void SetFileArn(const char* value) { m_fileArnHasBeenSet = true; m_fileArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the file.</p>
-     */
     inline FileFilter& WithFileArn(const Aws::String& value) { SetFileArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the file.</p>
-     */
     inline FileFilter& WithFileArn(Aws::String&& value) { SetFileArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the file.</p>
-     */
     inline FileFilter& WithFileArn(const char* value) { SetFileArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileArn;

@@ -34,113 +34,44 @@ namespace Model
     AWS_CHATBOT_API DescribeSlackUserIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * A list of Slack User Identities.
      */
     inline const Aws::Vector<SlackUserIdentity>& GetSlackUserIdentities() const{ return m_slackUserIdentities; }
-
-    /**
-     * A list of Slack User Identities.
-     */
     inline void SetSlackUserIdentities(const Aws::Vector<SlackUserIdentity>& value) { m_slackUserIdentities = value; }
-
-    /**
-     * A list of Slack User Identities.
-     */
     inline void SetSlackUserIdentities(Aws::Vector<SlackUserIdentity>&& value) { m_slackUserIdentities = std::move(value); }
-
-    /**
-     * A list of Slack User Identities.
-     */
     inline DescribeSlackUserIdentitiesResult& WithSlackUserIdentities(const Aws::Vector<SlackUserIdentity>& value) { SetSlackUserIdentities(value); return *this;}
-
-    /**
-     * A list of Slack User Identities.
-     */
     inline DescribeSlackUserIdentitiesResult& WithSlackUserIdentities(Aws::Vector<SlackUserIdentity>&& value) { SetSlackUserIdentities(std::move(value)); return *this;}
-
-    /**
-     * A list of Slack User Identities.
-     */
     inline DescribeSlackUserIdentitiesResult& AddSlackUserIdentities(const SlackUserIdentity& value) { m_slackUserIdentities.push_back(value); return *this; }
-
-    /**
-     * A list of Slack User Identities.
-     */
     inline DescribeSlackUserIdentitiesResult& AddSlackUserIdentities(SlackUserIdentity&& value) { m_slackUserIdentities.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * An optional token returned from a prior request. Use this token for pagination
      * of results from this action. If this parameter is specified, the response
      * includes only results beyond the token, up to the value specified by MaxResults.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline DescribeSlackUserIdentitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline DescribeSlackUserIdentitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline DescribeSlackUserIdentitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeSlackUserIdentitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeSlackUserIdentitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeSlackUserIdentitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SlackUserIdentity> m_slackUserIdentities;

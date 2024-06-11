@@ -39,151 +39,57 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether to use the specified update behavior when the crawler finds a changed
      * schema.</p>
      */
     inline bool GetEnableUpdateCatalog() const{ return m_enableUpdateCatalog; }
-
-    /**
-     * <p>Whether to use the specified update behavior when the crawler finds a changed
-     * schema.</p>
-     */
     inline bool EnableUpdateCatalogHasBeenSet() const { return m_enableUpdateCatalogHasBeenSet; }
-
-    /**
-     * <p>Whether to use the specified update behavior when the crawler finds a changed
-     * schema.</p>
-     */
     inline void SetEnableUpdateCatalog(bool value) { m_enableUpdateCatalogHasBeenSet = true; m_enableUpdateCatalog = value; }
-
-    /**
-     * <p>Whether to use the specified update behavior when the crawler finds a changed
-     * schema.</p>
-     */
     inline DirectSchemaChangePolicy& WithEnableUpdateCatalog(bool value) { SetEnableUpdateCatalog(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The update behavior when the crawler finds a changed schema.</p>
      */
     inline const UpdateCatalogBehavior& GetUpdateBehavior() const{ return m_updateBehavior; }
-
-    /**
-     * <p>The update behavior when the crawler finds a changed schema.</p>
-     */
     inline bool UpdateBehaviorHasBeenSet() const { return m_updateBehaviorHasBeenSet; }
-
-    /**
-     * <p>The update behavior when the crawler finds a changed schema.</p>
-     */
     inline void SetUpdateBehavior(const UpdateCatalogBehavior& value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = value; }
-
-    /**
-     * <p>The update behavior when the crawler finds a changed schema.</p>
-     */
     inline void SetUpdateBehavior(UpdateCatalogBehavior&& value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = std::move(value); }
-
-    /**
-     * <p>The update behavior when the crawler finds a changed schema.</p>
-     */
     inline DirectSchemaChangePolicy& WithUpdateBehavior(const UpdateCatalogBehavior& value) { SetUpdateBehavior(value); return *this;}
-
-    /**
-     * <p>The update behavior when the crawler finds a changed schema.</p>
-     */
     inline DirectSchemaChangePolicy& WithUpdateBehavior(UpdateCatalogBehavior&& value) { SetUpdateBehavior(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the table in the database that the schema change policy applies
      * to.</p>
      */
     inline const Aws::String& GetTable() const{ return m_table; }
-
-    /**
-     * <p>Specifies the table in the database that the schema change policy applies
-     * to.</p>
-     */
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
-
-    /**
-     * <p>Specifies the table in the database that the schema change policy applies
-     * to.</p>
-     */
     inline void SetTable(const Aws::String& value) { m_tableHasBeenSet = true; m_table = value; }
-
-    /**
-     * <p>Specifies the table in the database that the schema change policy applies
-     * to.</p>
-     */
     inline void SetTable(Aws::String&& value) { m_tableHasBeenSet = true; m_table = std::move(value); }
-
-    /**
-     * <p>Specifies the table in the database that the schema change policy applies
-     * to.</p>
-     */
     inline void SetTable(const char* value) { m_tableHasBeenSet = true; m_table.assign(value); }
-
-    /**
-     * <p>Specifies the table in the database that the schema change policy applies
-     * to.</p>
-     */
     inline DirectSchemaChangePolicy& WithTable(const Aws::String& value) { SetTable(value); return *this;}
-
-    /**
-     * <p>Specifies the table in the database that the schema change policy applies
-     * to.</p>
-     */
     inline DirectSchemaChangePolicy& WithTable(Aws::String&& value) { SetTable(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the table in the database that the schema change policy applies
-     * to.</p>
-     */
     inline DirectSchemaChangePolicy& WithTable(const char* value) { SetTable(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the database that the schema change policy applies to.</p>
      */
     inline const Aws::String& GetDatabase() const{ return m_database; }
-
-    /**
-     * <p>Specifies the database that the schema change policy applies to.</p>
-     */
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-
-    /**
-     * <p>Specifies the database that the schema change policy applies to.</p>
-     */
     inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-
-    /**
-     * <p>Specifies the database that the schema change policy applies to.</p>
-     */
     inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-
-    /**
-     * <p>Specifies the database that the schema change policy applies to.</p>
-     */
     inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-
-    /**
-     * <p>Specifies the database that the schema change policy applies to.</p>
-     */
     inline DirectSchemaChangePolicy& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-
-    /**
-     * <p>Specifies the database that the schema change policy applies to.</p>
-     */
     inline DirectSchemaChangePolicy& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the database that the schema change policy applies to.</p>
-     */
     inline DirectSchemaChangePolicy& WithDatabase(const char* value) { SetDatabase(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enableUpdateCatalog;

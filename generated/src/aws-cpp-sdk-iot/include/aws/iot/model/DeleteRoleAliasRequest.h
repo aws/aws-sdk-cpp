@@ -32,46 +32,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The role alias to delete.</p>
      */
     inline const Aws::String& GetRoleAlias() const{ return m_roleAlias; }
-
-    /**
-     * <p>The role alias to delete.</p>
-     */
     inline bool RoleAliasHasBeenSet() const { return m_roleAliasHasBeenSet; }
-
-    /**
-     * <p>The role alias to delete.</p>
-     */
     inline void SetRoleAlias(const Aws::String& value) { m_roleAliasHasBeenSet = true; m_roleAlias = value; }
-
-    /**
-     * <p>The role alias to delete.</p>
-     */
     inline void SetRoleAlias(Aws::String&& value) { m_roleAliasHasBeenSet = true; m_roleAlias = std::move(value); }
-
-    /**
-     * <p>The role alias to delete.</p>
-     */
     inline void SetRoleAlias(const char* value) { m_roleAliasHasBeenSet = true; m_roleAlias.assign(value); }
-
-    /**
-     * <p>The role alias to delete.</p>
-     */
     inline DeleteRoleAliasRequest& WithRoleAlias(const Aws::String& value) { SetRoleAlias(value); return *this;}
-
-    /**
-     * <p>The role alias to delete.</p>
-     */
     inline DeleteRoleAliasRequest& WithRoleAlias(Aws::String&& value) { SetRoleAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>The role alias to delete.</p>
-     */
     inline DeleteRoleAliasRequest& WithRoleAlias(const char* value) { SetRoleAlias(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleAlias;

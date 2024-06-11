@@ -38,95 +38,34 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The path for the Amazon S3 bucket that the application uses for exporting
      * assessment reports.</p>
      */
     inline const Aws::String& GetS3BucketPath() const{ return m_s3BucketPath; }
-
-    /**
-     * <p>The path for the Amazon S3 bucket that the application uses for exporting
-     * assessment reports.</p>
-     */
     inline bool S3BucketPathHasBeenSet() const { return m_s3BucketPathHasBeenSet; }
-
-    /**
-     * <p>The path for the Amazon S3 bucket that the application uses for exporting
-     * assessment reports.</p>
-     */
     inline void SetS3BucketPath(const Aws::String& value) { m_s3BucketPathHasBeenSet = true; m_s3BucketPath = value; }
-
-    /**
-     * <p>The path for the Amazon S3 bucket that the application uses for exporting
-     * assessment reports.</p>
-     */
     inline void SetS3BucketPath(Aws::String&& value) { m_s3BucketPathHasBeenSet = true; m_s3BucketPath = std::move(value); }
-
-    /**
-     * <p>The path for the Amazon S3 bucket that the application uses for exporting
-     * assessment reports.</p>
-     */
     inline void SetS3BucketPath(const char* value) { m_s3BucketPathHasBeenSet = true; m_s3BucketPath.assign(value); }
-
-    /**
-     * <p>The path for the Amazon S3 bucket that the application uses for exporting
-     * assessment reports.</p>
-     */
     inline SCApplicationAttributes& WithS3BucketPath(const Aws::String& value) { SetS3BucketPath(value); return *this;}
-
-    /**
-     * <p>The path for the Amazon S3 bucket that the application uses for exporting
-     * assessment reports.</p>
-     */
     inline SCApplicationAttributes& WithS3BucketPath(Aws::String&& value) { SetS3BucketPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The path for the Amazon S3 bucket that the application uses for exporting
-     * assessment reports.</p>
-     */
     inline SCApplicationAttributes& WithS3BucketPath(const char* value) { SetS3BucketPath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetS3BucketRoleArn() const{ return m_s3BucketRoleArn; }
-
-    /**
-     * <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
-     */
     inline bool S3BucketRoleArnHasBeenSet() const { return m_s3BucketRoleArnHasBeenSet; }
-
-    /**
-     * <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
-     */
     inline void SetS3BucketRoleArn(const Aws::String& value) { m_s3BucketRoleArnHasBeenSet = true; m_s3BucketRoleArn = value; }
-
-    /**
-     * <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
-     */
     inline void SetS3BucketRoleArn(Aws::String&& value) { m_s3BucketRoleArnHasBeenSet = true; m_s3BucketRoleArn = std::move(value); }
-
-    /**
-     * <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
-     */
     inline void SetS3BucketRoleArn(const char* value) { m_s3BucketRoleArnHasBeenSet = true; m_s3BucketRoleArn.assign(value); }
-
-    /**
-     * <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
-     */
     inline SCApplicationAttributes& WithS3BucketRoleArn(const Aws::String& value) { SetS3BucketRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
-     */
     inline SCApplicationAttributes& WithS3BucketRoleArn(Aws::String&& value) { SetS3BucketRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
-     */
     inline SCApplicationAttributes& WithS3BucketRoleArn(const char* value) { SetS3BucketRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_s3BucketPath;

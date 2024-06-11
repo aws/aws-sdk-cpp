@@ -40,67 +40,29 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates whether the volume is deleted on instance termination.</p>
      */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
-
-    /**
-     * <p>Indicates whether the volume is deleted on instance termination.</p>
-     */
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the volume is deleted on instance termination.</p>
-     */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
-
-    /**
-     * <p>Indicates whether the volume is deleted on instance termination.</p>
-     */
     inline EbsInstanceBlockDeviceSpecification& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the EBS volume.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
-
-    /**
-     * <p>The ID of the EBS volume.</p>
-     */
     inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the EBS volume.</p>
-     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
-
-    /**
-     * <p>The ID of the EBS volume.</p>
-     */
     inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
-
-    /**
-     * <p>The ID of the EBS volume.</p>
-     */
     inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
-
-    /**
-     * <p>The ID of the EBS volume.</p>
-     */
     inline EbsInstanceBlockDeviceSpecification& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-
-    /**
-     * <p>The ID of the EBS volume.</p>
-     */
     inline EbsInstanceBlockDeviceSpecification& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the EBS volume.</p>
-     */
     inline EbsInstanceBlockDeviceSpecification& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_deleteOnTermination;

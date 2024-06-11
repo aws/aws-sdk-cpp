@@ -40,119 +40,37 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A cluster identifier to force a failover for. This parameter is not case
      * sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
      * existing <code>DBCluster</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
-
-    /**
-     * <p>A cluster identifier to force a failover for. This parameter is not case
-     * sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing <code>DBCluster</code>.</p> </li> </ul>
-     */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>A cluster identifier to force a failover for. This parameter is not case
-     * sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing <code>DBCluster</code>.</p> </li> </ul>
-     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
-
-    /**
-     * <p>A cluster identifier to force a failover for. This parameter is not case
-     * sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing <code>DBCluster</code>.</p> </li> </ul>
-     */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
-
-    /**
-     * <p>A cluster identifier to force a failover for. This parameter is not case
-     * sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing <code>DBCluster</code>.</p> </li> </ul>
-     */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
-
-    /**
-     * <p>A cluster identifier to force a failover for. This parameter is not case
-     * sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing <code>DBCluster</code>.</p> </li> </ul>
-     */
     inline FailoverDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>A cluster identifier to force a failover for. This parameter is not case
-     * sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing <code>DBCluster</code>.</p> </li> </ul>
-     */
     inline FailoverDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>A cluster identifier to force a failover for. This parameter is not case
-     * sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing <code>DBCluster</code>.</p> </li> </ul>
-     */
     inline FailoverDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the instance to promote to the primary instance.</p> <p>You must
      * specify the instance identifier for an Amazon DocumentDB replica in the cluster.
      * For example, <code>mydbcluster-replica1</code>.</p>
      */
     inline const Aws::String& GetTargetDBInstanceIdentifier() const{ return m_targetDBInstanceIdentifier; }
-
-    /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Amazon DocumentDB replica in the cluster.
-     * For example, <code>mydbcluster-replica1</code>.</p>
-     */
     inline bool TargetDBInstanceIdentifierHasBeenSet() const { return m_targetDBInstanceIdentifierHasBeenSet; }
-
-    /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Amazon DocumentDB replica in the cluster.
-     * For example, <code>mydbcluster-replica1</code>.</p>
-     */
     inline void SetTargetDBInstanceIdentifier(const Aws::String& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
-
-    /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Amazon DocumentDB replica in the cluster.
-     * For example, <code>mydbcluster-replica1</code>.</p>
-     */
     inline void SetTargetDBInstanceIdentifier(Aws::String&& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = std::move(value); }
-
-    /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Amazon DocumentDB replica in the cluster.
-     * For example, <code>mydbcluster-replica1</code>.</p>
-     */
     inline void SetTargetDBInstanceIdentifier(const char* value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier.assign(value); }
-
-    /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Amazon DocumentDB replica in the cluster.
-     * For example, <code>mydbcluster-replica1</code>.</p>
-     */
     inline FailoverDBClusterRequest& WithTargetDBInstanceIdentifier(const Aws::String& value) { SetTargetDBInstanceIdentifier(value); return *this;}
-
-    /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Amazon DocumentDB replica in the cluster.
-     * For example, <code>mydbcluster-replica1</code>.</p>
-     */
     inline FailoverDBClusterRequest& WithTargetDBInstanceIdentifier(Aws::String&& value) { SetTargetDBInstanceIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Amazon DocumentDB replica in the cluster.
-     * For example, <code>mydbcluster-replica1</code>.</p>
-     */
     inline FailoverDBClusterRequest& WithTargetDBInstanceIdentifier(const char* value) { SetTargetDBInstanceIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dBClusterIdentifier;

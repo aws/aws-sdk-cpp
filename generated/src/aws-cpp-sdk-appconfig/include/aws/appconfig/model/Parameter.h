@@ -42,96 +42,41 @@ namespace Model
     AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the parameter.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>Information about the parameter.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>Information about the parameter.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>Information about the parameter.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>Information about the parameter.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>Information about the parameter.</p>
-     */
     inline Parameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>Information about the parameter.</p>
-     */
     inline Parameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the parameter.</p>
-     */
     inline Parameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A parameter value must be specified in the extension association.</p>
      */
     inline bool GetRequired() const{ return m_required; }
-
-    /**
-     * <p>A parameter value must be specified in the extension association.</p>
-     */
     inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
-
-    /**
-     * <p>A parameter value must be specified in the extension association.</p>
-     */
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
-
-    /**
-     * <p>A parameter value must be specified in the extension association.</p>
-     */
     inline Parameter& WithRequired(bool value) { SetRequired(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether this parameter's value can be supplied at the extension's
      * action point instead of during extension association. Dynamic parameters can't
      * be marked <code>Required</code>.</p>
      */
     inline bool GetDynamic() const{ return m_dynamic; }
-
-    /**
-     * <p>Indicates whether this parameter's value can be supplied at the extension's
-     * action point instead of during extension association. Dynamic parameters can't
-     * be marked <code>Required</code>.</p>
-     */
     inline bool DynamicHasBeenSet() const { return m_dynamicHasBeenSet; }
-
-    /**
-     * <p>Indicates whether this parameter's value can be supplied at the extension's
-     * action point instead of during extension association. Dynamic parameters can't
-     * be marked <code>Required</code>.</p>
-     */
     inline void SetDynamic(bool value) { m_dynamicHasBeenSet = true; m_dynamic = value; }
-
-    /**
-     * <p>Indicates whether this parameter's value can be supplied at the extension's
-     * action point instead of during extension association. Dynamic parameters can't
-     * be marked <code>Required</code>.</p>
-     */
     inline Parameter& WithDynamic(bool value) { SetDynamic(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_description;

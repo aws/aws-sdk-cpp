@@ -34,106 +34,43 @@ namespace Model
     AWS_IOTEVENTS_API ListInputRoutingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Summary information about the routed resources. </p>
      */
     inline const Aws::Vector<RoutedResource>& GetRoutedResources() const{ return m_routedResources; }
-
-    /**
-     * <p> Summary information about the routed resources. </p>
-     */
     inline void SetRoutedResources(const Aws::Vector<RoutedResource>& value) { m_routedResources = value; }
-
-    /**
-     * <p> Summary information about the routed resources. </p>
-     */
     inline void SetRoutedResources(Aws::Vector<RoutedResource>&& value) { m_routedResources = std::move(value); }
-
-    /**
-     * <p> Summary information about the routed resources. </p>
-     */
     inline ListInputRoutingsResult& WithRoutedResources(const Aws::Vector<RoutedResource>& value) { SetRoutedResources(value); return *this;}
-
-    /**
-     * <p> Summary information about the routed resources. </p>
-     */
     inline ListInputRoutingsResult& WithRoutedResources(Aws::Vector<RoutedResource>&& value) { SetRoutedResources(std::move(value)); return *this;}
-
-    /**
-     * <p> Summary information about the routed resources. </p>
-     */
     inline ListInputRoutingsResult& AddRoutedResources(const RoutedResource& value) { m_routedResources.push_back(value); return *this; }
-
-    /**
-     * <p> Summary information about the routed resources. </p>
-     */
     inline ListInputRoutingsResult& AddRoutedResources(RoutedResource&& value) { m_routedResources.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The token that you can use to return the next set of results, or
      * <code>null</code> if there are no more results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> The token that you can use to return the next set of results, or
-     * <code>null</code> if there are no more results. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p> The token that you can use to return the next set of results, or
-     * <code>null</code> if there are no more results. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p> The token that you can use to return the next set of results, or
-     * <code>null</code> if there are no more results. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p> The token that you can use to return the next set of results, or
-     * <code>null</code> if there are no more results. </p>
-     */
     inline ListInputRoutingsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> The token that you can use to return the next set of results, or
-     * <code>null</code> if there are no more results. </p>
-     */
     inline ListInputRoutingsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> The token that you can use to return the next set of results, or
-     * <code>null</code> if there are no more results. </p>
-     */
     inline ListInputRoutingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListInputRoutingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListInputRoutingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListInputRoutingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<RoutedResource> m_routedResources;

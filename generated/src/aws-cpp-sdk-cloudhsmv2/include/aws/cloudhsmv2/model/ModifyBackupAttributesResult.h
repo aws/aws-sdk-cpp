@@ -33,43 +33,25 @@ namespace Model
     AWS_CLOUDHSMV2_API ModifyBackupAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Backup& GetBackup() const{ return m_backup; }
-
-    
     inline void SetBackup(const Backup& value) { m_backup = value; }
-
-    
     inline void SetBackup(Backup&& value) { m_backup = std::move(value); }
-
-    
     inline ModifyBackupAttributesResult& WithBackup(const Backup& value) { SetBackup(value); return *this;}
-
-    
     inline ModifyBackupAttributesResult& WithBackup(Backup&& value) { SetBackup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ModifyBackupAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ModifyBackupAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ModifyBackupAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Backup m_backup;

@@ -34,63 +34,29 @@ namespace Model
     AWS_IOT1CLICKDEVICESSERVICE_API GetDeviceMethodsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>List of available device APIs.</p>
      */
     inline const Aws::Vector<DeviceMethod>& GetDeviceMethods() const{ return m_deviceMethods; }
-
-    /**
-     * <p>List of available device APIs.</p>
-     */
     inline void SetDeviceMethods(const Aws::Vector<DeviceMethod>& value) { m_deviceMethods = value; }
-
-    /**
-     * <p>List of available device APIs.</p>
-     */
     inline void SetDeviceMethods(Aws::Vector<DeviceMethod>&& value) { m_deviceMethods = std::move(value); }
-
-    /**
-     * <p>List of available device APIs.</p>
-     */
     inline GetDeviceMethodsResult& WithDeviceMethods(const Aws::Vector<DeviceMethod>& value) { SetDeviceMethods(value); return *this;}
-
-    /**
-     * <p>List of available device APIs.</p>
-     */
     inline GetDeviceMethodsResult& WithDeviceMethods(Aws::Vector<DeviceMethod>&& value) { SetDeviceMethods(std::move(value)); return *this;}
-
-    /**
-     * <p>List of available device APIs.</p>
-     */
     inline GetDeviceMethodsResult& AddDeviceMethods(const DeviceMethod& value) { m_deviceMethods.push_back(value); return *this; }
-
-    /**
-     * <p>List of available device APIs.</p>
-     */
     inline GetDeviceMethodsResult& AddDeviceMethods(DeviceMethod&& value) { m_deviceMethods.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDeviceMethodsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDeviceMethodsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDeviceMethodsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DeviceMethod> m_deviceMethods;

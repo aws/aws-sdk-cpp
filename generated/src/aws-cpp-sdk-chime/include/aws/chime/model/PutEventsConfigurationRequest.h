@@ -32,169 +32,61 @@ namespace Model
     AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Chime account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline PutEventsConfigurationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline PutEventsConfigurationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline PutEventsConfigurationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The bot ID.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
-
-    /**
-     * <p>The bot ID.</p>
-     */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-
-    /**
-     * <p>The bot ID.</p>
-     */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-
-    /**
-     * <p>The bot ID.</p>
-     */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-
-    /**
-     * <p>The bot ID.</p>
-     */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-
-    /**
-     * <p>The bot ID.</p>
-     */
     inline PutEventsConfigurationRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-
-    /**
-     * <p>The bot ID.</p>
-     */
     inline PutEventsConfigurationRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The bot ID.</p>
-     */
     inline PutEventsConfigurationRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
      */
     inline const Aws::String& GetOutboundEventsHTTPSEndpoint() const{ return m_outboundEventsHTTPSEndpoint; }
-
-    /**
-     * <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-     */
     inline bool OutboundEventsHTTPSEndpointHasBeenSet() const { return m_outboundEventsHTTPSEndpointHasBeenSet; }
-
-    /**
-     * <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-     */
     inline void SetOutboundEventsHTTPSEndpoint(const Aws::String& value) { m_outboundEventsHTTPSEndpointHasBeenSet = true; m_outboundEventsHTTPSEndpoint = value; }
-
-    /**
-     * <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-     */
     inline void SetOutboundEventsHTTPSEndpoint(Aws::String&& value) { m_outboundEventsHTTPSEndpointHasBeenSet = true; m_outboundEventsHTTPSEndpoint = std::move(value); }
-
-    /**
-     * <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-     */
     inline void SetOutboundEventsHTTPSEndpoint(const char* value) { m_outboundEventsHTTPSEndpointHasBeenSet = true; m_outboundEventsHTTPSEndpoint.assign(value); }
-
-    /**
-     * <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-     */
     inline PutEventsConfigurationRequest& WithOutboundEventsHTTPSEndpoint(const Aws::String& value) { SetOutboundEventsHTTPSEndpoint(value); return *this;}
-
-    /**
-     * <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-     */
     inline PutEventsConfigurationRequest& WithOutboundEventsHTTPSEndpoint(Aws::String&& value) { SetOutboundEventsHTTPSEndpoint(std::move(value)); return *this;}
-
-    /**
-     * <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-     */
     inline PutEventsConfigurationRequest& WithOutboundEventsHTTPSEndpoint(const char* value) { SetOutboundEventsHTTPSEndpoint(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
      */
     inline const Aws::String& GetLambdaFunctionArn() const{ return m_lambdaFunctionArn; }
-
-    /**
-     * <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-     */
     inline bool LambdaFunctionArnHasBeenSet() const { return m_lambdaFunctionArnHasBeenSet; }
-
-    /**
-     * <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-     */
     inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = value; }
-
-    /**
-     * <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-     */
     inline void SetLambdaFunctionArn(Aws::String&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = std::move(value); }
-
-    /**
-     * <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-     */
     inline void SetLambdaFunctionArn(const char* value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn.assign(value); }
-
-    /**
-     * <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-     */
     inline PutEventsConfigurationRequest& WithLambdaFunctionArn(const Aws::String& value) { SetLambdaFunctionArn(value); return *this;}
-
-    /**
-     * <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-     */
     inline PutEventsConfigurationRequest& WithLambdaFunctionArn(Aws::String&& value) { SetLambdaFunctionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-     */
     inline PutEventsConfigurationRequest& WithLambdaFunctionArn(const char* value) { SetLambdaFunctionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

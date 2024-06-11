@@ -38,48 +38,19 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains the primary key that identifies the item to get, together with the
      * name of the table that contains the item, and optionally the specific attributes
      * of the item to retrieve.</p>
      */
     inline const Get& GetGet() const{ return m_get; }
-
-    /**
-     * <p>Contains the primary key that identifies the item to get, together with the
-     * name of the table that contains the item, and optionally the specific attributes
-     * of the item to retrieve.</p>
-     */
     inline bool GetHasBeenSet() const { return m_getHasBeenSet; }
-
-    /**
-     * <p>Contains the primary key that identifies the item to get, together with the
-     * name of the table that contains the item, and optionally the specific attributes
-     * of the item to retrieve.</p>
-     */
     inline void SetGet(const Get& value) { m_getHasBeenSet = true; m_get = value; }
-
-    /**
-     * <p>Contains the primary key that identifies the item to get, together with the
-     * name of the table that contains the item, and optionally the specific attributes
-     * of the item to retrieve.</p>
-     */
     inline void SetGet(Get&& value) { m_getHasBeenSet = true; m_get = std::move(value); }
-
-    /**
-     * <p>Contains the primary key that identifies the item to get, together with the
-     * name of the table that contains the item, and optionally the specific attributes
-     * of the item to retrieve.</p>
-     */
     inline TransactGetItem& WithGet(const Get& value) { SetGet(value); return *this;}
-
-    /**
-     * <p>Contains the primary key that identifies the item to get, together with the
-     * name of the table that contains the item, and optionally the specific attributes
-     * of the item to retrieve.</p>
-     */
     inline TransactGetItem& WithGet(Get&& value) { SetGet(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Get m_get;

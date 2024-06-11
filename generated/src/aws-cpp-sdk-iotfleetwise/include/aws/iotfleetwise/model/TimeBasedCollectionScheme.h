@@ -36,34 +36,17 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time period (in milliseconds) to decide how often to collect data. For
      * example, if the time period is <code>60000</code>, the Edge Agent software
      * collects data once every minute.</p>
      */
     inline long long GetPeriodMs() const{ return m_periodMs; }
-
-    /**
-     * <p>The time period (in milliseconds) to decide how often to collect data. For
-     * example, if the time period is <code>60000</code>, the Edge Agent software
-     * collects data once every minute.</p>
-     */
     inline bool PeriodMsHasBeenSet() const { return m_periodMsHasBeenSet; }
-
-    /**
-     * <p>The time period (in milliseconds) to decide how often to collect data. For
-     * example, if the time period is <code>60000</code>, the Edge Agent software
-     * collects data once every minute.</p>
-     */
     inline void SetPeriodMs(long long value) { m_periodMsHasBeenSet = true; m_periodMs = value; }
-
-    /**
-     * <p>The time period (in milliseconds) to decide how often to collect data. For
-     * example, if the time period is <code>60000</code>, the Edge Agent software
-     * collects data once every minute.</p>
-     */
     inline TimeBasedCollectionScheme& WithPeriodMs(long long value) { SetPeriodMs(value); return *this;}
-
+    ///@}
   private:
 
     long long m_periodMs;

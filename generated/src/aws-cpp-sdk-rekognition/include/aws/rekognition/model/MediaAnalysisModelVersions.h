@@ -38,46 +38,19 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Moderation base model version.</p>
      */
     inline const Aws::String& GetModeration() const{ return m_moderation; }
-
-    /**
-     * <p>The Moderation base model version.</p>
-     */
     inline bool ModerationHasBeenSet() const { return m_moderationHasBeenSet; }
-
-    /**
-     * <p>The Moderation base model version.</p>
-     */
     inline void SetModeration(const Aws::String& value) { m_moderationHasBeenSet = true; m_moderation = value; }
-
-    /**
-     * <p>The Moderation base model version.</p>
-     */
     inline void SetModeration(Aws::String&& value) { m_moderationHasBeenSet = true; m_moderation = std::move(value); }
-
-    /**
-     * <p>The Moderation base model version.</p>
-     */
     inline void SetModeration(const char* value) { m_moderationHasBeenSet = true; m_moderation.assign(value); }
-
-    /**
-     * <p>The Moderation base model version.</p>
-     */
     inline MediaAnalysisModelVersions& WithModeration(const Aws::String& value) { SetModeration(value); return *this;}
-
-    /**
-     * <p>The Moderation base model version.</p>
-     */
     inline MediaAnalysisModelVersions& WithModeration(Aws::String&& value) { SetModeration(std::move(value)); return *this;}
-
-    /**
-     * <p>The Moderation base model version.</p>
-     */
     inline MediaAnalysisModelVersions& WithModeration(const char* value) { SetModeration(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_moderation;

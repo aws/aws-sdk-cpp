@@ -36,101 +36,48 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The total number of emails that arrived in recipients' inboxes.</p>
      */
     inline long long GetInboxRawCount() const{ return m_inboxRawCount; }
-
-    /**
-     * <p>The total number of emails that arrived in recipients' inboxes.</p>
-     */
     inline bool InboxRawCountHasBeenSet() const { return m_inboxRawCountHasBeenSet; }
-
-    /**
-     * <p>The total number of emails that arrived in recipients' inboxes.</p>
-     */
     inline void SetInboxRawCount(long long value) { m_inboxRawCountHasBeenSet = true; m_inboxRawCount = value; }
-
-    /**
-     * <p>The total number of emails that arrived in recipients' inboxes.</p>
-     */
     inline VolumeStatistics& WithInboxRawCount(long long value) { SetInboxRawCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of emails that arrived in recipients' spam or junk mail
      * folders.</p>
      */
     inline long long GetSpamRawCount() const{ return m_spamRawCount; }
-
-    /**
-     * <p>The total number of emails that arrived in recipients' spam or junk mail
-     * folders.</p>
-     */
     inline bool SpamRawCountHasBeenSet() const { return m_spamRawCountHasBeenSet; }
-
-    /**
-     * <p>The total number of emails that arrived in recipients' spam or junk mail
-     * folders.</p>
-     */
     inline void SetSpamRawCount(long long value) { m_spamRawCountHasBeenSet = true; m_spamRawCount = value; }
-
-    /**
-     * <p>The total number of emails that arrived in recipients' spam or junk mail
-     * folders.</p>
-     */
     inline VolumeStatistics& WithSpamRawCount(long long value) { SetSpamRawCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An estimate of the percentage of emails sent from the current domain that
      * will arrive in recipients' inboxes.</p>
      */
     inline long long GetProjectedInbox() const{ return m_projectedInbox; }
-
-    /**
-     * <p>An estimate of the percentage of emails sent from the current domain that
-     * will arrive in recipients' inboxes.</p>
-     */
     inline bool ProjectedInboxHasBeenSet() const { return m_projectedInboxHasBeenSet; }
-
-    /**
-     * <p>An estimate of the percentage of emails sent from the current domain that
-     * will arrive in recipients' inboxes.</p>
-     */
     inline void SetProjectedInbox(long long value) { m_projectedInboxHasBeenSet = true; m_projectedInbox = value; }
-
-    /**
-     * <p>An estimate of the percentage of emails sent from the current domain that
-     * will arrive in recipients' inboxes.</p>
-     */
     inline VolumeStatistics& WithProjectedInbox(long long value) { SetProjectedInbox(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An estimate of the percentage of emails sent from the current domain that
      * will arrive in recipients' spam or junk mail folders.</p>
      */
     inline long long GetProjectedSpam() const{ return m_projectedSpam; }
-
-    /**
-     * <p>An estimate of the percentage of emails sent from the current domain that
-     * will arrive in recipients' spam or junk mail folders.</p>
-     */
     inline bool ProjectedSpamHasBeenSet() const { return m_projectedSpamHasBeenSet; }
-
-    /**
-     * <p>An estimate of the percentage of emails sent from the current domain that
-     * will arrive in recipients' spam or junk mail folders.</p>
-     */
     inline void SetProjectedSpam(long long value) { m_projectedSpamHasBeenSet = true; m_projectedSpam = value; }
-
-    /**
-     * <p>An estimate of the percentage of emails sent from the current domain that
-     * will arrive in recipients' spam or junk mail folders.</p>
-     */
     inline VolumeStatistics& WithProjectedSpam(long long value) { SetProjectedSpam(value); return *this;}
-
+    ///@}
   private:
 
     long long m_inboxRawCount;

@@ -41,6 +41,7 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The container to determine whether to list results that have only reached <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
@@ -48,63 +49,14 @@ namespace Model
      * the response.</p>
      */
     inline const Aws::Vector<ConfirmationStatus>& GetInclude() const{ return m_include; }
-
-    /**
-     * <p>The container to determine whether to list results that have only reached <a
-     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finality are always part of
-     * the response.</p>
-     */
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
-
-    /**
-     * <p>The container to determine whether to list results that have only reached <a
-     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finality are always part of
-     * the response.</p>
-     */
     inline void SetInclude(const Aws::Vector<ConfirmationStatus>& value) { m_includeHasBeenSet = true; m_include = value; }
-
-    /**
-     * <p>The container to determine whether to list results that have only reached <a
-     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finality are always part of
-     * the response.</p>
-     */
     inline void SetInclude(Aws::Vector<ConfirmationStatus>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
-
-    /**
-     * <p>The container to determine whether to list results that have only reached <a
-     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finality are always part of
-     * the response.</p>
-     */
     inline ConfirmationStatusFilter& WithInclude(const Aws::Vector<ConfirmationStatus>& value) { SetInclude(value); return *this;}
-
-    /**
-     * <p>The container to determine whether to list results that have only reached <a
-     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finality are always part of
-     * the response.</p>
-     */
     inline ConfirmationStatusFilter& WithInclude(Aws::Vector<ConfirmationStatus>&& value) { SetInclude(std::move(value)); return *this;}
-
-    /**
-     * <p>The container to determine whether to list results that have only reached <a
-     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finality are always part of
-     * the response.</p>
-     */
     inline ConfirmationStatusFilter& AddInclude(const ConfirmationStatus& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
-
-    /**
-     * <p>The container to determine whether to list results that have only reached <a
-     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finality are always part of
-     * the response.</p>
-     */
     inline ConfirmationStatusFilter& AddInclude(ConfirmationStatus&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ConfirmationStatus> m_include;

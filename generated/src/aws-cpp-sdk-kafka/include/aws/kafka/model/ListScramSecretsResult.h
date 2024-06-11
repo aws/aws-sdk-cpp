@@ -33,56 +33,22 @@ namespace Model
     AWS_KAFKA_API ListScramSecretsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * 
             <p>Paginated results marker.</p>
          
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * 
-            <p>Paginated results marker.</p>
-         
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * 
-            <p>Paginated results marker.</p>
-         
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * 
-            <p>Paginated results marker.</p>
-         
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * 
-            <p>Paginated results marker.</p>
-         
-     */
     inline ListScramSecretsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * 
-            <p>Paginated results marker.</p>
-         
-     */
     inline ListScramSecretsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>Paginated results marker.</p>
-         
-     */
     inline ListScramSecretsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * 
             <p>The list of scram secrets associated with the cluster.</p>
@@ -90,85 +56,25 @@ namespace Model
      *    
      */
     inline const Aws::Vector<Aws::String>& GetSecretArnList() const{ return m_secretArnList; }
-
-    /**
-     * 
-            <p>The list of scram secrets associated with the cluster.</p>
-     
-     *    
-     */
     inline void SetSecretArnList(const Aws::Vector<Aws::String>& value) { m_secretArnList = value; }
-
-    /**
-     * 
-            <p>The list of scram secrets associated with the cluster.</p>
-     
-     *    
-     */
     inline void SetSecretArnList(Aws::Vector<Aws::String>&& value) { m_secretArnList = std::move(value); }
-
-    /**
-     * 
-            <p>The list of scram secrets associated with the cluster.</p>
-     
-     *    
-     */
     inline ListScramSecretsResult& WithSecretArnList(const Aws::Vector<Aws::String>& value) { SetSecretArnList(value); return *this;}
-
-    /**
-     * 
-            <p>The list of scram secrets associated with the cluster.</p>
-     
-     *    
-     */
     inline ListScramSecretsResult& WithSecretArnList(Aws::Vector<Aws::String>&& value) { SetSecretArnList(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The list of scram secrets associated with the cluster.</p>
-     
-     *    
-     */
     inline ListScramSecretsResult& AddSecretArnList(const Aws::String& value) { m_secretArnList.push_back(value); return *this; }
-
-    /**
-     * 
-            <p>The list of scram secrets associated with the cluster.</p>
-     
-     *    
-     */
     inline ListScramSecretsResult& AddSecretArnList(Aws::String&& value) { m_secretArnList.push_back(std::move(value)); return *this; }
-
-    /**
-     * 
-            <p>The list of scram secrets associated with the cluster.</p>
-     
-     *    
-     */
     inline ListScramSecretsResult& AddSecretArnList(const char* value) { m_secretArnList.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListScramSecretsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListScramSecretsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListScramSecretsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

@@ -36,36 +36,17 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The streaming distribution's configuration information.</p>
      */
     inline const StreamingDistributionConfig& GetStreamingDistributionConfig() const{ return m_streamingDistributionConfig; }
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline bool StreamingDistributionConfigHasBeenSet() const { return m_streamingDistributionConfigHasBeenSet; }
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = std::move(value); }
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline CreateStreamingDistribution2020_05_31Request& WithStreamingDistributionConfig(const StreamingDistributionConfig& value) { SetStreamingDistributionConfig(value); return *this;}
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline CreateStreamingDistribution2020_05_31Request& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StreamingDistributionConfig m_streamingDistributionConfig;

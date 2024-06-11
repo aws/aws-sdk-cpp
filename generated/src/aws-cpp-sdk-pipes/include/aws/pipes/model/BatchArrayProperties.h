@@ -38,26 +38,15 @@ namespace Model
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The size of the array, if this is an array batch job.</p>
      */
     inline int GetSize() const{ return m_size; }
-
-    /**
-     * <p>The size of the array, if this is an array batch job.</p>
-     */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-
-    /**
-     * <p>The size of the array, if this is an array batch job.</p>
-     */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
-
-    /**
-     * <p>The size of the array, if this is an array batch job.</p>
-     */
     inline BatchArrayProperties& WithSize(int value) { SetSize(value); return *this;}
-
+    ///@}
   private:
 
     int m_size;

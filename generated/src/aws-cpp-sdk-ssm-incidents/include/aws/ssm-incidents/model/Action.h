@@ -38,42 +38,18 @@ namespace Model
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Systems Manager automation document to start as the runbook at the
      * beginning of the incident.</p>
      */
     inline const SsmAutomation& GetSsmAutomation() const{ return m_ssmAutomation; }
-
-    /**
-     * <p>The Systems Manager automation document to start as the runbook at the
-     * beginning of the incident.</p>
-     */
     inline bool SsmAutomationHasBeenSet() const { return m_ssmAutomationHasBeenSet; }
-
-    /**
-     * <p>The Systems Manager automation document to start as the runbook at the
-     * beginning of the incident.</p>
-     */
     inline void SetSsmAutomation(const SsmAutomation& value) { m_ssmAutomationHasBeenSet = true; m_ssmAutomation = value; }
-
-    /**
-     * <p>The Systems Manager automation document to start as the runbook at the
-     * beginning of the incident.</p>
-     */
     inline void SetSsmAutomation(SsmAutomation&& value) { m_ssmAutomationHasBeenSet = true; m_ssmAutomation = std::move(value); }
-
-    /**
-     * <p>The Systems Manager automation document to start as the runbook at the
-     * beginning of the incident.</p>
-     */
     inline Action& WithSsmAutomation(const SsmAutomation& value) { SetSsmAutomation(value); return *this;}
-
-    /**
-     * <p>The Systems Manager automation document to start as the runbook at the
-     * beginning of the incident.</p>
-     */
     inline Action& WithSsmAutomation(SsmAutomation&& value) { SetSsmAutomation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SsmAutomation m_ssmAutomation;

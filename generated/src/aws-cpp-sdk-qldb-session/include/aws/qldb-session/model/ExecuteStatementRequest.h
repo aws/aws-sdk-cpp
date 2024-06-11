@@ -39,128 +39,47 @@ namespace Model
     AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the transaction ID of the request.</p>
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
-
-    /**
-     * <p>Specifies the transaction ID of the request.</p>
-     */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
-
-    /**
-     * <p>Specifies the transaction ID of the request.</p>
-     */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
-
-    /**
-     * <p>Specifies the transaction ID of the request.</p>
-     */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
-
-    /**
-     * <p>Specifies the transaction ID of the request.</p>
-     */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
-
-    /**
-     * <p>Specifies the transaction ID of the request.</p>
-     */
     inline ExecuteStatementRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-
-    /**
-     * <p>Specifies the transaction ID of the request.</p>
-     */
     inline ExecuteStatementRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the transaction ID of the request.</p>
-     */
     inline ExecuteStatementRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the statement of the request.</p>
      */
     inline const Aws::String& GetStatement() const{ return m_statement; }
-
-    /**
-     * <p>Specifies the statement of the request.</p>
-     */
     inline bool StatementHasBeenSet() const { return m_statementHasBeenSet; }
-
-    /**
-     * <p>Specifies the statement of the request.</p>
-     */
     inline void SetStatement(const Aws::String& value) { m_statementHasBeenSet = true; m_statement = value; }
-
-    /**
-     * <p>Specifies the statement of the request.</p>
-     */
     inline void SetStatement(Aws::String&& value) { m_statementHasBeenSet = true; m_statement = std::move(value); }
-
-    /**
-     * <p>Specifies the statement of the request.</p>
-     */
     inline void SetStatement(const char* value) { m_statementHasBeenSet = true; m_statement.assign(value); }
-
-    /**
-     * <p>Specifies the statement of the request.</p>
-     */
     inline ExecuteStatementRequest& WithStatement(const Aws::String& value) { SetStatement(value); return *this;}
-
-    /**
-     * <p>Specifies the statement of the request.</p>
-     */
     inline ExecuteStatementRequest& WithStatement(Aws::String&& value) { SetStatement(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the statement of the request.</p>
-     */
     inline ExecuteStatementRequest& WithStatement(const char* value) { SetStatement(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the parameters for the parameterized statement in the request.</p>
      */
     inline const Aws::Vector<ValueHolder>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>Specifies the parameters for the parameterized statement in the request.</p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>Specifies the parameters for the parameterized statement in the request.</p>
-     */
     inline void SetParameters(const Aws::Vector<ValueHolder>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>Specifies the parameters for the parameterized statement in the request.</p>
-     */
     inline void SetParameters(Aws::Vector<ValueHolder>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>Specifies the parameters for the parameterized statement in the request.</p>
-     */
     inline ExecuteStatementRequest& WithParameters(const Aws::Vector<ValueHolder>& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>Specifies the parameters for the parameterized statement in the request.</p>
-     */
     inline ExecuteStatementRequest& WithParameters(Aws::Vector<ValueHolder>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the parameters for the parameterized statement in the request.</p>
-     */
     inline ExecuteStatementRequest& AddParameters(const ValueHolder& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies the parameters for the parameterized statement in the request.</p>
-     */
     inline ExecuteStatementRequest& AddParameters(ValueHolder&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_transactionId;

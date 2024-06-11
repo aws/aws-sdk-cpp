@@ -37,46 +37,19 @@ namespace Model
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The latest version identifier for the source image set.</p>
      */
     inline const Aws::String& GetLatestVersionId() const{ return m_latestVersionId; }
-
-    /**
-     * <p>The latest version identifier for the source image set.</p>
-     */
     inline bool LatestVersionIdHasBeenSet() const { return m_latestVersionIdHasBeenSet; }
-
-    /**
-     * <p>The latest version identifier for the source image set.</p>
-     */
     inline void SetLatestVersionId(const Aws::String& value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId = value; }
-
-    /**
-     * <p>The latest version identifier for the source image set.</p>
-     */
     inline void SetLatestVersionId(Aws::String&& value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId = std::move(value); }
-
-    /**
-     * <p>The latest version identifier for the source image set.</p>
-     */
     inline void SetLatestVersionId(const char* value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId.assign(value); }
-
-    /**
-     * <p>The latest version identifier for the source image set.</p>
-     */
     inline CopySourceImageSetInformation& WithLatestVersionId(const Aws::String& value) { SetLatestVersionId(value); return *this;}
-
-    /**
-     * <p>The latest version identifier for the source image set.</p>
-     */
     inline CopySourceImageSetInformation& WithLatestVersionId(Aws::String&& value) { SetLatestVersionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The latest version identifier for the source image set.</p>
-     */
     inline CopySourceImageSetInformation& WithLatestVersionId(const char* value) { SetLatestVersionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_latestVersionId;

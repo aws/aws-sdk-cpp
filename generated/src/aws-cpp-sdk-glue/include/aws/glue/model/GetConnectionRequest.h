@@ -34,96 +34,36 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Data Catalog in which the connection resides. If none is
      * provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline GetConnectionRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline GetConnectionRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Data Catalog in which the connection resides. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline GetConnectionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the connection definition to retrieve.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the connection definition to retrieve.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the connection definition to retrieve.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the connection definition to retrieve.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the connection definition to retrieve.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the connection definition to retrieve.</p>
-     */
     inline GetConnectionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the connection definition to retrieve.</p>
-     */
     inline GetConnectionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the connection definition to retrieve.</p>
-     */
     inline GetConnectionRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows you to retrieve the connection metadata without returning the
      * password. For instance, the Glue console uses this flag to retrieve the
@@ -132,34 +72,10 @@ namespace Model
      * it does have permission to access the rest of the connection properties.</p>
      */
     inline bool GetHidePassword() const{ return m_hidePassword; }
-
-    /**
-     * <p>Allows you to retrieve the connection metadata without returning the
-     * password. For instance, the Glue console uses this flag to retrieve the
-     * connection, and does not display the password. Set this parameter when the
-     * caller might not have permission to use the KMS key to decrypt the password, but
-     * it does have permission to access the rest of the connection properties.</p>
-     */
     inline bool HidePasswordHasBeenSet() const { return m_hidePasswordHasBeenSet; }
-
-    /**
-     * <p>Allows you to retrieve the connection metadata without returning the
-     * password. For instance, the Glue console uses this flag to retrieve the
-     * connection, and does not display the password. Set this parameter when the
-     * caller might not have permission to use the KMS key to decrypt the password, but
-     * it does have permission to access the rest of the connection properties.</p>
-     */
     inline void SetHidePassword(bool value) { m_hidePasswordHasBeenSet = true; m_hidePassword = value; }
-
-    /**
-     * <p>Allows you to retrieve the connection metadata without returning the
-     * password. For instance, the Glue console uses this flag to retrieve the
-     * connection, and does not display the password. Set this parameter when the
-     * caller might not have permission to use the KMS key to decrypt the password, but
-     * it does have permission to access the rest of the connection properties.</p>
-     */
     inline GetConnectionRequest& WithHidePassword(bool value) { SetHidePassword(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_catalogId;

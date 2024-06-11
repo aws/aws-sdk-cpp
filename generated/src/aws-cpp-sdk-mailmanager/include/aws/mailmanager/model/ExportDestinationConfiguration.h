@@ -38,36 +38,17 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration for delivering to an Amazon S3 bucket.</p>
      */
     inline const S3ExportDestinationConfiguration& GetS3() const{ return m_s3; }
-
-    /**
-     * <p>Configuration for delivering to an Amazon S3 bucket.</p>
-     */
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    /**
-     * <p>Configuration for delivering to an Amazon S3 bucket.</p>
-     */
     inline void SetS3(const S3ExportDestinationConfiguration& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    /**
-     * <p>Configuration for delivering to an Amazon S3 bucket.</p>
-     */
     inline void SetS3(S3ExportDestinationConfiguration&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    /**
-     * <p>Configuration for delivering to an Amazon S3 bucket.</p>
-     */
     inline ExportDestinationConfiguration& WithS3(const S3ExportDestinationConfiguration& value) { SetS3(value); return *this;}
-
-    /**
-     * <p>Configuration for delivering to an Amazon S3 bucket.</p>
-     */
     inline ExportDestinationConfiguration& WithS3(S3ExportDestinationConfiguration&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3ExportDestinationConfiguration m_s3;

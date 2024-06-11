@@ -41,99 +41,42 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API DescribeReservedElasticsearchInstanceOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeReservedElasticsearchInstanceOfferingsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeReservedElasticsearchInstanceOfferingsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeReservedElasticsearchInstanceOfferingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of reserved Elasticsearch instance offerings</p>
      */
     inline const Aws::Vector<ReservedElasticsearchInstanceOffering>& GetReservedElasticsearchInstanceOfferings() const{ return m_reservedElasticsearchInstanceOfferings; }
-
-    /**
-     * <p>List of reserved Elasticsearch instance offerings</p>
-     */
     inline void SetReservedElasticsearchInstanceOfferings(const Aws::Vector<ReservedElasticsearchInstanceOffering>& value) { m_reservedElasticsearchInstanceOfferings = value; }
-
-    /**
-     * <p>List of reserved Elasticsearch instance offerings</p>
-     */
     inline void SetReservedElasticsearchInstanceOfferings(Aws::Vector<ReservedElasticsearchInstanceOffering>&& value) { m_reservedElasticsearchInstanceOfferings = std::move(value); }
-
-    /**
-     * <p>List of reserved Elasticsearch instance offerings</p>
-     */
     inline DescribeReservedElasticsearchInstanceOfferingsResult& WithReservedElasticsearchInstanceOfferings(const Aws::Vector<ReservedElasticsearchInstanceOffering>& value) { SetReservedElasticsearchInstanceOfferings(value); return *this;}
-
-    /**
-     * <p>List of reserved Elasticsearch instance offerings</p>
-     */
     inline DescribeReservedElasticsearchInstanceOfferingsResult& WithReservedElasticsearchInstanceOfferings(Aws::Vector<ReservedElasticsearchInstanceOffering>&& value) { SetReservedElasticsearchInstanceOfferings(std::move(value)); return *this;}
-
-    /**
-     * <p>List of reserved Elasticsearch instance offerings</p>
-     */
     inline DescribeReservedElasticsearchInstanceOfferingsResult& AddReservedElasticsearchInstanceOfferings(const ReservedElasticsearchInstanceOffering& value) { m_reservedElasticsearchInstanceOfferings.push_back(value); return *this; }
-
-    /**
-     * <p>List of reserved Elasticsearch instance offerings</p>
-     */
     inline DescribeReservedElasticsearchInstanceOfferingsResult& AddReservedElasticsearchInstanceOfferings(ReservedElasticsearchInstanceOffering&& value) { m_reservedElasticsearchInstanceOfferings.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeReservedElasticsearchInstanceOfferingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeReservedElasticsearchInstanceOfferingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeReservedElasticsearchInstanceOfferingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

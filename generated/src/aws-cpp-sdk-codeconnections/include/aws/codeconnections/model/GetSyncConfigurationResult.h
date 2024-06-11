@@ -33,58 +33,28 @@ namespace Model
     AWS_CODECONNECTIONS_API GetSyncConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details about the sync configuration for which you want to retrieve
      * information.</p>
      */
     inline const SyncConfiguration& GetSyncConfiguration() const{ return m_syncConfiguration; }
-
-    /**
-     * <p>The details about the sync configuration for which you want to retrieve
-     * information.</p>
-     */
     inline void SetSyncConfiguration(const SyncConfiguration& value) { m_syncConfiguration = value; }
-
-    /**
-     * <p>The details about the sync configuration for which you want to retrieve
-     * information.</p>
-     */
     inline void SetSyncConfiguration(SyncConfiguration&& value) { m_syncConfiguration = std::move(value); }
-
-    /**
-     * <p>The details about the sync configuration for which you want to retrieve
-     * information.</p>
-     */
     inline GetSyncConfigurationResult& WithSyncConfiguration(const SyncConfiguration& value) { SetSyncConfiguration(value); return *this;}
-
-    /**
-     * <p>The details about the sync configuration for which you want to retrieve
-     * information.</p>
-     */
     inline GetSyncConfigurationResult& WithSyncConfiguration(SyncConfiguration&& value) { SetSyncConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSyncConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSyncConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSyncConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SyncConfiguration m_syncConfiguration;

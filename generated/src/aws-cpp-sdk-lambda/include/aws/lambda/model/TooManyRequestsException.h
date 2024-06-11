@@ -40,115 +40,53 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of seconds the caller should wait before retrying.</p>
      */
     inline const Aws::String& GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
-
-    /**
-     * <p>The number of seconds the caller should wait before retrying.</p>
-     */
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
-
-    /**
-     * <p>The number of seconds the caller should wait before retrying.</p>
-     */
     inline void SetRetryAfterSeconds(const Aws::String& value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
-
-    /**
-     * <p>The number of seconds the caller should wait before retrying.</p>
-     */
     inline void SetRetryAfterSeconds(Aws::String&& value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = std::move(value); }
-
-    /**
-     * <p>The number of seconds the caller should wait before retrying.</p>
-     */
     inline void SetRetryAfterSeconds(const char* value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds.assign(value); }
-
-    /**
-     * <p>The number of seconds the caller should wait before retrying.</p>
-     */
     inline TooManyRequestsException& WithRetryAfterSeconds(const Aws::String& value) { SetRetryAfterSeconds(value); return *this;}
-
-    /**
-     * <p>The number of seconds the caller should wait before retrying.</p>
-     */
     inline TooManyRequestsException& WithRetryAfterSeconds(Aws::String&& value) { SetRetryAfterSeconds(std::move(value)); return *this;}
-
-    /**
-     * <p>The number of seconds the caller should wait before retrying.</p>
-     */
     inline TooManyRequestsException& WithRetryAfterSeconds(const char* value) { SetRetryAfterSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetType() const{ return m_type; }
-
-    
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    
     inline TooManyRequestsException& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    
     inline TooManyRequestsException& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    
     inline TooManyRequestsException& WithType(const char* value) { SetType(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline TooManyRequestsException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline TooManyRequestsException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline TooManyRequestsException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ThrottleReason& GetReason() const{ return m_reason; }
-
-    
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    
     inline void SetReason(const ThrottleReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    
     inline void SetReason(ThrottleReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    
     inline TooManyRequestsException& WithReason(const ThrottleReason& value) { SetReason(value); return *this;}
-
-    
     inline TooManyRequestsException& WithReason(ThrottleReason&& value) { SetReason(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_retryAfterSeconds;

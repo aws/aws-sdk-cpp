@@ -32,46 +32,19 @@ namespace Model
     AWS_FINSPACE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the kdb environment.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-
-    /**
-     * <p>A unique identifier for the kdb environment.</p>
-     */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the kdb environment.</p>
-     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-
-    /**
-     * <p>A unique identifier for the kdb environment.</p>
-     */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the kdb environment.</p>
-     */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the kdb environment.</p>
-     */
     inline GetKxEnvironmentRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the kdb environment.</p>
-     */
     inline GetKxEnvironmentRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the kdb environment.</p>
-     */
     inline GetKxEnvironmentRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_environmentId;

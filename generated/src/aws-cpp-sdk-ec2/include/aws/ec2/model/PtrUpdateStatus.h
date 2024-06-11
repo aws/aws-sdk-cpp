@@ -40,128 +40,47 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The value for the PTR record update.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value for the PTR record update.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value for the PTR record update.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value for the PTR record update.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value for the PTR record update.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value for the PTR record update.</p>
-     */
     inline PtrUpdateStatus& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value for the PTR record update.</p>
-     */
     inline PtrUpdateStatus& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value for the PTR record update.</p>
-     */
     inline PtrUpdateStatus& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the PTR record update.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the PTR record update.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the PTR record update.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the PTR record update.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the PTR record update.</p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The status of the PTR record update.</p>
-     */
     inline PtrUpdateStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the PTR record update.</p>
-     */
     inline PtrUpdateStatus& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the PTR record update.</p>
-     */
     inline PtrUpdateStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason for the PTR record update.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>The reason for the PTR record update.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>The reason for the PTR record update.</p>
-     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>The reason for the PTR record update.</p>
-     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>The reason for the PTR record update.</p>
-     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>The reason for the PTR record update.</p>
-     */
     inline PtrUpdateStatus& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>The reason for the PTR record update.</p>
-     */
     inline PtrUpdateStatus& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for the PTR record update.</p>
-     */
     inline PtrUpdateStatus& WithReason(const char* value) { SetReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_value;

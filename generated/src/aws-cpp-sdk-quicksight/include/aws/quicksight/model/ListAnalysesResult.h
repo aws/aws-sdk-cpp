@@ -34,115 +34,51 @@ namespace Model
     AWS_QUICKSIGHT_API ListAnalysesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Metadata describing each of the analyses that are listed.</p>
      */
     inline const Aws::Vector<AnalysisSummary>& GetAnalysisSummaryList() const{ return m_analysisSummaryList; }
-
-    /**
-     * <p>Metadata describing each of the analyses that are listed.</p>
-     */
     inline void SetAnalysisSummaryList(const Aws::Vector<AnalysisSummary>& value) { m_analysisSummaryList = value; }
-
-    /**
-     * <p>Metadata describing each of the analyses that are listed.</p>
-     */
     inline void SetAnalysisSummaryList(Aws::Vector<AnalysisSummary>&& value) { m_analysisSummaryList = std::move(value); }
-
-    /**
-     * <p>Metadata describing each of the analyses that are listed.</p>
-     */
     inline ListAnalysesResult& WithAnalysisSummaryList(const Aws::Vector<AnalysisSummary>& value) { SetAnalysisSummaryList(value); return *this;}
-
-    /**
-     * <p>Metadata describing each of the analyses that are listed.</p>
-     */
     inline ListAnalysesResult& WithAnalysisSummaryList(Aws::Vector<AnalysisSummary>&& value) { SetAnalysisSummaryList(std::move(value)); return *this;}
-
-    /**
-     * <p>Metadata describing each of the analyses that are listed.</p>
-     */
     inline ListAnalysesResult& AddAnalysisSummaryList(const AnalysisSummary& value) { m_analysisSummaryList.push_back(value); return *this; }
-
-    /**
-     * <p>Metadata describing each of the analyses that are listed.</p>
-     */
     inline ListAnalysesResult& AddAnalysisSummaryList(AnalysisSummary&& value) { m_analysisSummaryList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A pagination token that can be used in a subsequent request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline ListAnalysesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline ListAnalysesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline ListAnalysesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline void SetStatus(int value) { m_status = value; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline ListAnalysesResult& WithStatus(int value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAnalysesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAnalysesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAnalysesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AnalysisSummary> m_analysisSummaryList;

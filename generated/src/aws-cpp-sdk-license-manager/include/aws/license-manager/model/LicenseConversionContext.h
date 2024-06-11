@@ -38,6 +38,7 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Usage operation value that corresponds to the license type you are
      * converting your resource from. For more information about which platforms
@@ -46,70 +47,14 @@ namespace Model
      * data: usage operation by platform </a> </p>
      */
     inline const Aws::String& GetUsageOperation() const{ return m_usageOperation; }
-
-    /**
-     * <p>The Usage operation value that corresponds to the license type you are
-     * converting your resource from. For more information about which platforms
-     * correspond to which usage operation values see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample
-     * data: usage operation by platform </a> </p>
-     */
     inline bool UsageOperationHasBeenSet() const { return m_usageOperationHasBeenSet; }
-
-    /**
-     * <p>The Usage operation value that corresponds to the license type you are
-     * converting your resource from. For more information about which platforms
-     * correspond to which usage operation values see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample
-     * data: usage operation by platform </a> </p>
-     */
     inline void SetUsageOperation(const Aws::String& value) { m_usageOperationHasBeenSet = true; m_usageOperation = value; }
-
-    /**
-     * <p>The Usage operation value that corresponds to the license type you are
-     * converting your resource from. For more information about which platforms
-     * correspond to which usage operation values see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample
-     * data: usage operation by platform </a> </p>
-     */
     inline void SetUsageOperation(Aws::String&& value) { m_usageOperationHasBeenSet = true; m_usageOperation = std::move(value); }
-
-    /**
-     * <p>The Usage operation value that corresponds to the license type you are
-     * converting your resource from. For more information about which platforms
-     * correspond to which usage operation values see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample
-     * data: usage operation by platform </a> </p>
-     */
     inline void SetUsageOperation(const char* value) { m_usageOperationHasBeenSet = true; m_usageOperation.assign(value); }
-
-    /**
-     * <p>The Usage operation value that corresponds to the license type you are
-     * converting your resource from. For more information about which platforms
-     * correspond to which usage operation values see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample
-     * data: usage operation by platform </a> </p>
-     */
     inline LicenseConversionContext& WithUsageOperation(const Aws::String& value) { SetUsageOperation(value); return *this;}
-
-    /**
-     * <p>The Usage operation value that corresponds to the license type you are
-     * converting your resource from. For more information about which platforms
-     * correspond to which usage operation values see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample
-     * data: usage operation by platform </a> </p>
-     */
     inline LicenseConversionContext& WithUsageOperation(Aws::String&& value) { SetUsageOperation(std::move(value)); return *this;}
-
-    /**
-     * <p>The Usage operation value that corresponds to the license type you are
-     * converting your resource from. For more information about which platforms
-     * correspond to which usage operation values see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample
-     * data: usage operation by platform </a> </p>
-     */
     inline LicenseConversionContext& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_usageOperation;

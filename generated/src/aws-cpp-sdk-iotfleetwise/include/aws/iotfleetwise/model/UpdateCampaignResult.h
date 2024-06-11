@@ -33,78 +33,33 @@ namespace Model
     AWS_IOTFLEETWISE_API UpdateCampaignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the campaign. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the campaign. </p>
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the campaign. </p>
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the campaign. </p>
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the campaign. </p>
-     */
     inline UpdateCampaignResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the campaign. </p>
-     */
     inline UpdateCampaignResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the campaign. </p>
-     */
     inline UpdateCampaignResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the updated campaign.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the updated campaign.</p>
-     */
     inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The name of the updated campaign.</p>
-     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The name of the updated campaign.</p>
-     */
     inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The name of the updated campaign.</p>
-     */
     inline UpdateCampaignResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the updated campaign.</p>
-     */
     inline UpdateCampaignResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the updated campaign.</p>
-     */
     inline UpdateCampaignResult& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of a campaign. The status can be one of:</p> <ul> <li> <p>
      * <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your
@@ -118,85 +73,22 @@ namespace Model
      * </ul>
      */
     inline const CampaignStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The state of a campaign. The status can be one of:</p> <ul> <li> <p>
-     * <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your
-     * request to create the campaign. </p> </li> <li> <p>
-     * <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the
-     * <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT
-     * FleetWise to deploy the campaign to the target vehicle or fleet, use the API
-     * operation to approve the campaign. </p> </li> <li> <p> <code>RUNNING</code> -
-     * The campaign is active. </p> </li> <li> <p> <code>SUSPENDED</code> - The
-     * campaign is suspended. To resume the campaign, use the API operation. </p> </li>
-     * </ul>
-     */
     inline void SetStatus(const CampaignStatus& value) { m_status = value; }
-
-    /**
-     * <p>The state of a campaign. The status can be one of:</p> <ul> <li> <p>
-     * <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your
-     * request to create the campaign. </p> </li> <li> <p>
-     * <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the
-     * <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT
-     * FleetWise to deploy the campaign to the target vehicle or fleet, use the API
-     * operation to approve the campaign. </p> </li> <li> <p> <code>RUNNING</code> -
-     * The campaign is active. </p> </li> <li> <p> <code>SUSPENDED</code> - The
-     * campaign is suspended. To resume the campaign, use the API operation. </p> </li>
-     * </ul>
-     */
     inline void SetStatus(CampaignStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The state of a campaign. The status can be one of:</p> <ul> <li> <p>
-     * <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your
-     * request to create the campaign. </p> </li> <li> <p>
-     * <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the
-     * <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT
-     * FleetWise to deploy the campaign to the target vehicle or fleet, use the API
-     * operation to approve the campaign. </p> </li> <li> <p> <code>RUNNING</code> -
-     * The campaign is active. </p> </li> <li> <p> <code>SUSPENDED</code> - The
-     * campaign is suspended. To resume the campaign, use the API operation. </p> </li>
-     * </ul>
-     */
     inline UpdateCampaignResult& WithStatus(const CampaignStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The state of a campaign. The status can be one of:</p> <ul> <li> <p>
-     * <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your
-     * request to create the campaign. </p> </li> <li> <p>
-     * <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the
-     * <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT
-     * FleetWise to deploy the campaign to the target vehicle or fleet, use the API
-     * operation to approve the campaign. </p> </li> <li> <p> <code>RUNNING</code> -
-     * The campaign is active. </p> </li> <li> <p> <code>SUSPENDED</code> - The
-     * campaign is suspended. To resume the campaign, use the API operation. </p> </li>
-     * </ul>
-     */
     inline UpdateCampaignResult& WithStatus(CampaignStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateCampaignResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateCampaignResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateCampaignResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

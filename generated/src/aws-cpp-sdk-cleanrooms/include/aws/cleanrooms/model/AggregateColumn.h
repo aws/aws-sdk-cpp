@@ -40,82 +40,32 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Column names in configured table of aggregate columns.</p>
      */
     inline const Aws::Vector<Aws::String>& GetColumnNames() const{ return m_columnNames; }
-
-    /**
-     * <p>Column names in configured table of aggregate columns.</p>
-     */
     inline bool ColumnNamesHasBeenSet() const { return m_columnNamesHasBeenSet; }
-
-    /**
-     * <p>Column names in configured table of aggregate columns.</p>
-     */
     inline void SetColumnNames(const Aws::Vector<Aws::String>& value) { m_columnNamesHasBeenSet = true; m_columnNames = value; }
-
-    /**
-     * <p>Column names in configured table of aggregate columns.</p>
-     */
     inline void SetColumnNames(Aws::Vector<Aws::String>&& value) { m_columnNamesHasBeenSet = true; m_columnNames = std::move(value); }
-
-    /**
-     * <p>Column names in configured table of aggregate columns.</p>
-     */
     inline AggregateColumn& WithColumnNames(const Aws::Vector<Aws::String>& value) { SetColumnNames(value); return *this;}
-
-    /**
-     * <p>Column names in configured table of aggregate columns.</p>
-     */
     inline AggregateColumn& WithColumnNames(Aws::Vector<Aws::String>&& value) { SetColumnNames(std::move(value)); return *this;}
-
-    /**
-     * <p>Column names in configured table of aggregate columns.</p>
-     */
     inline AggregateColumn& AddColumnNames(const Aws::String& value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(value); return *this; }
-
-    /**
-     * <p>Column names in configured table of aggregate columns.</p>
-     */
     inline AggregateColumn& AddColumnNames(Aws::String&& value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Column names in configured table of aggregate columns.</p>
-     */
     inline AggregateColumn& AddColumnNames(const char* value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Aggregation function that can be applied to aggregate column in query.</p>
      */
     inline const AggregateFunctionName& GetFunction() const{ return m_function; }
-
-    /**
-     * <p>Aggregation function that can be applied to aggregate column in query.</p>
-     */
     inline bool FunctionHasBeenSet() const { return m_functionHasBeenSet; }
-
-    /**
-     * <p>Aggregation function that can be applied to aggregate column in query.</p>
-     */
     inline void SetFunction(const AggregateFunctionName& value) { m_functionHasBeenSet = true; m_function = value; }
-
-    /**
-     * <p>Aggregation function that can be applied to aggregate column in query.</p>
-     */
     inline void SetFunction(AggregateFunctionName&& value) { m_functionHasBeenSet = true; m_function = std::move(value); }
-
-    /**
-     * <p>Aggregation function that can be applied to aggregate column in query.</p>
-     */
     inline AggregateColumn& WithFunction(const AggregateFunctionName& value) { SetFunction(value); return *this;}
-
-    /**
-     * <p>Aggregation function that can be applied to aggregate column in query.</p>
-     */
     inline AggregateColumn& WithFunction(AggregateFunctionName&& value) { SetFunction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_columnNames;

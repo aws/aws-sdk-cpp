@@ -36,55 +36,27 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether the bucket policy allows the general public to have read
      * access to the bucket.</p>
      */
     inline bool GetAllowsPublicReadAccess() const{ return m_allowsPublicReadAccess; }
-
-    /**
-     * <p>Specifies whether the bucket policy allows the general public to have read
-     * access to the bucket.</p>
-     */
     inline bool AllowsPublicReadAccessHasBeenSet() const { return m_allowsPublicReadAccessHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the bucket policy allows the general public to have read
-     * access to the bucket.</p>
-     */
     inline void SetAllowsPublicReadAccess(bool value) { m_allowsPublicReadAccessHasBeenSet = true; m_allowsPublicReadAccess = value; }
-
-    /**
-     * <p>Specifies whether the bucket policy allows the general public to have read
-     * access to the bucket.</p>
-     */
     inline BucketPolicy& WithAllowsPublicReadAccess(bool value) { SetAllowsPublicReadAccess(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the bucket policy allows the general public to have write
      * access to the bucket.</p>
      */
     inline bool GetAllowsPublicWriteAccess() const{ return m_allowsPublicWriteAccess; }
-
-    /**
-     * <p>Specifies whether the bucket policy allows the general public to have write
-     * access to the bucket.</p>
-     */
     inline bool AllowsPublicWriteAccessHasBeenSet() const { return m_allowsPublicWriteAccessHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the bucket policy allows the general public to have write
-     * access to the bucket.</p>
-     */
     inline void SetAllowsPublicWriteAccess(bool value) { m_allowsPublicWriteAccessHasBeenSet = true; m_allowsPublicWriteAccess = value; }
-
-    /**
-     * <p>Specifies whether the bucket policy allows the general public to have write
-     * access to the bucket.</p>
-     */
     inline BucketPolicy& WithAllowsPublicWriteAccess(bool value) { SetAllowsPublicWriteAccess(value); return *this;}
-
+    ///@}
   private:
 
     bool m_allowsPublicReadAccess;

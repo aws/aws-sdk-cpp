@@ -40,112 +40,59 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const JobType& GetJobType() const{ return m_jobType; }
-
-    
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
-
-    
     inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
-
-    
     inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
-
-    
     inline CreateJobRequest& WithJobType(const JobType& value) { SetJobType(value); return *this;}
-
-    
     inline CreateJobRequest& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetManifest() const{ return m_manifest; }
-
-    
     inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
-
-    
     inline void SetManifest(const Aws::String& value) { m_manifestHasBeenSet = true; m_manifest = value; }
-
-    
     inline void SetManifest(Aws::String&& value) { m_manifestHasBeenSet = true; m_manifest = std::move(value); }
-
-    
     inline void SetManifest(const char* value) { m_manifestHasBeenSet = true; m_manifest.assign(value); }
-
-    
     inline CreateJobRequest& WithManifest(const Aws::String& value) { SetManifest(value); return *this;}
-
-    
     inline CreateJobRequest& WithManifest(Aws::String&& value) { SetManifest(std::move(value)); return *this;}
-
-    
     inline CreateJobRequest& WithManifest(const char* value) { SetManifest(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetManifestAddendum() const{ return m_manifestAddendum; }
-
-    
     inline bool ManifestAddendumHasBeenSet() const { return m_manifestAddendumHasBeenSet; }
-
-    
     inline void SetManifestAddendum(const Aws::String& value) { m_manifestAddendumHasBeenSet = true; m_manifestAddendum = value; }
-
-    
     inline void SetManifestAddendum(Aws::String&& value) { m_manifestAddendumHasBeenSet = true; m_manifestAddendum = std::move(value); }
-
-    
     inline void SetManifestAddendum(const char* value) { m_manifestAddendumHasBeenSet = true; m_manifestAddendum.assign(value); }
-
-    
     inline CreateJobRequest& WithManifestAddendum(const Aws::String& value) { SetManifestAddendum(value); return *this;}
-
-    
     inline CreateJobRequest& WithManifestAddendum(Aws::String&& value) { SetManifestAddendum(std::move(value)); return *this;}
-
-    
     inline CreateJobRequest& WithManifestAddendum(const char* value) { SetManifestAddendum(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline bool GetValidateOnly() const{ return m_validateOnly; }
-
-    
     inline bool ValidateOnlyHasBeenSet() const { return m_validateOnlyHasBeenSet; }
-
-    
     inline void SetValidateOnly(bool value) { m_validateOnlyHasBeenSet = true; m_validateOnly = value; }
-
-    
     inline CreateJobRequest& WithValidateOnly(bool value) { SetValidateOnly(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetAPIVersion() const{ return m_aPIVersion; }
-
-    
     inline bool APIVersionHasBeenSet() const { return m_aPIVersionHasBeenSet; }
-
-    
     inline void SetAPIVersion(const Aws::String& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = value; }
-
-    
     inline void SetAPIVersion(Aws::String&& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = std::move(value); }
-
-    
     inline void SetAPIVersion(const char* value) { m_aPIVersionHasBeenSet = true; m_aPIVersion.assign(value); }
-
-    
     inline CreateJobRequest& WithAPIVersion(const Aws::String& value) { SetAPIVersion(value); return *this;}
-
-    
     inline CreateJobRequest& WithAPIVersion(Aws::String&& value) { SetAPIVersion(std::move(value)); return *this;}
-
-    
     inline CreateJobRequest& WithAPIVersion(const char* value) { SetAPIVersion(value); return *this;}
-
+    ///@}
   private:
 
     JobType m_jobType;

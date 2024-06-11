@@ -40,67 +40,29 @@ namespace Model
     AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The container image used to create an Amazon Braket job.</p>
      */
     inline const ContainerImage& GetContainerImage() const{ return m_containerImage; }
-
-    /**
-     * <p>The container image used to create an Amazon Braket job.</p>
-     */
     inline bool ContainerImageHasBeenSet() const { return m_containerImageHasBeenSet; }
-
-    /**
-     * <p>The container image used to create an Amazon Braket job.</p>
-     */
     inline void SetContainerImage(const ContainerImage& value) { m_containerImageHasBeenSet = true; m_containerImage = value; }
-
-    /**
-     * <p>The container image used to create an Amazon Braket job.</p>
-     */
     inline void SetContainerImage(ContainerImage&& value) { m_containerImageHasBeenSet = true; m_containerImage = std::move(value); }
-
-    /**
-     * <p>The container image used to create an Amazon Braket job.</p>
-     */
     inline AlgorithmSpecification& WithContainerImage(const ContainerImage& value) { SetContainerImage(value); return *this;}
-
-    /**
-     * <p>The container image used to create an Amazon Braket job.</p>
-     */
     inline AlgorithmSpecification& WithContainerImage(ContainerImage&& value) { SetContainerImage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Configures the paths to the Python scripts used for entry and training.</p>
      */
     inline const ScriptModeConfig& GetScriptModeConfig() const{ return m_scriptModeConfig; }
-
-    /**
-     * <p>Configures the paths to the Python scripts used for entry and training.</p>
-     */
     inline bool ScriptModeConfigHasBeenSet() const { return m_scriptModeConfigHasBeenSet; }
-
-    /**
-     * <p>Configures the paths to the Python scripts used for entry and training.</p>
-     */
     inline void SetScriptModeConfig(const ScriptModeConfig& value) { m_scriptModeConfigHasBeenSet = true; m_scriptModeConfig = value; }
-
-    /**
-     * <p>Configures the paths to the Python scripts used for entry and training.</p>
-     */
     inline void SetScriptModeConfig(ScriptModeConfig&& value) { m_scriptModeConfigHasBeenSet = true; m_scriptModeConfig = std::move(value); }
-
-    /**
-     * <p>Configures the paths to the Python scripts used for entry and training.</p>
-     */
     inline AlgorithmSpecification& WithScriptModeConfig(const ScriptModeConfig& value) { SetScriptModeConfig(value); return *this;}
-
-    /**
-     * <p>Configures the paths to the Python scripts used for entry and training.</p>
-     */
     inline AlgorithmSpecification& WithScriptModeConfig(ScriptModeConfig&& value) { SetScriptModeConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ContainerImage m_containerImage;

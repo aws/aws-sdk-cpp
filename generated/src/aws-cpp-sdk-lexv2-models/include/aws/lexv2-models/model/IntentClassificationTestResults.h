@@ -39,46 +39,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of the results for the intent classification test.</p>
      */
     inline const Aws::Vector<IntentClassificationTestResultItem>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>A list of the results for the intent classification test.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>A list of the results for the intent classification test.</p>
-     */
     inline void SetItems(const Aws::Vector<IntentClassificationTestResultItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>A list of the results for the intent classification test.</p>
-     */
     inline void SetItems(Aws::Vector<IntentClassificationTestResultItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>A list of the results for the intent classification test.</p>
-     */
     inline IntentClassificationTestResults& WithItems(const Aws::Vector<IntentClassificationTestResultItem>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>A list of the results for the intent classification test.</p>
-     */
     inline IntentClassificationTestResults& WithItems(Aws::Vector<IntentClassificationTestResultItem>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the results for the intent classification test.</p>
-     */
     inline IntentClassificationTestResults& AddItems(const IntentClassificationTestResultItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the results for the intent classification test.</p>
-     */
     inline IntentClassificationTestResults& AddItems(IntentClassificationTestResultItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<IntentClassificationTestResultItem> m_items;

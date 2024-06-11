@@ -42,24 +42,15 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const QueryCompileError& GetQueryCompileError() const{ return m_queryCompileError; }
-
-    
     inline bool QueryCompileErrorHasBeenSet() const { return m_queryCompileErrorHasBeenSet; }
-
-    
     inline void SetQueryCompileError(const QueryCompileError& value) { m_queryCompileErrorHasBeenSet = true; m_queryCompileError = value; }
-
-    
     inline void SetQueryCompileError(QueryCompileError&& value) { m_queryCompileErrorHasBeenSet = true; m_queryCompileError = std::move(value); }
-
-    
     inline MalformedQueryException& WithQueryCompileError(const QueryCompileError& value) { SetQueryCompileError(value); return *this;}
-
-    
     inline MalformedQueryException& WithQueryCompileError(QueryCompileError&& value) { SetQueryCompileError(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     QueryCompileError m_queryCompileError;

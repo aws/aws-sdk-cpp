@@ -32,46 +32,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The stream ID.</p>
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
-
-    /**
-     * <p>The stream ID.</p>
-     */
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-
-    /**
-     * <p>The stream ID.</p>
-     */
     inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
-
-    /**
-     * <p>The stream ID.</p>
-     */
     inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
-
-    /**
-     * <p>The stream ID.</p>
-     */
     inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
-
-    /**
-     * <p>The stream ID.</p>
-     */
     inline DeleteStreamRequest& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-
-    /**
-     * <p>The stream ID.</p>
-     */
     inline DeleteStreamRequest& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-
-    /**
-     * <p>The stream ID.</p>
-     */
     inline DeleteStreamRequest& WithStreamId(const char* value) { SetStreamId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamId;

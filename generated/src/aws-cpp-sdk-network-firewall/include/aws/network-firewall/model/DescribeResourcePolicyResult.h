@@ -32,63 +32,29 @@ namespace Model
     AWS_NETWORKFIREWALL_API DescribeResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The IAM policy for the resource. </p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The IAM policy for the resource. </p>
-     */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
-
-    /**
-     * <p>The IAM policy for the resource. </p>
-     */
     inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
-
-    /**
-     * <p>The IAM policy for the resource. </p>
-     */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
-
-    /**
-     * <p>The IAM policy for the resource. </p>
-     */
     inline DescribeResourcePolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The IAM policy for the resource. </p>
-     */
     inline DescribeResourcePolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The IAM policy for the resource. </p>
-     */
     inline DescribeResourcePolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeResourcePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeResourcePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeResourcePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policy;

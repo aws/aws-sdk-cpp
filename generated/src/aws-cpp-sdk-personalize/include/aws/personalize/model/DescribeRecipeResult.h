@@ -33,53 +33,27 @@ namespace Model
     AWS_PERSONALIZE_API DescribeRecipeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that describes the recipe.</p>
      */
     inline const Recipe& GetRecipe() const{ return m_recipe; }
-
-    /**
-     * <p>An object that describes the recipe.</p>
-     */
     inline void SetRecipe(const Recipe& value) { m_recipe = value; }
-
-    /**
-     * <p>An object that describes the recipe.</p>
-     */
     inline void SetRecipe(Recipe&& value) { m_recipe = std::move(value); }
-
-    /**
-     * <p>An object that describes the recipe.</p>
-     */
     inline DescribeRecipeResult& WithRecipe(const Recipe& value) { SetRecipe(value); return *this;}
-
-    /**
-     * <p>An object that describes the recipe.</p>
-     */
     inline DescribeRecipeResult& WithRecipe(Recipe&& value) { SetRecipe(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeRecipeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeRecipeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeRecipeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Recipe m_recipe;

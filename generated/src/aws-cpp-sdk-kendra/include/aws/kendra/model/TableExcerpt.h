@@ -42,67 +42,29 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of rows in the table excerpt.</p>
      */
     inline const Aws::Vector<TableRow>& GetRows() const{ return m_rows; }
-
-    /**
-     * <p>A list of rows in the table excerpt.</p>
-     */
     inline bool RowsHasBeenSet() const { return m_rowsHasBeenSet; }
-
-    /**
-     * <p>A list of rows in the table excerpt.</p>
-     */
     inline void SetRows(const Aws::Vector<TableRow>& value) { m_rowsHasBeenSet = true; m_rows = value; }
-
-    /**
-     * <p>A list of rows in the table excerpt.</p>
-     */
     inline void SetRows(Aws::Vector<TableRow>&& value) { m_rowsHasBeenSet = true; m_rows = std::move(value); }
-
-    /**
-     * <p>A list of rows in the table excerpt.</p>
-     */
     inline TableExcerpt& WithRows(const Aws::Vector<TableRow>& value) { SetRows(value); return *this;}
-
-    /**
-     * <p>A list of rows in the table excerpt.</p>
-     */
     inline TableExcerpt& WithRows(Aws::Vector<TableRow>&& value) { SetRows(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of rows in the table excerpt.</p>
-     */
     inline TableExcerpt& AddRows(const TableRow& value) { m_rowsHasBeenSet = true; m_rows.push_back(value); return *this; }
-
-    /**
-     * <p>A list of rows in the table excerpt.</p>
-     */
     inline TableExcerpt& AddRows(TableRow&& value) { m_rowsHasBeenSet = true; m_rows.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A count of the number of rows in the original table within the document.</p>
      */
     inline int GetTotalNumberOfRows() const{ return m_totalNumberOfRows; }
-
-    /**
-     * <p>A count of the number of rows in the original table within the document.</p>
-     */
     inline bool TotalNumberOfRowsHasBeenSet() const { return m_totalNumberOfRowsHasBeenSet; }
-
-    /**
-     * <p>A count of the number of rows in the original table within the document.</p>
-     */
     inline void SetTotalNumberOfRows(int value) { m_totalNumberOfRowsHasBeenSet = true; m_totalNumberOfRows = value; }
-
-    /**
-     * <p>A count of the number of rows in the original table within the document.</p>
-     */
     inline TableExcerpt& WithTotalNumberOfRows(int value) { SetTotalNumberOfRows(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TableRow> m_rows;

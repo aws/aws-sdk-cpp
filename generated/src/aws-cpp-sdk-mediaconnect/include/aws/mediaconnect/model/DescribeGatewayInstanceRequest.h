@@ -32,54 +32,20 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The Amazon Resource Name (ARN) of the gateway instance that you want to
      * describe.
      */
     inline const Aws::String& GetGatewayInstanceArn() const{ return m_gatewayInstanceArn; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway instance that you want to
-     * describe.
-     */
     inline bool GatewayInstanceArnHasBeenSet() const { return m_gatewayInstanceArnHasBeenSet; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway instance that you want to
-     * describe.
-     */
     inline void SetGatewayInstanceArn(const Aws::String& value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn = value; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway instance that you want to
-     * describe.
-     */
     inline void SetGatewayInstanceArn(Aws::String&& value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway instance that you want to
-     * describe.
-     */
     inline void SetGatewayInstanceArn(const char* value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn.assign(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway instance that you want to
-     * describe.
-     */
     inline DescribeGatewayInstanceRequest& WithGatewayInstanceArn(const Aws::String& value) { SetGatewayInstanceArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway instance that you want to
-     * describe.
-     */
     inline DescribeGatewayInstanceRequest& WithGatewayInstanceArn(Aws::String&& value) { SetGatewayInstanceArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway instance that you want to
-     * describe.
-     */
     inline DescribeGatewayInstanceRequest& WithGatewayInstanceArn(const char* value) { SetGatewayInstanceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayInstanceArn;

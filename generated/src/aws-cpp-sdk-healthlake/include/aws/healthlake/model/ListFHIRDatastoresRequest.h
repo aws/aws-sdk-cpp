@@ -35,102 +35,42 @@ namespace Model
     AWS_HEALTHLAKE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Lists all filters associated with a FHIR data store request.</p>
      */
     inline const DatastoreFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>Lists all filters associated with a FHIR data store request.</p>
-     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>Lists all filters associated with a FHIR data store request.</p>
-     */
     inline void SetFilter(const DatastoreFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>Lists all filters associated with a FHIR data store request.</p>
-     */
     inline void SetFilter(DatastoreFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>Lists all filters associated with a FHIR data store request.</p>
-     */
     inline ListFHIRDatastoresRequest& WithFilter(const DatastoreFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>Lists all filters associated with a FHIR data store request.</p>
-     */
     inline ListFHIRDatastoresRequest& WithFilter(DatastoreFilter&& value) { SetFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Fetches the next page of data stores when results are paginated.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Fetches the next page of data stores when results are paginated.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Fetches the next page of data stores when results are paginated.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Fetches the next page of data stores when results are paginated.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Fetches the next page of data stores when results are paginated.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Fetches the next page of data stores when results are paginated.</p>
-     */
     inline ListFHIRDatastoresRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Fetches the next page of data stores when results are paginated.</p>
-     */
     inline ListFHIRDatastoresRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Fetches the next page of data stores when results are paginated.</p>
-     */
     inline ListFHIRDatastoresRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of data stores returned in a single page of a
      * ListFHIRDatastoresRequest call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of data stores returned in a single page of a
-     * ListFHIRDatastoresRequest call.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of data stores returned in a single page of a
-     * ListFHIRDatastoresRequest call.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of data stores returned in a single page of a
-     * ListFHIRDatastoresRequest call.</p>
-     */
     inline ListFHIRDatastoresRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     DatastoreFilter m_filter;

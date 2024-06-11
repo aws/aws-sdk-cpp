@@ -38,95 +38,34 @@ namespace Model
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The URL used to send commands to and from the Dev Environment.</p>
      */
     inline const Aws::String& GetStreamUrl() const{ return m_streamUrl; }
-
-    /**
-     * <p>The URL used to send commands to and from the Dev Environment.</p>
-     */
     inline bool StreamUrlHasBeenSet() const { return m_streamUrlHasBeenSet; }
-
-    /**
-     * <p>The URL used to send commands to and from the Dev Environment.</p>
-     */
     inline void SetStreamUrl(const Aws::String& value) { m_streamUrlHasBeenSet = true; m_streamUrl = value; }
-
-    /**
-     * <p>The URL used to send commands to and from the Dev Environment.</p>
-     */
     inline void SetStreamUrl(Aws::String&& value) { m_streamUrlHasBeenSet = true; m_streamUrl = std::move(value); }
-
-    /**
-     * <p>The URL used to send commands to and from the Dev Environment.</p>
-     */
     inline void SetStreamUrl(const char* value) { m_streamUrlHasBeenSet = true; m_streamUrl.assign(value); }
-
-    /**
-     * <p>The URL used to send commands to and from the Dev Environment.</p>
-     */
     inline DevEnvironmentAccessDetails& WithStreamUrl(const Aws::String& value) { SetStreamUrl(value); return *this;}
-
-    /**
-     * <p>The URL used to send commands to and from the Dev Environment.</p>
-     */
     inline DevEnvironmentAccessDetails& WithStreamUrl(Aws::String&& value) { SetStreamUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL used to send commands to and from the Dev Environment.</p>
-     */
     inline DevEnvironmentAccessDetails& WithStreamUrl(const char* value) { SetStreamUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An encrypted token value that contains session and caller information used to
      * authenticate the connection.</p>
      */
     inline const Aws::String& GetTokenValue() const{ return m_tokenValue; }
-
-    /**
-     * <p>An encrypted token value that contains session and caller information used to
-     * authenticate the connection.</p>
-     */
     inline bool TokenValueHasBeenSet() const { return m_tokenValueHasBeenSet; }
-
-    /**
-     * <p>An encrypted token value that contains session and caller information used to
-     * authenticate the connection.</p>
-     */
     inline void SetTokenValue(const Aws::String& value) { m_tokenValueHasBeenSet = true; m_tokenValue = value; }
-
-    /**
-     * <p>An encrypted token value that contains session and caller information used to
-     * authenticate the connection.</p>
-     */
     inline void SetTokenValue(Aws::String&& value) { m_tokenValueHasBeenSet = true; m_tokenValue = std::move(value); }
-
-    /**
-     * <p>An encrypted token value that contains session and caller information used to
-     * authenticate the connection.</p>
-     */
     inline void SetTokenValue(const char* value) { m_tokenValueHasBeenSet = true; m_tokenValue.assign(value); }
-
-    /**
-     * <p>An encrypted token value that contains session and caller information used to
-     * authenticate the connection.</p>
-     */
     inline DevEnvironmentAccessDetails& WithTokenValue(const Aws::String& value) { SetTokenValue(value); return *this;}
-
-    /**
-     * <p>An encrypted token value that contains session and caller information used to
-     * authenticate the connection.</p>
-     */
     inline DevEnvironmentAccessDetails& WithTokenValue(Aws::String&& value) { SetTokenValue(std::move(value)); return *this;}
-
-    /**
-     * <p>An encrypted token value that contains session and caller information used to
-     * authenticate the connection.</p>
-     */
     inline DevEnvironmentAccessDetails& WithTokenValue(const char* value) { SetTokenValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamUrl;

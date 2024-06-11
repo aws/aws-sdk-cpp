@@ -35,106 +35,43 @@ namespace Model
     AWS_ECR_API BatchCheckLayerAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of image layer objects corresponding to the image layer references in
      * the request.</p>
      */
     inline const Aws::Vector<Layer>& GetLayers() const{ return m_layers; }
-
-    /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
-     */
     inline void SetLayers(const Aws::Vector<Layer>& value) { m_layers = value; }
-
-    /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
-     */
     inline void SetLayers(Aws::Vector<Layer>&& value) { m_layers = std::move(value); }
-
-    /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
-     */
     inline BatchCheckLayerAvailabilityResult& WithLayers(const Aws::Vector<Layer>& value) { SetLayers(value); return *this;}
-
-    /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
-     */
     inline BatchCheckLayerAvailabilityResult& WithLayers(Aws::Vector<Layer>&& value) { SetLayers(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
-     */
     inline BatchCheckLayerAvailabilityResult& AddLayers(const Layer& value) { m_layers.push_back(value); return *this; }
-
-    /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
-     */
     inline BatchCheckLayerAvailabilityResult& AddLayers(Layer&& value) { m_layers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Any failures associated with the call.</p>
      */
     inline const Aws::Vector<LayerFailure>& GetFailures() const{ return m_failures; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline void SetFailures(const Aws::Vector<LayerFailure>& value) { m_failures = value; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline void SetFailures(Aws::Vector<LayerFailure>&& value) { m_failures = std::move(value); }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline BatchCheckLayerAvailabilityResult& WithFailures(const Aws::Vector<LayerFailure>& value) { SetFailures(value); return *this;}
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline BatchCheckLayerAvailabilityResult& WithFailures(Aws::Vector<LayerFailure>&& value) { SetFailures(std::move(value)); return *this;}
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline BatchCheckLayerAvailabilityResult& AddFailures(const LayerFailure& value) { m_failures.push_back(value); return *this; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline BatchCheckLayerAvailabilityResult& AddFailures(LayerFailure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchCheckLayerAvailabilityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchCheckLayerAvailabilityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchCheckLayerAvailabilityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Layer> m_layers;

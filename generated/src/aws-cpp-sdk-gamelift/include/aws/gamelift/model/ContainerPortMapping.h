@@ -44,82 +44,38 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The port opened on the container.</p>
      */
     inline int GetContainerPort() const{ return m_containerPort; }
-
-    /**
-     * <p>The port opened on the container.</p>
-     */
     inline bool ContainerPortHasBeenSet() const { return m_containerPortHasBeenSet; }
-
-    /**
-     * <p>The port opened on the container.</p>
-     */
     inline void SetContainerPort(int value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
-
-    /**
-     * <p>The port opened on the container.</p>
-     */
     inline ContainerPortMapping& WithContainerPort(int value) { SetContainerPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The port opened on the fleet instance. This is also called the "host
      * port".</p>
      */
     inline int GetConnectionPort() const{ return m_connectionPort; }
-
-    /**
-     * <p>The port opened on the fleet instance. This is also called the "host
-     * port".</p>
-     */
     inline bool ConnectionPortHasBeenSet() const { return m_connectionPortHasBeenSet; }
-
-    /**
-     * <p>The port opened on the fleet instance. This is also called the "host
-     * port".</p>
-     */
     inline void SetConnectionPort(int value) { m_connectionPortHasBeenSet = true; m_connectionPort = value; }
-
-    /**
-     * <p>The port opened on the fleet instance. This is also called the "host
-     * port".</p>
-     */
     inline ContainerPortMapping& WithConnectionPort(int value) { SetConnectionPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The network protocol that this mapping supports.</p>
      */
     inline const IpProtocol& GetProtocol() const{ return m_protocol; }
-
-    /**
-     * <p>The network protocol that this mapping supports.</p>
-     */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-
-    /**
-     * <p>The network protocol that this mapping supports.</p>
-     */
     inline void SetProtocol(const IpProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-
-    /**
-     * <p>The network protocol that this mapping supports.</p>
-     */
     inline void SetProtocol(IpProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-
-    /**
-     * <p>The network protocol that this mapping supports.</p>
-     */
     inline ContainerPortMapping& WithProtocol(const IpProtocol& value) { SetProtocol(value); return *this;}
-
-    /**
-     * <p>The network protocol that this mapping supports.</p>
-     */
     inline ContainerPortMapping& WithProtocol(IpProtocol&& value) { SetProtocol(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_containerPort;

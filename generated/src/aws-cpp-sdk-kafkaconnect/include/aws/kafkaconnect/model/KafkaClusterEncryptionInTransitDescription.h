@@ -38,36 +38,17 @@ namespace Model
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of encryption in transit to the Apache Kafka cluster.</p>
      */
     inline const KafkaClusterEncryptionInTransitType& GetEncryptionType() const{ return m_encryptionType; }
-
-    /**
-     * <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-     */
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
-
-    /**
-     * <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-     */
     inline void SetEncryptionType(const KafkaClusterEncryptionInTransitType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
-
-    /**
-     * <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-     */
     inline void SetEncryptionType(KafkaClusterEncryptionInTransitType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
-
-    /**
-     * <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-     */
     inline KafkaClusterEncryptionInTransitDescription& WithEncryptionType(const KafkaClusterEncryptionInTransitType& value) { SetEncryptionType(value); return *this;}
-
-    /**
-     * <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-     */
     inline KafkaClusterEncryptionInTransitDescription& WithEncryptionType(KafkaClusterEncryptionInTransitType&& value) { SetEncryptionType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KafkaClusterEncryptionInTransitType m_encryptionType;

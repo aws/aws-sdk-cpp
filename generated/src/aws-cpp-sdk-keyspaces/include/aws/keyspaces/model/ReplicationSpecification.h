@@ -43,97 +43,34 @@ namespace Model
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The <code>replicationStrategy</code> of a keyspace, the required value is
      * <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
      */
     inline const Rs& GetReplicationStrategy() const{ return m_replicationStrategy; }
-
-    /**
-     * <p> The <code>replicationStrategy</code> of a keyspace, the required value is
-     * <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
-     */
     inline bool ReplicationStrategyHasBeenSet() const { return m_replicationStrategyHasBeenSet; }
-
-    /**
-     * <p> The <code>replicationStrategy</code> of a keyspace, the required value is
-     * <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
-     */
     inline void SetReplicationStrategy(const Rs& value) { m_replicationStrategyHasBeenSet = true; m_replicationStrategy = value; }
-
-    /**
-     * <p> The <code>replicationStrategy</code> of a keyspace, the required value is
-     * <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
-     */
     inline void SetReplicationStrategy(Rs&& value) { m_replicationStrategyHasBeenSet = true; m_replicationStrategy = std::move(value); }
-
-    /**
-     * <p> The <code>replicationStrategy</code> of a keyspace, the required value is
-     * <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
-     */
     inline ReplicationSpecification& WithReplicationStrategy(const Rs& value) { SetReplicationStrategy(value); return *this;}
-
-    /**
-     * <p> The <code>replicationStrategy</code> of a keyspace, the required value is
-     * <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
-     */
     inline ReplicationSpecification& WithReplicationStrategy(Rs&& value) { SetReplicationStrategy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The <code>regionList</code> can contain up to six Amazon Web Services
      * Regions where the keyspace is replicated in. </p>
      */
     inline const Aws::Vector<Aws::String>& GetRegionList() const{ return m_regionList; }
-
-    /**
-     * <p> The <code>regionList</code> can contain up to six Amazon Web Services
-     * Regions where the keyspace is replicated in. </p>
-     */
     inline bool RegionListHasBeenSet() const { return m_regionListHasBeenSet; }
-
-    /**
-     * <p> The <code>regionList</code> can contain up to six Amazon Web Services
-     * Regions where the keyspace is replicated in. </p>
-     */
     inline void SetRegionList(const Aws::Vector<Aws::String>& value) { m_regionListHasBeenSet = true; m_regionList = value; }
-
-    /**
-     * <p> The <code>regionList</code> can contain up to six Amazon Web Services
-     * Regions where the keyspace is replicated in. </p>
-     */
     inline void SetRegionList(Aws::Vector<Aws::String>&& value) { m_regionListHasBeenSet = true; m_regionList = std::move(value); }
-
-    /**
-     * <p> The <code>regionList</code> can contain up to six Amazon Web Services
-     * Regions where the keyspace is replicated in. </p>
-     */
     inline ReplicationSpecification& WithRegionList(const Aws::Vector<Aws::String>& value) { SetRegionList(value); return *this;}
-
-    /**
-     * <p> The <code>regionList</code> can contain up to six Amazon Web Services
-     * Regions where the keyspace is replicated in. </p>
-     */
     inline ReplicationSpecification& WithRegionList(Aws::Vector<Aws::String>&& value) { SetRegionList(std::move(value)); return *this;}
-
-    /**
-     * <p> The <code>regionList</code> can contain up to six Amazon Web Services
-     * Regions where the keyspace is replicated in. </p>
-     */
     inline ReplicationSpecification& AddRegionList(const Aws::String& value) { m_regionListHasBeenSet = true; m_regionList.push_back(value); return *this; }
-
-    /**
-     * <p> The <code>regionList</code> can contain up to six Amazon Web Services
-     * Regions where the keyspace is replicated in. </p>
-     */
     inline ReplicationSpecification& AddRegionList(Aws::String&& value) { m_regionListHasBeenSet = true; m_regionList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> The <code>regionList</code> can contain up to six Amazon Web Services
-     * Regions where the keyspace is replicated in. </p>
-     */
     inline ReplicationSpecification& AddRegionList(const char* value) { m_regionListHasBeenSet = true; m_regionList.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Rs m_replicationStrategy;

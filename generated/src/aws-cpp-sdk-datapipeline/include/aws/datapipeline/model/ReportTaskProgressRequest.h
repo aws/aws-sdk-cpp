@@ -39,103 +39,35 @@ namespace Model
     AWS_DATAPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the task assigned to the task runner. This value is provided in the
      * response for <a>PollForTask</a>.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
-
-    /**
-     * <p>The ID of the task assigned to the task runner. This value is provided in the
-     * response for <a>PollForTask</a>.</p>
-     */
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the task assigned to the task runner. This value is provided in the
-     * response for <a>PollForTask</a>.</p>
-     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-
-    /**
-     * <p>The ID of the task assigned to the task runner. This value is provided in the
-     * response for <a>PollForTask</a>.</p>
-     */
     inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-
-    /**
-     * <p>The ID of the task assigned to the task runner. This value is provided in the
-     * response for <a>PollForTask</a>.</p>
-     */
     inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-
-    /**
-     * <p>The ID of the task assigned to the task runner. This value is provided in the
-     * response for <a>PollForTask</a>.</p>
-     */
     inline ReportTaskProgressRequest& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-
-    /**
-     * <p>The ID of the task assigned to the task runner. This value is provided in the
-     * response for <a>PollForTask</a>.</p>
-     */
     inline ReportTaskProgressRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the task assigned to the task runner. This value is provided in the
-     * response for <a>PollForTask</a>.</p>
-     */
     inline ReportTaskProgressRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
      * object.</p>
      */
     inline const Aws::Vector<Field>& GetFields() const{ return m_fields; }
-
-    /**
-     * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
-     * object.</p>
-     */
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-
-    /**
-     * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
-     * object.</p>
-     */
     inline void SetFields(const Aws::Vector<Field>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-
-    /**
-     * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
-     * object.</p>
-     */
     inline void SetFields(Aws::Vector<Field>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-
-    /**
-     * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
-     * object.</p>
-     */
     inline ReportTaskProgressRequest& WithFields(const Aws::Vector<Field>& value) { SetFields(value); return *this;}
-
-    /**
-     * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
-     * object.</p>
-     */
     inline ReportTaskProgressRequest& WithFields(Aws::Vector<Field>&& value) { SetFields(std::move(value)); return *this;}
-
-    /**
-     * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
-     * object.</p>
-     */
     inline ReportTaskProgressRequest& AddFields(const Field& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-
-    /**
-     * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
-     * object.</p>
-     */
     inline ReportTaskProgressRequest& AddFields(Field&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_taskId;

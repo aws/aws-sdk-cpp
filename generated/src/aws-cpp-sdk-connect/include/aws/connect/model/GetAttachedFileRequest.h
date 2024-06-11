@@ -41,113 +41,46 @@ namespace Model
     AWS_CONNECT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the Connect instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The unique identifier of the Connect instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the Connect instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The unique identifier of the Connect instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the Connect instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the Connect instance.</p>
-     */
     inline GetAttachedFileRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the Connect instance.</p>
-     */
     inline GetAttachedFileRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the Connect instance.</p>
-     */
     inline GetAttachedFileRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the attached file resource.</p>
      */
     inline const Aws::String& GetFileId() const{ return m_fileId; }
-
-    /**
-     * <p>The unique identifier of the attached file resource.</p>
-     */
     inline bool FileIdHasBeenSet() const { return m_fileIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the attached file resource.</p>
-     */
     inline void SetFileId(const Aws::String& value) { m_fileIdHasBeenSet = true; m_fileId = value; }
-
-    /**
-     * <p>The unique identifier of the attached file resource.</p>
-     */
     inline void SetFileId(Aws::String&& value) { m_fileIdHasBeenSet = true; m_fileId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the attached file resource.</p>
-     */
     inline void SetFileId(const char* value) { m_fileIdHasBeenSet = true; m_fileId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the attached file resource.</p>
-     */
     inline GetAttachedFileRequest& WithFileId(const Aws::String& value) { SetFileId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the attached file resource.</p>
-     */
     inline GetAttachedFileRequest& WithFileId(Aws::String&& value) { SetFileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the attached file resource.</p>
-     */
     inline GetAttachedFileRequest& WithFileId(const char* value) { SetFileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The
      * default value is 300.</p>
      */
     inline int GetUrlExpiryInSeconds() const{ return m_urlExpiryInSeconds; }
-
-    /**
-     * <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The
-     * default value is 300.</p>
-     */
     inline bool UrlExpiryInSecondsHasBeenSet() const { return m_urlExpiryInSecondsHasBeenSet; }
-
-    /**
-     * <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The
-     * default value is 300.</p>
-     */
     inline void SetUrlExpiryInSeconds(int value) { m_urlExpiryInSecondsHasBeenSet = true; m_urlExpiryInSeconds = value; }
-
-    /**
-     * <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The
-     * default value is 300.</p>
-     */
     inline GetAttachedFileRequest& WithUrlExpiryInSeconds(int value) { SetUrlExpiryInSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource to which the attached file is (being) uploaded to. <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
@@ -155,63 +88,14 @@ namespace Model
      * valid ARN.</p> 
      */
     inline const Aws::String& GetAssociatedResourceArn() const{ return m_associatedResourceArn; }
-
-    /**
-     * <p>The resource to which the attached file is (being) uploaded to. <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
-     */
     inline bool AssociatedResourceArnHasBeenSet() const { return m_associatedResourceArnHasBeenSet; }
-
-    /**
-     * <p>The resource to which the attached file is (being) uploaded to. <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
-     */
     inline void SetAssociatedResourceArn(const Aws::String& value) { m_associatedResourceArnHasBeenSet = true; m_associatedResourceArn = value; }
-
-    /**
-     * <p>The resource to which the attached file is (being) uploaded to. <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
-     */
     inline void SetAssociatedResourceArn(Aws::String&& value) { m_associatedResourceArnHasBeenSet = true; m_associatedResourceArn = std::move(value); }
-
-    /**
-     * <p>The resource to which the attached file is (being) uploaded to. <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
-     */
     inline void SetAssociatedResourceArn(const char* value) { m_associatedResourceArnHasBeenSet = true; m_associatedResourceArn.assign(value); }
-
-    /**
-     * <p>The resource to which the attached file is (being) uploaded to. <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
-     */
     inline GetAttachedFileRequest& WithAssociatedResourceArn(const Aws::String& value) { SetAssociatedResourceArn(value); return *this;}
-
-    /**
-     * <p>The resource to which the attached file is (being) uploaded to. <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
-     */
     inline GetAttachedFileRequest& WithAssociatedResourceArn(Aws::String&& value) { SetAssociatedResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource to which the attached file is (being) uploaded to. <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
-     */
     inline GetAttachedFileRequest& WithAssociatedResourceArn(const char* value) { SetAssociatedResourceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

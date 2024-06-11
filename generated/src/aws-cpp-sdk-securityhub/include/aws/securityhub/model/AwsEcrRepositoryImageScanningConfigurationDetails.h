@@ -36,26 +36,15 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether to scan images after they are pushed to a repository.</p>
      */
     inline bool GetScanOnPush() const{ return m_scanOnPush; }
-
-    /**
-     * <p>Whether to scan images after they are pushed to a repository.</p>
-     */
     inline bool ScanOnPushHasBeenSet() const { return m_scanOnPushHasBeenSet; }
-
-    /**
-     * <p>Whether to scan images after they are pushed to a repository.</p>
-     */
     inline void SetScanOnPush(bool value) { m_scanOnPushHasBeenSet = true; m_scanOnPush = value; }
-
-    /**
-     * <p>Whether to scan images after they are pushed to a repository.</p>
-     */
     inline AwsEcrRepositoryImageScanningConfigurationDetails& WithScanOnPush(bool value) { SetScanOnPush(value); return *this;}
-
+    ///@}
   private:
 
     bool m_scanOnPush;

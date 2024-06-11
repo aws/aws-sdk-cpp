@@ -38,54 +38,20 @@ namespace Model
     AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
      * retrieve.</p>
      */
     inline const Aws::String& GetImagePipelineArn() const{ return m_imagePipelineArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * retrieve.</p>
-     */
     inline bool ImagePipelineArnHasBeenSet() const { return m_imagePipelineArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * retrieve.</p>
-     */
     inline void SetImagePipelineArn(const Aws::String& value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * retrieve.</p>
-     */
     inline void SetImagePipelineArn(Aws::String&& value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * retrieve.</p>
-     */
     inline void SetImagePipelineArn(const char* value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * retrieve.</p>
-     */
     inline GetImagePipelineRequest& WithImagePipelineArn(const Aws::String& value) { SetImagePipelineArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * retrieve.</p>
-     */
     inline GetImagePipelineRequest& WithImagePipelineArn(Aws::String&& value) { SetImagePipelineArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * retrieve.</p>
-     */
     inline GetImagePipelineRequest& WithImagePipelineArn(const char* value) { SetImagePipelineArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imagePipelineArn;

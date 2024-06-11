@@ -34,99 +34,42 @@ namespace Model
     AWS_OMICS_API ListAnnotationStoresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of stores.</p>
      */
     inline const Aws::Vector<AnnotationStoreItem>& GetAnnotationStores() const{ return m_annotationStores; }
-
-    /**
-     * <p>A list of stores.</p>
-     */
     inline void SetAnnotationStores(const Aws::Vector<AnnotationStoreItem>& value) { m_annotationStores = value; }
-
-    /**
-     * <p>A list of stores.</p>
-     */
     inline void SetAnnotationStores(Aws::Vector<AnnotationStoreItem>&& value) { m_annotationStores = std::move(value); }
-
-    /**
-     * <p>A list of stores.</p>
-     */
     inline ListAnnotationStoresResult& WithAnnotationStores(const Aws::Vector<AnnotationStoreItem>& value) { SetAnnotationStores(value); return *this;}
-
-    /**
-     * <p>A list of stores.</p>
-     */
     inline ListAnnotationStoresResult& WithAnnotationStores(Aws::Vector<AnnotationStoreItem>&& value) { SetAnnotationStores(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of stores.</p>
-     */
     inline ListAnnotationStoresResult& AddAnnotationStores(const AnnotationStoreItem& value) { m_annotationStores.push_back(value); return *this; }
-
-    /**
-     * <p>A list of stores.</p>
-     */
     inline ListAnnotationStoresResult& AddAnnotationStores(AnnotationStoreItem&& value) { m_annotationStores.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A pagination token that's included if more results are available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline ListAnnotationStoresResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline ListAnnotationStoresResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline ListAnnotationStoresResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAnnotationStoresResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAnnotationStoresResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAnnotationStoresResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AnnotationStoreItem> m_annotationStores;

@@ -32,124 +32,45 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Filter results for the ListImagePackages request by the Image Build Version
      * ARN</p>
      */
     inline const Aws::String& GetImageBuildVersionArn() const{ return m_imageBuildVersionArn; }
-
-    /**
-     * <p>Filter results for the ListImagePackages request by the Image Build Version
-     * ARN</p>
-     */
     inline bool ImageBuildVersionArnHasBeenSet() const { return m_imageBuildVersionArnHasBeenSet; }
-
-    /**
-     * <p>Filter results for the ListImagePackages request by the Image Build Version
-     * ARN</p>
-     */
     inline void SetImageBuildVersionArn(const Aws::String& value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn = value; }
-
-    /**
-     * <p>Filter results for the ListImagePackages request by the Image Build Version
-     * ARN</p>
-     */
     inline void SetImageBuildVersionArn(Aws::String&& value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn = std::move(value); }
-
-    /**
-     * <p>Filter results for the ListImagePackages request by the Image Build Version
-     * ARN</p>
-     */
     inline void SetImageBuildVersionArn(const char* value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn.assign(value); }
-
-    /**
-     * <p>Filter results for the ListImagePackages request by the Image Build Version
-     * ARN</p>
-     */
     inline ListImagePackagesRequest& WithImageBuildVersionArn(const Aws::String& value) { SetImageBuildVersionArn(value); return *this;}
-
-    /**
-     * <p>Filter results for the ListImagePackages request by the Image Build Version
-     * ARN</p>
-     */
     inline ListImagePackagesRequest& WithImageBuildVersionArn(Aws::String&& value) { SetImageBuildVersionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Filter results for the ListImagePackages request by the Image Build Version
-     * ARN</p>
-     */
     inline ListImagePackagesRequest& WithImageBuildVersionArn(const char* value) { SetImageBuildVersionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum items to return in a request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum items to return in a request.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum items to return in a request.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum items to return in a request.</p>
-     */
     inline ListImagePackagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token to specify where to start paginating. This is the nextToken from a
      * previously truncated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline ListImagePackagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline ListImagePackagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token to specify where to start paginating. This is the nextToken from a
-     * previously truncated response.</p>
-     */
     inline ListImagePackagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageBuildVersionArn;

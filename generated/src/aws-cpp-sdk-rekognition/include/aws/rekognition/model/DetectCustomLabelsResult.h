@@ -34,63 +34,29 @@ namespace Model
     AWS_REKOGNITION_API DetectCustomLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of custom labels detected in the input image.</p>
      */
     inline const Aws::Vector<CustomLabel>& GetCustomLabels() const{ return m_customLabels; }
-
-    /**
-     * <p>An array of custom labels detected in the input image.</p>
-     */
     inline void SetCustomLabels(const Aws::Vector<CustomLabel>& value) { m_customLabels = value; }
-
-    /**
-     * <p>An array of custom labels detected in the input image.</p>
-     */
     inline void SetCustomLabels(Aws::Vector<CustomLabel>&& value) { m_customLabels = std::move(value); }
-
-    /**
-     * <p>An array of custom labels detected in the input image.</p>
-     */
     inline DetectCustomLabelsResult& WithCustomLabels(const Aws::Vector<CustomLabel>& value) { SetCustomLabels(value); return *this;}
-
-    /**
-     * <p>An array of custom labels detected in the input image.</p>
-     */
     inline DetectCustomLabelsResult& WithCustomLabels(Aws::Vector<CustomLabel>&& value) { SetCustomLabels(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of custom labels detected in the input image.</p>
-     */
     inline DetectCustomLabelsResult& AddCustomLabels(const CustomLabel& value) { m_customLabels.push_back(value); return *this; }
-
-    /**
-     * <p>An array of custom labels detected in the input image.</p>
-     */
     inline DetectCustomLabelsResult& AddCustomLabels(CustomLabel&& value) { m_customLabels.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DetectCustomLabelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DetectCustomLabelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DetectCustomLabelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CustomLabel> m_customLabels;

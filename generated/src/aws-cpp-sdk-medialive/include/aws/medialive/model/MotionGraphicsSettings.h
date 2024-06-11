@@ -37,24 +37,15 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const HtmlMotionGraphicsSettings& GetHtmlMotionGraphicsSettings() const{ return m_htmlMotionGraphicsSettings; }
-
-    
     inline bool HtmlMotionGraphicsSettingsHasBeenSet() const { return m_htmlMotionGraphicsSettingsHasBeenSet; }
-
-    
     inline void SetHtmlMotionGraphicsSettings(const HtmlMotionGraphicsSettings& value) { m_htmlMotionGraphicsSettingsHasBeenSet = true; m_htmlMotionGraphicsSettings = value; }
-
-    
     inline void SetHtmlMotionGraphicsSettings(HtmlMotionGraphicsSettings&& value) { m_htmlMotionGraphicsSettingsHasBeenSet = true; m_htmlMotionGraphicsSettings = std::move(value); }
-
-    
     inline MotionGraphicsSettings& WithHtmlMotionGraphicsSettings(const HtmlMotionGraphicsSettings& value) { SetHtmlMotionGraphicsSettings(value); return *this;}
-
-    
     inline MotionGraphicsSettings& WithHtmlMotionGraphicsSettings(HtmlMotionGraphicsSettings&& value) { SetHtmlMotionGraphicsSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HtmlMotionGraphicsSettings m_htmlMotionGraphicsSettings;

@@ -38,67 +38,29 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of channels in a streaming channel.</p>
      */
     inline int GetNumberOfChannels() const{ return m_numberOfChannels; }
-
-    /**
-     * <p>The number of channels in a streaming channel.</p>
-     */
     inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
-
-    /**
-     * <p>The number of channels in a streaming channel.</p>
-     */
     inline void SetNumberOfChannels(int value) { m_numberOfChannelsHasBeenSet = true; m_numberOfChannels = value; }
-
-    /**
-     * <p>The number of channels in a streaming channel.</p>
-     */
     inline StreamChannelDefinition& WithNumberOfChannels(int value) { SetNumberOfChannels(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The definitions of the channels in a streaming channel.</p>
      */
     inline const Aws::Vector<ChannelDefinition>& GetChannelDefinitions() const{ return m_channelDefinitions; }
-
-    /**
-     * <p>The definitions of the channels in a streaming channel.</p>
-     */
     inline bool ChannelDefinitionsHasBeenSet() const { return m_channelDefinitionsHasBeenSet; }
-
-    /**
-     * <p>The definitions of the channels in a streaming channel.</p>
-     */
     inline void SetChannelDefinitions(const Aws::Vector<ChannelDefinition>& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = value; }
-
-    /**
-     * <p>The definitions of the channels in a streaming channel.</p>
-     */
     inline void SetChannelDefinitions(Aws::Vector<ChannelDefinition>&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::move(value); }
-
-    /**
-     * <p>The definitions of the channels in a streaming channel.</p>
-     */
     inline StreamChannelDefinition& WithChannelDefinitions(const Aws::Vector<ChannelDefinition>& value) { SetChannelDefinitions(value); return *this;}
-
-    /**
-     * <p>The definitions of the channels in a streaming channel.</p>
-     */
     inline StreamChannelDefinition& WithChannelDefinitions(Aws::Vector<ChannelDefinition>&& value) { SetChannelDefinitions(std::move(value)); return *this;}
-
-    /**
-     * <p>The definitions of the channels in a streaming channel.</p>
-     */
     inline StreamChannelDefinition& AddChannelDefinitions(const ChannelDefinition& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(value); return *this; }
-
-    /**
-     * <p>The definitions of the channels in a streaming channel.</p>
-     */
     inline StreamChannelDefinition& AddChannelDefinitions(ChannelDefinition&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_numberOfChannels;

@@ -33,53 +33,27 @@ namespace Model
     AWS_PROTON_API CreateServiceTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The service template detail data that's returned by Proton.</p>
      */
     inline const ServiceTemplate& GetServiceTemplate() const{ return m_serviceTemplate; }
-
-    /**
-     * <p>The service template detail data that's returned by Proton.</p>
-     */
     inline void SetServiceTemplate(const ServiceTemplate& value) { m_serviceTemplate = value; }
-
-    /**
-     * <p>The service template detail data that's returned by Proton.</p>
-     */
     inline void SetServiceTemplate(ServiceTemplate&& value) { m_serviceTemplate = std::move(value); }
-
-    /**
-     * <p>The service template detail data that's returned by Proton.</p>
-     */
     inline CreateServiceTemplateResult& WithServiceTemplate(const ServiceTemplate& value) { SetServiceTemplate(value); return *this;}
-
-    /**
-     * <p>The service template detail data that's returned by Proton.</p>
-     */
     inline CreateServiceTemplateResult& WithServiceTemplate(ServiceTemplate&& value) { SetServiceTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateServiceTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateServiceTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateServiceTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceTemplate m_serviceTemplate;

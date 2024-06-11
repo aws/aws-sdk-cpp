@@ -41,118 +41,45 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The association ID for the IPv4 CIDR block.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-
-    /**
-     * <p>The association ID for the IPv4 CIDR block.</p>
-     */
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-
-    /**
-     * <p>The association ID for the IPv4 CIDR block.</p>
-     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-
-    /**
-     * <p>The association ID for the IPv4 CIDR block.</p>
-     */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-
-    /**
-     * <p>The association ID for the IPv4 CIDR block.</p>
-     */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-
-    /**
-     * <p>The association ID for the IPv4 CIDR block.</p>
-     */
     inline VpcCidrBlockAssociation& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-
-    /**
-     * <p>The association ID for the IPv4 CIDR block.</p>
-     */
     inline VpcCidrBlockAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The association ID for the IPv4 CIDR block.</p>
-     */
     inline VpcCidrBlockAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IPv4 CIDR block.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline VpcCidrBlockAssociation& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline VpcCidrBlockAssociation& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv4 CIDR block.</p>
-     */
     inline VpcCidrBlockAssociation& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the state of the CIDR block.</p>
      */
     inline const VpcCidrBlockState& GetCidrBlockState() const{ return m_cidrBlockState; }
-
-    /**
-     * <p>Information about the state of the CIDR block.</p>
-     */
     inline bool CidrBlockStateHasBeenSet() const { return m_cidrBlockStateHasBeenSet; }
-
-    /**
-     * <p>Information about the state of the CIDR block.</p>
-     */
     inline void SetCidrBlockState(const VpcCidrBlockState& value) { m_cidrBlockStateHasBeenSet = true; m_cidrBlockState = value; }
-
-    /**
-     * <p>Information about the state of the CIDR block.</p>
-     */
     inline void SetCidrBlockState(VpcCidrBlockState&& value) { m_cidrBlockStateHasBeenSet = true; m_cidrBlockState = std::move(value); }
-
-    /**
-     * <p>Information about the state of the CIDR block.</p>
-     */
     inline VpcCidrBlockAssociation& WithCidrBlockState(const VpcCidrBlockState& value) { SetCidrBlockState(value); return *this;}
-
-    /**
-     * <p>Information about the state of the CIDR block.</p>
-     */
     inline VpcCidrBlockAssociation& WithCidrBlockState(VpcCidrBlockState&& value) { SetCidrBlockState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_associationId;

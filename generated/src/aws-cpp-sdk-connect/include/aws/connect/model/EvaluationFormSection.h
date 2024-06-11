@@ -42,198 +42,72 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The title of the section.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
-
-    /**
-     * <p>The title of the section.</p>
-     */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-
-    /**
-     * <p>The title of the section.</p>
-     */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-
-    /**
-     * <p>The title of the section.</p>
-     */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-
-    /**
-     * <p>The title of the section.</p>
-     */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-
-    /**
-     * <p>The title of the section.</p>
-     */
     inline EvaluationFormSection& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-
-    /**
-     * <p>The title of the section.</p>
-     */
     inline EvaluationFormSection& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-
-    /**
-     * <p>The title of the section.</p>
-     */
     inline EvaluationFormSection& WithTitle(const char* value) { SetTitle(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the section. An identifier must be unique within the
      * evaluation form.</p>
      */
     inline const Aws::String& GetRefId() const{ return m_refId; }
-
-    /**
-     * <p>The identifier of the section. An identifier must be unique within the
-     * evaluation form.</p>
-     */
     inline bool RefIdHasBeenSet() const { return m_refIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the section. An identifier must be unique within the
-     * evaluation form.</p>
-     */
     inline void SetRefId(const Aws::String& value) { m_refIdHasBeenSet = true; m_refId = value; }
-
-    /**
-     * <p>The identifier of the section. An identifier must be unique within the
-     * evaluation form.</p>
-     */
     inline void SetRefId(Aws::String&& value) { m_refIdHasBeenSet = true; m_refId = std::move(value); }
-
-    /**
-     * <p>The identifier of the section. An identifier must be unique within the
-     * evaluation form.</p>
-     */
     inline void SetRefId(const char* value) { m_refIdHasBeenSet = true; m_refId.assign(value); }
-
-    /**
-     * <p>The identifier of the section. An identifier must be unique within the
-     * evaluation form.</p>
-     */
     inline EvaluationFormSection& WithRefId(const Aws::String& value) { SetRefId(value); return *this;}
-
-    /**
-     * <p>The identifier of the section. An identifier must be unique within the
-     * evaluation form.</p>
-     */
     inline EvaluationFormSection& WithRefId(Aws::String&& value) { SetRefId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the section. An identifier must be unique within the
-     * evaluation form.</p>
-     */
     inline EvaluationFormSection& WithRefId(const char* value) { SetRefId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The instructions of the section.</p>
      */
     inline const Aws::String& GetInstructions() const{ return m_instructions; }
-
-    /**
-     * <p>The instructions of the section.</p>
-     */
     inline bool InstructionsHasBeenSet() const { return m_instructionsHasBeenSet; }
-
-    /**
-     * <p>The instructions of the section.</p>
-     */
     inline void SetInstructions(const Aws::String& value) { m_instructionsHasBeenSet = true; m_instructions = value; }
-
-    /**
-     * <p>The instructions of the section.</p>
-     */
     inline void SetInstructions(Aws::String&& value) { m_instructionsHasBeenSet = true; m_instructions = std::move(value); }
-
-    /**
-     * <p>The instructions of the section.</p>
-     */
     inline void SetInstructions(const char* value) { m_instructionsHasBeenSet = true; m_instructions.assign(value); }
-
-    /**
-     * <p>The instructions of the section.</p>
-     */
     inline EvaluationFormSection& WithInstructions(const Aws::String& value) { SetInstructions(value); return *this;}
-
-    /**
-     * <p>The instructions of the section.</p>
-     */
     inline EvaluationFormSection& WithInstructions(Aws::String&& value) { SetInstructions(std::move(value)); return *this;}
-
-    /**
-     * <p>The instructions of the section.</p>
-     */
     inline EvaluationFormSection& WithInstructions(const char* value) { SetInstructions(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The items of the section.</p>
      */
     inline const Aws::Vector<EvaluationFormItem>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>The items of the section.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>The items of the section.</p>
-     */
     inline void SetItems(const Aws::Vector<EvaluationFormItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>The items of the section.</p>
-     */
     inline void SetItems(Aws::Vector<EvaluationFormItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>The items of the section.</p>
-     */
     inline EvaluationFormSection& WithItems(const Aws::Vector<EvaluationFormItem>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>The items of the section.</p>
-     */
     inline EvaluationFormSection& WithItems(Aws::Vector<EvaluationFormItem>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>The items of the section.</p>
-     */
     inline EvaluationFormSection& AddItems(const EvaluationFormItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>The items of the section.</p>
-     */
     inline EvaluationFormSection& AddItems(EvaluationFormItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The scoring weight of the section.</p>
      */
     inline double GetWeight() const{ return m_weight; }
-
-    /**
-     * <p>The scoring weight of the section.</p>
-     */
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
-
-    /**
-     * <p>The scoring weight of the section.</p>
-     */
     inline void SetWeight(double value) { m_weightHasBeenSet = true; m_weight = value; }
-
-    /**
-     * <p>The scoring weight of the section.</p>
-     */
     inline EvaluationFormSection& WithWeight(double value) { SetWeight(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_title;

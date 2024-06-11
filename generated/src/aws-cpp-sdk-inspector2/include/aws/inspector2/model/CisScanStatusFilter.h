@@ -38,67 +38,29 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The filter comparison value.</p>
      */
     inline const CisScanStatusComparison& GetComparison() const{ return m_comparison; }
-
-    /**
-     * <p>The filter comparison value.</p>
-     */
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
-
-    /**
-     * <p>The filter comparison value.</p>
-     */
     inline void SetComparison(const CisScanStatusComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
-
-    /**
-     * <p>The filter comparison value.</p>
-     */
     inline void SetComparison(CisScanStatusComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
-
-    /**
-     * <p>The filter comparison value.</p>
-     */
     inline CisScanStatusFilter& WithComparison(const CisScanStatusComparison& value) { SetComparison(value); return *this;}
-
-    /**
-     * <p>The filter comparison value.</p>
-     */
     inline CisScanStatusFilter& WithComparison(CisScanStatusComparison&& value) { SetComparison(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The filter value.</p>
      */
     inline const CisScanStatus& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The filter value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The filter value.</p>
-     */
     inline void SetValue(const CisScanStatus& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The filter value.</p>
-     */
     inline void SetValue(CisScanStatus&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The filter value.</p>
-     */
     inline CisScanStatusFilter& WithValue(const CisScanStatus& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The filter value.</p>
-     */
     inline CisScanStatusFilter& WithValue(CisScanStatus&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CisScanStatusComparison m_comparison;

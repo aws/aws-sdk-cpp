@@ -39,67 +39,29 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration values that override the container image Dockerfile.</p>
      */
     inline const ImageConfig& GetImageConfig() const{ return m_imageConfig; }
-
-    /**
-     * <p>Configuration values that override the container image Dockerfile.</p>
-     */
     inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
-
-    /**
-     * <p>Configuration values that override the container image Dockerfile.</p>
-     */
     inline void SetImageConfig(const ImageConfig& value) { m_imageConfigHasBeenSet = true; m_imageConfig = value; }
-
-    /**
-     * <p>Configuration values that override the container image Dockerfile.</p>
-     */
     inline void SetImageConfig(ImageConfig&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::move(value); }
-
-    /**
-     * <p>Configuration values that override the container image Dockerfile.</p>
-     */
     inline ImageConfigResponse& WithImageConfig(const ImageConfig& value) { SetImageConfig(value); return *this;}
-
-    /**
-     * <p>Configuration values that override the container image Dockerfile.</p>
-     */
     inline ImageConfigResponse& WithImageConfig(ImageConfig&& value) { SetImageConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
      */
     inline const ImageConfigError& GetError() const{ return m_error; }
-
-    /**
-     * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
-     */
     inline void SetError(const ImageConfigError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
-     */
     inline void SetError(ImageConfigError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
-     */
     inline ImageConfigResponse& WithError(const ImageConfigError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
-     */
     inline ImageConfigResponse& WithError(ImageConfigError&& value) { SetError(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ImageConfig m_imageConfig;

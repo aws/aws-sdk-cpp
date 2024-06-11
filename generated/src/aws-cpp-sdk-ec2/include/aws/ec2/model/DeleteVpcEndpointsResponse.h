@@ -34,57 +34,27 @@ namespace Model
     AWS_EC2_API DeleteVpcEndpointsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the VPC endpoints that were not successfully deleted.</p>
      */
     inline const Aws::Vector<UnsuccessfulItem>& GetUnsuccessful() const{ return m_unsuccessful; }
-
-    /**
-     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
-     */
     inline void SetUnsuccessful(const Aws::Vector<UnsuccessfulItem>& value) { m_unsuccessful = value; }
-
-    /**
-     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
-     */
     inline void SetUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { m_unsuccessful = std::move(value); }
-
-    /**
-     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
-     */
     inline DeleteVpcEndpointsResponse& WithUnsuccessful(const Aws::Vector<UnsuccessfulItem>& value) { SetUnsuccessful(value); return *this;}
-
-    /**
-     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
-     */
     inline DeleteVpcEndpointsResponse& WithUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { SetUnsuccessful(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
-     */
     inline DeleteVpcEndpointsResponse& AddUnsuccessful(const UnsuccessfulItem& value) { m_unsuccessful.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
-     */
     inline DeleteVpcEndpointsResponse& AddUnsuccessful(UnsuccessfulItem&& value) { m_unsuccessful.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteVpcEndpointsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteVpcEndpointsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<UnsuccessfulItem> m_unsuccessful;

@@ -35,100 +35,41 @@ namespace Model
     AWS_EC2_API DescribeSnapshotTierStatusResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the snapshot's storage tier.</p>
      */
     inline const Aws::Vector<SnapshotTierStatus>& GetSnapshotTierStatuses() const{ return m_snapshotTierStatuses; }
-
-    /**
-     * <p>Information about the snapshot's storage tier.</p>
-     */
     inline void SetSnapshotTierStatuses(const Aws::Vector<SnapshotTierStatus>& value) { m_snapshotTierStatuses = value; }
-
-    /**
-     * <p>Information about the snapshot's storage tier.</p>
-     */
     inline void SetSnapshotTierStatuses(Aws::Vector<SnapshotTierStatus>&& value) { m_snapshotTierStatuses = std::move(value); }
-
-    /**
-     * <p>Information about the snapshot's storage tier.</p>
-     */
     inline DescribeSnapshotTierStatusResponse& WithSnapshotTierStatuses(const Aws::Vector<SnapshotTierStatus>& value) { SetSnapshotTierStatuses(value); return *this;}
-
-    /**
-     * <p>Information about the snapshot's storage tier.</p>
-     */
     inline DescribeSnapshotTierStatusResponse& WithSnapshotTierStatuses(Aws::Vector<SnapshotTierStatus>&& value) { SetSnapshotTierStatuses(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the snapshot's storage tier.</p>
-     */
     inline DescribeSnapshotTierStatusResponse& AddSnapshotTierStatuses(const SnapshotTierStatus& value) { m_snapshotTierStatuses.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the snapshot's storage tier.</p>
-     */
     inline DescribeSnapshotTierStatusResponse& AddSnapshotTierStatuses(SnapshotTierStatus&& value) { m_snapshotTierStatuses.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline DescribeSnapshotTierStatusResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline DescribeSnapshotTierStatusResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
     inline DescribeSnapshotTierStatusResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeSnapshotTierStatusResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeSnapshotTierStatusResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SnapshotTierStatus> m_snapshotTierStatuses;

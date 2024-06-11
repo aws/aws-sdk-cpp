@@ -34,57 +34,27 @@ namespace Model
     AWS_EC2_API DescribeBundleTasksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the bundle tasks.</p>
      */
     inline const Aws::Vector<BundleTask>& GetBundleTasks() const{ return m_bundleTasks; }
-
-    /**
-     * <p>Information about the bundle tasks.</p>
-     */
     inline void SetBundleTasks(const Aws::Vector<BundleTask>& value) { m_bundleTasks = value; }
-
-    /**
-     * <p>Information about the bundle tasks.</p>
-     */
     inline void SetBundleTasks(Aws::Vector<BundleTask>&& value) { m_bundleTasks = std::move(value); }
-
-    /**
-     * <p>Information about the bundle tasks.</p>
-     */
     inline DescribeBundleTasksResponse& WithBundleTasks(const Aws::Vector<BundleTask>& value) { SetBundleTasks(value); return *this;}
-
-    /**
-     * <p>Information about the bundle tasks.</p>
-     */
     inline DescribeBundleTasksResponse& WithBundleTasks(Aws::Vector<BundleTask>&& value) { SetBundleTasks(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the bundle tasks.</p>
-     */
     inline DescribeBundleTasksResponse& AddBundleTasks(const BundleTask& value) { m_bundleTasks.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the bundle tasks.</p>
-     */
     inline DescribeBundleTasksResponse& AddBundleTasks(BundleTask&& value) { m_bundleTasks.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeBundleTasksResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeBundleTasksResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BundleTask> m_bundleTasks;

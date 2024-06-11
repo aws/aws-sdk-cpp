@@ -40,118 +40,45 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID for the tool request.</p>
      */
     inline const Aws::String& GetToolUseId() const{ return m_toolUseId; }
-
-    /**
-     * <p>The ID for the tool request.</p>
-     */
     inline bool ToolUseIdHasBeenSet() const { return m_toolUseIdHasBeenSet; }
-
-    /**
-     * <p>The ID for the tool request.</p>
-     */
     inline void SetToolUseId(const Aws::String& value) { m_toolUseIdHasBeenSet = true; m_toolUseId = value; }
-
-    /**
-     * <p>The ID for the tool request.</p>
-     */
     inline void SetToolUseId(Aws::String&& value) { m_toolUseIdHasBeenSet = true; m_toolUseId = std::move(value); }
-
-    /**
-     * <p>The ID for the tool request.</p>
-     */
     inline void SetToolUseId(const char* value) { m_toolUseIdHasBeenSet = true; m_toolUseId.assign(value); }
-
-    /**
-     * <p>The ID for the tool request.</p>
-     */
     inline ToolUseBlock& WithToolUseId(const Aws::String& value) { SetToolUseId(value); return *this;}
-
-    /**
-     * <p>The ID for the tool request.</p>
-     */
     inline ToolUseBlock& WithToolUseId(Aws::String&& value) { SetToolUseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for the tool request.</p>
-     */
     inline ToolUseBlock& WithToolUseId(const char* value) { SetToolUseId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the tool that the model wants to use.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the tool that the model wants to use.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the tool that the model wants to use.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the tool that the model wants to use.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the tool that the model wants to use.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the tool that the model wants to use.</p>
-     */
     inline ToolUseBlock& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the tool that the model wants to use.</p>
-     */
     inline ToolUseBlock& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the tool that the model wants to use.</p>
-     */
     inline ToolUseBlock& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The input to pass to the tool. </p>
      */
     inline Aws::Utils::DocumentView GetInput() const{ return m_input; }
-
-    /**
-     * <p>The input to pass to the tool. </p>
-     */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-
-    /**
-     * <p>The input to pass to the tool. </p>
-     */
     inline void SetInput(const Aws::Utils::Document& value) { m_inputHasBeenSet = true; m_input = value; }
-
-    /**
-     * <p>The input to pass to the tool. </p>
-     */
     inline void SetInput(Aws::Utils::Document&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-
-    /**
-     * <p>The input to pass to the tool. </p>
-     */
     inline ToolUseBlock& WithInput(const Aws::Utils::Document& value) { SetInput(value); return *this;}
-
-    /**
-     * <p>The input to pass to the tool. </p>
-     */
     inline ToolUseBlock& WithInput(Aws::Utils::Document&& value) { SetInput(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_toolUseId;

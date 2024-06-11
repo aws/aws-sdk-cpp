@@ -39,46 +39,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The elements that are included in the free-form layout.</p>
      */
     inline const Aws::Vector<FreeFormLayoutElement>& GetElements() const{ return m_elements; }
-
-    /**
-     * <p>The elements that are included in the free-form layout.</p>
-     */
     inline bool ElementsHasBeenSet() const { return m_elementsHasBeenSet; }
-
-    /**
-     * <p>The elements that are included in the free-form layout.</p>
-     */
     inline void SetElements(const Aws::Vector<FreeFormLayoutElement>& value) { m_elementsHasBeenSet = true; m_elements = value; }
-
-    /**
-     * <p>The elements that are included in the free-form layout.</p>
-     */
     inline void SetElements(Aws::Vector<FreeFormLayoutElement>&& value) { m_elementsHasBeenSet = true; m_elements = std::move(value); }
-
-    /**
-     * <p>The elements that are included in the free-form layout.</p>
-     */
     inline FreeFormSectionLayoutConfiguration& WithElements(const Aws::Vector<FreeFormLayoutElement>& value) { SetElements(value); return *this;}
-
-    /**
-     * <p>The elements that are included in the free-form layout.</p>
-     */
     inline FreeFormSectionLayoutConfiguration& WithElements(Aws::Vector<FreeFormLayoutElement>&& value) { SetElements(std::move(value)); return *this;}
-
-    /**
-     * <p>The elements that are included in the free-form layout.</p>
-     */
     inline FreeFormSectionLayoutConfiguration& AddElements(const FreeFormLayoutElement& value) { m_elementsHasBeenSet = true; m_elements.push_back(value); return *this; }
-
-    /**
-     * <p>The elements that are included in the free-form layout.</p>
-     */
     inline FreeFormSectionLayoutConfiguration& AddElements(FreeFormLayoutElement&& value) { m_elementsHasBeenSet = true; m_elements.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<FreeFormLayoutElement> m_elements;

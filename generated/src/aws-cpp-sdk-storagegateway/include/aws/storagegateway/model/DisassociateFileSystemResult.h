@@ -32,63 +32,29 @@ namespace Model
     AWS_STORAGEGATEWAY_API DisassociateFileSystemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
      */
     inline const Aws::String& GetFileSystemAssociationARN() const{ return m_fileSystemAssociationARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
-     */
     inline void SetFileSystemAssociationARN(const Aws::String& value) { m_fileSystemAssociationARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
-     */
     inline void SetFileSystemAssociationARN(Aws::String&& value) { m_fileSystemAssociationARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
-     */
     inline void SetFileSystemAssociationARN(const char* value) { m_fileSystemAssociationARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
-     */
     inline DisassociateFileSystemResult& WithFileSystemAssociationARN(const Aws::String& value) { SetFileSystemAssociationARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
-     */
     inline DisassociateFileSystemResult& WithFileSystemAssociationARN(Aws::String&& value) { SetFileSystemAssociationARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
-     */
     inline DisassociateFileSystemResult& WithFileSystemAssociationARN(const char* value) { SetFileSystemAssociationARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DisassociateFileSystemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DisassociateFileSystemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DisassociateFileSystemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileSystemAssociationARN;

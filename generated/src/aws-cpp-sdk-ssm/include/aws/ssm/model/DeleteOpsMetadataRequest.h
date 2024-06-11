@@ -34,46 +34,19 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
      */
     inline const Aws::String& GetOpsMetadataArn() const{ return m_opsMetadataArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
-     */
     inline bool OpsMetadataArnHasBeenSet() const { return m_opsMetadataArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
-     */
     inline void SetOpsMetadataArn(const Aws::String& value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
-     */
     inline void SetOpsMetadataArn(Aws::String&& value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
-     */
     inline void SetOpsMetadataArn(const char* value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
-     */
     inline DeleteOpsMetadataRequest& WithOpsMetadataArn(const Aws::String& value) { SetOpsMetadataArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
-     */
     inline DeleteOpsMetadataRequest& WithOpsMetadataArn(Aws::String&& value) { SetOpsMetadataArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
-     */
     inline DeleteOpsMetadataRequest& WithOpsMetadataArn(const char* value) { SetOpsMetadataArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_opsMetadataArn;

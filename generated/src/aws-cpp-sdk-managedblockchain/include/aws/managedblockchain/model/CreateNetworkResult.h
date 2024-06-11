@@ -32,99 +32,42 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API CreateNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier for the network.</p>
      */
     inline const Aws::String& GetNetworkId() const{ return m_networkId; }
-
-    /**
-     * <p>The unique identifier for the network.</p>
-     */
     inline void SetNetworkId(const Aws::String& value) { m_networkId = value; }
-
-    /**
-     * <p>The unique identifier for the network.</p>
-     */
     inline void SetNetworkId(Aws::String&& value) { m_networkId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the network.</p>
-     */
     inline void SetNetworkId(const char* value) { m_networkId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the network.</p>
-     */
     inline CreateNetworkResult& WithNetworkId(const Aws::String& value) { SetNetworkId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the network.</p>
-     */
     inline CreateNetworkResult& WithNetworkId(Aws::String&& value) { SetNetworkId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the network.</p>
-     */
     inline CreateNetworkResult& WithNetworkId(const char* value) { SetNetworkId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the first member within the network.</p>
      */
     inline const Aws::String& GetMemberId() const{ return m_memberId; }
-
-    /**
-     * <p>The unique identifier for the first member within the network.</p>
-     */
     inline void SetMemberId(const Aws::String& value) { m_memberId = value; }
-
-    /**
-     * <p>The unique identifier for the first member within the network.</p>
-     */
     inline void SetMemberId(Aws::String&& value) { m_memberId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the first member within the network.</p>
-     */
     inline void SetMemberId(const char* value) { m_memberId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the first member within the network.</p>
-     */
     inline CreateNetworkResult& WithMemberId(const Aws::String& value) { SetMemberId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the first member within the network.</p>
-     */
     inline CreateNetworkResult& WithMemberId(Aws::String&& value) { SetMemberId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the first member within the network.</p>
-     */
     inline CreateNetworkResult& WithMemberId(const char* value) { SetMemberId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateNetworkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateNetworkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateNetworkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_networkId;

@@ -39,67 +39,29 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The timestamp at which the inference experiment started or will start.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The timestamp at which the inference experiment started or will start.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The timestamp at which the inference experiment started or will start.</p>
-     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The timestamp at which the inference experiment started or will start.</p>
-     */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The timestamp at which the inference experiment started or will start.</p>
-     */
     inline InferenceExperimentSchedule& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The timestamp at which the inference experiment started or will start.</p>
-     */
     inline InferenceExperimentSchedule& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp at which the inference experiment ended or will end.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>The timestamp at which the inference experiment ended or will end.</p>
-     */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-
-    /**
-     * <p>The timestamp at which the inference experiment ended or will end.</p>
-     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-
-    /**
-     * <p>The timestamp at which the inference experiment ended or will end.</p>
-     */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-
-    /**
-     * <p>The timestamp at which the inference experiment ended or will end.</p>
-     */
     inline InferenceExperimentSchedule& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-
-    /**
-     * <p>The timestamp at which the inference experiment ended or will end.</p>
-     */
     inline InferenceExperimentSchedule& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_startTime;

@@ -52,144 +52,49 @@ namespace Model
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A string value indicating the communication type. At the moment the type
      * value can assume one of 3 values at the moment chat, web and call. </p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p> A string value indicating the communication type. At the moment the type
-     * value can assume one of 3 values at the moment chat, web and call. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p> A string value indicating the communication type. At the moment the type
-     * value can assume one of 3 values at the moment chat, web and call. </p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p> A string value indicating the communication type. At the moment the type
-     * value can assume one of 3 values at the moment chat, web and call. </p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p> A string value indicating the communication type. At the moment the type
-     * value can assume one of 3 values at the moment chat, web and call. </p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p> A string value indicating the communication type. At the moment the type
-     * value can assume one of 3 values at the moment chat, web and call. </p>
-     */
     inline CommunicationTypeOptions& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p> A string value indicating the communication type. At the moment the type
-     * value can assume one of 3 values at the moment chat, web and call. </p>
-     */
     inline CommunicationTypeOptions& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p> A string value indicating the communication type. At the moment the type
-     * value can assume one of 3 values at the moment chat, web and call. </p>
-     */
     inline CommunicationTypeOptions& WithType(const char* value) { SetType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A JSON-formatted list containing time ranges when support is available. </p>
      */
     inline const Aws::Vector<SupportedHour>& GetSupportedHours() const{ return m_supportedHours; }
-
-    /**
-     * <p> A JSON-formatted list containing time ranges when support is available. </p>
-     */
     inline bool SupportedHoursHasBeenSet() const { return m_supportedHoursHasBeenSet; }
-
-    /**
-     * <p> A JSON-formatted list containing time ranges when support is available. </p>
-     */
     inline void SetSupportedHours(const Aws::Vector<SupportedHour>& value) { m_supportedHoursHasBeenSet = true; m_supportedHours = value; }
-
-    /**
-     * <p> A JSON-formatted list containing time ranges when support is available. </p>
-     */
     inline void SetSupportedHours(Aws::Vector<SupportedHour>&& value) { m_supportedHoursHasBeenSet = true; m_supportedHours = std::move(value); }
-
-    /**
-     * <p> A JSON-formatted list containing time ranges when support is available. </p>
-     */
     inline CommunicationTypeOptions& WithSupportedHours(const Aws::Vector<SupportedHour>& value) { SetSupportedHours(value); return *this;}
-
-    /**
-     * <p> A JSON-formatted list containing time ranges when support is available. </p>
-     */
     inline CommunicationTypeOptions& WithSupportedHours(Aws::Vector<SupportedHour>&& value) { SetSupportedHours(std::move(value)); return *this;}
-
-    /**
-     * <p> A JSON-formatted list containing time ranges when support is available. </p>
-     */
     inline CommunicationTypeOptions& AddSupportedHours(const SupportedHour& value) { m_supportedHoursHasBeenSet = true; m_supportedHours.push_back(value); return *this; }
-
-    /**
-     * <p> A JSON-formatted list containing time ranges when support is available. </p>
-     */
     inline CommunicationTypeOptions& AddSupportedHours(SupportedHour&& value) { m_supportedHoursHasBeenSet = true; m_supportedHours.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> A JSON-formatted list containing date and time ranges for periods without
      * support </p>
      */
     inline const Aws::Vector<DateInterval>& GetDatesWithoutSupport() const{ return m_datesWithoutSupport; }
-
-    /**
-     * <p> A JSON-formatted list containing date and time ranges for periods without
-     * support </p>
-     */
     inline bool DatesWithoutSupportHasBeenSet() const { return m_datesWithoutSupportHasBeenSet; }
-
-    /**
-     * <p> A JSON-formatted list containing date and time ranges for periods without
-     * support </p>
-     */
     inline void SetDatesWithoutSupport(const Aws::Vector<DateInterval>& value) { m_datesWithoutSupportHasBeenSet = true; m_datesWithoutSupport = value; }
-
-    /**
-     * <p> A JSON-formatted list containing date and time ranges for periods without
-     * support </p>
-     */
     inline void SetDatesWithoutSupport(Aws::Vector<DateInterval>&& value) { m_datesWithoutSupportHasBeenSet = true; m_datesWithoutSupport = std::move(value); }
-
-    /**
-     * <p> A JSON-formatted list containing date and time ranges for periods without
-     * support </p>
-     */
     inline CommunicationTypeOptions& WithDatesWithoutSupport(const Aws::Vector<DateInterval>& value) { SetDatesWithoutSupport(value); return *this;}
-
-    /**
-     * <p> A JSON-formatted list containing date and time ranges for periods without
-     * support </p>
-     */
     inline CommunicationTypeOptions& WithDatesWithoutSupport(Aws::Vector<DateInterval>&& value) { SetDatesWithoutSupport(std::move(value)); return *this;}
-
-    /**
-     * <p> A JSON-formatted list containing date and time ranges for periods without
-     * support </p>
-     */
     inline CommunicationTypeOptions& AddDatesWithoutSupport(const DateInterval& value) { m_datesWithoutSupportHasBeenSet = true; m_datesWithoutSupport.push_back(value); return *this; }
-
-    /**
-     * <p> A JSON-formatted list containing date and time ranges for periods without
-     * support </p>
-     */
     inline CommunicationTypeOptions& AddDatesWithoutSupport(DateInterval&& value) { m_datesWithoutSupportHasBeenSet = true; m_datesWithoutSupport.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_type;

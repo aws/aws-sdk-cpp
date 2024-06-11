@@ -39,67 +39,29 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The destination configuration for successful invocations.</p>
      */
     inline const OnSuccess& GetOnSuccess() const{ return m_onSuccess; }
-
-    /**
-     * <p>The destination configuration for successful invocations.</p>
-     */
     inline bool OnSuccessHasBeenSet() const { return m_onSuccessHasBeenSet; }
-
-    /**
-     * <p>The destination configuration for successful invocations.</p>
-     */
     inline void SetOnSuccess(const OnSuccess& value) { m_onSuccessHasBeenSet = true; m_onSuccess = value; }
-
-    /**
-     * <p>The destination configuration for successful invocations.</p>
-     */
     inline void SetOnSuccess(OnSuccess&& value) { m_onSuccessHasBeenSet = true; m_onSuccess = std::move(value); }
-
-    /**
-     * <p>The destination configuration for successful invocations.</p>
-     */
     inline DestinationConfig& WithOnSuccess(const OnSuccess& value) { SetOnSuccess(value); return *this;}
-
-    /**
-     * <p>The destination configuration for successful invocations.</p>
-     */
     inline DestinationConfig& WithOnSuccess(OnSuccess&& value) { SetOnSuccess(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The destination configuration for failed invocations.</p>
      */
     inline const OnFailure& GetOnFailure() const{ return m_onFailure; }
-
-    /**
-     * <p>The destination configuration for failed invocations.</p>
-     */
     inline bool OnFailureHasBeenSet() const { return m_onFailureHasBeenSet; }
-
-    /**
-     * <p>The destination configuration for failed invocations.</p>
-     */
     inline void SetOnFailure(const OnFailure& value) { m_onFailureHasBeenSet = true; m_onFailure = value; }
-
-    /**
-     * <p>The destination configuration for failed invocations.</p>
-     */
     inline void SetOnFailure(OnFailure&& value) { m_onFailureHasBeenSet = true; m_onFailure = std::move(value); }
-
-    /**
-     * <p>The destination configuration for failed invocations.</p>
-     */
     inline DestinationConfig& WithOnFailure(const OnFailure& value) { SetOnFailure(value); return *this;}
-
-    /**
-     * <p>The destination configuration for failed invocations.</p>
-     */
     inline DestinationConfig& WithOnFailure(OnFailure&& value) { SetOnFailure(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OnSuccess m_onSuccess;

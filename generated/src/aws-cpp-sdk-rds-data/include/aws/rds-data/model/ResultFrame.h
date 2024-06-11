@@ -42,77 +42,31 @@ namespace Model
     AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The result-set metadata in the result set.</p>
      */
     inline const ResultSetMetadata& GetResultSetMetadata() const{ return m_resultSetMetadata; }
-
-    /**
-     * <p>The result-set metadata in the result set.</p>
-     */
     inline bool ResultSetMetadataHasBeenSet() const { return m_resultSetMetadataHasBeenSet; }
-
-    /**
-     * <p>The result-set metadata in the result set.</p>
-     */
     inline void SetResultSetMetadata(const ResultSetMetadata& value) { m_resultSetMetadataHasBeenSet = true; m_resultSetMetadata = value; }
-
-    /**
-     * <p>The result-set metadata in the result set.</p>
-     */
     inline void SetResultSetMetadata(ResultSetMetadata&& value) { m_resultSetMetadataHasBeenSet = true; m_resultSetMetadata = std::move(value); }
-
-    /**
-     * <p>The result-set metadata in the result set.</p>
-     */
     inline ResultFrame& WithResultSetMetadata(const ResultSetMetadata& value) { SetResultSetMetadata(value); return *this;}
-
-    /**
-     * <p>The result-set metadata in the result set.</p>
-     */
     inline ResultFrame& WithResultSetMetadata(ResultSetMetadata&& value) { SetResultSetMetadata(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The records in the result set.</p>
      */
     inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
-
-    /**
-     * <p>The records in the result set.</p>
-     */
     inline bool RecordsHasBeenSet() const { return m_recordsHasBeenSet; }
-
-    /**
-     * <p>The records in the result set.</p>
-     */
     inline void SetRecords(const Aws::Vector<Record>& value) { m_recordsHasBeenSet = true; m_records = value; }
-
-    /**
-     * <p>The records in the result set.</p>
-     */
     inline void SetRecords(Aws::Vector<Record>&& value) { m_recordsHasBeenSet = true; m_records = std::move(value); }
-
-    /**
-     * <p>The records in the result set.</p>
-     */
     inline ResultFrame& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
-
-    /**
-     * <p>The records in the result set.</p>
-     */
     inline ResultFrame& WithRecords(Aws::Vector<Record>&& value) { SetRecords(std::move(value)); return *this;}
-
-    /**
-     * <p>The records in the result set.</p>
-     */
     inline ResultFrame& AddRecords(const Record& value) { m_recordsHasBeenSet = true; m_records.push_back(value); return *this; }
-
-    /**
-     * <p>The records in the result set.</p>
-     */
     inline ResultFrame& AddRecords(Record&& value) { m_recordsHasBeenSet = true; m_records.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     ResultSetMetadata m_resultSetMetadata;

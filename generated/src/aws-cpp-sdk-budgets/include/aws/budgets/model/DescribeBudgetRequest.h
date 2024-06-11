@@ -37,95 +37,34 @@ namespace Model
     AWS_BUDGETS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The <code>accountId</code> that is associated with the budget that you want a
      * description of.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget that you want a
-     * description of.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget that you want a
-     * description of.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget that you want a
-     * description of.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget that you want a
-     * description of.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget that you want a
-     * description of.</p>
-     */
     inline DescribeBudgetRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget that you want a
-     * description of.</p>
-     */
     inline DescribeBudgetRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget that you want a
-     * description of.</p>
-     */
     inline DescribeBudgetRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the budget that you want a description of.</p>
      */
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
-
-    /**
-     * <p>The name of the budget that you want a description of.</p>
-     */
     inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the budget that you want a description of.</p>
-     */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
-
-    /**
-     * <p>The name of the budget that you want a description of.</p>
-     */
     inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
-
-    /**
-     * <p>The name of the budget that you want a description of.</p>
-     */
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
-
-    /**
-     * <p>The name of the budget that you want a description of.</p>
-     */
     inline DescribeBudgetRequest& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
-
-    /**
-     * <p>The name of the budget that you want a description of.</p>
-     */
     inline DescribeBudgetRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the budget that you want a description of.</p>
-     */
     inline DescribeBudgetRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

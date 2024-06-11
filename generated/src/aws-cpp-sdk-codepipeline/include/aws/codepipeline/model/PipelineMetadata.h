@@ -38,109 +38,45 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
      */
     inline const Aws::String& GetPipelineArn() const{ return m_pipelineArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-     */
     inline bool PipelineArnHasBeenSet() const { return m_pipelineArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-     */
     inline void SetPipelineArn(const Aws::String& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-     */
     inline void SetPipelineArn(Aws::String&& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-     */
     inline void SetPipelineArn(const char* value) { m_pipelineArnHasBeenSet = true; m_pipelineArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-     */
     inline PipelineMetadata& WithPipelineArn(const Aws::String& value) { SetPipelineArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-     */
     inline PipelineMetadata& WithPipelineArn(Aws::String&& value) { SetPipelineArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-     */
     inline PipelineMetadata& WithPipelineArn(const char* value) { SetPipelineArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
-
-    /**
-     * <p>The date and time the pipeline was created, in timestamp format.</p>
-     */
     inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
-
-    /**
-     * <p>The date and time the pipeline was created, in timestamp format.</p>
-     */
     inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
-
-    /**
-     * <p>The date and time the pipeline was created, in timestamp format.</p>
-     */
     inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
-
-    /**
-     * <p>The date and time the pipeline was created, in timestamp format.</p>
-     */
     inline PipelineMetadata& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
-
-    /**
-     * <p>The date and time the pipeline was created, in timestamp format.</p>
-     */
     inline PipelineMetadata& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time the pipeline was last updated, in timestamp format.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdated() const{ return m_updated; }
-
-    /**
-     * <p>The date and time the pipeline was last updated, in timestamp format.</p>
-     */
     inline bool UpdatedHasBeenSet() const { return m_updatedHasBeenSet; }
-
-    /**
-     * <p>The date and time the pipeline was last updated, in timestamp format.</p>
-     */
     inline void SetUpdated(const Aws::Utils::DateTime& value) { m_updatedHasBeenSet = true; m_updated = value; }
-
-    /**
-     * <p>The date and time the pipeline was last updated, in timestamp format.</p>
-     */
     inline void SetUpdated(Aws::Utils::DateTime&& value) { m_updatedHasBeenSet = true; m_updated = std::move(value); }
-
-    /**
-     * <p>The date and time the pipeline was last updated, in timestamp format.</p>
-     */
     inline PipelineMetadata& WithUpdated(const Aws::Utils::DateTime& value) { SetUpdated(value); return *this;}
-
-    /**
-     * <p>The date and time the pipeline was last updated, in timestamp format.</p>
-     */
     inline PipelineMetadata& WithUpdated(Aws::Utils::DateTime&& value) { SetUpdated(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that polling for source changes (periodic checks) was
      * stopped for the pipeline, in timestamp format. You can migrate (update) a
@@ -152,67 +88,12 @@ namespace Model
      * User Guide.</p>
      */
     inline const Aws::Utils::DateTime& GetPollingDisabledAt() const{ return m_pollingDisabledAt; }
-
-    /**
-     * <p>The date and time that polling for source changes (periodic checks) was
-     * stopped for the pipeline, in timestamp format. You can migrate (update) a
-     * polling pipeline to use event-based change detection. For example, for a
-     * pipeline with a CodeCommit source, we recommend you migrate (update) your
-     * pipeline to use CloudWatch Events. To learn more, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
-     * polling pipelines to use event-based change detection</a> in the CodePipeline
-     * User Guide.</p>
-     */
     inline bool PollingDisabledAtHasBeenSet() const { return m_pollingDisabledAtHasBeenSet; }
-
-    /**
-     * <p>The date and time that polling for source changes (periodic checks) was
-     * stopped for the pipeline, in timestamp format. You can migrate (update) a
-     * polling pipeline to use event-based change detection. For example, for a
-     * pipeline with a CodeCommit source, we recommend you migrate (update) your
-     * pipeline to use CloudWatch Events. To learn more, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
-     * polling pipelines to use event-based change detection</a> in the CodePipeline
-     * User Guide.</p>
-     */
     inline void SetPollingDisabledAt(const Aws::Utils::DateTime& value) { m_pollingDisabledAtHasBeenSet = true; m_pollingDisabledAt = value; }
-
-    /**
-     * <p>The date and time that polling for source changes (periodic checks) was
-     * stopped for the pipeline, in timestamp format. You can migrate (update) a
-     * polling pipeline to use event-based change detection. For example, for a
-     * pipeline with a CodeCommit source, we recommend you migrate (update) your
-     * pipeline to use CloudWatch Events. To learn more, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
-     * polling pipelines to use event-based change detection</a> in the CodePipeline
-     * User Guide.</p>
-     */
     inline void SetPollingDisabledAt(Aws::Utils::DateTime&& value) { m_pollingDisabledAtHasBeenSet = true; m_pollingDisabledAt = std::move(value); }
-
-    /**
-     * <p>The date and time that polling for source changes (periodic checks) was
-     * stopped for the pipeline, in timestamp format. You can migrate (update) a
-     * polling pipeline to use event-based change detection. For example, for a
-     * pipeline with a CodeCommit source, we recommend you migrate (update) your
-     * pipeline to use CloudWatch Events. To learn more, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
-     * polling pipelines to use event-based change detection</a> in the CodePipeline
-     * User Guide.</p>
-     */
     inline PipelineMetadata& WithPollingDisabledAt(const Aws::Utils::DateTime& value) { SetPollingDisabledAt(value); return *this;}
-
-    /**
-     * <p>The date and time that polling for source changes (periodic checks) was
-     * stopped for the pipeline, in timestamp format. You can migrate (update) a
-     * polling pipeline to use event-based change detection. For example, for a
-     * pipeline with a CodeCommit source, we recommend you migrate (update) your
-     * pipeline to use CloudWatch Events. To learn more, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
-     * polling pipelines to use event-based change detection</a> in the CodePipeline
-     * User Guide.</p>
-     */
     inline PipelineMetadata& WithPollingDisabledAt(Aws::Utils::DateTime&& value) { SetPollingDisabledAt(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pipelineArn;

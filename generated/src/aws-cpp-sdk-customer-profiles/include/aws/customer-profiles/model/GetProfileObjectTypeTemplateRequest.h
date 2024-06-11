@@ -32,46 +32,19 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the object template.</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
-
-    /**
-     * <p>A unique identifier for the object template.</p>
-     */
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the object template.</p>
-     */
     inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
-
-    /**
-     * <p>A unique identifier for the object template.</p>
-     */
     inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the object template.</p>
-     */
     inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the object template.</p>
-     */
     inline GetProfileObjectTypeTemplateRequest& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the object template.</p>
-     */
     inline GetProfileObjectTypeTemplateRequest& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the object template.</p>
-     */
     inline GetProfileObjectTypeTemplateRequest& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateId;

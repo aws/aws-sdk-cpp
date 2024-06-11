@@ -39,61 +39,28 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of aggregation function.</p>
      */
     inline const DifferentialPrivacyAggregationType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of aggregation function.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of aggregation function.</p>
-     */
     inline void SetType(const DifferentialPrivacyAggregationType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of aggregation function.</p>
-     */
     inline void SetType(DifferentialPrivacyAggregationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of aggregation function.</p>
-     */
     inline DifferentialPrivacyPreviewAggregation& WithType(const DifferentialPrivacyAggregationType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of aggregation function.</p>
-     */
     inline DifferentialPrivacyPreviewAggregation& WithType(DifferentialPrivacyAggregationType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of aggregations that the member who can query can run
      * given the epsilon and noise parameters.</p>
      */
     inline int GetMaxCount() const{ return m_maxCount; }
-
-    /**
-     * <p>The maximum number of aggregations that the member who can query can run
-     * given the epsilon and noise parameters.</p>
-     */
     inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
-
-    /**
-     * <p>The maximum number of aggregations that the member who can query can run
-     * given the epsilon and noise parameters.</p>
-     */
     inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
-
-    /**
-     * <p>The maximum number of aggregations that the member who can query can run
-     * given the epsilon and noise parameters.</p>
-     */
     inline DifferentialPrivacyPreviewAggregation& WithMaxCount(int value) { SetMaxCount(value); return *this;}
-
+    ///@}
   private:
 
     DifferentialPrivacyAggregationType m_type;

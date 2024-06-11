@@ -33,49 +33,21 @@ namespace Model
     AWS_IOTSITEWISE_API CreateAssetModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the asset model, in UUID format. You can use this ID when you call
      * other IoT SiteWise API operations.</p>
      */
     inline const Aws::String& GetAssetModelId() const{ return m_assetModelId; }
-
-    /**
-     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
-     * other IoT SiteWise API operations.</p>
-     */
     inline void SetAssetModelId(const Aws::String& value) { m_assetModelId = value; }
-
-    /**
-     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
-     * other IoT SiteWise API operations.</p>
-     */
     inline void SetAssetModelId(Aws::String&& value) { m_assetModelId = std::move(value); }
-
-    /**
-     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
-     * other IoT SiteWise API operations.</p>
-     */
     inline void SetAssetModelId(const char* value) { m_assetModelId.assign(value); }
-
-    /**
-     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
-     * other IoT SiteWise API operations.</p>
-     */
     inline CreateAssetModelResult& WithAssetModelId(const Aws::String& value) { SetAssetModelId(value); return *this;}
-
-    /**
-     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
-     * other IoT SiteWise API operations.</p>
-     */
     inline CreateAssetModelResult& WithAssetModelId(Aws::String&& value) { SetAssetModelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
-     * other IoT SiteWise API operations.</p>
-     */
     inline CreateAssetModelResult& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
@@ -84,114 +56,36 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetAssetModelArn() const{ return m_assetModelArn; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the asset model, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-     * </p>
-     */
     inline void SetAssetModelArn(const Aws::String& value) { m_assetModelArn = value; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the asset model, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-     * </p>
-     */
     inline void SetAssetModelArn(Aws::String&& value) { m_assetModelArn = std::move(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the asset model, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-     * </p>
-     */
     inline void SetAssetModelArn(const char* value) { m_assetModelArn.assign(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the asset model, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-     * </p>
-     */
     inline CreateAssetModelResult& WithAssetModelArn(const Aws::String& value) { SetAssetModelArn(value); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the asset model, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-     * </p>
-     */
     inline CreateAssetModelResult& WithAssetModelArn(Aws::String&& value) { SetAssetModelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the asset model, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-     * </p>
-     */
     inline CreateAssetModelResult& WithAssetModelArn(const char* value) { SetAssetModelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the asset model, which contains a state (<code>CREATING</code>
      * after successfully calling this operation) and any error message.</p>
      */
     inline const AssetModelStatus& GetAssetModelStatus() const{ return m_assetModelStatus; }
-
-    /**
-     * <p>The status of the asset model, which contains a state (<code>CREATING</code>
-     * after successfully calling this operation) and any error message.</p>
-     */
     inline void SetAssetModelStatus(const AssetModelStatus& value) { m_assetModelStatus = value; }
-
-    /**
-     * <p>The status of the asset model, which contains a state (<code>CREATING</code>
-     * after successfully calling this operation) and any error message.</p>
-     */
     inline void SetAssetModelStatus(AssetModelStatus&& value) { m_assetModelStatus = std::move(value); }
-
-    /**
-     * <p>The status of the asset model, which contains a state (<code>CREATING</code>
-     * after successfully calling this operation) and any error message.</p>
-     */
     inline CreateAssetModelResult& WithAssetModelStatus(const AssetModelStatus& value) { SetAssetModelStatus(value); return *this;}
-
-    /**
-     * <p>The status of the asset model, which contains a state (<code>CREATING</code>
-     * after successfully calling this operation) and any error message.</p>
-     */
     inline CreateAssetModelResult& WithAssetModelStatus(AssetModelStatus&& value) { SetAssetModelStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAssetModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAssetModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAssetModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assetModelId;

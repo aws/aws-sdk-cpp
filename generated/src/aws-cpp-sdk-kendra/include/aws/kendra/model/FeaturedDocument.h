@@ -40,6 +40,7 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the document to feature in the search results. You can use
      * the <a
@@ -48,70 +49,14 @@ namespace Model
      * items, or you can use the console.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The identifier of the document to feature in the search results. You can use
-     * the <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API
-     * to search for specific documents with their document IDs included in the result
-     * items, or you can use the console.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The identifier of the document to feature in the search results. You can use
-     * the <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API
-     * to search for specific documents with their document IDs included in the result
-     * items, or you can use the console.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The identifier of the document to feature in the search results. You can use
-     * the <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API
-     * to search for specific documents with their document IDs included in the result
-     * items, or you can use the console.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The identifier of the document to feature in the search results. You can use
-     * the <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API
-     * to search for specific documents with their document IDs included in the result
-     * items, or you can use the console.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The identifier of the document to feature in the search results. You can use
-     * the <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API
-     * to search for specific documents with their document IDs included in the result
-     * items, or you can use the console.</p>
-     */
     inline FeaturedDocument& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The identifier of the document to feature in the search results. You can use
-     * the <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API
-     * to search for specific documents with their document IDs included in the result
-     * items, or you can use the console.</p>
-     */
     inline FeaturedDocument& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the document to feature in the search results. You can use
-     * the <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API
-     * to search for specific documents with their document IDs included in the result
-     * items, or you can use the console.</p>
-     */
     inline FeaturedDocument& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

@@ -38,6 +38,7 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The access level.</p> <ul> <li> <p> <code>Account</code> - Filter results
      * based on the account.</p> </li> <li> <p> <code>Role</code> - Filter results
@@ -45,96 +46,27 @@ namespace Model
      * <code>User</code> - Filter results based on the specified user.</p> </li> </ul>
      */
     inline const AccessLevelFilterKey& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The access level.</p> <ul> <li> <p> <code>Account</code> - Filter results
-     * based on the account.</p> </li> <li> <p> <code>Role</code> - Filter results
-     * based on the federated role of the specified user.</p> </li> <li> <p>
-     * <code>User</code> - Filter results based on the specified user.</p> </li> </ul>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The access level.</p> <ul> <li> <p> <code>Account</code> - Filter results
-     * based on the account.</p> </li> <li> <p> <code>Role</code> - Filter results
-     * based on the federated role of the specified user.</p> </li> <li> <p>
-     * <code>User</code> - Filter results based on the specified user.</p> </li> </ul>
-     */
     inline void SetKey(const AccessLevelFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The access level.</p> <ul> <li> <p> <code>Account</code> - Filter results
-     * based on the account.</p> </li> <li> <p> <code>Role</code> - Filter results
-     * based on the federated role of the specified user.</p> </li> <li> <p>
-     * <code>User</code> - Filter results based on the specified user.</p> </li> </ul>
-     */
     inline void SetKey(AccessLevelFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The access level.</p> <ul> <li> <p> <code>Account</code> - Filter results
-     * based on the account.</p> </li> <li> <p> <code>Role</code> - Filter results
-     * based on the federated role of the specified user.</p> </li> <li> <p>
-     * <code>User</code> - Filter results based on the specified user.</p> </li> </ul>
-     */
     inline AccessLevelFilter& WithKey(const AccessLevelFilterKey& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The access level.</p> <ul> <li> <p> <code>Account</code> - Filter results
-     * based on the account.</p> </li> <li> <p> <code>Role</code> - Filter results
-     * based on the federated role of the specified user.</p> </li> <li> <p>
-     * <code>User</code> - Filter results based on the specified user.</p> </li> </ul>
-     */
     inline AccessLevelFilter& WithKey(AccessLevelFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The user to which the access level applies. The only supported value is
      * <code>self</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The user to which the access level applies. The only supported value is
-     * <code>self</code>.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The user to which the access level applies. The only supported value is
-     * <code>self</code>.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The user to which the access level applies. The only supported value is
-     * <code>self</code>.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The user to which the access level applies. The only supported value is
-     * <code>self</code>.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The user to which the access level applies. The only supported value is
-     * <code>self</code>.</p>
-     */
     inline AccessLevelFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The user to which the access level applies. The only supported value is
-     * <code>self</code>.</p>
-     */
     inline AccessLevelFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The user to which the access level applies. The only supported value is
-     * <code>self</code>.</p>
-     */
     inline AccessLevelFilter& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     AccessLevelFilterKey m_key;

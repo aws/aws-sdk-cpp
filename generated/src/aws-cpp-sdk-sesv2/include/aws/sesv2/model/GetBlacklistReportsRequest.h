@@ -43,69 +43,22 @@ namespace Model
     AWS_SESV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>A list of IP addresses that you want to retrieve blacklist information about.
      * You can only specify the dedicated IP addresses that you use to send email using
      * Amazon SES or Amazon Pinpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBlacklistItemNames() const{ return m_blacklistItemNames; }
-
-    /**
-     * <p>A list of IP addresses that you want to retrieve blacklist information about.
-     * You can only specify the dedicated IP addresses that you use to send email using
-     * Amazon SES or Amazon Pinpoint.</p>
-     */
     inline bool BlacklistItemNamesHasBeenSet() const { return m_blacklistItemNamesHasBeenSet; }
-
-    /**
-     * <p>A list of IP addresses that you want to retrieve blacklist information about.
-     * You can only specify the dedicated IP addresses that you use to send email using
-     * Amazon SES or Amazon Pinpoint.</p>
-     */
     inline void SetBlacklistItemNames(const Aws::Vector<Aws::String>& value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames = value; }
-
-    /**
-     * <p>A list of IP addresses that you want to retrieve blacklist information about.
-     * You can only specify the dedicated IP addresses that you use to send email using
-     * Amazon SES or Amazon Pinpoint.</p>
-     */
     inline void SetBlacklistItemNames(Aws::Vector<Aws::String>&& value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames = std::move(value); }
-
-    /**
-     * <p>A list of IP addresses that you want to retrieve blacklist information about.
-     * You can only specify the dedicated IP addresses that you use to send email using
-     * Amazon SES or Amazon Pinpoint.</p>
-     */
     inline GetBlacklistReportsRequest& WithBlacklistItemNames(const Aws::Vector<Aws::String>& value) { SetBlacklistItemNames(value); return *this;}
-
-    /**
-     * <p>A list of IP addresses that you want to retrieve blacklist information about.
-     * You can only specify the dedicated IP addresses that you use to send email using
-     * Amazon SES or Amazon Pinpoint.</p>
-     */
     inline GetBlacklistReportsRequest& WithBlacklistItemNames(Aws::Vector<Aws::String>&& value) { SetBlacklistItemNames(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of IP addresses that you want to retrieve blacklist information about.
-     * You can only specify the dedicated IP addresses that you use to send email using
-     * Amazon SES or Amazon Pinpoint.</p>
-     */
     inline GetBlacklistReportsRequest& AddBlacklistItemNames(const Aws::String& value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames.push_back(value); return *this; }
-
-    /**
-     * <p>A list of IP addresses that you want to retrieve blacklist information about.
-     * You can only specify the dedicated IP addresses that you use to send email using
-     * Amazon SES or Amazon Pinpoint.</p>
-     */
     inline GetBlacklistReportsRequest& AddBlacklistItemNames(Aws::String&& value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of IP addresses that you want to retrieve blacklist information about.
-     * You can only specify the dedicated IP addresses that you use to send email using
-     * Amazon SES or Amazon Pinpoint.</p>
-     */
     inline GetBlacklistReportsRequest& AddBlacklistItemNames(const char* value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_blacklistItemNames;

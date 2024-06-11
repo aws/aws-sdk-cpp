@@ -39,46 +39,19 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The choice of application destination that you specify. </p>
      */
     inline const Aws::Vector<NoPreferenceTargetDestination>& GetTargetDestination() const{ return m_targetDestination; }
-
-    /**
-     * <p> The choice of application destination that you specify. </p>
-     */
     inline bool TargetDestinationHasBeenSet() const { return m_targetDestinationHasBeenSet; }
-
-    /**
-     * <p> The choice of application destination that you specify. </p>
-     */
     inline void SetTargetDestination(const Aws::Vector<NoPreferenceTargetDestination>& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = value; }
-
-    /**
-     * <p> The choice of application destination that you specify. </p>
-     */
     inline void SetTargetDestination(Aws::Vector<NoPreferenceTargetDestination>&& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = std::move(value); }
-
-    /**
-     * <p> The choice of application destination that you specify. </p>
-     */
     inline NoManagementPreference& WithTargetDestination(const Aws::Vector<NoPreferenceTargetDestination>& value) { SetTargetDestination(value); return *this;}
-
-    /**
-     * <p> The choice of application destination that you specify. </p>
-     */
     inline NoManagementPreference& WithTargetDestination(Aws::Vector<NoPreferenceTargetDestination>&& value) { SetTargetDestination(std::move(value)); return *this;}
-
-    /**
-     * <p> The choice of application destination that you specify. </p>
-     */
     inline NoManagementPreference& AddTargetDestination(const NoPreferenceTargetDestination& value) { m_targetDestinationHasBeenSet = true; m_targetDestination.push_back(value); return *this; }
-
-    /**
-     * <p> The choice of application destination that you specify. </p>
-     */
     inline NoManagementPreference& AddTargetDestination(NoPreferenceTargetDestination&& value) { m_targetDestinationHasBeenSet = true; m_targetDestination.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<NoPreferenceTargetDestination> m_targetDestination;

@@ -34,6 +34,7 @@ namespace Model
     AWS_LAUNCHWIZARD_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Filters to scope the results. The following filters are supported:</p> <ul>
      * <li> <p> <code>WORKLOAD_NAME</code> - The name used in deployments.</p> </li>
@@ -44,158 +45,40 @@ namespace Model
      * <code>VALIDATING</code> </p> </li> </ul>
      */
     inline const Aws::Vector<DeploymentFilter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>WORKLOAD_NAME</code> - The name used in deployments.</p> </li>
-     * <li> <p> <code>DEPLOYMENT_STATUS</code> - <code>COMPLETED</code> |
-     * <code>CREATING</code> | <code>DELETE_IN_PROGRESS</code> |
-     * <code>DELETE_INITIATING</code> | <code>DELETE_FAILED</code> |
-     * <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> |
-     * <code>VALIDATING</code> </p> </li> </ul>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>WORKLOAD_NAME</code> - The name used in deployments.</p> </li>
-     * <li> <p> <code>DEPLOYMENT_STATUS</code> - <code>COMPLETED</code> |
-     * <code>CREATING</code> | <code>DELETE_IN_PROGRESS</code> |
-     * <code>DELETE_INITIATING</code> | <code>DELETE_FAILED</code> |
-     * <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> |
-     * <code>VALIDATING</code> </p> </li> </ul>
-     */
     inline void SetFilters(const Aws::Vector<DeploymentFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>WORKLOAD_NAME</code> - The name used in deployments.</p> </li>
-     * <li> <p> <code>DEPLOYMENT_STATUS</code> - <code>COMPLETED</code> |
-     * <code>CREATING</code> | <code>DELETE_IN_PROGRESS</code> |
-     * <code>DELETE_INITIATING</code> | <code>DELETE_FAILED</code> |
-     * <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> |
-     * <code>VALIDATING</code> </p> </li> </ul>
-     */
     inline void SetFilters(Aws::Vector<DeploymentFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>WORKLOAD_NAME</code> - The name used in deployments.</p> </li>
-     * <li> <p> <code>DEPLOYMENT_STATUS</code> - <code>COMPLETED</code> |
-     * <code>CREATING</code> | <code>DELETE_IN_PROGRESS</code> |
-     * <code>DELETE_INITIATING</code> | <code>DELETE_FAILED</code> |
-     * <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> |
-     * <code>VALIDATING</code> </p> </li> </ul>
-     */
     inline ListDeploymentsRequest& WithFilters(const Aws::Vector<DeploymentFilter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>WORKLOAD_NAME</code> - The name used in deployments.</p> </li>
-     * <li> <p> <code>DEPLOYMENT_STATUS</code> - <code>COMPLETED</code> |
-     * <code>CREATING</code> | <code>DELETE_IN_PROGRESS</code> |
-     * <code>DELETE_INITIATING</code> | <code>DELETE_FAILED</code> |
-     * <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> |
-     * <code>VALIDATING</code> </p> </li> </ul>
-     */
     inline ListDeploymentsRequest& WithFilters(Aws::Vector<DeploymentFilter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>WORKLOAD_NAME</code> - The name used in deployments.</p> </li>
-     * <li> <p> <code>DEPLOYMENT_STATUS</code> - <code>COMPLETED</code> |
-     * <code>CREATING</code> | <code>DELETE_IN_PROGRESS</code> |
-     * <code>DELETE_INITIATING</code> | <code>DELETE_FAILED</code> |
-     * <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> |
-     * <code>VALIDATING</code> </p> </li> </ul>
-     */
     inline ListDeploymentsRequest& AddFilters(const DeploymentFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>WORKLOAD_NAME</code> - The name used in deployments.</p> </li>
-     * <li> <p> <code>DEPLOYMENT_STATUS</code> - <code>COMPLETED</code> |
-     * <code>CREATING</code> | <code>DELETE_IN_PROGRESS</code> |
-     * <code>DELETE_INITIATING</code> | <code>DELETE_FAILED</code> |
-     * <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> |
-     * <code>VALIDATING</code> </p> </li> </ul>
-     */
     inline ListDeploymentsRequest& AddFilters(DeploymentFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to return for this request. To get the next page
      * of items, make another request with the token returned in the output.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output.</p>
-     */
     inline ListDeploymentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline ListDeploymentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline ListDeploymentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline ListDeploymentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DeploymentFilter> m_filters;

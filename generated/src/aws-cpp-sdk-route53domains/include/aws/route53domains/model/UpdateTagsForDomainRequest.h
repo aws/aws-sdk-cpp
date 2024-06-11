@@ -40,95 +40,34 @@ namespace Model
     AWS_ROUTE53DOMAINS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The domain for which you want to add or update tags.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The domain for which you want to add or update tags.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The domain for which you want to add or update tags.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The domain for which you want to add or update tags.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The domain for which you want to add or update tags.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The domain for which you want to add or update tags.</p>
-     */
     inline UpdateTagsForDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The domain for which you want to add or update tags.</p>
-     */
     inline UpdateTagsForDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain for which you want to add or update tags.</p>
-     */
     inline UpdateTagsForDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of the tag keys and values that you want to add or update. If you
      * specify a key that already exists, the corresponding value will be replaced.</p>
      */
     inline const Aws::Vector<Tag>& GetTagsToUpdate() const{ return m_tagsToUpdate; }
-
-    /**
-     * <p>A list of the tag keys and values that you want to add or update. If you
-     * specify a key that already exists, the corresponding value will be replaced.</p>
-     */
     inline bool TagsToUpdateHasBeenSet() const { return m_tagsToUpdateHasBeenSet; }
-
-    /**
-     * <p>A list of the tag keys and values that you want to add or update. If you
-     * specify a key that already exists, the corresponding value will be replaced.</p>
-     */
     inline void SetTagsToUpdate(const Aws::Vector<Tag>& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate = value; }
-
-    /**
-     * <p>A list of the tag keys and values that you want to add or update. If you
-     * specify a key that already exists, the corresponding value will be replaced.</p>
-     */
     inline void SetTagsToUpdate(Aws::Vector<Tag>&& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate = std::move(value); }
-
-    /**
-     * <p>A list of the tag keys and values that you want to add or update. If you
-     * specify a key that already exists, the corresponding value will be replaced.</p>
-     */
     inline UpdateTagsForDomainRequest& WithTagsToUpdate(const Aws::Vector<Tag>& value) { SetTagsToUpdate(value); return *this;}
-
-    /**
-     * <p>A list of the tag keys and values that you want to add or update. If you
-     * specify a key that already exists, the corresponding value will be replaced.</p>
-     */
     inline UpdateTagsForDomainRequest& WithTagsToUpdate(Aws::Vector<Tag>&& value) { SetTagsToUpdate(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the tag keys and values that you want to add or update. If you
-     * specify a key that already exists, the corresponding value will be replaced.</p>
-     */
     inline UpdateTagsForDomainRequest& AddTagsToUpdate(const Tag& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the tag keys and values that you want to add or update. If you
-     * specify a key that already exists, the corresponding value will be replaced.</p>
-     */
     inline UpdateTagsForDomainRequest& AddTagsToUpdate(Tag&& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_domainName;

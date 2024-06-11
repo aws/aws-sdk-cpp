@@ -41,71 +41,31 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline WAFLimitsExceededException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline WAFLimitsExceededException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline WAFLimitsExceededException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Source type for the exception. </p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
-
-    /**
-     * <p>Source type for the exception. </p>
-     */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-
-    /**
-     * <p>Source type for the exception. </p>
-     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-
-    /**
-     * <p>Source type for the exception. </p>
-     */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-
-    /**
-     * <p>Source type for the exception. </p>
-     */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-
-    /**
-     * <p>Source type for the exception. </p>
-     */
     inline WAFLimitsExceededException& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-
-    /**
-     * <p>Source type for the exception. </p>
-     */
     inline WAFLimitsExceededException& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-
-    /**
-     * <p>Source type for the exception. </p>
-     */
     inline WAFLimitsExceededException& WithSourceType(const char* value) { SetSourceType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

@@ -38,77 +38,31 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The step dependency status.</p>
      */
     inline const DependencyConsumerResolutionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The step dependency status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The step dependency status.</p>
-     */
     inline void SetStatus(const DependencyConsumerResolutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The step dependency status.</p>
-     */
     inline void SetStatus(DependencyConsumerResolutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The step dependency status.</p>
-     */
     inline StepDependency& WithStatus(const DependencyConsumerResolutionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The step dependency status.</p>
-     */
     inline StepDependency& WithStatus(DependencyConsumerResolutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The step ID.</p>
      */
     inline const Aws::String& GetStepId() const{ return m_stepId; }
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline StepDependency& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline StepDependency& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline StepDependency& WithStepId(const char* value) { SetStepId(value); return *this;}
-
+    ///@}
   private:
 
     DependencyConsumerResolutionStatus m_status;

@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The option that enables or disables a page break at the end of a section.</p>
      */
     inline const SectionPageBreakStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The option that enables or disables a page break at the end of a section.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The option that enables or disables a page break at the end of a section.</p>
-     */
     inline void SetStatus(const SectionPageBreakStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The option that enables or disables a page break at the end of a section.</p>
-     */
     inline void SetStatus(SectionPageBreakStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The option that enables or disables a page break at the end of a section.</p>
-     */
     inline SectionAfterPageBreak& WithStatus(const SectionPageBreakStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The option that enables or disables a page break at the end of a section.</p>
-     */
     inline SectionAfterPageBreak& WithStatus(SectionPageBreakStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SectionPageBreakStatus m_status;

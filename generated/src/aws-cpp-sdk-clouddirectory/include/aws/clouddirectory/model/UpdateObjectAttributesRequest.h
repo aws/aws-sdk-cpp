@@ -37,126 +37,46 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where the object resides. For more information, see <a>arns</a>.</p>
-     */
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where the object resides. For more information, see <a>arns</a>.</p>
-     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where the object resides. For more information, see <a>arns</a>.</p>
-     */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where the object resides. For more information, see <a>arns</a>.</p>
-     */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where the object resides. For more information, see <a>arns</a>.</p>
-     */
     inline UpdateObjectAttributesRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where the object resides. For more information, see <a>arns</a>.</p>
-     */
     inline UpdateObjectAttributesRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where the object resides. For more information, see <a>arns</a>.</p>
-     */
     inline UpdateObjectAttributesRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reference that identifies the object.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
-
-    /**
-     * <p>The reference that identifies the object.</p>
-     */
     inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
-
-    /**
-     * <p>The reference that identifies the object.</p>
-     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
-
-    /**
-     * <p>The reference that identifies the object.</p>
-     */
     inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
-
-    /**
-     * <p>The reference that identifies the object.</p>
-     */
     inline UpdateObjectAttributesRequest& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
-
-    /**
-     * <p>The reference that identifies the object.</p>
-     */
     inline UpdateObjectAttributesRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The attributes update structure.</p>
      */
     inline const Aws::Vector<ObjectAttributeUpdate>& GetAttributeUpdates() const{ return m_attributeUpdates; }
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline bool AttributeUpdatesHasBeenSet() const { return m_attributeUpdatesHasBeenSet; }
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline void SetAttributeUpdates(const Aws::Vector<ObjectAttributeUpdate>& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = value; }
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline void SetAttributeUpdates(Aws::Vector<ObjectAttributeUpdate>&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = std::move(value); }
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline UpdateObjectAttributesRequest& WithAttributeUpdates(const Aws::Vector<ObjectAttributeUpdate>& value) { SetAttributeUpdates(value); return *this;}
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline UpdateObjectAttributesRequest& WithAttributeUpdates(Aws::Vector<ObjectAttributeUpdate>&& value) { SetAttributeUpdates(std::move(value)); return *this;}
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline UpdateObjectAttributesRequest& AddAttributeUpdates(const ObjectAttributeUpdate& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(value); return *this; }
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline UpdateObjectAttributesRequest& AddAttributeUpdates(ObjectAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_directoryArn;

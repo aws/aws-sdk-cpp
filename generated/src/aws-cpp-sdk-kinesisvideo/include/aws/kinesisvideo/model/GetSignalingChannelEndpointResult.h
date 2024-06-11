@@ -34,63 +34,29 @@ namespace Model
     AWS_KINESISVIDEO_API GetSignalingChannelEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of endpoints for the specified signaling channel.</p>
      */
     inline const Aws::Vector<ResourceEndpointListItem>& GetResourceEndpointList() const{ return m_resourceEndpointList; }
-
-    /**
-     * <p>A list of endpoints for the specified signaling channel.</p>
-     */
     inline void SetResourceEndpointList(const Aws::Vector<ResourceEndpointListItem>& value) { m_resourceEndpointList = value; }
-
-    /**
-     * <p>A list of endpoints for the specified signaling channel.</p>
-     */
     inline void SetResourceEndpointList(Aws::Vector<ResourceEndpointListItem>&& value) { m_resourceEndpointList = std::move(value); }
-
-    /**
-     * <p>A list of endpoints for the specified signaling channel.</p>
-     */
     inline GetSignalingChannelEndpointResult& WithResourceEndpointList(const Aws::Vector<ResourceEndpointListItem>& value) { SetResourceEndpointList(value); return *this;}
-
-    /**
-     * <p>A list of endpoints for the specified signaling channel.</p>
-     */
     inline GetSignalingChannelEndpointResult& WithResourceEndpointList(Aws::Vector<ResourceEndpointListItem>&& value) { SetResourceEndpointList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of endpoints for the specified signaling channel.</p>
-     */
     inline GetSignalingChannelEndpointResult& AddResourceEndpointList(const ResourceEndpointListItem& value) { m_resourceEndpointList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of endpoints for the specified signaling channel.</p>
-     */
     inline GetSignalingChannelEndpointResult& AddResourceEndpointList(ResourceEndpointListItem&& value) { m_resourceEndpointList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSignalingChannelEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSignalingChannelEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSignalingChannelEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ResourceEndpointListItem> m_resourceEndpointList;

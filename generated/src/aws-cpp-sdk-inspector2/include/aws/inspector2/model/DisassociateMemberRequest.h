@@ -32,46 +32,19 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID of the member account to disassociate.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the member account to disassociate.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the member account to disassociate.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the member account to disassociate.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the member account to disassociate.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the member account to disassociate.</p>
-     */
     inline DisassociateMemberRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the member account to disassociate.</p>
-     */
     inline DisassociateMemberRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the member account to disassociate.</p>
-     */
     inline DisassociateMemberRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

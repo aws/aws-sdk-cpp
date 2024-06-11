@@ -43,134 +43,47 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Explains the status of the registration attempt from Amazon AppFlow. If the
      * attempt fails, the message explains why.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>Explains the status of the registration attempt from Amazon AppFlow. If the
-     * attempt fails, the message explains why.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>Explains the status of the registration attempt from Amazon AppFlow. If the
-     * attempt fails, the message explains why.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>Explains the status of the registration attempt from Amazon AppFlow. If the
-     * attempt fails, the message explains why.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>Explains the status of the registration attempt from Amazon AppFlow. If the
-     * attempt fails, the message explains why.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>Explains the status of the registration attempt from Amazon AppFlow. If the
-     * attempt fails, the message explains why.</p>
-     */
     inline RegistrationOutput& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>Explains the status of the registration attempt from Amazon AppFlow. If the
-     * attempt fails, the message explains why.</p>
-     */
     inline RegistrationOutput& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Explains the status of the registration attempt from Amazon AppFlow. If the
-     * attempt fails, the message explains why.</p>
-     */
     inline RegistrationOutput& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates the number of resources that Amazon AppFlow created or updated.
      * Possible resources include metadata tables and data partitions.</p>
      */
     inline const Aws::String& GetResult() const{ return m_result; }
-
-    /**
-     * <p>Indicates the number of resources that Amazon AppFlow created or updated.
-     * Possible resources include metadata tables and data partitions.</p>
-     */
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-
-    /**
-     * <p>Indicates the number of resources that Amazon AppFlow created or updated.
-     * Possible resources include metadata tables and data partitions.</p>
-     */
     inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
-
-    /**
-     * <p>Indicates the number of resources that Amazon AppFlow created or updated.
-     * Possible resources include metadata tables and data partitions.</p>
-     */
     inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-
-    /**
-     * <p>Indicates the number of resources that Amazon AppFlow created or updated.
-     * Possible resources include metadata tables and data partitions.</p>
-     */
     inline void SetResult(const char* value) { m_resultHasBeenSet = true; m_result.assign(value); }
-
-    /**
-     * <p>Indicates the number of resources that Amazon AppFlow created or updated.
-     * Possible resources include metadata tables and data partitions.</p>
-     */
     inline RegistrationOutput& WithResult(const Aws::String& value) { SetResult(value); return *this;}
-
-    /**
-     * <p>Indicates the number of resources that Amazon AppFlow created or updated.
-     * Possible resources include metadata tables and data partitions.</p>
-     */
     inline RegistrationOutput& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates the number of resources that Amazon AppFlow created or updated.
-     * Possible resources include metadata tables and data partitions.</p>
-     */
     inline RegistrationOutput& WithResult(const char* value) { SetResult(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
      */
     inline const ExecutionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
-     */
     inline void SetStatus(const ExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
-     */
     inline void SetStatus(ExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
-     */
     inline RegistrationOutput& WithStatus(const ExecutionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
-     */
     inline RegistrationOutput& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

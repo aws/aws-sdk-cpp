@@ -54,6 +54,7 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The recommended sequence to use when prioritizing where to place new game
      * sessions. Each type can only be listed once.</p> <ul> <li> <p>
@@ -68,113 +69,16 @@ namespace Model
      * locations, as defined in <code>LocationOrder</code>. </p> </li> </ul>
      */
     inline const Aws::Vector<PriorityType>& GetPriorityOrder() const{ return m_priorityOrder; }
-
-    /**
-     * <p>The recommended sequence to use when prioritizing where to place new game
-     * sessions. Each type can only be listed once.</p> <ul> <li> <p>
-     * <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player
-     * latency (provided in each game session request) is lowest. </p> </li> <li> <p>
-     * <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current
-     * hosting costs. Cost is evaluated based on the location, instance type, and fleet
-     * type (Spot or On-Demand) for each destination in the queue.</p> </li> <li> <p>
-     * <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that
-     * destinations are listed in the queue configuration.</p> </li> <li> <p>
-     * <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of
-     * locations, as defined in <code>LocationOrder</code>. </p> </li> </ul>
-     */
     inline bool PriorityOrderHasBeenSet() const { return m_priorityOrderHasBeenSet; }
-
-    /**
-     * <p>The recommended sequence to use when prioritizing where to place new game
-     * sessions. Each type can only be listed once.</p> <ul> <li> <p>
-     * <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player
-     * latency (provided in each game session request) is lowest. </p> </li> <li> <p>
-     * <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current
-     * hosting costs. Cost is evaluated based on the location, instance type, and fleet
-     * type (Spot or On-Demand) for each destination in the queue.</p> </li> <li> <p>
-     * <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that
-     * destinations are listed in the queue configuration.</p> </li> <li> <p>
-     * <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of
-     * locations, as defined in <code>LocationOrder</code>. </p> </li> </ul>
-     */
     inline void SetPriorityOrder(const Aws::Vector<PriorityType>& value) { m_priorityOrderHasBeenSet = true; m_priorityOrder = value; }
-
-    /**
-     * <p>The recommended sequence to use when prioritizing where to place new game
-     * sessions. Each type can only be listed once.</p> <ul> <li> <p>
-     * <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player
-     * latency (provided in each game session request) is lowest. </p> </li> <li> <p>
-     * <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current
-     * hosting costs. Cost is evaluated based on the location, instance type, and fleet
-     * type (Spot or On-Demand) for each destination in the queue.</p> </li> <li> <p>
-     * <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that
-     * destinations are listed in the queue configuration.</p> </li> <li> <p>
-     * <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of
-     * locations, as defined in <code>LocationOrder</code>. </p> </li> </ul>
-     */
     inline void SetPriorityOrder(Aws::Vector<PriorityType>&& value) { m_priorityOrderHasBeenSet = true; m_priorityOrder = std::move(value); }
-
-    /**
-     * <p>The recommended sequence to use when prioritizing where to place new game
-     * sessions. Each type can only be listed once.</p> <ul> <li> <p>
-     * <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player
-     * latency (provided in each game session request) is lowest. </p> </li> <li> <p>
-     * <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current
-     * hosting costs. Cost is evaluated based on the location, instance type, and fleet
-     * type (Spot or On-Demand) for each destination in the queue.</p> </li> <li> <p>
-     * <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that
-     * destinations are listed in the queue configuration.</p> </li> <li> <p>
-     * <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of
-     * locations, as defined in <code>LocationOrder</code>. </p> </li> </ul>
-     */
     inline PriorityConfiguration& WithPriorityOrder(const Aws::Vector<PriorityType>& value) { SetPriorityOrder(value); return *this;}
-
-    /**
-     * <p>The recommended sequence to use when prioritizing where to place new game
-     * sessions. Each type can only be listed once.</p> <ul> <li> <p>
-     * <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player
-     * latency (provided in each game session request) is lowest. </p> </li> <li> <p>
-     * <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current
-     * hosting costs. Cost is evaluated based on the location, instance type, and fleet
-     * type (Spot or On-Demand) for each destination in the queue.</p> </li> <li> <p>
-     * <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that
-     * destinations are listed in the queue configuration.</p> </li> <li> <p>
-     * <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of
-     * locations, as defined in <code>LocationOrder</code>. </p> </li> </ul>
-     */
     inline PriorityConfiguration& WithPriorityOrder(Aws::Vector<PriorityType>&& value) { SetPriorityOrder(std::move(value)); return *this;}
-
-    /**
-     * <p>The recommended sequence to use when prioritizing where to place new game
-     * sessions. Each type can only be listed once.</p> <ul> <li> <p>
-     * <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player
-     * latency (provided in each game session request) is lowest. </p> </li> <li> <p>
-     * <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current
-     * hosting costs. Cost is evaluated based on the location, instance type, and fleet
-     * type (Spot or On-Demand) for each destination in the queue.</p> </li> <li> <p>
-     * <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that
-     * destinations are listed in the queue configuration.</p> </li> <li> <p>
-     * <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of
-     * locations, as defined in <code>LocationOrder</code>. </p> </li> </ul>
-     */
     inline PriorityConfiguration& AddPriorityOrder(const PriorityType& value) { m_priorityOrderHasBeenSet = true; m_priorityOrder.push_back(value); return *this; }
-
-    /**
-     * <p>The recommended sequence to use when prioritizing where to place new game
-     * sessions. Each type can only be listed once.</p> <ul> <li> <p>
-     * <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player
-     * latency (provided in each game session request) is lowest. </p> </li> <li> <p>
-     * <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current
-     * hosting costs. Cost is evaluated based on the location, instance type, and fleet
-     * type (Spot or On-Demand) for each destination in the queue.</p> </li> <li> <p>
-     * <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that
-     * destinations are listed in the queue configuration.</p> </li> <li> <p>
-     * <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of
-     * locations, as defined in <code>LocationOrder</code>. </p> </li> </ul>
-     */
     inline PriorityConfiguration& AddPriorityOrder(PriorityType&& value) { m_priorityOrderHasBeenSet = true; m_priorityOrder.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The prioritization order to use for fleet locations, when the
      * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
@@ -182,71 +86,15 @@ namespace Model
      * <code>us-west-2</code>. Each location can only be listed once. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLocationOrder() const{ return m_locationOrder; }
-
-    /**
-     * <p>The prioritization order to use for fleet locations, when the
-     * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by Amazon Web Services Region codes such as
-     * <code>us-west-2</code>. Each location can only be listed once. </p>
-     */
     inline bool LocationOrderHasBeenSet() const { return m_locationOrderHasBeenSet; }
-
-    /**
-     * <p>The prioritization order to use for fleet locations, when the
-     * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by Amazon Web Services Region codes such as
-     * <code>us-west-2</code>. Each location can only be listed once. </p>
-     */
     inline void SetLocationOrder(const Aws::Vector<Aws::String>& value) { m_locationOrderHasBeenSet = true; m_locationOrder = value; }
-
-    /**
-     * <p>The prioritization order to use for fleet locations, when the
-     * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by Amazon Web Services Region codes such as
-     * <code>us-west-2</code>. Each location can only be listed once. </p>
-     */
     inline void SetLocationOrder(Aws::Vector<Aws::String>&& value) { m_locationOrderHasBeenSet = true; m_locationOrder = std::move(value); }
-
-    /**
-     * <p>The prioritization order to use for fleet locations, when the
-     * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by Amazon Web Services Region codes such as
-     * <code>us-west-2</code>. Each location can only be listed once. </p>
-     */
     inline PriorityConfiguration& WithLocationOrder(const Aws::Vector<Aws::String>& value) { SetLocationOrder(value); return *this;}
-
-    /**
-     * <p>The prioritization order to use for fleet locations, when the
-     * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by Amazon Web Services Region codes such as
-     * <code>us-west-2</code>. Each location can only be listed once. </p>
-     */
     inline PriorityConfiguration& WithLocationOrder(Aws::Vector<Aws::String>&& value) { SetLocationOrder(std::move(value)); return *this;}
-
-    /**
-     * <p>The prioritization order to use for fleet locations, when the
-     * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by Amazon Web Services Region codes such as
-     * <code>us-west-2</code>. Each location can only be listed once. </p>
-     */
     inline PriorityConfiguration& AddLocationOrder(const Aws::String& value) { m_locationOrderHasBeenSet = true; m_locationOrder.push_back(value); return *this; }
-
-    /**
-     * <p>The prioritization order to use for fleet locations, when the
-     * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by Amazon Web Services Region codes such as
-     * <code>us-west-2</code>. Each location can only be listed once. </p>
-     */
     inline PriorityConfiguration& AddLocationOrder(Aws::String&& value) { m_locationOrderHasBeenSet = true; m_locationOrder.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The prioritization order to use for fleet locations, when the
-     * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by Amazon Web Services Region codes such as
-     * <code>us-west-2</code>. Each location can only be listed once. </p>
-     */
     inline PriorityConfiguration& AddLocationOrder(const char* value) { m_locationOrderHasBeenSet = true; m_locationOrder.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<PriorityType> m_priorityOrder;

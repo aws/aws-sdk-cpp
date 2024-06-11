@@ -34,75 +34,31 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the WorkSpace.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline DeployWorkspaceApplicationsRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline DeployWorkspaceApplicationsRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline DeployWorkspaceApplicationsRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the force flag is applied for the specified WorkSpace. When
      * the force flag is enabled, it allows previously failed deployments to be
      * retried.</p>
      */
     inline bool GetForce() const{ return m_force; }
-
-    /**
-     * <p>Indicates whether the force flag is applied for the specified WorkSpace. When
-     * the force flag is enabled, it allows previously failed deployments to be
-     * retried.</p>
-     */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the force flag is applied for the specified WorkSpace. When
-     * the force flag is enabled, it allows previously failed deployments to be
-     * retried.</p>
-     */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
-
-    /**
-     * <p>Indicates whether the force flag is applied for the specified WorkSpace. When
-     * the force flag is enabled, it allows previously failed deployments to be
-     * retried.</p>
-     */
     inline DeployWorkspaceApplicationsRequest& WithForce(bool value) { SetForce(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workspaceId;

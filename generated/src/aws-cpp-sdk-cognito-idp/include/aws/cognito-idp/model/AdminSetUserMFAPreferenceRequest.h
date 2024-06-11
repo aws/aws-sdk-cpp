@@ -36,68 +36,31 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The SMS text message MFA settings.</p>
      */
     inline const SMSMfaSettingsType& GetSMSMfaSettings() const{ return m_sMSMfaSettings; }
-
-    /**
-     * <p>The SMS text message MFA settings.</p>
-     */
     inline bool SMSMfaSettingsHasBeenSet() const { return m_sMSMfaSettingsHasBeenSet; }
-
-    /**
-     * <p>The SMS text message MFA settings.</p>
-     */
     inline void SetSMSMfaSettings(const SMSMfaSettingsType& value) { m_sMSMfaSettingsHasBeenSet = true; m_sMSMfaSettings = value; }
-
-    /**
-     * <p>The SMS text message MFA settings.</p>
-     */
     inline void SetSMSMfaSettings(SMSMfaSettingsType&& value) { m_sMSMfaSettingsHasBeenSet = true; m_sMSMfaSettings = std::move(value); }
-
-    /**
-     * <p>The SMS text message MFA settings.</p>
-     */
     inline AdminSetUserMFAPreferenceRequest& WithSMSMfaSettings(const SMSMfaSettingsType& value) { SetSMSMfaSettings(value); return *this;}
-
-    /**
-     * <p>The SMS text message MFA settings.</p>
-     */
     inline AdminSetUserMFAPreferenceRequest& WithSMSMfaSettings(SMSMfaSettingsType&& value) { SetSMSMfaSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time-based one-time password software token MFA settings.</p>
      */
     inline const SoftwareTokenMfaSettingsType& GetSoftwareTokenMfaSettings() const{ return m_softwareTokenMfaSettings; }
-
-    /**
-     * <p>The time-based one-time password software token MFA settings.</p>
-     */
     inline bool SoftwareTokenMfaSettingsHasBeenSet() const { return m_softwareTokenMfaSettingsHasBeenSet; }
-
-    /**
-     * <p>The time-based one-time password software token MFA settings.</p>
-     */
     inline void SetSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = value; }
-
-    /**
-     * <p>The time-based one-time password software token MFA settings.</p>
-     */
     inline void SetSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = std::move(value); }
-
-    /**
-     * <p>The time-based one-time password software token MFA settings.</p>
-     */
     inline AdminSetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { SetSoftwareTokenMfaSettings(value); return *this;}
-
-    /**
-     * <p>The time-based one-time password software token MFA settings.</p>
-     */
     inline AdminSetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { SetSoftwareTokenMfaSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The username of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
@@ -106,111 +69,28 @@ namespace Model
      * user from a third-party IdP.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline AdminSetUserMFAPreferenceRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline AdminSetUserMFAPreferenceRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline AdminSetUserMFAPreferenceRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The user pool ID.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline AdminSetUserMFAPreferenceRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline AdminSetUserMFAPreferenceRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline AdminSetUserMFAPreferenceRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
-
+    ///@}
   private:
 
     SMSMfaSettingsType m_sMSMfaSettings;

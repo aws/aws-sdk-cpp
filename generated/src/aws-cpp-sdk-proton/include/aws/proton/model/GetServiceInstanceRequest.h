@@ -34,95 +34,34 @@ namespace Model
     AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of a service instance that you want to get the detailed data
      * for.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of a service instance that you want to get the detailed data
-     * for.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of a service instance that you want to get the detailed data
-     * for.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of a service instance that you want to get the detailed data
-     * for.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of a service instance that you want to get the detailed data
-     * for.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of a service instance that you want to get the detailed data
-     * for.</p>
-     */
     inline GetServiceInstanceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of a service instance that you want to get the detailed data
-     * for.</p>
-     */
     inline GetServiceInstanceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of a service instance that you want to get the detailed data
-     * for.</p>
-     */
     inline GetServiceInstanceRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the service that you want the service instance input for.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>The name of the service that you want the service instance input for.</p>
-     */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the service that you want the service instance input for.</p>
-     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>The name of the service that you want the service instance input for.</p>
-     */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>The name of the service that you want the service instance input for.</p>
-     */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>The name of the service that you want the service instance input for.</p>
-     */
     inline GetServiceInstanceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The name of the service that you want the service instance input for.</p>
-     */
     inline GetServiceInstanceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service that you want the service instance input for.</p>
-     */
     inline GetServiceInstanceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

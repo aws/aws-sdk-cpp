@@ -32,54 +32,20 @@ namespace Model
     AWS_APPFLOW_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
      * or hyphens (-) only. </p>
      */
     inline const Aws::String& GetFlowName() const{ return m_flowName; }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline bool FlowNameHasBeenSet() const { return m_flowNameHasBeenSet; }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline void SetFlowName(const Aws::String& value) { m_flowNameHasBeenSet = true; m_flowName = value; }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline void SetFlowName(Aws::String&& value) { m_flowNameHasBeenSet = true; m_flowName = std::move(value); }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline void SetFlowName(const char* value) { m_flowNameHasBeenSet = true; m_flowName.assign(value); }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline StopFlowRequest& WithFlowName(const Aws::String& value) { SetFlowName(value); return *this;}
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline StopFlowRequest& WithFlowName(Aws::String&& value) { SetFlowName(std::move(value)); return *this;}
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline StopFlowRequest& WithFlowName(const char* value) { SetFlowName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowName;

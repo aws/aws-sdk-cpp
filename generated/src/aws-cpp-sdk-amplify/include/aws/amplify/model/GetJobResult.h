@@ -33,43 +33,25 @@ namespace Model
     AWS_AMPLIFY_API GetJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Job& GetJob() const{ return m_job; }
-
-    
     inline void SetJob(const Job& value) { m_job = value; }
-
-    
     inline void SetJob(Job&& value) { m_job = std::move(value); }
-
-    
     inline GetJobResult& WithJob(const Job& value) { SetJob(value); return *this;}
-
-    
     inline GetJobResult& WithJob(Job&& value) { SetJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Job m_job;

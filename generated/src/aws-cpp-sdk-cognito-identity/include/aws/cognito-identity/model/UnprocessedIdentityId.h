@@ -39,77 +39,31 @@ namespace Model
     AWS_COGNITOIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline UnprocessedIdentityId& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline UnprocessedIdentityId& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier in the format REGION:GUID.</p>
-     */
     inline UnprocessedIdentityId& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error code indicating the type of error that occurred.</p>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code indicating the type of error that occurred.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code indicating the type of error that occurred.</p>
-     */
     inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code indicating the type of error that occurred.</p>
-     */
     inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code indicating the type of error that occurred.</p>
-     */
     inline UnprocessedIdentityId& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code indicating the type of error that occurred.</p>
-     */
     inline UnprocessedIdentityId& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identityId;

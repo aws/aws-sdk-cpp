@@ -36,46 +36,19 @@ namespace Model
      */
     AWS_NEPTUNEGRAPH_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The ID of the snapshot to retrieve.</p>
      */
     inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
-
-    /**
-     * <p>The ID of the snapshot to retrieve.</p>
-     */
     inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID of the snapshot to retrieve.</p>
-     */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
-
-    /**
-     * <p>The ID of the snapshot to retrieve.</p>
-     */
     inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID of the snapshot to retrieve.</p>
-     */
     inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
-
-    /**
-     * <p>The ID of the snapshot to retrieve.</p>
-     */
     inline GetGraphSnapshotRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of the snapshot to retrieve.</p>
-     */
     inline GetGraphSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the snapshot to retrieve.</p>
-     */
     inline GetGraphSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_snapshotIdentifier;

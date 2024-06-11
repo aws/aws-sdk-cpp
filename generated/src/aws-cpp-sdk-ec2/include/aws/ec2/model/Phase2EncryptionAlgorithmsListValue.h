@@ -40,46 +40,19 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The encryption algorithm.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The encryption algorithm.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The encryption algorithm.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The encryption algorithm.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The encryption algorithm.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The encryption algorithm.</p>
-     */
     inline Phase2EncryptionAlgorithmsListValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The encryption algorithm.</p>
-     */
     inline Phase2EncryptionAlgorithmsListValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The encryption algorithm.</p>
-     */
     inline Phase2EncryptionAlgorithmsListValue& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_value;

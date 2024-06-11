@@ -41,36 +41,17 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The base 64 encoded scrape configuration file.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetConfigurationBlob() const{ return m_configurationBlob; }
-
-    /**
-     * <p>The base 64 encoded scrape configuration file.</p>
-     */
     inline bool ConfigurationBlobHasBeenSet() const { return m_configurationBlobHasBeenSet; }
-
-    /**
-     * <p>The base 64 encoded scrape configuration file.</p>
-     */
     inline void SetConfigurationBlob(const Aws::Utils::ByteBuffer& value) { m_configurationBlobHasBeenSet = true; m_configurationBlob = value; }
-
-    /**
-     * <p>The base 64 encoded scrape configuration file.</p>
-     */
     inline void SetConfigurationBlob(Aws::Utils::ByteBuffer&& value) { m_configurationBlobHasBeenSet = true; m_configurationBlob = std::move(value); }
-
-    /**
-     * <p>The base 64 encoded scrape configuration file.</p>
-     */
     inline ScrapeConfiguration& WithConfigurationBlob(const Aws::Utils::ByteBuffer& value) { SetConfigurationBlob(value); return *this;}
-
-    /**
-     * <p>The base 64 encoded scrape configuration file.</p>
-     */
     inline ScrapeConfiguration& WithConfigurationBlob(Aws::Utils::ByteBuffer&& value) { SetConfigurationBlob(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_configurationBlob;

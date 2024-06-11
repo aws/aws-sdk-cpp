@@ -38,54 +38,20 @@ namespace Model
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Goods and Services Tax (GST) documents required in Amazon Web Services
      * Region in India.</p>
      */
     inline const Aws::String& GetGSTIN() const{ return m_gSTIN; }
-
-    /**
-     * <p>The Goods and Services Tax (GST) documents required in Amazon Web Services
-     * Region in India.</p>
-     */
     inline bool GSTINHasBeenSet() const { return m_gSTINHasBeenSet; }
-
-    /**
-     * <p>The Goods and Services Tax (GST) documents required in Amazon Web Services
-     * Region in India.</p>
-     */
     inline void SetGSTIN(const Aws::String& value) { m_gSTINHasBeenSet = true; m_gSTIN = value; }
-
-    /**
-     * <p>The Goods and Services Tax (GST) documents required in Amazon Web Services
-     * Region in India.</p>
-     */
     inline void SetGSTIN(Aws::String&& value) { m_gSTINHasBeenSet = true; m_gSTIN = std::move(value); }
-
-    /**
-     * <p>The Goods and Services Tax (GST) documents required in Amazon Web Services
-     * Region in India.</p>
-     */
     inline void SetGSTIN(const char* value) { m_gSTINHasBeenSet = true; m_gSTIN.assign(value); }
-
-    /**
-     * <p>The Goods and Services Tax (GST) documents required in Amazon Web Services
-     * Region in India.</p>
-     */
     inline INDTaxDocuments& WithGSTIN(const Aws::String& value) { SetGSTIN(value); return *this;}
-
-    /**
-     * <p>The Goods and Services Tax (GST) documents required in Amazon Web Services
-     * Region in India.</p>
-     */
     inline INDTaxDocuments& WithGSTIN(Aws::String&& value) { SetGSTIN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Goods and Services Tax (GST) documents required in Amazon Web Services
-     * Region in India.</p>
-     */
     inline INDTaxDocuments& WithGSTIN(const char* value) { SetGSTIN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gSTIN;

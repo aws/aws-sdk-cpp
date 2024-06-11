@@ -39,54 +39,20 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of criteria that determines how many retries are allowed for each
      * failure type for a job.</p>
      */
     inline const Aws::Vector<RetryCriteria>& GetCriteriaList() const{ return m_criteriaList; }
-
-    /**
-     * <p>The list of criteria that determines how many retries are allowed for each
-     * failure type for a job.</p>
-     */
     inline bool CriteriaListHasBeenSet() const { return m_criteriaListHasBeenSet; }
-
-    /**
-     * <p>The list of criteria that determines how many retries are allowed for each
-     * failure type for a job.</p>
-     */
     inline void SetCriteriaList(const Aws::Vector<RetryCriteria>& value) { m_criteriaListHasBeenSet = true; m_criteriaList = value; }
-
-    /**
-     * <p>The list of criteria that determines how many retries are allowed for each
-     * failure type for a job.</p>
-     */
     inline void SetCriteriaList(Aws::Vector<RetryCriteria>&& value) { m_criteriaListHasBeenSet = true; m_criteriaList = std::move(value); }
-
-    /**
-     * <p>The list of criteria that determines how many retries are allowed for each
-     * failure type for a job.</p>
-     */
     inline JobExecutionsRetryConfig& WithCriteriaList(const Aws::Vector<RetryCriteria>& value) { SetCriteriaList(value); return *this;}
-
-    /**
-     * <p>The list of criteria that determines how many retries are allowed for each
-     * failure type for a job.</p>
-     */
     inline JobExecutionsRetryConfig& WithCriteriaList(Aws::Vector<RetryCriteria>&& value) { SetCriteriaList(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of criteria that determines how many retries are allowed for each
-     * failure type for a job.</p>
-     */
     inline JobExecutionsRetryConfig& AddCriteriaList(const RetryCriteria& value) { m_criteriaListHasBeenSet = true; m_criteriaList.push_back(value); return *this; }
-
-    /**
-     * <p>The list of criteria that determines how many retries are allowed for each
-     * failure type for a job.</p>
-     */
     inline JobExecutionsRetryConfig& AddCriteriaList(RetryCriteria&& value) { m_criteriaListHasBeenSet = true; m_criteriaList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<RetryCriteria> m_criteriaList;

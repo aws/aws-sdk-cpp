@@ -33,53 +33,27 @@ namespace Model
     AWS_GAMELIFT_API UpdateGameServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Object that describes the newly updated game server.</p>
      */
     inline const GameServer& GetGameServer() const{ return m_gameServer; }
-
-    /**
-     * <p>Object that describes the newly updated game server.</p>
-     */
     inline void SetGameServer(const GameServer& value) { m_gameServer = value; }
-
-    /**
-     * <p>Object that describes the newly updated game server.</p>
-     */
     inline void SetGameServer(GameServer&& value) { m_gameServer = std::move(value); }
-
-    /**
-     * <p>Object that describes the newly updated game server.</p>
-     */
     inline UpdateGameServerResult& WithGameServer(const GameServer& value) { SetGameServer(value); return *this;}
-
-    /**
-     * <p>Object that describes the newly updated game server.</p>
-     */
     inline UpdateGameServerResult& WithGameServer(GameServer&& value) { SetGameServer(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateGameServerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateGameServerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateGameServerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     GameServer m_gameServer;

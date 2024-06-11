@@ -41,100 +41,55 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const HlsAkamaiSettings& GetHlsAkamaiSettings() const{ return m_hlsAkamaiSettings; }
-
-    
     inline bool HlsAkamaiSettingsHasBeenSet() const { return m_hlsAkamaiSettingsHasBeenSet; }
-
-    
     inline void SetHlsAkamaiSettings(const HlsAkamaiSettings& value) { m_hlsAkamaiSettingsHasBeenSet = true; m_hlsAkamaiSettings = value; }
-
-    
     inline void SetHlsAkamaiSettings(HlsAkamaiSettings&& value) { m_hlsAkamaiSettingsHasBeenSet = true; m_hlsAkamaiSettings = std::move(value); }
-
-    
     inline HlsCdnSettings& WithHlsAkamaiSettings(const HlsAkamaiSettings& value) { SetHlsAkamaiSettings(value); return *this;}
-
-    
     inline HlsCdnSettings& WithHlsAkamaiSettings(HlsAkamaiSettings&& value) { SetHlsAkamaiSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const HlsBasicPutSettings& GetHlsBasicPutSettings() const{ return m_hlsBasicPutSettings; }
-
-    
     inline bool HlsBasicPutSettingsHasBeenSet() const { return m_hlsBasicPutSettingsHasBeenSet; }
-
-    
     inline void SetHlsBasicPutSettings(const HlsBasicPutSettings& value) { m_hlsBasicPutSettingsHasBeenSet = true; m_hlsBasicPutSettings = value; }
-
-    
     inline void SetHlsBasicPutSettings(HlsBasicPutSettings&& value) { m_hlsBasicPutSettingsHasBeenSet = true; m_hlsBasicPutSettings = std::move(value); }
-
-    
     inline HlsCdnSettings& WithHlsBasicPutSettings(const HlsBasicPutSettings& value) { SetHlsBasicPutSettings(value); return *this;}
-
-    
     inline HlsCdnSettings& WithHlsBasicPutSettings(HlsBasicPutSettings&& value) { SetHlsBasicPutSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const HlsMediaStoreSettings& GetHlsMediaStoreSettings() const{ return m_hlsMediaStoreSettings; }
-
-    
     inline bool HlsMediaStoreSettingsHasBeenSet() const { return m_hlsMediaStoreSettingsHasBeenSet; }
-
-    
     inline void SetHlsMediaStoreSettings(const HlsMediaStoreSettings& value) { m_hlsMediaStoreSettingsHasBeenSet = true; m_hlsMediaStoreSettings = value; }
-
-    
     inline void SetHlsMediaStoreSettings(HlsMediaStoreSettings&& value) { m_hlsMediaStoreSettingsHasBeenSet = true; m_hlsMediaStoreSettings = std::move(value); }
-
-    
     inline HlsCdnSettings& WithHlsMediaStoreSettings(const HlsMediaStoreSettings& value) { SetHlsMediaStoreSettings(value); return *this;}
-
-    
     inline HlsCdnSettings& WithHlsMediaStoreSettings(HlsMediaStoreSettings&& value) { SetHlsMediaStoreSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const HlsS3Settings& GetHlsS3Settings() const{ return m_hlsS3Settings; }
-
-    
     inline bool HlsS3SettingsHasBeenSet() const { return m_hlsS3SettingsHasBeenSet; }
-
-    
     inline void SetHlsS3Settings(const HlsS3Settings& value) { m_hlsS3SettingsHasBeenSet = true; m_hlsS3Settings = value; }
-
-    
     inline void SetHlsS3Settings(HlsS3Settings&& value) { m_hlsS3SettingsHasBeenSet = true; m_hlsS3Settings = std::move(value); }
-
-    
     inline HlsCdnSettings& WithHlsS3Settings(const HlsS3Settings& value) { SetHlsS3Settings(value); return *this;}
-
-    
     inline HlsCdnSettings& WithHlsS3Settings(HlsS3Settings&& value) { SetHlsS3Settings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const HlsWebdavSettings& GetHlsWebdavSettings() const{ return m_hlsWebdavSettings; }
-
-    
     inline bool HlsWebdavSettingsHasBeenSet() const { return m_hlsWebdavSettingsHasBeenSet; }
-
-    
     inline void SetHlsWebdavSettings(const HlsWebdavSettings& value) { m_hlsWebdavSettingsHasBeenSet = true; m_hlsWebdavSettings = value; }
-
-    
     inline void SetHlsWebdavSettings(HlsWebdavSettings&& value) { m_hlsWebdavSettingsHasBeenSet = true; m_hlsWebdavSettings = std::move(value); }
-
-    
     inline HlsCdnSettings& WithHlsWebdavSettings(const HlsWebdavSettings& value) { SetHlsWebdavSettings(value); return *this;}
-
-    
     inline HlsCdnSettings& WithHlsWebdavSettings(HlsWebdavSettings&& value) { SetHlsWebdavSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HlsAkamaiSettings m_hlsAkamaiSettings;

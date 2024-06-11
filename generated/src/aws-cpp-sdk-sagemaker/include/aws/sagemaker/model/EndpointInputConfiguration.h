@@ -40,127 +40,53 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The instance types to use for the load test.</p>
      */
     inline const ProductionVariantInstanceType& GetInstanceType() const{ return m_instanceType; }
-
-    /**
-     * <p>The instance types to use for the load test.</p>
-     */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-
-    /**
-     * <p>The instance types to use for the load test.</p>
-     */
     inline void SetInstanceType(const ProductionVariantInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-
-    /**
-     * <p>The instance types to use for the load test.</p>
-     */
     inline void SetInstanceType(ProductionVariantInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-
-    /**
-     * <p>The instance types to use for the load test.</p>
-     */
     inline EndpointInputConfiguration& WithInstanceType(const ProductionVariantInstanceType& value) { SetInstanceType(value); return *this;}
-
-    /**
-     * <p>The instance types to use for the load test.</p>
-     */
     inline EndpointInputConfiguration& WithInstanceType(ProductionVariantInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ProductionVariantServerlessConfig& GetServerlessConfig() const{ return m_serverlessConfig; }
-
-    
     inline bool ServerlessConfigHasBeenSet() const { return m_serverlessConfigHasBeenSet; }
-
-    
     inline void SetServerlessConfig(const ProductionVariantServerlessConfig& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = value; }
-
-    
     inline void SetServerlessConfig(ProductionVariantServerlessConfig&& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = std::move(value); }
-
-    
     inline EndpointInputConfiguration& WithServerlessConfig(const ProductionVariantServerlessConfig& value) { SetServerlessConfig(value); return *this;}
-
-    
     inline EndpointInputConfiguration& WithServerlessConfig(ProductionVariantServerlessConfig&& value) { SetServerlessConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The inference specification name in the model package version.</p>
      */
     inline const Aws::String& GetInferenceSpecificationName() const{ return m_inferenceSpecificationName; }
-
-    /**
-     * <p>The inference specification name in the model package version.</p>
-     */
     inline bool InferenceSpecificationNameHasBeenSet() const { return m_inferenceSpecificationNameHasBeenSet; }
-
-    /**
-     * <p>The inference specification name in the model package version.</p>
-     */
     inline void SetInferenceSpecificationName(const Aws::String& value) { m_inferenceSpecificationNameHasBeenSet = true; m_inferenceSpecificationName = value; }
-
-    /**
-     * <p>The inference specification name in the model package version.</p>
-     */
     inline void SetInferenceSpecificationName(Aws::String&& value) { m_inferenceSpecificationNameHasBeenSet = true; m_inferenceSpecificationName = std::move(value); }
-
-    /**
-     * <p>The inference specification name in the model package version.</p>
-     */
     inline void SetInferenceSpecificationName(const char* value) { m_inferenceSpecificationNameHasBeenSet = true; m_inferenceSpecificationName.assign(value); }
-
-    /**
-     * <p>The inference specification name in the model package version.</p>
-     */
     inline EndpointInputConfiguration& WithInferenceSpecificationName(const Aws::String& value) { SetInferenceSpecificationName(value); return *this;}
-
-    /**
-     * <p>The inference specification name in the model package version.</p>
-     */
     inline EndpointInputConfiguration& WithInferenceSpecificationName(Aws::String&& value) { SetInferenceSpecificationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The inference specification name in the model package version.</p>
-     */
     inline EndpointInputConfiguration& WithInferenceSpecificationName(const char* value) { SetInferenceSpecificationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The parameter you want to benchmark against.</p>
      */
     inline const EnvironmentParameterRanges& GetEnvironmentParameterRanges() const{ return m_environmentParameterRanges; }
-
-    /**
-     * <p> The parameter you want to benchmark against.</p>
-     */
     inline bool EnvironmentParameterRangesHasBeenSet() const { return m_environmentParameterRangesHasBeenSet; }
-
-    /**
-     * <p> The parameter you want to benchmark against.</p>
-     */
     inline void SetEnvironmentParameterRanges(const EnvironmentParameterRanges& value) { m_environmentParameterRangesHasBeenSet = true; m_environmentParameterRanges = value; }
-
-    /**
-     * <p> The parameter you want to benchmark against.</p>
-     */
     inline void SetEnvironmentParameterRanges(EnvironmentParameterRanges&& value) { m_environmentParameterRangesHasBeenSet = true; m_environmentParameterRanges = std::move(value); }
-
-    /**
-     * <p> The parameter you want to benchmark against.</p>
-     */
     inline EndpointInputConfiguration& WithEnvironmentParameterRanges(const EnvironmentParameterRanges& value) { SetEnvironmentParameterRanges(value); return *this;}
-
-    /**
-     * <p> The parameter you want to benchmark against.</p>
-     */
     inline EndpointInputConfiguration& WithEnvironmentParameterRanges(EnvironmentParameterRanges&& value) { SetEnvironmentParameterRanges(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ProductionVariantInstanceType m_instanceType;

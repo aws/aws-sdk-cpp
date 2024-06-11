@@ -32,63 +32,29 @@ namespace Model
     AWS_CLOUD9_API CreateEnvironmentEC2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the environment that was created.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-
-    /**
-     * <p>The ID of the environment that was created.</p>
-     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentId = value; }
-
-    /**
-     * <p>The ID of the environment that was created.</p>
-     */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the environment that was created.</p>
-     */
     inline void SetEnvironmentId(const char* value) { m_environmentId.assign(value); }
-
-    /**
-     * <p>The ID of the environment that was created.</p>
-     */
     inline CreateEnvironmentEC2Result& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the environment that was created.</p>
-     */
     inline CreateEnvironmentEC2Result& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the environment that was created.</p>
-     */
     inline CreateEnvironmentEC2Result& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateEnvironmentEC2Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateEnvironmentEC2Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateEnvironmentEC2Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_environmentId;

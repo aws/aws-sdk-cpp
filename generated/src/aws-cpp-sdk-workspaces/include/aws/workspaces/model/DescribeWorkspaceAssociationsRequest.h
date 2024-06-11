@@ -36,87 +36,33 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the WorkSpace.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline DescribeWorkspaceAssociationsRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline DescribeWorkspaceAssociationsRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the WorkSpace.</p>
-     */
     inline DescribeWorkspaceAssociationsRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource types of the associated resources.</p>
      */
     inline const Aws::Vector<WorkSpaceAssociatedResourceType>& GetAssociatedResourceTypes() const{ return m_associatedResourceTypes; }
-
-    /**
-     * <p>The resource types of the associated resources.</p>
-     */
     inline bool AssociatedResourceTypesHasBeenSet() const { return m_associatedResourceTypesHasBeenSet; }
-
-    /**
-     * <p>The resource types of the associated resources.</p>
-     */
     inline void SetAssociatedResourceTypes(const Aws::Vector<WorkSpaceAssociatedResourceType>& value) { m_associatedResourceTypesHasBeenSet = true; m_associatedResourceTypes = value; }
-
-    /**
-     * <p>The resource types of the associated resources.</p>
-     */
     inline void SetAssociatedResourceTypes(Aws::Vector<WorkSpaceAssociatedResourceType>&& value) { m_associatedResourceTypesHasBeenSet = true; m_associatedResourceTypes = std::move(value); }
-
-    /**
-     * <p>The resource types of the associated resources.</p>
-     */
     inline DescribeWorkspaceAssociationsRequest& WithAssociatedResourceTypes(const Aws::Vector<WorkSpaceAssociatedResourceType>& value) { SetAssociatedResourceTypes(value); return *this;}
-
-    /**
-     * <p>The resource types of the associated resources.</p>
-     */
     inline DescribeWorkspaceAssociationsRequest& WithAssociatedResourceTypes(Aws::Vector<WorkSpaceAssociatedResourceType>&& value) { SetAssociatedResourceTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource types of the associated resources.</p>
-     */
     inline DescribeWorkspaceAssociationsRequest& AddAssociatedResourceTypes(const WorkSpaceAssociatedResourceType& value) { m_associatedResourceTypesHasBeenSet = true; m_associatedResourceTypes.push_back(value); return *this; }
-
-    /**
-     * <p>The resource types of the associated resources.</p>
-     */
     inline DescribeWorkspaceAssociationsRequest& AddAssociatedResourceTypes(WorkSpaceAssociatedResourceType&& value) { m_associatedResourceTypesHasBeenSet = true; m_associatedResourceTypes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_workspaceId;

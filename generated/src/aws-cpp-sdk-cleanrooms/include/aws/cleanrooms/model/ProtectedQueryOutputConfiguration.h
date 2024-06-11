@@ -38,36 +38,17 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Required configuration for a protected query with an `S3` output type.</p>
      */
     inline const ProtectedQueryS3OutputConfiguration& GetS3() const{ return m_s3; }
-
-    /**
-     * <p>Required configuration for a protected query with an `S3` output type.</p>
-     */
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    /**
-     * <p>Required configuration for a protected query with an `S3` output type.</p>
-     */
     inline void SetS3(const ProtectedQueryS3OutputConfiguration& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    /**
-     * <p>Required configuration for a protected query with an `S3` output type.</p>
-     */
     inline void SetS3(ProtectedQueryS3OutputConfiguration&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    /**
-     * <p>Required configuration for a protected query with an `S3` output type.</p>
-     */
     inline ProtectedQueryOutputConfiguration& WithS3(const ProtectedQueryS3OutputConfiguration& value) { SetS3(value); return *this;}
-
-    /**
-     * <p>Required configuration for a protected query with an `S3` output type.</p>
-     */
     inline ProtectedQueryOutputConfiguration& WithS3(ProtectedQueryS3OutputConfiguration&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ProtectedQueryS3OutputConfiguration m_s3;

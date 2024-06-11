@@ -34,76 +34,33 @@ namespace Model
     AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
      */
     inline const Aws::String& GetResolverEndpointId() const{ return m_resolverEndpointId; }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
-     */
     inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
-     */
     inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
-     */
     inline void SetResolverEndpointId(Aws::String&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::move(value); }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
-     */
     inline void SetResolverEndpointId(const char* value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId.assign(value); }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
-     */
     inline ListResolverEndpointIpAddressesRequest& WithResolverEndpointId(const Aws::String& value) { SetResolverEndpointId(value); return *this;}
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
-     */
     inline ListResolverEndpointIpAddressesRequest& WithResolverEndpointId(Aws::String&& value) { SetResolverEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
-     */
     inline ListResolverEndpointIpAddressesRequest& WithResolverEndpointId(const char* value) { SetResolverEndpointId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of IP addresses that you want to return in the response to
      * a <code>ListResolverEndpointIpAddresses</code> request. If you don't specify a
      * value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of IP addresses that you want to return in the response to
-     * a <code>ListResolverEndpointIpAddresses</code> request. If you don't specify a
-     * value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses. </p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of IP addresses that you want to return in the response to
-     * a <code>ListResolverEndpointIpAddresses</code> request. If you don't specify a
-     * value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses. </p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of IP addresses that you want to return in the response to
-     * a <code>ListResolverEndpointIpAddresses</code> request. If you don't specify a
-     * value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses. </p>
-     */
     inline ListResolverEndpointIpAddressesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this
      * value.</p> <p>If the specified Resolver endpoint has more than
@@ -113,77 +70,14 @@ namespace Model
      * the previous response. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this
-     * value.</p> <p>If the specified Resolver endpoint has more than
-     * <code>MaxResults</code> IP addresses, you can submit another
-     * <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP
-     * addresses. In the next request, specify the value of <code>NextToken</code> from
-     * the previous response. </p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this
-     * value.</p> <p>If the specified Resolver endpoint has more than
-     * <code>MaxResults</code> IP addresses, you can submit another
-     * <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP
-     * addresses. In the next request, specify the value of <code>NextToken</code> from
-     * the previous response. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this
-     * value.</p> <p>If the specified Resolver endpoint has more than
-     * <code>MaxResults</code> IP addresses, you can submit another
-     * <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP
-     * addresses. In the next request, specify the value of <code>NextToken</code> from
-     * the previous response. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this
-     * value.</p> <p>If the specified Resolver endpoint has more than
-     * <code>MaxResults</code> IP addresses, you can submit another
-     * <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP
-     * addresses. In the next request, specify the value of <code>NextToken</code> from
-     * the previous response. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this
-     * value.</p> <p>If the specified Resolver endpoint has more than
-     * <code>MaxResults</code> IP addresses, you can submit another
-     * <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP
-     * addresses. In the next request, specify the value of <code>NextToken</code> from
-     * the previous response. </p>
-     */
     inline ListResolverEndpointIpAddressesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this
-     * value.</p> <p>If the specified Resolver endpoint has more than
-     * <code>MaxResults</code> IP addresses, you can submit another
-     * <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP
-     * addresses. In the next request, specify the value of <code>NextToken</code> from
-     * the previous response. </p>
-     */
     inline ListResolverEndpointIpAddressesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this
-     * value.</p> <p>If the specified Resolver endpoint has more than
-     * <code>MaxResults</code> IP addresses, you can submit another
-     * <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP
-     * addresses. In the next request, specify the value of <code>NextToken</code> from
-     * the previous response. </p>
-     */
     inline ListResolverEndpointIpAddressesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resolverEndpointId;

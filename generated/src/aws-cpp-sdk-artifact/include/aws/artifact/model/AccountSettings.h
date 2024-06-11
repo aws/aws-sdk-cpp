@@ -37,36 +37,17 @@ namespace Model
     AWS_ARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Notification subscription status of the customer.</p>
      */
     inline const NotificationSubscriptionStatus& GetNotificationSubscriptionStatus() const{ return m_notificationSubscriptionStatus; }
-
-    /**
-     * <p>Notification subscription status of the customer.</p>
-     */
     inline bool NotificationSubscriptionStatusHasBeenSet() const { return m_notificationSubscriptionStatusHasBeenSet; }
-
-    /**
-     * <p>Notification subscription status of the customer.</p>
-     */
     inline void SetNotificationSubscriptionStatus(const NotificationSubscriptionStatus& value) { m_notificationSubscriptionStatusHasBeenSet = true; m_notificationSubscriptionStatus = value; }
-
-    /**
-     * <p>Notification subscription status of the customer.</p>
-     */
     inline void SetNotificationSubscriptionStatus(NotificationSubscriptionStatus&& value) { m_notificationSubscriptionStatusHasBeenSet = true; m_notificationSubscriptionStatus = std::move(value); }
-
-    /**
-     * <p>Notification subscription status of the customer.</p>
-     */
     inline AccountSettings& WithNotificationSubscriptionStatus(const NotificationSubscriptionStatus& value) { SetNotificationSubscriptionStatus(value); return *this;}
-
-    /**
-     * <p>Notification subscription status of the customer.</p>
-     */
     inline AccountSettings& WithNotificationSubscriptionStatus(NotificationSubscriptionStatus&& value) { SetNotificationSubscriptionStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NotificationSubscriptionStatus m_notificationSubscriptionStatus;

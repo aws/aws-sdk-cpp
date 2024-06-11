@@ -40,87 +40,33 @@ namespace Model
     AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The cache node type for which this value applies.</p>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
-
-    /**
-     * <p>The cache node type for which this value applies.</p>
-     */
     inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
-
-    /**
-     * <p>The cache node type for which this value applies.</p>
-     */
     inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
-
-    /**
-     * <p>The cache node type for which this value applies.</p>
-     */
     inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
-
-    /**
-     * <p>The cache node type for which this value applies.</p>
-     */
     inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
-
-    /**
-     * <p>The cache node type for which this value applies.</p>
-     */
     inline CacheNodeTypeSpecificValue& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
-
-    /**
-     * <p>The cache node type for which this value applies.</p>
-     */
     inline CacheNodeTypeSpecificValue& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
-
-    /**
-     * <p>The cache node type for which this value applies.</p>
-     */
     inline CacheNodeTypeSpecificValue& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value for the cache node type.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value for the cache node type.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value for the cache node type.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value for the cache node type.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value for the cache node type.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value for the cache node type.</p>
-     */
     inline CacheNodeTypeSpecificValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value for the cache node type.</p>
-     */
     inline CacheNodeTypeSpecificValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value for the cache node type.</p>
-     */
     inline CacheNodeTypeSpecificValue& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cacheNodeType;

@@ -32,63 +32,29 @@ namespace Model
     AWS_IOT_API UpdateScheduledAuditResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the scheduled audit.</p>
      */
     inline const Aws::String& GetScheduledAuditArn() const{ return m_scheduledAuditArn; }
-
-    /**
-     * <p>The ARN of the scheduled audit.</p>
-     */
     inline void SetScheduledAuditArn(const Aws::String& value) { m_scheduledAuditArn = value; }
-
-    /**
-     * <p>The ARN of the scheduled audit.</p>
-     */
     inline void SetScheduledAuditArn(Aws::String&& value) { m_scheduledAuditArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the scheduled audit.</p>
-     */
     inline void SetScheduledAuditArn(const char* value) { m_scheduledAuditArn.assign(value); }
-
-    /**
-     * <p>The ARN of the scheduled audit.</p>
-     */
     inline UpdateScheduledAuditResult& WithScheduledAuditArn(const Aws::String& value) { SetScheduledAuditArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the scheduled audit.</p>
-     */
     inline UpdateScheduledAuditResult& WithScheduledAuditArn(Aws::String&& value) { SetScheduledAuditArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the scheduled audit.</p>
-     */
     inline UpdateScheduledAuditResult& WithScheduledAuditArn(const char* value) { SetScheduledAuditArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateScheduledAuditResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateScheduledAuditResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateScheduledAuditResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scheduledAuditArn;

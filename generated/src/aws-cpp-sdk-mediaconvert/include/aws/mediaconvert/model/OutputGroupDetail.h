@@ -39,46 +39,19 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Details about the output
      */
     inline const Aws::Vector<OutputDetail>& GetOutputDetails() const{ return m_outputDetails; }
-
-    /**
-     * Details about the output
-     */
     inline bool OutputDetailsHasBeenSet() const { return m_outputDetailsHasBeenSet; }
-
-    /**
-     * Details about the output
-     */
     inline void SetOutputDetails(const Aws::Vector<OutputDetail>& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = value; }
-
-    /**
-     * Details about the output
-     */
     inline void SetOutputDetails(Aws::Vector<OutputDetail>&& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = std::move(value); }
-
-    /**
-     * Details about the output
-     */
     inline OutputGroupDetail& WithOutputDetails(const Aws::Vector<OutputDetail>& value) { SetOutputDetails(value); return *this;}
-
-    /**
-     * Details about the output
-     */
     inline OutputGroupDetail& WithOutputDetails(Aws::Vector<OutputDetail>&& value) { SetOutputDetails(std::move(value)); return *this;}
-
-    /**
-     * Details about the output
-     */
     inline OutputGroupDetail& AddOutputDetails(const OutputDetail& value) { m_outputDetailsHasBeenSet = true; m_outputDetails.push_back(value); return *this; }
-
-    /**
-     * Details about the output
-     */
     inline OutputGroupDetail& AddOutputDetails(OutputDetail&& value) { m_outputDetailsHasBeenSet = true; m_outputDetails.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<OutputDetail> m_outputDetails;

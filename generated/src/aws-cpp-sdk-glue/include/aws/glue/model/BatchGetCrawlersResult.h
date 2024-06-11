@@ -34,104 +34,43 @@ namespace Model
     AWS_GLUE_API BatchGetCrawlersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of crawler definitions.</p>
      */
     inline const Aws::Vector<Crawler>& GetCrawlers() const{ return m_crawlers; }
-
-    /**
-     * <p>A list of crawler definitions.</p>
-     */
     inline void SetCrawlers(const Aws::Vector<Crawler>& value) { m_crawlers = value; }
-
-    /**
-     * <p>A list of crawler definitions.</p>
-     */
     inline void SetCrawlers(Aws::Vector<Crawler>&& value) { m_crawlers = std::move(value); }
-
-    /**
-     * <p>A list of crawler definitions.</p>
-     */
     inline BatchGetCrawlersResult& WithCrawlers(const Aws::Vector<Crawler>& value) { SetCrawlers(value); return *this;}
-
-    /**
-     * <p>A list of crawler definitions.</p>
-     */
     inline BatchGetCrawlersResult& WithCrawlers(Aws::Vector<Crawler>&& value) { SetCrawlers(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of crawler definitions.</p>
-     */
     inline BatchGetCrawlersResult& AddCrawlers(const Crawler& value) { m_crawlers.push_back(value); return *this; }
-
-    /**
-     * <p>A list of crawler definitions.</p>
-     */
     inline BatchGetCrawlersResult& AddCrawlers(Crawler&& value) { m_crawlers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of names of crawlers that were not found.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCrawlersNotFound() const{ return m_crawlersNotFound; }
-
-    /**
-     * <p>A list of names of crawlers that were not found.</p>
-     */
     inline void SetCrawlersNotFound(const Aws::Vector<Aws::String>& value) { m_crawlersNotFound = value; }
-
-    /**
-     * <p>A list of names of crawlers that were not found.</p>
-     */
     inline void SetCrawlersNotFound(Aws::Vector<Aws::String>&& value) { m_crawlersNotFound = std::move(value); }
-
-    /**
-     * <p>A list of names of crawlers that were not found.</p>
-     */
     inline BatchGetCrawlersResult& WithCrawlersNotFound(const Aws::Vector<Aws::String>& value) { SetCrawlersNotFound(value); return *this;}
-
-    /**
-     * <p>A list of names of crawlers that were not found.</p>
-     */
     inline BatchGetCrawlersResult& WithCrawlersNotFound(Aws::Vector<Aws::String>&& value) { SetCrawlersNotFound(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of names of crawlers that were not found.</p>
-     */
     inline BatchGetCrawlersResult& AddCrawlersNotFound(const Aws::String& value) { m_crawlersNotFound.push_back(value); return *this; }
-
-    /**
-     * <p>A list of names of crawlers that were not found.</p>
-     */
     inline BatchGetCrawlersResult& AddCrawlersNotFound(Aws::String&& value) { m_crawlersNotFound.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of names of crawlers that were not found.</p>
-     */
     inline BatchGetCrawlersResult& AddCrawlersNotFound(const char* value) { m_crawlersNotFound.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetCrawlersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetCrawlersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetCrawlersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Crawler> m_crawlers;

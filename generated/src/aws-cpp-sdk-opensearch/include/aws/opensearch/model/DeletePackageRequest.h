@@ -36,54 +36,20 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The internal ID of the package you want to delete. Use
      * <code>DescribePackages</code> to find this value.</p>
      */
     inline const Aws::String& GetPackageID() const{ return m_packageID; }
-
-    /**
-     * <p>The internal ID of the package you want to delete. Use
-     * <code>DescribePackages</code> to find this value.</p>
-     */
     inline bool PackageIDHasBeenSet() const { return m_packageIDHasBeenSet; }
-
-    /**
-     * <p>The internal ID of the package you want to delete. Use
-     * <code>DescribePackages</code> to find this value.</p>
-     */
     inline void SetPackageID(const Aws::String& value) { m_packageIDHasBeenSet = true; m_packageID = value; }
-
-    /**
-     * <p>The internal ID of the package you want to delete. Use
-     * <code>DescribePackages</code> to find this value.</p>
-     */
     inline void SetPackageID(Aws::String&& value) { m_packageIDHasBeenSet = true; m_packageID = std::move(value); }
-
-    /**
-     * <p>The internal ID of the package you want to delete. Use
-     * <code>DescribePackages</code> to find this value.</p>
-     */
     inline void SetPackageID(const char* value) { m_packageIDHasBeenSet = true; m_packageID.assign(value); }
-
-    /**
-     * <p>The internal ID of the package you want to delete. Use
-     * <code>DescribePackages</code> to find this value.</p>
-     */
     inline DeletePackageRequest& WithPackageID(const Aws::String& value) { SetPackageID(value); return *this;}
-
-    /**
-     * <p>The internal ID of the package you want to delete. Use
-     * <code>DescribePackages</code> to find this value.</p>
-     */
     inline DeletePackageRequest& WithPackageID(Aws::String&& value) { SetPackageID(std::move(value)); return *this;}
-
-    /**
-     * <p>The internal ID of the package you want to delete. Use
-     * <code>DescribePackages</code> to find this value.</p>
-     */
     inline DeletePackageRequest& WithPackageID(const char* value) { SetPackageID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_packageID;

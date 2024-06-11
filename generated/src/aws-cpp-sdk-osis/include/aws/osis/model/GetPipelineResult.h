@@ -33,53 +33,27 @@ namespace Model
     AWS_OSIS_API GetPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Detailed information about the requested pipeline.</p>
      */
     inline const Pipeline& GetPipeline() const{ return m_pipeline; }
-
-    /**
-     * <p>Detailed information about the requested pipeline.</p>
-     */
     inline void SetPipeline(const Pipeline& value) { m_pipeline = value; }
-
-    /**
-     * <p>Detailed information about the requested pipeline.</p>
-     */
     inline void SetPipeline(Pipeline&& value) { m_pipeline = std::move(value); }
-
-    /**
-     * <p>Detailed information about the requested pipeline.</p>
-     */
     inline GetPipelineResult& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
-
-    /**
-     * <p>Detailed information about the requested pipeline.</p>
-     */
     inline GetPipelineResult& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Pipeline m_pipeline;

@@ -38,87 +38,33 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
      */
     inline const Aws::String& GetDataSetIdentifier() const{ return m_dataSetIdentifier; }
-
-    /**
-     * <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
-     */
     inline bool DataSetIdentifierHasBeenSet() const { return m_dataSetIdentifierHasBeenSet; }
-
-    /**
-     * <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
-     */
     inline void SetDataSetIdentifier(const Aws::String& value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier = value; }
-
-    /**
-     * <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
-     */
     inline void SetDataSetIdentifier(Aws::String&& value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier = std::move(value); }
-
-    /**
-     * <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
-     */
     inline void SetDataSetIdentifier(const char* value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier.assign(value); }
-
-    /**
-     * <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
-     */
     inline MappedDataSetParameter& WithDataSetIdentifier(const Aws::String& value) { SetDataSetIdentifier(value); return *this;}
-
-    /**
-     * <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
-     */
     inline MappedDataSetParameter& WithDataSetIdentifier(Aws::String&& value) { SetDataSetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
-     */
     inline MappedDataSetParameter& WithDataSetIdentifier(const char* value) { SetDataSetIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the dataset parameter.</p>
      */
     inline const Aws::String& GetDataSetParameterName() const{ return m_dataSetParameterName; }
-
-    /**
-     * <p>The name of the dataset parameter.</p>
-     */
     inline bool DataSetParameterNameHasBeenSet() const { return m_dataSetParameterNameHasBeenSet; }
-
-    /**
-     * <p>The name of the dataset parameter.</p>
-     */
     inline void SetDataSetParameterName(const Aws::String& value) { m_dataSetParameterNameHasBeenSet = true; m_dataSetParameterName = value; }
-
-    /**
-     * <p>The name of the dataset parameter.</p>
-     */
     inline void SetDataSetParameterName(Aws::String&& value) { m_dataSetParameterNameHasBeenSet = true; m_dataSetParameterName = std::move(value); }
-
-    /**
-     * <p>The name of the dataset parameter.</p>
-     */
     inline void SetDataSetParameterName(const char* value) { m_dataSetParameterNameHasBeenSet = true; m_dataSetParameterName.assign(value); }
-
-    /**
-     * <p>The name of the dataset parameter.</p>
-     */
     inline MappedDataSetParameter& WithDataSetParameterName(const Aws::String& value) { SetDataSetParameterName(value); return *this;}
-
-    /**
-     * <p>The name of the dataset parameter.</p>
-     */
     inline MappedDataSetParameter& WithDataSetParameterName(Aws::String&& value) { SetDataSetParameterName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the dataset parameter.</p>
-     */
     inline MappedDataSetParameter& WithDataSetParameterName(const char* value) { SetDataSetParameterName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataSetIdentifier;

@@ -42,42 +42,18 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration information required to invoke chat in
      * <code>PLUGIN_MODE</code>.</p>
      */
     inline const PluginConfiguration& GetPluginConfiguration() const{ return m_pluginConfiguration; }
-
-    /**
-     * <p>Configuration information required to invoke chat in
-     * <code>PLUGIN_MODE</code>.</p>
-     */
     inline bool PluginConfigurationHasBeenSet() const { return m_pluginConfigurationHasBeenSet; }
-
-    /**
-     * <p>Configuration information required to invoke chat in
-     * <code>PLUGIN_MODE</code>.</p>
-     */
     inline void SetPluginConfiguration(const PluginConfiguration& value) { m_pluginConfigurationHasBeenSet = true; m_pluginConfiguration = value; }
-
-    /**
-     * <p>Configuration information required to invoke chat in
-     * <code>PLUGIN_MODE</code>.</p>
-     */
     inline void SetPluginConfiguration(PluginConfiguration&& value) { m_pluginConfigurationHasBeenSet = true; m_pluginConfiguration = std::move(value); }
-
-    /**
-     * <p>Configuration information required to invoke chat in
-     * <code>PLUGIN_MODE</code>.</p>
-     */
     inline ChatModeConfiguration& WithPluginConfiguration(const PluginConfiguration& value) { SetPluginConfiguration(value); return *this;}
-
-    /**
-     * <p>Configuration information required to invoke chat in
-     * <code>PLUGIN_MODE</code>.</p>
-     */
     inline ChatModeConfiguration& WithPluginConfiguration(PluginConfiguration&& value) { SetPluginConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PluginConfiguration m_pluginConfiguration;

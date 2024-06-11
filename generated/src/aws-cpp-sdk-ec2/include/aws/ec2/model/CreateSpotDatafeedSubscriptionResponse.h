@@ -39,47 +39,25 @@ namespace Model
     AWS_EC2_API CreateSpotDatafeedSubscriptionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The Spot Instance data feed subscription.</p>
      */
     inline const SpotDatafeedSubscription& GetSpotDatafeedSubscription() const{ return m_spotDatafeedSubscription; }
-
-    /**
-     * <p>The Spot Instance data feed subscription.</p>
-     */
     inline void SetSpotDatafeedSubscription(const SpotDatafeedSubscription& value) { m_spotDatafeedSubscription = value; }
-
-    /**
-     * <p>The Spot Instance data feed subscription.</p>
-     */
     inline void SetSpotDatafeedSubscription(SpotDatafeedSubscription&& value) { m_spotDatafeedSubscription = std::move(value); }
-
-    /**
-     * <p>The Spot Instance data feed subscription.</p>
-     */
     inline CreateSpotDatafeedSubscriptionResponse& WithSpotDatafeedSubscription(const SpotDatafeedSubscription& value) { SetSpotDatafeedSubscription(value); return *this;}
-
-    /**
-     * <p>The Spot Instance data feed subscription.</p>
-     */
     inline CreateSpotDatafeedSubscriptionResponse& WithSpotDatafeedSubscription(SpotDatafeedSubscription&& value) { SetSpotDatafeedSubscription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateSpotDatafeedSubscriptionResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateSpotDatafeedSubscriptionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SpotDatafeedSubscription m_spotDatafeedSubscription;

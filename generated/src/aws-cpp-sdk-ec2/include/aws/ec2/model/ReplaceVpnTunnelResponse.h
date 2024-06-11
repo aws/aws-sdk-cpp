@@ -32,37 +32,23 @@ namespace Model
     AWS_EC2_API ReplaceVpnTunnelResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Confirmation of replace tunnel operation.</p>
      */
     inline bool GetReturn() const{ return m_return; }
-
-    /**
-     * <p>Confirmation of replace tunnel operation.</p>
-     */
     inline void SetReturn(bool value) { m_return = value; }
-
-    /**
-     * <p>Confirmation of replace tunnel operation.</p>
-     */
     inline ReplaceVpnTunnelResponse& WithReturn(bool value) { SetReturn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ReplaceVpnTunnelResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ReplaceVpnTunnelResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_return;

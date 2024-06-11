@@ -36,30 +36,16 @@ namespace Model
     AWS_NEPTUNEDATA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>If set to <code>TRUE</code>, the list returned includes waiting queries. The
      * default is <code>FALSE</code>;</p>
      */
     inline bool GetIncludeWaiting() const{ return m_includeWaiting; }
-
-    /**
-     * <p>If set to <code>TRUE</code>, the list returned includes waiting queries. The
-     * default is <code>FALSE</code>;</p>
-     */
     inline bool IncludeWaitingHasBeenSet() const { return m_includeWaitingHasBeenSet; }
-
-    /**
-     * <p>If set to <code>TRUE</code>, the list returned includes waiting queries. The
-     * default is <code>FALSE</code>;</p>
-     */
     inline void SetIncludeWaiting(bool value) { m_includeWaitingHasBeenSet = true; m_includeWaiting = value; }
-
-    /**
-     * <p>If set to <code>TRUE</code>, the list returned includes waiting queries. The
-     * default is <code>FALSE</code>;</p>
-     */
     inline ListGremlinQueriesRequest& WithIncludeWaiting(bool value) { SetIncludeWaiting(value); return *this;}
-
+    ///@}
   private:
 
     bool m_includeWaiting;

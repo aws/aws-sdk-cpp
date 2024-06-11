@@ -33,51 +33,20 @@ namespace Model
     AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
      */
     inline const Aws::Vector<Aws::String>& GetJobs() const{ return m_jobs; }
-
-    /**
-     * <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-     */
     inline bool JobsHasBeenSet() const { return m_jobsHasBeenSet; }
-
-    /**
-     * <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-     */
     inline void SetJobs(const Aws::Vector<Aws::String>& value) { m_jobsHasBeenSet = true; m_jobs = value; }
-
-    /**
-     * <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-     */
     inline void SetJobs(Aws::Vector<Aws::String>&& value) { m_jobsHasBeenSet = true; m_jobs = std::move(value); }
-
-    /**
-     * <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-     */
     inline BatchDescribeSimulationJobRequest& WithJobs(const Aws::Vector<Aws::String>& value) { SetJobs(value); return *this;}
-
-    /**
-     * <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-     */
     inline BatchDescribeSimulationJobRequest& WithJobs(Aws::Vector<Aws::String>&& value) { SetJobs(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-     */
     inline BatchDescribeSimulationJobRequest& AddJobs(const Aws::String& value) { m_jobsHasBeenSet = true; m_jobs.push_back(value); return *this; }
-
-    /**
-     * <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-     */
     inline BatchDescribeSimulationJobRequest& AddJobs(Aws::String&& value) { m_jobsHasBeenSet = true; m_jobs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-     */
     inline BatchDescribeSimulationJobRequest& AddJobs(const char* value) { m_jobsHasBeenSet = true; m_jobs.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_jobs;

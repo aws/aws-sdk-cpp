@@ -34,36 +34,17 @@ namespace Model
     AWS_ECR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An object representing the replication configuration for a registry.</p>
      */
     inline const ReplicationConfiguration& GetReplicationConfiguration() const{ return m_replicationConfiguration; }
-
-    /**
-     * <p>An object representing the replication configuration for a registry.</p>
-     */
     inline bool ReplicationConfigurationHasBeenSet() const { return m_replicationConfigurationHasBeenSet; }
-
-    /**
-     * <p>An object representing the replication configuration for a registry.</p>
-     */
     inline void SetReplicationConfiguration(const ReplicationConfiguration& value) { m_replicationConfigurationHasBeenSet = true; m_replicationConfiguration = value; }
-
-    /**
-     * <p>An object representing the replication configuration for a registry.</p>
-     */
     inline void SetReplicationConfiguration(ReplicationConfiguration&& value) { m_replicationConfigurationHasBeenSet = true; m_replicationConfiguration = std::move(value); }
-
-    /**
-     * <p>An object representing the replication configuration for a registry.</p>
-     */
     inline PutReplicationConfigurationRequest& WithReplicationConfiguration(const ReplicationConfiguration& value) { SetReplicationConfiguration(value); return *this;}
-
-    /**
-     * <p>An object representing the replication configuration for a registry.</p>
-     */
     inline PutReplicationConfigurationRequest& WithReplicationConfiguration(ReplicationConfiguration&& value) { SetReplicationConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReplicationConfiguration m_replicationConfiguration;

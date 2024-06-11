@@ -38,42 +38,18 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that contains details about an adjustment that Amazon Inspector
      * made to the CVSS score for the finding.</p>
      */
     inline const CvssScoreDetails& GetAdjustedCvss() const{ return m_adjustedCvss; }
-
-    /**
-     * <p>An object that contains details about an adjustment that Amazon Inspector
-     * made to the CVSS score for the finding.</p>
-     */
     inline bool AdjustedCvssHasBeenSet() const { return m_adjustedCvssHasBeenSet; }
-
-    /**
-     * <p>An object that contains details about an adjustment that Amazon Inspector
-     * made to the CVSS score for the finding.</p>
-     */
     inline void SetAdjustedCvss(const CvssScoreDetails& value) { m_adjustedCvssHasBeenSet = true; m_adjustedCvss = value; }
-
-    /**
-     * <p>An object that contains details about an adjustment that Amazon Inspector
-     * made to the CVSS score for the finding.</p>
-     */
     inline void SetAdjustedCvss(CvssScoreDetails&& value) { m_adjustedCvssHasBeenSet = true; m_adjustedCvss = std::move(value); }
-
-    /**
-     * <p>An object that contains details about an adjustment that Amazon Inspector
-     * made to the CVSS score for the finding.</p>
-     */
     inline InspectorScoreDetails& WithAdjustedCvss(const CvssScoreDetails& value) { SetAdjustedCvss(value); return *this;}
-
-    /**
-     * <p>An object that contains details about an adjustment that Amazon Inspector
-     * made to the CVSS score for the finding.</p>
-     */
     inline InspectorScoreDetails& WithAdjustedCvss(CvssScoreDetails&& value) { SetAdjustedCvss(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CvssScoreDetails m_adjustedCvss;

@@ -41,91 +41,33 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The verification status of the identity: "Pending", "Success", "Failed", or
      * "TemporaryFailure".</p>
      */
     inline const VerificationStatus& GetVerificationStatus() const{ return m_verificationStatus; }
-
-    /**
-     * <p>The verification status of the identity: "Pending", "Success", "Failed", or
-     * "TemporaryFailure".</p>
-     */
     inline bool VerificationStatusHasBeenSet() const { return m_verificationStatusHasBeenSet; }
-
-    /**
-     * <p>The verification status of the identity: "Pending", "Success", "Failed", or
-     * "TemporaryFailure".</p>
-     */
     inline void SetVerificationStatus(const VerificationStatus& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = value; }
-
-    /**
-     * <p>The verification status of the identity: "Pending", "Success", "Failed", or
-     * "TemporaryFailure".</p>
-     */
     inline void SetVerificationStatus(VerificationStatus&& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = std::move(value); }
-
-    /**
-     * <p>The verification status of the identity: "Pending", "Success", "Failed", or
-     * "TemporaryFailure".</p>
-     */
     inline IdentityVerificationAttributes& WithVerificationStatus(const VerificationStatus& value) { SetVerificationStatus(value); return *this;}
-
-    /**
-     * <p>The verification status of the identity: "Pending", "Success", "Failed", or
-     * "TemporaryFailure".</p>
-     */
     inline IdentityVerificationAttributes& WithVerificationStatus(VerificationStatus&& value) { SetVerificationStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The verification token for a domain identity. Null for email address
      * identities.</p>
      */
     inline const Aws::String& GetVerificationToken() const{ return m_verificationToken; }
-
-    /**
-     * <p>The verification token for a domain identity. Null for email address
-     * identities.</p>
-     */
     inline bool VerificationTokenHasBeenSet() const { return m_verificationTokenHasBeenSet; }
-
-    /**
-     * <p>The verification token for a domain identity. Null for email address
-     * identities.</p>
-     */
     inline void SetVerificationToken(const Aws::String& value) { m_verificationTokenHasBeenSet = true; m_verificationToken = value; }
-
-    /**
-     * <p>The verification token for a domain identity. Null for email address
-     * identities.</p>
-     */
     inline void SetVerificationToken(Aws::String&& value) { m_verificationTokenHasBeenSet = true; m_verificationToken = std::move(value); }
-
-    /**
-     * <p>The verification token for a domain identity. Null for email address
-     * identities.</p>
-     */
     inline void SetVerificationToken(const char* value) { m_verificationTokenHasBeenSet = true; m_verificationToken.assign(value); }
-
-    /**
-     * <p>The verification token for a domain identity. Null for email address
-     * identities.</p>
-     */
     inline IdentityVerificationAttributes& WithVerificationToken(const Aws::String& value) { SetVerificationToken(value); return *this;}
-
-    /**
-     * <p>The verification token for a domain identity. Null for email address
-     * identities.</p>
-     */
     inline IdentityVerificationAttributes& WithVerificationToken(Aws::String&& value) { SetVerificationToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The verification token for a domain identity. Null for email address
-     * identities.</p>
-     */
     inline IdentityVerificationAttributes& WithVerificationToken(const char* value) { SetVerificationToken(value); return *this;}
-
+    ///@}
   private:
 
     VerificationStatus m_verificationStatus;

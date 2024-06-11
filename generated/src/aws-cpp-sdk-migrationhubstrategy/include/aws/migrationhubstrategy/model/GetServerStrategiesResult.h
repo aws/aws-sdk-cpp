@@ -34,63 +34,29 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetServerStrategiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> A list of strategy recommendations for the server. </p>
      */
     inline const Aws::Vector<ServerStrategy>& GetServerStrategies() const{ return m_serverStrategies; }
-
-    /**
-     * <p> A list of strategy recommendations for the server. </p>
-     */
     inline void SetServerStrategies(const Aws::Vector<ServerStrategy>& value) { m_serverStrategies = value; }
-
-    /**
-     * <p> A list of strategy recommendations for the server. </p>
-     */
     inline void SetServerStrategies(Aws::Vector<ServerStrategy>&& value) { m_serverStrategies = std::move(value); }
-
-    /**
-     * <p> A list of strategy recommendations for the server. </p>
-     */
     inline GetServerStrategiesResult& WithServerStrategies(const Aws::Vector<ServerStrategy>& value) { SetServerStrategies(value); return *this;}
-
-    /**
-     * <p> A list of strategy recommendations for the server. </p>
-     */
     inline GetServerStrategiesResult& WithServerStrategies(Aws::Vector<ServerStrategy>&& value) { SetServerStrategies(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of strategy recommendations for the server. </p>
-     */
     inline GetServerStrategiesResult& AddServerStrategies(const ServerStrategy& value) { m_serverStrategies.push_back(value); return *this; }
-
-    /**
-     * <p> A list of strategy recommendations for the server. </p>
-     */
     inline GetServerStrategiesResult& AddServerStrategies(ServerStrategy&& value) { m_serverStrategies.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetServerStrategiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetServerStrategiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetServerStrategiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ServerStrategy> m_serverStrategies;

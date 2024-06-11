@@ -34,46 +34,19 @@ namespace Model
     AWS_B2BI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies a system-assigned unique identifier for the capability.</p>
      */
     inline const Aws::String& GetCapabilityId() const{ return m_capabilityId; }
-
-    /**
-     * <p>Specifies a system-assigned unique identifier for the capability.</p>
-     */
     inline bool CapabilityIdHasBeenSet() const { return m_capabilityIdHasBeenSet; }
-
-    /**
-     * <p>Specifies a system-assigned unique identifier for the capability.</p>
-     */
     inline void SetCapabilityId(const Aws::String& value) { m_capabilityIdHasBeenSet = true; m_capabilityId = value; }
-
-    /**
-     * <p>Specifies a system-assigned unique identifier for the capability.</p>
-     */
     inline void SetCapabilityId(Aws::String&& value) { m_capabilityIdHasBeenSet = true; m_capabilityId = std::move(value); }
-
-    /**
-     * <p>Specifies a system-assigned unique identifier for the capability.</p>
-     */
     inline void SetCapabilityId(const char* value) { m_capabilityIdHasBeenSet = true; m_capabilityId.assign(value); }
-
-    /**
-     * <p>Specifies a system-assigned unique identifier for the capability.</p>
-     */
     inline GetCapabilityRequest& WithCapabilityId(const Aws::String& value) { SetCapabilityId(value); return *this;}
-
-    /**
-     * <p>Specifies a system-assigned unique identifier for the capability.</p>
-     */
     inline GetCapabilityRequest& WithCapabilityId(Aws::String&& value) { SetCapabilityId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies a system-assigned unique identifier for the capability.</p>
-     */
     inline GetCapabilityRequest& WithCapabilityId(const char* value) { SetCapabilityId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_capabilityId;

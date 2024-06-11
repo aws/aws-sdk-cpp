@@ -34,113 +34,44 @@ namespace Model
     AWS_ROUTE53_API ListCidrBlocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>An opaque pagination token to indicate where the service is to begin
      * enumerating results. </p> <p>If no value is provided, the listing of results
      * starts from the beginning.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results. </p> <p>If no value is provided, the listing of results
-     * starts from the beginning.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results. </p> <p>If no value is provided, the listing of results
-     * starts from the beginning.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results. </p> <p>If no value is provided, the listing of results
-     * starts from the beginning.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results. </p> <p>If no value is provided, the listing of results
-     * starts from the beginning.</p>
-     */
     inline ListCidrBlocksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results. </p> <p>If no value is provided, the listing of results
-     * starts from the beginning.</p>
-     */
     inline ListCidrBlocksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results. </p> <p>If no value is provided, the listing of results
-     * starts from the beginning.</p>
-     */
     inline ListCidrBlocksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A complex type that contains information about the CIDR blocks.</p>
      */
     inline const Aws::Vector<CidrBlockSummary>& GetCidrBlocks() const{ return m_cidrBlocks; }
-
-    /**
-     * <p>A complex type that contains information about the CIDR blocks.</p>
-     */
     inline void SetCidrBlocks(const Aws::Vector<CidrBlockSummary>& value) { m_cidrBlocks = value; }
-
-    /**
-     * <p>A complex type that contains information about the CIDR blocks.</p>
-     */
     inline void SetCidrBlocks(Aws::Vector<CidrBlockSummary>&& value) { m_cidrBlocks = std::move(value); }
-
-    /**
-     * <p>A complex type that contains information about the CIDR blocks.</p>
-     */
     inline ListCidrBlocksResult& WithCidrBlocks(const Aws::Vector<CidrBlockSummary>& value) { SetCidrBlocks(value); return *this;}
-
-    /**
-     * <p>A complex type that contains information about the CIDR blocks.</p>
-     */
     inline ListCidrBlocksResult& WithCidrBlocks(Aws::Vector<CidrBlockSummary>&& value) { SetCidrBlocks(std::move(value)); return *this;}
-
-    /**
-     * <p>A complex type that contains information about the CIDR blocks.</p>
-     */
     inline ListCidrBlocksResult& AddCidrBlocks(const CidrBlockSummary& value) { m_cidrBlocks.push_back(value); return *this; }
-
-    /**
-     * <p>A complex type that contains information about the CIDR blocks.</p>
-     */
     inline ListCidrBlocksResult& AddCidrBlocks(CidrBlockSummary&& value) { m_cidrBlocks.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListCidrBlocksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListCidrBlocksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListCidrBlocksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

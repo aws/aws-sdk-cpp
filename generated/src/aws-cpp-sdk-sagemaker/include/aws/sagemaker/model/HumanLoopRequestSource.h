@@ -38,48 +38,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the
      * integration source. The default field settings and JSON parsing rules are
      * different based on the integration source. Valid values:</p>
      */
     inline const AwsManagedHumanLoopRequestSource& GetAwsManagedHumanLoopRequestSource() const{ return m_awsManagedHumanLoopRequestSource; }
-
-    /**
-     * <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the
-     * integration source. The default field settings and JSON parsing rules are
-     * different based on the integration source. Valid values:</p>
-     */
     inline bool AwsManagedHumanLoopRequestSourceHasBeenSet() const { return m_awsManagedHumanLoopRequestSourceHasBeenSet; }
-
-    /**
-     * <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the
-     * integration source. The default field settings and JSON parsing rules are
-     * different based on the integration source. Valid values:</p>
-     */
     inline void SetAwsManagedHumanLoopRequestSource(const AwsManagedHumanLoopRequestSource& value) { m_awsManagedHumanLoopRequestSourceHasBeenSet = true; m_awsManagedHumanLoopRequestSource = value; }
-
-    /**
-     * <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the
-     * integration source. The default field settings and JSON parsing rules are
-     * different based on the integration source. Valid values:</p>
-     */
     inline void SetAwsManagedHumanLoopRequestSource(AwsManagedHumanLoopRequestSource&& value) { m_awsManagedHumanLoopRequestSourceHasBeenSet = true; m_awsManagedHumanLoopRequestSource = std::move(value); }
-
-    /**
-     * <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the
-     * integration source. The default field settings and JSON parsing rules are
-     * different based on the integration source. Valid values:</p>
-     */
     inline HumanLoopRequestSource& WithAwsManagedHumanLoopRequestSource(const AwsManagedHumanLoopRequestSource& value) { SetAwsManagedHumanLoopRequestSource(value); return *this;}
-
-    /**
-     * <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the
-     * integration source. The default field settings and JSON parsing rules are
-     * different based on the integration source. Valid values:</p>
-     */
     inline HumanLoopRequestSource& WithAwsManagedHumanLoopRequestSource(AwsManagedHumanLoopRequestSource&& value) { SetAwsManagedHumanLoopRequestSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsManagedHumanLoopRequestSource m_awsManagedHumanLoopRequestSource;

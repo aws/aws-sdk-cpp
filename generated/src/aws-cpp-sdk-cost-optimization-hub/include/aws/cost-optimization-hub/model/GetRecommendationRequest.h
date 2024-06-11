@@ -34,46 +34,19 @@ namespace Model
     AWS_COSTOPTIMIZATIONHUB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID for the recommendation.</p>
      */
     inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
-
-    /**
-     * <p>The ID for the recommendation.</p>
-     */
     inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-
-    /**
-     * <p>The ID for the recommendation.</p>
-     */
     inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
-
-    /**
-     * <p>The ID for the recommendation.</p>
-     */
     inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
-
-    /**
-     * <p>The ID for the recommendation.</p>
-     */
     inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
-
-    /**
-     * <p>The ID for the recommendation.</p>
-     */
     inline GetRecommendationRequest& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-
-    /**
-     * <p>The ID for the recommendation.</p>
-     */
     inline GetRecommendationRequest& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for the recommendation.</p>
-     */
     inline GetRecommendationRequest& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_recommendationId;

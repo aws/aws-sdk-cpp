@@ -39,106 +39,43 @@ namespace Model
     AWS_CONFIGSERVICE_API DescribeComplianceByConfigRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Indicates whether each of the specified Config rules is compliant.</p>
      */
     inline const Aws::Vector<ComplianceByConfigRule>& GetComplianceByConfigRules() const{ return m_complianceByConfigRules; }
-
-    /**
-     * <p>Indicates whether each of the specified Config rules is compliant.</p>
-     */
     inline void SetComplianceByConfigRules(const Aws::Vector<ComplianceByConfigRule>& value) { m_complianceByConfigRules = value; }
-
-    /**
-     * <p>Indicates whether each of the specified Config rules is compliant.</p>
-     */
     inline void SetComplianceByConfigRules(Aws::Vector<ComplianceByConfigRule>&& value) { m_complianceByConfigRules = std::move(value); }
-
-    /**
-     * <p>Indicates whether each of the specified Config rules is compliant.</p>
-     */
     inline DescribeComplianceByConfigRuleResult& WithComplianceByConfigRules(const Aws::Vector<ComplianceByConfigRule>& value) { SetComplianceByConfigRules(value); return *this;}
-
-    /**
-     * <p>Indicates whether each of the specified Config rules is compliant.</p>
-     */
     inline DescribeComplianceByConfigRuleResult& WithComplianceByConfigRules(Aws::Vector<ComplianceByConfigRule>&& value) { SetComplianceByConfigRules(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates whether each of the specified Config rules is compliant.</p>
-     */
     inline DescribeComplianceByConfigRuleResult& AddComplianceByConfigRules(const ComplianceByConfigRule& value) { m_complianceByConfigRules.push_back(value); return *this; }
-
-    /**
-     * <p>Indicates whether each of the specified Config rules is compliant.</p>
-     */
     inline DescribeComplianceByConfigRuleResult& AddComplianceByConfigRules(ComplianceByConfigRule&& value) { m_complianceByConfigRules.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.</p>
-     */
     inline DescribeComplianceByConfigRuleResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.</p>
-     */
     inline DescribeComplianceByConfigRuleResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.</p>
-     */
     inline DescribeComplianceByConfigRuleResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeComplianceByConfigRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeComplianceByConfigRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeComplianceByConfigRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ComplianceByConfigRule> m_complianceByConfigRules;

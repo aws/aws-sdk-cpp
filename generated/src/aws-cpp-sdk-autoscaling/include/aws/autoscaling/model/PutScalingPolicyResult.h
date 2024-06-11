@@ -40,93 +40,40 @@ namespace Model
     AWS_AUTOSCALING_API PutScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
      */
     inline const Aws::String& GetPolicyARN() const{ return m_policyARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline void SetPolicyARN(const Aws::String& value) { m_policyARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline void SetPolicyARN(Aws::String&& value) { m_policyARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline void SetPolicyARN(const char* value) { m_policyARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline PutScalingPolicyResult& WithPolicyARN(const Aws::String& value) { SetPolicyARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline PutScalingPolicyResult& WithPolicyARN(Aws::String&& value) { SetPolicyARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the policy.</p>
-     */
     inline PutScalingPolicyResult& WithPolicyARN(const char* value) { SetPolicyARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
      */
     inline const Aws::Vector<Alarm>& GetAlarms() const{ return m_alarms; }
-
-    /**
-     * <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-     */
     inline void SetAlarms(const Aws::Vector<Alarm>& value) { m_alarms = value; }
-
-    /**
-     * <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-     */
     inline void SetAlarms(Aws::Vector<Alarm>&& value) { m_alarms = std::move(value); }
-
-    /**
-     * <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-     */
     inline PutScalingPolicyResult& WithAlarms(const Aws::Vector<Alarm>& value) { SetAlarms(value); return *this;}
-
-    /**
-     * <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-     */
     inline PutScalingPolicyResult& WithAlarms(Aws::Vector<Alarm>&& value) { SetAlarms(std::move(value)); return *this;}
-
-    /**
-     * <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-     */
     inline PutScalingPolicyResult& AddAlarms(const Alarm& value) { m_alarms.push_back(value); return *this; }
-
-    /**
-     * <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-     */
     inline PutScalingPolicyResult& AddAlarms(Alarm&& value) { m_alarms.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline PutScalingPolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline PutScalingPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyARN;

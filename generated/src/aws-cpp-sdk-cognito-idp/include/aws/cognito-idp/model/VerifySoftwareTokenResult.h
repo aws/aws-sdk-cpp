@@ -33,96 +33,41 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API VerifySoftwareTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the verify software token.</p>
      */
     inline const VerifySoftwareTokenResponseType& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the verify software token.</p>
-     */
     inline void SetStatus(const VerifySoftwareTokenResponseType& value) { m_status = value; }
-
-    /**
-     * <p>The status of the verify software token.</p>
-     */
     inline void SetStatus(VerifySoftwareTokenResponseType&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of the verify software token.</p>
-     */
     inline VerifySoftwareTokenResult& WithStatus(const VerifySoftwareTokenResponseType& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the verify software token.</p>
-     */
     inline VerifySoftwareTokenResult& WithStatus(VerifySoftwareTokenResponseType&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
-
-    /**
-     * <p>The session that should be passed both ways in challenge-response calls to
-     * the service.</p>
-     */
     inline void SetSession(const Aws::String& value) { m_session = value; }
-
-    /**
-     * <p>The session that should be passed both ways in challenge-response calls to
-     * the service.</p>
-     */
     inline void SetSession(Aws::String&& value) { m_session = std::move(value); }
-
-    /**
-     * <p>The session that should be passed both ways in challenge-response calls to
-     * the service.</p>
-     */
     inline void SetSession(const char* value) { m_session.assign(value); }
-
-    /**
-     * <p>The session that should be passed both ways in challenge-response calls to
-     * the service.</p>
-     */
     inline VerifySoftwareTokenResult& WithSession(const Aws::String& value) { SetSession(value); return *this;}
-
-    /**
-     * <p>The session that should be passed both ways in challenge-response calls to
-     * the service.</p>
-     */
     inline VerifySoftwareTokenResult& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
-
-    /**
-     * <p>The session that should be passed both ways in challenge-response calls to
-     * the service.</p>
-     */
     inline VerifySoftwareTokenResult& WithSession(const char* value) { SetSession(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline VerifySoftwareTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline VerifySoftwareTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline VerifySoftwareTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VerifySoftwareTokenResponseType m_status;

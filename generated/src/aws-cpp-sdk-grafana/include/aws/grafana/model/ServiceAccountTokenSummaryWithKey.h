@@ -41,136 +41,48 @@ namespace Model
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique ID of the service account token.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The unique ID of the service account token.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the service account token.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The unique ID of the service account token.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The unique ID of the service account token.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The unique ID of the service account token.</p>
-     */
     inline ServiceAccountTokenSummaryWithKey& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the service account token.</p>
-     */
     inline ServiceAccountTokenSummaryWithKey& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the service account token.</p>
-     */
     inline ServiceAccountTokenSummaryWithKey& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key for the service account token. Used when making calls to the Grafana
      * HTTP APIs to authenticate and authorize the requests.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The key for the service account token. Used when making calls to the Grafana
-     * HTTP APIs to authenticate and authorize the requests.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The key for the service account token. Used when making calls to the Grafana
-     * HTTP APIs to authenticate and authorize the requests.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The key for the service account token. Used when making calls to the Grafana
-     * HTTP APIs to authenticate and authorize the requests.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The key for the service account token. Used when making calls to the Grafana
-     * HTTP APIs to authenticate and authorize the requests.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The key for the service account token. Used when making calls to the Grafana
-     * HTTP APIs to authenticate and authorize the requests.</p>
-     */
     inline ServiceAccountTokenSummaryWithKey& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The key for the service account token. Used when making calls to the Grafana
-     * HTTP APIs to authenticate and authorize the requests.</p>
-     */
     inline ServiceAccountTokenSummaryWithKey& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The key for the service account token. Used when making calls to the Grafana
-     * HTTP APIs to authenticate and authorize the requests.</p>
-     */
     inline ServiceAccountTokenSummaryWithKey& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the service account token.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the service account token.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the service account token.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the service account token.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the service account token.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the service account token.</p>
-     */
     inline ServiceAccountTokenSummaryWithKey& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the service account token.</p>
-     */
     inline ServiceAccountTokenSummaryWithKey& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service account token.</p>
-     */
     inline ServiceAccountTokenSummaryWithKey& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

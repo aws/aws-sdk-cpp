@@ -38,99 +38,47 @@ namespace Model
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates how long the query waited, in milliseconds.</p>
      */
     inline int GetWaited() const{ return m_waited; }
-
-    /**
-     * <p>Indicates how long the query waited, in milliseconds.</p>
-     */
     inline bool WaitedHasBeenSet() const { return m_waitedHasBeenSet; }
-
-    /**
-     * <p>Indicates how long the query waited, in milliseconds.</p>
-     */
     inline void SetWaited(int value) { m_waitedHasBeenSet = true; m_waited = value; }
-
-    /**
-     * <p>Indicates how long the query waited, in milliseconds.</p>
-     */
     inline QueryEvalStats& WithWaited(int value) { SetWaited(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of milliseconds the query has been running so far.</p>
      */
     inline int GetElapsed() const{ return m_elapsed; }
-
-    /**
-     * <p>The number of milliseconds the query has been running so far.</p>
-     */
     inline bool ElapsedHasBeenSet() const { return m_elapsedHasBeenSet; }
-
-    /**
-     * <p>The number of milliseconds the query has been running so far.</p>
-     */
     inline void SetElapsed(int value) { m_elapsedHasBeenSet = true; m_elapsed = value; }
-
-    /**
-     * <p>The number of milliseconds the query has been running so far.</p>
-     */
     inline QueryEvalStats& WithElapsed(int value) { SetElapsed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Set to <code>TRUE</code> if the query was cancelled, or FALSE otherwise.</p>
      */
     inline bool GetCancelled() const{ return m_cancelled; }
-
-    /**
-     * <p>Set to <code>TRUE</code> if the query was cancelled, or FALSE otherwise.</p>
-     */
     inline bool CancelledHasBeenSet() const { return m_cancelledHasBeenSet; }
-
-    /**
-     * <p>Set to <code>TRUE</code> if the query was cancelled, or FALSE otherwise.</p>
-     */
     inline void SetCancelled(bool value) { m_cancelledHasBeenSet = true; m_cancelled = value; }
-
-    /**
-     * <p>Set to <code>TRUE</code> if the query was cancelled, or FALSE otherwise.</p>
-     */
     inline QueryEvalStats& WithCancelled(bool value) { SetCancelled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of subqueries in this query.</p>
      */
     inline Aws::Utils::DocumentView GetSubqueries() const{ return m_subqueries; }
-
-    /**
-     * <p>The number of subqueries in this query.</p>
-     */
     inline bool SubqueriesHasBeenSet() const { return m_subqueriesHasBeenSet; }
-
-    /**
-     * <p>The number of subqueries in this query.</p>
-     */
     inline void SetSubqueries(const Aws::Utils::Document& value) { m_subqueriesHasBeenSet = true; m_subqueries = value; }
-
-    /**
-     * <p>The number of subqueries in this query.</p>
-     */
     inline void SetSubqueries(Aws::Utils::Document&& value) { m_subqueriesHasBeenSet = true; m_subqueries = std::move(value); }
-
-    /**
-     * <p>The number of subqueries in this query.</p>
-     */
     inline QueryEvalStats& WithSubqueries(const Aws::Utils::Document& value) { SetSubqueries(value); return *this;}
-
-    /**
-     * <p>The number of subqueries in this query.</p>
-     */
     inline QueryEvalStats& WithSubqueries(Aws::Utils::Document&& value) { SetSubqueries(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_waited;

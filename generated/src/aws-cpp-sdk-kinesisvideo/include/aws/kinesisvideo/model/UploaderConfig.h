@@ -42,6 +42,7 @@ namespace Model
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration that consists of the <code>ScheduleExpression</code> and
      * the <code>DurationInMinutes</code> details that specify the scheduling to record
@@ -50,52 +51,12 @@ namespace Model
      * then the Edge Agent will upload at regular intervals (every 1 hour).</p>
      */
     inline const ScheduleConfig& GetScheduleConfig() const{ return m_scheduleConfig; }
-
-    /**
-     * <p>The configuration that consists of the <code>ScheduleExpression</code> and
-     * the <code>DurationInMinutes</code> details that specify the scheduling to record
-     * from a camera, or local media file, onto the Edge Agent. If the
-     * <code>ScheduleConfig</code> is not provided in this <code>UploaderConfig</code>,
-     * then the Edge Agent will upload at regular intervals (every 1 hour).</p>
-     */
     inline bool ScheduleConfigHasBeenSet() const { return m_scheduleConfigHasBeenSet; }
-
-    /**
-     * <p>The configuration that consists of the <code>ScheduleExpression</code> and
-     * the <code>DurationInMinutes</code> details that specify the scheduling to record
-     * from a camera, or local media file, onto the Edge Agent. If the
-     * <code>ScheduleConfig</code> is not provided in this <code>UploaderConfig</code>,
-     * then the Edge Agent will upload at regular intervals (every 1 hour).</p>
-     */
     inline void SetScheduleConfig(const ScheduleConfig& value) { m_scheduleConfigHasBeenSet = true; m_scheduleConfig = value; }
-
-    /**
-     * <p>The configuration that consists of the <code>ScheduleExpression</code> and
-     * the <code>DurationInMinutes</code> details that specify the scheduling to record
-     * from a camera, or local media file, onto the Edge Agent. If the
-     * <code>ScheduleConfig</code> is not provided in this <code>UploaderConfig</code>,
-     * then the Edge Agent will upload at regular intervals (every 1 hour).</p>
-     */
     inline void SetScheduleConfig(ScheduleConfig&& value) { m_scheduleConfigHasBeenSet = true; m_scheduleConfig = std::move(value); }
-
-    /**
-     * <p>The configuration that consists of the <code>ScheduleExpression</code> and
-     * the <code>DurationInMinutes</code> details that specify the scheduling to record
-     * from a camera, or local media file, onto the Edge Agent. If the
-     * <code>ScheduleConfig</code> is not provided in this <code>UploaderConfig</code>,
-     * then the Edge Agent will upload at regular intervals (every 1 hour).</p>
-     */
     inline UploaderConfig& WithScheduleConfig(const ScheduleConfig& value) { SetScheduleConfig(value); return *this;}
-
-    /**
-     * <p>The configuration that consists of the <code>ScheduleExpression</code> and
-     * the <code>DurationInMinutes</code> details that specify the scheduling to record
-     * from a camera, or local media file, onto the Edge Agent. If the
-     * <code>ScheduleConfig</code> is not provided in this <code>UploaderConfig</code>,
-     * then the Edge Agent will upload at regular intervals (every 1 hour).</p>
-     */
     inline UploaderConfig& WithScheduleConfig(ScheduleConfig&& value) { SetScheduleConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ScheduleConfig m_scheduleConfig;

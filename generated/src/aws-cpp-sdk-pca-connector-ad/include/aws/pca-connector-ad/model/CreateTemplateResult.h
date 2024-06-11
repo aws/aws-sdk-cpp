@@ -32,63 +32,29 @@ namespace Model
     AWS_PCACONNECTORAD_API CreateTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>If successful, the Amazon Resource Name (ARN) of the template.</p>
      */
     inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-
-    /**
-     * <p>If successful, the Amazon Resource Name (ARN) of the template.</p>
-     */
     inline void SetTemplateArn(const Aws::String& value) { m_templateArn = value; }
-
-    /**
-     * <p>If successful, the Amazon Resource Name (ARN) of the template.</p>
-     */
     inline void SetTemplateArn(Aws::String&& value) { m_templateArn = std::move(value); }
-
-    /**
-     * <p>If successful, the Amazon Resource Name (ARN) of the template.</p>
-     */
     inline void SetTemplateArn(const char* value) { m_templateArn.assign(value); }
-
-    /**
-     * <p>If successful, the Amazon Resource Name (ARN) of the template.</p>
-     */
     inline CreateTemplateResult& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-
-    /**
-     * <p>If successful, the Amazon Resource Name (ARN) of the template.</p>
-     */
     inline CreateTemplateResult& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>If successful, the Amazon Resource Name (ARN) of the template.</p>
-     */
     inline CreateTemplateResult& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateArn;

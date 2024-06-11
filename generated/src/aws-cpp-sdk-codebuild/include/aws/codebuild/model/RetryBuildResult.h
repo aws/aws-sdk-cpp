@@ -33,43 +33,25 @@ namespace Model
     AWS_CODEBUILD_API RetryBuildResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Build& GetBuild() const{ return m_build; }
-
-    
     inline void SetBuild(const Build& value) { m_build = value; }
-
-    
     inline void SetBuild(Build&& value) { m_build = std::move(value); }
-
-    
     inline RetryBuildResult& WithBuild(const Build& value) { SetBuild(value); return *this;}
-
-    
     inline RetryBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RetryBuildResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RetryBuildResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RetryBuildResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Build m_build;

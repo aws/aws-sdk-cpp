@@ -39,159 +39,59 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The action details for the regex filter used in the Guardrail.</p>
      */
     inline const GuardrailSensitiveInformationPolicyAction& GetAction() const{ return m_action; }
-
-    /**
-     * <p>The action details for the regex filter used in the Guardrail.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>The action details for the regex filter used in the Guardrail.</p>
-     */
     inline void SetAction(const GuardrailSensitiveInformationPolicyAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>The action details for the regex filter used in the Guardrail.</p>
-     */
     inline void SetAction(GuardrailSensitiveInformationPolicyAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>The action details for the regex filter used in the Guardrail.</p>
-     */
     inline GuardrailRegexFilter& WithAction(const GuardrailSensitiveInformationPolicyAction& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>The action details for the regex filter used in the Guardrail.</p>
-     */
     inline GuardrailRegexFilter& WithAction(GuardrailSensitiveInformationPolicyAction&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The match details for the regex filter used in the Guardrail.</p>
      */
     inline const Aws::String& GetMatch() const{ return m_match; }
-
-    /**
-     * <p>The match details for the regex filter used in the Guardrail.</p>
-     */
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-
-    /**
-     * <p>The match details for the regex filter used in the Guardrail.</p>
-     */
     inline void SetMatch(const Aws::String& value) { m_matchHasBeenSet = true; m_match = value; }
-
-    /**
-     * <p>The match details for the regex filter used in the Guardrail.</p>
-     */
     inline void SetMatch(Aws::String&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
-
-    /**
-     * <p>The match details for the regex filter used in the Guardrail.</p>
-     */
     inline void SetMatch(const char* value) { m_matchHasBeenSet = true; m_match.assign(value); }
-
-    /**
-     * <p>The match details for the regex filter used in the Guardrail.</p>
-     */
     inline GuardrailRegexFilter& WithMatch(const Aws::String& value) { SetMatch(value); return *this;}
-
-    /**
-     * <p>The match details for the regex filter used in the Guardrail.</p>
-     */
     inline GuardrailRegexFilter& WithMatch(Aws::String&& value) { SetMatch(std::move(value)); return *this;}
-
-    /**
-     * <p>The match details for the regex filter used in the Guardrail.</p>
-     */
     inline GuardrailRegexFilter& WithMatch(const char* value) { SetMatch(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name details for the regex filter used in the Guardrail.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name details for the regex filter used in the Guardrail.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name details for the regex filter used in the Guardrail.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name details for the regex filter used in the Guardrail.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name details for the regex filter used in the Guardrail.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name details for the regex filter used in the Guardrail.</p>
-     */
     inline GuardrailRegexFilter& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name details for the regex filter used in the Guardrail.</p>
-     */
     inline GuardrailRegexFilter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name details for the regex filter used in the Guardrail.</p>
-     */
     inline GuardrailRegexFilter& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The regex details for the regex filter used in the Guardrail.</p>
      */
     inline const Aws::String& GetRegex() const{ return m_regex; }
-
-    /**
-     * <p>The regex details for the regex filter used in the Guardrail.</p>
-     */
     inline bool RegexHasBeenSet() const { return m_regexHasBeenSet; }
-
-    /**
-     * <p>The regex details for the regex filter used in the Guardrail.</p>
-     */
     inline void SetRegex(const Aws::String& value) { m_regexHasBeenSet = true; m_regex = value; }
-
-    /**
-     * <p>The regex details for the regex filter used in the Guardrail.</p>
-     */
     inline void SetRegex(Aws::String&& value) { m_regexHasBeenSet = true; m_regex = std::move(value); }
-
-    /**
-     * <p>The regex details for the regex filter used in the Guardrail.</p>
-     */
     inline void SetRegex(const char* value) { m_regexHasBeenSet = true; m_regex.assign(value); }
-
-    /**
-     * <p>The regex details for the regex filter used in the Guardrail.</p>
-     */
     inline GuardrailRegexFilter& WithRegex(const Aws::String& value) { SetRegex(value); return *this;}
-
-    /**
-     * <p>The regex details for the regex filter used in the Guardrail.</p>
-     */
     inline GuardrailRegexFilter& WithRegex(Aws::String&& value) { SetRegex(std::move(value)); return *this;}
-
-    /**
-     * <p>The regex details for the regex filter used in the Guardrail.</p>
-     */
     inline GuardrailRegexFilter& WithRegex(const char* value) { SetRegex(value); return *this;}
-
+    ///@}
   private:
 
     GuardrailSensitiveInformationPolicyAction m_action;

@@ -32,63 +32,29 @@ namespace Model
     AWS_SSM_API StartAutomationExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique ID of a newly scheduled automation execution.</p>
      */
     inline const Aws::String& GetAutomationExecutionId() const{ return m_automationExecutionId; }
-
-    /**
-     * <p>The unique ID of a newly scheduled automation execution.</p>
-     */
     inline void SetAutomationExecutionId(const Aws::String& value) { m_automationExecutionId = value; }
-
-    /**
-     * <p>The unique ID of a newly scheduled automation execution.</p>
-     */
     inline void SetAutomationExecutionId(Aws::String&& value) { m_automationExecutionId = std::move(value); }
-
-    /**
-     * <p>The unique ID of a newly scheduled automation execution.</p>
-     */
     inline void SetAutomationExecutionId(const char* value) { m_automationExecutionId.assign(value); }
-
-    /**
-     * <p>The unique ID of a newly scheduled automation execution.</p>
-     */
     inline StartAutomationExecutionResult& WithAutomationExecutionId(const Aws::String& value) { SetAutomationExecutionId(value); return *this;}
-
-    /**
-     * <p>The unique ID of a newly scheduled automation execution.</p>
-     */
     inline StartAutomationExecutionResult& WithAutomationExecutionId(Aws::String&& value) { SetAutomationExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of a newly scheduled automation execution.</p>
-     */
     inline StartAutomationExecutionResult& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartAutomationExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartAutomationExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartAutomationExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_automationExecutionId;

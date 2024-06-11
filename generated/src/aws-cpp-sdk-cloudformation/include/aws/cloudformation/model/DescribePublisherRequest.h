@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the extension publisher.</p> <p>If you don't supply a
      * <code>PublisherId</code>, and you have registered as an extension publisher,
@@ -43,63 +44,14 @@ namespace Model
      * account.</p>
      */
     inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
-
-    /**
-     * <p>The ID of the extension publisher.</p> <p>If you don't supply a
-     * <code>PublisherId</code>, and you have registered as an extension publisher,
-     * <code>DescribePublisher</code> returns information about your own publisher
-     * account.</p>
-     */
     inline bool PublisherIdHasBeenSet() const { return m_publisherIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the extension publisher.</p> <p>If you don't supply a
-     * <code>PublisherId</code>, and you have registered as an extension publisher,
-     * <code>DescribePublisher</code> returns information about your own publisher
-     * account.</p>
-     */
     inline void SetPublisherId(const Aws::String& value) { m_publisherIdHasBeenSet = true; m_publisherId = value; }
-
-    /**
-     * <p>The ID of the extension publisher.</p> <p>If you don't supply a
-     * <code>PublisherId</code>, and you have registered as an extension publisher,
-     * <code>DescribePublisher</code> returns information about your own publisher
-     * account.</p>
-     */
     inline void SetPublisherId(Aws::String&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::move(value); }
-
-    /**
-     * <p>The ID of the extension publisher.</p> <p>If you don't supply a
-     * <code>PublisherId</code>, and you have registered as an extension publisher,
-     * <code>DescribePublisher</code> returns information about your own publisher
-     * account.</p>
-     */
     inline void SetPublisherId(const char* value) { m_publisherIdHasBeenSet = true; m_publisherId.assign(value); }
-
-    /**
-     * <p>The ID of the extension publisher.</p> <p>If you don't supply a
-     * <code>PublisherId</code>, and you have registered as an extension publisher,
-     * <code>DescribePublisher</code> returns information about your own publisher
-     * account.</p>
-     */
     inline DescribePublisherRequest& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
-
-    /**
-     * <p>The ID of the extension publisher.</p> <p>If you don't supply a
-     * <code>PublisherId</code>, and you have registered as an extension publisher,
-     * <code>DescribePublisher</code> returns information about your own publisher
-     * account.</p>
-     */
     inline DescribePublisherRequest& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the extension publisher.</p> <p>If you don't supply a
-     * <code>PublisherId</code>, and you have registered as an extension publisher,
-     * <code>DescribePublisher</code> returns information about your own publisher
-     * account.</p>
-     */
     inline DescribePublisherRequest& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_publisherId;

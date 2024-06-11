@@ -38,67 +38,29 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The qualitative representation of the finding's severity, ranging from Low
      * (least severe) to High (most severe).</p>
      */
     inline const SeverityDescription& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The qualitative representation of the finding's severity, ranging from Low
-     * (least severe) to High (most severe).</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The qualitative representation of the finding's severity, ranging from Low
-     * (least severe) to High (most severe).</p>
-     */
     inline void SetDescription(const SeverityDescription& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The qualitative representation of the finding's severity, ranging from Low
-     * (least severe) to High (most severe).</p>
-     */
     inline void SetDescription(SeverityDescription&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The qualitative representation of the finding's severity, ranging from Low
-     * (least severe) to High (most severe).</p>
-     */
     inline Severity& WithDescription(const SeverityDescription& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The qualitative representation of the finding's severity, ranging from Low
-     * (least severe) to High (most severe).</p>
-     */
     inline Severity& WithDescription(SeverityDescription&& value) { SetDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The numerical representation of the finding's severity, ranging from 1 (least
      * severe) to 3 (most severe).</p>
      */
     inline long long GetScore() const{ return m_score; }
-
-    /**
-     * <p>The numerical representation of the finding's severity, ranging from 1 (least
-     * severe) to 3 (most severe).</p>
-     */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-
-    /**
-     * <p>The numerical representation of the finding's severity, ranging from 1 (least
-     * severe) to 3 (most severe).</p>
-     */
     inline void SetScore(long long value) { m_scoreHasBeenSet = true; m_score = value; }
-
-    /**
-     * <p>The numerical representation of the finding's severity, ranging from 1 (least
-     * severe) to 3 (most severe).</p>
-     */
     inline Severity& WithScore(long long value) { SetScore(value); return *this;}
-
+    ///@}
   private:
 
     SeverityDescription m_description;

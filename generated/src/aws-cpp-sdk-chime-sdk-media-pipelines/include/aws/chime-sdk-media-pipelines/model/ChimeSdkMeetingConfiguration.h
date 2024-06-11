@@ -40,67 +40,29 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The source configuration for a specified media pipeline.</p>
      */
     inline const SourceConfiguration& GetSourceConfiguration() const{ return m_sourceConfiguration; }
-
-    /**
-     * <p>The source configuration for a specified media pipeline.</p>
-     */
     inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
-
-    /**
-     * <p>The source configuration for a specified media pipeline.</p>
-     */
     inline void SetSourceConfiguration(const SourceConfiguration& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = value; }
-
-    /**
-     * <p>The source configuration for a specified media pipeline.</p>
-     */
     inline void SetSourceConfiguration(SourceConfiguration&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::move(value); }
-
-    /**
-     * <p>The source configuration for a specified media pipeline.</p>
-     */
     inline ChimeSdkMeetingConfiguration& WithSourceConfiguration(const SourceConfiguration& value) { SetSourceConfiguration(value); return *this;}
-
-    /**
-     * <p>The source configuration for a specified media pipeline.</p>
-     */
     inline ChimeSdkMeetingConfiguration& WithSourceConfiguration(SourceConfiguration&& value) { SetSourceConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
      */
     inline const ArtifactsConfiguration& GetArtifactsConfiguration() const{ return m_artifactsConfiguration; }
-
-    /**
-     * <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
-     */
     inline bool ArtifactsConfigurationHasBeenSet() const { return m_artifactsConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
-     */
     inline void SetArtifactsConfiguration(const ArtifactsConfiguration& value) { m_artifactsConfigurationHasBeenSet = true; m_artifactsConfiguration = value; }
-
-    /**
-     * <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
-     */
     inline void SetArtifactsConfiguration(ArtifactsConfiguration&& value) { m_artifactsConfigurationHasBeenSet = true; m_artifactsConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
-     */
     inline ChimeSdkMeetingConfiguration& WithArtifactsConfiguration(const ArtifactsConfiguration& value) { SetArtifactsConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
-     */
     inline ChimeSdkMeetingConfiguration& WithArtifactsConfiguration(ArtifactsConfiguration&& value) { SetArtifactsConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SourceConfiguration m_sourceConfiguration;

@@ -39,51 +39,20 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of IP addresses and address ranges, in CIDR notation. </p>
      */
     inline const Aws::Vector<Aws::String>& GetDefinition() const{ return m_definition; }
-
-    /**
-     * <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-     */
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-
-    /**
-     * <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-     */
     inline void SetDefinition(const Aws::Vector<Aws::String>& value) { m_definitionHasBeenSet = true; m_definition = value; }
-
-    /**
-     * <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-     */
     inline void SetDefinition(Aws::Vector<Aws::String>&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-
-    /**
-     * <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-     */
     inline IPSet& WithDefinition(const Aws::Vector<Aws::String>& value) { SetDefinition(value); return *this;}
-
-    /**
-     * <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-     */
     inline IPSet& WithDefinition(Aws::Vector<Aws::String>&& value) { SetDefinition(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-     */
     inline IPSet& AddDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition.push_back(value); return *this; }
-
-    /**
-     * <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-     */
     inline IPSet& AddDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-     */
     inline IPSet& AddDefinition(const char* value) { m_definitionHasBeenSet = true; m_definition.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_definition;

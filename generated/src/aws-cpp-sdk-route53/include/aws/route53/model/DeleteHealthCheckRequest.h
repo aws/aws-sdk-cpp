@@ -35,46 +35,19 @@ namespace Model
     AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the health check that you want to delete.</p>
      */
     inline const Aws::String& GetHealthCheckId() const{ return m_healthCheckId; }
-
-    /**
-     * <p>The ID of the health check that you want to delete.</p>
-     */
     inline bool HealthCheckIdHasBeenSet() const { return m_healthCheckIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the health check that you want to delete.</p>
-     */
     inline void SetHealthCheckId(const Aws::String& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
-
-    /**
-     * <p>The ID of the health check that you want to delete.</p>
-     */
     inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::move(value); }
-
-    /**
-     * <p>The ID of the health check that you want to delete.</p>
-     */
     inline void SetHealthCheckId(const char* value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId.assign(value); }
-
-    /**
-     * <p>The ID of the health check that you want to delete.</p>
-     */
     inline DeleteHealthCheckRequest& WithHealthCheckId(const Aws::String& value) { SetHealthCheckId(value); return *this;}
-
-    /**
-     * <p>The ID of the health check that you want to delete.</p>
-     */
     inline DeleteHealthCheckRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the health check that you want to delete.</p>
-     */
     inline DeleteHealthCheckRequest& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_healthCheckId;

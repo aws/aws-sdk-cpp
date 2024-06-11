@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The standard layout type.</p>
      */
     inline const KPIVisualStandardLayoutType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The standard layout type.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The standard layout type.</p>
-     */
     inline void SetType(const KPIVisualStandardLayoutType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The standard layout type.</p>
-     */
     inline void SetType(KPIVisualStandardLayoutType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The standard layout type.</p>
-     */
     inline KPIVisualStandardLayout& WithType(const KPIVisualStandardLayoutType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The standard layout type.</p>
-     */
     inline KPIVisualStandardLayout& WithType(KPIVisualStandardLayoutType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KPIVisualStandardLayoutType m_type;

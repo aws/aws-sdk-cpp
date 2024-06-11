@@ -32,36 +32,17 @@ namespace Model
     AWS_APPSYNC_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The <code>rdsDataApiConfig</code> object data.</p>
      */
     inline const RdsDataApiConfig& GetRdsDataApiConfig() const{ return m_rdsDataApiConfig; }
-
-    /**
-     * <p>The <code>rdsDataApiConfig</code> object data.</p>
-     */
     inline bool RdsDataApiConfigHasBeenSet() const { return m_rdsDataApiConfigHasBeenSet; }
-
-    /**
-     * <p>The <code>rdsDataApiConfig</code> object data.</p>
-     */
     inline void SetRdsDataApiConfig(const RdsDataApiConfig& value) { m_rdsDataApiConfigHasBeenSet = true; m_rdsDataApiConfig = value; }
-
-    /**
-     * <p>The <code>rdsDataApiConfig</code> object data.</p>
-     */
     inline void SetRdsDataApiConfig(RdsDataApiConfig&& value) { m_rdsDataApiConfigHasBeenSet = true; m_rdsDataApiConfig = std::move(value); }
-
-    /**
-     * <p>The <code>rdsDataApiConfig</code> object data.</p>
-     */
     inline StartDataSourceIntrospectionRequest& WithRdsDataApiConfig(const RdsDataApiConfig& value) { SetRdsDataApiConfig(value); return *this;}
-
-    /**
-     * <p>The <code>rdsDataApiConfig</code> object data.</p>
-     */
     inline StartDataSourceIntrospectionRequest& WithRdsDataApiConfig(RdsDataApiConfig&& value) { SetRdsDataApiConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RdsDataApiConfig m_rdsDataApiConfig;

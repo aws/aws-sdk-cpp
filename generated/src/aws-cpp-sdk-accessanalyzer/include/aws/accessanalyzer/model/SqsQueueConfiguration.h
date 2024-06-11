@@ -47,46 +47,19 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The proposed resource policy for the Amazon SQS queue. </p>
      */
     inline const Aws::String& GetQueuePolicy() const{ return m_queuePolicy; }
-
-    /**
-     * <p> The proposed resource policy for the Amazon SQS queue. </p>
-     */
     inline bool QueuePolicyHasBeenSet() const { return m_queuePolicyHasBeenSet; }
-
-    /**
-     * <p> The proposed resource policy for the Amazon SQS queue. </p>
-     */
     inline void SetQueuePolicy(const Aws::String& value) { m_queuePolicyHasBeenSet = true; m_queuePolicy = value; }
-
-    /**
-     * <p> The proposed resource policy for the Amazon SQS queue. </p>
-     */
     inline void SetQueuePolicy(Aws::String&& value) { m_queuePolicyHasBeenSet = true; m_queuePolicy = std::move(value); }
-
-    /**
-     * <p> The proposed resource policy for the Amazon SQS queue. </p>
-     */
     inline void SetQueuePolicy(const char* value) { m_queuePolicyHasBeenSet = true; m_queuePolicy.assign(value); }
-
-    /**
-     * <p> The proposed resource policy for the Amazon SQS queue. </p>
-     */
     inline SqsQueueConfiguration& WithQueuePolicy(const Aws::String& value) { SetQueuePolicy(value); return *this;}
-
-    /**
-     * <p> The proposed resource policy for the Amazon SQS queue. </p>
-     */
     inline SqsQueueConfiguration& WithQueuePolicy(Aws::String&& value) { SetQueuePolicy(std::move(value)); return *this;}
-
-    /**
-     * <p> The proposed resource policy for the Amazon SQS queue. </p>
-     */
     inline SqsQueueConfiguration& WithQueuePolicy(const char* value) { SetQueuePolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_queuePolicy;

@@ -38,194 +38,73 @@ namespace Model
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ServiceQuotaExceededException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ServiceQuotaExceededException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ServiceQuotaExceededException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the service quota that was exceeded.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
-
-    /**
-     * <p>The ID of the service quota that was exceeded.</p>
-     */
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-
-    /**
-     * <p>The ID of the service quota that was exceeded.</p>
-     */
     inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
-
-    /**
-     * <p>The ID of the service quota that was exceeded.</p>
-     */
     inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
-
-    /**
-     * <p>The ID of the service quota that was exceeded.</p>
-     */
     inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
-
-    /**
-     * <p>The ID of the service quota that was exceeded.</p>
-     */
     inline ServiceQuotaExceededException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
-
-    /**
-     * <p>The ID of the service quota that was exceeded.</p>
-     */
     inline ServiceQuotaExceededException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the service quota that was exceeded.</p>
-     */
     inline ServiceQuotaExceededException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource ID.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline ServiceQuotaExceededException& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline ServiceQuotaExceededException& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline ServiceQuotaExceededException& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource type.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>The resource type.</p>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>The resource type.</p>
-     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>The resource type.</p>
-     */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>The resource type.</p>
-     */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-
-    /**
-     * <p>The resource type.</p>
-     */
     inline ServiceQuotaExceededException& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>The resource type.</p>
-     */
     inline ServiceQuotaExceededException& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource type.</p>
-     */
     inline ServiceQuotaExceededException& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The service code.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
-
-    /**
-     * <p>The service code.</p>
-     */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-
-    /**
-     * <p>The service code.</p>
-     */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-
-    /**
-     * <p>The service code.</p>
-     */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-
-    /**
-     * <p>The service code.</p>
-     */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-
-    /**
-     * <p>The service code.</p>
-     */
     inline ServiceQuotaExceededException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-
-    /**
-     * <p>The service code.</p>
-     */
     inline ServiceQuotaExceededException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The service code.</p>
-     */
     inline ServiceQuotaExceededException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

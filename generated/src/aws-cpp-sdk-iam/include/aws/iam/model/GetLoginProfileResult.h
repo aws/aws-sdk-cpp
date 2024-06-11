@@ -39,52 +39,26 @@ namespace Model
     AWS_IAM_API GetLoginProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A structure containing the user name and the profile creation date for the
      * user.</p>
      */
     inline const LoginProfile& GetLoginProfile() const{ return m_loginProfile; }
-
-    /**
-     * <p>A structure containing the user name and the profile creation date for the
-     * user.</p>
-     */
     inline void SetLoginProfile(const LoginProfile& value) { m_loginProfile = value; }
-
-    /**
-     * <p>A structure containing the user name and the profile creation date for the
-     * user.</p>
-     */
     inline void SetLoginProfile(LoginProfile&& value) { m_loginProfile = std::move(value); }
-
-    /**
-     * <p>A structure containing the user name and the profile creation date for the
-     * user.</p>
-     */
     inline GetLoginProfileResult& WithLoginProfile(const LoginProfile& value) { SetLoginProfile(value); return *this;}
-
-    /**
-     * <p>A structure containing the user name and the profile creation date for the
-     * user.</p>
-     */
     inline GetLoginProfileResult& WithLoginProfile(LoginProfile&& value) { SetLoginProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline GetLoginProfileResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline GetLoginProfileResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LoginProfile m_loginProfile;

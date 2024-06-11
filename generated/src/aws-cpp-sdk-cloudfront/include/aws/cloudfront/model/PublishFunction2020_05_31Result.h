@@ -33,58 +33,28 @@ namespace Model
     AWS_CLOUDFRONT_API PublishFunction2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Contains configuration information and metadata about a CloudFront
      * function.</p>
      */
     inline const FunctionSummary& GetFunctionSummary() const{ return m_functionSummary; }
-
-    /**
-     * <p>Contains configuration information and metadata about a CloudFront
-     * function.</p>
-     */
     inline void SetFunctionSummary(const FunctionSummary& value) { m_functionSummary = value; }
-
-    /**
-     * <p>Contains configuration information and metadata about a CloudFront
-     * function.</p>
-     */
     inline void SetFunctionSummary(FunctionSummary&& value) { m_functionSummary = std::move(value); }
-
-    /**
-     * <p>Contains configuration information and metadata about a CloudFront
-     * function.</p>
-     */
     inline PublishFunction2020_05_31Result& WithFunctionSummary(const FunctionSummary& value) { SetFunctionSummary(value); return *this;}
-
-    /**
-     * <p>Contains configuration information and metadata about a CloudFront
-     * function.</p>
-     */
     inline PublishFunction2020_05_31Result& WithFunctionSummary(FunctionSummary&& value) { SetFunctionSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PublishFunction2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PublishFunction2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PublishFunction2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FunctionSummary m_functionSummary;

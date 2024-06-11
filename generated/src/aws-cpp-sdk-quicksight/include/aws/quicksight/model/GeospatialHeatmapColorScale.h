@@ -39,46 +39,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of colors to be used in heatmap point style.</p>
      */
     inline const Aws::Vector<GeospatialHeatmapDataColor>& GetColors() const{ return m_colors; }
-
-    /**
-     * <p>The list of colors to be used in heatmap point style.</p>
-     */
     inline bool ColorsHasBeenSet() const { return m_colorsHasBeenSet; }
-
-    /**
-     * <p>The list of colors to be used in heatmap point style.</p>
-     */
     inline void SetColors(const Aws::Vector<GeospatialHeatmapDataColor>& value) { m_colorsHasBeenSet = true; m_colors = value; }
-
-    /**
-     * <p>The list of colors to be used in heatmap point style.</p>
-     */
     inline void SetColors(Aws::Vector<GeospatialHeatmapDataColor>&& value) { m_colorsHasBeenSet = true; m_colors = std::move(value); }
-
-    /**
-     * <p>The list of colors to be used in heatmap point style.</p>
-     */
     inline GeospatialHeatmapColorScale& WithColors(const Aws::Vector<GeospatialHeatmapDataColor>& value) { SetColors(value); return *this;}
-
-    /**
-     * <p>The list of colors to be used in heatmap point style.</p>
-     */
     inline GeospatialHeatmapColorScale& WithColors(Aws::Vector<GeospatialHeatmapDataColor>&& value) { SetColors(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of colors to be used in heatmap point style.</p>
-     */
     inline GeospatialHeatmapColorScale& AddColors(const GeospatialHeatmapDataColor& value) { m_colorsHasBeenSet = true; m_colors.push_back(value); return *this; }
-
-    /**
-     * <p>The list of colors to be used in heatmap point style.</p>
-     */
     inline GeospatialHeatmapColorScale& AddColors(GeospatialHeatmapDataColor&& value) { m_colorsHasBeenSet = true; m_colors.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<GeospatialHeatmapDataColor> m_colors;

@@ -38,67 +38,29 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration of the HTTP URL.</p>
      */
     inline const HttpUrlDestinationConfiguration& GetHttpUrlConfiguration() const{ return m_httpUrlConfiguration; }
-
-    /**
-     * <p>Configuration of the HTTP URL.</p>
-     */
     inline bool HttpUrlConfigurationHasBeenSet() const { return m_httpUrlConfigurationHasBeenSet; }
-
-    /**
-     * <p>Configuration of the HTTP URL.</p>
-     */
     inline void SetHttpUrlConfiguration(const HttpUrlDestinationConfiguration& value) { m_httpUrlConfigurationHasBeenSet = true; m_httpUrlConfiguration = value; }
-
-    /**
-     * <p>Configuration of the HTTP URL.</p>
-     */
     inline void SetHttpUrlConfiguration(HttpUrlDestinationConfiguration&& value) { m_httpUrlConfigurationHasBeenSet = true; m_httpUrlConfiguration = std::move(value); }
-
-    /**
-     * <p>Configuration of the HTTP URL.</p>
-     */
     inline TopicRuleDestinationConfiguration& WithHttpUrlConfiguration(const HttpUrlDestinationConfiguration& value) { SetHttpUrlConfiguration(value); return *this;}
-
-    /**
-     * <p>Configuration of the HTTP URL.</p>
-     */
     inline TopicRuleDestinationConfiguration& WithHttpUrlConfiguration(HttpUrlDestinationConfiguration&& value) { SetHttpUrlConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Configuration of the virtual private cloud (VPC) connection.</p>
      */
     inline const VpcDestinationConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
-
-    /**
-     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
-     */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-
-    /**
-     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
-     */
     inline void SetVpcConfiguration(const VpcDestinationConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
-
-    /**
-     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
-     */
     inline void SetVpcConfiguration(VpcDestinationConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
-
-    /**
-     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
-     */
     inline TopicRuleDestinationConfiguration& WithVpcConfiguration(const VpcDestinationConfiguration& value) { SetVpcConfiguration(value); return *this;}
-
-    /**
-     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
-     */
     inline TopicRuleDestinationConfiguration& WithVpcConfiguration(VpcDestinationConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HttpUrlDestinationConfiguration m_httpUrlConfiguration;

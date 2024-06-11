@@ -38,87 +38,33 @@ namespace Model
     AWS_MIGRATIONHUBORCHESTRATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of an AWS service. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of an AWS service. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of an AWS service. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of an AWS service. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of an AWS service. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of an AWS service. </p>
-     */
     inline Tool& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of an AWS service. </p>
-     */
     inline Tool& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an AWS service. </p>
-     */
     inline Tool& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The URL of an AWS service.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
-
-    /**
-     * <p>The URL of an AWS service.</p>
-     */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-
-    /**
-     * <p>The URL of an AWS service.</p>
-     */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-
-    /**
-     * <p>The URL of an AWS service.</p>
-     */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-
-    /**
-     * <p>The URL of an AWS service.</p>
-     */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-
-    /**
-     * <p>The URL of an AWS service.</p>
-     */
     inline Tool& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-
-    /**
-     * <p>The URL of an AWS service.</p>
-     */
     inline Tool& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL of an AWS service.</p>
-     */
     inline Tool& WithUrl(const char* value) { SetUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

@@ -32,46 +32,19 @@ namespace Model
     AWS_DEADLINE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The farm ID of the farm.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
-
-    /**
-     * <p>The farm ID of the farm.</p>
-     */
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-
-    /**
-     * <p>The farm ID of the farm.</p>
-     */
     inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-
-    /**
-     * <p>The farm ID of the farm.</p>
-     */
     inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-
-    /**
-     * <p>The farm ID of the farm.</p>
-     */
     inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-
-    /**
-     * <p>The farm ID of the farm.</p>
-     */
     inline GetFarmRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-
-    /**
-     * <p>The farm ID of the farm.</p>
-     */
     inline GetFarmRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-
-    /**
-     * <p>The farm ID of the farm.</p>
-     */
     inline GetFarmRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_farmId;

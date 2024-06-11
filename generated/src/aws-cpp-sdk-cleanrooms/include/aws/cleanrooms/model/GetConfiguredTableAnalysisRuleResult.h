@@ -33,53 +33,27 @@ namespace Model
     AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The entire analysis rule output.</p>
      */
     inline const ConfiguredTableAnalysisRule& GetAnalysisRule() const{ return m_analysisRule; }
-
-    /**
-     * <p>The entire analysis rule output.</p>
-     */
     inline void SetAnalysisRule(const ConfiguredTableAnalysisRule& value) { m_analysisRule = value; }
-
-    /**
-     * <p>The entire analysis rule output.</p>
-     */
     inline void SetAnalysisRule(ConfiguredTableAnalysisRule&& value) { m_analysisRule = std::move(value); }
-
-    /**
-     * <p>The entire analysis rule output.</p>
-     */
     inline GetConfiguredTableAnalysisRuleResult& WithAnalysisRule(const ConfiguredTableAnalysisRule& value) { SetAnalysisRule(value); return *this;}
-
-    /**
-     * <p>The entire analysis rule output.</p>
-     */
     inline GetConfiguredTableAnalysisRuleResult& WithAnalysisRule(ConfiguredTableAnalysisRule&& value) { SetAnalysisRule(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetConfiguredTableAnalysisRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetConfiguredTableAnalysisRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetConfiguredTableAnalysisRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ConfiguredTableAnalysisRule m_analysisRule;

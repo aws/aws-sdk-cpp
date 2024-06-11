@@ -38,49 +38,26 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The confidence, from 0 to 100, in the predicted values for a detected
      * signature.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
-
-    /**
-     * <p>The confidence, from 0 to 100, in the predicted values for a detected
-     * signature.</p>
-     */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-
-    /**
-     * <p>The confidence, from 0 to 100, in the predicted values for a detected
-     * signature.</p>
-     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-
-    /**
-     * <p>The confidence, from 0 to 100, in the predicted values for a detected
-     * signature.</p>
-     */
     inline SignatureDetection& WithConfidence(double value) { SetConfidence(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Geometry& GetGeometry() const{ return m_geometry; }
-
-    
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
-
-    
     inline void SetGeometry(const Geometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
-
-    
     inline void SetGeometry(Geometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
-
-    
     inline SignatureDetection& WithGeometry(const Geometry& value) { SetGeometry(value); return *this;}
-
-    
     inline SignatureDetection& WithGeometry(Geometry&& value) { SetGeometry(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_confidence;

@@ -40,63 +40,29 @@ namespace Model
     AWS_CODEDEPLOY_API BatchGetOnPremisesInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the on-premises instances.</p>
      */
     inline const Aws::Vector<InstanceInfo>& GetInstanceInfos() const{ return m_instanceInfos; }
-
-    /**
-     * <p>Information about the on-premises instances.</p>
-     */
     inline void SetInstanceInfos(const Aws::Vector<InstanceInfo>& value) { m_instanceInfos = value; }
-
-    /**
-     * <p>Information about the on-premises instances.</p>
-     */
     inline void SetInstanceInfos(Aws::Vector<InstanceInfo>&& value) { m_instanceInfos = std::move(value); }
-
-    /**
-     * <p>Information about the on-premises instances.</p>
-     */
     inline BatchGetOnPremisesInstancesResult& WithInstanceInfos(const Aws::Vector<InstanceInfo>& value) { SetInstanceInfos(value); return *this;}
-
-    /**
-     * <p>Information about the on-premises instances.</p>
-     */
     inline BatchGetOnPremisesInstancesResult& WithInstanceInfos(Aws::Vector<InstanceInfo>&& value) { SetInstanceInfos(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the on-premises instances.</p>
-     */
     inline BatchGetOnPremisesInstancesResult& AddInstanceInfos(const InstanceInfo& value) { m_instanceInfos.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the on-premises instances.</p>
-     */
     inline BatchGetOnPremisesInstancesResult& AddInstanceInfos(InstanceInfo&& value) { m_instanceInfos.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetOnPremisesInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetOnPremisesInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetOnPremisesInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<InstanceInfo> m_instanceInfos;

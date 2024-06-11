@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Visibility state.</p>
      */
     inline const DashboardUIState& GetVisibilityState() const{ return m_visibilityState; }
-
-    /**
-     * <p>Visibility state.</p>
-     */
     inline bool VisibilityStateHasBeenSet() const { return m_visibilityStateHasBeenSet; }
-
-    /**
-     * <p>Visibility state.</p>
-     */
     inline void SetVisibilityState(const DashboardUIState& value) { m_visibilityStateHasBeenSet = true; m_visibilityState = value; }
-
-    /**
-     * <p>Visibility state.</p>
-     */
     inline void SetVisibilityState(DashboardUIState&& value) { m_visibilityStateHasBeenSet = true; m_visibilityState = std::move(value); }
-
-    /**
-     * <p>Visibility state.</p>
-     */
     inline SheetControlsOption& WithVisibilityState(const DashboardUIState& value) { SetVisibilityState(value); return *this;}
-
-    /**
-     * <p>Visibility state.</p>
-     */
     inline SheetControlsOption& WithVisibilityState(DashboardUIState&& value) { SetVisibilityState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DashboardUIState m_visibilityState;

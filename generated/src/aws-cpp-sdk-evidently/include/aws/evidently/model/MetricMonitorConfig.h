@@ -38,36 +38,17 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A structure that defines the metric.</p>
      */
     inline const MetricDefinitionConfig& GetMetricDefinition() const{ return m_metricDefinition; }
-
-    /**
-     * <p>A structure that defines the metric.</p>
-     */
     inline bool MetricDefinitionHasBeenSet() const { return m_metricDefinitionHasBeenSet; }
-
-    /**
-     * <p>A structure that defines the metric.</p>
-     */
     inline void SetMetricDefinition(const MetricDefinitionConfig& value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition = value; }
-
-    /**
-     * <p>A structure that defines the metric.</p>
-     */
     inline void SetMetricDefinition(MetricDefinitionConfig&& value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition = std::move(value); }
-
-    /**
-     * <p>A structure that defines the metric.</p>
-     */
     inline MetricMonitorConfig& WithMetricDefinition(const MetricDefinitionConfig& value) { SetMetricDefinition(value); return *this;}
-
-    /**
-     * <p>A structure that defines the metric.</p>
-     */
     inline MetricMonitorConfig& WithMetricDefinition(MetricDefinitionConfig&& value) { SetMetricDefinition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MetricDefinitionConfig m_metricDefinition;

@@ -36,97 +36,35 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * List of channel IDs
      */
     inline const Aws::Vector<Aws::String>& GetChannelIds() const{ return m_channelIds; }
-
-    /**
-     * List of channel IDs
-     */
     inline bool ChannelIdsHasBeenSet() const { return m_channelIdsHasBeenSet; }
-
-    /**
-     * List of channel IDs
-     */
     inline void SetChannelIds(const Aws::Vector<Aws::String>& value) { m_channelIdsHasBeenSet = true; m_channelIds = value; }
-
-    /**
-     * List of channel IDs
-     */
     inline void SetChannelIds(Aws::Vector<Aws::String>&& value) { m_channelIdsHasBeenSet = true; m_channelIds = std::move(value); }
-
-    /**
-     * List of channel IDs
-     */
     inline BatchStartRequest& WithChannelIds(const Aws::Vector<Aws::String>& value) { SetChannelIds(value); return *this;}
-
-    /**
-     * List of channel IDs
-     */
     inline BatchStartRequest& WithChannelIds(Aws::Vector<Aws::String>&& value) { SetChannelIds(std::move(value)); return *this;}
-
-    /**
-     * List of channel IDs
-     */
     inline BatchStartRequest& AddChannelIds(const Aws::String& value) { m_channelIdsHasBeenSet = true; m_channelIds.push_back(value); return *this; }
-
-    /**
-     * List of channel IDs
-     */
     inline BatchStartRequest& AddChannelIds(Aws::String&& value) { m_channelIdsHasBeenSet = true; m_channelIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * List of channel IDs
-     */
     inline BatchStartRequest& AddChannelIds(const char* value) { m_channelIdsHasBeenSet = true; m_channelIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * List of multiplex IDs
      */
     inline const Aws::Vector<Aws::String>& GetMultiplexIds() const{ return m_multiplexIds; }
-
-    /**
-     * List of multiplex IDs
-     */
     inline bool MultiplexIdsHasBeenSet() const { return m_multiplexIdsHasBeenSet; }
-
-    /**
-     * List of multiplex IDs
-     */
     inline void SetMultiplexIds(const Aws::Vector<Aws::String>& value) { m_multiplexIdsHasBeenSet = true; m_multiplexIds = value; }
-
-    /**
-     * List of multiplex IDs
-     */
     inline void SetMultiplexIds(Aws::Vector<Aws::String>&& value) { m_multiplexIdsHasBeenSet = true; m_multiplexIds = std::move(value); }
-
-    /**
-     * List of multiplex IDs
-     */
     inline BatchStartRequest& WithMultiplexIds(const Aws::Vector<Aws::String>& value) { SetMultiplexIds(value); return *this;}
-
-    /**
-     * List of multiplex IDs
-     */
     inline BatchStartRequest& WithMultiplexIds(Aws::Vector<Aws::String>&& value) { SetMultiplexIds(std::move(value)); return *this;}
-
-    /**
-     * List of multiplex IDs
-     */
     inline BatchStartRequest& AddMultiplexIds(const Aws::String& value) { m_multiplexIdsHasBeenSet = true; m_multiplexIds.push_back(value); return *this; }
-
-    /**
-     * List of multiplex IDs
-     */
     inline BatchStartRequest& AddMultiplexIds(Aws::String&& value) { m_multiplexIdsHasBeenSet = true; m_multiplexIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * List of multiplex IDs
-     */
     inline BatchStartRequest& AddMultiplexIds(const char* value) { m_multiplexIdsHasBeenSet = true; m_multiplexIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_channelIds;

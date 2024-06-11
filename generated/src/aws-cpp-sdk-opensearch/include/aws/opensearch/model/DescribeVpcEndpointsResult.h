@@ -35,99 +35,42 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API DescribeVpcEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about each requested VPC endpoint.</p>
      */
     inline const Aws::Vector<VpcEndpoint>& GetVpcEndpoints() const{ return m_vpcEndpoints; }
-
-    /**
-     * <p>Information about each requested VPC endpoint.</p>
-     */
     inline void SetVpcEndpoints(const Aws::Vector<VpcEndpoint>& value) { m_vpcEndpoints = value; }
-
-    /**
-     * <p>Information about each requested VPC endpoint.</p>
-     */
     inline void SetVpcEndpoints(Aws::Vector<VpcEndpoint>&& value) { m_vpcEndpoints = std::move(value); }
-
-    /**
-     * <p>Information about each requested VPC endpoint.</p>
-     */
     inline DescribeVpcEndpointsResult& WithVpcEndpoints(const Aws::Vector<VpcEndpoint>& value) { SetVpcEndpoints(value); return *this;}
-
-    /**
-     * <p>Information about each requested VPC endpoint.</p>
-     */
     inline DescribeVpcEndpointsResult& WithVpcEndpoints(Aws::Vector<VpcEndpoint>&& value) { SetVpcEndpoints(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about each requested VPC endpoint.</p>
-     */
     inline DescribeVpcEndpointsResult& AddVpcEndpoints(const VpcEndpoint& value) { m_vpcEndpoints.push_back(value); return *this; }
-
-    /**
-     * <p>Information about each requested VPC endpoint.</p>
-     */
     inline DescribeVpcEndpointsResult& AddVpcEndpoints(VpcEndpoint&& value) { m_vpcEndpoints.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Any errors associated with the request.</p>
      */
     inline const Aws::Vector<VpcEndpointError>& GetVpcEndpointErrors() const{ return m_vpcEndpointErrors; }
-
-    /**
-     * <p>Any errors associated with the request.</p>
-     */
     inline void SetVpcEndpointErrors(const Aws::Vector<VpcEndpointError>& value) { m_vpcEndpointErrors = value; }
-
-    /**
-     * <p>Any errors associated with the request.</p>
-     */
     inline void SetVpcEndpointErrors(Aws::Vector<VpcEndpointError>&& value) { m_vpcEndpointErrors = std::move(value); }
-
-    /**
-     * <p>Any errors associated with the request.</p>
-     */
     inline DescribeVpcEndpointsResult& WithVpcEndpointErrors(const Aws::Vector<VpcEndpointError>& value) { SetVpcEndpointErrors(value); return *this;}
-
-    /**
-     * <p>Any errors associated with the request.</p>
-     */
     inline DescribeVpcEndpointsResult& WithVpcEndpointErrors(Aws::Vector<VpcEndpointError>&& value) { SetVpcEndpointErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>Any errors associated with the request.</p>
-     */
     inline DescribeVpcEndpointsResult& AddVpcEndpointErrors(const VpcEndpointError& value) { m_vpcEndpointErrors.push_back(value); return *this; }
-
-    /**
-     * <p>Any errors associated with the request.</p>
-     */
     inline DescribeVpcEndpointsResult& AddVpcEndpointErrors(VpcEndpointError&& value) { m_vpcEndpointErrors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeVpcEndpointsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeVpcEndpointsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeVpcEndpointsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<VpcEndpoint> m_vpcEndpoints;

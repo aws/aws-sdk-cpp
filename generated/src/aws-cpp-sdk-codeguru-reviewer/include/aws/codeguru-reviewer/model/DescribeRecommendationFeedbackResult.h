@@ -33,53 +33,27 @@ namespace Model
     AWS_CODEGURUREVIEWER_API DescribeRecommendationFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The recommendation feedback given by the user.</p>
      */
     inline const RecommendationFeedback& GetRecommendationFeedback() const{ return m_recommendationFeedback; }
-
-    /**
-     * <p>The recommendation feedback given by the user.</p>
-     */
     inline void SetRecommendationFeedback(const RecommendationFeedback& value) { m_recommendationFeedback = value; }
-
-    /**
-     * <p>The recommendation feedback given by the user.</p>
-     */
     inline void SetRecommendationFeedback(RecommendationFeedback&& value) { m_recommendationFeedback = std::move(value); }
-
-    /**
-     * <p>The recommendation feedback given by the user.</p>
-     */
     inline DescribeRecommendationFeedbackResult& WithRecommendationFeedback(const RecommendationFeedback& value) { SetRecommendationFeedback(value); return *this;}
-
-    /**
-     * <p>The recommendation feedback given by the user.</p>
-     */
     inline DescribeRecommendationFeedbackResult& WithRecommendationFeedback(RecommendationFeedback&& value) { SetRecommendationFeedback(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeRecommendationFeedbackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeRecommendationFeedbackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeRecommendationFeedbackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RecommendationFeedback m_recommendationFeedback;

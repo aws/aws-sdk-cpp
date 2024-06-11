@@ -42,79 +42,32 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    
     inline UpdateServiceAccessPoliciesRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    
     inline UpdateServiceAccessPoliciesRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    
     inline UpdateServiceAccessPoliciesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The access rules you want to configure. These rules replace any existing
      * rules. </p>
      */
     inline const Aws::String& GetAccessPolicies() const{ return m_accessPolicies; }
-
-    /**
-     * <p>The access rules you want to configure. These rules replace any existing
-     * rules. </p>
-     */
     inline bool AccessPoliciesHasBeenSet() const { return m_accessPoliciesHasBeenSet; }
-
-    /**
-     * <p>The access rules you want to configure. These rules replace any existing
-     * rules. </p>
-     */
     inline void SetAccessPolicies(const Aws::String& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies = value; }
-
-    /**
-     * <p>The access rules you want to configure. These rules replace any existing
-     * rules. </p>
-     */
     inline void SetAccessPolicies(Aws::String&& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies = std::move(value); }
-
-    /**
-     * <p>The access rules you want to configure. These rules replace any existing
-     * rules. </p>
-     */
     inline void SetAccessPolicies(const char* value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies.assign(value); }
-
-    /**
-     * <p>The access rules you want to configure. These rules replace any existing
-     * rules. </p>
-     */
     inline UpdateServiceAccessPoliciesRequest& WithAccessPolicies(const Aws::String& value) { SetAccessPolicies(value); return *this;}
-
-    /**
-     * <p>The access rules you want to configure. These rules replace any existing
-     * rules. </p>
-     */
     inline UpdateServiceAccessPoliciesRequest& WithAccessPolicies(Aws::String&& value) { SetAccessPolicies(std::move(value)); return *this;}
-
-    /**
-     * <p>The access rules you want to configure. These rules replace any existing
-     * rules. </p>
-     */
     inline UpdateServiceAccessPoliciesRequest& WithAccessPolicies(const char* value) { SetAccessPolicies(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

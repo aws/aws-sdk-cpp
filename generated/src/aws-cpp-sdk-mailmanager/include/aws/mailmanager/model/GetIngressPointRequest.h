@@ -34,46 +34,19 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of an ingress endpoint.</p>
      */
     inline const Aws::String& GetIngressPointId() const{ return m_ingressPointId; }
-
-    /**
-     * <p>The identifier of an ingress endpoint.</p>
-     */
     inline bool IngressPointIdHasBeenSet() const { return m_ingressPointIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of an ingress endpoint.</p>
-     */
     inline void SetIngressPointId(const Aws::String& value) { m_ingressPointIdHasBeenSet = true; m_ingressPointId = value; }
-
-    /**
-     * <p>The identifier of an ingress endpoint.</p>
-     */
     inline void SetIngressPointId(Aws::String&& value) { m_ingressPointIdHasBeenSet = true; m_ingressPointId = std::move(value); }
-
-    /**
-     * <p>The identifier of an ingress endpoint.</p>
-     */
     inline void SetIngressPointId(const char* value) { m_ingressPointIdHasBeenSet = true; m_ingressPointId.assign(value); }
-
-    /**
-     * <p>The identifier of an ingress endpoint.</p>
-     */
     inline GetIngressPointRequest& WithIngressPointId(const Aws::String& value) { SetIngressPointId(value); return *this;}
-
-    /**
-     * <p>The identifier of an ingress endpoint.</p>
-     */
     inline GetIngressPointRequest& WithIngressPointId(Aws::String&& value) { SetIngressPointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of an ingress endpoint.</p>
-     */
     inline GetIngressPointRequest& WithIngressPointId(const char* value) { SetIngressPointId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ingressPointId;

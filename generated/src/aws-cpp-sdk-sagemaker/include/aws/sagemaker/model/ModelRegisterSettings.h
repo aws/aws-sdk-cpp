@@ -39,43 +39,20 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes whether the integration to the model registry is enabled or
      * disabled in the Canvas application.</p>
      */
     inline const FeatureStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Describes whether the integration to the model registry is enabled or
-     * disabled in the Canvas application.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Describes whether the integration to the model registry is enabled or
-     * disabled in the Canvas application.</p>
-     */
     inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Describes whether the integration to the model registry is enabled or
-     * disabled in the Canvas application.</p>
-     */
     inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Describes whether the integration to the model registry is enabled or
-     * disabled in the Canvas application.</p>
-     */
     inline ModelRegisterSettings& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Describes whether the integration to the model registry is enabled or
-     * disabled in the Canvas application.</p>
-     */
     inline ModelRegisterSettings& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the SageMaker model registry account.
      * Required only to register model versions created by a different SageMaker Canvas
@@ -83,63 +60,14 @@ namespace Model
      * SageMaker model registry is set up.</p>
      */
     inline const Aws::String& GetCrossAccountModelRegisterRoleArn() const{ return m_crossAccountModelRegisterRoleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker model registry account.
-     * Required only to register model versions created by a different SageMaker Canvas
-     * Amazon Web Services account than the Amazon Web Services account in which
-     * SageMaker model registry is set up.</p>
-     */
     inline bool CrossAccountModelRegisterRoleArnHasBeenSet() const { return m_crossAccountModelRegisterRoleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker model registry account.
-     * Required only to register model versions created by a different SageMaker Canvas
-     * Amazon Web Services account than the Amazon Web Services account in which
-     * SageMaker model registry is set up.</p>
-     */
     inline void SetCrossAccountModelRegisterRoleArn(const Aws::String& value) { m_crossAccountModelRegisterRoleArnHasBeenSet = true; m_crossAccountModelRegisterRoleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker model registry account.
-     * Required only to register model versions created by a different SageMaker Canvas
-     * Amazon Web Services account than the Amazon Web Services account in which
-     * SageMaker model registry is set up.</p>
-     */
     inline void SetCrossAccountModelRegisterRoleArn(Aws::String&& value) { m_crossAccountModelRegisterRoleArnHasBeenSet = true; m_crossAccountModelRegisterRoleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker model registry account.
-     * Required only to register model versions created by a different SageMaker Canvas
-     * Amazon Web Services account than the Amazon Web Services account in which
-     * SageMaker model registry is set up.</p>
-     */
     inline void SetCrossAccountModelRegisterRoleArn(const char* value) { m_crossAccountModelRegisterRoleArnHasBeenSet = true; m_crossAccountModelRegisterRoleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker model registry account.
-     * Required only to register model versions created by a different SageMaker Canvas
-     * Amazon Web Services account than the Amazon Web Services account in which
-     * SageMaker model registry is set up.</p>
-     */
     inline ModelRegisterSettings& WithCrossAccountModelRegisterRoleArn(const Aws::String& value) { SetCrossAccountModelRegisterRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker model registry account.
-     * Required only to register model versions created by a different SageMaker Canvas
-     * Amazon Web Services account than the Amazon Web Services account in which
-     * SageMaker model registry is set up.</p>
-     */
     inline ModelRegisterSettings& WithCrossAccountModelRegisterRoleArn(Aws::String&& value) { SetCrossAccountModelRegisterRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker model registry account.
-     * Required only to register model versions created by a different SageMaker Canvas
-     * Amazon Web Services account than the Amazon Web Services account in which
-     * SageMaker model registry is set up.</p>
-     */
     inline ModelRegisterSettings& WithCrossAccountModelRegisterRoleArn(const char* value) { SetCrossAccountModelRegisterRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     FeatureStatus m_status;

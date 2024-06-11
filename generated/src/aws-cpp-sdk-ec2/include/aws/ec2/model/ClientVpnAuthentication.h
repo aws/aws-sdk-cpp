@@ -45,129 +45,53 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The authentication type used.</p>
      */
     inline const ClientVpnAuthenticationType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The authentication type used.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The authentication type used.</p>
-     */
     inline void SetType(const ClientVpnAuthenticationType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The authentication type used.</p>
-     */
     inline void SetType(ClientVpnAuthenticationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The authentication type used.</p>
-     */
     inline ClientVpnAuthentication& WithType(const ClientVpnAuthenticationType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The authentication type used.</p>
-     */
     inline ClientVpnAuthentication& WithType(ClientVpnAuthenticationType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the Active Directory, if applicable.</p>
      */
     inline const DirectoryServiceAuthentication& GetActiveDirectory() const{ return m_activeDirectory; }
-
-    /**
-     * <p>Information about the Active Directory, if applicable.</p>
-     */
     inline bool ActiveDirectoryHasBeenSet() const { return m_activeDirectoryHasBeenSet; }
-
-    /**
-     * <p>Information about the Active Directory, if applicable.</p>
-     */
     inline void SetActiveDirectory(const DirectoryServiceAuthentication& value) { m_activeDirectoryHasBeenSet = true; m_activeDirectory = value; }
-
-    /**
-     * <p>Information about the Active Directory, if applicable.</p>
-     */
     inline void SetActiveDirectory(DirectoryServiceAuthentication&& value) { m_activeDirectoryHasBeenSet = true; m_activeDirectory = std::move(value); }
-
-    /**
-     * <p>Information about the Active Directory, if applicable.</p>
-     */
     inline ClientVpnAuthentication& WithActiveDirectory(const DirectoryServiceAuthentication& value) { SetActiveDirectory(value); return *this;}
-
-    /**
-     * <p>Information about the Active Directory, if applicable.</p>
-     */
     inline ClientVpnAuthentication& WithActiveDirectory(DirectoryServiceAuthentication&& value) { SetActiveDirectory(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the authentication certificates, if applicable.</p>
      */
     inline const CertificateAuthentication& GetMutualAuthentication() const{ return m_mutualAuthentication; }
-
-    /**
-     * <p>Information about the authentication certificates, if applicable.</p>
-     */
     inline bool MutualAuthenticationHasBeenSet() const { return m_mutualAuthenticationHasBeenSet; }
-
-    /**
-     * <p>Information about the authentication certificates, if applicable.</p>
-     */
     inline void SetMutualAuthentication(const CertificateAuthentication& value) { m_mutualAuthenticationHasBeenSet = true; m_mutualAuthentication = value; }
-
-    /**
-     * <p>Information about the authentication certificates, if applicable.</p>
-     */
     inline void SetMutualAuthentication(CertificateAuthentication&& value) { m_mutualAuthenticationHasBeenSet = true; m_mutualAuthentication = std::move(value); }
-
-    /**
-     * <p>Information about the authentication certificates, if applicable.</p>
-     */
     inline ClientVpnAuthentication& WithMutualAuthentication(const CertificateAuthentication& value) { SetMutualAuthentication(value); return *this;}
-
-    /**
-     * <p>Information about the authentication certificates, if applicable.</p>
-     */
     inline ClientVpnAuthentication& WithMutualAuthentication(CertificateAuthentication&& value) { SetMutualAuthentication(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the IAM SAML identity provider, if applicable.</p>
      */
     inline const FederatedAuthentication& GetFederatedAuthentication() const{ return m_federatedAuthentication; }
-
-    /**
-     * <p>Information about the IAM SAML identity provider, if applicable.</p>
-     */
     inline bool FederatedAuthenticationHasBeenSet() const { return m_federatedAuthenticationHasBeenSet; }
-
-    /**
-     * <p>Information about the IAM SAML identity provider, if applicable.</p>
-     */
     inline void SetFederatedAuthentication(const FederatedAuthentication& value) { m_federatedAuthenticationHasBeenSet = true; m_federatedAuthentication = value; }
-
-    /**
-     * <p>Information about the IAM SAML identity provider, if applicable.</p>
-     */
     inline void SetFederatedAuthentication(FederatedAuthentication&& value) { m_federatedAuthenticationHasBeenSet = true; m_federatedAuthentication = std::move(value); }
-
-    /**
-     * <p>Information about the IAM SAML identity provider, if applicable.</p>
-     */
     inline ClientVpnAuthentication& WithFederatedAuthentication(const FederatedAuthentication& value) { SetFederatedAuthentication(value); return *this;}
-
-    /**
-     * <p>Information about the IAM SAML identity provider, if applicable.</p>
-     */
     inline ClientVpnAuthentication& WithFederatedAuthentication(FederatedAuthentication&& value) { SetFederatedAuthentication(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ClientVpnAuthenticationType m_type;

@@ -36,47 +36,25 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Lower bound for EoCloudCover.</p>
      */
     inline double GetLowerBound() const{ return m_lowerBound; }
-
-    /**
-     * <p>Lower bound for EoCloudCover.</p>
-     */
     inline bool LowerBoundHasBeenSet() const { return m_lowerBoundHasBeenSet; }
-
-    /**
-     * <p>Lower bound for EoCloudCover.</p>
-     */
     inline void SetLowerBound(double value) { m_lowerBoundHasBeenSet = true; m_lowerBound = value; }
-
-    /**
-     * <p>Lower bound for EoCloudCover.</p>
-     */
     inline EoCloudCoverInput& WithLowerBound(double value) { SetLowerBound(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Upper bound for EoCloudCover.</p>
      */
     inline double GetUpperBound() const{ return m_upperBound; }
-
-    /**
-     * <p>Upper bound for EoCloudCover.</p>
-     */
     inline bool UpperBoundHasBeenSet() const { return m_upperBoundHasBeenSet; }
-
-    /**
-     * <p>Upper bound for EoCloudCover.</p>
-     */
     inline void SetUpperBound(double value) { m_upperBoundHasBeenSet = true; m_upperBound = value; }
-
-    /**
-     * <p>Upper bound for EoCloudCover.</p>
-     */
     inline EoCloudCoverInput& WithUpperBound(double value) { SetUpperBound(value); return *this;}
-
+    ///@}
   private:
 
     double m_lowerBound;

@@ -34,106 +34,43 @@ namespace Model
     AWS_PERSONALIZERUNTIME_API GetRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of recommendations sorted in descending order by prediction score.
      * There can be a maximum of 500 items in the list.</p>
      */
     inline const Aws::Vector<PredictedItem>& GetItemList() const{ return m_itemList; }
-
-    /**
-     * <p>A list of recommendations sorted in descending order by prediction score.
-     * There can be a maximum of 500 items in the list.</p>
-     */
     inline void SetItemList(const Aws::Vector<PredictedItem>& value) { m_itemList = value; }
-
-    /**
-     * <p>A list of recommendations sorted in descending order by prediction score.
-     * There can be a maximum of 500 items in the list.</p>
-     */
     inline void SetItemList(Aws::Vector<PredictedItem>&& value) { m_itemList = std::move(value); }
-
-    /**
-     * <p>A list of recommendations sorted in descending order by prediction score.
-     * There can be a maximum of 500 items in the list.</p>
-     */
     inline GetRecommendationsResult& WithItemList(const Aws::Vector<PredictedItem>& value) { SetItemList(value); return *this;}
-
-    /**
-     * <p>A list of recommendations sorted in descending order by prediction score.
-     * There can be a maximum of 500 items in the list.</p>
-     */
     inline GetRecommendationsResult& WithItemList(Aws::Vector<PredictedItem>&& value) { SetItemList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of recommendations sorted in descending order by prediction score.
-     * There can be a maximum of 500 items in the list.</p>
-     */
     inline GetRecommendationsResult& AddItemList(const PredictedItem& value) { m_itemList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of recommendations sorted in descending order by prediction score.
-     * There can be a maximum of 500 items in the list.</p>
-     */
     inline GetRecommendationsResult& AddItemList(PredictedItem&& value) { m_itemList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the recommendation.</p>
      */
     inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
-
-    /**
-     * <p>The ID of the recommendation.</p>
-     */
     inline void SetRecommendationId(const Aws::String& value) { m_recommendationId = value; }
-
-    /**
-     * <p>The ID of the recommendation.</p>
-     */
     inline void SetRecommendationId(Aws::String&& value) { m_recommendationId = std::move(value); }
-
-    /**
-     * <p>The ID of the recommendation.</p>
-     */
     inline void SetRecommendationId(const char* value) { m_recommendationId.assign(value); }
-
-    /**
-     * <p>The ID of the recommendation.</p>
-     */
     inline GetRecommendationsResult& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-
-    /**
-     * <p>The ID of the recommendation.</p>
-     */
     inline GetRecommendationsResult& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the recommendation.</p>
-     */
     inline GetRecommendationsResult& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRecommendationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRecommendationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRecommendationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PredictedItem> m_itemList;

@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DeleteIpamResourceDiscoveryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The IPAM resource discovery.</p>
      */
     inline const IpamResourceDiscovery& GetIpamResourceDiscovery() const{ return m_ipamResourceDiscovery; }
-
-    /**
-     * <p>The IPAM resource discovery.</p>
-     */
     inline void SetIpamResourceDiscovery(const IpamResourceDiscovery& value) { m_ipamResourceDiscovery = value; }
-
-    /**
-     * <p>The IPAM resource discovery.</p>
-     */
     inline void SetIpamResourceDiscovery(IpamResourceDiscovery&& value) { m_ipamResourceDiscovery = std::move(value); }
-
-    /**
-     * <p>The IPAM resource discovery.</p>
-     */
     inline DeleteIpamResourceDiscoveryResponse& WithIpamResourceDiscovery(const IpamResourceDiscovery& value) { SetIpamResourceDiscovery(value); return *this;}
-
-    /**
-     * <p>The IPAM resource discovery.</p>
-     */
     inline DeleteIpamResourceDiscoveryResponse& WithIpamResourceDiscovery(IpamResourceDiscovery&& value) { SetIpamResourceDiscovery(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteIpamResourceDiscoveryResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteIpamResourceDiscoveryResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IpamResourceDiscovery m_ipamResourceDiscovery;

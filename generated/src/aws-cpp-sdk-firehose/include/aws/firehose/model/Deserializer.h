@@ -44,6 +44,7 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The OpenX SerDe. Used by Firehose for deserializing data, which means
      * converting it from the JSON format in preparation for serializing it to the
@@ -52,53 +53,14 @@ namespace Model
      * the native Hive / HCatalog JsonSerDe.</p>
      */
     inline const OpenXJsonSerDe& GetOpenXJsonSerDe() const{ return m_openXJsonSerDe; }
-
-    /**
-     * <p>The OpenX SerDe. Used by Firehose for deserializing data, which means
-     * converting it from the JSON format in preparation for serializing it to the
-     * Parquet or ORC format. This is one of two deserializers you can choose,
-     * depending on which one offers the functionality you need. The other option is
-     * the native Hive / HCatalog JsonSerDe.</p>
-     */
     inline bool OpenXJsonSerDeHasBeenSet() const { return m_openXJsonSerDeHasBeenSet; }
-
-    /**
-     * <p>The OpenX SerDe. Used by Firehose for deserializing data, which means
-     * converting it from the JSON format in preparation for serializing it to the
-     * Parquet or ORC format. This is one of two deserializers you can choose,
-     * depending on which one offers the functionality you need. The other option is
-     * the native Hive / HCatalog JsonSerDe.</p>
-     */
     inline void SetOpenXJsonSerDe(const OpenXJsonSerDe& value) { m_openXJsonSerDeHasBeenSet = true; m_openXJsonSerDe = value; }
-
-    /**
-     * <p>The OpenX SerDe. Used by Firehose for deserializing data, which means
-     * converting it from the JSON format in preparation for serializing it to the
-     * Parquet or ORC format. This is one of two deserializers you can choose,
-     * depending on which one offers the functionality you need. The other option is
-     * the native Hive / HCatalog JsonSerDe.</p>
-     */
     inline void SetOpenXJsonSerDe(OpenXJsonSerDe&& value) { m_openXJsonSerDeHasBeenSet = true; m_openXJsonSerDe = std::move(value); }
-
-    /**
-     * <p>The OpenX SerDe. Used by Firehose for deserializing data, which means
-     * converting it from the JSON format in preparation for serializing it to the
-     * Parquet or ORC format. This is one of two deserializers you can choose,
-     * depending on which one offers the functionality you need. The other option is
-     * the native Hive / HCatalog JsonSerDe.</p>
-     */
     inline Deserializer& WithOpenXJsonSerDe(const OpenXJsonSerDe& value) { SetOpenXJsonSerDe(value); return *this;}
-
-    /**
-     * <p>The OpenX SerDe. Used by Firehose for deserializing data, which means
-     * converting it from the JSON format in preparation for serializing it to the
-     * Parquet or ORC format. This is one of two deserializers you can choose,
-     * depending on which one offers the functionality you need. The other option is
-     * the native Hive / HCatalog JsonSerDe.</p>
-     */
     inline Deserializer& WithOpenXJsonSerDe(OpenXJsonSerDe&& value) { SetOpenXJsonSerDe(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing
      * data, which means converting it from the JSON format in preparation for
@@ -107,52 +69,12 @@ namespace Model
      * other option is the OpenX SerDe.</p>
      */
     inline const HiveJsonSerDe& GetHiveJsonSerDe() const{ return m_hiveJsonSerDe; }
-
-    /**
-     * <p>The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing
-     * data, which means converting it from the JSON format in preparation for
-     * serializing it to the Parquet or ORC format. This is one of two deserializers
-     * you can choose, depending on which one offers the functionality you need. The
-     * other option is the OpenX SerDe.</p>
-     */
     inline bool HiveJsonSerDeHasBeenSet() const { return m_hiveJsonSerDeHasBeenSet; }
-
-    /**
-     * <p>The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing
-     * data, which means converting it from the JSON format in preparation for
-     * serializing it to the Parquet or ORC format. This is one of two deserializers
-     * you can choose, depending on which one offers the functionality you need. The
-     * other option is the OpenX SerDe.</p>
-     */
     inline void SetHiveJsonSerDe(const HiveJsonSerDe& value) { m_hiveJsonSerDeHasBeenSet = true; m_hiveJsonSerDe = value; }
-
-    /**
-     * <p>The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing
-     * data, which means converting it from the JSON format in preparation for
-     * serializing it to the Parquet or ORC format. This is one of two deserializers
-     * you can choose, depending on which one offers the functionality you need. The
-     * other option is the OpenX SerDe.</p>
-     */
     inline void SetHiveJsonSerDe(HiveJsonSerDe&& value) { m_hiveJsonSerDeHasBeenSet = true; m_hiveJsonSerDe = std::move(value); }
-
-    /**
-     * <p>The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing
-     * data, which means converting it from the JSON format in preparation for
-     * serializing it to the Parquet or ORC format. This is one of two deserializers
-     * you can choose, depending on which one offers the functionality you need. The
-     * other option is the OpenX SerDe.</p>
-     */
     inline Deserializer& WithHiveJsonSerDe(const HiveJsonSerDe& value) { SetHiveJsonSerDe(value); return *this;}
-
-    /**
-     * <p>The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing
-     * data, which means converting it from the JSON format in preparation for
-     * serializing it to the Parquet or ORC format. This is one of two deserializers
-     * you can choose, depending on which one offers the functionality you need. The
-     * other option is the OpenX SerDe.</p>
-     */
     inline Deserializer& WithHiveJsonSerDe(HiveJsonSerDe&& value) { SetHiveJsonSerDe(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OpenXJsonSerDe m_openXJsonSerDe;

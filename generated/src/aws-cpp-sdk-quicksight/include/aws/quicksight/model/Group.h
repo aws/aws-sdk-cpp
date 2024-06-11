@@ -39,169 +39,61 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the group.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the group.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the group.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the group.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the group.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the group.</p>
-     */
     inline Group& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the group.</p>
-     */
     inline Group& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the group.</p>
-     */
     inline Group& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the group.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline Group& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline Group& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline Group& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The group description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The group description.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The group description.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The group description.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The group description.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The group description.</p>
-     */
     inline Group& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The group description.</p>
-     */
     inline Group& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The group description.</p>
-     */
     inline Group& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The principal ID of the group.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
-
-    /**
-     * <p>The principal ID of the group.</p>
-     */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-
-    /**
-     * <p>The principal ID of the group.</p>
-     */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-
-    /**
-     * <p>The principal ID of the group.</p>
-     */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-
-    /**
-     * <p>The principal ID of the group.</p>
-     */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-
-    /**
-     * <p>The principal ID of the group.</p>
-     */
     inline Group& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-
-    /**
-     * <p>The principal ID of the group.</p>
-     */
     inline Group& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The principal ID of the group.</p>
-     */
     inline Group& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

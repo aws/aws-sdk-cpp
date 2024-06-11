@@ -38,6 +38,7 @@ namespace Model
     AWS_AUDITMANAGER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The file that you want to upload. For a list of supported file formats, see
      * <a
@@ -45,63 +46,14 @@ namespace Model
      * file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetFileName() const{ return m_fileName; }
-
-    /**
-     * <p>The file that you want to upload. For a list of supported file formats, see
-     * <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
-     * file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
-     */
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-
-    /**
-     * <p>The file that you want to upload. For a list of supported file formats, see
-     * <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
-     * file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
-     */
     inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-
-    /**
-     * <p>The file that you want to upload. For a list of supported file formats, see
-     * <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
-     * file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
-     */
     inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-
-    /**
-     * <p>The file that you want to upload. For a list of supported file formats, see
-     * <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
-     * file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
-     */
     inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-
-    /**
-     * <p>The file that you want to upload. For a list of supported file formats, see
-     * <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
-     * file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
-     */
     inline GetEvidenceFileUploadUrlRequest& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-
-    /**
-     * <p>The file that you want to upload. For a list of supported file formats, see
-     * <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
-     * file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
-     */
     inline GetEvidenceFileUploadUrlRequest& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The file that you want to upload. For a list of supported file formats, see
-     * <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
-     * file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
-     */
     inline GetEvidenceFileUploadUrlRequest& WithFileName(const char* value) { SetFileName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileName;

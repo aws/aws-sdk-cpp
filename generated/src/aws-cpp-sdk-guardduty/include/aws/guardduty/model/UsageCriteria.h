@@ -40,147 +40,50 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The account IDs to aggregate usage statistics from.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
-
-    /**
-     * <p>The account IDs to aggregate usage statistics from.</p>
-     */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-
-    /**
-     * <p>The account IDs to aggregate usage statistics from.</p>
-     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-
-    /**
-     * <p>The account IDs to aggregate usage statistics from.</p>
-     */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-
-    /**
-     * <p>The account IDs to aggregate usage statistics from.</p>
-     */
     inline UsageCriteria& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-
-    /**
-     * <p>The account IDs to aggregate usage statistics from.</p>
-     */
     inline UsageCriteria& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The account IDs to aggregate usage statistics from.</p>
-     */
     inline UsageCriteria& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-    /**
-     * <p>The account IDs to aggregate usage statistics from.</p>
-     */
     inline UsageCriteria& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The account IDs to aggregate usage statistics from.</p>
-     */
     inline UsageCriteria& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resources to aggregate usage statistics from. Only accepts exact resource
      * names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
-
-    /**
-     * <p>The resources to aggregate usage statistics from. Only accepts exact resource
-     * names.</p>
-     */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-
-    /**
-     * <p>The resources to aggregate usage statistics from. Only accepts exact resource
-     * names.</p>
-     */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-
-    /**
-     * <p>The resources to aggregate usage statistics from. Only accepts exact resource
-     * names.</p>
-     */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-
-    /**
-     * <p>The resources to aggregate usage statistics from. Only accepts exact resource
-     * names.</p>
-     */
     inline UsageCriteria& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
-
-    /**
-     * <p>The resources to aggregate usage statistics from. Only accepts exact resource
-     * names.</p>
-     */
     inline UsageCriteria& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
-
-    /**
-     * <p>The resources to aggregate usage statistics from. Only accepts exact resource
-     * names.</p>
-     */
     inline UsageCriteria& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-
-    /**
-     * <p>The resources to aggregate usage statistics from. Only accepts exact resource
-     * names.</p>
-     */
     inline UsageCriteria& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The resources to aggregate usage statistics from. Only accepts exact resource
-     * names.</p>
-     */
     inline UsageCriteria& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The features to aggregate usage statistics from.</p>
      */
     inline const Aws::Vector<UsageFeature>& GetFeatures() const{ return m_features; }
-
-    /**
-     * <p>The features to aggregate usage statistics from.</p>
-     */
     inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
-
-    /**
-     * <p>The features to aggregate usage statistics from.</p>
-     */
     inline void SetFeatures(const Aws::Vector<UsageFeature>& value) { m_featuresHasBeenSet = true; m_features = value; }
-
-    /**
-     * <p>The features to aggregate usage statistics from.</p>
-     */
     inline void SetFeatures(Aws::Vector<UsageFeature>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
-
-    /**
-     * <p>The features to aggregate usage statistics from.</p>
-     */
     inline UsageCriteria& WithFeatures(const Aws::Vector<UsageFeature>& value) { SetFeatures(value); return *this;}
-
-    /**
-     * <p>The features to aggregate usage statistics from.</p>
-     */
     inline UsageCriteria& WithFeatures(Aws::Vector<UsageFeature>&& value) { SetFeatures(std::move(value)); return *this;}
-
-    /**
-     * <p>The features to aggregate usage statistics from.</p>
-     */
     inline UsageCriteria& AddFeatures(const UsageFeature& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
-
-    /**
-     * <p>The features to aggregate usage statistics from.</p>
-     */
     inline UsageCriteria& AddFeatures(UsageFeature&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_accountIds;

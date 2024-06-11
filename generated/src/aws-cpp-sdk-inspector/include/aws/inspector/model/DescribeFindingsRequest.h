@@ -36,88 +36,33 @@ namespace Model
     AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN that specifies the finding that you want to describe.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFindingArns() const{ return m_findingArns; }
-
-    /**
-     * <p>The ARN that specifies the finding that you want to describe.</p>
-     */
     inline bool FindingArnsHasBeenSet() const { return m_findingArnsHasBeenSet; }
-
-    /**
-     * <p>The ARN that specifies the finding that you want to describe.</p>
-     */
     inline void SetFindingArns(const Aws::Vector<Aws::String>& value) { m_findingArnsHasBeenSet = true; m_findingArns = value; }
-
-    /**
-     * <p>The ARN that specifies the finding that you want to describe.</p>
-     */
     inline void SetFindingArns(Aws::Vector<Aws::String>&& value) { m_findingArnsHasBeenSet = true; m_findingArns = std::move(value); }
-
-    /**
-     * <p>The ARN that specifies the finding that you want to describe.</p>
-     */
     inline DescribeFindingsRequest& WithFindingArns(const Aws::Vector<Aws::String>& value) { SetFindingArns(value); return *this;}
-
-    /**
-     * <p>The ARN that specifies the finding that you want to describe.</p>
-     */
     inline DescribeFindingsRequest& WithFindingArns(Aws::Vector<Aws::String>&& value) { SetFindingArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN that specifies the finding that you want to describe.</p>
-     */
     inline DescribeFindingsRequest& AddFindingArns(const Aws::String& value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
-
-    /**
-     * <p>The ARN that specifies the finding that you want to describe.</p>
-     */
     inline DescribeFindingsRequest& AddFindingArns(Aws::String&& value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The ARN that specifies the finding that you want to describe.</p>
-     */
     inline DescribeFindingsRequest& AddFindingArns(const char* value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The locale into which you want to translate a finding description,
      * recommendation, and the short description that identifies the finding.</p>
      */
     inline const Locale& GetLocale() const{ return m_locale; }
-
-    /**
-     * <p>The locale into which you want to translate a finding description,
-     * recommendation, and the short description that identifies the finding.</p>
-     */
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
-
-    /**
-     * <p>The locale into which you want to translate a finding description,
-     * recommendation, and the short description that identifies the finding.</p>
-     */
     inline void SetLocale(const Locale& value) { m_localeHasBeenSet = true; m_locale = value; }
-
-    /**
-     * <p>The locale into which you want to translate a finding description,
-     * recommendation, and the short description that identifies the finding.</p>
-     */
     inline void SetLocale(Locale&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
-
-    /**
-     * <p>The locale into which you want to translate a finding description,
-     * recommendation, and the short description that identifies the finding.</p>
-     */
     inline DescribeFindingsRequest& WithLocale(const Locale& value) { SetLocale(value); return *this;}
-
-    /**
-     * <p>The locale into which you want to translate a finding description,
-     * recommendation, and the short description that identifies the finding.</p>
-     */
     inline DescribeFindingsRequest& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_findingArns;

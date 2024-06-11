@@ -39,108 +39,43 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of authorization.</p>
      */
     inline const AuthType& GetAuthType() const{ return m_authType; }
-
-    /**
-     * <p>The type of authorization.</p>
-     */
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-
-    /**
-     * <p>The type of authorization.</p>
-     */
     inline void SetAuthType(const AuthType& value) { m_authTypeHasBeenSet = true; m_authType = value; }
-
-    /**
-     * <p>The type of authorization.</p>
-     */
     inline void SetAuthType(AuthType&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
-
-    /**
-     * <p>The type of authorization.</p>
-     */
     inline IPAddressBasedRemoteInfo& WithAuthType(const AuthType& value) { SetAuthType(value); return *this;}
-
-    /**
-     * <p>The type of authorization.</p>
-     */
     inline IPAddressBasedRemoteInfo& WithAuthType(AuthType&& value) { SetAuthType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time stamp of the configuration.</p>
      */
     inline const Aws::String& GetIpAddressConfigurationTimeStamp() const{ return m_ipAddressConfigurationTimeStamp; }
-
-    /**
-     * <p>The time stamp of the configuration.</p>
-     */
     inline bool IpAddressConfigurationTimeStampHasBeenSet() const { return m_ipAddressConfigurationTimeStampHasBeenSet; }
-
-    /**
-     * <p>The time stamp of the configuration.</p>
-     */
     inline void SetIpAddressConfigurationTimeStamp(const Aws::String& value) { m_ipAddressConfigurationTimeStampHasBeenSet = true; m_ipAddressConfigurationTimeStamp = value; }
-
-    /**
-     * <p>The time stamp of the configuration.</p>
-     */
     inline void SetIpAddressConfigurationTimeStamp(Aws::String&& value) { m_ipAddressConfigurationTimeStampHasBeenSet = true; m_ipAddressConfigurationTimeStamp = std::move(value); }
-
-    /**
-     * <p>The time stamp of the configuration.</p>
-     */
     inline void SetIpAddressConfigurationTimeStamp(const char* value) { m_ipAddressConfigurationTimeStampHasBeenSet = true; m_ipAddressConfigurationTimeStamp.assign(value); }
-
-    /**
-     * <p>The time stamp of the configuration.</p>
-     */
     inline IPAddressBasedRemoteInfo& WithIpAddressConfigurationTimeStamp(const Aws::String& value) { SetIpAddressConfigurationTimeStamp(value); return *this;}
-
-    /**
-     * <p>The time stamp of the configuration.</p>
-     */
     inline IPAddressBasedRemoteInfo& WithIpAddressConfigurationTimeStamp(Aws::String&& value) { SetIpAddressConfigurationTimeStamp(std::move(value)); return *this;}
-
-    /**
-     * <p>The time stamp of the configuration.</p>
-     */
     inline IPAddressBasedRemoteInfo& WithIpAddressConfigurationTimeStamp(const char* value) { SetIpAddressConfigurationTimeStamp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the operating system.</p>
      */
     inline const OSType& GetOsType() const{ return m_osType; }
-
-    /**
-     * <p>The type of the operating system.</p>
-     */
     inline bool OsTypeHasBeenSet() const { return m_osTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the operating system.</p>
-     */
     inline void SetOsType(const OSType& value) { m_osTypeHasBeenSet = true; m_osType = value; }
-
-    /**
-     * <p>The type of the operating system.</p>
-     */
     inline void SetOsType(OSType&& value) { m_osTypeHasBeenSet = true; m_osType = std::move(value); }
-
-    /**
-     * <p>The type of the operating system.</p>
-     */
     inline IPAddressBasedRemoteInfo& WithOsType(const OSType& value) { SetOsType(value); return *this;}
-
-    /**
-     * <p>The type of the operating system.</p>
-     */
     inline IPAddressBasedRemoteInfo& WithOsType(OSType&& value) { SetOsType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AuthType m_authType;

@@ -40,85 +40,40 @@ namespace Model
     AWS_MEDIALIVE_API ListEventBridgeRuleTemplateGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::Vector<EventBridgeRuleTemplateGroupSummary>& GetEventBridgeRuleTemplateGroups() const{ return m_eventBridgeRuleTemplateGroups; }
-
-    
     inline void SetEventBridgeRuleTemplateGroups(const Aws::Vector<EventBridgeRuleTemplateGroupSummary>& value) { m_eventBridgeRuleTemplateGroups = value; }
-
-    
     inline void SetEventBridgeRuleTemplateGroups(Aws::Vector<EventBridgeRuleTemplateGroupSummary>&& value) { m_eventBridgeRuleTemplateGroups = std::move(value); }
-
-    
     inline ListEventBridgeRuleTemplateGroupsResult& WithEventBridgeRuleTemplateGroups(const Aws::Vector<EventBridgeRuleTemplateGroupSummary>& value) { SetEventBridgeRuleTemplateGroups(value); return *this;}
-
-    
     inline ListEventBridgeRuleTemplateGroupsResult& WithEventBridgeRuleTemplateGroups(Aws::Vector<EventBridgeRuleTemplateGroupSummary>&& value) { SetEventBridgeRuleTemplateGroups(std::move(value)); return *this;}
-
-    
     inline ListEventBridgeRuleTemplateGroupsResult& AddEventBridgeRuleTemplateGroups(const EventBridgeRuleTemplateGroupSummary& value) { m_eventBridgeRuleTemplateGroups.push_back(value); return *this; }
-
-    
     inline ListEventBridgeRuleTemplateGroupsResult& AddEventBridgeRuleTemplateGroups(EventBridgeRuleTemplateGroupSummary&& value) { m_eventBridgeRuleTemplateGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * A token used to retrieve the next set of results in paginated list responses.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * A token used to retrieve the next set of results in paginated list responses.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * A token used to retrieve the next set of results in paginated list responses.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * A token used to retrieve the next set of results in paginated list responses.
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * A token used to retrieve the next set of results in paginated list responses.
-     */
     inline ListEventBridgeRuleTemplateGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * A token used to retrieve the next set of results in paginated list responses.
-     */
     inline ListEventBridgeRuleTemplateGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * A token used to retrieve the next set of results in paginated list responses.
-     */
     inline ListEventBridgeRuleTemplateGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListEventBridgeRuleTemplateGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListEventBridgeRuleTemplateGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListEventBridgeRuleTemplateGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EventBridgeRuleTemplateGroupSummary> m_eventBridgeRuleTemplateGroups;

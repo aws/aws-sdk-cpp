@@ -34,46 +34,19 @@ namespace Model
     AWS_TIMESTREAMINFLUXDB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The id of the DB parameter group.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>The id of the DB parameter group.</p>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p>The id of the DB parameter group.</p>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p>The id of the DB parameter group.</p>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p>The id of the DB parameter group.</p>
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * <p>The id of the DB parameter group.</p>
-     */
     inline GetDbParameterGroupRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>The id of the DB parameter group.</p>
-     */
     inline GetDbParameterGroupRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The id of the DB parameter group.</p>
-     */
     inline GetDbParameterGroupRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identifier;

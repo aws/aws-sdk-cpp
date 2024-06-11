@@ -40,62 +40,21 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of structures that define the traffic allocation percentages among
      * the feature variations during each step of the launch. This also defines the
      * start time of each step.</p>
      */
     inline const Aws::Vector<ScheduledSplit>& GetSteps() const{ return m_steps; }
-
-    /**
-     * <p>An array of structures that define the traffic allocation percentages among
-     * the feature variations during each step of the launch. This also defines the
-     * start time of each step.</p>
-     */
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
-
-    /**
-     * <p>An array of structures that define the traffic allocation percentages among
-     * the feature variations during each step of the launch. This also defines the
-     * start time of each step.</p>
-     */
     inline void SetSteps(const Aws::Vector<ScheduledSplit>& value) { m_stepsHasBeenSet = true; m_steps = value; }
-
-    /**
-     * <p>An array of structures that define the traffic allocation percentages among
-     * the feature variations during each step of the launch. This also defines the
-     * start time of each step.</p>
-     */
     inline void SetSteps(Aws::Vector<ScheduledSplit>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
-
-    /**
-     * <p>An array of structures that define the traffic allocation percentages among
-     * the feature variations during each step of the launch. This also defines the
-     * start time of each step.</p>
-     */
     inline ScheduledSplitsLaunchDefinition& WithSteps(const Aws::Vector<ScheduledSplit>& value) { SetSteps(value); return *this;}
-
-    /**
-     * <p>An array of structures that define the traffic allocation percentages among
-     * the feature variations during each step of the launch. This also defines the
-     * start time of each step.</p>
-     */
     inline ScheduledSplitsLaunchDefinition& WithSteps(Aws::Vector<ScheduledSplit>&& value) { SetSteps(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of structures that define the traffic allocation percentages among
-     * the feature variations during each step of the launch. This also defines the
-     * start time of each step.</p>
-     */
     inline ScheduledSplitsLaunchDefinition& AddSteps(const ScheduledSplit& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
-
-    /**
-     * <p>An array of structures that define the traffic allocation percentages among
-     * the feature variations during each step of the launch. This also defines the
-     * start time of each step.</p>
-     */
     inline ScheduledSplitsLaunchDefinition& AddSteps(ScheduledSplit&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ScheduledSplit> m_steps;

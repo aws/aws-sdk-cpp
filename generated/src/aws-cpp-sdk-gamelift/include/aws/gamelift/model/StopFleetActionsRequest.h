@@ -36,144 +36,49 @@ namespace Model
     AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the fleet to stop actions on. You can use either the
      * fleet ID or ARN value.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-
-    /**
-     * <p>A unique identifier for the fleet to stop actions on. You can use either the
-     * fleet ID or ARN value.</p>
-     */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the fleet to stop actions on. You can use either the
-     * fleet ID or ARN value.</p>
-     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-
-    /**
-     * <p>A unique identifier for the fleet to stop actions on. You can use either the
-     * fleet ID or ARN value.</p>
-     */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the fleet to stop actions on. You can use either the
-     * fleet ID or ARN value.</p>
-     */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the fleet to stop actions on. You can use either the
-     * fleet ID or ARN value.</p>
-     */
     inline StopFleetActionsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the fleet to stop actions on. You can use either the
-     * fleet ID or ARN value.</p>
-     */
     inline StopFleetActionsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the fleet to stop actions on. You can use either the
-     * fleet ID or ARN value.</p>
-     */
     inline StopFleetActionsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of actions to suspend on the fleet. </p>
      */
     inline const Aws::Vector<FleetAction>& GetActions() const{ return m_actions; }
-
-    /**
-     * <p>List of actions to suspend on the fleet. </p>
-     */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-
-    /**
-     * <p>List of actions to suspend on the fleet. </p>
-     */
     inline void SetActions(const Aws::Vector<FleetAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-
-    /**
-     * <p>List of actions to suspend on the fleet. </p>
-     */
     inline void SetActions(Aws::Vector<FleetAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-
-    /**
-     * <p>List of actions to suspend on the fleet. </p>
-     */
     inline StopFleetActionsRequest& WithActions(const Aws::Vector<FleetAction>& value) { SetActions(value); return *this;}
-
-    /**
-     * <p>List of actions to suspend on the fleet. </p>
-     */
     inline StopFleetActionsRequest& WithActions(Aws::Vector<FleetAction>&& value) { SetActions(std::move(value)); return *this;}
-
-    /**
-     * <p>List of actions to suspend on the fleet. </p>
-     */
     inline StopFleetActionsRequest& AddActions(const FleetAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-
-    /**
-     * <p>List of actions to suspend on the fleet. </p>
-     */
     inline StopFleetActionsRequest& AddActions(FleetAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The fleet location to stop fleet actions for. Specify a location in the form
      * of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>The fleet location to stop fleet actions for. Specify a location in the form
-     * of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-
-    /**
-     * <p>The fleet location to stop fleet actions for. Specify a location in the form
-     * of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-
-    /**
-     * <p>The fleet location to stop fleet actions for. Specify a location in the form
-     * of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-
-    /**
-     * <p>The fleet location to stop fleet actions for. Specify a location in the form
-     * of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-     */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-
-    /**
-     * <p>The fleet location to stop fleet actions for. Specify a location in the form
-     * of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-     */
     inline StopFleetActionsRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>The fleet location to stop fleet actions for. Specify a location in the form
-     * of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-     */
     inline StopFleetActionsRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The fleet location to stop fleet actions for. Specify a location in the form
-     * of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-     */
     inline StopFleetActionsRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fleetId;

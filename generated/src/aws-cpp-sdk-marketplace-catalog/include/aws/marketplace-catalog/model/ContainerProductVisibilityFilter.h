@@ -39,46 +39,19 @@ namespace Model
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A string array of unique visibility values to be filtered on.</p>
      */
     inline const Aws::Vector<ContainerProductVisibilityString>& GetValueList() const{ return m_valueList; }
-
-    /**
-     * <p>A string array of unique visibility values to be filtered on.</p>
-     */
     inline bool ValueListHasBeenSet() const { return m_valueListHasBeenSet; }
-
-    /**
-     * <p>A string array of unique visibility values to be filtered on.</p>
-     */
     inline void SetValueList(const Aws::Vector<ContainerProductVisibilityString>& value) { m_valueListHasBeenSet = true; m_valueList = value; }
-
-    /**
-     * <p>A string array of unique visibility values to be filtered on.</p>
-     */
     inline void SetValueList(Aws::Vector<ContainerProductVisibilityString>&& value) { m_valueListHasBeenSet = true; m_valueList = std::move(value); }
-
-    /**
-     * <p>A string array of unique visibility values to be filtered on.</p>
-     */
     inline ContainerProductVisibilityFilter& WithValueList(const Aws::Vector<ContainerProductVisibilityString>& value) { SetValueList(value); return *this;}
-
-    /**
-     * <p>A string array of unique visibility values to be filtered on.</p>
-     */
     inline ContainerProductVisibilityFilter& WithValueList(Aws::Vector<ContainerProductVisibilityString>&& value) { SetValueList(std::move(value)); return *this;}
-
-    /**
-     * <p>A string array of unique visibility values to be filtered on.</p>
-     */
     inline ContainerProductVisibilityFilter& AddValueList(const ContainerProductVisibilityString& value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
-
-    /**
-     * <p>A string array of unique visibility values to be filtered on.</p>
-     */
     inline ContainerProductVisibilityFilter& AddValueList(ContainerProductVisibilityString&& value) { m_valueListHasBeenSet = true; m_valueList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ContainerProductVisibilityString> m_valueList;

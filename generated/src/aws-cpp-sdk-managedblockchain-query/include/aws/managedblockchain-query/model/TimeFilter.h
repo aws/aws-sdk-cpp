@@ -37,43 +37,25 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const BlockchainInstant& GetFrom() const{ return m_from; }
-
-    
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-
-    
     inline void SetFrom(const BlockchainInstant& value) { m_fromHasBeenSet = true; m_from = value; }
-
-    
     inline void SetFrom(BlockchainInstant&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-
-    
     inline TimeFilter& WithFrom(const BlockchainInstant& value) { SetFrom(value); return *this;}
-
-    
     inline TimeFilter& WithFrom(BlockchainInstant&& value) { SetFrom(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const BlockchainInstant& GetTo() const{ return m_to; }
-
-    
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-
-    
     inline void SetTo(const BlockchainInstant& value) { m_toHasBeenSet = true; m_to = value; }
-
-    
     inline void SetTo(BlockchainInstant&& value) { m_toHasBeenSet = true; m_to = std::move(value); }
-
-    
     inline TimeFilter& WithTo(const BlockchainInstant& value) { SetTo(value); return *this;}
-
-    
     inline TimeFilter& WithTo(BlockchainInstant&& value) { SetTo(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BlockchainInstant m_from;

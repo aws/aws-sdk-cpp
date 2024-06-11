@@ -32,46 +32,19 @@ namespace Model
     AWS_SIGNER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the target signing platform.</p>
      */
     inline const Aws::String& GetPlatformId() const{ return m_platformId; }
-
-    /**
-     * <p>The ID of the target signing platform.</p>
-     */
     inline bool PlatformIdHasBeenSet() const { return m_platformIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the target signing platform.</p>
-     */
     inline void SetPlatformId(const Aws::String& value) { m_platformIdHasBeenSet = true; m_platformId = value; }
-
-    /**
-     * <p>The ID of the target signing platform.</p>
-     */
     inline void SetPlatformId(Aws::String&& value) { m_platformIdHasBeenSet = true; m_platformId = std::move(value); }
-
-    /**
-     * <p>The ID of the target signing platform.</p>
-     */
     inline void SetPlatformId(const char* value) { m_platformIdHasBeenSet = true; m_platformId.assign(value); }
-
-    /**
-     * <p>The ID of the target signing platform.</p>
-     */
     inline GetSigningPlatformRequest& WithPlatformId(const Aws::String& value) { SetPlatformId(value); return *this;}
-
-    /**
-     * <p>The ID of the target signing platform.</p>
-     */
     inline GetSigningPlatformRequest& WithPlatformId(Aws::String&& value) { SetPlatformId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the target signing platform.</p>
-     */
     inline GetSigningPlatformRequest& WithPlatformId(const char* value) { SetPlatformId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_platformId;

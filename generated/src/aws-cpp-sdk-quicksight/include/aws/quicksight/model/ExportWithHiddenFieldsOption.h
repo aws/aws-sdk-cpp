@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status of the export with hidden fields options.</p>
      */
     inline const DashboardBehavior& GetAvailabilityStatus() const{ return m_availabilityStatus; }
-
-    /**
-     * <p>The status of the export with hidden fields options.</p>
-     */
     inline bool AvailabilityStatusHasBeenSet() const { return m_availabilityStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the export with hidden fields options.</p>
-     */
     inline void SetAvailabilityStatus(const DashboardBehavior& value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = value; }
-
-    /**
-     * <p>The status of the export with hidden fields options.</p>
-     */
     inline void SetAvailabilityStatus(DashboardBehavior&& value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = std::move(value); }
-
-    /**
-     * <p>The status of the export with hidden fields options.</p>
-     */
     inline ExportWithHiddenFieldsOption& WithAvailabilityStatus(const DashboardBehavior& value) { SetAvailabilityStatus(value); return *this;}
-
-    /**
-     * <p>The status of the export with hidden fields options.</p>
-     */
     inline ExportWithHiddenFieldsOption& WithAvailabilityStatus(DashboardBehavior&& value) { SetAvailabilityStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DashboardBehavior m_availabilityStatus;

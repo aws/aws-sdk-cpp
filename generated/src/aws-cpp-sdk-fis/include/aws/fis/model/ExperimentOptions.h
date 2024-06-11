@@ -39,104 +39,42 @@ namespace Model
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The account targeting setting for an experiment.</p>
      */
     inline const AccountTargeting& GetAccountTargeting() const{ return m_accountTargeting; }
-
-    /**
-     * <p>The account targeting setting for an experiment.</p>
-     */
     inline bool AccountTargetingHasBeenSet() const { return m_accountTargetingHasBeenSet; }
-
-    /**
-     * <p>The account targeting setting for an experiment.</p>
-     */
     inline void SetAccountTargeting(const AccountTargeting& value) { m_accountTargetingHasBeenSet = true; m_accountTargeting = value; }
-
-    /**
-     * <p>The account targeting setting for an experiment.</p>
-     */
     inline void SetAccountTargeting(AccountTargeting&& value) { m_accountTargetingHasBeenSet = true; m_accountTargeting = std::move(value); }
-
-    /**
-     * <p>The account targeting setting for an experiment.</p>
-     */
     inline ExperimentOptions& WithAccountTargeting(const AccountTargeting& value) { SetAccountTargeting(value); return *this;}
-
-    /**
-     * <p>The account targeting setting for an experiment.</p>
-     */
     inline ExperimentOptions& WithAccountTargeting(AccountTargeting&& value) { SetAccountTargeting(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The empty target resolution mode for an experiment.</p>
      */
     inline const EmptyTargetResolutionMode& GetEmptyTargetResolutionMode() const{ return m_emptyTargetResolutionMode; }
-
-    /**
-     * <p>The empty target resolution mode for an experiment.</p>
-     */
     inline bool EmptyTargetResolutionModeHasBeenSet() const { return m_emptyTargetResolutionModeHasBeenSet; }
-
-    /**
-     * <p>The empty target resolution mode for an experiment.</p>
-     */
     inline void SetEmptyTargetResolutionMode(const EmptyTargetResolutionMode& value) { m_emptyTargetResolutionModeHasBeenSet = true; m_emptyTargetResolutionMode = value; }
-
-    /**
-     * <p>The empty target resolution mode for an experiment.</p>
-     */
     inline void SetEmptyTargetResolutionMode(EmptyTargetResolutionMode&& value) { m_emptyTargetResolutionModeHasBeenSet = true; m_emptyTargetResolutionMode = std::move(value); }
-
-    /**
-     * <p>The empty target resolution mode for an experiment.</p>
-     */
     inline ExperimentOptions& WithEmptyTargetResolutionMode(const EmptyTargetResolutionMode& value) { SetEmptyTargetResolutionMode(value); return *this;}
-
-    /**
-     * <p>The empty target resolution mode for an experiment.</p>
-     */
     inline ExperimentOptions& WithEmptyTargetResolutionMode(EmptyTargetResolutionMode&& value) { SetEmptyTargetResolutionMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The actions mode of the experiment that is set from the StartExperiment API
      * command.</p>
      */
     inline const ActionsMode& GetActionsMode() const{ return m_actionsMode; }
-
-    /**
-     * <p>The actions mode of the experiment that is set from the StartExperiment API
-     * command.</p>
-     */
     inline bool ActionsModeHasBeenSet() const { return m_actionsModeHasBeenSet; }
-
-    /**
-     * <p>The actions mode of the experiment that is set from the StartExperiment API
-     * command.</p>
-     */
     inline void SetActionsMode(const ActionsMode& value) { m_actionsModeHasBeenSet = true; m_actionsMode = value; }
-
-    /**
-     * <p>The actions mode of the experiment that is set from the StartExperiment API
-     * command.</p>
-     */
     inline void SetActionsMode(ActionsMode&& value) { m_actionsModeHasBeenSet = true; m_actionsMode = std::move(value); }
-
-    /**
-     * <p>The actions mode of the experiment that is set from the StartExperiment API
-     * command.</p>
-     */
     inline ExperimentOptions& WithActionsMode(const ActionsMode& value) { SetActionsMode(value); return *this;}
-
-    /**
-     * <p>The actions mode of the experiment that is set from the StartExperiment API
-     * command.</p>
-     */
     inline ExperimentOptions& WithActionsMode(ActionsMode&& value) { SetActionsMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AccountTargeting m_accountTargeting;

@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the authentication profile to delete.</p>
      */
     inline const Aws::String& GetAuthenticationProfileName() const{ return m_authenticationProfileName; }
-
-    /**
-     * <p>The name of the authentication profile to delete.</p>
-     */
     inline bool AuthenticationProfileNameHasBeenSet() const { return m_authenticationProfileNameHasBeenSet; }
-
-    /**
-     * <p>The name of the authentication profile to delete.</p>
-     */
     inline void SetAuthenticationProfileName(const Aws::String& value) { m_authenticationProfileNameHasBeenSet = true; m_authenticationProfileName = value; }
-
-    /**
-     * <p>The name of the authentication profile to delete.</p>
-     */
     inline void SetAuthenticationProfileName(Aws::String&& value) { m_authenticationProfileNameHasBeenSet = true; m_authenticationProfileName = std::move(value); }
-
-    /**
-     * <p>The name of the authentication profile to delete.</p>
-     */
     inline void SetAuthenticationProfileName(const char* value) { m_authenticationProfileNameHasBeenSet = true; m_authenticationProfileName.assign(value); }
-
-    /**
-     * <p>The name of the authentication profile to delete.</p>
-     */
     inline DeleteAuthenticationProfileRequest& WithAuthenticationProfileName(const Aws::String& value) { SetAuthenticationProfileName(value); return *this;}
-
-    /**
-     * <p>The name of the authentication profile to delete.</p>
-     */
     inline DeleteAuthenticationProfileRequest& WithAuthenticationProfileName(Aws::String&& value) { SetAuthenticationProfileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the authentication profile to delete.</p>
-     */
     inline DeleteAuthenticationProfileRequest& WithAuthenticationProfileName(const char* value) { SetAuthenticationProfileName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_authenticationProfileName;

@@ -41,79 +41,31 @@ namespace Model
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Prompts for information from the user. </p>
      */
     inline const Prompt& GetPrompt() const{ return m_prompt; }
-
-    /**
-     * <p>Prompts for information from the user. </p>
-     */
     inline bool PromptHasBeenSet() const { return m_promptHasBeenSet; }
-
-    /**
-     * <p>Prompts for information from the user. </p>
-     */
     inline void SetPrompt(const Prompt& value) { m_promptHasBeenSet = true; m_prompt = value; }
-
-    /**
-     * <p>Prompts for information from the user. </p>
-     */
     inline void SetPrompt(Prompt&& value) { m_promptHasBeenSet = true; m_prompt = std::move(value); }
-
-    /**
-     * <p>Prompts for information from the user. </p>
-     */
     inline FollowUpPrompt& WithPrompt(const Prompt& value) { SetPrompt(value); return *this;}
-
-    /**
-     * <p>Prompts for information from the user. </p>
-     */
     inline FollowUpPrompt& WithPrompt(Prompt&& value) { SetPrompt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the user answers "no" to the question defined in the <code>prompt</code>
      * field, Amazon Lex responds with this statement to acknowledge that the intent
      * was canceled. </p>
      */
     inline const Statement& GetRejectionStatement() const{ return m_rejectionStatement; }
-
-    /**
-     * <p>If the user answers "no" to the question defined in the <code>prompt</code>
-     * field, Amazon Lex responds with this statement to acknowledge that the intent
-     * was canceled. </p>
-     */
     inline bool RejectionStatementHasBeenSet() const { return m_rejectionStatementHasBeenSet; }
-
-    /**
-     * <p>If the user answers "no" to the question defined in the <code>prompt</code>
-     * field, Amazon Lex responds with this statement to acknowledge that the intent
-     * was canceled. </p>
-     */
     inline void SetRejectionStatement(const Statement& value) { m_rejectionStatementHasBeenSet = true; m_rejectionStatement = value; }
-
-    /**
-     * <p>If the user answers "no" to the question defined in the <code>prompt</code>
-     * field, Amazon Lex responds with this statement to acknowledge that the intent
-     * was canceled. </p>
-     */
     inline void SetRejectionStatement(Statement&& value) { m_rejectionStatementHasBeenSet = true; m_rejectionStatement = std::move(value); }
-
-    /**
-     * <p>If the user answers "no" to the question defined in the <code>prompt</code>
-     * field, Amazon Lex responds with this statement to acknowledge that the intent
-     * was canceled. </p>
-     */
     inline FollowUpPrompt& WithRejectionStatement(const Statement& value) { SetRejectionStatement(value); return *this;}
-
-    /**
-     * <p>If the user answers "no" to the question defined in the <code>prompt</code>
-     * field, Amazon Lex responds with this statement to acknowledge that the intent
-     * was canceled. </p>
-     */
     inline FollowUpPrompt& WithRejectionStatement(Statement&& value) { SetRejectionStatement(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Prompt m_prompt;

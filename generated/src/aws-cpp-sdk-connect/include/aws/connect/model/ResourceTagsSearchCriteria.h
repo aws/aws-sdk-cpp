@@ -37,36 +37,17 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The search criteria to be used to return tags.</p>
      */
     inline const TagSearchCondition& GetTagSearchCondition() const{ return m_tagSearchCondition; }
-
-    /**
-     * <p>The search criteria to be used to return tags.</p>
-     */
     inline bool TagSearchConditionHasBeenSet() const { return m_tagSearchConditionHasBeenSet; }
-
-    /**
-     * <p>The search criteria to be used to return tags.</p>
-     */
     inline void SetTagSearchCondition(const TagSearchCondition& value) { m_tagSearchConditionHasBeenSet = true; m_tagSearchCondition = value; }
-
-    /**
-     * <p>The search criteria to be used to return tags.</p>
-     */
     inline void SetTagSearchCondition(TagSearchCondition&& value) { m_tagSearchConditionHasBeenSet = true; m_tagSearchCondition = std::move(value); }
-
-    /**
-     * <p>The search criteria to be used to return tags.</p>
-     */
     inline ResourceTagsSearchCriteria& WithTagSearchCondition(const TagSearchCondition& value) { SetTagSearchCondition(value); return *this;}
-
-    /**
-     * <p>The search criteria to be used to return tags.</p>
-     */
     inline ResourceTagsSearchCriteria& WithTagSearchCondition(TagSearchCondition&& value) { SetTagSearchCondition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TagSearchCondition m_tagSearchCondition;

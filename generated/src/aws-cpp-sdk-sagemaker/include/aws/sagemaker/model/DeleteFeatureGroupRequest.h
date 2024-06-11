@@ -34,62 +34,21 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the <code>FeatureGroup</code> you want to delete. The name must
      * be unique within an Amazon Web Services Region in an Amazon Web Services
      * account. </p>
      */
     inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
-
-    /**
-     * <p>The name of the <code>FeatureGroup</code> you want to delete. The name must
-     * be unique within an Amazon Web Services Region in an Amazon Web Services
-     * account. </p>
-     */
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the <code>FeatureGroup</code> you want to delete. The name must
-     * be unique within an Amazon Web Services Region in an Amazon Web Services
-     * account. </p>
-     */
     inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
-
-    /**
-     * <p>The name of the <code>FeatureGroup</code> you want to delete. The name must
-     * be unique within an Amazon Web Services Region in an Amazon Web Services
-     * account. </p>
-     */
     inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the <code>FeatureGroup</code> you want to delete. The name must
-     * be unique within an Amazon Web Services Region in an Amazon Web Services
-     * account. </p>
-     */
     inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
-
-    /**
-     * <p>The name of the <code>FeatureGroup</code> you want to delete. The name must
-     * be unique within an Amazon Web Services Region in an Amazon Web Services
-     * account. </p>
-     */
     inline DeleteFeatureGroupRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the <code>FeatureGroup</code> you want to delete. The name must
-     * be unique within an Amazon Web Services Region in an Amazon Web Services
-     * account. </p>
-     */
     inline DeleteFeatureGroupRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the <code>FeatureGroup</code> you want to delete. The name must
-     * be unique within an Amazon Web Services Region in an Amazon Web Services
-     * account. </p>
-     */
     inline DeleteFeatureGroupRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_featureGroupName;

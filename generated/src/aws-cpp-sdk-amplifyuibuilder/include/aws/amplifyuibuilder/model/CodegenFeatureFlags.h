@@ -36,47 +36,25 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifes whether a code generation job supports data relationships.</p>
      */
     inline bool GetIsRelationshipSupported() const{ return m_isRelationshipSupported; }
-
-    /**
-     * <p>Specifes whether a code generation job supports data relationships.</p>
-     */
     inline bool IsRelationshipSupportedHasBeenSet() const { return m_isRelationshipSupportedHasBeenSet; }
-
-    /**
-     * <p>Specifes whether a code generation job supports data relationships.</p>
-     */
     inline void SetIsRelationshipSupported(bool value) { m_isRelationshipSupportedHasBeenSet = true; m_isRelationshipSupported = value; }
-
-    /**
-     * <p>Specifes whether a code generation job supports data relationships.</p>
-     */
     inline CodegenFeatureFlags& WithIsRelationshipSupported(bool value) { SetIsRelationshipSupported(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether a code generation job supports non models.</p>
      */
     inline bool GetIsNonModelSupported() const{ return m_isNonModelSupported; }
-
-    /**
-     * <p>Specifies whether a code generation job supports non models.</p>
-     */
     inline bool IsNonModelSupportedHasBeenSet() const { return m_isNonModelSupportedHasBeenSet; }
-
-    /**
-     * <p>Specifies whether a code generation job supports non models.</p>
-     */
     inline void SetIsNonModelSupported(bool value) { m_isNonModelSupportedHasBeenSet = true; m_isNonModelSupported = value; }
-
-    /**
-     * <p>Specifies whether a code generation job supports non models.</p>
-     */
     inline CodegenFeatureFlags& WithIsNonModelSupported(bool value) { SetIsNonModelSupported(value); return *this;}
-
+    ///@}
   private:
 
     bool m_isRelationshipSupported;

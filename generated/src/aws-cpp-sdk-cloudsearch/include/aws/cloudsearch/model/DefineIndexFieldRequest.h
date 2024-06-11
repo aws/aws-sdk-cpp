@@ -42,61 +42,29 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    
     inline DefineIndexFieldRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    
     inline DefineIndexFieldRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    
     inline DefineIndexFieldRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The index field and field options you want to configure. </p>
      */
     inline const IndexField& GetIndexField() const{ return m_indexField; }
-
-    /**
-     * <p>The index field and field options you want to configure. </p>
-     */
     inline bool IndexFieldHasBeenSet() const { return m_indexFieldHasBeenSet; }
-
-    /**
-     * <p>The index field and field options you want to configure. </p>
-     */
     inline void SetIndexField(const IndexField& value) { m_indexFieldHasBeenSet = true; m_indexField = value; }
-
-    /**
-     * <p>The index field and field options you want to configure. </p>
-     */
     inline void SetIndexField(IndexField&& value) { m_indexFieldHasBeenSet = true; m_indexField = std::move(value); }
-
-    /**
-     * <p>The index field and field options you want to configure. </p>
-     */
     inline DefineIndexFieldRequest& WithIndexField(const IndexField& value) { SetIndexField(value); return *this;}
-
-    /**
-     * <p>The index field and field options you want to configure. </p>
-     */
     inline DefineIndexFieldRequest& WithIndexField(IndexField&& value) { SetIndexField(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

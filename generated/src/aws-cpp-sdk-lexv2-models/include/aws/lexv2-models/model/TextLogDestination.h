@@ -38,42 +38,18 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are
      * delivered.</p>
      */
     inline const CloudWatchLogGroupLogDestination& GetCloudWatch() const{ return m_cloudWatch; }
-
-    /**
-     * <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are
-     * delivered.</p>
-     */
     inline bool CloudWatchHasBeenSet() const { return m_cloudWatchHasBeenSet; }
-
-    /**
-     * <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are
-     * delivered.</p>
-     */
     inline void SetCloudWatch(const CloudWatchLogGroupLogDestination& value) { m_cloudWatchHasBeenSet = true; m_cloudWatch = value; }
-
-    /**
-     * <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are
-     * delivered.</p>
-     */
     inline void SetCloudWatch(CloudWatchLogGroupLogDestination&& value) { m_cloudWatchHasBeenSet = true; m_cloudWatch = std::move(value); }
-
-    /**
-     * <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are
-     * delivered.</p>
-     */
     inline TextLogDestination& WithCloudWatch(const CloudWatchLogGroupLogDestination& value) { SetCloudWatch(value); return *this;}
-
-    /**
-     * <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are
-     * delivered.</p>
-     */
     inline TextLogDestination& WithCloudWatch(CloudWatchLogGroupLogDestination&& value) { SetCloudWatch(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CloudWatchLogGroupLogDestination m_cloudWatch;

@@ -42,271 +42,105 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The DevEUI value.</p>
      */
     inline const Aws::String& GetDevEui() const{ return m_devEui; }
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline bool DevEuiHasBeenSet() const { return m_devEuiHasBeenSet; }
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline void SetDevEui(const Aws::String& value) { m_devEuiHasBeenSet = true; m_devEui = value; }
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline void SetDevEui(Aws::String&& value) { m_devEuiHasBeenSet = true; m_devEui = std::move(value); }
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline void SetDevEui(const char* value) { m_devEuiHasBeenSet = true; m_devEui.assign(value); }
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline LoRaWANDevice& WithDevEui(const Aws::String& value) { SetDevEui(value); return *this;}
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline LoRaWANDevice& WithDevEui(Aws::String&& value) { SetDevEui(std::move(value)); return *this;}
-
-    /**
-     * <p>The DevEUI value.</p>
-     */
     inline LoRaWANDevice& WithDevEui(const char* value) { SetDevEui(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the device profile for the new wireless device.</p>
      */
     inline const Aws::String& GetDeviceProfileId() const{ return m_deviceProfileId; }
-
-    /**
-     * <p>The ID of the device profile for the new wireless device.</p>
-     */
     inline bool DeviceProfileIdHasBeenSet() const { return m_deviceProfileIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the device profile for the new wireless device.</p>
-     */
     inline void SetDeviceProfileId(const Aws::String& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = value; }
-
-    /**
-     * <p>The ID of the device profile for the new wireless device.</p>
-     */
     inline void SetDeviceProfileId(Aws::String&& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = std::move(value); }
-
-    /**
-     * <p>The ID of the device profile for the new wireless device.</p>
-     */
     inline void SetDeviceProfileId(const char* value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId.assign(value); }
-
-    /**
-     * <p>The ID of the device profile for the new wireless device.</p>
-     */
     inline LoRaWANDevice& WithDeviceProfileId(const Aws::String& value) { SetDeviceProfileId(value); return *this;}
-
-    /**
-     * <p>The ID of the device profile for the new wireless device.</p>
-     */
     inline LoRaWANDevice& WithDeviceProfileId(Aws::String&& value) { SetDeviceProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the device profile for the new wireless device.</p>
-     */
     inline LoRaWANDevice& WithDeviceProfileId(const char* value) { SetDeviceProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the service profile.</p>
      */
     inline const Aws::String& GetServiceProfileId() const{ return m_serviceProfileId; }
-
-    /**
-     * <p>The ID of the service profile.</p>
-     */
     inline bool ServiceProfileIdHasBeenSet() const { return m_serviceProfileIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the service profile.</p>
-     */
     inline void SetServiceProfileId(const Aws::String& value) { m_serviceProfileIdHasBeenSet = true; m_serviceProfileId = value; }
-
-    /**
-     * <p>The ID of the service profile.</p>
-     */
     inline void SetServiceProfileId(Aws::String&& value) { m_serviceProfileIdHasBeenSet = true; m_serviceProfileId = std::move(value); }
-
-    /**
-     * <p>The ID of the service profile.</p>
-     */
     inline void SetServiceProfileId(const char* value) { m_serviceProfileIdHasBeenSet = true; m_serviceProfileId.assign(value); }
-
-    /**
-     * <p>The ID of the service profile.</p>
-     */
     inline LoRaWANDevice& WithServiceProfileId(const Aws::String& value) { SetServiceProfileId(value); return *this;}
-
-    /**
-     * <p>The ID of the service profile.</p>
-     */
     inline LoRaWANDevice& WithServiceProfileId(Aws::String&& value) { SetServiceProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the service profile.</p>
-     */
     inline LoRaWANDevice& WithServiceProfileId(const char* value) { SetServiceProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>OTAA device object for v1.1 for create APIs</p>
      */
     inline const OtaaV1_1& GetOtaaV1_1() const{ return m_otaaV1_1; }
-
-    /**
-     * <p>OTAA device object for v1.1 for create APIs</p>
-     */
     inline bool OtaaV1_1HasBeenSet() const { return m_otaaV1_1HasBeenSet; }
-
-    /**
-     * <p>OTAA device object for v1.1 for create APIs</p>
-     */
     inline void SetOtaaV1_1(const OtaaV1_1& value) { m_otaaV1_1HasBeenSet = true; m_otaaV1_1 = value; }
-
-    /**
-     * <p>OTAA device object for v1.1 for create APIs</p>
-     */
     inline void SetOtaaV1_1(OtaaV1_1&& value) { m_otaaV1_1HasBeenSet = true; m_otaaV1_1 = std::move(value); }
-
-    /**
-     * <p>OTAA device object for v1.1 for create APIs</p>
-     */
     inline LoRaWANDevice& WithOtaaV1_1(const OtaaV1_1& value) { SetOtaaV1_1(value); return *this;}
-
-    /**
-     * <p>OTAA device object for v1.1 for create APIs</p>
-     */
     inline LoRaWANDevice& WithOtaaV1_1(OtaaV1_1&& value) { SetOtaaV1_1(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>OTAA device object for create APIs for v1.0.x</p>
      */
     inline const OtaaV1_0_x& GetOtaaV1_0_x() const{ return m_otaaV1_0_x; }
-
-    /**
-     * <p>OTAA device object for create APIs for v1.0.x</p>
-     */
     inline bool OtaaV1_0_xHasBeenSet() const { return m_otaaV1_0_xHasBeenSet; }
-
-    /**
-     * <p>OTAA device object for create APIs for v1.0.x</p>
-     */
     inline void SetOtaaV1_0_x(const OtaaV1_0_x& value) { m_otaaV1_0_xHasBeenSet = true; m_otaaV1_0_x = value; }
-
-    /**
-     * <p>OTAA device object for create APIs for v1.0.x</p>
-     */
     inline void SetOtaaV1_0_x(OtaaV1_0_x&& value) { m_otaaV1_0_xHasBeenSet = true; m_otaaV1_0_x = std::move(value); }
-
-    /**
-     * <p>OTAA device object for create APIs for v1.0.x</p>
-     */
     inline LoRaWANDevice& WithOtaaV1_0_x(const OtaaV1_0_x& value) { SetOtaaV1_0_x(value); return *this;}
-
-    /**
-     * <p>OTAA device object for create APIs for v1.0.x</p>
-     */
     inline LoRaWANDevice& WithOtaaV1_0_x(OtaaV1_0_x&& value) { SetOtaaV1_0_x(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>ABP device object for create APIs for v1.1</p>
      */
     inline const AbpV1_1& GetAbpV1_1() const{ return m_abpV1_1; }
-
-    /**
-     * <p>ABP device object for create APIs for v1.1</p>
-     */
     inline bool AbpV1_1HasBeenSet() const { return m_abpV1_1HasBeenSet; }
-
-    /**
-     * <p>ABP device object for create APIs for v1.1</p>
-     */
     inline void SetAbpV1_1(const AbpV1_1& value) { m_abpV1_1HasBeenSet = true; m_abpV1_1 = value; }
-
-    /**
-     * <p>ABP device object for create APIs for v1.1</p>
-     */
     inline void SetAbpV1_1(AbpV1_1&& value) { m_abpV1_1HasBeenSet = true; m_abpV1_1 = std::move(value); }
-
-    /**
-     * <p>ABP device object for create APIs for v1.1</p>
-     */
     inline LoRaWANDevice& WithAbpV1_1(const AbpV1_1& value) { SetAbpV1_1(value); return *this;}
-
-    /**
-     * <p>ABP device object for create APIs for v1.1</p>
-     */
     inline LoRaWANDevice& WithAbpV1_1(AbpV1_1&& value) { SetAbpV1_1(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>LoRaWAN object for create APIs</p>
      */
     inline const AbpV1_0_x& GetAbpV1_0_x() const{ return m_abpV1_0_x; }
-
-    /**
-     * <p>LoRaWAN object for create APIs</p>
-     */
     inline bool AbpV1_0_xHasBeenSet() const { return m_abpV1_0_xHasBeenSet; }
-
-    /**
-     * <p>LoRaWAN object for create APIs</p>
-     */
     inline void SetAbpV1_0_x(const AbpV1_0_x& value) { m_abpV1_0_xHasBeenSet = true; m_abpV1_0_x = value; }
-
-    /**
-     * <p>LoRaWAN object for create APIs</p>
-     */
     inline void SetAbpV1_0_x(AbpV1_0_x&& value) { m_abpV1_0_xHasBeenSet = true; m_abpV1_0_x = std::move(value); }
-
-    /**
-     * <p>LoRaWAN object for create APIs</p>
-     */
     inline LoRaWANDevice& WithAbpV1_0_x(const AbpV1_0_x& value) { SetAbpV1_0_x(value); return *this;}
-
-    /**
-     * <p>LoRaWAN object for create APIs</p>
-     */
     inline LoRaWANDevice& WithAbpV1_0_x(AbpV1_0_x&& value) { SetAbpV1_0_x(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const FPorts& GetFPorts() const{ return m_fPorts; }
-
-    
     inline bool FPortsHasBeenSet() const { return m_fPortsHasBeenSet; }
-
-    
     inline void SetFPorts(const FPorts& value) { m_fPortsHasBeenSet = true; m_fPorts = value; }
-
-    
     inline void SetFPorts(FPorts&& value) { m_fPortsHasBeenSet = true; m_fPorts = std::move(value); }
-
-    
     inline LoRaWANDevice& WithFPorts(const FPorts& value) { SetFPorts(value); return *this;}
-
-    
     inline LoRaWANDevice& WithFPorts(FPorts&& value) { SetFPorts(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_devEui;

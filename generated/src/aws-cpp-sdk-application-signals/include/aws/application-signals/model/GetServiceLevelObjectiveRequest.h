@@ -32,6 +32,7 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN or name of the SLO that you want to retrieve information about. You
      * can find the ARNs of SLOs by using the <a
@@ -39,63 +40,14 @@ namespace Model
      * operation.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ARN or name of the SLO that you want to retrieve information about. You
-     * can find the ARNs of SLOs by using the <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListServiceLevelObjectives.html">ListServiceLevelObjectives</a>
-     * operation.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ARN or name of the SLO that you want to retrieve information about. You
-     * can find the ARNs of SLOs by using the <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListServiceLevelObjectives.html">ListServiceLevelObjectives</a>
-     * operation.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ARN or name of the SLO that you want to retrieve information about. You
-     * can find the ARNs of SLOs by using the <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListServiceLevelObjectives.html">ListServiceLevelObjectives</a>
-     * operation.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ARN or name of the SLO that you want to retrieve information about. You
-     * can find the ARNs of SLOs by using the <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListServiceLevelObjectives.html">ListServiceLevelObjectives</a>
-     * operation.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ARN or name of the SLO that you want to retrieve information about. You
-     * can find the ARNs of SLOs by using the <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListServiceLevelObjectives.html">ListServiceLevelObjectives</a>
-     * operation.</p>
-     */
     inline GetServiceLevelObjectiveRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ARN or name of the SLO that you want to retrieve information about. You
-     * can find the ARNs of SLOs by using the <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListServiceLevelObjectives.html">ListServiceLevelObjectives</a>
-     * operation.</p>
-     */
     inline GetServiceLevelObjectiveRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN or name of the SLO that you want to retrieve information about. You
-     * can find the ARNs of SLOs by using the <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListServiceLevelObjectives.html">ListServiceLevelObjectives</a>
-     * operation.</p>
-     */
     inline GetServiceLevelObjectiveRequest& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

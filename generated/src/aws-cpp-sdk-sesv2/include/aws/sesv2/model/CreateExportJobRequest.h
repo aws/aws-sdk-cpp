@@ -37,67 +37,29 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The data source for the export job.</p>
      */
     inline const ExportDataSource& GetExportDataSource() const{ return m_exportDataSource; }
-
-    /**
-     * <p>The data source for the export job.</p>
-     */
     inline bool ExportDataSourceHasBeenSet() const { return m_exportDataSourceHasBeenSet; }
-
-    /**
-     * <p>The data source for the export job.</p>
-     */
     inline void SetExportDataSource(const ExportDataSource& value) { m_exportDataSourceHasBeenSet = true; m_exportDataSource = value; }
-
-    /**
-     * <p>The data source for the export job.</p>
-     */
     inline void SetExportDataSource(ExportDataSource&& value) { m_exportDataSourceHasBeenSet = true; m_exportDataSource = std::move(value); }
-
-    /**
-     * <p>The data source for the export job.</p>
-     */
     inline CreateExportJobRequest& WithExportDataSource(const ExportDataSource& value) { SetExportDataSource(value); return *this;}
-
-    /**
-     * <p>The data source for the export job.</p>
-     */
     inline CreateExportJobRequest& WithExportDataSource(ExportDataSource&& value) { SetExportDataSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The destination for the export job.</p>
      */
     inline const ExportDestination& GetExportDestination() const{ return m_exportDestination; }
-
-    /**
-     * <p>The destination for the export job.</p>
-     */
     inline bool ExportDestinationHasBeenSet() const { return m_exportDestinationHasBeenSet; }
-
-    /**
-     * <p>The destination for the export job.</p>
-     */
     inline void SetExportDestination(const ExportDestination& value) { m_exportDestinationHasBeenSet = true; m_exportDestination = value; }
-
-    /**
-     * <p>The destination for the export job.</p>
-     */
     inline void SetExportDestination(ExportDestination&& value) { m_exportDestinationHasBeenSet = true; m_exportDestination = std::move(value); }
-
-    /**
-     * <p>The destination for the export job.</p>
-     */
     inline CreateExportJobRequest& WithExportDestination(const ExportDestination& value) { SetExportDestination(value); return *this;}
-
-    /**
-     * <p>The destination for the export job.</p>
-     */
     inline CreateExportJobRequest& WithExportDestination(ExportDestination&& value) { SetExportDestination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ExportDataSource m_exportDataSource;

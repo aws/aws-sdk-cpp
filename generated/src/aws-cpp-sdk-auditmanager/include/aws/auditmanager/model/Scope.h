@@ -47,54 +47,20 @@ namespace Model
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The Amazon Web Services accounts that are included in the scope of the
      * assessment. </p>
      */
     inline const Aws::Vector<AWSAccount>& GetAwsAccounts() const{ return m_awsAccounts; }
-
-    /**
-     * <p> The Amazon Web Services accounts that are included in the scope of the
-     * assessment. </p>
-     */
     inline bool AwsAccountsHasBeenSet() const { return m_awsAccountsHasBeenSet; }
-
-    /**
-     * <p> The Amazon Web Services accounts that are included in the scope of the
-     * assessment. </p>
-     */
     inline void SetAwsAccounts(const Aws::Vector<AWSAccount>& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts = value; }
-
-    /**
-     * <p> The Amazon Web Services accounts that are included in the scope of the
-     * assessment. </p>
-     */
     inline void SetAwsAccounts(Aws::Vector<AWSAccount>&& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts = std::move(value); }
-
-    /**
-     * <p> The Amazon Web Services accounts that are included in the scope of the
-     * assessment. </p>
-     */
     inline Scope& WithAwsAccounts(const Aws::Vector<AWSAccount>& value) { SetAwsAccounts(value); return *this;}
-
-    /**
-     * <p> The Amazon Web Services accounts that are included in the scope of the
-     * assessment. </p>
-     */
     inline Scope& WithAwsAccounts(Aws::Vector<AWSAccount>&& value) { SetAwsAccounts(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Web Services accounts that are included in the scope of the
-     * assessment. </p>
-     */
     inline Scope& AddAwsAccounts(const AWSAccount& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts.push_back(value); return *this; }
-
-    /**
-     * <p> The Amazon Web Services accounts that are included in the scope of the
-     * assessment. </p>
-     */
     inline Scope& AddAwsAccounts(AWSAccount&& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AWSAccount> m_awsAccounts;

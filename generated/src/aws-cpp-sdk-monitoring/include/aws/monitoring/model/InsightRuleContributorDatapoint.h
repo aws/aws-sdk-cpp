@@ -44,57 +44,27 @@ namespace Model
     AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The timestamp of the data point.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The timestamp of the data point.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The timestamp of the data point.</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The timestamp of the data point.</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp of the data point.</p>
-     */
     inline InsightRuleContributorDatapoint& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp of the data point.</p>
-     */
     inline InsightRuleContributorDatapoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The approximate value that this contributor added during this timestamp.</p>
      */
     inline double GetApproximateValue() const{ return m_approximateValue; }
-
-    /**
-     * <p>The approximate value that this contributor added during this timestamp.</p>
-     */
     inline bool ApproximateValueHasBeenSet() const { return m_approximateValueHasBeenSet; }
-
-    /**
-     * <p>The approximate value that this contributor added during this timestamp.</p>
-     */
     inline void SetApproximateValue(double value) { m_approximateValueHasBeenSet = true; m_approximateValue = value; }
-
-    /**
-     * <p>The approximate value that this contributor added during this timestamp.</p>
-     */
     inline InsightRuleContributorDatapoint& WithApproximateValue(double value) { SetApproximateValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_timestamp;

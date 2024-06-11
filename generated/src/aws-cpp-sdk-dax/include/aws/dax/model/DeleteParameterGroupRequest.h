@@ -34,46 +34,19 @@ namespace Model
     AWS_DAX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the parameter group to delete.</p>
      */
     inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
-
-    /**
-     * <p>The name of the parameter group to delete.</p>
-     */
     inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the parameter group to delete.</p>
-     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
-
-    /**
-     * <p>The name of the parameter group to delete.</p>
-     */
     inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the parameter group to delete.</p>
-     */
     inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
-
-    /**
-     * <p>The name of the parameter group to delete.</p>
-     */
     inline DeleteParameterGroupRequest& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the parameter group to delete.</p>
-     */
     inline DeleteParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the parameter group to delete.</p>
-     */
     inline DeleteParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_parameterGroupName;

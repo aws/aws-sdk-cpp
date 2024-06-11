@@ -38,57 +38,27 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the feature for which the free trial is configured.</p>
      */
     inline const FreeTrialFeatureResult& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the feature for which the free trial is configured.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the feature for which the free trial is configured.</p>
-     */
     inline void SetName(const FreeTrialFeatureResult& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the feature for which the free trial is configured.</p>
-     */
     inline void SetName(FreeTrialFeatureResult&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the feature for which the free trial is configured.</p>
-     */
     inline FreeTrialFeatureConfigurationResult& WithName(const FreeTrialFeatureResult& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the feature for which the free trial is configured.</p>
-     */
     inline FreeTrialFeatureConfigurationResult& WithName(FreeTrialFeatureResult&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of the remaining free trial days for the feature.</p>
      */
     inline int GetFreeTrialDaysRemaining() const{ return m_freeTrialDaysRemaining; }
-
-    /**
-     * <p>The number of the remaining free trial days for the feature.</p>
-     */
     inline bool FreeTrialDaysRemainingHasBeenSet() const { return m_freeTrialDaysRemainingHasBeenSet; }
-
-    /**
-     * <p>The number of the remaining free trial days for the feature.</p>
-     */
     inline void SetFreeTrialDaysRemaining(int value) { m_freeTrialDaysRemainingHasBeenSet = true; m_freeTrialDaysRemaining = value; }
-
-    /**
-     * <p>The number of the remaining free trial days for the feature.</p>
-     */
     inline FreeTrialFeatureConfigurationResult& WithFreeTrialDaysRemaining(int value) { SetFreeTrialDaysRemaining(value); return *this;}
-
+    ///@}
   private:
 
     FreeTrialFeatureResult m_name;

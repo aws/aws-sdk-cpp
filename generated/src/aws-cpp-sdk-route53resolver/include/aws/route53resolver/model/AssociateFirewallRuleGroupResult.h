@@ -33,58 +33,28 @@ namespace Model
     AWS_ROUTE53RESOLVER_API AssociateFirewallRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The association that you just created. The association has an ID that you can
      * use to identify it in other requests, like update and delete.</p>
      */
     inline const FirewallRuleGroupAssociation& GetFirewallRuleGroupAssociation() const{ return m_firewallRuleGroupAssociation; }
-
-    /**
-     * <p>The association that you just created. The association has an ID that you can
-     * use to identify it in other requests, like update and delete.</p>
-     */
     inline void SetFirewallRuleGroupAssociation(const FirewallRuleGroupAssociation& value) { m_firewallRuleGroupAssociation = value; }
-
-    /**
-     * <p>The association that you just created. The association has an ID that you can
-     * use to identify it in other requests, like update and delete.</p>
-     */
     inline void SetFirewallRuleGroupAssociation(FirewallRuleGroupAssociation&& value) { m_firewallRuleGroupAssociation = std::move(value); }
-
-    /**
-     * <p>The association that you just created. The association has an ID that you can
-     * use to identify it in other requests, like update and delete.</p>
-     */
     inline AssociateFirewallRuleGroupResult& WithFirewallRuleGroupAssociation(const FirewallRuleGroupAssociation& value) { SetFirewallRuleGroupAssociation(value); return *this;}
-
-    /**
-     * <p>The association that you just created. The association has an ID that you can
-     * use to identify it in other requests, like update and delete.</p>
-     */
     inline AssociateFirewallRuleGroupResult& WithFirewallRuleGroupAssociation(FirewallRuleGroupAssociation&& value) { SetFirewallRuleGroupAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AssociateFirewallRuleGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AssociateFirewallRuleGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AssociateFirewallRuleGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FirewallRuleGroupAssociation m_firewallRuleGroupAssociation;

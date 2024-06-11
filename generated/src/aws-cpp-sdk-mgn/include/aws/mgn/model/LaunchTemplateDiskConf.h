@@ -37,78 +37,37 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Launch template disk iops configuration.</p>
      */
     inline long long GetIops() const{ return m_iops; }
-
-    /**
-     * <p>Launch template disk iops configuration.</p>
-     */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
-
-    /**
-     * <p>Launch template disk iops configuration.</p>
-     */
     inline void SetIops(long long value) { m_iopsHasBeenSet = true; m_iops = value; }
-
-    /**
-     * <p>Launch template disk iops configuration.</p>
-     */
     inline LaunchTemplateDiskConf& WithIops(long long value) { SetIops(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Launch template disk throughput configuration.</p>
      */
     inline long long GetThroughput() const{ return m_throughput; }
-
-    /**
-     * <p>Launch template disk throughput configuration.</p>
-     */
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
-
-    /**
-     * <p>Launch template disk throughput configuration.</p>
-     */
     inline void SetThroughput(long long value) { m_throughputHasBeenSet = true; m_throughput = value; }
-
-    /**
-     * <p>Launch template disk throughput configuration.</p>
-     */
     inline LaunchTemplateDiskConf& WithThroughput(long long value) { SetThroughput(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Launch template disk volume type configuration.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
-
-    /**
-     * <p>Launch template disk volume type configuration.</p>
-     */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
-
-    /**
-     * <p>Launch template disk volume type configuration.</p>
-     */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
-
-    /**
-     * <p>Launch template disk volume type configuration.</p>
-     */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
-
-    /**
-     * <p>Launch template disk volume type configuration.</p>
-     */
     inline LaunchTemplateDiskConf& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
-
-    /**
-     * <p>Launch template disk volume type configuration.</p>
-     */
     inline LaunchTemplateDiskConf& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_iops;

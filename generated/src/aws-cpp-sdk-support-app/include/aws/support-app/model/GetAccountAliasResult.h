@@ -32,63 +32,29 @@ namespace Model
     AWS_SUPPORTAPP_API GetAccountAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An alias or short name for an Amazon Web Services account.</p>
      */
     inline const Aws::String& GetAccountAlias() const{ return m_accountAlias; }
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline void SetAccountAlias(const Aws::String& value) { m_accountAlias = value; }
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline void SetAccountAlias(Aws::String&& value) { m_accountAlias = std::move(value); }
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline void SetAccountAlias(const char* value) { m_accountAlias.assign(value); }
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline GetAccountAliasResult& WithAccountAlias(const Aws::String& value) { SetAccountAlias(value); return *this;}
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline GetAccountAliasResult& WithAccountAlias(Aws::String&& value) { SetAccountAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline GetAccountAliasResult& WithAccountAlias(const char* value) { SetAccountAlias(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAccountAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAccountAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAccountAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountAlias;

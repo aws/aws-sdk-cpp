@@ -39,6 +39,7 @@ namespace Model
     AWS_APPMESH_API ListVirtualServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The <code>nextToken</code> value to include in a future
      * <code>ListVirtualServices</code> request. When the results of a
@@ -47,119 +48,37 @@ namespace Model
      * when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListVirtualServices</code> request. When the results of a
-     * <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use
-     * this value to retrieve the next page of results. This value is <code>null</code>
-     * when there are no more results to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListVirtualServices</code> request. When the results of a
-     * <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use
-     * this value to retrieve the next page of results. This value is <code>null</code>
-     * when there are no more results to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListVirtualServices</code> request. When the results of a
-     * <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use
-     * this value to retrieve the next page of results. This value is <code>null</code>
-     * when there are no more results to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListVirtualServices</code> request. When the results of a
-     * <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use
-     * this value to retrieve the next page of results. This value is <code>null</code>
-     * when there are no more results to return.</p>
-     */
     inline ListVirtualServicesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListVirtualServices</code> request. When the results of a
-     * <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use
-     * this value to retrieve the next page of results. This value is <code>null</code>
-     * when there are no more results to return.</p>
-     */
     inline ListVirtualServicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListVirtualServices</code> request. When the results of a
-     * <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use
-     * this value to retrieve the next page of results. This value is <code>null</code>
-     * when there are no more results to return.</p>
-     */
     inline ListVirtualServicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of existing virtual services for the specified service mesh.</p>
      */
     inline const Aws::Vector<VirtualServiceRef>& GetVirtualServices() const{ return m_virtualServices; }
-
-    /**
-     * <p>The list of existing virtual services for the specified service mesh.</p>
-     */
     inline void SetVirtualServices(const Aws::Vector<VirtualServiceRef>& value) { m_virtualServices = value; }
-
-    /**
-     * <p>The list of existing virtual services for the specified service mesh.</p>
-     */
     inline void SetVirtualServices(Aws::Vector<VirtualServiceRef>&& value) { m_virtualServices = std::move(value); }
-
-    /**
-     * <p>The list of existing virtual services for the specified service mesh.</p>
-     */
     inline ListVirtualServicesResult& WithVirtualServices(const Aws::Vector<VirtualServiceRef>& value) { SetVirtualServices(value); return *this;}
-
-    /**
-     * <p>The list of existing virtual services for the specified service mesh.</p>
-     */
     inline ListVirtualServicesResult& WithVirtualServices(Aws::Vector<VirtualServiceRef>&& value) { SetVirtualServices(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of existing virtual services for the specified service mesh.</p>
-     */
     inline ListVirtualServicesResult& AddVirtualServices(const VirtualServiceRef& value) { m_virtualServices.push_back(value); return *this; }
-
-    /**
-     * <p>The list of existing virtual services for the specified service mesh.</p>
-     */
     inline ListVirtualServicesResult& AddVirtualServices(VirtualServiceRef&& value) { m_virtualServices.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListVirtualServicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListVirtualServicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListVirtualServicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

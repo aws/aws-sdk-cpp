@@ -39,62 +39,21 @@ namespace Model
     AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If you specify a server name, API Gateway uses it to verify the hostname on
      * the integration's certificate. The server name is also included in the TLS
      * handshake to support Server Name Indication (SNI) or virtual hosting.</p>
      */
     inline const Aws::String& GetServerNameToVerify() const{ return m_serverNameToVerify; }
-
-    /**
-     * <p>If you specify a server name, API Gateway uses it to verify the hostname on
-     * the integration's certificate. The server name is also included in the TLS
-     * handshake to support Server Name Indication (SNI) or virtual hosting.</p>
-     */
     inline bool ServerNameToVerifyHasBeenSet() const { return m_serverNameToVerifyHasBeenSet; }
-
-    /**
-     * <p>If you specify a server name, API Gateway uses it to verify the hostname on
-     * the integration's certificate. The server name is also included in the TLS
-     * handshake to support Server Name Indication (SNI) or virtual hosting.</p>
-     */
     inline void SetServerNameToVerify(const Aws::String& value) { m_serverNameToVerifyHasBeenSet = true; m_serverNameToVerify = value; }
-
-    /**
-     * <p>If you specify a server name, API Gateway uses it to verify the hostname on
-     * the integration's certificate. The server name is also included in the TLS
-     * handshake to support Server Name Indication (SNI) or virtual hosting.</p>
-     */
     inline void SetServerNameToVerify(Aws::String&& value) { m_serverNameToVerifyHasBeenSet = true; m_serverNameToVerify = std::move(value); }
-
-    /**
-     * <p>If you specify a server name, API Gateway uses it to verify the hostname on
-     * the integration's certificate. The server name is also included in the TLS
-     * handshake to support Server Name Indication (SNI) or virtual hosting.</p>
-     */
     inline void SetServerNameToVerify(const char* value) { m_serverNameToVerifyHasBeenSet = true; m_serverNameToVerify.assign(value); }
-
-    /**
-     * <p>If you specify a server name, API Gateway uses it to verify the hostname on
-     * the integration's certificate. The server name is also included in the TLS
-     * handshake to support Server Name Indication (SNI) or virtual hosting.</p>
-     */
     inline TlsConfig& WithServerNameToVerify(const Aws::String& value) { SetServerNameToVerify(value); return *this;}
-
-    /**
-     * <p>If you specify a server name, API Gateway uses it to verify the hostname on
-     * the integration's certificate. The server name is also included in the TLS
-     * handshake to support Server Name Indication (SNI) or virtual hosting.</p>
-     */
     inline TlsConfig& WithServerNameToVerify(Aws::String&& value) { SetServerNameToVerify(std::move(value)); return *this;}
-
-    /**
-     * <p>If you specify a server name, API Gateway uses it to verify the hostname on
-     * the integration's certificate. The server name is also included in the TLS
-     * handshake to support Server Name Indication (SNI) or virtual hosting.</p>
-     */
     inline TlsConfig& WithServerNameToVerify(const char* value) { SetServerNameToVerify(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serverNameToVerify;

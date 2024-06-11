@@ -36,54 +36,20 @@ namespace Model
     AWS_CODEGURUPROFILER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the profiling group we want to get the notification configuration
      * for.</p>
      */
     inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
-
-    /**
-     * <p>The name of the profiling group we want to get the notification configuration
-     * for.</p>
-     */
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the profiling group we want to get the notification configuration
-     * for.</p>
-     */
     inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
-
-    /**
-     * <p>The name of the profiling group we want to get the notification configuration
-     * for.</p>
-     */
     inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the profiling group we want to get the notification configuration
-     * for.</p>
-     */
     inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the profiling group we want to get the notification configuration
-     * for.</p>
-     */
     inline GetNotificationConfigurationRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the profiling group we want to get the notification configuration
-     * for.</p>
-     */
     inline GetNotificationConfigurationRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the profiling group we want to get the notification configuration
-     * for.</p>
-     */
     inline GetNotificationConfigurationRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_profilingGroupName;

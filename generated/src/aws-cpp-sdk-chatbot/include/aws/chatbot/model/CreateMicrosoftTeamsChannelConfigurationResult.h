@@ -33,53 +33,27 @@ namespace Model
     AWS_CHATBOT_API CreateMicrosoftTeamsChannelConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The configuration for a Microsoft Teams channel configured with AWS Chatbot.
      */
     inline const TeamsChannelConfiguration& GetChannelConfiguration() const{ return m_channelConfiguration; }
-
-    /**
-     * The configuration for a Microsoft Teams channel configured with AWS Chatbot.
-     */
     inline void SetChannelConfiguration(const TeamsChannelConfiguration& value) { m_channelConfiguration = value; }
-
-    /**
-     * The configuration for a Microsoft Teams channel configured with AWS Chatbot.
-     */
     inline void SetChannelConfiguration(TeamsChannelConfiguration&& value) { m_channelConfiguration = std::move(value); }
-
-    /**
-     * The configuration for a Microsoft Teams channel configured with AWS Chatbot.
-     */
     inline CreateMicrosoftTeamsChannelConfigurationResult& WithChannelConfiguration(const TeamsChannelConfiguration& value) { SetChannelConfiguration(value); return *this;}
-
-    /**
-     * The configuration for a Microsoft Teams channel configured with AWS Chatbot.
-     */
     inline CreateMicrosoftTeamsChannelConfigurationResult& WithChannelConfiguration(TeamsChannelConfiguration&& value) { SetChannelConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateMicrosoftTeamsChannelConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateMicrosoftTeamsChannelConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateMicrosoftTeamsChannelConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TeamsChannelConfiguration m_channelConfiguration;

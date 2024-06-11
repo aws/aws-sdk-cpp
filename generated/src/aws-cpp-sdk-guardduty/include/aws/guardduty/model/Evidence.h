@@ -39,46 +39,19 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of threat intelligence details related to the evidence.</p>
      */
     inline const Aws::Vector<ThreatIntelligenceDetail>& GetThreatIntelligenceDetails() const{ return m_threatIntelligenceDetails; }
-
-    /**
-     * <p>A list of threat intelligence details related to the evidence.</p>
-     */
     inline bool ThreatIntelligenceDetailsHasBeenSet() const { return m_threatIntelligenceDetailsHasBeenSet; }
-
-    /**
-     * <p>A list of threat intelligence details related to the evidence.</p>
-     */
     inline void SetThreatIntelligenceDetails(const Aws::Vector<ThreatIntelligenceDetail>& value) { m_threatIntelligenceDetailsHasBeenSet = true; m_threatIntelligenceDetails = value; }
-
-    /**
-     * <p>A list of threat intelligence details related to the evidence.</p>
-     */
     inline void SetThreatIntelligenceDetails(Aws::Vector<ThreatIntelligenceDetail>&& value) { m_threatIntelligenceDetailsHasBeenSet = true; m_threatIntelligenceDetails = std::move(value); }
-
-    /**
-     * <p>A list of threat intelligence details related to the evidence.</p>
-     */
     inline Evidence& WithThreatIntelligenceDetails(const Aws::Vector<ThreatIntelligenceDetail>& value) { SetThreatIntelligenceDetails(value); return *this;}
-
-    /**
-     * <p>A list of threat intelligence details related to the evidence.</p>
-     */
     inline Evidence& WithThreatIntelligenceDetails(Aws::Vector<ThreatIntelligenceDetail>&& value) { SetThreatIntelligenceDetails(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of threat intelligence details related to the evidence.</p>
-     */
     inline Evidence& AddThreatIntelligenceDetails(const ThreatIntelligenceDetail& value) { m_threatIntelligenceDetailsHasBeenSet = true; m_threatIntelligenceDetails.push_back(value); return *this; }
-
-    /**
-     * <p>A list of threat intelligence details related to the evidence.</p>
-     */
     inline Evidence& AddThreatIntelligenceDetails(ThreatIntelligenceDetail&& value) { m_threatIntelligenceDetailsHasBeenSet = true; m_threatIntelligenceDetails.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ThreatIntelligenceDetail> m_threatIntelligenceDetails;

@@ -40,55 +40,22 @@ namespace Model
     AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of simulation clocks.</p>  <p>At this time, a simulation has
      * only one clock.</p> 
      */
     inline const Aws::Vector<SimulationClock>& GetClocks() const{ return m_clocks; }
-
-    /**
-     * <p>A list of simulation clocks.</p>  <p>At this time, a simulation has
-     * only one clock.</p> 
-     */
     inline bool ClocksHasBeenSet() const { return m_clocksHasBeenSet; }
-
-    /**
-     * <p>A list of simulation clocks.</p>  <p>At this time, a simulation has
-     * only one clock.</p> 
-     */
     inline void SetClocks(const Aws::Vector<SimulationClock>& value) { m_clocksHasBeenSet = true; m_clocks = value; }
-
-    /**
-     * <p>A list of simulation clocks.</p>  <p>At this time, a simulation has
-     * only one clock.</p> 
-     */
     inline void SetClocks(Aws::Vector<SimulationClock>&& value) { m_clocksHasBeenSet = true; m_clocks = std::move(value); }
-
-    /**
-     * <p>A list of simulation clocks.</p>  <p>At this time, a simulation has
-     * only one clock.</p> 
-     */
     inline LiveSimulationState& WithClocks(const Aws::Vector<SimulationClock>& value) { SetClocks(value); return *this;}
-
-    /**
-     * <p>A list of simulation clocks.</p>  <p>At this time, a simulation has
-     * only one clock.</p> 
-     */
     inline LiveSimulationState& WithClocks(Aws::Vector<SimulationClock>&& value) { SetClocks(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of simulation clocks.</p>  <p>At this time, a simulation has
-     * only one clock.</p> 
-     */
     inline LiveSimulationState& AddClocks(const SimulationClock& value) { m_clocksHasBeenSet = true; m_clocks.push_back(value); return *this; }
-
-    /**
-     * <p>A list of simulation clocks.</p>  <p>At this time, a simulation has
-     * only one clock.</p> 
-     */
     inline LiveSimulationState& AddClocks(SimulationClock&& value) { m_clocksHasBeenSet = true; m_clocks.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of domains for the simulation. For more information about domains, see
      * <a
@@ -96,63 +63,14 @@ namespace Model
      * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline const Aws::Vector<Domain>& GetDomains() const{ return m_domains; }
-
-    /**
-     * <p>A list of domains for the simulation. For more information about domains, see
-     * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
-     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
-     */
     inline bool DomainsHasBeenSet() const { return m_domainsHasBeenSet; }
-
-    /**
-     * <p>A list of domains for the simulation. For more information about domains, see
-     * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
-     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
-     */
     inline void SetDomains(const Aws::Vector<Domain>& value) { m_domainsHasBeenSet = true; m_domains = value; }
-
-    /**
-     * <p>A list of domains for the simulation. For more information about domains, see
-     * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
-     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
-     */
     inline void SetDomains(Aws::Vector<Domain>&& value) { m_domainsHasBeenSet = true; m_domains = std::move(value); }
-
-    /**
-     * <p>A list of domains for the simulation. For more information about domains, see
-     * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
-     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
-     */
     inline LiveSimulationState& WithDomains(const Aws::Vector<Domain>& value) { SetDomains(value); return *this;}
-
-    /**
-     * <p>A list of domains for the simulation. For more information about domains, see
-     * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
-     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
-     */
     inline LiveSimulationState& WithDomains(Aws::Vector<Domain>&& value) { SetDomains(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of domains for the simulation. For more information about domains, see
-     * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
-     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
-     */
     inline LiveSimulationState& AddDomains(const Domain& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
-
-    /**
-     * <p>A list of domains for the simulation. For more information about domains, see
-     * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
-     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
-     */
     inline LiveSimulationState& AddDomains(Domain&& value) { m_domainsHasBeenSet = true; m_domains.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<SimulationClock> m_clocks;

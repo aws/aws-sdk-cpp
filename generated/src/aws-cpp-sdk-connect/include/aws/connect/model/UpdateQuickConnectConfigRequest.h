@@ -33,134 +33,47 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline UpdateQuickConnectConfigRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline UpdateQuickConnectConfigRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline UpdateQuickConnectConfigRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier for the quick connect.</p>
      */
     inline const Aws::String& GetQuickConnectId() const{ return m_quickConnectId; }
-
-    /**
-     * <p>The identifier for the quick connect.</p>
-     */
     inline bool QuickConnectIdHasBeenSet() const { return m_quickConnectIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the quick connect.</p>
-     */
     inline void SetQuickConnectId(const Aws::String& value) { m_quickConnectIdHasBeenSet = true; m_quickConnectId = value; }
-
-    /**
-     * <p>The identifier for the quick connect.</p>
-     */
     inline void SetQuickConnectId(Aws::String&& value) { m_quickConnectIdHasBeenSet = true; m_quickConnectId = std::move(value); }
-
-    /**
-     * <p>The identifier for the quick connect.</p>
-     */
     inline void SetQuickConnectId(const char* value) { m_quickConnectIdHasBeenSet = true; m_quickConnectId.assign(value); }
-
-    /**
-     * <p>The identifier for the quick connect.</p>
-     */
     inline UpdateQuickConnectConfigRequest& WithQuickConnectId(const Aws::String& value) { SetQuickConnectId(value); return *this;}
-
-    /**
-     * <p>The identifier for the quick connect.</p>
-     */
     inline UpdateQuickConnectConfigRequest& WithQuickConnectId(Aws::String&& value) { SetQuickConnectId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the quick connect.</p>
-     */
     inline UpdateQuickConnectConfigRequest& WithQuickConnectId(const char* value) { SetQuickConnectId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the configuration settings for the quick connect.</p>
      */
     inline const QuickConnectConfig& GetQuickConnectConfig() const{ return m_quickConnectConfig; }
-
-    /**
-     * <p>Information about the configuration settings for the quick connect.</p>
-     */
     inline bool QuickConnectConfigHasBeenSet() const { return m_quickConnectConfigHasBeenSet; }
-
-    /**
-     * <p>Information about the configuration settings for the quick connect.</p>
-     */
     inline void SetQuickConnectConfig(const QuickConnectConfig& value) { m_quickConnectConfigHasBeenSet = true; m_quickConnectConfig = value; }
-
-    /**
-     * <p>Information about the configuration settings for the quick connect.</p>
-     */
     inline void SetQuickConnectConfig(QuickConnectConfig&& value) { m_quickConnectConfigHasBeenSet = true; m_quickConnectConfig = std::move(value); }
-
-    /**
-     * <p>Information about the configuration settings for the quick connect.</p>
-     */
     inline UpdateQuickConnectConfigRequest& WithQuickConnectConfig(const QuickConnectConfig& value) { SetQuickConnectConfig(value); return *this;}
-
-    /**
-     * <p>Information about the configuration settings for the quick connect.</p>
-     */
     inline UpdateQuickConnectConfigRequest& WithQuickConnectConfig(QuickConnectConfig&& value) { SetQuickConnectConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

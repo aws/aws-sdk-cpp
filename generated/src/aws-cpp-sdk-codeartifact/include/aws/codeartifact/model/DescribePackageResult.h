@@ -33,63 +33,29 @@ namespace Model
     AWS_CODEARTIFACT_API DescribePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
      * object that contains information about the requested package.</p>
      */
     inline const PackageDescription& GetPackage() const{ return m_package; }
-
-    /**
-     * <p>A <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
-     * object that contains information about the requested package.</p>
-     */
     inline void SetPackage(const PackageDescription& value) { m_package = value; }
-
-    /**
-     * <p>A <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
-     * object that contains information about the requested package.</p>
-     */
     inline void SetPackage(PackageDescription&& value) { m_package = std::move(value); }
-
-    /**
-     * <p>A <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
-     * object that contains information about the requested package.</p>
-     */
     inline DescribePackageResult& WithPackage(const PackageDescription& value) { SetPackage(value); return *this;}
-
-    /**
-     * <p>A <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
-     * object that contains information about the requested package.</p>
-     */
     inline DescribePackageResult& WithPackage(PackageDescription&& value) { SetPackage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribePackageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribePackageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribePackageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PackageDescription m_package;

@@ -39,67 +39,29 @@ namespace Model
     AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The analyzed transcript.</p>
      */
     inline const Transcript& GetTranscript() const{ return m_transcript; }
-
-    /**
-     * <p>The analyzed transcript.</p>
-     */
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
-
-    /**
-     * <p>The analyzed transcript.</p>
-     */
     inline void SetTranscript(const Transcript& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
-
-    /**
-     * <p>The analyzed transcript.</p>
-     */
     inline void SetTranscript(Transcript&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
-
-    /**
-     * <p>The analyzed transcript.</p>
-     */
     inline RealtimeContactAnalysisSegment& WithTranscript(const Transcript& value) { SetTranscript(value); return *this;}
-
-    /**
-     * <p>The analyzed transcript.</p>
-     */
     inline RealtimeContactAnalysisSegment& WithTranscript(Transcript&& value) { SetTranscript(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The matched category rules.</p>
      */
     inline const Categories& GetCategories() const{ return m_categories; }
-
-    /**
-     * <p>The matched category rules.</p>
-     */
     inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
-
-    /**
-     * <p>The matched category rules.</p>
-     */
     inline void SetCategories(const Categories& value) { m_categoriesHasBeenSet = true; m_categories = value; }
-
-    /**
-     * <p>The matched category rules.</p>
-     */
     inline void SetCategories(Categories&& value) { m_categoriesHasBeenSet = true; m_categories = std::move(value); }
-
-    /**
-     * <p>The matched category rules.</p>
-     */
     inline RealtimeContactAnalysisSegment& WithCategories(const Categories& value) { SetCategories(value); return *this;}
-
-    /**
-     * <p>The matched category rules.</p>
-     */
     inline RealtimeContactAnalysisSegment& WithCategories(Categories&& value) { SetCategories(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Transcript m_transcript;

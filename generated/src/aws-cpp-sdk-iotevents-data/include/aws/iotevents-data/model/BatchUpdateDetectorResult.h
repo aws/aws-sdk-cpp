@@ -34,70 +34,30 @@ namespace Model
     AWS_IOTEVENTSDATA_API BatchUpdateDetectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of those detector updates that resulted in errors. (If an error is
      * listed here, the specific update did not occur.)</p>
      */
     inline const Aws::Vector<BatchUpdateDetectorErrorEntry>& GetBatchUpdateDetectorErrorEntries() const{ return m_batchUpdateDetectorErrorEntries; }
-
-    /**
-     * <p>A list of those detector updates that resulted in errors. (If an error is
-     * listed here, the specific update did not occur.)</p>
-     */
     inline void SetBatchUpdateDetectorErrorEntries(const Aws::Vector<BatchUpdateDetectorErrorEntry>& value) { m_batchUpdateDetectorErrorEntries = value; }
-
-    /**
-     * <p>A list of those detector updates that resulted in errors. (If an error is
-     * listed here, the specific update did not occur.)</p>
-     */
     inline void SetBatchUpdateDetectorErrorEntries(Aws::Vector<BatchUpdateDetectorErrorEntry>&& value) { m_batchUpdateDetectorErrorEntries = std::move(value); }
-
-    /**
-     * <p>A list of those detector updates that resulted in errors. (If an error is
-     * listed here, the specific update did not occur.)</p>
-     */
     inline BatchUpdateDetectorResult& WithBatchUpdateDetectorErrorEntries(const Aws::Vector<BatchUpdateDetectorErrorEntry>& value) { SetBatchUpdateDetectorErrorEntries(value); return *this;}
-
-    /**
-     * <p>A list of those detector updates that resulted in errors. (If an error is
-     * listed here, the specific update did not occur.)</p>
-     */
     inline BatchUpdateDetectorResult& WithBatchUpdateDetectorErrorEntries(Aws::Vector<BatchUpdateDetectorErrorEntry>&& value) { SetBatchUpdateDetectorErrorEntries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of those detector updates that resulted in errors. (If an error is
-     * listed here, the specific update did not occur.)</p>
-     */
     inline BatchUpdateDetectorResult& AddBatchUpdateDetectorErrorEntries(const BatchUpdateDetectorErrorEntry& value) { m_batchUpdateDetectorErrorEntries.push_back(value); return *this; }
-
-    /**
-     * <p>A list of those detector updates that resulted in errors. (If an error is
-     * listed here, the specific update did not occur.)</p>
-     */
     inline BatchUpdateDetectorResult& AddBatchUpdateDetectorErrorEntries(BatchUpdateDetectorErrorEntry&& value) { m_batchUpdateDetectorErrorEntries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchUpdateDetectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchUpdateDetectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchUpdateDetectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BatchUpdateDetectorErrorEntry> m_batchUpdateDetectorErrorEntries;

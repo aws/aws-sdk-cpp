@@ -36,30 +36,16 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether scanning EBS volumes should be auto-enabled for new members joining
      * the organization.</p>
      */
     inline bool GetAutoEnable() const{ return m_autoEnable; }
-
-    /**
-     * <p>Whether scanning EBS volumes should be auto-enabled for new members joining
-     * the organization.</p>
-     */
     inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
-
-    /**
-     * <p>Whether scanning EBS volumes should be auto-enabled for new members joining
-     * the organization.</p>
-     */
     inline void SetAutoEnable(bool value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
-
-    /**
-     * <p>Whether scanning EBS volumes should be auto-enabled for new members joining
-     * the organization.</p>
-     */
     inline OrganizationEbsVolumes& WithAutoEnable(bool value) { SetAutoEnable(value); return *this;}
-
+    ///@}
   private:
 
     bool m_autoEnable;

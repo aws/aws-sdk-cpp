@@ -39,104 +39,37 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The ID of the launch template.</p> <p>You must specify either the launch
      * template ID or the launch template name, but not both.</p>
      */
     inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
-
-    /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
-
-    /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline void SetLaunchTemplateId(Aws::String&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::move(value); }
-
-    /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline void SetLaunchTemplateId(const char* value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId.assign(value); }
-
-    /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline LaunchTemplateSpecification& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
-
-    /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline LaunchTemplateSpecification& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline LaunchTemplateSpecification& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the launch template.</p> <p>You must specify either the launch
      * template ID or the launch template name, but not both.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
-
-    /**
-     * <p>The name of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
-
-    /**
-     * <p>The name of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline void SetLaunchTemplateName(Aws::String&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::move(value); }
-
-    /**
-     * <p>The name of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline void SetLaunchTemplateName(const char* value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName.assign(value); }
-
-    /**
-     * <p>The name of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline LaunchTemplateSpecification& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
-
-    /**
-     * <p>The name of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline LaunchTemplateSpecification& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name, but not both.</p>
-     */
     inline LaunchTemplateSpecification& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The launch template version number, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>A value of <code>$Latest</code> uses the latest
@@ -145,70 +78,14 @@ namespace Model
      * the launch template.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>A value of <code>$Latest</code> uses the latest
-     * version of the launch template.</p> <p>A value of <code>$Default</code> uses the
-     * default version of the launch template.</p> <p>Default: The default version of
-     * the launch template.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>A value of <code>$Latest</code> uses the latest
-     * version of the launch template.</p> <p>A value of <code>$Default</code> uses the
-     * default version of the launch template.</p> <p>Default: The default version of
-     * the launch template.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>A value of <code>$Latest</code> uses the latest
-     * version of the launch template.</p> <p>A value of <code>$Default</code> uses the
-     * default version of the launch template.</p> <p>Default: The default version of
-     * the launch template.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>A value of <code>$Latest</code> uses the latest
-     * version of the launch template.</p> <p>A value of <code>$Default</code> uses the
-     * default version of the launch template.</p> <p>Default: The default version of
-     * the launch template.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>A value of <code>$Latest</code> uses the latest
-     * version of the launch template.</p> <p>A value of <code>$Default</code> uses the
-     * default version of the launch template.</p> <p>Default: The default version of
-     * the launch template.</p>
-     */
     inline LaunchTemplateSpecification& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>A value of <code>$Latest</code> uses the latest
-     * version of the launch template.</p> <p>A value of <code>$Default</code> uses the
-     * default version of the launch template.</p> <p>Default: The default version of
-     * the launch template.</p>
-     */
     inline LaunchTemplateSpecification& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>A value of <code>$Latest</code> uses the latest
-     * version of the launch template.</p> <p>A value of <code>$Default</code> uses the
-     * default version of the launch template.</p> <p>Default: The default version of
-     * the launch template.</p>
-     */
     inline LaunchTemplateSpecification& WithVersion(const char* value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_launchTemplateId;

@@ -45,6 +45,7 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Optionally specify the level of sharpening to apply when you use the Bandwidth
      * reduction filter. Sharpening adds contrast to the edges of your video content
@@ -53,53 +54,14 @@ namespace Model
      * apply a maximum amount of sharpening.
      */
     inline const BandwidthReductionFilterSharpening& GetSharpening() const{ return m_sharpening; }
-
-    /**
-     * Optionally specify the level of sharpening to apply when you use the Bandwidth
-     * reduction filter. Sharpening adds contrast to the edges of your video content
-     * and can reduce softness. Keep the default value Off to apply no sharpening. Set
-     * Sharpening strength to Low to apply a minimal amount of sharpening, or High to
-     * apply a maximum amount of sharpening.
-     */
     inline bool SharpeningHasBeenSet() const { return m_sharpeningHasBeenSet; }
-
-    /**
-     * Optionally specify the level of sharpening to apply when you use the Bandwidth
-     * reduction filter. Sharpening adds contrast to the edges of your video content
-     * and can reduce softness. Keep the default value Off to apply no sharpening. Set
-     * Sharpening strength to Low to apply a minimal amount of sharpening, or High to
-     * apply a maximum amount of sharpening.
-     */
     inline void SetSharpening(const BandwidthReductionFilterSharpening& value) { m_sharpeningHasBeenSet = true; m_sharpening = value; }
-
-    /**
-     * Optionally specify the level of sharpening to apply when you use the Bandwidth
-     * reduction filter. Sharpening adds contrast to the edges of your video content
-     * and can reduce softness. Keep the default value Off to apply no sharpening. Set
-     * Sharpening strength to Low to apply a minimal amount of sharpening, or High to
-     * apply a maximum amount of sharpening.
-     */
     inline void SetSharpening(BandwidthReductionFilterSharpening&& value) { m_sharpeningHasBeenSet = true; m_sharpening = std::move(value); }
-
-    /**
-     * Optionally specify the level of sharpening to apply when you use the Bandwidth
-     * reduction filter. Sharpening adds contrast to the edges of your video content
-     * and can reduce softness. Keep the default value Off to apply no sharpening. Set
-     * Sharpening strength to Low to apply a minimal amount of sharpening, or High to
-     * apply a maximum amount of sharpening.
-     */
     inline BandwidthReductionFilter& WithSharpening(const BandwidthReductionFilterSharpening& value) { SetSharpening(value); return *this;}
-
-    /**
-     * Optionally specify the level of sharpening to apply when you use the Bandwidth
-     * reduction filter. Sharpening adds contrast to the edges of your video content
-     * and can reduce softness. Keep the default value Off to apply no sharpening. Set
-     * Sharpening strength to Low to apply a minimal amount of sharpening, or High to
-     * apply a maximum amount of sharpening.
-     */
     inline BandwidthReductionFilter& WithSharpening(BandwidthReductionFilterSharpening&& value) { SetSharpening(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Specify the strength of the Bandwidth reduction filter. For most workflows, we
      * recommend that you choose Auto to reduce the bandwidth of your output with
@@ -109,57 +71,12 @@ namespace Model
      * a slight increase in the softness of your output.
      */
     inline const BandwidthReductionFilterStrength& GetStrength() const{ return m_strength; }
-
-    /**
-     * Specify the strength of the Bandwidth reduction filter. For most workflows, we
-     * recommend that you choose Auto to reduce the bandwidth of your output with
-     * little to no perceptual decrease in video quality. For high quality and high
-     * bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We
-     * recommend that you choose High for low bitrate outputs. Note that High may incur
-     * a slight increase in the softness of your output.
-     */
     inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
-
-    /**
-     * Specify the strength of the Bandwidth reduction filter. For most workflows, we
-     * recommend that you choose Auto to reduce the bandwidth of your output with
-     * little to no perceptual decrease in video quality. For high quality and high
-     * bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We
-     * recommend that you choose High for low bitrate outputs. Note that High may incur
-     * a slight increase in the softness of your output.
-     */
     inline void SetStrength(const BandwidthReductionFilterStrength& value) { m_strengthHasBeenSet = true; m_strength = value; }
-
-    /**
-     * Specify the strength of the Bandwidth reduction filter. For most workflows, we
-     * recommend that you choose Auto to reduce the bandwidth of your output with
-     * little to no perceptual decrease in video quality. For high quality and high
-     * bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We
-     * recommend that you choose High for low bitrate outputs. Note that High may incur
-     * a slight increase in the softness of your output.
-     */
     inline void SetStrength(BandwidthReductionFilterStrength&& value) { m_strengthHasBeenSet = true; m_strength = std::move(value); }
-
-    /**
-     * Specify the strength of the Bandwidth reduction filter. For most workflows, we
-     * recommend that you choose Auto to reduce the bandwidth of your output with
-     * little to no perceptual decrease in video quality. For high quality and high
-     * bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We
-     * recommend that you choose High for low bitrate outputs. Note that High may incur
-     * a slight increase in the softness of your output.
-     */
     inline BandwidthReductionFilter& WithStrength(const BandwidthReductionFilterStrength& value) { SetStrength(value); return *this;}
-
-    /**
-     * Specify the strength of the Bandwidth reduction filter. For most workflows, we
-     * recommend that you choose Auto to reduce the bandwidth of your output with
-     * little to no perceptual decrease in video quality. For high quality and high
-     * bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We
-     * recommend that you choose High for low bitrate outputs. Note that High may incur
-     * a slight increase in the softness of your output.
-     */
     inline BandwidthReductionFilter& WithStrength(BandwidthReductionFilterStrength&& value) { SetStrength(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BandwidthReductionFilterSharpening m_sharpening;

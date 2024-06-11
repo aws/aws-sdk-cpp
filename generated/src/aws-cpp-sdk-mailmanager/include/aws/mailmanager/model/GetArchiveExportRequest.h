@@ -38,46 +38,19 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the export job to get details for.</p>
      */
     inline const Aws::String& GetExportId() const{ return m_exportId; }
-
-    /**
-     * <p>The identifier of the export job to get details for.</p>
-     */
     inline bool ExportIdHasBeenSet() const { return m_exportIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the export job to get details for.</p>
-     */
     inline void SetExportId(const Aws::String& value) { m_exportIdHasBeenSet = true; m_exportId = value; }
-
-    /**
-     * <p>The identifier of the export job to get details for.</p>
-     */
     inline void SetExportId(Aws::String&& value) { m_exportIdHasBeenSet = true; m_exportId = std::move(value); }
-
-    /**
-     * <p>The identifier of the export job to get details for.</p>
-     */
     inline void SetExportId(const char* value) { m_exportIdHasBeenSet = true; m_exportId.assign(value); }
-
-    /**
-     * <p>The identifier of the export job to get details for.</p>
-     */
     inline GetArchiveExportRequest& WithExportId(const Aws::String& value) { SetExportId(value); return *this;}
-
-    /**
-     * <p>The identifier of the export job to get details for.</p>
-     */
     inline GetArchiveExportRequest& WithExportId(Aws::String&& value) { SetExportId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the export job to get details for.</p>
-     */
     inline GetArchiveExportRequest& WithExportId(const char* value) { SetExportId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exportId;

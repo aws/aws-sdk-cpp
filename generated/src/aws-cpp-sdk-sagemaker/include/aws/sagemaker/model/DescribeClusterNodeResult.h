@@ -33,53 +33,27 @@ namespace Model
     AWS_SAGEMAKER_API DescribeClusterNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details of the SageMaker HyperPod cluster node.</p>
      */
     inline const ClusterNodeDetails& GetNodeDetails() const{ return m_nodeDetails; }
-
-    /**
-     * <p>The details of the SageMaker HyperPod cluster node.</p>
-     */
     inline void SetNodeDetails(const ClusterNodeDetails& value) { m_nodeDetails = value; }
-
-    /**
-     * <p>The details of the SageMaker HyperPod cluster node.</p>
-     */
     inline void SetNodeDetails(ClusterNodeDetails&& value) { m_nodeDetails = std::move(value); }
-
-    /**
-     * <p>The details of the SageMaker HyperPod cluster node.</p>
-     */
     inline DescribeClusterNodeResult& WithNodeDetails(const ClusterNodeDetails& value) { SetNodeDetails(value); return *this;}
-
-    /**
-     * <p>The details of the SageMaker HyperPod cluster node.</p>
-     */
     inline DescribeClusterNodeResult& WithNodeDetails(ClusterNodeDetails&& value) { SetNodeDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeClusterNodeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeClusterNodeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeClusterNodeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ClusterNodeDetails m_nodeDetails;

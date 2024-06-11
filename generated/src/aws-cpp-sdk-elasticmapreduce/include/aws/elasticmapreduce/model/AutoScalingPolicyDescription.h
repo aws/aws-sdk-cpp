@@ -44,128 +44,46 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status of an automatic scaling policy. </p>
      */
     inline const AutoScalingPolicyStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of an automatic scaling policy. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of an automatic scaling policy. </p>
-     */
     inline void SetStatus(const AutoScalingPolicyStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of an automatic scaling policy. </p>
-     */
     inline void SetStatus(AutoScalingPolicyStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of an automatic scaling policy. </p>
-     */
     inline AutoScalingPolicyDescription& WithStatus(const AutoScalingPolicyStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of an automatic scaling policy. </p>
-     */
     inline AutoScalingPolicyDescription& WithStatus(AutoScalingPolicyStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The upper and lower Amazon EC2 instance limits for an automatic scaling
      * policy. Automatic scaling activity will not cause an instance group to grow
      * above or below these limits.</p>
      */
     inline const ScalingConstraints& GetConstraints() const{ return m_constraints; }
-
-    /**
-     * <p>The upper and lower Amazon EC2 instance limits for an automatic scaling
-     * policy. Automatic scaling activity will not cause an instance group to grow
-     * above or below these limits.</p>
-     */
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
-
-    /**
-     * <p>The upper and lower Amazon EC2 instance limits for an automatic scaling
-     * policy. Automatic scaling activity will not cause an instance group to grow
-     * above or below these limits.</p>
-     */
     inline void SetConstraints(const ScalingConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
-
-    /**
-     * <p>The upper and lower Amazon EC2 instance limits for an automatic scaling
-     * policy. Automatic scaling activity will not cause an instance group to grow
-     * above or below these limits.</p>
-     */
     inline void SetConstraints(ScalingConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
-
-    /**
-     * <p>The upper and lower Amazon EC2 instance limits for an automatic scaling
-     * policy. Automatic scaling activity will not cause an instance group to grow
-     * above or below these limits.</p>
-     */
     inline AutoScalingPolicyDescription& WithConstraints(const ScalingConstraints& value) { SetConstraints(value); return *this;}
-
-    /**
-     * <p>The upper and lower Amazon EC2 instance limits for an automatic scaling
-     * policy. Automatic scaling activity will not cause an instance group to grow
-     * above or below these limits.</p>
-     */
     inline AutoScalingPolicyDescription& WithConstraints(ScalingConstraints&& value) { SetConstraints(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The scale-in and scale-out rules that comprise the automatic scaling
      * policy.</p>
      */
     inline const Aws::Vector<ScalingRule>& GetRules() const{ return m_rules; }
-
-    /**
-     * <p>The scale-in and scale-out rules that comprise the automatic scaling
-     * policy.</p>
-     */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-
-    /**
-     * <p>The scale-in and scale-out rules that comprise the automatic scaling
-     * policy.</p>
-     */
     inline void SetRules(const Aws::Vector<ScalingRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-
-    /**
-     * <p>The scale-in and scale-out rules that comprise the automatic scaling
-     * policy.</p>
-     */
     inline void SetRules(Aws::Vector<ScalingRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-
-    /**
-     * <p>The scale-in and scale-out rules that comprise the automatic scaling
-     * policy.</p>
-     */
     inline AutoScalingPolicyDescription& WithRules(const Aws::Vector<ScalingRule>& value) { SetRules(value); return *this;}
-
-    /**
-     * <p>The scale-in and scale-out rules that comprise the automatic scaling
-     * policy.</p>
-     */
     inline AutoScalingPolicyDescription& WithRules(Aws::Vector<ScalingRule>&& value) { SetRules(std::move(value)); return *this;}
-
-    /**
-     * <p>The scale-in and scale-out rules that comprise the automatic scaling
-     * policy.</p>
-     */
     inline AutoScalingPolicyDescription& AddRules(const ScalingRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-
-    /**
-     * <p>The scale-in and scale-out rules that comprise the automatic scaling
-     * policy.</p>
-     */
     inline AutoScalingPolicyDescription& AddRules(ScalingRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     AutoScalingPolicyStatus m_status;

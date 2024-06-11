@@ -32,63 +32,29 @@ namespace Model
     AWS_MAILMANAGER_API CreateIngressPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier for a previously created ingress endpoint.</p>
      */
     inline const Aws::String& GetIngressPointId() const{ return m_ingressPointId; }
-
-    /**
-     * <p>The unique identifier for a previously created ingress endpoint.</p>
-     */
     inline void SetIngressPointId(const Aws::String& value) { m_ingressPointId = value; }
-
-    /**
-     * <p>The unique identifier for a previously created ingress endpoint.</p>
-     */
     inline void SetIngressPointId(Aws::String&& value) { m_ingressPointId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for a previously created ingress endpoint.</p>
-     */
     inline void SetIngressPointId(const char* value) { m_ingressPointId.assign(value); }
-
-    /**
-     * <p>The unique identifier for a previously created ingress endpoint.</p>
-     */
     inline CreateIngressPointResult& WithIngressPointId(const Aws::String& value) { SetIngressPointId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for a previously created ingress endpoint.</p>
-     */
     inline CreateIngressPointResult& WithIngressPointId(Aws::String&& value) { SetIngressPointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for a previously created ingress endpoint.</p>
-     */
     inline CreateIngressPointResult& WithIngressPointId(const char* value) { SetIngressPointId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateIngressPointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateIngressPointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateIngressPointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ingressPointId;

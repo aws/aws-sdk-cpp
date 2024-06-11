@@ -38,54 +38,20 @@ namespace Model
     AWS_PINPOINTEMAIL_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
      * information for.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-     * information for.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-     * information for.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-     * information for.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-     * information for.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-     * information for.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-     * information for.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-     * information for.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

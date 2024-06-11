@@ -39,96 +39,41 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Identifier for the person detected person within a video. Use to keep track
      * of the person throughout the video. The identifier is not stored by Amazon
      * Rekognition.</p>
      */
     inline long long GetIndex() const{ return m_index; }
-
-    /**
-     * <p>Identifier for the person detected person within a video. Use to keep track
-     * of the person throughout the video. The identifier is not stored by Amazon
-     * Rekognition.</p>
-     */
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-
-    /**
-     * <p>Identifier for the person detected person within a video. Use to keep track
-     * of the person throughout the video. The identifier is not stored by Amazon
-     * Rekognition.</p>
-     */
     inline void SetIndex(long long value) { m_indexHasBeenSet = true; m_index = value; }
-
-    /**
-     * <p>Identifier for the person detected person within a video. Use to keep track
-     * of the person throughout the video. The identifier is not stored by Amazon
-     * Rekognition.</p>
-     */
     inline PersonDetail& WithIndex(long long value) { SetIndex(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Bounding box around the detected person.</p>
      */
     inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
-
-    /**
-     * <p>Bounding box around the detected person.</p>
-     */
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-
-    /**
-     * <p>Bounding box around the detected person.</p>
-     */
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-
-    /**
-     * <p>Bounding box around the detected person.</p>
-     */
     inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-
-    /**
-     * <p>Bounding box around the detected person.</p>
-     */
     inline PersonDetail& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
-
-    /**
-     * <p>Bounding box around the detected person.</p>
-     */
     inline PersonDetail& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Face details for the detected person.</p>
      */
     inline const FaceDetail& GetFace() const{ return m_face; }
-
-    /**
-     * <p>Face details for the detected person.</p>
-     */
     inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
-
-    /**
-     * <p>Face details for the detected person.</p>
-     */
     inline void SetFace(const FaceDetail& value) { m_faceHasBeenSet = true; m_face = value; }
-
-    /**
-     * <p>Face details for the detected person.</p>
-     */
     inline void SetFace(FaceDetail&& value) { m_faceHasBeenSet = true; m_face = std::move(value); }
-
-    /**
-     * <p>Face details for the detected person.</p>
-     */
     inline PersonDetail& WithFace(const FaceDetail& value) { SetFace(value); return *this;}
-
-    /**
-     * <p>Face details for the detected person.</p>
-     */
     inline PersonDetail& WithFace(FaceDetail&& value) { SetFace(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_index;

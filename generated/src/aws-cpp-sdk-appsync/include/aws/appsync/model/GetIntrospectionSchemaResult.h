@@ -37,42 +37,27 @@ namespace Model
 
 
 
+    ///@{
     /**
      * <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p> <p>For
      * more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
      * documentation</a>.</p>
      */
     inline Aws::IOStream& GetSchema() const { return m_schema.GetUnderlyingStream(); }
-
-    /**
-     * <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p> <p>For
-     * more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-     * documentation</a>.</p>
-     */
     inline void ReplaceBody(Aws::IOStream* body) { m_schema = Aws::Utils::Stream::ResponseStream(body); }
 
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetIntrospectionSchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetIntrospectionSchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetIntrospectionSchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Stream::ResponseStream m_schema;

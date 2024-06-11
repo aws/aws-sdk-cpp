@@ -39,42 +39,18 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Determines how long a CAPTCHA timestamp in the token remains valid after the
      * client successfully solves a CAPTCHA puzzle. </p>
      */
     inline const AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails& GetImmunityTimeProperty() const{ return m_immunityTimeProperty; }
-
-    /**
-     * <p> Determines how long a CAPTCHA timestamp in the token remains valid after the
-     * client successfully solves a CAPTCHA puzzle. </p>
-     */
     inline bool ImmunityTimePropertyHasBeenSet() const { return m_immunityTimePropertyHasBeenSet; }
-
-    /**
-     * <p> Determines how long a CAPTCHA timestamp in the token remains valid after the
-     * client successfully solves a CAPTCHA puzzle. </p>
-     */
     inline void SetImmunityTimeProperty(const AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails& value) { m_immunityTimePropertyHasBeenSet = true; m_immunityTimeProperty = value; }
-
-    /**
-     * <p> Determines how long a CAPTCHA timestamp in the token remains valid after the
-     * client successfully solves a CAPTCHA puzzle. </p>
-     */
     inline void SetImmunityTimeProperty(AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails&& value) { m_immunityTimePropertyHasBeenSet = true; m_immunityTimeProperty = std::move(value); }
-
-    /**
-     * <p> Determines how long a CAPTCHA timestamp in the token remains valid after the
-     * client successfully solves a CAPTCHA puzzle. </p>
-     */
     inline AwsWafv2WebAclCaptchaConfigDetails& WithImmunityTimeProperty(const AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails& value) { SetImmunityTimeProperty(value); return *this;}
-
-    /**
-     * <p> Determines how long a CAPTCHA timestamp in the token remains valid after the
-     * client successfully solves a CAPTCHA puzzle. </p>
-     */
     inline AwsWafv2WebAclCaptchaConfigDetails& WithImmunityTimeProperty(AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails&& value) { SetImmunityTimeProperty(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails m_immunityTimeProperty;

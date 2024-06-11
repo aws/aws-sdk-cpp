@@ -40,166 +40,66 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the endpoint made during a recommendation job.</p>
      */
     inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
-
-    /**
-     * <p>The name of the endpoint made during a recommendation job.</p>
-     */
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-
-    /**
-     * <p>The name of the endpoint made during a recommendation job.</p>
-     */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-
-    /**
-     * <p>The name of the endpoint made during a recommendation job.</p>
-     */
     inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-
-    /**
-     * <p>The name of the endpoint made during a recommendation job.</p>
-     */
     inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-
-    /**
-     * <p>The name of the endpoint made during a recommendation job.</p>
-     */
     inline EndpointOutputConfiguration& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-
-    /**
-     * <p>The name of the endpoint made during a recommendation job.</p>
-     */
     inline EndpointOutputConfiguration& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the endpoint made during a recommendation job.</p>
-     */
     inline EndpointOutputConfiguration& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the production variant (deployed model) made during a
      * recommendation job.</p>
      */
     inline const Aws::String& GetVariantName() const{ return m_variantName; }
-
-    /**
-     * <p>The name of the production variant (deployed model) made during a
-     * recommendation job.</p>
-     */
     inline bool VariantNameHasBeenSet() const { return m_variantNameHasBeenSet; }
-
-    /**
-     * <p>The name of the production variant (deployed model) made during a
-     * recommendation job.</p>
-     */
     inline void SetVariantName(const Aws::String& value) { m_variantNameHasBeenSet = true; m_variantName = value; }
-
-    /**
-     * <p>The name of the production variant (deployed model) made during a
-     * recommendation job.</p>
-     */
     inline void SetVariantName(Aws::String&& value) { m_variantNameHasBeenSet = true; m_variantName = std::move(value); }
-
-    /**
-     * <p>The name of the production variant (deployed model) made during a
-     * recommendation job.</p>
-     */
     inline void SetVariantName(const char* value) { m_variantNameHasBeenSet = true; m_variantName.assign(value); }
-
-    /**
-     * <p>The name of the production variant (deployed model) made during a
-     * recommendation job.</p>
-     */
     inline EndpointOutputConfiguration& WithVariantName(const Aws::String& value) { SetVariantName(value); return *this;}
-
-    /**
-     * <p>The name of the production variant (deployed model) made during a
-     * recommendation job.</p>
-     */
     inline EndpointOutputConfiguration& WithVariantName(Aws::String&& value) { SetVariantName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the production variant (deployed model) made during a
-     * recommendation job.</p>
-     */
     inline EndpointOutputConfiguration& WithVariantName(const char* value) { SetVariantName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
      */
     inline const ProductionVariantInstanceType& GetInstanceType() const{ return m_instanceType; }
-
-    /**
-     * <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
-     */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-
-    /**
-     * <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
-     */
     inline void SetInstanceType(const ProductionVariantInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-
-    /**
-     * <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
-     */
     inline void SetInstanceType(ProductionVariantInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-
-    /**
-     * <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
-     */
     inline EndpointOutputConfiguration& WithInstanceType(const ProductionVariantInstanceType& value) { SetInstanceType(value); return *this;}
-
-    /**
-     * <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
-     */
     inline EndpointOutputConfiguration& WithInstanceType(ProductionVariantInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of instances recommended to launch initially.</p>
      */
     inline int GetInitialInstanceCount() const{ return m_initialInstanceCount; }
-
-    /**
-     * <p>The number of instances recommended to launch initially.</p>
-     */
     inline bool InitialInstanceCountHasBeenSet() const { return m_initialInstanceCountHasBeenSet; }
-
-    /**
-     * <p>The number of instances recommended to launch initially.</p>
-     */
     inline void SetInitialInstanceCount(int value) { m_initialInstanceCountHasBeenSet = true; m_initialInstanceCount = value; }
-
-    /**
-     * <p>The number of instances recommended to launch initially.</p>
-     */
     inline EndpointOutputConfiguration& WithInitialInstanceCount(int value) { SetInitialInstanceCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ProductionVariantServerlessConfig& GetServerlessConfig() const{ return m_serverlessConfig; }
-
-    
     inline bool ServerlessConfigHasBeenSet() const { return m_serverlessConfigHasBeenSet; }
-
-    
     inline void SetServerlessConfig(const ProductionVariantServerlessConfig& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = value; }
-
-    
     inline void SetServerlessConfig(ProductionVariantServerlessConfig&& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = std::move(value); }
-
-    
     inline EndpointOutputConfiguration& WithServerlessConfig(const ProductionVariantServerlessConfig& value) { SetServerlessConfig(value); return *this;}
-
-    
     inline EndpointOutputConfiguration& WithServerlessConfig(ProductionVariantServerlessConfig&& value) { SetServerlessConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpointName;

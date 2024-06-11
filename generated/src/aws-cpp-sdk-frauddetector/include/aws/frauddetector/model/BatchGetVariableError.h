@@ -38,108 +38,43 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The error name. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The error name. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The error name. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The error name. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The error name. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The error name. </p>
-     */
     inline BatchGetVariableError& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The error name. </p>
-     */
     inline BatchGetVariableError& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The error name. </p>
-     */
     inline BatchGetVariableError& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error code. </p>
      */
     inline int GetCode() const{ return m_code; }
-
-    /**
-     * <p>The error code. </p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The error code. </p>
-     */
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The error code. </p>
-     */
     inline BatchGetVariableError& WithCode(int value) { SetCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline BatchGetVariableError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The error message.</p>
-     */
     inline BatchGetVariableError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message.</p>
-     */
     inline BatchGetVariableError& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

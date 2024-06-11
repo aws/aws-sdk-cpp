@@ -37,46 +37,19 @@ namespace Model
     AWS_COGNITOIDENTITY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
-
-    /**
-     * <p>An identity pool ID in the format REGION:GUID.</p>
-     */
     inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
-
-    /**
-     * <p>An identity pool ID in the format REGION:GUID.</p>
-     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
-
-    /**
-     * <p>An identity pool ID in the format REGION:GUID.</p>
-     */
     inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::move(value); }
-
-    /**
-     * <p>An identity pool ID in the format REGION:GUID.</p>
-     */
     inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
-
-    /**
-     * <p>An identity pool ID in the format REGION:GUID.</p>
-     */
     inline DeleteIdentityPoolRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
-
-    /**
-     * <p>An identity pool ID in the format REGION:GUID.</p>
-     */
     inline DeleteIdentityPoolRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>An identity pool ID in the format REGION:GUID.</p>
-     */
     inline DeleteIdentityPoolRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identityPoolId;

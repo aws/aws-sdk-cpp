@@ -34,54 +34,20 @@ namespace Model
     AWS_CLOUDHSMV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the backup to be deleted. To find the ID of a backup, use the
      * <a>DescribeBackups</a> operation.</p>
      */
     inline const Aws::String& GetBackupId() const{ return m_backupId; }
-
-    /**
-     * <p>The ID of the backup to be deleted. To find the ID of a backup, use the
-     * <a>DescribeBackups</a> operation.</p>
-     */
     inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the backup to be deleted. To find the ID of a backup, use the
-     * <a>DescribeBackups</a> operation.</p>
-     */
     inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
-
-    /**
-     * <p>The ID of the backup to be deleted. To find the ID of a backup, use the
-     * <a>DescribeBackups</a> operation.</p>
-     */
     inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = std::move(value); }
-
-    /**
-     * <p>The ID of the backup to be deleted. To find the ID of a backup, use the
-     * <a>DescribeBackups</a> operation.</p>
-     */
     inline void SetBackupId(const char* value) { m_backupIdHasBeenSet = true; m_backupId.assign(value); }
-
-    /**
-     * <p>The ID of the backup to be deleted. To find the ID of a backup, use the
-     * <a>DescribeBackups</a> operation.</p>
-     */
     inline DeleteBackupRequest& WithBackupId(const Aws::String& value) { SetBackupId(value); return *this;}
-
-    /**
-     * <p>The ID of the backup to be deleted. To find the ID of a backup, use the
-     * <a>DescribeBackups</a> operation.</p>
-     */
     inline DeleteBackupRequest& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the backup to be deleted. To find the ID of a backup, use the
-     * <a>DescribeBackups</a> operation.</p>
-     */
     inline DeleteBackupRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_backupId;

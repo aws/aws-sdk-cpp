@@ -38,42 +38,18 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of incremental run. It takes only one value:
      * <code>IMMEDIATE</code>.</p>
      */
     inline const IncrementalRunType& GetIncrementalRunType() const{ return m_incrementalRunType; }
-
-    /**
-     * <p>The type of incremental run. It takes only one value:
-     * <code>IMMEDIATE</code>.</p>
-     */
     inline bool IncrementalRunTypeHasBeenSet() const { return m_incrementalRunTypeHasBeenSet; }
-
-    /**
-     * <p>The type of incremental run. It takes only one value:
-     * <code>IMMEDIATE</code>.</p>
-     */
     inline void SetIncrementalRunType(const IncrementalRunType& value) { m_incrementalRunTypeHasBeenSet = true; m_incrementalRunType = value; }
-
-    /**
-     * <p>The type of incremental run. It takes only one value:
-     * <code>IMMEDIATE</code>.</p>
-     */
     inline void SetIncrementalRunType(IncrementalRunType&& value) { m_incrementalRunTypeHasBeenSet = true; m_incrementalRunType = std::move(value); }
-
-    /**
-     * <p>The type of incremental run. It takes only one value:
-     * <code>IMMEDIATE</code>.</p>
-     */
     inline IncrementalRunConfig& WithIncrementalRunType(const IncrementalRunType& value) { SetIncrementalRunType(value); return *this;}
-
-    /**
-     * <p>The type of incremental run. It takes only one value:
-     * <code>IMMEDIATE</code>.</p>
-     */
     inline IncrementalRunConfig& WithIncrementalRunType(IncrementalRunType&& value) { SetIncrementalRunType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IncrementalRunType m_incrementalRunType;

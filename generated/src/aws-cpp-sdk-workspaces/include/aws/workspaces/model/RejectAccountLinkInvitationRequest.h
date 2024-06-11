@@ -34,87 +34,33 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the account link</p>
      */
     inline const Aws::String& GetLinkId() const{ return m_linkId; }
-
-    /**
-     * <p>The identifier of the account link</p>
-     */
     inline bool LinkIdHasBeenSet() const { return m_linkIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the account link</p>
-     */
     inline void SetLinkId(const Aws::String& value) { m_linkIdHasBeenSet = true; m_linkId = value; }
-
-    /**
-     * <p>The identifier of the account link</p>
-     */
     inline void SetLinkId(Aws::String&& value) { m_linkIdHasBeenSet = true; m_linkId = std::move(value); }
-
-    /**
-     * <p>The identifier of the account link</p>
-     */
     inline void SetLinkId(const char* value) { m_linkIdHasBeenSet = true; m_linkId.assign(value); }
-
-    /**
-     * <p>The identifier of the account link</p>
-     */
     inline RejectAccountLinkInvitationRequest& WithLinkId(const Aws::String& value) { SetLinkId(value); return *this;}
-
-    /**
-     * <p>The identifier of the account link</p>
-     */
     inline RejectAccountLinkInvitationRequest& WithLinkId(Aws::String&& value) { SetLinkId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the account link</p>
-     */
     inline RejectAccountLinkInvitationRequest& WithLinkId(const char* value) { SetLinkId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The client token of the account link invitation to reject.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The client token of the account link invitation to reject.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>The client token of the account link invitation to reject.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>The client token of the account link invitation to reject.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>The client token of the account link invitation to reject.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>The client token of the account link invitation to reject.</p>
-     */
     inline RejectAccountLinkInvitationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The client token of the account link invitation to reject.</p>
-     */
     inline RejectAccountLinkInvitationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The client token of the account link invitation to reject.</p>
-     */
     inline RejectAccountLinkInvitationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_linkId;

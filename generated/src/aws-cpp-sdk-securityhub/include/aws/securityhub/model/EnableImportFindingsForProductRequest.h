@@ -32,46 +32,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the product to enable the integration for.</p>
      */
     inline const Aws::String& GetProductArn() const{ return m_productArn; }
-
-    /**
-     * <p>The ARN of the product to enable the integration for.</p>
-     */
     inline bool ProductArnHasBeenSet() const { return m_productArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the product to enable the integration for.</p>
-     */
     inline void SetProductArn(const Aws::String& value) { m_productArnHasBeenSet = true; m_productArn = value; }
-
-    /**
-     * <p>The ARN of the product to enable the integration for.</p>
-     */
     inline void SetProductArn(Aws::String&& value) { m_productArnHasBeenSet = true; m_productArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the product to enable the integration for.</p>
-     */
     inline void SetProductArn(const char* value) { m_productArnHasBeenSet = true; m_productArn.assign(value); }
-
-    /**
-     * <p>The ARN of the product to enable the integration for.</p>
-     */
     inline EnableImportFindingsForProductRequest& WithProductArn(const Aws::String& value) { SetProductArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the product to enable the integration for.</p>
-     */
     inline EnableImportFindingsForProductRequest& WithProductArn(Aws::String&& value) { SetProductArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the product to enable the integration for.</p>
-     */
     inline EnableImportFindingsForProductRequest& WithProductArn(const char* value) { SetProductArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_productArn;

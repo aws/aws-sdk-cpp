@@ -38,61 +38,29 @@ namespace Model
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ResourceNotFoundException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ResourceNotFoundException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ResourceNotFoundException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The specified resource type wasn't found.</p>
      */
     inline const ResourceTypeNotFound& GetResourceTypeNotFound() const{ return m_resourceTypeNotFound; }
-
-    /**
-     * <p>The specified resource type wasn't found.</p>
-     */
     inline bool ResourceTypeNotFoundHasBeenSet() const { return m_resourceTypeNotFoundHasBeenSet; }
-
-    /**
-     * <p>The specified resource type wasn't found.</p>
-     */
     inline void SetResourceTypeNotFound(const ResourceTypeNotFound& value) { m_resourceTypeNotFoundHasBeenSet = true; m_resourceTypeNotFound = value; }
-
-    /**
-     * <p>The specified resource type wasn't found.</p>
-     */
     inline void SetResourceTypeNotFound(ResourceTypeNotFound&& value) { m_resourceTypeNotFoundHasBeenSet = true; m_resourceTypeNotFound = std::move(value); }
-
-    /**
-     * <p>The specified resource type wasn't found.</p>
-     */
     inline ResourceNotFoundException& WithResourceTypeNotFound(const ResourceTypeNotFound& value) { SetResourceTypeNotFound(value); return *this;}
-
-    /**
-     * <p>The specified resource type wasn't found.</p>
-     */
     inline ResourceNotFoundException& WithResourceTypeNotFound(ResourceTypeNotFound&& value) { SetResourceTypeNotFound(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

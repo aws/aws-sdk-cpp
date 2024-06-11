@@ -39,67 +39,29 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Filters that are specific to technical cues.</p>
      */
     inline const StartTechnicalCueDetectionFilter& GetTechnicalCueFilter() const{ return m_technicalCueFilter; }
-
-    /**
-     * <p>Filters that are specific to technical cues.</p>
-     */
     inline bool TechnicalCueFilterHasBeenSet() const { return m_technicalCueFilterHasBeenSet; }
-
-    /**
-     * <p>Filters that are specific to technical cues.</p>
-     */
     inline void SetTechnicalCueFilter(const StartTechnicalCueDetectionFilter& value) { m_technicalCueFilterHasBeenSet = true; m_technicalCueFilter = value; }
-
-    /**
-     * <p>Filters that are specific to technical cues.</p>
-     */
     inline void SetTechnicalCueFilter(StartTechnicalCueDetectionFilter&& value) { m_technicalCueFilterHasBeenSet = true; m_technicalCueFilter = std::move(value); }
-
-    /**
-     * <p>Filters that are specific to technical cues.</p>
-     */
     inline StartSegmentDetectionFilters& WithTechnicalCueFilter(const StartTechnicalCueDetectionFilter& value) { SetTechnicalCueFilter(value); return *this;}
-
-    /**
-     * <p>Filters that are specific to technical cues.</p>
-     */
     inline StartSegmentDetectionFilters& WithTechnicalCueFilter(StartTechnicalCueDetectionFilter&& value) { SetTechnicalCueFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters that are specific to shot detections.</p>
      */
     inline const StartShotDetectionFilter& GetShotFilter() const{ return m_shotFilter; }
-
-    /**
-     * <p>Filters that are specific to shot detections.</p>
-     */
     inline bool ShotFilterHasBeenSet() const { return m_shotFilterHasBeenSet; }
-
-    /**
-     * <p>Filters that are specific to shot detections.</p>
-     */
     inline void SetShotFilter(const StartShotDetectionFilter& value) { m_shotFilterHasBeenSet = true; m_shotFilter = value; }
-
-    /**
-     * <p>Filters that are specific to shot detections.</p>
-     */
     inline void SetShotFilter(StartShotDetectionFilter&& value) { m_shotFilterHasBeenSet = true; m_shotFilter = std::move(value); }
-
-    /**
-     * <p>Filters that are specific to shot detections.</p>
-     */
     inline StartSegmentDetectionFilters& WithShotFilter(const StartShotDetectionFilter& value) { SetShotFilter(value); return *this;}
-
-    /**
-     * <p>Filters that are specific to shot detections.</p>
-     */
     inline StartSegmentDetectionFilters& WithShotFilter(StartShotDetectionFilter&& value) { SetShotFilter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StartTechnicalCueDetectionFilter m_technicalCueFilter;

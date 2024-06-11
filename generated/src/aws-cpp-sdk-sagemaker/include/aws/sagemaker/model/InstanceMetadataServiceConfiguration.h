@@ -38,6 +38,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates the minimum IMDS version that the notebook instance supports. When
      * passed as part of <code>CreateNotebookInstance</code>, if no value is selected,
@@ -46,70 +47,14 @@ namespace Model
      * default.</p>
      */
     inline const Aws::String& GetMinimumInstanceMetadataServiceVersion() const{ return m_minimumInstanceMetadataServiceVersion; }
-
-    /**
-     * <p>Indicates the minimum IMDS version that the notebook instance supports. When
-     * passed as part of <code>CreateNotebookInstance</code>, if no value is selected,
-     * then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are
-     * supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no
-     * default.</p>
-     */
     inline bool MinimumInstanceMetadataServiceVersionHasBeenSet() const { return m_minimumInstanceMetadataServiceVersionHasBeenSet; }
-
-    /**
-     * <p>Indicates the minimum IMDS version that the notebook instance supports. When
-     * passed as part of <code>CreateNotebookInstance</code>, if no value is selected,
-     * then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are
-     * supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no
-     * default.</p>
-     */
     inline void SetMinimumInstanceMetadataServiceVersion(const Aws::String& value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion = value; }
-
-    /**
-     * <p>Indicates the minimum IMDS version that the notebook instance supports. When
-     * passed as part of <code>CreateNotebookInstance</code>, if no value is selected,
-     * then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are
-     * supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no
-     * default.</p>
-     */
     inline void SetMinimumInstanceMetadataServiceVersion(Aws::String&& value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion = std::move(value); }
-
-    /**
-     * <p>Indicates the minimum IMDS version that the notebook instance supports. When
-     * passed as part of <code>CreateNotebookInstance</code>, if no value is selected,
-     * then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are
-     * supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no
-     * default.</p>
-     */
     inline void SetMinimumInstanceMetadataServiceVersion(const char* value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion.assign(value); }
-
-    /**
-     * <p>Indicates the minimum IMDS version that the notebook instance supports. When
-     * passed as part of <code>CreateNotebookInstance</code>, if no value is selected,
-     * then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are
-     * supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no
-     * default.</p>
-     */
     inline InstanceMetadataServiceConfiguration& WithMinimumInstanceMetadataServiceVersion(const Aws::String& value) { SetMinimumInstanceMetadataServiceVersion(value); return *this;}
-
-    /**
-     * <p>Indicates the minimum IMDS version that the notebook instance supports. When
-     * passed as part of <code>CreateNotebookInstance</code>, if no value is selected,
-     * then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are
-     * supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no
-     * default.</p>
-     */
     inline InstanceMetadataServiceConfiguration& WithMinimumInstanceMetadataServiceVersion(Aws::String&& value) { SetMinimumInstanceMetadataServiceVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates the minimum IMDS version that the notebook instance supports. When
-     * passed as part of <code>CreateNotebookInstance</code>, if no value is selected,
-     * then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are
-     * supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no
-     * default.</p>
-     */
     inline InstanceMetadataServiceConfiguration& WithMinimumInstanceMetadataServiceVersion(const char* value) { SetMinimumInstanceMetadataServiceVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_minimumInstanceMetadataServiceVersion;

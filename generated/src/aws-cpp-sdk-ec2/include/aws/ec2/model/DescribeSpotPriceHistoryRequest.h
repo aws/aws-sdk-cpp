@@ -44,6 +44,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for which prices should be returned.</p> </li> <li> <p>
@@ -62,182 +63,30 @@ namespace Model
      * supported.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for which prices should be returned.</p> </li> <li> <p>
-     * <code>instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
-     * The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red
-     * Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
-     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
-     * value must match exactly (or use wildcards; greater than or less than comparison
-     * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
-     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
-     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
-     * supported.</p> </li> </ul>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for which prices should be returned.</p> </li> <li> <p>
-     * <code>instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
-     * The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red
-     * Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
-     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
-     * value must match exactly (or use wildcards; greater than or less than comparison
-     * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
-     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
-     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
-     * supported.</p> </li> </ul>
-     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for which prices should be returned.</p> </li> <li> <p>
-     * <code>instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
-     * The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red
-     * Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
-     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
-     * value must match exactly (or use wildcards; greater than or less than comparison
-     * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
-     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
-     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
-     * supported.</p> </li> </ul>
-     */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for which prices should be returned.</p> </li> <li> <p>
-     * <code>instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
-     * The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red
-     * Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
-     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
-     * value must match exactly (or use wildcards; greater than or less than comparison
-     * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
-     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
-     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
-     * supported.</p> </li> </ul>
-     */
     inline DescribeSpotPriceHistoryRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for which prices should be returned.</p> </li> <li> <p>
-     * <code>instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
-     * The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red
-     * Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
-     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
-     * value must match exactly (or use wildcards; greater than or less than comparison
-     * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
-     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
-     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
-     * supported.</p> </li> </ul>
-     */
     inline DescribeSpotPriceHistoryRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for which prices should be returned.</p> </li> <li> <p>
-     * <code>instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
-     * The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red
-     * Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
-     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
-     * value must match exactly (or use wildcards; greater than or less than comparison
-     * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
-     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
-     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
-     * supported.</p> </li> </ul>
-     */
     inline DescribeSpotPriceHistoryRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for which prices should be returned.</p> </li> <li> <p>
-     * <code>instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
-     * The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red
-     * Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
-     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
-     * value must match exactly (or use wildcards; greater than or less than comparison
-     * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
-     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
-     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
-     * supported.</p> </li> </ul>
-     */
     inline DescribeSpotPriceHistoryRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters the results by the specified Availability Zone.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-
-    /**
-     * <p>Filters the results by the specified Availability Zone.</p>
-     */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-
-    /**
-     * <p>Filters the results by the specified Availability Zone.</p>
-     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-
-    /**
-     * <p>Filters the results by the specified Availability Zone.</p>
-     */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-
-    /**
-     * <p>Filters the results by the specified Availability Zone.</p>
-     */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-
-    /**
-     * <p>Filters the results by the specified Availability Zone.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-
-    /**
-     * <p>Filters the results by the specified Availability Zone.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters the results by the specified Availability Zone.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -245,116 +94,40 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time, up to the current date, from which to stop retrieving the
      * price history data, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>The date and time, up to the current date, from which to stop retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time, up to the current date, from which to stop retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-
-    /**
-     * <p>The date and time, up to the current date, from which to stop retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-
-    /**
-     * <p>The date and time, up to the current date, from which to stop retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-
-    /**
-     * <p>The date and time, up to the current date, from which to stop retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters the results by the specified instance types.</p>
      */
     inline const Aws::Vector<InstanceType>& GetInstanceTypes() const{ return m_instanceTypes; }
-
-    /**
-     * <p>Filters the results by the specified instance types.</p>
-     */
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
-
-    /**
-     * <p>Filters the results by the specified instance types.</p>
-     */
     inline void SetInstanceTypes(const Aws::Vector<InstanceType>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
-
-    /**
-     * <p>Filters the results by the specified instance types.</p>
-     */
     inline void SetInstanceTypes(Aws::Vector<InstanceType>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
-
-    /**
-     * <p>Filters the results by the specified instance types.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithInstanceTypes(const Aws::Vector<InstanceType>& value) { SetInstanceTypes(value); return *this;}
-
-    /**
-     * <p>Filters the results by the specified instance types.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithInstanceTypes(Aws::Vector<InstanceType>&& value) { SetInstanceTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters the results by the specified instance types.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& AddInstanceTypes(const InstanceType& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
-
-    /**
-     * <p>Filters the results by the specified instance types.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& AddInstanceTypes(InstanceType&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to return for this request. To get the next page
      * of items, make another request with the token returned in the output. For more
@@ -362,169 +135,54 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters the results by the specified basic product descriptions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProductDescriptions() const{ return m_productDescriptions; }
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
     inline bool ProductDescriptionsHasBeenSet() const { return m_productDescriptionsHasBeenSet; }
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
     inline void SetProductDescriptions(const Aws::Vector<Aws::String>& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions = value; }
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
     inline void SetProductDescriptions(Aws::Vector<Aws::String>&& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions = std::move(value); }
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithProductDescriptions(const Aws::Vector<Aws::String>& value) { SetProductDescriptions(value); return *this;}
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithProductDescriptions(Aws::Vector<Aws::String>&& value) { SetProductDescriptions(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& AddProductDescriptions(const Aws::String& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions.push_back(value); return *this; }
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& AddProductDescriptions(Aws::String&& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
     inline DescribeSpotPriceHistoryRequest& AddProductDescriptions(const char* value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time, up to the past 90 days, from which to start retrieving the
      * price history data, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The date and time, up to the past 90 days, from which to start retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time, up to the past 90 days, from which to start retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The date and time, up to the past 90 days, from which to start retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The date and time, up to the past 90 days, from which to start retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The date and time, up to the past 90 days, from which to start retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline DescribeSpotPriceHistoryRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Filter> m_filters;

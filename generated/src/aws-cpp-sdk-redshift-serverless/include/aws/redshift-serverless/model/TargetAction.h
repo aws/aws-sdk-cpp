@@ -41,24 +41,15 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const CreateSnapshotScheduleActionParameters& GetCreateSnapshot() const{ return m_createSnapshot; }
-
-    
     inline bool CreateSnapshotHasBeenSet() const { return m_createSnapshotHasBeenSet; }
-
-    
     inline void SetCreateSnapshot(const CreateSnapshotScheduleActionParameters& value) { m_createSnapshotHasBeenSet = true; m_createSnapshot = value; }
-
-    
     inline void SetCreateSnapshot(CreateSnapshotScheduleActionParameters&& value) { m_createSnapshotHasBeenSet = true; m_createSnapshot = std::move(value); }
-
-    
     inline TargetAction& WithCreateSnapshot(const CreateSnapshotScheduleActionParameters& value) { SetCreateSnapshot(value); return *this;}
-
-    
     inline TargetAction& WithCreateSnapshot(CreateSnapshotScheduleActionParameters&& value) { SetCreateSnapshot(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CreateSnapshotScheduleActionParameters m_createSnapshot;

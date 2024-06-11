@@ -33,53 +33,27 @@ namespace Model
     AWS_GLUE_API GetWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The resource metadata for the workflow.</p>
      */
     inline const Workflow& GetWorkflow() const{ return m_workflow; }
-
-    /**
-     * <p>The resource metadata for the workflow.</p>
-     */
     inline void SetWorkflow(const Workflow& value) { m_workflow = value; }
-
-    /**
-     * <p>The resource metadata for the workflow.</p>
-     */
     inline void SetWorkflow(Workflow&& value) { m_workflow = std::move(value); }
-
-    /**
-     * <p>The resource metadata for the workflow.</p>
-     */
     inline GetWorkflowResult& WithWorkflow(const Workflow& value) { SetWorkflow(value); return *this;}
-
-    /**
-     * <p>The resource metadata for the workflow.</p>
-     */
     inline GetWorkflowResult& WithWorkflow(Workflow&& value) { SetWorkflow(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetWorkflowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetWorkflowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetWorkflowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Workflow m_workflow;

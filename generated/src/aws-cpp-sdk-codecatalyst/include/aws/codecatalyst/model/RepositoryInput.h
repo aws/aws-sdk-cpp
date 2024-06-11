@@ -38,87 +38,33 @@ namespace Model
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the source repository.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the source repository.</p>
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the source repository.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the source repository.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the source repository.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the source repository.</p>
-     */
     inline RepositoryInput& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the source repository.</p>
-     */
     inline RepositoryInput& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the source repository.</p>
-     */
     inline RepositoryInput& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the branch in a source repository.</p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
-
-    /**
-     * <p>The name of the branch in a source repository.</p>
-     */
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
-
-    /**
-     * <p>The name of the branch in a source repository.</p>
-     */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
-
-    /**
-     * <p>The name of the branch in a source repository.</p>
-     */
     inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
-
-    /**
-     * <p>The name of the branch in a source repository.</p>
-     */
     inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
-
-    /**
-     * <p>The name of the branch in a source repository.</p>
-     */
     inline RepositoryInput& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
-
-    /**
-     * <p>The name of the branch in a source repository.</p>
-     */
     inline RepositoryInput& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the branch in a source repository.</p>
-     */
     inline RepositoryInput& WithBranchName(const char* value) { SetBranchName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_repositoryName;

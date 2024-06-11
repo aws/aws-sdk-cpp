@@ -34,46 +34,19 @@ namespace Model
     AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the service with the service pipeline deployment to cancel.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>The name of the service with the service pipeline deployment to cancel.</p>
-     */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the service with the service pipeline deployment to cancel.</p>
-     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>The name of the service with the service pipeline deployment to cancel.</p>
-     */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>The name of the service with the service pipeline deployment to cancel.</p>
-     */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>The name of the service with the service pipeline deployment to cancel.</p>
-     */
     inline CancelServicePipelineDeploymentRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The name of the service with the service pipeline deployment to cancel.</p>
-     */
     inline CancelServicePipelineDeploymentRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service with the service pipeline deployment to cancel.</p>
-     */
     inline CancelServicePipelineDeploymentRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceName;

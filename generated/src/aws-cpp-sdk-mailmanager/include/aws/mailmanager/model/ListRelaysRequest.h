@@ -34,75 +34,30 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>If you received a pagination token from a previous call to this API, you can
      * provide it here to continue paginating through the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If you received a pagination token from a previous call to this API, you can
-     * provide it here to continue paginating through the next page of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If you received a pagination token from a previous call to this API, you can
-     * provide it here to continue paginating through the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If you received a pagination token from a previous call to this API, you can
-     * provide it here to continue paginating through the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If you received a pagination token from a previous call to this API, you can
-     * provide it here to continue paginating through the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If you received a pagination token from a previous call to this API, you can
-     * provide it here to continue paginating through the next page of results.</p>
-     */
     inline ListRelaysRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If you received a pagination token from a previous call to this API, you can
-     * provide it here to continue paginating through the next page of results.</p>
-     */
     inline ListRelaysRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If you received a pagination token from a previous call to this API, you can
-     * provide it here to continue paginating through the next page of results.</p>
-     */
     inline ListRelaysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of relays to be returned in one request.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
-
-    /**
-     * <p>The number of relays to be returned in one request.</p>
-     */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-
-    /**
-     * <p>The number of relays to be returned in one request.</p>
-     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-
-    /**
-     * <p>The number of relays to be returned in one request.</p>
-     */
     inline ListRelaysRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

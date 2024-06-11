@@ -35,26 +35,15 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
      */
     inline bool GetEventBridgeEnabled() const{ return m_eventBridgeEnabled; }
-
-    /**
-     * <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
-     */
     inline bool EventBridgeEnabledHasBeenSet() const { return m_eventBridgeEnabledHasBeenSet; }
-
-    /**
-     * <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
-     */
     inline void SetEventBridgeEnabled(bool value) { m_eventBridgeEnabledHasBeenSet = true; m_eventBridgeEnabled = value; }
-
-    /**
-     * <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
-     */
     inline EventOrchestration& WithEventBridgeEnabled(bool value) { SetEventBridgeEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_eventBridgeEnabled;

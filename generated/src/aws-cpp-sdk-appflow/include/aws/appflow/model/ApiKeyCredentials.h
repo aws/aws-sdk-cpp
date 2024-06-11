@@ -38,87 +38,33 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The API key required for API key authentication.</p>
      */
     inline const Aws::String& GetApiKey() const{ return m_apiKey; }
-
-    /**
-     * <p>The API key required for API key authentication.</p>
-     */
     inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
-
-    /**
-     * <p>The API key required for API key authentication.</p>
-     */
     inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
-
-    /**
-     * <p>The API key required for API key authentication.</p>
-     */
     inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
-
-    /**
-     * <p>The API key required for API key authentication.</p>
-     */
     inline void SetApiKey(const char* value) { m_apiKeyHasBeenSet = true; m_apiKey.assign(value); }
-
-    /**
-     * <p>The API key required for API key authentication.</p>
-     */
     inline ApiKeyCredentials& WithApiKey(const Aws::String& value) { SetApiKey(value); return *this;}
-
-    /**
-     * <p>The API key required for API key authentication.</p>
-     */
     inline ApiKeyCredentials& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The API key required for API key authentication.</p>
-     */
     inline ApiKeyCredentials& WithApiKey(const char* value) { SetApiKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The API secret key required for API key authentication.</p>
      */
     inline const Aws::String& GetApiSecretKey() const{ return m_apiSecretKey; }
-
-    /**
-     * <p>The API secret key required for API key authentication.</p>
-     */
     inline bool ApiSecretKeyHasBeenSet() const { return m_apiSecretKeyHasBeenSet; }
-
-    /**
-     * <p>The API secret key required for API key authentication.</p>
-     */
     inline void SetApiSecretKey(const Aws::String& value) { m_apiSecretKeyHasBeenSet = true; m_apiSecretKey = value; }
-
-    /**
-     * <p>The API secret key required for API key authentication.</p>
-     */
     inline void SetApiSecretKey(Aws::String&& value) { m_apiSecretKeyHasBeenSet = true; m_apiSecretKey = std::move(value); }
-
-    /**
-     * <p>The API secret key required for API key authentication.</p>
-     */
     inline void SetApiSecretKey(const char* value) { m_apiSecretKeyHasBeenSet = true; m_apiSecretKey.assign(value); }
-
-    /**
-     * <p>The API secret key required for API key authentication.</p>
-     */
     inline ApiKeyCredentials& WithApiSecretKey(const Aws::String& value) { SetApiSecretKey(value); return *this;}
-
-    /**
-     * <p>The API secret key required for API key authentication.</p>
-     */
     inline ApiKeyCredentials& WithApiSecretKey(Aws::String&& value) { SetApiSecretKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The API secret key required for API key authentication.</p>
-     */
     inline ApiKeyCredentials& WithApiSecretKey(const char* value) { SetApiSecretKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_apiKey;

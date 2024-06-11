@@ -38,54 +38,20 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of an IAM role that Step Functions assumes for the task. The role can
      * allow cross-account access to resources.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The ARN of an IAM role that Step Functions assumes for the task. The role can
-     * allow cross-account access to resources.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of an IAM role that Step Functions assumes for the task. The role can
-     * allow cross-account access to resources.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The ARN of an IAM role that Step Functions assumes for the task. The role can
-     * allow cross-account access to resources.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of an IAM role that Step Functions assumes for the task. The role can
-     * allow cross-account access to resources.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The ARN of an IAM role that Step Functions assumes for the task. The role can
-     * allow cross-account access to resources.</p>
-     */
     inline TaskCredentials& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of an IAM role that Step Functions assumes for the task. The role can
-     * allow cross-account access to resources.</p>
-     */
     inline TaskCredentials& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of an IAM role that Step Functions assumes for the task. The role can
-     * allow cross-account access to resources.</p>
-     */
     inline TaskCredentials& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleArn;

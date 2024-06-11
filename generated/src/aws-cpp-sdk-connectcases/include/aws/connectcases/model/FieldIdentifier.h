@@ -37,46 +37,19 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Unique identifier of a field.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline FieldIdentifier& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline FieldIdentifier& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline FieldIdentifier& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

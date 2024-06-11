@@ -35,46 +35,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ID of the multiplex.
      */
     inline const Aws::String& GetMultiplexId() const{ return m_multiplexId; }
-
-    /**
-     * The ID of the multiplex.
-     */
     inline bool MultiplexIdHasBeenSet() const { return m_multiplexIdHasBeenSet; }
-
-    /**
-     * The ID of the multiplex.
-     */
     inline void SetMultiplexId(const Aws::String& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = value; }
-
-    /**
-     * The ID of the multiplex.
-     */
     inline void SetMultiplexId(Aws::String&& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = std::move(value); }
-
-    /**
-     * The ID of the multiplex.
-     */
     inline void SetMultiplexId(const char* value) { m_multiplexIdHasBeenSet = true; m_multiplexId.assign(value); }
-
-    /**
-     * The ID of the multiplex.
-     */
     inline DescribeMultiplexRequest& WithMultiplexId(const Aws::String& value) { SetMultiplexId(value); return *this;}
-
-    /**
-     * The ID of the multiplex.
-     */
     inline DescribeMultiplexRequest& WithMultiplexId(Aws::String&& value) { SetMultiplexId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the multiplex.
-     */
     inline DescribeMultiplexRequest& WithMultiplexId(const char* value) { SetMultiplexId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_multiplexId;

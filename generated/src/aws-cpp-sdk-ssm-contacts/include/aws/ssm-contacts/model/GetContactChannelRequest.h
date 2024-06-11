@@ -34,54 +34,20 @@ namespace Model
     AWS_SSMCONTACTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the contact channel you want information
      * about.</p>
      */
     inline const Aws::String& GetContactChannelId() const{ return m_contactChannelId; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel you want information
-     * about.</p>
-     */
     inline bool ContactChannelIdHasBeenSet() const { return m_contactChannelIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel you want information
-     * about.</p>
-     */
     inline void SetContactChannelId(const Aws::String& value) { m_contactChannelIdHasBeenSet = true; m_contactChannelId = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel you want information
-     * about.</p>
-     */
     inline void SetContactChannelId(Aws::String&& value) { m_contactChannelIdHasBeenSet = true; m_contactChannelId = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel you want information
-     * about.</p>
-     */
     inline void SetContactChannelId(const char* value) { m_contactChannelIdHasBeenSet = true; m_contactChannelId.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel you want information
-     * about.</p>
-     */
     inline GetContactChannelRequest& WithContactChannelId(const Aws::String& value) { SetContactChannelId(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel you want information
-     * about.</p>
-     */
     inline GetContactChannelRequest& WithContactChannelId(Aws::String&& value) { SetContactChannelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel you want information
-     * about.</p>
-     */
     inline GetContactChannelRequest& WithContactChannelId(const char* value) { SetContactChannelId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_contactChannelId;

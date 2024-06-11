@@ -38,55 +38,22 @@ namespace Model
     AWS_KINESISANALYTICS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Name of your existing Amazon Kinesis Analytics application to which you want
      * to add the streaming source.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>Name of your existing Amazon Kinesis Analytics application to which you want
-     * to add the streaming source.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>Name of your existing Amazon Kinesis Analytics application to which you want
-     * to add the streaming source.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>Name of your existing Amazon Kinesis Analytics application to which you want
-     * to add the streaming source.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>Name of your existing Amazon Kinesis Analytics application to which you want
-     * to add the streaming source.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>Name of your existing Amazon Kinesis Analytics application to which you want
-     * to add the streaming source.</p>
-     */
     inline AddApplicationInputRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>Name of your existing Amazon Kinesis Analytics application to which you want
-     * to add the streaming source.</p>
-     */
     inline AddApplicationInputRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of your existing Amazon Kinesis Analytics application to which you want
-     * to add the streaming source.</p>
-     */
     inline AddApplicationInputRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Current version of your Amazon Kinesis Analytics application. You can use the
      * <a
@@ -94,74 +61,24 @@ namespace Model
      * operation to find the current application version.</p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
-
-    /**
-     * <p>Current version of your Amazon Kinesis Analytics application. You can use the
-     * <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to find the current application version.</p>
-     */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
-
-    /**
-     * <p>Current version of your Amazon Kinesis Analytics application. You can use the
-     * <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to find the current application version.</p>
-     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
-
-    /**
-     * <p>Current version of your Amazon Kinesis Analytics application. You can use the
-     * <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to find the current application version.</p>
-     */
     inline AddApplicationInputRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
      * to add.</p>
      */
     inline const Input& GetInput() const{ return m_input; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
-     * to add.</p>
-     */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
-     * to add.</p>
-     */
     inline void SetInput(const Input& value) { m_inputHasBeenSet = true; m_input = value; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
-     * to add.</p>
-     */
     inline void SetInput(Input&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
-     * to add.</p>
-     */
     inline AddApplicationInputRequest& WithInput(const Input& value) { SetInput(value); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
-     * to add.</p>
-     */
     inline AddApplicationInputRequest& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

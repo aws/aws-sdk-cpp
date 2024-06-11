@@ -38,91 +38,33 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * A day of a week when the maintenance will happen. Use
      * Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
      */
     inline const MaintenanceDay& GetMaintenanceDay() const{ return m_maintenanceDay; }
-
-    /**
-     * A day of a week when the maintenance will happen. Use
-     * Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-     */
     inline bool MaintenanceDayHasBeenSet() const { return m_maintenanceDayHasBeenSet; }
-
-    /**
-     * A day of a week when the maintenance will happen. Use
-     * Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-     */
     inline void SetMaintenanceDay(const MaintenanceDay& value) { m_maintenanceDayHasBeenSet = true; m_maintenanceDay = value; }
-
-    /**
-     * A day of a week when the maintenance will happen. Use
-     * Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-     */
     inline void SetMaintenanceDay(MaintenanceDay&& value) { m_maintenanceDayHasBeenSet = true; m_maintenanceDay = std::move(value); }
-
-    /**
-     * A day of a week when the maintenance will happen. Use
-     * Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-     */
     inline AddMaintenance& WithMaintenanceDay(const MaintenanceDay& value) { SetMaintenanceDay(value); return *this;}
-
-    /**
-     * A day of a week when the maintenance will happen. Use
-     * Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-     */
     inline AddMaintenance& WithMaintenanceDay(MaintenanceDay&& value) { SetMaintenanceDay(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes
      * must be 00. Example: 13:00. The default value is 02:00.
      */
     inline const Aws::String& GetMaintenanceStartHour() const{ return m_maintenanceStartHour; }
-
-    /**
-     * UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes
-     * must be 00. Example: 13:00. The default value is 02:00.
-     */
     inline bool MaintenanceStartHourHasBeenSet() const { return m_maintenanceStartHourHasBeenSet; }
-
-    /**
-     * UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes
-     * must be 00. Example: 13:00. The default value is 02:00.
-     */
     inline void SetMaintenanceStartHour(const Aws::String& value) { m_maintenanceStartHourHasBeenSet = true; m_maintenanceStartHour = value; }
-
-    /**
-     * UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes
-     * must be 00. Example: 13:00. The default value is 02:00.
-     */
     inline void SetMaintenanceStartHour(Aws::String&& value) { m_maintenanceStartHourHasBeenSet = true; m_maintenanceStartHour = std::move(value); }
-
-    /**
-     * UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes
-     * must be 00. Example: 13:00. The default value is 02:00.
-     */
     inline void SetMaintenanceStartHour(const char* value) { m_maintenanceStartHourHasBeenSet = true; m_maintenanceStartHour.assign(value); }
-
-    /**
-     * UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes
-     * must be 00. Example: 13:00. The default value is 02:00.
-     */
     inline AddMaintenance& WithMaintenanceStartHour(const Aws::String& value) { SetMaintenanceStartHour(value); return *this;}
-
-    /**
-     * UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes
-     * must be 00. Example: 13:00. The default value is 02:00.
-     */
     inline AddMaintenance& WithMaintenanceStartHour(Aws::String&& value) { SetMaintenanceStartHour(std::move(value)); return *this;}
-
-    /**
-     * UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes
-     * must be 00. Example: 13:00. The default value is 02:00.
-     */
     inline AddMaintenance& WithMaintenanceStartHour(const char* value) { SetMaintenanceStartHour(value); return *this;}
-
+    ///@}
   private:
 
     MaintenanceDay m_maintenanceDay;

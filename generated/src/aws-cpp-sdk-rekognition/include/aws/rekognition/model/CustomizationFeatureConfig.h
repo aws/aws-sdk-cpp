@@ -40,36 +40,17 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration options for Custom Moderation training.</p>
      */
     inline const CustomizationFeatureContentModerationConfig& GetContentModeration() const{ return m_contentModeration; }
-
-    /**
-     * <p>Configuration options for Custom Moderation training.</p>
-     */
     inline bool ContentModerationHasBeenSet() const { return m_contentModerationHasBeenSet; }
-
-    /**
-     * <p>Configuration options for Custom Moderation training.</p>
-     */
     inline void SetContentModeration(const CustomizationFeatureContentModerationConfig& value) { m_contentModerationHasBeenSet = true; m_contentModeration = value; }
-
-    /**
-     * <p>Configuration options for Custom Moderation training.</p>
-     */
     inline void SetContentModeration(CustomizationFeatureContentModerationConfig&& value) { m_contentModerationHasBeenSet = true; m_contentModeration = std::move(value); }
-
-    /**
-     * <p>Configuration options for Custom Moderation training.</p>
-     */
     inline CustomizationFeatureConfig& WithContentModeration(const CustomizationFeatureContentModerationConfig& value) { SetContentModeration(value); return *this;}
-
-    /**
-     * <p>Configuration options for Custom Moderation training.</p>
-     */
     inline CustomizationFeatureConfig& WithContentModeration(CustomizationFeatureContentModerationConfig&& value) { SetContentModeration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CustomizationFeatureContentModerationConfig m_contentModeration;

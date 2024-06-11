@@ -38,36 +38,17 @@ namespace Model
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The empty target resolution mode of the experiment template.</p>
      */
     inline const EmptyTargetResolutionMode& GetEmptyTargetResolutionMode() const{ return m_emptyTargetResolutionMode; }
-
-    /**
-     * <p>The empty target resolution mode of the experiment template.</p>
-     */
     inline bool EmptyTargetResolutionModeHasBeenSet() const { return m_emptyTargetResolutionModeHasBeenSet; }
-
-    /**
-     * <p>The empty target resolution mode of the experiment template.</p>
-     */
     inline void SetEmptyTargetResolutionMode(const EmptyTargetResolutionMode& value) { m_emptyTargetResolutionModeHasBeenSet = true; m_emptyTargetResolutionMode = value; }
-
-    /**
-     * <p>The empty target resolution mode of the experiment template.</p>
-     */
     inline void SetEmptyTargetResolutionMode(EmptyTargetResolutionMode&& value) { m_emptyTargetResolutionModeHasBeenSet = true; m_emptyTargetResolutionMode = std::move(value); }
-
-    /**
-     * <p>The empty target resolution mode of the experiment template.</p>
-     */
     inline UpdateExperimentTemplateExperimentOptionsInput& WithEmptyTargetResolutionMode(const EmptyTargetResolutionMode& value) { SetEmptyTargetResolutionMode(value); return *this;}
-
-    /**
-     * <p>The empty target resolution mode of the experiment template.</p>
-     */
     inline UpdateExperimentTemplateExperimentOptionsInput& WithEmptyTargetResolutionMode(EmptyTargetResolutionMode&& value) { SetEmptyTargetResolutionMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EmptyTargetResolutionMode m_emptyTargetResolutionMode;

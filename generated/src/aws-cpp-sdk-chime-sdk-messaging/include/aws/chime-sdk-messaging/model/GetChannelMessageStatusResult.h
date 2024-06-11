@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API GetChannelMessageStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The message status and details.</p>
      */
     inline const ChannelMessageStatusStructure& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The message status and details.</p>
-     */
     inline void SetStatus(const ChannelMessageStatusStructure& value) { m_status = value; }
-
-    /**
-     * <p>The message status and details.</p>
-     */
     inline void SetStatus(ChannelMessageStatusStructure&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The message status and details.</p>
-     */
     inline GetChannelMessageStatusResult& WithStatus(const ChannelMessageStatusStructure& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The message status and details.</p>
-     */
     inline GetChannelMessageStatusResult& WithStatus(ChannelMessageStatusStructure&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetChannelMessageStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetChannelMessageStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetChannelMessageStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ChannelMessageStatusStructure m_status;

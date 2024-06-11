@@ -40,36 +40,17 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The type of service.</p>
      */
     inline const ServiceType& GetServiceType() const{ return m_serviceType; }
-
-    /**
-     * <p>The type of service.</p>
-     */
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of service.</p>
-     */
     inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
-
-    /**
-     * <p>The type of service.</p>
-     */
     inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
-
-    /**
-     * <p>The type of service.</p>
-     */
     inline ServiceTypeDetail& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
-
-    /**
-     * <p>The type of service.</p>
-     */
     inline ServiceTypeDetail& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ServiceType m_serviceType;

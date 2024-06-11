@@ -35,151 +35,57 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the configuration aggregator.</p>
      */
     inline const Aws::String& GetConfigurationAggregatorName() const{ return m_configurationAggregatorName; }
-
-    /**
-     * <p>The name of the configuration aggregator.</p>
-     */
     inline bool ConfigurationAggregatorNameHasBeenSet() const { return m_configurationAggregatorNameHasBeenSet; }
-
-    /**
-     * <p>The name of the configuration aggregator.</p>
-     */
     inline void SetConfigurationAggregatorName(const Aws::String& value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName = value; }
-
-    /**
-     * <p>The name of the configuration aggregator.</p>
-     */
     inline void SetConfigurationAggregatorName(Aws::String&& value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName = std::move(value); }
-
-    /**
-     * <p>The name of the configuration aggregator.</p>
-     */
     inline void SetConfigurationAggregatorName(const char* value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName.assign(value); }
-
-    /**
-     * <p>The name of the configuration aggregator.</p>
-     */
     inline DescribeAggregateComplianceByConfigRulesRequest& WithConfigurationAggregatorName(const Aws::String& value) { SetConfigurationAggregatorName(value); return *this;}
-
-    /**
-     * <p>The name of the configuration aggregator.</p>
-     */
     inline DescribeAggregateComplianceByConfigRulesRequest& WithConfigurationAggregatorName(Aws::String&& value) { SetConfigurationAggregatorName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the configuration aggregator.</p>
-     */
     inline DescribeAggregateComplianceByConfigRulesRequest& WithConfigurationAggregatorName(const char* value) { SetConfigurationAggregatorName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters the results by ConfigRuleComplianceFilters object. </p>
      */
     inline const ConfigRuleComplianceFilters& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>Filters the results by ConfigRuleComplianceFilters object. </p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>Filters the results by ConfigRuleComplianceFilters object. </p>
-     */
     inline void SetFilters(const ConfigRuleComplianceFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>Filters the results by ConfigRuleComplianceFilters object. </p>
-     */
     inline void SetFilters(ConfigRuleComplianceFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>Filters the results by ConfigRuleComplianceFilters object. </p>
-     */
     inline DescribeAggregateComplianceByConfigRulesRequest& WithFilters(const ConfigRuleComplianceFilters& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>Filters the results by ConfigRuleComplianceFilters object. </p>
-     */
     inline DescribeAggregateComplianceByConfigRulesRequest& WithFilters(ConfigRuleComplianceFilters&& value) { SetFilters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
      * is maximum. If you specify 0, Config uses the default.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The maximum number of evaluation results returned on each page. The default
-     * is maximum. If you specify 0, Config uses the default.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>The maximum number of evaluation results returned on each page. The default
-     * is maximum. If you specify 0, Config uses the default.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>The maximum number of evaluation results returned on each page. The default
-     * is maximum. If you specify 0, Config uses the default.</p>
-     */
     inline DescribeAggregateComplianceByConfigRulesRequest& WithLimit(int value) { SetLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline DescribeAggregateComplianceByConfigRulesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline DescribeAggregateComplianceByConfigRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline DescribeAggregateComplianceByConfigRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationAggregatorName;

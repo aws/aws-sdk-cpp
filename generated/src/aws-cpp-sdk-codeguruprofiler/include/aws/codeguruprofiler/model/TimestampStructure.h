@@ -39,48 +39,19 @@ namespace Model
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For
      * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
      * 1:15:02 PM UTC. </p>
      */
     inline const Aws::Utils::DateTime& GetValue() const{ return m_value; }
-
-    /**
-     * <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For
-     * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
-     * 1:15:02 PM UTC. </p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For
-     * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
-     * 1:15:02 PM UTC. </p>
-     */
     inline void SetValue(const Aws::Utils::DateTime& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For
-     * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
-     * 1:15:02 PM UTC. </p>
-     */
     inline void SetValue(Aws::Utils::DateTime&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For
-     * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
-     * 1:15:02 PM UTC. </p>
-     */
     inline TimestampStructure& WithValue(const Aws::Utils::DateTime& value) { SetValue(value); return *this;}
-
-    /**
-     * <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For
-     * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
-     * 1:15:02 PM UTC. </p>
-     */
     inline TimestampStructure& WithValue(Aws::Utils::DateTime&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_value;

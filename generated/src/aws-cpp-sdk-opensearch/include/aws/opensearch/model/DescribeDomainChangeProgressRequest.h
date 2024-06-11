@@ -42,103 +42,35 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the domain to get progress information for.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The name of the domain to get progress information for.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The name of the domain to get progress information for.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The name of the domain to get progress information for.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The name of the domain to get progress information for.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The name of the domain to get progress information for.</p>
-     */
     inline DescribeDomainChangeProgressRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The name of the domain to get progress information for.</p>
-     */
     inline DescribeDomainChangeProgressRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the domain to get progress information for.</p>
-     */
     inline DescribeDomainChangeProgressRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The specific change ID for which you want to get progress information. If
      * omitted, the request returns information about the most recent configuration
      * change.</p>
      */
     inline const Aws::String& GetChangeId() const{ return m_changeId; }
-
-    /**
-     * <p>The specific change ID for which you want to get progress information. If
-     * omitted, the request returns information about the most recent configuration
-     * change.</p>
-     */
     inline bool ChangeIdHasBeenSet() const { return m_changeIdHasBeenSet; }
-
-    /**
-     * <p>The specific change ID for which you want to get progress information. If
-     * omitted, the request returns information about the most recent configuration
-     * change.</p>
-     */
     inline void SetChangeId(const Aws::String& value) { m_changeIdHasBeenSet = true; m_changeId = value; }
-
-    /**
-     * <p>The specific change ID for which you want to get progress information. If
-     * omitted, the request returns information about the most recent configuration
-     * change.</p>
-     */
     inline void SetChangeId(Aws::String&& value) { m_changeIdHasBeenSet = true; m_changeId = std::move(value); }
-
-    /**
-     * <p>The specific change ID for which you want to get progress information. If
-     * omitted, the request returns information about the most recent configuration
-     * change.</p>
-     */
     inline void SetChangeId(const char* value) { m_changeIdHasBeenSet = true; m_changeId.assign(value); }
-
-    /**
-     * <p>The specific change ID for which you want to get progress information. If
-     * omitted, the request returns information about the most recent configuration
-     * change.</p>
-     */
     inline DescribeDomainChangeProgressRequest& WithChangeId(const Aws::String& value) { SetChangeId(value); return *this;}
-
-    /**
-     * <p>The specific change ID for which you want to get progress information. If
-     * omitted, the request returns information about the most recent configuration
-     * change.</p>
-     */
     inline DescribeDomainChangeProgressRequest& WithChangeId(Aws::String&& value) { SetChangeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The specific change ID for which you want to get progress information. If
-     * omitted, the request returns information about the most recent configuration
-     * change.</p>
-     */
     inline DescribeDomainChangeProgressRequest& WithChangeId(const char* value) { SetChangeId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

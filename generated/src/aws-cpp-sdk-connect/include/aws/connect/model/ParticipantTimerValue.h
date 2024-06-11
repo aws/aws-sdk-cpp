@@ -41,63 +41,28 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The timer action. Currently only one value is allowed: <code>Unset</code>. It
      * deletes a timer.</p>
      */
     inline const ParticipantTimerAction& GetParticipantTimerAction() const{ return m_participantTimerAction; }
-
-    /**
-     * <p>The timer action. Currently only one value is allowed: <code>Unset</code>. It
-     * deletes a timer.</p>
-     */
     inline bool ParticipantTimerActionHasBeenSet() const { return m_participantTimerActionHasBeenSet; }
-
-    /**
-     * <p>The timer action. Currently only one value is allowed: <code>Unset</code>. It
-     * deletes a timer.</p>
-     */
     inline void SetParticipantTimerAction(const ParticipantTimerAction& value) { m_participantTimerActionHasBeenSet = true; m_participantTimerAction = value; }
-
-    /**
-     * <p>The timer action. Currently only one value is allowed: <code>Unset</code>. It
-     * deletes a timer.</p>
-     */
     inline void SetParticipantTimerAction(ParticipantTimerAction&& value) { m_participantTimerActionHasBeenSet = true; m_participantTimerAction = std::move(value); }
-
-    /**
-     * <p>The timer action. Currently only one value is allowed: <code>Unset</code>. It
-     * deletes a timer.</p>
-     */
     inline ParticipantTimerValue& WithParticipantTimerAction(const ParticipantTimerAction& value) { SetParticipantTimerAction(value); return *this;}
-
-    /**
-     * <p>The timer action. Currently only one value is allowed: <code>Unset</code>. It
-     * deletes a timer.</p>
-     */
     inline ParticipantTimerValue& WithParticipantTimerAction(ParticipantTimerAction&& value) { SetParticipantTimerAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The duration of a timer, in minutes. </p>
      */
     inline int GetParticipantTimerDurationInMinutes() const{ return m_participantTimerDurationInMinutes; }
-
-    /**
-     * <p>The duration of a timer, in minutes. </p>
-     */
     inline bool ParticipantTimerDurationInMinutesHasBeenSet() const { return m_participantTimerDurationInMinutesHasBeenSet; }
-
-    /**
-     * <p>The duration of a timer, in minutes. </p>
-     */
     inline void SetParticipantTimerDurationInMinutes(int value) { m_participantTimerDurationInMinutesHasBeenSet = true; m_participantTimerDurationInMinutes = value; }
-
-    /**
-     * <p>The duration of a timer, in minutes. </p>
-     */
     inline ParticipantTimerValue& WithParticipantTimerDurationInMinutes(int value) { SetParticipantTimerDurationInMinutes(value); return *this;}
-
+    ///@}
   private:
 
     ParticipantTimerAction m_participantTimerAction;

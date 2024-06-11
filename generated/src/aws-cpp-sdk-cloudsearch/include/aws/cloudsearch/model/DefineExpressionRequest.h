@@ -42,49 +42,27 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    
     inline DefineExpressionRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    
     inline DefineExpressionRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    
     inline DefineExpressionRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Expression& GetExpression() const{ return m_expression; }
-
-    
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-
-    
     inline void SetExpression(const Expression& value) { m_expressionHasBeenSet = true; m_expression = value; }
-
-    
     inline void SetExpression(Expression&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-
-    
     inline DefineExpressionRequest& WithExpression(const Expression& value) { SetExpression(value); return *this;}
-
-    
     inline DefineExpressionRequest& WithExpression(Expression&& value) { SetExpression(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

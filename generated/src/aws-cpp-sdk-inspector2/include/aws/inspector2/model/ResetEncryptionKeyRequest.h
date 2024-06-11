@@ -33,67 +33,29 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The resource type the key encrypts.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>The resource type the key encrypts.</p>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>The resource type the key encrypts.</p>
-     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>The resource type the key encrypts.</p>
-     */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>The resource type the key encrypts.</p>
-     */
     inline ResetEncryptionKeyRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>The resource type the key encrypts.</p>
-     */
     inline ResetEncryptionKeyRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The scan type the key encrypts.</p>
      */
     inline const ScanType& GetScanType() const{ return m_scanType; }
-
-    /**
-     * <p>The scan type the key encrypts.</p>
-     */
     inline bool ScanTypeHasBeenSet() const { return m_scanTypeHasBeenSet; }
-
-    /**
-     * <p>The scan type the key encrypts.</p>
-     */
     inline void SetScanType(const ScanType& value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
-
-    /**
-     * <p>The scan type the key encrypts.</p>
-     */
     inline void SetScanType(ScanType&& value) { m_scanTypeHasBeenSet = true; m_scanType = std::move(value); }
-
-    /**
-     * <p>The scan type the key encrypts.</p>
-     */
     inline ResetEncryptionKeyRequest& WithScanType(const ScanType& value) { SetScanType(value); return *this;}
-
-    /**
-     * <p>The scan type the key encrypts.</p>
-     */
     inline ResetEncryptionKeyRequest& WithScanType(ScanType&& value) { SetScanType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResourceType m_resourceType;

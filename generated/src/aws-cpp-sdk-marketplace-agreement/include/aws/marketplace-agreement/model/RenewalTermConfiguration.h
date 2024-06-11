@@ -36,30 +36,16 @@ namespace Model
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines whether the acceptor has chosen to auto-renew the agreement at the
      * end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
      */
     inline bool GetEnableAutoRenew() const{ return m_enableAutoRenew; }
-
-    /**
-     * <p>Defines whether the acceptor has chosen to auto-renew the agreement at the
-     * end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
-     */
     inline bool EnableAutoRenewHasBeenSet() const { return m_enableAutoRenewHasBeenSet; }
-
-    /**
-     * <p>Defines whether the acceptor has chosen to auto-renew the agreement at the
-     * end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
-     */
     inline void SetEnableAutoRenew(bool value) { m_enableAutoRenewHasBeenSet = true; m_enableAutoRenew = value; }
-
-    /**
-     * <p>Defines whether the acceptor has chosen to auto-renew the agreement at the
-     * end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
-     */
     inline RenewalTermConfiguration& WithEnableAutoRenew(bool value) { SetEnableAutoRenew(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enableAutoRenew;

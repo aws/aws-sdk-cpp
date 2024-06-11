@@ -32,70 +32,30 @@ namespace Model
     AWS_CLOUDDIRECTORY_API AttachToIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
      * index.</p>
      */
     inline const Aws::String& GetAttachedObjectIdentifier() const{ return m_attachedObjectIdentifier; }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline void SetAttachedObjectIdentifier(const Aws::String& value) { m_attachedObjectIdentifier = value; }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline void SetAttachedObjectIdentifier(Aws::String&& value) { m_attachedObjectIdentifier = std::move(value); }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline void SetAttachedObjectIdentifier(const char* value) { m_attachedObjectIdentifier.assign(value); }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline AttachToIndexResult& WithAttachedObjectIdentifier(const Aws::String& value) { SetAttachedObjectIdentifier(value); return *this;}
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline AttachToIndexResult& WithAttachedObjectIdentifier(Aws::String&& value) { SetAttachedObjectIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline AttachToIndexResult& WithAttachedObjectIdentifier(const char* value) { SetAttachedObjectIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AttachToIndexResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AttachToIndexResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AttachToIndexResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attachedObjectIdentifier;

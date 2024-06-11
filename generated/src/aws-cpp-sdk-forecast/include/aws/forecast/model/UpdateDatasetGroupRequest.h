@@ -35,101 +35,35 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the dataset group.</p>
      */
     inline const Aws::String& GetDatasetGroupArn() const{ return m_datasetGroupArn; }
-
-    /**
-     * <p>The ARN of the dataset group.</p>
-     */
     inline bool DatasetGroupArnHasBeenSet() const { return m_datasetGroupArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the dataset group.</p>
-     */
     inline void SetDatasetGroupArn(const Aws::String& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = value; }
-
-    /**
-     * <p>The ARN of the dataset group.</p>
-     */
     inline void SetDatasetGroupArn(Aws::String&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the dataset group.</p>
-     */
     inline void SetDatasetGroupArn(const char* value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn.assign(value); }
-
-    /**
-     * <p>The ARN of the dataset group.</p>
-     */
     inline UpdateDatasetGroupRequest& WithDatasetGroupArn(const Aws::String& value) { SetDatasetGroupArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the dataset group.</p>
-     */
     inline UpdateDatasetGroupRequest& WithDatasetGroupArn(Aws::String&& value) { SetDatasetGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the dataset group.</p>
-     */
     inline UpdateDatasetGroupRequest& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
      * dataset group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDatasetArns() const{ return m_datasetArns; }
-
-    /**
-     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
-     * dataset group.</p>
-     */
     inline bool DatasetArnsHasBeenSet() const { return m_datasetArnsHasBeenSet; }
-
-    /**
-     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
-     * dataset group.</p>
-     */
     inline void SetDatasetArns(const Aws::Vector<Aws::String>& value) { m_datasetArnsHasBeenSet = true; m_datasetArns = value; }
-
-    /**
-     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
-     * dataset group.</p>
-     */
     inline void SetDatasetArns(Aws::Vector<Aws::String>&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns = std::move(value); }
-
-    /**
-     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
-     * dataset group.</p>
-     */
     inline UpdateDatasetGroupRequest& WithDatasetArns(const Aws::Vector<Aws::String>& value) { SetDatasetArns(value); return *this;}
-
-    /**
-     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
-     * dataset group.</p>
-     */
     inline UpdateDatasetGroupRequest& WithDatasetArns(Aws::Vector<Aws::String>&& value) { SetDatasetArns(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
-     * dataset group.</p>
-     */
     inline UpdateDatasetGroupRequest& AddDatasetArns(const Aws::String& value) { m_datasetArnsHasBeenSet = true; m_datasetArns.push_back(value); return *this; }
-
-    /**
-     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
-     * dataset group.</p>
-     */
     inline UpdateDatasetGroupRequest& AddDatasetArns(Aws::String&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
-     * dataset group.</p>
-     */
     inline UpdateDatasetGroupRequest& AddDatasetArns(const char* value) { m_datasetArnsHasBeenSet = true; m_datasetArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_datasetGroupArn;

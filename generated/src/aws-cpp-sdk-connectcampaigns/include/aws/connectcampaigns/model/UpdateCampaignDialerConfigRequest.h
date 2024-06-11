@@ -36,49 +36,27 @@ namespace Model
     AWS_CONNECTCAMPAIGNS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetId() const{ return m_id; }
-
-    
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    
     inline UpdateCampaignDialerConfigRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    
     inline UpdateCampaignDialerConfigRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    
     inline UpdateCampaignDialerConfigRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const DialerConfig& GetDialerConfig() const{ return m_dialerConfig; }
-
-    
     inline bool DialerConfigHasBeenSet() const { return m_dialerConfigHasBeenSet; }
-
-    
     inline void SetDialerConfig(const DialerConfig& value) { m_dialerConfigHasBeenSet = true; m_dialerConfig = value; }
-
-    
     inline void SetDialerConfig(DialerConfig&& value) { m_dialerConfigHasBeenSet = true; m_dialerConfig = std::move(value); }
-
-    
     inline UpdateCampaignDialerConfigRequest& WithDialerConfig(const DialerConfig& value) { SetDialerConfig(value); return *this;}
-
-    
     inline UpdateCampaignDialerConfigRequest& WithDialerConfig(DialerConfig&& value) { SetDialerConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

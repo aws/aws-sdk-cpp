@@ -48,60 +48,21 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A single rule level of the <code>MatchRules</code>. Configures how the
      * rule-based matching process should match profiles.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRule() const{ return m_rule; }
-
-    /**
-     * <p>A single rule level of the <code>MatchRules</code>. Configures how the
-     * rule-based matching process should match profiles.</p>
-     */
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
-
-    /**
-     * <p>A single rule level of the <code>MatchRules</code>. Configures how the
-     * rule-based matching process should match profiles.</p>
-     */
     inline void SetRule(const Aws::Vector<Aws::String>& value) { m_ruleHasBeenSet = true; m_rule = value; }
-
-    /**
-     * <p>A single rule level of the <code>MatchRules</code>. Configures how the
-     * rule-based matching process should match profiles.</p>
-     */
     inline void SetRule(Aws::Vector<Aws::String>&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
-
-    /**
-     * <p>A single rule level of the <code>MatchRules</code>. Configures how the
-     * rule-based matching process should match profiles.</p>
-     */
     inline MatchingRule& WithRule(const Aws::Vector<Aws::String>& value) { SetRule(value); return *this;}
-
-    /**
-     * <p>A single rule level of the <code>MatchRules</code>. Configures how the
-     * rule-based matching process should match profiles.</p>
-     */
     inline MatchingRule& WithRule(Aws::Vector<Aws::String>&& value) { SetRule(std::move(value)); return *this;}
-
-    /**
-     * <p>A single rule level of the <code>MatchRules</code>. Configures how the
-     * rule-based matching process should match profiles.</p>
-     */
     inline MatchingRule& AddRule(const Aws::String& value) { m_ruleHasBeenSet = true; m_rule.push_back(value); return *this; }
-
-    /**
-     * <p>A single rule level of the <code>MatchRules</code>. Configures how the
-     * rule-based matching process should match profiles.</p>
-     */
     inline MatchingRule& AddRule(Aws::String&& value) { m_ruleHasBeenSet = true; m_rule.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A single rule level of the <code>MatchRules</code>. Configures how the
-     * rule-based matching process should match profiles.</p>
-     */
     inline MatchingRule& AddRule(const char* value) { m_ruleHasBeenSet = true; m_rule.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_rule;

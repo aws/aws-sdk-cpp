@@ -38,54 +38,20 @@ namespace Model
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services Resource Name (ARN) for the CloudWatch log group to
      * which EventBridge sends the log records.</p>
      */
     inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
-
-    /**
-     * <p>The Amazon Web Services Resource Name (ARN) for the CloudWatch log group to
-     * which EventBridge sends the log records.</p>
-     */
     inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services Resource Name (ARN) for the CloudWatch log group to
-     * which EventBridge sends the log records.</p>
-     */
     inline void SetLogGroupArn(const Aws::String& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = value; }
-
-    /**
-     * <p>The Amazon Web Services Resource Name (ARN) for the CloudWatch log group to
-     * which EventBridge sends the log records.</p>
-     */
     inline void SetLogGroupArn(Aws::String&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Resource Name (ARN) for the CloudWatch log group to
-     * which EventBridge sends the log records.</p>
-     */
     inline void SetLogGroupArn(const char* value) { m_logGroupArnHasBeenSet = true; m_logGroupArn.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Resource Name (ARN) for the CloudWatch log group to
-     * which EventBridge sends the log records.</p>
-     */
     inline CloudwatchLogsLogDestinationParameters& WithLogGroupArn(const Aws::String& value) { SetLogGroupArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Resource Name (ARN) for the CloudWatch log group to
-     * which EventBridge sends the log records.</p>
-     */
     inline CloudwatchLogsLogDestinationParameters& WithLogGroupArn(Aws::String&& value) { SetLogGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Resource Name (ARN) for the CloudWatch log group to
-     * which EventBridge sends the log records.</p>
-     */
     inline CloudwatchLogsLogDestinationParameters& WithLogGroupArn(const char* value) { SetLogGroupArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_logGroupArn;

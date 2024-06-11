@@ -42,6 +42,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the snapshot copy grant. This name must be unique in the region
      * for the Amazon Web Services account.</p> <p>Constraints:</p> <ul> <li> <p>Must
@@ -52,174 +53,43 @@ namespace Model
      * Amazon Web Services account.</p> </li> </ul>
      */
     inline const Aws::String& GetSnapshotCopyGrantName() const{ return m_snapshotCopyGrantName; }
-
-    /**
-     * <p>The name of the snapshot copy grant. This name must be unique in the region
-     * for the Amazon Web Services account.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * Amazon Web Services account.</p> </li> </ul>
-     */
     inline bool SnapshotCopyGrantNameHasBeenSet() const { return m_snapshotCopyGrantNameHasBeenSet; }
-
-    /**
-     * <p>The name of the snapshot copy grant. This name must be unique in the region
-     * for the Amazon Web Services account.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * Amazon Web Services account.</p> </li> </ul>
-     */
     inline void SetSnapshotCopyGrantName(const Aws::String& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
-
-    /**
-     * <p>The name of the snapshot copy grant. This name must be unique in the region
-     * for the Amazon Web Services account.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * Amazon Web Services account.</p> </li> </ul>
-     */
     inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = std::move(value); }
-
-    /**
-     * <p>The name of the snapshot copy grant. This name must be unique in the region
-     * for the Amazon Web Services account.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * Amazon Web Services account.</p> </li> </ul>
-     */
     inline void SetSnapshotCopyGrantName(const char* value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName.assign(value); }
-
-    /**
-     * <p>The name of the snapshot copy grant. This name must be unique in the region
-     * for the Amazon Web Services account.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * Amazon Web Services account.</p> </li> </ul>
-     */
     inline CreateSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(const Aws::String& value) { SetSnapshotCopyGrantName(value); return *this;}
-
-    /**
-     * <p>The name of the snapshot copy grant. This name must be unique in the region
-     * for the Amazon Web Services account.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * Amazon Web Services account.</p> </li> </ul>
-     */
     inline CreateSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the snapshot copy grant. This name must be unique in the region
-     * for the Amazon Web Services account.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * Amazon Web Services account.</p> </li> </ul>
-     */
     inline CreateSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(const char* value) { SetSnapshotCopyGrantName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the encrypted symmetric key to which to grant Amazon
      * Redshift permission. If no key is specified, the default key is used.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The unique identifier of the encrypted symmetric key to which to grant Amazon
-     * Redshift permission. If no key is specified, the default key is used.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the encrypted symmetric key to which to grant Amazon
-     * Redshift permission. If no key is specified, the default key is used.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The unique identifier of the encrypted symmetric key to which to grant Amazon
-     * Redshift permission. If no key is specified, the default key is used.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the encrypted symmetric key to which to grant Amazon
-     * Redshift permission. If no key is specified, the default key is used.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the encrypted symmetric key to which to grant Amazon
-     * Redshift permission. If no key is specified, the default key is used.</p>
-     */
     inline CreateSnapshotCopyGrantRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the encrypted symmetric key to which to grant Amazon
-     * Redshift permission. If no key is specified, the default key is used.</p>
-     */
     inline CreateSnapshotCopyGrantRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the encrypted symmetric key to which to grant Amazon
-     * Redshift permission. If no key is specified, the default key is used.</p>
-     */
     inline CreateSnapshotCopyGrantRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of tag instances.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A list of tag instances.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A list of tag instances.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A list of tag instances.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A list of tag instances.</p>
-     */
     inline CreateSnapshotCopyGrantRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A list of tag instances.</p>
-     */
     inline CreateSnapshotCopyGrantRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tag instances.</p>
-     */
     inline CreateSnapshotCopyGrantRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tag instances.</p>
-     */
     inline CreateSnapshotCopyGrantRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_snapshotCopyGrantName;

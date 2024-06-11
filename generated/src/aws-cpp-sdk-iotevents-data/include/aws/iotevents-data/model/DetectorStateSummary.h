@@ -37,46 +37,19 @@ namespace Model
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the state.</p>
      */
     inline const Aws::String& GetStateName() const{ return m_stateName; }
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline bool StateNameHasBeenSet() const { return m_stateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline void SetStateName(const Aws::String& value) { m_stateNameHasBeenSet = true; m_stateName = value; }
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline void SetStateName(Aws::String&& value) { m_stateNameHasBeenSet = true; m_stateName = std::move(value); }
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline void SetStateName(const char* value) { m_stateNameHasBeenSet = true; m_stateName.assign(value); }
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline DetectorStateSummary& WithStateName(const Aws::String& value) { SetStateName(value); return *this;}
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline DetectorStateSummary& WithStateName(Aws::String&& value) { SetStateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the state.</p>
-     */
     inline DetectorStateSummary& WithStateName(const char* value) { SetStateName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stateName;

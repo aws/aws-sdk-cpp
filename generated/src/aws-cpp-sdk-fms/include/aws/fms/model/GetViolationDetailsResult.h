@@ -33,53 +33,27 @@ namespace Model
     AWS_FMS_API GetViolationDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Violation detail for a resource.</p>
      */
     inline const ViolationDetail& GetViolationDetail() const{ return m_violationDetail; }
-
-    /**
-     * <p>Violation detail for a resource.</p>
-     */
     inline void SetViolationDetail(const ViolationDetail& value) { m_violationDetail = value; }
-
-    /**
-     * <p>Violation detail for a resource.</p>
-     */
     inline void SetViolationDetail(ViolationDetail&& value) { m_violationDetail = std::move(value); }
-
-    /**
-     * <p>Violation detail for a resource.</p>
-     */
     inline GetViolationDetailsResult& WithViolationDetail(const ViolationDetail& value) { SetViolationDetail(value); return *this;}
-
-    /**
-     * <p>Violation detail for a resource.</p>
-     */
     inline GetViolationDetailsResult& WithViolationDetail(ViolationDetail&& value) { SetViolationDetail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetViolationDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetViolationDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetViolationDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ViolationDetail m_violationDetail;

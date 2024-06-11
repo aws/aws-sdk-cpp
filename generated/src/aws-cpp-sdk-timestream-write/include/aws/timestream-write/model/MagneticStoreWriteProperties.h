@@ -38,63 +38,28 @@ namespace Model
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A flag to enable magnetic store writes.</p>
      */
     inline bool GetEnableMagneticStoreWrites() const{ return m_enableMagneticStoreWrites; }
-
-    /**
-     * <p>A flag to enable magnetic store writes.</p>
-     */
     inline bool EnableMagneticStoreWritesHasBeenSet() const { return m_enableMagneticStoreWritesHasBeenSet; }
-
-    /**
-     * <p>A flag to enable magnetic store writes.</p>
-     */
     inline void SetEnableMagneticStoreWrites(bool value) { m_enableMagneticStoreWritesHasBeenSet = true; m_enableMagneticStoreWrites = value; }
-
-    /**
-     * <p>A flag to enable magnetic store writes.</p>
-     */
     inline MagneticStoreWriteProperties& WithEnableMagneticStoreWrites(bool value) { SetEnableMagneticStoreWrites(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The location to write error reports for records rejected asynchronously
      * during magnetic store writes.</p>
      */
     inline const MagneticStoreRejectedDataLocation& GetMagneticStoreRejectedDataLocation() const{ return m_magneticStoreRejectedDataLocation; }
-
-    /**
-     * <p>The location to write error reports for records rejected asynchronously
-     * during magnetic store writes.</p>
-     */
     inline bool MagneticStoreRejectedDataLocationHasBeenSet() const { return m_magneticStoreRejectedDataLocationHasBeenSet; }
-
-    /**
-     * <p>The location to write error reports for records rejected asynchronously
-     * during magnetic store writes.</p>
-     */
     inline void SetMagneticStoreRejectedDataLocation(const MagneticStoreRejectedDataLocation& value) { m_magneticStoreRejectedDataLocationHasBeenSet = true; m_magneticStoreRejectedDataLocation = value; }
-
-    /**
-     * <p>The location to write error reports for records rejected asynchronously
-     * during magnetic store writes.</p>
-     */
     inline void SetMagneticStoreRejectedDataLocation(MagneticStoreRejectedDataLocation&& value) { m_magneticStoreRejectedDataLocationHasBeenSet = true; m_magneticStoreRejectedDataLocation = std::move(value); }
-
-    /**
-     * <p>The location to write error reports for records rejected asynchronously
-     * during magnetic store writes.</p>
-     */
     inline MagneticStoreWriteProperties& WithMagneticStoreRejectedDataLocation(const MagneticStoreRejectedDataLocation& value) { SetMagneticStoreRejectedDataLocation(value); return *this;}
-
-    /**
-     * <p>The location to write error reports for records rejected asynchronously
-     * during magnetic store writes.</p>
-     */
     inline MagneticStoreWriteProperties& WithMagneticStoreRejectedDataLocation(MagneticStoreRejectedDataLocation&& value) { SetMagneticStoreRejectedDataLocation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_enableMagneticStoreWrites;

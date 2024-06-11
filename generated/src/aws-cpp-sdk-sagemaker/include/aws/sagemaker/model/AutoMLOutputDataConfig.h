@@ -37,87 +37,33 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Key Management Service encryption key ID.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The Key Management Service encryption key ID.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The Key Management Service encryption key ID.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The Key Management Service encryption key ID.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The Key Management Service encryption key ID.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The Key Management Service encryption key ID.</p>
-     */
     inline AutoMLOutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The Key Management Service encryption key ID.</p>
-     */
     inline AutoMLOutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Key Management Service encryption key ID.</p>
-     */
     inline AutoMLOutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon S3 output path. Must be 128 characters or less.</p>
      */
     inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
-
-    /**
-     * <p>The Amazon S3 output path. Must be 128 characters or less.</p>
-     */
     inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 output path. Must be 128 characters or less.</p>
-     */
     inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
-
-    /**
-     * <p>The Amazon S3 output path. Must be 128 characters or less.</p>
-     */
     inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 output path. Must be 128 characters or less.</p>
-     */
     inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
-
-    /**
-     * <p>The Amazon S3 output path. Must be 128 characters or less.</p>
-     */
     inline AutoMLOutputDataConfig& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 output path. Must be 128 characters or less.</p>
-     */
     inline AutoMLOutputDataConfig& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 output path. Must be 128 characters or less.</p>
-     */
     inline AutoMLOutputDataConfig& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;

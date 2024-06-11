@@ -38,6 +38,7 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the column, such as user_id, that contains the unique identifier
      * of your users, whose privacy you want to protect. If you want to turn on
@@ -46,70 +47,14 @@ namespace Model
      * rules.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the column, such as user_id, that contains the unique identifier
-     * of your users, whose privacy you want to protect. If you want to turn on
-     * differential privacy for two or more tables in a collaboration, you must
-     * configure the same column as the user identifier column in both analysis
-     * rules.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the column, such as user_id, that contains the unique identifier
-     * of your users, whose privacy you want to protect. If you want to turn on
-     * differential privacy for two or more tables in a collaboration, you must
-     * configure the same column as the user identifier column in both analysis
-     * rules.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the column, such as user_id, that contains the unique identifier
-     * of your users, whose privacy you want to protect. If you want to turn on
-     * differential privacy for two or more tables in a collaboration, you must
-     * configure the same column as the user identifier column in both analysis
-     * rules.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the column, such as user_id, that contains the unique identifier
-     * of your users, whose privacy you want to protect. If you want to turn on
-     * differential privacy for two or more tables in a collaboration, you must
-     * configure the same column as the user identifier column in both analysis
-     * rules.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the column, such as user_id, that contains the unique identifier
-     * of your users, whose privacy you want to protect. If you want to turn on
-     * differential privacy for two or more tables in a collaboration, you must
-     * configure the same column as the user identifier column in both analysis
-     * rules.</p>
-     */
     inline DifferentialPrivacyColumn& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the column, such as user_id, that contains the unique identifier
-     * of your users, whose privacy you want to protect. If you want to turn on
-     * differential privacy for two or more tables in a collaboration, you must
-     * configure the same column as the user identifier column in both analysis
-     * rules.</p>
-     */
     inline DifferentialPrivacyColumn& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the column, such as user_id, that contains the unique identifier
-     * of your users, whose privacy you want to protect. If you want to turn on
-     * differential privacy for two or more tables in a collaboration, you must
-     * configure the same column as the user identifier column in both analysis
-     * rules.</p>
-     */
     inline DifferentialPrivacyColumn& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

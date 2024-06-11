@@ -39,6 +39,7 @@ namespace Model
     AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to
      * publish email events to. For more information about Amazon SNS topics, see the
@@ -46,63 +47,14 @@ namespace Model
      * Developer Guide</a>.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to
-     * publish email events to. For more information about Amazon SNS topics, see the
-     * <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to
-     * publish email events to. For more information about Amazon SNS topics, see the
-     * <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to
-     * publish email events to. For more information about Amazon SNS topics, see the
-     * <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to
-     * publish email events to. For more information about Amazon SNS topics, see the
-     * <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to
-     * publish email events to. For more information about Amazon SNS topics, see the
-     * <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline SnsDestination& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to
-     * publish email events to. For more information about Amazon SNS topics, see the
-     * <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline SnsDestination& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to
-     * publish email events to. For more information about Amazon SNS topics, see the
-     * <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline SnsDestination& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topicArn;

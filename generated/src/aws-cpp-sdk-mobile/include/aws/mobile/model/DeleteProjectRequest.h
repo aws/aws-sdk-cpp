@@ -36,46 +36,19 @@ namespace Model
     AWS_MOBILE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> Unique project identifier. </p>
      */
     inline const Aws::String& GetProjectId() const{ return m_projectId; }
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline void SetProjectId(Aws::String&& value) { m_projectIdHasBeenSet = true; m_projectId = std::move(value); }
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline void SetProjectId(const char* value) { m_projectIdHasBeenSet = true; m_projectId.assign(value); }
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline DeleteProjectRequest& WithProjectId(const Aws::String& value) { SetProjectId(value); return *this;}
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline DeleteProjectRequest& WithProjectId(Aws::String&& value) { SetProjectId(std::move(value)); return *this;}
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline DeleteProjectRequest& WithProjectId(const char* value) { SetProjectId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectId;

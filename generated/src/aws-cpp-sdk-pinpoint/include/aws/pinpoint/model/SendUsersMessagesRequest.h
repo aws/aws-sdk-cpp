@@ -33,73 +33,30 @@ namespace Model
     AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline SendUsersMessagesRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline SendUsersMessagesRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline SendUsersMessagesRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const SendUsersMessageRequest& GetSendUsersMessageRequest() const{ return m_sendUsersMessageRequest; }
-
-    
     inline bool SendUsersMessageRequestHasBeenSet() const { return m_sendUsersMessageRequestHasBeenSet; }
-
-    
     inline void SetSendUsersMessageRequest(const SendUsersMessageRequest& value) { m_sendUsersMessageRequestHasBeenSet = true; m_sendUsersMessageRequest = value; }
-
-    
     inline void SetSendUsersMessageRequest(SendUsersMessageRequest&& value) { m_sendUsersMessageRequestHasBeenSet = true; m_sendUsersMessageRequest = std::move(value); }
-
-    
     inline SendUsersMessagesRequest& WithSendUsersMessageRequest(const SendUsersMessageRequest& value) { SetSendUsersMessageRequest(value); return *this;}
-
-    
     inline SendUsersMessagesRequest& WithSendUsersMessageRequest(SendUsersMessageRequest&& value) { SetSendUsersMessageRequest(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

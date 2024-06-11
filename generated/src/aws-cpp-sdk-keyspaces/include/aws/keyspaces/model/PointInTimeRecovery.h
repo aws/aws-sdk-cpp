@@ -42,42 +42,18 @@ namespace Model
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The options are:</p> <ul> <li> <p> <code>status=ENABLED</code> </p> </li>
      * <li> <p> <code>status=DISABLED</code> </p> </li> </ul>
      */
     inline const PointInTimeRecoveryStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The options are:</p> <ul> <li> <p> <code>status=ENABLED</code> </p> </li>
-     * <li> <p> <code>status=DISABLED</code> </p> </li> </ul>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The options are:</p> <ul> <li> <p> <code>status=ENABLED</code> </p> </li>
-     * <li> <p> <code>status=DISABLED</code> </p> </li> </ul>
-     */
     inline void SetStatus(const PointInTimeRecoveryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The options are:</p> <ul> <li> <p> <code>status=ENABLED</code> </p> </li>
-     * <li> <p> <code>status=DISABLED</code> </p> </li> </ul>
-     */
     inline void SetStatus(PointInTimeRecoveryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The options are:</p> <ul> <li> <p> <code>status=ENABLED</code> </p> </li>
-     * <li> <p> <code>status=DISABLED</code> </p> </li> </ul>
-     */
     inline PointInTimeRecovery& WithStatus(const PointInTimeRecoveryStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The options are:</p> <ul> <li> <p> <code>status=ENABLED</code> </p> </li>
-     * <li> <p> <code>status=DISABLED</code> </p> </li> </ul>
-     */
     inline PointInTimeRecovery& WithStatus(PointInTimeRecoveryStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PointInTimeRecoveryStatus m_status;

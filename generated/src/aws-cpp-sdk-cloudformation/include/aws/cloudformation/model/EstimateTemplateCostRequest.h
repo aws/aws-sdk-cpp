@@ -42,6 +42,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
@@ -51,78 +52,16 @@ namespace Model
      * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
-
-    /**
-     * <p>Structure containing the template body with a minimum length of 1 byte and a
-     * maximum length of 51,200 bytes. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
-     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
-     */
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
-
-    /**
-     * <p>Structure containing the template body with a minimum length of 1 byte and a
-     * maximum length of 51,200 bytes. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
-     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
-     */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
-
-    /**
-     * <p>Structure containing the template body with a minimum length of 1 byte and a
-     * maximum length of 51,200 bytes. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
-     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
-     */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
-
-    /**
-     * <p>Structure containing the template body with a minimum length of 1 byte and a
-     * maximum length of 51,200 bytes. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
-     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
-     */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
-
-    /**
-     * <p>Structure containing the template body with a minimum length of 1 byte and a
-     * maximum length of 51,200 bytes. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
-     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
-     */
     inline EstimateTemplateCostRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-
-    /**
-     * <p>Structure containing the template body with a minimum length of 1 byte and a
-     * maximum length of 51,200 bytes. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
-     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
-     */
     inline EstimateTemplateCostRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-
-    /**
-     * <p>Structure containing the template body with a minimum length of 1 byte and a
-     * maximum length of 51,200 bytes. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
-     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
-     */
     inline EstimateTemplateCostRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Location of file containing the template body. The URL must point to a
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
@@ -134,140 +73,29 @@ namespace Model
      * only <code>TemplateBody</code> is used.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
-
-    /**
-     * <p>Location of file containing the template body. The URL must point to a
-     * template that's located in an Amazon S3 bucket or a Systems Manager document.
-     * For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
-     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
-     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
-     * only <code>TemplateBody</code> is used.</p>
-     */
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
-
-    /**
-     * <p>Location of file containing the template body. The URL must point to a
-     * template that's located in an Amazon S3 bucket or a Systems Manager document.
-     * For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
-     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
-     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
-     * only <code>TemplateBody</code> is used.</p>
-     */
     inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
-
-    /**
-     * <p>Location of file containing the template body. The URL must point to a
-     * template that's located in an Amazon S3 bucket or a Systems Manager document.
-     * For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
-     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
-     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
-     * only <code>TemplateBody</code> is used.</p>
-     */
     inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
-
-    /**
-     * <p>Location of file containing the template body. The URL must point to a
-     * template that's located in an Amazon S3 bucket or a Systems Manager document.
-     * For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
-     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
-     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
-     * only <code>TemplateBody</code> is used.</p>
-     */
     inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
-
-    /**
-     * <p>Location of file containing the template body. The URL must point to a
-     * template that's located in an Amazon S3 bucket or a Systems Manager document.
-     * For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
-     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
-     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
-     * only <code>TemplateBody</code> is used.</p>
-     */
     inline EstimateTemplateCostRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
-
-    /**
-     * <p>Location of file containing the template body. The URL must point to a
-     * template that's located in an Amazon S3 bucket or a Systems Manager document.
-     * For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
-     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
-     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
-     * only <code>TemplateBody</code> is used.</p>
-     */
     inline EstimateTemplateCostRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
-
-    /**
-     * <p>Location of file containing the template body. The URL must point to a
-     * template that's located in an Amazon S3 bucket or a Systems Manager document.
-     * For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
-     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
-     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
-     * only <code>TemplateBody</code> is used.</p>
-     */
     inline EstimateTemplateCostRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of <code>Parameter</code> structures that specify input
      * parameters.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>A list of <code>Parameter</code> structures that specify input
-     * parameters.</p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>A list of <code>Parameter</code> structures that specify input
-     * parameters.</p>
-     */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>A list of <code>Parameter</code> structures that specify input
-     * parameters.</p>
-     */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>A list of <code>Parameter</code> structures that specify input
-     * parameters.</p>
-     */
     inline EstimateTemplateCostRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>A list of <code>Parameter</code> structures that specify input
-     * parameters.</p>
-     */
     inline EstimateTemplateCostRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>Parameter</code> structures that specify input
-     * parameters.</p>
-     */
     inline EstimateTemplateCostRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>Parameter</code> structures that specify input
-     * parameters.</p>
-     */
     inline EstimateTemplateCostRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_templateBody;

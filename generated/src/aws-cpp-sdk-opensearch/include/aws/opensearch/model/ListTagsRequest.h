@@ -42,46 +42,19 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
-     */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
-     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
-     */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
-     */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
-     */
     inline ListTagsRequest& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
-     */
     inline ListTagsRequest& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
-     */
     inline ListTagsRequest& WithARN(const char* value) { SetARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_aRN;

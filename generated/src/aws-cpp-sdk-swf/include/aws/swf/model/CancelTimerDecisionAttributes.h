@@ -51,46 +51,19 @@ namespace Model
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The unique ID of the timer to cancel.</p>
      */
     inline const Aws::String& GetTimerId() const{ return m_timerId; }
-
-    /**
-     * <p> The unique ID of the timer to cancel.</p>
-     */
     inline bool TimerIdHasBeenSet() const { return m_timerIdHasBeenSet; }
-
-    /**
-     * <p> The unique ID of the timer to cancel.</p>
-     */
     inline void SetTimerId(const Aws::String& value) { m_timerIdHasBeenSet = true; m_timerId = value; }
-
-    /**
-     * <p> The unique ID of the timer to cancel.</p>
-     */
     inline void SetTimerId(Aws::String&& value) { m_timerIdHasBeenSet = true; m_timerId = std::move(value); }
-
-    /**
-     * <p> The unique ID of the timer to cancel.</p>
-     */
     inline void SetTimerId(const char* value) { m_timerIdHasBeenSet = true; m_timerId.assign(value); }
-
-    /**
-     * <p> The unique ID of the timer to cancel.</p>
-     */
     inline CancelTimerDecisionAttributes& WithTimerId(const Aws::String& value) { SetTimerId(value); return *this;}
-
-    /**
-     * <p> The unique ID of the timer to cancel.</p>
-     */
     inline CancelTimerDecisionAttributes& WithTimerId(Aws::String&& value) { SetTimerId(std::move(value)); return *this;}
-
-    /**
-     * <p> The unique ID of the timer to cancel.</p>
-     */
     inline CancelTimerDecisionAttributes& WithTimerId(const char* value) { SetTimerId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_timerId;

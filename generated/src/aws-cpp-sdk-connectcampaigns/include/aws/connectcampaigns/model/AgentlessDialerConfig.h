@@ -35,18 +35,13 @@ namespace Model
     AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline double GetDialingCapacity() const{ return m_dialingCapacity; }
-
-    
     inline bool DialingCapacityHasBeenSet() const { return m_dialingCapacityHasBeenSet; }
-
-    
     inline void SetDialingCapacity(double value) { m_dialingCapacityHasBeenSet = true; m_dialingCapacity = value; }
-
-    
     inline AgentlessDialerConfig& WithDialingCapacity(double value) { SetDialingCapacity(value); return *this;}
-
+    ///@}
   private:
 
     double m_dialingCapacity;

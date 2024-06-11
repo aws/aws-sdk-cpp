@@ -39,67 +39,29 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about the user messages in the turn in the input.</p>
      */
     inline const UserTurnInputSpecification& GetInput() const{ return m_input; }
-
-    /**
-     * <p>Contains information about the user messages in the turn in the input.</p>
-     */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-
-    /**
-     * <p>Contains information about the user messages in the turn in the input.</p>
-     */
     inline void SetInput(const UserTurnInputSpecification& value) { m_inputHasBeenSet = true; m_input = value; }
-
-    /**
-     * <p>Contains information about the user messages in the turn in the input.</p>
-     */
     inline void SetInput(UserTurnInputSpecification&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-
-    /**
-     * <p>Contains information about the user messages in the turn in the input.</p>
-     */
     inline UserTurnSpecification& WithInput(const UserTurnInputSpecification& value) { SetInput(value); return *this;}
-
-    /**
-     * <p>Contains information about the user messages in the turn in the input.</p>
-     */
     inline UserTurnSpecification& WithInput(UserTurnInputSpecification&& value) { SetInput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains results about the expected output for the user turn.</p>
      */
     inline const UserTurnOutputSpecification& GetExpected() const{ return m_expected; }
-
-    /**
-     * <p>Contains results about the expected output for the user turn.</p>
-     */
     inline bool ExpectedHasBeenSet() const { return m_expectedHasBeenSet; }
-
-    /**
-     * <p>Contains results about the expected output for the user turn.</p>
-     */
     inline void SetExpected(const UserTurnOutputSpecification& value) { m_expectedHasBeenSet = true; m_expected = value; }
-
-    /**
-     * <p>Contains results about the expected output for the user turn.</p>
-     */
     inline void SetExpected(UserTurnOutputSpecification&& value) { m_expectedHasBeenSet = true; m_expected = std::move(value); }
-
-    /**
-     * <p>Contains results about the expected output for the user turn.</p>
-     */
     inline UserTurnSpecification& WithExpected(const UserTurnOutputSpecification& value) { SetExpected(value); return *this;}
-
-    /**
-     * <p>Contains results about the expected output for the user turn.</p>
-     */
     inline UserTurnSpecification& WithExpected(UserTurnOutputSpecification&& value) { SetExpected(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UserTurnInputSpecification m_input;

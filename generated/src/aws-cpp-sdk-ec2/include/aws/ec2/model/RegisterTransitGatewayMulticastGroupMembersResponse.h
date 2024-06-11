@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API RegisterTransitGatewayMulticastGroupMembersResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the registered transit gateway multicast group members.</p>
      */
     inline const TransitGatewayMulticastRegisteredGroupMembers& GetRegisteredMulticastGroupMembers() const{ return m_registeredMulticastGroupMembers; }
-
-    /**
-     * <p>Information about the registered transit gateway multicast group members.</p>
-     */
     inline void SetRegisteredMulticastGroupMembers(const TransitGatewayMulticastRegisteredGroupMembers& value) { m_registeredMulticastGroupMembers = value; }
-
-    /**
-     * <p>Information about the registered transit gateway multicast group members.</p>
-     */
     inline void SetRegisteredMulticastGroupMembers(TransitGatewayMulticastRegisteredGroupMembers&& value) { m_registeredMulticastGroupMembers = std::move(value); }
-
-    /**
-     * <p>Information about the registered transit gateway multicast group members.</p>
-     */
     inline RegisterTransitGatewayMulticastGroupMembersResponse& WithRegisteredMulticastGroupMembers(const TransitGatewayMulticastRegisteredGroupMembers& value) { SetRegisteredMulticastGroupMembers(value); return *this;}
-
-    /**
-     * <p>Information about the registered transit gateway multicast group members.</p>
-     */
     inline RegisterTransitGatewayMulticastGroupMembersResponse& WithRegisteredMulticastGroupMembers(TransitGatewayMulticastRegisteredGroupMembers&& value) { SetRegisteredMulticastGroupMembers(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline RegisterTransitGatewayMulticastGroupMembersResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline RegisterTransitGatewayMulticastGroupMembersResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TransitGatewayMulticastRegisteredGroupMembers m_registeredMulticastGroupMembers;

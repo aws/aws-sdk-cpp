@@ -38,87 +38,33 @@ namespace Model
     AWS_CODEGURUPROFILER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>One or 2 channels to report to when anomalies are detected.</p>
      */
     inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
-
-    /**
-     * <p>One or 2 channels to report to when anomalies are detected.</p>
-     */
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
-
-    /**
-     * <p>One or 2 channels to report to when anomalies are detected.</p>
-     */
     inline void SetChannels(const Aws::Vector<Channel>& value) { m_channelsHasBeenSet = true; m_channels = value; }
-
-    /**
-     * <p>One or 2 channels to report to when anomalies are detected.</p>
-     */
     inline void SetChannels(Aws::Vector<Channel>&& value) { m_channelsHasBeenSet = true; m_channels = std::move(value); }
-
-    /**
-     * <p>One or 2 channels to report to when anomalies are detected.</p>
-     */
     inline AddNotificationChannelsRequest& WithChannels(const Aws::Vector<Channel>& value) { SetChannels(value); return *this;}
-
-    /**
-     * <p>One or 2 channels to report to when anomalies are detected.</p>
-     */
     inline AddNotificationChannelsRequest& WithChannels(Aws::Vector<Channel>&& value) { SetChannels(std::move(value)); return *this;}
-
-    /**
-     * <p>One or 2 channels to report to when anomalies are detected.</p>
-     */
     inline AddNotificationChannelsRequest& AddChannels(const Channel& value) { m_channelsHasBeenSet = true; m_channels.push_back(value); return *this; }
-
-    /**
-     * <p>One or 2 channels to report to when anomalies are detected.</p>
-     */
     inline AddNotificationChannelsRequest& AddChannels(Channel&& value) { m_channelsHasBeenSet = true; m_channels.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the profiling group that we are setting up notifications for.</p>
      */
     inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
-
-    /**
-     * <p>The name of the profiling group that we are setting up notifications for.</p>
-     */
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the profiling group that we are setting up notifications for.</p>
-     */
     inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
-
-    /**
-     * <p>The name of the profiling group that we are setting up notifications for.</p>
-     */
     inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the profiling group that we are setting up notifications for.</p>
-     */
     inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the profiling group that we are setting up notifications for.</p>
-     */
     inline AddNotificationChannelsRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the profiling group that we are setting up notifications for.</p>
-     */
     inline AddNotificationChannelsRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the profiling group that we are setting up notifications for.</p>
-     */
     inline AddNotificationChannelsRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Channel> m_channels;

@@ -41,226 +41,84 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The time that the recommendation report generation task completes. </p>
      */
     inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
-
-    /**
-     * <p> The time that the recommendation report generation task completes. </p>
-     */
     inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
-
-    /**
-     * <p> The time that the recommendation report generation task completes. </p>
-     */
     inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
-
-    /**
-     * <p> The time that the recommendation report generation task completes. </p>
-     */
     inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
-
-    /**
-     * <p> The time that the recommendation report generation task completes. </p>
-     */
     inline RecommendationReportDetails& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-
-    /**
-     * <p> The time that the recommendation report generation task completes. </p>
-     */
     inline RecommendationReportDetails& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The S3 bucket where the report file is located. </p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
-
-    /**
-     * <p> The S3 bucket where the report file is located. </p>
-     */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-
-    /**
-     * <p> The S3 bucket where the report file is located. </p>
-     */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-
-    /**
-     * <p> The S3 bucket where the report file is located. </p>
-     */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-
-    /**
-     * <p> The S3 bucket where the report file is located. </p>
-     */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-
-    /**
-     * <p> The S3 bucket where the report file is located. </p>
-     */
     inline RecommendationReportDetails& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-
-    /**
-     * <p> The S3 bucket where the report file is located. </p>
-     */
     inline RecommendationReportDetails& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-
-    /**
-     * <p> The S3 bucket where the report file is located. </p>
-     */
     inline RecommendationReportDetails& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The Amazon S3 key name of the report file. </p>
      */
     inline const Aws::Vector<Aws::String>& GetS3Keys() const{ return m_s3Keys; }
-
-    /**
-     * <p> The Amazon S3 key name of the report file. </p>
-     */
     inline bool S3KeysHasBeenSet() const { return m_s3KeysHasBeenSet; }
-
-    /**
-     * <p> The Amazon S3 key name of the report file. </p>
-     */
     inline void SetS3Keys(const Aws::Vector<Aws::String>& value) { m_s3KeysHasBeenSet = true; m_s3Keys = value; }
-
-    /**
-     * <p> The Amazon S3 key name of the report file. </p>
-     */
     inline void SetS3Keys(Aws::Vector<Aws::String>&& value) { m_s3KeysHasBeenSet = true; m_s3Keys = std::move(value); }
-
-    /**
-     * <p> The Amazon S3 key name of the report file. </p>
-     */
     inline RecommendationReportDetails& WithS3Keys(const Aws::Vector<Aws::String>& value) { SetS3Keys(value); return *this;}
-
-    /**
-     * <p> The Amazon S3 key name of the report file. </p>
-     */
     inline RecommendationReportDetails& WithS3Keys(Aws::Vector<Aws::String>&& value) { SetS3Keys(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon S3 key name of the report file. </p>
-     */
     inline RecommendationReportDetails& AddS3Keys(const Aws::String& value) { m_s3KeysHasBeenSet = true; m_s3Keys.push_back(value); return *this; }
-
-    /**
-     * <p> The Amazon S3 key name of the report file. </p>
-     */
     inline RecommendationReportDetails& AddS3Keys(Aws::String&& value) { m_s3KeysHasBeenSet = true; m_s3Keys.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> The Amazon S3 key name of the report file. </p>
-     */
     inline RecommendationReportDetails& AddS3Keys(const char* value) { m_s3KeysHasBeenSet = true; m_s3Keys.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The time that the recommendation report generation task starts. </p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p> The time that the recommendation report generation task starts. </p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p> The time that the recommendation report generation task starts. </p>
-     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p> The time that the recommendation report generation task starts. </p>
-     */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p> The time that the recommendation report generation task starts. </p>
-     */
     inline RecommendationReportDetails& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p> The time that the recommendation report generation task starts. </p>
-     */
     inline RecommendationReportDetails& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The status of the recommendation report generation task. </p>
      */
     inline const RecommendationReportStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> The status of the recommendation report generation task. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> The status of the recommendation report generation task. </p>
-     */
     inline void SetStatus(const RecommendationReportStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> The status of the recommendation report generation task. </p>
-     */
     inline void SetStatus(RecommendationReportStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> The status of the recommendation report generation task. </p>
-     */
     inline RecommendationReportDetails& WithStatus(const RecommendationReportStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> The status of the recommendation report generation task. </p>
-     */
     inline RecommendationReportDetails& WithStatus(RecommendationReportStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The status message for recommendation report generation. </p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p> The status message for recommendation report generation. </p>
-     */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p> The status message for recommendation report generation. </p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p> The status message for recommendation report generation. </p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p> The status message for recommendation report generation. </p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p> The status message for recommendation report generation. </p>
-     */
     inline RecommendationReportDetails& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p> The status message for recommendation report generation. </p>
-     */
     inline RecommendationReportDetails& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p> The status message for recommendation report generation. </p>
-     */
     inline RecommendationReportDetails& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_completionTime;

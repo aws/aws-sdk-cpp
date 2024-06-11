@@ -46,84 +46,39 @@ namespace Model
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the number of days after creation that a recovery point is moved to
      * cold storage.</p>
      */
     inline long long GetMoveToColdStorageAfterDays() const{ return m_moveToColdStorageAfterDays; }
-
-    /**
-     * <p>Specifies the number of days after creation that a recovery point is moved to
-     * cold storage.</p>
-     */
     inline bool MoveToColdStorageAfterDaysHasBeenSet() const { return m_moveToColdStorageAfterDaysHasBeenSet; }
-
-    /**
-     * <p>Specifies the number of days after creation that a recovery point is moved to
-     * cold storage.</p>
-     */
     inline void SetMoveToColdStorageAfterDays(long long value) { m_moveToColdStorageAfterDaysHasBeenSet = true; m_moveToColdStorageAfterDays = value; }
-
-    /**
-     * <p>Specifies the number of days after creation that a recovery point is moved to
-     * cold storage.</p>
-     */
     inline Lifecycle& WithMoveToColdStorageAfterDays(long long value) { SetMoveToColdStorageAfterDays(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the number of days after creation that a recovery point is deleted.
      * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
      */
     inline long long GetDeleteAfterDays() const{ return m_deleteAfterDays; }
-
-    /**
-     * <p>Specifies the number of days after creation that a recovery point is deleted.
-     * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
-     */
     inline bool DeleteAfterDaysHasBeenSet() const { return m_deleteAfterDaysHasBeenSet; }
-
-    /**
-     * <p>Specifies the number of days after creation that a recovery point is deleted.
-     * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
-     */
     inline void SetDeleteAfterDays(long long value) { m_deleteAfterDaysHasBeenSet = true; m_deleteAfterDays = value; }
-
-    /**
-     * <p>Specifies the number of days after creation that a recovery point is deleted.
-     * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
-     */
     inline Lifecycle& WithDeleteAfterDays(long long value) { SetDeleteAfterDays(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Optional Boolean. If this is true, this setting will instruct your backup
      * plan to transition supported resources to archive (cold) storage tier in
      * accordance with your lifecycle settings.</p>
      */
     inline bool GetOptInToArchiveForSupportedResources() const{ return m_optInToArchiveForSupportedResources; }
-
-    /**
-     * <p>Optional Boolean. If this is true, this setting will instruct your backup
-     * plan to transition supported resources to archive (cold) storage tier in
-     * accordance with your lifecycle settings.</p>
-     */
     inline bool OptInToArchiveForSupportedResourcesHasBeenSet() const { return m_optInToArchiveForSupportedResourcesHasBeenSet; }
-
-    /**
-     * <p>Optional Boolean. If this is true, this setting will instruct your backup
-     * plan to transition supported resources to archive (cold) storage tier in
-     * accordance with your lifecycle settings.</p>
-     */
     inline void SetOptInToArchiveForSupportedResources(bool value) { m_optInToArchiveForSupportedResourcesHasBeenSet = true; m_optInToArchiveForSupportedResources = value; }
-
-    /**
-     * <p>Optional Boolean. If this is true, this setting will instruct your backup
-     * plan to transition supported resources to archive (cold) storage tier in
-     * accordance with your lifecycle settings.</p>
-     */
     inline Lifecycle& WithOptInToArchiveForSupportedResources(bool value) { SetOptInToArchiveForSupportedResources(value); return *this;}
-
+    ///@}
   private:
 
     long long m_moveToColdStorageAfterDays;

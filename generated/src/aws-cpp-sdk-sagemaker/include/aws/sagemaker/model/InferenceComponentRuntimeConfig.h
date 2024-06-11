@@ -36,30 +36,16 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of runtime copies of the model container to deploy with the
      * inference component. Each copy can serve inference requests.</p>
      */
     inline int GetCopyCount() const{ return m_copyCount; }
-
-    /**
-     * <p>The number of runtime copies of the model container to deploy with the
-     * inference component. Each copy can serve inference requests.</p>
-     */
     inline bool CopyCountHasBeenSet() const { return m_copyCountHasBeenSet; }
-
-    /**
-     * <p>The number of runtime copies of the model container to deploy with the
-     * inference component. Each copy can serve inference requests.</p>
-     */
     inline void SetCopyCount(int value) { m_copyCountHasBeenSet = true; m_copyCount = value; }
-
-    /**
-     * <p>The number of runtime copies of the model container to deploy with the
-     * inference component. Each copy can serve inference requests.</p>
-     */
     inline InferenceComponentRuntimeConfig& WithCopyCount(int value) { SetCopyCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_copyCount;

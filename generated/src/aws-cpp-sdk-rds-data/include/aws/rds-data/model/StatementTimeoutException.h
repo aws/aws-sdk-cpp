@@ -37,75 +37,30 @@ namespace Model
     AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The error message returned by this <code>StatementTimeoutException</code>
      * error.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The error message returned by this <code>StatementTimeoutException</code>
-     * error.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The error message returned by this <code>StatementTimeoutException</code>
-     * error.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The error message returned by this <code>StatementTimeoutException</code>
-     * error.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The error message returned by this <code>StatementTimeoutException</code>
-     * error.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The error message returned by this <code>StatementTimeoutException</code>
-     * error.</p>
-     */
     inline StatementTimeoutException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The error message returned by this <code>StatementTimeoutException</code>
-     * error.</p>
-     */
     inline StatementTimeoutException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message returned by this <code>StatementTimeoutException</code>
-     * error.</p>
-     */
     inline StatementTimeoutException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The database connection ID that executed the SQL statement.</p>
      */
     inline long long GetDbConnectionId() const{ return m_dbConnectionId; }
-
-    /**
-     * <p>The database connection ID that executed the SQL statement.</p>
-     */
     inline bool DbConnectionIdHasBeenSet() const { return m_dbConnectionIdHasBeenSet; }
-
-    /**
-     * <p>The database connection ID that executed the SQL statement.</p>
-     */
     inline void SetDbConnectionId(long long value) { m_dbConnectionIdHasBeenSet = true; m_dbConnectionId = value; }
-
-    /**
-     * <p>The database connection ID that executed the SQL statement.</p>
-     */
     inline StatementTimeoutException& WithDbConnectionId(long long value) { SetDbConnectionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

@@ -35,99 +35,42 @@ namespace Model
     AWS_ECS_API UpdateContainerInstancesStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of container instances.</p>
      */
     inline const Aws::Vector<ContainerInstance>& GetContainerInstances() const{ return m_containerInstances; }
-
-    /**
-     * <p>The list of container instances.</p>
-     */
     inline void SetContainerInstances(const Aws::Vector<ContainerInstance>& value) { m_containerInstances = value; }
-
-    /**
-     * <p>The list of container instances.</p>
-     */
     inline void SetContainerInstances(Aws::Vector<ContainerInstance>&& value) { m_containerInstances = std::move(value); }
-
-    /**
-     * <p>The list of container instances.</p>
-     */
     inline UpdateContainerInstancesStateResult& WithContainerInstances(const Aws::Vector<ContainerInstance>& value) { SetContainerInstances(value); return *this;}
-
-    /**
-     * <p>The list of container instances.</p>
-     */
     inline UpdateContainerInstancesStateResult& WithContainerInstances(Aws::Vector<ContainerInstance>&& value) { SetContainerInstances(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of container instances.</p>
-     */
     inline UpdateContainerInstancesStateResult& AddContainerInstances(const ContainerInstance& value) { m_containerInstances.push_back(value); return *this; }
-
-    /**
-     * <p>The list of container instances.</p>
-     */
     inline UpdateContainerInstancesStateResult& AddContainerInstances(ContainerInstance&& value) { m_containerInstances.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Any failures associated with the call.</p>
      */
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline UpdateContainerInstancesStateResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline UpdateContainerInstancesStateResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline UpdateContainerInstancesStateResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline UpdateContainerInstancesStateResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateContainerInstancesStateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateContainerInstancesStateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateContainerInstancesStateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ContainerInstance> m_containerInstances;

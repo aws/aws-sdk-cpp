@@ -39,46 +39,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of a segment attribute.</p>
      */
     inline const Aws::String& GetValueString() const{ return m_valueString; }
-
-    /**
-     * <p>The value of a segment attribute.</p>
-     */
     inline bool ValueStringHasBeenSet() const { return m_valueStringHasBeenSet; }
-
-    /**
-     * <p>The value of a segment attribute.</p>
-     */
     inline void SetValueString(const Aws::String& value) { m_valueStringHasBeenSet = true; m_valueString = value; }
-
-    /**
-     * <p>The value of a segment attribute.</p>
-     */
     inline void SetValueString(Aws::String&& value) { m_valueStringHasBeenSet = true; m_valueString = std::move(value); }
-
-    /**
-     * <p>The value of a segment attribute.</p>
-     */
     inline void SetValueString(const char* value) { m_valueStringHasBeenSet = true; m_valueString.assign(value); }
-
-    /**
-     * <p>The value of a segment attribute.</p>
-     */
     inline SegmentAttributeValue& WithValueString(const Aws::String& value) { SetValueString(value); return *this;}
-
-    /**
-     * <p>The value of a segment attribute.</p>
-     */
     inline SegmentAttributeValue& WithValueString(Aws::String&& value) { SetValueString(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of a segment attribute.</p>
-     */
     inline SegmentAttributeValue& WithValueString(const char* value) { SetValueString(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_valueString;

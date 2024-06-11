@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreateCodeRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the new repository.</p>
      */
     inline const Aws::String& GetCodeRepositoryArn() const{ return m_codeRepositoryArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new repository.</p>
-     */
     inline void SetCodeRepositoryArn(const Aws::String& value) { m_codeRepositoryArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new repository.</p>
-     */
     inline void SetCodeRepositoryArn(Aws::String&& value) { m_codeRepositoryArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new repository.</p>
-     */
     inline void SetCodeRepositoryArn(const char* value) { m_codeRepositoryArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new repository.</p>
-     */
     inline CreateCodeRepositoryResult& WithCodeRepositoryArn(const Aws::String& value) { SetCodeRepositoryArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new repository.</p>
-     */
     inline CreateCodeRepositoryResult& WithCodeRepositoryArn(Aws::String&& value) { SetCodeRepositoryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new repository.</p>
-     */
     inline CreateCodeRepositoryResult& WithCodeRepositoryArn(const char* value) { SetCodeRepositoryArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateCodeRepositoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateCodeRepositoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateCodeRepositoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_codeRepositoryArn;

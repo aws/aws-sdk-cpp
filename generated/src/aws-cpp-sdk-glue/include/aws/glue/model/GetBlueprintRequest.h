@@ -34,88 +34,39 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the blueprint.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the blueprint.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the blueprint.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the blueprint.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the blueprint.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the blueprint.</p>
-     */
     inline GetBlueprintRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the blueprint.</p>
-     */
     inline GetBlueprintRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the blueprint.</p>
-     */
     inline GetBlueprintRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether or not to include the blueprint in the response.</p>
      */
     inline bool GetIncludeBlueprint() const{ return m_includeBlueprint; }
-
-    /**
-     * <p>Specifies whether or not to include the blueprint in the response.</p>
-     */
     inline bool IncludeBlueprintHasBeenSet() const { return m_includeBlueprintHasBeenSet; }
-
-    /**
-     * <p>Specifies whether or not to include the blueprint in the response.</p>
-     */
     inline void SetIncludeBlueprint(bool value) { m_includeBlueprintHasBeenSet = true; m_includeBlueprint = value; }
-
-    /**
-     * <p>Specifies whether or not to include the blueprint in the response.</p>
-     */
     inline GetBlueprintRequest& WithIncludeBlueprint(bool value) { SetIncludeBlueprint(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether or not to include the parameter specification.</p>
      */
     inline bool GetIncludeParameterSpec() const{ return m_includeParameterSpec; }
-
-    /**
-     * <p>Specifies whether or not to include the parameter specification.</p>
-     */
     inline bool IncludeParameterSpecHasBeenSet() const { return m_includeParameterSpecHasBeenSet; }
-
-    /**
-     * <p>Specifies whether or not to include the parameter specification.</p>
-     */
     inline void SetIncludeParameterSpec(bool value) { m_includeParameterSpecHasBeenSet = true; m_includeParameterSpec = value; }
-
-    /**
-     * <p>Specifies whether or not to include the parameter specification.</p>
-     */
     inline GetBlueprintRequest& WithIncludeParameterSpec(bool value) { SetIncludeParameterSpec(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

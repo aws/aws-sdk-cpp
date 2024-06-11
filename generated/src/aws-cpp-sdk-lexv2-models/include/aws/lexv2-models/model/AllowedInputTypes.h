@@ -35,47 +35,25 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether audio input is allowed.</p>
      */
     inline bool GetAllowAudioInput() const{ return m_allowAudioInput; }
-
-    /**
-     * <p>Indicates whether audio input is allowed.</p>
-     */
     inline bool AllowAudioInputHasBeenSet() const { return m_allowAudioInputHasBeenSet; }
-
-    /**
-     * <p>Indicates whether audio input is allowed.</p>
-     */
     inline void SetAllowAudioInput(bool value) { m_allowAudioInputHasBeenSet = true; m_allowAudioInput = value; }
-
-    /**
-     * <p>Indicates whether audio input is allowed.</p>
-     */
     inline AllowedInputTypes& WithAllowAudioInput(bool value) { SetAllowAudioInput(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether DTMF input is allowed.</p>
      */
     inline bool GetAllowDTMFInput() const{ return m_allowDTMFInput; }
-
-    /**
-     * <p>Indicates whether DTMF input is allowed.</p>
-     */
     inline bool AllowDTMFInputHasBeenSet() const { return m_allowDTMFInputHasBeenSet; }
-
-    /**
-     * <p>Indicates whether DTMF input is allowed.</p>
-     */
     inline void SetAllowDTMFInput(bool value) { m_allowDTMFInputHasBeenSet = true; m_allowDTMFInput = value; }
-
-    /**
-     * <p>Indicates whether DTMF input is allowed.</p>
-     */
     inline AllowedInputTypes& WithAllowDTMFInput(bool value) { SetAllowDTMFInput(value); return *this;}
-
+    ///@}
   private:
 
     bool m_allowAudioInput;

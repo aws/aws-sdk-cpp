@@ -43,36 +43,17 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The operating mode of advanced security features in your user pool.</p>
      */
     inline const AdvancedSecurityModeType& GetAdvancedSecurityMode() const{ return m_advancedSecurityMode; }
-
-    /**
-     * <p>The operating mode of advanced security features in your user pool.</p>
-     */
     inline bool AdvancedSecurityModeHasBeenSet() const { return m_advancedSecurityModeHasBeenSet; }
-
-    /**
-     * <p>The operating mode of advanced security features in your user pool.</p>
-     */
     inline void SetAdvancedSecurityMode(const AdvancedSecurityModeType& value) { m_advancedSecurityModeHasBeenSet = true; m_advancedSecurityMode = value; }
-
-    /**
-     * <p>The operating mode of advanced security features in your user pool.</p>
-     */
     inline void SetAdvancedSecurityMode(AdvancedSecurityModeType&& value) { m_advancedSecurityModeHasBeenSet = true; m_advancedSecurityMode = std::move(value); }
-
-    /**
-     * <p>The operating mode of advanced security features in your user pool.</p>
-     */
     inline UserPoolAddOnsType& WithAdvancedSecurityMode(const AdvancedSecurityModeType& value) { SetAdvancedSecurityMode(value); return *this;}
-
-    /**
-     * <p>The operating mode of advanced security features in your user pool.</p>
-     */
     inline UserPoolAddOnsType& WithAdvancedSecurityMode(AdvancedSecurityModeType&& value) { SetAdvancedSecurityMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AdvancedSecurityModeType m_advancedSecurityMode;

@@ -37,63 +37,29 @@ namespace Model
     AWS_STORAGEGATEWAY_API CreateSMBFileShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
      */
     inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
-     */
     inline void SetFileShareARN(const Aws::String& value) { m_fileShareARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
-     */
     inline void SetFileShareARN(Aws::String&& value) { m_fileShareARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
-     */
     inline void SetFileShareARN(const char* value) { m_fileShareARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
-     */
     inline CreateSMBFileShareResult& WithFileShareARN(const Aws::String& value) { SetFileShareARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
-     */
     inline CreateSMBFileShareResult& WithFileShareARN(Aws::String&& value) { SetFileShareARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
-     */
     inline CreateSMBFileShareResult& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateSMBFileShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateSMBFileShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateSMBFileShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileShareARN;

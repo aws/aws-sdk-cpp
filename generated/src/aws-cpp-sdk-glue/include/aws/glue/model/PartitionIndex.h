@@ -38,92 +38,34 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The keys for the partition index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeys() const{ return m_keys; }
-
-    /**
-     * <p>The keys for the partition index.</p>
-     */
     inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
-
-    /**
-     * <p>The keys for the partition index.</p>
-     */
     inline void SetKeys(const Aws::Vector<Aws::String>& value) { m_keysHasBeenSet = true; m_keys = value; }
-
-    /**
-     * <p>The keys for the partition index.</p>
-     */
     inline void SetKeys(Aws::Vector<Aws::String>&& value) { m_keysHasBeenSet = true; m_keys = std::move(value); }
-
-    /**
-     * <p>The keys for the partition index.</p>
-     */
     inline PartitionIndex& WithKeys(const Aws::Vector<Aws::String>& value) { SetKeys(value); return *this;}
-
-    /**
-     * <p>The keys for the partition index.</p>
-     */
     inline PartitionIndex& WithKeys(Aws::Vector<Aws::String>&& value) { SetKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>The keys for the partition index.</p>
-     */
     inline PartitionIndex& AddKeys(const Aws::String& value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
-
-    /**
-     * <p>The keys for the partition index.</p>
-     */
     inline PartitionIndex& AddKeys(Aws::String&& value) { m_keysHasBeenSet = true; m_keys.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The keys for the partition index.</p>
-     */
     inline PartitionIndex& AddKeys(const char* value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the partition index.</p>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
-
-    /**
-     * <p>The name of the partition index.</p>
-     */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-
-    /**
-     * <p>The name of the partition index.</p>
-     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-
-    /**
-     * <p>The name of the partition index.</p>
-     */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-
-    /**
-     * <p>The name of the partition index.</p>
-     */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-
-    /**
-     * <p>The name of the partition index.</p>
-     */
     inline PartitionIndex& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The name of the partition index.</p>
-     */
     inline PartitionIndex& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the partition index.</p>
-     */
     inline PartitionIndex& WithIndexName(const char* value) { SetIndexName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_keys;

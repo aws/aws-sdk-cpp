@@ -38,43 +38,25 @@ namespace Model
     AWS_APPMESH_API UpdateMeshResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const MeshData& GetMesh() const{ return m_mesh; }
-
-    
     inline void SetMesh(const MeshData& value) { m_mesh = value; }
-
-    
     inline void SetMesh(MeshData&& value) { m_mesh = std::move(value); }
-
-    
     inline UpdateMeshResult& WithMesh(const MeshData& value) { SetMesh(value); return *this;}
-
-    
     inline UpdateMeshResult& WithMesh(MeshData&& value) { SetMesh(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateMeshResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateMeshResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateMeshResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MeshData m_mesh;

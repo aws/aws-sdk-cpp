@@ -40,88 +40,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
     inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline DisableVgwRoutePropagationRequest& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline DisableVgwRoutePropagationRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline DisableVgwRoutePropagationRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the route table.</p>
      */
     inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
     inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
     inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
     inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
     inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
     inline DisableVgwRoutePropagationRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
     inline DisableVgwRoutePropagationRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
     inline DisableVgwRoutePropagationRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -129,31 +76,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DisableVgwRoutePropagationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayId;

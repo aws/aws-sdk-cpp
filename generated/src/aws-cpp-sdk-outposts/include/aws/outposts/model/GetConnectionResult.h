@@ -33,89 +33,40 @@ namespace Model
     AWS_OUTPOSTS_API GetConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The ID of the connection. </p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
-
-    /**
-     * <p> The ID of the connection. </p>
-     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionId = value; }
-
-    /**
-     * <p> The ID of the connection. </p>
-     */
     inline void SetConnectionId(Aws::String&& value) { m_connectionId = std::move(value); }
-
-    /**
-     * <p> The ID of the connection. </p>
-     */
     inline void SetConnectionId(const char* value) { m_connectionId.assign(value); }
-
-    /**
-     * <p> The ID of the connection. </p>
-     */
     inline GetConnectionResult& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-
-    /**
-     * <p> The ID of the connection. </p>
-     */
     inline GetConnectionResult& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the connection. </p>
-     */
     inline GetConnectionResult& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Information about the connection. </p>
      */
     inline const ConnectionDetails& GetConnectionDetails() const{ return m_connectionDetails; }
-
-    /**
-     * <p> Information about the connection. </p>
-     */
     inline void SetConnectionDetails(const ConnectionDetails& value) { m_connectionDetails = value; }
-
-    /**
-     * <p> Information about the connection. </p>
-     */
     inline void SetConnectionDetails(ConnectionDetails&& value) { m_connectionDetails = std::move(value); }
-
-    /**
-     * <p> Information about the connection. </p>
-     */
     inline GetConnectionResult& WithConnectionDetails(const ConnectionDetails& value) { SetConnectionDetails(value); return *this;}
-
-    /**
-     * <p> Information about the connection. </p>
-     */
     inline GetConnectionResult& WithConnectionDetails(ConnectionDetails&& value) { SetConnectionDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectionId;

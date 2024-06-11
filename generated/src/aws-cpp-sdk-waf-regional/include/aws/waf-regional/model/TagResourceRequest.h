@@ -36,87 +36,33 @@ namespace Model
     AWS_WAFREGIONAL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
-
-    /**
-     * <p/>
-     */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-
-    /**
-     * <p/>
-     */
     inline TagResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline TagResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline TagResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p/>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p/>
-     */
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceARN;

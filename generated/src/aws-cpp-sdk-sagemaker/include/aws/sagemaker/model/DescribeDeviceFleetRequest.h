@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the fleet.</p>
      */
     inline const Aws::String& GetDeviceFleetName() const{ return m_deviceFleetName; }
-
-    /**
-     * <p>The name of the fleet.</p>
-     */
     inline bool DeviceFleetNameHasBeenSet() const { return m_deviceFleetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the fleet.</p>
-     */
     inline void SetDeviceFleetName(const Aws::String& value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName = value; }
-
-    /**
-     * <p>The name of the fleet.</p>
-     */
     inline void SetDeviceFleetName(Aws::String&& value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName = std::move(value); }
-
-    /**
-     * <p>The name of the fleet.</p>
-     */
     inline void SetDeviceFleetName(const char* value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName.assign(value); }
-
-    /**
-     * <p>The name of the fleet.</p>
-     */
     inline DescribeDeviceFleetRequest& WithDeviceFleetName(const Aws::String& value) { SetDeviceFleetName(value); return *this;}
-
-    /**
-     * <p>The name of the fleet.</p>
-     */
     inline DescribeDeviceFleetRequest& WithDeviceFleetName(Aws::String&& value) { SetDeviceFleetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the fleet.</p>
-     */
     inline DescribeDeviceFleetRequest& WithDeviceFleetName(const char* value) { SetDeviceFleetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceFleetName;

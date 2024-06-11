@@ -40,63 +40,29 @@ namespace Model
     AWS_OPSWORKS_API DescribeVolumesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of volume IDs.</p>
      */
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
-
-    /**
-     * <p>An array of volume IDs.</p>
-     */
     inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumes = value; }
-
-    /**
-     * <p>An array of volume IDs.</p>
-     */
     inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumes = std::move(value); }
-
-    /**
-     * <p>An array of volume IDs.</p>
-     */
     inline DescribeVolumesResult& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
-
-    /**
-     * <p>An array of volume IDs.</p>
-     */
     inline DescribeVolumesResult& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of volume IDs.</p>
-     */
     inline DescribeVolumesResult& AddVolumes(const Volume& value) { m_volumes.push_back(value); return *this; }
-
-    /**
-     * <p>An array of volume IDs.</p>
-     */
     inline DescribeVolumesResult& AddVolumes(Volume&& value) { m_volumes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeVolumesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeVolumesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeVolumesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Volume> m_volumes;

@@ -38,128 +38,46 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the archive.</p>
      */
     inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
-
-    /**
-     * <p>The identifier of the archive.</p>
-     */
     inline bool ArchiveIdHasBeenSet() const { return m_archiveIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the archive.</p>
-     */
     inline void SetArchiveId(const Aws::String& value) { m_archiveIdHasBeenSet = true; m_archiveId = value; }
-
-    /**
-     * <p>The identifier of the archive.</p>
-     */
     inline void SetArchiveId(Aws::String&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::move(value); }
-
-    /**
-     * <p>The identifier of the archive.</p>
-     */
     inline void SetArchiveId(const char* value) { m_archiveIdHasBeenSet = true; m_archiveId.assign(value); }
-
-    /**
-     * <p>The identifier of the archive.</p>
-     */
     inline ListArchiveSearchesRequest& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-
-    /**
-     * <p>The identifier of the archive.</p>
-     */
     inline ListArchiveSearchesRequest& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the archive.</p>
-     */
     inline ListArchiveSearchesRequest& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If NextToken is returned, there are more results available. The value of
      * NextToken is a unique pagination token for each page. Make the call again using
      * the returned token to retrieve the next page. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page. </p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page. </p>
-     */
     inline ListArchiveSearchesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page. </p>
-     */
     inline ListArchiveSearchesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page. </p>
-     */
     inline ListArchiveSearchesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of archive search jobs that are returned per call. You can
      * use NextToken to obtain further pages of archives. </p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
-
-    /**
-     * <p>The maximum number of archive search jobs that are returned per call. You can
-     * use NextToken to obtain further pages of archives. </p>
-     */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-
-    /**
-     * <p>The maximum number of archive search jobs that are returned per call. You can
-     * use NextToken to obtain further pages of archives. </p>
-     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-
-    /**
-     * <p>The maximum number of archive search jobs that are returned per call. You can
-     * use NextToken to obtain further pages of archives. </p>
-     */
     inline ListArchiveSearchesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_archiveId;

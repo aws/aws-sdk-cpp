@@ -36,54 +36,20 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Name of the OpenSearch Service domain configuration that you want to
      * describe.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>Name of the OpenSearch Service domain configuration that you want to
-     * describe.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>Name of the OpenSearch Service domain configuration that you want to
-     * describe.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>Name of the OpenSearch Service domain configuration that you want to
-     * describe.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>Name of the OpenSearch Service domain configuration that you want to
-     * describe.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>Name of the OpenSearch Service domain configuration that you want to
-     * describe.</p>
-     */
     inline DescribeDomainConfigRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>Name of the OpenSearch Service domain configuration that you want to
-     * describe.</p>
-     */
     inline DescribeDomainConfigRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the OpenSearch Service domain configuration that you want to
-     * describe.</p>
-     */
     inline DescribeDomainConfigRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

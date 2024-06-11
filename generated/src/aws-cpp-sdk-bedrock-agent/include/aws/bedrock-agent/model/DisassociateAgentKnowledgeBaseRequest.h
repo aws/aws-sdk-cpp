@@ -32,136 +32,48 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the agent from which to disassociate the knowledge
      * base.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
-
-    /**
-     * <p>The unique identifier of the agent from which to disassociate the knowledge
-     * base.</p>
-     */
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the agent from which to disassociate the knowledge
-     * base.</p>
-     */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-
-    /**
-     * <p>The unique identifier of the agent from which to disassociate the knowledge
-     * base.</p>
-     */
     inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the agent from which to disassociate the knowledge
-     * base.</p>
-     */
     inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the agent from which to disassociate the knowledge
-     * base.</p>
-     */
     inline DisassociateAgentKnowledgeBaseRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the agent from which to disassociate the knowledge
-     * base.</p>
-     */
     inline DisassociateAgentKnowledgeBaseRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the agent from which to disassociate the knowledge
-     * base.</p>
-     */
     inline DisassociateAgentKnowledgeBaseRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the agent from which to disassociate the knowledge base.</p>
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
-
-    /**
-     * <p>The version of the agent from which to disassociate the knowledge base.</p>
-     */
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the agent from which to disassociate the knowledge base.</p>
-     */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-
-    /**
-     * <p>The version of the agent from which to disassociate the knowledge base.</p>
-     */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-
-    /**
-     * <p>The version of the agent from which to disassociate the knowledge base.</p>
-     */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-
-    /**
-     * <p>The version of the agent from which to disassociate the knowledge base.</p>
-     */
     inline DisassociateAgentKnowledgeBaseRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-
-    /**
-     * <p>The version of the agent from which to disassociate the knowledge base.</p>
-     */
     inline DisassociateAgentKnowledgeBaseRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the agent from which to disassociate the knowledge base.</p>
-     */
     inline DisassociateAgentKnowledgeBaseRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the knowledge base to disassociate.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
-
-    /**
-     * <p>The unique identifier of the knowledge base to disassociate.</p>
-     */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the knowledge base to disassociate.</p>
-     */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-
-    /**
-     * <p>The unique identifier of the knowledge base to disassociate.</p>
-     */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the knowledge base to disassociate.</p>
-     */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the knowledge base to disassociate.</p>
-     */
     inline DisassociateAgentKnowledgeBaseRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the knowledge base to disassociate.</p>
-     */
     inline DisassociateAgentKnowledgeBaseRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the knowledge base to disassociate.</p>
-     */
     inline DisassociateAgentKnowledgeBaseRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agentId;

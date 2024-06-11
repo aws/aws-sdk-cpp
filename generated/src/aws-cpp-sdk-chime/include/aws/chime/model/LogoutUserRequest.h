@@ -32,87 +32,33 @@ namespace Model
     AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Chime account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline LogoutUserRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline LogoutUserRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline LogoutUserRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The user ID.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
-
-    /**
-     * <p>The user ID.</p>
-     */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-
-    /**
-     * <p>The user ID.</p>
-     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-
-    /**
-     * <p>The user ID.</p>
-     */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-
-    /**
-     * <p>The user ID.</p>
-     */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-
-    /**
-     * <p>The user ID.</p>
-     */
     inline LogoutUserRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-
-    /**
-     * <p>The user ID.</p>
-     */
     inline LogoutUserRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-
-    /**
-     * <p>The user ID.</p>
-     */
     inline LogoutUserRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

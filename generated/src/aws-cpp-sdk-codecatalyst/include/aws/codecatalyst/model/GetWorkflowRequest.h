@@ -32,136 +32,48 @@ namespace Model
     AWS_CODECATALYST_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the space.</p>
      */
     inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline GetWorkflowRequest& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline GetWorkflowRequest& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline GetWorkflowRequest& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the workflow. To rerieve a list of workflow IDs, use
      * <a>ListWorkflows</a>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the workflow. To rerieve a list of workflow IDs, use
-     * <a>ListWorkflows</a>.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the workflow. To rerieve a list of workflow IDs, use
-     * <a>ListWorkflows</a>.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the workflow. To rerieve a list of workflow IDs, use
-     * <a>ListWorkflows</a>.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the workflow. To rerieve a list of workflow IDs, use
-     * <a>ListWorkflows</a>.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the workflow. To rerieve a list of workflow IDs, use
-     * <a>ListWorkflows</a>.</p>
-     */
     inline GetWorkflowRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the workflow. To rerieve a list of workflow IDs, use
-     * <a>ListWorkflows</a>.</p>
-     */
     inline GetWorkflowRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workflow. To rerieve a list of workflow IDs, use
-     * <a>ListWorkflows</a>.</p>
-     */
     inline GetWorkflowRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the project in the space.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline GetWorkflowRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline GetWorkflowRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline GetWorkflowRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_spaceName;

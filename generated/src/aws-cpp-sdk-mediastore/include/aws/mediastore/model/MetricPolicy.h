@@ -46,37 +46,19 @@ namespace Model
     AWS_MEDIASTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A setting to enable or disable metrics at the container level.</p>
      */
     inline const ContainerLevelMetrics& GetContainerLevelMetrics() const{ return m_containerLevelMetrics; }
-
-    /**
-     * <p>A setting to enable or disable metrics at the container level.</p>
-     */
     inline bool ContainerLevelMetricsHasBeenSet() const { return m_containerLevelMetricsHasBeenSet; }
-
-    /**
-     * <p>A setting to enable or disable metrics at the container level.</p>
-     */
     inline void SetContainerLevelMetrics(const ContainerLevelMetrics& value) { m_containerLevelMetricsHasBeenSet = true; m_containerLevelMetrics = value; }
-
-    /**
-     * <p>A setting to enable or disable metrics at the container level.</p>
-     */
     inline void SetContainerLevelMetrics(ContainerLevelMetrics&& value) { m_containerLevelMetricsHasBeenSet = true; m_containerLevelMetrics = std::move(value); }
-
-    /**
-     * <p>A setting to enable or disable metrics at the container level.</p>
-     */
     inline MetricPolicy& WithContainerLevelMetrics(const ContainerLevelMetrics& value) { SetContainerLevelMetrics(value); return *this;}
-
-    /**
-     * <p>A setting to enable or disable metrics at the container level.</p>
-     */
     inline MetricPolicy& WithContainerLevelMetrics(ContainerLevelMetrics&& value) { SetContainerLevelMetrics(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A parameter that holds an array of rules that enable metrics at the object
      * level. This parameter is optional, but if you choose to include it, you must
@@ -86,77 +68,14 @@ namespace Model
      * a quota increase</a> to allow up to 300 rules per policy.</p>
      */
     inline const Aws::Vector<MetricPolicyRule>& GetMetricPolicyRules() const{ return m_metricPolicyRules; }
-
-    /**
-     * <p>A parameter that holds an array of rules that enable metrics at the object
-     * level. This parameter is optional, but if you choose to include it, you must
-     * also include at least one rule. By default, you can include up to five rules.
-     * You can also <a
-     * href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request
-     * a quota increase</a> to allow up to 300 rules per policy.</p>
-     */
     inline bool MetricPolicyRulesHasBeenSet() const { return m_metricPolicyRulesHasBeenSet; }
-
-    /**
-     * <p>A parameter that holds an array of rules that enable metrics at the object
-     * level. This parameter is optional, but if you choose to include it, you must
-     * also include at least one rule. By default, you can include up to five rules.
-     * You can also <a
-     * href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request
-     * a quota increase</a> to allow up to 300 rules per policy.</p>
-     */
     inline void SetMetricPolicyRules(const Aws::Vector<MetricPolicyRule>& value) { m_metricPolicyRulesHasBeenSet = true; m_metricPolicyRules = value; }
-
-    /**
-     * <p>A parameter that holds an array of rules that enable metrics at the object
-     * level. This parameter is optional, but if you choose to include it, you must
-     * also include at least one rule. By default, you can include up to five rules.
-     * You can also <a
-     * href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request
-     * a quota increase</a> to allow up to 300 rules per policy.</p>
-     */
     inline void SetMetricPolicyRules(Aws::Vector<MetricPolicyRule>&& value) { m_metricPolicyRulesHasBeenSet = true; m_metricPolicyRules = std::move(value); }
-
-    /**
-     * <p>A parameter that holds an array of rules that enable metrics at the object
-     * level. This parameter is optional, but if you choose to include it, you must
-     * also include at least one rule. By default, you can include up to five rules.
-     * You can also <a
-     * href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request
-     * a quota increase</a> to allow up to 300 rules per policy.</p>
-     */
     inline MetricPolicy& WithMetricPolicyRules(const Aws::Vector<MetricPolicyRule>& value) { SetMetricPolicyRules(value); return *this;}
-
-    /**
-     * <p>A parameter that holds an array of rules that enable metrics at the object
-     * level. This parameter is optional, but if you choose to include it, you must
-     * also include at least one rule. By default, you can include up to five rules.
-     * You can also <a
-     * href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request
-     * a quota increase</a> to allow up to 300 rules per policy.</p>
-     */
     inline MetricPolicy& WithMetricPolicyRules(Aws::Vector<MetricPolicyRule>&& value) { SetMetricPolicyRules(std::move(value)); return *this;}
-
-    /**
-     * <p>A parameter that holds an array of rules that enable metrics at the object
-     * level. This parameter is optional, but if you choose to include it, you must
-     * also include at least one rule. By default, you can include up to five rules.
-     * You can also <a
-     * href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request
-     * a quota increase</a> to allow up to 300 rules per policy.</p>
-     */
     inline MetricPolicy& AddMetricPolicyRules(const MetricPolicyRule& value) { m_metricPolicyRulesHasBeenSet = true; m_metricPolicyRules.push_back(value); return *this; }
-
-    /**
-     * <p>A parameter that holds an array of rules that enable metrics at the object
-     * level. This parameter is optional, but if you choose to include it, you must
-     * also include at least one rule. By default, you can include up to five rules.
-     * You can also <a
-     * href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request
-     * a quota increase</a> to allow up to 300 rules per policy.</p>
-     */
     inline MetricPolicy& AddMetricPolicyRules(MetricPolicyRule&& value) { m_metricPolicyRulesHasBeenSet = true; m_metricPolicyRules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     ContainerLevelMetrics m_containerLevelMetrics;

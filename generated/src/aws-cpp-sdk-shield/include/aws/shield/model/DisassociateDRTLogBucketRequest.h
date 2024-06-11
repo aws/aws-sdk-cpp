@@ -34,46 +34,19 @@ namespace Model
     AWS_SHIELD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
      */
     inline const Aws::String& GetLogBucket() const{ return m_logBucket; }
-
-    /**
-     * <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
-     */
     inline bool LogBucketHasBeenSet() const { return m_logBucketHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
-     */
     inline void SetLogBucket(const Aws::String& value) { m_logBucketHasBeenSet = true; m_logBucket = value; }
-
-    /**
-     * <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
-     */
     inline void SetLogBucket(Aws::String&& value) { m_logBucketHasBeenSet = true; m_logBucket = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
-     */
     inline void SetLogBucket(const char* value) { m_logBucketHasBeenSet = true; m_logBucket.assign(value); }
-
-    /**
-     * <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
-     */
     inline DisassociateDRTLogBucketRequest& WithLogBucket(const Aws::String& value) { SetLogBucket(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
-     */
     inline DisassociateDRTLogBucketRequest& WithLogBucket(Aws::String&& value) { SetLogBucket(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
-     */
     inline DisassociateDRTLogBucketRequest& WithLogBucket(const char* value) { SetLogBucket(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_logBucket;

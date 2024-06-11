@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API CreateCoipCidrResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p> Information about a range of customer-owned IP addresses. </p>
      */
     inline const CoipCidr& GetCoipCidr() const{ return m_coipCidr; }
-
-    /**
-     * <p> Information about a range of customer-owned IP addresses. </p>
-     */
     inline void SetCoipCidr(const CoipCidr& value) { m_coipCidr = value; }
-
-    /**
-     * <p> Information about a range of customer-owned IP addresses. </p>
-     */
     inline void SetCoipCidr(CoipCidr&& value) { m_coipCidr = std::move(value); }
-
-    /**
-     * <p> Information about a range of customer-owned IP addresses. </p>
-     */
     inline CreateCoipCidrResponse& WithCoipCidr(const CoipCidr& value) { SetCoipCidr(value); return *this;}
-
-    /**
-     * <p> Information about a range of customer-owned IP addresses. </p>
-     */
     inline CreateCoipCidrResponse& WithCoipCidr(CoipCidr&& value) { SetCoipCidr(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateCoipCidrResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateCoipCidrResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CoipCidr m_coipCidr;

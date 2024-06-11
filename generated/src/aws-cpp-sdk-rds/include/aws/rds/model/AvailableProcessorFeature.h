@@ -43,136 +43,48 @@ namespace Model
     AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
      * <code>threadsPerCore</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
-     * <code>threadsPerCore</code>.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
-     * <code>threadsPerCore</code>.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
-     * <code>threadsPerCore</code>.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
-     * <code>threadsPerCore</code>.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
-     * <code>threadsPerCore</code>.</p>
-     */
     inline AvailableProcessorFeature& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
-     * <code>threadsPerCore</code>.</p>
-     */
     inline AvailableProcessorFeature& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
-     * <code>threadsPerCore</code>.</p>
-     */
     inline AvailableProcessorFeature& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default value for the processor feature of the DB instance class.</p>
      */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
-
-    /**
-     * <p>The default value for the processor feature of the DB instance class.</p>
-     */
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-
-    /**
-     * <p>The default value for the processor feature of the DB instance class.</p>
-     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-
-    /**
-     * <p>The default value for the processor feature of the DB instance class.</p>
-     */
     inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-
-    /**
-     * <p>The default value for the processor feature of the DB instance class.</p>
-     */
     inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-
-    /**
-     * <p>The default value for the processor feature of the DB instance class.</p>
-     */
     inline AvailableProcessorFeature& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-
-    /**
-     * <p>The default value for the processor feature of the DB instance class.</p>
-     */
     inline AvailableProcessorFeature& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The default value for the processor feature of the DB instance class.</p>
-     */
     inline AvailableProcessorFeature& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The allowed values for the processor feature of the DB instance class.</p>
      */
     inline const Aws::String& GetAllowedValues() const{ return m_allowedValues; }
-
-    /**
-     * <p>The allowed values for the processor feature of the DB instance class.</p>
-     */
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
-
-    /**
-     * <p>The allowed values for the processor feature of the DB instance class.</p>
-     */
     inline void SetAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
-
-    /**
-     * <p>The allowed values for the processor feature of the DB instance class.</p>
-     */
     inline void SetAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
-
-    /**
-     * <p>The allowed values for the processor feature of the DB instance class.</p>
-     */
     inline void SetAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.assign(value); }
-
-    /**
-     * <p>The allowed values for the processor feature of the DB instance class.</p>
-     */
     inline AvailableProcessorFeature& WithAllowedValues(const Aws::String& value) { SetAllowedValues(value); return *this;}
-
-    /**
-     * <p>The allowed values for the processor feature of the DB instance class.</p>
-     */
     inline AvailableProcessorFeature& WithAllowedValues(Aws::String&& value) { SetAllowedValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The allowed values for the processor feature of the DB instance class.</p>
-     */
     inline AvailableProcessorFeature& WithAllowedValues(const char* value) { SetAllowedValues(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

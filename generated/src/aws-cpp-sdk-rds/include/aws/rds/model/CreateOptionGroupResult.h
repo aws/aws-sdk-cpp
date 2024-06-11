@@ -33,37 +33,23 @@ namespace Model
     AWS_RDS_API CreateOptionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const OptionGroup& GetOptionGroup() const{ return m_optionGroup; }
-
-    
     inline void SetOptionGroup(const OptionGroup& value) { m_optionGroup = value; }
-
-    
     inline void SetOptionGroup(OptionGroup&& value) { m_optionGroup = std::move(value); }
-
-    
     inline CreateOptionGroupResult& WithOptionGroup(const OptionGroup& value) { SetOptionGroup(value); return *this;}
-
-    
     inline CreateOptionGroupResult& WithOptionGroup(OptionGroup&& value) { SetOptionGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateOptionGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateOptionGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OptionGroup m_optionGroup;

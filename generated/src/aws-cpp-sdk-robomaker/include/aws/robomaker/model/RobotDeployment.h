@@ -41,248 +41,94 @@ namespace Model
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The robot deployment Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The robot deployment Amazon Resource Name (ARN).</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The robot deployment Amazon Resource Name (ARN).</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The robot deployment Amazon Resource Name (ARN).</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The robot deployment Amazon Resource Name (ARN).</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The robot deployment Amazon Resource Name (ARN).</p>
-     */
     inline RobotDeployment& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The robot deployment Amazon Resource Name (ARN).</p>
-     */
     inline RobotDeployment& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The robot deployment Amazon Resource Name (ARN).</p>
-     */
     inline RobotDeployment& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time, in milliseconds since the epoch, when the deployment was
      * started.</p>
      */
     inline const Aws::Utils::DateTime& GetDeploymentStartTime() const{ return m_deploymentStartTime; }
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the deployment was
-     * started.</p>
-     */
     inline bool DeploymentStartTimeHasBeenSet() const { return m_deploymentStartTimeHasBeenSet; }
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the deployment was
-     * started.</p>
-     */
     inline void SetDeploymentStartTime(const Aws::Utils::DateTime& value) { m_deploymentStartTimeHasBeenSet = true; m_deploymentStartTime = value; }
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the deployment was
-     * started.</p>
-     */
     inline void SetDeploymentStartTime(Aws::Utils::DateTime&& value) { m_deploymentStartTimeHasBeenSet = true; m_deploymentStartTime = std::move(value); }
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the deployment was
-     * started.</p>
-     */
     inline RobotDeployment& WithDeploymentStartTime(const Aws::Utils::DateTime& value) { SetDeploymentStartTime(value); return *this;}
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the deployment was
-     * started.</p>
-     */
     inline RobotDeployment& WithDeploymentStartTime(Aws::Utils::DateTime&& value) { SetDeploymentStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
      */
     inline const Aws::Utils::DateTime& GetDeploymentFinishTime() const{ return m_deploymentFinishTime; }
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
-     */
     inline bool DeploymentFinishTimeHasBeenSet() const { return m_deploymentFinishTimeHasBeenSet; }
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
-     */
     inline void SetDeploymentFinishTime(const Aws::Utils::DateTime& value) { m_deploymentFinishTimeHasBeenSet = true; m_deploymentFinishTime = value; }
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
-     */
     inline void SetDeploymentFinishTime(Aws::Utils::DateTime&& value) { m_deploymentFinishTimeHasBeenSet = true; m_deploymentFinishTime = std::move(value); }
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
-     */
     inline RobotDeployment& WithDeploymentFinishTime(const Aws::Utils::DateTime& value) { SetDeploymentFinishTime(value); return *this;}
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
-     */
     inline RobotDeployment& WithDeploymentFinishTime(Aws::Utils::DateTime&& value) { SetDeploymentFinishTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the robot deployment.</p>
      */
     inline const RobotStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the robot deployment.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the robot deployment.</p>
-     */
     inline void SetStatus(const RobotStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the robot deployment.</p>
-     */
     inline void SetStatus(RobotStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the robot deployment.</p>
-     */
     inline RobotDeployment& WithStatus(const RobotStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the robot deployment.</p>
-     */
     inline RobotDeployment& WithStatus(RobotStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about how the deployment is progressing.</p>
      */
     inline const ProgressDetail& GetProgressDetail() const{ return m_progressDetail; }
-
-    /**
-     * <p>Information about how the deployment is progressing.</p>
-     */
     inline bool ProgressDetailHasBeenSet() const { return m_progressDetailHasBeenSet; }
-
-    /**
-     * <p>Information about how the deployment is progressing.</p>
-     */
     inline void SetProgressDetail(const ProgressDetail& value) { m_progressDetailHasBeenSet = true; m_progressDetail = value; }
-
-    /**
-     * <p>Information about how the deployment is progressing.</p>
-     */
     inline void SetProgressDetail(ProgressDetail&& value) { m_progressDetailHasBeenSet = true; m_progressDetail = std::move(value); }
-
-    /**
-     * <p>Information about how the deployment is progressing.</p>
-     */
     inline RobotDeployment& WithProgressDetail(const ProgressDetail& value) { SetProgressDetail(value); return *this;}
-
-    /**
-     * <p>Information about how the deployment is progressing.</p>
-     */
     inline RobotDeployment& WithProgressDetail(ProgressDetail&& value) { SetProgressDetail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A short description of the reason why the robot deployment failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-
-    /**
-     * <p>A short description of the reason why the robot deployment failed.</p>
-     */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-
-    /**
-     * <p>A short description of the reason why the robot deployment failed.</p>
-     */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-
-    /**
-     * <p>A short description of the reason why the robot deployment failed.</p>
-     */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-
-    /**
-     * <p>A short description of the reason why the robot deployment failed.</p>
-     */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-
-    /**
-     * <p>A short description of the reason why the robot deployment failed.</p>
-     */
     inline RobotDeployment& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-
-    /**
-     * <p>A short description of the reason why the robot deployment failed.</p>
-     */
     inline RobotDeployment& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-
-    /**
-     * <p>A short description of the reason why the robot deployment failed.</p>
-     */
     inline RobotDeployment& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The robot deployment failure code.</p>
      */
     inline const DeploymentJobErrorCode& GetFailureCode() const{ return m_failureCode; }
-
-    /**
-     * <p>The robot deployment failure code.</p>
-     */
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-
-    /**
-     * <p>The robot deployment failure code.</p>
-     */
     inline void SetFailureCode(const DeploymentJobErrorCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-
-    /**
-     * <p>The robot deployment failure code.</p>
-     */
     inline void SetFailureCode(DeploymentJobErrorCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-
-    /**
-     * <p>The robot deployment failure code.</p>
-     */
     inline RobotDeployment& WithFailureCode(const DeploymentJobErrorCode& value) { SetFailureCode(value); return *this;}
-
-    /**
-     * <p>The robot deployment failure code.</p>
-     */
     inline RobotDeployment& WithFailureCode(DeploymentJobErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

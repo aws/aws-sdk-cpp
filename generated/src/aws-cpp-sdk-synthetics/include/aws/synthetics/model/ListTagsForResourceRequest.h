@@ -32,6 +32,7 @@ namespace Model
     AWS_SYNTHETICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the canary or group that you want to view tags for.</p> <p>The ARN
      * format of a canary is
@@ -41,77 +42,14 @@ namespace Model
      * </code> </p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The ARN of the canary or group that you want to view tags for.</p> <p>The ARN
-     * format of a canary is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-     * </code>.</p> <p>The ARN format of a group is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
-     * </code> </p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the canary or group that you want to view tags for.</p> <p>The ARN
-     * format of a canary is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-     * </code>.</p> <p>The ARN format of a group is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
-     * </code> </p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The ARN of the canary or group that you want to view tags for.</p> <p>The ARN
-     * format of a canary is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-     * </code>.</p> <p>The ARN format of a group is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
-     * </code> </p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the canary or group that you want to view tags for.</p> <p>The ARN
-     * format of a canary is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-     * </code>.</p> <p>The ARN format of a group is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
-     * </code> </p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the canary or group that you want to view tags for.</p> <p>The ARN
-     * format of a canary is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-     * </code>.</p> <p>The ARN format of a group is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
-     * </code> </p>
-     */
     inline ListTagsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the canary or group that you want to view tags for.</p> <p>The ARN
-     * format of a canary is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-     * </code>.</p> <p>The ARN format of a group is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
-     * </code> </p>
-     */
     inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the canary or group that you want to view tags for.</p> <p>The ARN
-     * format of a canary is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-     * </code>.</p> <p>The ARN format of a group is
-     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
-     * </code> </p>
-     */
     inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

@@ -32,95 +32,34 @@ namespace Model
     AWS_CLEANROOMS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the collaboration that the schema belongs to.
      * Currently accepts a collaboration ID.</p>
      */
     inline const Aws::String& GetCollaborationIdentifier() const{ return m_collaborationIdentifier; }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline bool CollaborationIdentifierHasBeenSet() const { return m_collaborationIdentifierHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline void SetCollaborationIdentifier(const Aws::String& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = value; }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline void SetCollaborationIdentifier(Aws::String&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline void SetCollaborationIdentifier(const char* value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier.assign(value); }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline GetSchemaRequest& WithCollaborationIdentifier(const Aws::String& value) { SetCollaborationIdentifier(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline GetSchemaRequest& WithCollaborationIdentifier(Aws::String&& value) { SetCollaborationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline GetSchemaRequest& WithCollaborationIdentifier(const char* value) { SetCollaborationIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the relation to retrieve the schema for.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the relation to retrieve the schema for.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the relation to retrieve the schema for.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the relation to retrieve the schema for.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the relation to retrieve the schema for.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the relation to retrieve the schema for.</p>
-     */
     inline GetSchemaRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the relation to retrieve the schema for.</p>
-     */
     inline GetSchemaRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the relation to retrieve the schema for.</p>
-     */
     inline GetSchemaRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_collaborationIdentifier;

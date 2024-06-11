@@ -34,128 +34,54 @@ namespace Model
     AWS_KINESISANALYTICSV2_API AddApplicationCloudWatchLoggingOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The application's ARN.</p>
      */
     inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
-
-    /**
-     * <p>The application's ARN.</p>
-     */
     inline void SetApplicationARN(const Aws::String& value) { m_applicationARN = value; }
-
-    /**
-     * <p>The application's ARN.</p>
-     */
     inline void SetApplicationARN(Aws::String&& value) { m_applicationARN = std::move(value); }
-
-    /**
-     * <p>The application's ARN.</p>
-     */
     inline void SetApplicationARN(const char* value) { m_applicationARN.assign(value); }
-
-    /**
-     * <p>The application's ARN.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionResult& WithApplicationARN(const Aws::String& value) { SetApplicationARN(value); return *this;}
-
-    /**
-     * <p>The application's ARN.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionResult& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The application's ARN.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionResult& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new version ID of the SQL-based Kinesis Data Analytics application.
      * Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time
      * you change the CloudWatch logging options. </p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
-
-    /**
-     * <p>The new version ID of the SQL-based Kinesis Data Analytics application.
-     * Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time
-     * you change the CloudWatch logging options. </p>
-     */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionId = value; }
-
-    /**
-     * <p>The new version ID of the SQL-based Kinesis Data Analytics application.
-     * Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time
-     * you change the CloudWatch logging options. </p>
-     */
     inline AddApplicationCloudWatchLoggingOptionResult& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The descriptions of the current CloudWatch logging options for the SQL-based
      * Kinesis Data Analytics application.</p>
      */
     inline const Aws::Vector<CloudWatchLoggingOptionDescription>& GetCloudWatchLoggingOptionDescriptions() const{ return m_cloudWatchLoggingOptionDescriptions; }
-
-    /**
-     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
-     * Kinesis Data Analytics application.</p>
-     */
     inline void SetCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { m_cloudWatchLoggingOptionDescriptions = value; }
-
-    /**
-     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
-     * Kinesis Data Analytics application.</p>
-     */
     inline void SetCloudWatchLoggingOptionDescriptions(Aws::Vector<CloudWatchLoggingOptionDescription>&& value) { m_cloudWatchLoggingOptionDescriptions = std::move(value); }
-
-    /**
-     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
-     * Kinesis Data Analytics application.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionResult& WithCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { SetCloudWatchLoggingOptionDescriptions(value); return *this;}
-
-    /**
-     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
-     * Kinesis Data Analytics application.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionResult& WithCloudWatchLoggingOptionDescriptions(Aws::Vector<CloudWatchLoggingOptionDescription>&& value) { SetCloudWatchLoggingOptionDescriptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
-     * Kinesis Data Analytics application.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionResult& AddCloudWatchLoggingOptionDescriptions(const CloudWatchLoggingOptionDescription& value) { m_cloudWatchLoggingOptionDescriptions.push_back(value); return *this; }
-
-    /**
-     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
-     * Kinesis Data Analytics application.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionResult& AddCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescription&& value) { m_cloudWatchLoggingOptionDescriptions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AddApplicationCloudWatchLoggingOptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AddApplicationCloudWatchLoggingOptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AddApplicationCloudWatchLoggingOptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationARN;

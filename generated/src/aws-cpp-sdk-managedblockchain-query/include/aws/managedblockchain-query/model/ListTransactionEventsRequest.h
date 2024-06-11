@@ -33,176 +33,63 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline const Aws::String& GetTransactionHash() const{ return m_transactionHash; }
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline bool TransactionHashHasBeenSet() const { return m_transactionHashHasBeenSet; }
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline void SetTransactionHash(const Aws::String& value) { m_transactionHashHasBeenSet = true; m_transactionHash = value; }
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline void SetTransactionHash(Aws::String&& value) { m_transactionHashHasBeenSet = true; m_transactionHash = std::move(value); }
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline void SetTransactionHash(const char* value) { m_transactionHashHasBeenSet = true; m_transactionHash.assign(value); }
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline ListTransactionEventsRequest& WithTransactionHash(const Aws::String& value) { SetTransactionHash(value); return *this;}
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline ListTransactionEventsRequest& WithTransactionHash(Aws::String&& value) { SetTransactionHash(std::move(value)); return *this;}
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline ListTransactionEventsRequest& WithTransactionHash(const char* value) { SetTransactionHash(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
      * is created.</p>  <p> <code>transactionId</code> is only supported on the
      * Bitcoin networks.</p> 
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline ListTransactionEventsRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline ListTransactionEventsRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline ListTransactionEventsRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The blockchain network where the transaction events occurred.</p>
      */
     inline const QueryNetwork& GetNetwork() const{ return m_network; }
-
-    /**
-     * <p>The blockchain network where the transaction events occurred.</p>
-     */
     inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
-
-    /**
-     * <p>The blockchain network where the transaction events occurred.</p>
-     */
     inline void SetNetwork(const QueryNetwork& value) { m_networkHasBeenSet = true; m_network = value; }
-
-    /**
-     * <p>The blockchain network where the transaction events occurred.</p>
-     */
     inline void SetNetwork(QueryNetwork&& value) { m_networkHasBeenSet = true; m_network = std::move(value); }
-
-    /**
-     * <p>The blockchain network where the transaction events occurred.</p>
-     */
     inline ListTransactionEventsRequest& WithNetwork(const QueryNetwork& value) { SetNetwork(value); return *this;}
-
-    /**
-     * <p>The blockchain network where the transaction events occurred.</p>
-     */
     inline ListTransactionEventsRequest& WithNetwork(QueryNetwork&& value) { SetNetwork(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListTransactionEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListTransactionEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListTransactionEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of transaction events to list.</p> <p>Default:
      * <code>100</code> </p>  <p>Even if additional results can be retrieved, the
@@ -213,40 +100,10 @@ namespace Model
      * return</p> 
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of transaction events to list.</p> <p>Default:
-     * <code>100</code> </p>  <p>Even if additional results can be retrieved, the
-     * request can return less results than <code>maxResults</code> or an empty array
-     * of results.</p> <p>To retrieve the next set of results, make another request
-     * with the returned <code>nextToken</code> value. The value of
-     * <code>nextToken</code> is <code>null</code> when there are no more results to
-     * return</p> 
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of transaction events to list.</p> <p>Default:
-     * <code>100</code> </p>  <p>Even if additional results can be retrieved, the
-     * request can return less results than <code>maxResults</code> or an empty array
-     * of results.</p> <p>To retrieve the next set of results, make another request
-     * with the returned <code>nextToken</code> value. The value of
-     * <code>nextToken</code> is <code>null</code> when there are no more results to
-     * return</p> 
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of transaction events to list.</p> <p>Default:
-     * <code>100</code> </p>  <p>Even if additional results can be retrieved, the
-     * request can return less results than <code>maxResults</code> or an empty array
-     * of results.</p> <p>To retrieve the next set of results, make another request
-     * with the returned <code>nextToken</code> value. The value of
-     * <code>nextToken</code> is <code>null</code> when there are no more results to
-     * return</p> 
-     */
     inline ListTransactionEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transactionHash;

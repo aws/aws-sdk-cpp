@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A check for whether you have the required permissions for the action without
      * actually making the request and provides an error response. If you have the
@@ -43,80 +44,25 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DisableIpamOrganizationAdminAccountRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Organizations member account ID that you want to disable as IPAM
      * account.</p>
      */
     inline const Aws::String& GetDelegatedAdminAccountId() const{ return m_delegatedAdminAccountId; }
-
-    /**
-     * <p>The Organizations member account ID that you want to disable as IPAM
-     * account.</p>
-     */
     inline bool DelegatedAdminAccountIdHasBeenSet() const { return m_delegatedAdminAccountIdHasBeenSet; }
-
-    /**
-     * <p>The Organizations member account ID that you want to disable as IPAM
-     * account.</p>
-     */
     inline void SetDelegatedAdminAccountId(const Aws::String& value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId = value; }
-
-    /**
-     * <p>The Organizations member account ID that you want to disable as IPAM
-     * account.</p>
-     */
     inline void SetDelegatedAdminAccountId(Aws::String&& value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId = std::move(value); }
-
-    /**
-     * <p>The Organizations member account ID that you want to disable as IPAM
-     * account.</p>
-     */
     inline void SetDelegatedAdminAccountId(const char* value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId.assign(value); }
-
-    /**
-     * <p>The Organizations member account ID that you want to disable as IPAM
-     * account.</p>
-     */
     inline DisableIpamOrganizationAdminAccountRequest& WithDelegatedAdminAccountId(const Aws::String& value) { SetDelegatedAdminAccountId(value); return *this;}
-
-    /**
-     * <p>The Organizations member account ID that you want to disable as IPAM
-     * account.</p>
-     */
     inline DisableIpamOrganizationAdminAccountRequest& WithDelegatedAdminAccountId(Aws::String&& value) { SetDelegatedAdminAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Organizations member account ID that you want to disable as IPAM
-     * account.</p>
-     */
     inline DisableIpamOrganizationAdminAccountRequest& WithDelegatedAdminAccountId(const char* value) { SetDelegatedAdminAccountId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

@@ -39,47 +39,25 @@ namespace Model
     AWS_IAM_API CreateAccessKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A structure with details about the access key.</p>
      */
     inline const AccessKey& GetAccessKey() const{ return m_accessKey; }
-
-    /**
-     * <p>A structure with details about the access key.</p>
-     */
     inline void SetAccessKey(const AccessKey& value) { m_accessKey = value; }
-
-    /**
-     * <p>A structure with details about the access key.</p>
-     */
     inline void SetAccessKey(AccessKey&& value) { m_accessKey = std::move(value); }
-
-    /**
-     * <p>A structure with details about the access key.</p>
-     */
     inline CreateAccessKeyResult& WithAccessKey(const AccessKey& value) { SetAccessKey(value); return *this;}
-
-    /**
-     * <p>A structure with details about the access key.</p>
-     */
     inline CreateAccessKeyResult& WithAccessKey(AccessKey&& value) { SetAccessKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateAccessKeyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateAccessKeyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AccessKey m_accessKey;

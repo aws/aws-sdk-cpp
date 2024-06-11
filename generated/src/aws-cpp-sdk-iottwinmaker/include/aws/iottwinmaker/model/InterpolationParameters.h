@@ -38,57 +38,27 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The interpolation type.</p>
      */
     inline const InterpolationType& GetInterpolationType() const{ return m_interpolationType; }
-
-    /**
-     * <p>The interpolation type.</p>
-     */
     inline bool InterpolationTypeHasBeenSet() const { return m_interpolationTypeHasBeenSet; }
-
-    /**
-     * <p>The interpolation type.</p>
-     */
     inline void SetInterpolationType(const InterpolationType& value) { m_interpolationTypeHasBeenSet = true; m_interpolationType = value; }
-
-    /**
-     * <p>The interpolation type.</p>
-     */
     inline void SetInterpolationType(InterpolationType&& value) { m_interpolationTypeHasBeenSet = true; m_interpolationType = std::move(value); }
-
-    /**
-     * <p>The interpolation type.</p>
-     */
     inline InterpolationParameters& WithInterpolationType(const InterpolationType& value) { SetInterpolationType(value); return *this;}
-
-    /**
-     * <p>The interpolation type.</p>
-     */
     inline InterpolationParameters& WithInterpolationType(InterpolationType&& value) { SetInterpolationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The interpolation time interval in seconds.</p>
      */
     inline long long GetIntervalInSeconds() const{ return m_intervalInSeconds; }
-
-    /**
-     * <p>The interpolation time interval in seconds.</p>
-     */
     inline bool IntervalInSecondsHasBeenSet() const { return m_intervalInSecondsHasBeenSet; }
-
-    /**
-     * <p>The interpolation time interval in seconds.</p>
-     */
     inline void SetIntervalInSeconds(long long value) { m_intervalInSecondsHasBeenSet = true; m_intervalInSeconds = value; }
-
-    /**
-     * <p>The interpolation time interval in seconds.</p>
-     */
     inline InterpolationParameters& WithIntervalInSeconds(long long value) { SetIntervalInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     InterpolationType m_interpolationType;

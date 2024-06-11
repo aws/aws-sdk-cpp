@@ -37,143 +37,50 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Parameters of a <code>Config</code>.</p>
      */
     inline const ConfigTypeData& GetConfigData() const{ return m_configData; }
-
-    /**
-     * <p>Parameters of a <code>Config</code>.</p>
-     */
     inline bool ConfigDataHasBeenSet() const { return m_configDataHasBeenSet; }
-
-    /**
-     * <p>Parameters of a <code>Config</code>.</p>
-     */
     inline void SetConfigData(const ConfigTypeData& value) { m_configDataHasBeenSet = true; m_configData = value; }
-
-    /**
-     * <p>Parameters of a <code>Config</code>.</p>
-     */
     inline void SetConfigData(ConfigTypeData&& value) { m_configDataHasBeenSet = true; m_configData = std::move(value); }
-
-    /**
-     * <p>Parameters of a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& WithConfigData(const ConfigTypeData& value) { SetConfigData(value); return *this;}
-
-    /**
-     * <p>Parameters of a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& WithConfigData(ConfigTypeData&& value) { SetConfigData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Name of a <code>Config</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Name of a <code>Config</code>.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Name of a <code>Config</code>.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Name of a <code>Config</code>.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Name of a <code>Config</code>.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Name of a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Name of a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Tags assigned to a <code>Config</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Tags assigned to a <code>Config</code>.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Tags assigned to a <code>Config</code>.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Tags assigned to a <code>Config</code>.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Tags assigned to a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Tags assigned to a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Tags assigned to a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>Tags assigned to a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Tags assigned to a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Tags assigned to a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Tags assigned to a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Tags assigned to a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Tags assigned to a <code>Config</code>.</p>
-     */
     inline CreateConfigRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     ConfigTypeData m_configData;

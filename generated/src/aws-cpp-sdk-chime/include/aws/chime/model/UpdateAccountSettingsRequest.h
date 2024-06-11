@@ -33,77 +33,31 @@ namespace Model
     AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Chime account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline UpdateAccountSettingsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline UpdateAccountSettingsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline UpdateAccountSettingsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Chime account settings to update.</p>
      */
     inline const AccountSettings& GetAccountSettings() const{ return m_accountSettings; }
-
-    /**
-     * <p>The Amazon Chime account settings to update.</p>
-     */
     inline bool AccountSettingsHasBeenSet() const { return m_accountSettingsHasBeenSet; }
-
-    /**
-     * <p>The Amazon Chime account settings to update.</p>
-     */
     inline void SetAccountSettings(const AccountSettings& value) { m_accountSettingsHasBeenSet = true; m_accountSettings = value; }
-
-    /**
-     * <p>The Amazon Chime account settings to update.</p>
-     */
     inline void SetAccountSettings(AccountSettings&& value) { m_accountSettingsHasBeenSet = true; m_accountSettings = std::move(value); }
-
-    /**
-     * <p>The Amazon Chime account settings to update.</p>
-     */
     inline UpdateAccountSettingsRequest& WithAccountSettings(const AccountSettings& value) { SetAccountSettings(value); return *this;}
-
-    /**
-     * <p>The Amazon Chime account settings to update.</p>
-     */
     inline UpdateAccountSettingsRequest& WithAccountSettings(AccountSettings&& value) { SetAccountSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

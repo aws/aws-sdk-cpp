@@ -38,6 +38,7 @@ namespace Model
     AWS_WAF_API UpdateXssMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
      * <code>UpdateXssMatchSet</code> request. You can also use this value to query the
@@ -45,77 +46,24 @@ namespace Model
      * <a>GetChangeTokenStatus</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
-
-    /**
-     * <p>The <code>ChangeToken</code> that you used to submit the
-     * <code>UpdateXssMatchSet</code> request. You can also use this value to query the
-     * status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.</p>
-     */
     inline void SetChangeToken(const Aws::String& value) { m_changeToken = value; }
-
-    /**
-     * <p>The <code>ChangeToken</code> that you used to submit the
-     * <code>UpdateXssMatchSet</code> request. You can also use this value to query the
-     * status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.</p>
-     */
     inline void SetChangeToken(Aws::String&& value) { m_changeToken = std::move(value); }
-
-    /**
-     * <p>The <code>ChangeToken</code> that you used to submit the
-     * <code>UpdateXssMatchSet</code> request. You can also use this value to query the
-     * status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.</p>
-     */
     inline void SetChangeToken(const char* value) { m_changeToken.assign(value); }
-
-    /**
-     * <p>The <code>ChangeToken</code> that you used to submit the
-     * <code>UpdateXssMatchSet</code> request. You can also use this value to query the
-     * status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.</p>
-     */
     inline UpdateXssMatchSetResult& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-
-    /**
-     * <p>The <code>ChangeToken</code> that you used to submit the
-     * <code>UpdateXssMatchSet</code> request. You can also use this value to query the
-     * status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.</p>
-     */
     inline UpdateXssMatchSetResult& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>ChangeToken</code> that you used to submit the
-     * <code>UpdateXssMatchSet</code> request. You can also use this value to query the
-     * status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.</p>
-     */
     inline UpdateXssMatchSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateXssMatchSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateXssMatchSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateXssMatchSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_changeToken;

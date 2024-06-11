@@ -39,89 +39,40 @@ namespace Model
     AWS_ROUTE53_API CreateTrafficPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A complex type that contains settings for the new traffic policy.</p>
      */
     inline const TrafficPolicy& GetTrafficPolicy() const{ return m_trafficPolicy; }
-
-    /**
-     * <p>A complex type that contains settings for the new traffic policy.</p>
-     */
     inline void SetTrafficPolicy(const TrafficPolicy& value) { m_trafficPolicy = value; }
-
-    /**
-     * <p>A complex type that contains settings for the new traffic policy.</p>
-     */
     inline void SetTrafficPolicy(TrafficPolicy&& value) { m_trafficPolicy = std::move(value); }
-
-    /**
-     * <p>A complex type that contains settings for the new traffic policy.</p>
-     */
     inline CreateTrafficPolicyResult& WithTrafficPolicy(const TrafficPolicy& value) { SetTrafficPolicy(value); return *this;}
-
-    /**
-     * <p>A complex type that contains settings for the new traffic policy.</p>
-     */
     inline CreateTrafficPolicyResult& WithTrafficPolicy(TrafficPolicy&& value) { SetTrafficPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique URL that represents a new traffic policy.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>A unique URL that represents a new traffic policy.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
-
-    /**
-     * <p>A unique URL that represents a new traffic policy.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-
-    /**
-     * <p>A unique URL that represents a new traffic policy.</p>
-     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
-
-    /**
-     * <p>A unique URL that represents a new traffic policy.</p>
-     */
     inline CreateTrafficPolicyResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>A unique URL that represents a new traffic policy.</p>
-     */
     inline CreateTrafficPolicyResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique URL that represents a new traffic policy.</p>
-     */
     inline CreateTrafficPolicyResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateTrafficPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateTrafficPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateTrafficPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TrafficPolicy m_trafficPolicy;

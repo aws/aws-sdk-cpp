@@ -38,62 +38,21 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>When the <code>host</code> parameter is used, specify a
      * <code>sourcePath</code> to declare the path on the host container instance
      * that's presented to the container. </p>
      */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. </p>
-     */
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. </p>
-     */
     inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. </p>
-     */
     inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. </p>
-     */
     inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. </p>
-     */
     inline AwsEcsTaskVolumeHostDetails& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. </p>
-     */
     inline AwsEcsTaskVolumeHostDetails& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. </p>
-     */
     inline AwsEcsTaskVolumeHostDetails& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourcePath;

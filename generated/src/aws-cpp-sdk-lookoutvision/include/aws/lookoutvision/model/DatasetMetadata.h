@@ -41,149 +41,57 @@ namespace Model
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of the dataset.</p>
      */
     inline const Aws::String& GetDatasetType() const{ return m_datasetType; }
-
-    /**
-     * <p>The type of the dataset.</p>
-     */
     inline bool DatasetTypeHasBeenSet() const { return m_datasetTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the dataset.</p>
-     */
     inline void SetDatasetType(const Aws::String& value) { m_datasetTypeHasBeenSet = true; m_datasetType = value; }
-
-    /**
-     * <p>The type of the dataset.</p>
-     */
     inline void SetDatasetType(Aws::String&& value) { m_datasetTypeHasBeenSet = true; m_datasetType = std::move(value); }
-
-    /**
-     * <p>The type of the dataset.</p>
-     */
     inline void SetDatasetType(const char* value) { m_datasetTypeHasBeenSet = true; m_datasetType.assign(value); }
-
-    /**
-     * <p>The type of the dataset.</p>
-     */
     inline DatasetMetadata& WithDatasetType(const Aws::String& value) { SetDatasetType(value); return *this;}
-
-    /**
-     * <p>The type of the dataset.</p>
-     */
     inline DatasetMetadata& WithDatasetType(Aws::String&& value) { SetDatasetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of the dataset.</p>
-     */
     inline DatasetMetadata& WithDatasetType(const char* value) { SetDatasetType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Unix timestamp for the date and time that the dataset was created. </p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
-
-    /**
-     * <p>The Unix timestamp for the date and time that the dataset was created. </p>
-     */
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
-
-    /**
-     * <p>The Unix timestamp for the date and time that the dataset was created. </p>
-     */
     inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
-
-    /**
-     * <p>The Unix timestamp for the date and time that the dataset was created. </p>
-     */
     inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
-
-    /**
-     * <p>The Unix timestamp for the date and time that the dataset was created. </p>
-     */
     inline DatasetMetadata& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
-
-    /**
-     * <p>The Unix timestamp for the date and time that the dataset was created. </p>
-     */
     inline DatasetMetadata& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status for the dataset.</p>
      */
     inline const DatasetStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status for the dataset.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status for the dataset.</p>
-     */
     inline void SetStatus(const DatasetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status for the dataset.</p>
-     */
     inline void SetStatus(DatasetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status for the dataset.</p>
-     */
     inline DatasetMetadata& WithStatus(const DatasetStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status for the dataset.</p>
-     */
     inline DatasetMetadata& WithStatus(DatasetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status message for the dataset.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>The status message for the dataset.</p>
-     */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p>The status message for the dataset.</p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p>The status message for the dataset.</p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p>The status message for the dataset.</p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p>The status message for the dataset.</p>
-     */
     inline DatasetMetadata& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>The status message for the dataset.</p>
-     */
     inline DatasetMetadata& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The status message for the dataset.</p>
-     */
     inline DatasetMetadata& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetType;

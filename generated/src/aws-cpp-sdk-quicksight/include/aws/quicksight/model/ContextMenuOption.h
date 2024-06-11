@@ -38,48 +38,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The availability status of the context menu options. If the value of this
      * property is set to <code>ENABLED</code>, dashboard readers can interact with the
      * context menu.</p>
      */
     inline const DashboardBehavior& GetAvailabilityStatus() const{ return m_availabilityStatus; }
-
-    /**
-     * <p>The availability status of the context menu options. If the value of this
-     * property is set to <code>ENABLED</code>, dashboard readers can interact with the
-     * context menu.</p>
-     */
     inline bool AvailabilityStatusHasBeenSet() const { return m_availabilityStatusHasBeenSet; }
-
-    /**
-     * <p>The availability status of the context menu options. If the value of this
-     * property is set to <code>ENABLED</code>, dashboard readers can interact with the
-     * context menu.</p>
-     */
     inline void SetAvailabilityStatus(const DashboardBehavior& value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = value; }
-
-    /**
-     * <p>The availability status of the context menu options. If the value of this
-     * property is set to <code>ENABLED</code>, dashboard readers can interact with the
-     * context menu.</p>
-     */
     inline void SetAvailabilityStatus(DashboardBehavior&& value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = std::move(value); }
-
-    /**
-     * <p>The availability status of the context menu options. If the value of this
-     * property is set to <code>ENABLED</code>, dashboard readers can interact with the
-     * context menu.</p>
-     */
     inline ContextMenuOption& WithAvailabilityStatus(const DashboardBehavior& value) { SetAvailabilityStatus(value); return *this;}
-
-    /**
-     * <p>The availability status of the context menu options. If the value of this
-     * property is set to <code>ENABLED</code>, dashboard readers can interact with the
-     * context menu.</p>
-     */
     inline ContextMenuOption& WithAvailabilityStatus(DashboardBehavior&& value) { SetAvailabilityStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DashboardBehavior m_availabilityStatus;

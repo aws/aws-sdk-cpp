@@ -32,46 +32,19 @@ namespace Model
     AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique name of a framework.</p>
      */
     inline const Aws::String& GetFrameworkName() const{ return m_frameworkName; }
-
-    /**
-     * <p>The unique name of a framework.</p>
-     */
     inline bool FrameworkNameHasBeenSet() const { return m_frameworkNameHasBeenSet; }
-
-    /**
-     * <p>The unique name of a framework.</p>
-     */
     inline void SetFrameworkName(const Aws::String& value) { m_frameworkNameHasBeenSet = true; m_frameworkName = value; }
-
-    /**
-     * <p>The unique name of a framework.</p>
-     */
     inline void SetFrameworkName(Aws::String&& value) { m_frameworkNameHasBeenSet = true; m_frameworkName = std::move(value); }
-
-    /**
-     * <p>The unique name of a framework.</p>
-     */
     inline void SetFrameworkName(const char* value) { m_frameworkNameHasBeenSet = true; m_frameworkName.assign(value); }
-
-    /**
-     * <p>The unique name of a framework.</p>
-     */
     inline DeleteFrameworkRequest& WithFrameworkName(const Aws::String& value) { SetFrameworkName(value); return *this;}
-
-    /**
-     * <p>The unique name of a framework.</p>
-     */
     inline DeleteFrameworkRequest& WithFrameworkName(Aws::String&& value) { SetFrameworkName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique name of a framework.</p>
-     */
     inline DeleteFrameworkRequest& WithFrameworkName(const char* value) { SetFrameworkName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_frameworkName;

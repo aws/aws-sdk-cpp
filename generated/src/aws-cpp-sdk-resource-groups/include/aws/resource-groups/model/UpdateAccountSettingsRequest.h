@@ -32,48 +32,19 @@ namespace Model
     AWS_RESOURCEGROUPS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Specifies whether you want to turn <a
      * href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group
      * lifecycle events</a> on or off.</p>
      */
     inline const GroupLifecycleEventsDesiredStatus& GetGroupLifecycleEventsDesiredStatus() const{ return m_groupLifecycleEventsDesiredStatus; }
-
-    /**
-     * <p>Specifies whether you want to turn <a
-     * href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group
-     * lifecycle events</a> on or off.</p>
-     */
     inline bool GroupLifecycleEventsDesiredStatusHasBeenSet() const { return m_groupLifecycleEventsDesiredStatusHasBeenSet; }
-
-    /**
-     * <p>Specifies whether you want to turn <a
-     * href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group
-     * lifecycle events</a> on or off.</p>
-     */
     inline void SetGroupLifecycleEventsDesiredStatus(const GroupLifecycleEventsDesiredStatus& value) { m_groupLifecycleEventsDesiredStatusHasBeenSet = true; m_groupLifecycleEventsDesiredStatus = value; }
-
-    /**
-     * <p>Specifies whether you want to turn <a
-     * href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group
-     * lifecycle events</a> on or off.</p>
-     */
     inline void SetGroupLifecycleEventsDesiredStatus(GroupLifecycleEventsDesiredStatus&& value) { m_groupLifecycleEventsDesiredStatusHasBeenSet = true; m_groupLifecycleEventsDesiredStatus = std::move(value); }
-
-    /**
-     * <p>Specifies whether you want to turn <a
-     * href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group
-     * lifecycle events</a> on or off.</p>
-     */
     inline UpdateAccountSettingsRequest& WithGroupLifecycleEventsDesiredStatus(const GroupLifecycleEventsDesiredStatus& value) { SetGroupLifecycleEventsDesiredStatus(value); return *this;}
-
-    /**
-     * <p>Specifies whether you want to turn <a
-     * href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group
-     * lifecycle events</a> on or off.</p>
-     */
     inline UpdateAccountSettingsRequest& WithGroupLifecycleEventsDesiredStatus(GroupLifecycleEventsDesiredStatus&& value) { SetGroupLifecycleEventsDesiredStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GroupLifecycleEventsDesiredStatus m_groupLifecycleEventsDesiredStatus;

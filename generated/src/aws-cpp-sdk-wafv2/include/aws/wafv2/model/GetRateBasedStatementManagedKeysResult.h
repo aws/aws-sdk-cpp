@@ -33,79 +33,38 @@ namespace Model
     AWS_WAFV2_API GetRateBasedStatementManagedKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
      */
     inline const RateBasedStatementManagedKeysIPSet& GetManagedKeysIPV4() const{ return m_managedKeysIPV4; }
-
-    /**
-     * <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
-     */
     inline void SetManagedKeysIPV4(const RateBasedStatementManagedKeysIPSet& value) { m_managedKeysIPV4 = value; }
-
-    /**
-     * <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
-     */
     inline void SetManagedKeysIPV4(RateBasedStatementManagedKeysIPSet&& value) { m_managedKeysIPV4 = std::move(value); }
-
-    /**
-     * <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
-     */
     inline GetRateBasedStatementManagedKeysResult& WithManagedKeysIPV4(const RateBasedStatementManagedKeysIPSet& value) { SetManagedKeysIPV4(value); return *this;}
-
-    /**
-     * <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
-     */
     inline GetRateBasedStatementManagedKeysResult& WithManagedKeysIPV4(RateBasedStatementManagedKeysIPSet&& value) { SetManagedKeysIPV4(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
      */
     inline const RateBasedStatementManagedKeysIPSet& GetManagedKeysIPV6() const{ return m_managedKeysIPV6; }
-
-    /**
-     * <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
-     */
     inline void SetManagedKeysIPV6(const RateBasedStatementManagedKeysIPSet& value) { m_managedKeysIPV6 = value; }
-
-    /**
-     * <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
-     */
     inline void SetManagedKeysIPV6(RateBasedStatementManagedKeysIPSet&& value) { m_managedKeysIPV6 = std::move(value); }
-
-    /**
-     * <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
-     */
     inline GetRateBasedStatementManagedKeysResult& WithManagedKeysIPV6(const RateBasedStatementManagedKeysIPSet& value) { SetManagedKeysIPV6(value); return *this;}
-
-    /**
-     * <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
-     */
     inline GetRateBasedStatementManagedKeysResult& WithManagedKeysIPV6(RateBasedStatementManagedKeysIPSet&& value) { SetManagedKeysIPV6(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRateBasedStatementManagedKeysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRateBasedStatementManagedKeysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRateBasedStatementManagedKeysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RateBasedStatementManagedKeysIPSet m_managedKeysIPV4;

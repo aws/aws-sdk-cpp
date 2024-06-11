@@ -32,46 +32,19 @@ namespace Model
     AWS_PCACONNECTORSCEP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the challenge.</p>
      */
     inline const Aws::String& GetChallengeArn() const{ return m_challengeArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the challenge.</p>
-     */
     inline bool ChallengeArnHasBeenSet() const { return m_challengeArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the challenge.</p>
-     */
     inline void SetChallengeArn(const Aws::String& value) { m_challengeArnHasBeenSet = true; m_challengeArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the challenge.</p>
-     */
     inline void SetChallengeArn(Aws::String&& value) { m_challengeArnHasBeenSet = true; m_challengeArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the challenge.</p>
-     */
     inline void SetChallengeArn(const char* value) { m_challengeArnHasBeenSet = true; m_challengeArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the challenge.</p>
-     */
     inline GetChallengePasswordRequest& WithChallengeArn(const Aws::String& value) { SetChallengeArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the challenge.</p>
-     */
     inline GetChallengePasswordRequest& WithChallengeArn(Aws::String&& value) { SetChallengeArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the challenge.</p>
-     */
     inline GetChallengePasswordRequest& WithChallengeArn(const char* value) { SetChallengeArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_challengeArn;

@@ -43,6 +43,7 @@ namespace Model
     AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of lifecycle management for apps in the domain. Indicates whether
      * apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the
@@ -55,113 +56,26 @@ namespace Model
      * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
      */
     inline const LifecycleManagementStrategy& GetLifecycle() const{ return m_lifecycle; }
-
-    /**
-     * <p>The type of lifecycle management for apps in the domain. Indicates whether
-     * apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the
-     * apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
-     * class="title"> <b>Lifecycle types</b> </p> <ul> <li> <p> <code>PerWorker</code>
-     * – Managed: SimSpace Weaver starts one app on each worker.</p> </li> <li> <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for
-     * each spatial partition.</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
-     * You use the <code>StartApp</code> API to start the apps and use the
-     * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
-     */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
-
-    /**
-     * <p>The type of lifecycle management for apps in the domain. Indicates whether
-     * apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the
-     * apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
-     * class="title"> <b>Lifecycle types</b> </p> <ul> <li> <p> <code>PerWorker</code>
-     * – Managed: SimSpace Weaver starts one app on each worker.</p> </li> <li> <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for
-     * each spatial partition.</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
-     * You use the <code>StartApp</code> API to start the apps and use the
-     * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
-     */
     inline void SetLifecycle(const LifecycleManagementStrategy& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
-
-    /**
-     * <p>The type of lifecycle management for apps in the domain. Indicates whether
-     * apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the
-     * apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
-     * class="title"> <b>Lifecycle types</b> </p> <ul> <li> <p> <code>PerWorker</code>
-     * – Managed: SimSpace Weaver starts one app on each worker.</p> </li> <li> <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for
-     * each spatial partition.</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
-     * You use the <code>StartApp</code> API to start the apps and use the
-     * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
-     */
     inline void SetLifecycle(LifecycleManagementStrategy&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
-
-    /**
-     * <p>The type of lifecycle management for apps in the domain. Indicates whether
-     * apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the
-     * apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
-     * class="title"> <b>Lifecycle types</b> </p> <ul> <li> <p> <code>PerWorker</code>
-     * – Managed: SimSpace Weaver starts one app on each worker.</p> </li> <li> <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for
-     * each spatial partition.</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
-     * You use the <code>StartApp</code> API to start the apps and use the
-     * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
-     */
     inline Domain& WithLifecycle(const LifecycleManagementStrategy& value) { SetLifecycle(value); return *this;}
-
-    /**
-     * <p>The type of lifecycle management for apps in the domain. Indicates whether
-     * apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the
-     * apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
-     * class="title"> <b>Lifecycle types</b> </p> <ul> <li> <p> <code>PerWorker</code>
-     * – Managed: SimSpace Weaver starts one app on each worker.</p> </li> <li> <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for
-     * each spatial partition.</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
-     * You use the <code>StartApp</code> API to start the apps and use the
-     * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
-     */
     inline Domain& WithLifecycle(LifecycleManagementStrategy&& value) { SetLifecycle(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the domain.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline Domain& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline Domain& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline Domain& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     LifecycleManagementStrategy m_lifecycle;

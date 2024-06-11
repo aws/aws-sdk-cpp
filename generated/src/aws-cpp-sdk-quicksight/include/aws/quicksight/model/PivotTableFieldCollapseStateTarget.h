@@ -40,103 +40,35 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field ID of the pivot table that the collapse state needs to be set
      * to.</p>
      */
     inline const Aws::String& GetFieldId() const{ return m_fieldId; }
-
-    /**
-     * <p>The field ID of the pivot table that the collapse state needs to be set
-     * to.</p>
-     */
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-
-    /**
-     * <p>The field ID of the pivot table that the collapse state needs to be set
-     * to.</p>
-     */
     inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-
-    /**
-     * <p>The field ID of the pivot table that the collapse state needs to be set
-     * to.</p>
-     */
     inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-
-    /**
-     * <p>The field ID of the pivot table that the collapse state needs to be set
-     * to.</p>
-     */
     inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-
-    /**
-     * <p>The field ID of the pivot table that the collapse state needs to be set
-     * to.</p>
-     */
     inline PivotTableFieldCollapseStateTarget& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-
-    /**
-     * <p>The field ID of the pivot table that the collapse state needs to be set
-     * to.</p>
-     */
     inline PivotTableFieldCollapseStateTarget& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-
-    /**
-     * <p>The field ID of the pivot table that the collapse state needs to be set
-     * to.</p>
-     */
     inline PivotTableFieldCollapseStateTarget& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data path of the pivot table's header. Used to set the collapse
      * state.</p>
      */
     inline const Aws::Vector<DataPathValue>& GetFieldDataPathValues() const{ return m_fieldDataPathValues; }
-
-    /**
-     * <p>The data path of the pivot table's header. Used to set the collapse
-     * state.</p>
-     */
     inline bool FieldDataPathValuesHasBeenSet() const { return m_fieldDataPathValuesHasBeenSet; }
-
-    /**
-     * <p>The data path of the pivot table's header. Used to set the collapse
-     * state.</p>
-     */
     inline void SetFieldDataPathValues(const Aws::Vector<DataPathValue>& value) { m_fieldDataPathValuesHasBeenSet = true; m_fieldDataPathValues = value; }
-
-    /**
-     * <p>The data path of the pivot table's header. Used to set the collapse
-     * state.</p>
-     */
     inline void SetFieldDataPathValues(Aws::Vector<DataPathValue>&& value) { m_fieldDataPathValuesHasBeenSet = true; m_fieldDataPathValues = std::move(value); }
-
-    /**
-     * <p>The data path of the pivot table's header. Used to set the collapse
-     * state.</p>
-     */
     inline PivotTableFieldCollapseStateTarget& WithFieldDataPathValues(const Aws::Vector<DataPathValue>& value) { SetFieldDataPathValues(value); return *this;}
-
-    /**
-     * <p>The data path of the pivot table's header. Used to set the collapse
-     * state.</p>
-     */
     inline PivotTableFieldCollapseStateTarget& WithFieldDataPathValues(Aws::Vector<DataPathValue>&& value) { SetFieldDataPathValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The data path of the pivot table's header. Used to set the collapse
-     * state.</p>
-     */
     inline PivotTableFieldCollapseStateTarget& AddFieldDataPathValues(const DataPathValue& value) { m_fieldDataPathValuesHasBeenSet = true; m_fieldDataPathValues.push_back(value); return *this; }
-
-    /**
-     * <p>The data path of the pivot table's header. Used to set the collapse
-     * state.</p>
-     */
     inline PivotTableFieldCollapseStateTarget& AddFieldDataPathValues(DataPathValue&& value) { m_fieldDataPathValuesHasBeenSet = true; m_fieldDataPathValues.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_fieldId;

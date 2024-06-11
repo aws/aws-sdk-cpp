@@ -34,63 +34,29 @@ namespace Model
     AWS_DIRECTCONNECT_API DescribeLagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The LAGs.</p>
      */
     inline const Aws::Vector<Lag>& GetLags() const{ return m_lags; }
-
-    /**
-     * <p>The LAGs.</p>
-     */
     inline void SetLags(const Aws::Vector<Lag>& value) { m_lags = value; }
-
-    /**
-     * <p>The LAGs.</p>
-     */
     inline void SetLags(Aws::Vector<Lag>&& value) { m_lags = std::move(value); }
-
-    /**
-     * <p>The LAGs.</p>
-     */
     inline DescribeLagsResult& WithLags(const Aws::Vector<Lag>& value) { SetLags(value); return *this;}
-
-    /**
-     * <p>The LAGs.</p>
-     */
     inline DescribeLagsResult& WithLags(Aws::Vector<Lag>&& value) { SetLags(std::move(value)); return *this;}
-
-    /**
-     * <p>The LAGs.</p>
-     */
     inline DescribeLagsResult& AddLags(const Lag& value) { m_lags.push_back(value); return *this; }
-
-    /**
-     * <p>The LAGs.</p>
-     */
     inline DescribeLagsResult& AddLags(Lag&& value) { m_lags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeLagsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeLagsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeLagsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Lag> m_lags;

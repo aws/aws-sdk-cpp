@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API GetModelPackageGroupPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The resource policy for the model group.</p>
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
-
-    /**
-     * <p>The resource policy for the model group.</p>
-     */
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicy = value; }
-
-    /**
-     * <p>The resource policy for the model group.</p>
-     */
     inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicy = std::move(value); }
-
-    /**
-     * <p>The resource policy for the model group.</p>
-     */
     inline void SetResourcePolicy(const char* value) { m_resourcePolicy.assign(value); }
-
-    /**
-     * <p>The resource policy for the model group.</p>
-     */
     inline GetModelPackageGroupPolicyResult& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
-
-    /**
-     * <p>The resource policy for the model group.</p>
-     */
     inline GetModelPackageGroupPolicyResult& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource policy for the model group.</p>
-     */
     inline GetModelPackageGroupPolicyResult& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetModelPackageGroupPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetModelPackageGroupPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetModelPackageGroupPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourcePolicy;

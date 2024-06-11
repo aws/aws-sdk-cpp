@@ -44,46 +44,19 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicated that the S3 Bucket was not found.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
-
-    /**
-     * <p>Indicated that the S3 Bucket was not found.</p>
-     */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-
-    /**
-     * <p>Indicated that the S3 Bucket was not found.</p>
-     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-
-    /**
-     * <p>Indicated that the S3 Bucket was not found.</p>
-     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-
-    /**
-     * <p>Indicated that the S3 Bucket was not found.</p>
-     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-
-    /**
-     * <p>Indicated that the S3 Bucket was not found.</p>
-     */
     inline InvalidS3ConfigurationException& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-
-    /**
-     * <p>Indicated that the S3 Bucket was not found.</p>
-     */
     inline InvalidS3ConfigurationException& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicated that the S3 Bucket was not found.</p>
-     */
     inline InvalidS3ConfigurationException& WithBucket(const char* value) { SetBucket(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucket;

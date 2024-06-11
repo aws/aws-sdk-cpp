@@ -38,42 +38,18 @@ namespace Model
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Information about the AWS IoT Greengrass component in a model packaging job.
      * </p>
      */
     inline const GreengrassOutputDetails& GetGreengrass() const{ return m_greengrass; }
-
-    /**
-     * <p> Information about the AWS IoT Greengrass component in a model packaging job.
-     * </p>
-     */
     inline bool GreengrassHasBeenSet() const { return m_greengrassHasBeenSet; }
-
-    /**
-     * <p> Information about the AWS IoT Greengrass component in a model packaging job.
-     * </p>
-     */
     inline void SetGreengrass(const GreengrassOutputDetails& value) { m_greengrassHasBeenSet = true; m_greengrass = value; }
-
-    /**
-     * <p> Information about the AWS IoT Greengrass component in a model packaging job.
-     * </p>
-     */
     inline void SetGreengrass(GreengrassOutputDetails&& value) { m_greengrassHasBeenSet = true; m_greengrass = std::move(value); }
-
-    /**
-     * <p> Information about the AWS IoT Greengrass component in a model packaging job.
-     * </p>
-     */
     inline ModelPackagingOutputDetails& WithGreengrass(const GreengrassOutputDetails& value) { SetGreengrass(value); return *this;}
-
-    /**
-     * <p> Information about the AWS IoT Greengrass component in a model packaging job.
-     * </p>
-     */
     inline ModelPackagingOutputDetails& WithGreengrass(GreengrassOutputDetails&& value) { SetGreengrass(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GreengrassOutputDetails m_greengrass;

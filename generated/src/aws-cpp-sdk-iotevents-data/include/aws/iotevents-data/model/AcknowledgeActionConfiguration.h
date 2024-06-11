@@ -38,46 +38,19 @@ namespace Model
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The note that you can leave when you acknowledge the alarm.</p>
      */
     inline const Aws::String& GetNote() const{ return m_note; }
-
-    /**
-     * <p>The note that you can leave when you acknowledge the alarm.</p>
-     */
     inline bool NoteHasBeenSet() const { return m_noteHasBeenSet; }
-
-    /**
-     * <p>The note that you can leave when you acknowledge the alarm.</p>
-     */
     inline void SetNote(const Aws::String& value) { m_noteHasBeenSet = true; m_note = value; }
-
-    /**
-     * <p>The note that you can leave when you acknowledge the alarm.</p>
-     */
     inline void SetNote(Aws::String&& value) { m_noteHasBeenSet = true; m_note = std::move(value); }
-
-    /**
-     * <p>The note that you can leave when you acknowledge the alarm.</p>
-     */
     inline void SetNote(const char* value) { m_noteHasBeenSet = true; m_note.assign(value); }
-
-    /**
-     * <p>The note that you can leave when you acknowledge the alarm.</p>
-     */
     inline AcknowledgeActionConfiguration& WithNote(const Aws::String& value) { SetNote(value); return *this;}
-
-    /**
-     * <p>The note that you can leave when you acknowledge the alarm.</p>
-     */
     inline AcknowledgeActionConfiguration& WithNote(Aws::String&& value) { SetNote(std::move(value)); return *this;}
-
-    /**
-     * <p>The note that you can leave when you acknowledge the alarm.</p>
-     */
     inline AcknowledgeActionConfiguration& WithNote(const char* value) { SetNote(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_note;

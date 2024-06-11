@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API PutDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The destination.</p>
      */
     inline const Destination& GetDestination() const{ return m_destination; }
-
-    /**
-     * <p>The destination.</p>
-     */
     inline void SetDestination(const Destination& value) { m_destination = value; }
-
-    /**
-     * <p>The destination.</p>
-     */
     inline void SetDestination(Destination&& value) { m_destination = std::move(value); }
-
-    /**
-     * <p>The destination.</p>
-     */
     inline PutDestinationResult& WithDestination(const Destination& value) { SetDestination(value); return *this;}
-
-    /**
-     * <p>The destination.</p>
-     */
     inline PutDestinationResult& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutDestinationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutDestinationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutDestinationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Destination m_destination;

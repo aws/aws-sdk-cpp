@@ -63,6 +63,7 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the custom vocabulary you want to use when processing your
      * transcription job. Custom vocabulary names are case sensitive.</p> <p>The
@@ -72,78 +73,16 @@ namespace Model
      * a language mismatch.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
-
-    /**
-     * <p>The name of the custom vocabulary you want to use when processing your
-     * transcription job. Custom vocabulary names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary must match the language code that
-     * you specify in your transcription request. If the languages do not match, the
-     * custom vocabulary isn't applied. There are no errors or warnings associated with
-     * a language mismatch.</p>
-     */
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the custom vocabulary you want to use when processing your
-     * transcription job. Custom vocabulary names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary must match the language code that
-     * you specify in your transcription request. If the languages do not match, the
-     * custom vocabulary isn't applied. There are no errors or warnings associated with
-     * a language mismatch.</p>
-     */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-
-    /**
-     * <p>The name of the custom vocabulary you want to use when processing your
-     * transcription job. Custom vocabulary names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary must match the language code that
-     * you specify in your transcription request. If the languages do not match, the
-     * custom vocabulary isn't applied. There are no errors or warnings associated with
-     * a language mismatch.</p>
-     */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-
-    /**
-     * <p>The name of the custom vocabulary you want to use when processing your
-     * transcription job. Custom vocabulary names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary must match the language code that
-     * you specify in your transcription request. If the languages do not match, the
-     * custom vocabulary isn't applied. There are no errors or warnings associated with
-     * a language mismatch.</p>
-     */
     inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-
-    /**
-     * <p>The name of the custom vocabulary you want to use when processing your
-     * transcription job. Custom vocabulary names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary must match the language code that
-     * you specify in your transcription request. If the languages do not match, the
-     * custom vocabulary isn't applied. There are no errors or warnings associated with
-     * a language mismatch.</p>
-     */
     inline LanguageIdSettings& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-
-    /**
-     * <p>The name of the custom vocabulary you want to use when processing your
-     * transcription job. Custom vocabulary names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary must match the language code that
-     * you specify in your transcription request. If the languages do not match, the
-     * custom vocabulary isn't applied. There are no errors or warnings associated with
-     * a language mismatch.</p>
-     */
     inline LanguageIdSettings& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the custom vocabulary you want to use when processing your
-     * transcription job. Custom vocabulary names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary must match the language code that
-     * you specify in your transcription request. If the languages do not match, the
-     * custom vocabulary isn't applied. There are no errors or warnings associated with
-     * a language mismatch.</p>
-     */
     inline LanguageIdSettings& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the custom vocabulary filter you want to use when processing your
      * transcription job. Custom vocabulary filter names are case sensitive.</p> <p>The
@@ -155,92 +94,16 @@ namespace Model
      * <code>VocabularyFilterMethod</code>.</p>
      */
     inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
-
-    /**
-     * <p>The name of the custom vocabulary filter you want to use when processing your
-     * transcription job. Custom vocabulary filter names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary filter must match the language code
-     * that you specify in your transcription request. If the languages do not match,
-     * the custom vocabulary filter isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p> <p>Note that if you include
-     * <code>VocabularyFilterName</code> in your request, you must also include
-     * <code>VocabularyFilterMethod</code>.</p>
-     */
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
-
-    /**
-     * <p>The name of the custom vocabulary filter you want to use when processing your
-     * transcription job. Custom vocabulary filter names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary filter must match the language code
-     * that you specify in your transcription request. If the languages do not match,
-     * the custom vocabulary filter isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p> <p>Note that if you include
-     * <code>VocabularyFilterName</code> in your request, you must also include
-     * <code>VocabularyFilterMethod</code>.</p>
-     */
     inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
-
-    /**
-     * <p>The name of the custom vocabulary filter you want to use when processing your
-     * transcription job. Custom vocabulary filter names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary filter must match the language code
-     * that you specify in your transcription request. If the languages do not match,
-     * the custom vocabulary filter isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p> <p>Note that if you include
-     * <code>VocabularyFilterName</code> in your request, you must also include
-     * <code>VocabularyFilterMethod</code>.</p>
-     */
     inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
-
-    /**
-     * <p>The name of the custom vocabulary filter you want to use when processing your
-     * transcription job. Custom vocabulary filter names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary filter must match the language code
-     * that you specify in your transcription request. If the languages do not match,
-     * the custom vocabulary filter isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p> <p>Note that if you include
-     * <code>VocabularyFilterName</code> in your request, you must also include
-     * <code>VocabularyFilterMethod</code>.</p>
-     */
     inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
-
-    /**
-     * <p>The name of the custom vocabulary filter you want to use when processing your
-     * transcription job. Custom vocabulary filter names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary filter must match the language code
-     * that you specify in your transcription request. If the languages do not match,
-     * the custom vocabulary filter isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p> <p>Note that if you include
-     * <code>VocabularyFilterName</code> in your request, you must also include
-     * <code>VocabularyFilterMethod</code>.</p>
-     */
     inline LanguageIdSettings& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
-
-    /**
-     * <p>The name of the custom vocabulary filter you want to use when processing your
-     * transcription job. Custom vocabulary filter names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary filter must match the language code
-     * that you specify in your transcription request. If the languages do not match,
-     * the custom vocabulary filter isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p> <p>Note that if you include
-     * <code>VocabularyFilterName</code> in your request, you must also include
-     * <code>VocabularyFilterMethod</code>.</p>
-     */
     inline LanguageIdSettings& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the custom vocabulary filter you want to use when processing your
-     * transcription job. Custom vocabulary filter names are case sensitive.</p> <p>The
-     * language of the specified custom vocabulary filter must match the language code
-     * that you specify in your transcription request. If the languages do not match,
-     * the custom vocabulary filter isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p> <p>Note that if you include
-     * <code>VocabularyFilterName</code> in your request, you must also include
-     * <code>VocabularyFilterMethod</code>.</p>
-     */
     inline LanguageIdSettings& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the custom language model you want to use when processing your
      * transcription job. Note that custom language model names are case sensitive.</p>
@@ -250,77 +113,14 @@ namespace Model
      * associated with a language mismatch.</p>
      */
     inline const Aws::String& GetLanguageModelName() const{ return m_languageModelName; }
-
-    /**
-     * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that custom language model names are case sensitive.</p>
-     * <p>The language of the specified custom language model must match the language
-     * code that you specify in your transcription request. If the languages do not
-     * match, the custom language model isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p>
-     */
     inline bool LanguageModelNameHasBeenSet() const { return m_languageModelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that custom language model names are case sensitive.</p>
-     * <p>The language of the specified custom language model must match the language
-     * code that you specify in your transcription request. If the languages do not
-     * match, the custom language model isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p>
-     */
     inline void SetLanguageModelName(const Aws::String& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = value; }
-
-    /**
-     * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that custom language model names are case sensitive.</p>
-     * <p>The language of the specified custom language model must match the language
-     * code that you specify in your transcription request. If the languages do not
-     * match, the custom language model isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p>
-     */
     inline void SetLanguageModelName(Aws::String&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::move(value); }
-
-    /**
-     * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that custom language model names are case sensitive.</p>
-     * <p>The language of the specified custom language model must match the language
-     * code that you specify in your transcription request. If the languages do not
-     * match, the custom language model isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p>
-     */
     inline void SetLanguageModelName(const char* value) { m_languageModelNameHasBeenSet = true; m_languageModelName.assign(value); }
-
-    /**
-     * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that custom language model names are case sensitive.</p>
-     * <p>The language of the specified custom language model must match the language
-     * code that you specify in your transcription request. If the languages do not
-     * match, the custom language model isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p>
-     */
     inline LanguageIdSettings& WithLanguageModelName(const Aws::String& value) { SetLanguageModelName(value); return *this;}
-
-    /**
-     * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that custom language model names are case sensitive.</p>
-     * <p>The language of the specified custom language model must match the language
-     * code that you specify in your transcription request. If the languages do not
-     * match, the custom language model isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p>
-     */
     inline LanguageIdSettings& WithLanguageModelName(Aws::String&& value) { SetLanguageModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that custom language model names are case sensitive.</p>
-     * <p>The language of the specified custom language model must match the language
-     * code that you specify in your transcription request. If the languages do not
-     * match, the custom language model isn't applied. There are no errors or warnings
-     * associated with a language mismatch.</p>
-     */
     inline LanguageIdSettings& WithLanguageModelName(const char* value) { SetLanguageModelName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_vocabularyName;

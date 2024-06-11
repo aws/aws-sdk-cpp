@@ -33,51 +33,20 @@ namespace Model
     AWS_DRS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The IDs of the Recovery Instances that should be terminated.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRecoveryInstanceIDs() const{ return m_recoveryInstanceIDs; }
-
-    /**
-     * <p>The IDs of the Recovery Instances that should be terminated.</p>
-     */
     inline bool RecoveryInstanceIDsHasBeenSet() const { return m_recoveryInstanceIDsHasBeenSet; }
-
-    /**
-     * <p>The IDs of the Recovery Instances that should be terminated.</p>
-     */
     inline void SetRecoveryInstanceIDs(const Aws::Vector<Aws::String>& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs = value; }
-
-    /**
-     * <p>The IDs of the Recovery Instances that should be terminated.</p>
-     */
     inline void SetRecoveryInstanceIDs(Aws::Vector<Aws::String>&& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs = std::move(value); }
-
-    /**
-     * <p>The IDs of the Recovery Instances that should be terminated.</p>
-     */
     inline TerminateRecoveryInstancesRequest& WithRecoveryInstanceIDs(const Aws::Vector<Aws::String>& value) { SetRecoveryInstanceIDs(value); return *this;}
-
-    /**
-     * <p>The IDs of the Recovery Instances that should be terminated.</p>
-     */
     inline TerminateRecoveryInstancesRequest& WithRecoveryInstanceIDs(Aws::Vector<Aws::String>&& value) { SetRecoveryInstanceIDs(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the Recovery Instances that should be terminated.</p>
-     */
     inline TerminateRecoveryInstancesRequest& AddRecoveryInstanceIDs(const Aws::String& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the Recovery Instances that should be terminated.</p>
-     */
     inline TerminateRecoveryInstancesRequest& AddRecoveryInstanceIDs(Aws::String&& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the Recovery Instances that should be terminated.</p>
-     */
     inline TerminateRecoveryInstancesRequest& AddRecoveryInstanceIDs(const char* value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_recoveryInstanceIDs;

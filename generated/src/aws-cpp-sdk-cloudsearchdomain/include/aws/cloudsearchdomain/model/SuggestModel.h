@@ -40,108 +40,43 @@ namespace Model
     AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The query string specified in the suggest request.</p>
      */
     inline const Aws::String& GetQuery() const{ return m_query; }
-
-    /**
-     * <p>The query string specified in the suggest request.</p>
-     */
     inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
-
-    /**
-     * <p>The query string specified in the suggest request.</p>
-     */
     inline void SetQuery(const Aws::String& value) { m_queryHasBeenSet = true; m_query = value; }
-
-    /**
-     * <p>The query string specified in the suggest request.</p>
-     */
     inline void SetQuery(Aws::String&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
-
-    /**
-     * <p>The query string specified in the suggest request.</p>
-     */
     inline void SetQuery(const char* value) { m_queryHasBeenSet = true; m_query.assign(value); }
-
-    /**
-     * <p>The query string specified in the suggest request.</p>
-     */
     inline SuggestModel& WithQuery(const Aws::String& value) { SetQuery(value); return *this;}
-
-    /**
-     * <p>The query string specified in the suggest request.</p>
-     */
     inline SuggestModel& WithQuery(Aws::String&& value) { SetQuery(std::move(value)); return *this;}
-
-    /**
-     * <p>The query string specified in the suggest request.</p>
-     */
     inline SuggestModel& WithQuery(const char* value) { SetQuery(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of documents that were found to match the query string.</p>
      */
     inline long long GetFound() const{ return m_found; }
-
-    /**
-     * <p>The number of documents that were found to match the query string.</p>
-     */
     inline bool FoundHasBeenSet() const { return m_foundHasBeenSet; }
-
-    /**
-     * <p>The number of documents that were found to match the query string.</p>
-     */
     inline void SetFound(long long value) { m_foundHasBeenSet = true; m_found = value; }
-
-    /**
-     * <p>The number of documents that were found to match the query string.</p>
-     */
     inline SuggestModel& WithFound(long long value) { SetFound(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The documents that match the query string.</p>
      */
     inline const Aws::Vector<SuggestionMatch>& GetSuggestions() const{ return m_suggestions; }
-
-    /**
-     * <p>The documents that match the query string.</p>
-     */
     inline bool SuggestionsHasBeenSet() const { return m_suggestionsHasBeenSet; }
-
-    /**
-     * <p>The documents that match the query string.</p>
-     */
     inline void SetSuggestions(const Aws::Vector<SuggestionMatch>& value) { m_suggestionsHasBeenSet = true; m_suggestions = value; }
-
-    /**
-     * <p>The documents that match the query string.</p>
-     */
     inline void SetSuggestions(Aws::Vector<SuggestionMatch>&& value) { m_suggestionsHasBeenSet = true; m_suggestions = std::move(value); }
-
-    /**
-     * <p>The documents that match the query string.</p>
-     */
     inline SuggestModel& WithSuggestions(const Aws::Vector<SuggestionMatch>& value) { SetSuggestions(value); return *this;}
-
-    /**
-     * <p>The documents that match the query string.</p>
-     */
     inline SuggestModel& WithSuggestions(Aws::Vector<SuggestionMatch>&& value) { SetSuggestions(std::move(value)); return *this;}
-
-    /**
-     * <p>The documents that match the query string.</p>
-     */
     inline SuggestModel& AddSuggestions(const SuggestionMatch& value) { m_suggestionsHasBeenSet = true; m_suggestions.push_back(value); return *this; }
-
-    /**
-     * <p>The documents that match the query string.</p>
-     */
     inline SuggestModel& AddSuggestions(SuggestionMatch&& value) { m_suggestionsHasBeenSet = true; m_suggestions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_query;

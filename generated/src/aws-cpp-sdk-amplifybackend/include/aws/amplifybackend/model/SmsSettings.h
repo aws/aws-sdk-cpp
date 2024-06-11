@@ -37,46 +37,19 @@ namespace Model
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The contents of the SMS message.</p>
      */
     inline const Aws::String& GetSmsMessage() const{ return m_smsMessage; }
-
-    /**
-     * <p>The contents of the SMS message.</p>
-     */
     inline bool SmsMessageHasBeenSet() const { return m_smsMessageHasBeenSet; }
-
-    /**
-     * <p>The contents of the SMS message.</p>
-     */
     inline void SetSmsMessage(const Aws::String& value) { m_smsMessageHasBeenSet = true; m_smsMessage = value; }
-
-    /**
-     * <p>The contents of the SMS message.</p>
-     */
     inline void SetSmsMessage(Aws::String&& value) { m_smsMessageHasBeenSet = true; m_smsMessage = std::move(value); }
-
-    /**
-     * <p>The contents of the SMS message.</p>
-     */
     inline void SetSmsMessage(const char* value) { m_smsMessageHasBeenSet = true; m_smsMessage.assign(value); }
-
-    /**
-     * <p>The contents of the SMS message.</p>
-     */
     inline SmsSettings& WithSmsMessage(const Aws::String& value) { SetSmsMessage(value); return *this;}
-
-    /**
-     * <p>The contents of the SMS message.</p>
-     */
     inline SmsSettings& WithSmsMessage(Aws::String&& value) { SetSmsMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The contents of the SMS message.</p>
-     */
     inline SmsSettings& WithSmsMessage(const char* value) { SetSmsMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_smsMessage;

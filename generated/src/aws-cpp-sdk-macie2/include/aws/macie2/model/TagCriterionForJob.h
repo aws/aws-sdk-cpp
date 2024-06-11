@@ -40,91 +40,33 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The operator to use in the condition. Valid values are EQ (equals) and NE
      * (not equals).</p>
      */
     inline const JobComparator& GetComparator() const{ return m_comparator; }
-
-    /**
-     * <p>The operator to use in the condition. Valid values are EQ (equals) and NE
-     * (not equals).</p>
-     */
     inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
-
-    /**
-     * <p>The operator to use in the condition. Valid values are EQ (equals) and NE
-     * (not equals).</p>
-     */
     inline void SetComparator(const JobComparator& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
-
-    /**
-     * <p>The operator to use in the condition. Valid values are EQ (equals) and NE
-     * (not equals).</p>
-     */
     inline void SetComparator(JobComparator&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
-
-    /**
-     * <p>The operator to use in the condition. Valid values are EQ (equals) and NE
-     * (not equals).</p>
-     */
     inline TagCriterionForJob& WithComparator(const JobComparator& value) { SetComparator(value); return *this;}
-
-    /**
-     * <p>The operator to use in the condition. Valid values are EQ (equals) and NE
-     * (not equals).</p>
-     */
     inline TagCriterionForJob& WithComparator(JobComparator&& value) { SetComparator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tag keys, tag values, or tag key and value pairs to use in the
      * condition.</p>
      */
     inline const Aws::Vector<TagCriterionPairForJob>& GetTagValues() const{ return m_tagValues; }
-
-    /**
-     * <p>The tag keys, tag values, or tag key and value pairs to use in the
-     * condition.</p>
-     */
     inline bool TagValuesHasBeenSet() const { return m_tagValuesHasBeenSet; }
-
-    /**
-     * <p>The tag keys, tag values, or tag key and value pairs to use in the
-     * condition.</p>
-     */
     inline void SetTagValues(const Aws::Vector<TagCriterionPairForJob>& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
-
-    /**
-     * <p>The tag keys, tag values, or tag key and value pairs to use in the
-     * condition.</p>
-     */
     inline void SetTagValues(Aws::Vector<TagCriterionPairForJob>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
-
-    /**
-     * <p>The tag keys, tag values, or tag key and value pairs to use in the
-     * condition.</p>
-     */
     inline TagCriterionForJob& WithTagValues(const Aws::Vector<TagCriterionPairForJob>& value) { SetTagValues(value); return *this;}
-
-    /**
-     * <p>The tag keys, tag values, or tag key and value pairs to use in the
-     * condition.</p>
-     */
     inline TagCriterionForJob& WithTagValues(Aws::Vector<TagCriterionPairForJob>&& value) { SetTagValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag keys, tag values, or tag key and value pairs to use in the
-     * condition.</p>
-     */
     inline TagCriterionForJob& AddTagValues(const TagCriterionPairForJob& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
-
-    /**
-     * <p>The tag keys, tag values, or tag key and value pairs to use in the
-     * condition.</p>
-     */
     inline TagCriterionForJob& AddTagValues(TagCriterionPairForJob&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     JobComparator m_comparator;

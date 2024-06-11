@@ -40,103 +40,35 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about discrepancies found for intents between the test
      * set and the bot.</p>
      */
     inline const Aws::Vector<TestSetIntentDiscrepancyItem>& GetIntentDiscrepancies() const{ return m_intentDiscrepancies; }
-
-    /**
-     * <p>Contains information about discrepancies found for intents between the test
-     * set and the bot.</p>
-     */
     inline bool IntentDiscrepanciesHasBeenSet() const { return m_intentDiscrepanciesHasBeenSet; }
-
-    /**
-     * <p>Contains information about discrepancies found for intents between the test
-     * set and the bot.</p>
-     */
     inline void SetIntentDiscrepancies(const Aws::Vector<TestSetIntentDiscrepancyItem>& value) { m_intentDiscrepanciesHasBeenSet = true; m_intentDiscrepancies = value; }
-
-    /**
-     * <p>Contains information about discrepancies found for intents between the test
-     * set and the bot.</p>
-     */
     inline void SetIntentDiscrepancies(Aws::Vector<TestSetIntentDiscrepancyItem>&& value) { m_intentDiscrepanciesHasBeenSet = true; m_intentDiscrepancies = std::move(value); }
-
-    /**
-     * <p>Contains information about discrepancies found for intents between the test
-     * set and the bot.</p>
-     */
     inline TestSetDiscrepancyErrors& WithIntentDiscrepancies(const Aws::Vector<TestSetIntentDiscrepancyItem>& value) { SetIntentDiscrepancies(value); return *this;}
-
-    /**
-     * <p>Contains information about discrepancies found for intents between the test
-     * set and the bot.</p>
-     */
     inline TestSetDiscrepancyErrors& WithIntentDiscrepancies(Aws::Vector<TestSetIntentDiscrepancyItem>&& value) { SetIntentDiscrepancies(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains information about discrepancies found for intents between the test
-     * set and the bot.</p>
-     */
     inline TestSetDiscrepancyErrors& AddIntentDiscrepancies(const TestSetIntentDiscrepancyItem& value) { m_intentDiscrepanciesHasBeenSet = true; m_intentDiscrepancies.push_back(value); return *this; }
-
-    /**
-     * <p>Contains information about discrepancies found for intents between the test
-     * set and the bot.</p>
-     */
     inline TestSetDiscrepancyErrors& AddIntentDiscrepancies(TestSetIntentDiscrepancyItem&& value) { m_intentDiscrepanciesHasBeenSet = true; m_intentDiscrepancies.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains information about discrepancies found for slots between the test set
      * and the bot.</p>
      */
     inline const Aws::Vector<TestSetSlotDiscrepancyItem>& GetSlotDiscrepancies() const{ return m_slotDiscrepancies; }
-
-    /**
-     * <p>Contains information about discrepancies found for slots between the test set
-     * and the bot.</p>
-     */
     inline bool SlotDiscrepanciesHasBeenSet() const { return m_slotDiscrepanciesHasBeenSet; }
-
-    /**
-     * <p>Contains information about discrepancies found for slots between the test set
-     * and the bot.</p>
-     */
     inline void SetSlotDiscrepancies(const Aws::Vector<TestSetSlotDiscrepancyItem>& value) { m_slotDiscrepanciesHasBeenSet = true; m_slotDiscrepancies = value; }
-
-    /**
-     * <p>Contains information about discrepancies found for slots between the test set
-     * and the bot.</p>
-     */
     inline void SetSlotDiscrepancies(Aws::Vector<TestSetSlotDiscrepancyItem>&& value) { m_slotDiscrepanciesHasBeenSet = true; m_slotDiscrepancies = std::move(value); }
-
-    /**
-     * <p>Contains information about discrepancies found for slots between the test set
-     * and the bot.</p>
-     */
     inline TestSetDiscrepancyErrors& WithSlotDiscrepancies(const Aws::Vector<TestSetSlotDiscrepancyItem>& value) { SetSlotDiscrepancies(value); return *this;}
-
-    /**
-     * <p>Contains information about discrepancies found for slots between the test set
-     * and the bot.</p>
-     */
     inline TestSetDiscrepancyErrors& WithSlotDiscrepancies(Aws::Vector<TestSetSlotDiscrepancyItem>&& value) { SetSlotDiscrepancies(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains information about discrepancies found for slots between the test set
-     * and the bot.</p>
-     */
     inline TestSetDiscrepancyErrors& AddSlotDiscrepancies(const TestSetSlotDiscrepancyItem& value) { m_slotDiscrepanciesHasBeenSet = true; m_slotDiscrepancies.push_back(value); return *this; }
-
-    /**
-     * <p>Contains information about discrepancies found for slots between the test set
-     * and the bot.</p>
-     */
     inline TestSetDiscrepancyErrors& AddSlotDiscrepancies(TestSetSlotDiscrepancyItem&& value) { m_slotDiscrepanciesHasBeenSet = true; m_slotDiscrepancies.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<TestSetIntentDiscrepancyItem> m_intentDiscrepancies;

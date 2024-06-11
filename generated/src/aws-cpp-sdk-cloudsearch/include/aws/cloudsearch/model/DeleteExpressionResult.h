@@ -39,47 +39,25 @@ namespace Model
     AWS_CLOUDSEARCH_API DeleteExpressionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The status of the expression being deleted.</p>
      */
     inline const ExpressionStatus& GetExpression() const{ return m_expression; }
-
-    /**
-     * <p>The status of the expression being deleted.</p>
-     */
     inline void SetExpression(const ExpressionStatus& value) { m_expression = value; }
-
-    /**
-     * <p>The status of the expression being deleted.</p>
-     */
     inline void SetExpression(ExpressionStatus&& value) { m_expression = std::move(value); }
-
-    /**
-     * <p>The status of the expression being deleted.</p>
-     */
     inline DeleteExpressionResult& WithExpression(const ExpressionStatus& value) { SetExpression(value); return *this;}
-
-    /**
-     * <p>The status of the expression being deleted.</p>
-     */
     inline DeleteExpressionResult& WithExpression(ExpressionStatus&& value) { SetExpression(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteExpressionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteExpressionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ExpressionStatus m_expression;

@@ -46,48 +46,19 @@ namespace Model
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> <code>COUNT</code> overrides the action specified by the individual rule
      * within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action
      * will take place.</p>
      */
     inline const WafOverrideActionType& GetType() const{ return m_type; }
-
-    /**
-     * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action
-     * will take place.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action
-     * will take place.</p>
-     */
     inline void SetType(const WafOverrideActionType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action
-     * will take place.</p>
-     */
     inline void SetType(WafOverrideActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action
-     * will take place.</p>
-     */
     inline WafOverrideAction& WithType(const WafOverrideActionType& value) { SetType(value); return *this;}
-
-    /**
-     * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action
-     * will take place.</p>
-     */
     inline WafOverrideAction& WithType(WafOverrideActionType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     WafOverrideActionType m_type;

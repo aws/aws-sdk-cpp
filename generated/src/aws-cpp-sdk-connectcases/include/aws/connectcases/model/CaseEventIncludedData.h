@@ -39,46 +39,19 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List of field identifiers.</p>
      */
     inline const Aws::Vector<FieldIdentifier>& GetFields() const{ return m_fields; }
-
-    /**
-     * <p>List of field identifiers.</p>
-     */
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-
-    /**
-     * <p>List of field identifiers.</p>
-     */
     inline void SetFields(const Aws::Vector<FieldIdentifier>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-
-    /**
-     * <p>List of field identifiers.</p>
-     */
     inline void SetFields(Aws::Vector<FieldIdentifier>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-
-    /**
-     * <p>List of field identifiers.</p>
-     */
     inline CaseEventIncludedData& WithFields(const Aws::Vector<FieldIdentifier>& value) { SetFields(value); return *this;}
-
-    /**
-     * <p>List of field identifiers.</p>
-     */
     inline CaseEventIncludedData& WithFields(Aws::Vector<FieldIdentifier>&& value) { SetFields(std::move(value)); return *this;}
-
-    /**
-     * <p>List of field identifiers.</p>
-     */
     inline CaseEventIncludedData& AddFields(const FieldIdentifier& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-
-    /**
-     * <p>List of field identifiers.</p>
-     */
     inline CaseEventIncludedData& AddFields(FieldIdentifier&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<FieldIdentifier> m_fields;

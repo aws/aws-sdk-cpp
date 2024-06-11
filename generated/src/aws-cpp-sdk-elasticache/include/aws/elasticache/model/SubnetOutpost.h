@@ -39,46 +39,19 @@ namespace Model
     AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The outpost ARN of the subnet.</p>
      */
     inline const Aws::String& GetSubnetOutpostArn() const{ return m_subnetOutpostArn; }
-
-    /**
-     * <p>The outpost ARN of the subnet.</p>
-     */
     inline bool SubnetOutpostArnHasBeenSet() const { return m_subnetOutpostArnHasBeenSet; }
-
-    /**
-     * <p>The outpost ARN of the subnet.</p>
-     */
     inline void SetSubnetOutpostArn(const Aws::String& value) { m_subnetOutpostArnHasBeenSet = true; m_subnetOutpostArn = value; }
-
-    /**
-     * <p>The outpost ARN of the subnet.</p>
-     */
     inline void SetSubnetOutpostArn(Aws::String&& value) { m_subnetOutpostArnHasBeenSet = true; m_subnetOutpostArn = std::move(value); }
-
-    /**
-     * <p>The outpost ARN of the subnet.</p>
-     */
     inline void SetSubnetOutpostArn(const char* value) { m_subnetOutpostArnHasBeenSet = true; m_subnetOutpostArn.assign(value); }
-
-    /**
-     * <p>The outpost ARN of the subnet.</p>
-     */
     inline SubnetOutpost& WithSubnetOutpostArn(const Aws::String& value) { SetSubnetOutpostArn(value); return *this;}
-
-    /**
-     * <p>The outpost ARN of the subnet.</p>
-     */
     inline SubnetOutpost& WithSubnetOutpostArn(Aws::String&& value) { SetSubnetOutpostArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The outpost ARN of the subnet.</p>
-     */
     inline SubnetOutpost& WithSubnetOutpostArn(const char* value) { SetSubnetOutpostArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_subnetOutpostArn;

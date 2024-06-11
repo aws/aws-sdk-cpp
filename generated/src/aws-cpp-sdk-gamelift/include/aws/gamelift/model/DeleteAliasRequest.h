@@ -34,54 +34,20 @@ namespace Model
     AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier of the alias that you want to delete. You can use either
      * the alias ID or ARN value.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
-
-    /**
-     * <p>A unique identifier of the alias that you want to delete. You can use either
-     * the alias ID or ARN value.</p>
-     */
     inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier of the alias that you want to delete. You can use either
-     * the alias ID or ARN value.</p>
-     */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
-
-    /**
-     * <p>A unique identifier of the alias that you want to delete. You can use either
-     * the alias ID or ARN value.</p>
-     */
     inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
-
-    /**
-     * <p>A unique identifier of the alias that you want to delete. You can use either
-     * the alias ID or ARN value.</p>
-     */
     inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
-
-    /**
-     * <p>A unique identifier of the alias that you want to delete. You can use either
-     * the alias ID or ARN value.</p>
-     */
     inline DeleteAliasRequest& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
-
-    /**
-     * <p>A unique identifier of the alias that you want to delete. You can use either
-     * the alias ID or ARN value.</p>
-     */
     inline DeleteAliasRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier of the alias that you want to delete. You can use either
-     * the alias ID or ARN value.</p>
-     */
     inline DeleteAliasRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_aliasId;

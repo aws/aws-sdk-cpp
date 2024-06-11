@@ -40,54 +40,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p> <code>PlatformApplicationArn</code> of platform application object to
      * delete.</p>
      */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
-
-    /**
-     * <p> <code>PlatformApplicationArn</code> of platform application object to
-     * delete.</p>
-     */
     inline bool PlatformApplicationArnHasBeenSet() const { return m_platformApplicationArnHasBeenSet; }
-
-    /**
-     * <p> <code>PlatformApplicationArn</code> of platform application object to
-     * delete.</p>
-     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
-
-    /**
-     * <p> <code>PlatformApplicationArn</code> of platform application object to
-     * delete.</p>
-     */
     inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = std::move(value); }
-
-    /**
-     * <p> <code>PlatformApplicationArn</code> of platform application object to
-     * delete.</p>
-     */
     inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn.assign(value); }
-
-    /**
-     * <p> <code>PlatformApplicationArn</code> of platform application object to
-     * delete.</p>
-     */
     inline DeletePlatformApplicationRequest& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
-
-    /**
-     * <p> <code>PlatformApplicationArn</code> of platform application object to
-     * delete.</p>
-     */
     inline DeletePlatformApplicationRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p> <code>PlatformApplicationArn</code> of platform application object to
-     * delete.</p>
-     */
     inline DeletePlatformApplicationRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_platformApplicationArn;

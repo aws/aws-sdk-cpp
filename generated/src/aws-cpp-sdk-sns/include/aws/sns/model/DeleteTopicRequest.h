@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ARN of the topic you want to delete.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
-
-    /**
-     * <p>The ARN of the topic you want to delete.</p>
-     */
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the topic you want to delete.</p>
-     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-
-    /**
-     * <p>The ARN of the topic you want to delete.</p>
-     */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the topic you want to delete.</p>
-     */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-
-    /**
-     * <p>The ARN of the topic you want to delete.</p>
-     */
     inline DeleteTopicRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the topic you want to delete.</p>
-     */
     inline DeleteTopicRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the topic you want to delete.</p>
-     */
     inline DeleteTopicRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topicArn;

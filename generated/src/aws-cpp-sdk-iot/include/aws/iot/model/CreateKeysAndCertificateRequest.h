@@ -42,26 +42,15 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Specifies whether the certificate is active.</p>
      */
     inline bool GetSetAsActive() const{ return m_setAsActive; }
-
-    /**
-     * <p>Specifies whether the certificate is active.</p>
-     */
     inline bool SetAsActiveHasBeenSet() const { return m_setAsActiveHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the certificate is active.</p>
-     */
     inline void SetSetAsActive(bool value) { m_setAsActiveHasBeenSet = true; m_setAsActive = value; }
-
-    /**
-     * <p>Specifies whether the certificate is active.</p>
-     */
     inline CreateKeysAndCertificateRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
-
+    ///@}
   private:
 
     bool m_setAsActive;

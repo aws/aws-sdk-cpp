@@ -34,55 +34,22 @@ namespace Model
     AWS_B2BI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the unique, system-generated identifier for the profile connected
      * to this partnership.</p>
      */
     inline const Aws::String& GetProfileId() const{ return m_profileId; }
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for the profile connected
-     * to this partnership.</p>
-     */
     inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for the profile connected
-     * to this partnership.</p>
-     */
     inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for the profile connected
-     * to this partnership.</p>
-     */
     inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for the profile connected
-     * to this partnership.</p>
-     */
     inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for the profile connected
-     * to this partnership.</p>
-     */
     inline ListPartnershipsRequest& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for the profile connected
-     * to this partnership.</p>
-     */
     inline ListPartnershipsRequest& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for the profile connected
-     * to this partnership.</p>
-     */
     inline ListPartnershipsRequest& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When additional results are obtained from the command, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass
@@ -90,84 +57,24 @@ namespace Model
      * additional resources.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>When additional results are obtained from the command, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> parameter in a subsequent command to continue listing
-     * additional resources.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>When additional results are obtained from the command, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> parameter in a subsequent command to continue listing
-     * additional resources.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>When additional results are obtained from the command, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> parameter in a subsequent command to continue listing
-     * additional resources.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>When additional results are obtained from the command, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> parameter in a subsequent command to continue listing
-     * additional resources.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>When additional results are obtained from the command, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> parameter in a subsequent command to continue listing
-     * additional resources.</p>
-     */
     inline ListPartnershipsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>When additional results are obtained from the command, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> parameter in a subsequent command to continue listing
-     * additional resources.</p>
-     */
     inline ListPartnershipsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>When additional results are obtained from the command, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> parameter in a subsequent command to continue listing
-     * additional resources.</p>
-     */
     inline ListPartnershipsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the maximum number of capabilities to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Specifies the maximum number of capabilities to return.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Specifies the maximum number of capabilities to return.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Specifies the maximum number of capabilities to return.</p>
-     */
     inline ListPartnershipsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_profileId;

@@ -45,83 +45,32 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about where the text with a citation begins and ends in
      * the generated output.</p>
      */
     inline const Span& GetSpan() const{ return m_span; }
-
-    /**
-     * <p>Contains information about where the text with a citation begins and ends in
-     * the generated output.</p>
-     */
     inline bool SpanHasBeenSet() const { return m_spanHasBeenSet; }
-
-    /**
-     * <p>Contains information about where the text with a citation begins and ends in
-     * the generated output.</p>
-     */
     inline void SetSpan(const Span& value) { m_spanHasBeenSet = true; m_span = value; }
-
-    /**
-     * <p>Contains information about where the text with a citation begins and ends in
-     * the generated output.</p>
-     */
     inline void SetSpan(Span&& value) { m_spanHasBeenSet = true; m_span = std::move(value); }
-
-    /**
-     * <p>Contains information about where the text with a citation begins and ends in
-     * the generated output.</p>
-     */
     inline TextResponsePart& WithSpan(const Span& value) { SetSpan(value); return *this;}
-
-    /**
-     * <p>Contains information about where the text with a citation begins and ends in
-     * the generated output.</p>
-     */
     inline TextResponsePart& WithSpan(Span&& value) { SetSpan(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The part of the generated text that contains a citation.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>The part of the generated text that contains a citation.</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>The part of the generated text that contains a citation.</p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>The part of the generated text that contains a citation.</p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>The part of the generated text that contains a citation.</p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>The part of the generated text that contains a citation.</p>
-     */
     inline TextResponsePart& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>The part of the generated text that contains a citation.</p>
-     */
     inline TextResponsePart& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>The part of the generated text that contains a citation.</p>
-     */
     inline TextResponsePart& WithText(const char* value) { SetText(value); return *this;}
-
+    ///@}
   private:
 
     Span m_span;

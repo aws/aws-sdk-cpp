@@ -39,67 +39,29 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The email attribute value to evaluate.</p>
      */
     inline const ArchiveBooleanToEvaluate& GetEvaluate() const{ return m_evaluate; }
-
-    /**
-     * <p>The email attribute value to evaluate.</p>
-     */
     inline bool EvaluateHasBeenSet() const { return m_evaluateHasBeenSet; }
-
-    /**
-     * <p>The email attribute value to evaluate.</p>
-     */
     inline void SetEvaluate(const ArchiveBooleanToEvaluate& value) { m_evaluateHasBeenSet = true; m_evaluate = value; }
-
-    /**
-     * <p>The email attribute value to evaluate.</p>
-     */
     inline void SetEvaluate(ArchiveBooleanToEvaluate&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::move(value); }
-
-    /**
-     * <p>The email attribute value to evaluate.</p>
-     */
     inline ArchiveBooleanExpression& WithEvaluate(const ArchiveBooleanToEvaluate& value) { SetEvaluate(value); return *this;}
-
-    /**
-     * <p>The email attribute value to evaluate.</p>
-     */
     inline ArchiveBooleanExpression& WithEvaluate(ArchiveBooleanToEvaluate&& value) { SetEvaluate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The boolean operator to use for evaluation.</p>
      */
     inline const ArchiveBooleanOperator& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The boolean operator to use for evaluation.</p>
-     */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The boolean operator to use for evaluation.</p>
-     */
     inline void SetOperator(const ArchiveBooleanOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The boolean operator to use for evaluation.</p>
-     */
     inline void SetOperator(ArchiveBooleanOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The boolean operator to use for evaluation.</p>
-     */
     inline ArchiveBooleanExpression& WithOperator(const ArchiveBooleanOperator& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The boolean operator to use for evaluation.</p>
-     */
     inline ArchiveBooleanExpression& WithOperator(ArchiveBooleanOperator&& value) { SetOperator(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ArchiveBooleanToEvaluate m_evaluate;

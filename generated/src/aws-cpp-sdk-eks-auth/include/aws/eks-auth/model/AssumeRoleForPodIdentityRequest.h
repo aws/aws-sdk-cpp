@@ -32,87 +32,33 @@ namespace Model
     AWS_EKSAUTH_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the cluster for the request.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
-
-    /**
-     * <p>The name of the cluster for the request.</p>
-     */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-
-    /**
-     * <p>The name of the cluster for the request.</p>
-     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-
-    /**
-     * <p>The name of the cluster for the request.</p>
-     */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-
-    /**
-     * <p>The name of the cluster for the request.</p>
-     */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-
-    /**
-     * <p>The name of the cluster for the request.</p>
-     */
     inline AssumeRoleForPodIdentityRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-
-    /**
-     * <p>The name of the cluster for the request.</p>
-     */
     inline AssumeRoleForPodIdentityRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the cluster for the request.</p>
-     */
     inline AssumeRoleForPodIdentityRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token of the Kubernetes service account for the pod.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
-
-    /**
-     * <p>The token of the Kubernetes service account for the pod.</p>
-     */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-
-    /**
-     * <p>The token of the Kubernetes service account for the pod.</p>
-     */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-
-    /**
-     * <p>The token of the Kubernetes service account for the pod.</p>
-     */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-
-    /**
-     * <p>The token of the Kubernetes service account for the pod.</p>
-     */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-
-    /**
-     * <p>The token of the Kubernetes service account for the pod.</p>
-     */
     inline AssumeRoleForPodIdentityRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-
-    /**
-     * <p>The token of the Kubernetes service account for the pod.</p>
-     */
     inline AssumeRoleForPodIdentityRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token of the Kubernetes service account for the pod.</p>
-     */
     inline AssumeRoleForPodIdentityRequest& WithToken(const char* value) { SetToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterName;

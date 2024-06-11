@@ -39,207 +39,80 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The state of the job flow.</p>
      */
     inline const JobFlowExecutionState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the job flow.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of the job flow.</p>
-     */
     inline void SetState(const JobFlowExecutionState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of the job flow.</p>
-     */
     inline void SetState(JobFlowExecutionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of the job flow.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithState(const JobFlowExecutionState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the job flow.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithState(JobFlowExecutionState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The creation date and time of the job flow.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-
-    /**
-     * <p>The creation date and time of the job flow.</p>
-     */
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-
-    /**
-     * <p>The creation date and time of the job flow.</p>
-     */
     inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-
-    /**
-     * <p>The creation date and time of the job flow.</p>
-     */
     inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-
-    /**
-     * <p>The creation date and time of the job flow.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-
-    /**
-     * <p>The creation date and time of the job flow.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The start date and time of the job flow.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDateTime() const{ return m_startDateTime; }
-
-    /**
-     * <p>The start date and time of the job flow.</p>
-     */
     inline bool StartDateTimeHasBeenSet() const { return m_startDateTimeHasBeenSet; }
-
-    /**
-     * <p>The start date and time of the job flow.</p>
-     */
     inline void SetStartDateTime(const Aws::Utils::DateTime& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
-
-    /**
-     * <p>The start date and time of the job flow.</p>
-     */
     inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::move(value); }
-
-    /**
-     * <p>The start date and time of the job flow.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithStartDateTime(const Aws::Utils::DateTime& value) { SetStartDateTime(value); return *this;}
-
-    /**
-     * <p>The start date and time of the job flow.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the job flow was ready to start running bootstrap
      * actions.</p>
      */
     inline const Aws::Utils::DateTime& GetReadyDateTime() const{ return m_readyDateTime; }
-
-    /**
-     * <p>The date and time when the job flow was ready to start running bootstrap
-     * actions.</p>
-     */
     inline bool ReadyDateTimeHasBeenSet() const { return m_readyDateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time when the job flow was ready to start running bootstrap
-     * actions.</p>
-     */
     inline void SetReadyDateTime(const Aws::Utils::DateTime& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
-
-    /**
-     * <p>The date and time when the job flow was ready to start running bootstrap
-     * actions.</p>
-     */
     inline void SetReadyDateTime(Aws::Utils::DateTime&& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time when the job flow was ready to start running bootstrap
-     * actions.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithReadyDateTime(const Aws::Utils::DateTime& value) { SetReadyDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time when the job flow was ready to start running bootstrap
-     * actions.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithReadyDateTime(Aws::Utils::DateTime&& value) { SetReadyDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The completion date and time of the job flow.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDateTime() const{ return m_endDateTime; }
-
-    /**
-     * <p>The completion date and time of the job flow.</p>
-     */
     inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
-
-    /**
-     * <p>The completion date and time of the job flow.</p>
-     */
     inline void SetEndDateTime(const Aws::Utils::DateTime& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
-
-    /**
-     * <p>The completion date and time of the job flow.</p>
-     */
     inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
-
-    /**
-     * <p>The completion date and time of the job flow.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithEndDateTime(const Aws::Utils::DateTime& value) { SetEndDateTime(value); return *this;}
-
-    /**
-     * <p>The completion date and time of the job flow.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Description of the job flow last changed state.</p>
      */
     inline const Aws::String& GetLastStateChangeReason() const{ return m_lastStateChangeReason; }
-
-    /**
-     * <p>Description of the job flow last changed state.</p>
-     */
     inline bool LastStateChangeReasonHasBeenSet() const { return m_lastStateChangeReasonHasBeenSet; }
-
-    /**
-     * <p>Description of the job flow last changed state.</p>
-     */
     inline void SetLastStateChangeReason(const Aws::String& value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason = value; }
-
-    /**
-     * <p>Description of the job flow last changed state.</p>
-     */
     inline void SetLastStateChangeReason(Aws::String&& value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason = std::move(value); }
-
-    /**
-     * <p>Description of the job flow last changed state.</p>
-     */
     inline void SetLastStateChangeReason(const char* value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason.assign(value); }
-
-    /**
-     * <p>Description of the job flow last changed state.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithLastStateChangeReason(const Aws::String& value) { SetLastStateChangeReason(value); return *this;}
-
-    /**
-     * <p>Description of the job flow last changed state.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithLastStateChangeReason(Aws::String&& value) { SetLastStateChangeReason(std::move(value)); return *this;}
-
-    /**
-     * <p>Description of the job flow last changed state.</p>
-     */
     inline JobFlowExecutionStatusDetail& WithLastStateChangeReason(const char* value) { SetLastStateChangeReason(value); return *this;}
-
+    ///@}
   private:
 
     JobFlowExecutionState m_state;

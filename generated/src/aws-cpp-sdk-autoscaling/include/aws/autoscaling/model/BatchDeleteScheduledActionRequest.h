@@ -37,101 +37,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline BatchDeleteScheduledActionRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline BatchDeleteScheduledActionRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline BatchDeleteScheduledActionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The names of the scheduled actions to delete. The maximum number allowed is
      * 50. </p>
      */
     inline const Aws::Vector<Aws::String>& GetScheduledActionNames() const{ return m_scheduledActionNames; }
-
-    /**
-     * <p>The names of the scheduled actions to delete. The maximum number allowed is
-     * 50. </p>
-     */
     inline bool ScheduledActionNamesHasBeenSet() const { return m_scheduledActionNamesHasBeenSet; }
-
-    /**
-     * <p>The names of the scheduled actions to delete. The maximum number allowed is
-     * 50. </p>
-     */
     inline void SetScheduledActionNames(const Aws::Vector<Aws::String>& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = value; }
-
-    /**
-     * <p>The names of the scheduled actions to delete. The maximum number allowed is
-     * 50. </p>
-     */
     inline void SetScheduledActionNames(Aws::Vector<Aws::String>&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = std::move(value); }
-
-    /**
-     * <p>The names of the scheduled actions to delete. The maximum number allowed is
-     * 50. </p>
-     */
     inline BatchDeleteScheduledActionRequest& WithScheduledActionNames(const Aws::Vector<Aws::String>& value) { SetScheduledActionNames(value); return *this;}
-
-    /**
-     * <p>The names of the scheduled actions to delete. The maximum number allowed is
-     * 50. </p>
-     */
     inline BatchDeleteScheduledActionRequest& WithScheduledActionNames(Aws::Vector<Aws::String>&& value) { SetScheduledActionNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the scheduled actions to delete. The maximum number allowed is
-     * 50. </p>
-     */
     inline BatchDeleteScheduledActionRequest& AddScheduledActionNames(const Aws::String& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the scheduled actions to delete. The maximum number allowed is
-     * 50. </p>
-     */
     inline BatchDeleteScheduledActionRequest& AddScheduledActionNames(Aws::String&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of the scheduled actions to delete. The maximum number allowed is
-     * 50. </p>
-     */
     inline BatchDeleteScheduledActionRequest& AddScheduledActionNames(const char* value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;

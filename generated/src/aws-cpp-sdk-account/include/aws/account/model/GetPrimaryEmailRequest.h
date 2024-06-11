@@ -32,6 +32,7 @@ namespace Model
     AWS_ACCOUNT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the 12-digit account ID number of the Amazon Web Services account
      * that you want to access or modify with this operation. To use this parameter,
@@ -51,147 +52,14 @@ namespace Model
      * <code>AccountId</code>.</p> 
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>Specifies the 12-digit account ID number of the Amazon Web Services account
-     * that you want to access or modify with this operation. To use this parameter,
-     * the caller must be an identity in the <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's
-     * management account</a> or a delegated administrator account. The specified
-     * account ID must be a member account in the same organization. The organization
-     * must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
-     * features enabled</a>, and the organization must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted
-     * access</a> enabled for the Account Management service, and optionally a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated
-     * admin</a> account assigned.</p> <p>This operation can only be called from the
-     * management account or the delegated administrator account of an organization for
-     * a member account.</p>  <p>The management account can't specify its own
-     * <code>AccountId</code>.</p> 
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>Specifies the 12-digit account ID number of the Amazon Web Services account
-     * that you want to access or modify with this operation. To use this parameter,
-     * the caller must be an identity in the <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's
-     * management account</a> or a delegated administrator account. The specified
-     * account ID must be a member account in the same organization. The organization
-     * must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
-     * features enabled</a>, and the organization must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted
-     * access</a> enabled for the Account Management service, and optionally a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated
-     * admin</a> account assigned.</p> <p>This operation can only be called from the
-     * management account or the delegated administrator account of an organization for
-     * a member account.</p>  <p>The management account can't specify its own
-     * <code>AccountId</code>.</p> 
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>Specifies the 12-digit account ID number of the Amazon Web Services account
-     * that you want to access or modify with this operation. To use this parameter,
-     * the caller must be an identity in the <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's
-     * management account</a> or a delegated administrator account. The specified
-     * account ID must be a member account in the same organization. The organization
-     * must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
-     * features enabled</a>, and the organization must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted
-     * access</a> enabled for the Account Management service, and optionally a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated
-     * admin</a> account assigned.</p> <p>This operation can only be called from the
-     * management account or the delegated administrator account of an organization for
-     * a member account.</p>  <p>The management account can't specify its own
-     * <code>AccountId</code>.</p> 
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>Specifies the 12-digit account ID number of the Amazon Web Services account
-     * that you want to access or modify with this operation. To use this parameter,
-     * the caller must be an identity in the <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's
-     * management account</a> or a delegated administrator account. The specified
-     * account ID must be a member account in the same organization. The organization
-     * must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
-     * features enabled</a>, and the organization must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted
-     * access</a> enabled for the Account Management service, and optionally a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated
-     * admin</a> account assigned.</p> <p>This operation can only be called from the
-     * management account or the delegated administrator account of an organization for
-     * a member account.</p>  <p>The management account can't specify its own
-     * <code>AccountId</code>.</p> 
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>Specifies the 12-digit account ID number of the Amazon Web Services account
-     * that you want to access or modify with this operation. To use this parameter,
-     * the caller must be an identity in the <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's
-     * management account</a> or a delegated administrator account. The specified
-     * account ID must be a member account in the same organization. The organization
-     * must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
-     * features enabled</a>, and the organization must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted
-     * access</a> enabled for the Account Management service, and optionally a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated
-     * admin</a> account assigned.</p> <p>This operation can only be called from the
-     * management account or the delegated administrator account of an organization for
-     * a member account.</p>  <p>The management account can't specify its own
-     * <code>AccountId</code>.</p> 
-     */
     inline GetPrimaryEmailRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>Specifies the 12-digit account ID number of the Amazon Web Services account
-     * that you want to access or modify with this operation. To use this parameter,
-     * the caller must be an identity in the <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's
-     * management account</a> or a delegated administrator account. The specified
-     * account ID must be a member account in the same organization. The organization
-     * must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
-     * features enabled</a>, and the organization must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted
-     * access</a> enabled for the Account Management service, and optionally a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated
-     * admin</a> account assigned.</p> <p>This operation can only be called from the
-     * management account or the delegated administrator account of an organization for
-     * a member account.</p>  <p>The management account can't specify its own
-     * <code>AccountId</code>.</p> 
-     */
     inline GetPrimaryEmailRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the 12-digit account ID number of the Amazon Web Services account
-     * that you want to access or modify with this operation. To use this parameter,
-     * the caller must be an identity in the <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's
-     * management account</a> or a delegated administrator account. The specified
-     * account ID must be a member account in the same organization. The organization
-     * must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
-     * features enabled</a>, and the organization must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted
-     * access</a> enabled for the Account Management service, and optionally a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated
-     * admin</a> account assigned.</p> <p>This operation can only be called from the
-     * management account or the delegated administrator account of an organization for
-     * a member account.</p>  <p>The management account can't specify its own
-     * <code>AccountId</code>.</p> 
-     */
     inline GetPrimaryEmailRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

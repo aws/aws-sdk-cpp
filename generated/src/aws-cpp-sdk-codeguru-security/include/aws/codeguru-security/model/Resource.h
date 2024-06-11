@@ -38,87 +38,33 @@ namespace Model
     AWS_CODEGURUSECURITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>scanName</code> of the scan that was run on the resource.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The <code>scanName</code> of the scan that was run on the resource.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The <code>scanName</code> of the scan that was run on the resource.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The <code>scanName</code> of the scan that was run on the resource.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The <code>scanName</code> of the scan that was run on the resource.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The <code>scanName</code> of the scan that was run on the resource.</p>
-     */
     inline Resource& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The <code>scanName</code> of the scan that was run on the resource.</p>
-     */
     inline Resource& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>scanName</code> of the scan that was run on the resource.</p>
-     */
     inline Resource& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier for a section of the resource.</p>
      */
     inline const Aws::String& GetSubResourceId() const{ return m_subResourceId; }
-
-    /**
-     * <p>The identifier for a section of the resource.</p>
-     */
     inline bool SubResourceIdHasBeenSet() const { return m_subResourceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for a section of the resource.</p>
-     */
     inline void SetSubResourceId(const Aws::String& value) { m_subResourceIdHasBeenSet = true; m_subResourceId = value; }
-
-    /**
-     * <p>The identifier for a section of the resource.</p>
-     */
     inline void SetSubResourceId(Aws::String&& value) { m_subResourceIdHasBeenSet = true; m_subResourceId = std::move(value); }
-
-    /**
-     * <p>The identifier for a section of the resource.</p>
-     */
     inline void SetSubResourceId(const char* value) { m_subResourceIdHasBeenSet = true; m_subResourceId.assign(value); }
-
-    /**
-     * <p>The identifier for a section of the resource.</p>
-     */
     inline Resource& WithSubResourceId(const Aws::String& value) { SetSubResourceId(value); return *this;}
-
-    /**
-     * <p>The identifier for a section of the resource.</p>
-     */
     inline Resource& WithSubResourceId(Aws::String&& value) { SetSubResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for a section of the resource.</p>
-     */
     inline Resource& WithSubResourceId(const char* value) { SetSubResourceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

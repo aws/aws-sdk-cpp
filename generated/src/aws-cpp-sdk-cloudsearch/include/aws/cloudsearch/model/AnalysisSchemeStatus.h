@@ -41,43 +41,25 @@ namespace Model
     AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     
     inline const AnalysisScheme& GetOptions() const{ return m_options; }
-
-    
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    
     inline void SetOptions(const AnalysisScheme& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    
     inline void SetOptions(AnalysisScheme&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    
     inline AnalysisSchemeStatus& WithOptions(const AnalysisScheme& value) { SetOptions(value); return *this;}
-
-    
     inline AnalysisSchemeStatus& WithOptions(AnalysisScheme&& value) { SetOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const OptionStatus& GetStatus() const{ return m_status; }
-
-    
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    
     inline AnalysisSchemeStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-
-    
     inline AnalysisSchemeStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AnalysisScheme m_options;

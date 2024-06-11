@@ -38,95 +38,34 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
     inline const Aws::String& GetLambdaARN() const{ return m_lambdaARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline bool LambdaARNHasBeenSet() const { return m_lambdaARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline void SetLambdaARN(const Aws::String& value) { m_lambdaARNHasBeenSet = true; m_lambdaARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline void SetLambdaARN(Aws::String&& value) { m_lambdaARNHasBeenSet = true; m_lambdaARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline void SetLambdaARN(const char* value) { m_lambdaARNHasBeenSet = true; m_lambdaARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline LambdaCodeHook& WithLambdaARN(const Aws::String& value) { SetLambdaARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline LambdaCodeHook& WithLambdaARN(Aws::String&& value) { SetLambdaARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline LambdaCodeHook& WithLambdaARN(const char* value) { SetLambdaARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the request-response that you want Amazon Lex to use to invoke
      * your Lambda function.</p>
      */
     inline const Aws::String& GetCodeHookInterfaceVersion() const{ return m_codeHookInterfaceVersion; }
-
-    /**
-     * <p>The version of the request-response that you want Amazon Lex to use to invoke
-     * your Lambda function.</p>
-     */
     inline bool CodeHookInterfaceVersionHasBeenSet() const { return m_codeHookInterfaceVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the request-response that you want Amazon Lex to use to invoke
-     * your Lambda function.</p>
-     */
     inline void SetCodeHookInterfaceVersion(const Aws::String& value) { m_codeHookInterfaceVersionHasBeenSet = true; m_codeHookInterfaceVersion = value; }
-
-    /**
-     * <p>The version of the request-response that you want Amazon Lex to use to invoke
-     * your Lambda function.</p>
-     */
     inline void SetCodeHookInterfaceVersion(Aws::String&& value) { m_codeHookInterfaceVersionHasBeenSet = true; m_codeHookInterfaceVersion = std::move(value); }
-
-    /**
-     * <p>The version of the request-response that you want Amazon Lex to use to invoke
-     * your Lambda function.</p>
-     */
     inline void SetCodeHookInterfaceVersion(const char* value) { m_codeHookInterfaceVersionHasBeenSet = true; m_codeHookInterfaceVersion.assign(value); }
-
-    /**
-     * <p>The version of the request-response that you want Amazon Lex to use to invoke
-     * your Lambda function.</p>
-     */
     inline LambdaCodeHook& WithCodeHookInterfaceVersion(const Aws::String& value) { SetCodeHookInterfaceVersion(value); return *this;}
-
-    /**
-     * <p>The version of the request-response that you want Amazon Lex to use to invoke
-     * your Lambda function.</p>
-     */
     inline LambdaCodeHook& WithCodeHookInterfaceVersion(Aws::String&& value) { SetCodeHookInterfaceVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the request-response that you want Amazon Lex to use to invoke
-     * your Lambda function.</p>
-     */
     inline LambdaCodeHook& WithCodeHookInterfaceVersion(const char* value) { SetCodeHookInterfaceVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_lambdaARN;

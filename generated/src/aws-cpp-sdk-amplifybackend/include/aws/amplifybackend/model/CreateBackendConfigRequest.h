@@ -35,87 +35,33 @@ namespace Model
     AWS_AMPLIFYBACKEND_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The app ID.</p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline CreateBackendConfigRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline CreateBackendConfigRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline CreateBackendConfigRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The app ID for the backend manager.</p>
      */
     inline const Aws::String& GetBackendManagerAppId() const{ return m_backendManagerAppId; }
-
-    /**
-     * <p>The app ID for the backend manager.</p>
-     */
     inline bool BackendManagerAppIdHasBeenSet() const { return m_backendManagerAppIdHasBeenSet; }
-
-    /**
-     * <p>The app ID for the backend manager.</p>
-     */
     inline void SetBackendManagerAppId(const Aws::String& value) { m_backendManagerAppIdHasBeenSet = true; m_backendManagerAppId = value; }
-
-    /**
-     * <p>The app ID for the backend manager.</p>
-     */
     inline void SetBackendManagerAppId(Aws::String&& value) { m_backendManagerAppIdHasBeenSet = true; m_backendManagerAppId = std::move(value); }
-
-    /**
-     * <p>The app ID for the backend manager.</p>
-     */
     inline void SetBackendManagerAppId(const char* value) { m_backendManagerAppIdHasBeenSet = true; m_backendManagerAppId.assign(value); }
-
-    /**
-     * <p>The app ID for the backend manager.</p>
-     */
     inline CreateBackendConfigRequest& WithBackendManagerAppId(const Aws::String& value) { SetBackendManagerAppId(value); return *this;}
-
-    /**
-     * <p>The app ID for the backend manager.</p>
-     */
     inline CreateBackendConfigRequest& WithBackendManagerAppId(Aws::String&& value) { SetBackendManagerAppId(std::move(value)); return *this;}
-
-    /**
-     * <p>The app ID for the backend manager.</p>
-     */
     inline CreateBackendConfigRequest& WithBackendManagerAppId(const char* value) { SetBackendManagerAppId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appId;

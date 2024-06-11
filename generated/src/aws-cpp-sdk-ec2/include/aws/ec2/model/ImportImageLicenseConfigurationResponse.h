@@ -40,46 +40,19 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The ARN of a license configuration.</p>
      */
     inline const Aws::String& GetLicenseConfigurationArn() const{ return m_licenseConfigurationArn; }
-
-    /**
-     * <p>The ARN of a license configuration.</p>
-     */
     inline bool LicenseConfigurationArnHasBeenSet() const { return m_licenseConfigurationArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of a license configuration.</p>
-     */
     inline void SetLicenseConfigurationArn(const Aws::String& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = value; }
-
-    /**
-     * <p>The ARN of a license configuration.</p>
-     */
     inline void SetLicenseConfigurationArn(Aws::String&& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = std::move(value); }
-
-    /**
-     * <p>The ARN of a license configuration.</p>
-     */
     inline void SetLicenseConfigurationArn(const char* value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn.assign(value); }
-
-    /**
-     * <p>The ARN of a license configuration.</p>
-     */
     inline ImportImageLicenseConfigurationResponse& WithLicenseConfigurationArn(const Aws::String& value) { SetLicenseConfigurationArn(value); return *this;}
-
-    /**
-     * <p>The ARN of a license configuration.</p>
-     */
     inline ImportImageLicenseConfigurationResponse& WithLicenseConfigurationArn(Aws::String&& value) { SetLicenseConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of a license configuration.</p>
-     */
     inline ImportImageLicenseConfigurationResponse& WithLicenseConfigurationArn(const char* value) { SetLicenseConfigurationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_licenseConfigurationArn;

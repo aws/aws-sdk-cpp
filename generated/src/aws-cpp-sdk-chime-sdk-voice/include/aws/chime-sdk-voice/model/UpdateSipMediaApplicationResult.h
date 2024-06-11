@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKVOICE_API UpdateSipMediaApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated SIP media application’s details.</p>
      */
     inline const SipMediaApplication& GetSipMediaApplication() const{ return m_sipMediaApplication; }
-
-    /**
-     * <p>The updated SIP media application’s details.</p>
-     */
     inline void SetSipMediaApplication(const SipMediaApplication& value) { m_sipMediaApplication = value; }
-
-    /**
-     * <p>The updated SIP media application’s details.</p>
-     */
     inline void SetSipMediaApplication(SipMediaApplication&& value) { m_sipMediaApplication = std::move(value); }
-
-    /**
-     * <p>The updated SIP media application’s details.</p>
-     */
     inline UpdateSipMediaApplicationResult& WithSipMediaApplication(const SipMediaApplication& value) { SetSipMediaApplication(value); return *this;}
-
-    /**
-     * <p>The updated SIP media application’s details.</p>
-     */
     inline UpdateSipMediaApplicationResult& WithSipMediaApplication(SipMediaApplication&& value) { SetSipMediaApplication(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateSipMediaApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateSipMediaApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateSipMediaApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SipMediaApplication m_sipMediaApplication;

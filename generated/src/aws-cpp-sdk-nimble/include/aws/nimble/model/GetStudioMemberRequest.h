@@ -32,87 +32,33 @@ namespace Model
     AWS_NIMBLESTUDIO_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
-
-    /**
-     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-     */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-
-    /**
-     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-     */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-
-    /**
-     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-     */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-
-    /**
-     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-     */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-
-    /**
-     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-     */
     inline GetStudioMemberRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-
-    /**
-     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-     */
     inline GetStudioMemberRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-     */
     inline GetStudioMemberRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The studio ID. </p>
      */
     inline const Aws::String& GetStudioId() const{ return m_studioId; }
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline bool StudioIdHasBeenSet() const { return m_studioIdHasBeenSet; }
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline void SetStudioId(const Aws::String& value) { m_studioIdHasBeenSet = true; m_studioId = value; }
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline void SetStudioId(Aws::String&& value) { m_studioIdHasBeenSet = true; m_studioId = std::move(value); }
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline void SetStudioId(const char* value) { m_studioIdHasBeenSet = true; m_studioId.assign(value); }
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline GetStudioMemberRequest& WithStudioId(const Aws::String& value) { SetStudioId(value); return *this;}
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline GetStudioMemberRequest& WithStudioId(Aws::String&& value) { SetStudioId(std::move(value)); return *this;}
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline GetStudioMemberRequest& WithStudioId(const char* value) { SetStudioId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_principalId;

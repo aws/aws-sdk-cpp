@@ -42,6 +42,7 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If an Amazon Web Services organization is present, this is either
      * <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For
@@ -50,111 +51,28 @@ namespace Model
      * from the entire Amazon Web Services organization.</p>
      */
     inline const Aws::String& GetOrganizationSourceType() const{ return m_organizationSourceType; }
-
-    /**
-     * <p>If an Amazon Web Services organization is present, this is either
-     * <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For
-     * <code>OrganizationalUnits</code>, the data is aggregated from a set of
-     * organization units. For <code>EntireOrganization</code>, the data is aggregated
-     * from the entire Amazon Web Services organization.</p>
-     */
     inline bool OrganizationSourceTypeHasBeenSet() const { return m_organizationSourceTypeHasBeenSet; }
-
-    /**
-     * <p>If an Amazon Web Services organization is present, this is either
-     * <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For
-     * <code>OrganizationalUnits</code>, the data is aggregated from a set of
-     * organization units. For <code>EntireOrganization</code>, the data is aggregated
-     * from the entire Amazon Web Services organization.</p>
-     */
     inline void SetOrganizationSourceType(const Aws::String& value) { m_organizationSourceTypeHasBeenSet = true; m_organizationSourceType = value; }
-
-    /**
-     * <p>If an Amazon Web Services organization is present, this is either
-     * <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For
-     * <code>OrganizationalUnits</code>, the data is aggregated from a set of
-     * organization units. For <code>EntireOrganization</code>, the data is aggregated
-     * from the entire Amazon Web Services organization.</p>
-     */
     inline void SetOrganizationSourceType(Aws::String&& value) { m_organizationSourceTypeHasBeenSet = true; m_organizationSourceType = std::move(value); }
-
-    /**
-     * <p>If an Amazon Web Services organization is present, this is either
-     * <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For
-     * <code>OrganizationalUnits</code>, the data is aggregated from a set of
-     * organization units. For <code>EntireOrganization</code>, the data is aggregated
-     * from the entire Amazon Web Services organization.</p>
-     */
     inline void SetOrganizationSourceType(const char* value) { m_organizationSourceTypeHasBeenSet = true; m_organizationSourceType.assign(value); }
-
-    /**
-     * <p>If an Amazon Web Services organization is present, this is either
-     * <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For
-     * <code>OrganizationalUnits</code>, the data is aggregated from a set of
-     * organization units. For <code>EntireOrganization</code>, the data is aggregated
-     * from the entire Amazon Web Services organization.</p>
-     */
     inline ResourceDataSyncAwsOrganizationsSource& WithOrganizationSourceType(const Aws::String& value) { SetOrganizationSourceType(value); return *this;}
-
-    /**
-     * <p>If an Amazon Web Services organization is present, this is either
-     * <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For
-     * <code>OrganizationalUnits</code>, the data is aggregated from a set of
-     * organization units. For <code>EntireOrganization</code>, the data is aggregated
-     * from the entire Amazon Web Services organization.</p>
-     */
     inline ResourceDataSyncAwsOrganizationsSource& WithOrganizationSourceType(Aws::String&& value) { SetOrganizationSourceType(std::move(value)); return *this;}
-
-    /**
-     * <p>If an Amazon Web Services organization is present, this is either
-     * <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For
-     * <code>OrganizationalUnits</code>, the data is aggregated from a set of
-     * organization units. For <code>EntireOrganization</code>, the data is aggregated
-     * from the entire Amazon Web Services organization.</p>
-     */
     inline ResourceDataSyncAwsOrganizationsSource& WithOrganizationSourceType(const char* value) { SetOrganizationSourceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Organizations organization units included in the sync.</p>
      */
     inline const Aws::Vector<ResourceDataSyncOrganizationalUnit>& GetOrganizationalUnits() const{ return m_organizationalUnits; }
-
-    /**
-     * <p>The Organizations organization units included in the sync.</p>
-     */
     inline bool OrganizationalUnitsHasBeenSet() const { return m_organizationalUnitsHasBeenSet; }
-
-    /**
-     * <p>The Organizations organization units included in the sync.</p>
-     */
     inline void SetOrganizationalUnits(const Aws::Vector<ResourceDataSyncOrganizationalUnit>& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits = value; }
-
-    /**
-     * <p>The Organizations organization units included in the sync.</p>
-     */
     inline void SetOrganizationalUnits(Aws::Vector<ResourceDataSyncOrganizationalUnit>&& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits = std::move(value); }
-
-    /**
-     * <p>The Organizations organization units included in the sync.</p>
-     */
     inline ResourceDataSyncAwsOrganizationsSource& WithOrganizationalUnits(const Aws::Vector<ResourceDataSyncOrganizationalUnit>& value) { SetOrganizationalUnits(value); return *this;}
-
-    /**
-     * <p>The Organizations organization units included in the sync.</p>
-     */
     inline ResourceDataSyncAwsOrganizationsSource& WithOrganizationalUnits(Aws::Vector<ResourceDataSyncOrganizationalUnit>&& value) { SetOrganizationalUnits(std::move(value)); return *this;}
-
-    /**
-     * <p>The Organizations organization units included in the sync.</p>
-     */
     inline ResourceDataSyncAwsOrganizationsSource& AddOrganizationalUnits(const ResourceDataSyncOrganizationalUnit& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits.push_back(value); return *this; }
-
-    /**
-     * <p>The Organizations organization units included in the sync.</p>
-     */
     inline ResourceDataSyncAwsOrganizationsSource& AddOrganizationalUnits(ResourceDataSyncOrganizationalUnit&& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_organizationSourceType;

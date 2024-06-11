@@ -34,46 +34,19 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the namespace to retrieve information for.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
-
-    /**
-     * <p>The name of the namespace to retrieve information for.</p>
-     */
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the namespace to retrieve information for.</p>
-     */
     inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
-
-    /**
-     * <p>The name of the namespace to retrieve information for.</p>
-     */
     inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
-
-    /**
-     * <p>The name of the namespace to retrieve information for.</p>
-     */
     inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
-
-    /**
-     * <p>The name of the namespace to retrieve information for.</p>
-     */
     inline GetNamespaceRequest& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
-
-    /**
-     * <p>The name of the namespace to retrieve information for.</p>
-     */
     inline GetNamespaceRequest& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the namespace to retrieve information for.</p>
-     */
     inline GetNamespaceRequest& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_namespaceName;

@@ -38,57 +38,27 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The criterion by which to bin the results.</p>
      */
     inline const AnalyticsBinByName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The criterion by which to bin the results.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The criterion by which to bin the results.</p>
-     */
     inline void SetName(const AnalyticsBinByName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The criterion by which to bin the results.</p>
-     */
     inline void SetName(AnalyticsBinByName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The criterion by which to bin the results.</p>
-     */
     inline AnalyticsBinKey& WithName(const AnalyticsBinByName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The criterion by which to bin the results.</p>
-     */
     inline AnalyticsBinKey& WithName(AnalyticsBinByName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the criterion that defines the bin.</p>
      */
     inline long long GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the criterion that defines the bin.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the criterion that defines the bin.</p>
-     */
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the criterion that defines the bin.</p>
-     */
     inline AnalyticsBinKey& WithValue(long long value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     AnalyticsBinByName m_name;

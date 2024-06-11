@@ -35,47 +35,25 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The latitude coordinate of the location.</p>
      */
     inline double GetLatitude() const{ return m_latitude; }
-
-    /**
-     * <p>The latitude coordinate of the location.</p>
-     */
     inline bool LatitudeHasBeenSet() const { return m_latitudeHasBeenSet; }
-
-    /**
-     * <p>The latitude coordinate of the location.</p>
-     */
     inline void SetLatitude(double value) { m_latitudeHasBeenSet = true; m_latitude = value; }
-
-    /**
-     * <p>The latitude coordinate of the location.</p>
-     */
     inline GPSCoordinates& WithLatitude(double value) { SetLatitude(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The longitude coordinate of the location.</p>
      */
     inline double GetLongitude() const{ return m_longitude; }
-
-    /**
-     * <p>The longitude coordinate of the location.</p>
-     */
     inline bool LongitudeHasBeenSet() const { return m_longitudeHasBeenSet; }
-
-    /**
-     * <p>The longitude coordinate of the location.</p>
-     */
     inline void SetLongitude(double value) { m_longitudeHasBeenSet = true; m_longitude = value; }
-
-    /**
-     * <p>The longitude coordinate of the location.</p>
-     */
     inline GPSCoordinates& WithLongitude(double value) { SetLongitude(value); return *this;}
-
+    ///@}
   private:
 
     double m_latitude;

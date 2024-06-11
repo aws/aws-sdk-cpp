@@ -38,53 +38,27 @@ namespace Model
     AWS_SESV2_API GetSuppressedDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object containing information about the suppressed email address.</p>
      */
     inline const SuppressedDestination& GetSuppressedDestination() const{ return m_suppressedDestination; }
-
-    /**
-     * <p>An object containing information about the suppressed email address.</p>
-     */
     inline void SetSuppressedDestination(const SuppressedDestination& value) { m_suppressedDestination = value; }
-
-    /**
-     * <p>An object containing information about the suppressed email address.</p>
-     */
     inline void SetSuppressedDestination(SuppressedDestination&& value) { m_suppressedDestination = std::move(value); }
-
-    /**
-     * <p>An object containing information about the suppressed email address.</p>
-     */
     inline GetSuppressedDestinationResult& WithSuppressedDestination(const SuppressedDestination& value) { SetSuppressedDestination(value); return *this;}
-
-    /**
-     * <p>An object containing information about the suppressed email address.</p>
-     */
     inline GetSuppressedDestinationResult& WithSuppressedDestination(SuppressedDestination&& value) { SetSuppressedDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSuppressedDestinationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSuppressedDestinationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSuppressedDestinationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SuppressedDestination m_suppressedDestination;

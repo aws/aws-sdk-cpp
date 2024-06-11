@@ -46,77 +46,31 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains the generated response and metadata </p>
      */
     inline const GeneratedResponsePart& GetGeneratedResponsePart() const{ return m_generatedResponsePart; }
-
-    /**
-     * <p>Contains the generated response and metadata </p>
-     */
     inline bool GeneratedResponsePartHasBeenSet() const { return m_generatedResponsePartHasBeenSet; }
-
-    /**
-     * <p>Contains the generated response and metadata </p>
-     */
     inline void SetGeneratedResponsePart(const GeneratedResponsePart& value) { m_generatedResponsePartHasBeenSet = true; m_generatedResponsePart = value; }
-
-    /**
-     * <p>Contains the generated response and metadata </p>
-     */
     inline void SetGeneratedResponsePart(GeneratedResponsePart&& value) { m_generatedResponsePartHasBeenSet = true; m_generatedResponsePart = std::move(value); }
-
-    /**
-     * <p>Contains the generated response and metadata </p>
-     */
     inline Citation& WithGeneratedResponsePart(const GeneratedResponsePart& value) { SetGeneratedResponsePart(value); return *this;}
-
-    /**
-     * <p>Contains the generated response and metadata </p>
-     */
     inline Citation& WithGeneratedResponsePart(GeneratedResponsePart&& value) { SetGeneratedResponsePart(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains metadata about the sources cited for the generated response.</p>
      */
     inline const Aws::Vector<RetrievedReference>& GetRetrievedReferences() const{ return m_retrievedReferences; }
-
-    /**
-     * <p>Contains metadata about the sources cited for the generated response.</p>
-     */
     inline bool RetrievedReferencesHasBeenSet() const { return m_retrievedReferencesHasBeenSet; }
-
-    /**
-     * <p>Contains metadata about the sources cited for the generated response.</p>
-     */
     inline void SetRetrievedReferences(const Aws::Vector<RetrievedReference>& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = value; }
-
-    /**
-     * <p>Contains metadata about the sources cited for the generated response.</p>
-     */
     inline void SetRetrievedReferences(Aws::Vector<RetrievedReference>&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = std::move(value); }
-
-    /**
-     * <p>Contains metadata about the sources cited for the generated response.</p>
-     */
     inline Citation& WithRetrievedReferences(const Aws::Vector<RetrievedReference>& value) { SetRetrievedReferences(value); return *this;}
-
-    /**
-     * <p>Contains metadata about the sources cited for the generated response.</p>
-     */
     inline Citation& WithRetrievedReferences(Aws::Vector<RetrievedReference>&& value) { SetRetrievedReferences(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains metadata about the sources cited for the generated response.</p>
-     */
     inline Citation& AddRetrievedReferences(const RetrievedReference& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.push_back(value); return *this; }
-
-    /**
-     * <p>Contains metadata about the sources cited for the generated response.</p>
-     */
     inline Citation& AddRetrievedReferences(RetrievedReference&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     GeneratedResponsePart m_generatedResponsePart;

@@ -39,83 +39,32 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the action that automatically creates the dataset's contents.</p>
      */
     inline const Aws::String& GetActionName() const{ return m_actionName; }
-
-    /**
-     * <p>The name of the action that automatically creates the dataset's contents.</p>
-     */
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the action that automatically creates the dataset's contents.</p>
-     */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-
-    /**
-     * <p>The name of the action that automatically creates the dataset's contents.</p>
-     */
     inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-
-    /**
-     * <p>The name of the action that automatically creates the dataset's contents.</p>
-     */
     inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-
-    /**
-     * <p>The name of the action that automatically creates the dataset's contents.</p>
-     */
     inline DatasetActionSummary& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-
-    /**
-     * <p>The name of the action that automatically creates the dataset's contents.</p>
-     */
     inline DatasetActionSummary& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the action that automatically creates the dataset's contents.</p>
-     */
     inline DatasetActionSummary& WithActionName(const char* value) { SetActionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of action by which the dataset's contents are automatically
      * created.</p>
      */
     inline const DatasetActionType& GetActionType() const{ return m_actionType; }
-
-    /**
-     * <p>The type of action by which the dataset's contents are automatically
-     * created.</p>
-     */
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-
-    /**
-     * <p>The type of action by which the dataset's contents are automatically
-     * created.</p>
-     */
     inline void SetActionType(const DatasetActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-
-    /**
-     * <p>The type of action by which the dataset's contents are automatically
-     * created.</p>
-     */
     inline void SetActionType(DatasetActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-
-    /**
-     * <p>The type of action by which the dataset's contents are automatically
-     * created.</p>
-     */
     inline DatasetActionSummary& WithActionType(const DatasetActionType& value) { SetActionType(value); return *this;}
-
-    /**
-     * <p>The type of action by which the dataset's contents are automatically
-     * created.</p>
-     */
     inline DatasetActionSummary& WithActionType(DatasetActionType&& value) { SetActionType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_actionName;

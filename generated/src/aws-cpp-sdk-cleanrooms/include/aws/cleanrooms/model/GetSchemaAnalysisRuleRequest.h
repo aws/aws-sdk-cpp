@@ -33,138 +33,48 @@ namespace Model
     AWS_CLEANROOMS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the collaboration that the schema belongs to.
      * Currently accepts a collaboration ID.</p>
      */
     inline const Aws::String& GetCollaborationIdentifier() const{ return m_collaborationIdentifier; }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline bool CollaborationIdentifierHasBeenSet() const { return m_collaborationIdentifierHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline void SetCollaborationIdentifier(const Aws::String& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = value; }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline void SetCollaborationIdentifier(Aws::String&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline void SetCollaborationIdentifier(const char* value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier.assign(value); }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline GetSchemaAnalysisRuleRequest& WithCollaborationIdentifier(const Aws::String& value) { SetCollaborationIdentifier(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline GetSchemaAnalysisRuleRequest& WithCollaborationIdentifier(Aws::String&& value) { SetCollaborationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the collaboration that the schema belongs to.
-     * Currently accepts a collaboration ID.</p>
-     */
     inline GetSchemaAnalysisRuleRequest& WithCollaborationIdentifier(const char* value) { SetCollaborationIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the schema to retrieve the analysis rule for.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the schema to retrieve the analysis rule for.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the schema to retrieve the analysis rule for.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the schema to retrieve the analysis rule for.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the schema to retrieve the analysis rule for.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the schema to retrieve the analysis rule for.</p>
-     */
     inline GetSchemaAnalysisRuleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the schema to retrieve the analysis rule for.</p>
-     */
     inline GetSchemaAnalysisRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the schema to retrieve the analysis rule for.</p>
-     */
     inline GetSchemaAnalysisRuleRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the schema analysis rule to retrieve. Schema analysis rules are
      * uniquely identified by a combination of the collaboration, the schema name, and
      * their type.</p>
      */
     inline const AnalysisRuleType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the schema analysis rule to retrieve. Schema analysis rules are
-     * uniquely identified by a combination of the collaboration, the schema name, and
-     * their type.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of the schema analysis rule to retrieve. Schema analysis rules are
-     * uniquely identified by a combination of the collaboration, the schema name, and
-     * their type.</p>
-     */
     inline void SetType(const AnalysisRuleType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of the schema analysis rule to retrieve. Schema analysis rules are
-     * uniquely identified by a combination of the collaboration, the schema name, and
-     * their type.</p>
-     */
     inline void SetType(AnalysisRuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of the schema analysis rule to retrieve. Schema analysis rules are
-     * uniquely identified by a combination of the collaboration, the schema name, and
-     * their type.</p>
-     */
     inline GetSchemaAnalysisRuleRequest& WithType(const AnalysisRuleType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the schema analysis rule to retrieve. Schema analysis rules are
-     * uniquely identified by a combination of the collaboration, the schema name, and
-     * their type.</p>
-     */
     inline GetSchemaAnalysisRuleRequest& WithType(AnalysisRuleType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_collaborationIdentifier;

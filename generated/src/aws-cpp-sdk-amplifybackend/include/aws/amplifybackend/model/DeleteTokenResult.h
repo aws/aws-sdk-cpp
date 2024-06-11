@@ -32,43 +32,25 @@ namespace Model
     AWS_AMPLIFYBACKEND_API DeleteTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Indicates whether the request succeeded or failed.</p>
      */
     inline bool GetIsSuccess() const{ return m_isSuccess; }
-
-    /**
-     * <p>Indicates whether the request succeeded or failed.</p>
-     */
     inline void SetIsSuccess(bool value) { m_isSuccess = value; }
-
-    /**
-     * <p>Indicates whether the request succeeded or failed.</p>
-     */
     inline DeleteTokenResult& WithIsSuccess(bool value) { SetIsSuccess(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_isSuccess;

@@ -39,77 +39,31 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Identifier of the directory consumer account.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>Identifier of the directory consumer account.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>Identifier of the directory consumer account.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>Identifier of the directory consumer account.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>Identifier of the directory consumer account.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>Identifier of the directory consumer account.</p>
-     */
     inline ShareTarget& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>Identifier of the directory consumer account.</p>
-     */
     inline ShareTarget& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifier of the directory consumer account.</p>
-     */
     inline ShareTarget& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Type of identifier to be used in the <code>Id</code> field.</p>
      */
     inline const TargetType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Type of identifier to be used in the <code>Id</code> field.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Type of identifier to be used in the <code>Id</code> field.</p>
-     */
     inline void SetType(const TargetType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Type of identifier to be used in the <code>Id</code> field.</p>
-     */
     inline void SetType(TargetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Type of identifier to be used in the <code>Id</code> field.</p>
-     */
     inline ShareTarget& WithType(const TargetType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Type of identifier to be used in the <code>Id</code> field.</p>
-     */
     inline ShareTarget& WithType(TargetType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

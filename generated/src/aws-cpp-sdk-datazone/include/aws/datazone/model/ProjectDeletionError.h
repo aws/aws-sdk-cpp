@@ -38,87 +38,33 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The code of the project deletion error.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The code of the project deletion error.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The code of the project deletion error.</p>
-     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The code of the project deletion error.</p>
-     */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The code of the project deletion error.</p>
-     */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-
-    /**
-     * <p>The code of the project deletion error.</p>
-     */
     inline ProjectDeletionError& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The code of the project deletion error.</p>
-     */
     inline ProjectDeletionError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The code of the project deletion error.</p>
-     */
     inline ProjectDeletionError& WithCode(const char* value) { SetCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The message of the project deletion error.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The message of the project deletion error.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The message of the project deletion error.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The message of the project deletion error.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The message of the project deletion error.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The message of the project deletion error.</p>
-     */
     inline ProjectDeletionError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The message of the project deletion error.</p>
-     */
     inline ProjectDeletionError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The message of the project deletion error.</p>
-     */
     inline ProjectDeletionError& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_code;

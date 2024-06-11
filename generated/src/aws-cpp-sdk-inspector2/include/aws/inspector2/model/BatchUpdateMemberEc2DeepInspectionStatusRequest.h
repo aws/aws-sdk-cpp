@@ -33,54 +33,20 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifiers for the Amazon Web Services accounts to change Amazon
      * Inspector deep inspection status for.</p>
      */
     inline const Aws::Vector<MemberAccountEc2DeepInspectionStatus>& GetAccountIds() const{ return m_accountIds; }
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to change Amazon
-     * Inspector deep inspection status for.</p>
-     */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to change Amazon
-     * Inspector deep inspection status for.</p>
-     */
     inline void SetAccountIds(const Aws::Vector<MemberAccountEc2DeepInspectionStatus>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to change Amazon
-     * Inspector deep inspection status for.</p>
-     */
     inline void SetAccountIds(Aws::Vector<MemberAccountEc2DeepInspectionStatus>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to change Amazon
-     * Inspector deep inspection status for.</p>
-     */
     inline BatchUpdateMemberEc2DeepInspectionStatusRequest& WithAccountIds(const Aws::Vector<MemberAccountEc2DeepInspectionStatus>& value) { SetAccountIds(value); return *this;}
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to change Amazon
-     * Inspector deep inspection status for.</p>
-     */
     inline BatchUpdateMemberEc2DeepInspectionStatusRequest& WithAccountIds(Aws::Vector<MemberAccountEc2DeepInspectionStatus>&& value) { SetAccountIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to change Amazon
-     * Inspector deep inspection status for.</p>
-     */
     inline BatchUpdateMemberEc2DeepInspectionStatusRequest& AddAccountIds(const MemberAccountEc2DeepInspectionStatus& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to change Amazon
-     * Inspector deep inspection status for.</p>
-     */
     inline BatchUpdateMemberEc2DeepInspectionStatusRequest& AddAccountIds(MemberAccountEc2DeepInspectionStatus&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<MemberAccountEc2DeepInspectionStatus> m_accountIds;

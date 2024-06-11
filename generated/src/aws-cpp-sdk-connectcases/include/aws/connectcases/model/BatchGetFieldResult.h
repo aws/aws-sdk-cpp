@@ -35,99 +35,42 @@ namespace Model
     AWS_CONNECTCASES_API BatchGetFieldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of field errors. </p>
      */
     inline const Aws::Vector<FieldError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>A list of field errors. </p>
-     */
     inline void SetErrors(const Aws::Vector<FieldError>& value) { m_errors = value; }
-
-    /**
-     * <p>A list of field errors. </p>
-     */
     inline void SetErrors(Aws::Vector<FieldError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>A list of field errors. </p>
-     */
     inline BatchGetFieldResult& WithErrors(const Aws::Vector<FieldError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>A list of field errors. </p>
-     */
     inline BatchGetFieldResult& WithErrors(Aws::Vector<FieldError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of field errors. </p>
-     */
     inline BatchGetFieldResult& AddErrors(const FieldError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>A list of field errors. </p>
-     */
     inline BatchGetFieldResult& AddErrors(FieldError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of detailed field information. </p>
      */
     inline const Aws::Vector<GetFieldResponse>& GetFields() const{ return m_fields; }
-
-    /**
-     * <p>A list of detailed field information. </p>
-     */
     inline void SetFields(const Aws::Vector<GetFieldResponse>& value) { m_fields = value; }
-
-    /**
-     * <p>A list of detailed field information. </p>
-     */
     inline void SetFields(Aws::Vector<GetFieldResponse>&& value) { m_fields = std::move(value); }
-
-    /**
-     * <p>A list of detailed field information. </p>
-     */
     inline BatchGetFieldResult& WithFields(const Aws::Vector<GetFieldResponse>& value) { SetFields(value); return *this;}
-
-    /**
-     * <p>A list of detailed field information. </p>
-     */
     inline BatchGetFieldResult& WithFields(Aws::Vector<GetFieldResponse>&& value) { SetFields(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of detailed field information. </p>
-     */
     inline BatchGetFieldResult& AddFields(const GetFieldResponse& value) { m_fields.push_back(value); return *this; }
-
-    /**
-     * <p>A list of detailed field information. </p>
-     */
     inline BatchGetFieldResult& AddFields(GetFieldResponse&& value) { m_fields.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetFieldResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetFieldResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetFieldResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FieldError> m_errors;

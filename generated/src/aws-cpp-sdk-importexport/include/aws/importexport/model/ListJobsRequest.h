@@ -39,68 +39,37 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline int GetMaxJobs() const{ return m_maxJobs; }
-
-    
     inline bool MaxJobsHasBeenSet() const { return m_maxJobsHasBeenSet; }
-
-    
     inline void SetMaxJobs(int value) { m_maxJobsHasBeenSet = true; m_maxJobs = value; }
-
-    
     inline ListJobsRequest& WithMaxJobs(int value) { SetMaxJobs(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    
     inline ListJobsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    
     inline ListJobsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    
     inline ListJobsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetAPIVersion() const{ return m_aPIVersion; }
-
-    
     inline bool APIVersionHasBeenSet() const { return m_aPIVersionHasBeenSet; }
-
-    
     inline void SetAPIVersion(const Aws::String& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = value; }
-
-    
     inline void SetAPIVersion(Aws::String&& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = std::move(value); }
-
-    
     inline void SetAPIVersion(const char* value) { m_aPIVersionHasBeenSet = true; m_aPIVersion.assign(value); }
-
-    
     inline ListJobsRequest& WithAPIVersion(const Aws::String& value) { SetAPIVersion(value); return *this;}
-
-    
     inline ListJobsRequest& WithAPIVersion(Aws::String&& value) { SetAPIVersion(std::move(value)); return *this;}
-
-    
     inline ListJobsRequest& WithAPIVersion(const char* value) { SetAPIVersion(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxJobs;

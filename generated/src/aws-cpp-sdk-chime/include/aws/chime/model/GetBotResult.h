@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIME_API GetBotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The chat bot details.</p>
      */
     inline const Bot& GetBot() const{ return m_bot; }
-
-    /**
-     * <p>The chat bot details.</p>
-     */
     inline void SetBot(const Bot& value) { m_bot = value; }
-
-    /**
-     * <p>The chat bot details.</p>
-     */
     inline void SetBot(Bot&& value) { m_bot = std::move(value); }
-
-    /**
-     * <p>The chat bot details.</p>
-     */
     inline GetBotResult& WithBot(const Bot& value) { SetBot(value); return *this;}
-
-    /**
-     * <p>The chat bot details.</p>
-     */
     inline GetBotResult& WithBot(Bot&& value) { SetBot(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Bot m_bot;

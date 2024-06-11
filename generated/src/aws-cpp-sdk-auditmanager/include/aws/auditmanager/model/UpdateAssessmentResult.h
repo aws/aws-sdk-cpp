@@ -33,58 +33,28 @@ namespace Model
     AWS_AUDITMANAGER_API UpdateAssessmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The response object for the <code>UpdateAssessment</code> API. This is the
      * name of the updated assessment.</p>
      */
     inline const Assessment& GetAssessment() const{ return m_assessment; }
-
-    /**
-     * <p> The response object for the <code>UpdateAssessment</code> API. This is the
-     * name of the updated assessment.</p>
-     */
     inline void SetAssessment(const Assessment& value) { m_assessment = value; }
-
-    /**
-     * <p> The response object for the <code>UpdateAssessment</code> API. This is the
-     * name of the updated assessment.</p>
-     */
     inline void SetAssessment(Assessment&& value) { m_assessment = std::move(value); }
-
-    /**
-     * <p> The response object for the <code>UpdateAssessment</code> API. This is the
-     * name of the updated assessment.</p>
-     */
     inline UpdateAssessmentResult& WithAssessment(const Assessment& value) { SetAssessment(value); return *this;}
-
-    /**
-     * <p> The response object for the <code>UpdateAssessment</code> API. This is the
-     * name of the updated assessment.</p>
-     */
     inline UpdateAssessmentResult& WithAssessment(Assessment&& value) { SetAssessment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateAssessmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateAssessmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateAssessmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Assessment m_assessment;

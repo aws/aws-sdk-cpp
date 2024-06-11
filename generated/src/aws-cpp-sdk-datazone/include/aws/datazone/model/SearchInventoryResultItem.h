@@ -40,129 +40,53 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The asset item included in the search results.</p>
      */
     inline const AssetItem& GetAssetItem() const{ return m_assetItem; }
-
-    /**
-     * <p>The asset item included in the search results.</p>
-     */
     inline bool AssetItemHasBeenSet() const { return m_assetItemHasBeenSet; }
-
-    /**
-     * <p>The asset item included in the search results.</p>
-     */
     inline void SetAssetItem(const AssetItem& value) { m_assetItemHasBeenSet = true; m_assetItem = value; }
-
-    /**
-     * <p>The asset item included in the search results.</p>
-     */
     inline void SetAssetItem(AssetItem&& value) { m_assetItemHasBeenSet = true; m_assetItem = std::move(value); }
-
-    /**
-     * <p>The asset item included in the search results.</p>
-     */
     inline SearchInventoryResultItem& WithAssetItem(const AssetItem& value) { SetAssetItem(value); return *this;}
-
-    /**
-     * <p>The asset item included in the search results.</p>
-     */
     inline SearchInventoryResultItem& WithAssetItem(AssetItem&& value) { SetAssetItem(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data product item included in the search results.</p>
      */
     inline const DataProductSummary& GetDataProductItem() const{ return m_dataProductItem; }
-
-    /**
-     * <p>The data product item included in the search results.</p>
-     */
     inline bool DataProductItemHasBeenSet() const { return m_dataProductItemHasBeenSet; }
-
-    /**
-     * <p>The data product item included in the search results.</p>
-     */
     inline void SetDataProductItem(const DataProductSummary& value) { m_dataProductItemHasBeenSet = true; m_dataProductItem = value; }
-
-    /**
-     * <p>The data product item included in the search results.</p>
-     */
     inline void SetDataProductItem(DataProductSummary&& value) { m_dataProductItemHasBeenSet = true; m_dataProductItem = std::move(value); }
-
-    /**
-     * <p>The data product item included in the search results.</p>
-     */
     inline SearchInventoryResultItem& WithDataProductItem(const DataProductSummary& value) { SetDataProductItem(value); return *this;}
-
-    /**
-     * <p>The data product item included in the search results.</p>
-     */
     inline SearchInventoryResultItem& WithDataProductItem(DataProductSummary&& value) { SetDataProductItem(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The glossary item included in the search results.</p>
      */
     inline const GlossaryItem& GetGlossaryItem() const{ return m_glossaryItem; }
-
-    /**
-     * <p>The glossary item included in the search results.</p>
-     */
     inline bool GlossaryItemHasBeenSet() const { return m_glossaryItemHasBeenSet; }
-
-    /**
-     * <p>The glossary item included in the search results.</p>
-     */
     inline void SetGlossaryItem(const GlossaryItem& value) { m_glossaryItemHasBeenSet = true; m_glossaryItem = value; }
-
-    /**
-     * <p>The glossary item included in the search results.</p>
-     */
     inline void SetGlossaryItem(GlossaryItem&& value) { m_glossaryItemHasBeenSet = true; m_glossaryItem = std::move(value); }
-
-    /**
-     * <p>The glossary item included in the search results.</p>
-     */
     inline SearchInventoryResultItem& WithGlossaryItem(const GlossaryItem& value) { SetGlossaryItem(value); return *this;}
-
-    /**
-     * <p>The glossary item included in the search results.</p>
-     */
     inline SearchInventoryResultItem& WithGlossaryItem(GlossaryItem&& value) { SetGlossaryItem(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The glossary term item included in the search results.</p>
      */
     inline const GlossaryTermItem& GetGlossaryTermItem() const{ return m_glossaryTermItem; }
-
-    /**
-     * <p>The glossary term item included in the search results.</p>
-     */
     inline bool GlossaryTermItemHasBeenSet() const { return m_glossaryTermItemHasBeenSet; }
-
-    /**
-     * <p>The glossary term item included in the search results.</p>
-     */
     inline void SetGlossaryTermItem(const GlossaryTermItem& value) { m_glossaryTermItemHasBeenSet = true; m_glossaryTermItem = value; }
-
-    /**
-     * <p>The glossary term item included in the search results.</p>
-     */
     inline void SetGlossaryTermItem(GlossaryTermItem&& value) { m_glossaryTermItemHasBeenSet = true; m_glossaryTermItem = std::move(value); }
-
-    /**
-     * <p>The glossary term item included in the search results.</p>
-     */
     inline SearchInventoryResultItem& WithGlossaryTermItem(const GlossaryTermItem& value) { SetGlossaryTermItem(value); return *this;}
-
-    /**
-     * <p>The glossary term item included in the search results.</p>
-     */
     inline SearchInventoryResultItem& WithGlossaryTermItem(GlossaryTermItem&& value) { SetGlossaryTermItem(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AssetItem m_assetItem;

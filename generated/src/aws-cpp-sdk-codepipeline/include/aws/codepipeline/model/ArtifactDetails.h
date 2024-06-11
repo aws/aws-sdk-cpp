@@ -36,47 +36,25 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The minimum number of artifacts allowed for the action type.</p>
      */
     inline int GetMinimumCount() const{ return m_minimumCount; }
-
-    /**
-     * <p>The minimum number of artifacts allowed for the action type.</p>
-     */
     inline bool MinimumCountHasBeenSet() const { return m_minimumCountHasBeenSet; }
-
-    /**
-     * <p>The minimum number of artifacts allowed for the action type.</p>
-     */
     inline void SetMinimumCount(int value) { m_minimumCountHasBeenSet = true; m_minimumCount = value; }
-
-    /**
-     * <p>The minimum number of artifacts allowed for the action type.</p>
-     */
     inline ArtifactDetails& WithMinimumCount(int value) { SetMinimumCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of artifacts allowed for the action type.</p>
      */
     inline int GetMaximumCount() const{ return m_maximumCount; }
-
-    /**
-     * <p>The maximum number of artifacts allowed for the action type.</p>
-     */
     inline bool MaximumCountHasBeenSet() const { return m_maximumCountHasBeenSet; }
-
-    /**
-     * <p>The maximum number of artifacts allowed for the action type.</p>
-     */
     inline void SetMaximumCount(int value) { m_maximumCountHasBeenSet = true; m_maximumCount = value; }
-
-    /**
-     * <p>The maximum number of artifacts allowed for the action type.</p>
-     */
     inline ArtifactDetails& WithMaximumCount(int value) { SetMaximumCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_minimumCount;

@@ -38,152 +38,50 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Id of the usage plan associated with the usage data.</p>
      */
     inline const Aws::String& GetUsagePlanId() const{ return m_usagePlanId; }
-
-    /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
-     */
     inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
-
-    /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
-     */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
-
-    /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
-     */
     inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
-
-    /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
-     */
     inline void SetUsagePlanId(const char* value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId.assign(value); }
-
-    /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
-     */
     inline UpdateUsageRequest& WithUsagePlanId(const Aws::String& value) { SetUsagePlanId(value); return *this;}
-
-    /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
-     */
     inline UpdateUsageRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
-     */
     inline UpdateUsageRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the API key associated with the usage plan in which a
      * temporary extension is granted to the remaining quota.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
-
-    /**
-     * <p>The identifier of the API key associated with the usage plan in which a
-     * temporary extension is granted to the remaining quota.</p>
-     */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the API key associated with the usage plan in which a
-     * temporary extension is granted to the remaining quota.</p>
-     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-
-    /**
-     * <p>The identifier of the API key associated with the usage plan in which a
-     * temporary extension is granted to the remaining quota.</p>
-     */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-
-    /**
-     * <p>The identifier of the API key associated with the usage plan in which a
-     * temporary extension is granted to the remaining quota.</p>
-     */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-
-    /**
-     * <p>The identifier of the API key associated with the usage plan in which a
-     * temporary extension is granted to the remaining quota.</p>
-     */
     inline UpdateUsageRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-
-    /**
-     * <p>The identifier of the API key associated with the usage plan in which a
-     * temporary extension is granted to the remaining quota.</p>
-     */
     inline UpdateUsageRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the API key associated with the usage plan in which a
-     * temporary extension is granted to the remaining quota.</p>
-     */
     inline UpdateUsageRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>For more information about supported patch operations, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
      * Operations</a>.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline UpdateUsageRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline UpdateUsageRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline UpdateUsageRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline UpdateUsageRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_usagePlanId;

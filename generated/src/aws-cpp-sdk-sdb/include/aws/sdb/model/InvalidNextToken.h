@@ -37,18 +37,13 @@ namespace Model
     AWS_SIMPLEDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     
     inline double GetBoxUsage() const{ return m_boxUsage; }
-
-    
     inline bool BoxUsageHasBeenSet() const { return m_boxUsageHasBeenSet; }
-
-    
     inline void SetBoxUsage(double value) { m_boxUsageHasBeenSet = true; m_boxUsage = value; }
-
-    
     inline InvalidNextToken& WithBoxUsage(double value) { SetBoxUsage(value); return *this;}
-
+    ///@}
   private:
 
     double m_boxUsage;

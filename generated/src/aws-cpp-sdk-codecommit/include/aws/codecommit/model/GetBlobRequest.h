@@ -37,87 +37,33 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the repository that contains the blob.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the repository that contains the blob.</p>
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the repository that contains the blob.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the repository that contains the blob.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the repository that contains the blob.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the repository that contains the blob.</p>
-     */
     inline GetBlobRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the repository that contains the blob.</p>
-     */
     inline GetBlobRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the repository that contains the blob.</p>
-     */
     inline GetBlobRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the blob, which is its SHA-1 pointer.</p>
      */
     inline const Aws::String& GetBlobId() const{ return m_blobId; }
-
-    /**
-     * <p>The ID of the blob, which is its SHA-1 pointer.</p>
-     */
     inline bool BlobIdHasBeenSet() const { return m_blobIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the blob, which is its SHA-1 pointer.</p>
-     */
     inline void SetBlobId(const Aws::String& value) { m_blobIdHasBeenSet = true; m_blobId = value; }
-
-    /**
-     * <p>The ID of the blob, which is its SHA-1 pointer.</p>
-     */
     inline void SetBlobId(Aws::String&& value) { m_blobIdHasBeenSet = true; m_blobId = std::move(value); }
-
-    /**
-     * <p>The ID of the blob, which is its SHA-1 pointer.</p>
-     */
     inline void SetBlobId(const char* value) { m_blobIdHasBeenSet = true; m_blobId.assign(value); }
-
-    /**
-     * <p>The ID of the blob, which is its SHA-1 pointer.</p>
-     */
     inline GetBlobRequest& WithBlobId(const Aws::String& value) { SetBlobId(value); return *this;}
-
-    /**
-     * <p>The ID of the blob, which is its SHA-1 pointer.</p>
-     */
     inline GetBlobRequest& WithBlobId(Aws::String&& value) { SetBlobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the blob, which is its SHA-1 pointer.</p>
-     */
     inline GetBlobRequest& WithBlobId(const char* value) { SetBlobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_repositoryName;

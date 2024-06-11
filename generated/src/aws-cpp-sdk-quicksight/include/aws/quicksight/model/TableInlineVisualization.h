@@ -38,42 +38,18 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration of the inline visualization of the data bars within a
      * chart.</p>
      */
     inline const DataBarsOptions& GetDataBars() const{ return m_dataBars; }
-
-    /**
-     * <p>The configuration of the inline visualization of the data bars within a
-     * chart.</p>
-     */
     inline bool DataBarsHasBeenSet() const { return m_dataBarsHasBeenSet; }
-
-    /**
-     * <p>The configuration of the inline visualization of the data bars within a
-     * chart.</p>
-     */
     inline void SetDataBars(const DataBarsOptions& value) { m_dataBarsHasBeenSet = true; m_dataBars = value; }
-
-    /**
-     * <p>The configuration of the inline visualization of the data bars within a
-     * chart.</p>
-     */
     inline void SetDataBars(DataBarsOptions&& value) { m_dataBarsHasBeenSet = true; m_dataBars = std::move(value); }
-
-    /**
-     * <p>The configuration of the inline visualization of the data bars within a
-     * chart.</p>
-     */
     inline TableInlineVisualization& WithDataBars(const DataBarsOptions& value) { SetDataBars(value); return *this;}
-
-    /**
-     * <p>The configuration of the inline visualization of the data bars within a
-     * chart.</p>
-     */
     inline TableInlineVisualization& WithDataBars(DataBarsOptions&& value) { SetDataBars(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataBarsOptions m_dataBars;

@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the trust store.</p>
      */
     inline const Aws::String& GetTrustStoreArn() const{ return m_trustStoreArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline void SetTrustStoreArn(const Aws::String& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline void SetTrustStoreArn(Aws::String&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline void SetTrustStoreArn(const char* value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline GetTrustStoreCaCertificatesBundleRequest& WithTrustStoreArn(const Aws::String& value) { SetTrustStoreArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline GetTrustStoreCaCertificatesBundleRequest& WithTrustStoreArn(Aws::String&& value) { SetTrustStoreArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline GetTrustStoreCaCertificatesBundleRequest& WithTrustStoreArn(const char* value) { SetTrustStoreArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trustStoreArn;

@@ -38,30 +38,17 @@ namespace Model
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
-
-    
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
-
-    
     inline void SetRetryAfterSeconds(const Aws::String& value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
-
-    
     inline void SetRetryAfterSeconds(Aws::String&& value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = std::move(value); }
-
-    
     inline void SetRetryAfterSeconds(const char* value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds.assign(value); }
-
-    
     inline ThrottlingException& WithRetryAfterSeconds(const Aws::String& value) { SetRetryAfterSeconds(value); return *this;}
-
-    
     inline ThrottlingException& WithRetryAfterSeconds(Aws::String&& value) { SetRetryAfterSeconds(std::move(value)); return *this;}
-
-    
     inline ThrottlingException& WithRetryAfterSeconds(const char* value) { SetRetryAfterSeconds(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_retryAfterSeconds;

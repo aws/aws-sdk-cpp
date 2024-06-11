@@ -38,42 +38,18 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The options that determine the default settings for a section-based layout
      * configuration.</p>
      */
     inline const DefaultSectionBasedLayoutConfiguration& GetSectionBased() const{ return m_sectionBased; }
-
-    /**
-     * <p>The options that determine the default settings for a section-based layout
-     * configuration.</p>
-     */
     inline bool SectionBasedHasBeenSet() const { return m_sectionBasedHasBeenSet; }
-
-    /**
-     * <p>The options that determine the default settings for a section-based layout
-     * configuration.</p>
-     */
     inline void SetSectionBased(const DefaultSectionBasedLayoutConfiguration& value) { m_sectionBasedHasBeenSet = true; m_sectionBased = value; }
-
-    /**
-     * <p>The options that determine the default settings for a section-based layout
-     * configuration.</p>
-     */
     inline void SetSectionBased(DefaultSectionBasedLayoutConfiguration&& value) { m_sectionBasedHasBeenSet = true; m_sectionBased = std::move(value); }
-
-    /**
-     * <p>The options that determine the default settings for a section-based layout
-     * configuration.</p>
-     */
     inline DefaultPaginatedLayoutConfiguration& WithSectionBased(const DefaultSectionBasedLayoutConfiguration& value) { SetSectionBased(value); return *this;}
-
-    /**
-     * <p>The options that determine the default settings for a section-based layout
-     * configuration.</p>
-     */
     inline DefaultPaginatedLayoutConfiguration& WithSectionBased(DefaultSectionBasedLayoutConfiguration&& value) { SetSectionBased(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DefaultSectionBasedLayoutConfiguration m_sectionBased;

@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The options that determine the numeric format configuration.</p>
      */
     inline const NumericFormatConfiguration& GetFormatConfiguration() const{ return m_formatConfiguration; }
-
-    /**
-     * <p>The options that determine the numeric format configuration.</p>
-     */
     inline bool FormatConfigurationHasBeenSet() const { return m_formatConfigurationHasBeenSet; }
-
-    /**
-     * <p>The options that determine the numeric format configuration.</p>
-     */
     inline void SetFormatConfiguration(const NumericFormatConfiguration& value) { m_formatConfigurationHasBeenSet = true; m_formatConfiguration = value; }
-
-    /**
-     * <p>The options that determine the numeric format configuration.</p>
-     */
     inline void SetFormatConfiguration(NumericFormatConfiguration&& value) { m_formatConfigurationHasBeenSet = true; m_formatConfiguration = std::move(value); }
-
-    /**
-     * <p>The options that determine the numeric format configuration.</p>
-     */
     inline NumberFormatConfiguration& WithFormatConfiguration(const NumericFormatConfiguration& value) { SetFormatConfiguration(value); return *this;}
-
-    /**
-     * <p>The options that determine the numeric format configuration.</p>
-     */
     inline NumberFormatConfiguration& WithFormatConfiguration(NumericFormatConfiguration&& value) { SetFormatConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NumericFormatConfiguration m_formatConfiguration;

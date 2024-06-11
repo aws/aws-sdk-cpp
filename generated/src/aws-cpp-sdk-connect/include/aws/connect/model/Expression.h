@@ -39,118 +39,45 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object to specify the predefined attribute condition.</p>
      */
     inline const AttributeCondition& GetAttributeCondition() const{ return m_attributeCondition; }
-
-    /**
-     * <p>An object to specify the predefined attribute condition.</p>
-     */
     inline bool AttributeConditionHasBeenSet() const { return m_attributeConditionHasBeenSet; }
-
-    /**
-     * <p>An object to specify the predefined attribute condition.</p>
-     */
     inline void SetAttributeCondition(const AttributeCondition& value) { m_attributeConditionHasBeenSet = true; m_attributeCondition = value; }
-
-    /**
-     * <p>An object to specify the predefined attribute condition.</p>
-     */
     inline void SetAttributeCondition(AttributeCondition&& value) { m_attributeConditionHasBeenSet = true; m_attributeCondition = std::move(value); }
-
-    /**
-     * <p>An object to specify the predefined attribute condition.</p>
-     */
     inline Expression& WithAttributeCondition(const AttributeCondition& value) { SetAttributeCondition(value); return *this;}
-
-    /**
-     * <p>An object to specify the predefined attribute condition.</p>
-     */
     inline Expression& WithAttributeCondition(AttributeCondition&& value) { SetAttributeCondition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of routing expressions which will be AND-ed together.</p>
      */
     inline const Aws::Vector<Expression>& GetAndExpression() const{ return m_andExpression; }
-
-    /**
-     * <p>List of routing expressions which will be AND-ed together.</p>
-     */
     inline bool AndExpressionHasBeenSet() const { return m_andExpressionHasBeenSet; }
-
-    /**
-     * <p>List of routing expressions which will be AND-ed together.</p>
-     */
     inline void SetAndExpression(const Aws::Vector<Expression>& value) { m_andExpressionHasBeenSet = true; m_andExpression = value; }
-
-    /**
-     * <p>List of routing expressions which will be AND-ed together.</p>
-     */
     inline void SetAndExpression(Aws::Vector<Expression>&& value) { m_andExpressionHasBeenSet = true; m_andExpression = std::move(value); }
-
-    /**
-     * <p>List of routing expressions which will be AND-ed together.</p>
-     */
     inline Expression& WithAndExpression(const Aws::Vector<Expression>& value) { SetAndExpression(value); return *this;}
-
-    /**
-     * <p>List of routing expressions which will be AND-ed together.</p>
-     */
     inline Expression& WithAndExpression(Aws::Vector<Expression>&& value) { SetAndExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>List of routing expressions which will be AND-ed together.</p>
-     */
     inline Expression& AddAndExpression(const Expression& value) { m_andExpressionHasBeenSet = true; m_andExpression.push_back(value); return *this; }
-
-    /**
-     * <p>List of routing expressions which will be AND-ed together.</p>
-     */
     inline Expression& AddAndExpression(Expression&& value) { m_andExpressionHasBeenSet = true; m_andExpression.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of routing expressions which will be OR-ed together.</p>
      */
     inline const Aws::Vector<Expression>& GetOrExpression() const{ return m_orExpression; }
-
-    /**
-     * <p>List of routing expressions which will be OR-ed together.</p>
-     */
     inline bool OrExpressionHasBeenSet() const { return m_orExpressionHasBeenSet; }
-
-    /**
-     * <p>List of routing expressions which will be OR-ed together.</p>
-     */
     inline void SetOrExpression(const Aws::Vector<Expression>& value) { m_orExpressionHasBeenSet = true; m_orExpression = value; }
-
-    /**
-     * <p>List of routing expressions which will be OR-ed together.</p>
-     */
     inline void SetOrExpression(Aws::Vector<Expression>&& value) { m_orExpressionHasBeenSet = true; m_orExpression = std::move(value); }
-
-    /**
-     * <p>List of routing expressions which will be OR-ed together.</p>
-     */
     inline Expression& WithOrExpression(const Aws::Vector<Expression>& value) { SetOrExpression(value); return *this;}
-
-    /**
-     * <p>List of routing expressions which will be OR-ed together.</p>
-     */
     inline Expression& WithOrExpression(Aws::Vector<Expression>&& value) { SetOrExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>List of routing expressions which will be OR-ed together.</p>
-     */
     inline Expression& AddOrExpression(const Expression& value) { m_orExpressionHasBeenSet = true; m_orExpression.push_back(value); return *this; }
-
-    /**
-     * <p>List of routing expressions which will be OR-ed together.</p>
-     */
     inline Expression& AddOrExpression(Expression&& value) { m_orExpressionHasBeenSet = true; m_orExpression.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     AttributeCondition m_attributeCondition;

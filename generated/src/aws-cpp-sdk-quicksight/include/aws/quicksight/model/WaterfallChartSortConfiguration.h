@@ -39,77 +39,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sort configuration of the category fields.</p>
      */
     inline const Aws::Vector<FieldSortOptions>& GetCategorySort() const{ return m_categorySort; }
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline bool CategorySortHasBeenSet() const { return m_categorySortHasBeenSet; }
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline void SetCategorySort(const Aws::Vector<FieldSortOptions>& value) { m_categorySortHasBeenSet = true; m_categorySort = value; }
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline void SetCategorySort(Aws::Vector<FieldSortOptions>&& value) { m_categorySortHasBeenSet = true; m_categorySort = std::move(value); }
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline WaterfallChartSortConfiguration& WithCategorySort(const Aws::Vector<FieldSortOptions>& value) { SetCategorySort(value); return *this;}
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline WaterfallChartSortConfiguration& WithCategorySort(Aws::Vector<FieldSortOptions>&& value) { SetCategorySort(std::move(value)); return *this;}
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline WaterfallChartSortConfiguration& AddCategorySort(const FieldSortOptions& value) { m_categorySortHasBeenSet = true; m_categorySort.push_back(value); return *this; }
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline WaterfallChartSortConfiguration& AddCategorySort(FieldSortOptions&& value) { m_categorySortHasBeenSet = true; m_categorySort.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The limit on the number of bar groups that are displayed.</p>
      */
     inline const ItemsLimitConfiguration& GetBreakdownItemsLimit() const{ return m_breakdownItemsLimit; }
-
-    /**
-     * <p>The limit on the number of bar groups that are displayed.</p>
-     */
     inline bool BreakdownItemsLimitHasBeenSet() const { return m_breakdownItemsLimitHasBeenSet; }
-
-    /**
-     * <p>The limit on the number of bar groups that are displayed.</p>
-     */
     inline void SetBreakdownItemsLimit(const ItemsLimitConfiguration& value) { m_breakdownItemsLimitHasBeenSet = true; m_breakdownItemsLimit = value; }
-
-    /**
-     * <p>The limit on the number of bar groups that are displayed.</p>
-     */
     inline void SetBreakdownItemsLimit(ItemsLimitConfiguration&& value) { m_breakdownItemsLimitHasBeenSet = true; m_breakdownItemsLimit = std::move(value); }
-
-    /**
-     * <p>The limit on the number of bar groups that are displayed.</p>
-     */
     inline WaterfallChartSortConfiguration& WithBreakdownItemsLimit(const ItemsLimitConfiguration& value) { SetBreakdownItemsLimit(value); return *this;}
-
-    /**
-     * <p>The limit on the number of bar groups that are displayed.</p>
-     */
     inline WaterfallChartSortConfiguration& WithBreakdownItemsLimit(ItemsLimitConfiguration&& value) { SetBreakdownItemsLimit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FieldSortOptions> m_categorySort;

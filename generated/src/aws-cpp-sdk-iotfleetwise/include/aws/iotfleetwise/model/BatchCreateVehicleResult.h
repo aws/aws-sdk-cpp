@@ -35,113 +35,44 @@ namespace Model
     AWS_IOTFLEETWISE_API BatchCreateVehicleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> A list of information about a batch of created vehicles. For more
      * information, see the API data type.</p>
      */
     inline const Aws::Vector<CreateVehicleResponseItem>& GetVehicles() const{ return m_vehicles; }
-
-    /**
-     * <p> A list of information about a batch of created vehicles. For more
-     * information, see the API data type.</p>
-     */
     inline void SetVehicles(const Aws::Vector<CreateVehicleResponseItem>& value) { m_vehicles = value; }
-
-    /**
-     * <p> A list of information about a batch of created vehicles. For more
-     * information, see the API data type.</p>
-     */
     inline void SetVehicles(Aws::Vector<CreateVehicleResponseItem>&& value) { m_vehicles = std::move(value); }
-
-    /**
-     * <p> A list of information about a batch of created vehicles. For more
-     * information, see the API data type.</p>
-     */
     inline BatchCreateVehicleResult& WithVehicles(const Aws::Vector<CreateVehicleResponseItem>& value) { SetVehicles(value); return *this;}
-
-    /**
-     * <p> A list of information about a batch of created vehicles. For more
-     * information, see the API data type.</p>
-     */
     inline BatchCreateVehicleResult& WithVehicles(Aws::Vector<CreateVehicleResponseItem>&& value) { SetVehicles(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of information about a batch of created vehicles. For more
-     * information, see the API data type.</p>
-     */
     inline BatchCreateVehicleResult& AddVehicles(const CreateVehicleResponseItem& value) { m_vehicles.push_back(value); return *this; }
-
-    /**
-     * <p> A list of information about a batch of created vehicles. For more
-     * information, see the API data type.</p>
-     */
     inline BatchCreateVehicleResult& AddVehicles(CreateVehicleResponseItem&& value) { m_vehicles.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of information about creation errors, or an empty list if there aren't
      * any errors. </p>
      */
     inline const Aws::Vector<CreateVehicleError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>A list of information about creation errors, or an empty list if there aren't
-     * any errors. </p>
-     */
     inline void SetErrors(const Aws::Vector<CreateVehicleError>& value) { m_errors = value; }
-
-    /**
-     * <p>A list of information about creation errors, or an empty list if there aren't
-     * any errors. </p>
-     */
     inline void SetErrors(Aws::Vector<CreateVehicleError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>A list of information about creation errors, or an empty list if there aren't
-     * any errors. </p>
-     */
     inline BatchCreateVehicleResult& WithErrors(const Aws::Vector<CreateVehicleError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>A list of information about creation errors, or an empty list if there aren't
-     * any errors. </p>
-     */
     inline BatchCreateVehicleResult& WithErrors(Aws::Vector<CreateVehicleError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of information about creation errors, or an empty list if there aren't
-     * any errors. </p>
-     */
     inline BatchCreateVehicleResult& AddErrors(const CreateVehicleError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>A list of information about creation errors, or an empty list if there aren't
-     * any errors. </p>
-     */
     inline BatchCreateVehicleResult& AddErrors(CreateVehicleError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchCreateVehicleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchCreateVehicleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchCreateVehicleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CreateVehicleResponseItem> m_vehicles;

@@ -45,46 +45,19 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The proposed trust policy for the IAM role.</p>
      */
     inline const Aws::String& GetTrustPolicy() const{ return m_trustPolicy; }
-
-    /**
-     * <p>The proposed trust policy for the IAM role.</p>
-     */
     inline bool TrustPolicyHasBeenSet() const { return m_trustPolicyHasBeenSet; }
-
-    /**
-     * <p>The proposed trust policy for the IAM role.</p>
-     */
     inline void SetTrustPolicy(const Aws::String& value) { m_trustPolicyHasBeenSet = true; m_trustPolicy = value; }
-
-    /**
-     * <p>The proposed trust policy for the IAM role.</p>
-     */
     inline void SetTrustPolicy(Aws::String&& value) { m_trustPolicyHasBeenSet = true; m_trustPolicy = std::move(value); }
-
-    /**
-     * <p>The proposed trust policy for the IAM role.</p>
-     */
     inline void SetTrustPolicy(const char* value) { m_trustPolicyHasBeenSet = true; m_trustPolicy.assign(value); }
-
-    /**
-     * <p>The proposed trust policy for the IAM role.</p>
-     */
     inline IamRoleConfiguration& WithTrustPolicy(const Aws::String& value) { SetTrustPolicy(value); return *this;}
-
-    /**
-     * <p>The proposed trust policy for the IAM role.</p>
-     */
     inline IamRoleConfiguration& WithTrustPolicy(Aws::String&& value) { SetTrustPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The proposed trust policy for the IAM role.</p>
-     */
     inline IamRoleConfiguration& WithTrustPolicy(const char* value) { SetTrustPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trustPolicy;

@@ -32,63 +32,29 @@ namespace Model
     AWS_CUSTOMERPROFILES_API MergeProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A message that indicates the merge request is complete.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A message that indicates the merge request is complete.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_message = value; }
-
-    /**
-     * <p>A message that indicates the merge request is complete.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-
-    /**
-     * <p>A message that indicates the merge request is complete.</p>
-     */
     inline void SetMessage(const char* value) { m_message.assign(value); }
-
-    /**
-     * <p>A message that indicates the merge request is complete.</p>
-     */
     inline MergeProfilesResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A message that indicates the merge request is complete.</p>
-     */
     inline MergeProfilesResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message that indicates the merge request is complete.</p>
-     */
     inline MergeProfilesResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline MergeProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline MergeProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline MergeProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

@@ -35,6 +35,7 @@ namespace Model
     AWS_CODEBUILD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
      * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
@@ -42,48 +43,14 @@ namespace Model
      * by build ID.</p> </li> </ul>
      */
     inline const SortOrderType& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
-     * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
-     * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
-     * by build ID.</p> </li> </ul>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
-     * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
-     * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
-     * by build ID.</p> </li> </ul>
-     */
     inline void SetSortOrder(const SortOrderType& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
-     * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
-     * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
-     * by build ID.</p> </li> </ul>
-     */
     inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
-     * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
-     * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
-     * by build ID.</p> </li> </ul>
-     */
     inline ListBuildsRequest& WithSortOrder(const SortOrderType& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
-     * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
-     * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
-     * by build ID.</p> </li> </ul>
-     */
     inline ListBuildsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>During a previous call, if there are more than 100 items in the list, only
      * the first 100 items are returned, along with a unique string called a
@@ -93,77 +60,14 @@ namespace Model
      * returned, until no more next tokens are returned.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>During a previous call, if there are more than 100 items in the list, only
-     * the first 100 items are returned, along with a unique string called a
-     * <i>nextToken</i>. To get the next batch of items in the list, call this
-     * operation again, adding the next token to the call. To get all of the items in
-     * the list, keep calling this operation with each subsequent next token that is
-     * returned, until no more next tokens are returned.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>During a previous call, if there are more than 100 items in the list, only
-     * the first 100 items are returned, along with a unique string called a
-     * <i>nextToken</i>. To get the next batch of items in the list, call this
-     * operation again, adding the next token to the call. To get all of the items in
-     * the list, keep calling this operation with each subsequent next token that is
-     * returned, until no more next tokens are returned.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>During a previous call, if there are more than 100 items in the list, only
-     * the first 100 items are returned, along with a unique string called a
-     * <i>nextToken</i>. To get the next batch of items in the list, call this
-     * operation again, adding the next token to the call. To get all of the items in
-     * the list, keep calling this operation with each subsequent next token that is
-     * returned, until no more next tokens are returned.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>During a previous call, if there are more than 100 items in the list, only
-     * the first 100 items are returned, along with a unique string called a
-     * <i>nextToken</i>. To get the next batch of items in the list, call this
-     * operation again, adding the next token to the call. To get all of the items in
-     * the list, keep calling this operation with each subsequent next token that is
-     * returned, until no more next tokens are returned.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>During a previous call, if there are more than 100 items in the list, only
-     * the first 100 items are returned, along with a unique string called a
-     * <i>nextToken</i>. To get the next batch of items in the list, call this
-     * operation again, adding the next token to the call. To get all of the items in
-     * the list, keep calling this operation with each subsequent next token that is
-     * returned, until no more next tokens are returned.</p>
-     */
     inline ListBuildsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>During a previous call, if there are more than 100 items in the list, only
-     * the first 100 items are returned, along with a unique string called a
-     * <i>nextToken</i>. To get the next batch of items in the list, call this
-     * operation again, adding the next token to the call. To get all of the items in
-     * the list, keep calling this operation with each subsequent next token that is
-     * returned, until no more next tokens are returned.</p>
-     */
     inline ListBuildsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>During a previous call, if there are more than 100 items in the list, only
-     * the first 100 items are returned, along with a unique string called a
-     * <i>nextToken</i>. To get the next batch of items in the list, call this
-     * operation again, adding the next token to the call. To get all of the items in
-     * the list, keep calling this operation with each subsequent next token that is
-     * returned, until no more next tokens are returned.</p>
-     */
     inline ListBuildsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     SortOrderType m_sortOrder;

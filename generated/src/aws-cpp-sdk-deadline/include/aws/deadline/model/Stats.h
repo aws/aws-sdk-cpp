@@ -35,89 +35,45 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The average of the usage statistics.</p>
      */
     inline double GetAvg() const{ return m_avg; }
-
-    /**
-     * <p>The average of the usage statistics.</p>
-     */
     inline bool AvgHasBeenSet() const { return m_avgHasBeenSet; }
-
-    /**
-     * <p>The average of the usage statistics.</p>
-     */
     inline void SetAvg(double value) { m_avgHasBeenSet = true; m_avg = value; }
-
-    /**
-     * <p>The average of the usage statistics.</p>
-     */
     inline Stats& WithAvg(double value) { SetAvg(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum among the usage statistics.</p>
      */
     inline double GetMax() const{ return m_max; }
-
-    /**
-     * <p>The maximum among the usage statistics.</p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p>The maximum among the usage statistics.</p>
-     */
     inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p>The maximum among the usage statistics.</p>
-     */
     inline Stats& WithMax(double value) { SetMax(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The minimum of the usage statistics.</p>
      */
     inline double GetMin() const{ return m_min; }
-
-    /**
-     * <p>The minimum of the usage statistics.</p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p>The minimum of the usage statistics.</p>
-     */
     inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p>The minimum of the usage statistics.</p>
-     */
     inline Stats& WithMin(double value) { SetMin(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sum of the usage statistics.</p>
      */
     inline double GetSum() const{ return m_sum; }
-
-    /**
-     * <p>The sum of the usage statistics.</p>
-     */
     inline bool SumHasBeenSet() const { return m_sumHasBeenSet; }
-
-    /**
-     * <p>The sum of the usage statistics.</p>
-     */
     inline void SetSum(double value) { m_sumHasBeenSet = true; m_sum = value; }
-
-    /**
-     * <p>The sum of the usage statistics.</p>
-     */
     inline Stats& WithSum(double value) { SetSum(value); return *this;}
-
+    ///@}
   private:
 
     double m_avg;

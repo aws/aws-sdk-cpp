@@ -41,110 +41,43 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The S3 location of the annotation documents for your custom entity
      * recognizer.</p>
      */
     inline const DatasetEntityRecognizerAnnotations& GetAnnotations() const{ return m_annotations; }
-
-    /**
-     * <p>The S3 location of the annotation documents for your custom entity
-     * recognizer.</p>
-     */
     inline bool AnnotationsHasBeenSet() const { return m_annotationsHasBeenSet; }
-
-    /**
-     * <p>The S3 location of the annotation documents for your custom entity
-     * recognizer.</p>
-     */
     inline void SetAnnotations(const DatasetEntityRecognizerAnnotations& value) { m_annotationsHasBeenSet = true; m_annotations = value; }
-
-    /**
-     * <p>The S3 location of the annotation documents for your custom entity
-     * recognizer.</p>
-     */
     inline void SetAnnotations(DatasetEntityRecognizerAnnotations&& value) { m_annotationsHasBeenSet = true; m_annotations = std::move(value); }
-
-    /**
-     * <p>The S3 location of the annotation documents for your custom entity
-     * recognizer.</p>
-     */
     inline DatasetEntityRecognizerInputDataConfig& WithAnnotations(const DatasetEntityRecognizerAnnotations& value) { SetAnnotations(value); return *this;}
-
-    /**
-     * <p>The S3 location of the annotation documents for your custom entity
-     * recognizer.</p>
-     */
     inline DatasetEntityRecognizerInputDataConfig& WithAnnotations(DatasetEntityRecognizerAnnotations&& value) { SetAnnotations(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The format and location of the training documents for your custom entity
      * recognizer.</p>
      */
     inline const DatasetEntityRecognizerDocuments& GetDocuments() const{ return m_documents; }
-
-    /**
-     * <p>The format and location of the training documents for your custom entity
-     * recognizer.</p>
-     */
     inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }
-
-    /**
-     * <p>The format and location of the training documents for your custom entity
-     * recognizer.</p>
-     */
     inline void SetDocuments(const DatasetEntityRecognizerDocuments& value) { m_documentsHasBeenSet = true; m_documents = value; }
-
-    /**
-     * <p>The format and location of the training documents for your custom entity
-     * recognizer.</p>
-     */
     inline void SetDocuments(DatasetEntityRecognizerDocuments&& value) { m_documentsHasBeenSet = true; m_documents = std::move(value); }
-
-    /**
-     * <p>The format and location of the training documents for your custom entity
-     * recognizer.</p>
-     */
     inline DatasetEntityRecognizerInputDataConfig& WithDocuments(const DatasetEntityRecognizerDocuments& value) { SetDocuments(value); return *this;}
-
-    /**
-     * <p>The format and location of the training documents for your custom entity
-     * recognizer.</p>
-     */
     inline DatasetEntityRecognizerInputDataConfig& WithDocuments(DatasetEntityRecognizerDocuments&& value) { SetDocuments(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The S3 location of the entity list for your custom entity recognizer.</p>
      */
     inline const DatasetEntityRecognizerEntityList& GetEntityList() const{ return m_entityList; }
-
-    /**
-     * <p>The S3 location of the entity list for your custom entity recognizer.</p>
-     */
     inline bool EntityListHasBeenSet() const { return m_entityListHasBeenSet; }
-
-    /**
-     * <p>The S3 location of the entity list for your custom entity recognizer.</p>
-     */
     inline void SetEntityList(const DatasetEntityRecognizerEntityList& value) { m_entityListHasBeenSet = true; m_entityList = value; }
-
-    /**
-     * <p>The S3 location of the entity list for your custom entity recognizer.</p>
-     */
     inline void SetEntityList(DatasetEntityRecognizerEntityList&& value) { m_entityListHasBeenSet = true; m_entityList = std::move(value); }
-
-    /**
-     * <p>The S3 location of the entity list for your custom entity recognizer.</p>
-     */
     inline DatasetEntityRecognizerInputDataConfig& WithEntityList(const DatasetEntityRecognizerEntityList& value) { SetEntityList(value); return *this;}
-
-    /**
-     * <p>The S3 location of the entity list for your custom entity recognizer.</p>
-     */
     inline DatasetEntityRecognizerInputDataConfig& WithEntityList(DatasetEntityRecognizerEntityList&& value) { SetEntityList(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DatasetEntityRecognizerAnnotations m_annotations;

@@ -37,46 +37,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p> A list of <code>ManagedRules</code> to enable. </p>
      */
     inline const Aws::Vector<ManagedRule>& GetManagedRules() const{ return m_managedRules; }
-
-    /**
-     * <p> A list of <code>ManagedRules</code> to enable. </p>
-     */
     inline bool ManagedRulesHasBeenSet() const { return m_managedRulesHasBeenSet; }
-
-    /**
-     * <p> A list of <code>ManagedRules</code> to enable. </p>
-     */
     inline void SetManagedRules(const Aws::Vector<ManagedRule>& value) { m_managedRulesHasBeenSet = true; m_managedRules = value; }
-
-    /**
-     * <p> A list of <code>ManagedRules</code> to enable. </p>
-     */
     inline void SetManagedRules(Aws::Vector<ManagedRule>&& value) { m_managedRulesHasBeenSet = true; m_managedRules = std::move(value); }
-
-    /**
-     * <p> A list of <code>ManagedRules</code> to enable. </p>
-     */
     inline PutManagedInsightRulesRequest& WithManagedRules(const Aws::Vector<ManagedRule>& value) { SetManagedRules(value); return *this;}
-
-    /**
-     * <p> A list of <code>ManagedRules</code> to enable. </p>
-     */
     inline PutManagedInsightRulesRequest& WithManagedRules(Aws::Vector<ManagedRule>&& value) { SetManagedRules(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of <code>ManagedRules</code> to enable. </p>
-     */
     inline PutManagedInsightRulesRequest& AddManagedRules(const ManagedRule& value) { m_managedRulesHasBeenSet = true; m_managedRules.push_back(value); return *this; }
-
-    /**
-     * <p> A list of <code>ManagedRules</code> to enable. </p>
-     */
     inline PutManagedInsightRulesRequest& AddManagedRules(ManagedRule&& value) { m_managedRulesHasBeenSet = true; m_managedRules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ManagedRule> m_managedRules;

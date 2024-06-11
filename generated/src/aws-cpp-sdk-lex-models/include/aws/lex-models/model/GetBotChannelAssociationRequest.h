@@ -32,144 +32,49 @@ namespace Model
     AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the association between the bot and the channel. The name is case
      * sensitive. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the association between the bot and the channel. The name is case
-     * sensitive. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the association between the bot and the channel. The name is case
-     * sensitive. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the association between the bot and the channel. The name is case
-     * sensitive. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the association between the bot and the channel. The name is case
-     * sensitive. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the association between the bot and the channel. The name is case
-     * sensitive. </p>
-     */
     inline GetBotChannelAssociationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the association between the bot and the channel. The name is case
-     * sensitive. </p>
-     */
     inline GetBotChannelAssociationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the association between the bot and the channel. The name is case
-     * sensitive. </p>
-     */
     inline GetBotChannelAssociationRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the Amazon Lex bot.</p>
      */
     inline const Aws::String& GetBotName() const{ return m_botName; }
-
-    /**
-     * <p>The name of the Amazon Lex bot.</p>
-     */
     inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon Lex bot.</p>
-     */
     inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
-
-    /**
-     * <p>The name of the Amazon Lex bot.</p>
-     */
     inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon Lex bot.</p>
-     */
     inline void SetBotName(const char* value) { m_botNameHasBeenSet = true; m_botName.assign(value); }
-
-    /**
-     * <p>The name of the Amazon Lex bot.</p>
-     */
     inline GetBotChannelAssociationRequest& WithBotName(const Aws::String& value) { SetBotName(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Lex bot.</p>
-     */
     inline GetBotChannelAssociationRequest& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon Lex bot.</p>
-     */
     inline GetBotChannelAssociationRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
      * association is being made.</p>
      */
     inline const Aws::String& GetBotAlias() const{ return m_botAlias; }
-
-    /**
-     * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
-     * association is being made.</p>
-     */
     inline bool BotAliasHasBeenSet() const { return m_botAliasHasBeenSet; }
-
-    /**
-     * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
-     * association is being made.</p>
-     */
     inline void SetBotAlias(const Aws::String& value) { m_botAliasHasBeenSet = true; m_botAlias = value; }
-
-    /**
-     * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
-     * association is being made.</p>
-     */
     inline void SetBotAlias(Aws::String&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::move(value); }
-
-    /**
-     * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
-     * association is being made.</p>
-     */
     inline void SetBotAlias(const char* value) { m_botAliasHasBeenSet = true; m_botAlias.assign(value); }
-
-    /**
-     * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
-     * association is being made.</p>
-     */
     inline GetBotChannelAssociationRequest& WithBotAlias(const Aws::String& value) { SetBotAlias(value); return *this;}
-
-    /**
-     * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
-     * association is being made.</p>
-     */
     inline GetBotChannelAssociationRequest& WithBotAlias(Aws::String&& value) { SetBotAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
-     * association is being made.</p>
-     */
     inline GetBotChannelAssociationRequest& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

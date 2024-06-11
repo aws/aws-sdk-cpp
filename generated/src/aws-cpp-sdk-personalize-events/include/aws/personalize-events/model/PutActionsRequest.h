@@ -34,95 +34,34 @@ namespace Model
     AWS_PERSONALIZEEVENTS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the
      * action or actions to.</p>
      */
     inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the
-     * action or actions to.</p>
-     */
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the
-     * action or actions to.</p>
-     */
     inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the
-     * action or actions to.</p>
-     */
     inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the
-     * action or actions to.</p>
-     */
     inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the
-     * action or actions to.</p>
-     */
     inline PutActionsRequest& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the
-     * action or actions to.</p>
-     */
     inline PutActionsRequest& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the
-     * action or actions to.</p>
-     */
     inline PutActionsRequest& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of action data.</p>
      */
     inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
-
-    /**
-     * <p>A list of action data.</p>
-     */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-
-    /**
-     * <p>A list of action data.</p>
-     */
     inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-
-    /**
-     * <p>A list of action data.</p>
-     */
     inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-
-    /**
-     * <p>A list of action data.</p>
-     */
     inline PutActionsRequest& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
-
-    /**
-     * <p>A list of action data.</p>
-     */
     inline PutActionsRequest& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of action data.</p>
-     */
     inline PutActionsRequest& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of action data.</p>
-     */
     inline PutActionsRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_datasetArn;

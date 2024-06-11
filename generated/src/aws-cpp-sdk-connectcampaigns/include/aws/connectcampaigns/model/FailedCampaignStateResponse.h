@@ -38,49 +38,27 @@ namespace Model
     AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
-
-    
     inline bool CampaignIdHasBeenSet() const { return m_campaignIdHasBeenSet; }
-
-    
     inline void SetCampaignId(const Aws::String& value) { m_campaignIdHasBeenSet = true; m_campaignId = value; }
-
-    
     inline void SetCampaignId(Aws::String&& value) { m_campaignIdHasBeenSet = true; m_campaignId = std::move(value); }
-
-    
     inline void SetCampaignId(const char* value) { m_campaignIdHasBeenSet = true; m_campaignId.assign(value); }
-
-    
     inline FailedCampaignStateResponse& WithCampaignId(const Aws::String& value) { SetCampaignId(value); return *this;}
-
-    
     inline FailedCampaignStateResponse& WithCampaignId(Aws::String&& value) { SetCampaignId(std::move(value)); return *this;}
-
-    
     inline FailedCampaignStateResponse& WithCampaignId(const char* value) { SetCampaignId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const GetCampaignStateBatchFailureCode& GetFailureCode() const{ return m_failureCode; }
-
-    
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-
-    
     inline void SetFailureCode(const GetCampaignStateBatchFailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-
-    
     inline void SetFailureCode(GetCampaignStateBatchFailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-
-    
     inline FailedCampaignStateResponse& WithFailureCode(const GetCampaignStateBatchFailureCode& value) { SetFailureCode(value); return *this;}
-
-    
     inline FailedCampaignStateResponse& WithFailureCode(GetCampaignStateBatchFailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_campaignId;

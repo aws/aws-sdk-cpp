@@ -38,47 +38,25 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The number of cores available to the neuron accelerator.</p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p>The number of cores available to the neuron accelerator.</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>The number of cores available to the neuron accelerator.</p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>The number of cores available to the neuron accelerator.</p>
-     */
     inline NeuronDeviceCoreInfo& WithCount(int value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the neuron accelerator.</p>
      */
     inline int GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The version of the neuron accelerator.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The version of the neuron accelerator.</p>
-     */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The version of the neuron accelerator.</p>
-     */
     inline NeuronDeviceCoreInfo& WithVersion(int value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     int m_count;

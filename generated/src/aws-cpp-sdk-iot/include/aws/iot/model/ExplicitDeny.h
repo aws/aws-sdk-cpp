@@ -38,46 +38,19 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The policies that denied the authorization.</p>
      */
     inline const Aws::Vector<Policy>& GetPolicies() const{ return m_policies; }
-
-    /**
-     * <p>The policies that denied the authorization.</p>
-     */
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
-
-    /**
-     * <p>The policies that denied the authorization.</p>
-     */
     inline void SetPolicies(const Aws::Vector<Policy>& value) { m_policiesHasBeenSet = true; m_policies = value; }
-
-    /**
-     * <p>The policies that denied the authorization.</p>
-     */
     inline void SetPolicies(Aws::Vector<Policy>&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
-
-    /**
-     * <p>The policies that denied the authorization.</p>
-     */
     inline ExplicitDeny& WithPolicies(const Aws::Vector<Policy>& value) { SetPolicies(value); return *this;}
-
-    /**
-     * <p>The policies that denied the authorization.</p>
-     */
     inline ExplicitDeny& WithPolicies(Aws::Vector<Policy>&& value) { SetPolicies(std::move(value)); return *this;}
-
-    /**
-     * <p>The policies that denied the authorization.</p>
-     */
     inline ExplicitDeny& AddPolicies(const Policy& value) { m_policiesHasBeenSet = true; m_policies.push_back(value); return *this; }
-
-    /**
-     * <p>The policies that denied the authorization.</p>
-     */
     inline ExplicitDeny& AddPolicies(Policy&& value) { m_policiesHasBeenSet = true; m_policies.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Policy> m_policies;

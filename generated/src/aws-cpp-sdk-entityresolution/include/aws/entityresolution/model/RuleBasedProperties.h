@@ -41,6 +41,7 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or
      * <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing
@@ -54,126 +55,27 @@ namespace Model
      * the two profiles are matched on the <code>Email</code> type.</p>
      */
     inline const AttributeMatchingModel& GetAttributeMatchingModel() const{ return m_attributeMatchingModel; }
-
-    /**
-     * <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or
-     * <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing
-     * <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types
-     * of an attribute type. For example, if the value of the <code>Email</code> field
-     * of Profile A and the value of <code>BusinessEmail</code> field of Profile B
-     * matches, the two profiles are matched on the <code>Email</code> type. When
-     * choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are
-     * exact matches. For example, only when the value of the <code>Email</code> field
-     * of Profile A and the value of the <code>Email</code> field of Profile B matches,
-     * the two profiles are matched on the <code>Email</code> type.</p>
-     */
     inline bool AttributeMatchingModelHasBeenSet() const { return m_attributeMatchingModelHasBeenSet; }
-
-    /**
-     * <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or
-     * <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing
-     * <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types
-     * of an attribute type. For example, if the value of the <code>Email</code> field
-     * of Profile A and the value of <code>BusinessEmail</code> field of Profile B
-     * matches, the two profiles are matched on the <code>Email</code> type. When
-     * choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are
-     * exact matches. For example, only when the value of the <code>Email</code> field
-     * of Profile A and the value of the <code>Email</code> field of Profile B matches,
-     * the two profiles are matched on the <code>Email</code> type.</p>
-     */
     inline void SetAttributeMatchingModel(const AttributeMatchingModel& value) { m_attributeMatchingModelHasBeenSet = true; m_attributeMatchingModel = value; }
-
-    /**
-     * <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or
-     * <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing
-     * <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types
-     * of an attribute type. For example, if the value of the <code>Email</code> field
-     * of Profile A and the value of <code>BusinessEmail</code> field of Profile B
-     * matches, the two profiles are matched on the <code>Email</code> type. When
-     * choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are
-     * exact matches. For example, only when the value of the <code>Email</code> field
-     * of Profile A and the value of the <code>Email</code> field of Profile B matches,
-     * the two profiles are matched on the <code>Email</code> type.</p>
-     */
     inline void SetAttributeMatchingModel(AttributeMatchingModel&& value) { m_attributeMatchingModelHasBeenSet = true; m_attributeMatchingModel = std::move(value); }
-
-    /**
-     * <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or
-     * <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing
-     * <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types
-     * of an attribute type. For example, if the value of the <code>Email</code> field
-     * of Profile A and the value of <code>BusinessEmail</code> field of Profile B
-     * matches, the two profiles are matched on the <code>Email</code> type. When
-     * choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are
-     * exact matches. For example, only when the value of the <code>Email</code> field
-     * of Profile A and the value of the <code>Email</code> field of Profile B matches,
-     * the two profiles are matched on the <code>Email</code> type.</p>
-     */
     inline RuleBasedProperties& WithAttributeMatchingModel(const AttributeMatchingModel& value) { SetAttributeMatchingModel(value); return *this;}
-
-    /**
-     * <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or
-     * <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing
-     * <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types
-     * of an attribute type. For example, if the value of the <code>Email</code> field
-     * of Profile A and the value of <code>BusinessEmail</code> field of Profile B
-     * matches, the two profiles are matched on the <code>Email</code> type. When
-     * choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are
-     * exact matches. For example, only when the value of the <code>Email</code> field
-     * of Profile A and the value of the <code>Email</code> field of Profile B matches,
-     * the two profiles are matched on the <code>Email</code> type.</p>
-     */
     inline RuleBasedProperties& WithAttributeMatchingModel(AttributeMatchingModel&& value) { SetAttributeMatchingModel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of <code>Rule</code> objects, each of which have fields
      * <code>RuleName</code> and <code>MatchingKeys</code>.</p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
-
-    /**
-     * <p>A list of <code>Rule</code> objects, each of which have fields
-     * <code>RuleName</code> and <code>MatchingKeys</code>.</p>
-     */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-
-    /**
-     * <p>A list of <code>Rule</code> objects, each of which have fields
-     * <code>RuleName</code> and <code>MatchingKeys</code>.</p>
-     */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-
-    /**
-     * <p>A list of <code>Rule</code> objects, each of which have fields
-     * <code>RuleName</code> and <code>MatchingKeys</code>.</p>
-     */
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-
-    /**
-     * <p>A list of <code>Rule</code> objects, each of which have fields
-     * <code>RuleName</code> and <code>MatchingKeys</code>.</p>
-     */
     inline RuleBasedProperties& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-
-    /**
-     * <p>A list of <code>Rule</code> objects, each of which have fields
-     * <code>RuleName</code> and <code>MatchingKeys</code>.</p>
-     */
     inline RuleBasedProperties& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>Rule</code> objects, each of which have fields
-     * <code>RuleName</code> and <code>MatchingKeys</code>.</p>
-     */
     inline RuleBasedProperties& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>Rule</code> objects, each of which have fields
-     * <code>RuleName</code> and <code>MatchingKeys</code>.</p>
-     */
     inline RuleBasedProperties& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     AttributeMatchingModel m_attributeMatchingModel;

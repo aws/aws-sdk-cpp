@@ -38,55 +38,27 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The minimum number of network interfaces. To specify no minimum limit, omit
      * this parameter.</p>
      */
     inline int GetMin() const{ return m_min; }
-
-    /**
-     * <p>The minimum number of network interfaces. To specify no minimum limit, omit
-     * this parameter.</p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p>The minimum number of network interfaces. To specify no minimum limit, omit
-     * this parameter.</p>
-     */
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p>The minimum number of network interfaces. To specify no minimum limit, omit
-     * this parameter.</p>
-     */
     inline NetworkInterfaceCountRequest& WithMin(int value) { SetMin(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of network interfaces. To specify no maximum limit, omit
      * this parameter.</p>
      */
     inline int GetMax() const{ return m_max; }
-
-    /**
-     * <p>The maximum number of network interfaces. To specify no maximum limit, omit
-     * this parameter.</p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p>The maximum number of network interfaces. To specify no maximum limit, omit
-     * this parameter.</p>
-     */
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p>The maximum number of network interfaces. To specify no maximum limit, omit
-     * this parameter.</p>
-     */
     inline NetworkInterfaceCountRequest& WithMax(int value) { SetMax(value); return *this;}
-
+    ///@}
   private:
 
     int m_min;

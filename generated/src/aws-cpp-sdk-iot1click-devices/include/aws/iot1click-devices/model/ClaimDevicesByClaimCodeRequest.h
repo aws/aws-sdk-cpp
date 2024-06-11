@@ -32,54 +32,20 @@ namespace Model
     AWS_IOT1CLICKDEVICESSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The claim code, starting with "C-", as provided by the device
      * manufacturer.</p>
      */
     inline const Aws::String& GetClaimCode() const{ return m_claimCode; }
-
-    /**
-     * <p>The claim code, starting with "C-", as provided by the device
-     * manufacturer.</p>
-     */
     inline bool ClaimCodeHasBeenSet() const { return m_claimCodeHasBeenSet; }
-
-    /**
-     * <p>The claim code, starting with "C-", as provided by the device
-     * manufacturer.</p>
-     */
     inline void SetClaimCode(const Aws::String& value) { m_claimCodeHasBeenSet = true; m_claimCode = value; }
-
-    /**
-     * <p>The claim code, starting with "C-", as provided by the device
-     * manufacturer.</p>
-     */
     inline void SetClaimCode(Aws::String&& value) { m_claimCodeHasBeenSet = true; m_claimCode = std::move(value); }
-
-    /**
-     * <p>The claim code, starting with "C-", as provided by the device
-     * manufacturer.</p>
-     */
     inline void SetClaimCode(const char* value) { m_claimCodeHasBeenSet = true; m_claimCode.assign(value); }
-
-    /**
-     * <p>The claim code, starting with "C-", as provided by the device
-     * manufacturer.</p>
-     */
     inline ClaimDevicesByClaimCodeRequest& WithClaimCode(const Aws::String& value) { SetClaimCode(value); return *this;}
-
-    /**
-     * <p>The claim code, starting with "C-", as provided by the device
-     * manufacturer.</p>
-     */
     inline ClaimDevicesByClaimCodeRequest& WithClaimCode(Aws::String&& value) { SetClaimCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The claim code, starting with "C-", as provided by the device
-     * manufacturer.</p>
-     */
     inline ClaimDevicesByClaimCodeRequest& WithClaimCode(const char* value) { SetClaimCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_claimCode;

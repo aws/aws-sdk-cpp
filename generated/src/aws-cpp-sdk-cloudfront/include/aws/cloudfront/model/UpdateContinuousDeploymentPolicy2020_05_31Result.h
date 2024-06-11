@@ -33,96 +33,41 @@ namespace Model
     AWS_CLOUDFRONT_API UpdateContinuousDeploymentPolicy2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A continuous deployment policy.</p>
      */
     inline const ContinuousDeploymentPolicy& GetContinuousDeploymentPolicy() const{ return m_continuousDeploymentPolicy; }
-
-    /**
-     * <p>A continuous deployment policy.</p>
-     */
     inline void SetContinuousDeploymentPolicy(const ContinuousDeploymentPolicy& value) { m_continuousDeploymentPolicy = value; }
-
-    /**
-     * <p>A continuous deployment policy.</p>
-     */
     inline void SetContinuousDeploymentPolicy(ContinuousDeploymentPolicy&& value) { m_continuousDeploymentPolicy = std::move(value); }
-
-    /**
-     * <p>A continuous deployment policy.</p>
-     */
     inline UpdateContinuousDeploymentPolicy2020_05_31Result& WithContinuousDeploymentPolicy(const ContinuousDeploymentPolicy& value) { SetContinuousDeploymentPolicy(value); return *this;}
-
-    /**
-     * <p>A continuous deployment policy.</p>
-     */
     inline UpdateContinuousDeploymentPolicy2020_05_31Result& WithContinuousDeploymentPolicy(ContinuousDeploymentPolicy&& value) { SetContinuousDeploymentPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version identifier for the current version of the continuous deployment
      * policy.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
-
-    /**
-     * <p>The version identifier for the current version of the continuous deployment
-     * policy.</p>
-     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
-
-    /**
-     * <p>The version identifier for the current version of the continuous deployment
-     * policy.</p>
-     */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-
-    /**
-     * <p>The version identifier for the current version of the continuous deployment
-     * policy.</p>
-     */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
-
-    /**
-     * <p>The version identifier for the current version of the continuous deployment
-     * policy.</p>
-     */
     inline UpdateContinuousDeploymentPolicy2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-
-    /**
-     * <p>The version identifier for the current version of the continuous deployment
-     * policy.</p>
-     */
     inline UpdateContinuousDeploymentPolicy2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-
-    /**
-     * <p>The version identifier for the current version of the continuous deployment
-     * policy.</p>
-     */
     inline UpdateContinuousDeploymentPolicy2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateContinuousDeploymentPolicy2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateContinuousDeploymentPolicy2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateContinuousDeploymentPolicy2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ContinuousDeploymentPolicy m_continuousDeploymentPolicy;

@@ -36,65 +36,29 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ARN of the bridge that you want to update.
      */
     inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
-
-    /**
-     * The ARN of the bridge that you want to update.
-     */
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
-
-    /**
-     * The ARN of the bridge that you want to update.
-     */
     inline void SetBridgeArn(const Aws::String& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = value; }
-
-    /**
-     * The ARN of the bridge that you want to update.
-     */
     inline void SetBridgeArn(Aws::String&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::move(value); }
-
-    /**
-     * The ARN of the bridge that you want to update.
-     */
     inline void SetBridgeArn(const char* value) { m_bridgeArnHasBeenSet = true; m_bridgeArn.assign(value); }
-
-    /**
-     * The ARN of the bridge that you want to update.
-     */
     inline UpdateBridgeStateRequest& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
-
-    /**
-     * The ARN of the bridge that you want to update.
-     */
     inline UpdateBridgeStateRequest& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the bridge that you want to update.
-     */
     inline UpdateBridgeStateRequest& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const DesiredState& GetDesiredState() const{ return m_desiredState; }
-
-    
     inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
-
-    
     inline void SetDesiredState(const DesiredState& value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
-
-    
     inline void SetDesiredState(DesiredState&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::move(value); }
-
-    
     inline UpdateBridgeStateRequest& WithDesiredState(const DesiredState& value) { SetDesiredState(value); return *this;}
-
-    
     inline UpdateBridgeStateRequest& WithDesiredState(DesiredState&& value) { SetDesiredState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bridgeArn;

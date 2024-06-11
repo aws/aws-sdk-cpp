@@ -32,46 +32,19 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the knowledge base to delete.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
-
-    /**
-     * <p>The unique identifier of the knowledge base to delete.</p>
-     */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the knowledge base to delete.</p>
-     */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-
-    /**
-     * <p>The unique identifier of the knowledge base to delete.</p>
-     */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the knowledge base to delete.</p>
-     */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the knowledge base to delete.</p>
-     */
     inline DeleteKnowledgeBaseRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the knowledge base to delete.</p>
-     */
     inline DeleteKnowledgeBaseRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the knowledge base to delete.</p>
-     */
     inline DeleteKnowledgeBaseRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_knowledgeBaseId;

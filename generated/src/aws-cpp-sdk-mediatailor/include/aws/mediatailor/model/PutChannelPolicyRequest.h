@@ -32,87 +32,33 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The channel name associated with this Channel Policy.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
-
-    /**
-     * <p>The channel name associated with this Channel Policy.</p>
-     */
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-
-    /**
-     * <p>The channel name associated with this Channel Policy.</p>
-     */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-
-    /**
-     * <p>The channel name associated with this Channel Policy.</p>
-     */
     inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-
-    /**
-     * <p>The channel name associated with this Channel Policy.</p>
-     */
     inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-
-    /**
-     * <p>The channel name associated with this Channel Policy.</p>
-     */
     inline PutChannelPolicyRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-
-    /**
-     * <p>The channel name associated with this Channel Policy.</p>
-     */
     inline PutChannelPolicyRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The channel name associated with this Channel Policy.</p>
-     */
     inline PutChannelPolicyRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Adds an IAM role that determines the permissions of your channel.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>Adds an IAM role that determines the permissions of your channel.</p>
-     */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-
-    /**
-     * <p>Adds an IAM role that determines the permissions of your channel.</p>
-     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-
-    /**
-     * <p>Adds an IAM role that determines the permissions of your channel.</p>
-     */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-
-    /**
-     * <p>Adds an IAM role that determines the permissions of your channel.</p>
-     */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-
-    /**
-     * <p>Adds an IAM role that determines the permissions of your channel.</p>
-     */
     inline PutChannelPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>Adds an IAM role that determines the permissions of your channel.</p>
-     */
     inline PutChannelPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>Adds an IAM role that determines the permissions of your channel.</p>
-     */
     inline PutChannelPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelName;

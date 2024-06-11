@@ -37,54 +37,20 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * String concatenated to the end of the destination filename.  Required for
      * multiple outputs of the same type.
      */
     inline const Aws::String& GetNameModifier() const{ return m_nameModifier; }
-
-    /**
-     * String concatenated to the end of the destination filename.  Required for
-     * multiple outputs of the same type.
-     */
     inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
-
-    /**
-     * String concatenated to the end of the destination filename.  Required for
-     * multiple outputs of the same type.
-     */
     inline void SetNameModifier(const Aws::String& value) { m_nameModifierHasBeenSet = true; m_nameModifier = value; }
-
-    /**
-     * String concatenated to the end of the destination filename.  Required for
-     * multiple outputs of the same type.
-     */
     inline void SetNameModifier(Aws::String&& value) { m_nameModifierHasBeenSet = true; m_nameModifier = std::move(value); }
-
-    /**
-     * String concatenated to the end of the destination filename.  Required for
-     * multiple outputs of the same type.
-     */
     inline void SetNameModifier(const char* value) { m_nameModifierHasBeenSet = true; m_nameModifier.assign(value); }
-
-    /**
-     * String concatenated to the end of the destination filename.  Required for
-     * multiple outputs of the same type.
-     */
     inline CmafIngestOutputSettings& WithNameModifier(const Aws::String& value) { SetNameModifier(value); return *this;}
-
-    /**
-     * String concatenated to the end of the destination filename.  Required for
-     * multiple outputs of the same type.
-     */
     inline CmafIngestOutputSettings& WithNameModifier(Aws::String&& value) { SetNameModifier(std::move(value)); return *this;}
-
-    /**
-     * String concatenated to the end of the destination filename.  Required for
-     * multiple outputs of the same type.
-     */
     inline CmafIngestOutputSettings& WithNameModifier(const char* value) { SetNameModifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nameModifier;

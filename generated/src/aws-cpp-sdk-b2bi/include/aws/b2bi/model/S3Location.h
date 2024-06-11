@@ -39,87 +39,33 @@ namespace Model
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the name of the Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
-
-    /**
-     * <p>Specifies the name of the Amazon S3 bucket.</p>
-     */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-
-    /**
-     * <p>Specifies the name of the Amazon S3 bucket.</p>
-     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-
-    /**
-     * <p>Specifies the name of the Amazon S3 bucket.</p>
-     */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-
-    /**
-     * <p>Specifies the name of the Amazon S3 bucket.</p>
-     */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-
-    /**
-     * <p>Specifies the name of the Amazon S3 bucket.</p>
-     */
     inline S3Location& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-
-    /**
-     * <p>Specifies the name of the Amazon S3 bucket.</p>
-     */
     inline S3Location& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the name of the Amazon S3 bucket.</p>
-     */
     inline S3Location& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the Amazon S3 key for the file location.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>Specifies the Amazon S3 key for the file location.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon S3 key for the file location.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>Specifies the Amazon S3 key for the file location.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon S3 key for the file location.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>Specifies the Amazon S3 key for the file location.</p>
-     */
     inline S3Location& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon S3 key for the file location.</p>
-     */
     inline S3Location& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Amazon S3 key for the file location.</p>
-     */
     inline S3Location& WithKey(const char* value) { SetKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucketName;

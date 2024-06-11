@@ -37,79 +37,31 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Timestamp that measures the beginning of the customer greeting from an
      * outbound voice call.</p>
      */
     inline const Aws::Utils::DateTime& GetGreetingStartTimestamp() const{ return m_greetingStartTimestamp; }
-
-    /**
-     * <p>Timestamp that measures the beginning of the customer greeting from an
-     * outbound voice call.</p>
-     */
     inline bool GreetingStartTimestampHasBeenSet() const { return m_greetingStartTimestampHasBeenSet; }
-
-    /**
-     * <p>Timestamp that measures the beginning of the customer greeting from an
-     * outbound voice call.</p>
-     */
     inline void SetGreetingStartTimestamp(const Aws::Utils::DateTime& value) { m_greetingStartTimestampHasBeenSet = true; m_greetingStartTimestamp = value; }
-
-    /**
-     * <p>Timestamp that measures the beginning of the customer greeting from an
-     * outbound voice call.</p>
-     */
     inline void SetGreetingStartTimestamp(Aws::Utils::DateTime&& value) { m_greetingStartTimestampHasBeenSet = true; m_greetingStartTimestamp = std::move(value); }
-
-    /**
-     * <p>Timestamp that measures the beginning of the customer greeting from an
-     * outbound voice call.</p>
-     */
     inline CustomerVoiceActivity& WithGreetingStartTimestamp(const Aws::Utils::DateTime& value) { SetGreetingStartTimestamp(value); return *this;}
-
-    /**
-     * <p>Timestamp that measures the beginning of the customer greeting from an
-     * outbound voice call.</p>
-     */
     inline CustomerVoiceActivity& WithGreetingStartTimestamp(Aws::Utils::DateTime&& value) { SetGreetingStartTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Timestamp that measures the end of the customer greeting from an outbound
      * voice call.</p>
      */
     inline const Aws::Utils::DateTime& GetGreetingEndTimestamp() const{ return m_greetingEndTimestamp; }
-
-    /**
-     * <p>Timestamp that measures the end of the customer greeting from an outbound
-     * voice call.</p>
-     */
     inline bool GreetingEndTimestampHasBeenSet() const { return m_greetingEndTimestampHasBeenSet; }
-
-    /**
-     * <p>Timestamp that measures the end of the customer greeting from an outbound
-     * voice call.</p>
-     */
     inline void SetGreetingEndTimestamp(const Aws::Utils::DateTime& value) { m_greetingEndTimestampHasBeenSet = true; m_greetingEndTimestamp = value; }
-
-    /**
-     * <p>Timestamp that measures the end of the customer greeting from an outbound
-     * voice call.</p>
-     */
     inline void SetGreetingEndTimestamp(Aws::Utils::DateTime&& value) { m_greetingEndTimestampHasBeenSet = true; m_greetingEndTimestamp = std::move(value); }
-
-    /**
-     * <p>Timestamp that measures the end of the customer greeting from an outbound
-     * voice call.</p>
-     */
     inline CustomerVoiceActivity& WithGreetingEndTimestamp(const Aws::Utils::DateTime& value) { SetGreetingEndTimestamp(value); return *this;}
-
-    /**
-     * <p>Timestamp that measures the end of the customer greeting from an outbound
-     * voice call.</p>
-     */
     inline CustomerVoiceActivity& WithGreetingEndTimestamp(Aws::Utils::DateTime&& value) { SetGreetingEndTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_greetingStartTimestamp;

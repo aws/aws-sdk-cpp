@@ -44,92 +44,34 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The key for the filter.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The key for the filter.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The key for the filter.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The key for the filter.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The key for the filter.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The key for the filter.</p>
-     */
     inline PatchOrchestratorFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The key for the filter.</p>
-     */
     inline PatchOrchestratorFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The key for the filter.</p>
-     */
     inline PatchOrchestratorFilter& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value for the filter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The value for the filter.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The value for the filter.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The value for the filter.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The value for the filter.</p>
-     */
     inline PatchOrchestratorFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The value for the filter.</p>
-     */
     inline PatchOrchestratorFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The value for the filter.</p>
-     */
     inline PatchOrchestratorFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The value for the filter.</p>
-     */
     inline PatchOrchestratorFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The value for the filter.</p>
-     */
     inline PatchOrchestratorFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_key;

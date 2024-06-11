@@ -38,36 +38,17 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The continuous deployment policy.</p>
      */
     inline const ContinuousDeploymentPolicy& GetContinuousDeploymentPolicy() const{ return m_continuousDeploymentPolicy; }
-
-    /**
-     * <p>The continuous deployment policy.</p>
-     */
     inline bool ContinuousDeploymentPolicyHasBeenSet() const { return m_continuousDeploymentPolicyHasBeenSet; }
-
-    /**
-     * <p>The continuous deployment policy.</p>
-     */
     inline void SetContinuousDeploymentPolicy(const ContinuousDeploymentPolicy& value) { m_continuousDeploymentPolicyHasBeenSet = true; m_continuousDeploymentPolicy = value; }
-
-    /**
-     * <p>The continuous deployment policy.</p>
-     */
     inline void SetContinuousDeploymentPolicy(ContinuousDeploymentPolicy&& value) { m_continuousDeploymentPolicyHasBeenSet = true; m_continuousDeploymentPolicy = std::move(value); }
-
-    /**
-     * <p>The continuous deployment policy.</p>
-     */
     inline ContinuousDeploymentPolicySummary& WithContinuousDeploymentPolicy(const ContinuousDeploymentPolicy& value) { SetContinuousDeploymentPolicy(value); return *this;}
-
-    /**
-     * <p>The continuous deployment policy.</p>
-     */
     inline ContinuousDeploymentPolicySummary& WithContinuousDeploymentPolicy(ContinuousDeploymentPolicy&& value) { SetContinuousDeploymentPolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ContinuousDeploymentPolicy m_continuousDeploymentPolicy;

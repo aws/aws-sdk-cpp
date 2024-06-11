@@ -37,67 +37,29 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Medium access control address (Mac).</p>
      */
     inline const Aws::String& GetMacAddress() const{ return m_macAddress; }
-
-    /**
-     * <p>Medium access control address (Mac).</p>
-     */
     inline bool MacAddressHasBeenSet() const { return m_macAddressHasBeenSet; }
-
-    /**
-     * <p>Medium access control address (Mac).</p>
-     */
     inline void SetMacAddress(const Aws::String& value) { m_macAddressHasBeenSet = true; m_macAddress = value; }
-
-    /**
-     * <p>Medium access control address (Mac).</p>
-     */
     inline void SetMacAddress(Aws::String&& value) { m_macAddressHasBeenSet = true; m_macAddress = std::move(value); }
-
-    /**
-     * <p>Medium access control address (Mac).</p>
-     */
     inline void SetMacAddress(const char* value) { m_macAddressHasBeenSet = true; m_macAddress.assign(value); }
-
-    /**
-     * <p>Medium access control address (Mac).</p>
-     */
     inline WiFiAccessPoint& WithMacAddress(const Aws::String& value) { SetMacAddress(value); return *this;}
-
-    /**
-     * <p>Medium access control address (Mac).</p>
-     */
     inline WiFiAccessPoint& WithMacAddress(Aws::String&& value) { SetMacAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>Medium access control address (Mac).</p>
-     */
     inline WiFiAccessPoint& WithMacAddress(const char* value) { SetMacAddress(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Received signal strength (dBm) of the WLAN measurement data.</p>
      */
     inline int GetRss() const{ return m_rss; }
-
-    /**
-     * <p>Received signal strength (dBm) of the WLAN measurement data.</p>
-     */
     inline bool RssHasBeenSet() const { return m_rssHasBeenSet; }
-
-    /**
-     * <p>Received signal strength (dBm) of the WLAN measurement data.</p>
-     */
     inline void SetRss(int value) { m_rssHasBeenSet = true; m_rss = value; }
-
-    /**
-     * <p>Received signal strength (dBm) of the WLAN measurement data.</p>
-     */
     inline WiFiAccessPoint& WithRss(int value) { SetRss(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_macAddress;

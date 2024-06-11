@@ -33,108 +33,50 @@ namespace Model
     AWS_KINESISANALYTICSV2_API AddApplicationVpcConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the application.</p>
      */
     inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
-
-    /**
-     * <p>The ARN of the application.</p>
-     */
     inline void SetApplicationARN(const Aws::String& value) { m_applicationARN = value; }
-
-    /**
-     * <p>The ARN of the application.</p>
-     */
     inline void SetApplicationARN(Aws::String&& value) { m_applicationARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the application.</p>
-     */
     inline void SetApplicationARN(const char* value) { m_applicationARN.assign(value); }
-
-    /**
-     * <p>The ARN of the application.</p>
-     */
     inline AddApplicationVpcConfigurationResult& WithApplicationARN(const Aws::String& value) { SetApplicationARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the application.</p>
-     */
     inline AddApplicationVpcConfigurationResult& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the application.</p>
-     */
     inline AddApplicationVpcConfigurationResult& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides the current application version. Managed Service for Apache Flink
      * updates the ApplicationVersionId each time you update the application.</p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
-
-    /**
-     * <p>Provides the current application version. Managed Service for Apache Flink
-     * updates the ApplicationVersionId each time you update the application.</p>
-     */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionId = value; }
-
-    /**
-     * <p>Provides the current application version. Managed Service for Apache Flink
-     * updates the ApplicationVersionId each time you update the application.</p>
-     */
     inline AddApplicationVpcConfigurationResult& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters of the new VPC configuration.</p>
      */
     inline const VpcConfigurationDescription& GetVpcConfigurationDescription() const{ return m_vpcConfigurationDescription; }
-
-    /**
-     * <p>The parameters of the new VPC configuration.</p>
-     */
     inline void SetVpcConfigurationDescription(const VpcConfigurationDescription& value) { m_vpcConfigurationDescription = value; }
-
-    /**
-     * <p>The parameters of the new VPC configuration.</p>
-     */
     inline void SetVpcConfigurationDescription(VpcConfigurationDescription&& value) { m_vpcConfigurationDescription = std::move(value); }
-
-    /**
-     * <p>The parameters of the new VPC configuration.</p>
-     */
     inline AddApplicationVpcConfigurationResult& WithVpcConfigurationDescription(const VpcConfigurationDescription& value) { SetVpcConfigurationDescription(value); return *this;}
-
-    /**
-     * <p>The parameters of the new VPC configuration.</p>
-     */
     inline AddApplicationVpcConfigurationResult& WithVpcConfigurationDescription(VpcConfigurationDescription&& value) { SetVpcConfigurationDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AddApplicationVpcConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AddApplicationVpcConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AddApplicationVpcConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationARN;

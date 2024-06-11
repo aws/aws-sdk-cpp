@@ -38,128 +38,47 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the domain.</p>
      */
     inline const Aws::String& GetDomainArn() const{ return m_domainArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain.</p>
-     */
     inline bool DomainArnHasBeenSet() const { return m_domainArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain.</p>
-     */
     inline void SetDomainArn(const Aws::String& value) { m_domainArnHasBeenSet = true; m_domainArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain.</p>
-     */
     inline void SetDomainArn(Aws::String&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain.</p>
-     */
     inline void SetDomainArn(const char* value) { m_domainArnHasBeenSet = true; m_domainArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain.</p>
-     */
     inline DomainSummary& WithDomainArn(const Aws::String& value) { SetDomainArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain.</p>
-     */
     inline DomainSummary& WithDomainArn(Aws::String&& value) { SetDomainArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the domain.</p>
-     */
     inline DomainSummary& WithDomainArn(const char* value) { SetDomainArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the domain.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
-
-    /**
-     * <p>The unique identifier of the domain.</p>
-     */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the domain.</p>
-     */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-
-    /**
-     * <p>The unique identifier of the domain.</p>
-     */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the domain.</p>
-     */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the domain.</p>
-     */
     inline DomainSummary& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the domain.</p>
-     */
     inline DomainSummary& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the domain.</p>
-     */
     inline DomainSummary& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the domain.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline DomainSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline DomainSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline DomainSummary& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainArn;

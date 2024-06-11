@@ -35,55 +35,22 @@ namespace Model
     AWS_SERVICEQUOTAS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the service identifier. To find the service code value for an
      * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline ListServiceQuotasRequest& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline ListServiceQuotasRequest& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline ListServiceQuotasRequest& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies a value for receiving additional results after you receive a
      * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
@@ -92,71 +59,16 @@ namespace Model
      * the output should continue from.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Specifies a value for receiving additional results after you receive a
-     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
-     * response indicates that more output is available. Set this parameter to the
-     * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Specifies a value for receiving additional results after you receive a
-     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
-     * response indicates that more output is available. Set this parameter to the
-     * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Specifies a value for receiving additional results after you receive a
-     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
-     * response indicates that more output is available. Set this parameter to the
-     * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Specifies a value for receiving additional results after you receive a
-     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
-     * response indicates that more output is available. Set this parameter to the
-     * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Specifies a value for receiving additional results after you receive a
-     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
-     * response indicates that more output is available. Set this parameter to the
-     * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
-     */
     inline ListServiceQuotasRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Specifies a value for receiving additional results after you receive a
-     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
-     * response indicates that more output is available. Set this parameter to the
-     * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
-     */
     inline ListServiceQuotasRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies a value for receiving additional results after you receive a
-     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
-     * response indicates that more output is available. Set this parameter to the
-     * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
-     */
     inline ListServiceQuotasRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the maximum number of results that you want included on each page
      * of the response. If you do not include this parameter, it defaults to a value
@@ -170,137 +82,38 @@ namespace Model
      * the results.</p> 
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Specifies the maximum number of results that you want included on each page
-     * of the response. If you do not include this parameter, it defaults to a value
-     * appropriate to the operation. If additional items exist beyond those included in
-     * the current response, the <code>NextToken</code> response element is present and
-     * has a value (is not null). Include that value as the <code>NextToken</code>
-     * request parameter in the next call to the operation to get the next part of the
-     * results.</p>  <p>An API operation can return fewer results than the
-     * maximum even when there are more results available. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p> 
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Specifies the maximum number of results that you want included on each page
-     * of the response. If you do not include this parameter, it defaults to a value
-     * appropriate to the operation. If additional items exist beyond those included in
-     * the current response, the <code>NextToken</code> response element is present and
-     * has a value (is not null). Include that value as the <code>NextToken</code>
-     * request parameter in the next call to the operation to get the next part of the
-     * results.</p>  <p>An API operation can return fewer results than the
-     * maximum even when there are more results available. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p> 
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Specifies the maximum number of results that you want included on each page
-     * of the response. If you do not include this parameter, it defaults to a value
-     * appropriate to the operation. If additional items exist beyond those included in
-     * the current response, the <code>NextToken</code> response element is present and
-     * has a value (is not null). Include that value as the <code>NextToken</code>
-     * request parameter in the next call to the operation to get the next part of the
-     * results.</p>  <p>An API operation can return fewer results than the
-     * maximum even when there are more results available. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p> 
-     */
     inline ListServiceQuotasRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the quota identifier. To find the quota code for a specific quota,
      * use the <a>ListServiceQuotas</a> operation, and look for the
      * <code>QuotaCode</code> response in the output for the quota you want.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline ListServiceQuotasRequest& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline ListServiceQuotasRequest& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline ListServiceQuotasRequest& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies at which level of granularity that the quota value is applied.</p>
      */
     inline const AppliedLevelEnum& GetQuotaAppliedAtLevel() const{ return m_quotaAppliedAtLevel; }
-
-    /**
-     * <p>Specifies at which level of granularity that the quota value is applied.</p>
-     */
     inline bool QuotaAppliedAtLevelHasBeenSet() const { return m_quotaAppliedAtLevelHasBeenSet; }
-
-    /**
-     * <p>Specifies at which level of granularity that the quota value is applied.</p>
-     */
     inline void SetQuotaAppliedAtLevel(const AppliedLevelEnum& value) { m_quotaAppliedAtLevelHasBeenSet = true; m_quotaAppliedAtLevel = value; }
-
-    /**
-     * <p>Specifies at which level of granularity that the quota value is applied.</p>
-     */
     inline void SetQuotaAppliedAtLevel(AppliedLevelEnum&& value) { m_quotaAppliedAtLevelHasBeenSet = true; m_quotaAppliedAtLevel = std::move(value); }
-
-    /**
-     * <p>Specifies at which level of granularity that the quota value is applied.</p>
-     */
     inline ListServiceQuotasRequest& WithQuotaAppliedAtLevel(const AppliedLevelEnum& value) { SetQuotaAppliedAtLevel(value); return *this;}
-
-    /**
-     * <p>Specifies at which level of granularity that the quota value is applied.</p>
-     */
     inline ListServiceQuotasRequest& WithQuotaAppliedAtLevel(AppliedLevelEnum&& value) { SetQuotaAppliedAtLevel(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceCode;

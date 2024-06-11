@@ -38,67 +38,29 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The monthly schedule's day.</p>
      */
     inline const Day& GetDay() const{ return m_day; }
-
-    /**
-     * <p>The monthly schedule's day.</p>
-     */
     inline bool DayHasBeenSet() const { return m_dayHasBeenSet; }
-
-    /**
-     * <p>The monthly schedule's day.</p>
-     */
     inline void SetDay(const Day& value) { m_dayHasBeenSet = true; m_day = value; }
-
-    /**
-     * <p>The monthly schedule's day.</p>
-     */
     inline void SetDay(Day&& value) { m_dayHasBeenSet = true; m_day = std::move(value); }
-
-    /**
-     * <p>The monthly schedule's day.</p>
-     */
     inline MonthlySchedule& WithDay(const Day& value) { SetDay(value); return *this;}
-
-    /**
-     * <p>The monthly schedule's day.</p>
-     */
     inline MonthlySchedule& WithDay(Day&& value) { SetDay(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The monthly schedule's start time.</p>
      */
     inline const Time& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The monthly schedule's start time.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The monthly schedule's start time.</p>
-     */
     inline void SetStartTime(const Time& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The monthly schedule's start time.</p>
-     */
     inline void SetStartTime(Time&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The monthly schedule's start time.</p>
-     */
     inline MonthlySchedule& WithStartTime(const Time& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The monthly schedule's start time.</p>
-     */
     inline MonthlySchedule& WithStartTime(Time&& value) { SetStartTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Day m_day;

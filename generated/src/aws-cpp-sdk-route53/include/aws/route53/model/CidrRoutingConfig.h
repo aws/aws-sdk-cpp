@@ -41,87 +41,33 @@ namespace Model
     AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The CIDR collection ID.</p>
      */
     inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
-
-    /**
-     * <p>The CIDR collection ID.</p>
-     */
     inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
-
-    /**
-     * <p>The CIDR collection ID.</p>
-     */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
-
-    /**
-     * <p>The CIDR collection ID.</p>
-     */
     inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
-
-    /**
-     * <p>The CIDR collection ID.</p>
-     */
     inline void SetCollectionId(const char* value) { m_collectionIdHasBeenSet = true; m_collectionId.assign(value); }
-
-    /**
-     * <p>The CIDR collection ID.</p>
-     */
     inline CidrRoutingConfig& WithCollectionId(const Aws::String& value) { SetCollectionId(value); return *this;}
-
-    /**
-     * <p>The CIDR collection ID.</p>
-     */
     inline CidrRoutingConfig& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIDR collection ID.</p>
-     */
     inline CidrRoutingConfig& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The CIDR collection location name.</p>
      */
     inline const Aws::String& GetLocationName() const{ return m_locationName; }
-
-    /**
-     * <p>The CIDR collection location name.</p>
-     */
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
-
-    /**
-     * <p>The CIDR collection location name.</p>
-     */
     inline void SetLocationName(const Aws::String& value) { m_locationNameHasBeenSet = true; m_locationName = value; }
-
-    /**
-     * <p>The CIDR collection location name.</p>
-     */
     inline void SetLocationName(Aws::String&& value) { m_locationNameHasBeenSet = true; m_locationName = std::move(value); }
-
-    /**
-     * <p>The CIDR collection location name.</p>
-     */
     inline void SetLocationName(const char* value) { m_locationNameHasBeenSet = true; m_locationName.assign(value); }
-
-    /**
-     * <p>The CIDR collection location name.</p>
-     */
     inline CidrRoutingConfig& WithLocationName(const Aws::String& value) { SetLocationName(value); return *this;}
-
-    /**
-     * <p>The CIDR collection location name.</p>
-     */
     inline CidrRoutingConfig& WithLocationName(Aws::String&& value) { SetLocationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIDR collection location name.</p>
-     */
     inline CidrRoutingConfig& WithLocationName(const char* value) { SetLocationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_collectionId;

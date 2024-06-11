@@ -40,91 +40,33 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of theme IDs that you want to apply overrides to. You can use
      * <code>*</code> to override all themes in this asset bundle.</p>
      */
     inline const Aws::Vector<Aws::String>& GetThemeIds() const{ return m_themeIds; }
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline bool ThemeIdsHasBeenSet() const { return m_themeIdsHasBeenSet; }
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline void SetThemeIds(const Aws::Vector<Aws::String>& value) { m_themeIdsHasBeenSet = true; m_themeIds = value; }
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline void SetThemeIds(Aws::Vector<Aws::String>&& value) { m_themeIdsHasBeenSet = true; m_themeIds = std::move(value); }
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline AssetBundleImportJobThemeOverridePermissions& WithThemeIds(const Aws::Vector<Aws::String>& value) { SetThemeIds(value); return *this;}
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline AssetBundleImportJobThemeOverridePermissions& WithThemeIds(Aws::Vector<Aws::String>&& value) { SetThemeIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline AssetBundleImportJobThemeOverridePermissions& AddThemeIds(const Aws::String& value) { m_themeIdsHasBeenSet = true; m_themeIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline AssetBundleImportJobThemeOverridePermissions& AddThemeIds(Aws::String&& value) { m_themeIdsHasBeenSet = true; m_themeIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline AssetBundleImportJobThemeOverridePermissions& AddThemeIds(const char* value) { m_themeIdsHasBeenSet = true; m_themeIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of permissions for the themes that you want to apply overrides to.</p>
      */
     inline const AssetBundleResourcePermissions& GetPermissions() const{ return m_permissions; }
-
-    /**
-     * <p>A list of permissions for the themes that you want to apply overrides to.</p>
-     */
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-
-    /**
-     * <p>A list of permissions for the themes that you want to apply overrides to.</p>
-     */
     inline void SetPermissions(const AssetBundleResourcePermissions& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-
-    /**
-     * <p>A list of permissions for the themes that you want to apply overrides to.</p>
-     */
     inline void SetPermissions(AssetBundleResourcePermissions&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-
-    /**
-     * <p>A list of permissions for the themes that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobThemeOverridePermissions& WithPermissions(const AssetBundleResourcePermissions& value) { SetPermissions(value); return *this;}
-
-    /**
-     * <p>A list of permissions for the themes that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobThemeOverridePermissions& WithPermissions(AssetBundleResourcePermissions&& value) { SetPermissions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_themeIds;

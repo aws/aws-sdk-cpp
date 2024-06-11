@@ -38,55 +38,22 @@ namespace Model
     AWS_MEDIACONNECT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * Filter the list results to display only the instances associated with the
      * selected Gateway Amazon Resource Name (ARN).
      */
     inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
-
-    /**
-     * Filter the list results to display only the instances associated with the
-     * selected Gateway Amazon Resource Name (ARN).
-     */
     inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
-
-    /**
-     * Filter the list results to display only the instances associated with the
-     * selected Gateway Amazon Resource Name (ARN).
-     */
     inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
-
-    /**
-     * Filter the list results to display only the instances associated with the
-     * selected Gateway Amazon Resource Name (ARN).
-     */
     inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
-
-    /**
-     * Filter the list results to display only the instances associated with the
-     * selected Gateway Amazon Resource Name (ARN).
-     */
     inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
-
-    /**
-     * Filter the list results to display only the instances associated with the
-     * selected Gateway Amazon Resource Name (ARN).
-     */
     inline ListGatewayInstancesRequest& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
-
-    /**
-     * Filter the list results to display only the instances associated with the
-     * selected Gateway Amazon Resource Name (ARN).
-     */
     inline ListGatewayInstancesRequest& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
-
-    /**
-     * Filter the list results to display only the instances associated with the
-     * selected Gateway Amazon Resource Name (ARN).
-     */
     inline ListGatewayInstancesRequest& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The maximum number of results to return per API request. For example, you submit
      * a ListInstances request with MaxResults set at 5. Although 20 items match your
@@ -97,41 +64,12 @@ namespace Model
      * maximum of 10 results per page.
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * The maximum number of results to return per API request. For example, you submit
-     * a ListInstances request with MaxResults set at 5. Although 20 items match your
-     * request, the service returns no more than the first 5 items. (The service also
-     * returns a NextToken value that you can use to fetch the next batch of results.)
-     * The service might return fewer results than the MaxResults value. If MaxResults
-     * is not included in the request, the service defaults to pagination with a
-     * maximum of 10 results per page.
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * The maximum number of results to return per API request. For example, you submit
-     * a ListInstances request with MaxResults set at 5. Although 20 items match your
-     * request, the service returns no more than the first 5 items. (The service also
-     * returns a NextToken value that you can use to fetch the next batch of results.)
-     * The service might return fewer results than the MaxResults value. If MaxResults
-     * is not included in the request, the service defaults to pagination with a
-     * maximum of 10 results per page.
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * The maximum number of results to return per API request. For example, you submit
-     * a ListInstances request with MaxResults set at 5. Although 20 items match your
-     * request, the service returns no more than the first 5 items. (The service also
-     * returns a NextToken value that you can use to fetch the next batch of results.)
-     * The service might return fewer results than the MaxResults value. If MaxResults
-     * is not included in the request, the service defaults to pagination with a
-     * maximum of 10 results per page.
-     */
     inline ListGatewayInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The token that identifies which batch of results that you want to see. For
      * example, you submit a ListInstances request with MaxResults set at 5. The
@@ -140,70 +78,14 @@ namespace Model
      * time and specify the NextToken value.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListInstances request with MaxResults set at 5. The
-     * service returns the first batch of results (up to 5) and a NextToken value. To
-     * see the next batch of results, you can submit the ListInstances request a second
-     * time and specify the NextToken value.
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListInstances request with MaxResults set at 5. The
-     * service returns the first batch of results (up to 5) and a NextToken value. To
-     * see the next batch of results, you can submit the ListInstances request a second
-     * time and specify the NextToken value.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListInstances request with MaxResults set at 5. The
-     * service returns the first batch of results (up to 5) and a NextToken value. To
-     * see the next batch of results, you can submit the ListInstances request a second
-     * time and specify the NextToken value.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListInstances request with MaxResults set at 5. The
-     * service returns the first batch of results (up to 5) and a NextToken value. To
-     * see the next batch of results, you can submit the ListInstances request a second
-     * time and specify the NextToken value.
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListInstances request with MaxResults set at 5. The
-     * service returns the first batch of results (up to 5) and a NextToken value. To
-     * see the next batch of results, you can submit the ListInstances request a second
-     * time and specify the NextToken value.
-     */
     inline ListGatewayInstancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListInstances request with MaxResults set at 5. The
-     * service returns the first batch of results (up to 5) and a NextToken value. To
-     * see the next batch of results, you can submit the ListInstances request a second
-     * time and specify the NextToken value.
-     */
     inline ListGatewayInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListInstances request with MaxResults set at 5. The
-     * service returns the first batch of results (up to 5) and a NextToken value. To
-     * see the next batch of results, you can submit the ListInstances request a second
-     * time and specify the NextToken value.
-     */
     inline ListGatewayInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_filterArn;

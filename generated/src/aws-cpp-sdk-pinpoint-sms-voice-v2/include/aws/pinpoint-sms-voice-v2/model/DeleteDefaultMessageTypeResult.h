@@ -33,125 +33,53 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API DeleteDefaultMessageTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the configuration set.</p>
      */
     inline const Aws::String& GetConfigurationSetArn() const{ return m_configurationSetArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-     */
     inline void SetConfigurationSetArn(const Aws::String& value) { m_configurationSetArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-     */
     inline void SetConfigurationSetArn(Aws::String&& value) { m_configurationSetArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-     */
     inline void SetConfigurationSetArn(const char* value) { m_configurationSetArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-     */
     inline DeleteDefaultMessageTypeResult& WithConfigurationSetArn(const Aws::String& value) { SetConfigurationSetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-     */
     inline DeleteDefaultMessageTypeResult& WithConfigurationSetArn(Aws::String&& value) { SetConfigurationSetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-     */
     inline DeleteDefaultMessageTypeResult& WithConfigurationSetArn(const char* value) { SetConfigurationSetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the configuration set.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetName = value; }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetName = std::move(value); }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetName.assign(value); }
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline DeleteDefaultMessageTypeResult& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline DeleteDefaultMessageTypeResult& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the configuration set.</p>
-     */
     inline DeleteDefaultMessageTypeResult& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current message type for the configuration set.</p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
-
-    /**
-     * <p>The current message type for the configuration set.</p>
-     */
     inline void SetMessageType(const MessageType& value) { m_messageType = value; }
-
-    /**
-     * <p>The current message type for the configuration set.</p>
-     */
     inline void SetMessageType(MessageType&& value) { m_messageType = std::move(value); }
-
-    /**
-     * <p>The current message type for the configuration set.</p>
-     */
     inline DeleteDefaultMessageTypeResult& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
-
-    /**
-     * <p>The current message type for the configuration set.</p>
-     */
     inline DeleteDefaultMessageTypeResult& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteDefaultMessageTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteDefaultMessageTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteDefaultMessageTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationSetArn;

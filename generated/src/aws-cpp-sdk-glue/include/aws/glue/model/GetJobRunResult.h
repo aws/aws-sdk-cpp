@@ -33,53 +33,27 @@ namespace Model
     AWS_GLUE_API GetJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The requested job-run metadata.</p>
      */
     inline const JobRun& GetJobRun() const{ return m_jobRun; }
-
-    /**
-     * <p>The requested job-run metadata.</p>
-     */
     inline void SetJobRun(const JobRun& value) { m_jobRun = value; }
-
-    /**
-     * <p>The requested job-run metadata.</p>
-     */
     inline void SetJobRun(JobRun&& value) { m_jobRun = std::move(value); }
-
-    /**
-     * <p>The requested job-run metadata.</p>
-     */
     inline GetJobRunResult& WithJobRun(const JobRun& value) { SetJobRun(value); return *this;}
-
-    /**
-     * <p>The requested job-run metadata.</p>
-     */
     inline GetJobRunResult& WithJobRun(JobRun&& value) { SetJobRun(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetJobRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetJobRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetJobRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JobRun m_jobRun;

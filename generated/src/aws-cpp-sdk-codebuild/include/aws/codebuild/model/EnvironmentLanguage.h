@@ -40,85 +40,32 @@ namespace Model
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The programming language for the Docker images.</p>
      */
     inline const LanguageType& GetLanguage() const{ return m_language; }
-
-    /**
-     * <p>The programming language for the Docker images.</p>
-     */
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-
-    /**
-     * <p>The programming language for the Docker images.</p>
-     */
     inline void SetLanguage(const LanguageType& value) { m_languageHasBeenSet = true; m_language = value; }
-
-    /**
-     * <p>The programming language for the Docker images.</p>
-     */
     inline void SetLanguage(LanguageType&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-
-    /**
-     * <p>The programming language for the Docker images.</p>
-     */
     inline EnvironmentLanguage& WithLanguage(const LanguageType& value) { SetLanguage(value); return *this;}
-
-    /**
-     * <p>The programming language for the Docker images.</p>
-     */
     inline EnvironmentLanguage& WithLanguage(LanguageType&& value) { SetLanguage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of Docker images that are related by the specified programming
      * language.</p>
      */
     inline const Aws::Vector<EnvironmentImage>& GetImages() const{ return m_images; }
-
-    /**
-     * <p>The list of Docker images that are related by the specified programming
-     * language.</p>
-     */
     inline bool ImagesHasBeenSet() const { return m_imagesHasBeenSet; }
-
-    /**
-     * <p>The list of Docker images that are related by the specified programming
-     * language.</p>
-     */
     inline void SetImages(const Aws::Vector<EnvironmentImage>& value) { m_imagesHasBeenSet = true; m_images = value; }
-
-    /**
-     * <p>The list of Docker images that are related by the specified programming
-     * language.</p>
-     */
     inline void SetImages(Aws::Vector<EnvironmentImage>&& value) { m_imagesHasBeenSet = true; m_images = std::move(value); }
-
-    /**
-     * <p>The list of Docker images that are related by the specified programming
-     * language.</p>
-     */
     inline EnvironmentLanguage& WithImages(const Aws::Vector<EnvironmentImage>& value) { SetImages(value); return *this;}
-
-    /**
-     * <p>The list of Docker images that are related by the specified programming
-     * language.</p>
-     */
     inline EnvironmentLanguage& WithImages(Aws::Vector<EnvironmentImage>&& value) { SetImages(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of Docker images that are related by the specified programming
-     * language.</p>
-     */
     inline EnvironmentLanguage& AddImages(const EnvironmentImage& value) { m_imagesHasBeenSet = true; m_images.push_back(value); return *this; }
-
-    /**
-     * <p>The list of Docker images that are related by the specified programming
-     * language.</p>
-     */
     inline EnvironmentLanguage& AddImages(EnvironmentImage&& value) { m_imagesHasBeenSet = true; m_images.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     LanguageType m_language;

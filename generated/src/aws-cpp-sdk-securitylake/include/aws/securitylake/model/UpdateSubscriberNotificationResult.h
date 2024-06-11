@@ -32,63 +32,29 @@ namespace Model
     AWS_SECURITYLAKE_API UpdateSubscriberNotificationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The subscriber endpoint to which exception messages are posted.</p>
      */
     inline const Aws::String& GetSubscriberEndpoint() const{ return m_subscriberEndpoint; }
-
-    /**
-     * <p>The subscriber endpoint to which exception messages are posted.</p>
-     */
     inline void SetSubscriberEndpoint(const Aws::String& value) { m_subscriberEndpoint = value; }
-
-    /**
-     * <p>The subscriber endpoint to which exception messages are posted.</p>
-     */
     inline void SetSubscriberEndpoint(Aws::String&& value) { m_subscriberEndpoint = std::move(value); }
-
-    /**
-     * <p>The subscriber endpoint to which exception messages are posted.</p>
-     */
     inline void SetSubscriberEndpoint(const char* value) { m_subscriberEndpoint.assign(value); }
-
-    /**
-     * <p>The subscriber endpoint to which exception messages are posted.</p>
-     */
     inline UpdateSubscriberNotificationResult& WithSubscriberEndpoint(const Aws::String& value) { SetSubscriberEndpoint(value); return *this;}
-
-    /**
-     * <p>The subscriber endpoint to which exception messages are posted.</p>
-     */
     inline UpdateSubscriberNotificationResult& WithSubscriberEndpoint(Aws::String&& value) { SetSubscriberEndpoint(std::move(value)); return *this;}
-
-    /**
-     * <p>The subscriber endpoint to which exception messages are posted.</p>
-     */
     inline UpdateSubscriberNotificationResult& WithSubscriberEndpoint(const char* value) { SetSubscriberEndpoint(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateSubscriberNotificationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateSubscriberNotificationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateSubscriberNotificationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_subscriberEndpoint;

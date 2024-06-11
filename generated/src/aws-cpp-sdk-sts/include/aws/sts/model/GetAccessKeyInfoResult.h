@@ -33,57 +33,27 @@ namespace Model
     AWS_STS_API GetAccessKeyInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The number used to identify the Amazon Web Services account.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
-
-    /**
-     * <p>The number used to identify the Amazon Web Services account.</p>
-     */
     inline void SetAccount(const Aws::String& value) { m_account = value; }
-
-    /**
-     * <p>The number used to identify the Amazon Web Services account.</p>
-     */
     inline void SetAccount(Aws::String&& value) { m_account = std::move(value); }
-
-    /**
-     * <p>The number used to identify the Amazon Web Services account.</p>
-     */
     inline void SetAccount(const char* value) { m_account.assign(value); }
-
-    /**
-     * <p>The number used to identify the Amazon Web Services account.</p>
-     */
     inline GetAccessKeyInfoResult& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-
-    /**
-     * <p>The number used to identify the Amazon Web Services account.</p>
-     */
     inline GetAccessKeyInfoResult& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-
-    /**
-     * <p>The number used to identify the Amazon Web Services account.</p>
-     */
     inline GetAccessKeyInfoResult& WithAccount(const char* value) { SetAccount(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline GetAccessKeyInfoResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline GetAccessKeyInfoResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_account;
