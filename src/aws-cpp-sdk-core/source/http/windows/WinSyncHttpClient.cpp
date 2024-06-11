@@ -80,8 +80,8 @@ void WinSyncHttpClient::AddHeadersToRequest(const std::shared_ptr<HttpRequest>& 
             }
             else
             {
-                // WinHttp does not accept empty header key or value
-                AWS_LOGSTREAM_DEBUG(GetLogTag(), "Empty header is ignored: " << header.first << ": " << header.second);
+                // DOUBLE SPACE after COLON, thanks, WinHTTP!
+                ss << header.first << ":  " << "\r\n";
             }
         }
 

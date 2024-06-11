@@ -590,6 +590,7 @@ namespace
         GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
         AWS_ASSERT_SUCCESS(getObjectOutcome);
         ASSERT_EQ(contentLength, getObjectOutcome.GetResult().GetContentLength());
+        EXPECT_TRUE(getObjectOutcome.GetResult().GetCacheControl().empty());
 
         // GET with range
         getObjectRequest.SetRange("bytes=128-1024");
